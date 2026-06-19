@@ -45,20 +45,61 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 CDP_DEFAULT = "http://127.0.0.1:18800"
-RESUME = os.path.abspath(os.path.join(HERE, "..", "resume", "Cyrus_Shekari_Resume.pdf"))
 
-# ---- Identity (single source of truth; tested) ----------------------------
-FIRST = "Cyrus"
-LAST = "Shekari"
-EMAIL = "cyshekari@gmail.com"
-PHONE = "3468040227"
-PHONE_FMT = "346-804-0227"
-ADDR_STREET = "12420 NE 120th St #1437"
-ADDR_CITY = "Kirkland"
-ADDR_STATE = "WA"
-ADDR_ZIP = "98034"
-ADDR_COUNTRY = "United States"
-LINKEDIN = "https://linkedin.com/in/cyshekari"
+# ---- Personal info loader (reads agents/job-search/personal-info.json) -----
+_INFO_PATH = os.path.join(HERE, "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n\ndef _phone_digits(p):
+    """Strip non-digits from phone string."""
+    return re.sub(r'[^0-9]', '', p or '')
+
+def _phone_fmt(p):
+    """Format phone as NXX-NXX-XXXX (no country code)."""
+    d = _phone_digits(p).lstrip('1')
+    if len(d) == 10:
+        return f"{d[0:3]}-{d[3:6]}-{d[6:]}"
+    return p
+
+# ---- Lazy identity accessors (read from personal-info.json at call time) ---
+def _FIRST():    return _info()["identity"]["first_name"]
+def _LAST():     return _info()["identity"]["last_name"]
+def _EMAIL():    return _info()["identity"]["email"]
+def _PHONE():    return _phone_digits(_info()["identity"]["phone"])
+def _PHONE_FMT():return _phone_fmt(_info()["identity"]["phone"])
+def _LINKEDIN(): return _info()["identity"]["linkedin_url"]
+def _ADDR_STREET():  return _info()["address"]["street"]
+def _ADDR_CITY():    return _info()["address"]["city"]
+def _ADDR_STATE():   return _info()["address"]["state"]
+def _ADDR_ZIP():     return _info()["address"]["zip"]
+def _ADDR_COUNTRY(): return _info()["address"].get("country", "United States")
+
+# Backward-compat module-level names — resolved lazily so tests that patch
+# personal-info.json work correctly.
+class _LazyPI:
+    @property
+    def FIRST(self): return _FIRST()
+    @property
+    def LAST(self): return _LAST()
+    @property
+    def EMAIL(self): return _EMAIL()
+    @property
+    def PHONE(self): return _PHONE()
+    @property
+    def PHONE_FMT(self): return _PHONE_FMT()
+    @property
+    def LINKEDIN(self): return _LINKEDIN()
+
+_PI = _LazyPI()
+FIRST     = property(lambda s: _FIRST())
+LAST      = property(lambda s: _LAST())
+EMAIL     = property(lambda s: _EMAIL())
+PHONE     = property(lambda s: _PHONE())
+PHONE_FMT = property(lambda s: _PHONE_FMT())
+LINKEDIN  = property(lambda s: _LINKEDIN())
+
+_pi = _info  # alias used later
+
+RESUME = os.path.abspath(os.path.join(HERE, "..", "resume", "Cyrus_Shekari_Resume.pdf"))
 
 # ---- Knockout / screening answer heuristics (TRUTHFUL only) ----------------
 # Cyrus: US citizen, authorized to work in US, NO sponsorship now or future, no

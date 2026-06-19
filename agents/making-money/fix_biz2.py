@@ -1,0 +1,1 @@
+with open('biz2.py', 'rb') as f:\n    data = f.read()\n# Replace literal backslash-n (0x5c 0x6e) with real newline (0x0a)\n# in the specific fetch function body\nfixed = data.replace(b') as r:\\n            return', b') as r:\n            return')\nwith open('biz2.py', 'wb') as f:\n    f.write(fixed)\nprint('Done, size:', len(fixed))
