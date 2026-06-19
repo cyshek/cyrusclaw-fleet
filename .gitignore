@@ -4,11 +4,15 @@
 .env.*
 !.env.example
 
-# Personal info
+# Personal info & credentials
 personal-info.json
 auth-profiles.json
 auth-state.json
 .gmail-app-password
+.bytedance-password
+.capsolver-key
+.tiktok-password
+.jobright-session
 
 # Resumes & documents
 *.pdf
@@ -17,9 +21,19 @@ auth-state.json
 # Databases
 tracker.db
 *.db
+*.sqlite
 
-# Memory daily logs (keep MEMORY.md, AGENTS.md, etc.)
-memory/20*.md
+# Agent runtime / memory files (personal, not code)
+MEMORY.md
+HANDOFF.md
+AGENTS.md
+SOUL.md
+IDENTITY.md
+USER.md
+TOOLS.md
+HEARTBEAT.md
+*.bak*
+memory/
 
 # Browser / automation data
 .workday-browser-data/
