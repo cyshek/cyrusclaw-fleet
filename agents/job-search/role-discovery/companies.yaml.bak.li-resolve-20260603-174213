@@ -1,0 +1,3036 @@
+companies:
+- name: Anthropic
+  adapter: greenhouse
+  slug: anthropic
+- name: Stripe
+  adapter: greenhouse
+  slug: stripe
+- name: Lyft
+  adapter: greenhouse
+  slug: lyft
+- name: Scale AI
+  adapter: greenhouse
+  slug: scaleai
+- name: Chime
+  adapter: greenhouse
+  slug: chime
+- name: DeepMind
+  adapter: greenhouse
+  slug: deepmind
+- name: Lucid
+  adapter: greenhouse
+  slug: lucidmotors
+- name: SpaceX
+  adapter: greenhouse
+  slug: spacex
+- name: Dropbox
+  adapter: greenhouse
+  slug: dropbox
+- name: Airbnb
+  adapter: greenhouse
+  slug: airbnb
+- name: Discord
+  adapter: greenhouse
+  slug: discord
+- name: Reddit
+  adapter: greenhouse
+  slug: reddit
+- name: Roblox
+  adapter: greenhouse
+  slug: roblox
+- name: Snap
+  adapter: snap
+  slug: ''
+- name: Asana
+  adapter: greenhouse
+  slug: asana
+- name: Twitch
+  adapter: greenhouse
+  slug: twitch
+- name: Block
+  adapter: greenhouse
+  slug: block
+- name: Figma
+  adapter: greenhouse
+  slug: figma
+- name: GoDaddy
+  adapter: greenhouse
+  slug: godaddy
+- name: Qualtrics
+  adapter: greenhouse
+  slug: qualtrics
+- name: Logitech
+  adapter: workday
+  host: logitech.wd1.myworkdayjobs.com
+  tenant: logitech
+  site: External
+- name: EA
+  skip: true
+  reason: uses gr8people custom ATS at ea.gr8people.com — needs custom adapter
+- name: Splunk
+  adapter: workday
+  host: wd1.myworkdaysite.com
+  tenant: cisco
+  site: External
+  skip: true
+  reason: Splunk acquired by Cisco; covered by Cisco entry
+- name: OpenAI
+  adapter: ashby
+  slug: openai
+- name: Cohere
+  adapter: ashby
+  slug: cohere
+- name: Notion
+  adapter: ashby
+  slug: notion
+- name: Anyscale
+  adapter: ashby
+  slug: anyscale
+- name: Quora
+  adapter: ashby
+  slug: quora
+- name: Duolingo
+  adapter: greenhouse
+  slug: duolingo
+- name: Bessemer
+  skip: true
+  reason: VC firm — doesn't hire PMs at scale
+- name: Spotify
+  adapter: lever
+  slug: spotify
+- name: Netflix
+  adapter: lever
+  slug: netflix
+- name: TikTok
+  adapter: tiktok
+  slug: ''
+  discovery_only: true
+- name: ByteDance
+  adapter: bytedance
+  slug: ''
+  discovery_only: true
+- name: LinkedIn
+  skip: true
+  reason: uses native ATS; LinkedIn careers — needs custom adapter
+- name: Nvidia
+  adapter: workday
+  host: nvidia.wd5.myworkdayjobs.com
+  tenant: nvidia
+  site: NVIDIAExternalCareerSite
+- name: Intel
+  adapter: workday
+  host: intel.wd1.myworkdayjobs.com
+  tenant: intel
+  site: External
+- name: Salesforce
+  adapter: workday
+  host: salesforce.wd12.myworkdayjobs.com
+  tenant: salesforce
+  site: External_Career_Site
+- name: HPE
+  adapter: workday
+  host: hpe.wd5.myworkdayjobs.com
+  tenant: hpe
+  site: Jobsathpe
+- name: Mastercard
+  adapter: workday
+  host: mastercard.wd1.myworkdayjobs.com
+  tenant: mastercard
+  site: CorporateCareers
+- name: PayPal
+  adapter: workday
+  host: paypal.wd1.myworkdayjobs.com
+  tenant: paypal
+  site: jobs
+- name: Baker Hughes
+  adapter: workday
+  host: bakerhughes.wd5.myworkdayjobs.com
+  tenant: bakerhughes
+  site: BakerHughes
+- name: Workday
+  adapter: workday
+  host: workday.wd5.myworkdayjobs.com
+  tenant: workday
+  site: Workday
+- name: Visa
+  adapter: workday
+  host: visa.wd1.myworkdayjobs.com
+  tenant: visa
+  site: VISA
+- name: ABB
+  adapter: workday
+  host: abb.wd3.myworkdayjobs.com
+  tenant: abb
+  site: 1abb
+- name: Capital One
+  adapter: workday
+  host: capitalone.wd1.myworkdayjobs.com
+  tenant: capitalone
+  site: Capital_One
+- name: Discover
+  adapter: workday
+  host: discover.wd5.myworkdayjobs.com
+  tenant: discover
+  site: discover
+- name: Goldman Sachs
+  adapter: workday
+  host: goldmansachs.wd1.myworkdayjobs.com
+  tenant: GS
+  site: Experienced_Hire
+- name: JP Morgan
+  adapter: workday
+  host: jpmc.wd5.myworkdayjobs.com
+  tenant: jpmc
+  site: jpmc
+- name: McKinsey
+  adapter: workday
+  host: mckinsey.wd5.myworkdayjobs.com
+  tenant: mckinsey
+  site: McKinsey
+  skip: true
+  reason: workday host 422/404 stale config (2026-06-03); needs correct host/site path; low-yield (acct-walled). Re-enable when host verified.
+- name: Oracle
+  adapter: workday
+  host: oracle.wd1.myworkdayjobs.com
+  tenant: oracle
+  site: Corporate
+- name: Dell
+  adapter: workday
+  host: dell.wd1.myworkdayjobs.com
+  tenant: dell
+  site: External
+- name: Lockheed Martin
+  adapter: workday
+  host: lockheedmartin.wd1.myworkdayjobs.com
+  tenant: Lockheed_Martin
+  site: External
+- name: Tesla
+  adapter: workday
+  host: tesla.wd5.myworkdayjobs.com
+  tenant: tesla
+  site: Tesla
+- name: IBM
+  adapter: workday
+  host: ibmglobal.wd1.myworkdayjobs.com
+  tenant: IBM
+  site: IBM_External
+- name: Snowflake
+  adapter: workday
+  host: snowflake.wd1.myworkdayjobs.com
+  tenant: snowflake
+  site: External
+- name: Atlassian
+  adapter: workday
+  host: atlassian.wd5.myworkdayjobs.com
+  tenant: atlassian
+  site: External
+- name: Rivian
+  adapter: workday
+  host: rivian.wd5.myworkdayjobs.com
+  tenant: rivian
+  site: rivian
+- name: Dolby
+  adapter: workday
+  host: dolby.wd1.myworkdayjobs.com
+  tenant: dolby
+  site: External
+- name: Starbucks
+  adapter: workday
+  host: starbucks.wd5.myworkdayjobs.com
+  tenant: starbucks
+  site: starbuckscareers
+- name: Chevron
+  adapter: workday
+  host: chevron.wd5.myworkdayjobs.com
+  tenant: chevron
+  site: jobs
+- name: ConocoPhillips
+  adapter: workday
+  host: conocophillips.wd1.myworkdayjobs.com
+  tenant: conocophillips
+  site: External
+- name: NOV
+  adapter: workday
+  host: nov.wd1.myworkdayjobs.com
+  tenant: nov
+  site: NOV
+- name: EOG Resources
+  adapter: workday
+  host: eogresources.wd5.myworkdayjobs.com
+  tenant: eogresources
+  site: External
+- name: Phillips 66
+  adapter: workday
+  host: phillips66.wd5.myworkdayjobs.com
+  tenant: phillips66
+  site: P66
+- name: BP
+  adapter: workday
+  host: bp.wd3.myworkdayjobs.com
+  tenant: bp
+  site: bp
+- name: Exxon
+  adapter: workday
+  host: exxonmobil.wd5.myworkdayjobs.com
+  tenant: exxonmobil
+  site: ExxonMobil
+- name: Microsoft
+  adapter: microsoft
+  slug: ''
+  discovery_only: true
+- name: Apple
+  adapter: apple
+- name: Google
+  adapter: google
+  slug: ''
+  discovery_only: true
+- name: Uber
+  adapter: uber
+  slug: ''
+  discovery_only: true
+- name: a16z
+  skip: true
+  reason: VC firm — doesn't hire PMs at scale
+- name: Sequoia
+  skip: true
+  reason: VC
+- name: Kleiner Perkins
+  skip: true
+  reason: VC
+- name: Tiger Global
+  skip: true
+  reason: VC
+- name: Insight Partners
+  skip: true
+  reason: VC
+- name: Menlo Ventures
+  skip: true
+  reason: VC
+- name: BCG
+  skip: true
+  reason: consultancy — different role pipeline
+- name: Talroo
+  skip: true
+  reason: low-comp; not target tier
+- name: Databricks
+  adapter: greenhouse
+  slug: databricks
+- name: Confluent
+  skip: true
+  reason: no public Greenhouse/Ashby/Lever board found; uses proprietary careers.confluent.io
+- name: Pinterest
+  adapter: greenhouse
+  slug: pinterest
+- name: Instacart
+  adapter: greenhouse
+  slug: instacart
+- name: DoorDash
+  adapter: greenhouse
+  slug: doordashusa
+- name: Coinbase
+  adapter: greenhouse
+  slug: coinbase
+- name: Hugging Face
+  skip: true
+  reason: careers requires login; no public board API found
+- name: Perplexity
+  adapter: ashby
+  slug: perplexity
+- name: Mistral AI
+  adapter: lever
+  slug: mistral
+- name: Robinhood
+  adapter: greenhouse
+  slug: robinhood
+- name: Plaid
+  adapter: ashby
+  slug: plaid
+- name: Stainless
+  adapter: ashby
+  slug: stainlessapi
+- name: Spot & Tango
+  adapter: greenhouse
+  slug: spotandtango
+- name: Sony Interactive Entertainment
+  adapter: greenhouse
+  slug: sonyinteractiveentertainmentglobal
+- name: Brain Co.
+  adapter: ashby
+  slug: brainco
+- name: Axon
+  adapter: greenhouse
+  slug: axon
+- name: HackerRank
+  adapter: greenhouse
+  slug: hackerrank
+- name: Sixfold
+  adapter: greenhouse
+  slug: sixfold
+- name: Neural Concept
+  adapter: ashby
+  slug: neuralconcept
+- name: Dust
+  adapter: ashby
+  slug: dust
+- name: Blaxel
+  adapter: ashby
+  slug: blaxel
+- name: Thought Machine
+  adapter: ashby
+  slug: thought-machine
+- name: Brex
+  adapter: greenhouse
+  slug: brex
+- name: Ramp
+  adapter: ashby
+  slug: ramp
+- name: Mercury
+  adapter: greenhouse
+  slug: mercury
+- name: Vercel
+  adapter: greenhouse
+  slug: vercel
+- name: Retool
+  adapter: ashby
+  slug: retool
+  skip: true
+  reason: 'no public board: ashby/greenhouse/lever all 404 (2026-06-01) — proprietary careers, needs custom adapter'
+- name: Linear
+  adapter: ashby
+  slug: linear
+- name: Cursor
+  adapter: ashby
+  slug: cursor
+- name: Replicate
+  skip: true
+  reason: no public Greenhouse/Ashby/Lever board found
+- name: Modal Labs
+  adapter: ashby
+  slug: modal
+- name: Together AI
+  adapter: greenhouse
+  slug: togetherai
+- name: Groq
+  skip: true
+  reason: no public board API; uses proprietary system at groq.com/careers
+- name: Sourcegraph
+  adapter: greenhouse
+  slug: sourcegraph91
+- name: GitLab
+  adapter: greenhouse
+  slug: gitlab
+- name: HashiCorp
+  adapter: smartrecruiters
+  slug: hashicorp
+- name: Datadog
+  adapter: greenhouse
+  slug: datadog
+- name: MongoDB
+  adapter: greenhouse
+  slug: mongodb
+- name: Elastic
+  adapter: greenhouse
+  slug: elastic
+- name: Cloudflare
+  adapter: greenhouse
+  slug: cloudflare
+- name: Fastly
+  adapter: greenhouse
+  slug: fastly
+- name: PagerDuty
+  adapter: greenhouse
+  slug: pagerduty
+- name: New Relic
+  adapter: greenhouse
+  slug: newrelic
+- name: Twilio
+  adapter: greenhouse
+  slug: twilio
+- name: Okta
+  adapter: greenhouse
+  slug: okta
+- name: Auth0
+  skip: true
+  reason: acquired by Okta; covered by Okta entry
+- name: Zoom
+  adapter: workday
+  host: zoom.wd5.myworkdayjobs.com
+  tenant: zoom
+  site: Zoom
+- name: Slack
+  skip: true
+  reason: acquired by Salesforce; covered by Salesforce entry
+- name: Box
+  adapter: workday
+  host: box.wd1.myworkdayjobs.com
+  tenant: box
+  site: Box
+- name: Affirm
+  adapter: greenhouse
+  slug: affirm
+- name: Wealthfront
+  skip: true
+  reason: no public job board API
+- name: Palantir
+  adapter: lever
+  slug: palantir
+- name: Smartsheet
+  adapter: greenhouse
+  slug: smartsheet
+- name: Roku
+  adapter: greenhouse
+  slug: roku
+- name: The Trade Desk
+  adapter: greenhouse
+  slug: thetradedesk
+- name: Tanium
+  adapter: greenhouse
+  slug: tanium
+- name: Cockroach Labs
+  adapter: greenhouse
+  slug: cockroachlabs
+- name: Fivetran
+  adapter: greenhouse
+  slug: fivetran
+- name: LaunchDarkly
+  adapter: greenhouse
+  slug: launchdarkly
+- name: Amplitude
+  adapter: greenhouse
+  slug: amplitude
+- name: Mixpanel
+  adapter: greenhouse
+  slug: mixpanel
+- name: Algolia
+  adapter: greenhouse
+  slug: algolia
+- name: Jane Street
+  adapter: greenhouse
+  slug: janestreet
+- name: Jump Trading
+  adapter: greenhouse
+  slug: jumptrading
+- name: Akuna Capital
+  adapter: greenhouse
+  slug: akunacapital
+- name: IMC Trading
+  adapter: greenhouse
+  slug: imc
+- name: Gemini
+  adapter: greenhouse
+  slug: gemini
+- name: xAI
+  adapter: greenhouse
+  slug: xai
+- name: Runway
+  adapter: ashby
+  slug: runway
+- name: ElevenLabs
+  adapter: ashby
+  slug: elevenlabs
+- name: Harvey
+  adapter: ashby
+  slug: harvey
+- name: Sierra
+  adapter: ashby
+  slug: sierra
+- name: Decagon
+  adapter: ashby
+  slug: decagon
+- name: Pika
+  adapter: ashby
+  slug: pika
+- name: Suno
+  adapter: ashby
+  slug: suno
+- name: Lovable
+  adapter: ashby
+  slug: lovable
+- name: CircleCI
+  adapter: greenhouse
+  slug: circleci
+- name: Replit
+  adapter: ashby
+  slug: replit
+- name: Render
+  adapter: ashby
+  slug: render
+- name: Supabase
+  adapter: ashby
+  slug: supabase
+- name: PlanetScale
+  adapter: greenhouse
+  slug: planetscale
+- name: Neon
+  adapter: ashby
+  slug: neon
+- name: Pendo
+  adapter: greenhouse
+  slug: pendo
+- name: Faire
+  adapter: greenhouse
+  slug: faire
+- name: Flexport
+  adapter: greenhouse
+  slug: flexport
+- name: Klaviyo
+  adapter: greenhouse
+  slug: klaviyo
+- name: Toast
+  adapter: greenhouse
+  slug: toast
+- name: Squarespace
+  adapter: greenhouse
+  slug: squarespace
+- name: Wix
+  skip: true
+  reason: no public job board API
+- name: Webflow
+  adapter: greenhouse
+  slug: webflow
+- name: Canva
+  skip: true
+  reason: no public Greenhouse/Ashby board found; canva.com/careers/jobs returns 403
+- name: Atlassian Cloud
+  skip: true
+  reason: duplicate of Atlassian Workday entry
+- name: ServiceNow
+  adapter: workday
+  host: servicenow.wd1.myworkdayjobs.com
+  tenant: servicenow
+  site: External
+  skip: true
+  reason: workday host 422/404 stale config (2026-06-03); needs correct host/site path; low-yield (acct-walled). Re-enable when host verified.
+- name: VMware
+  adapter: workday
+  host: vmware.wd1.myworkdayjobs.com
+  tenant: vmware
+  site: VMware
+  skip: true
+  reason: workday host 422/404 stale config (2026-06-03); needs correct host/site path; low-yield (acct-walled). Re-enable when host verified.
+- name: Adobe
+  adapter: workday
+  host: adobe.wd5.myworkdayjobs.com
+  tenant: adobe
+  site: external_experienced
+- name: Cisco
+  adapter: workday
+  host: cisco.wd5.myworkdayjobs.com
+  tenant: cisco
+  site: External
+- name: Splunk Inc
+  skip: true
+  reason: duplicate of Splunk entry above
+- name: Magic
+  adapter: greenhouse
+  slug: magic
+- name: World Labs
+  adapter: greenhouse
+  slug: worldlabs
+- name: Poolside
+  adapter: ashby
+  slug: poolside
+- name: Sakana AI
+  skip: true
+  reason: Japan-based; no US-facing public board found
+- name: Reka AI
+  adapter: ashby
+  slug: reka
+- name: Tavus
+  adapter: ashby
+  slug: tavus
+- name: Bland AI
+  adapter: ashby
+  slug: bland
+- name: Cresta
+  adapter: greenhouse
+  slug: cresta
+- name: Sana
+  adapter: ashby
+  slug: sana-roles
+- name: Glean
+  adapter: greenhouse
+  slug: gleanwork
+- name: LangChain
+  adapter: ashby
+  slug: langchain
+- name: Pinecone
+  adapter: ashby
+  slug: pinecone
+- name: Weights & Biases
+  adapter: greenhouse
+  slug: weights_and_biases
+- name: Arize AI
+  adapter: greenhouse
+  slug: arizeai
+- name: Snorkel AI
+  adapter: greenhouse
+  slug: snorkelai
+- name: Temporal
+  adapter: ashby
+  slug: temporal
+- name: Astronomer
+  adapter: ashby
+  slug: astronomer
+- name: dbt Labs
+  adapter: greenhouse
+  slug: dbtlabsinc
+- name: Hex
+  adapter: greenhouse
+  slug: hextechnologies
+- name: Sigma Computing
+  adapter: greenhouse
+  slug: sigmacomputing
+- name: Hightouch
+  adapter: ashby
+  slug: hightouch
+- name: Census
+  skip: true
+  reason: Acquired by Fivetran 2024 - careers redirect to Fivetran Greenhouse (already indexed as Fivetran above)
+- name: Wiz
+  adapter: greenhouse
+  slug: wizinc
+- name: Snyk
+  adapter: ashby
+  slug: snyk
+- name: 1Password
+  adapter: ashby
+  slug: 1password
+- name: Vanta
+  adapter: ashby
+  slug: vanta
+- name: Abnormal Security
+  adapter: greenhouse
+  slug: abnormalsecurity
+- name: Material Security
+  adapter: ashby
+  slug: materialsecurity
+- name: HackerOne
+  adapter: ashby
+  slug: hackerone
+- name: Sentry
+  adapter: ashby
+  slug: sentry
+- name: Hudson River Trading
+  adapter: greenhouse
+  slug: hrttalentcommunity
+- name: Two Sigma
+  adapter: greenhouse
+  slug: twosigma
+  skip: true
+  reason: hedge fund, proprietary careers; gh/ashby/lever all 404 (2026-06-01)
+- name: DE Shaw
+  adapter: greenhouse
+  slug: deshaw
+  skip: true
+  reason: hedge fund, proprietary careers; gh/ashby/lever all 404 (2026-06-01)
+- name: DRW
+  adapter: greenhouse
+  slug: drweng
+- name: Optiver
+  adapter: greenhouse
+  slug: optiver
+- name: Citadel Securities
+  skip: true
+  reason: uses Phenom People ATS at citadelsecurities.com/careers — needs custom adapter
+- name: Miro
+  adapter: ashby
+  slug: miro
+- name: Airtable
+  adapter: greenhouse
+  slug: airtable
+- name: Coda
+  adapter: greenhouse
+  slug: coda
+  skip: true
+  reason: gh/ashby/lever all 404 (2026-06-01); likely post-Grammarly-acquisition careers redirect
+- name: Zapier
+  adapter: ashby
+  slug: zapier
+- name: Calendly
+  adapter: greenhouse
+  slug: calendly
+- name: Substack
+  adapter: ashby
+  slug: substack
+- name: Patreon
+  adapter: ashby
+  slug: patreon
+- name: Gong
+  adapter: greenhouse
+  slug: gongio
+- name: Apollo.io
+  adapter: greenhouse
+  slug: apolloio
+- name: Outreach
+  adapter: lever
+  slug: outreach
+- name: Salesloft
+  adapter: greenhouse
+  slug: salesloft
+- name: Intercom
+  adapter: greenhouse
+  slug: intercom
+- name: Front
+  adapter: ashby
+  slug: frontcareers
+- name: ZoomInfo
+  adapter: greenhouse
+  slug: zoominfo
+- name: Chainalysis
+  adapter: greenhouse
+  slug: chainalysis
+  skip: true
+  reason: gh/ashby/lever all 404 (2026-06-01) — proprietary careers, needs custom adapter
+- name: Kraken
+  adapter: ashby
+  slug: kraken
+- name: OpenSea
+  adapter: ashby
+  slug: opensea
+- name: Marqeta
+  adapter: greenhouse
+  slug: marqeta
+- name: Drata
+  adapter: ashby
+  slug: drata
+- name: Warp
+  adapter: ashby
+  slug: warp
+- name: Dagger
+  adapter: greenhouse
+  slug: dagger
+- name: Prefect
+  adapter: ashby
+  slug: prefect
+- name: Crusoe
+  adapter: ashby
+  slug: crusoe
+- name: Cognition
+  adapter: ashby
+  slug: cognition
+- name: Writer
+  adapter: ashby
+  slug: writer
+- name: Fireworks AI
+  adapter: greenhouse
+  slug: fireworksai
+- name: Exa
+  adapter: ashby
+  slug: exa
+- name: Tavily
+  adapter: ashby
+  slug: tavily
+- name: LlamaIndex
+  adapter: ashby
+  slug: llamaindex
+- name: Browserbase
+  adapter: ashby
+  slug: browserbase
+- name: Tessl
+  adapter: ashby
+  slug: tesslcareers
+- name: Weaviate
+  adapter: ashby
+  slug: weaviate
+- name: Stability AI
+  adapter: greenhouse
+  slug: stabilityai
+- name: Inflection
+  adapter: greenhouse
+  slug: inflectionai
+- name: Deel
+  adapter: ashby
+  slug: deel
+- name: Carta
+  adapter: greenhouse
+  slug: carta
+- name: Gusto
+  adapter: greenhouse
+  slug: gusto
+- name: Pleo
+  adapter: ashby
+  slug: pleo
+- name: Newfront
+  adapter: ashby
+  slug: newfront
+- name: Pilot
+  adapter: greenhouse
+  slug: pilothq
+- name: Zscaler
+  adapter: greenhouse
+  slug: zscaler
+- name: Tenable
+  adapter: greenhouse
+  slug: tenableinc
+- name: Recorded Future
+  adapter: greenhouse
+  slug: recordedfuture
+- name: At-Bay
+  adapter: greenhouse
+  slug: atbayjobs
+- name: Veracode
+  adapter: greenhouse
+  slug: veracode
+- name: Bugcrowd
+  adapter: greenhouse
+  slug: bugcrowd
+- name: Coalition
+  adapter: greenhouse
+  slug: coalition
+- name: Orca Security
+  adapter: greenhouse
+  slug: orcasecurity
+- name: Synack
+  adapter: greenhouse
+  slug: synack
+- name: Cybereason
+  adapter: greenhouse
+  slug: cybereason
+- name: Hebbia
+  adapter: greenhouse
+  slug: hebbia
+  skip: true
+  reason: gh/ashby/lever all 404 (2026-06-01); slug went stale since auto-discovery
+- name: Otter.ai
+  adapter: greenhouse
+  slug: otterai
+- name: Rev
+  adapter: ashby
+  slug: rev
+- name: Fathom
+  adapter: ashby
+  slug: fathom
+- name: ClickUp
+  adapter: ashby
+  slug: clickup
+- name: Monday.com
+  adapter: ashby
+  slug: monday.com
+- name: Modern Health
+  adapter: greenhouse
+  slug: modernhealth
+- name: Mux
+  adapter: ashby
+  slug: mux
+- name: Clerk
+  adapter: ashby
+  slug: clerk
+- name: Netlify
+  adapter: greenhouse
+  slug: netlify
+- name: Quip
+  adapter: greenhouse
+  slug: quip
+- name: Character.AI
+  adapter: ashby
+  slug: character
+- name: CoreWeave
+  adapter: greenhouse
+  slug: coreweave
+- name: Lambda
+  adapter: ashby
+  slug: lambda
+- name: Baseten
+  adapter: ashby
+  slug: baseten
+- name: Figure
+  adapter: greenhouse
+  slug: figureai
+- name: Anduril
+  adapter: greenhouse
+  slug: andurilindustries
+- name: Shield AI
+  adapter: lever
+  slug: shieldai
+- name: Skydio
+  adapter: ashby
+  slug: skydio
+- name: Deepgram
+  adapter: ashby
+  slug: deepgram
+- name: Airbyte
+  adapter: ashby
+  slug: airbyte
+- name: Attio
+  adapter: ashby
+  slug: attio
+- name: Kalshi
+  adapter: ashby
+  slug: kalshi
+- name: Rerun
+  adapter: ashby
+  slug: rerun
+- name: Common Room
+  adapter: ashby
+  slug: commonroom
+- name: Continue
+  adapter: ashby
+  slug: continue
+- name: Decart AI
+  adapter: ashby
+  slug: decart-ai
+- name: Distyl
+  adapter: ashby
+  slug: distyl
+- name: Fiddler AI
+  adapter: ashby
+  slug: fiddler-ai
+- name: Liquid AI
+  adapter: ashby
+  slug: liquid-ai
+- name: Mercor
+  adapter: ashby
+  slug: mercor
+- name: Persona
+  adapter: ashby
+  slug: persona
+- name: Pylon
+  adapter: ashby
+  slug: pylon
+- name: Resend
+  adapter: ashby
+  slug: resend
+- name: Runway ML
+  adapter: ashby
+  slug: runway-ml
+- name: Synthesia
+  adapter: ashby
+  slug: synthesia
+- name: Synthflow
+  adapter: ashby
+  slug: synthflow
+- name: Vapi
+  adapter: ashby
+  slug: vapi
+- name: Apiiro
+  adapter: greenhouse
+  slug: apiiro
+- name: Black Forest Labs
+  adapter: greenhouse
+  slug: blackforestlabs
+- name: Comet
+  adapter: greenhouse
+  slug: comet
+- name: Iconiq
+  adapter: greenhouse
+  slug: iconiq
+- name: Imbue
+  adapter: greenhouse
+  slug: imbue
+- name: Lattice
+  adapter: greenhouse
+  slug: lattice
+- name: Patronus AI
+  adapter: greenhouse
+  slug: patronusaiinc
+- name: PolyAI
+  adapter: greenhouse
+  slug: polyai
+- name: Postman
+  adapter: greenhouse
+  slug: postman
+- name: You.com
+  adapter: greenhouse
+  slug: youcom
+- name: Thinking Machines
+  adapter: greenhouse
+  slug: thinkingmachines
+- name: H Company
+  adapter: ashby
+  slug: hcompany
+- name: Magic.dev
+  adapter: ashby
+  slug: magic.dev
+- name: Clay
+  adapter: ashby
+  slug: claylabs
+- name: Abridge
+  adapter: ashby
+  slug: abridge
+- name: Rogo
+  adapter: ashby
+  slug: rogo
+- name: Ironclad
+  adapter: ashby
+  slug: ironcladhq
+- name: Robin AI
+  adapter: ashby
+  slug: robin-ai
+- name: Tennr
+  adapter: ashby
+  slug: tennr
+- name: Relevance AI
+  adapter: ashby
+  slug: relevanceai
+- name: Artisan
+  adapter: ashby
+  slug: artisan
+- name: Unify
+  adapter: ashby
+  slug: unify
+- name: Aisera
+  adapter: greenhouse
+  slug: aiserajobs
+- name: Cartesia
+  adapter: ashby
+  slug: cartesia
+- name: Retell AI
+  adapter: ashby
+  slug: retell-ai
+- name: HeyGen
+  adapter: greenhouse
+  slug: heygen
+- name: Hume AI
+  adapter: greenhouse
+  slug: humeai
+- name: Photoroom
+  adapter: ashby
+  slug: photoroom
+- name: Cline
+  adapter: greenhouse
+  slug: cline
+- name: StackBlitz
+  adapter: greenhouse
+  slug: stackblitz
+- name: Sweep
+  adapter: ashby
+  slug: sweep
+- name: E2B
+  adapter: ashby
+  slug: e2b
+- name: Inngest
+  adapter: ashby
+  slug: inngest
+- name: Restate
+  adapter: ashby
+  slug: restate
+- name: Tenstorrent
+  adapter: greenhouse
+  slug: tenstorrent
+- name: Etched
+  adapter: greenhouse
+  slug: etchedai
+- name: Lightmatter
+  adapter: greenhouse
+  slug: lightmatter
+- name: Substrate
+  adapter: ashby
+  slug: substrate
+- name: Datacurve
+  adapter: ashby
+  slug: datacurve
+- name: MotherDuck
+  adapter: ashby
+  slug: motherduck
+- name: LanceDB
+  adapter: ashby
+  slug: lancedb
+- name: Turbopuffer
+  adapter: ashby
+  slug: turbopuffer
+- name: Materialize
+  adapter: greenhouse
+  slug: materialize
+- name: Chalk
+  adapter: ashby
+  slug: chalk
+- name: Braintrust
+  adapter: ashby
+  slug: braintrust
+- name: Galileo
+  adapter: greenhouse
+  slug: galileo
+- name: HiddenLayer
+  adapter: greenhouse
+  slug: hiddenlayer
+- name: Pulley
+  adapter: greenhouse
+  slug: pulley
+- name: Bolt
+  adapter: lever
+  slug: boltjobs
+- name: Tinybird
+  adapter: lever
+  slug: tinybird
+- name: Snowflake
+  adapter: ashby
+  slug: snowflake
+- name: Confluent Ashby
+  adapter: ashby
+  slug: confluent
+- name: LinkedIn
+  adapter: linkedin
+  slug: ''
+- name: Aircall
+  adapter: lever
+  slug: aircall
+- name: Arcade
+  adapter: ashby
+  slug: arcade
+- name: Arlo
+  adapter: ashby
+  slug: arlo
+- name: Authorium
+  adapter: ashby
+  slug: authorium
+- name: Basis
+  adapter: lever
+  slug: basis
+- name: BioCatch
+  adapter: lever
+  slug: biocatch
+- name: Checkr, Inc.
+  adapter: greenhouse
+  slug: checkr
+- name: Clera
+  adapter: ashby
+  slug: clera
+- name: Diligent
+  adapter: greenhouse
+  slug: diligent
+- name: EMAG Group
+  adapter: greenhouse
+  slug: emag
+- name: Encord
+  adapter: ashby
+  slug: encord
+- name: Epic
+  adapter: greenhouse
+  slug: epicgames
+- name: Gamma Reality Inc.
+  adapter: ashby
+  slug: gamma
+- name: Mattermost
+  adapter: greenhouse
+  slug: mattermost
+- name: Meticulous
+  adapter: ashby
+  slug: meticulous
+- name: Orkes
+  adapter: greenhouse
+  slug: orkes
+- name: Otter
+  adapter: greenhouse
+  slug: otter
+- name: Profound
+  adapter: ashby
+  slug: profound
+- name: Redwood Materials
+  adapter: greenhouse
+  slug: redwoodmaterials
+- name: Rho
+  adapter: ashby
+  slug: rho
+- name: Sitetracker
+  adapter: lever
+  slug: sitetracker
+- name: Solace
+  adapter: ashby
+  slug: solace
+- name: Symbiotic
+  adapter: ashby
+  slug: symbiotic
+- name: Tarro
+  adapter: ashby
+  slug: tarro
+- name: VideoAmp
+  adapter: greenhouse
+  slug: videoamp
+- name: Hammerspace
+  adapter: rippling
+  slug: hammerspace
+- name: Last Call Media
+  adapter: workable
+  slug: lastcallmedia
+- name: Unusual Machines
+  adapter: workable
+  slug: unusual-machines
+- name: Zip
+  adapter: ashby
+  slug: zip
+  note: yc-auto-discovered Summer 2020
+- name: TRM Labs
+  adapter: ashby
+  slug: trm-labs
+  note: yc-auto-discovered Summer 2019
+- name: Ashby
+  adapter: ashby
+  slug: ashby
+  note: yc-auto-discovered Winter 2019
+- name: Clipboard
+  adapter: ashby
+  slug: clipboard
+  note: yc-auto-discovered Winter 2017
+- name: Eight Sleep
+  adapter: ashby
+  slug: eightsleep
+  note: yc-auto-discovered Summer 2015
+- name: Speak
+  adapter: ashby
+  slug: speak
+  note: yc-auto-discovered Winter 2017
+- name: Astro Mechanica
+  adapter: ashby
+  slug: astro-mechanica
+  note: yc-auto-discovered Winter 2024
+- name: Twenty
+  adapter: ashby
+  slug: twenty
+  note: yc-auto-discovered Summer 2023
+- name: Candid Health
+  adapter: ashby
+  slug: candidhealth
+  note: yc-auto-discovered Winter 2020
+- name: Fieldguide
+  adapter: ashby
+  slug: fieldguide
+  note: yc-auto-discovered Summer 2020
+- name: Overview
+  adapter: ashby
+  slug: overview
+  note: yc-auto-discovered Winter 2019
+- name: Reducto
+  adapter: ashby
+  slug: reducto
+  note: yc-auto-discovered Winter 2024
+- name: PermitFlow
+  adapter: ashby
+  slug: permitflow
+  note: yc-auto-discovered Winter 2022
+- name: Verse Medical
+  adapter: ashby
+  slug: versemedical
+  note: yc-auto-discovered Summer 2018
+- name: Stepful
+  adapter: ashby
+  slug: stepful
+  note: yc-auto-discovered Summer 2021
+- name: AfterQuery
+  adapter: ashby
+  slug: afterquery
+  note: yc-auto-discovered Winter 2025
+- name: Confido
+  adapter: ashby
+  slug: confido
+  note: yc-auto-discovered Summer 2021
+- name: RevenueCat
+  adapter: ashby
+  slug: revenuecat
+  note: yc-auto-discovered Summer 2018
+- name: Campfire
+  adapter: ashby
+  slug: campfire
+  note: yc-auto-discovered Summer 2023
+- name: Promise
+  adapter: ashby
+  slug: promise
+  note: yc-auto-discovered Winter 2018
+- name: Roboflow
+  adapter: ashby
+  slug: roboflow
+  note: yc-auto-discovered Summer 2020
+- name: Curri
+  adapter: ashby
+  slug: curri
+  note: yc-auto-discovered Summer 2019
+- name: Ditto
+  adapter: ashby
+  slug: ditto
+  note: yc-auto-discovered Winter 2020
+- name: Nox Metals
+  adapter: ashby
+  slug: nox-metals
+  note: yc-auto-discovered Summer 2025
+- name: Sully.ai
+  adapter: ashby
+  slug: sully-ai
+  note: yc-auto-discovered Summer 2021
+- name: Juicebox
+  adapter: ashby
+  slug: juicebox
+  note: yc-auto-discovered Summer 2022
+- name: Avoca
+  adapter: ashby
+  slug: avoca
+  note: yc-auto-discovered Winter 2023
+- name: Numeral
+  adapter: ashby
+  slug: numeral
+  note: yc-auto-discovered Winter 2023
+- name: Turion Space
+  adapter: ashby
+  slug: turion-space
+  note: yc-auto-discovered Summer 2021
+- name: Vetcove
+  adapter: ashby
+  slug: vetcove
+  note: yc-auto-discovered Summer 2016
+- name: ClassDojo
+  adapter: ashby
+  slug: classdojo
+  note: yc-auto-discovered Summer 2012
+- name: Firecrawl
+  adapter: ashby
+  slug: firecrawl
+  note: yc-auto-discovered Summer 2022
+- name: Nash
+  adapter: ashby
+  slug: nash
+  note: yc-auto-discovered Summer 2021
+- name: Ambient.ai
+  adapter: ashby
+  slug: ambient.ai
+  note: yc-auto-discovered Winter 2017
+- name: Camber
+  adapter: ashby
+  slug: camber
+  note: yc-auto-discovered Winter 2021
+- name: Gecko Robotics
+  adapter: ashby
+  slug: gecko-robotics
+  note: yc-auto-discovered Winter 2016
+- name: Metriport
+  adapter: ashby
+  slug: metriport
+  note: yc-auto-discovered Summer 2022
+- name: Padlet
+  adapter: ashby
+  slug: padlet
+  note: yc-auto-discovered Winter 2013
+- name: Abacum
+  adapter: ashby
+  slug: abacum
+  note: yc-auto-discovered Winter 2021
+- name: Short Story
+  adapter: ashby
+  slug: shortstory
+  note: yc-auto-discovered Summer 2019
+- name: HockeyStack
+  adapter: ashby
+  slug: hockeystack
+  note: yc-auto-discovered Summer 2023
+- name: PostHog
+  adapter: ashby
+  slug: posthog
+  note: yc-auto-discovered Winter 2020
+- name: Shepherd
+  adapter: ashby
+  slug: shepherd
+  note: yc-auto-discovered Winter 2021
+- name: Aurelian
+  adapter: ashby
+  slug: aurelian
+  note: yc-auto-discovered Summer 2022
+- name: Posh
+  adapter: ashby
+  slug: posh
+  note: yc-auto-discovered Winter 2022
+- name: SigNoz
+  adapter: ashby
+  slug: signoz
+  note: yc-auto-discovered Winter 2021
+- name: 9 Mothers
+  adapter: ashby
+  slug: 9-mothers
+  note: yc-auto-discovered Spring 2026
+- name: AtoB
+  adapter: ashby
+  slug: atob
+  note: yc-auto-discovered Summer 2020
+- name: Auctor
+  adapter: ashby
+  slug: auctor
+  note: yc-auto-discovered Spring 2025
+- name: Bree
+  adapter: ashby
+  slug: bree
+  note: yc-auto-discovered Summer 2021
+- name: Infisical
+  adapter: ashby
+  slug: infisical
+  note: yc-auto-discovered Winter 2023
+- name: Middesk
+  adapter: ashby
+  slug: middesk
+  note: yc-auto-discovered Winter 2019
+- name: Novig
+  adapter: ashby
+  slug: novig
+  note: yc-auto-discovered Summer 2022
+- name: Odys Aviation
+  adapter: ashby
+  slug: odys-aviation
+  note: yc-auto-discovered Summer 2021
+- name: Parker
+  adapter: ashby
+  slug: parker
+  note: yc-auto-discovered Winter 2019
+- name: Cambly
+  adapter: ashby
+  slug: cambly
+  note: yc-auto-discovered Winter 2014
+- name: Concourse
+  adapter: ashby
+  slug: concourse
+  note: yc-auto-discovered Winter 2023
+- name: Ellipsis
+  adapter: ashby
+  slug: ellipsislabs
+  note: yc-auto-discovered Winter 2024
+- name: Eloquent AI
+  adapter: ashby
+  slug: eloquentai
+  note: yc-auto-discovered Spring 2025
+- name: Lago
+  adapter: ashby
+  slug: lago
+  note: yc-auto-discovered Summer 2021
+- name: Mintlify
+  adapter: ashby
+  slug: mintlify
+  note: yc-auto-discovered Winter 2022
+- name: PointOne
+  adapter: ashby
+  slug: pointone
+  note: yc-auto-discovered Winter 2024
+- name: Sphere
+  adapter: ashby
+  slug: sphere
+  note: yc-auto-discovered Winter 2022
+- name: Vori
+  adapter: ashby
+  slug: vori
+  note: yc-auto-discovered Winter 2020
+- name: Benepass
+  adapter: ashby
+  slug: benepass
+  note: yc-auto-discovered Winter 2020
+- name: Casca
+  adapter: ashby
+  slug: casca
+  note: yc-auto-discovered Summer 2023
+- name: Clarion
+  adapter: ashby
+  slug: clarion
+  note: yc-auto-discovered Winter 2024
+- name: David AI
+  adapter: ashby
+  slug: david-ai
+  note: yc-auto-discovered Summer 2024
+- name: Luminai
+  adapter: ashby
+  slug: luminai
+  note: yc-auto-discovered Summer 2020
+- name: Mutiny
+  adapter: ashby
+  slug: mutiny
+  note: yc-auto-discovered Summer 2018
+- name: Phoenix
+  adapter: ashby
+  slug: phoenix
+  note: yc-auto-discovered Winter 2021
+- name: Titan
+  adapter: ashby
+  slug: titan
+  note: yc-auto-discovered Summer 2018
+- name: Topline Pro
+  adapter: ashby
+  slug: topline-pro
+  note: yc-auto-discovered Winter 2021
+- name: AiPrise
+  adapter: ashby
+  slug: aiprise
+  note: yc-auto-discovered Summer 2022
+- name: Charge Robotics
+  adapter: ashby
+  slug: charge-robotics
+  note: yc-auto-discovered Summer 2021
+- name: Flint
+  adapter: ashby
+  slug: flint
+  note: yc-auto-discovered Summer 2020
+- name: Glimpse
+  adapter: ashby
+  slug: glimpse
+  note: yc-auto-discovered Summer 2020
+- name: Human Archive
+  adapter: ashby
+  slug: humanarchive
+  note: yc-auto-discovered Winter 2026
+- name: Legion Health
+  adapter: ashby
+  slug: legionhealth
+  note: yc-auto-discovered Summer 2021
+- name: Quindar
+  adapter: ashby
+  slug: quindar
+  note: yc-auto-discovered Summer 2022
+- name: Reacher
+  adapter: ashby
+  slug: reacher
+  note: yc-auto-discovered Summer 2025
+- name: Reality Defender
+  adapter: ashby
+  slug: realitydefender
+  note: yc-auto-discovered Winter 2022
+- name: Rescale
+  adapter: ashby
+  slug: rescale
+  note: yc-auto-discovered Winter 2012
+- name: Sift
+  adapter: ashby
+  slug: sift
+  note: yc-auto-discovered Summer 2011
+- name: Spellbrush
+  adapter: ashby
+  slug: spellbrush
+  note: yc-auto-discovered Winter 2018
+- name: Vooma
+  adapter: ashby
+  slug: vooma
+  note: yc-auto-discovered Winter 2023
+- name: Arketa
+  adapter: ashby
+  slug: arketa
+  note: yc-auto-discovered Summer 2020
+- name: Atomic
+  adapter: ashby
+  slug: atomic
+  note: yc-auto-discovered Summer 2020
+- name: Escape
+  adapter: ashby
+  slug: escape
+  note: yc-auto-discovered Winter 2023
+- name: Garage
+  adapter: ashby
+  slug: garage
+  note: yc-auto-discovered Winter 2024
+- name: Notabene
+  adapter: ashby
+  slug: notabene
+  note: yc-auto-discovered Summer 2020
+- name: SafetyKit
+  adapter: ashby
+  slug: safetykit
+  note: yc-auto-discovered Summer 2023
+- name: Vitalize
+  adapter: ashby
+  slug: vitalize
+  note: yc-auto-discovered Winter 2023
+- name: Bankjoy
+  adapter: ashby
+  slug: bankjoy
+  note: yc-auto-discovered Winter 2015
+- name: Blee
+  adapter: ashby
+  slug: blee
+  note: yc-auto-discovered Summer 2022
+- name: Blissway
+  adapter: ashby
+  slug: blissway
+  note: yc-auto-discovered Summer 2020
+- name: Bretton AI
+  adapter: ashby
+  slug: brettonai
+  note: yc-auto-discovered Summer 2023
+- name: Cinder
+  adapter: ashby
+  slug: cinder
+  note: yc-auto-discovered Winter 2022
+- name: Codes Health
+  adapter: ashby
+  slug: codes-health
+  note: yc-auto-discovered Summer 2024
+- name: Ekho
+  adapter: ashby
+  slug: ekho
+  note: yc-auto-discovered Summer 2022
+- name: FleetWorks
+  adapter: ashby
+  slug: fleetworks
+  note: yc-auto-discovered Summer 2023
+- name: Freshpaint
+  adapter: ashby
+  slug: freshpaint
+  note: yc-auto-discovered Summer 2019
+- name: FurtherAI
+  adapter: ashby
+  slug: furtherai
+  note: yc-auto-discovered Winter 2024
+- name: GovDash
+  adapter: ashby
+  slug: govdash
+  note: yc-auto-discovered Winter 2022
+- name: Kastle
+  adapter: ashby
+  slug: kastle
+  note: yc-auto-discovered Summer 2024
+- name: Knowtex
+  adapter: ashby
+  slug: knowtex
+  note: yc-auto-discovered Summer 2022
+- name: Lance
+  adapter: ashby
+  slug: lance
+  note: yc-auto-discovered Winter 2026
+- name: Outset
+  adapter: ashby
+  slug: outset
+  note: yc-auto-discovered Summer 2023
+- name: Salient
+  adapter: ashby
+  slug: salient
+  note: yc-auto-discovered Winter 2023
+- name: Sieve
+  adapter: ashby
+  slug: sieve
+  note: yc-auto-discovered Winter 2022
+- name: Simple AI
+  adapter: ashby
+  slug: simple-ai
+  note: yc-auto-discovered Summer 2024
+- name: Solidroad
+  adapter: ashby
+  slug: solidroad
+  note: yc-auto-discovered Winter 2025
+- name: SpruceID
+  adapter: ashby
+  slug: spruceid
+  note: yc-auto-discovered Winter 2021
+- name: Stable
+  adapter: ashby
+  slug: stable
+  note: yc-auto-discovered Winter 2020
+- name: Terra
+  adapter: ashby
+  slug: terraai
+  note: yc-auto-discovered Summer 2024
+- name: Uplane
+  adapter: ashby
+  slug: uplane
+  note: yc-auto-discovered Fall 2025
+- name: Aleph
+  adapter: ashby
+  slug: aleph
+  note: yc-auto-discovered Summer 2021
+- name: Blink
+  adapter: ashby
+  slug: blink
+  note: yc-auto-discovered Winter 2022
+- name: Clearly AI
+  adapter: ashby
+  slug: clearly-ai
+  note: yc-auto-discovered Summer 2024
+- name: Complete
+  adapter: ashby
+  slug: complete
+  note: yc-auto-discovered Winter 2022
+- name: Conductor
+  adapter: ashby
+  slug: conductorai
+  note: yc-auto-discovered Summer 2024
+- name: Double
+  adapter: ashby
+  slug: double
+  note: yc-auto-discovered Summer 2021
+- name: Heron Data
+  adapter: ashby
+  slug: herondata
+  note: yc-auto-discovered Summer 2020
+- name: Hyperbound
+  adapter: ashby
+  slug: hyperbound
+  note: yc-auto-discovered Summer 2023
+- name: Inkeep
+  adapter: ashby
+  slug: inkeep
+  note: yc-auto-discovered Winter 2023
+- name: LiveFlow
+  adapter: ashby
+  slug: liveflow
+  note: yc-auto-discovered Winter 2021
+- name: Modern Treasury
+  adapter: ashby
+  slug: moderntreasury
+  note: yc-auto-discovered Summer 2018
+- name: Mosaic
+  adapter: ashby
+  slug: mosaic
+  note: yc-auto-discovered Winter 2025
+- name: Parallel Bio
+  adapter: ashby
+  slug: parallel-bio
+  note: yc-auto-discovered Summer 2021
+- name: Popl
+  adapter: ashby
+  slug: popl
+  note: yc-auto-discovered Winter 2021
+- name: Rally UXR
+  adapter: ashby
+  slug: rallyuxr
+  note: yc-auto-discovered Winter 2022
+- name: Replo
+  adapter: ashby
+  slug: replo
+  note: yc-auto-discovered Summer 2021
+- name: Two Dots
+  adapter: ashby
+  slug: two-dots
+  note: yc-auto-discovered Summer 2022
+- name: Usul
+  adapter: ashby
+  slug: usul
+  note: yc-auto-discovered Summer 2024
+- name: AIOS
+  adapter: ashby
+  slug: aios
+  note: yc-auto-discovered Winter 2020
+- name: Atlas
+  adapter: ashby
+  slug: atlas
+  note: yc-auto-discovered Winter 2019
+- name: Automat
+  adapter: ashby
+  slug: automat
+  note: yc-auto-discovered Winter 2023
+- name: Axle Health
+  adapter: ashby
+  slug: axle-health
+  note: yc-auto-discovered Winter 2021
+- name: Bunkerhill Health
+  adapter: ashby
+  slug: bunkerhillhealth
+  note: yc-auto-discovered Winter 2019
+- name: Centralize
+  adapter: ashby
+  slug: centralize
+  note: yc-auto-discovered Winter 2024
+- name: Claim Health
+  adapter: ashby
+  slug: claim-health
+  note: yc-auto-discovered Spring 2025
+- name: Invert
+  adapter: ashby
+  slug: invert
+  note: yc-auto-discovered Winter 2022
+- name: LiteLLM
+  adapter: ashby
+  slug: litellm
+  note: yc-auto-discovered Winter 2023
+- name: Mach9
+  adapter: ashby
+  slug: mach9
+  note: yc-auto-discovered Summer 2021
+- name: Output Biosciences
+  adapter: ashby
+  slug: output
+  note: yc-auto-discovered Summer 2021
+- name: Relace
+  adapter: ashby
+  slug: relace
+  note: yc-auto-discovered Winter 2023
+- name: Sage Care
+  adapter: ashby
+  slug: sagecare
+  note: yc-auto-discovered Summer 2024
+- name: Tamarind Bio
+  adapter: ashby
+  slug: tamarindbio
+  note: yc-auto-discovered Winter 2024
+- name: Terminal
+  adapter: ashby
+  slug: terminal
+  note: yc-auto-discovered Summer 2023
+- name: Vector
+  adapter: ashby
+  slug: vector
+  note: yc-auto-discovered Winter 2023
+- name: Artie
+  adapter: ashby
+  slug: artie
+  note: yc-auto-discovered Summer 2023
+- name: Belvo
+  adapter: ashby
+  slug: belvo
+  note: yc-auto-discovered Winter 2020
+- name: Deepnote
+  adapter: ashby
+  slug: deepnote
+  note: yc-auto-discovered Summer 2019
+- name: Electric Air
+  adapter: ashby
+  slug: electricair
+  note: yc-auto-discovered Summer 2023
+- name: Finvest
+  adapter: ashby
+  slug: finvest
+  note: yc-auto-discovered Winter 2023
+- name: Flai
+  adapter: ashby
+  slug: flai
+  note: yc-auto-discovered Summer 2025
+- name: GoLinks
+  adapter: ashby
+  slug: golinks
+  note: yc-auto-discovered Winter 2019
+- name: Greenboard
+  adapter: ashby
+  slug: greenboard
+  note: yc-auto-discovered Winter 2024
+- name: Handoff
+  adapter: ashby
+  slug: handoff
+  note: yc-auto-discovered Winter 2020
+- name: hud
+  adapter: ashby
+  slug: hud
+  note: yc-auto-discovered Winter 2025
+- name: Kodex
+  adapter: ashby
+  slug: kodex
+  note: yc-auto-discovered Summer 2021
+- name: Magic Patterns
+  adapter: ashby
+  slug: magicpatterns
+  note: yc-auto-discovered Winter 2023
+- name: Mem0
+  adapter: ashby
+  slug: mem0
+  note: yc-auto-discovered Summer 2024
+- name: Onyx
+  adapter: ashby
+  slug: onyx
+  note: yc-auto-discovered Winter 2024
+- name: Polymath
+  adapter: ashby
+  slug: polymath
+  note: yc-auto-discovered Winter 2026
+- name: Ready
+  adapter: ashby
+  slug: ready
+  note: yc-auto-discovered Summer 2020
+- name: Sim
+  adapter: ashby
+  slug: sim
+  note: yc-auto-discovered Spring 2025
+- name: Sola
+  adapter: ashby
+  slug: sola
+  note: yc-auto-discovered Summer 2023
+- name: Svix
+  adapter: ashby
+  slug: svix
+  note: yc-auto-discovered Winter 2021
+- name: Thera
+  adapter: ashby
+  slug: thera
+  note: yc-auto-discovered Summer 2022
+- name: Ultra
+  adapter: ashby
+  slug: ultra
+  note: yc-auto-discovered Summer 2024
+- name: Zensors
+  adapter: ashby
+  slug: zensors
+  note: yc-auto-discovered Summer 2021
+- name: Anara
+  adapter: ashby
+  slug: anara
+  note: yc-auto-discovered Summer 2024
+- name: Asimov
+  adapter: ashby
+  slug: asimov
+  note: yc-auto-discovered Winter 2026
+- name: authzed
+  adapter: ashby
+  slug: authzed
+  note: yc-auto-discovered Winter 2021
+- name: Aviator
+  adapter: ashby
+  slug: aviator
+  note: yc-auto-discovered Summer 2021
+- name: Chestnut
+  adapter: ashby
+  slug: chestnut
+  note: yc-auto-discovered Spring 2025
+- name: Circleback
+  adapter: ashby
+  slug: circleback
+  note: yc-auto-discovered Winter 2024
+- name: Conduit
+  adapter: ashby
+  slug: conduit
+  note: yc-auto-discovered Winter 2023
+- name: Constellation Space
+  adapter: ashby
+  slug: constellationspace
+  note: yc-auto-discovered Winter 2026
+- name: Decoda Health
+  adapter: ashby
+  slug: decodahealth
+  note: yc-auto-discovered Summer 2023
+- name: DiligenceSquared
+  adapter: ashby
+  slug: diligencesquared
+  note: yc-auto-discovered Fall 2025
+- name: Ello
+  adapter: ashby
+  slug: ello
+  note: yc-auto-discovered Winter 2020
+- name: Idler
+  adapter: ashby
+  slug: idler
+  note: yc-auto-discovered Summer 2025
+- name: Julius
+  adapter: ashby
+  slug: julius
+  note: yc-auto-discovered Summer 2022
+- name: Loula
+  adapter: ashby
+  slug: loula
+  note: yc-auto-discovered Winter 2023
+- name: Mednet
+  adapter: ashby
+  slug: mednet
+  note: yc-auto-discovered Winter 2017
+- name: Pirros
+  adapter: ashby
+  slug: pirros
+  note: yc-auto-discovered Winter 2023
+- name: Prelim
+  adapter: ashby
+  slug: prelim
+  note: yc-auto-discovered Summer 2017
+- name: truthsystems
+  adapter: ashby
+  slug: truthsystems
+  note: yc-auto-discovered Summer 2025
+- name: Yuma AI
+  adapter: ashby
+  slug: yumaai
+  note: yc-auto-discovered Winter 2023
+- name: Abundant
+  adapter: ashby
+  slug: abundant
+  note: yc-auto-discovered Fall 2024
+- name: Alex
+  adapter: ashby
+  slug: alexai
+  note: yc-auto-discovered Winter 2024
+- name: Apolink
+  adapter: ashby
+  slug: apolink
+  note: yc-auto-discovered Fall 2024
+- name: Brainbase Labs
+  adapter: ashby
+  slug: brainbaselabs
+  note: yc-auto-discovered Winter 2024
+- name: Eventual
+  adapter: ashby
+  slug: eventual
+  note: yc-auto-discovered Winter 2022
+- name: Finch
+  adapter: ashby
+  slug: finch
+  note: yc-auto-discovered Summer 2020
+- name: GovEagle
+  adapter: ashby
+  slug: goveagle
+  note: yc-auto-discovered Winter 2023
+- name: Greptile
+  adapter: ashby
+  slug: greptile
+  note: yc-auto-discovered Winter 2024
+- name: Kingdom
+  adapter: ashby
+  slug: kingdom
+  note: yc-auto-discovered Summer 2020
+- name: OneSchema
+  adapter: ashby
+  slug: oneschema
+  note: yc-auto-discovered Summer 2021
+- name: Pax Historia
+  adapter: ashby
+  slug: pax-historia
+  note: yc-auto-discovered Winter 2026
+- name: Probably Genetic
+  adapter: ashby
+  slug: probablygenetic
+  note: yc-auto-discovered Winter 2019
+- name: Prox
+  adapter: ashby
+  slug: prox
+  note: yc-auto-discovered Fall 2025
+- name: Pure
+  adapter: ashby
+  slug: pure
+  note: yc-auto-discovered Summer 2023
+- name: Rollstack
+  adapter: ashby
+  slug: rollstack
+  note: yc-auto-discovered Winter 2023
+- name: SalesPatriot
+  adapter: ashby
+  slug: salespatriot
+  note: yc-auto-discovered Winter 2025
+- name: Strada
+  adapter: ashby
+  slug: stradahq
+  note: yc-auto-discovered Summer 2023
+- name: Accord
+  adapter: ashby
+  slug: accord
+  note: yc-auto-discovered Winter 2020
+- name: AgentMail
+  adapter: ashby
+  slug: agentmail
+  note: yc-auto-discovered Summer 2025
+- name: Airgoods
+  adapter: ashby
+  slug: airgoods
+  note: yc-auto-discovered Summer 2023
+- name: Bild AI
+  adapter: ashby
+  slug: bild-ai
+  note: yc-auto-discovered Winter 2025
+- name: Cambio
+  adapter: ashby
+  slug: cambio
+  note: yc-auto-discovered Summer 2022
+- name: Capy
+  adapter: ashby
+  slug: capy
+  note: yc-auto-discovered Fall 2024
+- name: Castle
+  adapter: ashby
+  slug: castle
+  note: yc-auto-discovered Winter 2016
+- name: CTGT
+  adapter: ashby
+  slug: ctgt
+  note: yc-auto-discovered Fall 2024
+- name: Fleetline
+  adapter: ashby
+  slug: fleetline
+  note: yc-auto-discovered Summer 2025
+- name: Hadrius
+  adapter: ashby
+  slug: hadrius
+  note: yc-auto-discovered Winter 2023
+- name: Harper
+  adapter: ashby
+  slug: harper
+  note: yc-auto-discovered Winter 2025
+- name: Hotplate
+  adapter: ashby
+  slug: hotplate
+  note: yc-auto-discovered Summer 2020
+- name: Infinite
+  adapter: ashby
+  slug: infinite
+  note: yc-auto-discovered Winter 2025
+- name: InfluxData
+  adapter: ashby
+  slug: influxdata
+  note: yc-auto-discovered Winter 2013
+- name: OffDeal
+  adapter: ashby
+  slug: offdeal
+  note: yc-auto-discovered Winter 2024
+- name: Pivot Robotics
+  adapter: ashby
+  slug: pivotrobotics
+  note: yc-auto-discovered Winter 2024
+- name: Revise Robotics
+  adapter: ashby
+  slug: reviserobotics
+  note: yc-auto-discovered Winter 2025
+- name: Thunder Compute
+  adapter: ashby
+  slug: thundercompute
+  note: yc-auto-discovered Summer 2024
+- name: UpCodes
+  adapter: ashby
+  slug: upcodes
+  note: yc-auto-discovered Summer 2017
+- name: Vorticity
+  adapter: ashby
+  slug: vorticity
+  note: yc-auto-discovered Summer 2019
+- name: Agave
+  adapter: ashby
+  slug: agave
+  note: yc-auto-discovered Winter 2022
+- name: Ambral
+  adapter: ashby
+  slug: ambral
+  note: yc-auto-discovered Summer 2025
+- name: Arini
+  adapter: ashby
+  slug: arini
+  note: yc-auto-discovered Winter 2024
+- name: Beacons
+  adapter: ashby
+  slug: beacons
+  note: yc-auto-discovered Summer 2019
+- name: BootLoop
+  adapter: ashby
+  slug: bootloop
+  note: yc-auto-discovered Summer 2025
+- name: Coperniq
+  adapter: ashby
+  slug: coperniq
+  note: yc-auto-discovered Winter 2023
+- name: Datafold
+  adapter: ashby
+  slug: datafold
+  note: yc-auto-discovered Summer 2020
+- name: Dedalus Labs
+  adapter: ashby
+  slug: dedalus-labs
+  note: yc-auto-discovered Summer 2025
+- name: Dex
+  adapter: ashby
+  slug: dex
+  note: yc-auto-discovered Summer 2019
+- name: Fernstone
+  adapter: ashby
+  slug: fernstone
+  note: yc-auto-discovered Fall 2025
+- name: Flowtel
+  adapter: ashby
+  slug: flowtel
+  note: yc-auto-discovered Winter 2025
+- name: Fortuna Health
+  adapter: ashby
+  slug: fortuna-health
+  note: yc-auto-discovered Summer 2023
+- name: Great Question
+  adapter: ashby
+  slug: greatquestion
+  note: yc-auto-discovered Winter 2021
+- name: Hypercubic
+  adapter: ashby
+  slug: hypercubic
+  note: yc-auto-discovered Fall 2025
+- name: Hyperspell
+  adapter: ashby
+  slug: hyperspell
+  note: yc-auto-discovered Fall 2025
+- name: Inscribe
+  adapter: ashby
+  slug: inscribeai
+  note: yc-auto-discovered Summer 2018
+- name: MangoDesk
+  adapter: ashby
+  slug: mangodesk
+  note: yc-auto-discovered Summer 2025
+- name: Nango
+  adapter: ashby
+  slug: nango
+  note: yc-auto-discovered Winter 2023
+- name: Quicknode
+  adapter: ashby
+  slug: quicknode
+  note: yc-auto-discovered Winter 2021
+- name: Ryvn
+  adapter: ashby
+  slug: ryvn
+  note: yc-auto-discovered Fall 2024
+- name: Spherecast
+  adapter: ashby
+  slug: spherecast
+  note: yc-auto-discovered Summer 2024
+- name: Stream
+  adapter: ashby
+  slug: stream
+  note: yc-auto-discovered Summer 2022
+- name: Verge Genomics
+  adapter: ashby
+  slug: verge-genomics
+  note: yc-auto-discovered Summer 2015
+- name: WarpBuild
+  adapter: ashby
+  slug: warpbuild
+  note: yc-auto-discovered Summer 2021
+- name: Pulse
+  adapter: greenhouse
+  slug: pulse
+  note: yc-auto-discovered Summer 2024
+- name: Agency
+  adapter: greenhouse
+  slug: agency
+  note: yc-auto-discovered Winter 2022
+- name: Astranis
+  adapter: greenhouse
+  slug: astranis
+  note: yc-auto-discovered Winter 2016
+- name: Clara
+  adapter: greenhouse
+  slug: clara
+  note: yc-auto-discovered Spring 2026
+- name: Instawork
+  adapter: greenhouse
+  slug: instawork
+  note: yc-auto-discovered Summer 2015
+- name: Human Interest
+  adapter: greenhouse
+  slug: humaninterest
+  note: yc-auto-discovered Summer 2015
+- name: Alpaca
+  adapter: greenhouse
+  slug: alpaca
+  note: yc-auto-discovered Winter 2019
+- name: ShipBob
+  adapter: greenhouse
+  slug: shipbobinc
+  note: yc-auto-discovered Summer 2014
+- name: May Mobility
+  adapter: greenhouse
+  slug: maymobility
+  note: yc-auto-discovered Summer 2017
+- name: Nabis
+  adapter: greenhouse
+  slug: nabis
+  note: yc-auto-discovered Winter 2019
+- name: Interface
+  adapter: greenhouse
+  slug: interfaceai
+  note: yc-auto-discovered Summer 2025
+- name: GOAT Group
+  adapter: greenhouse
+  slug: goatgroup
+  note: yc-auto-discovered Winter 2011
+- name: Gigs
+  adapter: greenhouse
+  slug: gigs
+  note: yc-auto-discovered Winter 2021
+- name: Momentic
+  adapter: greenhouse
+  slug: momentic
+  note: yc-auto-discovered Winter 2024
+- name: Axle
+  adapter: greenhouse
+  slug: axle
+  note: yc-auto-discovered Summer 2022
+- name: Mesh
+  adapter: greenhouse
+  slug: mesh
+  note: yc-auto-discovered Winter 2025
+- name: Pair Team
+  adapter: greenhouse
+  slug: pairteam
+  note: yc-auto-discovered Summer 2019
+- name: RADAR
+  adapter: greenhouse
+  slug: radar
+  note: yc-auto-discovered Winter 2013
+- name: Scout
+  adapter: greenhouse
+  slug: scoutai
+  note: yc-auto-discovered Winter 2023
+- name: NanoNets
+  adapter: greenhouse
+  slug: nanonets
+  note: yc-auto-discovered Winter 2017
+- name: Odeko
+  adapter: greenhouse
+  slug: odeko
+  note: yc-auto-discovered Summer 2019
+- name: Qventus
+  adapter: greenhouse
+  slug: qventus
+  note: yc-auto-discovered Winter 2015
+- name: Ophelia
+  adapter: greenhouse
+  slug: ophelia
+  note: yc-auto-discovered Winter 2020
+- name: Pine Park Health
+  adapter: greenhouse
+  slug: pineparkhealth
+  note: yc-auto-discovered Summer 2018
+- name: Coast
+  adapter: greenhouse
+  slug: coast
+  note: yc-auto-discovered Summer 2021
+- name: GiveCampus
+  adapter: greenhouse
+  slug: givecampus
+  note: yc-auto-discovered Summer 2015
+- name: Sendbird
+  adapter: greenhouse
+  slug: sendbird
+  note: yc-auto-discovered Winter 2016
+- name: Gather
+  adapter: greenhouse
+  slug: gatherai
+  note: yc-auto-discovered Summer 2019
+- name: Nova Credit
+  adapter: greenhouse
+  slug: novacredit
+  note: yc-auto-discovered Summer 2016
+- name: Pelago
+  adapter: greenhouse
+  slug: pelago
+  note: yc-auto-discovered Winter 2018
+- name: Swayable
+  adapter: greenhouse
+  slug: swayable
+  note: yc-auto-discovered Winter 2018
+- name: Attain
+  adapter: greenhouse
+  slug: attain
+  note: yc-auto-discovered Winter 2022
+- name: Prodigal
+  adapter: greenhouse
+  slug: prodigal
+  note: yc-auto-discovered Summer 2018
+- name: Atomic Industries
+  adapter: greenhouse
+  slug: atomicindustriesinc
+  note: yc-auto-discovered Winter 2021
+- name: Icarus
+  adapter: greenhouse
+  slug: icarus
+  note: yc-auto-discovered Fall 2025
+- name: OpenWork
+  adapter: greenhouse
+  slug: openwork
+  note: yc-auto-discovered Spring 2026
+- name: Onshore
+  adapter: greenhouse
+  slug: onshore
+  note: yc-auto-discovered Winter 2023
+- name: Pax
+  adapter: greenhouse
+  slug: paxlabs
+  note: yc-auto-discovered Summer 2024
+- name: General Proximity
+  adapter: greenhouse
+  slug: generalproximity
+  note: yc-auto-discovered Winter 2020
+- name: Hive
+  adapter: greenhouse
+  slug: hive
+  note: yc-auto-discovered Summer 2014
+- name: Osmosis
+  adapter: greenhouse
+  slug: osmosis
+  note: yc-auto-discovered Winter 2025
+- name: Albedo
+  adapter: greenhouse
+  slug: albedo
+  note: yc-auto-discovered Winter 2021
+- name: Recidiviz
+  adapter: greenhouse
+  slug: recidiviz
+  note: yc-auto-discovered Summer 2019
+- name: Bitmovin
+  adapter: greenhouse
+  slug: bitmovin
+  note: yc-auto-discovered Summer 2015
+- name: burnt
+  adapter: greenhouse
+  slug: burnt
+  note: yc-auto-discovered Summer 2025
+- name: Embrace
+  adapter: greenhouse
+  slug: embrace
+  note: yc-auto-discovered Summer 2019
+- name: Lob
+  adapter: greenhouse
+  slug: lob
+  note: yc-auto-discovered Summer 2013
+- name: SwiftSku
+  adapter: greenhouse
+  slug: swiftskuinc
+  note: yc-auto-discovered Winter 2021
+- name: Weave
+  adapter: greenhouse
+  slug: weave
+  note: yc-auto-discovered Winter 2025
+- name: AssemblyAI
+  adapter: greenhouse
+  slug: assemblyai
+  note: yc-auto-discovered Summer 2017
+- name: Postscript
+  adapter: greenhouse
+  slug: postscript
+  note: yc-auto-discovered Winter 2019
+- name: Vitable Health
+  adapter: greenhouse
+  slug: vitablehealth
+  note: yc-auto-discovered Summer 2020
+- name: Haven
+  adapter: greenhouse
+  slug: haven
+  note: yc-auto-discovered Winter 2020
+- name: Beam
+  adapter: greenhouse
+  slug: beam
+  note: yc-auto-discovered Winter 2022
+- name: Latent
+  adapter: greenhouse
+  slug: latentai
+  note: yc-auto-discovered Winter 2023
+- name: Piramidal
+  adapter: greenhouse
+  slug: piramidalinc
+  note: yc-auto-discovered Winter 2024
+- name: Superset
+  adapter: greenhouse
+  slug: superset
+  note: yc-auto-discovered Spring 2026
+- name: Paradigm
+  adapter: greenhouse
+  slug: paradigm
+  note: yc-auto-discovered Winter 2024
+- name: SmartAsset
+  adapter: greenhouse
+  slug: smartasset
+  note: yc-auto-discovered Summer 2012
+- name: Tempo
+  adapter: greenhouse
+  slug: tempo
+  note: yc-auto-discovered Winter 2015
+- name: AON3D
+  adapter: greenhouse
+  slug: aon3d
+  note: yc-auto-discovered Winter 2017
+- name: Attune
+  adapter: greenhouse
+  slug: attune
+  note: yc-auto-discovered Spring 2025
+- name: Navier AI
+  adapter: greenhouse
+  slug: navierai
+  note: yc-auto-discovered Winter 2024
+- name: Newton
+  adapter: greenhouse
+  slug: newton
+  note: yc-auto-discovered Winter 2024
+- name: Reflex
+  adapter: greenhouse
+  slug: reflex
+  note: yc-auto-discovered Winter 2023
+- name: 10x
+  adapter: greenhouse
+  slug: 10xlabs
+  note: yc-auto-discovered Winter 2025
+- name: Dots 💸
+  adapter: greenhouse
+  slug: dots
+  note: yc-auto-discovered Summer 2021
+- name: Meru Health
+  adapter: greenhouse
+  slug: meruhealth
+  note: yc-auto-discovered Summer 2018
+- name: Numen
+  adapter: greenhouse
+  slug: numenlabs
+  note: yc-auto-discovered Summer 2023
+- name: Paragon
+  adapter: greenhouse
+  slug: paragoncareers
+  note: yc-auto-discovered Winter 2020
+- name: Reach
+  adapter: greenhouse
+  slug: reach
+  note: yc-auto-discovered Summer 2015
+- name: Remi
+  adapter: greenhouse
+  slug: remi
+  note: yc-auto-discovered Winter 2022
+- name: Tractian
+  adapter: lever
+  slug: tractian
+  note: yc-auto-discovered Winter 2021
+- name: Canary Technologies
+  adapter: lever
+  slug: canarytechnologies
+  note: yc-auto-discovered Summer 2018
+- name: Netomi
+  adapter: lever
+  slug: netomi
+  note: yc-auto-discovered Winter 2016
+- name: CaptivateIQ
+  adapter: lever
+  slug: captivateiq
+  note: yc-auto-discovered Winter 2018
+- name: Porter
+  adapter: lever
+  slug: porter
+  note: yc-auto-discovered Summer 2020
+- name: Gridware
+  adapter: lever
+  slug: gridware
+  note: yc-auto-discovered Winter 2021
+- name: Snappr
+  adapter: lever
+  slug: snappr
+  note: yc-auto-discovered Winter 2017
+- name: Skyways
+  adapter: lever
+  slug: skyways
+  note: yc-auto-discovered Summer 2017
+- name: Mashgin
+  adapter: lever
+  slug: mashgin
+  note: yc-auto-discovered Winter 2015
+- name: Prosper
+  adapter: lever
+  slug: prosper
+  note: yc-auto-discovered Summer 2023
+- name: Bloom
+  adapter: lever
+  slug: bloom
+  note: yc-auto-discovered Spring 2026
+- name: Multiply Labs
+  adapter: lever
+  slug: multiplylabs
+  note: yc-auto-discovered Summer 2016
+- name: Tovala
+  adapter: lever
+  slug: tovala
+  note: yc-auto-discovered Winter 2016
+- name: doola
+  adapter: lever
+  slug: doola
+  note: yc-auto-discovered Summer 2020
+- name: Gem
+  adapter: lever
+  slug: gemcareers
+  note: yc-auto-discovered Summer 2017
+- name: People.ai
+  adapter: lever
+  slug: people-ai
+  note: yc-auto-discovered Summer 2016
+- name: Suger
+  adapter: lever
+  slug: suger
+  note: yc-auto-discovered Winter 2023
+- name: Unusual
+  adapter: lever
+  slug: unusual
+  note: yc-auto-discovered Fall 2024
+- name: MaverickX
+  adapter: lever
+  slug: maverickx
+  note: yc-auto-discovered Summer 2022
+- name: Zippi
+  adapter: lever
+  slug: zippi
+  note: yc-auto-discovered Summer 2019
+- name: Thunkable
+  adapter: lever
+  slug: thunkable
+  note: yc-auto-discovered Winter 2016
+- name: Quartzy
+  adapter: lever
+  slug: quartzy
+  note: yc-auto-discovered Summer 2011
+- name: Bolster
+  adapter: lever
+  slug: bolster
+  note: yc-auto-discovered Summer 2021
+- name: Living Carbon
+  adapter: lever
+  slug: livingcarbon
+  note: yc-auto-discovered Winter 2020
+- name: PostEra
+  adapter: lever
+  slug: postera
+  note: yc-auto-discovered Winter 2020
+- name: Smartcuts
+  adapter: lever
+  slug: smartcuts
+  note: yc-auto-discovered Winter 2021
+- name: Culdesac
+  adapter: lever
+  slug: culdesac
+  note: yc-auto-discovered Summer 2018
+- name: JITX
+  adapter: lever
+  slug: jitxinc
+  note: yc-auto-discovered Summer 2018
+- name: VergeSense
+  adapter: lever
+  slug: vergesense
+  note: yc-auto-discovered Summer 2017
+- name: Willow
+  adapter: lever
+  slug: willowinc
+  note: yc-auto-discovered Spring 2025
+- name: Benchling
+  adapter: ashby
+  slug: benchling
+  note: yc-auto-discovered Summer 2012
+- name: Docker
+  adapter: ashby
+  slug: docker
+  note: yc-auto-discovered Summer 2010
+- name: Scribd
+  adapter: ashby
+  slug: scribdinc
+  note: yc-auto-discovered Summer 2006
+- name: Tremendous
+  adapter: ashby
+  slug: tremendous
+  note: yc-auto-discovered Winter 2011
+- name: Alchemy
+  adapter: ashby
+  slug: alchemy
+  note: yc-auto-discovered Summer 2014
+- name: Boom
+  adapter: ashby
+  slug: boom
+  note: yc-auto-discovered Winter 2016
+- name: Backpack
+  adapter: ashby
+  slug: backpack
+  note: yc-auto-discovered Summer 2014
+- name: Snapdocs
+  adapter: ashby
+  slug: snapdocs
+  note: yc-auto-discovered Winter 2014
+- name: Plane
+  adapter: ashby
+  slug: plane
+  note: yc-auto-discovered Winter 2017
+- name: Meadow
+  adapter: ashby
+  slug: meadow
+  note: yc-auto-discovered Winter 2015
+- name: Shasqi
+  adapter: ashby
+  slug: shasqi
+  note: yc-auto-discovered Winter 2015
+- name: Blueberry Pediatrics
+  adapter: ashby
+  slug: blueberrypediatrics
+  note: yc-auto-discovered Winter 2018
+- name: ReadMe
+  adapter: ashby
+  slug: readme
+  note: yc-auto-discovered Winter 2015
+- name: HealthSherpa
+  adapter: ashby
+  slug: healthsherpa
+  note: yc-auto-discovered Summer 2012
+- name: REZI
+  adapter: ashby
+  slug: rezi
+  note: yc-auto-discovered Winter 2017
+- name: Clerky
+  adapter: ashby
+  slug: clerky
+  note: yc-auto-discovered Summer 2011
+- name: ACLU
+  adapter: greenhouse
+  slug: aclu
+  note: yc-auto-discovered Winter 2017
+- name: SingleStore
+  adapter: greenhouse
+  slug: singlestore
+  note: yc-auto-discovered Winter 2011
+- name: Observe.AI
+  adapter: greenhouse
+  slug: observeai
+  note: yc-auto-discovered Winter 2018
+- name: Veriff
+  adapter: greenhouse
+  slug: veriff
+  note: yc-auto-discovered Winter 2018
+- name: Akido Labs
+  adapter: greenhouse
+  slug: akidolabs
+  note: yc-auto-discovered Winter 2015
+- name: Bright
+  adapter: greenhouse
+  slug: brightai
+  note: yc-auto-discovered Winter 2015
+- name: Flip
+  adapter: greenhouse
+  slug: flip
+  note: yc-auto-discovered Winter 2015
+- name: Salt Security
+  adapter: greenhouse
+  slug: saltsecurity
+  note: yc-auto-discovered Winter 2016
+- name: Carrot Fertility
+  adapter: greenhouse
+  slug: carrotfertility
+  note: yc-auto-discovered Summer 2017
+- name: Zerocater
+  adapter: greenhouse
+  slug: zerocater
+  note: yc-auto-discovered Winter 2011
+- name: Focal Systems
+  adapter: greenhouse
+  slug: focalsystems
+  note: yc-auto-discovered Winter 2016
+- name: Roofr
+  adapter: greenhouse
+  slug: roofr
+  note: yc-auto-discovered Summer 2017
+- name: Legalist
+  adapter: greenhouse
+  slug: legalist
+  note: yc-auto-discovered Summer 2016
+- name: SIRUM
+  adapter: greenhouse
+  slug: sirum
+  note: yc-auto-discovered Winter 2015
+- name: Submittable
+  adapter: greenhouse
+  slug: submittable
+  note: yc-auto-discovered Summer 2012
+- name: Outschool
+  adapter: greenhouse
+  slug: outschool
+  note: yc-auto-discovered Winter 2016
+- name: Snackpass
+  adapter: greenhouse
+  slug: snackpass
+  note: yc-auto-discovered Winter 2018
+- name: Tesseract
+  adapter: greenhouse
+  slug: tesseract
+  note: yc-auto-discovered Summer 2017
+- name: Treasury Prime
+  adapter: greenhouse
+  slug: treasuryprime
+  note: yc-auto-discovered Winter 2018
+- name: Pyka
+  adapter: lever
+  slug: pyka
+  note: yc-auto-discovered Summer 2017
+- name: NimbleRx
+  adapter: lever
+  slug: nimblerx
+  note: yc-auto-discovered Winter 2015
+- name: Copia
+  adapter: lever
+  slug: copia
+  note: yc-auto-discovered Winter 2016
+- name: CareMessage
+  adapter: lever
+  slug: caremessage
+  note: yc-auto-discovered Winter 2014
+- name: PickTrace
+  adapter: lever
+  slug: picktrace
+  note: yc-auto-discovered Summer 2015
+- name: BackerKit
+  adapter: lever
+  slug: backerkit
+  note: yc-auto-discovered Summer 2012
+- name: Tesorio
+  adapter: lever
+  slug: tesorio
+  note: yc-auto-discovered Summer 2015
+- name: Corvus Robotics
+  adapter: ashby
+  slug: corvus-robotics
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Papa
+  adapter: greenhouse
+  slug: papa
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: SkydropX
+  adapter: ashby
+  slug: skydropx
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Fintual
+  adapter: lever
+  slug: fintual
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Enveritas
+  adapter: greenhouse
+  slug: enveritas
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Switchboard
+  adapter: ashby
+  slug: switchboard
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Heart Aerospace
+  adapter: greenhouse
+  slug: heartaerospace
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Glide
+  adapter: greenhouse
+  slug: glide
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Pronto
+  adapter: greenhouse
+  slug: pronto
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Emi Labs
+  adapter: lever
+  slug: emilabs
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Prometheus
+  adapter: ashby
+  slug: prometheus
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Shiru
+  adapter: lever
+  slug: shiru
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Lucid Bots
+  adapter: greenhouse
+  slug: lucidbots
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Flux
+  adapter: ashby
+  slug: flux
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: LAIKA
+  adapter: greenhouse
+  slug: laika
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: H1
+  adapter: lever
+  slug: h1
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Cortex
+  adapter: greenhouse
+  slug: cortex
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Kinter
+  adapter: lever
+  slug: kinter
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Upflow
+  adapter: ashby
+  slug: upflow
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Angle Health
+  adapter: ashby
+  slug: anglehealth
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: STARK BANK
+  adapter: lever
+  slug: starkbank
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Humanly
+  adapter: ashby
+  slug: humanly
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Ansa Biotechnologies
+  adapter: greenhouse
+  slug: ansabiotechnologies
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Novel
+  adapter: ashby
+  slug: novel
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Synapticure
+  adapter: lever
+  slug: synapticure
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Daybreak Health
+  adapter: greenhouse
+  slug: daybreakhealth
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Yotta
+  adapter: ashby
+  slug: yotta
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Farel
+  adapter: ashby
+  slug: farel
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Formal
+  adapter: ashby
+  slug: formal
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Verifiable
+  adapter: lever
+  slug: verifiable
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Hudu
+  adapter: ashby
+  slug: hudu
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Simplify
+  adapter: ashby
+  slug: simplify
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Seer
+  adapter: greenhouse
+  slug: seer
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Camp
+  adapter: greenhouse
+  slug: camp
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: REGENT
+  adapter: greenhouse
+  slug: regent
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: MarqVision
+  adapter: greenhouse
+  slug: marqvision
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: H3X Technologies
+  adapter: ashby
+  slug: h3x-technologies
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Slope
+  adapter: ashby
+  slug: slope
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Inversion Space
+  adapter: greenhouse
+  slug: inversionspace
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Epsilon3
+  adapter: lever
+  slug: epsilon3
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Onebrief
+  adapter: ashby
+  slug: onebrief
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Float
+  adapter: ashby
+  slug: float
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Baubap
+  adapter: greenhouse
+  slug: baubap
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Malga
+  adapter: ashby
+  slug: malga
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Birdie
+  adapter: ashby
+  slug: birdie
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Toku
+  adapter: ashby
+  slug: toku
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Hubble Network
+  adapter: greenhouse
+  slug: hubblenetwork
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Fleetzero
+  adapter: lever
+  slug: fleetzero
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Orca
+  adapter: ashby
+  slug: orca
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Gauss
+  adapter: lever
+  slug: gausslabs
+  note: yc-auto-discovered (ignore-hiring-flag)
+- name: Spade
+  adapter: greenhouse
+  slug: spade
+  note: yc-auto-discovered (ignore-hiring-flag)

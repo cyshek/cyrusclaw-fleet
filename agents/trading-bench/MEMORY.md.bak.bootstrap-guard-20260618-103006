@@ -1,0 +1,234 @@
+# MEMORY.md - Long-Term Memory
+
+> # 🎯 CURRENT MISSION (Cyrus, 2026-06-07) — BEAT SPX ON RAW RETURN. FULL EXPLORE-FIRST MODE.
+>
+> **Bar: out-return S&P 500 on RAW RETURN, maximize profit.** Risk-adjusted-only framing is demoted to fallback.
+>
+> **ALL promotion gates SUSPENDED** — research-side AND real-money-side. No predefined rule (the ~10-rejects base rate, 1.0-Sharpe bar, 8%/yr floor, DD ceilings, CLOSED-lane verdicts, Bar E graduation gauntlet, cost-disqualify math) may reject an idea before it's tested. Old gates made the bench timid; they get reintroduced LATER when Cyrus says so.
+>
+> **ONLY TWO THINGS STILL HOLD:** (1) **PHYSICAL** — paper-only broker wrapper + non-paper-URL refusal + `STOP_TRADING` killswitch; real-money go-live = Cyrus's explicit call. (2) **HONEST MEASUREMENT** — no lookahead/leakage, real OOS walk-forward, PIT data, benchmark on the path actually traded. Chase aggressive ideas hard; do NOT fake a winner.
+>
+> Full posture trail: `memory/2026-06-07.md`. Older sections assuming strict-gate posture are HISTORICAL.
+
+## ✅ VOL-TARGET SLEEVE ON TQQQ — first investable SPX-beating candidate (2026-06-13)
+
+**Vol-targeting the leveraged-trend lead** (scale weight inversely to trailing-20d realized vol, target 25% ann vol, SMA-200 gate, cap 1.0): compresses DD −56%→−34.8% (≈SPX −33.9%) while beating SPX raw + Sharpe OOS net of costs. Full 2010→2026: **+1,881% vs +587%**, CAGR 20.1% vs 12.6%, Sharpe 0.842 vs 0.773. OOS (frozen-2018): +354% vs +175%. Lookahead-audited.
+- **CAVEATS:** TQQQ-specific (UPRO/SPXL flips negative at realistic cost; SOXL −84% DD excluded). Leverage premium, not pure alpha. Single underlying/gate → paper first.
+- **DISPOSITION:** PAPER candidate (paper clock, standing orders); real money needs Cyrus approval + GATE. Report: `reports/VOLTARGET_SLEEVE_VERDICT_20260613.md`. Code: `strategies_candidates/leveraged_long_trend/` (`backtest_daily_voltarget.py`, `recost_voltarget.py`).
+
+## ✅ YOUTUBE RESEARCH SPRINT — missing piece is RISK/SIZING, not another signal (2026-06-12)
+
+6 bot-build vids + Umar Ashraf: **No new mechanical alpha.** Bot-builders died on fees/poor-risk (not bad signals). Umar = irreducibly discretionary (tape-reading) — **do NOT fabricate an OHLCV Umar proxy.** His risk/sizing discipline IS mechanizable (fixed-fractional, ≥2R, structural stops). **3 independent sources all converge: missing piece = risk/sizing layer.** 2 cheap eng steals: U1 anti-overfit reject filter; U2 churn penalty. Reports: `reports/yt_research/` (A1_BOTBUILD, A2_UMAR_ASHRAF, SYNTHESIS).
+
+## North star (2026-05-25, updated 2026-06-07)
+
+**CURRENT MISSION (2026-06-07):** beat SPX raw return, maximize profit. Explore-first — promotion gates SUSPENDED. Hard rails: (1) paper-only broker; (2) honest measurement (no lookahead/leakage).
+
+**Goal:** agents trading like quants making Cyrus real money. Starting capital: **$100**. Paper → real requires: ≥4 weeks + 100+ round-trips + Sharpe >1 + maxDD <20% + OOS pass + explicit Cyrus approval.
+
+**Durable principles:** Cost-realism first (`CostModel` in first backtest). Backtest → paper → real (never skip). 5 strategies same bet = leverage, not portfolio.
+
+## Project mission
+
+Paper-trading tournament. See AGENTS.md for mission/architecture.
+
+## Coaching relationship
+
+main is the coach. Standing weekly check-ins. main can be queried via `sessions_send(agentId="main", message="...")` for design questions or escalations.
+
+## Standing approvals / constraints
+
+- **Spawn subagents liberally** — no need to ask (standing, Cyrus 2026-06-08).
+- **Free-first on data.** Exhaust free before any paid source. Paid = explicit Cyrus sign-off per request.
+- Paper trading only. Real money = explicit per-request Cyrus approval.
+- Killswitch: `STOP_TRADING` in workspace root halts all runners.
+- Unlimited tokens — optimize for progress + quality.
+
+## Channel cadence + key hygiene (2026-05-25)
+
+**Key hygiene:** Alpaca keys in Discord = exposed. Write to `.env`, smoke-test, ask Cyrus to regenerate + delete Discord message. Paper keys: rotation waived (private Discord, wrapper refuses non-paper URL, killswitch). Live keys always rotate on leak.
+
+**Cadence:** one message per milestone. Post when done or genuinely blocked. Default silent except BUY/SELL fills, weekly leaderboard, real blockers, main escalations.
+
+## Channel availability rule (2026-05-25, Cyrus)
+
+**Never `sessions_yield` the main session after spawning a subagent.** Subagents run in the background regardless. Yielding blocks Cyrus from reaching me. Delegate, stay available; poll subagent status on-demand only when Cyrus asks or when I need the result to act. Completion events still arrive as messages — handle them when they show up.
+
+## Verify-subagent-output rule (2026-05-26)
+
+**Subagent report = claim, not result.** Verify disk AFTER the completion event (not before — sub may still be writing). If no disk artifacts AFTER the event, THEN it's fabricated. Panic-correction pre-event is worse than an optimistic post.
+
+## Single-data-point generalization trap (2026-05-30)
+
+**Hold a systemic-issue framing tentatively until ≥2 within-class data points confirm it.**
+1. Single finding → daily memory + BACKLOG OPEN, do NOT bring to main.
+2. ≥2 within-class → framing earns proposal status.
+3. Exception: safety/correctness issues (test failures, data corruption, risk-cap bypass) → flag immediately.
+
+## Standing directive from Cyrus (2026-05-25)
+
+**Operate independently.** Own the project; Cyrus is the customer, not the bottleneck. Subagents for IC work; stay in manager seat. Channel-first: post status/milestones/blockers/reports. Only ask Cyrus for: API keys, account creation, real-money go-live. Only ask main for: design forks, safety/policy, escalations.
+
+## Project learnings — distilled (2026-05-30)
+
+- **Cost realism gates everything.** Apply `CostModel` in FIRST backtest; crypto ~4% round-trip killed the slate.
+- **`regime_uptrend` filter:** ~80% DD reduction at no median-return loss. Start all archetypes with one.
+- **Long-only fails non-bull regimes.** Add short/cash leg or accept restricted deployment.
+- **LLM-mutation not producing edge** — only 2 real signal parents. Fix: throttle (`20 */4 * * *`), stability gate (`MUTATION_MIN_TOTAL_TRADES=40`, `MUTATION_SHARPE_DELTA_TOL=-0.10`, `MUTATION_MIN_SHARPE_SIGN_CONSISTENCY=0.60`; pinned by `TestMutationStabilityGuards`). OPEN: DEDUP + parent diversification.
+- **Subagent reports = claims.** Verify disk AFTER completion event.
+- **State persistence:** per-bar `position_state` rebuild silently no-ops mutations. Fix: hoist + `strategy_state` DB.
+- **GATE.md is the contract.** Pre-committed bars; changes need Cyrus/main sign-off.
+
+## Operational standing rules (2026-05-30/31)
+
+- Daily logs → `memory/YYYY-MM-DD.md`; distill to MEMORY.md. `BACKLOG.md` = live P0-P3. Post to Discord on meaningful state changes.
+- Execute on best judgment, document, don't bounce. Implicit-approval: (a) main aligned + (b) Cyrus silent. Only escalate: real-money allocation, agent-deletion, GATE.md ambiguity.
+- Promotion approval → start paper clock (standing order; no ask needed). Reserve asks for: real-money go-live, GATE.md changes.
+- `risk.py` MAX_NOTIONAL/MAX_POSITION = **1000.0** (paper-only). Real-money graduation = **$100** (GATE Bar E).
+- Beat-SPY risk-adjusted = first-class gate metric: log excess-return-vs-SPY + IR on every candidate.
+- **Leveraged-ETFs (TQQQ/SOXL/UPRO/TECL) — APPROVED** on paper, Bar A discipline. **TRUE leverage (margin/shorting/derivatives) — HARD RAIL.** Requires explicit Cyrus sign-off.
+- **GATE two-tier survival:** Tier 1 (4wk: trades-as-designed + live cost ≤2× model + no >2% single-rebalance loss); Tier 2 (≥12wk: ≥15 round-trips + realized Sharpe ≥0.80). Clause (f): ≥8.0%/yr net-of-cost on deployed notional. `worst_instrument_dd_pct` 30% candidate / 20% real-money. Never tune to satisfy gate.
+
+## THE √252 SHARPE BUG + promotion demoted (2026-05-31)
+
+**Bug (FIXED):** Sharpe annualized with √365 instead of √252 → inflated equity Sharpe by ~20%. Fix: `bars_per_year(timeframe, is_crypto)` → 252 equities / 365 crypto. 7 pinning tests. Both bugs bias toward OVER-stating → all prior rejects STAND.
+- `xsec_momentum_xa_38d2b2` Sharpe 1.04→0.87 → **DEMOTED**. Record: `reports/DEMOTE_xsec_momentum_xa_38d2b2_20260531T190924Z.md`.
+- **Phantom-span:** bars cache floor 2020-07-27. `walk_forward_xsec` now raises `ZeroTradesError` when warmup yields 0 trades.
+
+## Closed lanes (2026-06-01→06-02; reframed 2026-06-07)
+
+> ⚠️ "Didn't work THE WAY I TRIED IT" — bar is RAW RETURN vs SPX. ~10-rejects = observation, NOT law.
+
+- **PRICE-BASED SINGLE-STOCK XSEC:** all cost-strangled or overfit. Signal class is problem.
+- **LEVERAGED-ETF TREND** — REVERSED. Old risk-adj bar: rejected. Raw-return bar: CLEARED.
+- **CREDIT-SPREAD (HYG/LQD) as SPY timer** — no tradeable edge net of 4bps.
+- **VOL-REGIME TIMING (Moreira-Muir)** — best Sharpe +0.544, +6.72%/yr; both levers spent.
+
+## Measurement-hygiene patterns (2026-05-31)
+
+- **Median-of-windows Sharpe = MIRAGE; always quote full-period continuous-span Sharpe.** Canonical: `runner/fp_sharpe.py`.
+- **Benchmark on the SAME PATH.**
+- **Knife-edge argmax ≠ promotion.** Neighbors all below threshold = overfit. Auto-rejected by sweep robustness classifier.
+
+## Infra/harness gotchas
+
+- `walk_forward_xsec` skips <2-symbol baskets → compose `backtest_xsec` + `fp_continuous_sharpe` directly.
+- Sweep "PASS" doesn't fold clause-(a) FP-cont≥1.0 → misleading for sub-1.0 cells.
+
+## DECIDE-AND-ACT — money is not a blocker (Cyrus via main, 2026-06-08, STANDING)
+
+- **Decide and act.** Tiebreaker: act > idle — recoverable wrong decision beats inaction.
+- **Money NOT a blocker** for data/infra spend: recommend, state cost, proceed. (Real-money TRADING = explicit per-request approval. FREE-FIRST still holds.)
+- **Only genuine asks:** Cyrus's own credentials after exhausting alternatives; values/ethics/safety.
+- **Highest-leverage work = GATE-QUALITY**, not more mutation candidates. Don't add generic crons.
+
+## Data blocker CRACKED (2026-06-08)
+
+- **VIX overlay verdict:** DRAWDOWN tool only; SMA-200 already does the heavy lifting. ❌ beat SPX raw.
+- **Yahoo-v8 API works from this VM** (`indicators.adjclose`; use for leveraged ETFs). Old "Yahoo 429s from datacenter" was STALE.
+- **Free fundamentals are backtest-grade:** SEC EDGAR (200 + UA, native PIT, ~2009 XBRL floor). ONE paid gap: estimate-REVISION history.
+
+## ✅ LEVERAGED-TREND BEATS SPX RAW, OOS (2026-06-09)
+
+**TQQQ / SMA-200 gate / VIX-OFF / 2bps / T-bill cash.** 2010→2026: +10,121% vs +587% · CAGR 32.9% vs 12.6% · Sharpe 0.846 · maxDD −56%. ALL 18 cells beat SPX raw. OOS (split 2018): +1,212% vs +175%. 7/7 sma-windows plateau.
+- **Honest framing:** LEVERAGE PREMIUM, not risk-adjusted alpha. Under Sharpe≥1.0 gate: fails. Vol-target sleeve needed (see 06-13 entry).
+- Report: `reports/LEVERAGED_TREND_FULLHIST_20260609.md`.
+
+## Solo-operation mandate (Cyrus, 2026-06-12/13 — STANDING)
+
+**I DECIDE+DO all engineering** autonomously: paper trades, paper-roster promotions, killing dead crons, building overlays, experiments, stress-tests, culls. Bring to Cyrus ONLY: real-money go-live (per-request always), safety-rail trips, honest wind-down recommendation. **Silence = running clean.** Post on real state changes + weekly, not play-by-play. Correction logged: no live mutation cron existed to kill — it was already throttled→removed in a prior session. Verify before claiming.
+
+## Current P1 BACKLOG (Cyrus-confirmed 2026-06-13)
+
+7 items in priority order:
+
+**P1 — Core engine:**
+1. Diversify mutation parents ✅ DONE (7 GATE_PASSING_PARENTS; rsi_oversold_spy S1.80, volume_breakout_qqq S2.80 thin-sample, macd_momentum_iwm S1.33)
+2. Kelly sizing layer ✅ DONE (`runner/kelly.py`, half-Kelly, MIN_ROUND_TRIPS=20 gate, hooked before risk check)
+3. FX lane ✅ DONE — **CLOSED** (all 4 archetypes fail raw-return bar: Sharpe 0.088 / -0.182 / 0.084 / -0.416 OOS; FX not dead on cost, dead on signal weakness; archived in strategies_candidates/)
+
+**P1 — From YouTube research:**
+4. Loss-triggered postmortem loop ✅ DONE (`runner/postmortem.py`, 5-bucket classification, tournament_loop 70% postmortem-biased / 30% random when hint exists)
+5. Polymarket scanner+tracker ✅ DONE + RUNNING (`runner/polymarket_scanner.py`, `runner/polymarket_tracker.py`, cron 0 6 * * * UTC, DB `polymarket_track.db`). **PAPER TRACKING ONLY — no deposit, no KYC, no real money ever needed.** Scanner pulls live Gamma API (no auth), logs paper bets, scores resolved markets. 8 open paper bets (Fed rate markets). Edge thesis: macro/Fed rate markets thin on quant models; NFCI/FRED/CME priors should beat crowd. Decision rule: if hit rate >55% after 20+ resolved markets → escalate to Cyrus for real-money discussion.
+6. Edge-calibration meta-model ✅ SCAFFOLDED (`runner/edge_calibrator.py`, pass-through until 30 round-trips, then logistic on trade features; auto-activates at gate)
+
+**P2 — Infra:**
+7. Runner fill-reconcile pass ✅ DONE (`reconcile.py` hooked top of `cron_tick.sh`, idempotent, polls Alpaca for terminal status on pending orders)
+
+**Current suite:** 586/586 green. Live strategies: 10 on cron. GATE_PASSING_PARENTS: 7.
+
+**No pending Cyrus actions on Polymarket** — paper tracking is fully live and requires nothing from Cyrus.
+
+## Peer code-handoff lesson (2026-06-13)
+
+**Stage files (world-readable /tmp, chmod a+rX, cp/md5-verify); NEVER inline source in chat.** Discord newline mangling corrupts Python syntax. main hit this on first inline paste; staged copy was clean.
+
+## Where work is tracked
+
+- **`HANDOFF.md`** — operational state, runner roster, open questions. One-page snapshot.
+- **`BACKLOG.md`** — P0-P3 prioritized todo. Single source of "what's next."
+- **`MEMORY.md`** — durable principles, lessons, north star.
+- **`memory/YYYY-MM-DD.md`** — raw daily logs.
+- **`GATE.md`** — graduation bars (change protocol: Cyrus/main sign-off).
+- **`reports/*.md`** — point-in-time analysis artifacts.
+
+## Channel
+
+- My Discord channel: `1508503706545557656` (use `message` with `channel="discord"`, `target="1508503706545557656"`).
+- `sessions_send` replies to peers don't auto-post to my channel — must use `message.send` explicitly.
+
+## Silent Replies
+
+When you have nothing to say, respond with ONLY: NO_REPLY
+
+## IV-surface data spend
+
+~$99+/mo = NOT approved. Needs fresh explicit Cyrus approval.
+
+## LLM-generating cron: gotcha + technique (2026-06-05)
+
+**Trap:** `run_one_round()` in `python3 -c` silently falls back to `--dry-run` — `sessions_spawn` raises `NotImplementedError` from pure Python. **Real path:** `prepare_round(n)` dumps prompts to /tmp → agent calls `sessions_spawn` → `finalize_round()`. **v2 fix:** generate + finalize INLINE in cron's own turn; do NOT spawn+`sessions_yield` from cron (orphans candidates). **Leak guard:** `delivery.mode=none` on silent rounds.
+
+## FRED / macro data-access trap (2026-06-05)
+
+**`fredgraph.csv` is poison from this VM** — Akamai/bot-walled AND silently serves stale cached data. MUST use keyed API: `api.stlouisfed.org/fred/series/observations`. **Lookahead on revised series:** use ALFRED PIT vintages or lag-shift.
+
+## Free-dataset scout map (2026-06-05)
+
+> Pursue only when it plausibly helps RAW RETURN.
+
+**Free TIER-1 sources (decisive filter = 2008-GFC coverage):**
+1. **FRED** — `BAA10Y`, `NFCI`, `T10Y2Y` (keyed API only; fredgraph.csv Akamai-walled + stale; use ALFRED PIT for revised series).
+2. **CFTC COT (TFF)** — 1986, weekly, 3-day lag.
+3. **CBOE vol CSVs** — SKEW/VVIX/term-slope, free options class spanning 2008.
+4. **GDELT Events** — tone/Goldstein, 1979.
+5. **SEC EDGAR XBRL frames** — 2009, PIT.
+6. **Yahoo chart API** — MOVE/VIX + gold/copper, 2007.
+
+**DEAD:** NAAIM, Pushshift/Reddit. **#1 funded-upgrade:** estimate-REVISION history (PEAD). Full map: `reports/SCOUT_SYNTHESIS_20260605.md`.
+
+## ✅ c382b1 anomaly RESOLVED (2026-06-13)
+
+- Code-reviewed: PASS. Kept on live roster.
+- Stuck `pending_new` order WAS filled — DB corrected. **Root cause:** runner never polled Alpaca for terminal order status. Fix: `reconcile.py` now runs top of every cron_tick.sh.
+- Notional 1000→100 fixed (mutation artifact). XLK over-allocation trimmed; all 10 strategies at $100 parity.
+
+## ✅ SPRINT SHIPPED 2026-06-13 — 7 items (586/586 tests green)
+
+- **Kelly sizing:** `runner/kelly.py` — half-Kelly, MIN_ROUND_TRIPS=20 gate, hooked before risk check. Tests 16/16.
+- **Loss-triggered postmortem:** `runner/postmortem.py` — 5-bucket classification; mutation 70% postmortem-biased / 30% random when hint exists.
+- **Mutation parent diversification:** GATE_PASSING_PARENTS now 7: `rsi_oversold_spy` (S1.80), `volume_breakout_qqq` (S2.80 — thin-sample caution), `macd_momentum_iwm` (S1.33).
+- **Fill-reconcile:** `reconcile.py` runs top of every cron_tick.sh — polls Alpaca for terminal status on pending orders.
+- **Polymarket scanner+tracker:** `polymarket_scanner.py`/`polymarket_tracker.py`; cron 0 6 * * * UTC; DB `polymarket_track.db`. RUNNING. Pure paper tracking — no deposit/KYC ever needed. Gamma API is public. 8 open paper bets as of 2026-06-17.
+- **Edge-calibrator:** `runner/edge_calibrator.py` — logistic on trade features; pass-through until 30 round-trips.
+- **FX lane:** CLOSED (all 4 archetypes < SPX raw). `strategies_candidates/` dead-end archive.
+
+## ✅ DEBUNKED — things we PROVED we CAN do (don't re-derive these excuses)
+
+Append-only. Read at startup so a stale "we can't do X" excuse can't resurface. Each entry: the OLD false belief, what actually works, the date.
+
+- **FALSE: "`apply_patch` Add File failure = a blocker."** (2026-06-17) — `apply_patch` with "Add File" syntax errors out, but `write` tool or `exec tee/cat` creates files just fine. Never surface this as a blocker. Cyrus is specifically annoyed at this being raised repeatedly.
+
+- **FALSE: "the credit-spread / FRED lane is blocked on a FRED API key from Cyrus."** (2026-06-09) — The key was ALREADY on disk: `FRED_API_KEY` is present + valid in the **workspace** `.env` (verified `runner/fred_cache._api_key()` resolves it, 32-char lowercase, live keyed fetch works). I'd been checking the wrong path (`/home/azureuser/.openclaw/.env`) and parroting a stale "parked on Cyrus" note. **The genuine blocker is DIFFERENT and self-unblocks:** ICE BofA OAS series on free FRED (BAMLH0A0HYM2 HY-OAS, BAMLC0A0CM IG-OAS, BAMLC0A4CBBB BBB-OAS) were truncated to a rolling ~3yr window (all now `observation_start=2023-06-12`, an ICE licensing pullback) — so HY-IG-OAS-back-through-2008 can't come from free FRED anymore. **Working free deep substitutes, keyed-API-reachable NOW, spanning 2008+2020:** `BAA10Y` (Moody's Baa−10yr credit spread, 1986), `NFCI` (Chicago Fed financial conditions, 1971), `T10Y2Y` (curve slope, 1976). Build the credit-stress lane on those — no spend, no Cyrus dependency.
+
+- **FALSE: "we can't see what's shown in a YouTube video — visuals are completely inaccessible."** (2026-06-13) — Too absolute. Real spectrum: (1) **Thumbnail = ALWAYS fetchable** (no auth, `https://i.ytimg.com/vi/<ID>/maxresdefault.jpg` → 1280×720); run it through the image tool → extracts on-screen text the transcript never mentions (proven: shZwbIRtObE title card "while you sleep" was visual-only). (2) **Full video frames from this IP = bot-walled** (yt-dlp returns "Sign in to confirm") — not permanently impossible, needs cookies or a residential proxy. (3) **Vision tool now configured fleet-wide:** `agents.defaults.imageModel = github-copilot/claude-opus-4.8` (set 2026-06-13; NOTE: bare `image` call in a long-lived session that cached "unconfigured" at spawn → pass `model="github-copilot/claude-opus-4.8"` explicitly; fresh sessions resolve the default correctly). Image tool path gotcha: images must be in workspace (allowed dir) — `/tmp` is rejected; copy first. `gpt-4o` via Copilot Responses API = 400 error; use `claude-opus-4.8`. Full route documented in TOOLS.md ("Consuming what's SHOWN in a video").

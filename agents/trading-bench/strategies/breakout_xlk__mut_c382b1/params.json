@@ -1,0 +1,13 @@
+{
+    "symbol": "XLK",
+    "timeframe": "1Hour",
+    "bar_limit": 80,
+    "notional_usd": 100.0,
+    "lookback": 20,
+    "regime_period": 50,
+    "stop_bear_pct": -0.8,
+    "stop_bull_pct": -2.3,
+    "_grounding_note": "stop_bear_pct -0.80% sits between parent p75 per-trade DD (-0.70%) and median (-1.41%) -> tight stop fires on a meaningful slice of trades in bear regimes. stop_bull_pct -2.30% sits just beyond parent p25 DD (-2.21%) -> nearly inert in bull trades, only catches real breakdowns so trends breathe. Both grounded in breakout_xlk parent profile (45 trades, 8 windows).",
+    "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+    "safety_max_loss_pct": -50.0
+}

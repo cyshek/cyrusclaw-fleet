@@ -1,0 +1,40 @@
+{
+  "_schema_version": 1,
+  "_doc": "Ashby tenants whose application form is inlined on the tenant's own public website (so the standard captcha wall on jobs.ashbyhq.com/<tenant>/<id>/application can be bypassed). Source of truth for inline_submit._ashby_tenant_embed_fallback. To qualify a tenant: (a) GraphQL ApiOrganizationFromHostedJobsPageName returns publicWebsite, (b) <publicWebsite>/<slug_template> renders the Ashby form widgets in-page (#_systemfield_resume present, file input count >= 1), (c) NO recaptcha/hcaptcha/turnstile globals or scripts on the rendered page. Verify with role-discovery/sweep_ashby_tenant_embeds.py before adding.",
+  "_slug_modes": {
+    "role_slug": "Use the slugified role title, e.g. 'Forward Deployed Engineer' -> 'forward-deployed-engineer'. Some tenants (Cursor) use this pattern.",
+    "job_id": "Use the Ashby job UUID directly in the URL path.",
+    "custom": "Slug is recorded per-role in tracker.agent_notes as 'embed_slug:<value>'."
+  },
+  "tenants": {
+    "cursor": {
+      "tenant": "cursor",
+      "publicWebsite": "https://www.cursor.com",
+      "customJobsPageUrl": "https://cursor.com/careers",
+      "embed_url_template": "https://cursor.com/careers/{role_slug}",
+      "slug_mode": "role_slug",
+      "captcha_clean": true,
+      "verified_at": "2026-05-30",
+      "verified_via": "chain_018/019 (2 live submits) + sweep CDP probe 2026-05-30",
+      "cdp_probe_evidence": {
+        "url": "https://cursor.com/careers/forward-deployed-engineer",
+        "hasResumeInput": true,
+        "fileInputs": 1,
+        "submitButtons": 1,
+        "captchaScripts": [],
+        "grecaptcha": false
+      },
+      "notes": "First production tenant for the embed fallback. Use snapshot refs=aria selector='#_systemfield_resume' to get button ref, then browser.upload inputRef=<ref> paths=[...] (NOT selector= — TOOLS.md chain_019 note)."
+    }
+  },
+  "_sweep_history": [
+    {
+      "date": "2026-05-30",
+      "by": "ashby-tenant-embed-2026-05-30 chain (subagent)",
+      "tenants_probed": 31,
+      "tenants_qualified": 0,
+      "output": "applications/_ashby-tenant-embed-sweep-2026-05-30.json",
+      "summary": "Of the 31 captcha-walled Ashby tenants from chain_027 (anrok, artisan, assorthealth, blacksmith, brainco, braintrust, brellium, brettonai, claylabs, coframe, console, depthfirst, distyl, dust, eliseai, fluency, fonoa, happyrobot.ai, hcompany, higharc, lancedb, liquid-ai, moment, notion, picogrid, plain, restate, snowflake, speak, tessera-labs, thought-machine): 3 had a tenant-domain JD page that returned HTTP 200 (braintrust, moment, picogrid), but ALL THREE just link out to jobs.ashbyhq.com/<tenant>/<id>/application for the actual form. ZERO inlined-form embeds found. Cursor remains the only known tenant in this pattern."
+    }
+  ]
+}

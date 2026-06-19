@@ -1,0 +1,1183 @@
+#!/usr/bin/env python3
+"""JD-level LLM classifier (Claude Haiku via openclaw capability CLI).
+
+For each open role missing `llm_classified_at`:
+  1. Fetch JD via the appropriate path (greenhouse/ashby/lever/workday/apple/linkedin/generic).
+  2. Cache JD text under role-discovery/jd_cache/<source_key>.txt.
+  3. Send a trimmed JD (~6K chars) to claude-haiku-4-5 with a strict-JSON prompt.
+  4. Write classification back to tracker.db (6 columns).
+  5. Apply DETERMINISTIC skip gates (see maybe_skip below). The LLM's holistic
+     fit_score is stored for visibility but is NOT used as a skip gate as of
+     2026-05-25 (policy directive from Cyrus).
+
+Deterministic skip gates (all hard, no LLM vibe judgment):
+  - Title-keyword blocklist (senior, sr., principal, staff/staff+, director,
+    head of, vp, chief, fellow, distinguished, partner, group, lead, manager,
+    mgr). Flag: 'senior-title'.
+  - JD-stated YOE >= 4 (regex sweep of JD body; max value wins).
+    Flag: 'yoe-threshold'. Stored in llm_yoe_required (override of LLM value).
+  - LLM-extracted is_people_manager == true. Flag: 'people-mgr'.
+  - LLM-extracted seniority in {director+, manager}. Flag: 'senior-llm'.
+  - Non-US location signal in JD body or stored location field.
+    Flag: 'non-us'.
+
+CLI:
+    jd_llm_classifier.py [--limit N] [--role-id ID] [--dry-run] [--force]
+
+Cost guardrails:
+- Goes through openclaw CLI (Copilot-backed Haiku in our infra → effectively free
+  for us, but we still cap at --limit and track call counts).
+- Errors logged to applications/_llm-classifier-errors-<stamp>.json (never crash batch).
+- Never re-classifies rows where llm_classified_at IS NOT NULL unless --force.
+- Never touches applied_by/applied_on.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import shutil
+import sqlite3
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+from pathlib import Path
+from typing import Optional
+from urllib.parse import urlparse
+
+import requests
+
+HERE = Path(__file__).resolve().parent
+PROJ = HERE.parent
+DB = PROJ / "tracker.db"
+JD_CACHE = HERE / "jd_cache"
+JD_CACHE.mkdir(exist_ok=True)
+ERR_DIR = PROJ / "applications"
+
+MODEL = "github-copilot/claude-haiku-4-5"
+MODEL_CLI = ["openclaw", "capability", "model", "run",
+             "--model", MODEL, "--json", "--prompt"]
+
+UA = "job-search-agent/1.0 (jd-classifier)"
+HTTP_TIMEOUT = 25
+JD_MAX_CHARS = 6000  # passed to model
+
+# Models can return text wrapped in ```json fences; strip them.
+JSON_FENCE_RX = re.compile(r"^```(?:json)?\s*(.*?)\s*```\s*$", re.S)
+
+
+# ---------------------------------------------------------------------------
+# JD fetchers
+# ---------------------------------------------------------------------------
+
+class _HTMLTextExtractor(HTMLParser):
+    SKIP = {"script", "style", "noscript", "svg", "head", "meta", "link"}
+
+    def __init__(self) -> None:
+        super().__init__()
+        self._skip_depth = 0
+        self._parts: list[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.SKIP:
+            self._skip_depth += 1
+        elif tag in ("br", "p", "li", "div", "section"):
+            self._parts.append("\n")
+
+    def handle_endtag(self, tag):
+        if tag in self.SKIP and self._skip_depth > 0:
+            self._skip_depth -= 1
+        elif tag in ("p", "li", "div", "section"):
+            self._parts.append("\n")
+
+    def handle_data(self, data):
+        if self._skip_depth == 0:
+            self._parts.append(data)
+
+    def text(self) -> str:
+        raw = "".join(self._parts)
+        # collapse runs of whitespace and blank lines
+        lines = [l.strip() for l in raw.splitlines()]
+        return "\n".join(l for l in lines if l)
+
+
+def html_to_text(html: str) -> str:
+    p = _HTMLTextExtractor()
+    try:
+        p.feed(html)
+    except Exception:
+        pass
+    return p.text()
+
+
+def _http_get(url: str, *, headers: Optional[dict] = None) -> requests.Response:
+    h = {"User-Agent": UA, "Accept": "text/html,application/json"}
+    if headers:
+        h.update(headers)
+    r = requests.get(url, headers=h, timeout=HTTP_TIMEOUT, allow_redirects=True)
+    return r
+
+
+# --- ATS-specific fetchers ---
+
+def fetch_jd_greenhouse(url: str) -> str:
+    # url like https://boards.greenhouse.io/<org>/jobs/<id>
+    m = re.search(r"greenhouse\.io/(?:embed/job_app\?for=|boards/)?([a-z0-9_-]+)/jobs/(\d+)", url)
+    if not m:
+        # try ?for=org&token=id
+        m2 = re.search(r"for=([a-z0-9_-]+).*token=(\d+)", url)
+        if m2:
+            org, jid = m2.group(1), m2.group(2)
+        else:
+            raise ValueError(f"can't parse greenhouse URL: {url}")
+    else:
+        org, jid = m.group(1), m.group(2)
+    api = f"https://boards-api.greenhouse.io/v1/boards/{org}/jobs/{jid}"
+    r = _http_get(api, headers={"Accept": "application/json"})
+    r.raise_for_status()
+    data = r.json()
+    title = data.get("title", "")
+    content_html = data.get("content", "")
+    return f"# {title}\n\n" + html_to_text(content_html)
+
+
+def fetch_jd_ashby(url: str) -> str:
+    # https://jobs.ashbyhq.com/<org>/<jid>
+    m = re.search(r"ashbyhq\.com/([^/]+)/([a-f0-9-]+)", url)
+    if not m:
+        raise ValueError(f"can't parse ashby URL: {url}")
+    org, jid = m.group(1), m.group(2)
+    api = f"https://api.ashbyhq.com/posting-api/job-board/{org}?includeCompensation=true"
+    r = _http_get(api, headers={"Accept": "application/json"})
+    r.raise_for_status()
+    for job in (r.json().get("jobs") or []):
+        if job.get("id") == jid:
+            title = job.get("title", "")
+            desc_html = job.get("descriptionHtml") or job.get("descriptionPlain") or ""
+            txt = html_to_text(desc_html) if "<" in desc_html else desc_html
+            return f"# {title}\n\n{txt}"
+    raise RuntimeError(f"ashby job {jid} not found on board {org}")
+
+
+def fetch_jd_lever(url: str) -> str:
+    # https://jobs.lever.co/<org>/<uuid>
+    m = re.search(r"lever\.co/([^/]+)/([a-f0-9-]+)", url)
+    if not m:
+        raise ValueError(f"can't parse lever URL: {url}")
+    org, jid = m.group(1), m.group(2)
+    api = f"https://api.lever.co/v0/postings/{org}/{jid}?mode=json"
+    r = _http_get(api, headers={"Accept": "application/json"})
+    r.raise_for_status()
+    data = r.json()
+    parts = [f"# {data.get('text','')}", data.get("descriptionPlain", "")]
+    for lst in (data.get("lists") or []):
+        if isinstance(lst, dict):
+            parts.append("\n## " + (lst.get("text") or ""))
+            parts.append(html_to_text(lst.get("content") or ""))
+    extra = data.get("additionalPlain") or ""
+    if extra:
+        parts.append("\n" + extra)
+    return "\n".join(p for p in parts if p)
+
+
+def fetch_jd_workday(url: str) -> str:
+    # Reuse parse_workday_url + CXS endpoint.
+    sys.path.insert(0, str(HERE))
+    from workday_dryrun import parse_workday_url, fetch_workday_job  # type: ignore
+    parts = parse_workday_url(url)
+    info = fetch_workday_job(parts, quiet=True)
+    if info.get("maintenance_mode"):
+        raise RuntimeError("workday maintenance_mode")
+    title = info.get("title", "")
+    jd = info.get("jd_text") or html_to_text(info.get("jd_html") or "")
+    return f"# {title}\n\n{jd}"
+
+
+_APPLE_RX = {
+    "min": re.compile(r'\\"minimumQualifications\\":\\"((?:[^\\]|\\.){0,3000}?)\\"'),
+    "pref": re.compile(r'\\"preferredQualifications\\":\\"((?:[^\\]|\\.){0,3000}?)\\"'),
+    "desc": re.compile(r'\\"description\\":\\"((?:[^\\]|\\.){0,5000}?)\\"'),
+    "title": re.compile(r'\\"postingTitle\\":\\"((?:[^\\]|\\.){0,300}?)\\"'),
+}
+
+
+def _apple_decode(s: str) -> str:
+    # The HTML embeds JSON inside an attribute, so quotes are double-escaped.
+    # First decode the JSON-string escapes (\\n -> \n, \\" -> "), then strip HTML.
+    try:
+        decoded = bytes(s, "utf-8").decode("unicode_escape")
+    except Exception:
+        decoded = s
+    decoded = decoded.replace('\\"', '"').replace("\\/", "/")
+    return html_to_text(decoded)
+
+
+def fetch_jd_apple(url: str) -> str:
+    r = _http_get(url)
+    r.raise_for_status()
+    t = r.text
+    parts = []
+    title_m = _APPLE_RX["title"].search(t)
+    if title_m:
+        parts.append(f"# {_apple_decode(title_m.group(1))}")
+    for key in ("desc", "min", "pref"):
+        m = _APPLE_RX[key].search(t)
+        if m:
+            label = {"desc": "Description", "min": "Minimum Qualifications",
+                     "pref": "Preferred Qualifications"}[key]
+            parts.append(f"\n## {label}\n{_apple_decode(m.group(1))}")
+    if not parts:
+        # last-ditch: plain HTML scrape
+        return html_to_text(t)
+    return "\n".join(parts)
+
+
+_LI_DESC_RX = re.compile(
+    r'<div[^>]*class="[^"]*show-more-less-html__markup[^"]*"[^>]*>(.*?)</div>',
+    re.S,
+)
+_LI_TITLE_RX = re.compile(
+    r'<h1[^>]*top-card-layout__title[^>]*>(.*?)</h1>', re.S,
+)
+
+
+def fetch_jd_linkedin(url: str) -> str:
+    # public guest view
+    r = _http_get(url, headers={
+        "Accept-Language": "en-US,en;q=0.9",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    })
+    r.raise_for_status()
+    t = r.text
+    title_m = _LI_TITLE_RX.search(t)
+    desc_m = _LI_DESC_RX.search(t)
+    if not desc_m:
+        raise RuntimeError("linkedin: no JD body in public view (may need login)")
+    title = html_to_text(title_m.group(1)) if title_m else ""
+    body = html_to_text(desc_m.group(1))
+    return f"# {title}\n\n{body}" if title else body
+
+
+def fetch_jd_generic(url: str) -> str:
+    """Fallback: plain HTML fetch + crude text extraction."""
+    r = _http_get(url)
+    r.raise_for_status()
+    return html_to_text(r.text)
+
+
+def fetch_jd_microsoft(url: str) -> str:
+    """Microsoft careers (apply.careers.microsoft.com/careers/job/<id>).
+
+    The SPA HTML embeds the full JD inside the og:description meta tag
+    (concatenation of duties + qualifications). Title is in <title>.
+    """
+    r = _http_get(url)
+    r.raise_for_status()
+    text = r.text
+    title_m = re.search(r"<title>([^<]+)</title>", text)
+    title = (title_m.group(1) if title_m else "").strip()
+    desc_m = re.search(r'<meta\s+name="description"\s+content="([^"]+)"', text)
+    if not desc_m:
+        desc_m = re.search(r'<meta\s+property="og:description"\s+content="([^"]+)"', text)
+    desc = desc_m.group(1) if desc_m else ""
+    import html as _html
+    desc = _html.unescape(desc)
+    return f"# {title}\n\n{desc}"
+
+
+def fetch_jd_google(url: str) -> str:
+    """Google careers (google.com/about/careers/applications/jobs/results/<id>...).
+
+    The page server-renders all visible sections (incl. 'Minimum qualifications'
+    and 'Preferred qualifications' + 'About the job'). Extract the first
+    qualifications-anchored region; if the JD page returns 'Job not found.'
+    surface that so the caller can mark the role closed.
+    """
+    r = _http_get(url)
+    r.raise_for_status()
+    import html as _html
+    raw = r.text
+    if "Job not found." in raw:
+        return ""
+    text = _html.unescape(raw)
+    text = text.encode().decode("unicode_escape", errors="ignore")
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    # Carve out the first ~6000 chars centered on 'Minimum qualifications'
+    m = re.search(r"Minimum qualifications", text, re.IGNORECASE)
+    if m:
+        start = max(0, m.start() - 200)
+        body = text[start:start + 6000]
+        return body.strip()
+    # Fallback: just return the cleaned text head
+    return text[:6000].strip()
+
+
+def fetch_jd_stripe(url: str) -> str:
+    """Stripe routes job URLs through their React wrapper at stripe.com/jobs/...
+    but the underlying ATS is Greenhouse. The numeric id in the URL is the
+    same gh_jid the Greenhouse public boards API serves.
+
+    Supported URL shapes:
+      https://stripe.com/jobs/listing/<slug>/<gh_jid>            (JD page)
+      https://stripe.com/jobs/listing/<slug>/<gh_jid>/apply      (wrapper)
+      https://stripe.com/jobs/search?gh_jid=<gh_jid>             (301 redirect)
+
+    All three resolve to GH API:
+      https://boards-api.greenhouse.io/v1/boards/stripe/jobs/<gh_jid>
+
+    Background: 2026-05-24 6 Stripe submits slipped past the YOE classifier
+    because `detect_and_fetch` had no stripe.com branch — it fell through to
+    `fetch_jd_generic` and the React-rendered shell yielded no JD text, so
+    the classifier silently skipped them. Roles entered the submit queue
+    unclassified. See memory/2026-05-24.md "Stripe cracked today".
+    """
+    gh_jid: Optional[str] = None
+    # /jobs/listing/<slug>/<id>[/apply]
+    m = re.search(r"/jobs/listing/[^/]+/(\d+)(?:/|$|\?)", url)
+    if m:
+        gh_jid = m.group(1)
+    if not gh_jid:
+        m2 = re.search(r"[?&]gh_jid=(\d+)", url)
+        if m2:
+            gh_jid = m2.group(1)
+    if not gh_jid:
+        # Last-ditch: any 6+ digit number in the path
+        m3 = re.search(r"/(\d{6,})(?:/|$)", url)
+        if m3:
+            gh_jid = m3.group(1)
+    if not gh_jid:
+        raise ValueError(f"can't parse stripe URL (no gh_jid): {url}")
+    api = f"https://boards-api.greenhouse.io/v1/boards/stripe/jobs/{gh_jid}"
+    r = _http_get(api, headers={"Accept": "application/json"})
+    r.raise_for_status()
+    data = r.json()
+    title = data.get("title", "")
+    content_html = data.get("content", "")
+    return f"# {title}\n\n" + html_to_text(content_html)
+
+
+def detect_and_fetch(url: str) -> tuple[str, str]:
+    """Return (ats_label, jd_text)."""
+    if not url:
+        raise ValueError("empty url")
+    host = (urlparse(url).hostname or "").lower()
+    if "greenhouse.io" in host:
+        return "greenhouse", fetch_jd_greenhouse(url)
+    if "ashbyhq.com" in host:
+        return "ashby", fetch_jd_ashby(url)
+    if "lever.co" in host:
+        return "lever", fetch_jd_lever(url)
+    if "myworkdayjobs.com" in host:
+        return "workday", fetch_jd_workday(url)
+    if "apple.com" in host:
+        return "apple", fetch_jd_apple(url)
+    if "linkedin.com" in host:
+        return "linkedin", fetch_jd_linkedin(url)
+    if host == "stripe.com" or host.endswith(".stripe.com"):
+        return "stripe", fetch_jd_stripe(url)
+    if host.endswith("careers.microsoft.com") or host == "apply.careers.microsoft.com":
+        return "microsoft", fetch_jd_microsoft(url)
+    if host == "www.google.com" or host == "google.com":
+        if "/about/careers/" in url:
+            return "google", fetch_jd_google(url)
+    return "generic", fetch_jd_generic(url)
+
+
+def get_cached_jd(source_key: str, url: str) -> tuple[str, str]:
+    """Return (ats_label, jd_text), caching to disk."""
+    safe = re.sub(r"[^a-zA-Z0-9._-]", "_", source_key)[:200]
+    cache_path = JD_CACHE / f"{safe}.txt"
+    meta_path = JD_CACHE / f"{safe}.meta"
+    if cache_path.exists() and meta_path.exists():
+        try:
+            return meta_path.read_text().strip(), cache_path.read_text()
+        except Exception:
+            pass
+    ats, txt = detect_and_fetch(url)
+    if not txt or len(txt.strip()) < 50:
+        raise RuntimeError(f"JD body too short ({len(txt)} chars)")
+    cache_path.write_text(txt)
+    meta_path.write_text(ats)
+    return ats, txt
+
+
+# ---------------------------------------------------------------------------
+# LLM call
+# ---------------------------------------------------------------------------
+
+PROMPT_TEMPLATE = """You are screening a single job posting for an IC candidate (PM/TPM/SA/FDE/SE) with ~3 years of relevant experience. Output STRICT JSON ONLY — no prose, no fences.
+
+The candidate is looking for **individual contributor** roles. They are NOT a people manager and do NOT want to manage direct reports.
+
+NOTE: title-keyword and YOE skip gates are applied DETERMINISTICALLY downstream
+from regex scans (not from this JSON). Your job here is to extract structured
+signal the regex can't catch — primarily people-management duties buried in the
+JD body and overall seniority classification. fit_score is recorded for human
+visibility but is NOT used as an auto-skip gate.
+
+Return JSON with EXACTLY these keys:
+{{
+  "yoe_required": <int or null>,
+  "is_people_manager": <true|false>,
+  "seniority": "ic" | "lead" | "manager" | "director+" | "unclear",
+  "fit_score": <int 0-100>,
+  "reason": "<one-sentence justification, <= 200 chars>"
+}}
+
+Definitions:
+- yoe_required: minimum years of experience REQUIRED of the candidate for THIS role.
+  IMPORTANT: only count statements that describe the candidate's required experience.
+  IGNORE: company age ("founded 5 years ago"), product metrics ("5 billion API calls"),
+  team tenure ("team has 10 years of combined experience"), market/industry numbers,
+  contract/visa/probation durations, customer/client tenure statements.
+  We have pre-extracted candidate mentions below to help; if none look like a
+  requirement, return null.
+  RULES for picking the minimum when multiple statements exist:
+  (a) Take the MINIMUM across all required statements. "3+ years" -> 3. "3-5 years" -> 3. "at least 5" -> 5.
+  (b) "PREFERRED" / "ideally" / "nice to have" / "bonus" / "plus" YOE NEVER overrides
+      an explicit REQUIRED minimum. If JD says "3+ required, 5+ preferred", answer 3.
+      If JD ONLY says "5+ preferred" with no required minimum, return null.
+  (c) Education-alternate paths ("BA + 3yr OR MBA + 6yr OR PhD + 0yr"): take the
+      LOWEST yoe across all degree paths (typically the highest-degree path).
+      "BA + 3 yrs OR MBA + 6 yrs" -> 3 (BA path), not 6.
+  (d) If the JD has separate sections for Junior vs Senior variants of the same role,
+      take the JUNIOR variant's minimum.
+- is_people_manager: true iff the role REQUIRES managing direct reports.
+- seniority:
+    "ic"        = individual contributor, ~2-6 yrs YOE.
+    "lead"      = senior IC / tech lead, ~6-9 yrs, may informally lead but no direct reports.
+    "manager"   = people-manager role.
+    "director+" = director / VP / head of / senior manager / principal IC requiring 10+ yrs.
+    "unclear"   = JD ambiguous.
+- fit_score: 0-100 for OUR candidate (IC, 3 yrs). 100 = perfect, 0 = total mismatch.
+  NOT used as a skip gate; for transparency/debugging only.
+
+Role title: {title}
+Company:    {company}
+
+=== YOE candidate mentions (pre-extracted; pick which if any is the requirement) ===
+{yoe_candidates}
+=== END YOE candidates ===
+
+=== JD START ===
+{jd}
+=== JD END ===
+
+Respond with JSON only."""
+
+
+def call_model(prompt: str, timeout: int = 120) -> tuple[dict, dict]:
+    """Return (parsed_json, raw_envelope). Raises on failure."""
+    cmd = MODEL_CLI + [prompt]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    if proc.returncode != 0:
+        raise RuntimeError(f"model CLI rc={proc.returncode}; stderr={proc.stderr[:500]}")
+    try:
+        env = json.loads(proc.stdout)
+    except Exception as e:
+        raise RuntimeError(f"non-JSON envelope: {e}; head={proc.stdout[:300]}")
+    outs = env.get("outputs") or []
+    if not outs:
+        raise RuntimeError(f"no outputs: {proc.stdout[:300]}")
+    text = outs[0].get("text", "").strip()
+    # Strip ```json fences if present
+    m = JSON_FENCE_RX.match(text)
+    if m:
+        text = m.group(1).strip()
+    try:
+        parsed = json.loads(text)
+    except Exception as e:
+        # Try to find a JSON object in the text
+        m2 = re.search(r"\{.*\}", text, re.S)
+        if m2:
+            try:
+                parsed = json.loads(m2.group(0))
+            except Exception:
+                raise RuntimeError(f"non-JSON output: {e}; text={text[:300]}")
+        else:
+            raise RuntimeError(f"non-JSON output: {e}; text={text[:300]}")
+    return parsed, env
+
+
+def normalize_classification(d: dict) -> dict:
+    """Coerce model output into the expected schema."""
+    yoe = d.get("yoe_required")
+    if yoe is not None:
+        try:
+            yoe = int(yoe)
+        except Exception:
+            yoe = None
+    ipm = d.get("is_people_manager")
+    if isinstance(ipm, str):
+        ipm = ipm.strip().lower() in ("true", "yes", "1")
+    ipm = bool(ipm) if ipm is not None else False
+
+    sen = str(d.get("seniority") or "unclear").strip().lower()
+    if sen not in ("ic", "lead", "manager", "director+", "unclear"):
+        sen = "unclear"
+
+    fit = d.get("fit_score")
+    try:
+        fit = max(0, min(100, int(fit)))
+    except Exception:
+        fit = 0
+
+    reason = (d.get("reason") or "")[:500]
+
+    return {
+        "yoe_required": yoe,
+        "is_people_manager": ipm,
+        "seniority": sen,
+        "fit_score": fit,
+        "reason": reason,
+    }
+
+
+# ---------------------------------------------------------------------------
+# DB
+# ---------------------------------------------------------------------------
+
+def fetch_target_rows(con: sqlite3.Connection, *, limit: Optional[int],
+                      role_id: Optional[int], force: bool) -> list[sqlite3.Row]:
+    con.row_factory = sqlite3.Row
+    where = []
+    params: list = []
+    if role_id is not None:
+        where.append("id = ?")
+        params.append(role_id)
+    else:
+        # Default to open, unapplied, unclassified
+        where.append("(status = '' OR status IS NULL)")
+        where.append("applied_by IS NULL")
+        if not force:
+            where.append("llm_classified_at IS NULL")
+    sql = (
+        "SELECT id, source_key, company, role, loc, app_url, jd_url, status, flags, applied_by "
+        "FROM roles WHERE " + " AND ".join(where) + " ORDER BY id"
+    )
+    if limit:
+        sql += f" LIMIT {int(limit)}"
+    return con.execute(sql, params).fetchall()
+
+
+SKIP_SENIORITY = {"director+", "manager"}
+YOE_THRESHOLD = 4  # JD-stated minimum YOE >= this -> deterministic skip
+
+# --- Deterministic gate 1: title-keyword blocklist --------------------------
+# Word-boundary, case-insensitive. Each pattern is a self-contained regex
+# fragment with a single capture group naming the matched keyword.
+# Notes per Cyrus 2026-05-25:
+#   - 'lead' is intentionally included even though it false-positives on
+#     "Lead Generation" / "Tech Lead" / "Lead Engineer" — that's the desired
+#     behavior (no 'lead' titles).
+#   - 'manager' / 'mgr' are blanket-blocked; 'people-manager keep current'
+#     check from the LLM remains as a secondary gate.
+#   - 'sr' must be matched as 'sr' or 'sr.' but NOT as a random 2-letter word
+#     embedded in unrelated context; word-boundary handles that.
+#   - 'staff' and 'staff+' both blocked.
+#   - 'group' false-positives on team-name suffixes (e.g. "Vision Products
+#     Group"). To minimize that we require 'group' to appear before a word
+#     rather than at end-of-string (handled via lookahead).
+#   - 'partner' false-positives on "Partner Solutions Architect" (channel
+#     role, not seniority). Same lookahead trick: must be followed by another
+#     word AND not be the SA/SE channel pattern.
+# --- Title blocklist with target-role carve-out (Cyrus 2026-05-25 PM) ----
+#
+# Two layers:
+#  (A) HARD blocklist keywords — if title contains any of these (word-bounded,
+#      case-insensitive), SKIP unconditionally regardless of target-role match.
+#      These signal seniority or non-target seniority track.
+#  (B) SOFT 'manager' keyword — SKIP only if title does NOT also contain one
+#      of the ALLOWED target-role substrings (PM / TPM / EPM / PgM family).
+#      This is the carve-out so "Product Manager, GTM" KEEPS while
+#      "Engineering Manager" SKIPS.
+#
+# Order in HARD list matters for the reported keyword name (specific first,
+# e.g. 'chief' before 'staff' so "Chief of Staff" reports as 'chief').
+HARD_BLOCKLIST = [
+    ("chief",         r"\bchief\b"),
+    ("distinguished", r"\bdistinguished\b"),
+    ("fellow",        r"\bfellow\b"),
+    ("head of",       r"\bhead\s+of\b"),
+    ("principal",     r"\bprincipal\b"),
+    ("director",      r"\bdirector\b"),
+    ("svp",           r"\bsvp\b"),
+    ("evp",           r"\bevp\b"),
+    ("vp",            r"\bvp\b"),
+    ("senior",        r"\bsenior\b"),
+    ("sr",            r"\bsr\.?\b"),
+    ("staff",         r"\bstaff\+?\b"),
+    ("lead",          r"\blead\b"),
+    ("mgr",           r"\bmgr\b"),
+]
+_HARD_RE = [(k, re.compile(p, re.I)) for k, p in HARD_BLOCKLIST]
+
+# Positional senior-signal: 'group' as a prefix to a PM/PgM token signals
+# Group PM tier (senior IC). 'partner' as prefix to SA/SE/PM is a CHANNEL role
+# (partner ecosystem), NOT seniority — those keep and let YOE decide.
+# Per Cyrus 2026-05-25.
+#   "Group Product Manager" -> skip
+#   "Group PM" -> skip
+#   "Partner Solutions Architect" -> keep (channel role, not seniority)
+#   "Partner PM" -> keep (channel role)
+#   "EPM - Vision Products Group" -> keep (group is suffix)
+#   "PM, Group 5 Mission Autonomy" -> keep (group describes product)
+_POSITIONAL_PREFIX_RE = re.compile(
+    r"\bgroup\s+"
+    r"(?:product|program|project|technical\s+program|engineering\s+program)\s+"
+    r"manager\b",
+    re.I,
+)
+_POSITIONAL_ABBREV_RE = re.compile(
+    r"\bgroup\s+(?:PM|TPM|EPM|PgM|APM|TPgM)\b",
+    re.I,
+)
+
+# Soft 'manager' — word-boundary on its own; carve-out applies below.
+_MANAGER_RE = re.compile(r"\bmanager\b", re.I)
+
+# Target-role allowlist (substrings; case-insensitive). If title contains any
+# of these AND the only seniority signal was 'manager', KEEP.
+TARGET_ROLE_SUBSTRINGS = [
+    "product manager",
+    "program manager",
+    "project manager",
+    "technical program manager",
+    "engineering program manager",
+    "product marketing manager",   # IC marketing PM; per Cyrus, err on keep
+    "solutions engineer",
+    "solution engineer",
+    "sales engineer",
+    "solutions architect",
+    "solution architect",
+    "forward deployed engineer",
+    "customer engineer",
+    "software engineer",
+    "product engineer",
+]
+
+
+# Target-role abbreviations (whole-word regex). Cyrus 2026-05-25: PM/TPM/SE etc.
+# must register as target roles even when title doesn't spell them out.
+_TARGET_ROLE_ABBREV_RE = re.compile(
+    r"\b(?:PM|TPM|EPM|PgM|SE|SA|FDE|APM|TPgM)\b"
+)
+
+
+def title_has_target_role(title: str) -> bool:
+    if not title:
+        return False
+    t = title.lower()
+    if any(sub in t for sub in TARGET_ROLE_SUBSTRINGS):
+        return True
+    # Abbreviation pass is case-sensitive against the original title; PM/TPM/SE
+    # etc. are conventionally uppercase, so we don't want to match 'pm' in
+    # 'employment' or 'se' in 'design'.
+    if _TARGET_ROLE_ABBREV_RE.search(title):
+        return True
+    return False
+
+
+def extract_title_skip(title: Optional[str]) -> Optional[str]:
+    """Return matched skip-keyword, or None if title should KEEP.
+
+    Layered logic:
+      1. HARD blocklist keyword present -> SKIP.
+      2. Positional 'group X manager/engineer/architect' or 'partner X ...'
+         -> SKIP as 'group'/'partner' (the seniority-prefix case).
+      3. 'manager' present AND no target-role substring -> SKIP as 'manager'.
+      4. Otherwise KEEP.
+    """
+    if not title:
+        return None
+    for kw, rx in _HARD_RE:
+        if rx.search(title):
+            return kw
+    m = _POSITIONAL_PREFIX_RE.search(title)
+    if m:
+        return "group"
+    m = _POSITIONAL_ABBREV_RE.search(title)
+    if m:
+        return "group"
+    if _MANAGER_RE.search(title) and not title_has_target_role(title):
+        return "manager"
+    return None
+
+
+# --- Deterministic gate 2: JD-stated YOE >= threshold -----------------------
+_YOE_PATTERNS = [
+    # SIMPLIFIED 2026-05-25 (Cyrus): just find "N years ... experience" within
+    # a window. Don't enumerate adjectives (overall/relevant/professional/etc.)
+    # Take MAX across all matches.
+    #   "5+ years of relevant experience" -> 5
+    #   "4 years overall experience" -> 4
+    #   "3+ years of hands-on cloud experience" -> 3
+    #   "Minimum 5 yrs experience in..." -> 5
+    re.compile(
+        r"\b(\d{1,2})\+?\s*(?:years?|yrs?)\b[^.\n\r]{0,80}?\bexperience\b",
+        re.I,
+    ),
+    # "X+ years" inside a bracketed range "3-5 years" / "4 to 7 yrs" — take upper
+    re.compile(
+        r"\b(\d{1,2})\s*(?:-|–|to)\s*(\d{1,2})\+?\s*(?:years?|yrs?)\b",
+        re.I,
+    ),
+    # "YOE: 5" / "YOE = 6"
+    re.compile(r"\bYOE\s*[:=>]?\s*(\d{1,2})\b", re.I),
+    # "minimum/at least/requires N+ years" — belt-and-suspenders for the
+    # case where 'experience' doesn't follow within 80 chars
+    re.compile(
+        r"\b(?:minimum|at\s+least|requires?|require)\s+(?:of\s+)?(\d{1,2})\+?\s*(?:years?|yrs?)\b",
+        re.I,
+    ),
+]
+
+
+def extract_yoe_from_jd_text(jd: Optional[str]) -> Optional[int]:
+    """Scan JD body for YOE statements, return MAX integer or None.
+
+    Numbers > 25 are ignored as junk (e.g. "25 years of innovation", phone
+    numbers, dates). The 3-5 year range pattern returns the upper bound.
+    """
+    if not jd:
+        return None
+    values: list[int] = []
+    for rx in _YOE_PATTERNS:
+        for m in rx.finditer(jd):
+            groups = [g for g in m.groups() if g]
+            for g in groups:
+                try:
+                    n = int(g)
+                except (TypeError, ValueError):
+                    continue
+                if 0 < n < 25:
+                    values.append(n)
+    if not values:
+        return None
+    return max(values)
+
+
+# --- LLM-grounded YOE: extract all "<N> years" mentions with their local
+# context, hand them to the LLM, and let the LLM say which (if any) is the
+# actual candidate-experience requirement. Avoids the regex false-positive
+# on company-age/product-metric/team-tenure numbers.
+_YEARS_MENTION_RE = re.compile(
+    r"\b(\d{1,2})\+?\s*(?:-|–|to)?\s*\d{0,2}\+?\s*(?:years?|yrs?)\b",
+    re.I,
+)
+
+
+def extract_yoe_candidate_mentions(jd: Optional[str], *, window: int = 120,
+                                    max_mentions: int = 20) -> list[str]:
+    """Find every "<N> years/yrs" mention in the JD with surrounding context.
+
+    Returns a list of trimmed snippets like:
+      ["... requires 5+ years of relevant experience in distributed systems ...",
+       "... company was founded 3 years ago by ex-Google engineers ..."]
+
+    Each snippet has up to `window` chars on either side of the matched
+    "<N> years" phrase, with linebreaks normalized. The LLM uses these to
+    decide which (if any) is a candidate-experience requirement.
+    """
+    if not jd:
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+    for m in _YEARS_MENTION_RE.finditer(jd):
+        # Skip junk values
+        try:
+            n = int(m.group(1))
+        except Exception:
+            continue
+        if not (0 < n < 25):
+            continue
+        start = max(0, m.start() - window)
+        end = min(len(jd), m.end() + window)
+        snip = jd[start:end].strip()
+        snip = re.sub(r"\s+", " ", snip)
+        # Mark prefix/suffix ellipsis if truncated
+        if start > 0:
+            snip = "… " + snip
+        if end < len(jd):
+            snip = snip + " …"
+        if snip in seen:
+            continue
+        seen.add(snip)
+        out.append(snip)
+        if len(out) >= max_mentions:
+            break
+    return out
+
+
+# --- Deterministic gate 6: non-US location ----------------------------------
+# Strategy: look for strong non-US signals in the JD body or the stored
+# location field. We allowlist any US-state-or-city signal so "global team"
+# or "occasional travel to London" alongside "San Francisco" doesn't trigger.
+NON_US_CITIES = [
+    # Europe
+    "london", "manchester", "edinburgh", "glasgow", "dublin", "belfast",
+    "paris", "lyon", "berlin", "munich", "hamburg", "frankfurt", "cologne",
+    "amsterdam", "rotterdam", "utrecht", "the hague", "brussels", "antwerp",
+    "copenhagen", "stockholm", "oslo", "helsinki", "reykjavik",
+    "madrid", "barcelona", "lisbon", "porto", "rome", "milan", "turin",
+    "zurich", "geneva", "vienna", "prague", "warsaw", "krakow", "budapest",
+    "athens", "istanbul", "bucharest", "sofia",
+    # APAC
+    "tokyo", "osaka", "kyoto", "yokohama",
+    "seoul", "busan",
+    "beijing", "shanghai", "shenzhen", "guangzhou", "hangzhou", "chengdu",
+    "hong kong", "taipei", "singapore",
+    "bangalore", "bengaluru", "hyderabad", "mumbai", "delhi", "new delhi",
+    "chennai", "pune", "gurgaon", "gurugram", "noida", "kolkata", "ahmedabad",
+    "jakarta", "manila", "bangkok", "kuala lumpur", "ho chi minh", "hanoi",
+    "sydney", "melbourne", "brisbane", "perth", "auckland", "wellington",
+    # Americas (non-US)
+    "toronto", "vancouver", "montreal", "ottawa", "calgary", "edmonton",
+    "mexico city", "guadalajara", "monterrey",
+    "sao paulo", "são paulo", "rio de janeiro", "brasilia", "buenos aires",
+    "santiago", "bogota", "bogotá", "lima",
+    # MENA / Africa
+    "dubai", "abu dhabi", "doha", "riyadh", "tel aviv", "cairo",
+    "nairobi", "lagos", "johannesburg", "cape town",
+]
+NON_US_COUNTRIES = [
+    "united kingdom", "uk", "england", "scotland", "wales", "ireland",
+    "germany", "france", "netherlands", "belgium", "spain", "portugal",
+    "italy", "switzerland", "austria", "poland", "czech republic", "czechia",
+    "sweden", "norway", "denmark", "finland", "iceland",
+    "japan", "south korea", "china", "taiwan", "hong kong", "singapore",
+    "india", "indonesia", "philippines", "thailand", "malaysia", "vietnam",
+    "australia", "new zealand",
+    "canada", "mexico", "brazil", "argentina", "chile", "colombia", "peru",
+    "uae", "united arab emirates", "qatar", "saudi arabia", "israel", "egypt",
+    "kenya", "nigeria", "south africa",
+]
+# Strong non-US-only signals that ALONE should trigger skip.
+NON_US_EXCLUSIVE_PATTERNS = [
+    re.compile(r"\bremote\s*[-–—,:\s]\s*(?:uk|emea|europe|apac|india|canada(?:\s+only)?|eu(?:\s+only)?)\b", re.I),
+    re.compile(r"\b(?:uk|eu|emea|apac|india|canada)\s+only\b", re.I),
+    re.compile(r"\bbased\s+in\s+(?:london|berlin|paris|toronto|bangalore|bengaluru|hyderabad|mumbai|delhi|dublin|amsterdam|singapore|sydney|tokyo|tel\s+aviv|dubai)\b", re.I),
+    re.compile(r"\bmust\s+(?:be\s+)?(?:located|reside|based)\s+in\s+(?:the\s+)?(?:uk|eu|emea|apac|india|canada|europe|asia)\b", re.I),
+]
+# US-presence signals — if any of these appear, we abstain (treat as US).
+US_ALLOW_PATTERNS = [
+    re.compile(r"\b(?:usa?|united\s+states|u\.s\.|u\.s\.a\.)\b", re.I),
+    re.compile(
+        r"\b(?:san\s+francisco|sf\s+bay\s+area|silicon\s+valley|new\s+york|nyc|brooklyn|manhattan|seattle|austin|boston|chicago|denver|portland|los\s+angeles|la\b|san\s+diego|san\s+jose|sunnyvale|mountain\s+view|palo\s+alto|cupertino|menlo\s+park|redwood\s+city|oakland|berkeley|atlanta|miami|washington\s+dc|washington,?\s+d\.c\.|dallas|houston|philadelphia|phoenix|salt\s+lake|nashville|minneapolis|raleigh|durham|pittsburgh|detroit|cleveland|charlotte|tampa|orlando|kansas\s+city|st\.?\s+louis|cincinnati|columbus|indianapolis|milwaukee|las\s+vegas|reno|sacramento|fresno|long\s+beach|anaheim|santa\s+monica|santa\s+clara|fremont|hayward|arlington|alexandria|bethesda|reston|herndon|tysons|mclean|cambridge|somerville|providence|new\s+haven|hartford|stamford|jersey\s+city|newark|princeton)\b",
+        re.I,
+    ),
+    re.compile(
+        # US state names + 2-letter abbreviations (with word-boundary)
+        r"\b(?:alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new\s+hampshire|new\s+jersey|new\s+mexico|north\s+carolina|north\s+dakota|ohio|oklahoma|oregon|pennsylvania|rhode\s+island|south\s+carolina|south\s+dakota|tennessee|texas|utah|vermont|virginia|washington\s+state|west\s+virginia|wisconsin|wyoming)\b",
+        re.I,
+    ),
+    re.compile(
+        r"(?:^|[,\s])(?:AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)(?:[,\s]|$)"
+    ),
+    re.compile(r"\bremote\s*[-–—,:\s]\s*us(?:a)?\b", re.I),
+    re.compile(r"\bUS\s+remote\b", re.I),
+    re.compile(r"\b(?:us|usa)\s*(?:only|based)\b", re.I),
+]
+
+_NON_US_CITY_RE = re.compile(
+    r"\b(?:" + "|".join(re.escape(c) for c in NON_US_CITIES) + r")\b", re.I
+)
+_NON_US_COUNTRY_RE = re.compile(
+    r"\b(?:" + "|".join(re.escape(c) for c in NON_US_COUNTRIES) + r")\b", re.I
+)
+
+
+def _has_us_signal(text: str) -> bool:
+    return any(rx.search(text) for rx in US_ALLOW_PATTERNS)
+
+
+def detect_non_us_location(jd: Optional[str], location_field: Optional[str]) -> Optional[str]:
+    """Return a short reason string if the role is clearly non-US, else None.
+
+    Conservative: requires a strong exclusive signal OR a non-US city/country
+    in the location field with no offsetting US signal in either field.
+    """
+    loc = (location_field or "").strip()
+    # Only scan the first ~3000 chars of JD for location signals (header/intro
+    # is where they live; deep body talk about "the London office" shouldn't
+    # trigger a skip).
+    jd_head = (jd or "")[:3000]
+
+    combined_for_us = f"{loc}\n{jd_head}"
+    us_signal = _has_us_signal(combined_for_us)
+
+    # Strong exclusive non-US patterns trump everything.
+    for rx in NON_US_EXCLUSIVE_PATTERNS:
+        m = rx.search(loc) or rx.search(jd_head)
+        if m:
+            return f"non-us:{m.group(0).strip()[:40]}"
+
+    # Location field non-US city/country wins if no offsetting US signal in loc.
+    if loc:
+        loc_has_us = _has_us_signal(loc)
+        if not loc_has_us:
+            m = _NON_US_CITY_RE.search(loc) or _NON_US_COUNTRY_RE.search(loc)
+            if m:
+                return f"non-us-loc:{m.group(0).strip()[:40]}"
+
+    # If JD opens with a non-US city/country AND nothing US appears anywhere,
+    # treat as non-US. This is the conservative fallback.
+    if not us_signal and jd_head:
+        m = _NON_US_CITY_RE.search(jd_head) or _NON_US_COUNTRY_RE.search(jd_head)
+        if m:
+            return f"non-us-jd:{m.group(0).strip()[:40]}"
+
+    return None
+
+
+def _merge_flag(existing_flags: Optional[str], new_flag: str) -> str:
+    """Add new_flag to a flags string, preserving order and de-duping."""
+    existing = (existing_flags or "").strip()
+    parts = [f for f in re.split(r"[;,\s]+", existing) if f]
+    if new_flag not in parts:
+        parts.append(new_flag)
+    return ";".join(parts)
+
+
+def _merge_flags(existing_flags: Optional[str], new_flags: list[str]) -> str:
+    out = existing_flags
+    for f in new_flags:
+        out = _merge_flag(out, f)
+    return out or ""
+
+
+def maybe_skip(con: sqlite3.Connection, row: sqlite3.Row, cls: dict,
+               jd_text: Optional[str], *, dry_run: bool) -> Optional[dict]:
+    """Apply DETERMINISTIC skip gates. Returns dict describing the flip, or None.
+
+    Gates (any match -> skip):
+      1. Title-keyword blocklist -> 'senior-title'
+      2. JD-stated YOE >= YOE_THRESHOLD -> 'yoe-threshold'
+      3. LLM is_people_manager == true -> 'people-mgr'
+      4. LLM seniority in {director+, manager} -> 'senior-llm'
+      5. Non-US location signal -> 'non-us'
+
+    fit_score is INTENTIONALLY NOT a skip gate (policy 2026-05-25).
+    """
+    if row["applied_by"]:
+        return None  # never touch applied rows
+    if row["status"] and row["status"] != "":
+        return None  # already has a status (skip, etc.) — leave alone
+
+    new_flags: list[str] = []
+    reasons: list[str] = []
+    jd_yoe: Optional[int] = None
+
+    # Gate 1: title-keyword blocklist
+    title_kw = extract_title_skip(row["role"])
+    if title_kw:
+        new_flags.append("senior-title")
+        reasons.append(f"title:{title_kw}")
+
+    # Gate 2: YOE — trust the LLM's grounded yoe_required exclusively.
+    # The LLM sees pre-extracted candidate mentions and is instructed to ignore
+    # company-age/product-metric/team-tenure numbers and to take MINIMUM when
+    # a JD lists a range. If LLM returns null, treat as "no firm requirement"
+    # and don't skip on YOE. Regex extraction is kept only for visibility/
+    # backfill (see write side below), not as a skip gate.
+    llm_yoe = cls.get("yoe_required")
+    jd_yoe = llm_yoe  # for return record + flip log
+    if llm_yoe is not None and llm_yoe >= YOE_THRESHOLD:
+        new_flags.append("yoe-threshold")
+        reasons.append(f"llm-yoe:{llm_yoe}")
+
+    # Gate 3: people-manager (LLM)
+    if cls.get("is_people_manager"):
+        new_flags.append("people-mgr")
+        reasons.append("llm:people-mgr")
+
+    # Gate 4: senior seniority (LLM)
+    if cls.get("seniority") in SKIP_SENIORITY:
+        new_flags.append("senior-llm")
+        reasons.append(f"llm-seniority:{cls['seniority']}")
+
+    # Gate 5: non-US location
+    try:
+        loc_field = row["loc"]
+    except (IndexError, KeyError):
+        loc_field = None
+    non_us = detect_non_us_location(jd_text, loc_field)
+    if non_us:
+        new_flags.append("non-us")
+        reasons.append(non_us)
+
+    if not new_flags:
+        return None
+
+    flip = {
+        "id": row["id"],
+        "company": row["company"],
+        "role": row["role"],
+        "new_flags": new_flags,
+        "reasons": reasons,
+        "jd_yoe": jd_yoe,
+    }
+    if dry_run:
+        return flip
+
+    merged = _merge_flags(row["flags"], new_flags)
+    # If we extracted a stronger JD YOE than the LLM's, store it for visibility.
+    if jd_yoe is not None:
+        existing_llm_yoe = cls.get("yoe_required")
+        if existing_llm_yoe is None or jd_yoe > existing_llm_yoe:
+            con.execute(
+                "UPDATE roles SET llm_yoe_required = ? WHERE id = ?",
+                (jd_yoe, row["id"]),
+            )
+    con.execute(
+        "UPDATE roles SET status = 'skip', flags = ? WHERE id = ?",
+        (merged, row["id"]),
+    )
+    return flip
+
+
+def write_classification(con: sqlite3.Connection, role_id: int, cls: dict) -> None:
+    con.execute(
+        "UPDATE roles SET "
+        "llm_classified_at = ?, llm_yoe_required = ?, llm_is_people_manager = ?, "
+        "llm_seniority = ?, llm_fit_score = ?, llm_reason = ? "
+        "WHERE id = ?",
+        (
+            datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            cls["yoe_required"],
+            1 if cls["is_people_manager"] else 0,
+            cls["seniority"],
+            cls["fit_score"],
+            cls["reason"],
+            role_id,
+        ),
+    )
+
+
+# ---------------------------------------------------------------------------
+# Driver
+# ---------------------------------------------------------------------------
+
+def backup_db_once() -> Optional[Path]:
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
+    bak = DB.with_suffix(f".db.bak.{stamp}-llm-run")
+    if not bak.exists():
+        shutil.copy2(DB, bak)
+        return bak
+    return None
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--role-id", type=int, default=None)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--force", action="store_true",
+                    help="re-classify even if llm_classified_at is set")
+    ap.add_argument("--sleep", type=float, default=0.3,
+                    help="seconds between model calls (rate-limit politeness)")
+    args = ap.parse_args()
+
+    if not DB.exists():
+        print(f"ERR tracker.db missing: {DB}", file=sys.stderr)
+        return 2
+
+    con = sqlite3.connect(DB)
+    # Confirm migration ran
+    cols = {r[1] for r in con.execute("PRAGMA table_info(roles)").fetchall()}
+    if "llm_classified_at" not in cols:
+        print("ERR run migrate_llm_classifier_columns.py first", file=sys.stderr)
+        return 2
+
+    rows = fetch_target_rows(con, limit=args.limit, role_id=args.role_id, force=args.force)
+    print(f"[llm-classifier] {len(rows)} rows to process (dry_run={args.dry_run})")
+    if not rows:
+        print("[llm-classifier] nothing to do.")
+        return 0
+
+    if not args.dry_run:
+        bak = backup_db_once()
+        if bak:
+            print(f"[llm-classifier] backed up DB -> {bak.name}")
+
+    classified = 0
+    flipped = 0
+    errors: list[dict] = []
+    t0 = time.time()
+
+    for i, row in enumerate(rows, 1):
+        rid = row["id"]
+        url = row["jd_url"] or row["app_url"]
+        company = row["company"] or ""
+        title = row["role"] or ""
+        try:
+            ats, jd = get_cached_jd(row["source_key"], url)
+            jd_trimmed = jd[:JD_MAX_CHARS]
+            # Build YOE-mention candidates for LLM grounding
+            yoe_mentions = extract_yoe_candidate_mentions(jd_trimmed)
+            if yoe_mentions:
+                yoe_block = "\n".join(f"- {s}" for s in yoe_mentions)
+            else:
+                yoe_block = "(no year/yrs mentions found in JD)"
+            prompt = PROMPT_TEMPLATE.format(
+                title=title[:200], company=company[:100], jd=jd_trimmed,
+                yoe_candidates=yoe_block,
+            )
+            parsed, _env = call_model(prompt)
+            cls = normalize_classification(parsed)
+        except subprocess.TimeoutExpired as e:
+            errors.append({
+                "id": rid, "company": company, "title": title,
+                "stage": "model", "error": "timeout",
+            })
+            print(f"  [{i}/{len(rows)}] id={rid} ERR timeout")
+            continue
+        except Exception as e:
+            errors.append({
+                "id": rid, "company": company, "title": title,
+                "url": url, "stage": "fetch_or_model",
+                "error": str(e)[:500],
+            })
+            print(f"  [{i}/{len(rows)}] id={rid} ERR {type(e).__name__}: {str(e)[:120]}")
+            continue
+
+        if args.dry_run:
+            flip = maybe_skip(con, row, cls, jd, dry_run=True)
+            tag = f"[SKIP {'+'.join(flip['new_flags'])}]" if flip else ""
+            print(f"  [{i}/{len(rows)}] id={rid} {company[:20]:20s} | "
+                  f"yoe={cls['yoe_required']} mgr={cls['is_people_manager']} "
+                  f"sen={cls['seniority']} fit={cls['fit_score']} {tag}")
+        else:
+            write_classification(con, rid, cls)
+            flip = maybe_skip(con, row, cls, jd, dry_run=False)
+            tag = f" [FLIPPED→skip {'+'.join(flip['new_flags'])}]" if flip else ""
+            if flip:
+                flipped += 1
+            con.commit()
+            print(f"  [{i}/{len(rows)}] id={rid} {company[:20]:20s} | "
+                  f"yoe={cls['yoe_required']} mgr={cls['is_people_manager']} "
+                  f"sen={cls['seniority']} fit={cls['fit_score']}{tag}")
+        classified += 1
+        if args.sleep > 0:
+            time.sleep(args.sleep)
+
+    if errors:
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+        err_path = ERR_DIR / f"_llm-classifier-errors-{stamp}.json"
+        ERR_DIR.mkdir(exist_ok=True)
+        err_path.write_text(json.dumps(errors, indent=2))
+        print(f"[llm-classifier] wrote {len(errors)} errors -> {err_path}")
+
+    dt = time.time() - t0
+    print(f"[llm-classifier] DONE classified={classified} flipped_to_skip={flipped} "
+          f"errors={len(errors)} elapsed={dt:.0f}s")
+    # One-line summary for cron parsing:
+    print(f"LLM classifier: {classified} classified, {flipped} flagged as overreach, {len(errors)} errors.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

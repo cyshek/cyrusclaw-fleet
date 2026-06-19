@@ -1,0 +1,6 @@
+        _wa_now = _last_v.get('workauth') or {}
+        if _wa_radio_specs and isinstance(_wa_now, dict) and _wa_now.get('checked') is False:
+            _recommit_wa_radios()
+            _consec_ok = 0
+            page.wait_for_timeout(250)
+            continue

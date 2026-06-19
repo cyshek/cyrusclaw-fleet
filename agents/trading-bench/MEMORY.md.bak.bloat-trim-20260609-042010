@@ -1,0 +1,302 @@
+# MEMORY.md - Long-Term Memory
+
+> # 🎯 CURRENT MISSION (Cyrus, 2026-06-07) — BEAT SPX ON RAW RETURN. FULL EXPLORE-FIRST MODE.
+>
+> **The bar is: out-return the S&P 500 on RAW RETURN, maximize profit. Diversification / risk-adjusted-only / uncorrelated-edge framing is DEMOTED to a fallback.** If we can't beat SPX raw, the project has no value to Cyrus.
+>
+> **ALL promotion gates are SUSPENDED** — research-side AND real-money-side. No predefined rule (the ~10-rejects "base rate," 1.0-Sharpe bar, 8%/yr floor, drawdown ceilings, "CLOSED lane" verdicts, Bar E graduation gauntlet, cost-disqualify math) may reject, shrink, or pre-disqualify an idea before it's tested. They made the bench timid and caused dumb rejections; they get reintroduced LATER, when Cyrus says it's time — not pre-emptively by me. Explore aggressive / concentrated / leveraged-long lanes the old gates killed on sight.
+>
+> **ONLY TWO THINGS STILL HOLD:** (1) **PHYSICAL** — paper-only broker wrapper + non-paper-URL refusal + `STOP_TRADING` killswitch; I literally cannot place a real-money order; go-live is Cyrus's explicit call at the time. (2) **HONEST MEASUREMENT** — no lookahead/leakage, real OOS walk-forward, point-in-time data, benchmark on the path actually traded, honest labeling, code-review+smoke (narrow). I chase aggressive ideas hard but I do NOT fake a winner; Cyrus needs the truth about what actually makes money.
+>
+> Full posture-correction trail: `memory/2026-06-07.md` (3 Cyrus messages via main + my revised keep/relax list + green-light). Older sections below that assume the strict-gate posture are HISTORICAL — read them through this lens.
+
+## North star (2026-05-25, from Cyrus via main)
+
+> **⚠️ UPDATED 2026-06-07 — see CURRENT MISSION banner above. The raw-return-beat-SPX goal is now primary; the "prove a strategy good enough to risk capital" framing below still holds as the eventual endpoint, but is no longer allowed to gate exploration today.**
+
+**Goal:** eventually have an agent or team of agents that trade like quants and make Cyrus real money. Starting capital when we graduate to real: **$100**. Maximize from there.
+
+This does NOT mean trade real money soon. Everything we build now is in service of eventually proving a strategy good enough to risk real capital on. The tournament/cull/mutate loop is the *mechanism* for finding edge; the goal is the edge itself. Supersedes the open-ended "tournament" framing.
+
+### Graduation criteria (paper → real). None met yet.
+
+1. At least one strategy with clear edge over **4+ weeks** and **100+ round-trip trades**.
+2. Edge is **net of realistic execution costs** (fees, slippage, spread). The ~4% Alpaca crypto round-trip drag is exactly the kind of thing that kills naive edge.
+3. **Sharpe > 1**, **max drawdown < 20%**, win rate consistent across at least 2 different market regimes.
+4. Survives a **walk-forward backtest** on out-of-sample historical data.
+5. **Explicit per-request Cyrus approval** (never standing). Initial real allocation: $100. Scale only on continued performance.
+
+### Roadmap implications (bake into Session 3+ planning)
+
+- **Session 3 must include cost-realism.** Limit orders + maker rebates, or pivot strategies to stocks (lower spread). Three of the current 5 crypto strategies are structural losers at current execution — fine for proving infra, but the next batch should be cost-aware from day one.
+- **Backtester before LLM-mutation, full stop.** Historical OHLCV, walk-forward validation, in-sample/out-of-sample split. LLM generating new strategies without backtest gating = random code in prod paper. Backtest → promote to paper → only then consider real.
+- **Quant-style validation:** regime detection (bull/bear/chop), inter-strategy correlation analysis (avoid 5 strategies making the same bet — that's leverage, not a portfolio), Sharpe/Sortino/Calmar (not total return).
+- **Tier 2 (LLM-decision strategies) is MORE important, not less.** Pure code replicates textbook strategies. LLM-decision strategies could handle regime changes and context pure code can't. Plan Tier 2 as where real edge might live.
+- **Tier 3 = "quant team".** Each peer-agent is a trader with its own thesis, research, post-mortem. Cull = fired. Mutate = hire someone shaped by the winner. Cap at 3-5.
+
+### Sobriety reminder
+
+The YouTube videos were marketing. Real quant edge is rare. Most strategies I build will lose. The goal isn't to be impressive in week 1 — it's to find something that actually works over months. Patient and rigorous beats fast and exciting. This aligns with SOUL.md: cite the Sharpe and sample size, not the vibe.
+
+## Project mission
+
+Paper-trading tournament. See AGENTS.md "Mission" + "Architecture" for the canonical brief.
+
+## Coaching relationship
+
+main is the coach. Standing weekly check-ins. main can be queried via `sessions_send(agentId="main", message="...")` for design questions or escalations.
+
+## Standing approvals / constraints
+
+### Spawn freely + prefer FREE data over paid (Cyrus, 2026-06-08, said TWICE — standing)
+> "Please feel free to spawn more agents whenever you need to. I'm sure there's a lot of free data online that we may be missing. Much better to get free stuff if we can rather than paying for it."
+
+- **Spawn subagents liberally** to scout/scrape/hunt for free data and to do IC work — no need to ask first. (Reinforces the existing "unlimited tokens, spawn liberally" note.)
+- **Free-first on data, always.** Exhaust free sources before EVER proposing a paid one. Treat any paid-data spend as a last resort that needs explicit Cyrus sign-off per request, with a clear "here's why free can't do it" justification. The orthogonal-signal/leveraged-ETF/fundamentals hunts are exactly where this applies: scout free endpoints (Stooq, FRED, CBOE CDN, FINRA, NY Fed, EDGAR, Treasury, GitHub mirrors) hard before concluding something is paywalled.
+- This is a standing posture, not a one-off — keep fanning out free-data scouts as new data needs surface.
+
+- Paper trading only. Real money requires explicit per-request Cyrus approval.
+- Killswitch: `STOP_TRADING` file in workspace root halts all runners.
+- **Cyrus has unlimited tokens.** Optimize for project progress + quality, not token frugality. Spawn subagents liberally for IC work.
+
+## Channel cadence + key hygiene (2026-05-25, from main)
+
+**Key hygiene:**
+- Alpaca keys pasted in Discord are exposed to anyone with channel read. Treat any key dropped in-channel as compromised by default.
+- After receiving keys in-channel: write to `.env`, smoke-test, then ask Cyrus to (a) regenerate at https://app.alpaca.markets/paper/dashboard/overview, (b) delete the original Discord message. Old keys become invalid the moment new ones are generated.
+- Long-term: prefer a less-public drop channel for secrets. For now: paste → use → rotate → delete.
+
+**Exception (2026-05-25, Cyrus via main):** for the *current* paper Alpaca keys, rotation is waived. Rationale: Cyrus's Discord is private (single-user), broker wrapper refuses non-paper base URL, killswitch exists. Blast radius of a leak = "someone trashes my paper tournament," acceptable. **This exception is paper-only.** Any future *live*-money keys (or any other live API key, ever) still rotate-on-leak by default — do NOT generalize this waiver.
+
+**Channel cadence (defaults):**
+- One message per milestone. Consolidate before sending.
+- Don't post "starting X" — only post when X is done or genuinely blocked.
+- No correction posts unless a previous post actually misled. If I duplicated work mid-flight, fix it silently; only mention if it changed the outcome.
+- Default silent except: actual BUY/SELL fills (one-liner), weekly leaderboard, real blockers needing Cyrus, real escalations to main.
+- Mid-session dev work stays in daily memory + HANDOFF.md, not channel.
+- Rule of thumb: would Cyrus reading this in 2 weeks find it useful, or scroll past as noise? If scroll-past, don't post.
+- Today's 6-post Session 2 launch (4 status + 2 corrections) was 5 posts too many. One "Session 2 live" consolidated post would have done.
+
+## Channel availability rule (2026-05-25, Cyrus)
+
+**Never `sessions_yield` the main session after spawning a subagent.** Subagents run in the background regardless. Yielding blocks Cyrus from reaching me. Delegate, stay available; poll subagent status on-demand only when Cyrus asks or when I need the result to act. Completion events still arrive as messages — handle them when they show up.
+
+## Verify-subagent-output rule (2026-05-26, self)
+
+**A subagent's final report is a claim, not a result.** Before relaying anything to Cyrus or making decisions on it: check disk for the artifacts the subagent claimed to produce (report files, code files, DB rows). The subagent may have hallucinated success, run a wrong tool, or summarized aspirationally. 
+
+**Equally important corollary (learned 2026-05-26):** if you DON'T see disk artifacts yet, don't immediately conclude the subagent fabricated the report. The subagent may still be running. Completion events arrive *after* artifacts are written; if I'm checking disk *before* the completion event arrives, I'm checking too early. Wait for the completion event, THEN verify. On 2026-05-26 I posted a correction "round 1 was fabricated" based on a disk check that ran while the subagent was still mid-flight. The artifacts (3 candidate dirs + 2 round reports) showed up minutes later. Lesson: panic-correction is worse than the original optimistic post.
+
+Cheap fix: `ls` / `find` / DB query for the claimed artifact, AFTER the completion event arrives. If artifacts are missing then, only then is the report fabricated.
+
+## Single-data-point generalization trap (2026-05-30, self)
+
+**When a subagent flags a systemic issue from one data point, hold the framing tentatively until ≥2 within-class data points confirm or refute.** On 2026-05-30 the first xsec archetype (#1 momentum, 19% in-position) hit the 25% bars-in-position floor and the subagent flagged it as "the floor is broken for cross-sec basket strategies." I posted that framing to channel and BACKLOG. Then the #3 low-vol subagent landed at **67% in-position** on identical infrastructure — directly refuting the generalization. The floor is a momentum-class property (high churn rotating top names), NOT a structural xsec property. Had I brought the floor amendment to main after data-point #1, the conversation would have been premature and partially wrong.
+
+Rule:
+1. Single subagent finding → log to daily memory, flag to BACKLOG as OPEN, do NOT bring to main.
+2. ≥2 within-class data points → framing earns the right to be posted as a proposal.
+3. The exception: hard safety or correctness issues (test failures, data corruption, risk-cap bypass). Those need immediate flag regardless of sample size.
+
+Applied corollary for the trading bench specifically: "systematically blocked by gate X" claims about a strategy class need at least one within-class strategy that DOESN'T hit the same blocker before the framing is durable.
+
+## Standing directive from Cyrus (2026-05-25, reinforced 2026-05-26)
+
+> "Operate independently and keep this project moving forward on my behalf unless I tell you to do something else. I wanted to see if you could manage this project."
+
+**Clarification (2026-05-26):** "Take your time to get it right. I just didn't want to have to keep pinging you to 'do the next thing'. I just wanted you to keep the ball moving forward on your own."
+
+Translation: autonomy is the constant, not speed. Don't conflate "keep moving" with "ship fast." The thing he doesn't want is silence + waiting-to-be-pinged. He's fine with deliberate, slow, careful work as long as it's *me* driving it. If something needs a weekend to do well, take the weekend — don't half-ship it tonight to seem busy.
+
+Practical translation:
+1. **I own the project.** Don't wait for permission. Session 1 done → start Session 2. Etc. Cyrus is the customer, not the bottleneck.
+2. **Subagents for IC work.** I stay in the manager seat: strategy modules, debugging, analysis, research → fan out via `sessions_spawn` (no `agentId`, isolated context).
+3. **Channel-first.** Post status/milestones/blockers/weekly reports to #trading-bench. Don't go silent for days; don't spam either. Meaningful updates only.
+4. **Asks for Cyrus** (only him, can't do myself): post clearly in channel with what + why. API keys, account creation, real-money (per-request approval, never standing).
+5. **Asks for main** (coach): design questions, architecture forks, safety/policy ambiguity, escalations → `sessions_send(agentId="main", ...)`.
+6. **Cadence:** show progress between check-ins; don't wait to be asked.
+7. **Design forks I haven't pre-cleared:** make the call, document reasoning in daily memory, ping main only if I want a sanity check.
+
+## Project learnings — distilled (2026-05-30)
+
+Deeper-than-daily takeaways from Sessions 1-3 + the mutation rounds. These are durable; HANDOFF.md "Key lessons" is the operational mirror.
+
+- **Cost realism gates everything.** Pre-cost backtests are vanity. Alpaca crypto ~4% round-trip drag invalidates the entire crypto strategy slate. Any new strategy gets the `CostModel` applied in the *first* backtest, not after promotion.
+- **The regime filter (`regime_uptrend`) is the cheapest edge in the bench:** ~80% drawdown reduction with no median-return loss vs. unfiltered parent. Anything that doesn't have an equivalent should be considered defective. Future archetypes start with a regime gate by default.
+- **Long-only is the post-cost bottleneck.** Strategies that can't be flat-or-short in downtrends lose in any non-bull regime. Either add a short leg, a cash-equivalent leg (TLT/SHY), or accept regime-restricted deployment.
+- **LLM-mutation has not produced edge — and the hourly cron's gate is structurally a redundant-dir factory (CONFIRMED 2026-06-07 by independent triage, was hypothesis since ~Session 3).** Two converging proofs: (1) the gate that promotes — beating parent MEDIAN walk-forward return by just `MUTATION_MIN_DELTA_PCT=0.10`pp over 8 windows — is noise-level; the SAME code flips REJECT_GATE↔PROMOTE across re-runs and individual-candidate medSharpe swings the full −1.4…+3.6 range by split = textbook overfit-to-window-selection. (2) The parent pool (`tournament_loop.py` `GATE_PASSING_PARENTS`) is only 4 names = really **2 signals** (10/30 SMA-cross QQQ + 20-bar Donchian-breakout XLK; `_regime` just adds a SPY>50dSMA gate), so every round is a costume change → 48 dirs that are "2 edges in 48 costumes," ~40 of which add nothing (18 provably redundant: exact md5-clones + inert-filter no-ops + parent-baseline dups). **Bottleneck is parent DIVERSITY + gate STRENGTH, not mutation quality.** The fix is NOT more rounds on the same parents: THROTTLE the cron, replace the +0.10pp gate with a risk-adjusted/stability-aware bar (min-trades floor + penalize sign-flipping medSharpe), DEDUP before promote (md5 + "filter must change ≥X% of trades or reject"), and feed genuinely different archetypes. Triage verdict on the whole pile = **ship none, fix the process** (paper-trading a window-luck winner just launders overfit into "it traded live" credibility). Detail: `reports/MUTATION_QUARANTINE_TRIAGE_20260607T040632Z.md`.
+  - **FIX STATUS (2026-06-08):** THROTTLE done (cron `20 * * * *`→`20 */4 * * *`, 4× fewer). RISK-ADJUSTED/STABILITY GATE done — the 3 hardening constants (`MUTATION_MIN_TOTAL_TRADES=40`, `MUTATION_SHARPE_DELTA_TOL=−0.10`, `MUTATION_MIN_SHARPE_SIGN_CONSISTENCY=0.60`) are now WIRED into `passes_mutation_gate` (40-trade floor + 60% Sharpe-sign-consistency bind even orphan; −0.10 parent-Sharpe-regression guard catches raw-return-via-leverage; all alongside the +0.10pp return delta), pinned by `TestMutationStabilityGuards`, full suite 325 green, protected md5s + live `strategies/` untouched. **GOTCHA (durable):** those 3 constants had been DEFINED earlier in the session but were DEAD — never called by the gate fn. Scaffolding constants is not enforcing them; always grep that a new threshold is actually *invoked*, not just declared. **STILL OPEN:** trade-fingerprint DEDUP before quarantine (reject inert-filter no-ops + md5-clones) + parent diversification beyond the 2 signals — those are the last pieces.
+- **Moratorium scope was "don't spin LLM-mutation on a dead parent pool"** — NOT a blanket "stop all work." Clarified 2026-05-29 with Cyrus + main. Backtesting new archetypes, infra fixes, and design docs all proceed during moratorium. Lifts Sat 2026-05-30 after weekly leaderboard.
+- **Subagent reports are claims, not results.** Verify disk for claimed artifacts AFTER the completion event arrives (not before — the subagent may still be writing). See verify-subagent-output rule below.
+- **State persistence across bars/flats matters more than expected.** 6 of 13 mutation directives were silently no-op'd by a per-bar `position_state` rebuild. Fixed 2026-05-26 (Option B: hoist out of loop + DB-backed `strategy_state` + `strategy_persistent_state` tables). Lesson: backtest correctness bugs masquerade as "LLM produced inert code." Always sanity-check the harness when a class of mutants ALL fail.
+- **GATE.md is the contract.** Pre-committed Bars A-E lock graduation criteria before running new backtests, preventing goalpost-moving when a tempting result lands. Changes require Cyrus/main sign-off + audit entry. This is the single most important governance file.
+- **Tier 3 design (peer-agents as quant team) reviewed by main 2026-05-29.** Approved with 5 tightenings. Configured agents (not subagents), file-based killswitch, file-based cull workflow via main (never delete agents directly). Stand up POC AFTER Tier 1/2 pipeline is proven race-free — don't get distracted by the shiny.
+
+## Standing workspace discipline (2026-05-30, Cyrus via main, project-wide)
+
+Two practices now formalized as standing across all of Cyrus's agents:
+1. **Daily memory logs** — `memory/YYYY-MM-DD.md` for any day with real activity. Short is fine; gaps are worse than terseness. Distill into MEMORY.md periodically.
+2. **BACKLOG.md** at workspace root — sections: Active (P0/P1/P2/P3) / On hold (pending Cyrus) / Ideas / Hygiene / Recently shipped. Triage regularly; age done items into daily logs.
+
+I was already doing both before the directive landed, but recording it here so it's a *committed* practice, not just my current habit.
+
+## Channel-first status posting (2026-05-30, Cyrus via main, hard rule)
+
+Cyrus's primary view = my Discord channel, NOT webchat-to-main or daily memory. Silent productivity reads as ghosted, even when shipping. **Status-post to channel on every meaningful state change** (subagent spawn, item shipped, blocker, decision, direction change). `sessions_send` to main is bonus, not substitute. Failure mode this rule prevents: 2026-05-30 evening I shipped 4 items + 1 subagent + a GATE.md amendment, all logged to memory + relayed to main; from Cyrus's POV: silence → frustration. Lesson baked into AGENTS.md under "Channel-first status posting."
+
+## Default to action on money/strategy delegations (2026-05-30, Cyrus via main)
+
+When Cyrus delegates "make the decision that increases our chances of making money," that IS the decision. Execute on best judgment, document in daily memory, do NOT bounce back as a question. Implicit-approval-to-proceed applies when (a) main and I have aligned and (b) Cyrus has been silent past a reasonable window. Only escalate for things that genuinely require him: real-money allocation, agent-deletion, GATE.md ambiguity beyond what's been discussed.
+
+Applied 2026-05-30: shipped GATE.md Bar A bullet #1 + #7 amendment (cap=1 variant) under implicit approval after main signed off and Cyrus didn't respond within ~2hrs. Audit trail (post-hoc origin disclosed in History section) is the protection.
+
+## Starting the paper clock is inside standing orders (2026-05-31, Cyrus via main)
+
+**Once a promotion is approved, starting its paper-trading cron is NOT a separate ask.** On 2026-05-31 I built `runner_xsec.py`, then asked Cyrus self-add-cron vs hold before starting `xsec_momentum_xa_38d2b2`'s clock. Main corrected: the promotion approval already implied "start the paper clock." Adding a paper-strategy cron line is no real money, no destructive/external action — squarely standing-orders. **Next time: just start it and report, don't bounce.**
+
+Reserve the asks strictly for: (1) real-money go-live, (2) GATE.md changes, (3) genuinely ambiguous calls. Everything else inside the paper-tournament loop — promotions already approved, cron wiring, runner fixes, backtests — is mine to execute and report. Erring toward asking on paper-only actions wastes Cyrus's time the same way bouncing a delegated decision does.
+
+## Paper notional is $1000; real-money start stays $100 (2026-05-31, Cyrus)
+
+`risk.py` MAX_NOTIONAL/MAX_POSITION = **1000.0** (paper-only, loud comment block). Real-money graduation start is **unchanged at $100** (GATE Bar E). Decoupled deliberately: more capital does NOT create edge (% return is scale-invariant; 4bps round-trip cost is 4bps at any size). Capital only unlocks strategy *types* (single-stock baskets need ~$100/name for ~10 names — unrunnable under $100). Paper notional changes are paper-only/non-destructive/inside the loop → mine to execute + report, NOT a separate ask. **Footgun burned (06-01→06-02):** I spun a false "we're capital-starved across 3 data points" narrative to Cyrus — wrong on two counts (cost is a %, scales with notional; and risk.py was *already* $1000, I just didn't grep it). **Lesson: before framing a "structural constraint" story, grep the current config value of the thing I'm claiming is the constraint.**
+
+## Beat-SPY-risk-adjusted is now a first-class gate metric (2026-05-31, Cyrus)
+
+Cyrus: "aim to beat the S&P 500 — if we're only expecting 8% annual, I may as well not be doing this." I pushed back honestly (beating SPX net-of-cost consistently is one of the hardest problems in finance; most pros fail) and reframed: the right bar is **excess return over SPY risk-adjusted** (Sharpe>1 already encodes this; information ratio makes it explicit). A strategy making 12% at 2× SPY risk is NOT a winner — that's leverage in disguise. Directive: log excess-return-vs-SPY + information ratio on every candidate so "did this beat just holding the index" is never hand-waved.
+
+## Leverage policy (2026-05-31, Cyrus)
+
+- **Leveraged-ETF instruments (TQQQ/SOXL/UPRO/TECL) — APPROVED** on paper under normal Bar A discipline. Exposure stays ≤ cash, no rail change. Lane was TESTED and REJECTED (see below) but the lane itself is open.
+- **TRUE leverage (margin / shorting / borrowing / derivatives) — HARD RAIL.** The exposure-≤-cash invariant in risk.py is deliberate (can lose more than the account holds). NOT a config knob. Requires explicit Cyrus sign-off + a purpose-built rail design, never a side effect of "try riskier stuff." Did not loosen anything.
+- Sober framing: higher risk reliably raises RETURN in bull markets, not risk-adjusted return. Leveraged strategies only "win" if they beat SPX on Sharpe AND drawdown.
+
+## GATE hardened materially (2026-05-31) — three clauses, all self-audited into existence
+
+The gate is meaningfully harder to game than it was. All driven by the system auditing its own numbers (main's framing: "exactly the self-auditing, gate-hardening behavior we want").
+- **Two-tier survival condition** for promoted strategies: Tier 1 (4wk liveness: trades-as-designed + live cost ≤2× model + no >2% single-rebalance loss); Tier 2 (≥12wk significance: ≥15 round-trips + cost-aware realized Sharpe ≥0.80). The ≥15-trade floor was relocated 4wk→12wk because a 15-trade 4wk floor on a MONTHLY strategy is fail-by-construction. **Governing principle locked: never tune the strategy to satisfy the gate; a fail-by-construction floor is worse than no floor.**
+- **Clause (f) — absolute-return floor: ≥8.0%/yr net-of-cost on DEPLOYED notional** ($1000 paper basis). RATIFIED by Cyrus 2026-05-31. Closes the "Sharpe-denominator gaming" hole (a 50% cash-anchor barbell inflates Sharpe via halved vol but earns ~7.5%/yr → now FAILs). Denominator = deployed notional (NOT bench equity, NOT a fraction-cap) — turns "half is near-cash" from a defense into the indictment, avoids near-cash-definition arbitration. I OVERRODE main's suggested 3-5% range (the data showed real edge ~11%, barbell ~7.5% → 8% is where the classes separate; 3-5% would pass the barbell). Main: "This is when a peer SHOULD override main."
+- **Clause #5(b) re-bound on DEPLOYED-CAPITAL / instrument-level drawdown** (2026-05-31, main GO). Was bound on diluted portfolio-NAV DD — a −50% crash on one $100 leg in a $1000 book reported as ~−5%, so the clause couldn't see the wipeout it exists to catch. Now uses `worst_instrument_dd_pct` (worst single-leg DD-from-entry); threshold 30% candidate-stage (Bar E real-money stays 20%).
+
+## THE √252 SHARPE BUG + promotion demoted (2026-05-31) — the session's biggest correctness finding
+
+Ran a harness-integrity audit BEFORE building the next lane (audit-the-ruler-first; Cyrus approved). Memo: `reports/HARNESS_INTEGRITY_AUDIT_20260531T190026Z.md`. Verdict: TRUST=YES WITH CAVEATS — both bugs bias toward OVER-stating quality, so every REJECT is conservative (false-positive PROMOTES are the risk → all prior rejects STAND).
+- **Bug (FIXED): Sharpe annualized equity daily bars with √365; stock daily bars are ~252 trading days.** Inflated every equity daily Sharpe by √(365/252) ≈ 1.204× (~20%). Fix: `bars_per_year(timeframe, is_crypto)` → 252 equities / 365 crypto for 1Day (intraday unchanged). Applied to backtest.py + backtest_xsec.py. 7 pinning tests.
+- **CONSEQUENCE: `xsec_momentum_xa_38d2b2` full-period Sharpe 1.04 → 0.87 — BELOW the 1.0 bar. DEMOTED to candidate** (main GO). Cron line removed (clock 1 tick old, no fills → ~free), live dir → `.trash/`, candidate preserved → can re-promote if it clears the CORRECTED gate honestly (front door, not return-floor side door). Record: `reports/DEMOTE_xsec_momentum_xa_38d2b2_20260531T190924Z.md`. **Keeping it live on clause-(f) return-floor ALONE would be retroactively justifying a promotion against a Sharpe criterion it no longer meets = the exact goalpost-moving the audit existed to prevent.**
+- Earlier same session I'd ALSO caught a phantom-span error on this same strategy: promotion memo cited "FP Sharpe 1.13, span 2010-2026" — both wrong (1.13 was best-WINDOW not full-period; bars cache only has data from **2020-07-27**, Alpaca free-IEX floor — no pre-2020 history exists in this bench). `walk_forward_xsec` now RAISES `ZeroTradesError` when warmup-starvation yields 0 trades across all windows (was silently reporting +0.00%).
+
+## Tournament state as of 2026-06-02: ZERO live promotions on a trustworthy ruler
+
+This is the machine working, not stalling. After the √252 correction + demotion, there are no live promotions — and the corrected ruler keeps honestly saying NO.
+
+## Closed lanes (2026-06-01 → 2026-06-02) — durable negative results
+
+> **⚠️ REFRAMED 2026-06-07 (EXPLORE-FIRST MODE, Cyrus): these are NOT "CLOSED" anymore — they are "didn't work THE WAY I TRIED IT."** Every lane below was rejected against a SUSPENDED bar (1.0 Sharpe, 8%/yr floor, risk-adjusted-vs-BH, cost gates) and/or with a risk-adjusted-diversifier objective. The bar is now **RAW RETURN vs SPX**. Reopen any of these freely; several may clear the ACTUAL bar even though they failed the old one. Specifically:
+> - **LEVERAGED-ETF TREND/MOMENTUM is now a PRIME explore target, not a reject.** It was killed for losing to BH-SPY *risk-adjusted* and for buy-and-hold vol-decay — but the bar is raw return now, and a *trend-timed* (not buy-and-hold) leveraged-long sleeve that is only in TQQQ/SOXL/UPRO during uptrends is exactly the kind of high-raw-return idea the old gates killed on sight. SOXL trend cleared the screen at ~0.97 Sharpe (failed only the 1.0 gate). REOPEN with a raw-return lens + careful honest measurement of the vol-decay drag.
+> - The base-rate-of-rejects claim below is a **narrow-search observation** (price/vol only, $100 cap, 1 venue, risk-adjusted objective), NOT a law of nature. Do not quote it as a reason to expect failure.
+> - "Different signal INPUT needed" (fundamentals/earnings-revision/macro) still stands as a *direction*, but is no longer gated behind "price is closed."
+>
+> Original verdicts preserved verbatim below for audit.
+
+Roughly ~10 rejects across all classes is the **BASE RATE**, not bad luck. Textbook anomalies are arbitraged / cost-strangled at retail scale. "Anomaly N+1 on universe M" is LOW expected value.
+_(↑ HISTORICAL framing — see explore-mode reframe above; do not treat as binding.)_
+- **PRICE-BASED SINGLE-STOCK CROSS-SECTIONAL — CLOSED (4 rejects, distinct failure modes, one verdict).** momentum (no edge, flat basin ~0.2 Sharpe), reversal (real gross alpha but cost-strangled at 946 round-trips → net −8%/yr), low-turnover reversal (turnover fix worked mechanically 946→98 trades but Sharpe 0.73 + overfit knife-edge), low-vol (barbell), monthly momentum (low-turnover, survives cost, but no edge — return-without-edge mirror of the barbell), dispersed 95-name universe (widening 20→95 moved Sharpe +0.21→+0.16 = nothing; the high-idio-vol tail that pays also craters −86% single-leg → fails #5(b)). **Diagnosed cause "undispersed 20-name universe" was real but NOT binding — the SIGNAL CLASS is the problem, not the universe.** Revisit needs a different signal INPUT (fundamentals/earnings-revision/cross-asset/macro), not universe engineering.
+- **LEVERAGED-ETF TREND/MOMENTUM — REJECTED.** No variant beats BH-SPY risk-adjusted (best levered Sharpe 0.72 / maxDD −58→−98% vs BH-SPY 0.96 / −25%). Stark vol-decay lesson: over a span SPY made +134%, BH-TQQQ (3× Nasdaq) made −29%.
+- **CREDIT-SPREAD (HYG/LQD) AS DAILY SPY TIMER — CLOSED.** No tradeable edge net of 4bps in symmetric (whipsaw) OR asymmetric (lag-cost: confirmed-veto sells after the drawdown, misses the bounce) shape.
+- **VOL-REGIME TIMING (Moreira-Muir) — TAPPED OUT sub-threshold.** The most-promising non-price signal: best honest cell FP-cont Sharpe **+0.544**, +6.72%/yr, real plateau, NOT a cash-mirage (makes money trading actively) — but <1.0 (clause a) and <8% (clause f) → REJECT. Both flagged levers (true proportional inverse-vol sizing; cleaner implied-vol term-structure input) SPENT, neither closed the gap. **"VIXY roll-drag is the problem" hypothesis REFUTED — best signal was realized vol, not the cleaner implied proxy.**
+
+## Measurement-hygiene patterns hardened (2026-05-31 → 06-02)
+
+- **Median-of-windows Sharpe is a MIRAGE; always quote full-period CONTINUOUS-SPAN Sharpe.** This single artifact caused the momentum_xa false promotion (1.13 best-window sold as full-period) AND nearly passed low-turnover meanrev (+1.17 median vs 0.73 continuous). Canonicalized into `runner/fp_sharpe.py`.
+- **Benchmark on the SAME PATH; distrust cross-path Sharpe comparisons.** vol-regime's headline 0.87 (binary single-symbol path vs near-zero bench) deflated to +0.544 when re-expressed as a true vol-managed sleeve benchmarked against a same-path BH-SPY. The deflation IS the trustworthy ruler working.
+- **Knife-edge argmax ≠ promotion.** If a Sharpe-passing config's neighbors (K±1, reb±3, lb±1) all drop below threshold, it's overfit, not edge. Auto-rejected by the sweep harness's robustness classifier.
+- When editing markdown with `edit`, after multi-block edits run `grep -nE '^## '` to verify section headers survived (dropped/merged headers 3× in one heavy-edit session).
+
+## The 3-step force-multiplier chain SHIPPED (2026-06-02) — Cyrus "what next to increase our chances"
+
+Reframe: stop chasing "anomaly N+1"; the hit-rate multipliers are STRUCTURAL.
+1. **Confirm-or-kill xsec on a FAIR dispersed universe** → killed price-xsec conclusively (above).
+2. **Sweep harness BUILT** (`runner/sweep.py` + `runner/fp_sharpe.py`, suite 237→262). Replaces hand-spawned ~5-cell swings with systematic param-grid × multi-universe sweeps (cell_cap 500), ranks by honest FP-cont Sharpe, and **auto-rejects knife-edges (PLATEAU vs KNIFE-EDGE classifier)** — the overfit trust mechanism. First real use (credit-spread sweep) ran with zero friction.
+3. **Non-price signal class** — first lane to find genuinely uncrowded edge (everything price-derived is the most-arbitraged signal on Earth). Surfaced the vol-regime sub-threshold lead above. Tier 2 LLM-regime stays PARKED until a strategy clears Bar A on merits (building regime logic on an unproven eval surface = the trap main warned against).
+
+## Infra/harness gaps logged (2026-06-02, BACKLOG)
+
+- `walk_forward_xsec` skips <2-symbol baskets (`if len(bars_by_sym) < 2: continue`), so `run_sweep` CANNOT sweep single-name fractional-deployment strategies (vol-managed sleeves, cash-timing overlays) — all cells FP=0. Workaround: compose public `backtest_xsec` + `fp_continuous_sharpe` directly (NOT editing protected/evaluator code). Decide later whether to add a single-name deployment path to the harness.
+- Sweep "PASS" column = fitness ∧ bar_a1 ∧ dd5b but does NOT fold in clause (a) FP-cont≥1.0 → renders misleading "PASS(a)" for sub-1.0 cells. Rename to `gate-pass(ex-a)` or fold clause(a) in, with a test.
+- Leveraged-ETF backtest reports diluted portfolio maxDD (~−9.6%) when % invested is low; instrument-NAV DD is ~−65%. Don't cite the diluted number as strategy risk.
+
+## DECIDE-AND-ACT — money is not a blocker (Cyrus via main, 2026-06-08, STANDING)
+
+Sharpened autonomy directive, supersedes any residual "bounce it to Cyrus" reflex on recoverable calls:
+- **Decide and act. Stop bouncing trivial/recoverable decisions back to Cyrus.** Tiebreaker: **act > idle** — a recoverable wrong decision beats inaction.
+- **Money is NOT a blocker.** Paid feed / proxy / vendor / API key purchase = MY call: recommend it, state the cost, and proceed. (This does NOT touch the hard rails — real-money TRADING still needs explicit per-request Cyrus approval; this is about spending on *data/infra*, not allocating capital to trades. And FREE-FIRST still holds: exhaust free before proposing paid — see standing approval above.)
+- **The only genuine asks left:** (1) something needing Cyrus's OWN credentials/account after I've exhausted alternatives, (2) a values/ethics/safety call. Everything else inside the paper loop is mine to execute + report.
+- **Domain nuance (locked):** my own backlog flags the hourly mutation cron as OVER-PRODUCING ("2 edges in 48 costumes"). So the highest-leverage work is **GATE-QUALITY, not more candidates.** Do NOT add a generic "find-work" cron that just spins more mutation rounds. The cure is throttle + a risk-adjusted/stability-aware promote gate + dedup before quarantine + parent diversification — not volume.
+
+## Data blocker CRACKED — VIX overlay built; leveraged-long lane unblocked on $0 data (2026-06-08)
+
+Big week for data access. Net state:
+- **VIX-complex regime overlay BUILT + backtested (Natenberg idea #2).** `runner/cboe_cache.py` (keyless PIT CBOE ingest: VIX 1990→, SKEW 1990→, VVIX 2006→, VIX3M 2009-09→, all current; lookahead guard passes on real data), `runner/vix_regime.py` (signals), `runner/vix_overlay_backtest.py`, tests. Suite 320 green. **VERDICT — beat SPX raw: ❌ NO** in every variant + OOS (best variant −25.74pp raw vs SPY on the honest 2020-08→2026 window; OOS −15.14pp raw BUT 8.70pp drawdown avoided). **Disposition: NOT a standalone strategy — KEEP as the risk-OFF GATE for the next lane (trend-gated leveraged-long).** Report: `reports/VIX_REGIME_OVERLAY_20260608T042849Z.md`. ⚠️ The build-subagent's "2016→2026 / 2018 +4.58pp / COVID +10.43pp" prose is OUT OF SAMPLE of our SPY cache (cache floor is 2020-08) — was NOT reproduced; do NOT cite it.
+- **Leveraged-long lane (the real #1, plausibly beats SPX raw) is now UNBLOCKED on $0 data.** Free deep splits-adjusted daily OHLC confirmed live from this VM via **Yahoo v8 chart API** (browser UA → HTTP 200 on TQQQ/UPRO/SOXL/^GSPC etc.). **Durable correction: our old "Yahoo 429s from our datacenter IP" note was STALE/over-broad** — only `^VIX` specifically / transient 429'd; the v8 chart endpoint works for everything else. Use `indicators.adjclose` (leveraged ETFs split constantly → raw close is garbage). Earliest: ^GSPC 1970, SPY 1993, QQQ 1999, real-2x SSO/QLD 2006, SPXL/TECL 2008, UPRO 2009, TQQQ/SOXL 2010. (Full endpoint details now canonical in TOOLS.md "Free market-data endpoints".)
+- **Free fundamentals are backtest-grade** (SEC EDGAR data.sec.gov, 200 with a declared User-Agent, native point-in-time via `filed` dates, ~2009 XBRL floor). The ONE genuine paid gap remains **estimate-REVISION history** (paywalled everywhere free) — free workarounds: self-collect Nasdaq's current revision snapshot forward, or pivot to PEAD (earnings-surprise drift, free via EDGAR×Nasdaq).
+- **NEXT BUILD (teed up, fully unblocked):** Yahoo-v8 daily-bars ingest/cache → synthetic-leveraged-series builder (daily-compound + FRED financing drag + overlap calibration; CANNOT multiply cumulative — vol-decay path-dependence is the point) → parameterized trend-gated leveraged-long engine (200-DMA/TSMOM gate, hold 3x only in uptrend else cash/T-bill) → honest walk-forward across 2008/2018/2020/2022 vs SPX RAW, gated by the VIX overlay as the risk-OFF layer. THIS is the lane that plausibly beats SPX raw.
+
+## Where work is tracked
+
+- **`HANDOFF.md`** — operational state, current bugs, live runner roster, talking-to-others reference. One-page snapshot for a fresh instance.
+- **`BACKLOG.md`** — prioritized todo list (P0/P1/P2/P3), recently shipped log. Single source of truth for "what's next."
+- **`MEMORY.md`** (this file) — durable principles, lessons, north star, standing approvals. Updated weekly-ish from distilled daily memory.
+- **`memory/YYYY-MM-DD.md`** — raw daily logs (decisions, what happened, anomalies).
+- **`GATE.md`** — pre-committed graduation bars. Change protocol: Cyrus/main sign-off + audit entry.
+- **`reports/*.md`** — point-in-time analysis artifacts (audits, design docs, archetype triage).
+
+## Channel
+
+- My Discord channel: `1508503706545557656` (use `message` with `channel="discord"`, `target="1508503706545557656"`).
+- `sessions_send` replies to peers don't auto-post to my channel — must use `message.send` explicitly.
+
+## Silent Replies
+
+When you have nothing to say, respond with ONLY: NO_REPLY
+
+## Cyrus decisions — overnight 2026-06-04 research verdict (standing)
+
+> **⚠️ SUPERSEDED 2026-06-07 by Cyrus's explore-first directive.** The three rulings below were made under the OLD posture (1.0-Sharpe bar binding, risk-adjusted objective). Cyrus's 2026-06-07 correction explicitly reverses the strictness: **the bar is now raw return vs SPX, all gates suspended.** Concretely: **#1 (SOXL gate-hold FINAL — do not graduate) is REVERSED** — leveraged-ETF trend is now a prime explore lane, judged on raw return not the 1.0 gate. **#3 ("don't lower the 1.0 bar, widen the data instead") is REVERSED** — the 1.0 bar is no longer the bar; raw-return-vs-SPX is. **#2 (IV-surface paid spend NOT approved) STILL HOLDS** — that's a spend decision, not a research gate, and no fresh spend approval has been given. Preserved below for audit.
+
+After the overnight cull (11 lanes, all reject; ~0.5 Sharpe = SIGNAL ceiling not cost; full evidence in `reports/OVERNIGHT_SYNTHESIS_20260604.md`), Cyrus ruled on the 3 surfaced items:
+1. ~~**SOXL gate-hold at FP 0.973 is FINAL.** Do NOT graduate it.~~ **→ REVERSED 2026-06-07: reopen as a raw-return explore lane (see explore-mode note above).**
+2. **IV-surface history purchase (~$99+/mo, options-skew across bear regimes) = NOT approved.** Stays an open *optional, unfunded* idea — the single strongest spend candidate IF we ever revisit, but no spend without a fresh explicit approval. Not foreclosed, just not funded. **(STILL HOLDS — spend decision, not a research gate.)**
+3. ~~**"No graduating edge on this surface yet" is the ACCEPTED honest interim finding** — Don't lower the 1.0 bar to manufacture a winner; widen the data instead.~~ **→ REVERSED 2026-06-07: the 1.0 bar is suspended; the bar is raw-return-vs-SPX. Honest measurement still required (don't fake the raw-return number), but "no edge on this surface" is no longer a place to STOP — explore harder + wider, including aggressive lanes.**
+
+## LLM-generating cron: real-gen vs silent dry-run (gotcha + technique, 2026-06-05)
+
+**Recurring trap:** any cron that needs an LLM to WRITE code (mutation rounds, candidate gen) will SILENTLY fall back to `--dry-run` and only ever produce synthetic REJECTs if it tries to call `run_one_round()` inside a `python3 -c` subprocess. Reason: pure Python can't reach the `sessions_spawn` *tool* → `_default_spawn_fn` raises NotImplementedError by design → dry-run fallback every tick. Symptom = a wall of identical REJECT_GATEs (same medRet/pos/Sharpe), never a real candidate dir.
+
+**The real path:** the two-step orchestrator (`runner/_orchestrator_helpers.py`): `prepare_round(n)` dumps prompts to /tmp → the AGENT reads each prompt and calls `sessions_spawn` itself (real LLM) → `finalize_round()` evaluates + writes the report.
+
+**v2 fix that works (reusable pattern):** have the cron's own isolated agent turn GENERATE the candidate INLINE in a single turn, then finalize in that same turn. Do NOT use spawn+`sessions_yield` from a cron — v1 did and it ORPHANED candidates (the cron turn ends at the yield, `finalize_round` never runs, /tmp output left un-evaluated). Atomic inline-gen-then-finalize avoids the orphan.
+
+**Leak guard:** an earlier inline-gen window leaked full `strategy.py` to Discord via the announce fallback (delivered=true). Keep `delivery.mode=none` on these silent rounds so generated code never hits the channel. Fix was prompt-only — no runner/protected file changed; the "no spawn" line in the old prompt was tick-cron boilerplate, not a deliberate guardrail.
+
+## FRED / macro data-access trap (critical correctness, 2026-06-05)
+
+**`fredgraph.csv` is poison from this VM:** it's Akamai/bot-walled AND silently serves STALE cached data — HY OAS kept returning 2023 values on retries, ignoring `cosd`/`coed` (verified by 2 independent scouts). A backtest built on it would be silently corrupted. **MUST use the keyed official API:** `api.stlouisfed.org/fred/series/observations` (free instant API key). Never trust fredgraph.csv from here.
+
+**Lookahead-leak on revised series:** FRED revises many macro series after release. Use ALFRED point-in-time vintages, or lag-shift to the release calendar, for anything revised. Lightly/non-revised by construction (safe-ish): market-priced spreads (NFCI, OAS), and Yahoo/LBMA prices (PIT by construction).
+
+## Free-dataset scout map — orthogonal-signal hunt (standing reference, 2026-06-05)
+
+> **⚠️ DEMOTED 2026-06-07 (explore-first):** the orthogonal-signal / uncorrelated-diversifier hunt is now a **FALLBACK lane, not the mission.** The mission is **beat SPX on raw return.** This map stays as a useful data reference (FRED credit spreads, COT, CBOE vol, etc. are still good free orthogonal inputs worth testing), but "corr <0.3 to OHLCV" is no longer a *requirement* and "GATE stays at 1.0 FP-cont-Sharpe" below is **VOID** — the bar is raw-return-vs-SPX. Pursue orthogonal data when it plausibly helps RAW RETURN, not for orthogonality's own sake.
+
+**Why:** all 11 price/vol lanes topped out at ~0.5 Sharpe = a SIGNAL ceiling, not a cost problem. Re-feeding price/vol is useless. Hunt is for ORTHOGONAL signal (corr <~0.3 to OHLCV) on FREE data (zero spend; IV-surface paid spend stays OFF per Cyrus 2026-06-04). **Decisive ranking filter = 2008-GFC coverage** (regime-robustness across ≥2 bears is a graduation criterion; most free tiers miss 2008).
+
+**TIER 1 (free, spans 2008+2020+2022) — build from here:**
+1. **FRED credit/conditions/curve** — HY−IG OAS spread + NFCI + T10Y2Y slope. Crowned #1 independently by BOTH the macro and cross-asset scouts. Public domain, NFCI→1971. (Access via keyed API only — see FRED trap above.)
+2. **CFTC COT (TFF)** — 1986, weekly, 3-day lag, public domain. Best pure positioning signal.
+3. **CBOE vol-index CSVs** — SKEW/VVIX/term-structure slope, 1990/2006. Rescues the options class (no free full-surface reaches 2008). ingest=1.
+4. **GDELT Events** — tone/Goldstein, 1979.
+5. **SEC EDGAR FSDS + XBRL frames** — 2009, point-in-time capable (UA + ≤10 req/s; pin post-Dec-2024 FSDS vintage).
+6. **Yahoo chart API** — MOVE/VIX + gold/copper ratios, 2007 (personal-use license, paper-OK).
+
+**DEAD (licensing):** NAAIM (needs commercial-use permission), Pushshift/Reddit (mod-only ToU). **#1 funded-upgrade candidate:** estimate-REVISION history (PEAD / revision momentum) — paywalled on every free tier.
+
+**Key principle:** orthogonality lives in SPREADS / RATIOS / SLOPES, not raw levels. **Proposed build order:** FRED spreads → COT → CBOE → GDELT/EDGAR second wave. **Honest caveat (keep it):** orthogonal DATA ≠ EDGE — the map says where to dig, the backtest says if there's gold. ~~GATE stays at **1.0 FP-cont-Sharpe**; widen the data, don't lower the bar.~~ **→ VOID 2026-06-07: bar is now raw-return-vs-SPX, not 1.0 Sharpe (see explore-first demote at top of this section).** Full map: `reports/SCOUT_SYNTHESIS_20260605.md`.

@@ -1,0 +1,28 @@
+{
+  "symbol": "TQQQ",
+  "underlying": "QQQ",
+  "timeframe": "1Day",
+  "bar_limit": 260,
+
+  "target_vol": 0.25,
+  "vol_window": 20,
+  "sma_window": 200,
+  "w_max": 1.0,
+
+  "deployable_notional": 1000.0,
+  "deadband_abs_usd": 25.0,
+  "deadband_frac": 0.05,
+  "flat_weight_eps": 0.02,
+
+  "vix_gate": false,
+
+  "_paper_note": "PAPER ONLY. deployable_notional == runner MAX_NOTIONAL ($1000). w_max=1.0 means NO added leverage on top of the 3x sleeve (max one full $1000 TQQQ position OR flat). deadband = max($25, 5%*$1000=$50) = $50: ignore rebalances smaller than $50 to avoid churn. flat_weight_eps=0.02: a target weight under 2% closes to cash.",
+
+  "_gate_note": "SMA-200 trend gate is on the UNDERLYING (QQQ), on QQQ closes through the decision-day close (lookahead-safe). The live runner does NOT currently supply QQQ closes to a TQQQ strategy (regime is SPY-only, bars are TQQQ-only). Until Tessera adds that plumbing, the adapter fails safe to FLAT and will not trade on a proxy gate. Realized vol is on the sleeve (TQQQ) and DOES work today from market_state['bars'].",
+
+  "_vol_note": "vol_window=20 trailing daily simple returns, population stdev * sqrt(252), exactly matching backtest_daily_voltarget.realized_ann_vol. target_vol=0.25 (25% annualized). weight = clamp(0.25 / realized_ann_vol, 0, w_max).",
+
+  "_vix_note": "vix_gate=false: the engine sets vix_gate=true, but the live runner cannot supply VIX/VIX3M term structure, and the engine's own _vix_risk_off passes (not risk-off) on missing data. We set false explicitly so live == engine-with-VIX-missing (faithful, slightly more permissive). Flip to true only once VIX term structure is plumbed into market_state.",
+
+  "_engine_ref": "strategies_candidates/leveraged_long_trend/backtest_daily_voltarget.py (PASSED OOS net of realistic costs: beats SPX raw + Sharpe, ~-35% maxDD). This adapter mirrors its gate/vol/sizing math verbatim."
+}

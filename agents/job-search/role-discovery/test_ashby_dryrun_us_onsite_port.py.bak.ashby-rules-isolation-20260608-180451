@@ -1,0 +1,141 @@
+"""Regression tests for the 2026-06-04 port of proven Greenhouse dryrun
+resolvers into the Ashby dryrun resolver.
+
+Bug fixed: valid Ashby questions banked at PREP time because:
+  1. `_r_location_ack` was city-gated and returned 'No' for any non-target US
+     city -> false geo-knockouts (Plaud 2731, Vendelux 2774). Doctrine
+     ("US onsite is NEVER a knockout", personal-info.json _relocation_note)
+     says these must answer Yes.
+  2. proficiency / work-arrangement / prior-employer phrasings had no Ashby
+     rule (or were grabbed by the broken location_ack) -> banked
+     (Helion 2712 prior-employer, Dash0 2757 proficiency+work-arrangement).
+
+These tests lock each ported rule + the resolver behaviour so a regression
+re-banks instead of silently passing.
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(__file__))
+import ashby_dryrun as a  # noqa: E402
+
+gh = a.gh
+
+YESNO = {'values': [{'label': 'Yes'}, {'label': 'No'}]}
+
+
+# ---------- _r_location_ack: US onsite is NEVER a knockout -> always Yes ----------
+
+def test_location_ack_non_target_city_now_yes():
+    # Denver is NOT a relocation-target city; the OLD resolver returned 'No'.
+    f = dict(YESNO, _label_for_resolver='are you based in our denver office?')
+    status, val, src = a._r_location_ack({}, f)
+    assert status == 'ok'
+    assert val == 'Yes', f'US onsite must never be a knockout, got {val!r} ({src})'
+
+
+def test_location_ack_free_text_yes():
+    f = {'_label_for_resolver': 'comfortable working in-person in austin, tx'}
+    status, val, _ = a._r_location_ack({}, f)
+    assert (status, val) == ('ok', 'Yes')
+
+
+def test_location_ack_matches_yes_variant_option():
+    f = {'values': [{'label': 'Yes, I can'}, {'label': 'No'}],
+         '_label_for_resolver': 'able to commute to the office?'}
+    _, val, _ = a._r_location_ack({}, f)
+    assert val == 'Yes, I can'
+
+
+# ---------- ported onsite phrasings -> answer_yes ----------
+
+ONSITE_LABELS = [
+    'This role is onsite at our NYC office, are you comfortable working onsite?',
+    'Are you within commuting distance of our office?',
+    'Do you currently reside in the Greater Boston area?',
+    'Can you come into our Lehi, UT office 4 days a week?',
+    'Are you based in the US?',
+    'Can you meet this requirement?',
+]
+
+
+def test_onsite_phrasings_route_to_affirmative_resolver():
+    for lbl in ONSITE_LABELS:
+        key = gh.find_resolver(lbl)
+        assert key in ('answer_yes', 'location_ack', 'ack_in_office',
+                       'us_based_confirm', 'work_authorized'), \
+            f'{lbl!r} -> {key!r} (expected an affirmative onsite resolver)'
+        status, val, _ = gh.RESOLVERS[key]({}, dict(YESNO, _label_for_resolver=lbl))
+        assert status == 'ok'
+        assert val == 'Yes', f'{lbl!r} resolved {val!r}, expected Yes'
+
+
+# ---------- skill proficiency -> Intermediate ----------
+
+def test_proficiency_routes_and_resolves_intermediate():
+    lbl = 'What is your level of proficiency in Python?'
+    assert gh.find_resolver(lbl) == 'proficiency_intermediate'
+    opts = {'values': [{'label': 'No experience'}, {'label': 'Beginner'},
+                       {'label': 'Intermediate'}, {'label': 'Advanced'}]}
+    _, val, _ = gh.RESOLVERS['proficiency_intermediate']({}, opts)
+    assert val == 'Intermediate'
+
+
+def test_proficiency_middle_when_no_intermediate_label():
+    opts = {'values': [{'label': 'None'}, {'label': 'Basic'}, {'label': 'Strong'}]}
+    _, val, _ = gh.RESOLVERS['proficiency_intermediate']({}, opts)
+    assert val in ('Basic', 'Strong')  # middle of the non-None options
+
+
+# ---------- work-arrangement dropdown -> consistent with onsite=Yes ----------
+
+def test_work_arrangement_routes():
+    for lbl in ('Preferred work arrangement?', 'What is your preferred work setup?',
+                'Remote, hybrid, or onsite?'):
+        assert gh.find_resolver(lbl) == 'work_arrangement', lbl
+
+
+def test_work_arrangement_prefers_hybrid_then_onsite():
+    _, val, _ = a._r_work_arrangement({}, {'values': [
+        {'label': 'Remote'}, {'label': 'Hybrid'}, {'label': 'Onsite'}]})
+    assert val == 'Hybrid'
+    # onsite-only set still resolves (never a knockout)
+    _, val2, _ = a._r_work_arrangement({}, {'values': [
+        {'label': 'Remote only'}, {'label': 'Onsite only'}]})
+    assert val2 == 'Onsite only'
+
+
+def test_work_arrangement_open_to_all_wins():
+    _, val, _ = a._r_work_arrangement({}, {'values': [
+        {'label': 'Open to all arrangements'}, {'label': 'Remote'}, {'label': 'Hybrid'}]})
+    assert val == 'Open to all arrangements'
+
+
+# ---------- prior-employer (biographical, not a knockout) ----------
+
+def test_prior_employer_routes_to_worked_at_handler():
+    for lbl in ('Have you previously worked at Helion?',
+                'Have you ever worked for this company?',
+                'Are you a former employee?'):
+        assert gh.find_resolver(lbl) == 'worked_at_company_before', lbl
+
+
+def test_prior_employer_resolves_no_when_no_prior():
+    # Cyrus never worked at Helion -> picks the 'No' option (truthful).
+    _, val, _ = gh.RESOLVERS['worked_at_company_before']({}, YESNO)
+    assert val == 'No'
+
+
+# ---------- registration / precedence sanity ----------
+
+def test_ported_resolvers_registered():
+    for k in ('answer_yes', 'proficiency_intermediate', 'work_arrangement',
+              'worked_at_company_before', 'location_ack', 'ack_in_office'):
+        assert k in gh.RESOLVERS, k
+
+
+def test_ported_rules_present_in_front_of_label_rules():
+    keys = {k for _, k in gh.LABEL_RULES}
+    for k in ('answer_yes', 'proficiency_intermediate', 'work_arrangement',
+              'worked_at_company_before'):
+        assert k in keys, k

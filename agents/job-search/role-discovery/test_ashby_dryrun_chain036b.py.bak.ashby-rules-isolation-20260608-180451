@@ -1,0 +1,55 @@
+"""chain_036b (2026-05-30) regressions:
+ - "Where/How did you hear about" radio -> honest channel from profile
+ - privacy-ack ("by submitting...acknowledge personal data") -> acknowledge_yes
+These were the two unresolved fields blocking Thought Machine 1367's submit
+after the upload-last autofill fix landed.
+"""
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
+import ashby_dryrun as a
+
+gh = a.gh
+
+HEAR_OPTS = {'values': [
+    {'label': 'LinkedIn'}, {'label': 'Industry Event'},
+    {'label': 'Company Website'}, {'label': 'News Article'}, {'label': 'Other'},
+]}
+
+
+def test_how_did_you_hear_prefers_profile_channel():
+    p = {'common_form_answers': {'how_did_you_hear_about_us': 'LinkedIn'}}
+    status, val, _ = a._r_how_did_you_hear(p, HEAR_OPTS)
+    assert status == 'ok'
+    assert val == 'LinkedIn'
+
+
+def test_how_did_you_hear_falls_back_to_company_website():
+    # no LinkedIn option present, no profile pref -> honest "Company Website"
+    f = {'values': [{'label': 'Company Website'}, {'label': 'Other'}]}
+    status, val, _ = a._r_how_did_you_hear({}, f)
+    assert val == 'Company Website'
+
+
+def test_how_did_you_hear_last_resort_is_other():
+    f = {'values': [{'label': 'Recruiter'}, {'label': 'Other'}]}
+    _, val, _ = a._r_how_did_you_hear({}, f)
+    assert val == 'Other'
+
+
+def test_hear_rules_registered_front():
+    keys = {k for n, k in gh.LABEL_RULES}
+    assert 'how_did_you_hear' in keys
+    needles = {n for n, k in gh.LABEL_RULES if k == 'how_did_you_hear'}
+    assert any('where did you hear about' in n for n in needles)
+    assert any('how did you hear about' in n for n in needles)
+
+
+def test_resolver_registered():
+    assert 'how_did_you_hear' in gh.RESOLVERS
+
+
+def test_privacy_ack_patterns_registered():
+    pairs = {n for n, k in gh.LABEL_RULES if k == 'acknowledge_yes'}
+    assert any('acknowledge my personal data' in n for n in pairs)
+    assert any('personal data will be processed' in n for n in pairs)
+    assert any('by submitting this application' in n for n in pairs)

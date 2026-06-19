@@ -1,0 +1,89 @@
+```python
+# === strategy.py ===
+"""SMA crossover on QQQ 1h bars with a one-shot partial scale-out.
+
+Parent thesis unchanged: go long when the fast SMA crosses above the slow SMA,
+exit fully when it crosses back below. Mutation: parent winners tend to give
+back gains by holding all the way to the crossover exit. We lock in half the
+position the first time a trade rises >= 1.17% above entry (the parent's MEDIAN
+max-runup), so the scale-out fires on roughly half of all winners while leaving
+the other half to ride the parent's normal fast<slow close. The +1.17% trigger
+sits between the parent's p25 runup (+0.52%) and p75 (+3.03%), so it is neither
+a noise-level exit nor so far out that it never fires. Scale-out is gated by a
+per-symbol 'scaled_out' flag so it only happens ONCE per trade.
+"""
+from __future__ import annotations
+from dataclasses import dataclass
+from typing import Optional
+from strategies._lib.indicators import closes, sma
+
+
+@dataclass
+class Action:
+    action: str
+    symbol: str
+    notional_usd: float = 0.0
+    qty: Optional[float] = None
+    reason: str = ""
+
+
+def decide(market_state: dict, position_state: dict, params: dict) -> Action:
+    symbol = params.get("symbol", "QQQ")
+    fast_p = int(params.get("fast", 10))
+    slow_p = int(params.get("slow", 30))
+    notional = float(params.get("notional_usd", 100.0))
+    scale_pct = float(params.get("scale_out_runup_pct", 1.17))
+
+    bars = market_state.get("bars") or []
+    cs = closes(bars)
+    fast = sma(cs, fast_p)
+    slow = sma(cs, slow_p)
+
+    pos = position_state.get(symbol) or {}
+    holding = float(pos.get("qty", 0) or 0)
+
+    # --- EXIT LOGIC FIRST: open positions must always be closeable ---
+    # Full parent close on bearish cross fires regardless of scaled_out state,
+    # closing whatever remains (full or the un-scaled half).
+    if fast is not None and slow is not None and fast < slow and holding > 0:
+        return Action("close", symbol, reason="fast<slow cross: full exit")
+
+    # Partial scale-out: once per trade, when runup >= trigger.
+    if holding > 0:
+        already = bool(pos.get("scaled_out", False))
+        entry = pos.get("avg_entry_price")
+        if entry is None:
+            entry = pos.get("entry_price")
+        if not already and entry is not None:
+            try:
+                entry_f = float(entry)
+            except (TypeError, ValueError):
+                entry_f = None
+            if entry_f and entry_f > 0 and cs:
+                last = cs[-1]
+                runup = (last - entry_f) / entry_f * 100.0
+                if runup >= scale_pct:
+                    pos["scaled_out"] = True
+                    position_state[symbol] = pos
+                    return Action(
+                        "sell",
+                        symbol,
+                        qty=holding / 2.0,
+                        reason=f"scale-out half at +{runup:.2f}% (>= {scale_pct}%)",
+                    )
+
+    # Hold guard when not enough bars for the SMAs.
+    if fast is None or slow is None:
+        return Action("hold", symbol, reason=f"not enough bars ({len(cs)})")
+
+    # --- ENTRY ---
+    if fast > slow and holding == 0:
+        return Action("buy", symbol, notional_usd=notional, reason="fast>slow cross: enter long")
+
+    return Action("hold", symbol, reason="no signal")
+```
+
+```json
+# === params.json ===
+{"symbol":"QQQ","timeframe":"1Hour","bar_limit":120,"notional_usd":100.0,"fast":10,"slow":30,"scale_out_runup_pct":1.17}
+```

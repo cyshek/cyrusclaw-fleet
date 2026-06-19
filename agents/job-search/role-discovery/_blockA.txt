@@ -1,0 +1,14 @@
+    _wa_radio_specs = []
+    for _rd in (plan.get('radios') or []):
+        _l = (_rd.get('label') or '').lower()
+        if any(k in _l for k in _WA_RE):
+            _vv = (_rd.get('value') or '').strip()
+            _oo = [o for o in (_rd.get('options') or []) if isinstance(o, str) and o.strip()]
+            _tgt = choose_select_option(_vv, _oo, _rd.get('label', '')) or _vv
+            _wa_radio_specs.append({'field_paths': _field_path_candidates(_rd.get('name') or ''), 'target': _tgt})
+    def _recommit_wa_radios():
+        for _spec in _wa_radio_specs:
+            try:
+                page.evaluate(_RADIO_FORCE_COMMIT_IN_CONTAINER_JS, _spec)
+            except Exception as _e:
+                log("final-guard stability radio re-commit fail: " + repr(_e))

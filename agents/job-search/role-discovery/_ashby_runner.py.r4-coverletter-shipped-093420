@@ -1,0 +1,3042 @@
+#!/usr/bin/env python3
+"""chain_033 Ashby submit runner — connect to OpenClaw browser on port 18800
+and execute a compiled plan end-to-end via Playwright CDP.
+
+Usage:
+  python3 chain033_ashby_runner.py <plan_path> [--no-submit] [--no-captcha]
+
+Pipeline per role:
+  1. Connect over CDP, open a fresh page (so we don't clobber other tabs).
+  2. Navigate to apply URL.
+  3. For each plan step, dispatch:
+     - browser.open      -> page.goto
+     - sleep             -> page.wait_for_timeout
+     - browser.act.evaluate (inlined fn) -> page.evaluate
+     - ashby.type_text_fields -> dispatch via CDP keystrokes per text field
+     - ashby.upload_resume_via_visible_button -> use input[type=file] direct
+     - ashby.maybe_solve_recaptcha_v3 -> CapSolver + inject token
+  4. Read submit-button click result. Wait for "Application submitted" /
+     redirect. Return SUCCESS/FAILED.
+"""
+import json, sys, time, os
+from pathlib import Path
+sys.path.insert(0, '/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery')
+from playwright.sync_api import sync_playwright
+from captcha_solver import CaptchaSolver
+
+# Default OpenClaw browser is on 18800 (datacenter VM egress). For residential-IP
+# submission (Ashby reCAPTCHA-v3 score-gate), launch a proxied Chrome on another
+# debug port and point the runner at it via JOBSEARCH_CDP. See _proxy_browser.sh.
+import os as _os
+CDP = _os.environ.get("JOBSEARCH_CDP", "http://127.0.0.1:18800")
+
+_YESNO_CLICK_JS = """(args) => {
+  const {name, label_text} = args;
+  const uuidRe = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;
+  const cands = [name];
+  const m = name.match(uuidRe); if (m && m.length) cands.push(m[m.length-1]);
+  const qIdx = name.indexOf('question_'); if (qIdx>=0) cands.push(name.slice(qIdx));
+  const sysIdx = name.indexOf('_systemfield_'); if (sysIdx>=0) cands.push(name.slice(sysIdx));
+  let fe = null;
+  for (const c of cands) { fe = document.querySelector(`[data-field-path="${c}"]`); if (fe) break; }
+  if (!fe) return {ok:false, reason:'no-container', cands};
+  const yesno = fe.querySelector('div[class*="_yesno_"]');
+  if (!yesno) return {ok:false, reason:'no-yesno'};
+  const btns = [...yesno.querySelectorAll('button')];
+  const want = (label_text||'').trim().toLowerCase();
+  const btn = btns.find(b => (b.textContent||'').trim().toLowerCase() === want) || btns[0];
+  if (!btn) return {ok:false, reason:'no-button'};
+  try { btn.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+  const r = btn.getBoundingClientRect();
+  const cx = r.left+r.width/2, cy = r.top+r.height/2;
+  const ev = {bubbles:true,cancelable:true,clientX:cx,clientY:cy,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+  btn.dispatchEvent(new PointerEvent('pointerdown', ev));
+  btn.dispatchEvent(new MouseEvent('mousedown', ev));
+  btn.dispatchEvent(new PointerEvent('pointerup', ev));
+  btn.dispatchEvent(new MouseEvent('mouseup', ev));
+  btn.dispatchEvent(new MouseEvent('click', ev));
+  return {ok:true, active: /_active_|_selected_/.test(btn.className), cls: btn.className};
+}"""
+
+_SET_VALUE_JS = """(args) => {
+  const {id, val} = args;
+  const e = document.getElementById(id);
+  if (!e) return {ok:false, reason:'no-el'};
+  try { e.scrollIntoView({block:'center', behavior:'instant'}); } catch(_){}
+  e.focus();
+  // chain_034b: type=number inputs reject non-numeric strings
+  // (Rho salary field). Extract first integer if present.
+  let useVal = val;
+  if (e.type === 'number') {
+    const m = String(val).match(/[-+]?[\d,]*\d/);
+    if (m) useVal = m[0].replace(/,/g, '');
+    else useVal = '170000';  // fallback for salary-like fields
+  }
+  const proto = e.tagName === 'TEXTAREA' ? window.HTMLTextAreaElement.prototype : window.HTMLInputElement.prototype;
+  const ns = Object.getOwnPropertyDescriptor(proto, 'value').set;
+  // chain_036: force React to register the change even when the autofill left
+  // the SAME string in .value but reset React's controlled state. React's
+  // _valueTracker caches the last value; if we set the same value it treats it
+  // as a no-op. Defeat by (a) clearing the tracker and (b) bouncing through ''
+  // first so the input event reflects a genuine transition.
+  try { if (e._valueTracker) e._valueTracker.setValue(''); } catch(_){}
+  ns.call(e, '');
+  e.dispatchEvent(new Event('input', {bubbles:true}));
+  try { if (e._valueTracker) e._valueTracker.setValue(''); } catch(_){}
+  ns.call(e, useVal);
+  e.dispatchEvent(new Event('input', {bubbles:true}));
+  e.dispatchEvent(new Event('change', {bubbles:true}));
+  e.blur();
+  return {ok:true, used:useVal, after:e.value, type:e.type, tag:e.tagName};
+}"""
+
+# ashby-date-runner (2026-06-08): commit an ISO date into an Ashby "Date" widget
+# so it persists to Ashby's submit serializer. r4 diagnosis: typing the ISO
+# string into the calendar-picker input via normal CDP keystrokes does NOT
+# commit to React controlled state -> submit banks "Missing entry". This mirrors
+# the proven _SET_VALUE_JS _valueTracker-reset transition but is date-aware:
+#   * Ashby Date inputs come in TWO physical shapes:
+#       - a native <input type="date"> whose .value MUST be ISO YYYY-MM-DD; and
+#       - a react-datepicker / masked text <input type="text"> that displays a
+#         localized string (e.g. MM/DD/YYYY) but whose React onChange parses
+#         whatever string is typed.
+#     We probe el.type and format the value accordingly (ISO for type=date,
+#     also try the localized MM/DD/YYYY for a text control), and reset
+#     _valueTracker + bounce through '' so React registers a genuine transition.
+#   * The field is frequently nameless+idless (same class as the OpenAI 2549
+#     "When can you start a new role?" input, see chain_035), so accept either a
+#     concrete element id OR a data-field-path container tail and locate the
+#     date <input> inside that container.
+# Returns a structured result the caller uses to verify the commit stuck; the
+# calendar-cell CLICK fallback lives in the Python helper (needs trusted clicks
+# via Playwright, which a single evaluate cannot fully synthesize on every
+# tenant).
+_SET_DATE_JS = r"""(args) => {
+  const {id, iso, fp} = args;  // id: dom id or null; iso: 'YYYY-MM-DD'; fp: data-field-path tail or null
+  // ---- resolve the date <input> ----
+  let e = id ? document.getElementById(id) : null;
+  const isDateInput = (el) => el && el.tagName === 'INPUT'
+    && !['radio','checkbox','file','submit','button'].includes(el.type);
+  if (!isDateInput(e) && fp) {
+    const cont = document.querySelector(`[data-field-path="${fp}"]`);
+    if (cont) {
+      e = cont.querySelector('input[type=date]')
+        || cont.querySelector('input:not([type=radio]):not([type=checkbox]):not([type=file])');
+    }
+  }
+  // last resort: a label[for] pointing at the id, then nearest field container
+  if (!isDateInput(e) && id) {
+    const lbl = document.querySelector(`label[for="${id}"]`);
+    if (lbl) {
+      const cont = lbl.closest('[data-field-path], [class*=_fieldEntry_], fieldset');
+      if (cont) e = cont.querySelector('input[type=date]')
+        || cont.querySelector('input:not([type=radio]):not([type=checkbox]):not([type=file])');
+    }
+  }
+  if (!isDateInput(e)) return {ok:false, reason:'no-date-input', id, fp};
+  try { e.scrollIntoView({block:'center', behavior:'instant'}); } catch(_){}
+  e.focus();
+  const proto = window.HTMLInputElement.prototype;
+  const ns = Object.getOwnPropertyDescriptor(proto, 'value').set;
+  // Build the candidate display strings. A native date input ONLY accepts ISO;
+  // a text/masked datepicker usually wants a localized MM/DD/YYYY but many also
+  // accept ISO. Try the type-appropriate value first, then the alternate, and
+  // keep whichever the control actually retains (.value non-empty after set).
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+  const usLocal = m ? (m[2] + '/' + m[3] + '/' + m[1]) : iso;
+  const candidates = (e.type === 'date') ? [iso] : [usLocal, iso];
+  const forceSet = (val) => {
+    try { if (e._valueTracker) e._valueTracker.setValue(''); } catch(_){}
+    ns.call(e, '');
+    e.dispatchEvent(new Event('input', {bubbles:true}));
+    try { if (e._valueTracker) e._valueTracker.setValue(''); } catch(_){}
+    ns.call(e, val);
+    e.dispatchEvent(new Event('input', {bubbles:true}));
+    e.dispatchEvent(new Event('change', {bubbles:true}));
+    return e.value;
+  };
+  let used = null, after = '';
+  for (const cand of candidates) {
+    const got = forceSet(cand);
+    if (got) { used = cand; after = got; break; }
+    used = cand; after = got;  // remember the last attempt even if empty
+  }
+  e.blur();
+  // Re-read after blur (some masked inputs reformat on blur).
+  const finalVal = e.value;
+  // Heuristic 'committed' signal: the input retained a value AND it contains the
+  // day/month/year digits we asked for (covers ISO + MM/DD/YYYY reformat).
+  const day = m ? m[3] : '', mon = m ? m[2] : '', yr = m ? m[1] : '';
+  const committed = !!finalVal && (!m
+    || (finalVal.includes(yr) && finalVal.includes(mon) && finalVal.includes(day)));
+  return {ok:true, used, after, final:finalVal, type:e.type, committed,
+          domId:(e.id||null)};
+}"""
+
+# chain_p7 (2026-06-04): RE-ASSERT-AFTER-PARSE. The dominant Ashby bank class is
+# the resume-parse autofill clobbering a SINGLE already-filled field (Email /
+# LinkedIn / Name) AFTER our fill, so the form fails validation on that one
+# field at submit (Plaid=Email, Reducto=LinkedIn, Benchling=Name). The legacy
+# repair passes only re-fill fids that appear in BOTH the eval-step `resolved`
+# lists AND text_fields, and resolve the DOM element via bare getElementById on
+# the recorded dom_id. That misses system fields (filled via fast-path, so not
+# in any `resolved` list) and breaks when the planned fid suffix != the live DOM
+# input id. This helper takes the AUTHORITATIVE text_fields map (planned values
+# from personal-info.json) and force-sets EVERY non-empty field directly, using
+# the same suffix-fallback resolve the filler uses, AFTER the parse has settled.
+# It returns which fields it had to repair (cur != want) so the pre-submit scan
+# reads the FINAL committed values.
+_REASSERT_TEXT_JS = r"""(args) => {
+  const {fields, force} = args;  // [{fid, val}], force?:bool
+  const out = {repaired: [], ok: [], missing: [], errors: []};
+  const resolve = (fid) => {
+    let el = document.getElementById(fid);
+    if (el) return el;
+    const parts = fid.split('_');
+    for (let i = 1; i < parts.length; i++) {
+      const tail = parts.slice(i).join('_');
+      el = document.getElementById(tail);
+      if (el) return el;
+      if (!tail.startsWith('_')) { el = document.getElementById('_' + tail); if (el) return el; }
+    }
+    const sysIdx = fid.indexOf('_systemfield_');
+    if (sysIdx >= 0) { el = document.getElementById(fid.slice(sysIdx)); if (el) return el; }
+    el = document.querySelector(`[name="${fid}"]`);
+    return el;
+  };
+  const forceSet = (e, val) => {
+    let useVal = val;
+    if (e.type === 'number') {
+      const m = String(val).match(/[-+]?[\d,]*\d/);
+      useVal = m ? m[0].replace(/,/g,'') : '170000';
+    }
+    const proto = e.tagName === 'TEXTAREA' ? window.HTMLTextAreaElement.prototype : window.HTMLInputElement.prototype;
+    const ns = Object.getOwnPropertyDescriptor(proto, 'value').set;
+    try { if (e._valueTracker) e._valueTracker.setValue(''); } catch(_){}
+    ns.call(e, '');
+    e.dispatchEvent(new Event('input', {bubbles:true}));
+    try { if (e._valueTracker) e._valueTracker.setValue(''); } catch(_){}
+    ns.call(e, useVal);
+    e.dispatchEvent(new Event('input', {bubbles:true}));
+    e.dispatchEvent(new Event('change', {bubbles:true}));
+    e.blur();
+    return e.value;
+  };
+  for (const {fid, val} of (fields || [])) {
+    if (val === '' || val == null) continue;
+    try {
+      const el = resolve(fid);
+      if (!el) { out.missing.push(fid); continue; }
+      if (el.tagName === 'INPUT' && ['radio','checkbox','file','submit','button'].includes(el.type)) continue;
+      const cur = el.value;
+      // chain_p10 (2026-06-06 Dash0 2757): with force=true, re-apply even when the
+      // DOM .value already matches. The Ashby resume-parse autofill clobbers React's
+      // CONTROLLED state to empty while leaving DOM .value intact (intl-tel Phone
+      // field is the canonical victim: dom_value stays '346-...' but React/form-state
+      // is ''), so the server reports "Missing entry" for a field that LOOKS filled.
+      // forceSet() resets _valueTracker, forcing a genuine React transition that
+      // re-commits the value into controlled/form state. The cur===val fast-skip is
+      // only safe for the early (non-force) passes.
+      if (cur === val && !force) { out.ok.push(fid); continue; }  // already correct
+      forceSet(el, val);
+      out.repaired.push({fid, was: (cur || '').slice(0,40), now: (el.value || '').slice(0,40), forced: !!force && cur === val});
+    } catch (e) { out.errors.push({fid, error: String(e).slice(0,80)}); }
+  }
+  return out;
+}"""
+
+_COMBOBOX_OPEN_JS = """(args) => {
+  const {fid} = args;
+  const uuidRe = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;
+  const cands = [fid];
+  const m = fid.match(uuidRe); if (m && m.length) cands.push(m[m.length-1]);
+  const sysIdx = fid.indexOf('_systemfield_'); if (sysIdx>=0) cands.push(fid.slice(sysIdx));
+  const qIdx = fid.indexOf('question_'); if (qIdx>=0) cands.push(fid.slice(qIdx));
+  let fe = null;
+  for (const c of cands) { fe = document.querySelector(`[data-field-path="${c}"]`); if (fe) break; }
+  if (!fe) {
+    for (const c of cands) { const lbl = document.querySelector(`label[for="${c}"]`); if (lbl) { fe = lbl.closest('[class*=_fieldEntry_], fieldset'); if (fe) break; } }
+  }
+  if (!fe) return {ok:false, reason:'no-container'};
+  const cbInput = fe.querySelector('input[role=combobox]');
+  if (!cbInput) return {ok:false, reason:'no-combobox', fp: fe.getAttribute('data-field-path')};
+  try { cbInput.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+  cbInput.focus();
+  const ns = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+  ns.call(cbInput, 'a'); cbInput.dispatchEvent(new Event('input', {bubbles:true}));
+  ns.call(cbInput, ''); cbInput.dispatchEvent(new Event('input', {bubbles:true}));
+  return {ok:true, opened:true};
+}"""
+
+_COMBOBOX_PICK_JS = """(args) => {
+  const {want, alts} = args;
+  const lb = document.querySelector('[role=listbox]');
+  if (!lb) return {ok:false, reason:'no-listbox'};
+  const opts = [...lb.querySelectorAll('[role=option]')];
+  const tries = [want, ...(alts||[])].map(s => (s||'').trim().toLowerCase()).filter(Boolean);
+  const txt = (el) => (el.textContent||'').trim();
+  let chosen = null;
+  for (const t of tries) {
+    chosen = opts.find(o => txt(o).toLowerCase() === t)
+          || opts.find(o => txt(o).toLowerCase().includes(t));
+    if (chosen) break;
+  }
+  if (!chosen) chosen = opts.find(o => txt(o).includes('200,000 - $220,000'));
+  if (!chosen) return {ok:false, reason:'no-match', opts: opts.map(o => txt(o))};
+  try { chosen.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+  const r = chosen.getBoundingClientRect();
+  const cx = r.left + r.width/2, cy = r.top + r.height/2;
+  const ev = {bubbles:true,cancelable:true,clientX:cx,clientY:cy,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+  chosen.dispatchEvent(new PointerEvent('pointerdown', ev));
+  chosen.dispatchEvent(new MouseEvent('mousedown', ev));
+  chosen.dispatchEvent(new PointerEvent('pointerup', ev));
+  chosen.dispatchEvent(new MouseEvent('mouseup', ev));
+  chosen.dispatchEvent(new MouseEvent('click', ev));
+  return {ok:true, picked: txt(chosen)};
+}"""
+
+_RADIO_CLICK_BY_ID_JS = """(args) => {
+  // chain_035: click a real <input type=radio> by its id (label_for from the
+  // resolver). Coord-clicking the label is unreliable for some tenants (Sierra)
+  // -- the click lands but React onChange never fires. Click the input directly
+  // and dispatch click+input+change so React controlled state updates.
+  const {input_id} = args;
+  if (!input_id) return {ok:false, reason:'no-id'};
+  const el = document.getElementById(input_id);
+  if (!el) return {ok:false, reason:'no-el', input_id};
+  try { el.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+  const lbl = document.querySelector(`label[for=\"${input_id}\"]`);
+  const r = (lbl||el).getBoundingClientRect();
+  const ev = {bubbles:true,cancelable:true,clientX:r.left+r.width/2,clientY:r.top+r.height/2,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+  const tgt = lbl || el;
+  tgt.dispatchEvent(new PointerEvent('pointerdown', ev));
+  tgt.dispatchEvent(new MouseEvent('mousedown', ev));
+  tgt.dispatchEvent(new PointerEvent('pointerup', ev));
+  tgt.dispatchEvent(new MouseEvent('mouseup', ev));
+  tgt.dispatchEvent(new MouseEvent('click', ev));
+  if (!el.checked) {
+    try { el.click(); } catch(e){}
+  }
+  // force-set checked + fire React events as last resort
+  if (!el.checked) {
+    const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'checked').set;
+    try { setter.call(el, true); } catch(e){}
+    el.dispatchEvent(new Event('input', {bubbles:true}));
+    el.dispatchEvent(new Event('change', {bubbles:true}));
+  }
+  return {ok:true, checked:el.checked, input_id};
+}"""
+
+_RADIO_FORCE_COMMIT_IN_CONTAINER_JS = """(args) => {
+  // chain_p11b (2026-06-08): force-commit a radio/select option INSIDE a known
+  // field container (by data-field-path candidates) to its target label. Some
+  // Ashby tenants ignore a plain label.click() for radios (click lands, React
+  // onChange never fires) so the option reads UNCHECKED at submit and the POST
+  // banks "Missing entry for required field". This locates the container, finds
+  // the option whose label matches `target`, then commits via a TRUSTED pointer
+  // sequence + native checked-setter + input/change events. Idempotent.
+  const {field_paths, target} = args;
+  const tnorm = (target || '').trim().toLowerCase();
+  let cont = null;
+  for (const fp of (field_paths || [])) {
+    cont = document.querySelector(`[data-field-path="${fp}"]`);
+    if (cont) break;
+  }
+  if (!cont) {
+    // fallback: a fieldset/div whose label text leads with the question is hard
+    // to key here; bail so caller can log no-container.
+    return {ok:false, reason:'no-container'};
+  }
+  // Gather candidate option rows: a real radio input + its visible label text.
+  const rows = [];
+  cont.querySelectorAll('label').forEach(lab => {
+    const t = (lab.innerText || '').trim();
+    if (!t) return;
+    let inp = null;
+    const forId = lab.getAttribute('for');
+    if (forId) inp = document.getElementById(forId);
+    if (!inp) inp = lab.querySelector('input[type=radio], input[type=checkbox]');
+    if (!inp) {
+      // input may be a sibling within the same row container
+      const row = lab.closest('div');
+      if (row) inp = row.querySelector('input[type=radio], input[type=checkbox]');
+    }
+    rows.push({lab, t, inp});
+  });
+  // Choose the row matching target (exact, then contains, then startswith).
+  let pick = rows.find(r => r.t.toLowerCase() === tnorm)
+          || rows.find(r => r.t.toLowerCase().includes(tnorm) && tnorm.length > 2)
+          || rows.find(r => tnorm.includes(r.t.toLowerCase()) && r.t.length > 2);
+  if (!pick) return {ok:false, reason:'no-option-match', target, opts: rows.map(r => r.t)};
+  const {lab, inp} = pick;
+  const fire = (el) => {
+    try { el.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+    const r = el.getBoundingClientRect();
+    const ev = {bubbles:true,cancelable:true,clientX:r.left+r.width/2,clientY:r.top+r.height/2,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+    el.dispatchEvent(new PointerEvent('pointerdown', ev));
+    el.dispatchEvent(new MouseEvent('mousedown', ev));
+    el.dispatchEvent(new PointerEvent('pointerup', ev));
+    el.dispatchEvent(new MouseEvent('mouseup', ev));
+    el.dispatchEvent(new MouseEvent('click', ev));
+  };
+  // 1) trusted-click the label (registers in React for most tenants)
+  fire(lab);
+  // 2) if we have the input, trusted-click it too + force-set checked
+  if (inp) {
+    if (!inp.checked) fire(inp);
+    if (!inp.checked) { try { inp.click(); } catch(e){} }
+    if (!inp.checked) {
+      try {
+        const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'checked').set;
+        setter.call(inp, true);
+      } catch(e){}
+      inp.dispatchEvent(new Event('input', {bubbles:true}));
+      inp.dispatchEvent(new Event('change', {bubbles:true}));
+    }
+    return {ok:true, checked: !!inp.checked, picked: pick.t};
+  }
+  // No input handle: the label click is our best effort.
+  return {ok:true, checked: null, picked: pick.t, note:'no-input-handle'};
+}"""
+
+_LOCATION_COMBO_FILL_JS = """async (args) => {
+  // chain_035: fill a location-style typeahead combobox by its container
+  // field-path tail. Used as a FALLBACK when the plan's location-resolve step
+  // cannot find the input (e.g. ElevenLabs renders Location as a CUSTOM field
+  // whose fid has no 'location' substring and no id/name -> only an
+  // input[role=combobox] with placeholder 'Start typing...'). Types the value
+  // char-by-char, waits for the listbox, clicks the best option.
+  const {tail, value} = args;
+  const sleep = (ms)=>new Promise(r=>setTimeout(r,ms));
+  let cont = [...document.querySelectorAll('[data-field-path]')]
+    .find(e => (e.getAttribute('data-field-path')||'').endsWith(tail));
+  // fallback: any required combobox whose label says Location (broadened
+  // 2026-06-08 for Modern Treasury ~2602: "Where will you be working from?"
+  // and similar labels that have no "location" substring).
+  if (!cont) {
+    cont = [...document.querySelectorAll('[data-field-path]')].find(e => {
+      const lbl=(e.querySelector('label')||{}).textContent||'';
+      return /location|working from|will you be based|are you based|are you located|will you work from|where will you be|based out of/i.test(lbl) && e.querySelector('input[role=combobox]');
+    });
+  }
+  if (!cont) return {ok:false, reason:'no-container'};
+  const inp = cont.querySelector('input[role=combobox]') || cont.querySelector('input[type=text]');
+  if (!inp) return {ok:false, reason:'no-input'};
+  const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;
+  // chain_036: read options scoped to THIS input's listbox via aria-controls/
+  // aria-owns, falling back to any visible listbox option. Prevents grabbing a
+  // sibling combobox's options (the 'Wallis and Futuna' bug -> a city string
+  // fed an unrelated geo list, no scoping).
+  const scopedOpts = () => {
+    const lbId = inp.getAttribute('aria-controls') || inp.getAttribute('aria-owns');
+    let lb = lbId ? document.getElementById(lbId) : null;
+    let o = lb ? [...lb.querySelectorAll('[role=\"option\"]')]
+               : [...document.querySelectorAll('[role=\"listbox\"] [role=\"option\"], [role=\"option\"]')];
+    return o.filter(x=>{const r=x.getBoundingClientRect();return r.width>0&&r.height>0;});
+  };
+  const city = value.split(',')[0].trim();
+  // chain_036: Ashby geo-autocomplete chokes on 'City, ST' (comma+state).
+  // Try a sequence of progressively simpler query strings.
+  const tries = [city, city + ', WA', value, city + ', Washington'];
+  for (const q of tries) {
+    inp.focus();
+    setter.call(inp, '');
+    inp.dispatchEvent(new Event('input',{bubbles:true}));
+    await sleep(120);
+    for (const ch of q) {
+      setter.call(inp, inp.value + ch);
+      inp.dispatchEvent(new Event('input',{bubbles:true}));
+      inp.dispatchEvent(new KeyboardEvent('keydown',{key:ch,bubbles:true}));
+      await sleep(55);
+    }
+    // wait for options (geo lookup is async)
+    let opts=[];
+    for (let t=0;t<4000;t+=150){ opts=scopedOpts(); if(opts.length) break; await sleep(150); }
+    if (!opts.length) continue;
+    const wantC = city.toLowerCase();
+    let pick = opts.find(o=>o.textContent.trim().toLowerCase()===value.toLowerCase())
+            || opts.find(o=>o.textContent.trim().toLowerCase().startsWith(wantC))
+            || opts.find(o=>o.textContent.trim().toLowerCase().includes(wantC));
+    if (pick) {
+      pick.scrollIntoView({block:'center'});
+      pick.dispatchEvent(new MouseEvent('mousedown',{bubbles:true}));
+      pick.dispatchEvent(new MouseEvent('mouseup',{bubbles:true}));
+      pick.click();
+      await sleep(250);
+      return {ok:true, picked: pick.textContent.trim().slice(0,60), typed:q};
+    }
+  }
+  // INTEGRITY GUARD: never auto-pick garbage. Report options for review.
+  {
+    const opts=scopedOpts();
+    return {ok:false, reason:'no-exact-match', typed:value,
+            options: opts.slice(0,6).map(o=>o.textContent.trim())};
+  }
+}"""
+
+_CHECKBOX_ACK_JS = """(args) => {
+  // Resolve a required-acknowledgement checkbox by its question UUID tail and
+  // click its label. Ashby labeled-checkbox inputs have name=<labelText> (NOT a
+  // uuid) and id=<entryId>_<questionUuid>-labeled-checkbox-<n>, wrapped by a
+  // container <div data-field-path="<questionUuid>">. The old name-uuid resolver
+  // missed them. chain_035 fix.
+  const {want_name, want_text} = args;
+  const uuidRe = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;
+  const uuids = (want_name||'').match(uuidRe) || [];
+  const tail = uuids[uuids.length - 1];
+  if (!tail) return {ok:false, reason:'no-tail'};
+  let container = document.querySelector(`[data-field-path=\"${tail}\"]`);
+  if (!container) {
+    // fallback: any checkbox whose id contains the tail
+    const cb = [...document.querySelectorAll('input[type=checkbox]')].find(c => (c.id||'').includes(tail));
+    if (cb) container = cb.closest('[data-field-path]') || cb.parentElement;
+  }
+  if (!container) return {ok:false, reason:'no-container', tail};
+  const inputs = [...container.querySelectorAll('input[type=checkbox]')];
+  if (!inputs.length) return {ok:false, reason:'no-checkbox-input', tail};
+  const lblText = (id) => (document.querySelector(`label[for=\"${id}\"]`)?.textContent||'').trim().toLowerCase();
+  let target = inputs[0];
+  if (want_text) {
+    const w = want_text.trim().toLowerCase();
+    target = inputs.find(i => lblText(i.id) === w)
+          || inputs.find(i => lblText(i.id).startsWith(w))
+          || inputs.find(i => lblText(i.id).includes(w)) || inputs[0];
+  }
+  if (target.checked) return {ok:true, already:true, id:target.id};
+  const label = document.querySelector(`label[for=\"${target.id}\"]`) || target.closest('label') || target.parentElement;
+  try { (label||target).scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+  const el = label || target;
+  const r = el.getBoundingClientRect();
+  const cx = r.left + r.width/2, cy = r.top + r.height/2;
+  const ev = {bubbles:true,cancelable:true,clientX:cx,clientY:cy,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+  el.dispatchEvent(new PointerEvent('pointerdown', ev));
+  el.dispatchEvent(new MouseEvent('mousedown', ev));
+  el.dispatchEvent(new PointerEvent('pointerup', ev));
+  el.dispatchEvent(new MouseEvent('mouseup', ev));
+  el.dispatchEvent(new MouseEvent('click', ev));
+  // also try direct .click() on the input as a belt-and-suspenders
+  if (!target.checked) { try { target.click(); } catch(e){} }
+  return {ok:true, checked:target.checked, id:target.id, label:(el.textContent||'').trim().slice(0,40)};
+}"""
+
+def log(msg): print(f"[runner] {msg}", file=sys.stderr, flush=True)
+
+def _collect_text_fields(steps, upto_i):
+    """Return the authoritative {fid: value} map from the plan's
+    ashby.type_text_fields step (the values resolved from personal-info.json)."""
+    for j in range(upto_i):
+        if steps[j].get('tool') == 'ashby.type_text_fields':
+            return dict(steps[j].get('args', {}).get('text_fields', {}) or {})
+    return {}
+
+def reassert_text_fields(page, text_fields, stabilize_passes=3, settle_ms=900, force=False):
+    """chain_p7: re-assert EVERY authoritative text/system field after the Ashby
+    resume-parse autofill settles, so a clobbered Email/LinkedIn/Name field wins
+    the race. Iterates text_fields DIRECTLY (not the eval `resolved` intersection)
+    and resolves the DOM input by suffix-fallback. Loops a few passes with a short
+    settle between because some tenants keep re-clobbering on later microtasks;
+    breaks early once a full pass repairs nothing. Returns the union of fids that
+    were repaired across passes. Best-effort; never raises.
+    chain_p10: pass force=True for the FINAL pre-submit pass so every field is
+    re-applied through the _valueTracker reset even when DOM .value already
+    matches -- defeats the autofill 'DOM-value-kept-but-React-state-emptied'
+    clobber (intl-tel Phone field on Dash0 2757)."""
+    fields = [{"fid": k, "val": v} for k, v in (text_fields or {}).items() if v not in ('', None)]
+    if not fields:
+        return []
+    repaired_union = []
+    seen = set()
+    for p in range(max(1, stabilize_passes)):
+        try:
+            res = page.evaluate(_REASSERT_TEXT_JS, {"fields": fields, "force": bool(force)})
+        except Exception as e:
+            log(f"reassert-text pass {p+1} eval fail: {e}")
+            break
+        rep = res.get('repaired', []) if isinstance(res, dict) else []
+        for r in rep:
+            fid = r.get('fid') if isinstance(r, dict) else r
+            if fid and fid not in seen:
+                seen.add(fid); repaired_union.append(fid)
+        miss = res.get('missing', []) if isinstance(res, dict) else []
+        log(f"reassert-text pass {p+1}: repaired={len(rep)} {[ (r.get('fid') or '')[-24:] for r in rep ]} missing={len(miss)}")
+        if not rep:
+            break  # full pass found nothing clobbered -> stable
+        if p < stabilize_passes - 1:
+            try: page.wait_for_timeout(settle_ms)
+            except Exception: pass
+    return repaired_union
+
+
+# ---------------------------------------------------------------------------
+# ashby-date-runner (2026-06-08): commit ISO dates into Ashby "Date" widgets.
+# The dryrun normalizes any Ashby Date field to an ISO YYYY-MM-DD (today+14d)
+# and tags entry["_ashby_date_iso"]; build_plan routes Date fids into BOTH
+# plan["text_fields"] (legacy) AND plan["date_fields"], and the
+# ashby.type_text_fields step carries date_field_ids=list(date_fields). The
+# legacy path typed the ISO string with CDP keystrokes, which does NOT commit to
+# the calendar-picker's React controlled state -> submit banks "Missing entry"
+# (r4). commit_ashby_date_fields drives each date input via the _SET_DATE_JS
+# _valueTracker-reset transition (the proven pattern), then verifies the value
+# stuck; if a control ignores the programmatic set (rare masked pickers that
+# only accept a real calendar click), it falls back to opening the picker and
+# trusted-clicking the day cell that matches the target date.
+#
+# `date_specs` is a list of {"fid": <plan fid>, "iso": "YYYY-MM-DD"}. We resolve
+# the live DOM id with the same uuid/systemfield/data-field-path fallback the
+# text path uses. Best-effort; never raises. Returns a list of per-field result
+# dicts so the pre-submit scan / caller can see which dates committed.
+
+# Calendar-cell CLICK fallback: open the picker for a date input, find the
+# day-cell whose number == target day (and, when the header is visible, ensure
+# the month/year matches), and trusted-click it. react-datepicker + most Ashby
+# pickers render day cells with role=gridcell / [class*=day] / aria-label that
+# contains the full date. Returns {ok, picked, reason}.
+_DATE_CALENDAR_OPEN_JS = r"""(args) => {
+  const {id, fp} = args;
+  let e = id ? document.getElementById(id) : null;
+  const ok = (el) => el && el.tagName === 'INPUT'
+    && !['radio','checkbox','file','submit','button'].includes(el.type);
+  if (!ok(e) && fp) {
+    const cont = document.querySelector(`[data-field-path="${fp}"]`);
+    if (cont) e = cont.querySelector('input[type=date]')
+      || cont.querySelector('input:not([type=radio]):not([type=checkbox]):not([type=file])');
+  }
+  if (!ok(e)) return {ok:false, reason:'no-date-input'};
+  try { e.scrollIntoView({block:'center', behavior:'instant'}); } catch(_){}
+  const r = e.getBoundingClientRect();
+  return {ok:true, cx: r.left + r.width/2, cy: r.top + r.height/2,
+          domId: (e.id||null)};
+}"""
+
+_DATE_CALENDAR_PICK_JS = r"""(args) => {
+  const {iso} = args;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+  if (!m) return {ok:false, reason:'bad-iso'};
+  const day = String(parseInt(m[3],10));
+  // react-datepicker: '.react-datepicker__day--0NN' & not '--outside-month'
+  let cells = [...document.querySelectorAll('.react-datepicker__day:not(.react-datepicker__day--outside-month)')];
+  if (!cells.length) {
+    cells = [...document.querySelectorAll('[role=gridcell], [class*="day"], td')];
+  }
+  const want = day;
+  const norm = (s) => (s||'').trim();
+  let chosen = cells.find(c => norm(c.textContent) === want && !/disabled|outside/.test(c.className));
+  if (!chosen) chosen = cells.find(c => norm(c.textContent) === want);
+  if (!chosen) return {ok:false, reason:'no-cell', day: want,
+                       sample: cells.slice(0,8).map(c=>norm(c.textContent))};
+  try { chosen.scrollIntoView({block:'center', behavior:'instant'}); } catch(_){}
+  const r = chosen.getBoundingClientRect();
+  return {ok:true, cx: r.left + r.width/2, cy: r.top + r.height/2,
+          text: norm(chosen.textContent)};
+}"""
+
+
+def _resolve_date_dom_id(page, fid):
+    """Resolve a plan date fid to a live DOM id using the same uuid /
+    systemfield / single-underscore fallbacks as the text path. Returns a
+    concrete id string when one exists, else None (caller then drives by the
+    data-field-path tail)."""
+    import re as _re_d
+    cands = [fid]
+    u = _re_d.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', fid)
+    if u:
+        cands.append(u[-1])
+    for sf in ('__systemfield_', '_systemfield_'):
+        k = fid.find(sf)
+        if k >= 0:
+            cands.append(fid[k:]); cands.append(fid[k + 1:])
+    seen = set(); ordered = []
+    for c in cands:
+        if c and c not in seen:
+            seen.add(c); ordered.append(c)
+    for c in ordered:
+        try:
+            if page.evaluate("(id)=>!!document.getElementById(id)", c):
+                return c
+        except Exception:
+            pass
+    return None
+
+
+def _date_fp_tail(fid):
+    """The data-field-path tail to scope the date <input> when it is
+    nameless+idless (the OpenAI 2549 'When can you start?' class). Prefer the
+    trailing uuid; fall back to a `question_<id>` suffix."""
+    import re as _re_d
+    u = _re_d.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', fid)
+    if u:
+        return u[-1]
+    k = fid.find('question_')
+    if k >= 0:
+        return fid[k:]
+    return fid
+
+
+def commit_ashby_date_fields(page, date_specs):
+    """Drive each Ashby Date widget to commit an ISO date into React state.
+    date_specs: [{"fid": <plan fid>, "iso": "YYYY-MM-DD"}]. Best-effort; never
+    raises. Returns [{fid, committed, method, final, ...}] for verification."""
+    import re
+    out = []
+    for spec in (date_specs or []):
+        fid = spec.get("fid")
+        iso = (spec.get("iso") or "").strip()
+        if not fid or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", iso):
+            out.append({"fid": fid, "committed": False, "method": "skip",
+                        "reason": f"bad-iso:{iso!r}"})
+            continue
+        dom_id = _resolve_date_dom_id(page, fid)
+        fp = _date_fp_tail(fid)
+        # 1) programmatic _valueTracker-reset transition (the proven pattern)
+        res = {}
+        try:
+            res = page.evaluate(_SET_DATE_JS, {"id": dom_id, "iso": iso, "fp": fp})
+        except Exception as e:
+            log(f"date set-js fail {fid[-20:]}: {e}")
+            res = {"ok": False, "reason": f"eval-error:{e}"}
+        committed = bool(isinstance(res, dict) and res.get("committed"))
+        method = "set_value_js"
+        # 2) calendar-cell CLICK fallback if the programmatic set did not stick
+        if not committed:
+            try:
+                opened = page.evaluate(_DATE_CALENDAR_OPEN_JS, {"id": dom_id, "fp": fp})
+                if isinstance(opened, dict) and opened.get("ok"):
+                    # focus + click the input to open the calendar (trusted)
+                    try:
+                        page.mouse.click(opened["cx"], opened["cy"])
+                        page.wait_for_timeout(250)
+                    except Exception:
+                        pass
+                    pick = page.evaluate(_DATE_CALENDAR_PICK_JS, {"iso": iso})
+                    if isinstance(pick, dict) and pick.get("ok"):
+                        try:
+                            page.mouse.click(pick["cx"], pick["cy"])
+                            page.wait_for_timeout(200)
+                            method = "calendar_click"
+                        except Exception as ce:
+                            log(f"date cell click fail {fid[-20:]}: {ce}")
+                    else:
+                        log(f"date calendar pick no-cell {fid[-20:]}: {pick}")
+                    # re-verify after the click via a fresh set-js read-back
+                    try:
+                        res2 = page.evaluate(_SET_DATE_JS, {"id": dom_id, "iso": iso, "fp": fp})
+                        if isinstance(res2, dict) and res2.get("committed"):
+                            committed = True
+                            res = res2
+                    except Exception:
+                        pass
+            except Exception as e:
+                log(f"date calendar fallback fail {fid[-20:]}: {e}")
+        out.append({"fid": fid, "committed": committed, "method": method,
+                    "final": (res.get("final") if isinstance(res, dict) else None),
+                    "used": (res.get("used") if isinstance(res, dict) else None),
+                    "dom_id": dom_id, "reason": (res.get("reason") if isinstance(res, dict) else None)})
+        log(f"date-commit {fid[-24:]}: committed={committed} method={method} "
+            f"final={out[-1]['final']!r}")
+    return out
+
+
+# ---------------------------------------------------------------------------
+# chain_p9 (2026-06-04 ashby-batch4): CUSTOM-SELECT RE-ASSERT.
+# The next dominant Ashby bank class after the text-field clobber: custom
+# NON-Yes/No single-selects (Ashby ValueSelect rendered as a multi-option
+# radio group OR, on some tenants, a react-select `.select__control`) whose
+# resolved value is filled ONCE during the radio-resolve pass but is then
+# (a) cleared by the resume-parse autofill re-render, or (b) never committed
+# because the resolved value didn't textually match any option label.
+# Confirmed:
+#   * Cape 2800 "3 days/wk NYC office / DC office / cannot come in" select —
+#     dryrun resolved value="Yes" (US-onsite doctrine answer_yes), but "Yes"
+#     matches NO option label, so the radio-fill no_match'd and the field
+#     stayed empty -> bank. The truthful answer is an AFFIRMATIVE office
+#     option (Cyrus relocates anywhere in the US, onsite never a knockout).
+#   * Helion 2712 "have you worked for Helion" 4-option select — resolved
+#     value="I have not worked for Helion" matches an option, but the autofill
+#     clobber clears it and the legacy yesno-verify (which only handles _yesno_
+#     button widgets and bare-substring radio match) didn't re-commit reliably.
+# The fix mirrors the existing chain_p7/p8 text re-assert and the yesno-verify
+# radio re-click, but for arbitrary single-option selects: resolve the BEST
+# option deterministically (choose_select_option), confirm the committed value,
+# and re-pick it scoped to THAT field's own container/menu if it doesn't match.
+
+_AFFIRMATIVE_HINTS = (
+    "i can", "i am able", "i'm able", "i am willing", "yes", "i agree",
+    "i confirm", "i acknowledge", "in office", "in-office", "in person",
+    "in-person", "on-site", "onsite",
+)
+_NEGATIVE_HINTS = (
+    "cannot", "can not", "can't", "unable", "i am not able", "not able",
+    "i do not", "i don't", "none of", "no, ", "decline",
+)
+_PRIOR_EMPLOYER_HINTS = ("worked for", "work for", "employee of", "employed by", "current or former")
+_NEVER_WORKED_HINTS = (
+    "have not worked", "haven't worked", "never worked", "not worked",
+    "do not work", "don't work", "i have not", "no, i have not", "none", "n/a",
+)
+
+
+def _norm(s):
+    return (s or "").strip().lower()
+
+
+def choose_select_option(want, options, label=""):
+    """Pure, deterministic chooser: given the dryrun-resolved value `want` and
+    the live option label list `options`, return the option string to commit
+    (or None if nothing sensible matches). Mirrors the radio-fill ladder
+    (exact -> startswith -> substring) then layers the truthful Ashby doctrine
+    fallbacks the plain ladder misses:
+
+      1. Exact / startswith / substring on `want` (and `want` inside option).
+      2. PRIOR-EMPLOYER selects ("have you worked for X"): Cyrus has NOT worked
+         for these companies, so when `want` is a negative/no answer (or the
+         options are clearly a worked-here ladder) pick the honest
+         "have not worked / no" option, NEVER an "I am a current/former employee"
+         option.
+      3. AFFIRMATIVE-ARRANGEMENT selects (onsite/hybrid/office "can you come in"
+         arrangement) when `want` is affirmative (Yes / I can / willing): pick
+         an affirmative office option, explicitly avoiding any "cannot/unable"
+         option (US-onsite-never-a-knockout doctrine).
+
+    Returns the chosen option label EXACTLY as it appears in `options`, or None.
+    Never raises. This is the single source of truth the JS re-pick targets."""
+    opts = [o for o in (options or []) if isinstance(o, str) and o.strip()]
+    if not opts:
+        return None
+    w = _norm(want)
+    lab = _norm(label)
+
+    # ---- 1. plain ladder (matches the radio-fill behavior exactly) ----
+    if w:
+        for o in opts:
+            if _norm(o) == w:
+                return o
+        for o in opts:
+            if _norm(o).startswith(w):
+                return o
+        for o in opts:
+            if w in _norm(o):
+                return o
+        # want may be the longer string containing an option (rare)
+        for o in opts:
+            on = _norm(o)
+            if on and on in w:
+                return o
+
+    # ---- 2. prior-employer ladder ----
+    is_prior_employer = any(h in lab for h in _PRIOR_EMPLOYER_HINTS) or any(
+        h in _norm(o) for o in opts for h in ("former ", "current ") if "employee" in _norm(o)
+    )
+    want_negative = (w in ("no", "false", "") or any(h in w for h in _NEVER_WORKED_HINTS))
+    if is_prior_employer and want_negative:
+        for o in opts:
+            if any(h in _norm(o) for h in _NEVER_WORKED_HINTS):
+                return o
+        # else fall through to affirmative/neg logic below
+
+    # ---- 3. affirmative-arrangement ladder ----
+    # Only fire when the question is actually an arrangement/onsite/availability
+    # question (label or options hint at it) AND `want` is affirmative. This
+    # avoids picking an arbitrary first option for an unrelated select that just
+    # happened to resolve to "Yes" with no matching option.
+    _ARRANGEMENT_HINTS = ("office", "onsite", "on-site", "in person", "in-person",
+                          "hybrid", "remote", "days a week", "days/week", "days per week",
+                          "come in", "commute", "relocat", "in the", "work arrangement",
+                          "willing", "able to", "can you", "availab")
+    is_arrangement = any(h in lab for h in _ARRANGEMENT_HINTS) or any(
+        h in _norm(o) for o in opts for h in ("office", "onsite", "in person", "remote", "days a week", "i can work", "i cannot")
+    )
+    want_affirmative = (w in ("yes", "true") or any(h in w for h in ("i can", "willing", "able", "agree", "onsite", "in office", "in-office", "in person")))
+    if is_arrangement and want_affirmative:
+        # prefer an explicitly affirmative option that is NOT a negative one
+        for hint in _AFFIRMATIVE_HINTS:
+            for o in opts:
+                on = _norm(o)
+                if hint in on and not any(neg in on for neg in _NEGATIVE_HINTS):
+                    return o
+        # else the first non-negative option (avoid "cannot/none")
+        for o in opts:
+            if not any(neg in _norm(o) for neg in _NEGATIVE_HINTS):
+                return o
+
+    return None
+
+
+_REASSERT_SELECT_JS = r"""(args) => {
+  // chain_p9: re-assert ONE custom single-select to a target option label,
+  // SCOPED to that field's own container (data-field-path) so we never bind to
+  // a sibling control's open menu (the documented remix id-collision bug).
+  // Handles two DOM shapes inside the container:
+  //   (A) traditional <input type=radio> group  -> click the matching label.
+  //   (B) react-select `.select__control`       -> open it, click the matching
+  //       `.select__option` from THIS control's own `.select__menu`.
+  // Returns {ok, shape, before, after, reason}. Never throws.
+  const {field_paths, target} = args;
+  const want = (target || '').trim().toLowerCase();
+  if (!want) return {ok:false, reason:'no-target'};
+  // locate the field container by any of the candidate field-paths
+  let cont = null;
+  for (const fp of (field_paths || [])) {
+    cont = document.querySelector(`[data-field-path="${fp}"]`);
+    if (cont) break;
+  }
+  if (!cont) return {ok:false, reason:'no-container', field_paths};
+  const norm = (s) => (s||'').trim().toLowerCase();
+  const matches = (txt) => { const t = norm(txt); return t === want || t.startsWith(want) || t.includes(want) || (t && want.includes(t)); };
+
+  // ---- (A) radio group ----
+  const radios = [...cont.querySelectorAll('input[type=radio]')];
+  if (radios.length) {
+    const lblText = (r) => norm((document.querySelector(`label[for="${r.id}"]`)||r.closest('label')||{}).textContent||'');
+    const cur = radios.find(r => r.checked);
+    const curTxt = cur ? lblText(cur) : '';
+    if (cur && matches(curTxt)) return {ok:true, shape:'radio', before:curTxt, after:curTxt, already:true};
+    const tgt = radios.find(r => matches(lblText(r)));
+    if (!tgt) return {ok:false, shape:'radio', reason:'no-option-match', before:curTxt, options:radios.map(lblText)};
+    const lbl = document.querySelector(`label[for="${tgt.id}"]`) || tgt.closest('label') || tgt;
+    try { lbl.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+    const r = lbl.getBoundingClientRect();
+    const ev = {bubbles:true,cancelable:true,clientX:r.left+r.width/2,clientY:r.top+r.height/2,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+    lbl.dispatchEvent(new PointerEvent('pointerdown', ev));
+    lbl.dispatchEvent(new MouseEvent('mousedown', ev));
+    lbl.dispatchEvent(new PointerEvent('pointerup', ev));
+    lbl.dispatchEvent(new MouseEvent('mouseup', ev));
+    lbl.dispatchEvent(new MouseEvent('click', ev));
+    if (!tgt.checked) { try { tgt.click(); } catch(e){} }
+    if (!tgt.checked) {
+      const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'checked').set;
+      try { setter.call(tgt, true); } catch(e){}
+      tgt.dispatchEvent(new Event('input',{bubbles:true}));
+      tgt.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+    return {ok:tgt.checked, shape:'radio', before:curTxt, after:lblText(tgt)};
+  }
+
+  // ---- (B) react-select control (scoped to THIS container) ----
+  const control = cont.querySelector('.select__control');
+  if (control) {
+    const single = cont.querySelector('.select__single-value');
+    const curTxt = norm(single ? single.textContent : '');
+    if (curTxt && matches(curTxt)) return {ok:true, shape:'react-select', before:curTxt, after:curTxt, already:true};
+    // open the menu
+    const r0 = control.getBoundingClientRect();
+    const ev0 = {bubbles:true,cancelable:true,clientX:r0.left+r0.width/2,clientY:r0.top+r0.height/2,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+    control.dispatchEvent(new PointerEvent('pointerdown', ev0));
+    control.dispatchEvent(new MouseEvent('mousedown', ev0));
+    control.dispatchEvent(new MouseEvent('mouseup', ev0));
+    control.dispatchEvent(new MouseEvent('click', ev0));
+    // ANTI-COLLISION: only read options from THIS container's own menu. The
+    // react-select menu is portaled in some builds; prefer the in-container
+    // menu, else a menu whose controlling input id matches this container.
+    let menu = cont.querySelector('.select__menu');
+    if (!menu) {
+      const hidden = cont.querySelector('input[id]');
+      const qid = hidden ? hidden.id : null;
+      const menus = [...document.querySelectorAll('.select__menu')];
+      // last resort: a menu inside the same fieldEntry, never a global pick
+      menu = menus.find(m => cont.contains(m)) || null;
+      if (!menu && qid) {
+        menu = menus.find(m => { const a = m.closest('[data-field-path]'); return a && (field_paths||[]).includes(a.getAttribute('data-field-path')); }) || null;
+      }
+    }
+    if (!menu) return {ok:false, shape:'react-select', reason:'no-scoped-menu', before:curTxt};
+    const opts = [...menu.querySelectorAll('.select__option')];
+    const tgt = opts.find(o => matches(o.textContent));
+    if (!tgt) return {ok:false, shape:'react-select', reason:'no-option-match', before:curTxt, options:opts.map(o=>norm(o.textContent))};
+    try { tgt.scrollIntoView({block:'center', behavior:'instant'}); } catch(e){}
+    const r1 = tgt.getBoundingClientRect();
+    const ev1 = {bubbles:true,cancelable:true,clientX:r1.left+r1.width/2,clientY:r1.top+r1.height/2,pointerType:'mouse',button:0,pointerId:1,isPrimary:true};
+    tgt.dispatchEvent(new PointerEvent('pointerdown', ev1));
+    tgt.dispatchEvent(new MouseEvent('mousedown', ev1));
+    tgt.dispatchEvent(new MouseEvent('mouseup', ev1));
+    tgt.dispatchEvent(new MouseEvent('click', ev1));
+    const after = norm((cont.querySelector('.select__single-value')||{}).textContent||'');
+    return {ok:matches(after), shape:'react-select', before:curTxt, after};
+  }
+
+  return {ok:false, reason:'no-select-widget', field_paths};
+}"""
+
+
+def _field_path_candidates(name):
+    """Mirror the filler's extractFieldPath: full fid, trailing UUID, trailing
+    _systemfield_ suffix. Used to scope the JS re-pick to the right container."""
+    import re as _re
+    cands = [name]
+    uuids = _re.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', name or '')
+    if uuids:
+        cands.append(uuids[-1])
+    si = (name or '').find('_systemfield_')
+    if si >= 0:
+        cands.append(name[si:])
+    # chain (Helion 2712): Ashby renders the container's data-field-path as the
+    # bare `question_<numericId>` suffix (NOT the UUID, NOT the full fid). The
+    # plan fid is `<entryUuid>_question_<id>`, so strip the leading `<uuid>_`
+    # prefix to recover the real container key. Also match a trailing
+    # `question_<id>` as a belt-and-suspenders.
+    qi = (name or '').find('_question_')
+    if qi >= 0:
+        cands.append(name[qi + 1:])  # drop leading underscore -> 'question_<id>'
+    qm = _re.search(r'(question_[0-9]+)$', name or '')
+    if qm:
+        cands.append(qm.group(1))
+    # de-dup, preserve order
+    seen = set(); out = []
+    for c in cands:
+        if c and c not in seen:
+            seen.add(c); out.append(c)
+    return out
+
+
+def reassert_select_fields(page, radios):
+    """chain_p9: re-assert every CUSTOM single-select (a plan `radios` entry that
+    is NOT a plain Yes/No) to its truthful option, scoped to that field's own
+    container so we never bind to a sibling control's open menu. Resolves the
+    target option deterministically via choose_select_option (affirmative-office
+    / honest-prior-employer doctrine), then re-picks via _REASSERT_SELECT_JS if
+    the committed value doesn't match. Yes/No radios are left to the existing
+    yesno-verify block. Returns a list of dicts describing each re-pick. Never
+    raises."""
+    out = []
+    for rd in (radios or []):
+        try:
+            name = rd.get('name') or ''
+            want = (rd.get('value') or '').strip()
+            options = [o for o in (rd.get('options') or []) if isinstance(o, str) and o.strip()]
+            if not name or not options:
+                continue
+            # Skip plain Yes/No widgets — the yesno-verify block owns those.
+            opt_set = {(_norm(o)) for o in options}
+            is_yesno = opt_set <= {'yes', 'no'} and len(opt_set) <= 2
+            if is_yesno:
+                continue
+            target = choose_select_option(want, options, rd.get('label', ''))
+            if not target:
+                out.append({'name': name[-24:], 'want': want, 'picked': None, 'reason': 'no-choosable-option', 'options': options})
+                continue
+            res = page.evaluate(_REASSERT_SELECT_JS, {
+                'field_paths': _field_path_candidates(name),
+                'target': target,
+            })
+            entry = {'name': name[-24:], 'want': want, 'target': target}
+            if isinstance(res, dict):
+                entry.update({'ok': res.get('ok'), 'shape': res.get('shape'),
+                              'already': res.get('already', False),
+                              'before': res.get('before'), 'after': res.get('after'),
+                              'reason': res.get('reason')})
+            out.append(entry)
+        except Exception as e:
+            log(f"reassert-select fail for {(rd.get('name') or '')[-20:]}: {e}")
+    committed = [e for e in out if e.get('ok') and not e.get('already')]
+    log(f"reassert-select: {len(out)} custom-select(s) checked, {len(committed)} re-committed")
+    return out
+
+
+def wait_autofill_settle(page, max_ms=12000, quiet_ms=1500):
+    """Block until the Ashby resume-autofill parse finishes and the form DOM is
+    quiescent. The autofill widget shows a "Parsing your resume. Autofilling key
+    fields..." banner while it re-renders (and clobbers already-set fields). On
+    pathological tenants (Snowflake) the re-render fires LATE, racing field fills.
+    Calling this right after the resume upload — BEFORE any radio/text fill — lets
+    the autofill finish first so subsequent fills stick. Returns True if it saw a
+    clean settle, False on timeout (caller proceeds anyway). Best-effort; never
+    raises."""
+    import time as _t
+    _deadline = _t.time() + (max_ms / 1000.0)
+    _PARSING_RE = "parsing your resume|autofilling key fields|analyzing your resume"
+    _last_sig = None
+    _quiet_since = None
+    while _t.time() < _deadline:
+        try:
+            _busy = page.evaluate(
+                "(re)=>{const t=(document.body.innerText||'').toLowerCase();"
+                "return new RegExp(re).test(t);}", _PARSING_RE)
+        except Exception:
+            _busy = False
+        try:
+            # DOM signature: count of inputs + their concatenated values length.
+            _sig = page.evaluate(
+                "()=>{const xs=[...document.querySelectorAll('input,textarea,select')];"
+                "return xs.length+':'+xs.reduce((a,e)=>a+(String(e.value||'').length),0);}")
+        except Exception:
+            _sig = None
+        _now = _t.time()
+        if not _busy and _sig == _last_sig and _sig is not None:
+            if _quiet_since is None:
+                _quiet_since = _now
+            elif (_now - _quiet_since) * 1000.0 >= quiet_ms:
+                return True
+        else:
+            _quiet_since = None
+            _last_sig = _sig
+        page.wait_for_timeout(250)
+    return False
+
+
+# chain_p11 (2026-06-08, Rogo 2475/2901-2904): the resume-autofill widget
+# RE-EMPTIES the Location typeahead + the work-auth radio AT SUBMIT -- it fires
+# its LAST DOM mutation AFTER our earlier force-reassert wins, so by the time the
+# submit POST serializes the form those two fields are blank again and Ashby
+# FormRender returns "Missing entry" for Location + work-auth. The earlier
+# upload-last/chain_p7/p8 reasserts run too soon to beat this final clobber.
+#
+# FIX = deterministic settle-THEN-reassert as the VERY LAST action before submit:
+#   1. wait_autofill_settle() so the autofill has emitted its last mutation (NOT a
+#      fixed sleep -- it returns as soon as the DOM signature goes quiet, capped).
+#   2. re-run the idempotent location_typeahead_v2 step (refills the Location combo).
+#   3. re-assert the work-auth radio(s) via a TRUSTED label click (registers in
+#      React even if .checked already reads true).
+#   4. VERIFY in the same tick that Location input is non-empty AND the work-auth
+#      radio is checked. Returns a status dict; caller proceeds to submit and logs.
+# Because this is gated on the settle signal it runs only once the autofill can no
+# longer fire, so the reassert is the last write the serializer sees.
+_VERIFY_LOC_WORKAUTH_JS = r"""() => {
+  const out = {location: null, workauth: null};
+  // Location: find a required combobox whose label mentions Location, report its value.
+  const conts = [...document.querySelectorAll('[data-field-path], [class*=_fieldEntry_], fieldset')];
+  for (const c of conts) {
+    const lbl = ((c.querySelector('label')||{}).textContent||'').toLowerCase();
+    if (/location|where .*(based|work|located)|city/.test(lbl)) {
+      const inp = c.querySelector('input[role=combobox]') || c.querySelector('input[type=text]');
+      if (inp) { out.location = String(inp.value||'').trim(); break; }
+    }
+  }
+  // Work-auth: find a fieldset/container whose label mentions authoriz/eligib/visa/
+  // sponsor/work in the u and report whether any radio is checked + its label.
+  for (const c of conts) {
+    const lbl = ((c.querySelector('label, legend')||{}).textContent||'').toLowerCase();
+    if (/authoriz|authoris|eligib|legally|work in the u|right to work|visa|sponsor/.test(lbl)) {
+      const radios = [...c.querySelectorAll('input[type=radio]')];
+      const yesno = c.querySelector('div[class*="_yesno_"], button[class*="_active_"], button[class*="_selected_"]');
+      if (radios.length) {
+        const chk = radios.find(r=>r.checked);
+        out.workauth = {kind:'radio', checked: !!chk, total: radios.length};
+        if (out.workauth.checked) break;
+      } else if (yesno) {
+        const active = c.querySelector('button[class*="_active_"], button[class*="_selected_"]');
+        out.workauth = {kind:'yesno', checked: !!active};
+        if (out.workauth.checked) break;
+      }
+    }
+  }
+  return out;
+}"""
+
+
+# chain_p12 (2026-06-08, Benchling 2658): TWO additive pre-submit fixes for the
+# Ashby autofill/regenerated-entry-UUID clobber class that the earlier guard
+# missed:
+#   (A) Work-auth radio whose live container data-field-path carries a FRESH
+#       entry-UUID (regenerated on page load) that the plan's stale-UUID
+#       field-path candidates fail to `[data-field-path="..."]`-match exactly,
+#       so the work-auth option never re-commits -> POST banks "Missing entry
+#       for required field: ...Work Authorization...". Fix: locate the container
+#       by LABEL needle (UUID-independent) and trusted-commit the radio whose
+#       label matches the desired value.
+#   (B) In-office / hybrid / relocation questions Ashby renders as a required
+#       CHECKBOX group (e.g. "Are you able to work from our office Mon/Tue/Thu"
+#       -> options Yes / No / I'd like to discuss). The static dry-run only
+#       enumerates radios + yes/no widgets, so these checkbox-questions are
+#       NEVER in the plan and submit banks "Missing entry for required field".
+#       Fix: check the affirmative ("Yes") option per in-office/relocate doctrine.
+# Both are STRICTLY ADDITIVE + idempotent: they only act on a container that is
+# (label-matched) AND currently has NO option selected, so they are a no-op for
+# tenants/rows without these exact fields (safe for the rest of the cohort).
+_DOCTRINE_CHOICE_FIX_JS = r"""(args) => {
+  const out = {workauth: null, inoffice: null};
+  const fire = (el) => {
+    try {
+      const proto = el.type === 'checkbox' ? HTMLInputElement.prototype : HTMLInputElement.prototype;
+      const setter = Object.getOwnPropertyDescriptor(proto, 'checked');
+      if (setter && setter.set) setter.set.call(el, true); else el.checked = true;
+      el.dispatchEvent(new MouseEvent('click', {bubbles:true}));
+      el.dispatchEvent(new Event('input', {bubbles:true}));
+      el.dispatchEvent(new Event('change', {bubbles:true}));
+    } catch(e) {}
+  };
+  const labelFor = (el) => {
+    if (!el.id) return '';
+    const l = document.querySelector('label[for="' + el.id.replace(/"/g,'') + '"]');
+    return (l ? l.innerText : '').trim();
+  };
+  const conts = [...document.querySelectorAll('[data-field-path], div[class*=_fieldEntry_], fieldset')];
+  // (A) work-auth radio by label needle.
+  const WA = /authoriz|authoris|eligib|legally|work in the u|right to work/;
+  for (const c of conts) {
+    const lbl = ((c.querySelector('label, legend')||{}).innerText||'').toLowerCase();
+    if (!WA.test(lbl)) continue;
+    const radios = [...c.querySelectorAll('input[type=radio]')];
+    if (!radios.length) continue;
+    if (radios.some(r => r.checked)) { out.workauth = {already:true}; break; }
+    const want = (args.workauth_value || '').toLowerCase();
+    let pick = radios.find(r => labelFor(r).toLowerCase() === want)
+            || radios.find(r => want && labelFor(r).toLowerCase().includes(want))
+            || radios.find(r => /any employer|authorized to work|u\.?s\.? citizen|yes/.test(labelFor(r).toLowerCase()));
+    if (pick) { fire(pick); out.workauth = {checked:true, label:labelFor(pick)}; }
+    break;
+  }
+  // (B) in-office / hybrid / relocation CHECKBOX-question -> affirmative "Yes".
+  const IO = /work from our|work out of our|in.?office|in person|able to work (from|hybrid)|onsite|on-site|relocat|willing.*office|local office|days (a|per) week|monday|tuesday|thursday|hybrid/;
+  for (const c of conts) {
+    const lbl = ((c.querySelector('label, legend')||{}).innerText||'').toLowerCase();
+    if (!IO.test(lbl)) continue;
+    const boxes = [...c.querySelectorAll('input[type=checkbox]')];
+    if (!boxes.length) continue;
+    if (boxes.some(b => b.checked)) { out.inoffice = {already:true}; break; }
+    let yes = boxes.find(b => labelFor(b).trim().toLowerCase() === 'yes')
+           || boxes.find(b => /^yes\b|able to|i can|i am able/.test(labelFor(b).toLowerCase()));
+    if (yes) { fire(yes); out.inoffice = {checked:true, label:labelFor(yes)}; }
+    break;
+  }
+  return out;
+}"""
+
+
+def final_clobber_guard(page, plan, steps, settle_max_ms=6000, settle_quiet_ms=1200):
+    """chain_p11: settle-then-reassert Location typeahead + work-auth radio as the
+    LAST action before submit, to beat the Ashby resume-autofill's final clobber.
+    Returns a status dict {settled, location_value, location_ok, workauth_checked,
+    refilled_location, reasserted_workauth}. Never raises."""
+    status = {'settled': False, 'location_value': None, 'location_ok': None,
+              'workauth_checked': None, 'refilled_location': None,
+              'reasserted_workauth': []}
+    # 1) Deterministic settle: wait for the autofill's last mutation (capped).
+    try:
+        status['settled'] = wait_autofill_settle(page, max_ms=settle_max_ms, quiet_ms=settle_quiet_ms)
+    except Exception as e:
+        log(f"final-guard settle fail: {e}")
+    # 2) Re-fill the Location typeahead with PROPER option-SELECTION (not the
+    #    free-text-tab fast path, which leaves visible text the form serializer
+    #    rejects as empty -> "Missing entry for required field: Location"). The
+    #    location_typeahead_v2 step often falls back to free-text-tab when Ashby's
+    #    async geo lookup is slow; here we use _LOCATION_COMBO_FILL_JS which waits
+    #    for the geo options and CLICKS a matching one (integrity-guarded). Verify
+    #    non-empty after; retry once if still blank.
+    _loc_value = None
+    _loc_tail = None
+    try:
+        # Discover the Location field's value + field-path tail from the plan's
+        # location_typeahead_v2 payload (fid like '<...>__systemfield_location').
+        loc_step = next((st for st in steps
+            if st.get('tool') == 'browser.act.evaluate'
+            and st.get('args', {}).get('meta', {}).get('location_typeahead_v2')), None)
+        if loc_step:
+            import re as _re11
+            _m = _re11.search(r'"fid":\s*"([^"]+)"', loc_step['args']['fn'])
+            _mv = _re11.search(r'"value":\s*"([^"]+)"', loc_step['args']['fn'])
+            if _m:
+                _fid = _m.group(1)
+                # tail = portion after the form-id underscore split that ends the fid;
+                # _LOCATION_COMBO_FILL_JS matches on data-field-path.endsWith(tail).
+                _loc_tail = _fid.split('_', 1)[1] if '_' in _fid else _fid
+            if _mv:
+                _loc_value = _mv.group(1)
+    except Exception as e:
+        log(f"final-guard location-step parse fail: {e}")
+    _loc_value = _loc_value or 'Kirkland, WA'
+    _loc_tail = _loc_tail or '__systemfield_location'
+    status['_loc_value'] = _loc_value
+    status['_loc_tail'] = _loc_tail
+    for _attempt in range(2):
+        try:
+            status['refilled_location'] = page.evaluate(
+                f"(args) => ({_LOCATION_COMBO_FILL_JS})(args)",
+                {'tail': _loc_tail, 'value': _loc_value})
+            page.wait_for_timeout(350)
+        except Exception as e:
+            log(f"final-guard location combo-fill fail (attempt {_attempt+1}): {e}")
+            status['refilled_location'] = {'ok': False, 'reason': f'eval-threw:{e}'}
+        # Quick verify; break if the field is now non-empty.
+        try:
+            _v = page.evaluate(_VERIFY_LOC_WORKAUTH_JS)
+            if isinstance(_v, dict) and (_v.get('location') or '').strip():
+                break
+        except Exception:
+            break
+        page.wait_for_timeout(250)
+    # 3) Re-assert work-auth radio(s) via TRUSTED click. Identify work-auth-class
+    #    radio entries in the plan by label keywords, then trusted-click the
+    #    truthful option in its own container (registers in React).
+    _WA_RE = ('authoriz', 'authoris', 'eligib', 'legally', 'work in the u',
+              'right to work', 'visa', 'sponsor')
+    for rd in (plan.get('radios') or []):
+        try:
+            lbl = (rd.get('label') or '').lower()
+            if not any(k in lbl for k in _WA_RE):
+                continue
+            name = rd.get('name') or ''
+            want = (rd.get('value') or '').strip()
+            opts = [o for o in (rd.get('options') or []) if isinstance(o, str) and o.strip()]
+            # Locate the field container.
+            cand_paths = _field_path_candidates(name)
+            cont = None
+            for cp in cand_paths:
+                try:
+                    el = page.query_selector(f'[data-field-path="{cp}"]')
+                except Exception:
+                    el = None
+                if el:
+                    cont = el
+                    break
+            if cont is None:
+                continue
+            opt_labels = []
+            for _lab in cont.query_selector_all('label'):
+                _t = (_lab.inner_text() or '').strip()
+                if _t:
+                    opt_labels.append(_t)
+            tgt = choose_select_option(want, opt_labels or opts, rd.get('label', '')) or want
+            tl = (tgt or '').strip().lower()
+            clicked = False
+            for _lab in cont.query_selector_all('label'):
+                _lt = (_lab.inner_text() or '').strip().lower()
+                if _lt and (_lt == tl or tl in _lt):
+                    try:
+                        _lab.scroll_into_view_if_needed(timeout=1500)
+                        _lab.click(timeout=2500)
+                        clicked = True
+                    except Exception:
+                        pass
+                    break
+            # chain_p11b (2026-06-08): some Ashby tenants (Klarity 1434) ignore a
+            # plain Playwright label.click() for radio options -- the click lands
+            # but React onChange never fires, so the option reads UNCHECKED at
+            # submit and the POST banks "Missing entry for required field". Force-
+            # commit the matched option via a TRUSTED pointer sequence + native
+            # checked-setter + input/change events (same mechanism as
+            # _RADIO_CLICK_BY_ID_JS). Idempotent + never raises.
+            committed = None
+            try:
+                committed = page.evaluate(_RADIO_FORCE_COMMIT_IN_CONTAINER_JS,
+                                          {'field_paths': _field_path_candidates(name),
+                                           'target': tgt})
+                if isinstance(committed, dict) and committed.get('checked'):
+                    clicked = True
+            except Exception as _e:
+                log(f"final-guard radio force-commit fail for {name[-20:]}: {_e}")
+            status['reasserted_workauth'].append({'name': name[-24:], 'target': tgt, 'clicked': clicked, 'committed': committed})
+        except Exception as e:
+            log(f"final-guard workauth reassert fail for {(rd.get('name') or '')[-20:]}: {e}")
+    # 4) STABILITY GATE + same-tick verification. The autofill can re-clobber
+    #    Location in a microtask AFTER our refill+verify but BEFORE the submit
+    #    serialize (observed on Rogo 2903: verify read location_ok=True yet the
+    #    submit body still showed "Parsing your resume. Autofilling key fields..."
+    #    and the POST returned the Location error). Defend by: (a) waiting for the
+    #    "Parsing..." banner to clear, (b) re-picking Location if it went blank,
+    #    and (c) requiring Location to read non-empty on TWO consecutive checks
+    #    (stable) before we let the caller submit. Capped, deterministic.
+    def _loc_now():
+        try:
+            v = page.evaluate(_VERIFY_LOC_WORKAUTH_JS)
+            if isinstance(v, dict):
+                return v
+        except Exception as e:
+            log(f"final-guard verify fail: {e}")
+        return {}
+    def _parsing_up():
+        try:
+            return bool(page.evaluate(
+                "() => /parsing your resume|autofilling key fields/i.test(document.body.innerText||'')"))
+        except Exception:
+            return False
+    _consec_ok = 0
+    _last_v = {}
+    _wa_radio_specs = []
+    for _rd in (plan.get('radios') or []):
+        _l = (_rd.get('label') or '').lower()
+        if any(k in _l for k in _WA_RE):
+            _vv = (_rd.get('value') or '').strip()
+            _oo = [o for o in (_rd.get('options') or []) if isinstance(o, str) and o.strip()]
+            _tgt = choose_select_option(_vv, _oo, _rd.get('label', '')) or _vv
+            _wa_radio_specs.append({'field_paths': _field_path_candidates(_rd.get('name') or ''), 'target': _tgt})
+    def _recommit_wa_radios():
+        for _spec in _wa_radio_specs:
+            try:
+                page.evaluate(_RADIO_FORCE_COMMIT_IN_CONTAINER_JS, _spec)
+            except Exception as _e:
+                log("final-guard stability radio re-commit fail: " + repr(_e))
+    for _i in range(8):
+        # If the autofill is mid-parse, wait it out before trusting/redoing.
+        if _parsing_up():
+            page.wait_for_timeout(400)
+            continue
+        _last_v = _loc_now()
+        _loc_str = (_last_v.get('location') or '').strip()
+        _wa_now = _last_v.get('workauth') or {}
+        if _wa_radio_specs and isinstance(_wa_now, dict) and _wa_now.get('checked') is False:
+            _recommit_wa_radios()
+            _consec_ok = 0
+            page.wait_for_timeout(250)
+            continue
+        if _loc_str:
+            _consec_ok += 1
+            if _consec_ok >= 2:
+                break
+            page.wait_for_timeout(300)
+            continue
+        # Location went blank again -> re-pick via the robust combo filler.
+        _consec_ok = 0
+        try:
+            page.evaluate(f"(args) => ({_LOCATION_COMBO_FILL_JS})(args)",
+                          {'tail': _loc_tail, 'value': _loc_value})
+            page.wait_for_timeout(350)
+        except Exception as e:
+            log(f"final-guard stability re-pick fail: {e}")
+            break
+    if _wa_radio_specs:
+        _recommit_wa_radios()
+    if isinstance(_last_v, dict) and _last_v:
+        status['location_value'] = (_last_v.get('location') or '') or None
+        status['location_ok'] = bool((_last_v.get('location') or '').strip())
+        wa = _last_v.get('workauth') or {}
+        status['workauth_checked'] = wa.get('checked') if isinstance(wa, dict) else None
+    status['location_stable'] = (_consec_ok >= 2)
+    # chain_p12: ADDITIVE doctrine fix as the very last pre-submit action --
+    # commit a work-auth radio whose live container UUID regenerated (stale-fid
+    # container miss) AND/OR answer an in-office/hybrid/relocation CHECKBOX-question
+    # the static dry-run never enumerated. No-op when those fields are absent or
+    # already selected. Never raises.
+    try:
+        _wa_value = ''
+        for _rd in (plan.get('radios') or []):
+            _l = (_rd.get('label') or '').lower()
+            if any(k in _l for k in ('authoriz', 'authoris', 'eligib', 'legally', 'work in the u', 'right to work')):
+                _wa_value = (choose_select_option((_rd.get('value') or '').strip(),
+                              [o for o in (_rd.get('options') or []) if isinstance(o, str) and o.strip()],
+                              _rd.get('label', '')) or (_rd.get('value') or '')).strip()
+                break
+        if not _wa_value:
+            _wa_value = 'Can work for any employer'
+        _dfix = page.evaluate(_DOCTRINE_CHOICE_FIX_JS, {'workauth_value': _wa_value})
+        status['doctrine_fix'] = _dfix
+        # (B) in-office/hybrid/relocation CHECKBOX-question: a synthetic JS click
+        #     does NOT register in Ashby's React form state (the checkbox reads
+        #     checked in the DOM but the submit POST still banks it empty). A
+        #     TRUSTED Playwright label.click() DOES stick (verified Benchling 2658:
+        #     stays checked across re-renders). So commit the affirmative checkbox
+        #     in Python here, scoped to a required checkbox-group whose label
+        #     matches in-office/relocate doctrine that has NO box checked yet.
+        try:
+            _io_re = __import__('re').compile(
+                r'work from our|work out of our|in.?office|in person|able to work (from|hybrid)|onsite|on-site|relocat|local office|days (a|per) week|monday|tuesday|thursday|hybrid',
+                __import__('re').I)
+            for _c in page.query_selector_all('[data-field-path], div[class*=_fieldEntry_], fieldset'):
+                _lab_el = _c.query_selector('label, legend')
+                _lbl = (_lab_el.inner_text() if _lab_el else '') or ''
+                if not _io_re.search(_lbl):
+                    continue
+                _boxes = _c.query_selector_all('input[type=checkbox]')
+                if not _boxes:
+                    continue
+                if any(bool(_b.is_checked()) for _b in _boxes):
+                    status['inoffice_checkbox'] = 'already-checked'
+                    break
+                _clicked = False
+                for _b in _boxes:
+                    _bid = _b.get_attribute('id') or ''
+                    _ylab = _c.query_selector('label[for="' + _bid + '"]') if _bid else None
+                    _ytxt = (_ylab.inner_text().strip().lower() if _ylab else '')
+                    if _ytxt == 'yes' or _ytxt.startswith('yes'):
+                        _ylab.scroll_into_view_if_needed(timeout=1500)
+                        _ylab.click(timeout=2500)
+                        _clicked = True
+                        status['inoffice_checkbox'] = {'clicked': True, 'label': _ylab.inner_text().strip()}
+                        break
+                if not _clicked:
+                    status['inoffice_checkbox'] = 'yes-option-not-found'
+                page.wait_for_timeout(400)
+                break
+        except Exception as _ioe:
+            log(f"final-guard inoffice-checkbox sweep fail: {_ioe}")
+        if isinstance(_dfix, dict) and (
+            (isinstance(_dfix.get('workauth'), dict) and _dfix['workauth'].get('checked'))
+            or (isinstance(_dfix.get('inoffice'), dict) and _dfix['inoffice'].get('checked'))):
+            page.wait_for_timeout(350)
+            log(f"final-guard doctrine-fix committed: {_dfix}")
+    except Exception as _e:
+        log(f"final-guard doctrine-fix fail: {_e}")
+    log(f"final-clobber-guard: settled={status['settled']} "
+        f"location_ok={status['location_ok']} stable={status.get('location_stable')} "
+        f"({(status['location_value'] or '')[:30]!r}) "
+        f"workauth_checked={status['workauth_checked']} "
+        f"reassert_wa={[r['target'] for r in status['reasserted_workauth']]}")
+    return status
+
+
+def scan_form_submit_success(submit_resps):
+    """chain_p11c: a submit can produce TWO POSTs in a race -- an EARLY FormRender
+    error (autofill clobber) then a clean FormSubmitSuccess once the reasserted
+    fields win. Scan ALL captured (status, body) submit responses for a definitive
+    Ashby `applicationFormResult.__typename == 'FormSubmitSuccess'`. A success
+    ANYWHERE in the captured responses wins (you cannot un-submit). Returns True if
+    found, else False. Pure/never-raises so it is unit-testable."""
+    import json as _jsfs
+    for item in (submit_resps or []):
+        try:
+            _bd = item[1] if isinstance(item, (list, tuple)) and len(item) > 1 else item
+            if not _bd or 'FormSubmitSuccess' not in _bd:
+                continue
+            sd = _jsfs.loads(_bd) if str(_bd).strip().startswith('{') else {}
+            mfs = ((sd.get('data') or {}).get('submitApplicationFormAction')
+                or (sd.get('data') or {}).get('submitMultipleFormsAction') or {})
+            afr = mfs.get('applicationFormResult') or {}
+            if afr.get('__typename') == 'FormSubmitSuccess':
+                return True
+        except Exception:
+            continue
+    return False
+
+
+def patch_plan_default_empty_radios(plan):
+    """chain_034b: dryrun sometimes emits radio entries with value='' (e.g. Tarro
+    'Were you referred by...' — the referral question). Default empty radio
+    values to 'No' so the resolver picks the negative option instead of
+    leaving the required field blank.
+    Returns count of fields defaulted.
+    """
+    import re
+    defaulted = 0
+    for s in plan['steps']:
+        if s.get('tool') != 'browser.act.evaluate':
+            continue
+        fn = s.get('args', {}).get('fn', '')
+        m = re.search(r'const __payload = (\[.*?\]);', fn)
+        if not m:
+            continue
+        try:
+            payload = json.loads(m.group(1))
+        except Exception:
+            continue
+        changed = False
+        for entry in payload:
+            if isinstance(entry, dict) and entry.get('value', None) == '' and isinstance(entry.get('alternates'), list) and not entry['alternates']:
+                entry['value'] = 'No'
+                entry['alternates'] = ['no', 'False']
+                defaulted += 1
+                changed = True
+        if changed:
+            new_payload_str = json.dumps(payload)
+            s['args']['fn'] = fn.replace(m.group(1), new_payload_str)
+    return defaulted
+
+
+def upload_cover_letter_if_required(page, plan):
+    """Detect a REQUIRED Ashby 'Cover Letter' file-upload field and upload a
+    generated cover-letter PDF (Cinder 2588 cohort, 2026-06-09).
+
+    Some Ashby tenants render a required Cover Letter file input distinct from
+    the resume input. The static dryrun never enumerates it (it's a file
+    widget, not an essay text field) so it reports needs_essay=0 / blockers=0,
+    yet the live submit bounces with server error
+    'Missing entry for required field: Cover Letter'. This mirrors the
+    Greenhouse `upload_cover_letter` path: find the cover input by its label,
+    skip the resume/autofill inputs, generate the tailored PDF via
+    cover_letter_pdf, and set_input_files it. No-op when absent or already
+    filled. Returns a status dict.
+    """
+    try:
+        det = page.evaluate(r"""() => {
+          const inputs=[...document.querySelectorAll('input[type=file]')];
+          for(const f of inputs){
+            const id=(f.id||'').toLowerCase();
+            if(id.includes('resume')||id.includes('autofill')) continue;
+            // label text via closest field entry / aria
+            let lab='';
+            const fe=f.closest('[class*="fieldEntry"],[class*="_field"]');
+            if(fe){const h=fe.querySelector('label,[class*="heading"]'); if(h) lab=(h.textContent||'').trim();}
+            if(!lab){const lf=document.querySelector(`label[for="${f.id}"]`); if(lf) lab=(lf.textContent||'').trim();}
+            if(/cover letter/i.test(lab)){
+              const filled=f.files&&f.files.length>0;
+              return {found:true, id:f.id||null, label:lab.slice(0,60), filled};
+            }
+          }
+          return {found:false};
+        }""")
+    except Exception as e:
+        return {'present': False, 'detect_err': str(e)}
+    if not det or not det.get('found'):
+        return {'present': False}
+    if det.get('filled'):
+        return {'present': True, 'already_uploaded': True}
+    fid = det.get('id')
+    if not fid:
+        return {'present': True, 'err': 'no-resolvable-id', 'detail': det}
+    # Generate the tailored cover-letter PDF (same module GH uses).
+    try:
+        import cover_letter_pdf as _clp
+        from pathlib import Path as _P
+        slug = plan.get('slug') or 'ashby'
+        company = plan.get('company') or _infer_company_from_slug(slug)
+        role = plan.get('role') or plan.get('title') or 'Product Manager'
+        out_pdf = _P('/tmp/openclaw/uploads') / (
+            f"Cyrus_Shekari_CoverLetter_{slug.replace('/','_')}.pdf")
+        gen = _clp.generate(company=company, role=role, jd_file=None,
+                            slug=slug, out_pdf=out_pdf)
+        cover_pdf = gen['pdf']
+    except Exception as e:
+        return {'present': True, 'err': f'generate-failed:{e}'}
+    # Upload via set_input_files on the located input.
+    try:
+        # NOTE: Ashby file-input ids are UUIDs that often START WITH A DIGIT
+        # (e.g. '5f4f089c-...'), which is an INVALID `#id` CSS selector. Use an
+        # [id="..."] attribute selector (digit-safe) instead.
+        fi = page.locator(f'input[id="{fid}"]') if fid else None
+        if fi is None or fi.count() == 0:
+            # fall back to a non-resume/non-autofill file input
+            fi = None
+            allf = page.locator('input[type=file]')
+            for k in range(allf.count()):
+                cid = (allf.nth(k).get_attribute('id') or '').lower()
+                if 'resume' in cid or 'autofill' in cid:
+                    continue
+                fi = allf.nth(k); break
+        if fi is None or fi.count() == 0:
+            return {'present': True, 'err': 'input-vanished'}
+        fi.set_input_files(cover_pdf, timeout=15000)
+        page.wait_for_timeout(2000)
+    except Exception as e:
+        return {'present': True, 'err': f'set_input_files-failed:{e}', 'pdf': cover_pdf}
+    import os as _os2
+    base = _os2.path.basename(cover_pdf)
+    committed = page.evaluate("(b)=>document.body.innerText.includes(b)", base)
+    return {'present': True, 'uploaded': True, 'pdf': cover_pdf,
+            'filename_committed': bool(committed)}
+
+
+def _css_escape_id(s):
+    # minimal CSS.escape for ids that may contain hyphens/digits (UUIDs are safe)
+    return str(s).replace('"', '\\"')
+
+
+def _infer_company_from_slug(slug):
+    # slug like 'cinder-2c483a08-...' or 'ashby-cinder_...' -> 'Cinder'
+    s = str(slug)
+    for pre in ('ashby-', 'ashby_'):
+        if s.startswith(pre):
+            s = s[len(pre):]
+    token = s.split('-')[0].split('_')[0]
+    return token.capitalize() if token else 'the company'
+
+
+def run_plan(plan_path, no_submit=False, no_captcha=False):
+    plan = json.load(open(plan_path))
+    n_defaulted = patch_plan_default_empty_radios(plan)
+    if n_defaulted:
+        log(f"plan-patch: defaulted {n_defaulted} empty radio value(s) to 'No'")
+    steps = plan['steps']
+    slug = plan['slug']
+    pdf_staged = plan['pdf_path_staged']
+
+    # chain_036b (2026-05-30): UPLOAD-LAST mode to beat the Ashby autofill race.
+    # On autofill-class tenants the "Autofill from resume" widget fires field-
+    # population events on a microtask AFTER our post-upload retype, clobbering
+    # Name/Email/Phone right before submit (server then reports them missing even
+    # though the DOM .value is correct). The robust fix: type ALL text fields and
+    # resolve radios/combos FIRST, then upload the resume LAST (just before the
+    # submit click), and do NOT retype afterward. With every value already set by
+    # real user keystrokes and committed to React state, the autofill widget on
+    # the bottom resume input (#_systemfield_resume) does not re-parse, so there
+    # is nothing left to clobber. Reorder is a no-op risk for clean tenants: their
+    # forms accept the resume at the end identically.
+    # Toggle off with ASHBY_UPLOAD_LAST=0 if a tenant regresses.
+    upload_last_mode = os.environ.get('ASHBY_UPLOAD_LAST', '1') != '0'
+    if upload_last_mode:
+        up_idx = next((k for k, s in enumerate(steps)
+                       if s.get('tool') == 'ashby.upload_resume_via_visible_button'), None)
+        if up_idx is not None:
+            # find the submit step (last step flagged final_submit, else a click step
+            # whose meta marks it, else the last browser.click).
+            sub_idx = None
+            for k in range(len(steps) - 1, -1, -1):
+                sk = steps[k]
+                if sk.get('args', {}).get('meta', {}).get('final_submit'):
+                    sub_idx = k; break
+            if sub_idx is None:
+                for k in range(len(steps) - 1, -1, -1):
+                    if steps[k].get('tool') in ('browser.click', 'ashby.click_submit'):
+                        sub_idx = k; break
+            if sub_idx is not None and up_idx < sub_idx:
+                # Insert the upload as late as possible WITHOUT moving it past the
+                # captcha-solve step. The captcha token is single-use and a resume
+                # upload re-renders the form (Ashby), which can invalidate a token
+                # injected before it. So target = just before the captcha step if
+                # one exists between here and submit; otherwise just before submit.
+                cap_idx = next((k for k in range(len(steps))
+                                if steps[k].get('tool') == 'ashby.maybe_solve_recaptcha_v3'
+                                and k < sub_idx and k > up_idx), None)
+                up_step = steps.pop(up_idx)
+                if cap_idx is not None:
+                    # cap_idx shifts down by 1 after the pop (pop was earlier)
+                    target = cap_idx - 1
+                else:
+                    target = sub_idx - 1
+                steps.insert(target, up_step)
+                up_step.setdefault('args', {})['_upload_last'] = True
+                log(f"UPLOAD-LAST: moved upload step {up_idx} -> idx {target} "
+                    f"({'before captcha' if cap_idx is not None else 'before submit'})")
+            else:
+                log("UPLOAD-LAST: could not locate submit step; leaving plan order unchanged")
+        plan['steps'] = steps
+
+    pw = sync_playwright().start()
+    browser = pw.chromium.connect_over_cdp(CDP)
+    # Use existing context, fresh page
+    ctx = browser.contexts[0]
+    page = ctx.new_page()
+    # 2026-06-03 anti-detect: optionally apply playwright-stealth to raise the
+    # reCAPTCHA-v3 score (patches navigator.webdriver, chrome runtime, plugins,
+    # WebGL vendor, etc). The strict-Ashby score-gate is a BOT-FINGERPRINT score,
+    # not an IP wall (proven: residential IP + native token still scored low),
+    # so the lever is the headless/automation fingerprint. Behind a flag.
+    # Default OFF so the proven permissive-tenant path is unchanged; the strict
+    # cohort opts in via JOBSEARCH_STEALTH=1 (stealth_ashby_sweep.py sets it).
+    if _os.environ.get('JOBSEARCH_STEALTH', '0') == '1':
+        try:
+            from playwright_stealth import stealth_sync
+            # 2026-06-05 strict-Ashby score-gate retest: playwright-stealth's
+            # default UA override rewrites navigator.userAgent to an ANCIENT
+            # Chrome/92 (2021) string, which reCAPTCHA-v3 penalizes HARD in
+            # 2026. When the dedicated proxied Chrome is launched with a CURRENT
+            # --user-agent CLI flag (Chrome 149), set JOBSEARCH_KEEP_UA=1 to make
+            # stealth SKIP its UA patch so the realistic process-level UA wins.
+            # (navigator.webdriver/plugins/chrome-runtime patches still apply.)
+            if _os.environ.get('JOBSEARCH_KEEP_UA', '0') == '1':
+                try:
+                    from playwright_stealth import StealthConfig
+                    stealth_sync(page, config=StealthConfig(
+                        navigator_user_agent=False, nav_user_agent=False))
+                    log('playwright-stealth applied (KEEP_UA: process UA preserved)')
+                except Exception:
+                    # older stealth without StealthConfig kw: re-assert UA after
+                    stealth_sync(page)
+                    log('playwright-stealth applied (no StealthConfig; UA may be clobbered)')
+            else:
+                stealth_sync(page)
+                log('playwright-stealth applied to page')
+        except Exception as _es:
+            log(f'stealth apply failed (non-fatal): {_es}')
+    # chain_035 diag: log the submit GraphQL response so we can distinguish
+    # form-validation reject vs spam-flag vs application-limit.
+    _submit_resps = []
+    def _on_resp(resp):
+        try:
+            u = resp.url
+            if 'graphql' in u and resp.request.method == 'POST':
+                pd = resp.request.post_data or ''
+                if 'SubmitApplication' in pd or 'submitApplication' in pd or 'ApplicationSubmit' in pd or 'SubmitMultipleFormsAction' in pd:
+                    body = ''
+                    full = ''
+                    try:
+                        full = resp.text()
+                        body = full[:800]
+                    except Exception:
+                        body = '<no-body>'; full = ''
+                    _submit_resps.append((resp.status, full))
+                    try:
+                        open('/tmp/last_submit_resp.json','w').write(resp.text())
+                        import time as _t35
+                        open(f'/tmp/submit_resp_{len(_submit_resps)}.json','w').write(resp.text())
+                    except Exception: pass
+                    log(f"SUBMIT-RESP status={resp.status} body={body[:400]}")
+        except Exception:
+            pass
+    page.on('response', _on_resp)
+
+    result = {"slug": slug, "steps": [], "ok": False, "error": None, "submit_response": None}
+    captcha_token = None
+    captcha_action = "submit"
+
+    try:
+        for i, s in enumerate(steps):
+            tool = s.get('tool')
+            args = s.get('args', {})
+            log(f"step {i}: {tool}")
+            if tool == 'browser.open':
+                page.goto(args['url'], wait_until='domcontentloaded', timeout=30000)
+                page.wait_for_timeout(1500)
+                result['steps'].append({'i':i,'tool':tool,'url':args['url']})
+            elif tool == 'sleep':
+                page.wait_for_timeout(args.get('ms', 500))
+                result['steps'].append({'i':i,'tool':tool})
+            elif tool == 'browser.act.evaluate':
+                fn = args['fn'].strip()
+                arg = args.get('arg')
+                if arg is not None:
+                    js = f"({fn})({json.dumps(arg)})"
+                else:
+                    js = f"({fn})()"
+                try:
+                    r = page.evaluate(js)
+                except Exception as e:
+                    r = {'_eval_err': str(e)}
+                result['steps'].append({'i':i,'tool':tool,'r':r})
+                # chain_033 runner addendum: if the eval returned a `picked` list of
+                # {cx, cy, kind} entries (radio-resolve step), clickCoords each.
+                # chain_034b: yesno_button entries need PointerEvent dispatch
+                # (pointerdown+mousedown+pointerup+mouseup+click); Ashby's React
+                # yesno widget ignores plain click() AND CDP Input.dispatchMouseEvent.
+                if isinstance(r, dict) and isinstance(r.get('picked'), list):
+                    for pick in r['picked']:
+                        if 'cx' in pick and 'cy' in pick and not pick.get('already_active'):
+                            try:
+                                if pick.get('kind') == 'yesno_button':
+                                    page.evaluate(_YESNO_CLICK_JS, {"name": pick.get('name'), "label_text": pick.get('label_text')})
+                                elif pick.get('kind') == 'radio_label' and pick.get('label_for'):
+                                    page.evaluate(_RADIO_CLICK_BY_ID_JS, {"input_id": pick.get('label_for')})
+                                else:
+                                    page.mouse.click(pick['cx'], pick['cy'])
+                                page.wait_for_timeout(120)
+                            except Exception as e:
+                                log(f"radio clickCoords fail {pick}: {e}")
+                # chain_034b: handle Ashby combobox-style multi-option fields
+                # (e.g. salary range dropdowns). The dryrun emits these in the radio
+                # payload but the resolver returns them in `missing` because the
+                # field renders as <input role=combobox> not <input type=radio>.
+                # Recover by typing into the combobox and selecting the matching option.
+                if isinstance(r, dict) and isinstance(r.get('missing'), list) and 'allRadioNames' in fn:
+                    # Pull the original payload from the fn to recover wanted values
+                    import re as _re
+                    pm = _re.search(r'const __payload = (\[.*?\]);', fn)
+                    payload_map = {}
+                    if pm:
+                        try:
+                            for entry in json.loads(pm.group(1)):
+                                payload_map[entry.get('name','')] = entry
+                        except Exception:
+                            pass
+                    SALARY_DEFAULT = '$200,000 - $220,000'
+                    for miss in r['missing']:
+                        miss_name = miss.get('want_name') or miss.get('name') or (miss if isinstance(miss, str) else '')
+                        entry = payload_map.get(miss_name, {})
+                        want = entry.get('value') or ''
+                        alts = entry.get('alternates', []) or []
+                        cb_res = page.evaluate(_COMBOBOX_OPEN_JS, {"fid": miss_name})
+                        if not (isinstance(cb_res, dict) and cb_res.get('ok')):
+                            log(f"combobox open fail for {miss_name}: {cb_res}")
+                            continue
+                        page.wait_for_timeout(250)
+                        pick_res = page.evaluate(_COMBOBOX_PICK_JS, {"want": want, "alts": alts + ([SALARY_DEFAULT] if (not want or 'discuss' in want.lower()) else [])})
+                        log(f"combobox pick {miss_name}: {pick_res}")
+                        result['steps'].append({'i':i,'tool':'combobox-pick','fid':miss_name,'want':want,'res':pick_res})
+                        page.wait_for_timeout(250)
+                # chain_035: required-acknowledgement checkbox recovery. The
+                # checkbox-resolve step returns missing=[{want_name}] when the
+                # Ashby labeled-checkbox name= is label text (not a uuid), so the
+                # old uuid-tail resolver fails. Re-resolve via container
+                # [data-field-path=<questionUuid>] and click the label.
+                if (isinstance(r, dict) and isinstance(r.get('missing'), list)
+                        and 'input[type=checkbox]' in fn):
+                    import re as _re2
+                    pm2 = _re2.search(r'const __payload = (\[.*?\]); return', fn, _re2.S)
+                    cb_payload = {}
+                    if pm2:
+                        try:
+                            for e2 in json.loads(pm2.group(1)):
+                                cb_payload[e2.get('name','')] = e2
+                        except Exception:
+                            pass
+                    for miss in r['missing']:
+                        wn = miss.get('want_name') if isinstance(miss, dict) else miss
+                        if not wn:
+                            continue
+                        entry2 = cb_payload.get(wn, {})
+                        vals2 = entry2.get('values') or []
+                        wt = vals2[0] if vals2 else ''
+                        ack_res = page.evaluate(_CHECKBOX_ACK_JS, {"want_name": wn, "want_text": wt})
+                        log(f"checkbox-ack {wn[-12:]}: {ack_res}")
+                        result['steps'].append({'i':i,'tool':'checkbox-ack','want_name':wn,'res':ack_res})
+                        page.wait_for_timeout(200)
+                meta = args.get('meta', {})
+                if meta.get('final_submit'):
+                    # INLINE PROOF SCREENSHOT (Cyrus 2026-06-02): if this role is
+                    # flagged (every 5th submission), screenshot the filled form
+                    # NOW, immediately before the real submit. Best-effort.
+                    try:
+                        from proof_capture import maybe_capture_by_slug
+                        maybe_capture_by_slug(page, slug)
+                    except Exception as _e:
+                        log(f"proof_capture skipped: {_e}")
+                    # chain_p3 (2026-06-02 Starbridge 2120): FINAL pre-submit re-fill.
+                    # On autofill tenants that NEVER stop re-clobbering, the stabilize
+                    # loop's last pass still leaves a settle window before submit in
+                    # which the autofill widget reverts React's controlled state on ONE
+                    # field (rotating: ACV -> exceptional-work -> Email across retries).
+                    # Fix: immediately before the trusted submit click, force-set EVERY
+                    # valued text field by id with NO settle gap. Build the id list from
+                    # the type_text_fields dict directly (covers post-hoc INJECTED fields
+                    # that are absent from the resolved map), mapping fid->dom_id via the
+                    # resolved map when present else using fid as the id.
+                    try:
+                        _final_text = {}
+                        for _j in range(i):
+                            if steps[_j].get('tool') == 'ashby.type_text_fields':
+                                _final_text = steps[_j].get('args', {}).get('text_fields', {}) or {}
+                                break
+                        _dommap = {}
+                        for _prev in result['steps']:
+                            if _prev.get('tool') == 'browser.act.evaluate' and isinstance(_prev.get('r'), dict) and isinstance(_prev['r'].get('resolved'), list):
+                                for _it in _prev['r']['resolved']:
+                                    if isinstance(_it, dict) and _it.get('fid'):
+                                        _dommap[_it['fid']] = _it.get('dom_id') or _it['fid']
+                        _final_set = 0
+                        # chain_p5 (2026-06-03): the resolved _dommap can miss
+                        # fields (esp. Phone/Name) -> _dom falls back to the full
+                        # plan fid <formId>_<uuid>, but the LIVE Ashby input id is
+                        # the BARE field id (trailing UUID, _systemfield_X, or
+                        # __systemfield_X). getElementById(full-fid) returns null ->
+                        # the field is never re-set -> server reports it missing
+                        # (Snowflake Phone, Cohere Name). Resolve to the id that
+                        # actually exists in the DOM before setting.
+                        import re as _re_p5
+                        def _resolve_live_id(_fid, _dom):
+                            _cands = [_dom, _fid]
+                            _u = _re_p5.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', _fid)
+                            if _u:
+                                _cands.append(_u[-1])
+                            for _sf in ('__systemfield_', '_systemfield_'):
+                                _k = _fid.find(_sf)
+                                if _k >= 0:
+                                    _cands.append(_fid[_k:])
+                                    _cands.append(_fid[_k+1:])  # single-underscore variant
+                            # de-dup preserve order
+                            _seen = set(); _ord = []
+                            for _c in _cands:
+                                if _c and _c not in _seen:
+                                    _seen.add(_c); _ord.append(_c)
+                            for _c in _ord:
+                                try:
+                                    _exists = page.evaluate(
+                                        "(id)=>!!document.getElementById(id)", _c)
+                                except Exception:
+                                    _exists = False
+                                if _exists:
+                                    return _c
+                            return _dom
+                        for _fid, _val in _final_text.items():
+                            if not _val:
+                                continue
+                            _dom = _resolve_live_id(_fid, _dommap.get(_fid, _fid))
+                            try:
+                                _cur = page.evaluate(f"() => {{const e=document.getElementById({json.dumps(_dom)}); return e? e.value : null;}}")
+                            except Exception:
+                                _cur = None
+                            if _cur == _val:
+                                continue
+                            try:
+                                _r = page.evaluate(_SET_VALUE_JS, {"id": _dom, "val": _val})
+                                if isinstance(_r, dict) and _r.get('ok'):
+                                    _final_set += 1
+                                else:
+                                    log(f"final re-fill no-el for {_fid[-20:]} (tried {_dom})")
+                            except Exception as _e:
+                                log(f"final pre-submit re-fill fail {_dom}: {_e}")
+                        log(f"FINAL pre-submit re-fill: re-set {_final_set} field(s)")
+                    except Exception as _e:
+                        log(f"final pre-submit re-fill block fail: {_e}")
+                    # chain (2026-06-03 Snowflake): yesno widgets set via the
+                    # eval-dispatched PointerEvent path (_YESNO_CLICK_JS) sometimes
+                    # DON'T register in React (button stays inactive -> server says
+                    # 'Missing entry for required field'). A TRUSTED Playwright
+                    # .click() on the matching Yes/No button DOES register. Before
+                    # submit, verify every plan radio committed and real-click any
+                    # that didn't. Cross-cutting (helps all Ashby tenants).
+                    try:
+                        _plan_radios = plan.get('radios', []) or []
+                        _yn_fixed = 0
+                        for _rd in _plan_radios:
+                            _name = _rd.get('name') or ''
+                            _want = (_rd.get('value') or '').strip()
+                            if not (_name and _want):
+                                continue
+                            # chain (Helion 2712): resolve the container via the
+                            # FULL candidate set (uuid, full fid, AND bare
+                            # `question_<id>` suffix). Helion's container fp is
+                            # `question_<id>` so the old uuid/full-name pair missed
+                            # it -> the eval-dispatched radio click never got the
+                            # trusted-click re-assert and React state stayed empty.
+                            _cont = None
+                            _dfp = _name
+                            for _cand in _field_path_candidates(_name):
+                                _cont = page.query_selector(f'[data-field-path="{_cand}"]')
+                                if _cont:
+                                    _dfp = _cand
+                                    break
+                            if not _cont:
+                                continue
+                            if not _cont.query_selector('div[class*="_yesno_"]'):
+                                # chain_p4 (2026-06-03 Snowflake): multi-option
+                                # ValueSelect groups (e.g. "U.S. person status",
+                                # PwC employment) are traditional input[type=radio]
+                                # groups, NOT _yesno_ button widgets. The filler
+                                # drives these via clickCoords on the <label>,
+                                # which sometimes misses (overlay/offscreen) ->
+                                # server reports the field missing. Re-assert here
+                                # with a TRUSTED Playwright label .click() on the
+                                # option whose visible text matches _want. Truthful
+                                # (value already resolved truthfully in the plan).
+                                if _cont.query_selector('input[type=radio]'):
+                                    # chain (Cape 2800 / Helion 2712): the office &
+                                    # work-auth selects are radio GROUPS whose plan
+                                    # value may be 'Yes' (no literal option match) or
+                                    # the full option string. Resolve the truthful
+                                    # target via choose_select_option (affirmative-
+                                    # office / honest-prior-employer doctrine), then
+                                    # ALWAYS trusted-click it — even if the DOM already
+                                    # reads checked, because eval-dispatch sets
+                                    # `.checked` WITHOUT firing React onChange, so the
+                                    # serializer still sees the field empty. A trusted
+                                    # Playwright click is idempotent on an already-
+                                    # selected radio but DOES register in React.
+                                    _opt_labels = []
+                                    for _lab in _cont.query_selector_all('label'):
+                                        _t = (_lab.inner_text() or '').strip()
+                                        if _t:
+                                            _opt_labels.append(_t)
+                                    _tgt_label = choose_select_option(_want, _opt_labels, _rd.get('label', '')) or _want
+                                    _tl = _tgt_label.strip().lower()
+                                    _clicked_ms = False
+                                    for _lab in _cont.query_selector_all('label'):
+                                        _lt = (_lab.inner_text() or '').strip().lower()
+                                        if not _lt:
+                                            continue
+                                        if _lt == _tl or _tl in _lt or _lt in _tl:
+                                            try:
+                                                _lab.scroll_into_view_if_needed(timeout=2000)
+                                                _lab.click(timeout=3000)
+                                                _yn_fixed += 1
+                                                _clicked_ms = True
+                                            except Exception as _me:
+                                                log(f"multiselect real-click fail {_dfp[-12:]}: {_me}")
+                                            break
+                                    if not _clicked_ms:
+                                        log(f"multiselect no label match {_dfp[-12:]} want={_want!r} tgt={_tgt_label!r} opts={_opt_labels}")
+                                continue
+                            # already active? chain_p7: verify against BOTH the
+                            # button _active_ class AND the hidden checkbox (some
+                            # Snowflake yes/no widgets show a stale _active_ snapshot
+                            # while the checkbox — what the serializer reads — is still
+                            # unchecked). Only skip when the checkbox confirms.
+                            _act = page.evaluate(
+                                "(el)=>{const b=[...el.querySelectorAll('button')].find(x=>/_active_|_selected_/.test(x.className));const cb=el.querySelector('input[type=checkbox]');const lab=b?(b.textContent||'').trim():null;return {lab, cb:(cb?cb.checked:null)};}",
+                                _cont)
+                            if (isinstance(_act, dict) and _act.get('lab')
+                                    and _act['lab'].strip().lower() == _want.lower()
+                                    and _act.get('cb') is not False):
+                                continue
+                            for _b in _cont.query_selector_all('button'):
+                                if (_b.inner_text() or '').strip().lower() == _want.lower():
+                                    # chain_p7 (2026-06-03 Snowflake in-office): the
+                                    # below-the-fold yes/no sometimes needs a verified
+                                    # click + retry. The isolated trusted .click()
+                                    # sets _active_ + checks the hidden checkbox, but
+                                    # in-flow a scroll/stale race can drop it. Click,
+                                    # verify active, retry once if not.
+                                    for _attempt in range(2):
+                                        try:
+                                            _b.scroll_into_view_if_needed(timeout=2000)
+                                            _b.click(timeout=3000)
+                                        except Exception as _ye:
+                                            log(f"yesno real-click fail {_dfp[-12:]}: {_ye}")
+                                            break
+                                        page.wait_for_timeout(200)
+                                        try:
+                                            _ok = page.evaluate(
+                                                "(el)=>{const b=[...el.querySelectorAll('button')].find(x=>/_active_|_selected_/.test(x.className));const cb=el.querySelector('input[type=checkbox]');return (b&&/_active_|_selected_/.test(b.className))||(cb&&cb.checked);}",
+                                                _cont)
+                                        except Exception:
+                                            _ok = True
+                                        if _ok:
+                                            _yn_fixed += 1
+                                            break
+                                        log(f"yesno not active after click {_dfp[-12:]}, retry {_attempt+1}")
+                                    break
+                        if _yn_fixed:
+                            log(f"YESNO trusted-click fix: re-clicked {_yn_fixed} radio(s)")
+                            page.wait_for_timeout(300)
+                    except Exception as _ye:
+                        log(f"yesno verify block fail: {_ye}")
+                    # chain_p9 (2026-06-04 ashby-batch4): CUSTOM-SELECT re-assert.
+                    # The yesno-verify block above only handles plain Yes/No
+                    # widgets and bare-substring radio matches. Custom non-Yes/No
+                    # single-selects (Cape office-arrangement, Helion prior-employer)
+                    # either resolved to a value that matches no option ("Yes" vs
+                    # office choices) or got cleared by the autofill clobber and
+                    # never re-committed. Re-assert each to its truthful option,
+                    # scoped to its own container (anti-collision).
+                    try:
+                        _sel_res = reassert_select_fields(page, plan.get('radios', []) or [])
+                        if _sel_res:
+                            result['steps'].append({'i':'pre-submit','tool':'reassert-select-fields','results':_sel_res})
+                            _bad = [r for r in _sel_res if r.get('target') and not r.get('ok') and not r.get('already')]
+                            if _bad:
+                                log(f"reassert-select UNCOMMITTED: {[(r['name'], r.get('reason')) for r in _bad]}")
+                            page.wait_for_timeout(250)
+                    except Exception as _se:
+                        log(f"reassert-select block fail: {_se}")
+                    # chain_p8 (2026-06-04 ashby-batch3): FINAL pre-submit re-assert.
+                    # The chain_p7 re-assert runs right after upload, but several
+                    # tenants (Vendelux 2774 / Helion 2712 / Dash0 2757) re-clobber
+                    # system text fields (Email / Full Name / physically-based) on a
+                    # LATER microtask, AFTER the upload re-assert and BEFORE submit,
+                    # so a fresh field drops on each run. Re-assert ALL authoritative
+                    # text_fields one more time immediately before the submit click
+                    # so the very last write wins the race.
+                    try:
+                        _final_tf = _collect_text_fields(steps, len(steps))
+                        if _final_tf:
+                            # chain_p10: force=True so even fields whose DOM .value already
+                            # matches are re-committed through the _valueTracker reset --
+                            # the Dash0 intl-tel Phone clobber kept DOM value but emptied
+                            # React/form state, so the unconditional re-apply is what wins.
+                            _fra = reassert_text_fields(page, _final_tf, stabilize_passes=2, settle_ms=500, force=True)
+                            if _fra:
+                                log(f"PRE-SUBMIT chain_p8 re-assert: re-won {len(_fra)} field(s) {[f[-24:] for f in _fra]}")
+                            result['steps'].append({'i':'pre-submit','tool':'reassert-text-fields-final','repaired':_fra})
+                    except Exception as _pse:
+                        log(f"PRE-SUBMIT chain_p8 re-assert fail: {_pse}")
+                    # ashby-date-runner (2026-06-08): FINAL pre-submit re-commit of
+                    # Date-widget fields. reassert_text_fields above does NOT cover
+                    # Date fids (calendar pickers need the date-aware _valueTracker
+                    # path), so re-commit them here as the last write before submit
+                    # in BOTH the upload-last and legacy paths -- the autofill can
+                    # clobber a date on a late microtask just like Email/Location.
+                    try:
+                        _f_date_ids = []
+                        _f_date_tf = {}
+                        for _j in range(len(steps)):
+                            if steps[_j].get('tool') == 'ashby.type_text_fields':
+                                _sa = steps[_j].get('args', {})
+                                _f_date_ids = list(_sa.get('date_field_ids', []) or [])
+                                _f_date_tf = _sa.get('text_fields', {}) or {}
+                                break
+                        if _f_date_ids:
+                            _f_date_specs = [{"fid": _d, "iso": (_f_date_tf.get(_d) or "")}
+                                              for _d in _f_date_ids]
+                            _f_dr = commit_ashby_date_fields(page, _f_date_specs)
+                            _f_date_bad = [r['fid'] for r in _f_dr if not r.get('committed')]
+                            if _f_date_bad:
+                                log(f"PRE-SUBMIT date re-commit UNCOMMITTED: {[f[-20:] for f in _f_date_bad]}")
+                            else:
+                                log(f"PRE-SUBMIT date re-commit: {len(_f_dr)} date field(s) committed")
+                            result['steps'].append({'i':'pre-submit','tool':'reassert-date-fields-final','date_results':_f_dr})
+                    except Exception as _fde:
+                        log(f"PRE-SUBMIT date re-commit fail: {_fde}")
+                    # COVER-LETTER upload (Cinder 2588 cohort, 2026-06-09): some
+                    # Ashby tenants require a Cover Letter FILE upload the static
+                    # dryrun never enumerates (needs_essay=0) -> live submit bounces
+                    # 'Missing entry for required field: Cover Letter'. Upload a
+                    # generated PDF here, BEFORE the final clobber guard, so the
+                    # guard re-settles location/work-auth after any re-render. No-op
+                    # when the tenant has no such field.
+                    try:
+                        _clr = upload_cover_letter_if_required(page, plan)
+                        if _clr.get('present'):
+                            result['steps'].append({'i':'pre-submit','tool':'cover-letter-upload','status':_clr})
+                            log(f"cover-letter upload: {_clr.get('uploaded') or _clr.get('already_uploaded') or _clr.get('err')}")
+                            if _clr.get('uploaded'):
+                                page.wait_for_timeout(1200)
+                    except Exception as _cle:
+                        log(f"cover-letter upload block fail: {_cle}")
+                    # chain_p11 (2026-06-08, Rogo 2475/2901-2904): FINAL clobber
+                    # guard. The resume-autofill re-empties the Location typeahead +
+                    # work-auth radio AT SUBMIT, AFTER the chain_p8 reasserts above.
+                    # Settle-then-reassert those two fields as the LAST action before
+                    # the submit click (gated on the autofill's last DOM mutation, not
+                    # a fixed sleep), and verify they're non-empty in the same tick.
+                    try:
+                        _fcg = final_clobber_guard(page, plan, steps)
+                        result['steps'].append({'i':'pre-submit','tool':'final-clobber-guard','status':_fcg})
+                        if _fcg.get('location_ok') is False or _fcg.get('workauth_checked') is False:
+                            log(f"FINAL-GUARD WARNING: location_ok={_fcg.get('location_ok')} "
+                                f"workauth_checked={_fcg.get('workauth_checked')} -- submit may still bank Missing entry")
+                    except Exception as _fge:
+                        log(f"final-clobber-guard block fail: {_fge}")
+                    # chain_p11b: LAST-MILLISECOND Location re-pick immediately
+                    # before the submit click, to close the residual microtask gap
+                    # between the guard's stability check and the submit serialize
+                    # (Rogo 2903: autofill re-clobbered Location AFTER the guard
+                    # returned location_ok=True). Wait out any active parse, then if
+                    # Location reads blank re-pick once via the robust combo filler.
+                    try:
+                        _lt = (_fcg.get('_loc_tail') if isinstance(_fcg, dict) else None) or '__systemfield_location'
+                        _lv = (_fcg.get('_loc_value') if isinstance(_fcg, dict) else None) or 'Kirkland, WA'
+                        for _g in range(6):
+                            _parsing = page.evaluate(
+                                "() => /parsing your resume|autofilling key fields/i.test(document.body.innerText||'')")
+                            if _parsing:
+                                page.wait_for_timeout(400); continue
+                            _lv_now = page.evaluate(_VERIFY_LOC_WORKAUTH_JS)
+                            _locstr = (_lv_now.get('location') or '').strip() if isinstance(_lv_now, dict) else ''
+                            if _locstr:
+                                break
+                            page.evaluate(f"(args) => ({_LOCATION_COMBO_FILL_JS})(args)",
+                                          {'tail': _lt, 'value': _lv})
+                            page.wait_for_timeout(300)
+                    except Exception as _lme:
+                        log(f"last-ms location re-pick fail: {_lme}")
+                    # chain_035: the plan's eval-based btn.click() is an UNTRUSTED
+                    # event. Some tenants (OpenAI) ignore it. Re-click via a trusted
+                    # Playwright locator click, then wait for confirmation OR url change.
+                    try:
+                        sub = page.locator('button:has-text("Submit Application")').first
+                        if sub.count() and not sub.is_disabled():
+                            sub.scroll_into_view_if_needed(timeout=2000)
+                            sub.click(timeout=5000)
+                            log("trusted submit click dispatched")
+                    except Exception as e:
+                        log(f"trusted submit click fail: {e}")
+                    success = False
+                    body_text = ''
+                    for _ in range(12):
+                        page.wait_for_timeout(1000)
+                        try:
+                            body_text = (page.locator('body').text_content() or '')[:1500]
+                        except Exception:
+                            body_text = ''
+                        if __import__('re').search(r"(application (was )?(received|submitted|successfully)|successfully submitted|thank you|we[' \u2019]+ve? ?received|thanks for applying|your application has been)", body_text, __import__('re').I):
+                            success = True; break
+                    # chain_p11c (2026-06-08, Rogo 2904): the submit can produce TWO
+                    # POSTs in a race -- an EARLY FormRender error (autofill clobber)
+                    # FOLLOWED by a clean FormSubmitSuccess once the reasserted fields
+                    # win. The old classifier only read _submit_resps[-1] at the moment
+                    # it ran, which sometimes captured the EARLY error POST before the
+                    # trailing success POST landed -> false-negative. Fix: (a) wait a
+                    # short extra beat for a trailing POST, then (b) scan ALL captured
+                    # responses for a definitive FormSubmitSuccess -- a success ANYWHERE
+                    # wins over an earlier FormRender error (you cannot un-submit).
+                    try:
+                        _pre = len(_submit_resps)
+                        for _w in range(6):
+                            page.wait_for_timeout(500)
+                            if len(_submit_resps) > _pre:
+                                break
+                    except Exception:
+                        pass
+                    _form_success = False
+                    try:
+                        _form_success = scan_form_submit_success(_submit_resps)
+                    except Exception as _fse:
+                        log(f"FormSubmitSuccess scan err: {_fse}")
+                    if _form_success:
+                        result['ok'] = True
+                        result['classify'] = 'submitted'
+                        success = True
+                        log("SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)")
+                    # chain_035: authoritative classification from the captured
+                    # ApiSubmitMultipleFormsAction GraphQL response. SSR body text is
+                    # unreliable (returns 'enable JavaScript' shell). The response tells
+                    # us definitively: field errors vs block-message vs clean success.
+                    if _submit_resps and not _form_success:
+                        import json as _json35
+                        try:
+                            sd = _json35.loads(_submit_resps[-1][1]) if _submit_resps[-1][1].strip().startswith('{') else {}
+                        except Exception:
+                            sd = {}
+                        try:
+                            # chain_041: the spam-flag rejection comes back as a
+                            # top-level GraphQL `errors[]` entry with
+                            # extensions.ashbyErrorType == RECAPTCHA_SCORE_BELOW_THRESHOLD
+                            # (NOT under data.*). Check it FIRST as the authoritative
+                            # structured signal (more reliable than SSR body text).
+                            _gql_errs = sd.get('errors') or []
+                            _spam = any(
+                                (isinstance(e, dict) and (
+                                    (e.get('extensions') or {}).get('ashbyErrorType') == 'RECAPTCHA_SCORE_BELOW_THRESHOLD'
+                                    or 'flagged as possible spam' in str(e.get('message', '')).lower()))
+                                for e in _gql_errs)
+                            if _spam:
+                                result['ok'] = False
+                                result['classify'] = 'spam-flag'
+                                result['error'] = 'spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)'
+                                log('SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD')
+                                mfsa = {}
+                            else:
+                                mfsa = ((sd.get('data') or {}).get('submitMultipleFormsAction')
+                                     or (sd.get('data') or {}).get('submitApplicationFormAction') or {})
+                            afr = mfsa.get('applicationFormResult') or {}
+                            field_errs = afr.get('errorMessages') or afr.get('formErrors')
+                            block_msg = ((mfsa.get('messages') or {}).get('blockMessageForCandidateHtml')
+                                         if isinstance(mfsa.get('messages'), dict) else None)
+                            if field_errs:
+                                result['ok'] = False
+                                result['error'] = 'form-validation: ' + _json35.dumps(field_errs)[:300]
+                                result['classify'] = 'form-validation'
+                                log(f"SERVER FIELD ERRORS: {field_errs}")
+                            elif block_msg:
+                                result['ok'] = False
+                                result['error'] = 'block-message'
+                                result['classify'] = 'block-message'
+                                result['block_message'] = block_msg
+                                log(f"SERVER BLOCK MESSAGE: {block_msg[:200]}")
+                            else:
+                                # chain_041: if already classified spam-flag above
+                                # (gql errors[]), do NOT override to submitted.
+                                if result.get('classify') == 'spam-flag':
+                                    pass
+                                elif __import__('re').search(r'flagged as possible spam|limiting applications to give everyone|spam[ -]?flag', body_text, __import__('re').I):
+                                    result['ok'] = False
+                                    result['classify'] = 'spam-flag'
+                                    result['error'] = 'spam-flag: submission flagged as possible spam (proxy-walled reCAPTCHA-v3 score gate)'
+                                    log('SERVER SPAM-FLAG: submission flagged as possible spam')
+                                else:
+                                    # No field errors and no block -> accepted/submitted.
+                                    result['ok'] = True
+                                    result['classify'] = 'submitted'
+                                    success = True
+                                    log("SUBMIT SUCCESS (server: no errors, no block)")
+                        except Exception as e:
+                            log(f"submit-resp classify err: {e}")
+                    # chain_035: GraphQL classifier is authoritative over body-text regex.
+                    if result.get('classify') in ('block-message', 'form-validation', 'spam-flag'):
+                        success = False
+                    elif result.get('classify') == 'submitted':
+                        success = True
+                    result['submit_response'] = body_text
+                    if success:
+                        result['ok'] = True
+                        log("SUBMIT SUCCESS")
+                    else:
+                        result['ok'] = False
+                        if not result.get('error'):
+                            result['error'] = 'submit-clicked-but-no-confirmation'
+                        log(f"submit not confirmed; classify={result.get('classify')} error={result.get('error')}")
+            elif tool == 'ashby.type_text_fields':
+                # Take the resolved list from prior step's result.
+                # chain_034b: merge resolved lists from ALL prior eval steps that emit them
+                # (e.g. Rho has separate location resolver step alongside text-field resolver).
+                resolved = []
+                seen_fids_init = set()
+                for prev in reversed(result['steps']):
+                    if prev['tool'] == 'browser.act.evaluate' and isinstance(prev['r'], dict) and isinstance(prev['r'].get('resolved'), list):
+                        for it in prev['r']['resolved']:
+                            if isinstance(it, dict):
+                                fid_ = it.get('fid')
+                                if fid_ and fid_ not in seen_fids_init:
+                                    seen_fids_init.add(fid_)
+                                    resolved.append(it)
+                text_fields = args.get('text_fields', {})
+                # ashby-date-runner (2026-06-08): Date-widget fields are routed
+                # through this step's text_fields (legacy) AND flagged via
+                # date_field_ids. Typing the ISO string with CDP keystrokes does
+                # NOT commit the calendar-picker's React state (r4) -> submit
+                # banks "Missing entry". Pre-seed `done` with the date fids so the
+                # keystroke loops below SKIP them, then drive each via the
+                # date-aware _valueTracker-reset path (commit_ashby_date_fields).
+                date_field_ids = set(args.get('date_field_ids', []) or [])
+                date_specs = [
+                    {"fid": _dfid, "iso": (text_fields.get(_dfid) or "")}
+                    for _dfid in date_field_ids
+                ]
+                # Check fast-path read-back: any field whose el.value already == requested -> skip
+                done = list(date_field_ids)  # date fids handled by the date path, not keystrokes
+                for item in resolved:
+                    fid = item['fid']
+                    val = text_fields.get(fid, '')
+                    dom_id = item.get('dom_id') or item.get('fid') or fid
+                    if not val:
+                        continue
+                    # Read-back current value
+                    cur = page.evaluate(f"() => {{const e = document.getElementById({json.dumps(dom_id)}); return e ? e.value : null;}}")
+                    if cur == val:
+                        done.append(fid); continue
+                    # Click + clear + type
+                    sel = f"#{dom_id}"
+                    try:
+                        loc = page.locator(sel).first
+                        loc.scroll_into_view_if_needed(timeout=2000)
+                        loc.click(timeout=3000)
+                        page.keyboard.press('Control+a')
+                        page.keyboard.press('Delete')
+                        # Use page.keyboard.type which simulates real keystrokes
+                        page.keyboard.type(val, delay=8)
+                        done.append(fid)
+                    except Exception as e:
+                        log(f"type fail on {dom_id}: {e}")
+                # chain_035: fallback for text inputs with EMPTY id AND empty name
+                # (e.g. OpenAI "When can you start?"). The plan resolver locates by
+                # getElementById / [name=], both of which fail when Ashby renders a
+                # nameless+idless input. Locate via container [data-field-path=<tail>].
+                done_set = set(done)
+                import re as _re3
+                uuidRe3 = _re3.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', _re3.I)
+                for fid, val in text_fields.items():
+                    if not val or fid in done_set:
+                        continue
+                    uuids3 = uuidRe3.findall(fid)
+                    tail3 = uuids3[-1] if uuids3 else None
+                    if not tail3:
+                        continue
+                    sel3 = f'[data-field-path="{tail3}"] input:not([type=radio]):not([type=checkbox]):not([type=file]), [data-field-path="{tail3}"] textarea'
+                    try:
+                        loc3 = page.locator(sel3).first
+                        if loc3.count() == 0:
+                            continue
+                        cur3 = (loc3.input_value(timeout=1500) or '')
+                        if cur3 == val:
+                            done.append(fid); continue
+                        loc3.scroll_into_view_if_needed(timeout=2000)
+                        loc3.click(timeout=3000)
+                        page.keyboard.press('Control+a')
+                        page.keyboard.press('Delete')
+                        page.keyboard.type(val, delay=8)
+                        done.append(fid)
+                        log(f"text-fallback typed via data-field-path {tail3[-12:]}")
+                    except Exception as e:
+                        log(f"text-fallback fail {tail3}: {e}")
+                # ashby-date-runner (2026-06-08): now commit the Date-widget
+                # fields via the date-aware path (the keystroke loops above
+                # skipped them because their fids were pre-seeded into `done`).
+                date_results = []
+                if date_specs:
+                    try:
+                        date_results = commit_ashby_date_fields(page, date_specs)
+                    except Exception as _de:
+                        log(f"commit_ashby_date_fields fail: {_de}")
+                    _date_bad = [r['fid'] for r in date_results if not r.get('committed')]
+                    if _date_bad:
+                        log(f"date-commit UNCOMMITTED: {[f[-20:] for f in _date_bad]}")
+                    # `done` already counted the date fids; drop any that did NOT
+                    # commit so typed_count stays honest.
+                    for _bad in _date_bad:
+                        if _bad in done:
+                            done.remove(_bad)
+                _step_rec = {'i': i, 'tool': tool, 'typed_count': len(done), 'fields': done}
+                if date_results:
+                    _step_rec['date_results'] = date_results
+                result['steps'].append(_step_rec)
+            elif tool == 'ashby.upload_resume_via_visible_button':
+                # The plan args usually have 'pdf' or upload key. Use the file input directly.
+                try:
+                    # AUTOFILL-WIDGET FIX (chain_036 2026-05-31): on autofill-class
+                    # tenants (Clay/Snowflake/Cohere/Rho/Tarro/...) the page has TWO
+                    # file inputs:
+                    #   - TOP  '#_systemfield_autofill' (or first-in-DOM) -> parses the
+                    #     resume and CLOBBERS typed fields a few ms later.
+                    #   - BOTTOM '#_systemfield_resume' -> just attaches the file, no parse.
+                    # `input[type=file]).first` was grabbing the TOP autofill widget,
+                    # which is exactly what triggers the clobber. Prefer the explicit
+                    # resume input and NEVER feed the autofill widget. Falls back to
+                    # .first only when there's a single input (no autofill widget).
+                    fi = None
+                    try:
+                        resume_input = page.locator('#_systemfield_resume')
+                        if resume_input.count() > 0:
+                            fi = resume_input.first
+                            log("upload: using #_systemfield_resume (skipping autofill widget)")
+                    except Exception:
+                        fi = None
+                    if fi is None:
+                        # No explicit resume input id; pick a non-autofill file input.
+                        all_inputs = page.locator('input[type="file"]')
+                        n_inputs = all_inputs.count()
+                        chosen = None
+                        for k in range(n_inputs):
+                            cand = all_inputs.nth(k)
+                            cid = (cand.get_attribute('id') or '').lower()
+                            if 'autofill' in cid:
+                                continue  # never the autofill widget
+                            chosen = cand
+                            break
+                        fi = chosen or all_inputs.first
+                        log(f"upload: {n_inputs} file input(s), chose non-autofill={chosen is not None}")
+                    fi.set_input_files(pdf_staged, timeout=10000)
+                    page.wait_for_timeout(2500)
+                    # chain_p6 (2026-06-03): block until the autofill parse fully
+                    # settles (banner gone + DOM quiescent) so late re-renders can't
+                    # race subsequent fills. Best-effort; bounded. Helps pathological
+                    # autofill tenants (Snowflake) where the resume input itself
+                    # triggers a late clobber even via #_systemfield_resume.
+                    try:
+                        _settled = wait_autofill_settle(page)
+                        log(f"autofill settle: {'clean' if _settled else 'timeout(proceeding)'}")
+                    except Exception as _se:
+                        log(f"autofill settle err: {_se}")
+                    result['steps'].append({'i':i,'tool':tool,'uploaded':pdf_staged})
+                    # chain_036b UPLOAD-LAST: when the upload was deferred to just
+                    # before submit, every text field / radio / combo is already set
+                    # and committed. Wait for any autofill parse to settle, then do a
+                    # light verify-and-repair pass (re-set ONLY fields the autofill
+                    # actually cleared) and SKIP the heavy legacy retype/radio-reclick/
+                    # location/checkbox cascade below (which is what was racing the
+                    # autofill and losing). This is the architectural fix.
+                    if args.get('_upload_last'):
+                        page.wait_for_timeout(1500)
+                        try:
+                            for _ in range(20):
+                                parsing = page.evaluate("() => /Parsing your resume|Autofilling key fields/i.test(document.body.innerText)")
+                                if not parsing:
+                                    break
+                                page.wait_for_timeout(500)
+                        except Exception:
+                            pass
+                        # gather resolved + text_fields (same merge logic as legacy path)
+                        ul_resolved = []
+                        ul_seen = set()
+                        for prev in reversed(result['steps']):
+                            if prev.get('tool') == 'browser.act.evaluate' and isinstance(prev.get('r'), dict) and isinstance(prev['r'].get('resolved'), list):
+                                for it in prev['r']['resolved']:
+                                    if isinstance(it, dict) and it.get('fid') and it['fid'] not in ul_seen:
+                                        ul_seen.add(it['fid']); ul_resolved.append(it)
+                        ul_text = {}
+                        for j in range(i):
+                            if steps[j].get('tool') == 'ashby.type_text_fields':
+                                ul_text = steps[j].get('args', {}).get('text_fields', {}); break
+                        ul_repaired = []
+                        for item in ul_resolved:
+                            fid = item['fid']; val = ul_text.get(fid, '')
+                            if not val:
+                                continue
+                            dom_id = item.get('dom_id') or fid
+                            try:
+                                cur = page.evaluate(f"() => {{const e = document.getElementById({json.dumps(dom_id)}); return e ? e.value : null;}}")
+                            except Exception:
+                                cur = None
+                            # chain_037: autofill clobbers React's CONTROLLED state to
+                            # empty while leaving DOM .value intact -> server rejects
+                            # the field as "Missing entry" even though cur==val. This
+                            # affects BOTH system fields (Email) AND custom-UUID fields
+                            # (LinkedIn URL on Bretton AI 1536). _SET_VALUE_JS forces a
+                            # genuine React transition via the _valueTracker reset, so
+                            # re-applying the correct value is harmless. The autofill
+                            # parse has already settled (we waited above), so there is
+                            # nothing left to re-clobber. ALWAYS force-set every resolved
+                            # text field that has a value.
+                            try:
+                                res = page.evaluate(_SET_VALUE_JS, {"id": dom_id, "val": val})
+                                if isinstance(res, dict) and res.get('ok'):
+                                    ul_repaired.append(fid)
+                            except Exception as e:
+                                log(f"upload-last repair fail {dom_id}: {e}")
+                        log(f"UPLOAD-LAST verify pass: repaired {len(ul_repaired)} field(s) {ul_repaired}")
+                        # chain_038 (2026-05-31): Snowflake-class custom-UUID essay
+                        # fields ('Where have you most recently worked?') stay
+                        # clobbered after a SINGLE repair: the autofill widget keeps
+                        # firing post-repair on a later microtask, reverting React's
+                        # controlled state to empty while our DOM .value survives ->
+                        # server still reports 'Missing entry'. Fix: stabilization
+                        # loop. Re-apply _SET_VALUE_JS for every valued field up to 4
+                        # extra passes with a short settle between, and break early
+                        # once a full pass finds nothing to fix. The LAST pass lands
+                        # immediately before the submit click, so even a tenant that
+                        # never stops re-clobbering loses the final race.
+                        ul_pairs = []
+                        for item in ul_resolved:
+                            v = ul_text.get(item['fid'], '')
+                            if v:
+                                ul_pairs.append((item.get('dom_id') or item['fid'], v))
+                        for _stab in range(4):
+                            page.wait_for_timeout(1200)
+                            changed = 0
+                            for dom_id, val in ul_pairs:
+                                try:
+                                    cur = page.evaluate(f"() => {{const e=document.getElementById({json.dumps(dom_id)}); return e? e.value : null;}}")
+                                except Exception:
+                                    cur = None
+                                if cur == val:
+                                    continue
+                                try:
+                                    page.evaluate(_SET_VALUE_JS, {"id": dom_id, "val": val})
+                                    changed += 1
+                                except Exception as e:
+                                    log(f"upload-last stabilize fail {dom_id}: {e}")
+                            log(f"UPLOAD-LAST stabilize pass {_stab+1}: re-set {changed} field(s)")
+                            if changed == 0:
+                                break
+                        # chain_p7 (2026-06-04): AUTHORITATIVE re-assert of ALL
+                        # text/system fields straight from the plan's text_fields
+                        # map (personal-info.json values), independent of the
+                        # eval-`resolved` bookkeeping above. This is the fix for the
+                        # Plaid=Email / Reducto=LinkedIn / Benchling=Name clobber
+                        # class: those system fields are filled via the fast-path and
+                        # never appear in ul_resolved, so the stabilize loop above
+                        # skipped them. Re-assert here, after parse-settle, with the
+                        # suffix-fallback DOM resolver so the live input is found even
+                        # when its id != the planned fid suffix.
+                        try:
+                            _auth_tf = _collect_text_fields(steps, i)
+                            _ra = reassert_text_fields(page, _auth_tf)
+                            if _ra:
+                                log(f"UPLOAD-LAST chain_p7 re-assert: re-won {len(_ra)} field(s) {[f[-24:] for f in _ra]}")
+                            result['steps'].append({'i':i,'tool':'reassert-text-fields','repaired':_ra})
+                        except Exception as _rae:
+                            log(f"UPLOAD-LAST chain_p7 re-assert fail: {_rae}")
+                        # ashby-date-runner (2026-06-08): the autofill parse can
+                        # also clobber a committed Date widget (same class as the
+                        # Location-typeahead clobber below). reassert_text_fields
+                        # above does NOT cover Date fids (they need the date-aware
+                        # _valueTracker path), so re-commit them here after parse-
+                        # settle. Pull date_field_ids + ISO values from the plan's
+                        # type_text_fields step.
+                        try:
+                            _ul_date_ids = []
+                            _ul_date_tf = {}
+                            for _j in range(i):
+                                if steps[_j].get('tool') == 'ashby.type_text_fields':
+                                    _sa = steps[_j].get('args', {})
+                                    _ul_date_ids = list(_sa.get('date_field_ids', []) or [])
+                                    _ul_date_tf = _sa.get('text_fields', {}) or {}
+                                    break
+                            if _ul_date_ids:
+                                _ul_date_specs = [{"fid": _d, "iso": (_ul_date_tf.get(_d) or "")}
+                                                   for _d in _ul_date_ids]
+                                _ul_dr = commit_ashby_date_fields(page, _ul_date_specs)
+                                _ul_date_bad = [r['fid'] for r in _ul_dr if not r.get('committed')]
+                                if _ul_date_bad:
+                                    log(f"UPLOAD-LAST date re-commit UNCOMMITTED: {[f[-20:] for f in _ul_date_bad]}")
+                                result['steps'].append({'i':i,'tool':'reassert-date-fields','date_results':_ul_dr})
+                        except Exception as _ude:
+                            log(f"UPLOAD-LAST date re-commit fail: {_ude}")
+                        # chain_041 (2026-05-31 ElevenLabs 939): autofill also
+                        # clobbers the Location TYPEAHEAD combobox (not just text
+                        # fields). The chain_037 verify pass only force-set
+                        # text_fields, so a required Location field came back empty
+                        # AFTER upload -> server rejected "Missing entry for required
+                        # field: Location". Fix: re-run the plan's location-typeahead
+                        # evaluate step (meta.location_typeahead_v2) AFTER upload+
+                        # stabilization so the autofill can't re-clobber it. The step
+                        # fn is self-contained/idempotent and returns
+                        # {resolved, unresolved}; safe to re-invoke.
+                        loc_relocated = None
+                        try:
+                            loc_step = next((st for st in steps
+                                if st.get('tool') == 'browser.act.evaluate'
+                                and st.get('args', {}).get('meta', {}).get('location_typeahead_v2')), None)
+                            if loc_step:
+                                lfn = loc_step['args']['fn'].strip()
+                                loc_relocated = page.evaluate(f"({lfn})()")
+                                log(f"UPLOAD-LAST location re-fill: {loc_relocated}")
+                                page.wait_for_timeout(400)
+                        except Exception as e:
+                            log(f"upload-last location re-fill fail: {e}")
+                        result['steps'].append({'i':i,'tool':'upload-last-verify','repaired':ul_repaired,'location_refill':loc_relocated})
+                        continue  # skip legacy post-upload retype cascade
+                    # chain_033 runner addendum: Ashby tenants with "Autofill from resume"
+                    # (Tarro etc.) clobber typed text fields after upload. Re-type all
+                    # text fields to overwrite the autofill data.
+                    # chain_035: this tenant may be AUTOFILL-CLASS (OpenAI etc).
+                    # Wait for the 'Parsing your resume. Autofilling...' widget to
+                    # finish before retyping, else autofill clobbers on a microtask
+                    # boundary AFTER our retype.
+                    page.wait_for_timeout(1500)  # let autofill finish
+                    try:
+                        for _ in range(20):  # up to ~10s
+                            parsing = page.evaluate("() => /Parsing your resume|Autofilling key fields/i.test(document.body.innerText)")
+                            if not parsing:
+                                break
+                            page.wait_for_timeout(500)
+                        log("autofill settle wait done")
+                    except Exception as e:
+                        log(f"autofill settle probe fail: {e}")
+                    # Find prior resolved list and text_fields map.
+                    # chain_034b: plan may have MULTIPLE eval steps with 'resolved' key
+                    # (e.g. Rho has a separate location resolver step). Merge all of them.
+                    resolved = []
+                    text_fields = {}
+                    seen_fids = set()
+                    for prev in reversed(result['steps']):
+                        if prev['tool'] == 'browser.act.evaluate' and isinstance(prev.get('r'), dict) and isinstance(prev['r'].get('resolved'), list):
+                            for item in prev['r']['resolved']:
+                                if not isinstance(item, dict):
+                                    continue
+                                fid = item.get('fid')
+                                if not fid or fid in seen_fids:
+                                    continue
+                                seen_fids.add(fid)
+                                resolved.append(item)
+                    # Get text_fields from the type_text_fields step args
+                    for j in range(i):
+                        if steps[j].get('tool') == 'ashby.type_text_fields':
+                            text_fields = steps[j].get('args', {}).get('text_fields', {})
+                            break
+                    retyped = []
+                    for item in resolved:
+                        fid = item['fid']
+                        val = text_fields.get(fid, '')
+                        dom_id = item.get('dom_id') or item.get('fid') or fid
+                        if not val:
+                            continue
+                        cur = page.evaluate(f"() => {{const e = document.getElementById({json.dumps(dom_id)}); return e ? e.value : null;}}")
+                        if cur == val:
+                            continue
+                        # chain_034b: use direct value-setter + input-event for React controlled inputs.
+                        # page.keyboard.type fails silently on long textareas after autofill scroll-jitter.
+                        try:
+                            res = page.evaluate(_SET_VALUE_JS, {"id": dom_id, "val": val})
+                            if isinstance(res, dict) and res.get('ok'):
+                                retyped.append(fid)
+                            else:
+                                log(f"post-upload retype JS fail on {dom_id}: {res}")
+                        except Exception as e:
+                            log(f"post-upload retype fail on {dom_id}: {e}")
+                    if retyped:
+                        result['steps'].append({'i':i,'tool':'post-upload-retype','count':len(retyped),'fields':retyped})
+                    # chain_p7 (2026-06-04): same authoritative re-assert in the
+                    # LEGACY (non-upload-last) path. The retype above only re-fills
+                    # fids present in the eval `resolved` list; system fields filled
+                    # by the fast-path are missing from it, so a clobbered Email/
+                    # LinkedIn/Name survived to submit. Re-assert all text_fields
+                    # straight from the plan after the autofill-settle wait above.
+                    try:
+                        _auth_tf_leg = _collect_text_fields(steps, i)
+                        _ra_leg = reassert_text_fields(page, _auth_tf_leg)
+                        if _ra_leg:
+                            log(f"LEGACY chain_p7 re-assert: re-won {len(_ra_leg)} field(s) {[f[-24:] for f in _ra_leg]}")
+                        result['steps'].append({'i':i,'tool':'reassert-text-fields','repaired':_ra_leg})
+                    except Exception as _rale:
+                        log(f"LEGACY chain_p7 re-assert fail: {_rale}")
+                    # chain_033 runner addendum 2: re-execute the radio-resolve eval
+                    # too, since autofill ALSO clears radio selections. Find the most
+                    # recent eval whose result had `picked` (radio resolver), re-run
+                    # its fn, and clickCoords each picked entry again.
+                    radio_step_idx = None
+                    for j in range(i):
+                        sj = steps[j]
+                        if sj.get('tool') == 'browser.act.evaluate' and isinstance(sj.get('args',{}).get('fn',''), str):
+                            # Recognize the radio-resolve step by its fn signature
+                            if 'allRadioNames' in sj['args']['fn'] or 'yesno_button' in sj['args']['fn']:
+                                radio_step_idx = j
+                    if radio_step_idx is not None:
+                        rsj = steps[radio_step_idx]
+                        rfn = rsj['args']['fn'].strip()
+                        rarg = rsj['args'].get('arg')
+                        rjs = f"({rfn})({json.dumps(rarg)})" if rarg is not None else f"({rfn})()"
+                        # Loop: re-pick + click stale-coord items, up to 4 passes.
+                        # Re-eval after each click so coords reflect any layout shift.
+                        total_reclicked = 0
+                        last_pickset = None
+                        for pass_i in range(4):
+                            try:
+                                rr = page.evaluate(rjs)
+                            except Exception as e:
+                                log(f"radio re-eval fail pass {pass_i}: {e}"); break
+                            picks = rr.get('picked', []) if isinstance(rr, dict) else []
+                            todo = [p for p in picks if 'cx' in p and 'cy' in p and not p.get('already_active')]
+                            if not todo:
+                                log(f"radio settle done at pass {pass_i}; picks={len(picks)}")
+                                break
+                            for pick in todo:
+                                try:
+                                    if pick.get('kind') == 'yesno_button':
+                                        page.evaluate(_YESNO_CLICK_JS, {"name": pick.get('name'), "label_text": pick.get('label_text')})
+                                    elif pick.get('kind') == 'radio_label' and pick.get('label_for'):
+                                        page.evaluate(_RADIO_CLICK_BY_ID_JS, {"input_id": pick.get('label_for')})
+                                    else:
+                                        page.mouse.click(pick['cx'], pick['cy'])
+                                    page.wait_for_timeout(200)
+                                    total_reclicked += 1
+                                except Exception as e:
+                                    log(f"reclick fail: {e}")
+                            page.wait_for_timeout(300)
+                        result['steps'].append({'i':i,'tool':'post-upload-radio-reclick','count':total_reclicked,'passes':pass_i+1})
+                    # chain_035: autofill clobbers the Location autocomplete combobox
+                    # too (OpenAI _systemfield_location). Re-run the location-resolve
+                    # eval step (it does typeahead + dropdown-select to register React
+                    # state) AFTER autofill settles. Find it by fn signature.
+                    loc_step_idx = None
+                    for j in range(i):
+                        sj = steps[j]
+                        fnj = sj.get('args', {}).get('fn', '') if sj.get('tool') == 'browser.act.evaluate' else ''
+                        if 'systemfield_location' in fnj and 'combobox' in fnj:
+                            loc_step_idx = j
+                    if loc_step_idx is not None:
+                        lsj = steps[loc_step_idx]
+                        lfn = lsj['args']['fn'].strip()
+                        larg = lsj['args'].get('arg')
+                        ljs = f"({lfn})({json.dumps(larg)})" if larg is not None else f"({lfn})()"
+                        for lpass in range(2):
+                            try:
+                                lr = page.evaluate(ljs)
+                            except Exception as e:
+                                log(f"location re-eval fail: {e}"); break
+                            res_ok = isinstance(lr, dict) and lr.get('resolved')
+                            log(f"post-upload location re-resolve pass {lpass}: {json.dumps(lr)[:160]}")
+                            result['steps'].append({'i':i,'tool':'post-upload-location','pass':lpass,'res':lr})
+                            if res_ok and not (lr.get('unresolved')):
+                                break
+                            page.wait_for_timeout(600)
+                        # chain_035: if the plan's location step still left it
+                        # unresolved (custom-location field with no id/name and a
+                        # non-'location' fid -> ElevenLabs), fall back to direct
+                        # typeahead fill by container field-path tail.
+                        try:
+                            still = lr.get('unresolved') if isinstance(lr, dict) else None
+                        except Exception:
+                            still = None
+                        if still:
+                            for uf in still:
+                                fid = uf.get('fid') or ''
+                                tail = fid.split('_')[-1] if '_' in fid else fid
+                                val = uf.get('label') or 'Kirkland, WA'
+                                try:
+                                    fr = page.evaluate(_LOCATION_COMBO_FILL_JS, {"tail": tail, "value": val})
+                                    log(f"location combobox fallback tail={tail}: {json.dumps(fr)[:200]}")
+                                    # chain_035 INTEGRITY: if no exact match and the
+                                    # offered options are countries, retry honestly
+                                    # with 'United States' (Cyrus is US-based). Never
+                                    # accept a fuzzy/garbage auto-pick.
+                                    if isinstance(fr, dict) and fr.get('reason')=='no-exact-match':
+                                        # location field returned only fuzzy options.
+                                        # Cyrus is US-based -> the honest answer for a
+                                        # country-style picker is 'United States'.
+                                        fr = page.evaluate(_LOCATION_COMBO_FILL_JS, {"tail": tail, "value": "United States"})
+                                        log(f"location combobox COUNTRY-retry tail={tail}: {json.dumps(fr)[:160]}")
+                                    result['steps'].append({'i':i,'tool':'location-combo-fallback','res':fr})
+                                    page.wait_for_timeout(400)
+                                except Exception as e:
+                                    log(f"location combobox fallback fail: {e}")
+                        # chain_034b: also handle combobox-missing post-upload (autofill may clear salary)
+                        try:
+                            rr_final = page.evaluate(rjs)
+                        except Exception:
+                            rr_final = None
+                        if isinstance(rr_final, dict) and isinstance(rr_final.get('missing'), list):
+                            import re as _re2
+                            pm2 = _re2.search(r'const __payload = (\[.*?\]);', rfn)
+                            payload_map2 = {}
+                            if pm2:
+                                try:
+                                    for entry in json.loads(pm2.group(1)):
+                                        payload_map2[entry.get('name','')] = entry
+                                except Exception:
+                                    pass
+                            for miss in rr_final['missing']:
+                                miss_name = miss.get('want_name') or miss.get('name') or (miss if isinstance(miss, str) else '')
+                                entry = payload_map2.get(miss_name, {})
+                                want = entry.get('value') or ''
+                                alts = entry.get('alternates', []) or []
+                                cb_res = page.evaluate(_COMBOBOX_OPEN_JS, {"fid": miss_name})
+                                if not (isinstance(cb_res, dict) and cb_res.get('ok')):
+                                    continue
+                                page.wait_for_timeout(250)
+                                pick_res = page.evaluate(_COMBOBOX_PICK_JS, {"want": want, "alts": alts + (["$200,000 - $220,000"] if not want or 'discuss' in want.lower() else [])})
+                                log(f"post-upload combobox pick {miss_name}: {pick_res}")
+                                result['steps'].append({'i':i,'tool':'post-upload-combobox-pick','fid':miss_name,'res':pick_res})
+                                page.wait_for_timeout(250)
+                        # chain_034b: FINAL retype pass after autofill+radio-reclick settles.
+                        # Some tenants (Rho) keep firing autofill bursts; one early retype
+                        # isn't enough. Re-check every text field and re-set via JS if cleared.
+                        page.wait_for_timeout(800)
+                        final_retyped = []
+                        for item in resolved:
+                            fid = item['fid']
+                            val = text_fields.get(fid, '')
+                            dom_id = item.get('dom_id') or item.get('fid') or fid
+                            if not val:
+                                continue
+                            cur = page.evaluate(f"() => {{const e = document.getElementById({json.dumps(dom_id)}); return e ? e.value : null;}}")
+                            # chain_036: Snowflake-class autofill resets React's
+                            # CONTROLLED state to empty while leaving the DOM .value
+                            # intact -> server reports required field missing even
+                            # though cur==val. So for core identity/required fields
+                            # (name/email/phone), ALWAYS re-fire the native setter to
+                            # force a React onChange commit, even when cur==val.
+                            low = (item.get('label','') + ' ' + str(fid)).lower()
+                            force = any(k in low for k in ('name','email','phone','systemfield'))
+                            if cur == val and not force:
+                                continue
+                            try:
+                                res = page.evaluate(_SET_VALUE_JS, {"id": dom_id, "val": val})
+                                if isinstance(res, dict) and res.get('ok'):
+                                    final_retyped.append(fid)
+                            except Exception as e:
+                                log(f"final retype fail on {dom_id}: {e}")
+                        if final_retyped:
+                            result['steps'].append({'i':i,'tool':'final-retype','count':len(final_retyped),'fields':final_retyped})
+                        # chain_035: autofill ALSO clobbers (a) required-ack checkboxes
+                        # and (b) empty-id text inputs. The post-upload retype above only
+                        # restores id-resolvable text + radios. Re-run checkbox-ack and
+                        # the [data-field-path] text fallback here, post-settle.
+                        import re as _re35
+                        _uuidR = _re35.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', _re35.I)
+                        # re-fill empty-id text fields via container
+                        for fid, val in text_fields.items():
+                            if not val:
+                                continue
+                            uu = _uuidR.findall(fid)
+                            if not uu:
+                                continue
+                            tail = uu[-1]
+                            sel = f'[data-field-path="{tail}"] input:not([type=radio]):not([type=checkbox]):not([type=file]), [data-field-path="{tail}"] textarea'
+                            try:
+                                loc = page.locator(sel).first
+                                if loc.count() == 0:
+                                    continue
+                                # chain_036: do NOT skip when input_value()==val.
+                                # Snowflake-class autofill leaves the DOM .value intact
+                                # while resetting React's controlled state to empty, so
+                                # the server still sees the field as missing. Always
+                                # re-type via real keystrokes (Playwright keyboard fires
+                                # genuine input/change that React commits).
+                                loc.scroll_into_view_if_needed(timeout=1500)
+                                loc.click(timeout=2000)
+                                page.keyboard.press('Control+a'); page.keyboard.press('Delete')
+                                page.keyboard.type(val, delay=8)
+                                page.keyboard.press('Tab')
+                                log(f"post-upload text-fallback {tail[-12:]}")
+                            except Exception:
+                                pass
+                        # re-check ack checkboxes (find the checkbox-resolve eval step)
+                        for j in range(i):
+                            sj2 = steps[j]
+                            fnj = sj2.get('args', {}).get('fn', '') if sj2.get('tool') == 'browser.act.evaluate' else ''
+                            if 'input[type=checkbox]' in fnj and 'const __payload = [' in fnj:
+                                pmj = _re35.search(r'const __payload = (\[.*?\]); return', fnj, _re35.S)
+                                if not pmj:
+                                    continue
+                                try:
+                                    cbpay = json.loads(pmj.group(1))
+                                except Exception:
+                                    continue
+                                for e3 in cbpay:
+                                    wn = e3.get('name', '')
+                                    vals3 = e3.get('values') or []
+                                    wt = vals3[0] if vals3 else ''
+                                    try:
+                                        ar = page.evaluate(_CHECKBOX_ACK_JS, {"want_name": wn, "want_text": wt})
+                                        log(f"post-upload checkbox-ack {wn[-12:]}: {ar.get('checked') if isinstance(ar,dict) else ar}")
+                                    except Exception:
+                                        pass
+                                    page.wait_for_timeout(120)
+                except Exception as e:
+                    result['steps'].append({'i':i,'tool':tool,'err':str(e)})
+                    log(f"upload fail: {e}")
+            elif tool == 'ashby.maybe_solve_recaptcha_v3':
+                if no_captcha:
+                    result['steps'].append({'i':i,'tool':tool,'skipped':'no-captcha-flag'})
+                    continue
+                sitekey = (args.get('sitekey_fallback')
+                           or args.get('known_strict_sitekey')
+                           or (args.get('driver_exec', {}).get('kwargs', {}) or {}).get('fallback_sitekey'))
+                page_url = args.get('page_url')
+                # CapSolver scores the token against the page where it is
+                # generated. The Ashby grecaptcha.execute() runs on the
+                # /application page, so the score is computed for THAT url. The
+                # plan may carry the bare JD url; normalize to /application.
+                try:
+                    cur_url = page.url
+                    if cur_url and '/application' in cur_url:
+                        page_url = cur_url
+                    elif page_url and not page_url.rstrip('/').endswith('/application'):
+                        page_url = page_url.rstrip('/') + '/application'
+                except Exception:
+                    if page_url and not page_url.rstrip('/').endswith('/application'):
+                        page_url = page_url.rstrip('/') + '/application'
+                # TOOLS.md (chain_032): the Ashby app bundle calls
+                # grecaptcha.execute(sitekey, {action: "job_apply"}). The token's
+                # action MUST match what the server verifies. The plan emitter
+                # historically wrote page_action="submit" (wrong for Ashby), so
+                # force job_apply here regardless of the stale plan value.
+                action = 'job_apply'
+                # Live sitekey detection beats any hardcoded fallback: scrape the
+                # recaptcha loader's ?render=<sitekey> from the page scripts.
+                try:
+                    live_sk = page.evaluate("() => { const s = Array.from(document.scripts).map(x=>x.src).find(u=>/recaptcha\\/(api|enterprise)\\.js/.test(u||'')); if(!s) return null; const m = s.match(/[?&]render=([^&]+)/); return m ? m[1] : null; }")
+                    if live_sk and live_sk != 'explicit':
+                        sitekey = live_sk
+                        log(f"live recaptcha sitekey detected: {live_sk[:18]}...")
+                except Exception as e:
+                    log(f"live sitekey probe fail: {e}")
+                # Detect: confirm v3 is present
+                detect_js = args.get('detect_fn', '').strip()
+                if detect_js:
+                    det = page.evaluate(f"({detect_js})()")
+                else:
+                    det = None
+                if not sitekey:
+                    log("no sitekey, skip captcha"); result['steps'].append({'i':i,'tool':tool,'skipped':'no-sitekey'}); continue
+                t0 = time.monotonic()
+                try:
+                    # 2026-06-03 RESIDENTIAL-IP FIX: when the submit browser is
+                    # already egressing through a residential proxy (JOBSEARCH_CDP
+                    # points at the proxied Chrome), generate the v3 token IN-PAGE
+                    # via grecaptcha.execute(). That token is bound to the SAME
+                    # residential IP/session the form submits from -> reCAPTCHA-v3
+                    # sees one consistent trusted IP (page-load + token + submit),
+                    # which the Proxyless 2Captcha/CapSolver farm-IP token never
+                    # achieved (that was the real cause of the persistent
+                    # RECAPTCHA_SCORE_BELOW_THRESHOLD). Free, no solver call.
+                    # Falls through to the solver loop if grecaptcha isn't ready.
+                    token = None
+                    _cerrs = {}
+                    if _os.environ.get('JOBSEARCH_INBROWSER_V3', '1') != '0':
+                        try:
+                            token = page.evaluate(
+                                """([sk, act]) => new Promise((res)=>{
+                                  try{
+                                    const g = (window.grecaptcha && window.grecaptcha.enterprise && window.grecaptcha.enterprise.execute)
+                                              ? window.grecaptcha.enterprise : window.grecaptcha;
+                                    if(!g || !g.execute){ res(null); return; }
+                                    g.ready(()=>{ g.execute(sk,{action:act}).then(t=>res(t||null)).catch(()=>res(null)); });
+                                    setTimeout(()=>res(null), 12000);
+                                  }catch(e){ res(null); }
+                                })""",
+                                [sitekey, action])
+                            if token:
+                                log(f"recaptcha-v3 generated IN-BROWSER (residential), len={len(token)}")
+                        except Exception as _eb:
+                            log(f"in-browser v3 exec failed: {_eb}")
+                            token = None
+                    # 2026-06-03: prefer 2Captcha (CapSolver v3 still works but
+                    # 2Captcha is the funded primary). Fall back to capsolver.
+                    if not token:
+                        for _vend in ('twocaptcha', 'capsolver'):
+                            try:
+                                token = CaptchaSolver(vendor=_vend).solve_recaptcha_v3(
+                                    sitekey, page_url, page_action=action)
+                                log(f"recaptcha-v3 solved via {_vend}")
+                                break
+                            except Exception as _ev:
+                                _cerrs[_vend] = str(_ev)
+                                log(f"recaptcha-v3 {_vend} failed: {_ev}")
+                    if not token:
+                        raise RuntimeError('; '.join(f'{k}={v}' for k,v in _cerrs.items()))
+                except Exception as e:
+                    log(f"captcha solve fail: {e}")
+                    result['steps'].append({'i':i,'tool':tool,'err':f'solve_fail:{e}'})
+                    captcha_token = None
+                    continue
+                elapsed = time.monotonic() - t0
+                log(f"captcha v3 solved in {elapsed:.1f}s, token len={len(token)}")
+                # Inject
+                inject_js = args.get('inject_fn', '').strip()
+                if inject_js:
+                    inj = page.evaluate(f"({inject_js})({json.dumps(token)})")
+                else:
+                    # Ashby uses SUFFIXED textareas (g-recaptcha-response-100000),
+                    # not just the bare id. Inject into every recaptcha-response
+                    # slot present, and create the canonical ids if missing.
+                    _inject_fn = (
+                        "(t) => {"
+                        "  const slots = new Set(['g-recaptcha-response','g-recaptcha-response-100000']);"
+                        "  document.querySelectorAll('textarea[id^=g-recaptcha-response],textarea[name^=g-recaptcha-response]').forEach(e=>{ if(e.id) slots.add(e.id); });"
+                        "  let n=0;"
+                        "  for (const id of slots){ let el=document.getElementById(id); if(!el){ el=document.createElement('textarea'); el.id=id; el.name=id; el.style.display='none'; document.body.appendChild(el);} el.value=t; n++; }"
+                        "  return {injected:n, ids:[...slots]};"
+                        "}"
+                    )
+                    inj = page.evaluate(f"({_inject_fn})({json.dumps(token)})")
+                captcha_token = token
+                result['steps'].append({'i':i,'tool':tool,'solve_ms':int(elapsed*1000),'token_len':len(token),'inject':inj,'detect':det})
+            else:
+                log(f"UNKNOWN STEP TOOL: {tool}")
+                result['steps'].append({'i':i,'tool':tool,'skipped':'unknown'})
+            # Stop early on no-submit
+            if no_submit and args.get('meta',{}).get('final_submit'):
+                result['steps'].append({'i':i,'tool':'final_submit-SKIPPED'})
+                break
+    finally:
+        # Don't close the page yet — let caller inspect
+        time.sleep(0.5)
+        try: page.close()
+        except: pass
+        try: browser.close()
+        except: pass
+        pw.stop()
+    return result
+
+if __name__ == '__main__':
+    plan = sys.argv[1]
+    no_submit = '--no-submit' in sys.argv
+    no_captcha = '--no-captcha' in sys.argv
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+    print(json.dumps(r, indent=2, default=str))
+    sys.exit(0 if r['ok'] else 1)

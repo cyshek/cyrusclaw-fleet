@@ -1,0 +1,4 @@
+import json
+
+chunks = []
+for i in [1, 2, 3]:\n    with open(f'/home/azureuser/.openclaw/agents/making-money/workspace/outreach/batch2_chunk{i}.json') as f:\n        chunks.extend(json.load(f))\n\nseen = set()\ndeduped = []\nfor t in chunks:\n    if t['domain'] not in seen:\n        seen.add(t['domain'])\n        deduped.append(t)\n\nwith open('/home/azureuser/.openclaw/agents/making-money/workspace/outreach/batch2_merged.json', 'w') as f:\n    json.dump(deduped, f, indent=2)\n\nprint(f'{len(deduped)} unique targets merged')\nfor t in deduped[:5]:\n    print(f"  {t['domain']} -> {t['to']} ({t.get('source','?')})")\n

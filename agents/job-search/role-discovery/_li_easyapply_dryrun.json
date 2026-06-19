@@ -1,0 +1,398 @@
+{
+  "status": "BLOCKED",
+  "blocker": "linkedin-li_at-session-invalid",
+  "diagnosis": "Saved .linkedin-li-at (len=152, written 2026-06-05) is invalidated server-side. With the cookie, /feed/ 302-redirects to itself (infinite loop = ERR_TOO_MANY_REDIRECTS on every LinkedIn URL); with no cookie it cleanly 302s to /uas/login. Recognized-but-rejected token = expired/revoked session, almost certainly killed by LinkedIn on datacenter-IP egress (shared browser is on the VM datacenter IP; resolver stayed authed via the residential proxy this task was told not to use).",
+  "reproduced_via": [
+    "raw playwright fresh context",
+    "raw playwright inherited context",
+    "curl (15 self-redirects)",
+    "OpenClaw browser tool navigate"
+  ],
+  "probeable_count": 0,
+  "total_rows": 61,
+  "tallies": {
+    "SUBMITTABLE": 0,
+    "Q-BLOCKED": 0,
+    "NOT-EASY-APPLY": 0,
+    "AGENCY-REPOST": 0,
+    "UNPROBED-BLOCKED": 61
+  },
+  "submittable_ids": [],
+  "submittable_with_screening_q": 0,
+  "submittable_zero_question": 0,
+  "remediation": "Refresh li_at from a real logged-in LinkedIn browser session (ideally egressing from the same residential IP as where the token was issued), OR route _easyapply_probe.py through the residential proxy. Then re-run this dry-run recon.",
+  "constraints_honored": {
+    "never_submitted": true,
+    "no_db_writes": true,
+    "li_at_file_untouched": true,
+    "shared_browser_not_killed": true
+  },
+  "rows": [
+    {
+      "id": 1017,
+      "company": "Haystack",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 1051,
+      "company": "AceStack",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 1253,
+      "company": "AceStack",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2255,
+      "company": "CHAMP",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2259,
+      "company": "Well",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2261,
+      "company": "ReachMobi",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2275,
+      "company": "Pylon",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2277,
+      "company": "Uniguest",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2279,
+      "company": "Mayo Clinic",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2284,
+      "company": "Kidde Global Solutions",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2288,
+      "company": "VIAVI Solutions",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2298,
+      "company": "VeeAR Projects Inc.",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2302,
+      "company": "hackajob",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2305,
+      "company": "TikTok USDS Joint Venture",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2307,
+      "company": "Spot AI",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2319,
+      "company": "InvestCloud, Inc.",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2325,
+      "company": "Perpetual",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2361,
+      "company": "Thea Energy",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2370,
+      "company": "Tailored Management",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2371,
+      "company": "University of Washington",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2373,
+      "company": "Weir Minerals",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2376,
+      "company": "Ryerson",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2377,
+      "company": "Hilti North America",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2378,
+      "company": "Fives",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2379,
+      "company": "Nexthermal",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2380,
+      "company": "S\u00e9cheron SA",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2382,
+      "company": "Geiger Pump & Equipment Company",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2383,
+      "company": "Rise Technical",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2386,
+      "company": "ELLWOOD",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2387,
+      "company": "Copeland",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2388,
+      "company": "R.F. MacDonald Co.",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2389,
+      "company": "ProActivate",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2390,
+      "company": "Chromalox",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2392,
+      "company": "Flowtec Group",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2393,
+      "company": "Atlas Copco",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2396,
+      "company": "Eaton",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2399,
+      "company": "Dorner Company",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2400,
+      "company": "Archon Resources LLC",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2401,
+      "company": "Cindavi",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2402,
+      "company": "Topa Group, Inc.",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2408,
+      "company": "Kastle Systems",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2420,
+      "company": "PEAK6",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2421,
+      "company": "Cisco",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2424,
+      "company": "Dartronics, Inc.",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2425,
+      "company": "AvtechTyee",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2436,
+      "company": "Canopy",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2438,
+      "company": "Spot AI",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2446,
+      "company": "Apex Fintech Solutions",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2455,
+      "company": "The Associated Press",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2456,
+      "company": "Valence",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2460,
+      "company": "ITRS",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2464,
+      "company": "GEICO",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2471,
+      "company": "HAVI",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2472,
+      "company": "Harvard Business School",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2480,
+      "company": "Hashlist",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2483,
+      "company": "Teradata",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2484,
+      "company": "Triverus Consulting",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2490,
+      "company": "Dexian",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2493,
+      "company": "Kaiser Permanente",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2495,
+      "company": "Softchoice",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    },
+    {
+      "id": 2498,
+      "company": "Teachers Federal Credit Union",
+      "bucket": "UNPROBED-BLOCKED",
+      "note": "li_at session invalid (ERR_TOO_MANY_REDIRECTS self-loop); could not reach job page"
+    }
+  ]
+}

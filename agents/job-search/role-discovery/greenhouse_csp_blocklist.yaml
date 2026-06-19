@@ -1,0 +1,36 @@
+# Greenhouse tenants confirmed to deploy reCAPTCHA Enterprise via www.recaptcha.net
+# while their CSP only allows www.google.com -> submit blocked.
+# Detected via failed submit attempts; remove if tenant fixes CSP.
+#
+# Schema:
+#   tenants:
+#     - slug: <gh_org slug, exactly as it appears in job-boards.greenhouse.io/<slug>/...>
+#       observed: YYYY-MM-DD
+#       symptom: short note
+#
+# Maintenance: when a new tenant is discovered (browser plan hangs with submit
+# button permanent-disabled + 428 on /v1/post), add an entry here and re-run
+# inline_submit so future preps short-circuit to PREP-READY-MANUAL-CSP-CAPTCHA.
+tenants:
+  - slug: similarweb
+    observed: 2026-05-24
+    symptom: HTTP 428 on /v1/post; submit btn permanent-disabled
+  - slug: hackerrank
+    observed: 2026-05-24
+    symptom: HTTP 428 on /v1/post; submit btn permanent-disabled
+  - slug: ascend21
+    observed: 2026-05-24
+    symptom: HTTP 428 on /v1/post; submit btn permanent-disabled
+  - slug: afresh
+    observed: 2026-05-25
+    symptom: tab killed after combobox interaction; reCAPTCHA Enterprise + headless detection
+  - slug: humeai
+    observed: 2026-05-25
+    symptom: resume upload + tab instability; new gh-template + reCAPTCHA Enterprise
+    # NOTE 2026-05-26 chain_009: actual gate is Filestack-CDN-required, NOT reCAPTCHA CSP.
+    # Re-attempt with --ignore-csp-block + DataTransfer-first showed:
+    # strict_bound=true, files_in_input=1, but server rejects with "Resume/CV is required".
+    # Same gate as Lyft 716/1343. Real fix = Filestack API integration (4-6hr build).
+  - slug: intercom
+    observed: 2026-06-02
+    symptom: reCAPTCHA Enterprise via www.recaptcha.net; submit no-confirm (uncertain), recaptcha anchor iframe loaded; CSP-block class
