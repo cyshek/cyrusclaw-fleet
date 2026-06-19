@@ -26,6 +26,10 @@ import pytest
 
 import rippling_filler as rf
 
+# Personal info loaded from personal-info.json
+_PI = json.loads((Path(__file__).resolve().parent.parent / "personal-info.json").read_text())
+_pi_id = _PI["identity"]
+
 
 # --- Fake transport ----------------------------------------------------------
 
@@ -163,7 +167,7 @@ class TestNormalizeUrlLike:
 
 class TestBuildPayload:
     BASE = {
-        "first_name": "Cyrus", "last_name": "Yari",
+        "first_name": _pi_id["first_name"], "last_name": _pi_id["last_name"],
         "email": "x@example.com", "current_company": "Acme",
         "location": "SF", "phone_number": "+14155551234",
         "linkedin_link": "linkedin.com/in/cy",
@@ -177,7 +181,7 @@ class TestBuildPayload:
             turnstile_token=None,
         )
         afr = body["applicationFormResponse"]
-        assert afr["first_name"] == "Cyrus"
+        assert afr["first_name"] == _pi_id["first_name"]
         assert afr["resume"] == "https://s3.example/r.pdf"
         assert afr["resumeFileExtension"] == "application/pdf"
         assert "cover_letter" not in afr
@@ -348,7 +352,7 @@ def test_fetch_sitekey_404():
 # --- submit_application end-to-end ----------------------------------------
 
 ANSWERS = {
-    "first_name": "Cyrus", "last_name": "Yari",
+    "first_name": _pi_id["first_name"], "last_name": _pi_id["last_name"],
     "email": "x@example.com", "current_company": "Acme",
     "location": "SF, CA", "phone_number": "415-555-1234",
     "linkedin_link": "linkedin.com/in/cy",
@@ -375,7 +379,7 @@ def test_submit_happy(tmp_pdf):
     assert art.http_status == 200
     assert art.sitekey == "0xTESTKEY"
     assert art.turnstile_token_len > 0
-    assert art.payload["applicationFormResponse"]["first_name"] == "Cyrus"
+    assert art.payload["applicationFormResponse"]["first_name"] == _pi_id["first_name"]
     assert art.payload["cf-client-response"]
     assert art.submitted_at
     # captcha called with the right sitekey

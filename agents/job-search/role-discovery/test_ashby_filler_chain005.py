@@ -8,12 +8,16 @@ Covers:
       (NOT into text_fields, since combobox typeahead needs real keystrokes).
 - General: skipped list should not contain Date/Location anymore.
 """
-import sys
+import sys, json
 import unittest
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+
+# Personal info loaded from personal-info.json
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
+_FIRST = _PI["identity"]["first_name"]
 
 import ashby_filler as af  # noqa: E402
 
@@ -43,7 +47,7 @@ class TestP1FastPath(unittest.TestCase):
 
     def test_emit_steps_inserts_fast_path_before_cdp_fallback(self):
         spec = _spec_with([
-            {"id": "fid-1", "label": "Full Name", "value": "Cyrus",
+            {"id": "fid-1", "label": "Full Name", "value": _FIRST,
              "status": "filled", "_ashby_type": "String", "required": True},
         ])
         plan = af.build_plan(spec)
@@ -60,7 +64,7 @@ class TestP1FastPath(unittest.TestCase):
 
     def test_kill_switch_false_suppresses_fast_path(self):
         spec = _spec_with([
-            {"id": "fid-1", "label": "Full Name", "value": "Cyrus",
+            {"id": "fid-1", "label": "Full Name", "value": _FIRST,
              "status": "filled", "_ashby_type": "String", "required": True},
         ])
         plan = af.build_plan(spec)
@@ -286,7 +290,7 @@ class TestChain028LocationGuard(unittest.TestCase):
 class TestRegressionCombinedSpec(unittest.TestCase):
     def test_combined_spec_no_date_or_location_in_skipped(self):
         spec = _spec_with([
-            {"id": "name-fid", "label": "Name", "value": "Cyrus",
+            {"id": "name-fid", "label": "Name", "value": _FIRST,
              "status": "filled", "_ashby_type": "String", "required": True},
             {"id": "date-fid", "label": "Earliest start?",
              "value": "Two weeks from offer", "status": "filled",

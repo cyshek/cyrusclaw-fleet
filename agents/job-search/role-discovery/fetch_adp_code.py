@@ -11,7 +11,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_PW = (ROOT / ".gmail-app-password").read_text().strip().replace(" ", "")
-GMAIL_USER = "cyshekari@gmail.com"
+
+# ---- Personal info loader --------------------------------------------------
+def _load_gmail_user():
+    try:
+        import json as _j
+        pi = _j.load(open(ROOT / "personal-info.json"))
+        return pi["identity"]["email"]
+    except Exception:
+        return ""
+
+GMAIL_USER = _load_gmail_user()
 MAILBOXES = ['"[Gmail]/All Mail"', "INBOX"]
 
 NEAR_RE = re.compile(r"(?:verification code|security code|one[- ]time|passcode|code is|your code)[^0-9]{0,40}(\d{4,8})\b", re.I)

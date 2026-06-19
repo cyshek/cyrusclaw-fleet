@@ -46,11 +46,16 @@ Usage:
 """
 import sys, os, time, json, argparse, re
 
-EMAIL = "cyshekari@gmail.com"
-FIRST = "Cyrus"
-LAST = "Shekari"
-PHONE = "3468040227"
-LINKEDIN = "https://www.linkedin.com/in/cyrus-shekari"
+# ---- Personal info loader (reads agents/job-search/personal-info.json) -----
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n\ndef _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
+
+EMAIL   = _info()["identity"]["email"]
+FIRST   = _info()["identity"]["first_name"]
+LAST    = _info()["identity"]["last_name"]
+PHONE   = _phone_digits(_info()["identity"]["phone"])
+LINKEDIN = _info()["identity"]["linkedin_url"]
 HEADLINE = "Technical Program Manager | Microsoft Azure, Amazon Robotics"
 # Address — a real US address keeps the geo-autocomplete + required-field happy.
 # Cyrus's real location (prefill.json source of truth): Kirkland, WA.

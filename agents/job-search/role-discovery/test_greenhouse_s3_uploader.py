@@ -24,6 +24,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+# Personal info loaded from personal-info.json
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
+_pi_id = _PI["identity"]
+
 import greenhouse_filler as gf  # noqa: E402
 
 
@@ -148,7 +152,7 @@ class FetchPatchMutation(unittest.TestCase):
 
     def test_mutates_job_application_resume_fields(self):
         body = json.dumps({
-            "job_application": {"first_name": "Cyrus", "last_name": "Shekari"},
+            "job_application": {"first_name": _pi_id["first_name"], "last_name": _pi_id["last_name"]},
             "fingerprint": {"foo": "bar"},
         })
         new, mut = mutate_submit_body(body, "application/json", self.INJECT)
@@ -157,13 +161,13 @@ class FetchPatchMutation(unittest.TestCase):
         self.assertEqual(parsed["job_application"]["resume_url"], self.INJECT["resume_url"])
         self.assertEqual(parsed["job_application"]["resume_url_filename"], self.INJECT["resume_url_filename"])
         # Other fields preserved
-        self.assertEqual(parsed["job_application"]["first_name"], "Cyrus")
+        self.assertEqual(parsed["job_application"]["first_name"], _pi_id["first_name"])
         self.assertEqual(parsed["fingerprint"], {"foo": "bar"})
 
     def test_overwrites_existing_resume_fields(self):
         body = json.dumps({
             "job_application": {
-                "first_name": "Cyrus",
+                "first_name": _pi_id["first_name"],
                 "resume_url": "https://example.com/old.pdf",
                 "resume_url_filename": "old.pdf",
             }

@@ -12,6 +12,10 @@ SEL_TYPEAHEAD specs automatically with truthful canonical values, so main() fill
 them with no manual --answers.
 """
 import _gh_submit as g
+import json, os
+_PI = json.load(open(os.path.join(os.path.dirname(__file__), "..", "personal-info.json")))
+_pi_id = _PI["identity"]; _pi_ad = _PI.get("address", {})
+_LOCATION = f"{_pi_ad.get('city','')}, {_pi_ad.get('state','')}"
 
 
 # ---------------------------------------------------------------------------
@@ -89,31 +93,31 @@ def test_education_blank_values_skipped():
 # ---------------------------------------------------------------------------
 
 def test_location_typeahead_from_text_fields_dict():
-    plan = {"text_fields": {"location": "Kirkland, WA", "first_name": "Cyrus"}}
+    plan = {"text_fields": {"location": _LOCATION, "first_name": _pi_id["first_name"]}}
     spec = g.plan_location_typeahead_spec(plan)
-    assert spec == {"id": "candidate-location", "label": "Kirkland, WA"}
+    assert spec == {"id": "candidate-location", "label": _LOCATION}
 
 
 def test_location_typeahead_from_text_fields_list_shape():
     # Ashby-style list-of-dicts text_fields shape is flattened correctly.
-    plan = {"text_fields": [{"location": "Kirkland, WA"}, {"first_name": "Cyrus"}]}
+    plan = {"text_fields": [{"location": _LOCATION}, {"first_name": _pi_id["first_name"]}]}
     spec = g.plan_location_typeahead_spec(plan)
     assert spec["id"] == "candidate-location"
-    assert spec["label"] == "Kirkland, WA"
+    assert spec["label"] == _LOCATION
 
 
 def test_location_skipped_when_already_staged_in_country_dropdowns():
     # greenhouse_filler.build_plan already adds candidate-location to
     # country_dropdowns -> don't double-drive it.
     plan = {
-        "text_fields": {"location": "Kirkland, WA"},
-        "country_dropdowns": [{"id": "candidate-location", "label": "Kirkland, WA"}],
+        "text_fields": {"location": _LOCATION},
+        "country_dropdowns": [{"id": "candidate-location", "label": _LOCATION}],
     }
     assert g.plan_location_typeahead_spec(plan) is None
 
 
 def test_location_none_when_no_location_value():
-    assert g.plan_location_typeahead_spec({"text_fields": {"first_name": "Cyrus"}}) is None
+    assert g.plan_location_typeahead_spec({"text_fields": {"first_name": _pi_id["first_name"]}}) is None
     assert g.plan_location_typeahead_spec({"text_fields": {"location": "   "}}) is None
     assert g.plan_location_typeahead_spec({}) is None
 
@@ -122,8 +126,8 @@ def test_country_typeahead_not_clobbered_by_location_heal():
     # A real country typeahead staged alongside a location value: location heal
     # still emits candidate-location (country is a different id, both wanted).
     plan = {
-        "text_fields": {"location": "Kirkland, WA"},
+        "text_fields": {"location": _LOCATION},
         "country_dropdowns": [{"id": "country", "label": "United States"}],
     }
     spec = g.plan_location_typeahead_spec(plan)
-    assert spec == {"id": "candidate-location", "label": "Kirkland, WA"}
+    assert spec == {"id": "candidate-location", "label": _LOCATION}

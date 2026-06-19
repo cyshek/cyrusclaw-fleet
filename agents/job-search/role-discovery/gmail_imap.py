@@ -24,7 +24,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_PW_FILE = ROOT / ".gmail-app-password"
-GMAIL_USER = "cyshekari@gmail.com"
+
+# ---- Personal info loader --------------------------------------------------
+def _load_gmail_user():
+    try:
+        import json as _j
+        pi = _j.load(open(ROOT / "personal-info.json"))
+        return pi["identity"]["email"]
+    except Exception:
+        return ""  # must be configured in personal-info.json
+
+GMAIL_USER = _load_gmail_user()
 IMAP_HOST = "imap.gmail.com"
 IMAP_PORT = 993
 

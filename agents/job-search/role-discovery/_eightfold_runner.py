@@ -479,10 +479,10 @@ def run_eightfold(
     contact = personal_info.get("contact", {})
     address = personal_info.get("address", {})
 
-    firstname = identity.get("first_name", "Cyrus")
-    lastname = identity.get("last_name", "Shekari")
-    email = contact.get("email", "cyshekari@gmail.com")
-    phone = contact.get("phone", "346-804-0227")
+    firstname = identity.get("first_name") or ""
+    lastname = identity.get("last_name") or ""
+    email = contact.get("email") or ""
+    phone = contact.get("phone") or ""
     city = address.get("city", "Kirkland")
     state = address.get("state", "WA")
 
@@ -670,7 +670,7 @@ def run_eightfold(
 
         # LinkedIn URL
         try:
-            linkedin_url = contact.get("linkedin", "https://linkedin.com/in/cyshekari")
+            linkedin_url = contact.get("linkedin") or identity.get("linkedin_url") or ""
             page.fill("#Additional_Documents_candidate_portfolio_url", linkedin_url)
         except Exception:
             pass

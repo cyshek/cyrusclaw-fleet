@@ -5,10 +5,14 @@ blocking submit (observed live on Palantir 817):
   1. "How did you hear about this opportunity?" -> prefer LinkedIn.
   2. Generic last-resort for any required single-select -> first real option.
 """
+import json, os
 import lever_dryrun as ld
 
+_pi_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+_pi_id = json.load(open(_pi_path))["identity"]
+
 PERSONAL = {
-    "identity": {"first_name": "Cyrus"},
+    "identity": {"first_name": _pi_id["first_name"]},
     "work_authorization": {"status": "us_citizen"},
 }
 

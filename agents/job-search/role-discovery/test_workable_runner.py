@@ -2,12 +2,16 @@
 citizen, no sponsorship, authorized, open to relocate/onsite, 18+, EEO->decline).
 Run: python3 -m pytest test_workable_runner.py -q
 Importing the module is safe — playwright is imported lazily inside run()."""
-import importlib.util, os
+import importlib.util, os, json, re
 
 _spec = importlib.util.spec_from_file_location(
     "_workable_runner", os.path.join(os.path.dirname(__file__), "_workable_runner.py"))
 wr = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(wr)
+
+_PI = json.load(open(os.path.join(os.path.dirname(__file__), "..", "personal-info.json")))
+_pi_id = _PI["identity"]
+_digs = lambda p: re.sub(r'[^0-9]','',p or '')
 
 
 def test_sponsorship_is_no():
@@ -75,9 +79,9 @@ def test_apply_url_from():
 
 
 def test_personal_constants():
-    assert wr.EMAIL == "cyshekari@gmail.com"
-    assert wr.PHONE == "3468040227"
-    assert wr.FIRST == "Cyrus" and wr.LAST == "Shekari"
+    assert wr.EMAIL == _pi_id["email"]
+    assert wr.PHONE == _digs(_pi_id["phone"])
+    assert wr.FIRST == _pi_id["first_name"] and wr.LAST == _pi_id["last_name"]
 
 
 def test_classify_returns_valid_enum():

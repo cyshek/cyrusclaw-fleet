@@ -593,7 +593,7 @@ def upload_cover_letter(page, plan, *, company=None, role=None, jd_file=None):
         import cover_letter_pdf as _clp
         from pathlib import Path as _P
         slug = plan.get('slug')
-        out_pdf = _P('/tmp/openclaw/uploads') / f"Cyrus_Shekari_CoverLetter_{(slug or 'gh').replace('/','_')}.pdf"
+        out_pdf = _P('/tmp/openclaw/uploads') / f"{_load_personal().get('identity',{}).get('first_name','First')}_{_load_personal().get('identity',{}).get('last_name','Last')}_CoverLetter_{(slug or 'gh').replace('/','_')}.pdf"
         gen = _clp.generate(
             company=company or 'the company',
             role=role or 'Product Manager',
@@ -705,7 +705,7 @@ def upload_custom_required_file(page, plan, *, company=None, role=None, jd_file=
         import prd_brief_pdf as _prd
         from pathlib import Path as _P
         slug = plan.get('slug')
-        out_pdf = _P('/tmp/openclaw/uploads') / f"Cyrus_Shekari_ProductBrief_{(slug or 'gh').replace('/','_')}.pdf"
+        out_pdf = _P('/tmp/openclaw/uploads') / f"{_load_personal().get('identity',{}).get('first_name','First')}_{_load_personal().get('identity',{}).get('last_name','Last')}_ProductBrief_{(slug or 'gh').replace('/','_')}.pdf"
         gen = _prd.generate(
             company=company or 'the company',
             role=role or 'Product Manager',
@@ -880,7 +880,8 @@ def main():
         result['steps']['phone'] = r
     else:
         # ensure plain #phone filled
-        page.evaluate("""()=>{const el=document.getElementById('phone');if(el&&!el.value){const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');d.set.call(el,'3468040227');el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));}}""")
+        _ph = re.sub(r'[^0-9]', '', (_load_personal(plan) or {}).get('identity', {}).get('phone', ''))
+        page.evaluate("""(ph)=>{const el=document.getElementById('phone');if(el&&!el.value){const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');d.set.call(el,ph);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));}}}""", _ph)
 
     # demographics decline
     r = page.evaluate(DECLINE, {"declines": DECLINES})

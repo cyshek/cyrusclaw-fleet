@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 """Definitive Personal Info: country, places (MOUSE-click pac-item), both phones, Next. One flow."""
-import time, json
+import time, json, os, re
 from playwright.sync_api import sync_playwright
+
+# ---- Personal info loader --------------------------------------------------
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+with open(_INFO_PATH) as _f:\n    _pi = json.load(_f)\n_ident = _pi["identity"]; _addr = _pi.get("address", {})
+def _phone_fmt_intl(p):
+    d = re.sub(r'[^0-9]', '', p or '')
+    if d.startswith('1') and len(d) == 11: return f"+1 {d[1:4]} {d[4:7]} {d[7:]}"
+    if len(d) == 10: return f"+1 {d[0:3]} {d[3:6]} {d[6:]}"
+    return p
 
 CDP = "http://127.0.0.1:18800"
 pw = sync_playwright().start()
@@ -26,7 +35,7 @@ time.sleep(1.0)
 # 2) address line1 via Places, MOUSE-click the first pac-item to fire place_changed
 line1 = page.locator("#PersonalAddress_address_line1")
 line1.click(timeout=4000); line1.fill("", timeout=2000)
-line1.type("12420 NE 120th St, Kirkland, WA 98034", delay=60, timeout=8000)
+line1.type(f"{_addr.get('street', '')} {_addr.get('city', '')} {_addr.get('state', '')} {_addr.get('zip', '')}".strip(), delay=60, timeout=8000)
 time.sleep(2.6)
 pac = page.locator(".pac-container .pac-item").first
 if pac.count() > 0:
@@ -41,7 +50,7 @@ vals = page.evaluate("() => ({l1:document.getElementById('PersonalAddress_addres
 print("addr:", vals)
 
 # 3) fill BOTH phone inputs with the full number
-fullnum = "+1 346 804 0227"
+fullnum = _phone_fmt_intl(_ident.get("phone", ""))
 for pid in ("personalInfomationMobileNumberError", "personalInfomationMobileNumberErrorMessage"):
     try:
         el = page.locator("#%s" % pid)

@@ -25,10 +25,14 @@ import ashby_dryrun as a  # noqa: E402
 FIXTURE = os.path.join(os.path.dirname(__file__), "_fixture_klarity_form.json")
 ROLE_URL = "https://jobs.ashbyhq.com/klarity-ai/4843b6cd-405e-412f-8261-d1a2d6acd850"
 
+# Load real identity from personal-info.json to avoid hardcoded PII in fixtures
+_PI = json.loads(open(os.path.join(os.path.dirname(__file__), "..", "personal-info.json")).read())
+_id = _PI["identity"]
+
 CITIZEN_PERSONAL = {
-    "identity": {"first_name": "Cyrus", "last_name": "Shekari"},
-    "contact": {"email": "cyshekari@gmail.com", "linkedin": "https://linkedin.com/in/cyshekari"},
-    "files": {"resume_path": "resume/Cyrus_Shekari_Resume.pdf"},
+    "identity": {"first_name": _id["first_name"], "last_name": _id["last_name"]},
+    "contact": {"email": _id["email"], "linkedin": _id.get("linkedin_url", "")},
+    "files": {"resume_path": f"resume/{_id['first_name']}_{_id['last_name']}_Resume.pdf"},
     "work_authorization": {
         "authorized_to_work_us": "yes",
         "status": "us_citizen",

@@ -20,10 +20,19 @@ import os
 import shutil
 import sqlite3
 import sys
+import json
 
 DEFAULT_DB = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), "..", "tracker.db"
 )
+
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+def _applied_by():
+    try:
+        pi = json.load(open(_INFO_PATH))
+        return pi["identity"].get("first_name", "")
+    except Exception:
+        return ""
 
 
 def main() -> int:
@@ -104,7 +113,7 @@ def main() -> int:
     con.execute(
         "UPDATE roles SET status=?, applied_by=?, applied_on=?, agent_notes=? "
         "WHERE id=?",
-        (new_status, "Cyrus", today, new_notes, args.id),
+        (new_status, _applied_by(), today, new_notes, args.id),
     )
     con.commit()
     con.close()

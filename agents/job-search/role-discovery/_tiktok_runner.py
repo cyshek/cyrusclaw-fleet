@@ -96,7 +96,14 @@ def _password_file(brand: str) -> Path:
         if bd.exists():
             return bd
     return PASSWORD_FILE
-EMAIL = "cyshekari@gmail.com"
+EMAIL = ""  # loaded from personal-info.json below
+try:
+    import json as _json, os as _os
+    _pi_path = _os.path.join(ROOT, "role-discovery", "..", "personal-info.json")
+    _pi = _json.load(open(_os.path.normpath(_pi_path)))
+    EMAIL = _pi["identity"]["email"]
+except Exception:
+    pass  # keep fallback
 
 HOSTS = {"tiktok": "lifeattiktok.com", "bytedance": "jobs.bytedance.com"}
 

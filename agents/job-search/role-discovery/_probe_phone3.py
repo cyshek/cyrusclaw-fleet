@@ -1,7 +1,15 @@
-import sys, json, re
+import sys, json, re, os
 sys.path.insert(0, '.')
 import _ashby_runner as m
 from playwright.sync_api import sync_playwright
+
+# ---- Personal info loader --------------------------------------------------
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n_pi = _info()\n_ident = _pi["identity"]
+def _phone_fmt(p):
+    d = re.sub(r'[^0-9]', '', p or '').lstrip('1')
+    return f"{d[0:3]}-{d[3:6]}-{d[6:]}" if len(d)==10 else p
 
 CDP = "http://127.0.0.1:19223"
 URL = "https://jobs.ashbyhq.com/curri/0da884e4-ad46-44a2-9a87-3acfefe42026/application"
@@ -27,18 +35,18 @@ def run(method):
         page.wait_for_timeout(3500)
 
         # Minimal fill: name, email, phone only via the chosen method, then submit and read server error
-        page.fill(f'[name="{NAME_FID}"], #{NAME_FID}', "Cyrus Shekari", timeout=4000)
-        page.fill(f'[name="{EMAIL_FID}"], #{EMAIL_FID}', "cyshekari@gmail.com", timeout=4000)
+        page.fill(f'[name="{NAME_FID}"], #{NAME_FID}', f"{_ident['first_name']} {_ident['last_name']}", timeout=4000)
+        page.fill(f'[name="{EMAIL_FID}"], #{EMAIL_FID}', _ident["email"], timeout=4000)
 
         loc = page.locator(f'#{PHONE_FID}, [name="{PHONE_FID}"]').first
         if method == "fill":
-            loc.fill("346-804-0227", timeout=4000)
+            loc.fill(_phone_fmt(_ident["phone"]), timeout=4000)
         elif method == "type":
             loc.click(timeout=3000); loc.press("Control+a"); loc.press("Delete")
-            loc.type("346-804-0227", delay=40)
+            loc.type(_phone_fmt(_ident["phone"]), delay=40)
         elif method == "pressSequentially":
             loc.click(timeout=3000); loc.press("Control+a"); loc.press("Delete")
-            loc.press_sequentially("346-804-0227", delay=40)
+            loc.press_sequentially(_phone_fmt(_ident["phone"]), delay=40)
         page.wait_for_timeout(400)
         # read react prop value for phone
         chk = page.evaluate("""(fid)=>{const el=document.getElementById(fid)||document.querySelector(`[name="${fid}"]`);const k=Object.keys(el).find(x=>x.startsWith('__reactProps$'));return {dom:el.value, react:k?el[k].value:null};}""", PHONE_FID)

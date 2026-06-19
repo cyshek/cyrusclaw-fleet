@@ -92,10 +92,17 @@ class FakePage:
 
 
 # Authoritative values straight from personal-info.json (truthful).
-EMAIL = "cyshekari@gmail.com"
-NAME = "Cyrus Shekari"
-LINKEDIN = "https://linkedin.com/in/cyshekari"
-PHONE = "346-804-0227"
+import json as _tj, re as _tre, os as _tos
+_pi_path = _tos.path.join(_tos.path.dirname(__file__), "..", "personal-info.json")
+_pi = _tj.load(open(_pi_path))
+_pi_id = _pi["identity"]; _pi_ad = _pi.get("address", {})
+def _phone_fmt(p):
+    d = _tre.sub(r'[^0-9]','',p or '').lstrip('1')
+    return f"{d[0:3]}-{d[3:6]}-{d[6:]}" if len(d)==10 else p
+EMAIL   = _pi_id["email"]
+NAME    = f"{_pi_id['first_name']} {_pi_id['last_name']}"
+LINKEDIN = _pi_id.get("linkedin_url", "")
+PHONE   = _phone_fmt(_pi_id.get("phone", ""))
 
 FORM = "905168ec-cefa-4db5-a876-6eddeaa9086c"
 # Planned fids (what the dryrun emits) vs the LIVE DOM input ids (suffix only).

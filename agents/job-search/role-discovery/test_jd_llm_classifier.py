@@ -6,13 +6,14 @@ Covers the new pure-deterministic gate:
   2. Title-keyword fallback when JD has no YOE signal.
   3. is_people_manager / seniority signals are IGNORED by the gate (regression).
 """
-import sys
+import sys, json
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import MagicMock
 
 HERE = Path(__file__).resolve().parent
+_pi_id = json.loads((HERE.parent / "personal-info.json").read_text())["identity"]
 sys.path.insert(0, str(HERE))
 
 import jd_llm_classifier as J  # noqa: E402
@@ -272,7 +273,7 @@ class TestMaybeSkipIgnoresLLMSignals(unittest.TestCase):
         self.assertIn("senior-title", flip["new_flags"])
 
     def test_applied_row_never_flips(self):
-        row = self._row(applied_by="cyrus", role="Senior PM")
+        row = self._row(applied_by=_pi_id["first_name"].lower(), role="Senior PM")
         flip = J.maybe_skip(MagicMock(), row, None, "", dry_run=True)
         self.assertIsNone(flip)
 

@@ -45,8 +45,8 @@ DBG.mkdir(exist_ok=True)
 sys.path.insert(0, str(HERE))
 import gmail_imap
 
-# ---- Cyrus profile ----
-EMAIL = "cyshekari@gmail.com"
+# ---- Cyrus profile (loaded from personal-info.json) ----
+EMAIL = _pi_ident.get("email", "")
 PW = (ROOT / ".tiktok-password").read_text().strip()
 
 def load_tenant_creds(tenant):
@@ -281,17 +281,31 @@ def resolve_account_for_tenant(tenant, force_fresh=None):
     return email, pw, "signin_legacy"
 
 
-FIRST = "Cyrus"
-LAST = "Shekari"
-PHONE = "3468040227"
-ADDR1 = "Kirkland"   # placeholder; real line set below
-ADDRESS_LINE1 = "11800 NE 128th St"  # generic Kirkland address; Workday rarely verifies
-CITY = "Kirkland"
-STATE = "Washington"
-STATE_ABBR = "WA"
-POSTAL = "98034"
-COUNTRY = "United States of America"
-LINKEDIN = "https://www.linkedin.com/in/cyrus-shekari"
+# ---- Personal info (read from personal-info.json at module load) -----------
+def _load_pi():
+    try:
+        import json as _json
+        return _json.load(open(ROOT / "personal-info.json"))
+    except Exception:
+        return {}
+
+_PIDATA = _load_pi()
+_pi_ident = _PIDATA.get("identity", {})
+_pi_addr  = _PIDATA.get("address", {})
+
+def _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
+
+FIRST        = _pi_ident.get("first_name", "")
+LAST         = _pi_ident.get("last_name", "")
+PHONE        = _phone_digits(_pi_ident.get("phone", ""))
+ADDR1        = _pi_addr.get("city", "")
+ADDRESS_LINE1 = _pi_addr.get("street", "")
+CITY         = _pi_addr.get("city", "")
+STATE        = _pi_addr.get("state_label", _pi_addr.get("state", ""))
+STATE_ABBR   = _pi_addr.get("state", "")
+POSTAL       = _pi_addr.get("zip", "")
+COUNTRY      = _pi_addr.get("country", "United States of America")
+LINKEDIN     = _pi_ident.get("linkedin_url", "")
 SOURCE_DEFAULT = "LinkedIn"
 
 def log(*a): print("[wd]", *a, flush=True)
@@ -787,7 +801,7 @@ def ensure_signed_in(page, tenant, base_url=None):
     def in_app():
         has_next = page.locator("[data-automation-id=pageFooterNextButton]").count() > 0
         has_signin = page.locator("[data-automation-id=SignInWithEmailButton]").count() > 0 or page.locator("[data-automation-id=password]").count() > 0
-        logged = page.locator("[data-automation-id=utilityButtonSignIn]").count() == 0 and page.locator("button:has-text('cyshekari')").count() > 0
+        logged = page.locator("[data-automation-id=utilityButtonSignIn]").count() == 0 and page.locator(f"button:has-text('{EMAIL.split('@')[0]}')").count() > 0
         # require an actual form field of My Information to be sure
         has_field = page.locator("input#name--legalName--firstName").count() > 0 or page.locator("input#source--source").count() > 0
         return (has_next and not has_signin) or logged or has_field
@@ -3349,9 +3363,9 @@ def _freetext_answer_for(low, ftype="text"):
         return "LinkedIn"
     # LinkedIn / portfolio URL.
     if "linkedin" in low:
-        return "https://www.linkedin.com/in/cyrus-shekari"
+        return _pi_ident.get("linkedin_url", "")
     if "website" in low or "portfolio" in low or "github" in low:
-        return "https://github.com/cyrusshekari"
+        return _pi_ident.get("github_url", "")
     # Numeric fallback -> a benign number; text fallback -> a non-empty professional default.
     if ftype in ("number", "numeric", "tel"):
         return "0"

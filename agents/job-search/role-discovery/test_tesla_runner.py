@@ -37,9 +37,13 @@ def test_eeo_all_decline():
 
 
 def test_personal_constants():
-    assert tr.EMAIL == "cyshekari@gmail.com"
-    assert tr.PHONE == "3468040227"
-    assert tr.FIRST == "Cyrus" and tr.LAST == "Shekari"
+    import json as _j, re as _re, os as _os
+    _pi = _j.load(open(_os.path.join(_os.path.dirname(__file__), "..", "personal-info.json")))
+    _id = _pi["identity"]
+    _digits = lambda p: _re.sub(r'[^0-9]','',p or '')
+    assert tr.EMAIL() == _id["email"]
+    assert tr.PHONE() == _digits(_id["phone"])
+    assert tr.FIRST() == _id["first_name"] and tr.LAST() == _id["last_name"]
 
 
 def test_no_yes_radio_values_only():

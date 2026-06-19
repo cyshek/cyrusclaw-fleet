@@ -63,6 +63,13 @@ from urllib.parse import urlparse, parse_qs
 HERE = Path(__file__).resolve().parent
 DRYRUN_DIR = HERE.parent / "applications" / "dryrun"
 
+# ---- Personal info loader --------------------------------------------------
+_INFO_PATH = HERE.parent / "personal-info.json"
+def _info():
+    try:
+        return json.loads(_INFO_PATH.read_text())
+    except Exception:
+        return {"identity": {}, "address": {}}
 
 # ---------------------------------------------------------------------------
 # URL parsing
@@ -683,19 +690,23 @@ def _smoke_spec_for(tenant: str, job_id: str) -> dict:
     """Build a minimal placeholder spec for smoke-testing build_plan + emit_steps
     without a real dryrun resolver. Uses dummy answers; only field shape matters.
     """
+        _pi = _info()
+    _id = _pi.get("identity", {}); _ad = _pi.get("address", {})
+    import re as _re
+    def _digs(p): return _re.sub(r'[^0-9]','',p or '')
     return {
         "role_url": canonical_apply_url(tenant, job_id),
         "answers": {
-            "first_name": "Cyrus",
-            "last_name": "Yari",
-            "email": "cyshekari@gmail.com",
-            "phone": "+1 415 555 1234",
-            "street": "123 Fake St",
-            "city": "Kirkland",
-            "state": "Washington",
-            "zip": "98033",
+            "first_name": _id.get("first_name", ""),
+            "last_name": _id.get("last_name", ""),
+            "email": _id.get("email", ""),
+            "phone": _digs(_id.get("phone", "")),
+            "street": _ad.get("street", ""),
+            "city": _ad.get("city", ""),
+            "state": _ad.get("state_label", _ad.get("state", "")),
+            "zip": _ad.get("zip", ""),
             "desired_pay": "150000",
-            "linkedin": "https://linkedin.com/in/cyrusyari",
+            "linkedin": _id.get("linkedin_url", ""),
             "resume_path": "/tmp/resume.pdf",
             "cover_letter_path": None,
             "yesno_questions": [

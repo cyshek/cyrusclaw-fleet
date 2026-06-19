@@ -35,7 +35,17 @@ QUEUED = PROJ / "applications" / "queued"
 PY = str(RD / ".venv" / "bin" / "python")
 PW_FILE = PROJ / ".gmail-app-password"
 REFERRALS_FILE = PROJ / ".referrals.json"
-EMAIL_ADDR = "cyshekari@gmail.com"
+
+# ---- Personal info loader --------------------------------------------------
+def _load_email_addr():
+    try:
+        import json as _j
+        pi = _j.load(open(PROJ / "personal-info.json"))
+        return pi["identity"]["email"]
+    except Exception:
+        return ""
+
+EMAIL_ADDR = _load_email_addr()
 
 # Companies whose rows are referral-hold (discover + email, never auto-apply).
 REFERRAL_COMPANIES = {"Uber": "uber", "ByteDance": "bytedance", "TikTok": "tiktok"}

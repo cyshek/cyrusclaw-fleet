@@ -1,5 +1,12 @@
 from playwright.sync_api import sync_playwright
-import json, time
+import json, time, re, os
+
+# ---- Personal info loader --------------------------------------------------
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n_pi = _info()\n_ident = _pi["identity"]
+_addr  = _pi.get("address", {})
+def _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
 
 APPLY_URL = "https://careers.starktech.com/us/en/apply?jobSeqNo=STNSTLUSP100275EXTERNALENUS"
 RESUME = "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/resume/Cyrus_Shekari_Resume.pdf"
@@ -37,13 +44,13 @@ with sync_playwright() as p:\n+    browser = p.chromium.connect_over_cdp("http:/
     print("upload_alerts:", upload_alerts)
 
     r = {}
-    r["firstName"] = pw_fill(page, "firstName", "Cyrus")
-    r["lastName"] = pw_fill(page, "lastName", "Shekari")
-    r["email"] = pw_fill(page, "email", "cyshekari@gmail.com")
-    r["phone"] = pw_fill(page, "phone", "3468040227")
-    r["candidateAddress"] = pw_fill(page, "candidateAddress", "12420 NE 120th St #1437")
-    r["city"] = pw_fill(page, "city", "Kirkland")
-    r["zipCode"] = pw_fill(page, "zipCode", "98033")
+    r["firstName"] = pw_fill(page, "firstName", _ident["first_name"])
+    r["lastName"] = pw_fill(page, "lastName", _ident["last_name"])
+    r["email"] = pw_fill(page, "email", _ident["email"])
+    r["phone"] = pw_fill(page, "phone", _phone_digits(_ident["phone"]))
+    r["candidateAddress"] = pw_fill(page, "candidateAddress", _addr.get("street", ""))
+    r["city"] = pw_fill(page, "city", _addr.get("city", ""))
+    r["zipCode"] = pw_fill(page, "zipCode", _addr.get("zip", ""))
     r["country"] = pw_select(page, "country", "United States of America")
     page.wait_for_timeout(800)
     r["state"] = pw_select(page, "state", "Washington")

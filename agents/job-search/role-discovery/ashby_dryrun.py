@@ -908,7 +908,14 @@ def _r_linkedin_url(p, f):
     v = (p.get('contact') or {}).get('linkedin') or (p.get('links') or {}).get('linkedin')
     if v:
         return ('ok', v, 'ashby_linkedin_url (contact.linkedin)')
-    return ('ok', 'https://www.linkedin.com/in/cyrus-shekari', 'ashby_linkedin_url (fallback hardcoded)')
+    try:
+        _pi = json.loads(PERSONAL_INFO_PATH.read_text())
+        _li = _pi.get('identity', {}).get('linkedin_url', '')
+        if _li:
+            return ('ok', _li, 'ashby_linkedin_url (personal-info.json)')
+    except Exception:
+        pass
+    return ('ok', '', 'ashby_linkedin_url (no value found)')
 
 
 def _r_how_did_you_hear(p, f):

@@ -36,11 +36,15 @@ Usage:
 """
 import sys, os, time, json, argparse, re
 
-EMAIL = "cyshekari@gmail.com"
-FIRST = "Cyrus"
-LAST = "Shekari"
-PHONE = "3468040227"
-LINKEDIN = "https://www.linkedin.com/in/cyrus-shekari"
+# ---- Personal info loader (reads agents/job-search/personal-info.json) -----
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n\ndef _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
+def EMAIL():   return _info()["identity"]["email"]
+def FIRST():   return _info()["identity"]["first_name"]
+def LAST():    return _info()["identity"]["last_name"]
+def PHONE():   return _phone_digits(_info()["identity"]["phone"])
+def LINKEDIN(): return _info()["identity"]["linkedin_url"]
 EVIDENCE = ("Led 0-to-1 Resilience Automation Platform at Microsoft Azure, driving 14M-plus "
             "dollars business impact; scaled recovery validation into a platformized system "
             "across the org. Prior: zero-downtime 2,000-plus unit OS migration at Amazon Robotics.")
@@ -188,12 +192,12 @@ def upload_resume(page):
 
 def step1_personal(page, debug):
     log("step1 personal")
-    set_input(page, 'input[name="personal.firstName"]', FIRST)
-    set_input(page, 'input[name="personal.lastName"]', LAST)
-    set_input(page, 'input[name="personal.phone"]', PHONE)
-    set_input(page, 'input[name="personal.email"]', EMAIL)
+    set_input(page, 'input[name="personal.firstName"]', FIRST())
+    set_input(page, 'input[name="personal.lastName"]', LAST())
+    set_input(page, 'input[name="personal.phone"]', PHONE())
+    set_input(page, 'input[name="personal.email"]', EMAIL())
     set_input(page, 'textarea[name="personal.evidenceOfExcellence"]', EVIDENCE)
-    set_input(page, 'input[name="personal.profileLinks[0].link"]', LINKEDIN)
+    set_input(page, 'input[name="personal.profileLinks[0].link"]', LINKEDIN())
     pick_select(page, "personal.phoneType", "Mobile")
     pick_select(page, "personal.country", "United States")
     pick_select(page, "personal.profileLinks[0].type", "LinkedIn")
@@ -212,7 +216,7 @@ def step2_legal(page, debug):
         answers[name] = set_radio(page, name, val)
     answers["legal.legalAcknowledgment"] = set_check(page, "legal.legalAcknowledgment")
     answers["legal.legalAcknowledgmentName"] = set_input(
-        page, 'input[name="legal.legalAcknowledgmentName"]', f"{FIRST} {LAST}")
+        page, 'input[name="legal.legalAcknowledgmentName"]', f"{FIRST()} {LAST()}")
     shot(page, debug, "02-step2-filled")
     return answers
 
@@ -223,7 +227,7 @@ def step3_eeo(page, debug):
     for name, val in EEO_SELECT_ANSWERS.items():
         answers[name] = pick_select(page, name, val)
     answers["eeo.eeoDisabilityStatusName"] = set_input(
-        page, 'input[name="eeo.eeoDisabilityStatusName"]', f"{FIRST} {LAST}")
+        page, 'input[name="eeo.eeoDisabilityStatusName"]', f"{FIRST()} {LAST()}")
     shot(page, debug, "03-step3-filled")
     return answers
 

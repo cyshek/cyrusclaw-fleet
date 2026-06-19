@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Fill mobileNumber + verify firstName/lastName/email present; report remaining invalid required fields."""
-import sys, time, json
+import sys, time, json, os, re
 from playwright.sync_api import sync_playwright
 CDP="http://127.0.0.1:18800"; job=sys.argv[1]
-PI=json.load(open("../personal-info.json"))
-phone=PI.get("phone") or PI.get("mobile") or "346-804-0227"
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+PI=json.load(open(_INFO_PATH))
+def _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
+phone=_phone_digits(PI.get("identity", {}).get("phone") or PI.get("phone") or PI.get("mobile") or "")
 pw=sync_playwright().start(); br=pw.chromium.connect_over_cdp(CDP)
 page=None
 for ctx in br.contexts:
@@ -28,7 +30,7 @@ for nm in ["mobileNumber","phone","phoneNumber"]:
     print(r)
     if not r.startswith("MISS"): break
 # ensure name/email
-for nm,val in [("firstName",PI.get("first_name","Cyrus")),("lastName",PI.get("last_name","Shekari")),("email",PI.get("email","cyshekari@gmail.com"))]:
+for nm,val in [("firstName",PI.get("identity",{}).get("first_name") or PI.get("first_name","")), ("lastName",PI.get("identity",{}).get("last_name") or PI.get("last_name","")), ("email",PI.get("identity",{}).get("email") or PI.get("email",""))]:  
     print(setval(nm,val))
 time.sleep(0.6)
 inv=page.evaluate("""()=>{const i=[...document.querySelectorAll('[aria-invalid=true]')].map(e=>e.name||e.id||e.getAttribute('aria-label')||e.tagName); const sub=[...document.querySelectorAll('button')].find(b=>/submit application/i.test(b.innerText)); return JSON.stringify({invalid:i, submitFound: !!sub, submitDisabled: sub? (sub.disabled||sub.getAttribute('aria-disabled')==='true'):null});}""")

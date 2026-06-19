@@ -46,6 +46,13 @@ spec = importlib.util.spec_from_file_location("_workday_runner", HERE / "_workda
 wd = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(wd)
 
+# ---- Personal info (test fixtures derive aliases from real email) ----------
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
+_BASE_EMAIL = _PI["identity"]["email"]
+_EMAIL_USER = _BASE_EMAIL.split("@")[0] if "@" in _BASE_EMAIL else _BASE_EMAIL
+_EMAIL_DOM  = _BASE_EMAIL.split("@")[1] if "@" in _BASE_EMAIL else "gmail.com"
+def _alias(tag): return f"{_EMAIL_USER}+{tag}@{_EMAIL_DOM}"
+
 SRC = (HERE / "_workday_runner.py").read_text()
 
 
@@ -60,7 +67,7 @@ def _temp_creds(tenants):
     temp Path. The real .workday-creds.json is NEVER touched."""
     tmp = pathlib.Path(tempfile.mkdtemp())
     creds = {
-        "shared_email": "cyshekari@gmail.com",
+        "shared_email": _BASE_EMAIL,
         "shared_password": "SharedPW123!",
         "tenants": tenants,
     }
@@ -133,7 +140,7 @@ def test_dupe_class_set_covers_the_six_blocked_tenants():
 
 
 def test_dupe_class_defaults_create_fresh_and_persists_alias():
-    tmp = _temp_creds({"exfo": {"email": "cyshekari+exfo@gmail.com", "account_created": True}})
+    tmp = _temp_creds({"exfo": {"email": _alias("exfo"), "account_created": True}})
     email, pw, mode = wd.resolve_account_for_tenant("exfo")
     assert mode == "create_fresh", "a polluted dupe-class tenant must default to create_fresh"
     assert "+wd-exfo-" in email, "create_fresh must use a freshly-minted wd-<tenant> alias"
@@ -145,20 +152,20 @@ def test_dupe_class_defaults_create_fresh_and_persists_alias():
 
 
 def test_known_good_fresh_alias_is_reused_not_reminted():
-    _temp_creds({"hpe": {"fresh_alias": "cyshekari+wd-hpe-202606080000@gmail.com",
+    _temp_creds({"hpe": {"fresh_alias": _alias("wd-hpe-202606080000"),
                           "fresh_password": "FreshPW9!", "fresh_created": True}})
     email, pw, mode = wd.resolve_account_for_tenant("hpe")
     assert mode == "signin_fresh", "a known-good fresh alias must be SIGNED INTO, not re-minted"
-    assert email == "cyshekari+wd-hpe-202606080000@gmail.com"
+    assert email == _alias("wd-hpe-202606080000")
     assert pw == "FreshPW9!"
 
 
 def test_polluted_fresh_alias_is_reminted():
-    _temp_creds({"nordstrom": {"fresh_alias": "cyshekari+wd-nordstrom-old@gmail.com",
+    _temp_creds({"nordstrom": {"fresh_alias": _alias("wd-nordstrom-old"),
                                "fresh_password": "X1!", "fresh_polluted": True}})
     email, _pw, mode = wd.resolve_account_for_tenant("nordstrom")
     assert mode == "create_fresh", "a fresh alias flagged polluted must be re-minted, not reused"
-    assert email != "cyshekari+wd-nordstrom-old@gmail.com"
+    assert email != _alias("wd-nordstrom-old")
     assert "+wd-nordstrom-" in email
 
 
@@ -168,7 +175,7 @@ def test_clean_tenant_defaults_create_fresh():
     runner must fill every field from the tailored resume and never trust Workday's saved-
     profile autofill, so fresh-account is the default for ALL tenants. (Supersedes the old
     test_clean_tenant_keeps_legacy_signin contract.)"""
-    tmp = _temp_creds({"salesforce": {"email": "cyshekari+salesforce@gmail.com", "account_created": True}})
+    tmp = _temp_creds({"salesforce": {"email": _alias("salesforce"), "account_created": True}})
     email, pw, mode = wd.resolve_account_for_tenant("salesforce")
     assert mode == "create_fresh", "a clean tenant must DEFAULT to create_fresh (global fresh default)"
     assert "+wd-salesforce-" in email, "create_fresh must use a freshly-minted wd-<tenant> alias"
@@ -188,20 +195,20 @@ def test_force_fresh_and_force_legacy_overrides():
     import os as _os
     _saved = _os.environ.pop("WORKDAY_ALLOW_LEGACY_PROFILE", None)
     try:
-        _temp_creds({"salesforce": {"email": "cyshekari+salesforce@gmail.com"},
-                     "exfo": {"email": "cyshekari+exfo@gmail.com"},
-                     "workday": {"email": "cyshekari+workday@gmail.com"}})
+        _temp_creds({"salesforce": {"email": _alias("salesforce")},
+                     "exfo": {"email": _alias("exfo")},
+                     "workday": {"email": _alias("workday")}})
         # force_fresh=True on a clean tenant -> create_fresh (unchanged)
         _e, _p, m1 = wd.resolve_account_for_tenant("salesforce", force_fresh=True)
         assert m1 == "create_fresh", "force_fresh must mint fresh even for a clean tenant"
         # force_fresh=False WITHOUT the env override is now REFUSED -> create_fresh (NOT
         # signin_legacy). Anti-pollution policy: no silent legacy fallback in production.
-        _temp_creds({"exfo": {"email": "cyshekari+exfo@gmail.com"}})
+        _temp_creds({"exfo": {"email": _alias("exfo")}})
         _e2, _p2, m2 = wd.resolve_account_for_tenant("exfo", force_fresh=False)
         assert m2 == "create_fresh", (
             "force_fresh=False without WORKDAY_ALLOW_LEGACY_PROFILE=1 must REFUSE legacy and "
             "force a FRESH account (dupe tenant)")
-        _temp_creds({"workday": {"email": "cyshekari+workday@gmail.com"}})
+        _temp_creds({"workday": {"email": _alias("workday")}})
         _e3, _p3, m3 = wd.resolve_account_for_tenant("workday", force_fresh=False)
         assert m3 == "create_fresh", (
             "force_fresh=False without the env override must REFUSE legacy on a CLEAN tenant too")
@@ -221,13 +228,13 @@ def test_legacy_profile_refused_without_env_override():
     _saved = _os.environ.pop("WORKDAY_ALLOW_LEGACY_PROFILE", None)
     try:
         # (a) override UNSET + force_fresh=False -> refused -> create_fresh
-        _temp_creds({"exfo": {"email": "cyshekari+exfo@gmail.com"}})
+        _temp_creds({"exfo": {"email": _alias("exfo")}})
         _e, _p, m = wd.resolve_account_for_tenant("exfo", force_fresh=False)
         assert m == "create_fresh", "legacy must be refused (create_fresh) when env override is unset"
 
         # (b) override SET=1 + force_fresh=False -> legacy explicitly allowed -> signin_legacy
         _os.environ["WORKDAY_ALLOW_LEGACY_PROFILE"] = "1"
-        _temp_creds({"exfo": {"email": "cyshekari+exfo@gmail.com"}})
+        _temp_creds({"exfo": {"email": _alias("exfo")}})
         _e2, _p2, m2 = wd.resolve_account_for_tenant("exfo", force_fresh=False)
         assert m2 == "signin_legacy", (
             "signin_legacy must be reachable ONLY with force_fresh=False AND "
@@ -235,13 +242,13 @@ def test_legacy_profile_refused_without_env_override():
 
         # (c) override SET=1 but force_fresh=True -> fresh still wins (override only un-gates
         # legacy, it never forces it)
-        _temp_creds({"workday": {"email": "cyshekari+workday@gmail.com"}})
+        _temp_creds({"workday": {"email": _alias("workday")}})
         _e3, _p3, m3 = wd.resolve_account_for_tenant("workday", force_fresh=True)
         assert m3 == "create_fresh", "force_fresh=True must mint fresh even with the legacy override set"
 
         # (d) override SET=1 but DEFAULT (force_fresh=None) -> still create_fresh (override only
         # matters when legacy is explicitly requested via force_fresh=False)
-        _temp_creds({"salesforce": {"email": "cyshekari+salesforce@gmail.com"}})
+        _temp_creds({"salesforce": {"email": _alias("salesforce")}})
         _e4, _p4, m4 = wd.resolve_account_for_tenant("salesforce")
         assert m4 == "create_fresh", "default must stay create_fresh even with the legacy override set"
     finally:

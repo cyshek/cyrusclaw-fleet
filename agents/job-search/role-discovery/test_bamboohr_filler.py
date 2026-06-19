@@ -20,6 +20,10 @@ import pytest
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+# Personal info loaded from personal-info.json
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
+_pi_id = _PI["identity"]
+
 import bamboohr_filler as bf
 
 
@@ -74,7 +78,7 @@ class TestBuildPlan:
     BASE_SPEC = {
         "role_url": "https://uphold.bamboohr.com/careers/839",
         "answers": {
-            "first_name": "Cyrus",
+            "first_name": _pi_id["first_name"],
             "last_name": "Yari",
             "email": "x@y.com",
             "phone": "+1 415 555 1234",
@@ -91,7 +95,7 @@ class TestBuildPlan:
     def test_text_fields_use_default_ids(self):
         plan = bf.build_plan(self.BASE_SPEC)
         tf = plan["text_fields"]
-        assert tf["firstName"] == "Cyrus"
+        assert tf["firstName"] == _pi_id["first_name"]
         assert tf["lastName"] == "Yari"
         assert tf["email"] == "x@y.com"
         assert tf["phone"] == "+1 415 555 1234"
@@ -150,7 +154,7 @@ class TestBuildPlan:
         spec = dict(self.BASE_SPEC)
         spec["field_ids"] = {"first_name": "applicantFirstName"}
         plan = bf.build_plan(spec)
-        assert plan["text_fields"]["applicantFirstName"] == "Cyrus"
+        assert plan["text_fields"]["applicantFirstName"] == _pi_id["first_name"]
         assert "firstName" not in plan["text_fields"]
 
     def test_extra_text_fields_passthrough(self):

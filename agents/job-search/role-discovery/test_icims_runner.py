@@ -66,10 +66,14 @@ def test_knockout_answers_table_truthful():
 
 
 def test_identity_constants():
-    assert ir.EMAIL == "cyshekari@gmail.com"
-    assert ir.PHONE == "3468040227"
-    assert ir.FIRST == "Cyrus" and ir.LAST == "Shekari"
-    assert ir.ADDR_STATE == "WA" and ir.ADDR_CITY == "Kirkland"
+    import json as _j, re as _re, os as _os
+    _pi = _j.load(open(_os.path.join(_os.path.dirname(__file__), "..", "personal-info.json")))
+    _id = _pi["identity"]; _ad = _pi.get("address", {})
+    _digits = lambda p: _re.sub(r'[^0-9]','',p or '')
+    assert ir._EMAIL() == _id["email"]
+    assert ir._PHONE() == _digits(_id["phone"])
+    assert ir._FIRST() == _id["first_name"] and ir._LAST() == _id["last_name"]
+    assert ir._ADDR_STATE() == _ad["state"] and ir._ADDR_CITY() == _ad["city"]
 
 
 # ---- Fake page/frame stubs (no live browser) ------------------------------

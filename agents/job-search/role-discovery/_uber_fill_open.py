@@ -3,8 +3,15 @@
 Operates on the already-signed-in form page via CDP. Month dropdowns handled separately.
 Usage: _uber_fill_open.py <job_id> <resume_pdf>
 """
-import sys, json, time
+import sys, json, os, re, time
 from playwright.sync_api import sync_playwright
+
+# ---- Personal info loader --------------------------------------------------
+_INFO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n\n_pi = _info()\n_ident = _pi["identity"]
+_addr  = _pi.get("address", {})
+def _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
 
 CDP="http://127.0.0.1:18800"
 job_id=sys.argv[1]
@@ -29,10 +36,10 @@ def fill(name, val):
     print("MISS field", name); return False
 
 # Basic info
-fill("firstName","Cyrus")
-fill("lastName","Shekari")
+fill("firstName", _ident["first_name"])
+fill("lastName", _ident["last_name"])
 # phone: digits only, no country code
-fill("mobileNumber","3468040227")
+fill("mobileNumber", _phone_digits(_ident["phone"]))
 
 # Experience 0 (Microsoft TPM, current)
 fill("experiences.0.companyName","Microsoft")
@@ -57,8 +64,8 @@ fill("educations.0.startDate.year","2021")
 fill("educations.0.endDate.year","2024")
 
 # Links
-fill("linkedin","https://linkedin.com/in/cyshekari")
-fill("github","https://github.com/cyshek")
+fill("linkedin", _ident.get("linkedin_url", ""))
+fill("github", _ident.get("github_url", ""))
 
 # Resume upload -> the file input with accept=.doc,.docx,.pdf,.rtf (2nd file input)
 import os

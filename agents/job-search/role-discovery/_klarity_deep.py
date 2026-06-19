@@ -12,7 +12,15 @@ CDP = os.environ["JOBSEARCH_CDP"]
 PROJ = pathlib.Path(__file__).resolve().parent.parent
 RESUME = str(PROJ / "applications/submitted/klarity-4843b6cd-405e-412f-8261-d1a2d6acd850/Cyrus_Shekari_Resume_ashby-klarity-ai_4843b6cd_v2.pdf")
 SF_UUID="b4ff3fea-a627-4945-b958-9df48cbc63fd"; SPON_UUID="5658b589-ea7a-4582-b9c7-92a4c5809fbd"
-TEXT_FIELDS={"_systemfield_name":"Cyrus Shekari","_systemfield_email":"cyshekari@gmail.com","988ea71d-2e8f-424b-a2d5-b21752d94c8a":"https://linkedin.com/in/cyshekari"}
+
+# ---- Personal info loader --------------------------------------------------
+def _info():
+    with open(PROJ / "personal-info.json") as _f:\n        return json.load(_f)\n_pi = _info()\n_ident = _pi["identity"]
+TEXT_FIELDS={
+    "_systemfield_name": f"{_ident['first_name']} {_ident['last_name']}",
+    "_systemfield_email": _ident["email"],
+    "988ea71d-2e8f-424b-a2d5-b21752d94c8a": _ident.get("linkedin_url", ""),
+}
 RADIO_TARGETS=[(SPON_UUID,"I am a US Citizen / Green Card Holder"),(SF_UUID,"I am open to relocating to San Francisco")]
 SITEKEY="6LeFb_YUAAAAALUD5h-BiQEp8JaFChe0e0A6r49Y"
 

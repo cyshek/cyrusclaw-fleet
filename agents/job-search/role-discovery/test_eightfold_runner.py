@@ -2,11 +2,18 @@
 # test_eightfold_runner.py -- Unit tests for _eightfold_runner.py
 # Mocked HTTP (no live network). Run: python3 -m pytest test_eightfold_runner.py -v
 from __future__ import annotations
-import json, sys, types, unittest
+import json, sys, types, re, unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch, PropertyMock
 
-sys.path.insert(0, str(Path(__file__).parent))
+_HERE = Path(__file__).resolve().parent
+_pi = json.loads((_HERE.parent / "personal-info.json").read_text())
+_pi_id = _pi["identity"]; _pi_ad = _pi.get("address", {})
+def _pfmt(p):
+    d = re.sub(r'[^0-9]','',p or '').lstrip('1')
+    return f"{d[0:3]}-{d[3:6]}-{d[6:]}" if len(d)==10 else p
+
+sys.path.insert(0, str(_HERE))
 
 # ---------------------------------------------------------------------------
 # Minimal stubs so playwright does not need to be present for import
@@ -163,9 +170,9 @@ def _make_page(csrf="test-csrf-token", pids="790316069889", extra_qs=None):
 
 
 PERSONAL_INFO = {
-    "identity": {"first_name": "Cyrus", "last_name": "Shekari"},
-    "contact": {"email": "cyshekari@gmail.com", "phone": "346-804-0227"},
-    "address": {"city": "Kirkland", "state": "WA"},
+    "identity": {"first_name": _pi_id["first_name"], "last_name": _pi_id["last_name"]},
+    "contact": {"email": _pi_id["email"], "phone": _pfmt(_pi_id.get("phone", ""))},
+    "address": {"city": _pi_ad.get("city", ""), "state": _pi_ad.get("state", "")},
     "work_authorization": {"authorized_to_work_us": "yes", "status": "us_citizen"},
     "common_form_answers": {"how_did_you_hear_about_us": "LinkedIn"},
 }

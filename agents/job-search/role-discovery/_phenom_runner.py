@@ -30,17 +30,32 @@ import sys, os, time, json, argparse, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-FIRST = "Cyrus"
-LAST = "Shekari"
-PREFERRED = "Cyrus"
-EMAIL = "cyshekari@gmail.com"
-PHONE = "3468040227"
-ADDRESS = "12420 NE 120th St #1437"
-CITY = "Kirkland"
-STATE = "Washington"  # select label; falls back to WA value-match
-STATE_CODE = "WA"
-ZIP = "98034"
-COUNTRY = "United States"  # falls back to USA/US
+# ---- Personal info loader (reads agents/job-search/personal-info.json) -----
+_INFO_PATH = os.path.join(HERE, "..", "personal-info.json")
+def _info():
+    with open(_INFO_PATH) as _f:\n        return json.load(_f)\n\ndef _phone_digits(p): return re.sub(r'[^0-9]', '', p or '')
+def _FIRST():      return _info()["identity"]["first_name"]
+def _LAST():       return _info()["identity"]["last_name"]
+def _EMAIL():      return _info()["identity"]["email"]
+def _PHONE():      return _phone_digits(_info()["identity"]["phone"])
+def _ADDRESS():    return _info()["address"]["street"]
+def _CITY():       return _info()["address"]["city"]
+def _STATE():      return _info()["address"]["state"]  # two-letter abbrev
+def _STATE_LABEL(): return _info()["address"].get("state_label", _info()["address"]["state"])
+def _ZIP():        return _info()["address"]["zip"]
+def _COUNTRY():    return _info()["address"].get("country", "United States")
+
+FIRST      = _FIRST()
+LAST       = _LAST()
+PREFERRED  = _FIRST()
+EMAIL      = _EMAIL()
+PHONE      = _PHONE()
+ADDRESS    = _ADDRESS()
+CITY       = _CITY()
+STATE      = _STATE_LABEL()
+STATE_CODE = _STATE()
+ZIP        = _ZIP()
+COUNTRY    = _COUNTRY()
 SOURCE = "LinkedIn"
 
 RESUME = os.path.abspath(os.path.join(HERE, "..", "resume", "Cyrus_Shekari_Resume.pdf"))

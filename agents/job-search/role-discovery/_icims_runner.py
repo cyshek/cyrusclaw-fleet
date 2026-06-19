@@ -60,44 +60,17 @@ def _phone_fmt(p):
         return f"{d[0:3]}-{d[3:6]}-{d[6:]}"
     return p
 
-# ---- Lazy identity accessors (read from personal-info.json at call time) ---
-def _FIRST():    return _info()["identity"]["first_name"]
-def _LAST():     return _info()["identity"]["last_name"]
-def _EMAIL():    return _info()["identity"]["email"]
-def _PHONE():    return _phone_digits(_info()["identity"]["phone"])
-def _PHONE_FMT():return _phone_fmt(_info()["identity"]["phone"])
-def _LINKEDIN(): return _info()["identity"]["linkedin_url"]
-def _ADDR_STREET():  return _info()["address"]["street"]
-def _ADDR_CITY():    return _info()["address"]["city"]
-def _ADDR_STATE():   return _info()["address"]["state"]
-def _ADDR_ZIP():     return _info()["address"]["zip"]
-def _ADDR_COUNTRY(): return _info()["address"].get("country", "United States")
-
-# Backward-compat module-level names — resolved lazily so tests that patch
-# personal-info.json work correctly.
-class _LazyPI:
-    @property
-    def FIRST(self): return _FIRST()
-    @property
-    def LAST(self): return _LAST()
-    @property
-    def EMAIL(self): return _EMAIL()
-    @property
-    def PHONE(self): return _PHONE()
-    @property
-    def PHONE_FMT(self): return _PHONE_FMT()
-    @property
-    def LINKEDIN(self): return _LINKEDIN()
-
-_PI = _LazyPI()
-FIRST     = property(lambda s: _FIRST())
-LAST      = property(lambda s: _LAST())
-EMAIL     = property(lambda s: _EMAIL())
-PHONE     = property(lambda s: _PHONE())
-PHONE_FMT = property(lambda s: _PHONE_FMT())
-LINKEDIN  = property(lambda s: _LINKEDIN())
-
-_pi = _info  # alias used later
+def _FIRST():         return _info()["identity"]["first_name"]
+def _LAST():          return _info()["identity"]["last_name"]
+def _EMAIL():         return _info()["identity"]["email"]
+def _PHONE():         return _phone_digits(_info()["identity"]["phone"])
+def _PHONE_FMT():     return _phone_fmt(_info()["identity"]["phone"])
+def _LINKEDIN():      return _info()["identity"]["linkedin_url"]
+def _ADDR_STREET():   return _info()["address"]["street"]
+def _ADDR_CITY():     return _info()["address"]["city"]
+def _ADDR_STATE():    return _info()["address"]["state"]
+def _ADDR_ZIP():      return _info()["address"]["zip"]
+def _ADDR_COUNTRY():  return _info()["address"].get("country", "United States")
 
 RESUME = os.path.abspath(os.path.join(HERE, "..", "resume", "Cyrus_Shekari_Resume.pdf"))
 
@@ -376,7 +349,7 @@ def email_gate(page, debug):
     fr = find_form_frame(page, sel)
     if not fr:
         return {"stage": "email", "status": "no-email-frame"}
-    frame_eval(fr, JS_SET, [sel, EMAIL])
+    frame_eval(fr, JS_SET, [sel, _EMAIL()])
     page.wait_for_timeout(800)
     shot(page, debug, "01-email-filled")
     present, sitekey = detect_hcaptcha(page)

@@ -35,7 +35,17 @@ from email.header import decode_header
 
 ROOT = pathlib.Path("/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search")
 PW_FILE = ROOT / ".gmail-app-password"
-GMAIL_USER = "cyshekari@gmail.com"
+
+# ---- Personal info loader --------------------------------------------------
+def _load_gmail_user():
+    try:
+        import json as _j
+        pi = _j.load(open(ROOT / "personal-info.json"))
+        return pi["identity"]["email"]
+    except Exception:
+        return ""
+
+GMAIL_USER = _load_gmail_user()
 IMAP_HOST, IMAP_PORT = "imap.gmail.com", 993
 LABEL = "Job Applications"
 

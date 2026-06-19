@@ -7,11 +7,15 @@ calling `_smart_match_option_label`).
 """
 from __future__ import annotations
 
-import sys
+import sys, json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+
+# Personal info loaded from personal-info.json
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
+_pi_id = _PI["identity"]
 
 import greenhouse_dryrun as gh  # noqa: E402
 
@@ -110,7 +114,7 @@ def test_education_panel_includes_minor_and_dates():
     # build the report shape that emits education_panel; verify minor flows
     # through and the start/end years are derived from start_date/end_date.
     personal = {
-        "identity": {"first_name": "Cyrus", "last_name": "Shekari"},
+        "identity": {"first_name": _pi_id["first_name"], "last_name": _pi_id["last_name"]},
         "education": {
             "school": "University of Houston",
             "degree": "Bachelor of Science",
