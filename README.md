@@ -4,6 +4,21 @@
 
 ---
 
+## 🔍 Just Want the Job Search Agent?
+
+You don't need the whole fleet. The job search automation pipeline is fully standalone:
+
+```bash
+git clone https://github.com/cyshek/cyrusclaw-fleet
+cd cyrusclaw-fleet/agents/job-search
+```
+
+Then follow **[agents/job-search/README.md](agents/job-search/README.md)** — it covers everything: setup, personal info config, Gmail integration, running the pipeline, and known ATS limitations.
+
+Covers Ashby, Greenhouse, Lever, Workday, ADP, BambooHR, Rippling, iCIMS, Eightfold, and more.
+
+---
+
 ## What Is This?
 
 This repo is the source of truth for a personal fleet of OpenClaw agents. Each agent lives in its own directory under `/agents/` and has its own workspace, memory files, and scripts. They coordinate through the OpenClaw gateway running on a cloud VM.

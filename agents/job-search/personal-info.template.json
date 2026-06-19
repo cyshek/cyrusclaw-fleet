@@ -1,73 +1,100 @@
 {
-  "_comment_for_cyrus": "Your personal info used to fill out job applications. Copy to personal-info.json and fill in.",
+  "_comment": "Copy this file to personal-info.json and fill in your details. personal-info.json is gitignored — never commit it.",
   "identity": {
-    "first_name": "",
-    "last_name": "",
-    "full_name": "",
-    "email": "",
-    "phone": "",
-    "linkedin_url": "",
-    "github_url": "",
+    "first_name": "YOUR_FIRST_NAME",
+    "last_name": "YOUR_LAST_NAME",
+    "full_name": "YOUR_FIRST_NAME YOUR_LAST_NAME",
+    "email": "YOUR_EMAIL@example.com",
+    "phone": "+1-555-000-0000",
+    "linkedin_url": "https://linkedin.com/in/YOUR_LINKEDIN_HANDLE",
+    "github_url": "https://github.com/YOUR_GITHUB_HANDLE",
     "portfolio_url": ""
   },
   "contact": {
-    "email": "",
-    "phone": "",
-    "phone_country_code": ""
+    "_comment": "Usually the same as identity.email and identity.phone",
+    "email": "YOUR_EMAIL@example.com",
+    "phone": "+1-555-000-0000",
+    "phone_country_code": "+1"
   },
   "address": {
-    "street": "",
-    "city": "",
-    "state": "",
-    "zip": "",
+    "street": "123 Main St",
+    "city": "YOUR_CITY",
+    "state": "CA",
+    "zip": "00000",
     "country": "US"
   },
   "work_authorization": {
-    "status": "",
+    "_comment": "E.g. 'US Citizen', 'Green Card', 'H-1B', 'OPT', etc.",
+    "status": "US Citizen",
     "requires_sponsorship": false,
     "authorized_countries": ["US"]
   },
   "experience_summary": {
-    "years_total": 0,
-    "title_current": "",
-    "bio_short": ""
+    "_comment": "years_total: your total years of professional experience",
+    "years_total": 5,
+    "title_current": "Software Engineer",
+    "bio_short": "One paragraph bio used for cover letter intros and application summaries."
   },
-  "work_experience": [],
-  "education": [],
+  "work_experience": [
+    {
+      "_comment": "Add one object per job. Repeat as needed.",
+      "company": "Example Corp",
+      "title": "Software Engineer",
+      "start_date": "2021-06",
+      "end_date": "present",
+      "location": "San Francisco, CA",
+      "bullets": [
+        "Led development of X, resulting in Y",
+        "Collaborated with cross-functional teams to deliver Z"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "_comment": "Add one object per degree.",
+      "school": "University of Example",
+      "degree": "B.S. Computer Science",
+      "graduation_year": 2021,
+      "gpa": ""
+    }
+  ],
   "preferences": {
-    "roles": [],
-    "min_salary": 0,
-    "preferred_salary": 0,
+    "roles": ["Software Engineer", "Senior Software Engineer", "Staff Engineer"],
+    "min_salary": 120000,
+    "preferred_salary": 160000,
     "work_type": ["remote", "hybrid", "onsite"],
-    "start_availability": ""
+    "start_availability": "2 weeks"
   },
   "relocation_targets": [],
-  "_relocation_note": "List of cities/metros you are open to relocating to",
-  "cities_available_to_work": [],
+  "_relocation_note": "List of cities/metros you are open to relocating to. Leave empty if not open to relocation.",
+  "cities_available_to_work": ["San Francisco, CA", "New York, NY", "Remote"],
   "languages_spoken": ["English"],
   "messaging_opt_in": false,
   "demographics_default": {
+    "_comment": "Used for EEO forms. Fill in your actual values, or leave blank to skip optional fields.",
     "gender": "",
     "race_ethnicity": "",
-    "veteran_status": "",
-    "disability_status": ""
+    "veteran_status": "I am not a protected veteran",
+    "disability_status": "I do not have a disability"
   },
-  "_demographics_note": "Used for EEO forms. Fill in your actual values or leave blank to skip.",
   "demographics_overrides": {},
   "demographics_forced_fallbacks": {},
   "common_form_answers": {
-    "how_did_you_hear": "",
-    "salary_expectation": "",
-    "earliest_start_date": "",
-    "cover_letter_short": ""
+    "_comment": "Freeform answers for common ATS questions.",
+    "how_did_you_hear": "LinkedIn",
+    "salary_expectation": "160000",
+    "earliest_start_date": "2 weeks from offer",
+    "cover_letter_short": "I am excited about this opportunity and believe my background in X makes me a strong fit."
   },
   "optional_field_policy": "skip",
-  "_optional_field_note": "skip = leave blank when optional; fill = try to fill",
+  "_optional_field_note": "skip = leave blank when optional; fill = try to fill optional fields",
   "references": [],
-  "skills_for_multiselect": [],
+  "skills_for_multiselect": ["Python", "TypeScript", "SQL", "AWS", "Docker"],
   "cover_letter_policy": "generate",
+  "_cover_letter_policy_note": "generate = LLM-generated per role; default = use cover_letter_default string below",
   "cover_letter_default": "",
   "files": {
+    "_comment": "Paths to your resume files. Relative to the agents/job-search/ directory.",
     "resume_pdf": "resume/resume.pdf",
     "resume_docx": ""
   },
