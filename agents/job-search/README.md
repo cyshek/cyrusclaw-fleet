@@ -85,7 +85,17 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### Step 3: Configure your personal info
+### Step 3: Configure your personal info (interactive wizard)
+
+The fastest way is the onboarding wizard — it asks you questions and writes everything for you:
+
+```bash
+python onboard.py
+```
+
+The wizard covers: identity, address, work authorization, job preferences, and Gmail App Password setup. It also runs a quick IMAP connectivity test so you know the credential works before the first run.
+
+If you prefer to configure manually:
 
 ```bash
 cp personal-info.template.json personal-info.json
