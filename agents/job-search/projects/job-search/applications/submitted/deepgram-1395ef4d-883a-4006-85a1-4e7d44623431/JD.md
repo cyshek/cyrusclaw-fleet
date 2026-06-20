@@ -1,0 +1,141 @@
+# Pre-Sales Solutions Engineer (EST or PST)
+
+**Company:** Deepgram
+**Location:** USA | Remote
+**Apply:** https://jobs.ashbyhq.com/deepgram/1395ef4d-883a-4006-85a1-4e7d44623431
+**Ashby Org:** deepgram
+**Ashby Job ID:** 1395ef4d-883a-4006-85a1-4e7d44623431
+
+---
+
+# **Company Overview**
+
+Deepgram is the leading platform underpinning the emerging trillion-dollar Voice AI economy, providing real-time APIs for speech-to-text (STT), text-to-speech (TTS), and building production-grade voice agents at scale. More than 200,000 developers and 1,300+ organizations build voice offerings that are ‘Powered by Deepgram’, including Twilio, Cloudflare, Sierra, Decagon, Vapi, Daily, Cresta, Granola, and Jack in the Box. Deepgram’s voice-native foundation models are accessed through cloud APIs or as self-hosted and on-premises software, with unmatched accuracy, low latency, and cost efficiency. Backed by a recent Series C led by leading global investors and strategic partners, Deepgram has processed over 50,000 years of audio and transcribed more than 1 trillion words. There is no organization in the world that understands voice better than Deepgram.
+
+# **Company Operating Rhythm**
+
+At Deepgram, we expect an AI-first mindset—AI use and comfort aren’t optional, they’re core to how we operate, innovate, and measure performance.
+
+Every team member who works at Deepgram is expected to actively use and experiment with advanced AI tools, and even build your own into your everyday work. We measure how effectively AI is applied to deliver results, and consistent, creative use of the latest AI capabilities is key to success here. Candidates should be comfortable adopting new models and modes quickly, integrating AI into their workflows, and continuously pushing the boundaries of what these technologies can do.
+
+Additionally, we move at the pace of AI. Change is rapid, and you can expect your day-to-day work to evolve just as quickly. This may not be the right role if you’re not excited to experiment, adapt, think on your feet, and learn constantly, or if you’re seeking something highly prescriptive with a traditional 9-to-5.
+
+# Note: This individual must be based within either Eastern or Pacific Time in the US.
+
+**Opportunity**
+
+Deepgram is seeking a Pre-Sales Solutions Engineer to join our Applied Engineering team. While you'll have the opportunity to contribute across the team's various responsibilities (including pre-sales, implementation, and customer support), your primary focus will be driving technical pre-sales engagements with our prospects, customers, and partners. In this role, you will be the technical authority who bridges the gap between our state-of-the-art AI speech technology and customer business needs. You'll collaborate closely with our sales team to craft compelling technical solutions, provide technical validation, build proof-of-concepts, and demonstrate the value of our platform to technical decision makers. Your deep engineering expertise combined with consultative sales skills will be crucial in navigating complex sales cycles and establishing Deepgram as the preferred Voice AI partner. As a member of the Applied Engineering team, you'll influence the team’s vision, product strategy based on market insights, and contribute to the evolution of our pre-sales methodology.
+
+**About Applied Engineering at Deepgram **
+
+The Applied Engineering (AppEng) team at Deepgram combines the functions that other companies might separate into Solutions Engineering, Sales Engineering, Implementation, and Technical Support. We serve as the technical interface between Deepgram and our customers throughout their entire journey. We work closely with our Customer Success and Developer Experience (DX) teams to ensure a positive, growth-focused experience for our customers, as well as with Product and Engineering teams to deliver solutions that meet customer needs. This unified approach allows us to provide comprehensive technical guidance and build deeper relationships with our customers. As an Applied Engineer, you'll be primarily focused on the pre-sales aspects of this journey while having opportunities to contribute to the full customer lifecycle.
+
+This role also includes up to 50% travel to meet with customers, support sales engagements, and participate in key onsite interactions
+
+**What You’ll Do**
+
+- Lead technical discovery and solution design for enterprise prospects and customers
+
+- Architect and implement custom proof-of-concepts and technical demonstrations that address specific customer use cases 
+
+- Provide expert guidance on API integration, performance optimization, and deployment strategies 
+
+- Partner with Account Executives to navigate technical objections and accelerate the sales cycle 
+
+- Contribute to technical content creation including implementation guides, reference architectures, and best practices 
+
+- Mentor junior team members and share technical knowledge across the organization
+
+- Represent the voice of the customer to product and engineering teams
+
+**Your First 90 Days **
+
+- **First 30 Days: **Complete comprehensive onboarding to understand Deepgram's technology, products, and competitive landscape. Shadow senior team members on customer calls and begin building technical demos. Gain proficiency with our core APIs and documentation.
+
+- **60 Days: **Lead technical discovery calls with account executives, and develop custom proof-of-concepts for prospects. Begin contributing to technical content. Participate in sales strategy sessions and provide technical insights to deals in progress.
+
+- **90 Days: **Own the technical relationship with assigned accounts. Develop and present complex solutions addressing specific customer challenges. Begin mentoring newer team members and contributing to the pre-sales methodology.
+
+**You’ll Love This Role If You**
+
+- Are passionate about translating complex technical capabilities into business value
+
+- Thrive in consultative customer environments where you can showcase your technical expertise 
+
+- Enjoy the strategic aspects of enterprise sales cycles while maintaining technical credibility 
+
+- Find satisfaction in seeing your technical solutions drive customer adoption and success 
+
+- Are energized by staying at the forefront of AI and speech technology
+
+**It’s Important To Us That You Have**
+
+- 5+ years of experience in technical pre-sales, solutions architecture, or similar customer-facing technical roles 
+
+- Strong software engineering background with professional development experience in at least one modern programming language, such as Python, JavaScript/TypeScript, or similar languages 
+
+- Proven track record of successfully navigating complex technical sales cycles
+
+- Experience building and demonstrating proof-of-concepts or technical solutions to diverse audiences 
+
+- Excellent verbal and written communication skills with the ability to translate technical concepts for both technical and non-technical stakeholders
+
+**It Would Be Great if You Had **
+
+- Experience with speech recognition, NLP, AI/Voice agents, or related AI technologies
+
+- Experience building customer-facing demos and sample code
+
+- Knowledge of cloud platforms (AWS, GCP, Azure) and containerization technologies like Docker and Kubernetes (K8s)
+
+- Experience with API-first products and developer tools 
+
+- Background in sales methodologies such as Triangle, MEDDIC, or Solution Selling
+
+# Benefits & Perks*
+
+## Holistic health
+
+- Medical, dental, vision benefits
+
+- Annual wellness stipend
+
+- Mental health support
+
+- Life, STD, LTD Income Insurance Plans
+
+## Work/life blend
+
+- Unlimited PTO
+
+- Parental leave 
+
+- Flexible schedule
+
+- 12 Paid US company holidays
+
+- Quarterly personal productivity stipend
+
+- One-time stipend for home office upgrades
+
+- 401(k) plan with company match
+
+- Tax Savings Programs
+
+## Continuous learning
+
+- Learning / Education stipend
+
+- Participation in talks and conferences
+
+- Employee Resource Groups
+
+- AI enablement workshops / sessions
+
+**For candidates outside of the US, we use an Employer of Record model in many countries, which means benefits are administered locally and governed by country-specific regulations. Because of this, benefits will differ by region — in some cases international employees receive benefits US employees do not, and vice versa. As we scale, we will continue to evaluate where we can create more alignment, but a 1:1 global benefits structure is not always legally or operationally possible.*
+
+Backed by prominent investors including Y Combinator, Madrona, Tiger Global, Wing VC and NVIDIA, Deepgram has raised over $215M in total funding. If you're looking to work on cutting-edge technology and make a significant impact in the AI industry, we'd love to hear from you!
+
+Deepgram is an equal opportunity employer. We want all voices and perspectives represented in our workforce. We are a curious bunch focused on collaboration and doing the right thing. We put our customers first, grow together and move quickly. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, gender identity or expression, age, marital status, veteran status, disability status, pregnancy, parental status, genetic information, political affiliation, or any other status protected by the laws or regulations in the locations where we operate.
+
+We are happy to provide accommodations for applicants who need them.

@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned **prompt engineering and AI agent workflows** for an internal drill-planning agent, fine-tuning prompts and LLM logic to cut planning cycle time by **39%** and increase automation capacity by 21%.
+2. Architected a 0→1 **Resilience Automation Platform**, defining requirements, testing/monitoring tooling, and self-service workflows that reduced manual operational toil by **30%** across enterprise drill execution.
+3. Scaled Azure's recovery validation from a 2-person manual operation into a **platformized automation system**, sustaining 45+ annual drills and driving **$14M+** business impact across Databricks, Walmart, SAP, and NetApp.
+4. Pioneered Azure's first proactive resilience testing capability with a rack-level drill program delivered in 4 months at a **94% recovery rate**, surfacing critical defects and establishing a reusable validation playbook.
+5. Tracked AI and workflow **accuracy metrics** across 14 cross-org recovery executions under exec visibility, including a sovereign-cloud network isolation test tied to a **$1.5B+** enterprise contract.
+6. Partnered with Product, Operations, and Engineering to translate complex distributed-systems failures into **actionable prompt strategies** and reusable automation playbooks, improving downstream reliability and customer experience.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove adoption of **AI-driven code generation** and LLM-powered developer workflows across 14 Azure teams via hands-on demos and training, saving **37 engineering hours monthly**.
+2. Shaped product roadmap toward **intent-based YAML generation** by running 11+ user interviews with Azure service teams, translating real-world pain points into prompt and agent feature requirements.
+3. Migrated documentation to an **AI-powered semantic search** (RAG) tool with rigorous metadata standards, cutting lookup time by **83%** and improving retrieval accuracy for downstream agents.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Accelerated region launches by **28%** and unlocked **$3M** in revenue by aligning 140+ teams on a unified **automation prioritization framework** for high-impact workflows.
+2. Ran discovery with 20+ service teams to quantify **81 hours of manual toil per region launch**, then built a roadmap to automate critical paths and reduce repetitive work over time.
+3. Engineered a **Power BI dashboard** tracking operational toil and workflow metrics across 140+ teams, enabling leadership to target automation gaps with data-driven prioritization.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero downtime** across a 2,000+ unit pilot OS migration by mapping dependencies across 1,200+ stations and sequencing rollout with engineering and ops stakeholders.
+2. Facilitated Agile ceremonies and prioritized the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake process and improving team throughput.
+3. Drove cross-team alignment to implement **automated CI/CD pipelines**, accelerating software deployment cycles by **25%** across IT, Operations, and Engineering.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the CRM-driven scoping and invoicing lifecycle for 200+ monthly proposals, turning a manual process into a repeatable system.
+2. Cut Customer Acquisition Cost by **13%** and lifted conversions 2.7% via a digital-first GTM strategy, optimizing web presence and Google profile targeting.
+3. Conducted **profitability analysis** across 1,000+ project records to surface margin leaks and refine leadership's pricing models with data-backed recommendations.
+
+## Notes from the rewriter
+- Led microsoft_ft with prompt engineering + AI agent ownership to mirror JD's core responsibility.
+- Surfaced LLM, RAG, accuracy metrics, and playbook vocabulary throughout to match Ascend's language.
+

@@ -1,0 +1,641 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/shieldai/dce17863-39ea-4e24-ae68-c0ed7d53c540",
+  "apply_url": "https://jobs.lever.co/shieldai/dce17863-39ea-4e24-ae68-c0ed7d53c540/apply",
+  "org": "shieldai",
+  "job_id": "dce17863-39ea-4e24-ae68-c0ed7d53c540",
+  "job_title": "Shield AI - Technical Product Manager (R4779)",
+  "fetched_at": "2026-05-13T16:17:58Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 35,
+    "filled": 23,
+    "filled_needs_review": 4,
+    "declined": 6,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[115d9079-dcfa-4a25-aff3-f213bf88362e][field0]",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "212cd8ee-d458-4451-a99d-08491bfc552d"
+        },
+        {
+          "label": "No",
+          "value": "04431687-cc0f-49ae-9185-4ebccf111e25"
+        }
+      ],
+      "card_text": "Compliance with work authorization"
+    },
+    {
+      "id": "cards[115d9079-dcfa-4a25-aff3-f213bf88362e][field1]",
+      "label": "Will you require sponsorship for employment now or in the future?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "4e15789e-16f8-4edc-84aa-f93500c208ee"
+        },
+        {
+          "label": "No",
+          "value": "ef42d49b-9c29-4a13-a355-db637e94ad08"
+        }
+      ],
+      "card_text": "Compliance with work authorization"
+    },
+    {
+      "id": "cards[115d9079-dcfa-4a25-aff3-f213bf88362e][field2]",
+      "label": "If yes, what type of sponsorship?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Compliance with work authorization"
+    },
+    {
+      "id": "cards[7e99ef70-58ab-4a59-bc31-cc1c35935935][field0]",
+      "label": "This position may require access to information and technology that is subject to export controls, such as EAR. Are you any of the following?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "A United States Citizen",
+      "source": "work_authorization.status=us_citizen (matched ITAR option 'A United States Citizen')",
+      "status": "filled",
+      "matched_rule": "itar_us_person_ack",
+      "options": [
+        {
+          "label": "A United States Citizen",
+          "value": "2b6bda72-f13a-46d7-a90f-5720067c9487"
+        },
+        {
+          "label": "A lawful permanent resident of the United States (i.e. Greencard holder)",
+          "value": "a4059877-734c-4c51-814c-9a705c9ef592"
+        },
+        {
+          "label": "A protected individual",
+          "value": "7543b8c3-4e06-4eab-8623-76dadaf91c4c"
+        },
+        {
+          "label": "Other",
+          "value": "9e1ceb79-8edc-45c6-8e75-d81677dc4f98"
+        }
+      ],
+      "card_text": "Export Control Requirements "
+    },
+    {
+      "id": "cards[7e99ef70-58ab-4a59-bc31-cc1c35935935][field1]",
+      "label": "If you selected \"A protected Individual\" OR \"Other\" to the above question, please explain further.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Export Control Requirements "
+    },
+    {
+      "id": "cards[5f2a739c-bb0e-4283-92c6-1dc8c09b459c][field0]",
+      "label": "Shield AI provides technology, services, and support to the United States military and allied forces with their various missions. If selected for employment with Shield AI, your contributions will directly relate to and/or support these missions.  Are there any reasons why you would not be able to fully contribute in support of the U.S. military and allied forces?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Shield AI because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Shield AI is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Shield AI while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Shield AI aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Shield AI') | NOTE: 'I'm excited about the opportunity to work at Shield AI because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Shield AI is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Shield AI while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Shield AI aligns strongly with those values, which makes the opportunity especially compelling to me.' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "why_company_essay",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "818e0487-24ad-4826-a596-bfeb8c6bbe89"
+        },
+        {
+          "label": "No",
+          "value": "dd0d8fe1-5973-44ca-80c4-be53431226dc"
+        },
+        {
+          "label": "Other",
+          "value": "26c21c28-05e8-4fc5-8f2d-462e4e50e747"
+        }
+      ],
+      "card_text": "Mission"
+    },
+    {
+      "id": "cards[5f2a739c-bb0e-4283-92c6-1dc8c09b459c][field1]",
+      "label": "(Optional) If you selected other or would like to expand on the above, feel free to do so below:",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Mission"
+    },
+    {
+      "id": "cards[a90569ad-6b52-448e-9792-055f7c122285][field0]",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us | NOTE: 'LinkedIn' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Campus visit",
+          "value": "fa47a5e5-0776-4fe4-904d-d13a5100116f"
+        },
+        {
+          "label": "LinkedIn Post",
+          "value": "5110174b-ecf7-4db1-8aa1-22c0eb79ccd0"
+        },
+        {
+          "label": "LinkedIn Sponsored Job/Ad",
+          "value": "c9c39644-d9bc-4bf6-a7f2-c27d085bd953"
+        },
+        {
+          "label": "Industry Conference",
+          "value": "045497e1-f9ef-46be-8811-35ec9f0b3b8a"
+        },
+        {
+          "label": "Twitter/X",
+          "value": "43fe6003-94ab-45be-bf9c-94f54b31a7fe"
+        },
+        {
+          "label": "Instagram",
+          "value": "3e75c711-262d-4639-9e19-13a6b7cde067"
+        },
+        {
+          "label": "Referral",
+          "value": "241f839f-700e-4fe2-ad67-4eeb0bdea045"
+        },
+        {
+          "label": "Handshake",
+          "value": "f7548f75-5e35-4e09-8607-0f235655e301"
+        },
+        {
+          "label": "Other",
+          "value": "fa14e717-a73f-4239-8413-2ff3ac6863c0"
+        }
+      ],
+      "card_text": "How did you hear about us?"
+    },
+    {
+      "id": "cards[a90569ad-6b52-448e-9792-055f7c122285][field1]",
+      "label": "If  \"Industry Conference\" or \"Other,\" please provide more details:",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "How did you hear about us?"
+    },
+    {
+      "id": "cards[eb3750bb-e1f0-473c-a54d-012919c5e349][field0]",
+      "label": "Please state your full legal name:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "card_text": "Full Legal Name"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field0]",
+      "label": "Are you a transitioning service member?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "not a veteran / transitioning service member",
+      "status": "filled",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "No",
+          "value": "5640c803-0ed4-4806-b373-b2304c61a4a2"
+        },
+        {
+          "label": "Yes",
+          "value": "5c14ef83-a3ca-4b4f-9bfe-d0ad54c04b6b"
+        }
+      ],
+      "card_text": "Fellowship question/Transitioning Service Member"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field1]",
+      "label": "If yes, what partnership program are you working with?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, what partnership program are you working with?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Hiring our Heroes",
+          "value": "c9252fd3-8dcf-4228-994b-75fc163ec4f1"
+        },
+        {
+          "label": "NextOp",
+          "value": "4bae8235-68cb-43da-9b88-fcfe92f42b7a"
+        },
+        {
+          "label": "Skillbridge general (no program)",
+          "value": "545c2888-4e33-4961-895a-1ea404c58cd1"
+        }
+      ],
+      "card_text": "Fellowship question/Transitioning Service Member"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field2]",
+      "label": "If other, please provide further details",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Fellowship question/Transitioning Service Member"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field3]",
+      "label": "When are you available to start your fellowship?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Fellowship question/Transitioning Service Member"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field4]",
+      "label": "When are you available for full time work?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Fellowship question/Transitioning Service Member"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field5]",
+      "label": "What full time job(s) are you applying for?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Fellowship question/Transitioning Service Member"
+    },
+    {
+      "id": "cards[f27077c2-d069-4885-b031-ee14b393fd41][field0]",
+      "label": "Are you local to or willing to relocate?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "000fc922-1e76-4882-8c2f-f577a518d397"
+        },
+        {
+          "label": "No",
+          "value": "f48d1715-fc0d-458f-8114-09330c6e6f58"
+        }
+      ],
+      "card_text": "Work Location Availability"
+    },
+    {
+      "id": "cards[f27077c2-d069-4885-b031-ee14b393fd41][field1]",
+      "label": "What office(s) would you be willing to relocate to? (Select all that apply)",
+      "type": "multi_value_multi_select",
+      "lever_type": "multiple-select",
+      "required": false,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate | NOTE: 'Yes' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "San Diego, California",
+          "value": "c6d92ed1-ee42-4277-bbe7-d4a48f91900c"
+        },
+        {
+          "label": "Dallas, Texas",
+          "value": "cf5e7d3a-d5a6-47fa-be31-67d1dcd6e308"
+        },
+        {
+          "label": "Washington, DC",
+          "value": "5c9a03d4-4fb3-422a-8dd3-c2ae4f3014ef"
+        },
+        {
+          "label": "Boston, MA",
+          "value": "e0f5b7eb-7035-4caa-82d7-218c0f38699c"
+        },
+        {
+          "label": "International",
+          "value": "d656d965-87ad-48d8-bf11-13e6863c2c2b"
+        },
+        {
+          "label": "San Francisco, California",
+          "value": "21ecd1c5-d06b-44de-8ff4-2269a271771b"
+        }
+      ],
+      "card_text": "Work Location Availability"
+    },
+    {
+      "id": "cards[f27077c2-d069-4885-b031-ee14b393fd41][field2]",
+      "label": "If you selected international, what location(s)?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "card_text": "Work Location Availability"
+    },
+    {
+      "id": "cards[f90c0d1e-ef0c-49f7-9655-6e55f2dc4c2d][field0]",
+      "label": "This position requires an Active or the eligibility to obtain a U.S. DoD Secret Security Clearance (U.S. Citizenship Required).",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "None",
+      "source": "work_authorization.security_clearance | NOTE: 'None' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "security_clearance",
+      "options": [
+        {
+          "label": "Actively hold a clearance",
+          "value": "bc67b6a4-d2ca-4a2c-81f4-a84d30de71e3"
+        },
+        {
+          "label": "Previously held a clearance",
+          "value": "4ccdba9c-7313-4a80-a103-01848d852763"
+        },
+        {
+          "label": "Eligible to obtain",
+          "value": "49b0c84a-56e3-4f50-8183-5b33a61b08f0"
+        }
+      ],
+      "card_text": "Security Clearance - Secret"
+    },
+    {
+      "id": "eeo[disabilitySignatureDate]",
+      "label": "Disabilitysignaturedate",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[disabilitySignature]",
+      "label": "Disabilitysignature",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[disability]",
+      "label": "Disability",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "required": false,
+      "reason": "portfolio_url is null"
+    },
+    {
+      "id": "cards[07fdf1f1-9952-493d-a9b7-320969a56fed][field1]",
+      "label": "If yes, what partnership program are you working with?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, what partnership program are you working with?'"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "Shield AI - Technical Product Manager (R4779)",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

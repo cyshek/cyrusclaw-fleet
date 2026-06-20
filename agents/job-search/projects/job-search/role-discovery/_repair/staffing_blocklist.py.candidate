@@ -1,0 +1,236 @@
+"""Staffing-firm / recruiter blocklist.
+
+LinkedIn discovery surfaces a long tail of staffing agencies, contract houses,
+and IT-services firms that re-post client jobs as if they were their own.
+Cyrus never wants to apply through these — the path is opaque, the listings
+are usually stale, and the firm is just a middleman.
+
+Usage:
+    from staffing_blocklist import is_staffing_firm
+    if is_staffing_firm(company_name):
+        continue  # drop or mark status='skip'
+
+Maintained as:
+  - `EXPLICIT_BLOCKLIST` — known firms (case-insensitive substring match on
+    normalized company name).
+  - `KEYWORD_PATTERNS` — strong indicator words that always signal a
+    staffing/services firm in this context (e.g. "staffing", "recruiters").
+  - `ALLOWLIST` — escape hatch for false positives (e.g. legitimate product
+    companies whose name contains a flagged keyword).
+
+Conservative bias: when in doubt, NOT a staffing firm. We'd rather let one
+slip through than block a real product company.
+"""
+from __future__ import annotations
+
+import re
+from typing import Iterable
+
+# ---- explicit blocklist (curated 2026-05-23 from tracker.db inspection) ----
+#
+# Match: case-insensitive substring on normalized company name (lowercased,
+# punctuation stripped). One name per entry — variations (LLC, Inc, etc.)
+# fold to the same normalized form.
+EXPLICIT_BLOCKLIST: tuple[str, ...] = (
+    # Big national staffing/consulting middlemen
+    "aquent",
+    "aston carter",
+    "actalent",
+    "robert half",
+    "kforce",
+    "tek systems",
+    "teksystems",
+    "insight global",
+    "beacon hill",
+    "cybercoders",
+    "jobot",
+    "brooksource",
+    "cypress hcm",
+    "bayone",
+    "bayone solutions",
+    "pivotal partners",
+    "workgenius",
+    "kellymitchell",
+    "kelly services",
+    "milestone technologies",
+    "edi staffing",
+    "edi specialists",
+    "inspyr solutions",
+    "open systems technologies",
+    "agelix consulting",
+    "amag group",
+    "imcs group",
+    "altech group",
+    "wbe technologies",
+    "holistic partners",
+    "the greene group",
+    "the kinsley group",
+    "new york technology partners",
+    "strategic employment partners",
+    "acceler8 talent",
+    "bright vision technologies",
+    "mmd services",
+    "talentpluto",
+    "evona",
+    "ascendion",
+    "tata consultancy",
+    "tcs",
+    "infosys",
+    "wipro",
+    "cognizant",
+    "capgemini",
+    "accenture",
+    "ust global",
+    "ltimindtree",
+    "hcl technologies",
+    "hcltech",
+    "mphasis",
+    # Common LinkedIn boilerplate posters
+    "crossing hurdles",
+    "compunnel",
+    "the planet group",
+    "harvey nash",
+    "phaxis",
+    "synechron",
+    "diverse lynx",
+    "syntricate technologies",
+    "talentburst",
+    "russell tobin",
+    "us tech solutions",
+)
+
+# ---- keyword patterns ----
+#
+# These ALWAYS imply a staffing/services firm in our context. Tuned to be
+# conservative — generic words like "solutions", "partners", "consulting",
+# "group" alone are TOO common (Klaviyo Solutions Architect, Anthropic Group,
+# etc.) so we look for staffing-specific compounds.
+KEYWORD_PATTERNS: tuple[re.Pattern, ...] = tuple(re.compile(p, re.I) for p in (
+    r"\bstaffing\b",
+    r"\brecruiters?\b",
+    r"\brecruiting\b",
+    r"\btalent acquisition\b",
+    r"\btalent solutions\b",
+    r"\bsearch group\b",
+    r"\bsearch partners\b",
+    r"\bexecutive search\b",
+    r"\bheadhunt(?:er|ing|ers)\b",
+    # IT services / body-shop signals
+    r"\bit services\b",
+    r"\bsoftware services\b",
+    r"\bconsulting llc\b",
+    r"\bconsultants? llc\b",
+    r"\bsolutions llc\b",
+    r"\bconsulting group\b",
+    r"\binfotech\b",
+    r"\binfo tech\b",
+    r"\bIT consulting\b",
+))
+
+# ---- allowlist (escape hatch for false positives) ----
+#
+# Lowercased, normalized substring match. If a company hits the blocklist
+# OR keyword patterns but is in the allowlist, we keep it.
+ALLOWLIST: tuple[str, ...] = (
+    # Big-name companies whose substring might collide above (none today,
+    # placeholder for future regressions)
+    "aws",
+    "amazon web services",
+)
+
+
+# ---- normalization ----
+
+_PUNCT_RE = re.compile(r"[^\w\s]+")
+_WS_RE = re.compile(r"\s+")
+
+
+def _normalize(name: str) -> str:
+    n = (name or "").lower()
+    n = _PUNCT_RE.sub(" ", n)
+    n = _WS_RE.sub(" ", n).strip()
+    return n
+
+
+def is_staffing_firm(company: str) -> bool:
+    """Return True iff `company` is a known staffing/recruiter/IT-services firm."""
+    if not company:
+        return False
+    n = _normalize(company)
+    # Allowlist short-circuits
+    for a in ALLOWLIST:
+        if a in n:
+            return False
+    # Explicit blocklist (substring match on normalized form)
+    for b in EXPLICIT_BLOCKLIST:
+        if b in n:
+            return True
+    # Keyword patterns
+    for pat in KEYWORD_PATTERNS:
+        if pat.search(company) or pat.search(n):
+            return True
+    return False
+
+
+def filter_companies(companies: Iterable[str]) -> tuple[list[str], list[str]]:
+    """Split an iterable of company names into (kept, blocked)."""
+    kept: list[str] = []
+    blocked: list[str] = []
+    for c in companies:
+        (blocked if is_staffing_firm(c) else kept).append(c)
+    return kept, blocked
+
+
+# ---- CLI smoke test ----
+if __name__ == "__main__":
+    import argparse
+    import sqlite3
+    import sys
+    from pathlib import Path
+
+    p = argparse.ArgumentParser()
+    p.add_argument("--db", default=str(Path(__file__).resolve().parents[1] / "tracker.db"))
+    p.add_argument("--show", action="store_true", help="Show which companies would be blocked")
+    p.add_argument("--source", default="linkedin", help="Source-key prefix to inspect")
+    p.add_argument("--apply", action="store_true",
+                   help="Update matching rows: status='skip', flags adds 'staffing-firm'. (Idempotent.)")
+    p.add_argument("--limit", type=int, default=200)
+    args = p.parse_args()
+
+    con = sqlite3.connect(args.db)
+    con.row_factory = sqlite3.Row
+    rows = con.execute(
+        "SELECT id, company, role, source_key, status, flags FROM roles "
+        "WHERE source_key LIKE ?",
+        (f"{args.source}:%",),
+    ).fetchall()
+
+    blocked_rows = [r for r in rows if is_staffing_firm(r["company"])]
+    print(f"Source prefix {args.source!r}: {len(rows)} rows, {len(blocked_rows)} would be blocked.")
+
+    if args.show:
+        by_co: dict[str, int] = {}
+        for r in blocked_rows:
+            by_co[r["company"]] = by_co.get(r["company"], 0) + 1
+        for co, c in sorted(by_co.items(), key=lambda kv: -kv[1])[:args.limit]:
+            print(f"  {c:3}  {co}")
+
+    if args.apply:
+        updated = 0
+        skipped = 0
+        for r in blocked_rows:
+            # Don't touch rows already marked applied/closed/skip
+            cur_status = (r["status"] or "").strip().lower()
+            if cur_status in ("skip", "closed") or r["status"] is None and False:
+                skipped += 1
+                continue
+            new_flags = (r["flags"] or "").strip()
+            if "staffing-firm" not in new_flags:
+                new_flags = (new_flags + " staffing-firm").strip()
+            con.execute(
+                "UPDATE roles SET status='skip', flags=? WHERE id=?",
+                (new_flags, r["id"]),
+            )
+            updated += 1
+        con.commit()
+        print(f"  Applied: {updated} updated, {skipped} already-skipped/closed.")

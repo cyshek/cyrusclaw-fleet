@@ -1,0 +1,7 @@
+# Cover answers — Videoamp, Product Manager, Methodology (Future Position) (videoamp-8465234002)
+
+## Why VideoAmp?
+
+At Microsoft, I've served as the in-house methodology and analytical expert for Azure's resilience validation, defining clear product requirements and validation standards that ensured data accuracy and integrity across 45+ annual drills. A lot of that work was translating large-scale event-level recovery data into Summary of Findings reports for stakeholders of varying technical depth, and collaborating with Machine Learning, Data Science, and Product teams to deliver cross-org executions accurately and on time. The Methodology PM role reads almost like a description of what I already do, just pointed at audience measurement instead of infrastructure resilience.
+
+What draws me to VideoAmp specifically is the bet on building currency-grade measurement for a media landscape that's fragmenting across linear, OTT, CTV, and digital. Measurement is only as good as the rigor behind it, and I like that this team treats methodology as a first-class product surface where accuracy, repeatability, and transparency actually matter. The push into agentic AI and intelligent optimization is also right in my lane. I've built internal AI agents and RAG-based tooling to cut process toil, and I'd be excited to bring that same problem-solving to defining what comes next in cross-screen measurement.

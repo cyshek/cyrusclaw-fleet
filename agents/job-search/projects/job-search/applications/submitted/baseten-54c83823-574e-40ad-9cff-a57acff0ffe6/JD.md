@@ -1,0 +1,84 @@
+# Solution Architect (AI/LLM Inference)
+
+**Company:** Baseten
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/baseten/54c83823-574e-40ad-9cff-a57acff0ffe6
+**Ashby Org:** baseten
+**Ashby Job ID:** 54c83823-574e-40ad-9cff-a57acff0ffe6
+
+---
+
+**ABOUT BASETEN**
+
+Baseten powers mission-critical inference for the world's most dynamic AI companies, like Cursor, Notion, OpenEvidence, Abridge, Clay, Gamma and Writer. By uniting applied AI research, flexible infrastructure, and seamless developer tooling, we enable companies operating at the frontier of AI to bring cutting-edge models into production. We're growing quickly and recently raised our [$300M Series E](https://www.baseten.co/blog/announcing-baseten-s-300m-series-e/), backed by investors including BOND, IVP, Spark Capital, Greylock, and Conviction. Join us and help build the platform engineers turn to to ship AI products.
+
+**THE ROLE: **
+As a Solution Architect (AI/LLM Inference) at Baseten you will partner closely with Sales and customers to translate business needs into technical solutions, run technical discovery, and guide repeatable deployments and proofs of value for customers. This role is a great fit for entrepreneurial, customer-facing technical professionals who want a front-row view into how modern companies adopt AI at scale, and who enjoy working across technical discovery, solution design, demos, deployment scoping, and hands-on customer implementations, in close partnership with Sales and Engineering.
+
+**RESPONSIBILITIES:**
+
+- Partner with Sales on **customer discovery calls** (most often second calls, occasionally first calls for large accounts).
+
+- Lead **demos** and **technical scoping** to align on success criteria, architecture, and deployment approach.
+
+- Own **benchmarking and repeatable deployments**, including:
+
+- Handling standard deployment patterns and configurations across many modalities – LLMs, embeddings, image and video generation, VoiceAI, etc.
+
+- Advising on tradeoffs like H100s vs B200s and latency-optimized vs throughput-optimized setups.
+
+- Driving consistent “playbook” style deployments for common models and use cases.
+
+- Become a power user of different runtimes such as vllm, sglang, and TRT-LMM and all the common configurations and tradeoffs between them
+
+- Drive **POC and project execution**, including:
+
+- Scoping POCs and keeping stakeholders aligned on timeline, deliverables, and next steps.
+
+- Acting as the “ringleader” or project manager for POCs.
+
+- Pulling in Forward Deployed Engineering (FDE) support when deeper or more complex technical work is needed.
+
+ 
+
+**REQUIREMENTS:**
+
+- AI/ML background and the ability to credibly discuss AI/ML topics with technical stakeholders.
+
+- Strong customer-facing communication skills, including the ability to run structured discovery and clarify ambiguous requirements.
+
+- Technical depth to scope solutions, without needing to write production code.
+
+- Ability to script and prototype as needed, including comfort “vibe coding” to move quickly in technical workflows.
+
+ 
+
+**NICE TO HAVE:**
+
+- Experience running or supporting benchmarks for ML inference deployments.
+
+- Familiarity with infrastructure tradeoffs relevant to inference performance and cost (for example GPU selection and latency versus throughput tuning).
+
+- Experience serving as a cross-functional technical lead for customer POCs, including coordination across Sales and Engineering.
+
+**BENEFITS**
+
+- Competitive compensation, including meaningful equity.
+
+- 100% coverage of medical, dental, and vision insurance for employee and dependents
+
+- Flexible PTO policy including company wide Winter Break (our offices are closed from Christmas Eve to New Year's Day!)
+
+- Paid parental leave
+
+- Fertility and family-building stipend through Carrot
+
+- Company-facilitated 401(k)
+
+- Exposure to a variety of ML startups, offering unparalleled learning and networking opportunities.
+
+**Apply now** to embark on a rewarding journey in shaping the future of AI! If you are a motivated individual with a passion for machine learning and a desire to be part of a collaborative and forward-thinking team, we would love to hear from you.
+
+*At Baseten, we are committed to fostering a diverse and inclusive workplace. We provide equal employment opportunities to all employees and applicants without regard to race, color, religion, gender, sexual orientation, gender identity or expression, national origin, age, genetic information, disability, or veteran status.*
+
+*We are an Equal Opportunity Employer and will consider qualified applicants with criminal histories in a manner consistent with applicable law (by example, the requirements of the San Francisco Fair Chance Ordinance, where applicable).*

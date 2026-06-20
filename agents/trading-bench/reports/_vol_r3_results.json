@@ -1,0 +1,735 @@
+{
+  "bh": {
+    "fp": 0.25008024853032845,
+    "trades": 8,
+    "per_win": [
+      [
+        "2022-H1 bear",
+        "bear",
+        -0.16809748342989575
+      ],
+      [
+        "2022-Q3 chop",
+        "chop",
+        -0.14859567481454497
+      ],
+      [
+        "2023-H1 recovery",
+        "bull",
+        0.04722805918564518
+      ],
+      [
+        "2023-Q3 chop",
+        "chop",
+        0.056285219652818116
+      ],
+      [
+        "2024-Q2 bull",
+        "bull",
+        0.1914435264899537
+      ],
+      [
+        "2025-Q1 tariff bear",
+        "bear",
+        -0.024395487254528916
+      ],
+      [
+        "2025-Q3 bull",
+        "bull",
+        0.1422023509263365
+      ],
+      [
+        "2026-recent bull",
+        "bull",
+        0.09693498884826636
+      ]
+    ]
+  },
+  "sweeps": {
+    "ratio_prop": [
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 10,
+          "resize_band": 0.3
+        },
+        "fp": 0.355,
+        "avg_deploy": 0.933,
+        "worst_dd": -0.2,
+        "trades": 18,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 5.43,
+        "tot_pnl_usd": 267.62
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 10,
+          "resize_band": 0.2
+        },
+        "fp": 0.271,
+        "avg_deploy": 0.956,
+        "worst_dd": -0.19,
+        "trades": 24,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 4.16,
+        "tot_pnl_usd": 200.68
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 20,
+          "resize_band": 0.3
+        },
+        "fp": 0.263,
+        "avg_deploy": 0.933,
+        "worst_dd": -0.2,
+        "trades": 20,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.97,
+        "tot_pnl_usd": 190.89
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 40,
+          "resize_band": 0.3
+        },
+        "fp": 0.263,
+        "avg_deploy": 0.925,
+        "worst_dd": -0.2,
+        "trades": 20,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 4.0,
+        "tot_pnl_usd": 192.26
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 10,
+          "resize_band": 0.1
+        },
+        "fp": 0.238,
+        "avg_deploy": 0.958,
+        "worst_dd": -0.18,
+        "trades": 60,
+        "beats_bh_win": "4/8",
+        "ann_deployed": 3.74,
+        "tot_pnl_usd": 179.15
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 20,
+          "resize_band": 0.2
+        },
+        "fp": 0.23,
+        "avg_deploy": 0.931,
+        "worst_dd": -0.2,
+        "trades": 28,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.58,
+        "tot_pnl_usd": 171.13
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 40,
+          "resize_band": 0.2
+        },
+        "fp": 0.203,
+        "avg_deploy": 0.948,
+        "worst_dd": -0.19,
+        "trades": 30,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.21,
+        "tot_pnl_usd": 152.29
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 40,
+          "resize_band": 0.1
+        },
+        "fp": 0.106,
+        "avg_deploy": 0.933,
+        "worst_dd": -0.17,
+        "trades": 62,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 1.31,
+        "tot_pnl_usd": 59.96
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "proportional",
+          "ratio_lookback": 20,
+          "resize_band": 0.1
+        },
+        "fp": 0.067,
+        "avg_deploy": 0.954,
+        "worst_dd": -0.17,
+        "trades": 62,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.83,
+        "tot_pnl_usd": 37.94
+      }
+    ],
+    "ratio_binary": [
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 10,
+          "band": 0.0
+        },
+        "fp": 0.408,
+        "avg_deploy": 0.647,
+        "worst_dd": -0.07,
+        "trades": 188,
+        "beats_bh_win": "4/8",
+        "ann_deployed": 4.89,
+        "tot_pnl_usd": 239.06
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 40,
+          "band": 0.0
+        },
+        "fp": 0.13,
+        "avg_deploy": 0.656,
+        "worst_dd": -0.05,
+        "trades": 87,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 1.95,
+        "tot_pnl_usd": 90.63
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 20,
+          "band": 0.05
+        },
+        "fp": 0.026,
+        "avg_deploy": 0.609,
+        "worst_dd": -0.09,
+        "trades": 43,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 0.89,
+        "tot_pnl_usd": 40.36
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 20,
+          "band": 0.0
+        },
+        "fp": -0.166,
+        "avg_deploy": 0.648,
+        "worst_dd": -0.07,
+        "trades": 144,
+        "beats_bh_win": "1/8",
+        "ann_deployed": -2.4,
+        "tot_pnl_usd": -103.3
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 20,
+          "band": 0.1
+        },
+        "fp": -0.237,
+        "avg_deploy": 0.229,
+        "worst_dd": -0.08,
+        "trades": 13,
+        "beats_bh_win": "4/8",
+        "ann_deployed": -1.27,
+        "tot_pnl_usd": -55.81
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 40,
+          "band": 0.05
+        },
+        "fp": -0.376,
+        "avg_deploy": 0.622,
+        "worst_dd": -0.12,
+        "trades": 32,
+        "beats_bh_win": "1/8",
+        "ann_deployed": -4.62,
+        "tot_pnl_usd": -191.41
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 10,
+          "band": 0.05
+        },
+        "fp": -0.422,
+        "avg_deploy": 0.548,
+        "worst_dd": -0.13,
+        "trades": 46,
+        "beats_bh_win": "2/8",
+        "ann_deployed": -5.78,
+        "tot_pnl_usd": -234.35
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 40,
+          "band": 0.1
+        },
+        "fp": -0.456,
+        "avg_deploy": 0.503,
+        "worst_dd": -0.18,
+        "trades": 20,
+        "beats_bh_win": "1/8",
+        "ann_deployed": -5.23,
+        "tot_pnl_usd": -214.31
+      },
+      {
+        "params": {
+          "vol_source": "vixy_ratio",
+          "exposure_mode": "binary",
+          "ratio_lookback": 10,
+          "band": 0.1
+        },
+        "fp": -0.99,
+        "avg_deploy": 0.044,
+        "worst_dd": -0.07,
+        "trades": 6,
+        "beats_bh_win": "3/8",
+        "ann_deployed": -3.61,
+        "tot_pnl_usd": -152.11
+      }
+    ],
+    "vixy_prop": [
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 10,
+          "resize_band": 0.3
+        },
+        "fp": 0.317,
+        "avg_deploy": 0.924,
+        "worst_dd": -0.2,
+        "trades": 16,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 4.76,
+        "tot_pnl_usd": 231.93
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 20,
+          "resize_band": 0.3
+        },
+        "fp": 0.305,
+        "avg_deploy": 0.898,
+        "worst_dd": -0.19,
+        "trades": 20,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 4.48,
+        "tot_pnl_usd": 217.31
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 40,
+          "resize_band": 0.3
+        },
+        "fp": 0.301,
+        "avg_deploy": 0.919,
+        "worst_dd": -0.19,
+        "trades": 24,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 4.45,
+        "tot_pnl_usd": 215.96
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 10,
+          "resize_band": 0.1
+        },
+        "fp": 0.244,
+        "avg_deploy": 0.949,
+        "worst_dd": -0.16,
+        "trades": 74,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 3.9,
+        "tot_pnl_usd": 187.3
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 10,
+          "resize_band": 0.2
+        },
+        "fp": 0.231,
+        "avg_deploy": 0.958,
+        "worst_dd": -0.19,
+        "trades": 26,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.56,
+        "tot_pnl_usd": 170.01
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 20,
+          "resize_band": 0.1
+        },
+        "fp": 0.219,
+        "avg_deploy": 0.933,
+        "worst_dd": -0.11,
+        "trades": 88,
+        "beats_bh_win": "4/8",
+        "ann_deployed": 3.49,
+        "tot_pnl_usd": 166.53
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 20,
+          "resize_band": 0.2
+        },
+        "fp": 0.207,
+        "avg_deploy": 0.921,
+        "worst_dd": -0.21,
+        "trades": 30,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.18,
+        "tot_pnl_usd": 150.89
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 40,
+          "resize_band": 0.1
+        },
+        "fp": 0.176,
+        "avg_deploy": 0.912,
+        "worst_dd": -0.15,
+        "trades": 80,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 2.62,
+        "tot_pnl_usd": 123.03
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "proportional",
+          "vixy_lookback": 40,
+          "resize_band": 0.2
+        },
+        "fp": 0.039,
+        "avg_deploy": 0.918,
+        "worst_dd": -0.2,
+        "trades": 34,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 0.39,
+        "tot_pnl_usd": 17.46
+      }
+    ],
+    "vixy_binary": [
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 10,
+          "band": 0.0
+        },
+        "fp": 0.35,
+        "avg_deploy": 0.637,
+        "worst_dd": -0.05,
+        "trades": 188,
+        "beats_bh_win": "4/8",
+        "ann_deployed": 4.01,
+        "tot_pnl_usd": 192.74
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 10,
+          "band": 0.05
+        },
+        "fp": 0.265,
+        "avg_deploy": 0.599,
+        "worst_dd": -0.05,
+        "trades": 66,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.32,
+        "tot_pnl_usd": 158.08
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 40,
+          "band": 0.0
+        },
+        "fp": -0.053,
+        "avg_deploy": 0.635,
+        "worst_dd": -0.1,
+        "trades": 83,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 0.37,
+        "tot_pnl_usd": 16.66
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 20,
+          "band": 0.0
+        },
+        "fp": -0.076,
+        "avg_deploy": 0.65,
+        "worst_dd": -0.05,
+        "trades": 148,
+        "beats_bh_win": "2/8",
+        "ann_deployed": -1.2,
+        "tot_pnl_usd": -52.88
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 20,
+          "band": 0.05
+        },
+        "fp": -0.113,
+        "avg_deploy": 0.608,
+        "worst_dd": -0.08,
+        "trades": 57,
+        "beats_bh_win": "2/8",
+        "ann_deployed": -0.73,
+        "tot_pnl_usd": -32.19
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 40,
+          "band": 0.05
+        },
+        "fp": -0.319,
+        "avg_deploy": 0.62,
+        "worst_dd": -0.09,
+        "trades": 39,
+        "beats_bh_win": "2/8",
+        "ann_deployed": -2.84,
+        "tot_pnl_usd": -121.12
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 20,
+          "band": 0.1
+        },
+        "fp": -0.399,
+        "avg_deploy": 0.521,
+        "worst_dd": -0.11,
+        "trades": 31,
+        "beats_bh_win": "2/8",
+        "ann_deployed": -3.12,
+        "tot_pnl_usd": -132.74
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 40,
+          "band": 0.1
+        },
+        "fp": -0.445,
+        "avg_deploy": 0.528,
+        "worst_dd": -0.12,
+        "trades": 26,
+        "beats_bh_win": "2/8",
+        "ann_deployed": -3.87,
+        "tot_pnl_usd": -162.51
+      },
+      {
+        "params": {
+          "vol_source": "vixy",
+          "exposure_mode": "binary",
+          "vixy_lookback": 10,
+          "band": 0.1
+        },
+        "fp": -0.629,
+        "avg_deploy": 0.161,
+        "worst_dd": -0.06,
+        "trades": 21,
+        "beats_bh_win": "3/8",
+        "ann_deployed": -4.61,
+        "tot_pnl_usd": -190.91
+      }
+    ],
+    "realized_prop": [
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 10,
+          "target_vol": 0.15
+        },
+        "fp": 0.544,
+        "avg_deploy": 0.829,
+        "worst_dd": -0.12,
+        "trades": 125,
+        "beats_bh_win": "5/8",
+        "ann_deployed": 6.72,
+        "tot_pnl_usd": 339.08
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 20,
+          "target_vol": 0.1
+        },
+        "fp": 0.513,
+        "avg_deploy": 0.676,
+        "worst_dd": -0.16,
+        "trades": 88,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 5.2,
+        "tot_pnl_usd": 255.37
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 20,
+          "target_vol": 0.15
+        },
+        "fp": 0.494,
+        "avg_deploy": 0.862,
+        "worst_dd": -0.13,
+        "trades": 60,
+        "beats_bh_win": "5/8",
+        "ann_deployed": 6.34,
+        "tot_pnl_usd": 317.89
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 10,
+          "target_vol": 0.2
+        },
+        "fp": 0.445,
+        "avg_deploy": 0.926,
+        "worst_dd": -0.12,
+        "trades": 70,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 6.08,
+        "tot_pnl_usd": 303.4
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 20,
+          "target_vol": 0.2
+        },
+        "fp": 0.353,
+        "avg_deploy": 0.943,
+        "worst_dd": -0.13,
+        "trades": 42,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 5.06,
+        "tot_pnl_usd": 247.86
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 40,
+          "target_vol": 0.2
+        },
+        "fp": 0.293,
+        "avg_deploy": 0.954,
+        "worst_dd": -0.2,
+        "trades": 26,
+        "beats_bh_win": "4/8",
+        "ann_deployed": 4.35,
+        "tot_pnl_usd": 210.53
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 40,
+          "target_vol": 0.15
+        },
+        "fp": 0.284,
+        "avg_deploy": 0.891,
+        "worst_dd": -0.17,
+        "trades": 34,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 4.05,
+        "tot_pnl_usd": 195.16
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 40,
+          "target_vol": 0.1
+        },
+        "fp": 0.247,
+        "avg_deploy": 0.739,
+        "worst_dd": -0.17,
+        "trades": 52,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 2.91,
+        "tot_pnl_usd": 137.32
+      },
+      {
+        "params": {
+          "vol_source": "realized",
+          "exposure_mode": "proportional",
+          "vol_lookback": 10,
+          "target_vol": 0.1
+        },
+        "fp": 0.18,
+        "avg_deploy": 0.658,
+        "worst_dd": -0.12,
+        "trades": 161,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 1.71,
+        "tot_pnl_usd": 78.91
+      }
+    ]
+  }
+}

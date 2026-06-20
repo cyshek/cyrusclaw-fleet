@@ -1,0 +1,84 @@
+# Product Manager - Poker
+
+**Company:** FanDuel
+**Location:** New York City
+**Apply:** https://www.fanduel.careers/open-positions?gh_jid=7954862
+**Greenhouse ID:** 7954862
+
+---
+
+**THE POSITION
+**Our roster has an opening with your name on it
+
+The Product Manager is responsible for the planning, prioritization, and execution of successful products. This includes understanding and prioritizing product and customer needs, defining product goals, and working closely with engineering, design, and stakeholders to bring solutions to market. The Product Manager ensures successful product performance through market analysis, a deep understanding of customer needs, and objective data analysis and reporting. This is an individual contributor role responsible for end-to-end product ownership of FanDuel’s Poker experience, driving strategy, roadmap, and execution in close partnership with cross-functional teams.
+
+In addition to the specific responsibilities outlined above, employees may be required to perform other such duties as assigned by the Company. This ensures operational flexibility and allows the Company to meet evolving business needs.
+
+**THE GAME PLAN**
+Everyone on our team has a part to play
+
+- Identify, shape, and ensure execution of new products and product initiatives
+
+- Establish and maintain domain expertise on the product, market, and competitors
+
+- Assess product opportunities and contribute meaningfully to vision and prioritization of new initiatives and products
+
+- Ensure transparency and alignment across the company, bridging the gap between product and other functions
+
+- Act as an on-time zone point of contact communicating with and influencing leaders in other functions.
+
+- Collaborate with engineering, design, marketing, and operational functions to ensure successful product deliveries and launches
+
+- Identify, prioritize, and execute post-launch optimizations and improvements
+
+- Establish, track and report objectively on product performance metrics
+
+- Opportunity to identify, grow, and develop top talent on the Product team
+
+ 
+
+**THE STATS**
+What we're looking for in our next teammate
+
+- Bachelor’s degree preferred
+
+- Minimum of 3 years’ of experience as a Product Manager
+
+- Proven track record of delivering successful and innovative products
+
+- Ability to handle multiple simultaneous projects while effectively balancing scope, resourcing, time, and quality.
+
+- A strong sense of ownership and accountability for goals and deliverables
+
+- Demonstrated success cross-functionally influencing teams without formal authority
+
+- Excellent numerical and analytical skills with the ability to interpret data quickly to inform the right decisions
+
+- Excellent critical thinking skills
+
+- Exceptional written and verbal communication skills
+
+**ABOUT FANDUEL**
+
+FanDuel Group is the premier mobile gaming company in the United States and Canada. FanDuel Group consists of a portfolio of leading brands across mobile wagering including: America’s #1 Sportsbook, FanDuel Sportsbook; its leading iGaming platform, FanDuel Casino; the industry’s unquestioned leader in horse racing and advance-deposit wagering, FanDuel Racing; and its daily fantasy sports product.  
+
+In addition, FanDuel Group operates FanDuel TV, its broadly distributed linear cable television network and FanDuel TV+, its leading direct-to-consumer OTT platform. FanDuel Group has a presence across all 50 states, Canada, and Puerto Rico.
+
+The company is based in New York with US offices in Los Angeles, Atlanta, and Jersey City, as well as global offices in Canada and Scotland. The company’s affiliates have offices worldwide, including in Ireland, Portugal, Romania, and Australia.
+
+FanDuel Group is a subsidiary of Flutter Entertainment, the world's largest sports betting and gaming operator with a portfolio of globally recognized brands and traded on the New York Stock Exchange (NYSE: FLUT).
+
+**PLAYER BENEFITS**
+We treat our team right
+
+We offer amazing benefits above and beyond the basics. We have an array of health plans to choose from (some as low as $0 per paycheck) that include programs for fertility and family planning, mental health support, and fitness benefits. We offer generous paid time off (PTO & sick leave), annual bonus and long-term incentive opportunities (based on performance), 401k with up to a 5% match, commuter benefits, pet insurance, and more - check out all our benefits here: [**FanDuel Total Rewards**](https://fanduelbenefits.com/). *Benefits differ across location, role, and level.
+
+FanDuel is an equal opportunities employer and we believe, as one of our principles states, “We are One Team!”. As such, we are committed to equal employment opportunity regardless of race, color, ethnicity, ancestry, religion, creed, sex, national origin, sexual orientation, age, citizenship status, marital status, disability, gender identity, gender expression, veteran status, or any other characteristic protected by state, local or federal law. We believe FanDuel is strongest and best able to compete if all employees feel valued, respected, and included.
+
+FanDuel is committed to providing reasonable accommodations for qualified individuals with disabilities. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please email [Benefits@fanduel.com](mailto:Benefits@fanduel.com).
+
+***The applicable salary range for this position is $94,000 - $129, 250 USD, which is dependent on a variety of factors including relevant experience, location, business needs and market demand. This role may offer the following benefits: medical, vision, and dental insurance; life insurance; disability insurance; a 401(k) matching program; among other employee benefits. This role may also be eligible for short-term or long-term incentive compensation, including, but not limited to, cash bonuses and stock program participation. This role includes paid personal time off and 14 paid company holidays. FanDuel offers paid sick time in accordance with all applicable state and federal laws.***
+
+***It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.***
+
+#LI-Hybrid

@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a platformized system, standardizing workflows and milestone tracking to sustain **45+ annual resilience drills** and drive **$14M+ business impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Led 0→1 execution of an internal Resilience Automation Platform, decomposing requirements and flowing them down to engineering teams to define self-service scheduling that **reduced operational toil 30%** and transitioned delivery to a scalable, compliance-tracked model.
+3. Pioneered Azure's first proactive resilience testing capability, planning and coordinating a rack-level hardware drill program delivered in **4 months** with a **94% recovery rate**, surfacing critical hardware defects and establishing a new model for continuous qualification.
+4. Directed **14 cross-functional recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, aligning engineering, operations, and quality on cost, schedule, and technical performance.
+5. Identified program risks and developed mitigation plans across hardware-prototyping drills, preparing dashboards, KPIs, and status reports that gave internal leadership and external customers clear visibility into program health, milestones, and deliverable timelines.
+6. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to **reduce planning cycle time 39%** and increase drill capacity 21% while maintaining rigorous program documentation and action-item tracking.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows across the A&D-adjacent Azure portfolio, running user demos and training sessions that drove utilization across **14 key teams** and saved **37 engineering hours monthly**, streamlining program execution.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ structured user interviews** with Azure service teams, decomposing and validating critical feature requirements to align engineering delivery against stakeholder needs.
+3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time 83%** and improving accuracy of program records and compliance documentation.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ teams**, coordinating cost, schedule, and technical performance across the program.
+2. Mobilized a program strategy to mitigate operational toil during region launches, conducting discovery with **20+ service teams** to quantify **81 hours of manual effort per region** and building a milestone-driven roadmap to automate critical-path deliverables.
+3. Enabled leadership to target automation gaps and prioritize high-impact support by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, delivering KPIs and performance metrics for internal leadership review.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit hardware pilot transition by defining the legacy OS migration strategy, mapping dependencies across **1,200+ stations**, and identifying risks with mitigation plans to protect program schedule.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across cross-functional engineering and operations teams.
+3. Drove strategic alignment between IT, Operations, and Engineering teams to implement automated **CI/CD pipelines**, accelerating the software deployment cycle **25%** and reducing manual coordination overhead on a fast-iteration hardware program.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM process, improving tracking accuracy and stakeholder responsiveness.
+2. Reduced Customer Acquisition Cost **13%** and boosted conversions **2.7%** by executing a digital-first go-to-market strategy, optimizing the company website and Google business profile to capture higher-intent inbound leads.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to drive more accurate cost estimating and reporting.
+
+## Notes from the rewriter
+- Relabeled roles to Technical Program Manager and mirrored JD vocabulary: requirements flow-down, cost/schedule, risk mitigation, KPIs/dashboards, compliance.
+- Fixed microsoft_ft bullet#1 to ≤290 chars; expanded all roles to max bullet counts for full-page density.
+- Surfaced hardware-prototyping, cross-functional engineering, and qualification experience to match A&D entry-TPM needs.
+

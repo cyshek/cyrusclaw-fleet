@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned **technical relationships** with enterprise AI customers (Databricks, Walmart, SAP, NetApp), leading discovery, solution design, and PoCs that scaled Azure's recovery validation into a platformized program driving **$14M+ in business impact** across 45+ annual drills.
+2. Led 0→1 design of an internal **Resilience Automation Platform**, translating customer infrastructure pain points into product requirements and self-service workflows that **cut operational toil 30%** and unblocked scalable adoption.
+3. Architected Azure's first **proactive resilience testing** capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and earning trust with skeptical partner engineering teams.
+4. Served as **technical bridge lead** on 14 executive-visible recovery executions, including a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, de-risking deals by surfacing blockers and aligning C-level stakeholders.
+5. Shipped an internal **AI agent** (LLM-powered planning copilot) and restructured workflows to **reduce planning cycle time 39%** and grow drill capacity 21%, demonstrating applied GenAI value to engineering and exec audiences alike.
+6. Acted as **voice of the customer** to Product and Engineering, channeling field insights from enterprise AI/data infra teams into roadmap decisions on accuracy, latency, cost, and scale trade-offs.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **enterprise adoption** of AI-driven code generation across 14 Azure service teams via hands-on demos, technical evaluations, and training that **saved 37 engineering hours/month** and converted skeptics into power users.
+2. Shaped the product roadmap for **intent-based YAML generation** by running 11+ technical discovery interviews with Azure engineers, translating ambiguous customer needs into prioritized feature requirements.
+3. Migrated documentation to an **AI-powered semantic search** tool (RAG-style retrieval) with rigorous metadata standards, **cutting lookup time 83%** and improving data pipeline integrity for downstream LLM workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Accelerated regional launches **28% faster** and unlocked **$3M in revenue** by aligning 140+ teams on a unified automation prioritization framework — building technical consensus across a complex internal buying committee.
+2. Scoped automation strategy under ambiguity by running discovery with **20+ service teams**, quantifying 81 hours of manual toil per region launch and designing a roadmap to automate critical paths.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership the data to target high-impact automation investments and prioritize engineering effort.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero downtime** across a 2,000+ unit OS migration pilot by architecting the rollout strategy and mapping dependencies across 1,200+ stations under tight ambiguity.
+2. Ran Agile ceremonies and groomed the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake process and unblocking engineering velocity.
+3. Aligned IT, Operations, and Engineering on automated **CI/CD pipelines**, accelerating the software deployment cycle **25%** and reducing release risk.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Lifted job bookings **26%** by redesigning the CRM-driven scoping and invoicing lifecycle for 200+ monthly proposals, owning the end-to-end customer technical workflow.
+2. Executed a digital-first **GTM strategy** that cut Customer Acquisition Cost **13%** and lifted conversions 2.7% via website and Google profile optimization.
+3. Conducted profitability analysis across **1,000+ project records** to surface margin leaks, equipping leadership with data-backed pricing model improvements.
+
+## Notes from the rewriter
+- Reframed MSFT FT around customer-facing technical ownership, PoCs, and exec communication to mirror Applied AI SA language.
+- Surfaced AI agent / semantic search / RAG work to signal applied LLM credibility for LlamaIndex.
+

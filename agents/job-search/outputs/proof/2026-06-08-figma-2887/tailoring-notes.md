@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Built and ran Azure's company-scale resilience **Voice-of-the-Customer loop**, integrating signals from Support, partner escalations, and drill telemetry into a unified narrative that reached Product and Engineering and drove **$14M+** impact across Databricks, Walmart, SAP, and NetApp.
+2. Owned the full insight loop end-to-end: **surfacing and prioritizing** the biggest customer pain points, aligning Engineering on roadmap prioritization, then tracking remediation and bringing **wins back** to customer-facing partner teams to demonstrate program impact.
+3. Defined the reporting rhythm and mechanisms feeding the program, standardizing launch-insight workflows so customer signals stayed **visible, shareable, and easy to act on** across the org and sustained 45+ annual resilience validations.
+4. Set shared, **data-backed goals** with Product and Engineering partners and monitored progress to keep them on track, pioneering Azure's first proactive rack-level testing capability in 4 months with a **94% recovery rate** and surfacing critical hardware defects.
+5. Strategically implemented **AI workflows** to scale insight generation, building an internal AI agent and restructuring planning processes that cut cycle time by **39%** and increased validation capacity by 21% with limited team capacity.
+6. Communicated customer insights across audiences from frontline partners to **Product leadership** with clarity and a strong POV, directing 14 cross-org executions under executive visibility including a sovereign-cloud isolation test tied to a **$1.5B+** contract.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Translated **customer pain points** into product priorities by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps and influencing the roadmap to include intent-based YAML generation.
+2. Drove **adoption** of AI-driven code-generation workflows through hands-on demos and training, ruthlessly prioritizing the highest-impact teams to reach **14 key teams** and save 37 engineering hours monthly.
+3. Built **scalable, lightweight processes** for insight retrieval by enforcing metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by **83%** across customer-facing teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M** in accelerated revenue and launched regions 28% faster by aligning **140+ teams** on a unified, data-backed prioritization framework and advocating for the highest-impact customer needs.
+2. Mobilized a strategy to eliminate operational toil during launches, running discovery with **20+ service teams** to quantify 81 hours of manual effort per region and building a roadmap to automate the critical paths.
+3. Gave leadership shared, **data-backed visibility** into toil and prioritization by engineering a Power BI dashboard tracking signals across **140+ teams**, enabling fast, actionable decisions on where to invest.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations to de-risk the cross-functional rollout.
+2. Facilitated Agile ceremonies and **ruthlessly prioritized** the backlog across IT, Operations, and Engineering, resolving 40+ high-priority tickets and stabilizing the developer intake process.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%** and improving release reliability.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM process, turning customer signals into operational improvements.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy and optimizing the website and Google business profile.
+3. Improved leadership pricing models by analyzing **1,000+ project records** for profitability, translating the data into a compelling narrative that identified and sealed **margin leaks**.
+
+## Notes from the rewriter
+- Reframed Microsoft FT around the VOC 'full insight loop' language: surfacing/prioritizing pain points, aligning Eng on roadmap, tracking remediation, and bringing wins back.
+- Mirrored JD vocabulary: reporting rhythm/mechanisms, data-backed goals, unified narrative, AI workflows, communicate to Product leadership.
+- Set all titles to Program Manager variants to match the VOC Program Manager role.
+- Elevated customer-facing, analytics, and storytelling skills to the top of skills_priority to match the JD's emphasis.
+

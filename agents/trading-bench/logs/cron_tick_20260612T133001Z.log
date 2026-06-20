@@ -1,0 +1,16 @@
+=== cron_tick.sh @ 20260612T133001Z ===
+strategies: breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth breakout_xlk__mut_c382b1
+tick rc: 0
+--- tick output ---
+[breakout_xlk] BUY 0.547554377 XLK @ $182.61 | reason: close 183.30 > 20-bar high 183.19
+[sma_crossover_qqq] BUY 0.139770306 QQQ @ $715.39 | reason: SMA10=708.89 > SMA30=705.42
+[breakout_xlk_regime] BUY 0.547650345 XLK @ $182.58 | reason: close 183.30 > 20-bar high 183.19
+[sma_crossover_qqq_regime] BUY 0.13973007 QQQ @ $715.59 | reason: SMA10=708.89 > SMA30=705.42
+[breakout_xlk__mut_c382b1] BUY 5.47975232 XLK @ $182.49 | reason: close 183.30 > 20-bar high 183.19
+=== end ===
+--- post rc: 1 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+Error: Ambiguous Discord recipient "1508503706545557656". For DMs use "user:1508503706545557656" or "<@1508503706545557656>"; for channels use "channel:1508503706545557656".
+=== posted ===

@@ -1,0 +1,257 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/lance/acc4698f-319e-4a8d-a4ea-60e4e5ce7a03",
+  "org": "lance",
+  "job_id": "acc4698f-319e-4a8d-a4ea-60e4e5ce7a03",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-08T23:09:27Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56__systemfield_name"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56__systemfield_email"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_223e145f-b166-4ebf-915f-4495cd4eea00",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_223e145f-b166-4ebf-915f-4495cd4eea00"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_97c03e65-c580-45d5-acc2-696ae2d67290",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_97c03e65-c580-45d5-acc2-696ae2d67290"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56__systemfield_resume"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_a4610758-ba1a-47fc-9fd9-f737ff68113d",
+      "label": "Where are you currently located?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_a4610758-ba1a-47fc-9fd9-f737ff68113d"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_9172d8b6-d424-4c39-ac44-66027ca982bc",
+      "label": "When can you start?",
+      "type": "input_text",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_9172d8b6-d424-4c39-ac44-66027ca982bc"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_c41c4947-5a3e-4980-aa80-29582b01c190",
+      "label": "Are you able to travel throughout the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_c41c4947-5a3e-4980-aa80-29582b01c190"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_d7b102ff-c646-49f0-a14d-cf6ae5168df2",
+      "label": "Are you willing to work 996?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "auto_answered_extreme_hours": true,
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_d7b102ff-c646-49f0-a14d-cf6ae5168df2"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_8ca1d9a9-c64d-447b-ac50-5b8aa4f1e867",
+      "label": "Are you willing to work in the San Francisco office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_8ca1d9a9-c64d-447b-ac50-5b8aa4f1e867"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_239c65b5-ee18-423a-a275-df881e307642",
+      "label": "Are you authorized to work in the country where the job is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_239c65b5-ee18-423a-a275-df881e307642"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_d821adfe-47e4-4420-8105-98528c74a5b9",
+      "label": "Will you now or in the future require sponsorship for employment visa status in this country?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_d821adfe-47e4-4420-8105-98528c74a5b9"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_3d5d8023-7823-4344-b193-19823a08f746",
+      "label": "At Lance, our mission is to automate hotel operations. We believe this starts with our own work. Describe a manual, broken, or low-value process from a previous role that you found frustrating. Then, briefly outline the system or tool you would build to eliminate it entirely.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_3d5d8023-7823-4344-b193-19823a08f746"
+    },
+    {
+      "id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_921fec5a-4413-402c-93b8-e5db5237dda9",
+      "label": "I hereby certify that I have not knowingly withheld any information that might adversely affect my chances for employment and that the answers given by me are true and correct to the best of my knowledge. I further certify that I, the undersigned applicant, have personally completed this application. I understand that, to the extent permitted by applicable law, any omission or misstatement of material fact on this application or on any document used to secure employment shall be grounds for rejection of this application or for immediate discharge if I am employed, regardless of the time elapsed before discovery. Lance is not seeking, nor should you disclose, any information that may be subject to confidentiality obligations to third parties, including but not limited to, your current employer.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I confirm I have read the above.",
+      "source": "ashby_single_option_ack (auto-checked the only option)",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": [
+        {
+          "label": "I confirm I have read the above.",
+          "value": "I confirm I have read the above."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "1a8b6a67-3c61-469f-ac3f-6c21577a2e56_921fec5a-4413-402c-93b8-e5db5237dda9"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

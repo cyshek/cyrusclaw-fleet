@@ -1,0 +1,652 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/intercom/jobs/7926025",
+  "org": "intercom",
+  "job_id": "7926025",
+  "job_title": "Partner Solutions Engineer (NAMER & LATAM)",
+  "job_location": "San Francisco, California",
+  "fetched_at": "2026-06-02T08:38:32Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/intercom/jobs/7926025?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 28,
+    "filled": 23,
+    "filled_needs_review": 0,
+    "declined": 4,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_66870556",
+      "label": "Are you authorised to work in the country in which this role is located? \n(Fin sponsors immigration for some roles so we encourage you to still apply if you require sponsorship.)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am authorised to work in the country which this role is located (citizen, permanent resident etc)",
+      "source": "work_authorization.authorized_to_work_us (matched 'authorized to work for any employer')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "I am authorised to work in the country which this role is located (citizen, permanent resident etc)",
+          "value": 716838173
+        },
+        {
+          "label": "My current work authorisation requires sponsorship or renewal now or in the future.",
+          "value": 716838174
+        },
+        {
+          "label": "My authorisation to work in this country is unknown",
+          "value": 716838175
+        }
+      ]
+    },
+    {
+      "id": "question_66870557",
+      "label": "Current Location",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "US - Washington",
+      "source": "address.state (matched US-state option 'US - Washington')",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Australia",
+          "value": 716838176
+        },
+        {
+          "label": "Brazil",
+          "value": 716838177
+        },
+        {
+          "label": "England",
+          "value": 716838178
+        },
+        {
+          "label": "Finland",
+          "value": 716838179
+        },
+        {
+          "label": "France",
+          "value": 716838180
+        },
+        {
+          "label": "Germany",
+          "value": 716838181
+        },
+        {
+          "label": "Greece",
+          "value": 716838182
+        },
+        {
+          "label": "India",
+          "value": 716838183
+        },
+        {
+          "label": "Ireland",
+          "value": 716838184
+        },
+        {
+          "label": "Italy",
+          "value": 716838185
+        },
+        {
+          "label": "Netherlands",
+          "value": 716838186
+        },
+        {
+          "label": "New Zealand",
+          "value": 716838187
+        },
+        {
+          "label": "Portugal",
+          "value": 716838188
+        },
+        {
+          "label": "Russia",
+          "value": 716838189
+        },
+        {
+          "label": "Spain",
+          "value": 716838190
+        },
+        {
+          "label": "Sweden",
+          "value": 716838191
+        },
+        {
+          "label": "Turkey",
+          "value": 716838192
+        },
+        {
+          "label": "EMEA - Other",
+          "value": 716838193
+        },
+        {
+          "label": "APAC - Other",
+          "value": 716838194
+        },
+        {
+          "label": "US - California (San Francisco Metro)",
+          "value": 716838195
+        },
+        {
+          "label": "US - California (San Francisco Non-Metro)",
+          "value": 716838196
+        },
+        {
+          "label": "US - Colorado",
+          "value": 716838197
+        },
+        {
+          "label": "US - Florida",
+          "value": 716838198
+        },
+        {
+          "label": "US - Illinois (Chicago Metro)",
+          "value": 716838199
+        },
+        {
+          "label": "US - Illinois (Chicago Non-Metro)",
+          "value": 716838200
+        },
+        {
+          "label": "US - Massachusetts",
+          "value": 716838201
+        },
+        {
+          "label": "US - New York",
+          "value": 716838202
+        },
+        {
+          "label": "US - North Carolina",
+          "value": 716838203
+        },
+        {
+          "label": "US - Texas",
+          "value": 716838204
+        },
+        {
+          "label": "US - Washington",
+          "value": 716838205
+        },
+        {
+          "label": "US - Other",
+          "value": 716838206
+        }
+      ]
+    },
+    {
+      "id": "question_66870558",
+      "label": "Are you willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66870559",
+      "label": "Current or most recent company?",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_66870560",
+      "label": "Have you previously worked for Fin (formerly Intercom)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66870561",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_66870562",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_66870563",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Job Board",
+      "source": "how_heard fuzzy 'job board' -> 'Job Board'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Job Board",
+          "value": 716838207
+        },
+        {
+          "label": "Social Media",
+          "value": 716838208
+        },
+        {
+          "label": "Intercom Website",
+          "value": 716838209
+        },
+        {
+          "label": "Intercom Event",
+          "value": 716838210
+        },
+        {
+          "label": "Industry Event",
+          "value": 716838211
+        },
+        {
+          "label": "Employee Referral",
+          "value": 716838212
+        },
+        {
+          "label": "Recruiter Outreach",
+          "value": 716838213
+        },
+        {
+          "label": "University / Campus",
+          "value": 716838214
+        },
+        {
+          "label": "Podcasts / Media",
+          "value": 716838215
+        },
+        {
+          "label": "Online Community",
+          "value": 716838216
+        },
+        {
+          "label": "Other",
+          "value": 716838217
+        }
+      ]
+    },
+    {
+      "id": "question_66870564",
+      "label": "What excites you most about this opportunity?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Fin because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Fin is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Fin while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Fin aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Fin')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_66870565",
+      "label": "Which Fin value resonates most with you and why? (Our values can be found on our Careers Page)\n",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Which Fin value resonates most with you and why? (Our values can be found on our Careers Page)\\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_66870566",
+      "label": "We work under a hybrid in-office model. Are you willing to work from our office location 3 days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66870567",
+      "label": "Please email me about future job openings\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66870568[]",
+      "label": "Point of Data Transfer ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Acknowledge",
+      "source": "acknowledge_yes (matched 'Acknowledge')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Acknowledge",
+          "value": 716838218
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_66870565",
+      "label": "Which Fin value resonates most with you and why? (Our values can be found on our Careers Page)\n",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Which Fin value resonates most with you and why? (Our values can be found on our Careers Page)\\n'"
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

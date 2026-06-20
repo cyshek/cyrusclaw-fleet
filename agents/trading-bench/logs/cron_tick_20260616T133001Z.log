@@ -1,0 +1,17 @@
+=== reconcile @ 20260616T133001Z ===
+rc: 0
+Before: {'filled': 46}
+Nothing to do — no non-terminal rows.
+=== cron_tick.sh @ 20260616T133001Z ===
+strategies: breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth breakout_xlk__mut_c382b1 leveraged_long_trend_paper rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo
+tick rc: 0
+--- tick output ---
+[leveraged_long_trend_paper] BUY 1.190867514 TQQQ @ $83.96 | reason: voltarget w=0.31 rv=81.1% gate=ON(QQQ 743.81 vs SMA200 626.21) tgt=$308 cur=$101: buy $207 toward target
+[tqqq_cot_combo] BUY 1.191378324 TQQQ @ $83.93 | reason: underweight +4sh ($336) | [QQQ] close=743.81 SMA200=626.21 gate=ON | rv=25.2% tgt=40% w=1.000 | COT_scale=0.5 | w_final=0.500 tgt_qty=5 cur_qty=1 thresh=1
+=== end ===
+--- post rc: 1 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+Error: Ambiguous Discord recipient "1508503706545557656". For DMs use "user:1508503706545557656" or "<@1508503706545557656>"; for channels use "channel:1508503706545557656".
+=== posted ===

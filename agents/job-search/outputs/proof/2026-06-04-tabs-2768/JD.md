@@ -1,0 +1,85 @@
+# Sales Engineer
+
+**Company:** Tabs
+**Location:** New York City, NY
+**Apply:** https://jobs.ashbyhq.com/tabs/3b07948f-82fe-44fe-ad6d-cb17f68d4691
+**Ashby Org:** tabs
+**Ashby Job ID:** 3b07948f-82fe-44fe-ad6d-cb17f68d4691
+
+---
+
+**Tabs **is the leading AI-native revenue platform for modern finance and accounting teams. Tabs agents automate the entire contract-to-cash lifecycle, including billing, collections, revenue recognition, and reporting, to help teams eliminate manual work and accelerate cash flow.
+
+High-growth companies like **Cursor** and **Statsig** rely on Tabs to generate invoices directly from contracts, reconcile payments in real time, and automate ASC 606 compliance.
+
+Founded in 2023, Tabs has raised over $91 million from [**Lightspeed Venture Partners**](https://lsvp.com), [**General Catalyst**](https://www.generalcatalyst.com), and [**Primary**](https://www.primary.vc). The team is headquartered in New York and brings deep expertise in finance and AI.
+
+**About the Role **
+
+Tabs is hiring a Sales Engineer based in New York to play an integral role in our pre-sales process helping craft solutions and be a thought partner to both our Go-to-Market organization and our clients. This is a perfect role for someone who is looking to join an exceptional team at the earliest stages and have a massive hand in our growth acceleration.
+
+**What You’ll Do**
+
+- Partner closely with finance and accounting leaders to demonstrate the capabilities of the Tabs platform, focusing on solving business problems and articulating end-to-end workflows
+
+- Manage pre-sales projects, ensuring the feasibility of proposed solutions and conducting proof-of-concept development in close collaboration with the Implementation team at Tabs to ensure tight alignment with product capabilities
+
+- Support the Go-to-Market team by offering a consultative and solutions-oriented approach in meetings with prospects, and translating those solutions into workflow maps, implementation proposals and other materials and assets
+
+- Provide guidance on integrating Tabs into clients' broader tech stack, which often involves navigating complex systems like ERP, CRM, and BI tools
+
+- Maintain strong relationships with key decision-makers, ensuring a consultative approach to technical and business problem-solving
+
+**Who You Are**
+
+- **Customer EQ** – Genuinely interested in learning about prospects, their businesses, and their challenges. Ability to connect with users/buyers and take a consultative approach to solving customers’ needs.
+
+- **Curious & Intelligent **– Ability to turn curiosity into knowledge; to synthesize and distill lots of disparate information; to master a new and complex subject or product.
+
+- **Autonomy** – Can successfully operate autonomously, and is experienced with capturing and communicating representative metrics and results.
+
+- **Commercial Savvy** – Strong understanding of commercial dynamics and stakeholder management.
+
+- **Exceptional Communicator** – Excellent presentation skills, evidenced by an ability to explain technical solutions to non-technical audiences both verbally and visually.
+
+**Requirements**
+
+- 4+ in a customer-facing technical role such as Sales Engineer, Solutions Consultant, Solutions Architect, or Pre-Sales at a B2B SaaS or fintech company
+
+- Track record of owning the technical side of complex, multi-stakeholder deals from discovery through close
+
+- Hands-on experience with ERP, CRM, or billing platform integrations in a pre-sales context
+
+- Strong demo and presentation skills across both technical and executive audiences
+
+- Familiarity with finance or accounting workflows is a plus, not a requirement, but you should be able to get up to speed fast and earn credibility with Controllers and CFOs
+
+- Experience at an early-stage company or in a role where you were building process alongside executing is a strong plus
+
+**Additional Information**
+
+This role is based in New York City 5 days a week at our Soho office.
+
+## **Perks and Benefits (Full-time Employees)**
+
+- Competitive compensation and equity
+
+- Unlimited PTO
+
+- Up to 100% employer covered monthly healthcare premium (medical, dental, vision)
+
+- Lunch provided via Sharebite, plus dinner for any later in office days.
+
+- Parental leave up to 12 weeks
+
+- Tax free commuter and parking benefits
+
+- Voluntary insurances (Life, Hospital, Critical Illness, Accident)
+
+- Employee Assistance Program (Rightway)
+
+- Free One Medical Membership
+
+- 401k
+
+Tabs is an equal opportunity employer. We welcome teammates of all identities and do not discriminate on the basis of race, ethnicity, religion, gender identity, sexual orientation, age, disability, veteran status, or any other protected characteristic. We’re committed to creating an environment where everyone can grow, contribute, and feel comfortable being themselves.

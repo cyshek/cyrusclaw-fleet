@@ -1,0 +1,266 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sierra/0c66e8ed-1c18-4b64-ad27-a522a866b6e1",
+  "org": "sierra",
+  "job_id": "0c66e8ed-1c18-4b64-ad27-a522a866b6e1",
+  "job_title": "Product Manager, Voice",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-05-31T02:55:23Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f__systemfield_name"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f__systemfield_email"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_224ed93f-d97f-4310-a02b-fd04032dfde8",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_224ed93f-d97f-4310-a02b-fd04032dfde8"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_14d2738c-e433-43d4-bc81-99fca34616d1",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_14d2738c-e433-43d4-bc81-99fca34616d1"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f__systemfield_resume"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_50ba8cd7-8f8c-4ffc-ae03-4a7a30da89cd",
+      "label": "What's your favorite  junk food?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"What's your favorite\\xa0 junk food?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_50ba8cd7-8f8c-4ffc-ae03-4a7a30da89cd"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_911f4add-622c-4355-861c-576bae4156df",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_911f4add-622c-4355-861c-576bae4156df"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_eb35699a-15cd-42e0-bb62-e7e491ceed5f",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_eb35699a-15cd-42e0-bb62-e7e491ceed5f"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_91cfb419-6f05-493f-8c2a-e89116ee43ef",
+      "label": "Are you able to work from San Francisco, CA?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, and I currently live in the SF Bay Area.",
+      "source": "preferences.willing_to_travel_pct (>=25%) | smart-matched to option 'Yes, and I currently live in the SF Bay Area.'",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes, and I currently live in the SF Bay Area.",
+          "value": "Yes, and I currently live in the SF Bay Area."
+        },
+        {
+          "label": "Yes, and while I do not currently live in the SF Bay Area, I am open to relocation.",
+          "value": "Yes, and while I do not currently live in the SF Bay Area, I am open to relocation."
+        },
+        {
+          "label": "No or Other. Please add more details in the \"Anything else\" section below.",
+          "value": "No or Other. Please add more details in the \"Anything else\" section below."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_91cfb419-6f05-493f-8c2a-e89116ee43ef"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_7bdaab62-aa60-45f7-953d-a7a42495eb63",
+      "label": "We use Metaview, an AI notetaking tool, to streamline interviews by recoding and summarizing discussions, enabling interviewers to be fully present without manual notetaking. With your approval, it silently records notes during interviews. Can Metaview transcribe all your interviews?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_ai_notetaking_consent (auto-Yes per AI-disclosure policy: ok with recording for interview process)",
+      "status": "filled",
+      "matched_rule": "ai_notetaking_consent",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_7bdaab62-aa60-45f7-953d-a7a42495eb63"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_6e2d7cef-fb11-44c4-8c9a-a4c97ffb636f",
+      "label": "How did you hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Blog or news article",
+          "value": "Blog or news article"
+        },
+        {
+          "label": "Company website",
+          "value": "Company website"
+        },
+        {
+          "label": "Current employee",
+          "value": "Current employee"
+        },
+        {
+          "label": "Event",
+          "value": "Event"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        },
+        {
+          "label": "Podcast",
+          "value": "Podcast"
+        },
+        {
+          "label": "Search engine",
+          "value": "Search engine"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_6e2d7cef-fb11-44c4-8c9a-a4c97ffb636f"
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_f4f2f771-4cf4-4d6c-b7c2-80676907acda",
+      "label": "Anything else? (Optional)",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Anything else? (Optional)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_f4f2f771-4cf4-4d6c-b7c2-80676907acda"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_50ba8cd7-8f8c-4ffc-ae03-4a7a30da89cd",
+      "label": "What's your favorite  junk food?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"What's your favorite\\xa0 junk food?\""
+    },
+    {
+      "id": "891c15e2-450b-42e0-a14a-7937b7e66d3f_f4f2f771-4cf4-4d6c-b7c2-80676907acda",
+      "label": "Anything else? (Optional)",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Anything else? (Optional)'"
+    }
+  ],
+  "blockers": []
+}

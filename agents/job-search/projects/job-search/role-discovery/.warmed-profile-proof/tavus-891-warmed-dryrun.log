@@ -1,0 +1,334 @@
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+[runner] playwright-stealth applied (KEEP_UA: process UA preserved)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: sleep
+[runner] step 7: browser.act.evaluate
+[runner] step 8: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 3 field(s) ['f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name', 'f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email', 'f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] step 9: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 solved via twocaptcha
+[runner] captcha v3 solved in 22.8s, token len=2254
+[runner] step 10: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] multiselect real-click fail 419d5d855b93: ElementHandle.click: Timeout 3000ms exceeded.
+Call log:
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    5 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+
+[runner] multiselect no label match 419d5d855b93 want='Some familiarity (can read and modify code)' tgt='Some familiarity (can read and modify code)' opts=['Which of the following best describes your coding ability?', 'No Coding Experience', 'Some familiarity (can read and modify code)', 'Comfortable coding independently', 'Expert (have built or maintained production-level systems)']
+[runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=3 ['731ea2__systemfield_name', '31ea2__systemfield_email', '7-4a6f-91a5-41999a1ac313'] missing=0
+[runner] reassert-text pass 2: repaired=3 ['731ea2__systemfield_name', '31ea2__systemfield_email', '7-4a6f-91a5-41999a1ac313'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 3 field(s) ['731ea2__systemfield_name', '31ea2__systemfield_email', '7-4a6f-91a5-41999a1ac313']
+[runner] SUBMIT-RESP status=200 body={"errors":[{"message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.","extensions":{"ashbyErrorId":"0d545441-8a97-4492-908b-9fd897b99773","ashbyErrorType":"RECAPTCHA_SCORE_BELOW_THRESHOLD","message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your app
+[runner] reassert-text pass 1: repaired=0 [] missing=3
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=['Are you currently based in the US? We are only considering candidates that are currently eligible to work in the US for this postion.']
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+{
+  "slug": "tavus-a1a0a3e5-281c-4247-9240-75398c7814d7",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/tavus/a1a0a3e5-281c-4247-9240-75398c7814d7/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313",
+            "dom_id": "a9c03335-8267-4a6f-91a5-41999a1ac313",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313",
+            "dom_id": "a9c03335-8267-4a6f-91a5-41999a1ac313",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 3,
+      "fields": [
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name",
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email",
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_eb1a8796-8be9-426f-8423-2ec0f89ec53e",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 808,
+            "cy": 546
+          },
+          {
+            "name": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_1233eeed-ccf7-4497-b3ac-7151544d902c",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 808,
+            "cy": 546
+          },
+          {
+            "name": "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a652cdc4-2d9e-4901-875a-72685c426529",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 808,
+            "cy": 557
+          },
+          {
+            "name": "f5685e1d-d907-4b16-a712-e724b82f629b_448bc363-d551-410b-ad89-419d5d855b93",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "f5685e1d-d907-4b16-a712-e724b82f629b_448bc363-d551-410b-ad89-419d5d855b93-labeled-radio-1",
+            "label_text": "Some familiarity (can read and modify code)",
+            "cx": 973,
+            "cy": 687
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "sleep"
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 4,
+        "text_filled": 3,
+        "radios_groups": 1,
+        "radios_checked": 1,
+        "checkboxes": 3,
+        "checkboxes_checked": 3,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 3,
+        "yesno_groups": 3
+      }
+    },
+    {
+      "i": 8,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-tavus_a1a0a3e5_v2.pdf"
+    },
+    {
+      "i": 8,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 8,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name",
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email",
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 9,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 22768,
+      "token_len": 2254,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 10,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-select-fields",
+      "results": [
+        {
+          "name": "1-410b-ad89-419d5d855b93",
+          "want": "Some familiarity (can read and modify code)",
+          "target": "Some familiarity (can read and modify code)",
+          "ok": true,
+          "shape": "radio",
+          "already": true,
+          "before": "some familiarity (can read and modify code)",
+          "after": "some familiarity (can read and modify code)",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name",
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email",
+        "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [
+          {
+            "name": "9-426f-8423-2ec0f89ec53e",
+            "target": "Are you currently based in the US? We are only considering candidates that are currently eligible to work in the US for this postion.",
+            "clicked": true,
+            "committed": {
+              "ok": true,
+              "checked": true,
+              "picked": "Are you currently based in the US? We are only considering candidates that are currently eligible to work in the US for this postion."
+            }
+          }
+        ],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_name",
+          "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2__systemfield_email",
+          "f93b73ef-8b48-4ad1-aff9-d9ff41731ea2_a9c03335-8267-4a6f-91a5-41999a1ac313"
+        ],
+        "errors": []
+      },
+      "stable": true
+    },
+    {
+      "i": 10,
+      "tool": "final_submit-SKIPPED"
+    }
+  ],
+  "ok": false,
+  "error": "spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)",
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Customer Engineer LocationSan FranciscoEmployment TypeFull timeLocation TypeOn-siteDepartmentCustomer SuccessOverviewApplicationWe couldn't submit your applicationYour application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.Learn morePowered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"44a3bf7f-cb32-4fbe-9771-ff93512ea8dd\",\"name\":\"Tavus\",\"publicWebsite\":\"https://www.tavus.io/\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"tavus\",\"activeFeatureFlags\":[\"ValidateFormFieldLogging\",\"CustomFieldHasUrlType\",\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"ArchiveReasonJobPostingList\",\"EnhancedMobileCandidateFloatingButtons\",\"NewSchedulingActivityRescheduleActions\",\"CoreOrganizationIssueNotifyOnNewCauseOnly\",\"SelfServiceAiCreditPurchasing\",\"SelfServiceTextingCreditPurchasing\",\"InterviewLocationTypeReportingField\",\"MobileJobPipelinePage\",\"UseRTEOverlaysManager\",\"RejectBase64EncodedResumesFrontEnd\",\"ShowCountsOnJobBoardFilterOptions\",\"CandidateSocialLinksWriteToTable\",\"OverdueFollowupOptimizations\",\"RejectBase64EncodedResumesThrowErrorFrontEnd\",\"RejectDeepPaginationOnIn",
+  "classify": "spam-flag"
+}

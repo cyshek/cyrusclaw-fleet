@@ -1,0 +1,125 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/cape/602bd208-8d7f-4194-b592-e414962aff0a",
+  "org": "cape",
+  "job_id": "602bd208-8d7f-4194-b592-e414962aff0a",
+  "job_title": "Solutions Architect, Air Force",
+  "job_location": "Washington, DC",
+  "fetched_at": "2026-06-04T09:17:21Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 5,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "bf1dda5a-307b-4780-a839-bb0dfb576459__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bf1dda5a-307b-4780-a839-bb0dfb576459__systemfield_name"
+    },
+    {
+      "id": "bf1dda5a-307b-4780-a839-bb0dfb576459__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "bf1dda5a-307b-4780-a839-bb0dfb576459__systemfield_email"
+    },
+    {
+      "id": "bf1dda5a-307b-4780-a839-bb0dfb576459__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "bf1dda5a-307b-4780-a839-bb0dfb576459__systemfield_resume"
+    },
+    {
+      "id": "bf1dda5a-307b-4780-a839-bb0dfb576459_ba4c426b-7adc-4a4b-9c95-5799850bee6e",
+      "label": "If you have a LinkedIn profile, please add it here.",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bf1dda5a-307b-4780-a839-bb0dfb576459_ba4c426b-7adc-4a4b-9c95-5799850bee6e"
+    },
+    {
+      "id": "bf1dda5a-307b-4780-a839-bb0dfb576459_b7da9643-d5f3-421a-aaef-6b01d0051729",
+      "label": "Do you have unrestricted work authorization for the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I have unrestricted work authorization (I am a US citizen, greencard holder, or a citizen of Mexico or Canada)",
+      "source": "work_authorization.authorized_to_work_us (matched Yes/no-restriction variant)",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes, I have unrestricted work authorization (I am a US citizen, greencard holder, or a citizen of Mexico or Canada)",
+          "value": "Yes, I have unrestricted work authorization (I am a US citizen, greencard holder, or a citizen of Mexico or Canada)"
+        },
+        {
+          "label": "No, I do not have unrestricted work authorization (I require sponsorship to work)",
+          "value": "No, I do not have unrestricted work authorization (I require sponsorship to work)"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "bf1dda5a-307b-4780-a839-bb0dfb576459_b7da9643-d5f3-421a-aaef-6b01d0051729"
+    },
+    {
+      "id": "bf1dda5a-307b-4780-a839-bb0dfb576459_50420923-57e8-4e80-9724-a3bd51c9516c",
+      "label": "Cape is a hybrid work environment with 3 days a week in office. We have offices in NYC and DC",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%) | NOTE: 'Yes' not literally in options ['I can work 3 days a week in the NYC office', 'I can work 3 days a week in the DC office ', 'I cannot work 3 days a week in an office']",
+      "status": "filled_needs_review",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "I can work 3 days a week in the NYC office",
+          "value": "I can work 3 days a week in the NYC office"
+        },
+        {
+          "label": "I can work 3 days a week in the DC office ",
+          "value": "I can work 3 days a week in the DC office "
+        },
+        {
+          "label": "I cannot work 3 days a week in an office",
+          "value": "I cannot work 3 days a week in an office"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "bf1dda5a-307b-4780-a839-bb0dfb576459_50420923-57e8-4e80-9724-a3bd51c9516c",
+      "match_attempted": true
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

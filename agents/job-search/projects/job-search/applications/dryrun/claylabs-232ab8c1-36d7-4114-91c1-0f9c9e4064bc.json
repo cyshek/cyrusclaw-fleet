@@ -1,0 +1,176 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/claylabs/232ab8c1-36d7-4114-91c1-0f9c9e4064bc",
+  "org": "claylabs",
+  "job_id": "232ab8c1-36d7-4114-91c1-0f9c9e4064bc",
+  "job_title": "Solutions Engineer",
+  "job_location": "New York",
+  "fetched_at": "2026-06-02T06:39:34Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e__systemfield_name"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e__systemfield_email"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e__systemfield_resume"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_d4acf149-e6ce-4689-916d-484e4a448e11",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_d4acf149-e6ce-4689-916d-484e4a448e11"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_0b552c39-2cb3-4093-b9b8-5af733c92f79",
+      "label": "Other Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_0b552c39-2cb3-4093-b9b8-5af733c92f79"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_44e506ac-a47f-476a-8390-4ee2ba3b680b",
+      "label": "Are you currently legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_44e506ac-a47f-476a-8390-4ee2ba3b680b"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_32df82d6-15c2-4440-98f3-4af3403b8d0f",
+      "label": "This role is based in both NYC & SF. Do you live in one of these hubs / would you be willing to relocate, or would you need to be fully remote?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I live in / am willing to relocate to NYC",
+      "source": "preferences.willing_to_relocate (matched 'willing to relocate' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "I live in / am willing to relocate to NYC",
+          "value": "I live in / am willing to relocate to NYC"
+        },
+        {
+          "label": "I live in / am willing to relocate to SF",
+          "value": "I live in / am willing to relocate to SF"
+        },
+        {
+          "label": "I'd need to be fully remote",
+          "value": "I'd need to be fully remote"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_32df82d6-15c2-4440-98f3-4af3403b8d0f"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_bd33c802-7b75-46ff-b556-546bad00c986",
+      "label": "Have you used Clay or similar tools before?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_bd33c802-7b75-46ff-b556-546bad00c986"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_c484989e-9537-45dd-9376-c1958a5bafce",
+      "label": "What's the best product demo you've seen lately?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_c484989e-9537-45dd-9376-c1958a5bafce"
+    },
+    {
+      "id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_cf6539c1-2b6f-465f-8f2d-d4d42d5bf630",
+      "label": "Additional Information ",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "aafa09d4-bbd0-48f4-ba68-0f28cf3c289e_cf6539c1-2b6f-465f-8f2d-d4d42d5bf630"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

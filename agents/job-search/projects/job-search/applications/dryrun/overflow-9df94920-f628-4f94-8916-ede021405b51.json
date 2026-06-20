@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/overflow/9df94920-f628-4f94-8916-ede021405b51",
+  "org": "overflow",
+  "job_id": "9df94920-f628-4f94-8916-ede021405b51",
+  "job_title": "Solutions Engineer",
+  "job_location": "Los Gatos, California",
+  "fetched_at": "2026-06-02T07:50:46Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299__systemfield_name"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299__systemfield_email"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299_f0207e66-f008-461a-bbe8-351145b3b4af",
+      "label": "At this time, we are unable to provide visa sponsorship. Will you now or in the future require sponsorship to work in the United States? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299_f0207e66-f008-461a-bbe8-351145b3b4af"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299_f7d4ecd5-3eaa-4715-82bd-09b907dc803e",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299_f7d4ecd5-3eaa-4715-82bd-09b907dc803e"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299__systemfield_resume"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299_09fdc379-ebe6-488b-ad9b-d642a7d798c1",
+      "label": "What are your compensation expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299_09fdc379-ebe6-488b-ad9b-d642a7d798c1"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299_b6559e3a-859a-4acb-ab31-af664bddd155",
+      "label": "Describe a complex product or technical concept you had to explain to a non-technical customer. How did you approach it?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299_b6559e3a-859a-4acb-ab31-af664bddd155"
+    },
+    {
+      "id": "d70a2062-c302-4d82-9fff-1fba094d2299_4c72e125-974d-4670-ad1e-f783a4bf5fbd",
+      "label": "This role has a strong preference for candidates who are able to regularly work from our Los Gatos, CA office for in-person collaboration. Are you currently located in the Bay Area or open to working from Los Gatos on a recurring basis?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (matched relocation target 'bay area' in label)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "d70a2062-c302-4d82-9fff-1fba094d2299_4c72e125-974d-4670-ad1e-f783a4bf5fbd"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

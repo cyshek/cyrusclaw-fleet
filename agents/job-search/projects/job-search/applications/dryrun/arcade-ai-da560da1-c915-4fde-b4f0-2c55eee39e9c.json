@@ -1,0 +1,322 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/arcade-ai/da560da1-c915-4fde-b4f0-2c55eee39e9c",
+  "org": "arcade-ai",
+  "job_id": "da560da1-c915-4fde-b4f0-2c55eee39e9c",
+  "job_title": "Product Manager, AI",
+  "job_location": "Presidio, CA",
+  "fetched_at": "2026-06-02T07:29:29Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 19,
+    "filled": 15,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 3,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_name"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_email"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_resume"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_43a5d281-217d-49ae-b499-ffa8668d9d5c",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_43a5d281-217d-49ae-b499-ffa8668d9d5c"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb__systemfield_location"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_a98619f8-24e2-4583-8324-7d4ca33f16ac",
+      "label": "Current company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_a98619f8-24e2-4583-8324-7d4ca33f16ac"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_a28dab07-e229-4022-b58f-42b9b214137b",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_a28dab07-e229-4022-b58f-42b9b214137b"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_d7b783e1-0e17-47e2-a7e4-9f39dc439e71",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Social Media (e.g. LinkedIn, Twitter)",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Greylock Techfair",
+          "value": "Greylock Techfair"
+        },
+        {
+          "label": "Social Media (e.g. LinkedIn, Twitter)",
+          "value": "Social Media (e.g. LinkedIn, Twitter)"
+        },
+        {
+          "label": "Current employee",
+          "value": "Current employee"
+        },
+        {
+          "label": "School",
+          "value": "School"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_d7b783e1-0e17-47e2-a7e4-9f39dc439e71"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_0d27cf94-8e29-4035-86b1-3715aac04002",
+      "label": "Employee referral, if applicable",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Employee referral, if applicable'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_0d27cf94-8e29-4035-86b1-3715aac04002"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_6d82b7b0-a0e7-4556-afc8-c1656ba55030",
+      "label": "School / University",
+      "type": "input_text",
+      "required": true,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_6d82b7b0-a0e7-4556-afc8-c1656ba55030"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_a14d153c-8b61-41a0-b7d3-4108c9cd88a5",
+      "label": "Graduation Date",
+      "type": "input_text",
+      "required": true,
+      "value": "2024",
+      "source": "education.graduation_year",
+      "status": "filled",
+      "matched_rule": "graduation_year",
+      "options": null,
+      "_ashby_type": "Date",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_a14d153c-8b61-41a0-b7d3-4108c9cd88a5"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_e3fb0d83-7d10-4584-ba00-41ec5ef7e348",
+      "label": "Earliest Start Date",
+      "type": "input_text",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "Date",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_e3fb0d83-7d10-4584-ba00-41ec5ef7e348"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_4f80bb08-638b-4d2c-a43f-acf63720ce2c",
+      "label": "How do you meet the Arcade criteria? Briefly share how your accomplishments and experience align with what we're looking for. ",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_4f80bb08-638b-4d2c-a43f-acf63720ce2c"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_87e5d4c6-28bd-4b09-812c-0620c128b75a",
+      "label": "We want to understand your superpowers. What are moments from your life that demonstrate your outlier characteristics, whether as a builder, leader, academic, artist, athlete, or something else entirely? There’s no right answer, we just want to see what makes you exceptional (max 100 words).",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_87e5d4c6-28bd-4b09-812c-0620c128b75a"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_36fa81ee-b8d1-4aa3-81ff-de63bc8c9ce3",
+      "label": "What's the hardest thing you’ve overcome? How long did you have to struggle? What did you learn about yourself? This could be academic, professional or personal (max 100 words).",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_36fa81ee-b8d1-4aa3-81ff-de63bc8c9ce3"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_76c8077d-5a90-4134-9d2e-7a73f3f4edde",
+      "label": "Tell us about a company, website, or product that has great taste. Why is that so? (max 100 words)",
+      "type": "textarea",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.website_required_fallback (required -> LinkedIn)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_76c8077d-5a90-4134-9d2e-7a73f3f4edde"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_ec43758a-f08e-49f6-84a9-91fcf057d2c9",
+      "label": "Are you legally authorized to work in the United States on a full-time basis?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_ec43758a-f08e-49f6-84a9-91fcf057d2c9"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_be20ae55-1238-4274-b78e-a59c63eddade",
+      "label": "Will you now or in the future require sponsorship for employment visa status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_be20ae55-1238-4274-b78e-a59c63eddade"
+    },
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_7afa6b2b-fd95-41e7-803d-76b66920661d",
+      "label": "Are you able to work in person at our San Francisco office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e3378230-c891-4508-81fc-b10a49dee9cb_7afa6b2b-fd95-41e7-803d-76b66920661d"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "e3378230-c891-4508-81fc-b10a49dee9cb_0d27cf94-8e29-4035-86b1-3715aac04002",
+      "label": "Employee referral, if applicable",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Employee referral, if applicable'"
+    }
+  ],
+  "blockers": []
+}

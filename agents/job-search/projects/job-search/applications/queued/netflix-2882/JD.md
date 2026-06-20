@@ -1,0 +1,116 @@
+# Support Solutions Engineer (L5), Graph Search
+Location: USA - Remote
+
+At Netflix, our mission is to entertain the world. Together, we are writing the next episode - pushing the boundaries of storytelling, global fandom and making the unimaginable a reality. We are a dream team obsessed with the uncomfortable excitement of discovering what happens when you merge creativity, intuition and cutting-edge technology. Come be a part of what’s next.
+
+About the Engineering Support Organization
+
+The aim of the Engineering Support Organization is to 
+
+enable Infrastructure Engineering to effectively and sustainably scale the support they provide to their customers. 
+
+The team  is the frontline resource for the engineering support needs of our customers (i.e., our workforce) - handling, troubleshooting, and resolving customer requests and issues. In addition, the team will 
+
+focus on ways of working, customer advocacy, support tooling, platform product offerings, documentation, and developer education. 
+
+Our Mission 
+
+Deliver an excellent support experience to Netflix’s developer community. To advocate for our customers, follow through on issues and resolve them in a reasonable time. If blockers prevent immediate resolution, we communicate status and ensure there is visibility into why there is a delay. 
+
+Provide insights, feedback and champion customer sentiment about the tools we support to our partners across Infrastructure Engineering. Partner with Product Management, Developer Education and Engineering to track and maintain visibility into ongoing issues and communicate customer needs to ensure improving in these areas is prioritized.
+
+Drive collaboration efforts to reduce product friction and increase usability of the 
+
+Graph Search platform
+
+, so that engineering teams across Netflix can build, deploy, and deliver high-quality solutions for the Developer Community.
+
+The Role 
+
+We are looking for a Support Solutions Engineer with a passion for 
+
+search technologies, developer experience, and operational excellence
+
+. You will be responsible for monitoring and handling our customers’ requests, troubleshooting, solving issues, automating support needs, developing support documentation and runbooks, improving and maintaining support tools and automation, understanding our product offerings, and continuously looking for ways to improve the engineering support experience.
+
+Our ideal team member has first-hand experience working in customer-facing, engineering support roles, writing and building a comprehensive self-service knowledge base and has knowledge of 
+
+search platforms, data indexing pipelines, and distributed systems.
+
+ You are excellent at understanding and solving complex and ambiguous problems and constantly seek improvement. As an Engineer in this role, we need a candidate who can understand our complex offerings on a technical level, be hands-on in the development of our support automation tooling, and recommend product and operational improvements based on customer interactions.
+
+What you’ll need to be successful:
+
+Proven ability to deliver superior customer support and advocate for customer needs across complex organizations, ideally within a central team.
+
+Highly adaptable, thriving in fast-paced, ambiguous environments, and comfortable managing end-to-end investigations with creative problem-solving.
+
+Data-driven decision-maker with strong written and verbal communication skills, including experience enhancing documentation and explaining technical concepts to diverse audiences.
+
+Working knowledge of 
+
+search engine concepts
+
+: index mappings, text analyzers, aliases, data backfill processes, and index lifecycle management. Able to diagnose why data isn't appearing in an index, interpret document count discrepancies, and reason through reindexing and refresh workflows. Experience with OpenSearch or Elasticsearch is strongly preferred.
+
+Ability to read and reason about
+
+ GraphQL 
+
+schemas, understand the difference between filter and aggregation semantics, and debug query issues such as unexpected results, unindexed field errors, and schema federation mismatches. Experience with any GraphQL server framework (Apollo, Spring GraphQL, or similar) is a plus.
+
+Experience 
+
+debugging platform configuration 
+
+issues: provisioning errors, schema validation failures, variant or environment setup, and deployment conflicts. Comfortable using CLI-based tooling to inspect and manipulate index state, and able to interpret error messages from configuration pipelines without direct access to source code.
+
+Understanding of 
+
+event-driven architectures
+
+, message queue concepts, and dead-letter queue (DLQ) patterns. Able to identify why events aren't flowing — e.g., missing publish, inactive consumer, enrichment errors — and know when to re-trigger vs. escalate. Experience with 
+
+Kafka, RabbitMQ, AWS SQS/SNS
+
+, or similar messaging systems is relevant.
+
+Familiarity with 
+
+access control models
+
+ — RBAC, ABAC, or policy-based systems — and experience troubleshooting permission errors. Able to distinguish between self-serve and operator-required changes, and guide users through access requests efficiently.
+
+Proficient in reading 
+
+distributed traces 
+
+and structured logs to identify root cause across services. Able to use monitoring dashboards and basic SQL to investigate data inconsistencies and communicate findings to both technical and non-technical stakeholders. Experience with tools such as Datadog, Jaeger, Grafana, Splunk, or similar is relevant.
+
+Comfortable reasoning about differences between test and production environments. Able to guide users through environment inconsistencies — data not synced, pipelines inactive in test, alerting misconfigured per environment — and document resolutions as reusable guidance.
+
+Demonstrated ability to write clear runbooks, FAQs, and troubleshooting guides that reduce repeat support load. Experience translating complex platform behavior into actionable self-service resources for a developer audience.
+
+ 
+Generally, our compensation structure consists solely of an annual salary; we do not have bonuses. You choose each year how much of your compensation you want in salary versus stock options. To determine your personal top of market compensation, we rely on market indicators and consider your specific job family, background, skills, and experience to determine your compensation in the market range. The range for this role is $270,000.00 - $410,000.00. This compensation range will vary based on location.
+
+Netflix provides comprehensive benefits including Health Plans, Mental Health support, a 401(k) Retirement Plan with employer match, Stock Option Program, Disability Programs, Health Savings and Flexible Spending Accounts, Family-forming benefits, and Life and Serious Injury Benefits. We also offer paid leave of absence programs. Full-time hourly employees accrue 35 days annually for paid time off to be used for vacation, holidays, and sick paid time off. Full-time salaried employees are immediately entitled to flexible time off. See more details about our Benefits 
+
+here
+
+.
+
+Netflix is a unique culture and environment. Learn more 
+
+here
+
+.
+
+Inclusion
+
+ 
+is a Netflix value and we strive to host a meaningful interview experience for all candidates. If you want an accommodation/adjustment for a disability or any other reason during the hiring process, please send a request to your recruiting partner.
+
+We are an equal-opportunity employer and celebrate diversity, recognizing that diversity builds stronger teams. We approach diversity and inclusion seriously and thoughtfully. We do not discriminate on the basis of race, religion, color, ancestry, national origin, caste, sex, sexual orientation, gender, gender identity or expression, age, disability, medical condition, pregnancy, genetic makeup, marital status, or military service.
+
+Job is open for no less than 7 days and will be removed when the position is filled.

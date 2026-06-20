@@ -1,0 +1,3 @@
+# Product Manager, Identity & Access Management — Trimble (R53677)
+
+Architect the future of enterprise trust as our Product Manager, Identity & Access Management. Lead our Identity and Access Management platform, owning the strategy and execution of how users and organizations manage access across our entire global product portfolio. Drive the product roadmap for IAM capabilities — authentication, authorization, SSO, provisioning, and access governance. Partner with engineering, security, and product teams to deliver scalable, secure access experiences. Requires technical fluency in identity protocols (OAuth, SAML, OIDC), strong stakeholder management, and a data-driven approach to roadmap prioritization.

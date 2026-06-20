@@ -1,0 +1,13 @@
+{
+  "symbol": "XLK",
+  "timeframe": "1Hour",
+  "bar_limit": 80,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "scale_out_pct": 0.026,
+
+  "_scale_out_note": "scale_out_pct=0.026 is the parent's MEDIAN max runup (+2.60%) from its 45-trade walk-forward profile (runup p25 +1.26%, median +2.60%, p75 +4.11%). Chosen so the one-shot 50% scale-out would have fired on ~half of historical winners and sits strictly inside the observed distribution (not above p75, so not inert). Grounded in the parent profile, deliberately non-round.",
+
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

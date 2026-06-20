@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned a software domain end-to-end, partnering with engineering and platform architects to **convert business requirements into high-level technical requirements** and detailed product scope that drove $14M+ business impact across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Built and executed the domain product roadmap in an **agile environment**, defining goals and metrics to drive prioritization and timely delivery of 45+ annual resilience validation products that removed barriers and created value for the engineering team.
+3. Led 0→1 delivery of an internal Resilience Automation Platform built on **API-driven integrations**, defining product requirements and self-service scheduling that reduced operational toil 30% and transitioned execution to a scalable, measurable model.
+4. Drove design and solutioning across the **full software development lifecycle**—requirements gathering, technical translation, implementation, testing, and feature delivery—launching Azure's first proactive rack-level drill program in 4 months at a **94% recovery rate**.
+5. Represented the technology team in product meetings to scope technical needs in early product definition, directing 14 cross-org executions under executive visibility including a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+6. Became subject-matter expert for the resilience domain and scaled team leverage with an internal **AI agent** and restructured planning workflows, cutting planning cycle time 39% and increasing drill capacity 21% across compliance, analytics, and engineering stakeholders.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed product adoption for **AI-driven code generation** workflows, defining user stories with acceptance criteria and running demos and training that drove utilization across **14 key teams** and saved 37 engineering hours monthly.
+2. Influenced the product roadmap to include intent-based YAML generation by gathering requirements from **11+ user interviews** with Azure service teams, translating technical needs into prioritized, measurable feature scope.
+3. Optimized data integrity and retrieval by defining metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time **83%** and improving self-service for engineering and platform stakeholders.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ teams** in an agile delivery model.
+2. Mobilized a product strategy to remove operational toil during region launches, running discovery with 20+ service teams to quantify **81 hours** of manual effort per region and building a roadmap to automate critical paths.
+3. Engineered a **Power BI dashboard** with SQL-backed metrics tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact technical support.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping technical dependencies across **1,200+ stations** with engineering and operations.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for the platform team.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle **25%** and reducing manual release effort.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing sales operations and owning the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM process and clearly defined requirements.
+2. Reduced Customer Acquisition Cost **13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile against measured funnel metrics.
+3. Improved leadership pricing models by running financial profitability analysis across **1,000+ project records** to identify and seal margin leaks, surfacing data-driven recommendations to stakeholders.
+
+## Notes from the rewriter
+- Mirrored JD language: 'convert business requirements to high-level technical requirements', 'own a software domain', 'subject-matter expert', 'full software development lifecycle', and 'represent technology team in product meetings'.
+- Surfaced FinTech-adjacent technical PM signals (API-driven platforms, SQL metrics, defining user stories with acceptance criteria) since the role is Technical PM at PayPal.
+- Reordered skills to lead with the JD's special skill requirements: API integrations, SQL, data analysis, and user-story definition.
+

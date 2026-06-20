@@ -1,0 +1,144 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/brellium/ec618c95-e55b-433f-84b7-c7a2c9cfa4c5",
+  "org": "brellium",
+  "job_id": "ec618c95-e55b-433f-84b7-c7a2c9cfa4c5",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-05-31T11:52:08Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_name"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_email"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_8b0986be-02fe-4f78-8809-375a9a9513b5",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_8b0986be-02fe-4f78-8809-375a9a9513b5"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_resume"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_4ce343dd-47b3-4fa1-a9dd-e26def00967f",
+      "label": "Will you now or in the future require sponsorship to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_4ce343dd-47b3-4fa1-a9dd-e26def00967f"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_181575da-de10-4997-8e9b-ee47faec32f5",
+      "label": "If \"YES\", what is the basis of your current employment authorization? And when does your current employment authorization expire? If H-1B, is there an approved I-140?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If \"YES\", what is the basis of your current employment authorization? And when does your current employment authorization expire? If H-1B, is there an approved I-140?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_181575da-de10-4997-8e9b-ee47faec32f5"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c__systemfield_location"
+    },
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_3e7d217c-707f-4d43-b7ea-63d568aa3422",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_3e7d217c-707f-4d43-b7ea-63d568aa3422"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "63abc8fc-8472-4fd5-b661-9faa70c0590c_181575da-de10-4997-8e9b-ee47faec32f5",
+      "label": "If \"YES\", what is the basis of your current employment authorization? And when does your current employment authorization expire? If H-1B, is there an approved I-140?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If \"YES\", what is the basis of your current employment authorization? And when does your current employment authorization expire? If H-1B, is there an approved I-140?'"
+    }
+  ],
+  "blockers": []
+}

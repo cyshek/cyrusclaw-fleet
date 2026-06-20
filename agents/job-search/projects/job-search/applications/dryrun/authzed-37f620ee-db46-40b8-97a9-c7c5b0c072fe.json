@@ -1,0 +1,111 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/authzed/37f620ee-db46-40b8-97a9-c7c5b0c072fe",
+  "org": "authzed",
+  "job_id": "37f620ee-db46-40b8-97a9-c7c5b0c072fe",
+  "job_title": "Solutions Engineer - U.S. Based",
+  "job_location": "United States",
+  "fetched_at": "2026-06-08T23:00:46Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5__systemfield_name",
+      "label": "Full Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5__systemfield_name"
+    },
+    {
+      "id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5_0d763faf-d7d4-48bb-a760-33c9df6a3f40",
+      "label": "Preferred Name:",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5_0d763faf-d7d4-48bb-a760-33c9df6a3f40"
+    },
+    {
+      "id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5__systemfield_email"
+    },
+    {
+      "id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5__systemfield_resume"
+    },
+    {
+      "id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5_39d6f087-48c2-44f3-88f4-9b540985d3fa",
+      "label": "LinkedIn:",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5_39d6f087-48c2-44f3-88f4-9b540985d3fa"
+    },
+    {
+      "id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5_6fb0fa2f-5a53-49f4-9e08-1f4115e2e323",
+      "label": "I understand this role requires twice-yearly travel for company offsites.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "0a2c1309-e9a5-48e3-af5a-744f4ba7e9b5_6fb0fa2f-5a53-49f4-9e08-1f4115e2e323"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

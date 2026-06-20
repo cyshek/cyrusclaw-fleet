@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/cinder/2c483a08-7d94-4901-babb-5cbd880ce949",
+  "org": "cinder",
+  "job_id": "2c483a08-7d94-4901-babb-5cbd880ce949",
+  "job_title": "Agent Product Manager",
+  "job_location": "New York",
+  "fetched_at": "2026-06-09T09:25:46Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302__systemfield_name"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302__systemfield_email"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_fa2b3642-dd5a-496a-826f-f7ecc7777dd2",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_fa2b3642-dd5a-496a-826f-f7ecc7777dd2"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_5f4f089c-f2fc-4965-829c-4257d8fc2c2a",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_5f4f089c-f2fc-4965-829c-4257d8fc2c2a"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302__systemfield_resume"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_b2542dee-0410-4f30-82c3-3f8bb5337215",
+      "label": "How did you hear about Cinder?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_b2542dee-0410-4f30-82c3-3f8bb5337215"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_14ee2f5b-004b-4403-bd53-f0baaead1470",
+      "label": "Are you authorized to work in the country for which you are applying? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_14ee2f5b-004b-4403-bd53-f0baaead1470"
+    },
+    {
+      "id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_7057a2c3-62c1-4cec-ac29-1b2eec3a7e0f",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B, etc.)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "cbe3be83-6558-446c-9eb1-8b766a5bf302_7057a2c3-62c1-4cec-ac29-1b2eec3a7e0f"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

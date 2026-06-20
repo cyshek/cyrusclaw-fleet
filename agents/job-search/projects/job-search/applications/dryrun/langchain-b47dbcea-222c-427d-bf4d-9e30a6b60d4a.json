@@ -1,0 +1,339 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/langchain/b47dbcea-222c-427d-bf4d-9e30a6b60d4a",
+  "org": "langchain",
+  "job_id": "b47dbcea-222c-427d-bf4d-9e30a6b60d4a",
+  "job_title": "Sales Engineer (Bay Area)",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-05-26T18:51:41Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 17,
+    "filled": 15,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134__systemfield_name"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134__systemfield_email"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134__systemfield_resume"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_b173b4fe-49d0-4532-a0b6-4fe497fdc211",
+      "label": "Where are you currently located? (City, State)",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_b173b4fe-49d0-4532-a0b6-4fe497fdc211"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_c68ad29f-7251-42b1-b430-617f3ef801f1",
+      "label": "If in the Bay Area or NYC Metro, are you available to work onsite at the corporate office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (matched relocation target 'bay area' in label)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_c68ad29f-7251-42b1-b430-617f3ef801f1"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_51aed936-77f9-46ce-9711-450026a097b0",
+      "label": "Linkedin URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_51aed936-77f9-46ce-9711-450026a097b0"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_7a525ff6-3588-4057-ab24-d2737024cfc4",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_7a525ff6-3588-4057-ab24-d2737024cfc4"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_dd131169-7a41-478f-a20f-c6c1eeb29a2e",
+      "label": "Do you have strong Python, JavaScript and systems fundamentals?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_dd131169-7a41-478f-a20f-c6c1eeb29a2e"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_d5f93911-4604-43fa-a603-7372b3a891d0",
+      "label": "Do you have 3+ years in a relevant technical role (software engineering, customer engineering, solutions engineering, founding/product engineering)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_d5f93911-4604-43fa-a603-7372b3a891d0"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_ab5a0bf6-4132-4c0b-8734-d84038d2323e",
+      "label": "Have you designed agent-based or LLM-powered applications?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_ab5a0bf6-4132-4c0b-8734-d84038d2323e"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_65bc2b5b-9dd3-42ef-80db-a4a07ac15b26",
+      "label": "Do you have experience working directly with customers during POCs, architecture reviews, and technical evaluations?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_65bc2b5b-9dd3-42ef-80db-a4a07ac15b26"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_43cc77d8-872f-4412-9071-7697d9801202",
+      "label": "Have you deployed AI agents in production, especially using LangChain, LangGraph, or similar frameworks? (not required)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_43cc77d8-872f-4412-9071-7697d9801202"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_674dc2b7-784b-494f-b14e-09f7afead009",
+      "label": "Have you worked with LLM evaluation, observability, or guardrails? (not required)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_674dc2b7-784b-494f-b14e-09f7afead009"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_a09afea4-c71e-4fba-ba68-c8196515e5d0",
+      "label": "Do you have experience with cloud environments (AWS, GCP, Azure), containers, and basic Kubernetes concepts? (not required)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_a09afea4-c71e-4fba-ba68-c8196515e5d0"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_92386c0e-2bdd-4a55-b099-d79dc8e1abbb",
+      "label": "Have you shipped and operated production software? (not required)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_92386c0e-2bdd-4a55-b099-d79dc8e1abbb"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_e98c257d-f8e3-4492-a03d-a608f6da7cd8",
+      "label": "Feel free to share any additional context on your responses above, or anything else you’d like us to know about your experience or interest in this role at LangChain.",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Feel free to share any additional context on your responses above, or anything else you’d like us to know about your experience or interest in this role at LangChain.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_e98c257d-f8e3-4492-a03d-a608f6da7cd8"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_9c06284d-0e41-4158-bb8f-291b4e9e481e",
+      "label": "Please share your portfolio ",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_9c06284d-0e41-4158-bb8f-291b4e9e481e"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_e98c257d-f8e3-4492-a03d-a608f6da7cd8",
+      "label": "Feel free to share any additional context on your responses above, or anything else you’d like us to know about your experience or interest in this role at LangChain.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Feel free to share any additional context on your responses above, or anything else you’d like us to know about your experience or interest in this role at LangChain.'"
+    },
+    {
+      "id": "115127e9-c5b3-48e3-ba82-a4a3cddc2134_9c06284d-0e41-4158-bb8f-291b4e9e481e",
+      "label": "Please share your portfolio ",
+      "required": false,
+      "reason": "portfolio_url is null"
+    }
+  ],
+  "blockers": []
+}

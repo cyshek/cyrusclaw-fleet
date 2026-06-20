@@ -1,6 +1,110 @@
-.gmail-app-password
+# ============================================================================
+# job-search workspace .gitignore
+# Purpose: let us git-track the role-discovery ENGINE CODE (so a tick that edits
+# an engine file and errors before its commit step no longer loses the fix),
+# while NEVER tracking secrets, cookies, credentials, the SQLite tracker DB,
+# its hundreds of .bak snapshots, the 216M .venv, browser-profile data, debug
+# dumps, or pycache. Added 2026-06-08 (autonomous tick) — closes the documented
+# "errored-tick-loses-work" loss-vector (BACKLOG ROOT CAUSE item).
+# ============================================================================
 
-.workday-creds.json
-.referrals.json
-.tiktok-password
-.bytedance-password
+# ---- Secrets / credentials / cookies (NEVER commit) ----
+.env
+.env.*
+!.env.template
+**/.env
+**/.env.*
+**/*creds*.json
+**/*-creds.json
+**/.uber-creds.json
+**/.workday-creds.json
+**/.amazon-jobs-creds.json
+**/.capsolver-key
+**/.nopecha-key
+**/.gmail-app-password
+**/.bytedance-password
+**/.tiktok-password
+**/.linkedin-li-at
+**/.linkedin-li-at.bak.*
+**/.referrals.json
+**/.referrals.json.bak.*
+**/*.pem
+**/*.key
+**/id_rsa*
+
+# ---- SQLite tracker DB + all its backups/WAL (data, not code) ----
+tracker.db
+tracker.db-wal
+tracker.db-shm
+tracker.db.bak*
+tracker.db.*.bak
+tracker.db-*.bak*
+**/tracker.db
+**/tracker.db-wal
+**/tracker.db-shm
+**/tracker.db.bak*
+**/tracker.db.*.bak
+**/tracker.db-*.bak*
+
+# ---- All point-in-time backup snapshots (data files, large + noisy) ----
+*.bak
+*.bak.*
+*.bak-*
+*.superseded
+*.superseded-*
+**/*.bak
+**/*.bak.*
+**/*.bak-*
+**/*.superseded
+**/*.superseded-*
+
+# ---- Python venv (216M — catastrophic to commit) ----
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+
+# ---- Python caches / build ----
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+**/.pytest_cache/
+.mypy_cache/
+**/.mypy_cache/
+*.egg-info/
+
+# ---- Browser profile data + per-ATS debug dumps (runtime artifacts) ----
+**/.workday-browser-data/
+**/.warmed-profile/
+**/.bd-debug/
+**/.tiktok-debug/
+**/.ashby-debug/
+**/.eightfold-debug/
+**/.gh-debug/
+**/.icims-debug/
+**/.lever-debug/
+**/.tesla-debug/
+**/.workable-debug/
+**/.workable-debug-submit/
+**/.workday-debug/
+**/*-debug/
+**/*-debug-submit/
+
+# ---- Live-browser ad-hoc probe scripts that masquerade as pytest tests ----
+# These match pytest's default *_test.py glob and each launches a real browser
+# that times out at collection. They are NOT real tests. We also set
+# python_files=test_*.py in pytest.ini, but ignoring them in git keeps the
+# tree clean. (Real tests are named test_*.py and ARE tracked.)
+**/_moniker_test.py
+**/_source_test.py
+
+# ---- Large generated spreadsheets / logs (regenerated artifacts) ----
+**/*.xlsx.bak*
+**/applications/_*.log
+
+# ---- JobRight session cookie (gitignored, never commit) ----
+**/.jobright-session

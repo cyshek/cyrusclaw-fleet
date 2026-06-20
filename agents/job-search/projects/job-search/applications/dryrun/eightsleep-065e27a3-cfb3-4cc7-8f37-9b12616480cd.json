@@ -1,0 +1,198 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/eightsleep/065e27a3-cfb3-4cc7-8f37-9b12616480cd",
+  "org": "eightsleep",
+  "job_id": "065e27a3-cfb3-4cc7-8f37-9b12616480cd",
+  "job_title": "Engineering Program Manager, Hardware",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-16T19:37:53Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 3,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747__systemfield_name"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747__systemfield_email"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747__systemfield_resume"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_c03a0fd4-2a94-4d27-be51-84d8c75ad215",
+      "label": "Linkedin",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_c03a0fd4-2a94-4d27-be51-84d8c75ad215"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_42e4a624-2185-404a-91e8-a0191e9e6757",
+      "label": "This role is based out of our San Francisco office.  Are you able to work from the office 5 days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_42e4a624-2185-404a-91e8-a0191e9e6757"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_f1e4c9b9-2821-46ec-b14a-3b9841f5a7ea",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_f1e4c9b9-2821-46ec-b14a-3b9841f5a7ea"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_c2ea0b39-f2c2-4c9f-8f55-223202837933",
+      "label": "If you answered yes above, please detail your current or future sponsorship needs.",
+      "type": "textarea",
+      "required": false,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_c2ea0b39-f2c2-4c9f-8f55-223202837933"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_3bae5abe-b9e8-446c-8274-9e446af250ac",
+      "label": "This role requires up to 15-20% travel to Asia. Are you able to commit to this?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_3bae5abe-b9e8-446c-8274-9e446af250ac"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_e3825c02-9d9d-40d1-b1fa-092ee7adafa4",
+      "label": "This role is available for an immediate start. Do you have any notice periods or scheduling constraints we should be aware of?",
+      "type": "textarea",
+      "required": true,
+      "value": "2 weeks",
+      "source": "preferences.notice_period_weeks",
+      "status": "filled",
+      "matched_rule": "notice_period",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_e3825c02-9d9d-40d1-b1fa-092ee7adafa4"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_a5e35566-b4b8-43c1-990a-2fa285d69a3f",
+      "label": "What is your experience managing hardware development (including mechanical and electrical components) from concept to production? What kind of production volumes were you involved with?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_a5e35566-b4b8-43c1-990a-2fa285d69a3f"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_626f9472-2f69-41e1-bddd-c753fbfb6efd",
+      "label": "What experience do you have working with manufacturing partners in Asia?",
+      "type": "textarea",
+      "required": true,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_626f9472-2f69-41e1-bddd-c753fbfb6efd"
+    },
+    {
+      "id": "05bb74fe-1926-457d-bf59-bc44111b7747_6aef5515-ef01-447b-8ab4-3cc8317919a2",
+      "label": "How does Eight Sleep fit in your career and long term goals?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "05bb74fe-1926-457d-bf59-bc44111b7747_6aef5515-ef01-447b-8ab4-3cc8317919a2"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

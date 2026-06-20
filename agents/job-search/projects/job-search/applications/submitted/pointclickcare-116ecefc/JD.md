@@ -1,0 +1,69 @@
+# Associate Product Manager - Data Projects
+
+**Company:** PointClickCare
+**Location:** Remote, USA
+**Apply:** https://jobs.lever.co/pointclickcare/116ecefc-4316-44ae-87ed-889bd206fca6/apply
+**Lever ID:** 116ecefc-4316-44ae-87ed-889bd206fca6
+
+---
+
+Job Title: Associate Product Manager - Data ProjectsLocation: Remote - USA
+
+For Remote Roles: If this role is remote, there will be in-office events that will require travel to and from the Mississauga and/or Salt Lake City office. These will include, but not limited to, onboarding, team events, semi-annual and annual team meetings.
+ 
+At PointClickCare our mission is simple: to help providers deliver exceptional care. And that starts with our people. As a leading health tech company that’s founder-led and privately held, we empower our employees to push boundaries, innovate, and shape the future of healthcare.
+With the largest long-term and post-acute care dataset and a Marketplace of 400+ integrated partners, our platform serves over 30,000 provider organizations, making a real difference in millions of lives. We also reinvest a significant percentage of our revenue back into research and development, ensuring our employees have the resources to innovate and make a lasting impact. Recognized by Forbes as a top private cloud company and honored as one of Canada’s Most Admired Corporate Cultures, we offer flexibility, growth opportunities, and meaningful work. 
+At PointClickCare, we empower our people to be the architects of a smarter healthcare future; one that is human-first and accelerated by AI to create meaningful and lasting change. Employees harness AI as a catalyst for creativity, productivity, and thoughtful decision-making. By integrating AI tools into our daily workflows, collaboration is enhanced, outcomes are improved, and every team member has the proficiency to maximize their impact. It all starts with our hiring practices where we uncover AI expertise that complements our mission, and we continue to invest in training and development to nurture innovation throughout the employee journey.
+Join us in redefining healthcare — so it doesn’t just survive, it thrives. To learn more about PointClickCare, check out Life at PointClickCare and connect with us on Glassdoor and LinkedIn.
+Position Summary:
+As an Associate Product Manager at PointClickCare,you’ll join our Senior Care Advanced Insights Team to support data, analytics, and AI products that help that help care teams deliver exceptional care. You are responsible for working directly with the Engineering and Product teams to deliver products with an amazing experience to end users and customers.
+You create and maintain a healthy backlog for the team while ensuring a successful and tactical execution for Product and Operations.
+In this role, you will partner with Senior Product Managers to obtain guidance and mentorship as needed. You approach your work with natural curiosity and use your growth mindset to maximize the value in your delivery of various PointClickCare Products.
+Key Responsibilities:
+Understand company strategy and how it connects to Product strategy and assigned scope.
+Become the product expert for their assigned scope, including product functionality and how the product creates value for customers and users.
+Serve as the voice of the customer to a scrum team inclusive of engineering and UX, partnering with engineering leads to manage ceremonies associated with product delivery.
+Maintain a prioritized backlog and write user stories, acceptance criteria and other artifacts to support engineering teams in delivering on product priorities.
+Continuously assess ways to improve products and services.
+Identify, communicate and bring the right people together to manage risks timely and effectively
+Oversee the data-to-insight pipeline, including data ingestion, cataloguing, normalization, model training and deployment
+Work with engineering, data and AI platform teams to ensure seamless data flow
+Work with customers to ensure product-market fit
+Required Skills & Qualifications:
+Bachelor’s degree in business, computer science, or a healthcare-related field of study.
+1-3 years working in Product management or related discipline, preferably in a health tech SaaS business.
+Experience with SaaS, Big Data, AI/ML preferred
+Understanding of healthcare data (Quality Programs, Claims, etc)
+Familiarity with data structures, SQL, Python, BI tools (PowerBI), React, Databricks
+Data Driven - experience managing, receiving, and delivering timely reports to a variety of team members.
+Curious, takes initiative, and receptive to new ideas.
+Proven ability to work cross functionally with various teams
+Adaptive to a dynamic and fast paced work style
+Demonstrated ability to create and execute a plan to achieve a desired result.
+Investigate, gather, and document detailed information regarding defects
+Experience with contributing to and executing on a Product roadmap.
+Experience working in a health tech SaaS B2B business preferred
+Experience in Product Life Cycle, Forecasting, Launch planning.
+Focus on delivery of product in alignment with strategy
+Proven ability to influence cross-functional teams (without formal authority) and guide them to solve complex problems.
+Ability to communicate effectively with internal and external stakeholders, both orally and in writing.
+Strong work experience in Cross Functional setting (Product, Engineering, Operations, etc.) 
+Strong written and verbal communication skills, with the ability to listen and understand an audience and tailor communication accordingly. 
+At PointClickCare, base salary is one of the many components that make up our total rewards package. The Canada base salary range for this position is $87,900 - $97,700+ bonus + benefits. Our salary ranges are determined by job and level. The range displayed on each job posting reflects the target for new hire salaries for the position across all Canada locations. Within the range, individual compensation is determined by job-related skills and knowledge, relevant experience including professional and lived experience, and/or work location. Your recruiter can share more information about our total rewards package during the hiring process.
+PointClickCare Benefits & Perks 
+Benefits starting from Day 1
+Retirement Plan Matching (RRSP & 401K)
+Flexible Paid Time Off
+Lifestyle/Wellness Spending Account
+Parental & Caregiver Leaves
+Fertility & Adoption Support
+Continuous Development Support Program
+Employee Assistance Program
+Learning Programs & Resources
+Employee Recognition … and more!
+Equal Employment Opportunity:
+It is the policy of PointClickCare to ensure equal employment opportunity without discrimination or harassment on the basis of race, religion, national origin, status, age, sex, sexual orientation, gender identity or expression, marital or domestic/civil partnership status, disability, veteran status, genetic information, or any other basis protected by law. PointClickCare welcomes and encourages applications from people with disabilities. Accommodations are available upon request for candidates taking part in all aspects of the selection process. Please contact recruitment@pointclickcare.com should you require any accommodations.
+When you apply for a position, your information is processed and stored with Lever, in accordance with Lever’s Privacy Policy. We use this information to evaluate your candidacy for the posted position. We also store this information, and may use it in relation to future positions to which you apply, or which we believe may be relevant to you given your background. When we have no ongoing legitimate business need to process your information, we will either delete or anonymize it.  If you have any questions about how PointClickCare uses or processes your information, or if you would like to ask to access, correct, or delete your information, please contact PointClickCare’s human resources team: recruitment@pointclickcare.com 
+PointClickCare is committed to Information Security. By applying to this position, if hired, you commit to following our information security policies and procedures and making every effort to secure confidential and/or sensitive information.
+#LI-Remote
+

@@ -1,0 +1,3162 @@
+{
+  "bench": {
+    "BH_TQQQ_full": {
+      "ret_pct": -47.36438076457947,
+      "inst_dd": -90.2081752881129,
+      "nav_dd": -91.87980503492287,
+      "trades": 1,
+      "fp": 0.29038500386146593,
+      "n_ticks": 1373
+    },
+    "BH_SOXL_full": {
+      "ret_pct": -36.29620818870001,
+      "inst_dd": -98.58203730861628,
+      "nav_dd": -99.00708404580921,
+      "trades": 1,
+      "fp": 0.7281897701068742,
+      "n_ticks": 1373
+    },
+    "BH_UPRO_full": {
+      "ret_pct": 107.82668717857527,
+      "inst_dd": -63.474121981853195,
+      "nav_dd": -81.97438702619216,
+      "trades": 1,
+      "fp": 0.545422109465014,
+      "n_ticks": 1373
+    },
+    "BH_SPY_full": {
+      "ret_pct": 106.76461395227807,
+      "inst_dd": -4.558684621526933,
+      "nav_dd": -25.375196232339093,
+      "trades": 1,
+      "fp": 0.8865114138034685,
+      "n_ticks": 1373
+    },
+    "BH_SPY_panel": {
+      "fp": 0.2886628535242504,
+      "trades": 8,
+      "per_win": [
+        [
+          "2022-H1 bear",
+          "bear",
+          -12.555449361712135
+        ],
+        [
+          "2022-Q3 chop",
+          "chop",
+          -20.140745447207586
+        ],
+        [
+          "2023-H1 recovery",
+          "bull",
+          -6.557352030427229
+        ],
+        [
+          "2023-Q3 chop",
+          "chop",
+          16.451659240195795
+        ],
+        [
+          "2024-Q2 bull",
+          "bull",
+          20.65856358072308
+        ],
+        [
+          "2025-Q1 tariff bear",
+          "bear",
+          4.742397019149576
+        ],
+        [
+          "2025-Q3 bull",
+          "bull",
+          14.367357864405268
+        ],
+        [
+          "2026-recent bull",
+          "bull",
+          19.46780161703043
+        ]
+      ]
+    }
+  },
+  "sweeps": {
+    "TQQQ": [
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 156.2,
+        "full_inst_dd": -11.0,
+        "full_nav_dd": -19.8,
+        "full_fp": 1.026,
+        "full_trades": 15,
+        "panel_fp": 0.899,
+        "panel_inst_dd": -11.0,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 156.2,
+        "full_inst_dd": -11.0,
+        "full_nav_dd": -19.8,
+        "full_fp": 1.026,
+        "full_trades": 15,
+        "panel_fp": 0.899,
+        "panel_inst_dd": -11.0,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 225.6,
+        "full_inst_dd": -17.4,
+        "full_nav_dd": -42.5,
+        "full_fp": 0.858,
+        "full_trades": 65,
+        "panel_fp": 0.529,
+        "panel_inst_dd": -17.4,
+        "panel_trades": 86
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 105.1,
+        "full_inst_dd": -11.0,
+        "full_nav_dd": -22.2,
+        "full_fp": 0.856,
+        "full_trades": 33,
+        "panel_fp": 0.677,
+        "panel_inst_dd": -11.0,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 105.1,
+        "full_inst_dd": -11.0,
+        "full_nav_dd": -22.2,
+        "full_fp": 0.856,
+        "full_trades": 33,
+        "panel_fp": 0.677,
+        "panel_inst_dd": -11.0,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 206.8,
+        "full_inst_dd": -18.5,
+        "full_nav_dd": -37.2,
+        "full_fp": 0.818,
+        "full_trades": 33,
+        "panel_fp": 0.621,
+        "panel_inst_dd": -17.1,
+        "panel_trades": 44
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 223.2,
+        "full_inst_dd": -17.4,
+        "full_nav_dd": -53.6,
+        "full_fp": 0.772,
+        "full_trades": 71,
+        "panel_fp": 0.454,
+        "panel_inst_dd": -17.4,
+        "panel_trades": 94
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 210.1,
+        "full_inst_dd": -26.9,
+        "full_nav_dd": -50.8,
+        "full_fp": 0.75,
+        "full_trades": 33,
+        "panel_fp": 0.47,
+        "panel_inst_dd": -26.9,
+        "panel_trades": 44
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 157.8,
+        "full_inst_dd": -18.4,
+        "full_nav_dd": -55.5,
+        "full_fp": 0.716,
+        "full_trades": 23,
+        "panel_fp": 0.475,
+        "panel_inst_dd": -18.4,
+        "panel_trades": 24
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 157.8,
+        "full_inst_dd": -18.4,
+        "full_nav_dd": -55.5,
+        "full_fp": 0.716,
+        "full_trades": 23,
+        "panel_fp": 0.475,
+        "panel_inst_dd": -18.4,
+        "panel_trades": 24
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 57.3,
+        "full_inst_dd": -8.5,
+        "full_nav_dd": -15.0,
+        "full_fp": 0.624,
+        "full_trades": 24,
+        "panel_fp": 0.462,
+        "panel_inst_dd": -8.5,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 57.3,
+        "full_inst_dd": -8.5,
+        "full_nav_dd": -15.0,
+        "full_fp": 0.624,
+        "full_trades": 24,
+        "panel_fp": 0.462,
+        "panel_inst_dd": -8.5,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 71.0,
+        "full_inst_dd": -10.8,
+        "full_nav_dd": -19.3,
+        "full_fp": 0.611,
+        "full_trades": 14,
+        "panel_fp": 0.547,
+        "panel_inst_dd": -8.6,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 71.0,
+        "full_inst_dd": -10.8,
+        "full_nav_dd": -19.3,
+        "full_fp": 0.611,
+        "full_trades": 14,
+        "panel_fp": 0.547,
+        "panel_inst_dd": -8.6,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 94.2,
+        "full_inst_dd": -14.8,
+        "full_nav_dd": -47.5,
+        "full_fp": 0.601,
+        "full_trades": 47,
+        "panel_fp": 0.33,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 44
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 94.2,
+        "full_inst_dd": -14.8,
+        "full_nav_dd": -47.5,
+        "full_fp": 0.601,
+        "full_trades": 47,
+        "panel_fp": 0.33,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 44
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 97.5,
+        "full_inst_dd": -35.2,
+        "full_nav_dd": -46.7,
+        "full_fp": 0.531,
+        "full_trades": 63,
+        "panel_fp": 0.378,
+        "panel_inst_dd": -54.2,
+        "panel_trades": 74
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 83.7,
+        "full_inst_dd": -47.4,
+        "full_nav_dd": -69.3,
+        "full_fp": 0.512,
+        "full_trades": 9,
+        "panel_fp": 0.397,
+        "panel_inst_dd": -19.5,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 67.2,
+        "full_inst_dd": -51.2,
+        "full_nav_dd": -74.2,
+        "full_fp": 0.486,
+        "full_trades": 30,
+        "panel_fp": 0.268,
+        "panel_inst_dd": -16.0,
+        "panel_trades": 23
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 78.5,
+        "full_inst_dd": -35.2,
+        "full_nav_dd": -66.1,
+        "full_fp": 0.472,
+        "full_trades": 73,
+        "panel_fp": 0.116,
+        "panel_inst_dd": -54.2,
+        "panel_trades": 92
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 55.6,
+        "full_inst_dd": -54.0,
+        "full_nav_dd": -76.7,
+        "full_fp": 0.457,
+        "full_trades": 47,
+        "panel_fp": 0.481,
+        "panel_inst_dd": -54.0,
+        "panel_trades": 30
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 55.6,
+        "full_inst_dd": -54.0,
+        "full_nav_dd": -76.7,
+        "full_fp": 0.457,
+        "full_trades": 47,
+        "panel_fp": 0.481,
+        "panel_inst_dd": -54.0,
+        "panel_trades": 30
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 56.8,
+        "full_inst_dd": -44.7,
+        "full_nav_dd": -64.6,
+        "full_fp": 0.454,
+        "full_trades": 19,
+        "panel_fp": 0.632,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 13
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": -32.1,
+        "full_inst_dd": -54.2,
+        "full_nav_dd": -97.1,
+        "full_fp": 0.452,
+        "full_trades": 13,
+        "panel_fp": -0.014,
+        "panel_inst_dd": -68.7,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 42.7,
+        "full_inst_dd": -55.1,
+        "full_nav_dd": -75.8,
+        "full_fp": 0.438,
+        "full_trades": 7,
+        "panel_fp": 0.295,
+        "panel_inst_dd": -20.8,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 34.5,
+        "full_inst_dd": -46.8,
+        "full_nav_dd": -70.9,
+        "full_fp": 0.403,
+        "full_trades": 27,
+        "panel_fp": 0.383,
+        "panel_inst_dd": -58.2,
+        "panel_trades": 21
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 27.3,
+        "full_inst_dd": -61.7,
+        "full_nav_dd": -72.6,
+        "full_fp": 0.399,
+        "full_trades": 6,
+        "panel_fp": 0.249,
+        "panel_inst_dd": -26.4,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 6.7,
+        "full_inst_dd": -39.3,
+        "full_nav_dd": -85.2,
+        "full_fp": 0.393,
+        "full_trades": 17,
+        "panel_fp": 0.347,
+        "panel_inst_dd": -57.0,
+        "panel_trades": 15
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 28.4,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -67.1,
+        "full_fp": 0.39,
+        "full_trades": 33,
+        "panel_fp": 0.603,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 18
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 11.2,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -80.4,
+        "full_fp": 0.389,
+        "full_trades": 25,
+        "panel_fp": 0.452,
+        "panel_inst_dd": -53.6,
+        "panel_trades": 18
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 29.4,
+        "full_inst_dd": -35.2,
+        "full_nav_dd": -74.6,
+        "full_fp": 0.377,
+        "full_trades": 19,
+        "panel_fp": 0.241,
+        "panel_inst_dd": -54.2,
+        "panel_trades": 20
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 29.4,
+        "full_inst_dd": -35.2,
+        "full_nav_dd": -74.6,
+        "full_fp": 0.377,
+        "full_trades": 19,
+        "panel_fp": 0.241,
+        "panel_inst_dd": -54.2,
+        "panel_trades": 20
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 1.8,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -83.5,
+        "full_fp": 0.375,
+        "full_trades": 27,
+        "panel_fp": 0.282,
+        "panel_inst_dd": -53.6,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 1.3,
+        "full_inst_dd": -51.0,
+        "full_nav_dd": -78.4,
+        "full_fp": 0.372,
+        "full_trades": 19,
+        "panel_fp": 0.461,
+        "panel_inst_dd": -54.5,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 19.6,
+        "full_inst_dd": -34.4,
+        "full_nav_dd": -72.6,
+        "full_fp": 0.357,
+        "full_trades": 33,
+        "panel_fp": 0.143,
+        "panel_inst_dd": -52.9,
+        "panel_trades": 40
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 2.3,
+        "full_inst_dd": -43.3,
+        "full_nav_dd": -74.5,
+        "full_fp": 0.347,
+        "full_trades": 25,
+        "panel_fp": 0.463,
+        "panel_inst_dd": -19.5,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 18.2,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -68.2,
+        "full_fp": 0.347,
+        "full_trades": 41,
+        "panel_fp": 0.279,
+        "panel_inst_dd": -53.6,
+        "panel_trades": 28
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 2.7,
+        "full_inst_dd": -49.4,
+        "full_nav_dd": -71.1,
+        "full_fp": 0.337,
+        "full_trades": 13,
+        "panel_fp": 0.36,
+        "panel_inst_dd": -30.5,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 7.1,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -69.8,
+        "full_fp": 0.33,
+        "full_trades": 31,
+        "panel_fp": 0.503,
+        "panel_inst_dd": -15.3,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -1.6,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -70.7,
+        "full_fp": 0.326,
+        "full_trades": 33,
+        "panel_fp": 0.481,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 27.7,
+        "full_inst_dd": -11.1,
+        "full_nav_dd": -25.9,
+        "full_fp": 0.326,
+        "full_trades": 12,
+        "panel_fp": 0.557,
+        "panel_inst_dd": -11.1,
+        "panel_trades": 2
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 27.7,
+        "full_inst_dd": -11.1,
+        "full_nav_dd": -25.9,
+        "full_fp": 0.326,
+        "full_trades": 12,
+        "panel_fp": 0.557,
+        "panel_inst_dd": -11.1,
+        "panel_trades": 2
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 4.7,
+        "full_inst_dd": -63.6,
+        "full_nav_dd": -71.6,
+        "full_fp": 0.324,
+        "full_trades": 9,
+        "panel_fp": 0.287,
+        "panel_inst_dd": -30.6,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 27.4,
+        "full_inst_dd": -46.8,
+        "full_nav_dd": -57.3,
+        "full_fp": 0.323,
+        "full_trades": 15,
+        "panel_fp": 0.62,
+        "panel_inst_dd": -14.1,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 27.4,
+        "full_inst_dd": -46.8,
+        "full_nav_dd": -57.3,
+        "full_fp": 0.323,
+        "full_trades": 15,
+        "panel_fp": 0.62,
+        "panel_inst_dd": -14.1,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": -37.3,
+        "full_inst_dd": -58.8,
+        "full_nav_dd": -86.2,
+        "full_fp": 0.313,
+        "full_trades": 18,
+        "panel_fp": 0.451,
+        "panel_inst_dd": -18.2,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -3.7,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -74.9,
+        "full_fp": 0.312,
+        "full_trades": 35,
+        "panel_fp": 0.452,
+        "panel_inst_dd": -15.3,
+        "panel_trades": 12
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 0.6,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -70.8,
+        "full_fp": 0.31,
+        "full_trades": 29,
+        "panel_fp": 0.519,
+        "panel_inst_dd": -15.3,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -30.1,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -83.3,
+        "full_fp": 0.293,
+        "full_trades": 48,
+        "panel_fp": 0.285,
+        "panel_inst_dd": -12.9,
+        "panel_trades": 24
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 2.0,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -62.8,
+        "full_fp": 0.279,
+        "full_trades": 29,
+        "panel_fp": 0.315,
+        "panel_inst_dd": -53.6,
+        "panel_trades": 18
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": -23.6,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -72.9,
+        "full_fp": 0.273,
+        "full_trades": 31,
+        "panel_fp": 0.442,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -14.4,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -68.4,
+        "full_fp": 0.258,
+        "full_trades": 31,
+        "panel_fp": 0.421,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -13.7,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -68.7,
+        "full_fp": 0.248,
+        "full_trades": 28,
+        "panel_fp": 0.519,
+        "panel_inst_dd": -15.3,
+        "panel_trades": 4
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -76.4,
+        "full_inst_dd": -53.6,
+        "full_nav_dd": -88.2,
+        "full_fp": 0.24,
+        "full_trades": 34,
+        "panel_fp": 0.553,
+        "panel_inst_dd": -14.0,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": -39.4,
+        "full_inst_dd": -45.5,
+        "full_nav_dd": -77.5,
+        "full_fp": 0.236,
+        "full_trades": 15,
+        "panel_fp": 0.414,
+        "panel_inst_dd": -20.6,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": -30.4,
+        "full_inst_dd": -35.9,
+        "full_nav_dd": -105.1,
+        "full_fp": 0.149,
+        "full_trades": 27,
+        "panel_fp": -0.182,
+        "panel_inst_dd": -54.0,
+        "panel_trades": 38
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 3.7,
+        "full_inst_dd": -10.9,
+        "full_nav_dd": -22.7,
+        "full_fp": 0.124,
+        "full_trades": 22,
+        "panel_fp": 0.251,
+        "panel_inst_dd": -10.9,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 3.7,
+        "full_inst_dd": -10.9,
+        "full_nav_dd": -22.7,
+        "full_fp": 0.124,
+        "full_trades": 22,
+        "panel_fp": 0.251,
+        "panel_inst_dd": -10.9,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 0.0,
+        "full_inst_dd": 0.0,
+        "full_nav_dd": 0.0,
+        "full_fp": 0.0,
+        "full_trades": 0,
+        "panel_fp": 0.0,
+        "panel_inst_dd": 0.0,
+        "panel_trades": 0
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 0.0,
+        "full_inst_dd": 0.0,
+        "full_nav_dd": 0.0,
+        "full_fp": 0.0,
+        "full_trades": 0,
+        "panel_fp": 0.0,
+        "panel_inst_dd": 0.0,
+        "panel_trades": 0
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": -52.4,
+        "full_inst_dd": -49.8,
+        "full_nav_dd": -69.4,
+        "full_fp": -0.121,
+        "full_trades": 14,
+        "panel_fp": 0.31,
+        "panel_inst_dd": -11.8,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -52.4,
+        "full_inst_dd": -49.8,
+        "full_nav_dd": -69.4,
+        "full_fp": -0.121,
+        "full_trades": 14,
+        "panel_fp": 0.31,
+        "panel_inst_dd": -11.8,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": -84.4,
+        "full_inst_dd": -51.1,
+        "full_nav_dd": -87.5,
+        "full_fp": -0.316,
+        "full_trades": 12,
+        "panel_fp": 0.557,
+        "panel_inst_dd": -11.1,
+        "panel_trades": 2
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -84.4,
+        "full_inst_dd": -51.1,
+        "full_nav_dd": -87.5,
+        "full_fp": -0.316,
+        "full_trades": 12,
+        "panel_fp": 0.557,
+        "panel_inst_dd": -11.1,
+        "panel_trades": 2
+      }
+    ],
+    "SOXL": [
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 755.1,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -41.2,
+        "full_fp": 1.122,
+        "full_trades": 17,
+        "panel_fp": 1.026,
+        "panel_inst_dd": -29.6,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 720.8,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -44.3,
+        "full_fp": 1.088,
+        "full_trades": 15,
+        "panel_fp": 0.962,
+        "panel_inst_dd": -29.6,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 728.0,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -37.9,
+        "full_fp": 1.07,
+        "full_trades": 15,
+        "panel_fp": 1.014,
+        "panel_inst_dd": -29.6,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 1223.4,
+        "full_inst_dd": -49.2,
+        "full_nav_dd": -49.5,
+        "full_fp": 1.047,
+        "full_trades": 13,
+        "panel_fp": 0.977,
+        "panel_inst_dd": -47.0,
+        "panel_trades": 12
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 1024.3,
+        "full_inst_dd": -25.5,
+        "full_nav_dd": -59.1,
+        "full_fp": 1.031,
+        "full_trades": 7,
+        "panel_fp": 0.831,
+        "panel_inst_dd": -37.5,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 678.4,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -42.1,
+        "full_fp": 1.029,
+        "full_trades": 21,
+        "panel_fp": 1.031,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 15
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 646.9,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -44.4,
+        "full_fp": 1.023,
+        "full_trades": 21,
+        "panel_fp": 1.027,
+        "panel_inst_dd": -29.6,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 397.9,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -31.0,
+        "full_fp": 1.023,
+        "full_trades": 13,
+        "panel_fp": 0.78,
+        "panel_inst_dd": -34.9,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 1064.9,
+        "full_inst_dd": -21.1,
+        "full_nav_dd": -57.3,
+        "full_fp": 1.01,
+        "full_trades": 9,
+        "panel_fp": 0.873,
+        "panel_inst_dd": -37.5,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 684.2,
+        "full_inst_dd": -25.9,
+        "full_nav_dd": -64.5,
+        "full_fp": 1.005,
+        "full_trades": 33,
+        "panel_fp": 0.811,
+        "panel_inst_dd": -34.5,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 429.6,
+        "full_inst_dd": -17.7,
+        "full_nav_dd": -35.8,
+        "full_fp": 1.004,
+        "full_trades": 9,
+        "panel_fp": 0.691,
+        "panel_inst_dd": -38.0,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 1007.2,
+        "full_inst_dd": -18.2,
+        "full_nav_dd": -55.2,
+        "full_fp": 0.999,
+        "full_trades": 7,
+        "panel_fp": 0.931,
+        "panel_inst_dd": -47.0,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 717.7,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -40.7,
+        "full_fp": 0.995,
+        "full_trades": 17,
+        "panel_fp": 1.103,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 15
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 590.8,
+        "full_inst_dd": -12.4,
+        "full_nav_dd": -38.4,
+        "full_fp": 0.99,
+        "full_trades": 15,
+        "panel_fp": 1.024,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 15
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 689.4,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -49.1,
+        "full_fp": 0.984,
+        "full_trades": 13,
+        "panel_fp": 0.514,
+        "panel_inst_dd": -23.8,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 661.7,
+        "full_inst_dd": -18.1,
+        "full_nav_dd": -51.4,
+        "full_fp": 0.978,
+        "full_trades": 35,
+        "panel_fp": 0.868,
+        "panel_inst_dd": -29.3,
+        "panel_trades": 27
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 625.9,
+        "full_inst_dd": -26.6,
+        "full_nav_dd": -45.8,
+        "full_fp": 0.973,
+        "full_trades": 43,
+        "panel_fp": 0.902,
+        "panel_inst_dd": -26.6,
+        "panel_trades": 39
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 969.0,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -66.8,
+        "full_fp": 0.962,
+        "full_trades": 7,
+        "panel_fp": 0.659,
+        "panel_inst_dd": -32.8,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 975.7,
+        "full_inst_dd": -25.2,
+        "full_nav_dd": -63.6,
+        "full_fp": 0.958,
+        "full_trades": 7,
+        "panel_fp": 0.776,
+        "panel_inst_dd": -37.5,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 645.9,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -44.8,
+        "full_fp": 0.958,
+        "full_trades": 19,
+        "panel_fp": 0.625,
+        "panel_inst_dd": -23.8,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 646.9,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -48.5,
+        "full_fp": 0.953,
+        "full_trades": 19,
+        "panel_fp": 0.943,
+        "panel_inst_dd": -37.5,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 673.0,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -55.8,
+        "full_fp": 0.949,
+        "full_trades": 15,
+        "panel_fp": 0.53,
+        "panel_inst_dd": -23.8,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 568.2,
+        "full_inst_dd": -19.9,
+        "full_nav_dd": -35.3,
+        "full_fp": 0.948,
+        "full_trades": 13,
+        "panel_fp": 1.025,
+        "panel_inst_dd": -16.4,
+        "panel_trades": 13
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 873.4,
+        "full_inst_dd": -29.5,
+        "full_nav_dd": -100.6,
+        "full_fp": 0.942,
+        "full_trades": 39,
+        "panel_fp": 0.572,
+        "panel_inst_dd": -41.9,
+        "panel_trades": 28
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 991.4,
+        "full_inst_dd": -59.6,
+        "full_nav_dd": -67.7,
+        "full_fp": 0.939,
+        "full_trades": 7,
+        "panel_fp": 0.746,
+        "panel_inst_dd": -32.8,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 939.7,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -73.3,
+        "full_fp": 0.928,
+        "full_trades": 9,
+        "panel_fp": 0.644,
+        "panel_inst_dd": -32.8,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 329.1,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -41.5,
+        "full_fp": 0.927,
+        "full_trades": 23,
+        "panel_fp": 0.839,
+        "panel_inst_dd": -15.6,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 604.2,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -63.1,
+        "full_fp": 0.901,
+        "full_trades": 33,
+        "panel_fp": 0.368,
+        "panel_inst_dd": -23.1,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 453.5,
+        "full_inst_dd": -93.3,
+        "full_nav_dd": -156.9,
+        "full_fp": 0.898,
+        "full_trades": 59,
+        "panel_fp": 0.68,
+        "panel_inst_dd": -24.2,
+        "panel_trades": 63
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 346.2,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -38.9,
+        "full_fp": 0.884,
+        "full_trades": 11,
+        "panel_fp": 0.425,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 1
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 525.9,
+        "full_inst_dd": -26.6,
+        "full_nav_dd": -52.3,
+        "full_fp": 0.868,
+        "full_trades": 49,
+        "panel_fp": 0.818,
+        "panel_inst_dd": -26.6,
+        "panel_trades": 42
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 491.4,
+        "full_inst_dd": -27.4,
+        "full_nav_dd": -98.4,
+        "full_fp": 0.861,
+        "full_trades": 41,
+        "panel_fp": 0.498,
+        "panel_inst_dd": -30.8,
+        "panel_trades": 15
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 498.3,
+        "full_inst_dd": -18.4,
+        "full_nav_dd": -51.0,
+        "full_fp": 0.859,
+        "full_trades": 15,
+        "panel_fp": 0.881,
+        "panel_inst_dd": -41.1,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 333.7,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -40.5,
+        "full_fp": 0.857,
+        "full_trades": 15,
+        "panel_fp": 0.569,
+        "panel_inst_dd": -34.9,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 365.3,
+        "full_inst_dd": -25.6,
+        "full_nav_dd": -49.8,
+        "full_fp": 0.855,
+        "full_trades": 9,
+        "panel_fp": 0.425,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 1
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 653.1,
+        "full_inst_dd": -25.0,
+        "full_nav_dd": -79.6,
+        "full_fp": 0.851,
+        "full_trades": 33,
+        "panel_fp": 0.428,
+        "panel_inst_dd": -23.8,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 428.7,
+        "full_inst_dd": -19.0,
+        "full_nav_dd": -44.7,
+        "full_fp": 0.849,
+        "full_trades": 13,
+        "panel_fp": 0.677,
+        "panel_inst_dd": -28.1,
+        "panel_trades": 13
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 561.7,
+        "full_inst_dd": -24.8,
+        "full_nav_dd": -74.1,
+        "full_fp": 0.83,
+        "full_trades": 43,
+        "panel_fp": 0.51,
+        "panel_inst_dd": -36.1,
+        "panel_trades": 31
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 436.5,
+        "full_inst_dd": -27.4,
+        "full_nav_dd": -55.9,
+        "full_fp": 0.812,
+        "full_trades": 15,
+        "panel_fp": 0.867,
+        "panel_inst_dd": -16.4,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 289.7,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -48.1,
+        "full_fp": 0.803,
+        "full_trades": 19,
+        "panel_fp": 0.425,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 1
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 441.3,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -65.6,
+        "full_fp": 0.791,
+        "full_trades": 25,
+        "panel_fp": 0.887,
+        "panel_inst_dd": -28.1,
+        "panel_trades": 23
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 338.2,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -49.4,
+        "full_fp": 0.785,
+        "full_trades": 41,
+        "panel_fp": 0.765,
+        "panel_inst_dd": -17.9,
+        "panel_trades": 39
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 280.1,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -41.5,
+        "full_fp": 0.778,
+        "full_trades": 25,
+        "panel_fp": 0.635,
+        "panel_inst_dd": -15.6,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 356.2,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -59.0,
+        "full_fp": 0.771,
+        "full_trades": 23,
+        "panel_fp": 0.594,
+        "panel_inst_dd": -28.1,
+        "panel_trades": 19
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 315.3,
+        "full_inst_dd": -36.4,
+        "full_nav_dd": -60.9,
+        "full_fp": 0.758,
+        "full_trades": 11,
+        "panel_fp": 0.384,
+        "panel_inst_dd": -38.0,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 372.5,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -65.6,
+        "full_fp": 0.746,
+        "full_trades": 27,
+        "panel_fp": 0.789,
+        "panel_inst_dd": -28.1,
+        "panel_trades": 24
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 290.7,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -58.0,
+        "full_fp": 0.739,
+        "full_trades": 37,
+        "panel_fp": 0.447,
+        "panel_inst_dd": -17.9,
+        "panel_trades": 31
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 282.0,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -57.1,
+        "full_fp": 0.734,
+        "full_trades": 13,
+        "panel_fp": 0.357,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 2
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 314.4,
+        "full_inst_dd": -36.4,
+        "full_nav_dd": -75.0,
+        "full_fp": 0.725,
+        "full_trades": 15,
+        "panel_fp": 0.475,
+        "panel_inst_dd": -28.1,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 288.9,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -49.4,
+        "full_fp": 0.715,
+        "full_trades": 45,
+        "panel_fp": 0.654,
+        "panel_inst_dd": -17.9,
+        "panel_trades": 42
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 251.0,
+        "full_inst_dd": -36.4,
+        "full_nav_dd": -87.4,
+        "full_fp": 0.713,
+        "full_trades": 11,
+        "panel_fp": 0.357,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 2
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 292.0,
+        "full_inst_dd": -28.1,
+        "full_nav_dd": -59.0,
+        "full_fp": 0.705,
+        "full_trades": 25,
+        "panel_fp": 0.461,
+        "panel_inst_dd": -28.1,
+        "panel_trades": 20
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 240.7,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -56.5,
+        "full_fp": 0.683,
+        "full_trades": 21,
+        "panel_fp": 0.357,
+        "panel_inst_dd": -19.0,
+        "panel_trades": 2
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 241.8,
+        "full_inst_dd": -17.9,
+        "full_nav_dd": -63.0,
+        "full_fp": 0.669,
+        "full_trades": 39,
+        "panel_fp": 0.326,
+        "panel_inst_dd": -17.9,
+        "panel_trades": 32
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 332.1,
+        "full_inst_dd": -93.3,
+        "full_nav_dd": -173.2,
+        "full_fp": 0.666,
+        "full_trades": 89,
+        "panel_fp": 0.016,
+        "panel_inst_dd": -24.2,
+        "panel_trades": 98
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 381.4,
+        "full_inst_dd": -93.3,
+        "full_nav_dd": -142.9,
+        "full_fp": 0.536,
+        "full_trades": 75,
+        "panel_fp": 0.541,
+        "panel_inst_dd": -20.4,
+        "panel_trades": 78
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 404.8,
+        "full_inst_dd": -93.3,
+        "full_nav_dd": -153.5,
+        "full_fp": 0.088,
+        "full_trades": 73,
+        "panel_fp": 0.436,
+        "panel_inst_dd": -20.4,
+        "panel_trades": 77
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 799.6,
+        "full_inst_dd": -36.7,
+        "full_nav_dd": -146.7,
+        "full_fp": 0.012,
+        "full_trades": 29,
+        "panel_fp": 0.605,
+        "panel_inst_dd": -32.1,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 0.0,
+        "full_inst_dd": 0.0,
+        "full_nav_dd": 0.0,
+        "full_fp": 0.0,
+        "full_trades": 0,
+        "panel_fp": 0.0,
+        "panel_inst_dd": 0.0,
+        "panel_trades": 0
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 0.0,
+        "full_inst_dd": 0.0,
+        "full_nav_dd": 0.0,
+        "full_fp": 0.0,
+        "full_trades": 0,
+        "panel_fp": 0.0,
+        "panel_inst_dd": 0.0,
+        "panel_trades": 0
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 366.6,
+        "full_inst_dd": -93.6,
+        "full_nav_dd": -119.9,
+        "full_fp": -0.162,
+        "full_trades": 37,
+        "panel_fp": 0.609,
+        "panel_inst_dd": -26.6,
+        "panel_trades": 47
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 260.3,
+        "full_inst_dd": -94.9,
+        "full_nav_dd": -193.7,
+        "full_fp": -0.431,
+        "full_trades": 39,
+        "panel_fp": 0.186,
+        "panel_inst_dd": -32.1,
+        "panel_trades": 49
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 193.5,
+        "full_inst_dd": -94.9,
+        "full_nav_dd": -191.7,
+        "full_fp": -0.493,
+        "full_trades": 29,
+        "panel_fp": 0.302,
+        "panel_inst_dd": -41.7,
+        "panel_trades": 36
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 258.6,
+        "full_inst_dd": -93.6,
+        "full_nav_dd": -138.0,
+        "full_fp": -0.5,
+        "full_trades": 33,
+        "panel_fp": 0.475,
+        "panel_inst_dd": -39.7,
+        "panel_trades": 42
+      }
+    ],
+    "UPRO": [
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 114.4,
+        "full_inst_dd": -37.7,
+        "full_nav_dd": -71.8,
+        "full_fp": 0.57,
+        "full_trades": 19,
+        "panel_fp": 0.445,
+        "panel_inst_dd": -16.8,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 89.9,
+        "full_inst_dd": -40.0,
+        "full_nav_dd": -68.4,
+        "full_fp": 0.519,
+        "full_trades": 23,
+        "panel_fp": 0.473,
+        "panel_inst_dd": -16.5,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 84.2,
+        "full_inst_dd": -40.1,
+        "full_nav_dd": -59.6,
+        "full_fp": 0.512,
+        "full_trades": 23,
+        "panel_fp": 0.364,
+        "panel_inst_dd": -17.6,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 26.2,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -94.6,
+        "full_fp": 0.508,
+        "full_trades": 61,
+        "panel_fp": -0.014,
+        "panel_inst_dd": -48.3,
+        "panel_trades": 56
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 26.2,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -94.6,
+        "full_fp": 0.508,
+        "full_trades": 61,
+        "panel_fp": -0.014,
+        "panel_inst_dd": -48.3,
+        "panel_trades": 56
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 72.0,
+        "full_inst_dd": -38.7,
+        "full_nav_dd": -64.0,
+        "full_fp": 0.482,
+        "full_trades": 29,
+        "panel_fp": 0.45,
+        "panel_inst_dd": -10.2,
+        "panel_trades": 24
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 67.2,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -64.3,
+        "full_fp": 0.476,
+        "full_trades": 33,
+        "panel_fp": 0.746,
+        "panel_inst_dd": -11.3,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 64.1,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -67.6,
+        "full_fp": 0.466,
+        "full_trades": 35,
+        "panel_fp": 0.506,
+        "panel_inst_dd": -10.2,
+        "panel_trades": 24
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 66.2,
+        "full_inst_dd": -42.0,
+        "full_nav_dd": -69.3,
+        "full_fp": 0.465,
+        "full_trades": 11,
+        "panel_fp": 0.343,
+        "panel_inst_dd": -13.2,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 62.7,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -53.8,
+        "full_fp": 0.456,
+        "full_trades": 37,
+        "panel_fp": -0.276,
+        "panel_inst_dd": -54.1,
+        "panel_trades": 55
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 47.2,
+        "full_inst_dd": -39.9,
+        "full_nav_dd": -88.0,
+        "full_fp": 0.456,
+        "full_trades": 13,
+        "panel_fp": 0.005,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 19
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 56.0,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -72.4,
+        "full_fp": 0.447,
+        "full_trades": 35,
+        "panel_fp": 0.552,
+        "panel_inst_dd": -12.6,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 65.9,
+        "full_inst_dd": -51.9,
+        "full_nav_dd": -73.0,
+        "full_fp": 0.446,
+        "full_trades": 85,
+        "panel_fp": -0.346,
+        "panel_inst_dd": -51.9,
+        "panel_trades": 110
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 52.6,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -62.0,
+        "full_fp": 0.439,
+        "full_trades": 37,
+        "panel_fp": 0.502,
+        "panel_inst_dd": -10.4,
+        "panel_trades": 23
+      },
+      {
+        "params": {
+          "filter_mode": "sma",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 62.6,
+        "full_inst_dd": -51.9,
+        "full_nav_dd": -81.8,
+        "full_fp": 0.437,
+        "full_trades": 91,
+        "panel_fp": -0.426,
+        "panel_inst_dd": -51.9,
+        "panel_trades": 118
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 49.2,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -68.6,
+        "full_fp": 0.429,
+        "full_trades": 31,
+        "panel_fp": 0.663,
+        "panel_inst_dd": -12.6,
+        "panel_trades": 6
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 48.0,
+        "full_inst_dd": -32.7,
+        "full_nav_dd": -78.1,
+        "full_fp": 0.422,
+        "full_trades": 31,
+        "panel_fp": 0.168,
+        "panel_inst_dd": -51.3,
+        "panel_trades": 31
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 47.6,
+        "full_inst_dd": -45.5,
+        "full_nav_dd": -79.1,
+        "full_fp": 0.421,
+        "full_trades": 23,
+        "panel_fp": 0.134,
+        "panel_inst_dd": -49.5,
+        "panel_trades": 21
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 44.6,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -75.7,
+        "full_fp": 0.418,
+        "full_trades": 27,
+        "panel_fp": 0.443,
+        "panel_inst_dd": -14.0,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 44.9,
+        "full_inst_dd": -44.6,
+        "full_nav_dd": -72.3,
+        "full_fp": 0.412,
+        "full_trades": 13,
+        "panel_fp": 0.191,
+        "panel_inst_dd": -18.0,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 9.7,
+        "full_inst_dd": -50.1,
+        "full_nav_dd": -95.3,
+        "full_fp": 0.41,
+        "full_trades": 29,
+        "panel_fp": -0.417,
+        "panel_inst_dd": -55.1,
+        "panel_trades": 45
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 18.7,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -89.7,
+        "full_fp": 0.407,
+        "full_trades": 31,
+        "panel_fp": -0.019,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 25
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 41.0,
+        "full_inst_dd": -46.1,
+        "full_nav_dd": -73.5,
+        "full_fp": 0.405,
+        "full_trades": 27,
+        "panel_fp": 0.429,
+        "panel_inst_dd": -13.2,
+        "panel_trades": 16
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 49.8,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -67.3,
+        "full_fp": 0.396,
+        "full_trades": 29,
+        "panel_fp": -0.491,
+        "panel_inst_dd": -54.1,
+        "panel_trades": 41
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 37.9,
+        "full_inst_dd": -55.4,
+        "full_nav_dd": -63.4,
+        "full_fp": 0.392,
+        "full_trades": 9,
+        "panel_fp": -0.072,
+        "panel_inst_dd": -45.7,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 28.9,
+        "full_inst_dd": -48.5,
+        "full_nav_dd": -78.7,
+        "full_fp": 0.375,
+        "full_trades": 11,
+        "panel_fp": 0.115,
+        "panel_inst_dd": -21.5,
+        "panel_trades": 10
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 9.2,
+        "full_inst_dd": -51.6,
+        "full_nav_dd": -88.5,
+        "full_fp": 0.374,
+        "full_trades": 11,
+        "panel_fp": -0.137,
+        "panel_inst_dd": -61.6,
+        "panel_trades": 14
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 25.3,
+        "full_inst_dd": -8.3,
+        "full_nav_dd": -26.2,
+        "full_fp": 0.369,
+        "full_trades": 33,
+        "panel_fp": 0.582,
+        "panel_inst_dd": -8.3,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 25.3,
+        "full_inst_dd": -8.3,
+        "full_nav_dd": -26.2,
+        "full_fp": 0.369,
+        "full_trades": 33,
+        "panel_fp": 0.582,
+        "panel_inst_dd": -8.3,
+        "panel_trades": 11
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 22.3,
+        "full_inst_dd": -45.5,
+        "full_nav_dd": -79.3,
+        "full_fp": 0.366,
+        "full_trades": 33,
+        "panel_fp": 0.142,
+        "panel_inst_dd": -49.5,
+        "panel_trades": 25
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 24.5,
+        "full_inst_dd": -7.8,
+        "full_nav_dd": -22.4,
+        "full_fp": 0.366,
+        "full_trades": 27,
+        "panel_fp": 0.598,
+        "panel_inst_dd": -5.2,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 24.5,
+        "full_inst_dd": -7.8,
+        "full_nav_dd": -22.4,
+        "full_fp": 0.366,
+        "full_trades": 27,
+        "panel_fp": 0.598,
+        "panel_inst_dd": -5.2,
+        "panel_trades": 5
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 25.3,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -76.3,
+        "full_fp": 0.364,
+        "full_trades": 27,
+        "panel_fp": 0.337,
+        "panel_inst_dd": -15.2,
+        "panel_trades": 15
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 26.4,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -80.6,
+        "full_fp": 0.364,
+        "full_trades": 43,
+        "panel_fp": 0.025,
+        "panel_inst_dd": -51.3,
+        "panel_trades": 38
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 34.3,
+        "full_inst_dd": -15.3,
+        "full_nav_dd": -43.6,
+        "full_fp": 0.363,
+        "full_trades": 47,
+        "panel_fp": 0.007,
+        "panel_inst_dd": -15.3,
+        "panel_trades": 41
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 34.3,
+        "full_inst_dd": -15.3,
+        "full_nav_dd": -43.6,
+        "full_fp": 0.363,
+        "full_trades": 47,
+        "panel_fp": 0.007,
+        "panel_inst_dd": -15.3,
+        "panel_trades": 41
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 24.3,
+        "full_inst_dd": -55.4,
+        "full_nav_dd": -74.9,
+        "full_fp": 0.361,
+        "full_trades": 11,
+        "panel_fp": 0.22,
+        "panel_inst_dd": -18.0,
+        "panel_trades": 8
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 20.7,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -76.8,
+        "full_fp": 0.352,
+        "full_trades": 27,
+        "panel_fp": 0.432,
+        "panel_inst_dd": -14.8,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": false
+        },
+        "full_ret": 23.3,
+        "full_inst_dd": -7.8,
+        "full_nav_dd": -24.6,
+        "full_fp": 0.332,
+        "full_trades": 37,
+        "panel_fp": 0.407,
+        "panel_inst_dd": -7.8,
+        "panel_trades": 21
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 10,
+          "regime_filter": true
+        },
+        "full_ret": 23.3,
+        "full_inst_dd": -7.8,
+        "full_nav_dd": -24.6,
+        "full_fp": 0.332,
+        "full_trades": 37,
+        "panel_fp": 0.407,
+        "panel_inst_dd": -7.8,
+        "panel_trades": 21
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 22.5,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -79.4,
+        "full_fp": 0.328,
+        "full_trades": 89,
+        "panel_fp": -0.419,
+        "panel_inst_dd": -54.4,
+        "panel_trades": 126
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 26.9,
+        "full_inst_dd": -50.1,
+        "full_nav_dd": -73.4,
+        "full_fp": 0.322,
+        "full_trades": 35,
+        "panel_fp": -0.454,
+        "panel_inst_dd": -55.1,
+        "panel_trades": 51
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 11.1,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -70.1,
+        "full_fp": 0.301,
+        "full_trades": 31,
+        "panel_fp": 0.041,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 28
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 11.3,
+        "full_inst_dd": -47.5,
+        "full_nav_dd": -67.8,
+        "full_fp": 0.3,
+        "full_trades": 29,
+        "panel_fp": 0.373,
+        "panel_inst_dd": -10.2,
+        "panel_trades": 18
+      },
+      {
+        "params": {
+          "filter_mode": "momentum",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 17.9,
+        "full_inst_dd": -43.0,
+        "full_nav_dd": -77.5,
+        "full_fp": 0.296,
+        "full_trades": 93,
+        "panel_fp": -0.44,
+        "panel_inst_dd": -54.4,
+        "panel_trades": 128
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 11.5,
+        "full_inst_dd": -54.5,
+        "full_nav_dd": -63.4,
+        "full_fp": 0.294,
+        "full_trades": 9,
+        "panel_fp": 0.198,
+        "panel_inst_dd": -26.0,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 6.0,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -79.8,
+        "full_fp": 0.291,
+        "full_trades": 19,
+        "panel_fp": -0.417,
+        "panel_inst_dd": -54.4,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 6.0,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -79.8,
+        "full_fp": 0.291,
+        "full_trades": 19,
+        "panel_fp": -0.417,
+        "panel_inst_dd": -54.4,
+        "panel_trades": 22
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": 1.6,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -81.8,
+        "full_fp": 0.231,
+        "full_trades": 33,
+        "panel_fp": -0.464,
+        "panel_inst_dd": -54.4,
+        "panel_trades": 35
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 50,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": 1.6,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -81.8,
+        "full_fp": 0.231,
+        "full_trades": 33,
+        "panel_fp": -0.464,
+        "panel_inst_dd": -54.4,
+        "panel_trades": 35
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": -8.1,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -54.0,
+        "full_fp": 0.133,
+        "full_trades": 25,
+        "panel_fp": -0.04,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 17
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -8.1,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -54.0,
+        "full_fp": 0.133,
+        "full_trades": 25,
+        "panel_fp": -0.04,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 17
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": -27.8,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -57.7,
+        "full_fp": 0.096,
+        "full_trades": 17,
+        "panel_fp": -0.053,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 13
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 100,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -27.8,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -57.7,
+        "full_fp": 0.096,
+        "full_trades": 17,
+        "panel_fp": -0.053,
+        "panel_inst_dd": -52.4,
+        "panel_trades": 13
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": -43.5,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -67.0,
+        "full_fp": 0.073,
+        "full_trades": 17,
+        "panel_fp": 0.345,
+        "panel_inst_dd": -9.5,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -43.5,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -67.0,
+        "full_fp": 0.073,
+        "full_trades": 17,
+        "panel_fp": 0.345,
+        "panel_inst_dd": -9.5,
+        "panel_trades": 7
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": -23.9,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -59.3,
+        "full_fp": 0.071,
+        "full_trades": 25,
+        "panel_fp": 0.561,
+        "panel_inst_dd": -8.3,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 150,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -23.9,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -59.3,
+        "full_fp": 0.071,
+        "full_trades": 25,
+        "panel_fp": 0.561,
+        "panel_inst_dd": -8.3,
+        "panel_trades": 9
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": false
+        },
+        "full_ret": -22.8,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -62.1,
+        "full_fp": 0.068,
+        "full_trades": 21,
+        "panel_fp": 0.732,
+        "panel_inst_dd": -6.9,
+        "panel_trades": 3
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 20,
+          "regime_filter": true
+        },
+        "full_ret": -22.8,
+        "full_inst_dd": -52.4,
+        "full_nav_dd": -62.1,
+        "full_fp": 0.068,
+        "full_trades": 21,
+        "panel_fp": 0.732,
+        "panel_inst_dd": -6.9,
+        "panel_trades": 3
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": -47.1,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -72.2,
+        "full_fp": 0.032,
+        "full_trades": 15,
+        "panel_fp": 0.732,
+        "panel_inst_dd": -6.9,
+        "panel_trades": 3
+      },
+      {
+        "params": {
+          "filter_mode": "donchian",
+          "slow": 200,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": -47.1,
+        "full_inst_dd": -46.9,
+        "full_nav_dd": -72.2,
+        "full_fp": 0.032,
+        "full_trades": 15,
+        "panel_fp": 0.732,
+        "panel_inst_dd": -6.9,
+        "panel_trades": 3
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": false
+        },
+        "full_ret": 0.0,
+        "full_inst_dd": 0.0,
+        "full_nav_dd": 0.0,
+        "full_fp": 0.0,
+        "full_trades": 0,
+        "panel_fp": 0.0,
+        "panel_inst_dd": 0.0,
+        "panel_trades": 0
+      },
+      {
+        "params": {
+          "filter_mode": "sma_cross",
+          "slow": 50,
+          "fast": 50,
+          "regime_filter": true
+        },
+        "full_ret": 0.0,
+        "full_inst_dd": 0.0,
+        "full_nav_dd": 0.0,
+        "full_fp": 0.0,
+        "full_trades": 0,
+        "panel_fp": 0.0,
+        "panel_inst_dd": 0.0,
+        "panel_trades": 0
+      }
+    ]
+  }
+}

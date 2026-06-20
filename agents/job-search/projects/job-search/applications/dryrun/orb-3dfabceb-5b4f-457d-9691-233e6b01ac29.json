@@ -1,0 +1,260 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/orb/3dfabceb-5b4f-457d-9691-233e6b01ac29",
+  "org": "orb",
+  "job_id": "3dfabceb-5b4f-457d-9691-233e6b01ac29",
+  "job_title": "Solutions Architect- San Francisco HQ",
+  "job_location": "HQ-San Francisco",
+  "fetched_at": "2026-05-26T18:46:06Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_name",
+      "label": "First and Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_name"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_a480623a-f97d-4b15-a1ea-7c7b4dad413c",
+      "label": "Preferred Pronouns",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "She/Her/Hers",
+          "value": "She/Her/Hers"
+        },
+        {
+          "label": "He/Him/His",
+          "value": "He/Him/His"
+        },
+        {
+          "label": "They/Them/Theirs",
+          "value": "They/Them/Theirs"
+        },
+        {
+          "label": "Prefer not to answer",
+          "value": "Prefer not to answer"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_a480623a-f97d-4b15-a1ea-7c7b4dad413c"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_email"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_0ef8fc68-1840-4dcc-b360-393926dd675e",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_0ef8fc68-1840-4dcc-b360-393926dd675e"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_location"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_54e20c2b-c767-489e-aa87-69697e817e20",
+      "label": "Orb has an office-centric work model with 3 days per week in the office. Our SF office is located downtown and our NYC office is in Brooklyn. Are you willing to come in 3 days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_54e20c2b-c767-489e-aa87-69697e817e20"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_a4bddd57-01a6-49a7-bc44-e1031d5455a9",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_a4bddd57-01a6-49a7-bc44-e1031d5455a9"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d__systemfield_resume"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_6ffb0c65-1310-4c0b-a27f-b01e16618509",
+      "label": "U.S. Work Authorization",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Can work for any employer",
+      "source": "work_authorization.authorized_to_work_us (matched 'Can work for any employer')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Can work for any employer",
+          "value": "Can work for any employer"
+        },
+        {
+          "label": "Can work for current employer",
+          "value": "Can work for current employer"
+        },
+        {
+          "label": "Seeking work authorization",
+          "value": "Seeking work authorization"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_6ffb0c65-1310-4c0b-a27f-b01e16618509"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_4168d869-ad9c-47b4-a590-cb85d8323100",
+      "label": "Will you now or in the future require visa transfer or sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_4168d869-ad9c-47b4-a590-cb85d8323100"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_ed96eb16-f2af-4926-8e62-2960ba408595",
+      "label": "How did you hear about Orb?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Online job board (LinkedIn, Indeed)",
+      "source": "how_heard fuzzy 'linkedin' -> 'Online job board (LinkedIn, Indeed)'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Online job board (LinkedIn, Indeed)",
+          "value": "Online job board (LinkedIn, Indeed)"
+        },
+        {
+          "label": "Repvue",
+          "value": "Repvue"
+        },
+        {
+          "label": "BuiltIn",
+          "value": "BuiltIn"
+        },
+        {
+          "label": "Orb employee referral",
+          "value": "Orb employee referral"
+        },
+        {
+          "label": "Social media/industry event",
+          "value": "Social media/industry event"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_ed96eb16-f2af-4926-8e62-2960ba408595"
+    },
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_22e4f8f2-baf9-4800-a77b-43f44236143d",
+      "label": "About you",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='About you'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ab614365-d57b-4610-bb10-04ee67f6921d_22e4f8f2-baf9-4800-a77b-43f44236143d"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "ab614365-d57b-4610-bb10-04ee67f6921d_22e4f8f2-baf9-4800-a77b-43f44236143d",
+      "label": "About you",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='About you'"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,233 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/astronomer/3e3be48c-ccf0-4a39-9eb2-03a896787999",
+  "org": "astronomer",
+  "job_id": "3e3be48c-ccf0-4a39-9eb2-03a896787999",
+  "job_title": "Sales Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-05-31T00:30:55Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2__systemfield_name",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2__systemfield_email",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_43db2a93-fdca-4b8b-99da-b1c0cdd25218",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_43db2a93-fdca-4b8b-99da-b1c0cdd25218",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2__systemfield_resume",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_55e5ee7b-35b8-4161-9203-d75b795c2b0c",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_55e5ee7b-35b8-4161-9203-d75b795c2b0c",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_b32a7d9e-cd04-4938-9fb2-5f2b564ab79a",
+      "label": "Do you now or will you in the future require work visa sponsorship from us (for example H-1B)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_b32a7d9e-cd04-4938-9fb2-5f2b564ab79a",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_c7e9190c-996b-49b1-acd8-263ace295d9f",
+      "label": "Current Company",
+      "type": "input_text",
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_c7e9190c-996b-49b1-acd8-263ace295d9f",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_9ba8993e-c691-429a-9410-bceb6378c985",
+      "label": "To help us with scheduling and time zones: where are you based?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_9ba8993e-c691-429a-9410-bceb6378c985",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_7fc3ab60-7677-45a1-bc5f-e41a7cbb59a2",
+      "label": "How many years do you have with Python?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_7fc3ab60-7677-45a1-bc5f-e41a7cbb59a2",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_e00b3cf6-4e28-48c5-af63-fdccec59ed4a",
+      "label": "Are you based in Boston or able to commute in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "ashby_location_ack (Cyrus in WA, label does not mention a relocation-target city)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_e00b3cf6-4e28-48c5-af63-fdccec59ed4a",
+      "section": "Your Information"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_01b88b26-dbeb-40a9-8911-a1c001adc5c9",
+      "label": "Linkedin Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_01b88b26-dbeb-40a9-8911-a1c001adc5c9",
+      "section": "Links"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_2b19ce15-4f83-431d-be01-45e6e0682add",
+      "label": "Portfolio or other website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_2b19ce15-4f83-431d-be01-45e6e0682add",
+      "section": "Links"
+    },
+    {
+      "id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_97832764-576d-46ab-9711-aca02d53fa7f",
+      "label": "Additional Information",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "4daf1290-6a17-49cf-8bb2-7a59f47f1cd2_97832764-576d-46ab-9711-aca02d53fa7f",
+      "section": "Additional Information"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

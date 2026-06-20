@@ -1,0 +1,624 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/robinhood/jobs/7947548",
+  "org": "robinhood",
+  "job_id": "7947548",
+  "job_title": "Product Manager, Brokerage",
+  "job_location": "Menlo Park, CA; New York, NY",
+  "fetched_at": "2026-06-02T01:57:22Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs/7947548?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 30,
+    "filled": 22,
+    "filled_needs_review": 0,
+    "declined": 6,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67090523",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67090524",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_67090525",
+      "label": "How did you hear about this job?",
+      "type": "input_text",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_67090526",
+      "label": "Have you used Robinhood?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Have you used Robinhood?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67090527",
+      "label": "Have you ever worked for Robinhood as an employee, intern or contractor? Note that providing false or misleading information may result in disqualification from the hiring process.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have never worked at Robinhood",
+      "source": "worked_at_company_before (matched 'i have never' -> 'I have never worked at Robinhood')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "I currently work at Robinhood as a full-time employee or intern",
+          "value": 722345943
+        },
+        {
+          "label": "I have previously worked at Robinhood as a full-time employee or intern (Hoodie Alumni)",
+          "value": 722345944
+        },
+        {
+          "label": "I currently work at Robinhood in a contractor role",
+          "value": 722345945
+        },
+        {
+          "label": "I have previously worked at Robinhood in a contractor role",
+          "value": 722345946
+        },
+        {
+          "label": "I have never worked at Robinhood",
+          "value": 722345947
+        }
+      ]
+    },
+    {
+      "id": "question_67090528",
+      "label": "What gender pronouns do you prefer?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He / Him",
+          "value": 722345948
+        },
+        {
+          "label": "She / Her",
+          "value": 722345949
+        },
+        {
+          "label": "Them / They",
+          "value": 722345950
+        },
+        {
+          "label": "My pronouns are not listed",
+          "value": 722345951
+        },
+        {
+          "label": "I don’t wish to answer",
+          "value": 722345952
+        }
+      ]
+    },
+    {
+      "id": "question_67090529",
+      "label": "Are you legally work authorized to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67090530",
+      "label": "Will you now (or in the future) require visa sponsorship in order to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67090531",
+      "label": "Are you willing to work from the office(s) listed on the job description?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67090532",
+      "label": "Do you have:\na) any Personal/Familial Relationships (current Robinhood employees or employees of Robinhood’s vendors); \nb) any Outside Business Activities that you wish to continue; \nc) any investment that is greater than 5% of the outstanding shares of a publicly-traded company;\nd) any investment in a private company that has a business relationship or that is a current competitor of Robinhood; or \ne) any Intellectual Property Ownership (patents, trademarks, copyrights) that you wish to retain and/or create/develop while at Robinhood?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 722345953
+        },
+        {
+          "label": "No",
+          "value": 722345954
+        }
+      ]
+    },
+    {
+      "id": "question_67090533",
+      "label": "If you answered \"Yes\" to the above question, please provide additional information here:",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null
+    },
+    {
+      "id": "question_67090534",
+      "label": "Robinhood adheres to applicable laws and regulations in relation to government officials given inherent bribery and/or corruption risk. A government official is any person that performs a public function on any level or acts in any official capacity on behalf of a government or government owned entity. \na)  Do you currently hold or have you held, within the last 5 years, a position as a government official?\nb)  Have you been referred or recommended for this position by a government official?\nc)  Are you related to or have a close personal relationship with a government official?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "family_relations_at_company (default no)",
+      "status": "filled",
+      "matched_rule": "family_relations_at_company",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 722345955
+        },
+        {
+          "label": "No",
+          "value": 722345956
+        }
+      ]
+    },
+    {
+      "id": "question_67090535",
+      "label": "If you answered \"Yes\" to the above question, please provide additional information here:",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null
+    },
+    {
+      "id": "question_67193448",
+      "label": "Please briefly share your experience launching consumer products.",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please briefly share your experience launching consumer products.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "demographic_question_1255",
+      "label": "What is your gender identity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Cisgender woman",
+          "value": 7038
+        },
+        {
+          "label": "Cisgender man",
+          "value": 7039
+        },
+        {
+          "label": "Transgender woman",
+          "value": 7040
+        },
+        {
+          "label": "Transgender man",
+          "value": 7041
+        },
+        {
+          "label": "Non-binary",
+          "value": 7042
+        },
+        {
+          "label": "Two-spirit",
+          "value": 7043
+        },
+        {
+          "label": "My gender identity is not listed",
+          "value": 7044
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7045
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1258",
+      "label": "What is your race or ethnicity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": 7053
+        },
+        {
+          "label": "Black or African American",
+          "value": 7057
+        },
+        {
+          "label": "East Asian",
+          "value": 7054
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 7058
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 7061
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 7060
+        },
+        {
+          "label": "South Asian",
+          "value": 7055
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 7056
+        },
+        {
+          "label": "White",
+          "value": 7059
+        },
+        {
+          "label": "Two or More Races",
+          "value": 7062
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7063
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1259",
+      "label": "What is your military status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I am on active duty",
+          "value": 7065
+        },
+        {
+          "label": "I am part of the national guard or on reserve",
+          "value": 7066
+        },
+        {
+          "label": "I have never served in the military",
+          "value": 7064
+        },
+        {
+          "label": "I identify as a protected veteran",
+          "value": 8288
+        },
+        {
+          "label": "I identify as a non-protected veteran",
+          "value": 8289
+        },
+        {
+          "label": "I identify in multiple military status categories",
+          "value": 8290
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7067
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1261",
+      "label": "What is your disability status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability",
+          "value": 7071
+        },
+        {
+          "label": "No, I don't have a disability",
+          "value": 7072
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7073
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1465",
+      "label": "Do you identify as part of the LGBTQ+ community?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 8291
+        },
+        {
+          "label": "No",
+          "value": 8292
+        },
+        {
+          "label": "Questioning",
+          "value": 8293
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 8294
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67090526",
+      "label": "Have you used Robinhood?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Have you used Robinhood?'"
+    },
+    {
+      "id": "question_67193448",
+      "label": "Please briefly share your experience launching consumer products.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Please briefly share your experience launching consumer products.'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67193448",
+      "label": "Please briefly share your experience launching consumer products.",
+      "reason": "no LABEL_RULES match for label='Please briefly share your experience launching consumer products.'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

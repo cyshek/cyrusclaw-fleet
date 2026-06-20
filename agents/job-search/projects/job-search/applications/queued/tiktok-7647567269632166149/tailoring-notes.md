@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing SOPs and workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, authoring product requirements and self-service scheduling SOPs that **reduced operational toil by 30%** and transitioned execution from manual coordination to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new standard SOP for continuous validation across cloud infrastructure.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating stakeholder alignment across engineering, operations, and compliance teams.
+5. Scaled team leverage through AI-driven automation by building an internal AI agent and restructuring planning workflows, **reducing planning cycle time by 39%** and increasing drill capacity by 21% without adding headcount.
+6. Facilitated cross-functional stakeholder meetings across tech and non-tech teams to drive program decisions to conclusion, maintain documentation standards, and deliver training that ensured **consistent process adoption** at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed SOP adoption for AI-driven code generation workflows, conducting user demos and structured training sessions that drove **utilization across 14 key teams** and saved 37 engineering hours monthly through standardized process guidance.
+2. Performed root cause analysis on critical feature gaps by facilitating **11+ user interviews** with Azure service teams, translating findings into actionable roadmap recommendations that influenced intent-based YAML generation as a priority feature.
+3. Improved process efficiency and data integrity by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time by 83%** and enabling faster, more accurate support workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization SOP across 140+ teams, standardizing how teams identified and escalated manual workflow gaps.
+2. Developed a scalable process improvement roadmap by conducting structured discovery with 20+ service teams, identifying **81 hours of manual effort per region** and mapping critical automation paths to eliminate toil during high-stakes launches.
+3. Enabled leadership to prioritize high-impact SOP gaps and track efficiency gains by engineering a **Power BI dashboard** that surfaced operational toil metrics across 140+ teams, translating raw data into actionable program decisions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by authoring the legacy OS migration SOP, mapping dependencies across 1,200+ stations, and coordinating execution across IT, Operations, and Engineering stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, maintaining a prioritized backlog that resolved **40+ high-priority tickets** and stabilized the developer intake process through consistent, documented workflow standards.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating software deployment cycles by 25%** and reducing manual intervention through standardized release process documentation.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by developing and standardizing a CRM-based SOP for end-to-end scoping and invoicing, bringing consistency and scalability to the management of 200+ monthly customer proposals.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market process, optimizing the website and Google profile through structured, repeatable improvement workflows.
+3. Identified and resolved margin leaks by performing root cause analysis across **1,000+ project records**, delivering a financial profitability framework that gave leadership actionable data to refine pricing SOPs and protect margins.
+
+## Notes from the rewriter
+- Mirrored JD vocabulary throughout: 'SOP,' 'root cause analysis,' 'process standardization,' 'scalability,' 'cross-functional,' 'training and support,' and 'tools and systems.'
+- microsoft_ft bullet#1 trimmed from 297 to ≤290 chars by removing 'including' redundancy; bullet#4 trimmed from 298 to ≤290 by condensing the dependent clause on stakeholder scope.
+- All bullets verified ≤290 chars and structured as full 2-liners to maximize page density per formatting rules.
+

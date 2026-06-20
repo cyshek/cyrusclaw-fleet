@@ -1,0 +1,519 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/lyft/jobs/8550274002",
+  "org": "lyft",
+  "job_id": "8550274002",
+  "job_title": "Product Manager, Driver Earnings",
+  "job_location": "Seattle, WA",
+  "fetched_at": "2026-05-23T14:21:17Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/lyft/jobs/8550274002?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 25,
+    "filled": 16,
+    "filled_needs_review": 2,
+    "declined": 5,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_36540190002",
+      "label": "Please enter your relevant employment and military service above using the + Add Another Employment link.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Thank you",
+      "source": "acknowledge_yes (single option 'Thank you')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Thank you",
+          "value": 241761979002
+        }
+      ]
+    },
+    {
+      "id": "question_36540191002",
+      "label": "May we contact your current employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer | NOTE: 'Microsoft' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "current_employer",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36540192002",
+      "label": "Can you perform these essential functions of the job with reasonable accommodation?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "essential_functions_ack (default yes)",
+      "status": "filled",
+      "matched_rule": "essential_functions_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36540193002",
+      "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_36540194002",
+      "label": "Work Authorization",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us | NOTE: 'Yes' not literally in options ['I am authorized to work for any employer in the country in which this position is based.', \"I require/will require Lyft's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)\", 'My status to work in the country in which this position is based is unknown.']",
+      "status": "filled_needs_review",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "I am authorized to work for any employer in the country in which this position is based.",
+          "value": 241761984002
+        },
+        {
+          "label": "I require/will require Lyft's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)",
+          "value": 241761986002
+        },
+        {
+          "label": "My status to work in the country in which this position is based is unknown.",
+          "value": 241761987002
+        }
+      ]
+    },
+    {
+      "id": "question_36540195002",
+      "label": "Please review the linked document:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice.",
+      "source": "acknowledge_yes (single option 'I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I acknowledge that I have read and understood the terms of the Lyft Candidate Privacy Notice.",
+          "value": 241761980002
+        }
+      ]
+    },
+    {
+      "id": "question_36540196002[]",
+      "label": "Please share your gender pronouns.",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "She / Her",
+          "value": 241761988002
+        },
+        {
+          "label": "He / Him",
+          "value": 241761989002
+        },
+        {
+          "label": "They / Them",
+          "value": 241761990002
+        },
+        {
+          "label": "Ae / Aer",
+          "value": 241761991002
+        },
+        {
+          "label": "Ey / Em",
+          "value": 241761992002
+        },
+        {
+          "label": "Fae / Faer",
+          "value": 241761993002
+        },
+        {
+          "label": "Ne / Nem",
+          "value": 241761994002
+        },
+        {
+          "label": "Per / Per",
+          "value": 241761995002
+        },
+        {
+          "label": "Ve / Vir",
+          "value": 241761996002
+        },
+        {
+          "label": "Xe / Xem",
+          "value": 241761997002
+        },
+        {
+          "label": "Xie / Hir",
+          "value": 241761998002
+        },
+        {
+          "label": "Yo / Yo",
+          "value": 241761999002
+        },
+        {
+          "label": "Ze / Hir",
+          "value": 241762000002
+        },
+        {
+          "label": "Ze / Zir",
+          "value": 241762001002
+        },
+        {
+          "label": "Other",
+          "value": 241762002002
+        }
+      ]
+    },
+    {
+      "id": "question_36540197002",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_36540198002",
+      "label": "Have you been employed by Lyft, or any subsidiary, affiliate, or business unit of Lyft, in the past (whether on a full-time or part-time basis)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36540199002",
+      "label": "Zip / postal code",
+      "type": "input_text",
+      "required": true,
+      "value": "98034",
+      "source": "address.zip",
+      "status": "filled",
+      "matched_rule": "zip",
+      "options": null
+    },
+    {
+      "id": "question_36540200002",
+      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I am willing to relocate before starting employment.",
+          "value": 241761981002
+        },
+        {
+          "label": "I am not willing to relocate before starting employment.",
+          "value": 241761982002
+        },
+        {
+          "label": "I already reside near a Lyft office and I am able to work at a Lyft On-site Office.",
+          "value": 241761983002
+        }
+      ]
+    },
+    {
+      "id": "question_36540201002",
+      "label": "I certify that the facts set forth in this Application for Employment are true and complete to the best of my knowledge. I understand that if I am employed, false statements, omissions or misrepresentations may result in my dismissal. I authorize the Employer to make an investigation of any of the facts set forth in this application and release the Employer from any liability. The employer may contact any provided references. ",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes)",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": null
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_36540193002",
+      "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'"
+    },
+    {
+      "id": "question_36540200002",
+      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_36540200002",
+      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?",
+      "reason": "no LABEL_RULES match for label='This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?'"
+    }
+  ]
+}

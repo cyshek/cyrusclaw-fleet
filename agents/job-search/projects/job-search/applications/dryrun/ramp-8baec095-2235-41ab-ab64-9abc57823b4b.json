@@ -1,0 +1,154 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/ramp/8baec095-2235-41ab-ab64-9abc57823b4b",
+  "org": "ramp",
+  "job_id": "8baec095-2235-41ab-ab64-9abc57823b4b",
+  "job_title": "Product Manager | International",
+  "job_location": "New York, NY (HQ)",
+  "fetched_at": "2026-05-13T16:14:30Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_name",
+      "label": "Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_name"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_email"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267_5d5ffa81-2161-4b2b-8470-9aa7179a34e6",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267_5d5ffa81-2161-4b2b-8470-9aa7179a34e6"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_location",
+      "label": "Where do you plan on working from (for payroll tax purposes)?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_location"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267__systemfield_resume"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267_641a6090-09b6-4ad3-9ca9-2913ea3bdc43",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267_641a6090-09b6-4ad3-9ca9-2913ea3bdc43"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267_8acd4a6a-d3bf-4fa8-86fa-a0caf916daab",
+      "label": "Can you share an example of how you’ve integrated an AI tool into your product development workflow (e.g., research, PRDs, data analysis, design brainstorming)?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267_8acd4a6a-d3bf-4fa8-86fa-a0caf916daab"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267_d2ab5f5e-fefc-4967-b027-2f7391e2579e",
+      "label": "Please follow this link (https://www.db-fiddle.com/f/sRqKozBHiTZ9rZ8W14D8wS/29) and leverage the data provided to answer the following 3 questions. [1] Which card has the most spend? [2] Which card program has the most number of individual transactions? [3] Which card program had the most transactions in October?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267_d2ab5f5e-fefc-4967-b027-2f7391e2579e"
+    },
+    {
+      "id": "afd0a573-7c92-411e-ace7-37d809c3d267_e041fc35-ecfb-4fa0-ae68-df8b632c44ce",
+      "label": "Are you comfortable working in-person at the office (New York City) at least 3 days/week?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes | Able to relocate to the NYC  area upon offer acceptance and comfortable being in the office at least 3 days/week",
+      "source": "ashby_location_ack (matched relocation target 'new york' in label) | NOTE: 'Yes' not literally in options ['No | Would prefer to work remotely', 'Yes | Able to relocate to the NYC  area upon offer acceptance and comfortable being in the office at least 3 days/week', 'Yes | Currently located in the broader NYC area and comfortable being in the office at least 3 days/week'] | ashby_smart_match(yes_specific,picked='Yes | Able to relocate to the NYC  area upon offer acceptance and comfortable being in the office at least 3 days/week')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "No | Would prefer to work remotely",
+          "value": "No | Would prefer to work remotely"
+        },
+        {
+          "label": "Yes | Able to relocate to the NYC  area upon offer acceptance and comfortable being in the office at least 3 days/week",
+          "value": "Yes | Able to relocate to the NYC  area upon offer acceptance and comfortable being in the office at least 3 days/week"
+        },
+        {
+          "label": "Yes | Currently located in the broader NYC area and comfortable being in the office at least 3 days/week",
+          "value": "Yes | Currently located in the broader NYC area and comfortable being in the office at least 3 days/week"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "afd0a573-7c92-411e-ace7-37d809c3d267_e041fc35-ecfb-4fa0-ae68-df8b632c44ce"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

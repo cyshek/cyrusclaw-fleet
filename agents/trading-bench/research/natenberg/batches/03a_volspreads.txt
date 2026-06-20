@@ -1,0 +1,2738 @@
+Figure 9-7 Charm of an option.
+
+
+
+    Charm – sensitivity of the delta to a change in time
+                                                                                        Less time                               Less time
+                                                                                      to expiration                           to expiration
+
+
+
+
+                                                           0
+
+                                                                   More time                               More time
+                                                                  to expiration                           to expiration
+
+
+
+
+                                                           –100                 –50                   0                   50                  100
+                                                                              Put deltas                              Call deltas
+
+
+
+
+Theta
+
+The theta of an option, the rate at which it decays, will vary depending not
+only on market conditions but also on whether an option is in the money, at
+the money, or out of the money. In Figure 9-8, we can see that the theta of an
+option is greatest when it is at the money. As the option moves either into or out
+of the money, its theta declines. Because the theta of an option is a function of
+its time value, and because very deeply in the money options and very far out of
+the money options have very little time value, it is logical that such options have a
+very low theta.
+      Note also that when all other conditions are the same, an at-the-money
+option at a higher underlying price has a greater theta value than an at-the-
+money option with lower underlying price. To understand why, consider two
+calls, one with an exercise price of 10 and one with an exercise price of 1,000,
+where both options are at the money and both calls have the same amount
+of time to expiration and the same implied volatility. Which option will be
+worth more? Clearly, the 1,000 call will be worth more because it represents the
+right to buy a more valuable asset.3 Because both options are at the money and
+therefore consist solely of time value, the theta of the 1,000 call must be greater
+than the theta of the 10 call.
+
+3
+  In fact, the theoretical value and theta of two otherwise identical at-the-money options are proportional to
+their exercise prices. In this example, the 1,000 call will be worth exactly 100 times more than the 10 call, and
+its theta will be exactly 100 times greater.
+
+
+
+                                                                                                                          RIsk MeAsUReMeNT II       141
+      Figure 9-8 Theta of an option as the underlying price changes.
+
+
+
+                                                                                Higher
+                                                                             exercise price
+                                                            Intermediate
+                                                           exercise price
+
+                                    Lower
+                                 exercise price
+             Theta*
+
+
+
+
+                                  Lower underlying prices           Higher underlying prices
+                      *Although it is common to express theta as a negative number, the theta values
+                      in Figures 9-8, 9-10, and 9-11 are expressed in terms of absolute value.
+
+
+
+
+            Figure 9-9 shows the theoretical value of an in-the-money, at-the-
+      money, and out-of-the-money option as time passes. Early in the option’s
+      life, the rate of decay (the slope of the theoretical-value graph) is similar for
+      each option. But late in the option’s life, as expiration approaches, the rate
+      of decay slows for in-the-money and out-of-the-money options, whereas it
+      accelerates for an at-the-money option, approaching infinity at the moment
+      of expiration. These characteristics, which apply to both calls and puts, are
+      shown in Figure 9-10.4
+            The effect on the theta of changing volatility is shown in Figure 9-11. If
+      we ignore interest, with a 0 volatility, the theta of any option will be 0. As we
+      increase volatility, we increase the time premium, at the same time increas-
+      ing the theta.
+            Note that the graph of the at-the-money option is essentially a straight line,
+      with the theta being directly proportional to the volatility. For an at-the-money
+      option, the theta at a volatility of 20 percent is exactly double the theta at a vol-
+      atility of 10 percent. The same is not necessarily true for higher exercise prices
+      (out-of-the-money calls and in-the-money puts) or lower exercise prices (in-the-
+      money calls and out-of-the-money puts). The theta tends to decline as volatility
+      declines but may become 0 well before the volatility is 0.
+
+      4
+       The theta values for in-the-money and out-of-the-money options are actually slightly different. However, the
+      values are so close that in Figure 9-10 we use one line to represent both options.
+
+
+
+142   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-9 Theoretical value of an option as time passes.
+
+
+
+
+                                                      In the money
+    Option value
+
+
+
+
+                       At the money
+
+
+
+
+                                                        % out of the money
+
+
+
+       0                                                              Time to expiration
+  (Expiration)
+
+
+
+
+Figure 9-10 Theta of an option as time passes.
+    Theta
+
+
+
+
+                          In the money
+                                 or                         At the money
+                         out of the money
+
+
+
+
+       0                                                              Time to expiration
+  (Expiration)
+
+
+
+
+                                                                RIsk MeAsUReMeNT II        143
+      Figure 9-11 Theta of an option as volatility changes.
+
+
+
+
+                                                                         Higher
+                                                                      exercise price
+          Theta
+
+
+
+
+                                      At the money
+
+
+
+
+                                                                                   Lower
+                                                                                exercise price
+
+
+
+
+                               Lower volatility                        Higher volatility
+
+
+
+
+           Figure 9-11 was constructed with the higher and lower exercise prices
+      equally far away from the current underlying price. Note that the higher exer-
+      cise price has a greater theta than the lower exercise price, with the difference
+      increasing with increasing volatility. We touched on the explanation for this
+      in Chapter 6. If a call and a put are both equally out of the money, under the
+      assumptions of a lognormal distribution, the out-of-the-money call (the higher
+      exercise price) will carry greater time premium than the out-of-the-money put
+      (the lower exercise price). If there is no movement in the price of the under-
+      lying contract, the option with more time premium (the higher exercise price)
+      must necessarily decay more quickly than the option with less time premium
+      (the lower exercise price).
+           If we know the value of an option today, is there any way to estimate the
+      option’s theta? There is no convenient method for estimating the theta of
+      in-the-money and out-of-the-money options, but for an at-the-money option,
+      we know that theta is directly proportional to volatility (Figure 9-11). We also
+      know from Chapter 6 that volatility is proportional to the square root of time
+
+                                         volatility t = volatility annual × t
+      The theta of an at-the-money option must therefore be proportional to the
+      square root of time. If TVt is an option’s theoretical value at time t (in days to
+      expiration), then the theoretical value one day later TVt–1 is
+                                              TVt −1 = TVt × (t − 1) / t
+
+
+144   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+The theta is therefore
+
+                  TVt − TVt × (t − 1) / t = TVt × 1 − (t − 1) / t 
+
+As time passes, the value of 1 − (t − 1) / t becomes increasingly large. Con-
+sequently, the theta of an at-the-money option will also become increasingly
+large (Figure 9-7).
+    For example, consider an at-the-money option with a theoretical value
+of 2.50 and 30 days remaining to expiration. The option’s theta will be
+approximately
+
+                        (              )
+                2.50 × 1 − 29 / 30 = 2.50 × (1 − 0.9832) ≈ 0.042
+One day later, with 29 days remaining to expiration, the theta will be
+
+                             (               )
+          (2.50 − 0.042) × 1 − 28 / 29 = 2.458 × (1 − 0.9826) ≈ 0.043
+
+
+Vega
+
+Figure 9-12 shows the vega of an option as we change the underlying price.
+Note that this figure is almost identical to Figure 9-8. As with the theta, the vega
+is greatest when an option is at the money, and an at-the-money option with
+
+Figure 9-12 Vega of an option as the underlying price changes.
+
+
+
+                                                             Higher
+                                                          exercise price
+                                       Intermediate
+                                      exercise price
+
+                      Lower
+                   exercise price
+   Vega
+
+
+
+
+                   Lower underlying prices       Higher underlying prices
+
+
+
+
+                                                                 RIsk MeAsUReMeNT II   145
+      a higher exercise price has a greater vega than an at-the-money option with a
+      lower exercise price. Moreover, the vega of an at-the-money option is propor-
+      tional to its exercise price. Assuming that all other conditions are the same, an
+      at-the-money option with an exercise price of 100 will have a vega that is twice
+      that of an option with an exercise price of 50. Note that the term vanna, which
+      previously referred to the sensitivity of delta to a change in volatility, can also
+      refer to the sensitivity of the vega to a change in the underlying price. Both
+      interpretations are mathematically identical.
+           Figure 9-13 shows the theoretical value of an in-the-money, at-the-money,
+      and out-of-the-money option as we change volatility. Of particular note is the
+      fact that the value of an at-the-money option is essentially a straight line. Be-
+      cause the vega is the slope of the graph, we can conclude that the vega of an
+      at-the-money option is relatively constant with respect to changes in volatility.
+      Whether volatility is 20 percent, 30 percent, or some higher value, the vega of
+      an at-the-money option will be the same.
+           The effect on the vega of changing volatility is shown in Figure 9-14.
+      While the vega of the at-the-money option is relatively constant, the vega val-
+      ues of in-the-money and out-of-the-money options tend to rise with higher
+      volatility.5 This is logical when we recall that as we raise volatility, the deltas
+      of in-the-money and out-of-the-money options tend toward 50, causing the
+      options to act more and more as if they are at the money. Because at-the-
+      money options have the greatest vega (see Figure 9-12), we would expect the
+
+      Figure 9-13 Theoretical value of an option as volatility changes.
+
+
+
+
+                                                                       In the money
+          Option value
+
+
+
+
+                                  At the money
+
+
+
+                                                                               Out of the money
+
+
+
+                              Lower volatility                              Higher volatility
+
+
+
+      5
+       In fact, we can see from Figure 9-14 that the vega of an at-the-money option declines very slightly as we raise
+      volatility. This will be discussed in greater detail in Chapter 18.
+
+
+146   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-14 Vega of an option as volatility changes.
+
+
+                                                       At the money
+
+
+
+
+                       Higher
+                    exercise price
+   Vega
+
+
+
+
+                                                                   Lower
+                                                                exercise price
+
+
+
+
+                    Lower volatility                   Higher volatility
+
+
+
+
+vega values to rise. The sensitivity of vega to a change in volatility is some-
+times referred to as either the volga or the vomma (both terms are a contraction
+of volatility and gamma—either volatility gamma or volatility gamma).
+     Figure 9-15 shows volga values for calls and puts with varying deltas. We
+have already noted that an at-the-money option with a delta of approximately
+50 has a relatively constant vega and, consequently, a volga close to 0. How-
+ever, as an option moves either into the money or out of the money, the volga
+begins to increase, reaching its maximum for calls with deltas of approximately
+10 and 90 and puts with deltas of approximately –10 and –90. Additionally, as
+we increase time, volga values for in-the-money and out-of-the-money options
+become more sensitive to the passage of time, with long-term options having
+greater volga values than short-term options.
+     In Figure 9-16, we can see how vega values change as time changes,
+rising as we increase time to expiration and falling as we reduce time. This
+characteristic, that long-term options are always more sensitive to changes
+in volatility than short-term options, was introduced in Chapter 6 (see
+Figures 6-11 and 6-12).
+     The sensitivity of the vega to changes in time to expiration, sometimes
+referred to as either vega decay or DvegaDtime, is shown in Figure 9-17. The vega
+of options with delta values between 10 and 90 tends to be the most sensitive to
+the passage of time. This sensitivity increases as we reduce time to expiration;
+as time passes, the vega of short-term options will change more quickly than
+the vega of long-term options.
+
+                                                              RIsk MeAsUReMeNT II   147
+      Figure 9-15 Volga (vomma) of an option.
+
+
+        Volga–sensitivity of the vega to a change in volatility
+                                                                                                  More time
+                                                                                                 to expiration
+
+
+
+
+                                                                                                         Less time
+                                                                                                       to expiration
+
+
+
+
+                                                                   0
+                                                                  –100     –50          0                      50                  100
+                                                                         Put deltas                        Call deltas
+
+
+
+
+      Figure 9-16 Vega of an option as time passes.
+
+
+
+
+                                                                                         At the money
+                                                                  Vega
+
+
+
+
+                                                                                         Higher
+                                                                                      exercise price
+
+
+
+
+                                                                                                                     Lower
+                                                                                                                  exercise price
+
+
+
+                                0                                                                                  Time to expiration
+                           (Expiration)
+
+
+
+
+148   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-17 Vega decay of an option.
+
+
+
+
+                                                                                Less time
+                                                                              to expiration
+    Vega decay–sensitivity of the vega to
+           the passage of time
+
+
+
+
+                                                                                         More time
+                                                                                        to expiration
+
+                            0
+                           –100               –50        0                      50                       100
+                                            Put deltas                      Call deltas
+
+
+
+Gamma
+
+The gamma measures the sensitivity of the delta to a change in the underlying
+price. But the gamma itself is sensitive to changes in market conditions.6
+     In Figure 9-18, we can see that the gamma is greatest when an option is
+at the money. This is similar to theta and vega, which are also greatest when
+an option is at the money, and leads to an important principle of option trad-
+ing: gamma, theta, and vega are greatest when an option is at the money. Because of this,
+at-the-money options tend to be the most actively traded in most option mar-
+kets. Such options have the characteristics that traders are looking for when
+they go into an option market.
+     Unlike the theta and vega of at-the-money options, which increase at
+higher exercise prices, the gamma of an at-the-money option declines at higher
+exercise prices. To understand why, recall that the gamma is the change in
+the delta per one-point change in the underlying price. But theoretical pric-
+ing models measure change in percentage terms. By this measure, a one-point
+price change with the underlying at 50 (a 2 percent change) is greater than
+
+6
+ Because the gamma is a second-order sensitivity—the sensitivity of the delta to a change in the underlying
+price—the sensitivity of gamma to a change in market conditions is a third-order sensitivity. For a discussion
+of some of the higher-order sensitivities, see Espen Gaarder Haug, The Complete Guide to Option Pricing Formulas
+(New York: McGraw-Hill, 2007); Espen Gaarder Haug, “Know Your Weapon, Part 1,” Wilmott Magazine,
+May 2003: 49–57, also available at http://www.wilmott.com/pdfs/050527_haug.pdf; and Espen Gaarder
+Haug, “Know Your Weapon, Part 2,” Wilmott Magazine, July–August 2003:50–56, also available at http://www
+.nuclearphynance.com/User percent20Files/2552/0307_haug.pdf.
+
+                                                                               RIsk MeAsUReMeNT II                 149
+      Figure 9-18 Gamma of an option as the underlying price changes.
+
+
+
+
+                                 Lower
+                              exercise price
+                                                        Intermediate
+                                                       exercise price
+                                                                            Higher
+                                                                         exercise price
+          Gamma
+
+
+
+
+                               Lower underlying prices          Higher underlying prices
+
+
+
+
+      a one-point price change with the underlying at 100 (a 1 percent change).
+      Although the theta and vega of at-the-money options are proportional to their
+      exercise prices, the gamma is inversely proportional. The gamma of an option
+      with an exercise price of 50 will be twice as large as the gamma of an option
+      with an exercise price of 100.
+            Because at-the-money options have the greatest gamma, as the underly-
+      ing price moves toward the exercise price, the gamma of an option will rise,
+      and as the underlying price moves away from the exercise price, the gamma
+      will fall. The sensitivity of the gamma to a change in the underlying price,
+      sometimes referred to as the speed, is shown in Figure 9-19. The speed is great-
+      est for out-of-the-money options with deltas close to 15 for calls and –15
+      for puts and for in-the-money options with deltas close to 85 for calls and
+      –85 for puts. As we increase time to expiration or volatility, the speed of an
+      option declines; as we reduce time to expiration or volatility, the speed rises.
+      The gamma is least sensitive to changes in the underlying price for at-the-
+      money options (a delta close to 50 for calls or –50 for puts) or for very deeply
+      in-the-money or very far out-of-the-money options (deltas close to 0 and close
+      to 100 for calls or –100 for puts).
+            The gamma will also be sensitive to changes in time to expiration and vol-
+      atility. This is shown in Figure 9-20. We know that gamma is greatest when an
+      option is at the money and declines as the option moves either into the money
+      or out of the money. Of particular importance is the fact that the gamma of an
+      at-the-money option rises as time passes or as we reduce volatility and falls as
+      we increase volatility. To see why, consider a 100 call with the market at 97.50.
+150   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-19 speed of an option.
+
+
+
+
+                                                                             Less time to
+                                                                                                                        Less time to
+Speed – sensitivity of the gamma to a change
+
+
+                                                                             expiration or
+                                                                                                                        expiration or
+                                                                            lower volatility
+                                                                                                                       lower volatility
+            in underlying price
+
+
+
+
+                                               0
+
+                                                       More time to                                 More time to
+                                                       expiration or                                expiration or
+                                                      higher volatility                            higher volatility
+
+
+
+
+                                               –100                   –50                      0                    50                    100
+                                                                    Put deltas                                  Call deltas
+
+
+
+Because the option is currently out of the money, its delta is less than 50. We
+also know that as time passes or we reduce volatility, delta values move away
+from 50. If we are close to expiration or in a very low-volatility market, the
+delta of the option will be well below 50, perhaps 25. If the underlying market
+should then rise 5 points to 102.50, the delta of the option will be greater than
+50, perhaps 75. With the underlying market rising from 97.50 to 102.50 and
+the delta rising from 25 to 75, the approximate gamma should be
+
+                                                                             75 − 25      50
+                                                                                        =    = 10
+                                                                          102.50 − 97.50 5
+If, however, expiration is far in the future or we are in a high-volatility market,
+the delta of the 100 call will stay close to 50. With the underlying market at
+97.50, the delta of the option may be 45. If the market then rises to 102.50, the
+delta may be only 55. The approximate gamma is then
+
+                                                                              55 − 45      50
+                                                                                         =    =2
+                                                                           102.50 − 97.50 5
+    The effect is just the opposite for in-the-money and out-of-the-money
+options. The gamma will fall if we reduce volatility and rise if we increase
+volatility.7 Because gamma and theta are closely related, if we were to graph
+7
+ This is a general rule. Sometimes an option that is only slightly in the money or out of the money will act like an
+at-the-money option. Whether an option’s characteristics will resemble those of an at-the-money, in-the-money,
+or out-of-the-money option will depend on a variety of factors, including volatility and time to expiration.
+
+                                                                                                                  RIsk MeAsUReMeNT II           151
+      Figure 9-20 Gamma of an option as time passes or volatility changes.
+
+
+
+
+                                                                 Less time to expiration
+                                                                   or lower volatility
+          Gamma
+
+
+
+
+                                                                              More time to expiration
+                                                                                or higher volatility
+
+
+
+
+                       Lower underlying prices             Exercise    Higher underlying prices
+                                                            price
+
+
+
+
+      the gamma of an option as time passes, the result would be very similar to
+      Figure 9-10, with the gamma instead of the theta along the y-axis.
+            The sensitivity of the gamma to the passage of time, sometimes referred
+      to as its color, is shown in Figure 9-21. The color is greatest for at-the-money
+      calls and puts, with gamma values becoming smaller as we increase time
+      to expiration and larger as we reduce time (hence a negative color value).
+      Calls with deltas close to 5 or 95 and puts with deltas close to –5 or –95 also
+      have large color values. Here, however, an increase in time causes gamma
+      values to rise, whereas the passage of time causes gamma values to fall
+      (a positive color). Moreover, reducing time or volatility will increase color
+      values, making an option’s gamma more sensitive to changes in the passage
+      of time. Increasing time or volatility will reduce color values, making an
+      option’s gamma less sensitive to the passage of time. Calls with deltas close to
+      15 or 85 and puts with deltas close to –15 and –85 tend to have color values
+      close to 0. The gamma values of such options will be relatively insensitive to
+      the passage of time.
+            The sensitivity of an option’s gamma to a change in volatility, sometimes
+      referred to as its zomma, is shown in Figure 9-22. Zomma characteristics are
+      similar to color characteristics. The zomma is large for at-the-money calls and
+      puts, with gamma values becoming smaller as volatility rises and larger as vola-
+      tility falls (a negative zomma). Calls with deltas close to 5 or 95 and puts with
+      deltas close to –5 or –95 also have large zomma values. Here, however, an
+152   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-21 Color of an option.
+
+Color–sensitivity of the gamma to
+      the passage of time
+
+
+
+
+                                                                        0
+
+
+
+
+                                                                              More time to          Less time to               More time to         Less time to
+                                                                              expiration or         expiration or              expiration or        expiration or
+                                                                             higher volatility     lower volatility           higher volatility    lower volatility
+
+
+                                                                     –100                     –50                         0                    50                     100
+                                                                                            Put deltas                                     Call deltas
+
+
+
+
+Figure 9-22 Zomma of an option.
+         Zomma–sensitivity of the gamma to a change in volatility
+
+
+
+
+                                                                             More time to          Less time to            More time to            Less time to
+                                                                             expiration or         expiration or           expiration or           expiration or
+                                                                            higher volatility     lower volatility        higher volatility       lower volatility
+
+
+
+
+                                                                    0
+
+
+
+
+                                                                    –100                     –50                      0                       50                     100
+                                                                                           Put deltas                                     Call deltas
+
+
+
+                                                                                                                                              RIsk MeAsUReMeNT II           153
+      increase in volatility causes gamma values to rise and a decline in volatility
+      causes gamma values to fall (a positive zomma). Moreover, reducing time or
+      volatility will increase the zomma, making an option’s gamma more sensitive to
+      changes in volatility. Increasing time or volatility will reduce the zomma, mak-
+      ing an option’s gamma less sensitive to changes in volatility. Calls with deltas
+      close to 15 or 85 and puts with deltas close to –15 and –85 tend to have zomma
+      values close to 0. The gamma values of such options will be relatively insensi-
+      tive to changes in volatility.
+            Given the fact that the gamma is greatest for at-the-money options and
+      that the gamma of an at-the-money option increases as time passes or vola-
+      tility declines, experienced traders know that at-the-money options close to
+      expiration in a low-volatility environment are among the riskiest options that
+      one can trade. Although these gamma options initially have delta values close to
+      50, their deltas can change dramatically with only small moves in the price of
+      the underlying contract, moving very quickly toward 0 or 100.
+
+
+      Lambda (Λ)
+
+      The delta tells us the point change in an option’s value for a given point
+      change in the price of the underlying contract. But we might also ask how an
+      option’s value changes in percentage terms for a given percentage change in
+      the underlying price.
+            Consider a call option with a theoretical value of 4.00 and a delta of
+      20, with the underlying contract trading at a price of 100. If the underly-
+      ing contract rises one point to 101, the new delta of the option (ignoring the
+      gamma) should be approximately 4.20. But how much are these changes in
+      percentage terms? The underlying changed by 1 percent (1/100), whereas
+      the option changed by 5 percent (0.20/4.00). The option has a lambda, or
+      elasticity, of 5. In percentage terms, it will change at five times the rate of the
+      underlying contract.
+            We can see that the lambda is simply the option’s delta (using the decimal
+      format) multiplied by the ratio of the underlying price S to the option’s theo-
+      retical value
+
+                                                    Λ = Δ × (S/TV)
+
+      In our example, lambda is
+
+                                                0.20 × 100/4.00 = 5
+
+      Traders sometimes refer to the lambda as the option’s leverage value. Although
+      lambda is not a widely used risk measure, it may still be worth looking at
+      some basic lambda characteristics. These are shown in Figures 9-23 (call
+      lambda values) and 9-24 (put lambda values). Logically, because the lambda
+      is calculated from the delta, calls have positive lambda values and puts have
+      negative lambda values. We can see that the lambda is greatest for out-of-
+      the-money options—as the underlying price rises, call lambda values decline
+
+
+154   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-23 Lambda of a call as time passes or volatility changes.
+
+
+
+
+                        Less time to expiration
+                          or lower volatility
+   Lambda
+
+
+
+
+                                                         More time to expiration
+                                                           or higher volatility
+
+
+
+
+      0
+                   Lower underlying prices        Higher underlying prices
+
+
+
+
+Figure 9-24 Lambda of a put as time passes or volatility changes.
+
+
+      0
+
+
+
+
+                            More time to expiration
+                              or higher volatility
+   Lambda
+
+
+
+
+                                                         Less time to expiration
+                                                           or lower volatility
+
+
+
+
+                   Lower underlying prices        Higher underlying prices
+
+
+
+
+                                                                    RIsk MeAsUReMeNT II   155
+      and put lambda values rise (they take on large negative values). Lambda val-
+      ues are also sensitive to changes in time and volatility. If we increase volatil-
+      ity, lambda values for both calls and puts fall. If we reduce volatility or as time
+      passes, lambda values for both calls and puts rise.
+            A trader who wants the biggest possible return on his investment, in per-
+      centage terms, compared with an equal investment in the underlying contract
+      can maximize his lambda by trading out-of-the-money options close to expi-
+      ration in a low-volatility environment. Of course, this is true only in theory.
+      There may be other considerations, such as the bid-ask spread and liquidity of
+      the option market, that might make a large lambda position impractical com-
+      pared with a similar position in the underlying market.
+            It may seem that we have gone into undue detail in our examination
+      of the option risk measures. Although it is certainly true that not every risk
+      is important in every situation, experienced traders have learned that it is
+      almost impossible to overemphasize the importance of risk management
+      in option trading. Because options are affected by so many different market
+      forces, unless a trader is aware of and understands the many ways in which
+      option values change, he cannot hope to successfully manage the very real
+      risks that option trading entails.
+            A summary of the primary risk characteristics discussed in this chapter is
+      given in Figures 9-25 and 9-26.
+
+
+      Figure 9-25 Traditional risk measures.
+
+       C = call theoretical value P = put theoretical value S = underlying price or spot price
+       t = time to expiration σ = annual volatility r = domestic interest rate rf = foreign interest rate
+         Risk Name           sensitivity of the       To a Change in           Math              Maximized
+                            Theoretical value       Underlying price
+           Delta (∆)                                                     ∂C/∂S ≈ ∂P/∂S + 1   Deeply in the money
+                               (in points)            (in points)
+         Lambda (Λ)                                                                          Out of the money
+                            Theoretical value       Underlying price         ∆c*(S/C)
+         [omega (Ω)]                                                                         Close to expiration
+                              (in percent)            (in percent)           ∆p*(S/P)
+           elasticity                                                                           Low volatility
+                                                                             ∂2C/∂S2 =         At the money
+          Gamma (Γ)
+                                   Delta            Underlying price          ∂2P/∂S2        Close to expiration
+          curvature
+                                                                              ∂∆/∂S             Low volatility
+                                                                                               At the money
+           Theta (Θ)                                                          ∂C/∂t
+                            Theoretical value       Time to expiration                       Close to expiration
+          time decay                                                          ∂P/∂t
+                                                                                                Low volatility
+                                                                                                At the money
+             Vega           Theoretical value              Volatility     ∂C/∂σ = ∂P/∂σ
+                                                                                                 Long term
+                                                                              ∂C/∂r          Deeply in the money
+            Rho (Ρ)         Theoretical value          Interest rate
+                                                                              ∂P/∂r              Long term
+                                                     Foreign interest
+                                                                              ∂C/∂rf         Deeply in the money
+        Rhof or phi (Φ)     Theoretical value        rate or dividend
+                                                                              ∂P/∂rf             Long term
+                                                           yield
+
+
+
+
+156   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 9-26 Nontraditional higher-order risk measures.
+
+   Risk Name     sensitivity of the    To a Change in           Math             Maximized
+                       Delta             Volatility           ∂2C/∂S∂σ        15-20, 80-85 delta
+     Vanna
+                       Vega           Underlying price        ∂2P/∂S∂σ          Low volatility
+
+    Charm             Delta               Time                ∂2C/∂S∂t        15-20, 80-85 delta
+  delta decay         Theta           Underlying price        ∂2P/∂S∂t        Close to expiration
+                                                                              15-20, 80-85 delta
+                                                           ∂3C/∂S3 = ∂3P/∂S
+     Speed           Gamma            Underlying price                           Low volatility
+                                                            ∂2∆/∂S2 ∂Γ/∂S
+                                                                              Close to expiration
+                                                              ∂3C/∂S2∂t         At the money
+    Color            Gamma            Time to expiration
+                                                              ∂3P/∂S2∂t       Close to expiration
+ gamma decay         Charm             Underlying price
+                                                                ∂Γ/∂t            Low volatility
+
+     Volga                                                                       10, 90 delta
+                                                              ∂2C/∂σ2 =
+                       Vega               Volatility                             Long term
+   (vomma)                                                     ∂2P/∂σ2
+                                                                                Low volatility
+                                                              ∂2C/∂σ∂t           20, 80 delta
+  Vega decay           Vega                 Time
+                                                              ∂2P/∂σ∂t        Close to expiration
+                                                             ∂3C/∂S2∂σ =        At the money
+                     Gamma               Volatility
+    Zomma                                                     ∂3P/∂S2∂σ       Close to expiration
+                      Vanna           Underlying price
+                                                                ∂Γ/∂σ            Low volatility
+
+
+
+
+                                                                       RIsk MeAsUReMeNT II          157
+10
+                                            Introduction to
+                                                 Spreading
+
+
+      In option markets, as in all markets, there are many different approaches to
+      trading. At one time, scalping was a popular strategy among traders on the floors
+      of futures exchanges. By observing the activity in a particular market, a scalper
+      would try to determine an equilibrium price that reflected a balance between
+      buyers and sellers. The scalper would then quote a bid-ask spread around
+      this equilibrium price, attempting to buy at the bid price and sell at the offer
+      price as often as possible without taking either a long or short position for any
+      extended period of time. The scalper made no attempt to determine the the-
+      oretical value of the contract. Although the profit from each trade might be
+      small, if a trader was able to trade often enough, he expected to show a reason-
+      able profit. Scalping, however, requires a highly liquid market, and option mar-
+      kets are rarely sufficiently liquid to support this type of trading.
+           A different type of trading strategy involves speculating on the direction in
+      which the underlying contract will move. The directional position can be taken
+      in a variety of ways—in the cash market, in the futures market, or in the option
+      market. Unfortunately, even when an underlying market moves in the expected
+      direction, taking a directional position in an option market will not necessar-
+      ily be profitable. Many different forces, including changes in volatility and the
+      passage of time, can affect an option’s price. If a trader’s sole consideration
+      is direction, he is usually better advised to take the position in the underlying
+      market. If he does and he is right, he is assured of making a profit.
+           Most successful option traders are spread traders. Because option evaluation
+      is based on the laws of probability and the laws of probability can be expected
+      to even out only over long periods of time, option traders must often hold posi-
+      tions for extended periods. Over short periods of time, while the trader is wait-
+      ing for an option position to move toward theoretical value, the position may
+      be affected by a variety of changes in market conditions that threaten its poten-
+      tial profit. Indeed, over short periods of time, there is no guarantee that an op-
+      tion position will react in a manner consistent with a theoretical pricing model.
+
+158
+Spreading enables an option trader to take advantage of theoretically mispriced
+options while at the same time reducing the effects of short-term “bad luck.”
+
+
+what Is a spread?
+
+A spread is a strategy that involves taking opposing positions in different but
+related instruments. Most commonly, a spread will consist of positions that
+move in the opposite direction with respect to changes in market conditions.
+When market conditions change, one position is likely to gain value, while the
+other position is likely to lose value. Of course, if the values change at the same
+rate, the value of the spread will never change. A profitable spreading strategy
+is predicated on the assumption that the values of the positions will change at
+different rates.
+     Many common spreading strategies are based on arbitrage relationships,
+buying and selling the same or very closely related instruments in different mar-
+kets to profit from a mispricing. The cash-and-carry strategy common in commod-
+ity markets is an example of this type of spread. Given the current cash price,
+interest rate, and storage and insurance costs, a commodity trader can calcu-
+late the value of a forward contract. If the actual market price of the forward
+contract is higher than the calculated value, the trader will create a spread by
+purchasing the commodity, selling the overpriced forward contract, and carry-
+ing the position to maturity.1
+     Consider a commodity trading at a price of $700. If interest rates are 6
+percent annually and storage and insurance costs combined are $5 per month,
+what should be the value of a two-month forward contract?
+
+           Forward price = cash price + interest + storage and insurance
+                         = $700 + ($700 × 0.06 × 2/12) + (2 × $5)
+                         = $717
+
+    If the actual price of the two-month forward contract is $725, the trader
+might buy the commodity for $700, sell the forward contract for $725, and
+carry the position to maturity. The total cash flow in terms of debits (–) and
+credits (+) will be
+            Cost of borrowing $700 for two months at 6.00 percent                                   –$7
+            Cost of buying the commodity                                                          –$700
+            Cost of storing and insuring the commodity for two months                              –$10
+            Amount received for the commodity at maturity                                         +$725
+The total profit resulting from this strategy is
+
+                                –$7 – $700 – $10 + $725 = +$8
+
+This is exactly the amount by which the forward contract was mispriced. The
+resulting profit will be unaffected by fluctuations in the price of either the
+
+1
+ The opposite type of arbitrage, selling the commodity and buying a forward contract, is not usually possible
+in commodity markets because commodities, unlike financial instruments, cannot be borrowed and sold short.
+
+                                                                  INTRODUCTION TO sPReADING                     159
+      commodity itself or the forward contract because all cash flows were deter-
+      mined at the time the strategy was initiated. Whether the commodity rises to
+      $800 or falls to $600, the profit is still $8.
+          Another type of spreading strategy involves buying and selling futures con-
+      tracts of different maturities on the same underlying commodity. In the pre-
+      ceding example, we calculated the value of a two-month forward contract on a
+      commodity at $717. We can do a similar calculation for a four-month forward
+      contract. Here, however, the cost of borrowing will be compounded because
+      we will need to borrow $700 for the first two-month period at 6 percent and
+      then borrow $717 for the second two-month period, also at 6 percent.2
+                   Cost of borrowing $700 for two months at 6.00 percent and then
+                   borrowing $717 for another two months at 6.00 percent:
+                   –(700 × 0.06/6) – (717 × 0.06/6) = 7.00 +7.17               –$14.17
+                   Cost of buying the commodity                               –$700.00
+                   Cost of storing and insuring the commodity for four months –$20.00
+      The value of the four-month forward contract ought to be
+                      Four-month forward price = $700.00 + $14.17 + $20.00
+                                               = $734.17
+      If there are two-month- and four-month exchange-traded futures contracts on
+      this commodity, there should be a $17.17 difference, or spread, between the
+      prices of the two contracts. If the spread between months is actually $20, a
+      trader might buy the two-month contract and sell the four-month contract. The
+      trader cannot tell whether either contract individually is overpriced or under-
+      priced. But he knows that at a price of $20, the spread is $2.83 too expensive.
+            Assuming that the trader has accurately evaluated the spread, how will he
+      make this $2.83 profit? One possibility is that the price of the futures spread
+      will return to its expected value of $17.17. Having sold the spread (sell the four-
+      month futures contract, buy the two-month futures contract), the trader can
+      close out the position by purchasing the spread (buy the four-month futures
+      contract, sell the two-month futures contract).
+            If the price of the spread does not return to its expected value, the trader
+      can carry the entire position to maturity. Suppose that the spread was originally
+      created by purchasing the two-month forward contract at a price of $717 and
+      selling the four-month forward contract at a price of $737. If carried to matu-
+      rity, the cash flow from the entire position will be as follows:
+                   At the maturity of the two-month futures contract:
+                     Borrow $717 for two months at 6.00 percent                                       –$7.17
+                     Buy the commodity at the agreed-on two-month
+                     forward price                                                                –$717.00
+                     Store and insure the commodity for the two months
+                     to maturity of the four-month futures contract                                 –$10.00
+
+      2
+       For simplicity, we have assumed a constant interest rate. In fact, the cost of borrowing money for the second
+      two-month period may be different from the cost of borrowing for the first two-month period. We have also
+      ignored the cost of borrowing money to pay for storage and insurance. This will add a very small additional
+      cost to the strategy.
+
+160   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+               At maturity of the four-month futures contract:
+                 Deliver the commodity and receive the agreed-on
+                 four-month forward price                                                  +$737.00
+               Total profit                                                                  +$2.83
+      Of course, the trader could have achieved the same result by simply sell-
+ing the four-month forward contract and buying the commodity. However,
+although a trader may have easy access to a futures exchange, he may find that
+his access to the physical commodity market is limited because such markets
+are typically dominated by large corporations. In such a case, he may find that
+it is both simpler and cheaper to execute the spread in the futures market.
+      Spreading strategies are often done to reduce one or more risks. In a cash-
+and-carry strategy, much of the directional risk is eliminated because the value
+of the long cash contract and the value of the short forward contract will tend
+to move in opposite directions. But a spreading strategy will not necessar-
+ily eliminate all risks. In our example, we assumed that we were able to bor-
+row money at a fixed rate, thereby eliminating any interest-rate risk. We also
+assumed that storage and insurance costs were fixed when the strategy was ini-
+tiated. If we are dealing only with futures contracts, changes in interest rates, as
+well as changes in storage and insurance costs, may affect the price relationship
+between futures months. If the changes are large enough, a seemingly prof-
+itable spreading strategy may in fact become unprofitable. In the preceding
+example, if interest rates and storage costs rise after the strategy has been initi-
+ated, the spread between the two-month and four-month futures contract will
+widen, resulting in a smaller profit to the trader or perhaps even a loss.
+      Our examples thus far were both intramarket commodity spreads, with
+all contract values based on the same underlying commodity. However, if a
+trader can identify a price relationship between two different commodities or
+two different financial instruments, he might consider an intermarket spread,
+buying in one market and selling in a different market. As with all spreads, the
+strategy is based on the assumption that there is an identifiable relationship
+between the prices of different contracts. When the price spread between the
+two contracts appears to violate this relationship, it represents an opportunity
+for the trader.
+      In the fixed-income markets, a common strategy involves buying or sell-
+ing short-term interest-rate instruments and taking an opposing position in
+long-term interest-rate instruments. The value of the spread depends on
+changes in the yield curve—the relationship between short- and long-term
+interest rates.
+      Consider two futures contracts with the same time to maturity, a 10-year
+Treasury note future trading at price of 116 14/32 and a 30-year Treasury bond
+future trading at a price of 118 27/32.3 The spread between the two is
+
+                                      118 27/32 – 116 14/32 = 2 13/32
+
+The prices of Treasury contracts move in the opposite direction of interest
+rates. If interest rates rise, Treasury prices will fall; if interest rates fall, Treasury
+
+3
+    Treasury note and bond prices are typically quoted in points and 32nds of par value.
+
+                                                                     INTRODUCTION TO sPReADING        161
+      prices will rise. If a trader believes that interest rates will rise but that long-term
+      rates will rise more quickly than short-term rates, he might sell the 10-year/30-
+      year spread.4 If he is correct, the spread will narrow, perhaps at a later date
+      trading at
+
+                                              11510/32 – 1137/32 = 23/32
+
+      If the trader originally sold the spread at 213/32 and later buys the spread back
+      at 23/32, he will show a profit of
+
+                                                  213/32 – 23/32 = 10/32
+
+           As a somewhat different intermarket spread, suppose that a trader observes
+      the prices of two commodities, Commodity A and Commodity B, over an
+      extended period and concludes that Commodity B tends to trade at a price that
+      is three times greater than that of Commodity A. That is,
+
+                          Price of Commodity B = 3 × price of Commodity A
+
+      If the price of Commodity A is 50, the price of Commodity B ought to be 150.
+      If the price of Commodity A is 200, the price of Commodity B ought to be
+      600. Although prices may occasionally deviate from this, they eventually seem
+      to revert to this 3:1 relationship. Given this relationship, what will a trader do if
+      the current prices of the commodities are
+                     Price of Commodity A = 120
+                     Price of Commodity B = 390
+      With prices of 120 and 390, Commodity B is trading at a multiple of 3.25
+      times Commodity A. Given the historical relationship, Commodity B seems
+      to be trading at a price that is too high compared with Commodity A. Either
+      Commodity A ought to be trading at 360 (3 × 120) or Commodity B ought to
+      be trading at 130 (390/3).
+           If the trader believes that the prices are likely to return to their 3:1 histori-
+      cal relationship, he might purchase three contracts of Commodity A for 120
+      each and sell one contract of Commodity B at a price of 390
+                     +3 Commodity A for 120                      –360
+                     –1 Commodity B at 390                       +390
+                     Total credit                                 +30
+      If at a later date the contract prices return to their 3:1 relationship, the trader
+      can close out the position at no cost, leaving him with the expected profit of 30.
+      This profit will be independent of the actual prices of the two commodities as
+      long as the 3:1 relationship is maintained.
+           The strategy that we have just described involves buying and selling un-
+      equal numbers of contracts, sometimes referred to as a ratio strategy. It is com-
+      mon in markets where there is a perceived relationship between products with
+      similar characteristics but that trade at different prices. In the precious metals
+
+      4
+          Traders refer to this as the NOB spread (notes over bonds).
+
+
+162   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+market, a trader might spread gold against silver, even though gold trades at
+a price many times that of silver. In the agricultural market, a trader might
+spread corn against soybeans, even though soybean prices are always greater
+than corn prices. In the stock index market, a trader might spread the Standard
+and Poor’s (S&P) 500 Index against the Dow Jones Industrial Average Index.
+All these spreads differ from previous strategies in that they depend on an ob-
+served and perhaps less well-defined relationship than that between the cash
+price and the futures price or between the prices of different futures months.
+Because the relationship is less reliable, these types of spreads carry greater un-
+certainty and therefore greater risk. Nonetheless, if a trader believes that his
+analysis of a price relationship is accurate, the strategy may be worth pursuing.
+     Thus far, all our spreading examples have consisted of two sides, or legs. In
+the first example, one leg consisted of a physical commodity and one leg con-
+sisted of a forward contract. In the second example, the legs consisted of two
+different futures contracts. In the third example, the legs consisted of two differ-
+ent commodities. But spreading strategies may consist of many legs as long as a
+price relationship between the different legs can be identified.
+     In energy markets, a common spreading strategy consists of buying or sell-
+ing crude oil futures and taking an opposing position in futures in products that
+are made from crude oil—gasoline and heating oil. The value of this crack spread
+depends on the cost of refining, or cracking, crude oil into its derivative prod-
+ucts, as well as the demand for these products relative to the cost of crude oil.
+If the costs of refining rise or the demand for refined products rises, the value
+of the spread will widen. If costs fall or demand falls, the value of the spread
+will narrow.5
+     There are a number of ratios in which the crack spread can be traded, but
+one common ratio is the 3:2:1—3 gallons of crude oil to yield 2 gallons of gas-
+oline and 1 gallon of heating oil. Because the value of the refined products is
+greater than that of crude oil, a trader is said to buy the spread when he buys
+the products and sells crude oil.
+
+                    Price of the 3:2:1 crack spread = (2 × gasoline) +
+                             (1 × heating oil) – (3 × crude oil)
+A trader who believes that the demand for refined products will fall can sell
+the crack spread. A trader who believes that demand will rise can buy the
+spread.
+     In some markets, it may be necessary to execute each leg of a spread
+separately because there may be no counterparty willing to execute the
+entire spread at one time. If the spread consists of multiple legs and the
+trader has only been able to execute one leg, he will be at risk until he com-
+pletes the spread by executing the remaining legs. If the trader must execute
+the spread one leg at a time, he needs to consider the risk resulting from this
+piecemeal execution. Determining how best to execute a spread is usually a
+matter of experience. It is often true that some legs, owing to the liquidity in
+
+5
+ A similar type of three-sided spread is available in the soybean market. The crush spread consists of buying or
+selling soybean futures and taking an opposing futures position in the products that are made from soybeans—
+soybean oil and soybean meal.
+
+
+                                                                    INTRODUCTION TO sPReADING                      163
+      the respective markets, will be more difficult to execute than other legs. As a
+      consequence, most traders learn that it is usually best to execute the more dif-
+      ficult leg first. If a trader does this, he will find that execution risk is reduced
+      because he will be able to more easily complete the spread. If, on the other
+      hand, a trader executes the easier leg first, he may be left with a naked posi-
+      tion if he is unable to execute the remaining legs in a timely manner or at a
+      reasonable price.
+           Fortunately, in many markets, spreads are traded all at one time as if they
+      are one contract. A quote for the spread will typically consist of one bid price
+      and one offer price, no matter how complex the spread. Consider a spread that
+      consists of buying Contract A and selling Contracts B and C with the follow-
+      ing bid-ask quotes:
+                                 Contract                    Bid                      Ask
+                                      A                     128                      131
+                                      B                       47                       49
+                                      C                       68                       70
+
+      From the bid-ask quotes for each of the individual contracts, the current mar-
+      ket for the spread is
+                   Bid:         128 – 49 – 70 = 9 (buy Contract A, sell Contracts B and C)
+                   Ask:         131 – 47 – 68 = 16 (sell Contract A, buy Contracts B and C)
+      If a trader wants to buy the spread, he can immediately trade all three contracts
+      individually and pay a total of 16. If he wants to sell the spread, he can do so at
+      a price of 9. But a trader may take the position that because he is trading multi-
+      ple contracts, he ought to get some discount. A market maker in this spread will
+      often take the view that because he has less risk when he executes all contracts
+      at one time, he is willing to do so at a price more favorable to the trader. If the
+      trader asks for a market for the entire spread, he will often find that the differ-
+      ence between the bid price and ask price is narrower than the sum of the bid-ask
+      prices, perhaps 11 bid, 14 offer. Executing the entire spread as one transaction
+      will clearly be better than executing the spread as three individual transactions.
+           Even if a spread is executed as one trade, many exchanges require that
+      parties trading a spread still report the prices of the individual contracts.
+      If this is the case, what prices should be reported if a trader buys the en-
+      tire spread at a price of 14? In fact, the individual prices really don’t matter.
+      Whether the trader pays 129 for Contract A and sells Contracts B and C at 48
+      and 68 (129 – 47 – 68 = 14) or pays 131 for Contract A and sells Contracts B
+      and C at 48 and 69 (131 – 48 – 69 = 14), the total price is still 14. Indeed, the
+      parties could decide for whatever reason to trade Contract A at a price of 200
+      and Contracts B and C at prices of 86 and 100 (200 – 86 100 = 14). As far as
+      the parties to the trade are concerned, all that matters is that the individual
+      prices add up to the agreed-on spread price of 14.6
+
+      6
+       In practice, when reporting the price of a spread, exchanges prefer that the parties to the trade use prices for
+      the individual contracts that reflect current market conditions. Otherwise, it may appear that someone is en-
+      gaging in unethical or illegal market activity. The exchange will not be happy if the parties report prices of 200,
+      86, and 100, even though these prices still add up to a total spread price of 14.
+
+164   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Option spreads
+
+At the beginning of this chapter, we defined a spread as consisting of oppos-
+ing positions in related instruments. But what do we mean by a position? In
+the spread examples thus far, the positions were based on directional consider-
+ations. If the value of one position rises as a result of a directional move in the
+underlying market, the value of the opposing position is expected to decline,
+even though ultimately the price of the spread is expected to converge to some
+projected value. We can also create directional spreads in the option market by
+taking opposing but unequal delta positions in different contracts. As with our
+other spreads, the value of such a spread will depend on directional movement
+in the underlying contract.
+     While the prices of options are affected by directional moves in the under-
+lying market, they can also be affected by other factors. In an option market,
+we might create a spread by taking a long gamma position in one option and
+a short gamma position in a different option, or by taking a long vega position
+and a short vega position, or even a long and short rho position. The value of
+each of these spreads will depend on factors other than directional moves in
+the underlying market. The gamma spread will be sensitive to the volatility of
+the underlying market. The vega spread will be sensitive to changes in implied
+volatility. And the rho spread will be sensitive to changes in interest rates.
+     The dynamic hedging examples in Chapter 8 are typical gamma spreads. We
+initiated the spreads by either purchasing or selling options and then offsetting
+the option’s delta with an opposing delta position in the underlying contract.
+However, although an underlying contract has no gamma, an option does have
+a gamma. As a result, the entire position had either a positive or a negative
+gamma. From this we demonstrated that the value of the position depended
+not on the direction of movement in the underlying contract but on the volatil-
+ity of the underlying contract.
+     Many option spreads are dynamic, requiring periodic adjustments. But a
+spread can also be static. Once initiated, the spread is carried to expiration with-
+out adjustments. This is usually done only when the risk characteristics of the
+spread are well defined and limited.
+     Perhaps in no other market are spreading strategies as widely employed as
+they are in option markets. There are a number of reasons for this:
+
+      1. A trader might perceive a relative mispricing between contracts. Just as a trader
+         might calculate the value of a futures contract in relation to the price
+         of a cash contract, an option trader might try to identify the value of
+         one option contract in relation to another option. Although it may not
+         be possible to determine the exact value of either contract, the trader
+         might be able to estimate the relative value of the contracts. If prices
+         in the marketplace deviate from this relative value, a trader will try to
+         profit by either buying or selling the spread.
+           In many markets, traders express a mispricing in terms of how
+         much the price of a contract differs from its value. In option markets,
+         the mispricing is often expressed in terms of volatility. Consider two
+                                                      INTRODUCTION TO sPReADING              165
+                   options, one that has a theoretical value of 7.00 and is trading at a
+                   price of 8.00 and another that has a theoretical value of 6.00 and is
+                   trading at a price of 6.75. Which option represents a greater mispric-
+                   ing? Looking only at the option prices, the first option appears to be
+                   overpriced by 1.00, whereas the second option appears to be over-
+                   priced by only 0.75. But suppose that the volatility used to calculate
+                   the theoretical value is 23 percent. Because both options are over-
+                   priced, we know that their implied volatilities must be greater than
+                   23 percent. If the implied volatility of the option trading at 8.00 is
+                   26 percent, while the implied volatility of the option trading at 6.75
+                   is 28 percent, an option trader is likely to conclude that in volatility
+                   terms, the second option is more overpriced.
+
+                     Option Theoretical Value              Option Price   Option Implied Volatility
+                     (Using a Volatility of 23%)
+                                 7.00                         8.00                  26%
+                                 6.00                         6.75                  28%
+
+              2. A trader may want to construct a position that reflects a particular view of mar-
+                 ket conditions. Options can be combined in an almost infinite variety of
+                 ways such that a position will yield a profit when market conditions
+                 move favorably. At the same time, options can be combined in ways
+                 that will limit loss when conditions turn unfavorable. We looked at
+                 some examples of this in Chapter 4. Of course, even if a trader is able
+                 to construct a position that exactly reflects his view of market condi-
+                 tions, he will have to decide whether the prices at which the trades can
+                 be executed make the position worthwhile.
+              3. Spreading strategies help to control risk. This is particularly important for
+                 someone who is making decisions based on a theoretical pricing
+                 model. In Chapter 5, we stressed the fact that all commonly used pric-
+                 ing models are probability based and that outcomes predicated on
+                 the laws of probability are only reliable in the long run. In the short run,
+                 any one outcome can deviate from the expected outcome. If a trader
+                 wants to be successful in options, he must ensure that he remains in
+                 the game for the long run. If he is unlucky in the short run and must
+                 leave the game, the long-term probability theory does him no good.
+                 Spreading is the primary method by which traders limit the short-
+                 term effects of “bad luck.”
+
+           In addition to reducing the effects of short-term bad luck, spreading strat-
+      egies can also help protect a trader against incorrectly estimated inputs into
+      the theoretical pricing model. Suppose that a trader estimates that over the life
+      of an option, the volatility of an underlying contract will be 35 percent. Based
+      on this, he determines that a certain call option, which is currently trading at a
+      price of 4.00, has a theoretical value of 3.50. If the call has a delta of 25, the
+      trader might try to capture this mispricing by selling four calls at a price of 4.00
+
+
+166   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+each and buying one underlying contract and dynamically hedging the posi-
+tion over the life of the option. The total theoretical edge for the position is
+4 × 0.50 = 2.00. Of course, if the trader can make 2.00 with a 4 × 1 spread, it
+may occur to him that he can make 20.00 if he increases the size of the spread
+to 40 × 10. Why stop now? The trader can make 200.00 if he increases the size
+to 400 × 100.
+     Even if the market is sufficiently liquid to absorb the increased size, is this
+a reasonable approach to trading? Should a trader simply find a theoretically
+profitable strategy and do it as many times as possible in order to maximize
+the potential profit? At some point, the intelligent trader will have to consider
+not only the potential profit of a strategy but also its risks. After all, the trader’s
+volatility estimate of 35 percent is just that, an estimate. What will happen if
+volatility actually turns out to be some higher number, perhaps 40 percent, or
+45 percent? If the calls that the trader sold at 4.00 are worth 4.50 at a volatility
+of 45 percent, and volatility actually turns out to be 45 percent, then the hoped-
+for profit of 200.00 (assuming a size of 400 × 100) will turn into a loss of 200.00.
+     A trader must always consider the effects of an incorrect estimate and then
+decide how much risk he is willing to take. If the trader in this example decides
+that he can survive if volatility goes no higher than 40 percent (a 5 percentage
+point margin for error), he might only be willing to do the spread 40 × 10. But,
+if there is some way to increase his breakeven volatility to 45 percent (a 10 per-
+centage point margin for error), he might indeed be willing to do the spread
+400 × 100. Option spreading strategies enable traders to profit under a wide
+variety of market conditions by giving them an increased margin for error in
+estimating the inputs into a theoretical pricing model. No trader will survive
+very long if his livelihood depends on estimating each input with 100 percent
+accuracy. But if he has constructed an intelligent spreading strategy that allows
+for a large margin of error, the experienced trader can survive even when his
+estimates of market conditions turn out to be incorrect.
+     To see how spreading strategies can be used to reduce risk, recall our ex-
+ample in Chapter 5 where a casino is selling a roulette bet with an expected
+value of 95 cents for $1.00. The casino knows that based on the laws of prob-
+ability, it has a 5 percent theoretical edge. Suppose that a customer comes into
+the casino and proposes to bet $2,000 on one number at the roulette table.
+Should the casino allow the bet? The casino owner knows that the odds are
+on his side and that he will most likely get to keep the $2,000 bet, but there is
+always a chance that the player’s number will come up. If it does, the casino
+will lose $70,000 (the $72,000 payoff less the $2,000 cost of the bet). If the
+casino is backed by millions of dollars, the loss of $70,000 will not severely
+interfere with the casino’s continuing operations. If, however, the casino is only
+backed by $50,000, the loss of $70,000 will put the casino out of business. And
+if the casino goes out of business, it can no longer rely on its 5 percent edge be-
+cause this is an expectation that is only reliable in the long run. And the long
+run has just been eliminated.
+     Now consider a slight variation where two customers come into the casino
+and propose to place bets of $1,000 each at the roulette table, but they also
+agree not to bet on the same number. Whichever number one player chooses,
+
+
+                                                     INTRODUCTION TO sPReADING            167
+      the other will choose a different number. As with the first scenario, where one
+      player makes a single $2,000 bet, the casino’s potential reward in this new sce-
+      nario is also $2,000. If neither number comes up, the casino gets to keep the
+      two $1,000 bets. But what is the risk to the casino now? In the worst case, the
+      casino can only lose $34,000, the $36,000 payoff if one player wins less the cost
+      of the two $1,000 bets. The two bets are mutually exclusive—if one player
+      wins, the other must lose.
+           In return for the reduced risk, it might seem that the casino must give up
+      some of its theoretical edge. We tend to assume that there is a tradeoff be-
+      tween risk and reward. But the edge to the casino in both cases is still the same
+      5 percent. Regardless of the amount wagered or the number of individual
+      bets, the laws of probability specify that in the long run the casino gets to keep
+      5 percent of everything that is bet at the roulette table. In the short run, how-
+      ever, the risk to the casino is greatly reduced with two $1,000 bets because the
+      bets have been spread around the table.
+           Casinos do not like to see an individual player wager a large amount of
+      money on one outcome, whether at roulette or any other casino game. This is
+      why casinos have betting limits. The laws of probability are still in the casino’s
+      favor, but if the bet is large enough and the bettor happens to win, the short-
+      term bad luck can overwhelm the casino. From the casino’s point of view, the
+      ideal scenario is for 38 players to place 38 bets of $1,000 each on all 38 num-
+      bers at the roulette table. Now the casino has a perfect spread position. One
+      player will collect $36,000, but with $38,000 on the table, the casino has a sure
+      profit of $2,000.
+           Looking at the situation from the player’s point of view, if the player knows
+      that the odds are against him and he wants the greatest chance of showing a
+      profit, his best course is to wager the maximum amount on one outcome and
+      hope that in the short run he gets lucky. If he continues to make bets over a long
+      period of time, the laws of probability eventually will catch up with him, and
+      the casino will end up with the player’s money.
+           An option trader prefers to spread for the same reason that the casino pre-
+      fers the bets to be spread around the table: spreading maintains profit poten-
+      tial but reduces short-term risk. There is rarely a perfect spread position for an
+      option trader, but an intelligent option trader learns to spread off the risk in as
+      many different ways as possible to minimize the effects of short-term bad luck.
+      An important part of any serious option trader’s education consists of learning
+      a wide variety of spreading strategies.
+           New traders are sometimes astonished at the size of the trades an
+      experienced option trader is prepared to make. How can the trader afford
+      to do this? His financial resources certainly play a role in the risk he is will-
+      ing to accept. But equally important is his ability to spread off risk. An
+      experienced trader may know many different ways to spread off the risk, us-
+      ing other options, futures contracts, cash contracts, or some combination of
+      these. While he may not be able to completely eliminate his risk, he may be
+      able to reduce it to such an extent that his risk is actually less than that of a
+      much smaller trader who does not know how to spread or knows only a lim-
+      ited number of spreading strategies.
+
+
+168   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+                                                                             11
+Volatility Spreads
+
+
+In Chapter 8, we showed that it is possible, at least in theory, to capture an
+option’s mispricing in the marketplace by employing a dynamic hedging
+strategy. The first step in this process involves hedging the option position,
+delta neutral, by taking an opposing market position in the underlying con-
+tract. But the underlying contract is not the only way in which we can hedge
+an option position. We might instead take our opposing delta position with
+other options.
+     Consider a call with a delta of 50 that appears to be underpriced in the
+marketplace. If we buy 10 calls, resulting in a delta position of +500, we might
+hedge the position in any of the following ways:
+         Sell five underlying contracts.
+         Buy puts with a total delta of –500.
+         Sell calls, different from those that we purchased, with a total delta of
+         –500.
+         Do a combination of any of the preceding such that we create a total
+         delta of –500.
+    There are clearly many different ways of hedging our 10 calls. Regardless
+of which method we choose, each spread will have certain features in common:
+         Each spread will be approximately delta neutral.
+         Each spread will be sensitive to changes in the price of the underlying
+         instrument.
+         Each spread will be sensitive to changes in implied volatility.
+         Each spread will be sensitive to the passage of time.
+      Spreads with the foregoing characteristics fall under the general heading
+of volatility spreads. In this chapter, we will look at the most common types of vol-
+atility spreads, initially by examining their expiration values and then by con-
+sidering their delta, gamma, theta, vega, and rho characteristics.
+
+
+
+
+                                                                                        169
+      straddle
+
+      A straddle consists of a call and a put where both options have the same exer-
+      cise price and expiration date. In a straddle, both options are either purchased
+      (a long straddle) or sold (a short straddle). Examples of long and short straddles,
+      with their expiration profit-and-loss (P&L) graphs, are shown in Figures 11-1
+      and 11-2.
+           At expiration, the value of a straddle can be expressed as a simple parity
+      graph. But what about its value prior to expiration? As with all option positions,
+      some changes in market conditions will help the strategy and some changes will
+      hurt. From Figure 11-1, we can see that a long straddle becomes more valuable
+      when the underlying market moves away from the exercise price and less valu-
+      able as time passes if no movement occurs. At the same time, any increase in
+      volatility will help, while any decline will hurt. These characteristics are indi-
+      cated by the risk measures associated with the position:
+                         +Gamma (desire for movement in the underlying contract)
+                         –Theta (the value of the position declines as time passes)
+                         +Vega (the value of the position increases as implied volatility rises)
+      The characteristics of a short straddle are shown in Figure 11-2:
+                         –Gamma (movement in the underlying contract will hurt the position)
+                         +Theta (the value of the position increases as time passes)
+                         –Vega (the value of the position increases as implied volatility falls)
+
+
+      Figure 11-1 Long straddle as time passes or volatility declines.
+
+
+
+
+                                                         Buy calls and
+                                                       puts at the same
+                                                        exercise price
+                                                        with the same
+                                                        expiration date
+        Position value
+
+
+
+
+                                                                               +1 March 100 call
+                                                                               +1 March 100 put
+
+                              Value at expiration
+                                                                               +1 June 40 call
+                                                                               +1 June 40 put
+
+
+
+                                 Lower underlying prices          Higher underlying prices
+
+
+170   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-2 short straddle as time passes or volatility declines.
+
+
+
+                                                                      –1 March 100 call
+                                                                      –1 March 100 put
+
+                                                                      –1 June 40 call
+                                                                      –1 June 40 put
+                  Value at expiration
+ Position value
+
+
+
+
+                                               Sell calls and
+                                             puts at the same
+                                              exercise price
+                                              with the same
+                                              expiration date
+
+
+                           Lower underlying prices      Higher underlying prices
+
+
+
+
+    Straddles are most often executed one to one (one call for each put) us-
+ing at-the-money options. When this is done, the spread will be approxi-
+mately delta neutral because the delta values of the call and put will be close
+to 50 and –50. A straddle can also be done with options that are either in
+the money or out of the money. For example, with the underlying contract
+trading at 100, we might buy the September 95 straddle. If the September
+95 calls, which are in the money, have a delta of 75 and the September 95
+puts, which are out of the money, have a delta of –25, the total delta will be
+75 – 25 = 50, resulting in a bull straddle. If we want the straddle to be delta
+neutral, we will need to adjust the number of contracts by purchasing three
+puts for every call:
+                  Buy 1 September 95 call (delta = 75).
+                  Buy 3 September 95 puts (delta = –25).
+This spread still qualifies as a straddle because we are buying calls and puts at
+the same exercise price. But, more specifically, this is a ratio straddle because the
+number of long market contracts (the calls) and the number of short market
+contracts (the puts) are unequal.
+
+
+strangle
+
+Like a straddle, a strangle consists of a long call and a long put (a long strangle)
+or a short call and a short put (a short strangle), where both options expire
+
+                                                                      V O L AT I L I T Y s P R e A D s   171
+      at the same time. But in a strangle the options have different exercise prices.
+      Typical long and short strangles are shown in Figures 11-3 and 11-4.
+           As with a straddle, strangles are most often done one to one (one call for
+      each put). In order to ensure that the position is delta neutral, exercise prices
+      are usually chosen so that the call and put deltas are approximately equal.
+           If a strangle is identified only by its expiration month and exercise prices,
+      there may be some confusion as to the specific options involved. A March
+      90/110 strangle might consist of a March 90 put and a March 110 call. But
+      it might also consist of a March 90 call and a March 110 put. Both strategies
+      are consistent with the definition of a strangle. To avoid confusion, a stran-
+      gle is commonly assumed to consist of out-of-the-money options. If the un-
+      derlying market is currently at 100 and a trader wants to purchase the March
+      90/110 strangle, everyone will assume that he wants to purchase a March 90
+      put and a March 110 call. Although both strangles have essentially the same
+      P&L profile, in-the-money options tend to be less actively traded than their out-
+      of-the-money counterparts. A strangle consisting of in-the-money options is
+      sometimes referred to as a guts.
+           Note that the risk characteristics of a strangle are similar to those of a
+      straddle:
+                            Long strangle: +gamma/–theta/+vega
+                            Short strangle: +gamma/–theta/+vega
+          A new option trader often finds long straddles and strangles attractive
+      because strategies with limited risk and unlimited profit potential offer great
+      appeal, especially when the profit is unlimited in both directions. However,
+
+      Figure 11-3 Long strangle as time passes or volatility declines.
+
+
+
+                                                        +1 March 90 put
+                                                        +1 March 110 call
+
+                                                        +1 June 35 put
+                                                        +1 June 45 call
+
+                                     Buy puts (calls)      All options must    Buy calls (puts)
+                                       at a lower          have the same         at a higher
+        Position value
+
+
+
+
+                                     exercise price        expiration date     exercise price
+
+
+
+
+                         Value at expiration
+
+
+
+                                     Lower underlying prices          Higher underlying prices
+
+
+172   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-4 short strangle as time passes or volatility declines.
+
+
+
+                                                   –1 March 90 put
+                                                   –1 March 110 call
+
+                                                   –1 June 35 put
+                                                   –1 June 45 call
+                  Value at expiration
+ Position value
+
+
+
+
+                               Sell puts (calls)    All options must    Sell calls (puts)
+                                 at a lower         have the same         at a higher
+                               exercise price       expiration date     exercise price
+
+
+
+
+                               Lower underlying prices         Higher underlying prices
+
+
+
+if the hoped-for movement fails to materialize, a trader will find that losing
+money, even a limited amount, can also be a painful experience. This is not
+an endorsement of either long or short straddles. Under the right conditions,
+either strategy may be sensible. But an intelligent trader needs to consider
+not only whether the risk and reward is limited or unlimited but also the like-
+lihood of the various outcomes. This, of course, is one important reason for
+using a theoretical pricing model.
+
+
+Butterfly
+
+Thus far we have looked at spreads that involve buying or selling two different
+option contracts. However, we can also construct spreads consisting of three,
+four, or even more different options. A butterfly is a common three-sided spread
+consisting of options with equally spaced exercise prices, where all options are
+of the same type (either all calls or all puts) and expire at the same time. In a
+long butterfly, the outside exercise prices are purchased and the inside exercise
+price is sold, and vice versa for a short butterfly. Moreover, the ratio of a but-
+terfly never varies. It is always 1 × 2 × 1, with two of each inside exercise price
+traded for each one of the outside exercise prices. Typical long and short but-
+terflies are shown in Figures 11-5 and 11-6.
+     To a new trader, a butterfly may look quite complex since it involves
+three different options in different quantities. But butterflies have very simple
+and well-defined characteristics that make them popular trading strategies.
+
+                                                                              V O L AT I L I T Y s P R e A D s   173
+      Figure 11-5 Long butterfly as time passes or volatility declines.
+
+
+
+
+                                                                               +1 March 90 call (wing)
+                                                                               –2 March 100 calls (body)
+                                                                               +1 March 110 call (wing)
+
+                                        Value at expiration                    +1 June 35 put (wing)
+                                                                               –2 June 40 puts (body)
+                             There must be an equal                            +1 June 45 put (wing)
+        Position value
+
+
+
+
+                                amount between
+                                 exercise prices
+
+
+
+
+                                                       Sell two calls (puts)
+                                                       at an intermediate
+                                                         exercise price
+                                   Buy a call (put)        All options must    Buy a call (put)
+                                     at a lower            have the same         at a higher
+                                   exercise price          expiration date     exercise price
+
+
+                                    Lower underlying prices           Higher underlying prices
+
+
+
+
+      Figure 11-6 short butterfly as time passes or volatility declines.
+
+
+
+
+                                   Sell a call (put)       All options must    Sell a call (put)
+                                     at a lower            have the same        at a higher
+                                   exercise price          expiration date     exercise price
+
+                                                       Buy two calls (puts)
+        Position value
+
+
+
+
+                                                        at an intermediate
+                                                          exercise price
+
+
+
+                                                                                There must be an equal
+                         –1 March 90 call (wing)                                   amount between
+                         +2 March 100 calls (body)                                  exercise prices
+                         –1 March 110 call (wing)
+
+                         –1 June 35 put (wing)                            Value at expiration
+                         +2 June 40 puts (body)
+                         –1 June 45 put (wing)
+
+                                    Lower underlying prices           Higher underlying prices
+
+
+
+174   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+To understand these characteristics, let’s consider the value of a long butter-
+fly at expiration:
+
+                                                    Underlying Price at Expiration
+                                             80                 100                   120
+ +1 March 90 call     Position value          0                +10                   +30
+ −2 March 100 calls   Position value          0                    0                 –20
+ +1 March 110 call    Position value          0                    0                 +10
+ Total                                        0                +10                       0
+
+      If the underlying price is below 90 at expiration, all the calls will expire
+worthless, and the value of the position will be 0. If the underlying contract is
+above 120 at expiration, the combined value of the 90 and 110 calls will equal
+the value of the two 100 calls. Again, the value of the butterfly will be 0. Now
+suppose that the underlying contract is between 90 and 110 at expiration, spe-
+cifically, right at the inside exercise price of 100. The 90 call will be worth 10.00,
+while the 100 and 110 calls will be worthless. The position will be worth exactly
+10.00. If the underlying moves away from 100, the value of the butterfly will de-
+cline, but its value can never fall below 0. Summarizing, at expiration, a butter-
+fly is worthless if the underlying contract is above or below the outside exercise
+prices (sometimes referred to as the wings of the butterfly). It has its maximum
+value at expiration when the underlying contract is right at the inside exercise
+price (sometimes referred to as the body of the butterfly). And the maximum value
+is always equal to the amount between exercise prices, in our example 10.00.
+      Because a butterfly at expiration always has a value between 0 and the
+amount between exercise prices, in our example, a trader should be willing
+to pay some amount between 0 and 10.00 for the position. The exact amount
+depends on the likelihood of the underlying contract finishing close to the in-
+side price at expiration. If there is a high probability of this occurring, a trader
+might be willing to pay as much as 8.00 for the butterfly since it might very well
+expand to its full value of 10.00. If, however, there is a low probability of this
+occurring and, consequently, a high probability that the underlying contract
+will finish outside the extreme exercise prices, a trader may only be willing to
+pay 1.00 or 2.00 because he may very well lose his entire investment. This also
+explains why our example position is a long butterfly. Because the position can
+never be worth less than 0, a trader will always be required to pay some amount
+for the position. Otherwise, there would be a riskless profit opportunity. When a
+position requires an outlay of cash, a trader has bought, or is long, the position.
+      A butterfly will tend to be delta neutral when the inside exercise price is ap-
+proximately at the money. Under these conditions, a long butterfly will tend to
+act like a short straddle, while a short butterfly will tend to act like a long strad-
+dle. With either a long butterfly or a short straddle, a trader wants the under-
+lying market to sit still (–gamma, +theta) and implied volatility to fall (–vega).
+With either a short butterfly or a long straddle, a trader wants the underly-
+ing market to make a large move (+gamma, –theta) and implied volatility to
+rise (+vega). But there is one important difference. While a straddle is open-
+ended in terms of either profit potential or risk, a butterfly is strictly limited.
+
+                                                                   V O L AT I L I T Y s P R e A D s   175
+      It can never be worth less than 0 nor more than the amount between exercise
+      prices. This is important for a trader who might want to sell straddles but who is
+      uncomfortable with the possibility of unlimited loss. Of course, there is always
+      a risk-reward tradeoff. If a long butterfly has reduced risk when the trader is
+      wrong, it will also have increased profit when the trader is right. For this reason,
+      butterflies tend to be executed in much larger sizes than straddles. A trader may
+      find that buying 300 butterflies (300 × 600 × 300) is actually less risky than sell-
+      ing 100 straddles. In option trading, size and risk do not always correlate. Some
+      strategies done in large sizes can have a relatively small risk, while other strate-
+      gies, even when done in small sizes, can have a relatively large risk. Risk depends
+      not only on the size in which a strategy is executed but also on the characteris-
+      tics of the strategy.
+           We know that a butterfly at expiration is worth its maximum when the un-
+      derlying contract is right at the inside exercise price. If we assume that all op-
+      tions are European, with no possibility of early exercise, both a call and a put
+      butterfly with the same exercise prices and the same expiration dates desire ex-
+      actly the same outcome and therefore have identical characteristics. Both the
+      March 90/100/110 call butterfly and the March 90/100/110 put butterfly will
+      be worth a maximum of 10.00 with the underlying price exactly at 100 at expi-
+      ration and a minimum of 0 with the underlying price below 90 or above 110. If
+      both butterflies are not trading at the same price, there is a sure profit opportu-
+      nity available by purchasing the cheaper and selling the more expensive.1
+
+
+      Condor
+
+      Just as a butterfly can be thought of as a straddle with limited risk or reward,
+      a condor can be thought of as a strangle with limited risk or reward. A condor
+      consists of four options, two inside exercise prices (the body of the condor) and
+      two outside exercise prices (the wings of the condor).2 The ratio of a condor
+      is always 1 × 1 × 1 × 1. Although the amount between the two inside exercise
+      prices can vary, there must be an equal amount between the two lowest exercise
+      prices and the two highest exercise prices. As with a butterfly, all options must
+      expire at the same time and be of the same type (either all calls or all puts). In
+      a long condor, the two outside exercise prices are purchased and the two in-
+      side exercise prices are sold, and vice versa for a short condor. Typical long and
+      short condors are shown in Figures 11-7 and 11-8.
+           The value of a condor at expiration can never be less than 0 nor more
+      than the amount between the two higher or the two lower exercise prices. A
+      trader who buys a condor will pay some amount between these values, expect-
+      ing that the underlying contract will finish between the two intermediate exer-
+      cise prices, where the condor will be worth its maximum. A trader who sells a
+      condor will take in some amount, expecting that the underlying contract will
+      finish outside the extreme exercise prices, where the condor will be worthless.
+
+      1
+        This is not necessarily true for butterflies consisting of American options, where early exercise is a possibility.
+      A sure profit would exist only if one could be certain of carrying the position to expiration.
+      2
+        Butterflies and condors fall under the general category of strategies known as wingspreads.
+
+
+176   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-7 Long condor as time passes or volatility declines.
+
+
+
+                                           There must be an equal             +1 March 90 call
+                                             amount between the               –1 March 95 call
+                                           two higher and the two             –1 March 105 call
+                                            lower exercise prices             +1 March 110 call
+
+                     Value at expiration                                      +1 June 35 put
+                                                                              –1 June 40 put
+                                                                              –1 June 45 put
+ Position value
+
+
+
+
+                                                                              +1 June 50 put
+
+
+
+
+                                       Sell a call (put) Sell a call (put)
+                                          at a lower       at a higher
+                                        intermediate      intermediate
+                                       exercise price exercise price
+                    Buy a call (put)           All options must              Buy a call (put)
+                      at a lower               have the same                   at a higher
+                    exercise price             expiration date               exercise price
+
+                          Lower underlying prices           Higher underlying prices
+
+
+
+
+Figure 11-8 short condor as time passes or volatility declines.
+
+
+
+
+                                               All options must
+                                               have the same
+                                               expiration date               Value at expiration
+
+                                       Sell a call (put) Sell a call (put)
+                                          at a lower       at a higher
+                                        intermediate      intermediate
+ Position value
+
+
+
+
+                                       exercise price exercise price
+
+
+                    Buy a call (put)                                          Buy a call (put)
+                      at a lower                                                at a higher
+                    exercise price                                            exercise price
+
+
+                  –1 June 35 put                                                 –1 March 90 call
+                  +1 June 40 put           There must be an equal                +1 March 95 call
+                  +1 June 45 put             amount between the                  +1 March 105 call
+                  –1 June 50 put           two higher and the two                –1 March 110 call
+                                            lower exercise prices
+                          Lower underlying prices           Higher underlying prices
+
+
+
+                                                                             V O L AT I L I T Y s P R e A D s   177
+           A condor will be approximately delta neutral when the underlying con-
+      tract is midway between the two inside exercise prices. When all options are
+      European, the value and characteristics of a call condor and put condor will
+      be identical.
+           The four volatility spreads that we just described—straddles, strangles, but-
+      terflies, and condors—all have symmetrical P&L graphs. When executed delta
+      neutral, as is most common, these strategies have no preference as to the direc-
+      tion of movement in the underlying market. Long straddles and strangles and
+      short butterflies and condors prefer movement in the underlying market and
+      an increase in implied volatility (+gamma, –theta , +vega). Short straddles and
+      strangles and long butterflies and condors prefer no movement in the underly-
+      ing market and a decline in implied volatility (–gamma, +theta, –vega). These
+      characteristics are summarized in Figure 11-9.
+
+
+      Figure 11-9 symmetrical strategies.
+
+
+                          Long straddle                        Short straddle
+
+
+
+
+                    +gamma / –theta / +vega                –gamma / +theta / –vega
+
+
+
+
+                          Long strangle                        Short strangle
+
+
+
+
+                    +gamma / –theta / +vega                –gamma / +theta / –vega
+
+
+
+
+                         Short butterfly                       Long butterfly
+
+
+
+
+                    +gamma / –theta / +vega                –gamma / +theta / –vega
+
+
+
+
+                          Short condor                          Long condor
+
+
+
+
+                    +gamma / –theta / +vega                –gamma / +theta / –vega
+
+
+
+178   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Ratio spread
+
+In a volatility spread, a trader need not be totally indifferent to the direction of
+movement in the underlying market. The trader may believe that movement
+in one direction is more likely than movement in the other direction. Given
+this, the trader may wish to construct a spread that either maximizes his profit
+or minimizes his loss when movement occurs in one direction rather than the
+other. In order to achieve this, a trader can construct a ratio spread—buying and
+selling unequal numbers of options where all options are the same type and
+expire at the same time. As with other volatility positions, the spread is typi-
+cally delta neutral.
+     Consider the following delta-neutral position with the underlying contract
+trading at 100 (delta values are in parentheses):
+
+ Contract Position                             Price per Contract
+ +3 October 105 call (25)                           1.00
+ –1 October 95 call (75)                            6.00
+
+Now let’s consider three possible prices for the underlying contract at expiration:
+
+ Underlying Price     95 Call P&L              105 Call P&L                         Total P&L
+  80                  +6.00 – 0 = +6.00        3 × (–1.00 + 0) = –3.00               +3.00
+ 120                  +6.00 – 25.00 = –19.00   3 × (–1.00 + 15.00) = +42.00         +23.00
+ 100                  +6.00 – 5.00 = +1.00     3 × (–1.00 + 0) = –3.00               –2.00
+
+     If the underlying contract makes a very big move in either direction, the
+position will show a profit. Of course, the profit will be much larger if the move
+is upward. If the underlying sits at 100 until expiration, the position will show
+a loss. This call ratio spread, where more calls are purchased than sold, wants
+movement in the underlying contract but clearly prefers upward movement,
+where the potential profit is unlimited. The P&L diagram for this type of strat-
+egy is shown in Figure 11-10.
+     The same type of position can be created using puts. A put ratio spread,
+where more puts are purchased than sold, also prefers movement in the un-
+derlying contract. But now there is a preference for downward movement be-
+cause the profit potential on the downside will be unlimited. This is shown in
+Figure 11-11.
+     A ratio spread where more options are purchased than sold is sometimes
+referred to as backspread. Regardless of whether the spread consists of calls or
+puts, this type of spread always wants movement in the underlying market
+(+gamma, –theta) and/or an increase in implied volatility (+vega).
+     In a ratio spread where more options are purchased than sold, the spread
+will be worthless if the underlying contract makes a large enough downward
+move in the case of calls or a large enough upward move in the case of puts. For
+either spread to result in a profit, it must be executed initially for a credit, and
+this is a typical characteristic of these types of spreads. Indeed, under the as-
+sumptions of a traditional theoretical pricing model, a delta-neutral ratio spread
+where more options are purchased than sold should always result in a credit.
+                                                                    V O L AT I L I T Y s P R e A D s   179
+      Figure 11-10 Call ratio spread (buy more than sell) as time passes or volatility declines.
+
+
+
+                                                       +3 October 105 calls
+                                                       –1 October 95 call
+                                                       +2 April 45 calls
+                                                       –1 April 40 call
+
+                                                             Buy multiple
+                                                           calls at a higher
+            Position value
+
+
+
+
+                                                            exercise price
+
+
+
+
+                                        Sell a call                                 Value at expiration
+                                        at a lower
+                                      exercise price
+                                                                                      All options must
+                                                                                      have the same
+                                                                                      expiration date
+
+
+                                      Lower underlying prices         Higher underlying prices
+
+
+
+          Ratio spreads are often used to limit the risk in one direction. If we sell
+      more calls than we buy, the spread will act like a short straddle (–gamma,
+      +theta, –vega) but with limited downside risk. If we sell more puts than we buy,
+
+
+      Figure 11-11 Put ratio spread (buy more than sell) as time passes or volatility declines.
+
+
+
+
+                                                                               +4 October 90 puts
+                                                                               –1 October 100 put
+                                                                               +3 April 35 puts
+                                                                               –2 April 40 puts
+                                                            Buy multiple
+                                                           puts at a lower
+            Position value
+
+
+
+
+                                                           exercise price
+
+
+
+
+                             Value at expiration
+                                                                                  Sell a put
+                             All options must                                    at a higher
+                             have the same                                      exercise price
+                             expiration date
+
+
+                                      Lower underlying prices         Higher underlying prices
+
+
+
+180   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-12 Call ratio spread (sell more than buy) as time passes or volatility declines.
+
+
+
+                                                                      +1 October 95 call
+                                                                      –3 October 105 calls
+
+                                                                      +1 April 40 call
+                                Buy a call                            –2 April 45 calls
+                                at a lower
+                              exercise price
+                                                                          Value at expiration
+     Position value
+
+
+
+
+                                                   Sell multiple
+                                                 calls at a higher
+                                                  exercise price
+                                                 All options must
+                                                 have the same
+                                                 expiration date
+
+
+                              Lower underlying prices       Higher underlying prices
+
+
+
+
+the spread will have limited upside risk. The P&L diagrams for these types of
+spreads are shown Figures 11-12 and 11-13.
+
+
+Figure 11-13 Put ratio spread (sell more than buy) as time passes or volatility declines.
+
+
+
+
+                                                                      +1 October 100 put
+                                                                      –4 October 90 puts
+                                                                      +2 April 40 puts
+                                                                      –3 April 35 puts
+
+
+                       Value at expiration
+      Position value
+
+
+
+
+                                                  Sell multiple
+                                                 puts at a lower
+                                                 exercise price          Buy a put
+                                                                        at a higher
+                                                All options must       exercise price
+                                                have the same
+                                                expiration date
+
+                              Lower underlying prices        Higher underlying prices
+
+
+
+                                                                             V O L AT I L I T Y s P R e A D s   181
+            A ratio spread where more options are sold than purchased is sometimes re-
+      ferred to as frontspread .3 Using calls, the position will be worthless at expiration if
+      the underlying contract is below the lower exercise price. Using puts, the posi-
+      tion will be worthless at expiration if the underlying contract is above the higher
+      exercise price. The fact that the value of the position cannot fall below 0 lim-
+      its the downside risk if more calls are sold than purchased and the upside risk if
+      more puts are sold than purchased.
+            When executed as a single trade, ratio spreads are usually submitted using
+      simple ratios, the most common being 2 to 1. However, other ratios—3 to 1, 4
+      to 1, or 3 to 2—are also relatively common.
+
+      Christmas Tree
+
+      Ratio spreads tend to mimic straddles, but with the risk or reward limited in
+      one direction. We can also construct strategies that mimic strangles, but again
+      with limited risk or reward in one direction. Such spreads are known as either
+      Christmas trees or ladders.4
+            A call Christmas tree involves buying (selling) a call at a lower exercise
+      price and selling (buying) one call each at two higher exercise prices. A put
+      Christmas tree involves buying (selling) a put at a higher exercise price and sell-
+      ing (buying) one put each at two lower exercise prices. All options must be the
+      same type and expire at the same time, with exercise prices most often chosen
+      so that the entire position is delta neutral. When one option is bought and two
+      options sold (a long Christmas tree), the position acts like a short strangle but
+      with limited risk in one direction. When one option is sold and two options
+      bought (a short Christmas tree), the position acts like a long strangle but with
+      limited profit potential in one direction. P&L diagrams for typical Christmas
+      trees are shown in Figures 11-14 through 11-17.
+            Although ratio spreads and Christmas trees have nonsymmetrical P&L
+      graphs, their volatility characteristics tend to mimic straddles and strangles. A
+      spread in which more options are purchased than sold will prefer movement
+      in the underlying market and/or an increase in implied volatility (+gamma,
+      –theta, +vega). A spread in which more options are sold than purchased will
+      prefer no movement in the underlying market and/or a decline in implied vola-
+      tility (–gamma, +theta, –vega). The characteristics of nonsymmetrical spreads
+      are summarized in Figure 11-18.
+
+
+      Calendar spread
+
+      If all options in a spread expire at the same time, the value of the spread at ex-
+      piration depends solely on the underlying price. If, however, the spread consists
+      of options that expire at different times, the spread’s value depends not only on
+
+      3
+        The terms backspread and frontspread date from the early days of option trading in the United States but
+      are now used infrequently except by some older traders. Most traders simply refer to these strategies as ratio
+      spreads, specifying whether more options are purchased or sold and the ratio of long to short options.
+      4
+        The term ladder may also refer to a type of exotic option.
+
+182   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-14 Long call Christmas tree as time passes or volatility declines.
+
+
+
+
+                                      Buy a call                            Value at expiration
+                                      at a lower
+                                    exercise price
+ Position value
+
+
+
+
+                                                   Sell a call     Sell a call at
+                                                  at a higher      a still higher
+                  +1 October 90 call
+                                                 exercise price   exercise price
+                  –1 October 95 call
+                  –1 October 105 call
+
+                  +1 April 80 call                     All options must
+                  –1 April 90 call                     have the same
+                  –1 April 110 call                    expiration date
+
+
+                          Lower underlying prices          Higher underlying prices
+
+
+
+
+Figure 11-15 short call Christmas tree as time passes or volatility declines.
+
+
+
+
+                    –1 October 90 call                 All options must
+                    +1 October 95 call                 have the same
+                    +1 October 105 call                expiration date
+                    –1 April 80 call
+ Position value
+
+
+
+
+                                                   Buy a call      Buy a call at
+                    +1 April 90 call              at a higher      a still higher
+                    +1 April 110 call            exercise price   exercise price
+
+
+
+
+                     Sell a call
+                     at a lower                                              Value at expiration
+                   exercise price
+
+
+
+                           Lower underlying prices         Higher underlying prices
+
+
+
+                                                                           V O L AT I L I T Y s P R e A D s   183
+      Figure 11-16 Long put Christmas tree as time passes or volatility declines.
+
+
+
+
+                                                                          Buy a put
+                          Value at expiration                            at a higher
+                                                                        exercise price
+        Position value
+
+
+
+
+                                           Sell a put at   Sell a put
+                                           a still lower   at a lower             +1 October 110 put
+                                          exercise price exercise price           –1 October 105 put
+                                                                                  –1 October 95 put
+                                                 All options must
+                                                 have the same                    +1 April 120 put
+                                                 expiration date                  –1 April 110 put
+                                                                                  –1 April 90 put
+
+
+                                     Lower underlying prices         Higher underlying prices
+
+
+
+
+      Figure 11-17 short put Christmas tree as time passes or volatility declines.
+
+
+
+
+                                                                                  –1 October 110 put
+                                                                                  +1 October 105 put
+                                                 All options must                 +1 October 95 put
+                                                 have the same
+                                                 expiration date
+                                                                                  –1 April 120 put
+                                                                                  +1 April 110 put
+        Position value
+
+
+
+
+                                            Buy a put at      Buy a put           +1 April 90 put
+                                            a still lower     at a lower
+                                           exercise price   exercise price
+
+
+
+
+                         Value at expiration                              Sell a put
+                                                                         at a higher
+                                                                        exercise price
+
+
+
+                                     Lower underlying prices         Higher underlying prices
+
+
+
+184   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-18 Nonsymmetrical strategies.
+
+
+                 Call ratio spread                                      Call ratio spread
+               (buy more than sell)                                   (sell more than sell)
+
+
+
+
+            +gamma / –theta / +vega                                –gamma / +theta / –vega
+
+
+                 Put ratio spread                                       Put ratio spread
+               (buy more than sell)                                   (sell more than sell)
+
+
+
+
+            +gamma / –theta / +vega                                –gamma / +theta / –vega
+
+
+
+           Short call Christmas tree                              Long call Christmas tree
+
+
+
+
+            +gamma / –theta / +vega                                –gamma / +theta / –vega
+
+
+
+           Short put Christmas tree                               Long put Christmas tree
+
+
+
+
+            +gamma / –theta / +vega                                –gamma / +theta / –vega
+
+
+
+
+where the underlying market is when the short-term option expires but also on
+what will happen between that date and the date on which the long-term op-
+tion expires. Calendar spreads, sometimes referred to as time spreads or horizontal
+spreads,5 consist of option positions that expire in different months.
+     The most common type of calendar spread consists of opposing positions
+in two options of the same type (either both calls or both puts) where both op-
+tions have the same exercise price. When the long-term option is purchased
+and the short-term option is sold, a trader is long the calendar spread; when the
+short-term option is purchased and the long-term option is sold, the trader is
+short the calendar spread. Because a long-term option will typically be worth
+
+5
+ In the early days of floor trading on option exchanges, expiration months were listed horizontally on the ex-
+change display boards—hence the term horizontal spread for strategies consisting of options with different ex-
+piration months.
+
+                                                                                V O L AT I L I T Y s P R e A D s   185
+      more than a short-term option, this is consistent with the practice of referring
+      to any strategy that is executed at a debit as a long position and any spread that
+      is executed for a credit as a short position.
+           Although calendar spreads are most commonly executed one to one (one
+      contract purchased for each contract sold), a trader may ratio a calendar spread
+      to reflect a bullish, bearish, or neutral market sentiment. For purposes of dis-
+      cussion, we will focus on one-to-one calendar spreads (one long-term option
+      for each short-term option) that are approximately delta neutral. Because at-
+      the-money options have delta values close to 50, the most common calendar
+      spreads consist of long and short at-the-money options.6
+           The value of a calendar spread depends not only on movement in the un-
+      derlying market but also on the marketplace’s expectations about future mar-
+      ket movement as reflected in the implied volatility. Because of this, a calendar
+      spread has characteristics that differ from the other spreads we have discussed.
+      If we assume that the options making up a calendar spread are approximately
+      at the money, calendar spreads have two important characteristics:
+
+              1. A calendar spread will increase in value if time passes with no move-
+                 ment in the underlying contract.
+              2. A calendar spread will increase in value if implied volatility rises and
+                 decline in value if implied volatility falls.
+
+          Why should a calendar spread become more valuable as time passes? Con-
+      sider the following spread, where the underlying contract, which is currently
+      trading at 100, is the same for both options:
+                   +1 June 100 call
+                   –1 April 100 call
+      Suppose that there are four months remaining to June expiration and two
+      months remaining to April expiration. If we assume a constant underlying
+      price of 100 and a constant volatility of 20 percent, the value of the indi-
+      vidual options as time passes, as well as the value of the spread, is shown in
+      Figure 11-19.
+          The spread is initially worth 1.34, but as time passes, both options begin to
+      decay. However the April option, with less time remaining to expiration, decays
+      more rapidly than the June option. Over the first month, the April option loses
+      0.96, while the June option loses only 0.61. The spread has increased to 1.69.
+          Over the next month, with the underlying contract still at 100, the April
+      option, because it is at the money, must give up its entire value of 2.30. The
+      June option will also continue to decay, and at a slightly greater rate, losing
+      0.73. But the calendar spread has still increased to 3.26.
+          The increase in value of the calendar spread as time passes is the result
+      of an important characteristic of theta that was noted in Chapter 8: as time
+      to expiration grows shorter, the theta of an at-the-money option increases.
+      6
+       To be more exact, at-the-forward options tend to have deltas closest to 50. For this reason, a trader might
+      prefer a calendar spread that consists of at-the-forward options.
+
+
+186   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-19 The value of a calendar spread as time passes.
+
+
+ Contract Month                                                  Time to Expiration
+
+ June                             4 months                   3 months                    2 months
+
+ April                            2 months                   1 month                     0
+
+ Option                                                                Value
+
+ June 100 call                    4.60                       3.99                        3.26
+
+ April 100 call                   3.26                       2.30                        0
+
+ Spread value                     1.34                       1.69                        3.26
+
+
+
+A short-term at-the-money option decays more rapidly than a long-term at-
+the-money option.
+     What will happen if the underlying contract does not sit still but instead
+makes a large upward or downward move? The value of a calendar spread de-
+pends on the long-term option retaining as much time value as possible while
+the short-term option decays. This will be true if both options remain at the
+money because an at-the-money option always has the greatest amount of
+time value. As an option moves either into the money or out of the money, its
+time value will disappear. A long-term option will always have greater time value
+than a short-term option. But, if the movement in the underlying contract is
+large enough and the option moves very deeply into the money or very far out
+of the money, even a long-term option will eventually lose almost all or its time
+value. This will cause the calendar spread to collapse, as shown in Figure 11-20.
+     Now let’s consider the effect of changing volatility on a calendar spread.
+The value of the April/June 100 call calendar spread at different volatilities is
+shown in Figure 11-21.
+     As we raise or lower volatility, both options rise or fall in value, but the June
+option changes more quickly than the April option. We touched on this char-
+acteristic in Chapter 6, where we noted that a change in volatility will have
+a greater effect on a long-term option than on an equivalent short-term op-
+tion. In other words, long-term options have greater vega values than short-term
+
+
+Figure 11-20 The value of a calendar spread as the underlying price changes.
+
+
+                              Theoretical Value if the Underlying Price Is…
+
+ Option                      80                 90                 100                110             120
+
+ June 100 call              0.10               1.07               4.60                11.39          20.31
+
+ April 100 call             0.01               0.36               3.26                10.51          20.04
+
+ Spread value               0.09               0.71               1.34                 0.88           0.27
+
+
+
+                                                                                 V O L AT I L I T Y s P R e A D s   187
+      Figure 11-21 The value of a calendar spread as volatility changes.
+
+
+                                                  Theoretical Value if Volatility Is …
+
+        Option                        10 percent           15 percent         20 percent   25 percent   30 percent
+
+        June 100 call                     2.30                3.45                4.60       5.75         6.90
+
+        April 100 call                    1.63                2.44                3.26       4.07         4.88
+
+        Spread value                       0.67               1.01                1.34       1.68         2.02
+
+
+
+      options. This difference in sensitivity to a change in volatility causes the calendar
+      spread to widen if we increase volatility and to narrow if we reduce volatility.
+           A trader who is long a calendar spread wants two apparently contradictory
+      conditions in the marketplace. First, he wants the underlying contract to sit still
+      in order to take advantage of the greater time decay for the short-term option.
+      Second, he wants everyone to think that the market is going to move so that
+      implied volatility will rise, causing the long-term option to rise in price more
+      quickly than the short-term option. Can this happen? Can the market remain
+      unchanged yet everyone think that it will move? In fact, it happens quite often
+      because events that do not have an immediate effect on the underlying contract
+      may be perceived to have a future effect on the underlying.
+           The most common example occurs when news is pending that is likely to
+      affect the underlying contract but whose exact effect is unknown. Consider a
+      company that announces that its CEO will make an important statement one
+      week from today. If no one knows the content of the statement, there is unlikely
+      to be any significant change in the company’s stock price prior to the statement.
+      But traders will assume that the statement, when it is made, will have an effect,
+      perhaps a dramatic one, on the stock price. The possibility of future movement
+      in the stock price will cause implied volatility to rise. This combination of con-
+      ditions—the lack of movement in the underlying stock together with rising im-
+      plied volatility—will cause calendar spreads to widen.
+           Of course, the assumption of future stock movement as a result of the
+      CEO’s statement is just that—an assumption. If the statement turns out to be
+      irrelevant to the company’s fortunes (the CEO wanted to announce that he
+      and his wife just became grandparents), any presumption of future volatility
+      is removed. The result will be a decline in implied volatility, causing calendar
+      spreads to narrow.
+           The effect of implied volatility is what distinguishes time spreads from the
+      other types of spreads we have discussed. Long straddles, long strangles, and
+      short butterflies all want the volatility of the underlying contract as well as im-
+      plied volatility to rise (+gamma, +vega). Short straddles, short strangles, and
+      long butterflies all want the volatility of the underlying contract as well as im-
+      plied volatility to fall (–gamma, –vega). But with calendar spreads underlying
+      volatility and implied volatility have opposite effects. A quiet market or an in-
+      crease in implied volatility will help a long calendar spread (–gamma, +vega),
+      while a big move in the underlying market or a decline in implied volatility will
+
+188   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-22 Long calendar spread as time passes.
+
+
+
+
+                                                                          Value at expiration of
+                                                                          the short-term option
+
+
+                      +1 December 100 call
+                      –1 October 100 call
+    Position value
+
+
+
+
+                      +1 June 50 put
+                      –1 March 50 put
+
+
+                                                  Buy a long-term
+                                                 option and sell a
+                                                 short-term option
+
+                                                 Both options must
+                                                 be the same type
+                                              (both calls or both puts)
+                                                and have the same
+                                                   exercise price
+                               Lower underlying prices        Higher underlying prices
+
+
+
+help a short calendar spread (+gamma, –vega). This opposite effect is what
+gives calendar spreads their unique characteristics.
+    Figures 11-22 and 11-23 show the value of long and short calendar
+spreads as time passes. Figures 11-24 and 11-25 show the value as volatility
+changes.
+
+Figure 11-23 short calendar spread as time passes.
+
+
+
+                                                  Buy a long-term
+                                                 option and sell a
+                                                 short-term option
+
+                                                 Both options must
+                                                 be the same type
+                                              (both calls or both puts)
+                                                and have the same
+     Position value
+
+
+
+
+                                                  exercise price.
+
+
+                      +1 October 100 call
+                      −1 December 100 call
+
+                      +1 March 50 put
+                      −1 June 50 put
+
+                                                                          Value at expiration of
+                                                                          the short-term option
+
+
+
+                               Lower underlying prices        Higher underlying prices
+
+
+                                                                                  V O L AT I L I T Y s P R e A D s   189
+      Figure 11-24 Long calendar spread as volatility declines.
+
+
+
+            Position value
+
+
+
+
+                                                            Buy a long-term
+                                                           option and sell a
+                                                           short-term option
+
+
+                                 Lower underlying prices              Higher underlying prices
+
+
+
+           Although the effects of time and volatility apply to calendar spreads in all
+      markets, there may be other considerations, depending on the specific under-
+      lying market. In the foregoing examples, we assumed that the underlying con-
+      tract for both the short- and long-term option was the same. In the stock option
+
+      Figure 11-25 short calendar spread as volatility declines.
+
+
+
+
+                                                           Buy a short-term
+                                                           option and sell a
+                                                           long-term option
+            Position value
+
+
+
+
+                                 Lower underlying prices              Higher underlying prices
+
+
+
+190   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+market, this will always be true. The underlying contract for General Electric
+(GE) options, regardless of the expiration month, is always GE stock. And GE
+stock can only have a single price at any one time. But in a futures market the
+underlying for a futures option is a specific futures contract, and different op-
+tion expirations can have different underlying futures contracts.
+     Consider a futures market where there are four futures months: March,
+June, September, and December. If serial months are available, an April/June
+calendar spread will have the same underlying contract, June futures. But a
+March/June calendar spread will have one underlying contract for March op-
+tions, a March future, and a different underlying contract for June options, a
+June future. Although one might expect March futures and June futures to move
+together, there is no guarantee that they will. Particularly in commodity mar-
+kets, short-term supply and demand considerations can cause futures contracts
+on the same commodity to move in different directions. In addition to volatility
+considerations, a trader who buys a June/March call calendar spread must also
+consider the possibility that March futures will rise relative to June futures.
+     In order to offset the risk of futures contracts moving against a calendar-
+spread position, it is common in commodity futures markets for a trader to off-
+set a calendar spread with an opposing position in the futures market. In our
+example, if a trader buys the March/June call calendar spread, he can offset
+the position by purchasing March futures and selling June futures.
+     How many futures spreads should the trader execute? If he wants a po-
+sition that is sensitive only to volatility, he ought to trade the number of fu-
+tures spreads required to be delta neutral. If both calls are at the money,
+with deltas of approximately 50, a trader who buys 10 call calendar spreads
+(buy 10 June calls, sell 10 March calls) will be long 500 deltas in June and
+short 500 deltas in March. Therefore, he should buy 5 March futures con-
+tracts and sell 5 June futures contracts. The entire position will be (delta val-
+ues are in parentheses)
+         +10 June calls (+500), – June futures (–500)
+         –10 March calls (–500), +5 March futures (+500)
+This type of balancing is not necessary—indeed, not possible—in stock options
+because the underlying for all months is identical.
+
+
+Time Butterfly
+
+In futures markets, as opposed to option markets, a butterfly is a position in
+three futures months. A trader will buy (sell) one each of a short- and long-
+term futures contract and sell (buy) two intermediate-term futures contracts.
+A similar type of strategy can be done in option markets. A traditional option
+butterfly consists of options at three different exercise prices but with the same
+expiration date. A time butterfly (sometimes shortened to time fly) consists of
+options at the same exercise price but with three different expiration dates. All
+options must be the same type (either all calls or all puts), with approximately
+the same amount of time between expirations. The outside expiration months
+
+
+                                                           V O L AT I L I T Y s P R e A D s   191
+      are usually referred to as the wings and the inside expiration month as the body.
+      Some typical time butterflies might be
+                   +1 May 100 call (wing)                          –1 January 50 put (wing)
+                   –2 June 100 calls (body)                        +2 March 50 puts (body)
+                   +1 July 100 call (wing)                         –1 May 50 put (wing)
+
+
+                   –1 March 70 call (wing)                         +1 February 25 put (wing)
+                   +2 June 70 calls (body)                         –2 June 25 puts (body)
+                   –1 September 70 call (wing)                     +1 October 25 put (wing)
+           Note that a time butterfly consists of simultaneously buying or selling a
+      long-term calendar spread and taking an opposing position in a short-term
+      calendar spread, where each spread has one common expiration month.
+      The example May/June/July 100 call time butterfly consists of buying the
+      May 100 call and selling the June 100 call (selling the May/June calendar
+      spread) and simultaneously selling the June 100 call and buying the July 100
+      call (buying the June/July calendar spread).
+           If all options remain at the money, as time passes, the value of a calendar
+      spread will increase. The short-term spread must therefore be worth more than
+      the long-term spread. Consequently, if we buy the short-term calendar spread
+      and sell the long-term calendar spread (buying the body and selling the wings),
+      in total, we will pay more than we receive. Because the entire position will result
+      in a debit, we are long the time butterfly. If we do the opposite, selling the short-
+      term calendar spread and buying the long-term spread (selling the body and
+      buying the wings), we are short the time butterfly.7 This can be somewhat con-
+      fusing because in a traditional butterfly consisting of different exercise prices,
+      the combination of buying the wings and selling the body results in a debit. But
+      in a time butterfly consisting of different expiration months, buying the wings
+      and selling the body results in a credit.
+           The value of a long time butterfly as time passes and as volatility falls is
+      shown in Figures 11-26 and 11-27. The value of the spread will tend to collapse
+      as the underlying contract moves away from the exercise price, implying that
+      the spread has a negative gamma. Consequently, the spread must also have a
+      positive theta. Finally, the value of the spread falls as volatility declines, imply-
+      ing that the spread has a positive vega. In sum, a long time butterfly has charac-
+      teristics similar to those of a long calendar spread.
+
+
+      effect of Changing Interest Rates and Dividends
+
+      Thus far we have considered only the effects of changes in underlying price,
+      time, and volatility on the value of a volatility spread. What about changes in
+      interest rates and, in the case of stocks, dividends?
+
+      7
+       We are making the assumption here that the implied volatility of all expirations is the same. If the implied vol-
+      atility differs across expiration months, a long time butterfly might in fact result in a credit.
+
+
+
+192   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+

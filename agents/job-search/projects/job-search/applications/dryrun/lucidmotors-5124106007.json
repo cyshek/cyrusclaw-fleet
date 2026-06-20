@@ -1,0 +1,748 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/lucidmotors/jobs/5124106007",
+  "org": "lucidmotors",
+  "job_id": "5124106007",
+  "job_title": "HR Program Manager, HR Compliance & Internal Audit",
+  "job_location": "Southfield, MI",
+  "fetched_at": "2026-05-13T15:52:48Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/lucidmotors/jobs/5124106007?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 30,
+    "filled": 14,
+    "filled_needs_review": 3,
+    "declined": 9,
+    "unresolved": 4,
+    "blockers": 4
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_11915923007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_11915924007",
+      "label": "How did you learn about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How did you learn about this opportunity?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": 27816320007
+        },
+        {
+          "label": "Indeed",
+          "value": 27816321007
+        },
+        {
+          "label": "Social media post (not LinkedIn)",
+          "value": 27816323007
+        },
+        {
+          "label": "Betterteam",
+          "value": 27816325007
+        },
+        {
+          "label": "Job Board (Other)",
+          "value": 27816327007
+        },
+        {
+          "label": "Employee referral",
+          "value": 27816329007
+        },
+        {
+          "label": "College / University recruitment",
+          "value": 27816331007
+        },
+        {
+          "label": "Career Fair or Hiring Event",
+          "value": 27816333007
+        },
+        {
+          "label": "Lucid Careers Page",
+          "value": 27816334007
+        },
+        {
+          "label": "Other",
+          "value": 27816335007
+        }
+      ]
+    },
+    {
+      "id": "question_11915925007",
+      "label": "Are you a current contractor for Lucid, or any of its entities?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you a current contractor for Lucid, or any of its entities?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 27816318007
+        },
+        {
+          "label": "No",
+          "value": 27816319007
+        }
+      ]
+    },
+    {
+      "id": "question_11915926007",
+      "label": "Have you previously worked for Lucid, or any of its entities, as a contractor?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No) | NOTE: 'No' not literally in options ['Currently a contractor', 'Previously a contractor', 'Previously an employee', 'Never been a contractor or an employee']",
+      "status": "filled_needs_review",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Currently a contractor",
+          "value": 27816336007
+        },
+        {
+          "label": "Previously a contractor",
+          "value": 27816337007
+        },
+        {
+          "label": "Previously an employee",
+          "value": 27816338007
+        },
+        {
+          "label": "Never been a contractor or an employee",
+          "value": 27816339007
+        }
+      ]
+    },
+    {
+      "id": "question_11915927007",
+      "label": "What is your highest level of education completed?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What is your highest level of education completed?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Some High School",
+          "value": 27816340007
+        },
+        {
+          "label": "High School Diploma/GED",
+          "value": 27816341007
+        },
+        {
+          "label": "Bachelors Degree",
+          "value": 27816342007
+        },
+        {
+          "label": "Masters Degree",
+          "value": 27816343007
+        },
+        {
+          "label": "PHD",
+          "value": 27816344007
+        }
+      ]
+    },
+    {
+      "id": "question_11915928007",
+      "label": "Are you currently authorized to work in the United States of America?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 27816345007
+        },
+        {
+          "label": "No",
+          "value": 27816346007
+        }
+      ]
+    },
+    {
+      "id": "question_11915929007",
+      "label": "Do you now or in the future require visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 27816347007
+        },
+        {
+          "label": "No",
+          "value": 27816348007
+        }
+      ]
+    },
+    {
+      "id": "question_11915930007",
+      "label": "What is your expected compensation range?",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What is your expected compensation range?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_11915931007",
+      "label": "Would you like to receive communications via SMS and/or WhatsApp to the number provided on your application? Message & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email | NOTE: 'cyshekari@gmail.com' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "email",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4009378007",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4056185007
+        },
+        {
+          "label": "Non-binary",
+          "value": 4056186007
+        },
+        {
+          "label": "Woman",
+          "value": 4056187007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4056188007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4056189007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4009379007",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4056190007
+        },
+        {
+          "label": "East Asian",
+          "value": 4056191007
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4056192007
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4056193007
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 4056194007
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4056195007
+        },
+        {
+          "label": "South Asian",
+          "value": 4056196007
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4056197007
+        },
+        {
+          "label": "White or European",
+          "value": 4056198007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4056199007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4056200007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4009380007",
+      "label": "How would you describe your sexual orientation? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4056201007
+        },
+        {
+          "label": "Bisexual and/or pansexual",
+          "value": 4056202007
+        },
+        {
+          "label": "Gay",
+          "value": 4056203007
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4056204007
+        },
+        {
+          "label": "Lesbian",
+          "value": 4056205007
+        },
+        {
+          "label": "Queer",
+          "value": 4056206007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4056207007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4056208007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4009381007",
+      "label": "Do you identify as transgender? (select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4056209007
+        },
+        {
+          "label": "No",
+          "value": 4056210007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4056211007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4056212007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4009382007",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning? (select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4056213007
+        },
+        {
+          "label": "No",
+          "value": 4056214007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4056215007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4056216007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4009383007",
+      "label": "Are you a veteran or active member of the United States Armed Forces? (select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 4056217007
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4056218007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4056219007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4056220007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_11915924007",
+      "label": "How did you learn about this opportunity?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='How did you learn about this opportunity?'"
+    },
+    {
+      "id": "question_11915925007",
+      "label": "Are you a current contractor for Lucid, or any of its entities?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you a current contractor for Lucid, or any of its entities?'"
+    },
+    {
+      "id": "question_11915927007",
+      "label": "What is your highest level of education completed?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='What is your highest level of education completed?'"
+    },
+    {
+      "id": "question_11915930007",
+      "label": "What is your expected compensation range?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='What is your expected compensation range?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_11915924007",
+      "label": "How did you learn about this opportunity?",
+      "reason": "no LABEL_RULES match for label='How did you learn about this opportunity?'"
+    },
+    {
+      "id": "question_11915925007",
+      "label": "Are you a current contractor for Lucid, or any of its entities?",
+      "reason": "no LABEL_RULES match for label='Are you a current contractor for Lucid, or any of its entities?'"
+    },
+    {
+      "id": "question_11915927007",
+      "label": "What is your highest level of education completed?",
+      "reason": "no LABEL_RULES match for label='What is your highest level of education completed?'"
+    },
+    {
+      "id": "question_11915930007",
+      "label": "What is your expected compensation range?",
+      "reason": "no LABEL_RULES match for label='What is your expected compensation range?'"
+    }
+  ]
+}

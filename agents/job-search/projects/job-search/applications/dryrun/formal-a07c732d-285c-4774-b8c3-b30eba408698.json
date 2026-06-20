@@ -1,0 +1,89 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/formal/a07c732d-285c-4774-b8c3-b30eba408698",
+  "org": "formal",
+  "job_id": "a07c732d-285c-4774-b8c3-b30eba408698",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-03T12:24:53Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 4,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "b130b41e-0773-468d-82e0-ec3d852d693d__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b130b41e-0773-468d-82e0-ec3d852d693d__systemfield_name"
+    },
+    {
+      "id": "b130b41e-0773-468d-82e0-ec3d852d693d__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "b130b41e-0773-468d-82e0-ec3d852d693d__systemfield_email"
+    },
+    {
+      "id": "b130b41e-0773-468d-82e0-ec3d852d693d__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "b130b41e-0773-468d-82e0-ec3d852d693d__systemfield_resume"
+    },
+    {
+      "id": "b130b41e-0773-468d-82e0-ec3d852d693d_0018786e-76e8-4ba1-b2ff-a92b1c2f99d8",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b130b41e-0773-468d-82e0-ec3d852d693d_0018786e-76e8-4ba1-b2ff-a92b1c2f99d8"
+    },
+    {
+      "id": "b130b41e-0773-468d-82e0-ec3d852d693d_50ef0b28-2398-46c7-904f-4ef0baf6bf26",
+      "label": "Describe something you've built that you're exceptionally proud of",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "b130b41e-0773-468d-82e0-ec3d852d693d_50ef0b28-2398-46c7-904f-4ef0baf6bf26"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

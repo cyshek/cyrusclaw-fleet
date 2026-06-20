@@ -1,0 +1,162 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/mintlify/82c062be-e822-41a9-88c5-bed972e19e43",
+  "org": "mintlify",
+  "job_id": "82c062be-e822-41a9-88c5-bed972e19e43",
+  "job_title": "Solutions Engineer - Pre Sales",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-08T23:06:10Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6__systemfield_name"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6__systemfield_email"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6__systemfield_resume"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_e65fa2db-afa4-438b-b9de-cd8fb93fe317",
+      "label": "This is an in-person role. Are you willing to work in our San Francisco office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_e65fa2db-afa4-438b-b9de-cd8fb93fe317"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_4163ab16-98dd-4673-b112-8b118762a551",
+      "label": "Will you now or in the future require visa sponsorship? If yes, select the type of sponsorship.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Yes, H1B Transfer",
+          "value": "Yes, H1B Transfer"
+        },
+        {
+          "label": "Yes, STEM OPT",
+          "value": "Yes, STEM OPT"
+        },
+        {
+          "label": "Yes, TN",
+          "value": "Yes, TN"
+        },
+        {
+          "label": "Yes, H1B Sponsorship",
+          "value": "Yes, H1B Sponsorship"
+        },
+        {
+          "label": "Yes, other",
+          "value": "Yes, other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_4163ab16-98dd-4673-b112-8b118762a551"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_389180f1-a4c5-40b7-9a80-ff4d141a9fcf",
+      "label": "How did you hear about us!?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_389180f1-a4c5-40b7-9a80-ff4d141a9fcf"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_93b88813-c554-4075-be5f-c377160a29c5",
+      "label": "Why are you interested in Mintlify?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Mintlify because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Mintlify is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Mintlify while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Mintlify aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Mintlify')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_93b88813-c554-4075-be5f-c377160a29c5"
+    },
+    {
+      "id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_458c5a9d-7d02-4cfd-b4e1-da92518c66c8",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "133b1887-1cbd-4c69-8a81-6bf65f5d1ab6_458c5a9d-7d02-4cfd-b4e1-da92518c66c8"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

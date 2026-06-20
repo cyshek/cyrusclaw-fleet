@@ -1,0 +1,240 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/deepgram/69d7f329-968a-4c9d-a0b4-972f83f1206c",
+  "org": "deepgram",
+  "job_id": "69d7f329-968a-4c9d-a0b4-972f83f1206c",
+  "job_title": "Technical Program Manager, Research",
+  "job_location": "USA | Remote",
+  "fetched_at": "2026-06-19T04:14:14Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_name",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_email",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_2f7f2843-1ad7-4462-93de-2158426af9cf",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_2f7f2843-1ad7-4462-93de-2158426af9cf",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_resume",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_602c2ad8-c49a-4164-bbe3-19a649c2ac85",
+      "label": "Are you located in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "address.country=United States",
+      "status": "filled",
+      "matched_rule": "us_based_confirm",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_602c2ad8-c49a-4164-bbe3-19a649c2ac85",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55__systemfield_location",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_c4d40628-0abc-468f-9ba9-ec42a4a3fb24",
+      "label": "Will you now or in the future require visa sponsorship (H1B, etc.) for employment in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_c4d40628-0abc-468f-9ba9-ec42a4a3fb24",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_7da46c93-1a97-4dc0-9d4a-d82ffee97e63",
+      "label": "What excites you about Deepgram?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Deepgram because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Deepgram is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Deepgram while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Deepgram aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Deepgram')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_7da46c93-1a97-4dc0-9d4a-d82ffee97e63",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_55d3ce2d-5f90-497e-8913-2664493a3cc9",
+      "label": "What is the most impressive thing you’ve personally built or automated with AI? Describe exactly what you did, how it worked, and the measurable outcome",
+      "type": "textarea",
+      "required": true,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_55d3ce2d-5f90-497e-8913-2664493a3cc9",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_85da26a8-3e2e-4f75-b45a-aeae40e1bbff",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_85da26a8-3e2e-4f75-b45a-aeae40e1bbff",
+      "section": "Additional Information (optional)"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_fdf3a8f5-5e29-4b26-99fd-850953493d75",
+      "label": "Other",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Other'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_fdf3a8f5-5e29-4b26-99fd-850953493d75",
+      "section": "Additional Information (optional)"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_03c4f77b-3195-4d7e-8118-38516fdd75d0",
+      "label": "Do you have 5+ years of experience as a Technical Program Manager or Engineering Program Manager, ideally with meaningful time spent supporting or embedded in an AI/ML Research organization?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_03c4f77b-3195-4d7e-8118-38516fdd75d0",
+      "section": "Technical Program Management, Research"
+    },
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_b79fa4bb-ebe6-4f28-83c8-27255bfba8ff",
+      "label": "Detail any experience supporting a Research team and/or having experience with speech or audio projects — audio data collection and labeling, audio model evaluation (including human eval), or shipping products where audio quality is the core user experience",
+      "type": "textarea",
+      "required": false,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_b79fa4bb-ebe6-4f28-83c8-27255bfba8ff",
+      "section": "Technical Program Management, Research"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "13e04c57-8b9a-421d-88b3-87cddd58ab55_fdf3a8f5-5e29-4b26-99fd-850953493d75",
+      "label": "Other",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Other'"
+    }
+  ],
+  "blockers": []
+}

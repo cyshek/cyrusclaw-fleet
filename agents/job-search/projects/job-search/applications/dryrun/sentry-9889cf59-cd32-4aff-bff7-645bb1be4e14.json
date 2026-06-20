@@ -1,0 +1,267 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sentry/9889cf59-cd32-4aff-bff7-645bb1be4e14",
+  "org": "sentry",
+  "job_id": "9889cf59-cd32-4aff-bff7-645bb1be4e14",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco, California",
+  "fetched_at": "2026-05-31T03:53:47Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_name",
+      "label": "First and Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_name"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_location"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_email"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_62439af1-f8d5-4d89-b723-b6f09607238f",
+      "label": "Phone number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_62439af1-f8d5-4d89-b723-b6f09607238f"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4__systemfield_resume"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_c8a52469-53df-48c4-a397-8294a9958de8",
+      "label": "Cover Letter (optional)",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_c8a52469-53df-48c4-a397-8294a9958de8"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_a4d09bff-2128-44bf-9117-3de3393b8630",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_a4d09bff-2128-44bf-9117-3de3393b8630"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_fb469178-68cb-4d3b-a06b-1c01c7c29208",
+      "label": "GitHub Profile URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_fb469178-68cb-4d3b-a06b-1c01c7c29208"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_f38308d5-366a-4aec-bb17-010821a9600e",
+      "label": "How did you hear about this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Sentry's Careers Page",
+          "value": "Sentry's Careers Page"
+        },
+        {
+          "label": "Friend (Referral)",
+          "value": "Friend (Referral)"
+        },
+        {
+          "label": "Twitter",
+          "value": "Twitter"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "AngelList",
+          "value": "AngelList"
+        },
+        {
+          "label": "Indeed",
+          "value": "Indeed"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_f38308d5-366a-4aec-bb17-010821a9600e"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_4804fa61-7ce1-4335-b5d3-2d5d5a412b40",
+      "label": "Pronouns",
+      "type": "input_text",
+      "required": true,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_4804fa61-7ce1-4335-b5d3-2d5d5a412b40"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_fea4e158-9179-4556-a0c7-f31d5102dd8f",
+      "label": "Our Sentaurs enjoy a hybrid work model with 3 days a week in office, and 2 days working remotely. Are you willing to join us in office on Mondays, Tuesdays and Thursdays in our SAN FRANCISCO office? This role does not offer remote opportunities.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_fea4e158-9179-4556-a0c7-f31d5102dd8f"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_7dcb7223-0cc1-45b7-98e5-c6d8c0a8895e",
+      "label": "Will you now or in the future require visa sponsorship to work in the location where this job is posted? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_7dcb7223-0cc1-45b7-98e5-c6d8c0a8895e"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_03676f39-faba-4bae-952e-e26e2c595978",
+      "label": "Have you ever used Sentry before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_ever_used_product (default Yes)",
+      "status": "filled",
+      "matched_rule": "ever_used_product",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_03676f39-faba-4bae-952e-e26e2c595978"
+    },
+    {
+      "id": "8d588cb8-1607-4430-95da-a23ea7c446c4_b7854f38-501c-4ceb-81da-898623cf58ac",
+      "label": "I understand the information I submit will be used in accordance to Sentry's Applicant Privacy Policy.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have read and acknowledge Sentry's Applicant Privacy Policy. ",
+      "source": "acknowledge_yes (single option \"I have read and acknowledge Sentry's Applicant Privacy Policy.\") | smart-matched to option \"I have read and acknowledge Sentry's Applicant Privacy Policy. \" | ashby_smart_match(substring_unique,picked=\"I have read and acknowledge Sentry's Applicant Privacy Policy. \")",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I have read and acknowledge Sentry's Applicant Privacy Policy. ",
+          "value": "I have read and acknowledge Sentry's Applicant Privacy Policy. "
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "8d588cb8-1607-4430-95da-a23ea7c446c4_b7854f38-501c-4ceb-81da-898623cf58ac"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

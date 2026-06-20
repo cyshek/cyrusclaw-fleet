@@ -1,0 +1,142 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/furtherai/5c5f4e78-ad00-4754-8c43-f92b05e393cc",
+  "org": "furtherai",
+  "job_id": "5c5f4e78-ad00-4754-8c43-f92b05e393cc",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-09T08:18:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641__systemfield_name"
+    },
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641__systemfield_email"
+    },
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_e41c6784-7b14-4cc0-838f-0882179d572b",
+      "label": "Please add your LinkedIn here:",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_e41c6784-7b14-4cc0-838f-0882179d572b"
+    },
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641__systemfield_resume"
+    },
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_08be2111-5d62-4579-9ae8-322db2f9b841",
+      "label": "Are you legally authorized to work in the U.S? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_08be2111-5d62-4579-9ae8-322db2f9b841"
+    },
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_46c0e14b-3b7a-46f3-96d7-7e6e4e6df424",
+      "label": "If yes, will you now or in the future require visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_46c0e14b-3b7a-46f3-96d7-7e6e4e6df424"
+    },
+    {
+      "id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_a6818467-d8e5-4dfc-a5ce-99fef244a8a8",
+      "label": "Are you able to work in the downtown San Francisco office 5 days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "02e4f5cc-43bd-4695-8339-90cc79dc0641_a6818467-d8e5-4dfc-a5ce-99fef244a8a8"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,155 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/anrok/40367604-03ac-459e-9ac7-880fa8497f4e",
+  "org": "anrok",
+  "job_id": "40367604-03ac-459e-9ac7-880fa8497f4e",
+  "job_title": "Solutions Engineer, Pre Sales",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-08T22:48:21Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_name"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_email"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_resume"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723_5736b32a-93d2-4172-afae-a7c8f1abcab4",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723_5736b32a-93d2-4172-afae-a7c8f1abcab4"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723_845e546a-6048-4662-843e-3849e2ff9c1d",
+      "label": "Are you legally authorized to work in the United States for any employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723_845e546a-6048-4662-843e-3849e2ff9c1d"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723_f6fab17d-b981-40a3-ae11-815133b5cbd9",
+      "label": "Will you now or in the future require employer sponsorship for an employment visa (e.g., H-1B, TN, O-1)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723_f6fab17d-b981-40a3-ae11-815133b5cbd9"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723_4a77a84b-f47c-4813-921a-ace3de6e3eb2",
+      "label": "If you are based in San Francisco, Salt Lake City, or New York City, are you able to commute to the office three days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723_4a77a84b-f47c-4813-921a-ace3de6e3eb2"
+    },
+    {
+      "id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_location",
+      "label": "What city and state do you currently reside in?",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (default Yes)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "43146247-9667-48d5-80bc-b123710d9723__systemfield_location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and shipping self-service capabilities that reduced operational toil by **30%** and transitioned execution to a scalable, **customer-facing** model.
+2. Built and deployed an internal **AI agent** for drill planning, applying **LLM prompting** and workflow automation to cut planning cycle time by **39%** and increase capacity by 21% — iterating rapidly on real user feedback.
+3. Worked directly with enterprise customers (**Databricks, Walmart, SAP, NetApp**) to integrate and optimize Azure resilience solutions, scaling validation from a 2-person operation into a platformized system driving **$14M+ impact**.
+4. Managed **APIs and third-party integrations** across partner systems to deliver seamless functionality, sustaining 45+ annual resilience drills under tight deadlines and executive visibility.
+5. Directed 14 cross-org executions including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+** contract, owning end-to-end delivery with **extreme ownership** in a high-stakes environment.
+6. Pioneered Azure’s first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a **94% recovery rate**, surfacing critical hardware defects and establishing continuous validation.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows, running customer demos and training that drove utilization across **14 teams** and saved 37 engineering hours monthly — translating technical value to non-technical stakeholders.
+2. Designed and shipped **LLM-powered semantic search** by implementing rigorous metadata standards, cutting documentation lookup time by **83%** and improving data integrity and retrieval.
+3. Influenced the product roadmap toward intent-based **YAML** generation by facilitating **11+ user interviews** with Azure service teams to surface critical feature gaps and iterate on solutions.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M** in accelerated revenue and launched regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework across **140+ teams**.
+2. Drove a product strategy to mitigate operational toil during region launches, conducting discovery with 20+ service teams to identify 81 hours of manual effort per region and building a roadmap to automate critical paths.
+3. Engineered a **Power BI** dashboard to track operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact support.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across **1,200+ stations**.
+2. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%**.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve 40+ high-priority tickets and stabilize the developer intake process.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** via a new CRM process.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+
+## Notes from the rewriter
+- Led with customer-facing engineering, AI/ML application, and API/integration language to mirror the FDE JD.
+- Surfaced LLM prompting, AI agents, and full-stack/Python skills up front; foregrounded ownership and fast-paced delivery to match operating principles.
+

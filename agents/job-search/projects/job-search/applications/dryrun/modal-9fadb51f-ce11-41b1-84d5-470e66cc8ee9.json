@@ -1,0 +1,85 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/modal/9fadb51f-ce11-41b1-84d5-470e66cc8ee9",
+  "org": "modal",
+  "job_id": "9fadb51f-ce11-41b1-84d5-470e66cc8ee9",
+  "job_title": "Forward Deployed Engineer - ML",
+  "job_location": "New York",
+  "fetched_at": "2026-05-31T00:28:54Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 4,
+    "filled": 4,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "dad2994a-52b1-459a-9e90-521966415f66__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "dad2994a-52b1-459a-9e90-521966415f66__systemfield_name"
+    },
+    {
+      "id": "dad2994a-52b1-459a-9e90-521966415f66__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "dad2994a-52b1-459a-9e90-521966415f66__systemfield_email"
+    },
+    {
+      "id": "dad2994a-52b1-459a-9e90-521966415f66__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "dad2994a-52b1-459a-9e90-521966415f66__systemfield_resume"
+    },
+    {
+      "id": "dad2994a-52b1-459a-9e90-521966415f66_e1b0e23e-fa98-49b1-99e9-7319f21ff487",
+      "label": "Are you excited and able to work from our NYC, SF, or Stockholm office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "dad2994a-52b1-459a-9e90-521966415f66_e1b0e23e-fa98-49b1-99e9-7319f21ff487"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

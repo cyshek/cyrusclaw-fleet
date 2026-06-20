@@ -1,0 +1,9 @@
+# Cover answers — Drweng, Associate Product Manager (drw-7743571)
+
+## Please provide additional detail if appropriate.
+
+The core of this role, converting time-consuming manual workflows into reliable, monitored automation, is exactly what I do day to day at Microsoft. I own delivery of small-to-medium initiatives on Azure's recovery validation platform, partnering with software and data engineers to turn manual, high-risk workflows into monitored automation that sustains 45+ annual drills and $14M+ in business impact. On a separate effort I led the 0 to 1 build of an internal Resilience Automation Platform, mapping front-office and operations workflows, SLAs and failure modes into product requirements that cut operational toil 30% through self-service scheduling.
+
+The technical fluency you're looking for is real for me, not just a checkbox. My degree is in Computer Science with a Math minor, and I work hands-on with Python, SQL pipelines, REST APIs and cloud infrastructure. As an intern I migrated documentation to an AI-powered semantic search tool built on REST APIs that cut lookup time 83%, and built a Power BI dashboard backed by SQL pipelines to track operational toil across 140+ teams. I'm comfortable getting into the data and tooling alongside engineers rather than handing off requirements and walking away.
+
+A couple of things that fit this specific role: I'm a University of Houston grad and a member of the Trading Enthusiast Club, so the Houston location and the commodities trading domain are genuinely interesting to me, and I'm eager to ramp on North American power and gas. I've also liaised across procurement, central engineering and cloud computing teams on a sovereign-cloud test tied to a $1.5B+ contract, which is the same cross-org coordination this job asks for. Happy to walk through any of this in more detail.

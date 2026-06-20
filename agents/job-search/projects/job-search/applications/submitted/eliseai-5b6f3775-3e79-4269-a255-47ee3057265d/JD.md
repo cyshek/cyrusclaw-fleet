@@ -1,0 +1,129 @@
+# Associate Solutions Engineer | Housing
+
+**Company:** EliseAI
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/eliseai/5b6f3775-3e79-4269-a255-47ee3057265d
+**Ashby Org:** eliseai
+**Ashby Job ID:** 5b6f3775-3e79-4269-a255-47ee3057265d
+
+---
+
+**About EliseAI**
+
+At EliseAI, we're improving the industries that matter most: housing and healthcare. Everyone needs a place to live and access to quality healthcare, yet both are often harder to secure than they should be. 
+
+By integrating AI agents deeply into existing workflows, we make them more efficient, reduce costs, and improve the experience for everyone.
+
+- **Housing**: We simplify how renters tour apartments, sign leases, submit maintenance requests, and stay connected with their property team—bringing everything they need for their home into one place.
+
+- **Healthcare**: We make it easy to schedule appointments, complete intake forms, and we help patients communicate with providers, so everyone can focus on health instead of paperwork.
+
+With EliseAI, organizations reduce manual work, improve accessibility, and deliver a seamless experience across essential services. We recently raised a [$250 million Series E round](https://www.eliseai.com/blog/eliseai-raises-250m-series-e) led by Andreessen Horowitz to accelerate this mission.
+
+**About The Role **
+
+EliseAI’s Technical Solutions & Support team are subject matter experts responsible for solving issues and answering questions for our customers. Our Solutions & Support team members possess in-depth system knowledge on our individual client configurations and systems and configuration data access. The team works with other internal teams to troubleshoot customer issues and ensure the best possible customer experience.
+
+**Key Responsibilities**
+
+Deeply understand our systems, customers, and how they work best together:
+
+- How we onboard clients and translate their preferences into our system’s settings.
+
+- How our integrations work with client email, calendar, CRM, and property management systems.
+
+- How our clients’ businesses work and how issues they report impact their operations.
+
+Provide excellent, customer-obsessed support to our clients:
+
+- Quickly, clearly, and professionally communicate with clients to understand their issues, reproduction steps, and the business impact they’re causing.
+
+- Resolve issues by providing empathetic, over-the-top, extra-mile customer service.
+
+- Prioritize your time according to the issue's impact on our clients’ businesses.
+
+- Advise clients on best practices for configuring and interacting with their AI Assistant.
+
+Investigate and document bugs:
+
+- Investigate issues' root cause and impact using SQL queries, logs, and other data sources.
+
+- Write highly effective ticket summaries that provide clear descriptions of the issue, how to reproduce it, its business impact, and relevant documents that will help prioritize the issue and quickly solve it.
+
+- Communicate bug fixes to our clients, confirm the issue is solved, and share these updates with your team members
+
+**Requirements**
+
+- Bachelor's degree in Computer Science or equivalent field 
+
+- 1-3 years of experience in similar role or field 
+
+- Experience with support software and CRMs (e.g., Zendesk, Salesforce) is a plus 
+
+- Demonstrated technical proficiency such as a computer science degree, bootcamp certificate, or previous work experience
+
+- Bias towards data-driven decision-making and analytical skills
+
+- Strong written and verbal communication skills 
+
+- Experience in a customer-facing role is a plus 
+
+- Willingness to work in person at our office 5 days a week
+
+**Move at rocket speed, build something massive.**
+
+We’re scaling fast, solving real client problems with precision and ambition. Here, you own your impact; full autonomy, no micromanagement, no fluff. We hire the best, expect the best, and give you the masterclass of your career. It’s hard, it’s intense, and it’s the most rewarding work you’ll ever do. If you’re hungry, driven, and ready to build something massive, climb aboard.
+
+**Nice to haves include**
+
+- Computer Science degree, bootcamp certificate, or equivalent
+
+- Experience building projects using low code / no code tools such as Retool
+
+- Advanced knowledge of Google Sheets or Excel
+
+- Familiarity with DataDog or other similar event-logging software
+
+- Familiarity with Postman or other API testing tools
+
+- Familiarity with Reporting tools such as Tableau
+
+- Experience writing SQL queries
+
+**Why Join**
+
+Growth and impact. It’s not often that you can get in on the ground floor of a funded ([unicorn!](https://www.eliseai.com/blog/eliseai-raises-250m-series-e)) startup that’s scaling so fast. That means that instead of following a playbook, you’ll be writing it. Every single day you will be challenged to identify how we can scale and execute on it. You’ll learn what works when you succeed and what doesn’t when you fail. Either way, the rest of the team will be here to support you.
+
+**Benefits**
+
+In addition to the growth and impact you’ll have at EliseAI, we offer competitive salaries along with the following benefits:
+
+- Equity in the company
+
+- Medical, Dental and Vision premiums covered at 100%
+
+- Fully paid parental leave
+
+- Commuter benefits
+
+- 401k benefits
+
+- Fitness & home services stipend to cover part of your expenses so you can focus on what matters
+
+- A collaborative in-office environment with an open floor plan, fully stocked kitchen, and all meals covered in the office
+
+- Unlimited vacation and paid holidays
+
+- We'll cover relocation packages and make the move exciting, not painful!
+
+**Job Compensation Range**
+
+The salary range for this role is $100,000 - $135,000. EliseAI offers a competitive total rewards package which includes base salary, equity, and a comprehensive benefits & perks package. Exact compensation is determined based on a number of factors, including experience, skill level, location, and qualifications which are assessed during the interview process. Additional details about total compensation and benefits will be provided by our Recruiting Team during the hiring process.
+
+EliseAI provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.
+
+Please note that employment with EliseAI is on an "at-will" basis, which means that either the employee or the company may terminate the employment relationship at any time, with or without cause or notice.
+
+Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.
+
+If you need assistance and/or a reasonable accommodation in the application or recruiting process due to a disability, please contact us at [recruiting@eliseai.com](mailto:recruiting@eliseai.com)

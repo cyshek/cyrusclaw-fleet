@@ -1,0 +1,15 @@
+{
+  "symbol": "IWM",
+  "timeframe": "1Hour",
+  "bar_limit": 80,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "tp_pct": 2.0,
+  "sl_pct": 2.0,
+  "max_hold_bars": 43,
+
+  "_threshold_grounding": "All thresholds sized from the breakout_xlk parent trade distribution (45 trades, 8 windows). tp_pct=2.0 sits below median per-trade max runup (+2.60%) so it would have captured >=half of winners and is well inside p75 (+4.11%), not inert. sl_pct=2.0 sits between median per-trade max drawdown (1.41%) and p25 (2.21%), so it fires on a meaningful but not all-trades fraction (64% touched >=1% dd) and is NOT deeper than p25 (which would make it inert). max_hold_bars=43 = parent p75 holding period, so the time-stop only kills trades that linger past where most resolved (median 34 bars). lookback=20 matches the parent Donchian window.",
+
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

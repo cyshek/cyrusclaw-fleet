@@ -1,0 +1,102 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/bland/804fbd27-027e-4de5-8a6f-77241a65e599",
+  "org": "bland",
+  "job_id": "804fbd27-027e-4de5-8a6f-77241a65e599",
+  "job_title": "Customer Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-31T11:24:12Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f837d641-cf47-4957-bb2a-4a868c4167a2__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f837d641-cf47-4957-bb2a-4a868c4167a2__systemfield_name"
+    },
+    {
+      "id": "f837d641-cf47-4957-bb2a-4a868c4167a2__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f837d641-cf47-4957-bb2a-4a868c4167a2__systemfield_email"
+    },
+    {
+      "id": "f837d641-cf47-4957-bb2a-4a868c4167a2__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f837d641-cf47-4957-bb2a-4a868c4167a2__systemfield_resume"
+    },
+    {
+      "id": "f837d641-cf47-4957-bb2a-4a868c4167a2_e2563ecd-f498-46f3-b9fb-0997c8b22659",
+      "label": "Linkedin?",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f837d641-cf47-4957-bb2a-4a868c4167a2_e2563ecd-f498-46f3-b9fb-0997c8b22659"
+    },
+    {
+      "id": "f837d641-cf47-4957-bb2a-4a868c4167a2_9eea03f0-f011-4d27-a319-99d08be5eb44",
+      "label": "What’s a habit you have that your friends would make fun of? (Be specific. We value authenticity over polish)",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f837d641-cf47-4957-bb2a-4a868c4167a2_9eea03f0-f011-4d27-a319-99d08be5eb44"
+    },
+    {
+      "id": "f837d641-cf47-4957-bb2a-4a868c4167a2_f83808e3-324d-4e71-8094-96dedc4949e3",
+      "label": "Github?",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f837d641-cf47-4957-bb2a-4a868c4167a2_f83808e3-324d-4e71-8094-96dedc4949e3"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,172 @@
+[wd] creds: email=cyshekari@gmail.com pw_len=24
+[wd] goto https://exfo.wd10.myworkdayjobs.com/en-US/EXFO_Careers/job/Solutions-Engineer_R-100191
+[wd] creating account
+[wd] account created & signed in
+[wd] --- iteration 0: step 'My Information' ---
+[wd] step: My Information
+[wd] source picked: LinkedIn
+[wd] DIAG myinfo: {"req_empty":["source--source","phoneNumber--countryPhoneCode"],"errors":[]}
+[wd] --- iteration 1: step 'My Experience' ---
+[wd] step: My Experience (resume upload)
+[wd] resume set: applications/queued/exfo-R-100191/Cyrus_Shekari_Resume_exfo_R-100191_v2.pdf
+[wd]   populate: detected we_idx=None ed_idx=None
+[wd]   date fill err workExperience-52--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   work exp [52]: Technical Program Manager @ Microsoft (jt=True cn=True lc=True)
+[wd]   date fill err workExperience-84--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date fill err workExperience-84--endDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   work exp [84]: Technical Program Manager Intern @ Amazon Robotics (jt=True cn=True lc=True)
+[wd]   date fill err workExperience-144--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date fill err workExperience-144--endDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   work exp [144]: Program Manager Intern @ Pro Painters (jt=True cn=True lc=True)
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-52--roleDescription :: Role Description*","workExperience-84--roleDescription :: Role Description*","workExperience-144--roleDescription :: Role Description*","workExperience-234--jobTitle :: Job Title*","workExperience-234--companyName :: Company*","workExperience-234--location :: Location*","workExperience-234--roleDescription :: Role Description*"]
+[wd] DIAG experience: {"uploaded":true,"req_empty":["workExperience-52--roleDescription","workExperience-84--roleDescription","workExperience-144--roleDescription","workExperience-234--jobTitle","workExperience-234--companyName","workExperience-234--location","workExperience-234--roleDescription"],"errors":["Cyrus_Shekari_Resume_exfo_R-100191_v2.pdf successfully uploaded"]}
+[wd] --- iteration 2: step 'My Experience' ---
+[wd] step: My Experience (resume upload)
+[wd]   resume already uploaded -> skip re-upload
+[wd]   populate: detected we_idx=52 ed_idx=None
+[wd]   profile-prefilled work history detected -> repair dates on filled blocks, fill/delete empties, skip Add
+[wd]   empty permanent block remains -> kbd-fill it
+[wd]   date fill err workExperience-234--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   kbd-filled work-exp[234]: jobTitle now='Technical Program Manager'
+[wd]   date fill err workExperience-52--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[52] Microsoft
+[wd]   date fill err workExperience-84--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date fill err workExperience-84--endDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[84] Amazon Robotics
+[wd]   date fill err workExperience-144--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date fill err workExperience-144--endDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[144] Pro Painters
+[wd]   date fill err workExperience-234--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[234] Microsoft
+[wd]   prefill-guard: work history done -> fall through to Education fill
+[wd]   date-repair block[52] Microsoft: start_filled=False
+[wd]   date-repair block[84] Amazon Robotics: start_filled=False
+[wd]   date-repair block[144] Pro Painters: start_filled=False
+[wd]   date-repair block[234] Microsoft: start_filled=False
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-52--roleDescription :: Role Description*","workExperience-84--roleDescription :: Role Description*","workExperience-144--roleDescription :: Role Description*","workExperience-234--roleDescription :: Role Description*","workExperience-616--jobTitle :: Job Title*","workExperience-616--companyName :: Company*","workExperience-616--location :: Location*","workExperience-616--roleDescription :: Role Description*"]
+[wd] DIAG experience: {"uploaded":false,"req_empty":["workExperience-52--roleDescription","workExperience-84--roleDescription","workExperience-144--roleDescription","workExperience-234--roleDescription","workExperience-616--jobTitle","workExperience-616--companyName","workExperience-616--location","workExperience-616--roleDescription"],"errors":[]}
+[wd] --- iteration 3: step 'My Experience' ---
+[wd] step: My Experience (resume upload)
+[wd] resume set: applications/queued/exfo-R-100191/Cyrus_Shekari_Resume_exfo_R-100191_v2.pdf
+[wd]   populate: detected we_idx=52 ed_idx=None
+[wd]   profile-prefilled work history detected -> repair dates on filled blocks, fill/delete empties, skip Add
+[wd]   empty permanent block remains -> kbd-fill it
+[wd]   date fill err workExperience-616--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   kbd-filled work-exp[616]: jobTitle now='Technical Program Manager'
+[wd]   date-repair (guard) block[52] Microsoft
+[wd]   date-repair (guard) block[84] Amazon Robotics
+[wd]   date-repair (guard) block[144] Pro Painters
+[wd]   date-repair (guard) block[234] Microsoft
+[wd]   date fill err workExperience-616--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[616] Microsoft
+[wd]   prefill-guard: work history done -> fall through to Education fill
+[wd]   date-repair block[52] Microsoft: start_filled=False
+[wd]   date-repair block[84] Amazon Robotics: start_filled=False
+[wd]   date-repair block[144] Pro Painters: start_filled=False
+[wd]   date-repair block[234] Microsoft: start_filled=False
+[wd]   date-repair block[616] Microsoft: start_filled=False
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-52--roleDescription :: Role Description*","workExperience-84--roleDescription :: Role Description*","workExperience-144--roleDescription :: Role Description*","workExperience-234--roleDescription :: Role Description*","workExperience-616--roleDescription :: Role Description*","workExperience-820--jobTitle :: Job Title*","workExperience-820--companyName :: Company*","workExperience-820--location :: Location*","workExperience-820--roleDescription :: Role Description*"]
+[wd] DIAG experience: {"uploaded":false,"req_empty":["workExperience-52--roleDescription","workExperience-84--roleDescription","workExperience-144--roleDescription","workExperience-234--roleDescription","workExperience-616--roleDescription","workExperience-820--jobTitle","workExperience-820--companyName","workExperience-820--location","workExperience-820--roleDescription"],"errors":[]}
+[wd] --- iteration 4: step 'My Experience' ---
+[wd] step: My Experience (resume upload)
+[wd] resume set: applications/queued/exfo-R-100191/Cyrus_Shekari_Resume_exfo_R-100191_v2.pdf
+[wd]   populate: detected we_idx=52 ed_idx=None
+[wd]   profile-prefilled work history detected -> repair dates on filled blocks, fill/delete empties, skip Add
+[wd]   empty permanent block remains -> kbd-fill it
+[wd]   date fill err workExperience-820--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   kbd-filled work-exp[820]: jobTitle now='Technical Program Manager'
+[wd]   date-repair (guard) block[52] Microsoft
+[wd]   date-repair (guard) block[84] Amazon Robotics
+[wd]   date-repair (guard) block[144] Pro Painters
+[wd]   date-repair (guard) block[234] Microsoft
+[wd]   date-repair (guard) block[616] Microsoft
+[wd]   date fill err workExperience-820--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[820] Microsoft
+[wd]   prefill-guard: work history done -> fall through to Education fill
+[wd]   date-repair block[52] Microsoft: start_filled=False
+[wd]   date-repair block[84] Amazon Robotics: start_filled=False
+[wd]   date-repair block[144] Pro Painters: start_filled=False
+[wd]   date-repair block[234] Microsoft: start_filled=False
+[wd]   date-repair block[616] Microsoft: start_filled=False
+[wd]   date-repair block[820] Microsoft: start_filled=False
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-52--roleDescription :: Role Description*","workExperience-84--roleDescription :: Role Description*","workExperience-144--roleDescription :: Role Description*","workExperience-234--roleDescription :: Role Description*","workExperience-616--roleDescription :: Role Description*","workExperience-820--roleDescription :: Role Description*","workExperience-1034--jobTitle :: Job Title*","workExperience-1034--companyName :: Company*","workExperience-1034--location :: Location*","workExperience-1034--roleDescription :: Role Description*"]
+[wd] DIAG experience: {"uploaded":false,"req_empty":["workExperience-52--roleDescription","workExperience-84--roleDescription","workExperience-144--roleDescription","workExperience-234--roleDescription","workExperience-616--roleDescription","workExperience-820--roleDescription","workExperience-1034--jobTitle","workExperience-1034--companyName","workExperience-1034--location","workExperience-1034--roleDescription"],"errors":[]}
+[wd] --- iteration 5: step 'My Experience' ---
+[wd] step: My Experience (resume upload)
+[wd] resume set: applications/queued/exfo-R-100191/Cyrus_Shekari_Resume_exfo_R-100191_v2.pdf
+[wd]   populate: detected we_idx=52 ed_idx=None
+[wd]   profile-prefilled work history detected -> repair dates on filled blocks, fill/delete empties, skip Add
+[wd]   empty permanent block remains -> kbd-fill it
+[wd]   date fill err workExperience-1034--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   kbd-filled work-exp[1034]: jobTitle now='Technical Program Manager'
+[wd]   date-repair (guard) block[52] Microsoft
+[wd]   date-repair (guard) block[84] Amazon Robotics
+[wd]   date-repair (guard) block[144] Pro Painters
+[wd]   date-repair (guard) block[234] Microsoft
+[wd]   date-repair (guard) block[616] Microsoft
+[wd]   date-repair (guard) block[820] Microsoft
+[wd]   date fill err workExperience-1034--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   date-repair (guard) block[1034] Microsoft
+[wd]   prefill-guard: work history done -> fall through to Education fill
+[wd]   date-repair block[52] Microsoft: start_filled=False
+[wd]   date-repair block[84] Amazon Robotics: start_filled=False
+[wd]   date-repair block[144] Pro Painters: start_filled=False
+[wd]   date-repair block[234] Microsoft: start_filled=False
+[wd]   date-repair block[616] Microsoft: start_filled=False
+[wd]   date-repair block[820] Microsoft: start_filled=False
+[wd]   date-repair block[1034] Microsoft: start_filled=False
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-52--roleDescription :: Role Description*","workExperience-84--roleDescription :: Role Description*","workExperience-144--roleDescription :: Role Description*","workExperience-234--roleDescription :: Role Description*","workExperience-616--roleDescription :: Role Description*","workExperience-820--roleDescription :: Role Description*","workExperience-1034--roleDescription :: Role Description*","workExperience-1268--jobTitle :: Job Title*","workExperience-1268--companyName :: Company*","workExperience-1268--location :: Location*","workExperience-1268--roleDescription :: Role Des
+[wd] DIAG experience: {"uploaded":false,"req_empty":["workExperience-52--roleDescription","workExperience-84--roleDescription","workExperience-144--roleDescription","workExperience-234--roleDescription","workExperience-616--roleDescription","workExperience-820--roleDescription","workExperience-1034--roleDescription","workExperience-1268--jobTitle","workExperience-1268--companyName","workExperience-1268--location","workExperience-1268--roleDescription"],"errors":[]}
+[wd] --- iteration 6: step 'My Experience' ---
+[wd] step: My Experience (resume upload)
+[wd] resume set: applications/queued/exfo-R-100191/Cyrus_Shekari_Resume_exfo_R-100191_v2.pdf
+[wd]   populate: detected we_idx=52 ed_idx=None
+[wd]   profile-prefilled work history detected -> repair dates on filled blocks, fill/delete empties, skip Add
+[wd]   empty permanent block remains -> kbd-fill it
+[wd]   date fill err workExperience-1268--startDate Locator.click: Element is outside of the viewport
+Call log:
+
+[wd]   kbd-filled work-exp[1268]: jobTitle now='Technical Program Manager'
+[wd]   date-repair (guard) block[52] Microsoft
+[wd]   date-repair (guard) block[84] Amazon Robotics
+[wd]   date-repair (guard) block[144] Pro Painters
+[wd]   date-repair (guard) block[234] Microsoft
+[wd]   date-repair (guard) block[616] Microsoft
+[wd]   date-repair (guard) block[820] Microsoft
+[wd]   date-repair (guard) block[1034] Microsoft

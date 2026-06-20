@@ -1,0 +1,668 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/stripe/jobs/7815794",
+  "org": "stripe",
+  "job_id": "7815794",
+  "job_title": "Operations Program Manager, Capital Collections",
+  "job_location": "US-NYC",
+  "fetched_at": "2026-05-23T14:08:15Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7815794?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 27,
+    "filled": 19,
+    "filled_needs_review": 4,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_65678618",
+      "label": "Linkedin Profile:",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_66625084",
+      "label": "This role requires the candidate to be based in New York City and able to work in a hybrid arrangement. Are you currently based in NYC, and are you able to work in a hybrid schedule?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65611047",
+      "label": "Please select the country where you currently reside.\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Australia', 'Belgium', 'Brazil', 'Canada', 'Egypt', 'France', 'Germany', 'India', 'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Malaysia', 'Mexico', 'New Zealand', 'Poland', 'Romania', 'Singapore', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Thailand', 'The Netherlands', 'UAE', 'UK', 'US', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Australia",
+          "value": 685688260
+        },
+        {
+          "label": "Belgium",
+          "value": 685688261
+        },
+        {
+          "label": "Brazil",
+          "value": 685688262
+        },
+        {
+          "label": "Canada",
+          "value": 685688263
+        },
+        {
+          "label": "Egypt",
+          "value": 685688264
+        },
+        {
+          "label": "France",
+          "value": 685688265
+        },
+        {
+          "label": "Germany",
+          "value": 685688266
+        },
+        {
+          "label": "India",
+          "value": 685688267
+        },
+        {
+          "label": "Indonesia",
+          "value": 685688268
+        },
+        {
+          "label": "Ireland",
+          "value": 685688269
+        },
+        {
+          "label": "Israel",
+          "value": 685688270
+        },
+        {
+          "label": "Italy",
+          "value": 685688271
+        },
+        {
+          "label": "Japan",
+          "value": 685688272
+        },
+        {
+          "label": "Malaysia",
+          "value": 685688273
+        },
+        {
+          "label": "Mexico",
+          "value": 685688274
+        },
+        {
+          "label": "New Zealand",
+          "value": 685688275
+        },
+        {
+          "label": "Poland",
+          "value": 685688276
+        },
+        {
+          "label": "Romania",
+          "value": 685688277
+        },
+        {
+          "label": "Singapore",
+          "value": 685688278
+        },
+        {
+          "label": "South Korea",
+          "value": 685688279
+        },
+        {
+          "label": "Spain",
+          "value": 685688280
+        },
+        {
+          "label": "Sweden",
+          "value": 685688281
+        },
+        {
+          "label": "Switzerland",
+          "value": 685688282
+        },
+        {
+          "label": "Thailand",
+          "value": 685688283
+        },
+        {
+          "label": "The Netherlands",
+          "value": 685688284
+        },
+        {
+          "label": "UAE",
+          "value": 685688285
+        },
+        {
+          "label": "UK",
+          "value": 685688286
+        },
+        {
+          "label": "US",
+          "value": 685688287
+        },
+        {
+          "label": "Other",
+          "value": 685688288
+        }
+      ]
+    },
+    {
+      "id": "question_65611048[]",
+      "label": "Please select the country or countries you anticipate working in for the role in which you are applying.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Australia', 'Belgium', 'Brazil', 'Canada', 'France', 'Germany', 'India', 'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Luxembourg', 'Malaysia', 'Mexico', 'New Zealand', 'Poland', 'Portugal', 'Romania', 'Singapore', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Thailand', 'The Netherlands', 'UAE', 'UK', 'US']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Australia",
+          "value": 712515992
+        },
+        {
+          "label": "Belgium",
+          "value": 712515993
+        },
+        {
+          "label": "Brazil",
+          "value": 712515994
+        },
+        {
+          "label": "Canada",
+          "value": 712515995
+        },
+        {
+          "label": "France",
+          "value": 712515996
+        },
+        {
+          "label": "Germany",
+          "value": 712515997
+        },
+        {
+          "label": "India",
+          "value": 712515998
+        },
+        {
+          "label": "Indonesia",
+          "value": 712515999
+        },
+        {
+          "label": "Ireland",
+          "value": 712516000
+        },
+        {
+          "label": "Israel",
+          "value": 712516001
+        },
+        {
+          "label": "Italy",
+          "value": 712516002
+        },
+        {
+          "label": "Japan",
+          "value": 712516003
+        },
+        {
+          "label": "Luxembourg",
+          "value": 712516004
+        },
+        {
+          "label": "Malaysia",
+          "value": 712516005
+        },
+        {
+          "label": "Mexico",
+          "value": 712516006
+        },
+        {
+          "label": "New Zealand",
+          "value": 712516007
+        },
+        {
+          "label": "Poland",
+          "value": 712516008
+        },
+        {
+          "label": "Portugal",
+          "value": 712516009
+        },
+        {
+          "label": "Romania",
+          "value": 712516010
+        },
+        {
+          "label": "Singapore",
+          "value": 712516011
+        },
+        {
+          "label": "South Korea",
+          "value": 712516012
+        },
+        {
+          "label": "Spain",
+          "value": 712516013
+        },
+        {
+          "label": "Sweden",
+          "value": 712516014
+        },
+        {
+          "label": "Switzerland",
+          "value": 712516015
+        },
+        {
+          "label": "Thailand",
+          "value": 712516016
+        },
+        {
+          "label": "The Netherlands",
+          "value": 712516017
+        },
+        {
+          "label": "UAE",
+          "value": 712516018
+        },
+        {
+          "label": "UK",
+          "value": 712516019
+        },
+        {
+          "label": "US",
+          "value": 712516020
+        }
+      ]
+    },
+    {
+      "id": "question_65611049",
+      "label": "Are you authorized to work in the location(s) you selected in your previous response?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 685688317
+        },
+        {
+          "label": "No",
+          "value": 685688318
+        }
+      ]
+    },
+    {
+      "id": "question_65611050",
+      "label": "Will you require Stripe to sponsor you for a work permit now or in the future for the location(s) you selected in in your previous response?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 685688319
+        },
+        {
+          "label": "No",
+          "value": 685688320
+        }
+      ]
+    },
+    {
+      "id": "question_65611052",
+      "label": "Have you ever been employed by Stripe or a Stripe affiliate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65611053",
+      "label": "What is your current or previous job title?",
+      "type": "input_text",
+      "required": true,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null
+    },
+    {
+      "id": "question_65611054",
+      "label": "Who is your current or previous employer?",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_65611055",
+      "label": "What is the most recent degree you obtained?",
+      "type": "input_text",
+      "required": true,
+      "value": "Bachelor of Science",
+      "source": "education.degree",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": null
+    },
+    {
+      "id": "question_65611056",
+      "label": "What is the most recent school you attended?",
+      "type": "input_text",
+      "required": true,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null
+    },
+    {
+      "id": "question_67051797",
+      "label": "If located in the US, in what city and state do you reside?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

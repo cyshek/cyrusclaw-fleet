@@ -1,0 +1,3 @@
+# Product Manager (Remote) — First American (R055967)
+
+The Product Manager identifies opportunities to enhance security posture through platform capabilities, integrations, and workflow automation. Responsibilities include gathering requirements, defining specifications, managing the product roadmap, and ensuring successful delivery of secure, scalable, and efficient solutions within the ServiceNow platform and adjacent security tooling. Partners with engineering, security, and operations stakeholders to prioritize the backlog, define product vision and KPIs, and drive cross-functional delivery. Strong technical fluency, stakeholder management, and data-driven decision-making required.

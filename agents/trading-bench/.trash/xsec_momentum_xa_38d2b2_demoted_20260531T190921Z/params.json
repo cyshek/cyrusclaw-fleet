@@ -1,0 +1,19 @@
+{
+  "_archetype": "cross-sectional momentum (Jegadeesh-Titman 12-1), CROSS-ASSET universe",
+  "_citation": "Jegadeesh & Titman, J. Finance 48(1) 1993; Asness, Moskowitz, Pedersen 2013 (\"Value and Momentum Everywhere\") for cross-asset version",
+  "_universe_rationale": "Wave-4 cross-asset variant of xsec_momentum_236b86 (sector-equity, REJECT). Universe spans 4 asset classes: SPY (US equity broad), EFA (developed-intl equity), TLT (long bonds), VNQ (US REITs), DBC (broad commodities), GLD (gold). Picked to maximize dispersion vs sector-equity universe where all 11 SPDRs share 0.7-0.9 SPY beta. Binding history constraint: DBC inception 2006-02-03.",
+  "basket": ["SPY", "EFA", "TLT", "VNQ", "DBC", "GLD"],
+  "timeframe": "1Day",
+  "max_notional_usd": 100,
+  "notional_usd": 100,
+  "lookback_bars": 252,
+  "skip_bars": 21,
+  "top_k": 2,
+  "xsec_basket_size": 2,
+  "_top_k_rationale": "Rule of thumb K ~ N/3 for cross-asset; with N=6 that's K=2. K=1 (degenerate single-asset rotation) and K=3 (half-the-universe) reported as sensitivity in the report.",
+  "use_regime_filter": false,
+  "regime_sma_period": 50,
+
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py. -50% means a leg would have to halve before the rail fires. Not for entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

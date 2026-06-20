@@ -1,0 +1,70 @@
+[wd] account-decision[nvidia]: SIGN-IN to existing FRESH alias cyshekari+wd-nvidia-202606110435@gmail.com (mode=signin_fresh)
+[wd] creds: email=cyshekari+wd-nvidia-202606110435@gmail.com pw_len=22 account_mode=signin_fresh
+[wd] goto https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Infrastructure-Solutions-Architect_JR2019167
+[wd] attempting sign-in with existing account
+[wd] recover_to_step: re-nav to base (try 0) body='Skip to main contentCAREERS AT NVIDIASettingscyshekari+wd-n'
+[wd] signed in OK
+[wd] --- iteration 0: step 'My Information' (visit 1) ---
+[wd] step: My Information
+[wd] source already selected, skipping
+[wd] dropdown[countryPhoneCode] already committed -> skip
+[wd] DIAG myinfo: {"req_empty":["source--source","phoneNumber--countryPhoneCode"],"errors":[]}
+[wd] --- iteration 1: step 'My Experience' (visit 1) ---
+[wd] step: My Experience (resume upload)
+[wd] resume set: ../resume/Cyrus_Shekari_Resume.pdf
+[wd]   populate: detected we_idx=4 ed_idx=None
+[wd]   FRESH-ACCOUNT WARN: 7 prefilled WE block(s) on a fresh account (unexpected) -> will delete + fill fresh: ['Technical Program Manager', 'Technical Program Manager', 'Technical Program Manager']
+[wd]   FRESH-FILL SOURCE: tailored resume / WORK_HISTORY (not profile autofill)
+[wd]   profile-prefilled work history detected -> repair dates on filled blocks, fill/delete empties, skip Add
+[wd]   prefill-guard WE start: total=7 empty=0
+[wd]   prefill-guard conv 0: total=7 empty=0 perm_empty=False
+[wd]   prefill-guard WE converged: total=7 empty=0
+[wd]   date-repair (guard) block[4] Microsoft
+[wd]   date-repair (guard) block[5] Microsoft
+[wd]   date-repair (guard) block[6] Microsoft
+[wd]   date-repair (guard) block[7] Microsoft
+[wd]   date-repair (guard) block[8] Microsoft
+[wd]   date-repair (guard) block[9] Amazon Robotics
+[wd]   date-repair (guard) block[10] Pro Painters
+[wd]   prefill-guard: work history done -> fall through to Education fill
+[wd]   date-repair block[4] Microsoft: start_committed=True (mon='3' yr='2024')
+[wd]   date-repair block[5] Microsoft: start_committed=True (mon='3' yr='2024')
+[wd]   date-repair block[6] Microsoft: start_committed=True (mon='3' yr='2024')
+[wd]   date-repair block[7] Microsoft: start_committed=True (mon='3' yr='2024')
+[wd]   date-repair block[8] Microsoft: start_committed=True (mon='5' yr='2022')
+[wd]   date-repair block[9] Amazon Robotics: start_committed=True (mon='8' yr='2023')
+[wd]   date-repair block[10] Pro Painters: start_committed=True (mon='5' yr='2021')
+[wd]   roledesc sweep: nothing to fill (none empty/required, or no textarea rendered)
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-53--jobTitle :: Job Title*","workExperience-53--companyName :: Company*"]
+[wd] DIAG experience: {"uploaded":true,"req_empty":["workExperience-53--jobTitle","workExperience-53--companyName"],"errors":["Cyrus_Shekari_Resume.pdf successfully uploaded"]}
+[wd]   delete_empty_we_blocks: removed 1 deletable empty block(s)
+[wd]   harden: filling lone permanent empty WE block[53] as last resort
+[wd]   date-commit workExperience-53--startDate: mon='3'(typed '3') yr='2024'(typed '2024') err=False -> OK
+[wd]   kbd-filled roleDescription on work-exp[53]
+[wd]   kbd-filled work-exp[53]: jobTitle now='Technical Program Manager'
+[wd]   harden: WE count plateaued clean (total=8 empty=0, stable) -> safe to Next
+[wd] --- iteration 2: step 'Application Question' (visit 1) ---
+[wd] step: Application Questions
+[wd]   Q 'are you legally authorized to work in the country ' -> Yes
+[wd]   Q 'will you require employer support to obtain or mai' -> No
+[wd] DIAG questions: {"qs":["settingsSelectorButton=>Settings","a829100642af25b88deb0000=>Yes Required","a829100642af26ec534f0000=>No Required"],"errors":[],"unanswered":[]}
+[wd] --- iteration 3: step 'Voluntary Disclosure' (visit 1) ---
+[wd] DIAG selfid: {"inputs":["termsAndConditions--acceptTermsAndAgreements=on"],"buttons":["personalInfoUS--ethnicity=0c40f6bd1d8f10adf350f435bbe44437","personalInfoUS--gender=0c40f6bd1d8f10adf3cbb2b7437444f9","personalInfoUS--veteranStatus=9b33fb4d310d1050a2feb5f7074a003c"],"errors":[]}
+[wd] step: Voluntary/Self-Identify
+[wd] --- iteration 4: step 'Self Identif' (visit 1) ---
+[wd] DIAG selfid: {"inputs":["selfIdentifiedDisabilityData--name","selfIdentifiedDisabilityData--employeeId","selfIdentifiedDisabilityData--dateSignedOn-dateSectionMonth-input","selfIdentifiedDisabilityData--dateSignedOn-dateSectionDay-input","selfIdentifiedDisabilityData--dateSignedOn-dateSectionYear-input","64cbff5f364f10000ae7a421cf210000-disabilityStatus=on","64cbff5f364f10000aeec521b4ec0000-disabilityStatus=on","64cbff5f364f10000af3af293a050000-disabilityStatus=on"],"buttons":["selfIdentifiedDisabilityData--disabilityForm=c17fb198564510000de6e6b35bb80000"],"errors":[]}
+[wd] step: Self Identify (disability)
+[wd]   date-commit edDisabilityData--dateSignedOn: mon='6'(typed '6') yr='2026'(typed '2026') day='1' err=False -> OK
+[wd] disability option committed: True 64cbff5f364f
+[wd] --- iteration 5: step 'Self Identif' (visit 2) ---
+[wd] DIAG selfid: {"inputs":["selfIdentifiedDisabilityData--name=Cyrus Shekari","selfIdentifiedDisabilityData--employeeId","selfIdentifiedDisabilityData--dateSignedOn-dateSectionMonth-input=6","selfIdentifiedDisabilityData--dateSignedOn-dateSectionDay-input=1","selfIdentifiedDisabilityData--dateSignedOn-dateSectionYear-input=2026","64cbff5f364f10000ae7a421cf210000-disabilityStatus=on","64cbff5f364f10000aeec521b4ec0000-disabilityStatus=on","64cbff5f364f10000af3af293a050000-disabilityStatus=on"],"buttons":["selfIdentifiedDisabilityData--disabilityForm=c17fb198564510000de6e6b35bb80000"],"errors":["Error-DateEnter 
+[wd] step: Self Identify (disability)
+[wd]   date-commit edDisabilityData--dateSignedOn: mon='6'(typed '6') yr='2026'(typed '2026') day='1' err=False -> OK
+[wd] disability option committed: True 64cbff5f364f
+[wd] --- iteration 6: step 'Self Identif' (visit 3) ---
+[wd] DIAG selfid: {"inputs":["selfIdentifiedDisabilityData--name=Cyrus Shekari","selfIdentifiedDisabilityData--employeeId","selfIdentifiedDisabilityData--dateSignedOn-dateSectionMonth-input=6","selfIdentifiedDisabilityData--dateSignedOn-dateSectionDay-input=1","selfIdentifiedDisabilityData--dateSignedOn-dateSectionYear-input=2026","64cbff5f364f10000ae7a421cf210000-disabilityStatus=on","64cbff5f364f10000aeec521b4ec0000-disabilityStatus=on","64cbff5f364f10000af3af293a050000-disabilityStatus=on"],"buttons":["selfIdentifiedDisabilityData--disabilityForm=c17fb198564510000de6e6b35bb80000"],"errors":["Error-DateEnter 
+[wd] step: Self Identify (disability)
+[wd]   date-commit edDisabilityData--dateSignedOn: mon='6'(typed '6') yr='2026'(typed '2026') day='1' err=False -> OK
+[wd] disability option committed: True 64cbff5f364f
+[wd] RESULT: BLOCKED step 'Self Identif' revisited >3x without advancing (loop-cap)
+[wd] EXIT 5

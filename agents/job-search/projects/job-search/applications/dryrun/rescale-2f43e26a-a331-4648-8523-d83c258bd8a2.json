@@ -1,0 +1,98 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/rescale/2f43e26a-a331-4648-8523-d83c258bd8a2",
+  "org": "rescale",
+  "job_id": "2f43e26a-a331-4648-8523-d83c258bd8a2",
+  "job_title": "Solutions Architect - Data & AI",
+  "job_location": "Remote (United States)",
+  "fetched_at": "2026-06-04T06:53:42Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "70c088fd-3a36-4d36-adfd-01180fb519bc__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "70c088fd-3a36-4d36-adfd-01180fb519bc__systemfield_name"
+    },
+    {
+      "id": "70c088fd-3a36-4d36-adfd-01180fb519bc__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "70c088fd-3a36-4d36-adfd-01180fb519bc__systemfield_email"
+    },
+    {
+      "id": "70c088fd-3a36-4d36-adfd-01180fb519bc__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "70c088fd-3a36-4d36-adfd-01180fb519bc__systemfield_resume"
+    },
+    {
+      "id": "70c088fd-3a36-4d36-adfd-01180fb519bc_a78bb1ee-6437-4437-9719-f28de4b67cc2",
+      "label": "Do you now or in the future require Visa Sponsorship to work for Rescale in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "70c088fd-3a36-4d36-adfd-01180fb519bc_a78bb1ee-6437-4437-9719-f28de4b67cc2"
+    },
+    {
+      "id": "70c088fd-3a36-4d36-adfd-01180fb519bc_ab56d959-6340-4972-8d03-900cc62135ce",
+      "label": "Why is this role with Rescale exciting to you?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Rescale because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Rescale is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Rescale while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Rescale aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Rescale')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "70c088fd-3a36-4d36-adfd-01180fb519bc_ab56d959-6340-4972-8d03-900cc62135ce"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

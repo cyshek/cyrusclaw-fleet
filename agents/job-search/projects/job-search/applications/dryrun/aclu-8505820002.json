@@ -1,0 +1,527 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/aclu/jobs/8505820002",
+  "org": "aclu",
+  "job_id": "8505820002",
+  "job_title": "Technical Program Manager, Engagement Platform(s)",
+  "job_location": "New York, New York, United States",
+  "fetched_at": "2026-06-10T07:40:52Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/aclu/jobs/8505820002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 25,
+    "filled": 11,
+    "filled_needs_review": 0,
+    "declined": 13,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_36119048002",
+      "label": "Please attach a project brief or a short requirements document you wrote to support development of a new product, service or feature. Please make sure to redact any sensitive details.\n",
+      "type": "input_file",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please attach a project brief or a short requirements document you wrote to support development of a new product, service or feature. Please make sure to redact any sensitive details.\\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_36118432002",
+      "label": "Pronouns (optional)",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null
+    },
+    {
+      "id": "question_36118433002",
+      "label": "First Name/Common Use First Name (optional)",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "question_36118434002",
+      "label": "Are you a former employee of ACLU National or an ACLU Affiliate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36118435002",
+      "label": "The following demographic questions are optional. They are used to help us better understand our applicant pool and to continually improve our outreach and recruitment efforts.\n\nIndividuals seeking employment at the ACLU are considered without regards to race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, gender identity, or sexual orientation. ",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "I understand",
+          "value": 239272924002
+        }
+      ]
+    },
+    {
+      "id": "question_36118436002",
+      "label": "Race and/or Ethnicity:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "African American or Black",
+          "value": 239272925002
+        },
+        {
+          "label": "American Indian, Native American, or Alaska Native",
+          "value": 239272926002
+        },
+        {
+          "label": "Arab or Middle Eastern",
+          "value": 239272927002
+        },
+        {
+          "label": "Asian including South Asian",
+          "value": 239272928002
+        },
+        {
+          "label": "Hispanic or Latina/o/x",
+          "value": 239272929002
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 239272930002
+        },
+        {
+          "label": "Two or More Races/Ethnicities",
+          "value": 239272931002
+        },
+        {
+          "label": "White or Caucasian",
+          "value": 239272932002
+        },
+        {
+          "label": "I prefer not to answer",
+          "value": 239272933002
+        },
+        {
+          "label": "A race or ethnicity not listed",
+          "value": 239272934002
+        }
+      ]
+    },
+    {
+      "id": "question_36118437002",
+      "label": "If you chose 'A race or ethnic group not listed,' please let us know how you self-identify:",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": null
+    },
+    {
+      "id": "question_36118438002",
+      "label": "Gender:\n\n",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Cisgender Man",
+          "value": 239272935002
+        },
+        {
+          "label": "Cisgender Woman",
+          "value": 239272936002
+        },
+        {
+          "label": "Non-Binary",
+          "value": 239272937002
+        },
+        {
+          "label": "Transgender Man",
+          "value": 239272938002
+        },
+        {
+          "label": "Transgender Woman",
+          "value": 239272939002
+        },
+        {
+          "label": "I prefer not to answer",
+          "value": 239272940002
+        },
+        {
+          "label": "A gender not listed",
+          "value": 239272941002
+        }
+      ]
+    },
+    {
+      "id": "question_36118439002",
+      "label": "If you chose \"A gender not listed,\" please let us know how you self-identify:",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": null
+    },
+    {
+      "id": "question_36118440002",
+      "label": "Disability Status:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Person with a Disability (or Previously had a Disability)",
+          "value": 239272942002
+        },
+        {
+          "label": "Not a Person with a Disability",
+          "value": 239272943002
+        },
+        {
+          "label": "I prefer not to answer",
+          "value": 239272944002
+        }
+      ]
+    },
+    {
+      "id": "question_36118441002",
+      "label": "Significant Disability Status",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Blind",
+          "value": 239272945002
+        },
+        {
+          "label": "Deaf",
+          "value": 239272946002
+        },
+        {
+          "label": "Significant Intellectual, Developmental, or Psychiatric Disability",
+          "value": 239272947002
+        },
+        {
+          "label": "Without the use of one or more limbs",
+          "value": 239272948002
+        },
+        {
+          "label": "Another Equivalent Limitation",
+          "value": 239272949002
+        },
+        {
+          "label": "I prefer not to answer",
+          "value": 239272950002
+        }
+      ]
+    },
+    {
+      "id": "question_36118442002",
+      "label": "Veteran Status:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am not a protected veteran",
+          "value": 239272951002
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": 239272952002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 239272953002
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_36119048002",
+      "label": "Please attach a project brief or a short requirements document you wrote to support development of a new product, service or feature. Please make sure to redact any sensitive details.\n",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Please attach a project brief or a short requirements document you wrote to support development of a new product, service or feature. Please make sure to redact any sensitive details.\\n'"
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

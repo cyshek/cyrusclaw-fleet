@@ -1,0 +1,168 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/brettonai/b21f7919-92f0-4de8-bd76-daeb16341a31",
+  "org": "brettonai",
+  "job_id": "b21f7919-92f0-4de8-bd76-daeb16341a31",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-05-31T07:06:44Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185__systemfield_name",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185__systemfield_email",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_19bcfc26-6ca7-4c31-b388-0f02bbc02725",
+      "label": "What is the best phone number for you?",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_19bcfc26-6ca7-4c31-b388-0f02bbc02725",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_b111e34c-225e-4419-99b8-32898c847e40",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_b111e34c-225e-4419-99b8-32898c847e40",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185__systemfield_resume",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_f4e41a35-bb4e-42c3-ae39-14ae1c0114a4",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_f4e41a35-bb4e-42c3-ae39-14ae1c0114a4",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_25b8dfef-6505-45d6-bb9d-53d07a8bff8a",
+      "label": "Will you now or in the future require Bretton AI to sponsor an immigration case in order to employ you?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_25b8dfef-6505-45d6-bb9d-53d07a8bff8a",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_476e4aaf-b3dc-4736-a26c-c76d7edf6b5e",
+      "label": "GitHub or Portfolio Link",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_476e4aaf-b3dc-4736-a26c-c76d7edf6b5e",
+      "section": "Application Form"
+    },
+    {
+      "id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_1ec02478-d29f-4d79-b842-2f70d9a53aac",
+      "label": "What excites you about working at Bretton AI? ",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Brettonai because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Brettonai is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Brettonai while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Brettonai aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Brettonai')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "a0c9641c-ca30-47ea-87b7-7f9a5b831185_1ec02478-d29f-4d79-b842-2f70d9a53aac",
+      "section": "Application Form"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

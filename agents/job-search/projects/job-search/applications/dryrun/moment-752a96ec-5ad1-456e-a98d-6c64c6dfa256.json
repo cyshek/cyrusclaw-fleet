@@ -1,0 +1,207 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/moment/752a96ec-5ad1-456e-a98d-6c64c6dfa256",
+  "org": "moment",
+  "job_id": "752a96ec-5ad1-456e-a98d-6c64c6dfa256",
+  "job_title": "Deployment Strategist ",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-05-30T23:52:37Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 9,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b__systemfield_name"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b__systemfield_email"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b__systemfield_resume"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_phone"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166947007",
+      "label": "Personal Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166947007"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166948007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166948007"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166949007",
+      "label": "Are you based in the NYC metro area?\n\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (matched relocation target 'nyc' in label)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166949007"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166951007",
+      "label": "Are you comfortable commuting to this job's location? (NYC - West Village)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_6166951007",
+      "match_attempted": true
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_9253587007",
+      "label": "Will you now, or in the future, require sponsorship for employment visa status (e.g. H-1B visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_9253587007"
+    },
+    {
+      "id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_9253588007[]",
+      "label": "How did you hear about us? ",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "1. LinkedIn",
+      "source": "how_heard fuzzy 'linkedin' -> '1. LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "1. LinkedIn",
+          "value": "15414523007"
+        },
+        {
+          "label": "2. Company Website",
+          "value": "15414524007"
+        },
+        {
+          "label": "3. Company Event",
+          "value": "15414525007"
+        },
+        {
+          "label": "4. Referral",
+          "value": "15414526007"
+        },
+        {
+          "label": "5. Recruiter Outreach",
+          "value": "15414527007"
+        },
+        {
+          "label": "6. Twitter / X",
+          "value": "15414528007"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "b6557164-99c3-4159-bc5e-6ea04aab524b_question_9253588007[]"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

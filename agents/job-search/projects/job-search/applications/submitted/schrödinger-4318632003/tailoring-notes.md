@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Technical Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's cloud recovery validation program from a 2-person operation into a platformized system, standardizing high-throughput workflows to sustain **45+ annual resilience drills** and drive **$14M+ business impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities deployed in customer cloud environments that **reduced operational toil by 30%** and transitioned execution to a scalable, self-service model.
+3. Pioneered Azure's first proactive resilience testing capability, designing and implementing a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects in production-critical environments and establishing a new model for continuous validation.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, troubleshooting emergent Linux and infrastructure issues across multiple production-critical systems.
+5. Scaled team leverage through AI-driven automation, building an internal AI agent and ETL-style planning workflows that **reduced planning cycle time by 39%** and increased drill capacity by 21%, integrating data from multiple sources to streamline complex high-throughput operations.
+6. Collaborated closely with product managers, scientists, and software developers as the **voice of the customer**, iterating on a fast schedule to improve deployment, configuration, and feature support for cloud-hosted enterprise platforms in technically challenging environments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed product adoption for **AI-driven code generation** workflows via web-based applications, conducting user demos and training that drove utilization across 14 key teams and saved 37 engineering hours monthly in technically challenging software environments.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, acting as the voice of the customer to identify critical feature gaps and prioritize creative, customized solutions on a fast schedule.
+3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, crafting ETL-style data flows across multiple sources that cut lookup time by 83% and unified fragmented data management.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on a unified automation and workflow prioritization framework across 140+ teams, streamlining complex high-throughput deployment operations.
+2. Mobilized a product strategy to mitigate operational toil during region launches, conducting discovery with **20+ service teams** to quantify 81 hours of manual effort per region and building a roadmap to automate critical paths in production-critical cloud environments.
+3. Engineered a **Power BI dashboard** integrating data pipelines across 140+ teams to track operational toil, enabling leadership to target automation gaps, prioritize high-impact support, and make data-driven decisions on emergent workflow bottlenecks.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy Linux OS migration strategy and mapping dependencies across 1,200+ stations, troubleshooting emergent issues in multiple production-critical environments.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process while iterating on creative, customized fixes on a fast schedule.
+3. Drove strategic alignment between IT, Operations, and Engineering teams to implement **automated CI/CD pipelines** and containerized workloads, accelerating the software deployment cycle by 25% across technically challenging distributed systems.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new CRM process, crafting data flows across multiple sources and destinations to unify fragmented records.
+2. Reduced Customer Acquisition Cost by 13% and boosted conversions by **2.7%** by executing a digital-first go-to-market strategy, optimizing the website and Google profile while communicating directly with customers to solve their pain points.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, building ETL-style data wrangling pipelines to identify and seal margin leaks and surface actionable insights for decision-makers.
+
+## Notes from the rewriter
+- Mirrored JD vocabulary: cloud environments, ETL pipelines, Linux troubleshooting, containerized workloads, voice of the customer, high-throughput workflows.
+- Surfaced Python/bash/SQL/Linux/Kubernetes/AWS and data wrangling skills to match Solutions Architect technical bar.
+- Fixed microsoft_ft bullet#1 to stay under 290 chars; expanded all roles to full 2-line density at 6/3/3/3/3 bullets.
+

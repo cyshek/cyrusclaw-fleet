@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Partnered directly with enterprise customer engineering teams (**Databricks, Walmart, SAP, NetApp**) to provision, monitor, and validate **Azure** services, systematically diagnosing and resolving complex infrastructure issues across cloud and on-prem environments to drive $14M+ business impact.
+2. Architected an internal **Resilience Automation Platform** from 0→1, defining IaC-driven self-service provisioning and scheduling that **reduced operational toil by 30%** and scaled deployment workflows for 45+ annual resilience drills.
+3. Pioneered Azure's first proactive resilience-testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate** that surfaced critical hardware and networking defects using **SRE best practices**.
+4. Led a **sovereign-cloud network isolation** test as bridge lead under executive visibility, debugging distributed-system failures across 14 cross-org recovery executions tied to a **$1.5B+ enterprise contract**.
+5. Built an internal **AI agent** and restructured planning workflows to automate drill orchestration, **cutting cycle time 39%** and increasing capacity 21% while scaling team leverage across multi-cloud environments.
+6. Drove **best-in-class customer experiences** through technical discussions, demos, and enablement content, influencing the product roadmap from direct partner feedback and standardizing operations across enterprise deployments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows by running hands-on demos and training sessions for **14 teams**, accelerating ML tooling adoption and saving 37 engineering hours monthly.
+2. Influenced the product roadmap toward intent-based **YAML** generation by facilitating 11+ user interviews with Azure service teams to diagnose critical feature gaps and infrastructure pain points.
+3. Migrated documentation to an AI-powered **semantic search** tool with rigorous metadata standards, **cutting lookup time 83%** and improving data retrieval for engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by aligning 140+ teams on a unified automation prioritization framework for deployment and provisioning.
+2. Drove discovery with 20+ service teams to identify 81 hours of manual effort per region launch, building a roadmap to **automate critical infrastructure paths** and reduce operational toil.
+3. Engineered a **Power BI** dashboard tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact infrastructure support.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit Linux/OS migration by defining the strategy and mapping infrastructure dependencies across 1,200+ stations.
+2. Drove cross-team alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%**.
+3. Facilitated Agile ceremonies and prioritized backlog to resolve 40+ high-priority tickets, stabilizing the developer intake process for distributed systems.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased bookings **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new CRM process.
+2. Reduced Customer Acquisition Cost **13%** and boosted conversions 2.7% by executing a digital-first go-to-market strategy across web and search properties.
+3. Conducted financial profitability analysis across 1,000+ project records to identify margin leaks and improve leadership pricing models.
+
+## Notes from the rewriter
+- Reframed FT role around SRE + customer-facing Solutions Architecture: provisioning, monitoring, debugging infra, multi-cloud, enablement content.
+- Surfaced JD keywords (IaC, networking, distributed systems, ML workflows) and led with diagnostic/customer-partner action verbs.
+- Prioritized skills list toward containerization, IaC, and cloud platforms per JD must-haves; deprioritized PM-only terms.
+

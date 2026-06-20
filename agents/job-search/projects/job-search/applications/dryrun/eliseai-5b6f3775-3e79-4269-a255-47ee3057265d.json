@@ -1,0 +1,293 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/eliseai/5b6f3775-3e79-4269-a255-47ee3057265d",
+  "org": "eliseai",
+  "job_id": "5b6f3775-3e79-4269-a255-47ee3057265d",
+  "job_title": "Associate Solutions Engineer | Housing",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-09T07:34:29Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166__systemfield_name",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166__systemfield_email",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166__systemfield_resume",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_63cac544-0b1e-492f-8e36-2813d7e69aff",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_63cac544-0b1e-492f-8e36-2813d7e69aff",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_62ef64df-c9d3-4447-b47c-f3ef15453999",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_62ef64df-c9d3-4447-b47c-f3ef15453999",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_6bae5ec9-c69d-4054-b64e-4be51ff34a4f",
+      "label": "LinkedIn  Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_6bae5ec9-c69d-4054-b64e-4be51ff34a4f",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_596453b8-f2bb-451c-b2e1-9938067917d4",
+      "label": "How did you hear about EliseAI?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "X / Twitter",
+          "value": "X / Twitter"
+        },
+        {
+          "label": "Meta (Instagram/ Facebook)",
+          "value": "Meta (Instagram/ Facebook)"
+        },
+        {
+          "label": "Reddit",
+          "value": "Reddit"
+        },
+        {
+          "label": "YouTube",
+          "value": "YouTube"
+        },
+        {
+          "label": "Media / Press",
+          "value": "Media / Press"
+        },
+        {
+          "label": "Podcast",
+          "value": "Podcast"
+        },
+        {
+          "label": "EliseAI Event ",
+          "value": "EliseAI Event "
+        },
+        {
+          "label": "EliseAI Website",
+          "value": "EliseAI Website"
+        },
+        {
+          "label": "Job Board (Indeed, Built In, Wellfound)",
+          "value": "Job Board (Indeed, Built In, Wellfound)"
+        },
+        {
+          "label": "Referred by an EliseAI employee",
+          "value": "Referred by an EliseAI employee"
+        },
+        {
+          "label": "Recruiter Reached out ",
+          "value": "Recruiter Reached out "
+        },
+        {
+          "label": "Other (please specify)",
+          "value": "Other (please specify)"
+        },
+        {
+          "label": "Super Day Linkedin Outreach",
+          "value": "Super Day Linkedin Outreach"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_596453b8-f2bb-451c-b2e1-9938067917d4",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_b212e9fd-9c56-41e9-a5fb-1ef0303c7982",
+      "label": "If you were contacted by a recruiter or a current/former employee, please specify who.",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you were contacted by a recruiter or a current/former employee, please specify who.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_b212e9fd-9c56-41e9-a5fb-1ef0303c7982",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_847a8aaa-81b7-4b8f-81cb-cf827af178b8",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_847a8aaa-81b7-4b8f-81cb-cf827af178b8",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_3aca0d62-df4f-43ba-a891-ee5c2d511e25",
+      "label": "Will you now, or in the future, require sponsorship for employment visa status (e.g. H-1B, TN visa status)?",
+      "type": "textarea",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_3aca0d62-df4f-43ba-a891-ee5c2d511e25",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_43302716-af5e-4915-84d0-52f60d7ec8ac",
+      "label": "EliseAI is an in-office company. Are you comfortable working from our office around 5 days per week?",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_43302716-af5e-4915-84d0-52f60d7ec8ac",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_31d2f13d-6c78-46b5-a4cf-9cc2dcbeb4fb",
+      "label": "Please provide a range of your compensation expectations.",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_31d2f13d-6c78-46b5-a4cf-9cc2dcbeb4fb",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_25d30a9e-b8ac-424d-b0a0-9b18f03b0e6e",
+      "label": "What is your earliest availability for a start date? Please include an estimated day and month.",
+      "type": "input_text",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_25d30a9e-b8ac-424d-b0a0-9b18f03b0e6e",
+      "section": "Your Information"
+    },
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_1365162b-404f-4c16-92c3-cab096a71cfb",
+      "label": "What was your GPA?",
+      "type": "input_text",
+      "required": true,
+      "value": "3.8",
+      "source": "education.gpa",
+      "status": "filled",
+      "matched_rule": "gpa",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa2cde9-3148-490b-99db-9e368042d166_1365162b-404f-4c16-92c3-cab096a71cfb",
+      "section": "Your Information"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "daa2cde9-3148-490b-99db-9e368042d166_b212e9fd-9c56-41e9-a5fb-1ef0303c7982",
+      "label": "If you were contacted by a recruiter or a current/former employee, please specify who.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you were contacted by a recruiter or a current/former employee, please specify who.'"
+    }
+  ],
+  "blockers": []
+}

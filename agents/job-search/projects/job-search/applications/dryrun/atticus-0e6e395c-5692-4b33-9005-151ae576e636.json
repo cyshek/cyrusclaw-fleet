@@ -1,0 +1,159 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/atticus/0e6e395c-5692-4b33-9005-151ae576e636",
+  "org": "atticus",
+  "job_id": "0e6e395c-5692-4b33-9005-151ae576e636",
+  "job_title": "Fullstack Engineer",
+  "job_location": "Remote",
+  "fetched_at": "2026-06-08T22:50:56Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4__systemfield_name"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_835d8ac7-0938-4664-8f66-917088962f89",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_835d8ac7-0938-4664-8f66-917088962f89"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4__systemfield_email"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_f1cce632-f21e-4454-8e52-c712d268c59f",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_f1cce632-f21e-4454-8e52-c712d268c59f"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_f6efe454-b8d9-42d5-b028-bda8300997a4",
+      "label": "GitHub",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_f6efe454-b8d9-42d5-b028-bda8300997a4"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_d0423778-0be8-4f73-b118-33f45d65b2a2",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_d0423778-0be8-4f73-b118-33f45d65b2a2"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4__systemfield_resume"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_679988cd-e950-44c6-aae7-e558020b7991",
+      "label": "Do you currently reside in the United States? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "address.country=United States",
+      "status": "filled",
+      "matched_rule": "us_based_confirm",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_679988cd-e950-44c6-aae7-e558020b7991"
+    },
+    {
+      "id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_a52f8c25-fc7a-4a3e-a7b2-329d86acf025",
+      "label": "Will you now or in the future require visa sponsorship for employment?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "87718293-c10c-4f9a-8606-c3bfdf61f4a4_a52f8c25-fc7a-4a3e-a7b2-329d86acf025"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

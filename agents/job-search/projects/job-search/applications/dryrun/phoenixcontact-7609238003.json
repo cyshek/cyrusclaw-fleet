@@ -1,0 +1,461 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/phoenixcontact/jobs/7609238003",
+  "org": "phoenixcontact",
+  "job_id": "7609238003",
+  "job_title": "Sales Engineer - OEM",
+  "job_location": "San Francisco, California ",
+  "fetched_at": "2026-05-25T03:34:16Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/phoenixcontact/jobs/7609238003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 24,
+    "filled": 17,
+    "filled_needs_review": 3,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_29829664003",
+      "label": "What experience do you have in electronic component or industrial sales? ",
+      "type": "textarea",
+      "required": true,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null
+    },
+    {
+      "id": "question_29829665003",
+      "label": "What are your base salary expectations for this role? ",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_29829666003",
+      "label": "Where are you located? ",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "question_29483569003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_29483570003",
+      "label": "Are you a current or former Phoenix Contact employee?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29483571003",
+      "label": "Do you have any restrictive covenants (non-compete, non-solicitation, confidentiality) with either your current or any prior employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.non_compete_agreement",
+      "status": "filled",
+      "matched_rule": "non_compete",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29483572003",
+      "label": "How did you hear about this specific opening?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "College Career Fair",
+          "value": 159935664003
+        },
+        {
+          "label": "College Job Board",
+          "value": 159935665003
+        },
+        {
+          "label": "Phoenix Contact Website",
+          "value": 159935666003
+        },
+        {
+          "label": "Other Website",
+          "value": 159935668003
+        },
+        {
+          "label": "Job Fair",
+          "value": 159935669003
+        },
+        {
+          "label": "LinkedIn",
+          "value": 159935670003
+        },
+        {
+          "label": "Indeed",
+          "value": 159935671003
+        },
+        {
+          "label": "Promotional Flyer",
+          "value": 159935672003
+        },
+        {
+          "label": "Trade Show/Convention",
+          "value": 159935673003
+        },
+        {
+          "label": "Referral",
+          "value": 159935675003
+        },
+        {
+          "label": "Recruiter",
+          "value": 159935677003
+        },
+        {
+          "label": "Agency",
+          "value": 159935678003
+        }
+      ]
+    },
+    {
+      "id": "question_29483573003",
+      "label": "By selecting Yes, you agree to receive mobile messages from us in relation to this job application. Message frequency varies. Message and data rates may apply. View our Privacy & SMS Policy: https://www.phoenixcontact.com/en-us/careers",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone | NOTE: '346-804-0227' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "phone",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29483574003",
+      "label": "Will you now or in the future require Phoenix Contact to sponsor an employment based visa status to employ you?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_* | NOTE: 'No' not literally in options ['No - I will NOT require Phoenix Contact to sponsor me now or in the future.', 'Yes - I will require Phoenix Contact to sponsor me now or in the future.']",
+      "status": "filled_needs_review",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "No - I will NOT require Phoenix Contact to sponsor me now or in the future.",
+          "value": 154507363003
+        },
+        {
+          "label": "Yes - I will require Phoenix Contact to sponsor me now or in the future.",
+          "value": 154507364003
+        }
+      ]
+    },
+    {
+      "id": "question_29483575003",
+      "label": "If hired, can you provide proof of citizenship or verification of your Legal Right to Work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29483576003",
+      "label": "GDPR Acknowledgement",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "gdpr_consent_ack (always tick the consent) | NOTE: 'Yes' not literally in options ['Acknowledge']",
+      "status": "filled_needs_review",
+      "matched_rule": "gdpr_consent_ack",
+      "options": [
+        {
+          "label": "Acknowledge",
+          "value": 154507365003
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,26 @@
+=== cron_tick.sh @ 20260528T050501Z ===
+strategies: buy_and_hold_btc sma_crossover_btc rsi_mean_revert_eth breakout_ltc momentum_sol
+tick rc: 0
+--- tick output ---
+[breakout_ltc] ERROR: HTTP 403 POST https://paper-api.alpaca.markets/v2/orders: {"available":"1.861610401","balance":"1.861610401","code":40310000,"message":"insufficient balance for LTC (requested: 1.866276092, available: 1.861610401)","symbol":"USD"}
+[breakout_ltc] runner exit=1
+=== end ===
+--- post rc: 0 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+{
+  "action": "send",
+  "channel": "discord",
+  "dryRun": false,
+  "handledBy": "plugin",
+  "messageId": "1509422251701960775",
+  "payload": {
+    "ok": true,
+    "result": {
+      "messageId": "1509422251701960775",
+      "channelId": "1508503706545557656"
+    }
+  }
+}
+=== posted ===

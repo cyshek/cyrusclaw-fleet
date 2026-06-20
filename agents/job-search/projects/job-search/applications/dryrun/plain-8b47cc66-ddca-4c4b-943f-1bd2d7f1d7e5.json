@@ -1,0 +1,159 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/plain/8b47cc66-ddca-4c4b-943f-1bd2d7f1d7e5",
+  "org": "plain",
+  "job_id": "8b47cc66-ddca-4c4b-943f-1bd2d7f1d7e5",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco office",
+  "fetched_at": "2026-05-31T11:38:01Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28__systemfield_name"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28__systemfield_email"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28__systemfield_resume"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_bddd4438-621c-4849-9131-e2f9a52ce550",
+      "label": "What are your salary expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_bddd4438-621c-4849-9131-e2f9a52ce550"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_1bd5785b-7274-4dc5-b912-e3ff9b3c6414",
+      "label": "Current location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_1bd5785b-7274-4dc5-b912-e3ff9b3c6414"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_8aac3ac6-512a-4ee0-a780-542d8f636989",
+      "label": "This role requries 3 days in-office per week, is this something you're happy with?",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_8aac3ac6-512a-4ee0-a780-542d8f636989"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_7dfe9986-cd51-49c4-8ad0-a6250aea0411",
+      "label": "How did you learn about this role at Plain?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_7dfe9986-cd51-49c4-8ad0-a6250aea0411"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_998759eb-abfd-45fa-865b-447a5b028bf2",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_998759eb-abfd-45fa-865b-447a5b028bf2"
+    },
+    {
+      "id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_3618e37c-651b-421e-ab02-76607c8f3017",
+      "label": "Would you require sponsorship now or in the future?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Yes",
+          "value": "Yes"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "b668cd6e-e8c6-4c74-afe6-367ced3bad28_3618e37c-651b-421e-ab02-76607c8f3017"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

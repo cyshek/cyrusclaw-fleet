@@ -1,0 +1,55 @@
+[wd] account-decision[exfo]: SIGN-IN to existing FRESH alias cyshekari+wd-exfo-202606091904@gmail.com (mode=signin_fresh)
+[p3] account cyshekari+wd-exfo-202606091904@gmail.com mode=signin_fresh
+[wd] create-account form shown on cold start -> trying Sign In toggle first
+[wd] recover_to_step: re-nav to base (try 0) body='Skip to main contentCareersEnglishSettingscyshekari+wd-exfo'
+[wd] signed in OK (via toggle)
+[p3] nav step 0: My Information
+[wd] step: My Information
+[wd] source already selected, skipping
+[wd] dropdown[countryPhoneCode] already committed -> skip
+[p3] nav step 1: My Experience
+[p3] ON My Experience -> running handle_experience (adds+fills via runner)
+[wd] step: My Experience (resume upload)
+[wd]   resume already uploaded -> skip re-upload
+[wd]   populate: detected we_idx=None ed_idx=None
+[wd]   FRESH-ACCOUNT ASSERT OK: work-history starts EMPTY -> filling from tailored resume (no saved-profile reuse)
+[wd]   FRESH-FILL SOURCE: tailored resume / WORK_HISTORY (not profile autofill)
+[wd]   WE-fill start: total_blocks=0 empty=0
+[wd]   kbd-filled roleDescription on work-exp[8]
+[wd]   kbd-filled work-exp[8]: jobTitle now='Technical Program Manager'
+[wd]   work exp [8] Technical Program Manager @ Microsoft: blocks 1->1 (empty 1->0)
+[wd]   kbd-filled roleDescription on work-exp[37]
+[wd]   kbd-filled work-exp[37]: jobTitle now='Technical Program Manager Intern'
+[wd]   work exp [37] Technical Program Manager Intern @ Amazon Robotics: blocks 2->2 (empty 1->0)
+[wd]   kbd-filled roleDescription on work-exp[64]
+[wd]   kbd-filled work-exp[64]: jobTitle now='Program Manager Intern'
+[wd]   work exp [64] Program Manager Intern @ Pro Painters: blocks 3->3 (empty 1->0)
+[wd]   WE convergence pass 0: total=3 empty=0
+[wd]   WE-fill done: filled=3 final total_blocks=3 empty=0
+[wd]   roledesc sweep: nothing to fill (none empty/required, or no textarea rendered)
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-95--jobTitle :: Job Title*","workExperience-95--companyName :: Company*","workExperience-95--location :: Location*","workExperience-95--roleDescription :: Role Description*"]
+[p3] WE indices after fill: [8, 37, 64, 95]
+[p3] RB ix=8 jt='Technical Program Manager' | startMon='' startYr='' startErr=[] | endMon=None endYr=None
+[p3] RB ix=37 jt='Technical Program Manager Intern' | startMon='' startYr='' startErr=[] | endMon='' endYr=''
+[p3] RB ix=64 jt='Program Manager Intern' | startMon='' startYr='' startErr=[] | endMon='' endYr=''
+[p3] RB ix=95 jt='' | startMon='' startYr='' startErr=[] | endMon='' endYr=''
+[p3] EMPTY block for mech probe = 95
+[p3] --- MECH B_native_setter ---
+[p3] MECH B_native_setter -> month_set=False monVal='' err_cleared=True errors=[] aria={"required": null, "invalid": "true", "valuetext": "MM"} ret=8
+[p3] --- MECH C_react_fiber ---
+[p3] MECH C_react_fiber -> month_set=True monVal='8' err_cleared=True errors=[] aria={"required": null, "invalid": null, "valuetext": "8"} ret={"fns":["onChange","onFocus","onKeyDown"],"called":["onChang
+[p3] --- MECH D_fill_tab ---
+[p3] MECH D_fill_tab -> month_set=True monVal='8' err_cleared=True errors=[] aria={"required": null, "invalid": null, "valuetext": "8"} ret=filled+tab
+[p3] --- MECH E_press_seq ---
+[p3] MECH E_press_seq -> month_set=False monVal='' err_cleared=True errors=[] aria={"required": null, "invalid": "true", "valuetext": "MM"} ret=err:Locator.click: Timeout 4000ms exceeded.
+Call log:
+  - wa
+[p3] MONTH WINNER = D_fill_tab
+[p3] --- winner D_fill_tab: fill block fully + Next/regen test ---
+[wd]   kbd-filled roleDescription on work-exp[95]
+[wd]   kbd-filled work-exp[95]: jobTitle now='Solutions Engineer Probe'
+[p3] post-winner START mon='12' yr='' err=[]
+[p3] post-winner END   mon='12' yr='2006' err=[] end_present=True
+[p3] AFTER NEXT: step=My Experience advanced=True idx_before=[8, 37, 64, 95] idx_after=[8, 37, 64, 95] new_block=False left_MyExp=False
+[p3] page errors after Next: ["Cyrus_Shekari_Resume_workday-exfo_Solutions-Engineer-R-100191_v2.pdf successfully uploaded"]
+[p3] WROTE _probe3_results.json. DONE.

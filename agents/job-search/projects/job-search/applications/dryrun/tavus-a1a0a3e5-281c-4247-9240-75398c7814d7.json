@@ -1,0 +1,172 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/tavus/a1a0a3e5-281c-4247-9240-75398c7814d7",
+  "org": "tavus",
+  "job_id": "a1a0a3e5-281c-4247-9240-75398c7814d7",
+  "job_title": "Customer Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-19T04:00:47Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c__systemfield_name"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c__systemfield_email"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c__systemfield_resume"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_a9c03335-8267-4a6f-91a5-41999a1ac313",
+      "label": "Linkedin Profile URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_a9c03335-8267-4a6f-91a5-41999a1ac313"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_eb1a8796-8be9-426f-8423-2ec0f89ec53e",
+      "label": "Are you currently based in the US? We are only considering candidates that are currently eligible to work in the US for this postion.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_eb1a8796-8be9-426f-8423-2ec0f89ec53e"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_1233eeed-ccf7-4497-b3ac-7151544d902c",
+      "label": "This opportunity requires coming into the office in San Francisco. Can you commit to 3+ times a week in office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_1233eeed-ccf7-4497-b3ac-7151544d902c"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_a652cdc4-2d9e-4901-875a-72685c426529",
+      "label": "When we run an employment verification check, will it come back saying ‘yep, this person is who they say they are’?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_a652cdc4-2d9e-4901-875a-72685c426529"
+    },
+    {
+      "id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_448bc363-d551-410b-ad89-419d5d855b93",
+      "label": "Which of the following best describes your coding ability?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Some familiarity (can read and modify code)",
+      "source": "ashby_coding_ability (matched 'some familiarity')",
+      "status": "filled",
+      "matched_rule": "coding_ability",
+      "options": [
+        {
+          "label": "No Coding Experience",
+          "value": "No Coding Experience"
+        },
+        {
+          "label": "Some familiarity (can read and modify code)",
+          "value": "Some familiarity (can read and modify code)"
+        },
+        {
+          "label": "Comfortable coding independently",
+          "value": "Comfortable coding independently"
+        },
+        {
+          "label": "Expert (have built or maintained production-level systems)",
+          "value": "Expert (have built or maintained production-level systems)"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "40c9ddc9-843b-4064-98f0-7177b38d6f1c_448bc363-d551-410b-ad89-419d5d855b93"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

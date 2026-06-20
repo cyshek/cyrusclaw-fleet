@@ -1,0 +1,84 @@
+# Solutions Engineer
+
+**Company:** FurtherAI
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/furtherai/5c5f4e78-ad00-4754-8c43-f92b05e393cc
+**Ashby Org:** furtherai
+**Ashby Job ID:** 5c5f4e78-ad00-4754-8c43-f92b05e393cc
+
+---
+
+# Solutions Engineer
+
+**About Us**
+
+ 
+At FurtherAI, we're building the next generation of AI agents for the insurance industry, a trillion-dollar market primed for transformation. Supported by over $30M in funding from world-class investors (Andreessen Horowitz, YC, Nexus, South Park Commons, Converge) and experiencing 10x revenue growth this year, we are poised for rapid expansion. Our all-star team, bringing expertise from Apple, Microsoft, Google, Amazon, and more, is passionate about reshaping this foundational industry.
+
+ 
+Now, we're seeking an outstanding Insurance Solutions Engineer to drive product innovation and work directly with leading insurance providers as we reimagine the industry's future.
+
+ 
+**Why Join Us**
+
+- **Rocketship Growth:** Join a post-PMF company with explosive revenue and team growth.
+
+- **Elite Team:** Work with world-class engineers, founders, and industry experts.
+
+- **Massive Market Impact:** Influence the backbone of global commerce at scale.
+
+- **Founder's Mindset:** Thrive with high ownership and autonomy, and shape key product and customer engagement strategies.
+
+ 
+**What You'll Do**
+
+- Design, implement, and optimize insurance solutions powered by advanced AI agents.
+
+- Collaborate with customers (including leading global insurance companies) to identify business needs and tailor product integrations.
+
+- Experiment with and evaluate new agentic workflows, orchestration systems, and LLM-enabled insurance solutions.
+
+- Partner closely with engineering and product teams to drive roadmap and deliver mission-critical features.
+
+- Serve as a technical and domain expert, bridging the gap between AI innovation and insurance client requirements.
+
+- Build and document best practices and solution templates for rapid deployment.
+
+ 
+**What We're Looking For**
+
+- 3+ years of experience in solution engineering, technical consulting, or related roles in high-growth startups or tech companies.
+
+- Strong technical background; experience with Python and AI/ML products highly preferred.
+
+- Excellent communication, relationship-building, and problem-solving skills.
+
+- Proven ability to operate with autonomy in fast-paced, high-ownership environments.
+
+- **Bonus**: Prior experience with AI platforms, insurance technology, or founding team environments.
+
+ 
+**Location:** San Francisco, CA (In-person)
+
+ 
+At FurtherAI, we set a high bar. If you're passionate about building transformative solutions, thrive in high-growth settings, and want ownership over your work, you'll love it here.
+
+**You can look forward to the following benefits:**
+
+- Fully covered, best-in-class health, dental, and vision benefits
+
+- Competitive Compensation & meaningful stock options
+
+- Unlimited PTO
+
+- Outstanding in-office culture in the heart of San Francisco
+
+- Lunch and dinner onsite
+
+- Team events, such as happy hours and off-sites
+
+- Commuter benefits
+
+- Company 401(k)
+
+**Ready to help build a generational company? Apply now.**

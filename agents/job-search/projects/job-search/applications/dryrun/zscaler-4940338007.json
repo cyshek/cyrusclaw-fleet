@@ -1,0 +1,484 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/zscaler/jobs/4940338007",
+  "org": "zscaler",
+  "job_id": "4940338007",
+  "job_title": "Federal Compliance Program Manager (FedRAMP, IL5 and IL6 Compliance)",
+  "job_location": "Crystal City, Virginia, USA; Remote - USA",
+  "fetched_at": "2026-05-14T01:10:21Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/zscaler/jobs/4940338007?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 26,
+    "filled": 14,
+    "filled_needs_review": 6,
+    "declined": 4,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_10494807007",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_10494808007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_10494809007[]",
+      "label": "How did you learn about this job?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us | NOTE: 'LinkedIn' not literally in options ['BuiltIn', 'Glassdoor', 'Google search', 'Indeed', 'Linkedin', 'Referral', 'Zscaler Careers Page', 'Zscaler Talent Team', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "BuiltIn",
+          "value": 18250276007
+        },
+        {
+          "label": "Glassdoor",
+          "value": 18250277007
+        },
+        {
+          "label": "Google search",
+          "value": 18250278007
+        },
+        {
+          "label": "Indeed",
+          "value": 18250279007
+        },
+        {
+          "label": "Linkedin",
+          "value": 18250280007
+        },
+        {
+          "label": "Referral",
+          "value": 18250281007
+        },
+        {
+          "label": "Zscaler Careers Page",
+          "value": 18250282007
+        },
+        {
+          "label": "Zscaler Talent Team",
+          "value": 18250283007
+        },
+        {
+          "label": "Other",
+          "value": 18250284007
+        }
+      ]
+    },
+    {
+      "id": "question_10494810007",
+      "label": "If you selected Other please tell us how you learned about this job.",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you selected Other please tell us how you learned about this job.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_10494811007",
+      "label": "Do you have the legal right to work in the country where you are applying to work?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_10494812007",
+      "label": "Do you require a work permit, visa or additional right to work support for the country where you are applying to work?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_10494813007",
+      "label": "If yes, please advise what support is needed:",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please advise what support is needed:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_10494814007",
+      "label": "In what city and state is your primary residence? (e.g. San Jose, CA)",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_10494815007",
+      "label": "Do you currently work for, or have you previously worked for Zscaler?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No) | NOTE: 'No' not literally in options ['Yes, I currently work for Zscaler', 'Yes, I have previously worked for Zscaler', 'No, I have never worked for Zscaler']",
+      "status": "filled_needs_review",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes, I currently work for Zscaler",
+          "value": 18250285007
+        },
+        {
+          "label": "Yes, I have previously worked for Zscaler",
+          "value": 18250286007
+        },
+        {
+          "label": "No, I have never worked for Zscaler",
+          "value": 18250287007
+        }
+      ]
+    },
+    {
+      "id": "question_10494816007",
+      "label": "Current Company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_10494817007",
+      "label": "Current Title",
+      "type": "input_text",
+      "required": true,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null
+    },
+    {
+      "id": "question_10494819007[]",
+      "label": "Zscaler Confidential Information",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['I Agree']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I Agree",
+          "value": 18250288007
+        }
+      ]
+    },
+    {
+      "id": "question_10494820007[]",
+      "label": "Zscaler Privacy Policy",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['I Agree']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I Agree",
+          "value": 18250289007
+        }
+      ]
+    },
+    {
+      "id": "question_11250791007",
+      "label": "Have you been involved in procurement or contract award activities involving Zscaler as a government employee or official?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "family_relations_at_company (default no)",
+      "status": "filled",
+      "matched_rule": "family_relations_at_company",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_10494810007",
+      "label": "If you selected Other please tell us how you learned about this job.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you selected Other please tell us how you learned about this job.'"
+    },
+    {
+      "id": "question_10494813007",
+      "label": "If yes, please advise what support is needed:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please advise what support is needed:'"
+    }
+  ],
+  "blockers": []
+}

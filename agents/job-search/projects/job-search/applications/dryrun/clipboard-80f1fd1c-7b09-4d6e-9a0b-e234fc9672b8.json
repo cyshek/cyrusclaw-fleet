@@ -1,0 +1,228 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/clipboard/80f1fd1c-7b09-4d6e-9a0b-e234fc9672b8",
+  "org": "clipboard",
+  "job_id": "80f1fd1c-7b09-4d6e-9a0b-e234fc9672b8",
+  "job_title": "Tooling Program Manager",
+  "job_location": "Remote (United States)",
+  "fetched_at": "2026-06-03T11:41:03Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_name"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_email"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_resume"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_location",
+      "label": "In which country will you perform services for Clipboard?",
+      "type": "input_text",
+      "required": true,
+      "value": "United States",
+      "source": "address.country",
+      "status": "filled",
+      "matched_rule": "country",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694__systemfield_location"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_17a1b5f6-f9ae-45b8-88a2-a95a7bb382af",
+      "label": "Are you authorized to work in your country of residence?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_17a1b5f6-f9ae-45b8-88a2-a95a7bb382af"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_65622c6b-e162-43bf-9a74-5b4d1cb943cd",
+      "label": "Do you now or in the future require visa sponsorhip to continue working from your current location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_65622c6b-e162-43bf-9a74-5b4d1cb943cd"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_8b3f65e6-5d51-498d-89c9-f9cb6f768ba6",
+      "label": "Have you ever worked for Clipboard?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_8b3f65e6-5d51-498d-89c9-f9cb6f768ba6"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_a00ff57a-cbb8-4ace-acb6-964baecd8c85",
+      "label": "What is your expected annual compensation in USD?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_a00ff57a-cbb8-4ace-acb6-964baecd8c85"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_436f443d-d9ef-4289-afb9-8029b45c7929",
+      "label": "Describe something you built from scratch. Go five levels deep — what it was, why you built it, what the architecture looked like, what broke, and what you'd do differently.",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Clipboard because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Clipboard is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Clipboard while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Clipboard aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Clipboard')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_436f443d-d9ef-4289-afb9-8029b45c7929"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_76bbc58c-d3b2-45c5-b8fe-cd77eb311f2a",
+      "label": "Describe your experience building & scaling Technical Operations teams and/or 10’xing technical delivery for an operational domain.",
+      "type": "textarea",
+      "required": true,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_76bbc58c-d3b2-45c5-b8fe-cd77eb311f2a"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_285c35ab-137e-4857-84cd-ac23bb6e7914",
+      "label": "How did you hear about the position? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Indeed",
+          "value": "Indeed"
+        },
+        {
+          "label": "Word of Mouth",
+          "value": "Word of Mouth"
+        },
+        {
+          "label": "Clipboard User",
+          "value": "Clipboard User"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_285c35ab-137e-4857-84cd-ac23bb6e7914"
+    },
+    {
+      "id": "82f4e129-9928-4cb4-8f2c-134b511c3694_500189f7-2ca4-4cc0-9d78-3ba38795e14a",
+      "label": "If you selected \"other\", please tell us how you heard about the position.",
+      "type": "input_text",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "82f4e129-9928-4cb4-8f2c-134b511c3694_500189f7-2ca4-4cc0-9d78-3ba38795e14a"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

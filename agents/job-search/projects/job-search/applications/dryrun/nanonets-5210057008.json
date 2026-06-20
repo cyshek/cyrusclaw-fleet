@@ -1,0 +1,209 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/nanonets/jobs/5210057008",
+  "org": "nanonets",
+  "job_id": "5210057008",
+  "job_title": "Sales Engineer",
+  "job_location": "Palo Alto, CA",
+  "fetched_at": "2026-06-03T11:36:57Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/nanonets/jobs/5210057008?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 11,
+    "filled": 8,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_15916397008",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_15916398008[]",
+      "label": "How many years of hands-on experience do you have with Python scripting?\n",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['No Experience', '0 to 1 year', '1 to 3 years', '3 to 5 years', '5+ years']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "No Experience",
+          "value": 32376541008
+        },
+        {
+          "label": "0 to 1 year",
+          "value": 32376542008
+        },
+        {
+          "label": "1 to 3 years",
+          "value": 32376543008
+        },
+        {
+          "label": "3 to 5 years",
+          "value": 32376544008
+        },
+        {
+          "label": "5+ years",
+          "value": 32376545008
+        }
+      ]
+    },
+    {
+      "id": "question_15916399008",
+      "label": "Have worked with API integrations?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Have worked with API integrations?\\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_15916400008",
+      "label": "What is your expected base compensation ?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_15916401008",
+      "label": "Are you already in the Bay Area or planning a move to the Bay area?",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you already in the Bay Area or planning a move to the Bay area?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_15916399008",
+      "label": "Have worked with API integrations?\n",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Have worked with API integrations?\\n'"
+    },
+    {
+      "id": "question_15916401008",
+      "label": "Are you already in the Bay Area or planning a move to the Bay area?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you already in the Bay Area or planning a move to the Bay area?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_15916399008",
+      "label": "Have worked with API integrations?\n",
+      "reason": "no LABEL_RULES match for label='Have worked with API integrations?\\n'"
+    },
+    {
+      "id": "question_15916401008",
+      "label": "Are you already in the Bay Area or planning a move to the Bay area?",
+      "reason": "no LABEL_RULES match for label='Are you already in the Bay Area or planning a move to the Bay area?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

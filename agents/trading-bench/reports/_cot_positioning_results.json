@@ -1,0 +1,723 @@
+{
+  "bh": {
+    "fp": 0.6595341020610532,
+    "trades": 8,
+    "per_win": [
+      [
+        "2022-H1 bear",
+        "bear",
+        0.16689215519514436
+      ],
+      [
+        "2022-Q3 chop",
+        "chop",
+        0.10480285926357397
+      ],
+      [
+        "2023-H1 recovery",
+        "bull",
+        0.26612677835651105
+      ],
+      [
+        "2023-Q3 chop",
+        "chop",
+        0.3215818755447081
+      ],
+      [
+        "2024-Q2 bull",
+        "bull",
+        0.4788267269071059
+      ],
+      [
+        "2025-Q1 tariff bear",
+        "bear",
+        0.22899759963693986
+      ],
+      [
+        "2025-Q3 bull",
+        "bull",
+        0.49851890149884687
+      ],
+      [
+        "2026-recent bull",
+        "bull",
+        0.8689184036821695
+      ]
+    ]
+  },
+  "provenance": {
+    "ES": [
+      "E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE",
+      "E-MINI S&P 500 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE"
+    ],
+    "NQ": [
+      "NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE",
+      "NASDAQ-100 STOCK INDEX (MINI) - CHICAGO MERCANTILE EXCHANGE"
+    ],
+    "ZN": [
+      "10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE",
+      "UST 10Y NOTE - CHICAGO BOARD OF TRADE"
+    ]
+  },
+  "relabel": {
+    "lev_net_oi z156": {
+      "n": 55,
+      "corr_vs_spy_return": -0.20496728789029722,
+      "corr_vs_spy_vol": 0.45126134721541006
+    },
+    "lev_net_oi z104": {
+      "n": 55,
+      "corr_vs_spy_return": -0.3542888584228666,
+      "corr_vs_spy_vol": 0.5279873605076457
+    },
+    "am_net_oi z156": {
+      "n": 55,
+      "corr_vs_spy_return": 0.1133076121859564,
+      "corr_vs_spy_vol": -0.11354013667902861
+    },
+    "deal_net_oi z156": {
+      "n": 55,
+      "corr_vs_spy_return": 0.23576313776522348,
+      "corr_vs_spy_vol": -0.4381935956953406
+    },
+    "NQ lev_net_oi z156": {
+      "n": 55,
+      "corr_vs_spy_return": 0.22111623187539595,
+      "corr_vs_spy_vol": -0.20742915077361837
+    }
+  },
+  "sweeps": {
+    "spy_contrarian_lev": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.0
+        },
+        "fp": 0.45,
+        "avg_deploy": 0.7,
+        "worst_dd": -0.12,
+        "trades": 207,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 3.56,
+        "tot_pnl_usd": 1311.08
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 1.0
+        },
+        "fp": 0.155,
+        "avg_deploy": 0.279,
+        "worst_dd": -0.07,
+        "trades": 118,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.02,
+        "tot_pnl_usd": 275.5
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 1.0
+        },
+        "fp": 0.129,
+        "avg_deploy": 0.29,
+        "worst_dd": -0.07,
+        "trades": 126,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.77,
+        "tot_pnl_usd": 202.34
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.0
+        },
+        "fp": 0.085,
+        "avg_deploy": 0.54,
+        "worst_dd": -0.16,
+        "trades": 142,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.53,
+        "tot_pnl_usd": 133.7
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.5
+        },
+        "fp": -0.016,
+        "avg_deploy": 0.471,
+        "worst_dd": -0.12,
+        "trades": 205,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.89,
+        "tot_pnl_usd": -192.45
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.5
+        },
+        "fp": -0.021,
+        "avg_deploy": 0.39,
+        "worst_dd": -0.12,
+        "trades": 157,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.75,
+        "tot_pnl_usd": -164.06
+      }
+    ],
+    "spy_momentum_lev": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "momentum",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.0
+        },
+        "fp": 0.93,
+        "avg_deploy": 0.469,
+        "worst_dd": -0.16,
+        "trades": 158,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 5.32,
+        "tot_pnl_usd": 2458.56
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "momentum",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.0
+        },
+        "fp": 0.508,
+        "avg_deploy": 0.316,
+        "worst_dd": -0.16,
+        "trades": 189,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 3.51,
+        "tot_pnl_usd": 1285.67
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "momentum",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.5
+        },
+        "fp": 0.359,
+        "avg_deploy": 0.288,
+        "worst_dd": -0.16,
+        "trades": 166,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 2.46,
+        "tot_pnl_usd": 790.07
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "momentum",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 1.0
+        },
+        "fp": 0.286,
+        "avg_deploy": 0.184,
+        "worst_dd": -0.12,
+        "trades": 125,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.67,
+        "tot_pnl_usd": 487.8
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "momentum",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 1.0
+        },
+        "fp": 0.24,
+        "avg_deploy": 0.129,
+        "worst_dd": -0.12,
+        "trades": 68,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.26,
+        "tot_pnl_usd": 348.15
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "momentum",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.5
+        },
+        "fp": 0.102,
+        "avg_deploy": 0.2,
+        "worst_dd": -0.14,
+        "trades": 79,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.53,
+        "tot_pnl_usd": 135.79
+      }
+    ],
+    "spy_contrarian_lev_prop": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "proportional",
+          "z_weeks": 156,
+          "ramp_band": 1.0
+        },
+        "fp": 0.423,
+        "avg_deploy": 0.605,
+        "worst_dd": -0.13,
+        "trades": 695,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 3.17,
+        "tot_pnl_usd": 1111.15
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "proportional",
+          "z_weeks": 156,
+          "ramp_band": 1.5
+        },
+        "fp": 0.393,
+        "avg_deploy": 0.578,
+        "worst_dd": -0.13,
+        "trades": 641,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 2.9,
+        "tot_pnl_usd": 984.55
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "proportional",
+          "z_weeks": 104,
+          "ramp_band": 1.0
+        },
+        "fp": 0.252,
+        "avg_deploy": 0.513,
+        "worst_dd": -0.08,
+        "trades": 704,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.93,
+        "tot_pnl_usd": 580.51
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "proportional",
+          "z_weeks": 104,
+          "ramp_band": 1.5
+        },
+        "fp": 0.158,
+        "avg_deploy": 0.514,
+        "worst_dd": -0.13,
+        "trades": 694,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.15,
+        "tot_pnl_usd": 316.11
+      }
+    ],
+    "spy_contrarian_am": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "am_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.0
+        },
+        "fp": 0.26,
+        "avg_deploy": 0.356,
+        "worst_dd": -0.17,
+        "trades": 138,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 2.06,
+        "tot_pnl_usd": 631.28
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "am_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.5
+        },
+        "fp": 0.144,
+        "avg_deploy": 0.216,
+        "worst_dd": -0.17,
+        "trades": 142,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.95,
+        "tot_pnl_usd": 254.15
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "am_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.5
+        },
+        "fp": 0.123,
+        "avg_deploy": 0.203,
+        "worst_dd": -0.17,
+        "trades": 108,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.74,
+        "tot_pnl_usd": 193.36
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "am_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.0
+        },
+        "fp": 0.12,
+        "avg_deploy": 0.316,
+        "worst_dd": -0.17,
+        "trades": 95,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.72,
+        "tot_pnl_usd": 187.36
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "am_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 1.0
+        },
+        "fp": 0.058,
+        "avg_deploy": 0.16,
+        "worst_dd": -0.16,
+        "trades": 38,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.1,
+        "tot_pnl_usd": 25.38
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "am_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 1.0
+        },
+        "fp": 0.019,
+        "avg_deploy": 0.155,
+        "worst_dd": -0.16,
+        "trades": 38,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.29,
+        "tot_pnl_usd": -67.19
+      }
+    ],
+    "spy_contrarian_deal": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "deal_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.0
+        },
+        "fp": 0.869,
+        "avg_deploy": 0.615,
+        "worst_dd": -0.16,
+        "trades": 65,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 5.02,
+        "tot_pnl_usd": 2229.69
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "deal_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.5
+        },
+        "fp": 0.57,
+        "avg_deploy": 0.52,
+        "worst_dd": -0.15,
+        "trades": 79,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 3.73,
+        "tot_pnl_usd": 1406.45
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "market": "ES",
+          "feature": "deal_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 1.0
+        },
+        "fp": 0.479,
+        "avg_deploy": 0.278,
+        "worst_dd": -0.16,
+        "trades": 90,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 2.6,
+        "tot_pnl_usd": 848.68
+      }
+    ],
+    "xa_ief_contrarian_lev": [
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "IEF",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.0
+        },
+        "fp": 0.307,
+        "avg_deploy": 1.011,
+        "worst_dd": -0.12,
+        "trades": 396,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 2.65,
+        "tot_pnl_usd": 869.09
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "IEF",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.0
+        },
+        "fp": -0.013,
+        "avg_deploy": 0.998,
+        "worst_dd": -0.16,
+        "trades": 282,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.56,
+        "tot_pnl_usd": -125.5
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "IEF",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.5
+        },
+        "fp": -0.153,
+        "avg_deploy": 1.006,
+        "worst_dd": -0.12,
+        "trades": 408,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -4.39,
+        "tot_pnl_usd": -658.49
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "IEF",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.5
+        },
+        "fp": -0.246,
+        "avg_deploy": 1.005,
+        "worst_dd": -0.12,
+        "trades": 312,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -10.12,
+        "tot_pnl_usd": -922.3
+      }
+    ],
+    "xa_gld_contrarian_lev": [
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.0
+        },
+        "fp": 0.492,
+        "avg_deploy": 1.015,
+        "worst_dd": -0.12,
+        "trades": 402,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 4.24,
+        "tot_pnl_usd": 1706.41
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 156,
+          "thr_z": 0.5
+        },
+        "fp": 0.292,
+        "avg_deploy": 1.007,
+        "worst_dd": -0.13,
+        "trades": 414,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 3.23,
+        "tot_pnl_usd": 1139.09
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.0
+        },
+        "fp": 0.271,
+        "avg_deploy": 0.992,
+        "worst_dd": -0.16,
+        "trades": 288,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 2.98,
+        "tot_pnl_usd": 1021.52
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "market": "ES",
+          "feature": "lev_net_oi",
+          "direction": "contrarian",
+          "exposure_mode": "binary",
+          "z_weeks": 104,
+          "thr_z": 0.5
+        },
+        "fp": 0.264,
+        "avg_deploy": 1.009,
+        "worst_dd": -0.13,
+        "trades": 334,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 3.16,
+        "tot_pnl_usd": 1109.06
+      }
+    ]
+  },
+  "best": {
+    "fp": 0.9300667309291486,
+    "label": "spy_momentum_lev",
+    "params": {
+      "mode": "spy_timing",
+      "market": "ES",
+      "feature": "lev_net_oi",
+      "direction": "momentum",
+      "exposure_mode": "binary",
+      "z_weeks": 104,
+      "thr_z": 0.0
+    },
+    "trades": 158,
+    "avg_deploy": 0.46861281989315456,
+    "worst_dd": -0.16330823039227083
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/sambatv/4ab583d2-38ce-4f99-a85d-7f87db1a0766",
+  "apply_url": "https://jobs.lever.co/sambatv/4ab583d2-38ce-4f99-a85d-7f87db1a0766/apply",
+  "org": "sambatv",
+  "job_id": "4ab583d2-38ce-4f99-a85d-7f87db1a0766",
+  "job_title": "Samba - Product Manager - Outcomes & Attribution",
+  "fetched_at": "2026-06-04T10:30:03Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 11,
+    "filled_needs_review": 0,
+    "declined": 3,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[fc35af29-c97f-4724-bd57-1477ebe69e50][field0]",
+      "label": "Are you legally authorized to accept work in the United States?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "140e0ae8-b0d9-4b71-bfda-74255d8a7d10"
+        },
+        {
+          "label": "No",
+          "value": "a389d00f-2519-47a4-b640-065384204677"
+        }
+      ],
+      "card_text": "Work Authorization (US)"
+    },
+    {
+      "id": "cards[fc35af29-c97f-4724-bd57-1477ebe69e50][field1]",
+      "label": "Assuming yes, will you now or in the future require sponsorship for employment visa status?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "69a2b325-764e-4590-bbcb-2e8df15144fe"
+        },
+        {
+          "label": "No",
+          "value": "daa44883-5a04-4748-b298-9a061010ace4"
+        }
+      ],
+      "card_text": "Work Authorization (US)"
+    },
+    {
+      "id": "cards[fc35af29-c97f-4724-bd57-1477ebe69e50][field2]",
+      "label": "Expected Compensation",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "card_text": "Work Authorization (US)"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "required": false,
+      "reason": "portfolio_url is null"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "Samba - Product Manager - Outcomes & Attribution",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

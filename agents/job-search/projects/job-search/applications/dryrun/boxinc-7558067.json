@@ -1,0 +1,470 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/boxinc/jobs/7558067",
+  "org": "boxinc",
+  "job_id": "7558067",
+  "job_title": "Enterprise Solutions Engineer",
+  "job_location": " New York, NY, United States",
+  "fetched_at": "2026-05-31T17:01:56Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/boxinc/jobs/7558067?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 23,
+    "filled": 17,
+    "filled_needs_review": 0,
+    "declined": 6,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_62957312",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_62957314",
+      "label": "Do you now, or will you in the future, require sponsorship for employment visa status (e.g.. H-1B visa status, etc) to work legally for Box in the United States? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_62957315",
+      "label": "In what City, State and Zip are you currently residing?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_62957316",
+      "label": "Have you ever been employed at Box, including working as a contractor, intern, grad, or full-time employee? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64244151",
+      "label": "Privacy Notice Acknowledgement",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I Acknowledge",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "I Acknowledge",
+          "value": 644632372
+        }
+      ]
+    },
+    {
+      "id": "question_64244156",
+      "label": "Consent To Process",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I Agree",
+      "source": "acknowledge_yes (matched 'I Agree')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I Agree",
+          "value": 644632379
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_1101",
+      "label": "I identify my gender as:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Woman",
+          "value": 6102
+        },
+        {
+          "label": "Man",
+          "value": 6103
+        },
+        {
+          "label": "Non-binary (inclusive of bigender, agender, androgynous, gender fluid, and gender non-conforming)",
+          "value": 6104
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 6105
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 6106
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1102",
+      "label": "I identify as transgender:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "No",
+          "value": 6107
+        },
+        {
+          "label": "Yes",
+          "value": 6108
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 6109
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 6110
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1103",
+      "label": "I identify my sexual orientation as:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 6111
+        },
+        {
+          "label": "Bisexual, pansexual, or queer",
+          "value": 6112
+        },
+        {
+          "label": "Gay and/or lesbian",
+          "value": 6113
+        },
+        {
+          "label": "Heterosexual",
+          "value": 6114
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 6115
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 6116
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1104",
+      "label": "I identify my ethnicity as:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Alaskan Native / American Indian / Indigenous American / Native American",
+          "value": 6117
+        },
+        {
+          "label": "Black / of African descent",
+          "value": 6118
+        },
+        {
+          "label": "East Asian (inclusive of Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)",
+          "value": 6119
+        },
+        {
+          "label": "Latinx / Hispanic",
+          "value": 6120
+        },
+        {
+          "label": "Middle Eastern",
+          "value": 6121
+        },
+        {
+          "label": "Pacific Islander",
+          "value": 6122
+        },
+        {
+          "label": "South Asian (inclusive of Bangladeshi, Bhutanese, Indian, Pakistani, and Sri Lankan)",
+          "value": 6123
+        },
+        {
+          "label": "Southeast Asian (inclusive of Burmese, Cambodian, Filipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+          "value": 6124
+        },
+        {
+          "label": "White",
+          "value": 6125
+        },
+        {
+          "label": "Two or More Races",
+          "value": 6126
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 6127
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 6128
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1126",
+      "label": "Veteran status:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "Yes, I am a veteran",
+          "value": 6246
+        },
+        {
+          "label": "No, I am not a veteran",
+          "value": 6247
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 6248
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 6249
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1127",
+      "label": "I have a physical disability, or have a history/record of having a disability",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 6250
+        },
+        {
+          "label": "No",
+          "value": 6251
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 6252
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 6253
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

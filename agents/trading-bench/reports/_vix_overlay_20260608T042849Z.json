@@ -1,0 +1,98 @@
+{
+  "floor_reason": "contiguous SPY daily coverage begins 2020-08 (>= 15 bars/mo); leading sparse months trimmed",
+  "n_bars": 1468,
+  "results": [
+    {
+      "label": "ts-only (VIX/VIX3M>1.0)",
+      "strat_total_return_pct": 94.40167005631837,
+      "spy_total_return_pct": 124.31256843898267,
+      "raw_excess_total_pct": -29.9108983826643,
+      "dd_reduction_pp": -4.52883068643359,
+      "strat_sharpe": 0.8362964571700392,
+      "spy_sharpe": 0.9139135208625305,
+      "information_ratio": -0.3694197108698943,
+      "pct_days_risk_off": 4.976141785957737
+    },
+    {
+      "label": "pct-only (VIX>90th)",
+      "strat_total_return_pct": 68.87071899510013,
+      "spy_total_return_pct": 124.31256843898267,
+      "raw_excess_total_pct": -55.44184944388253,
+      "dd_reduction_pp": -6.16402548203958,
+      "strat_sharpe": 0.700364826484505,
+      "spy_sharpe": 0.9139135208625305,
+      "information_ratio": -0.6068536424975417,
+      "pct_days_risk_off": 11.042944785276074
+    },
+    {
+      "label": "ts+pct (either)",
+      "strat_total_return_pct": 73.69488002240952,
+      "spy_total_return_pct": 124.31256843898267,
+      "raw_excess_total_pct": -50.617688416573145,
+      "dd_reduction_pp": -6.164025482039559,
+      "strat_sharpe": 0.7463908655755981,
+      "spy_sharpe": 0.9139135208625305,
+      "information_ratio": -0.5274777200598565,
+      "pct_days_risk_off": 11.792774369461487
+    },
+    {
+      "label": "ts+pct+vvix",
+      "strat_total_return_pct": 47.48078384421104,
+      "spy_total_return_pct": 124.31256843898267,
+      "raw_excess_total_pct": -76.83178459477162,
+      "dd_reduction_pp": -6.134496633884591,
+      "strat_sharpe": 0.5594930646544564,
+      "spy_sharpe": 0.9139135208625305,
+      "information_ratio": -0.7859384364787614,
+      "pct_days_risk_off": 15.882753919563736
+    },
+    {
+      "label": "ts+pct de-risk-to-50%",
+      "strat_total_return_pct": 98.57277291823519,
+      "spy_total_return_pct": 124.31256843898267,
+      "raw_excess_total_pct": -25.739795520747478,
+      "dd_reduction_pp": -2.2567191832875153,
+      "strat_sharpe": 0.8732059060423774,
+      "spy_sharpe": 0.9139135208625305,
+      "information_ratio": -0.5274777200598565,
+      "pct_days_risk_off": 11.792774369461487
+    }
+  ],
+  "oos": {
+    "train_frac": 0.5,
+    "cut_date": "2023-07-05",
+    "candidate_table": [
+      [
+        0.8,
+        27.74,
+        35.02
+      ],
+      [
+        0.85,
+        31.95,
+        35.02
+      ],
+      [
+        0.9,
+        16.47,
+        35.02
+      ],
+      [
+        0.95,
+        21.33,
+        35.02
+      ]
+    ],
+    "chosen_vix_pct_off": 0.85,
+    "train_best_raw_return_pct": 31.95,
+    "test_span": [
+      "2023-07-05",
+      "2026-06-05"
+    ],
+    "test_strat_raw_return_pct": 50.99,
+    "test_spy_raw_return_pct": 66.13,
+    "test_raw_excess_pct": -15.14,
+    "test_strat_max_dd_pct": -10.28,
+    "test_spy_max_dd_pct": -18.98
+  }
+}

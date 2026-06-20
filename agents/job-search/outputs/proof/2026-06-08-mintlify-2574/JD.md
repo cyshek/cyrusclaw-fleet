@@ -1,0 +1,120 @@
+# Solutions Engineer - Pre Sales
+
+**Company:** Mintlify
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/mintlify/82c062be-e822-41a9-88c5-bed972e19e43
+**Ashby Org:** mintlify
+**Ashby Job ID:** 82c062be-e822-41a9-88c5-bed972e19e43
+
+---
+
+# **Why Mintlify?**
+
+We're on a mission to empower builders. 
+
+- **Massive reach:** Our docs platform serves 100 million+ developers every year and powers documentation for 20,000+ companies, including Anthropic, Microsoft, PayPal, Spotify, Coinbase, X, and over 20% of the last YC batch.
+
+- **Small team, huge impact:** We recently passed 50 employees and raised a $45 million Series B led by A16Z and Salesforce Ventures. Each new hire has a huge impact on shaping the company's trajectory. 
+
+- **Culture of **[**slope over y-intercept**](https://mattrickard.com/hire-slope-not-intercept)**:** We value learning velocity, grit, and unapologetically unique personalities.
+
+We grew in value faster than headcount and we’re looking to align the two quickly.
+
+# **About the Role**
+
+In this role, you will work closely with Sales, Engineering, Product, and the CEO to win our most strategic deals and turn one-off custom work into repeatable, productized capabilities.
+
+This role is for someone who wants to roll up their sleeves and build.
+
+# 
+**Responsibilities**
+
+**Deal Execution & Technical Validation**
+
+- Partner with AEs on complex enterprise and mid-market deals from discovery through close
+
+- Lead deep technical discovery to understand customer documentation workflows, integrations, and success criteria
+
+- Design and build custom demos, prototypes, and proofs-of-concept that directly unblock deals and accelerate decisions
+
+- Present technical solutions to mixed audiences, from frontline engineers to executive buyers
+
+**Technical Scoping & Risk Management**
+
+- Translate customer requirements into clear technical specifications that engineering can realistically deliver
+
+- Scope custom work with enough fidelity to inform pricing, timelines, and contract structure
+
+- Partner with engineering leadership to estimate effort, assess feasibility, and flag risks early. Identify technical debt, integration complexity, or maintenance concerns before deals are signed.
+
+**Cross-Functional Enablement & Leverage**
+
+- Serve as the go-to technical operator for Sales on complex deals
+
+- Share customer and field insights to influence product roadmap and go-to-market strategy
+
+- Build internal tools, templates, and processes that make technical selling more repeatable and scalable.
+
+# **Requirements**
+
+**Technical Skills:**
+
+- Strong full-stack development experience (React, Node.js, APIs, databases)
+
+- Proficiency in web technologies: HTML, CSS, JavaScript, modern frameworks
+
+- Ability to rapidly build functional prototypes and MVPs
+
+- Experience with documentation tools, MDX, or content platforms (strong plus)
+
+- Comfortable reading and understanding codebases to assess integration complexity
+
+**Experience Requirements:**
+
+- 1-2+ years of software engineering experience in product or customer-facing roles
+
+- Track record working directly with customers on technical implementations
+
+- Experience scoping technical work and creating specifications for engineering teams
+
+- Background in fast-moving startup environments with high autonomy
+
+**Behavioral Competencies:**
+
+- You'd rather ship a working prototype than a slide deck
+
+- You understand how technical decisions impact deal economics
+
+- You can run multiple complex deals simultaneously without dropping balls
+
+- You can translate technical depth into business value for executives and explain business constraints to engineers
+
+- You move fast and ship iteratively
+
+**Nice-to-Have**
+
+- Previous SE, sales engineering, or solutions consulting experience
+
+- Experience with enterprise RFPs, security reviews, or procurement processes
+
+- Background in developer tools, APIs, or technical products
+
+- Understanding of SaaS and usage pricing models and contract structures
+
+# **Company Benefits:**
+
+- Competitive compensation and equity
+
+- 20 days paid time off every year
+
+- 401k or RRSP
+
+- $420/mo. wellness stipend
+
+- 100% coverage for Health, dental, vision
+
+- Free Ubers to and from work
+
+- Free lunch and dinners
+
+- Annual team offsite (previously went to Alaska, Hawaii)

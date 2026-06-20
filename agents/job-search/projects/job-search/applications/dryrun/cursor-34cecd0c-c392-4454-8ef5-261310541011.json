@@ -1,0 +1,144 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/cursor/34cecd0c-c392-4454-8ef5-261310541011",
+  "org": "cursor",
+  "job_id": "34cecd0c-c392-4454-8ef5-261310541011",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-29T17:15:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82__systemfield_name"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82__systemfield_email"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82__systemfield_resume"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_76ac8c89-d8e8-4972-ba61-ad938053fe0d",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_76ac8c89-d8e8-4972-ba61-ad938053fe0d"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_8cad46b3-4fae-489b-b26b-5d6dc44fa4b7",
+      "label": "GitHub Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_8cad46b3-4fae-489b-b26b-5d6dc44fa4b7"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_c9104c7d-2dc6-4b6f-8edd-7a4e26a77734",
+      "label": "Tell us about a time you convinced a technical audience to adopt a new solution or tool. What was the resistance and how did you handle it?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Tell us about a time you convinced a technical audience to adopt a new solution or tool. What was the resistance and how did you handle it?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_c9104c7d-2dc6-4b6f-8edd-7a4e26a77734"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_94c49e85-d3c6-4e1e-bb28-0829ade50824",
+      "label": "Will you now or in the future require visa sponsorship to work in the country where this position is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_94c49e85-d3c6-4e1e-bb28-0829ade50824"
+    },
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_43429982-be90-495c-81b9-49218d75113a",
+      "label": "Has someone at Cursor or Graphite referred you for this role? If so, please include their email here",
+      "type": "input_text",
+      "required": false,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_43429982-be90-495c-81b9-49218d75113a"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "4b5ccd33-2058-43d7-ae2a-318a12791f82_c9104c7d-2dc6-4b6f-8edd-7a4e26a77734",
+      "label": "Tell us about a time you convinced a technical audience to adopt a new solution or tool. What was the resistance and how did you handle it?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Tell us about a time you convinced a technical audience to adopt a new solution or tool. What was the resistance and how did you handle it?'"
+    }
+  ],
+  "blockers": []
+}

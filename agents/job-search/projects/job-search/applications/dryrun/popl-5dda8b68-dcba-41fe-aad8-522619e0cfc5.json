@@ -1,0 +1,149 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/popl/5dda8b68-dcba-41fe-aad8-522619e0cfc5",
+  "org": "popl",
+  "job_id": "5dda8b68-dcba-41fe-aad8-522619e0cfc5",
+  "job_title": "Customer Solutions Engineer",
+  "job_location": "United States",
+  "fetched_at": "2026-06-09T08:34:31Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 6,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_name"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_email"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_resume"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a_47009fcd-6aa8-4677-b9b1-dc6290ffab2f",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a_47009fcd-6aa8-4677-b9b1-dc6290ffab2f"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a_81adb9b2-2985-4804-b5d7-e1481731c827",
+      "label": "Linkedin URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a_81adb9b2-2985-4804-b5d7-e1481731c827"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a__systemfield_location"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a_1b1781eb-b874-448c-9c09-701eea6843da",
+      "label": "Send a Message to the Hiring Manager",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Send a Message to the Hiring Manager'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a_1b1781eb-b874-448c-9c09-701eea6843da"
+    },
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a_c469b34f-bdc9-462a-9cf8-678854b462f1",
+      "label": "Will you now or in the future require sponsorship for employment visa status ?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_* | NOTE: 'No' not literally in options ['I require assistance immediately.', 'I am legally authorized to work in the USA.', 'I require assistance in the future.']",
+      "status": "filled_needs_review",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "I require assistance immediately.",
+          "value": "I require assistance immediately."
+        },
+        {
+          "label": "I am legally authorized to work in the USA.",
+          "value": "I am legally authorized to work in the USA."
+        },
+        {
+          "label": "I require assistance in the future.",
+          "value": "I require assistance in the future."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "5203c640-4e66-4895-b985-f3b242bd851a_c469b34f-bdc9-462a-9cf8-678854b462f1",
+      "match_attempted": true
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "5203c640-4e66-4895-b985-f3b242bd851a_1b1781eb-b874-448c-9c09-701eea6843da",
+      "label": "Send a Message to the Hiring Manager",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Send a Message to the Hiring Manager'"
+    }
+  ],
+  "blockers": []
+}

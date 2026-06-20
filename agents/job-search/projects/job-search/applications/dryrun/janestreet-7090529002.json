@@ -1,0 +1,1047 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/janestreet/jobs/7090529002",
+  "org": "janestreet",
+  "job_id": "7090529002",
+  "job_title": "Technical Product Manager",
+  "job_location": "New York, New York, United States",
+  "fetched_at": "2026-05-14T00:36:26Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/janestreet/jobs/7090529002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 28,
+    "filled": 22,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "unresolved": 5,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_26103039002",
+      "label": "Additional information (for source)",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null
+    },
+    {
+      "id": "question_26103040002",
+      "label": "Have you interviewed with Jane Street before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_applied_to_company (proxy)",
+      "status": "filled",
+      "matched_rule": "previously_interviewed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_26103041002",
+      "label": "Pronouns",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null
+    },
+    {
+      "id": "question_26103042002",
+      "label": "Are you currently a student?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "experience_summary.current_employer=Microsoft (not a student)",
+      "status": "filled",
+      "matched_rule": "currently_student",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_26103043002",
+      "label": "Enter your college/university",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null
+    },
+    {
+      "id": "question_26103044002",
+      "label": "Candidate: college/university",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null
+    },
+    {
+      "id": "question_26103045002",
+      "label": "Major/Field of study",
+      "type": "input_text",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major",
+      "status": "filled",
+      "matched_rule": "major",
+      "options": null
+    },
+    {
+      "id": "question_26103046002",
+      "label": "Extra",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Extra'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_26103047002",
+      "label": "Year you expect to begin full time employment",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Year you expect to begin full time employment'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_26103048002",
+      "label": "What is your current education level?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What is your current education level?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "High School",
+          "value": 141455583002
+        },
+        {
+          "label": "Undergraduate",
+          "value": 141455584002
+        },
+        {
+          "label": "Master's",
+          "value": 184356798002
+        },
+        {
+          "label": "PhD",
+          "value": 141455586002
+        },
+        {
+          "label": "JD",
+          "value": 184359688002
+        },
+        {
+          "label": "MD",
+          "value": 184362578002
+        },
+        {
+          "label": "Other",
+          "value": 141455588002
+        }
+      ]
+    },
+    {
+      "id": "question_26103050002",
+      "label": "LinkedIn profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_26103051002",
+      "label": "Website UID",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_26103052002",
+      "label": "Who is your current employer/position?",
+      "type": "input_text",
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_28213858002",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "3Blue1Brown",
+          "value": 237256959002
+        },
+        {
+          "label": "Academic advisor",
+          "value": 237256964002
+        },
+        {
+          "label": "Academic camp...",
+          "value": 237256966002
+        },
+        {
+          "label": "Academic department",
+          "value": 237256968002
+        },
+        {
+          "label": "Advent of Code",
+          "value": 237256969002
+        },
+        {
+          "label": "AoPS - Art of Problem Solving",
+          "value": 237256970002
+        },
+        {
+          "label": "BEAM - Bridge to Enter Advanced Mathematics",
+          "value": 237256972002
+        },
+        {
+          "label": "Bright Network",
+          "value": 237256974002
+        },
+        {
+          "label": "CMD-IT; Tapia Conference",
+          "value": 237256975002
+        },
+        {
+          "label": "ColorStack",
+          "value": 237256978002
+        },
+        {
+          "label": "Computerphile",
+          "value": 237256980002
+        },
+        {
+          "label": "Cracking the Cryptic",
+          "value": 237256983002
+        },
+        {
+          "label": "Current employee...",
+          "value": 237256985002
+        },
+        {
+          "label": "Current/former intern",
+          "value": 237256986002
+        },
+        {
+          "label": "DS4A",
+          "value": 237256987002
+        },
+        {
+          "label": "ETC",
+          "value": 237256988002
+        },
+        {
+          "label": "Estimathon",
+          "value": 237256989002
+        },
+        {
+          "label": "Facebook",
+          "value": 237256993002
+        },
+        {
+          "label": "Faculty referral...",
+          "value": 237256995002
+        },
+        {
+          "label": "Figgie event",
+          "value": 237256997002
+        },
+        {
+          "label": "Figgie online",
+          "value": 237256999002
+        },
+        {
+          "label": "Game night",
+          "value": 237257002002
+        },
+        {
+          "label": "Glassdoor",
+          "value": 237257003002
+        },
+        {
+          "label": "Grace Hopper Celebration",
+          "value": 237257006002
+        },
+        {
+          "label": "GradCracker",
+          "value": 237257007002
+        },
+        {
+          "label": "HireWomenStem",
+          "value": 237257010002
+        },
+        {
+          "label": "ICFP",
+          "value": 237257012002
+        },
+        {
+          "label": "ICML",
+          "value": 237257015002
+        },
+        {
+          "label": "Info session",
+          "value": 237257018002
+        },
+        {
+          "label": "Jane Street Get to Know Us",
+          "value": 237257019002
+        },
+        {
+          "label": "Jane Street T-shirt or item",
+          "value": 237257022002
+        },
+        {
+          "label": "Jane Street Blog",
+          "value": 237257025002
+        },
+        {
+          "label": "Jane Street Tech Talk on YouTube",
+          "value": 237257026002
+        },
+        {
+          "label": "Jane Street games",
+          "value": 237257027002
+        },
+        {
+          "label": "Jane Street puzzles",
+          "value": 237257028002
+        },
+        {
+          "label": "Job Openings for Economists (JOE)",
+          "value": 237257030002
+        },
+        {
+          "label": "Kaggle",
+          "value": 237257032002
+        },
+        {
+          "label": "Lesbians Who Tech Summit",
+          "value": 237257035002
+        },
+        {
+          "label": "LinkedIn",
+          "value": 237257036002
+        },
+        {
+          "label": "MLT",
+          "value": 237257037002
+        },
+        {
+          "label": "Math Association of America",
+          "value": 237257040002
+        },
+        {
+          "label": "Mathfest",
+          "value": 237257042002
+        },
+        {
+          "label": "Mathjobs.org",
+          "value": 237257043002
+        },
+        {
+          "label": "Mystery Planet",
+          "value": 237257044002
+        },
+        {
+          "label": "NCWIT",
+          "value": 237257045002
+        },
+        {
+          "label": "NSBE",
+          "value": 237257046002
+        },
+        {
+          "label": "Networking dinner",
+          "value": 237257047002
+        },
+        {
+          "label": "NeurIPS",
+          "value": 237257048002
+        },
+        {
+          "label": "Numberphile",
+          "value": 237257050002
+        },
+        {
+          "label": "OSDI",
+          "value": 237257052002
+        },
+        {
+          "label": "Online forum...",
+          "value": 237257054002
+        },
+        {
+          "label": "Other Conference...",
+          "value": 237257056002
+        },
+        {
+          "label": "Other...",
+          "value": 237257057002
+        },
+        {
+          "label": "PLDI",
+          "value": 237257058002
+        },
+        {
+          "label": "POCIT",
+          "value": 237257059002
+        },
+        {
+          "label": "POPL",
+          "value": 237257060002
+        },
+        {
+          "label": "Per Scholas",
+          "value": 237257061002
+        },
+        {
+          "label": "Perspektywy Women in Tech",
+          "value": 237257064002
+        },
+        {
+          "label": "Piazza",
+          "value": 237257066002
+        },
+        {
+          "label": "Pre-university academic competition (IOI, IMO, HMMT, AIME, etc.)...",
+          "value": 237257068002
+        },
+        {
+          "label": "PuzzleCity",
+          "value": 237257070002
+        },
+        {
+          "label": "PyCon",
+          "value": 237257071002
+        },
+        {
+          "label": "REU program",
+          "value": 237257073002
+        },
+        {
+          "label": "Rare Recruitment (UK)",
+          "value": 237257074002
+        },
+        {
+          "label": "Real Numbers",
+          "value": 237257075002
+        },
+        {
+          "label": "Ron Brown Scholar Program",
+          "value": 237257076002
+        },
+        {
+          "label": "SREcon",
+          "value": 237257077002
+        },
+        {
+          "label": "STEM Women (UK organization)",
+          "value": 237257078002
+        },
+        {
+          "label": "Scientific Association of Mathematical Finance",
+          "value": 237257079002
+        },
+        {
+          "label": "StandUp Maths",
+          "value": 237257082002
+        },
+        {
+          "label": "Steve Mould",
+          "value": 237257085002
+        },
+        {
+          "label": "StrangeLoop",
+          "value": 237257086002
+        },
+        {
+          "label": "Student Freedom Initiative",
+          "value": 237257087002
+        },
+        {
+          "label": "Tech Talks",
+          "value": 237257088002
+        },
+        {
+          "label": "Twitter/X",
+          "value": 237257089002
+        },
+        {
+          "label": "University club...",
+          "value": 237257090002
+        },
+        {
+          "label": "University job board",
+          "value": 237257091002
+        },
+        {
+          "label": "University-hosted event (e.g., career fair, career services event, etc.)...",
+          "value": 237257092002
+        },
+        {
+          "label": "University-level competition (ICPC, Putnam, IMC, etc.)...",
+          "value": 237257093002
+        },
+        {
+          "label": "WeChat",
+          "value": 237257094002
+        },
+        {
+          "label": "Word of mouth",
+          "value": 237257095002
+        },
+        {
+          "label": "Working Not Working",
+          "value": 237257096002
+        },
+        {
+          "label": "Oxford Online Maths Club",
+          "value": 237257097002
+        },
+        {
+          "label": "CVPR",
+          "value": 237257098002
+        },
+        {
+          "label": "EMNLP",
+          "value": 237257099002
+        },
+        {
+          "label": "NANOG",
+          "value": 237257100002
+        },
+        {
+          "label": "PyTorch",
+          "value": 237257101002
+        },
+        {
+          "label": "SIGCOMM",
+          "value": 237257102002
+        },
+        {
+          "label": "Women in Logic",
+          "value": 237257103002
+        },
+        {
+          "label": "Jane Street OCaml Unboxed",
+          "value": 237257104002
+        },
+        {
+          "label": "Jane Street's Signals & Threads podcast",
+          "value": 237257105002
+        },
+        {
+          "label": "Periodic Videos",
+          "value": 237257107002
+        },
+        {
+          "label": "Reconcilable Differences",
+          "value": 237257109002
+        },
+        {
+          "label": "The Art of the Problem",
+          "value": 237257110002
+        },
+        {
+          "label": "HackerNews",
+          "value": 237257111002
+        },
+        {
+          "label": "Sixty Symbols",
+          "value": 237257112002
+        },
+        {
+          "label": "Dwarkesh Podcast",
+          "value": 237257113002
+        },
+        {
+          "label": "Oxford Mathematics Plus",
+          "value": 237257114002
+        },
+        {
+          "label": "Bsides",
+          "value": 237257115002
+        },
+        {
+          "label": "Progress Conference",
+          "value": 237257116002
+        },
+        {
+          "label": "TLDR AI",
+          "value": 237257117002
+        },
+        {
+          "label": "APS",
+          "value": 237257118002
+        },
+        {
+          "label": "CU*IP",
+          "value": 237257119002
+        },
+        {
+          "label": "FCCM",
+          "value": 237257120002
+        },
+        {
+          "label": "FP Matsuri",
+          "value": 237257121002
+        },
+        {
+          "label": "FPL",
+          "value": 237257122002
+        },
+        {
+          "label": "ICLR",
+          "value": 237257123002
+        },
+        {
+          "label": "ISFPGA",
+          "value": 237257124002
+        },
+        {
+          "label": "Latch-up Fossi",
+          "value": 237257125002
+        },
+        {
+          "label": "NDC London",
+          "value": 237257126002
+        },
+        {
+          "label": "OOPSLA/Splash",
+          "value": 237257127002
+        },
+        {
+          "label": "Out for Undergrad",
+          "value": 237257128002
+        },
+        {
+          "label": "Powershell Conf EU",
+          "value": 237257129002
+        },
+        {
+          "label": "Powershell Summit",
+          "value": 237257130002
+        },
+        {
+          "label": "PPL",
+          "value": 237257131002
+        },
+        {
+          "label": "Rust Asia",
+          "value": 237257132002
+        },
+        {
+          "label": "STOC",
+          "value": 237257133002
+        },
+        {
+          "label": "ALT",
+          "value": 237257134002
+        },
+        {
+          "label": "COLM",
+          "value": 237257135002
+        },
+        {
+          "label": "COLT",
+          "value": 237257136002
+        },
+        {
+          "label": "FAST",
+          "value": 237257137002
+        },
+        {
+          "label": "MLSys",
+          "value": 237257138002
+        },
+        {
+          "label": "NSDI",
+          "value": 237257139002
+        },
+        {
+          "label": "OOPSLA",
+          "value": 237257140002
+        },
+        {
+          "label": "Powershell Conference EU",
+          "value": 237257141002
+        },
+        {
+          "label": "SOSP",
+          "value": 237257142002
+        },
+        {
+          "label": "SPLASH",
+          "value": 237257143002
+        },
+        {
+          "label": "VLDB",
+          "value": 237257144002
+        }
+      ]
+    },
+    {
+      "id": "question_28995259002",
+      "label": "Area of Study",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Area of Study'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Pure mathematics A (algebra, number theory, geometry, topology, representation theory)",
+          "value": 209619781002
+        },
+        {
+          "label": "Pure mathematics B (analysis, probability, combinatorics)",
+          "value": 209623677002
+        },
+        {
+          "label": "Applied mathematics (PDEs, numerical methods, physical applied math)",
+          "value": 209627208002
+        },
+        {
+          "label": "Statistics",
+          "value": 184036947002
+        },
+        {
+          "label": "Theoretical computer science",
+          "value": 184036946002
+        },
+        {
+          "label": "Learning theory and/or optimization",
+          "value": 209630377002
+        },
+        {
+          "label": "Natural language processing",
+          "value": 209633560002
+        },
+        {
+          "label": "Computer vision",
+          "value": 209636733002
+        },
+        {
+          "label": "Reinforcement learning",
+          "value": 209639908002
+        },
+        {
+          "label": "Robotics",
+          "value": 209643085002
+        },
+        {
+          "label": "Deep learning / neural networks",
+          "value": 209646254002
+        },
+        {
+          "label": "Computational biology",
+          "value": 184036955002
+        },
+        {
+          "label": "Other machine learning / applied AI",
+          "value": 209649437002
+        },
+        {
+          "label": "Electrical engineering",
+          "value": 209652774002
+        },
+        {
+          "label": "Experimental physics",
+          "value": 184036948002
+        },
+        {
+          "label": "Applied theoretical physics (e.g. computational high-energy, phenomenology, astrophysics/cosmology theory)",
+          "value": 184036949002
+        },
+        {
+          "label": "Formal theoretical physics (e.g. string theory, quantum information)",
+          "value": 184036950002
+        },
+        {
+          "label": "Programming languages",
+          "value": 184036952002
+        },
+        {
+          "label": "Databases / Networking / Systems / Architecture",
+          "value": 184036953002
+        },
+        {
+          "label": "Other computer science + engineering",
+          "value": 184036956002
+        }
+      ]
+    },
+    {
+      "id": "question_32391146002[]",
+      "label": "Languages Spoken",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Languages Spoken'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Spanish",
+          "value": 208511388002
+        },
+        {
+          "label": "Portuguese",
+          "value": 208511390002
+        },
+        {
+          "label": "French",
+          "value": 208511396002
+        },
+        {
+          "label": "Italian",
+          "value": 208511397002
+        },
+        {
+          "label": "German",
+          "value": 208511399002
+        },
+        {
+          "label": "Japanese",
+          "value": 208511409002
+        },
+        {
+          "label": "Korean",
+          "value": 208511420002
+        },
+        {
+          "label": "Bahasa Indonesian",
+          "value": 208511432002
+        },
+        {
+          "label": "Mandarin",
+          "value": 208511437002
+        },
+        {
+          "label": "Hindi",
+          "value": 208511443002
+        },
+        {
+          "label": "Other",
+          "value": 208511452002
+        }
+      ]
+    },
+    {
+      "id": "question_32391159002",
+      "label": "Additional Information For Languages",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null
+    },
+    {
+      "id": "question_32844587002",
+      "label": "What year did you graduate high school?",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null
+    },
+    {
+      "id": "question_34961988002",
+      "label": "University Email Address",
+      "type": "input_text",
+      "required": false,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_26103046002",
+      "label": "Extra",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Extra'"
+    },
+    {
+      "id": "question_26103047002",
+      "label": "Year you expect to begin full time employment",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Year you expect to begin full time employment'"
+    },
+    {
+      "id": "question_26103048002",
+      "label": "What is your current education level?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='What is your current education level?'"
+    },
+    {
+      "id": "question_28995259002",
+      "label": "Area of Study",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Area of Study'"
+    },
+    {
+      "id": "question_32391146002[]",
+      "label": "Languages Spoken",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Languages Spoken'"
+    }
+  ],
+  "blockers": []
+}

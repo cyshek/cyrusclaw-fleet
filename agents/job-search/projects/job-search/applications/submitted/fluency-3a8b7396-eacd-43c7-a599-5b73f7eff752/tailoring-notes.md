@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Embedded inside enterprise customer environments (Databricks, Walmart, SAP, NetApp) to scale Azure's recovery validation from a 2-person operation into a **platformized system**, owning delivery end-to-end across 45+ annual resilience drills and driving **$14M+ business impact**.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining requirements and self-service scheduling workflows that cut operational toil **30%** and shipped production-quality automations into unfamiliar customer-facing systems.
+3. Built and shipped an internal **AI agent** for drill planning, feeding process and work definitions into the agent to handle real edge cases and boundary conditions, reducing planning cycle time **39%** and increasing drill capacity 21%.
+4. Pioneered Azure's first proactive resilience testing capability, validating workflows and delivering a rack-level program in **4 months** at a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous-validation model.
+5. Owned 14 cross-org recovery executions under executive visibility despite incomplete requirements and governance constraints, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+6. Translated technical constraints, cost/latency/reliability tradeoffs, and rollout risks across customer engineering teams, integrating automations into existing systems and reporting performance signal back to product to inform roadmap decisions.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Shipped **AI-driven code-generation** workflows into 14 Azure service teams, running hands-on demos and training that drove adoption and saved **37 engineering hours monthly** in real production environments.
+2. Influenced the product roadmap toward **intent-based YAML** automation by scoping incomplete requirements through 11+ user interviews with Azure service teams to surface critical feature gaps.
+3. Migrated documentation to an **LLM-powered semantic search** tool with rigorous metadata standards, cutting lookup time **83%** and improving retrieval across unfamiliar codebases and systems.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ enterprise teams.
+2. Drove a process-improvement strategy to mitigate launch toil, running discovery with 20+ service teams to quantify **81 hours of manual effort per region** and building a roadmap to automate critical paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact, measurable before-and-after improvements.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero operational downtime** across a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations in an unfamiliar environment.
+2. Facilitated Agile ceremonies and prioritized backlog under ambiguity, resolving **40+ high-priority tickets** and stabilizing the developer intake process through rapid iteration.
+3. Drove alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle **25%** and owning rollout independently.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing operations and owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new **CRM workflow automation**.
+2. Reduced Customer Acquisition Cost **13%** and boosted conversions 2.7% by executing a digital-first go-to-market strategy across the website and Google profile.
+3. Improved leadership pricing models by running **profitability analysis** across 1,000+ project records to identify and seal margin leaks across the business.
+
+## Notes from the rewriter
+- Reframed Azure resilience work as forward-deployed, customer-embedded delivery owning end-to-end transformation.
+- Surfaced AI agent + automation building, edge-case handling, and ROI/before-after measurement to mirror JD.
+- Emphasized shipping under ambiguity, incomplete requirements, governance constraints, and cost/latency tradeoffs.
+- Prioritized Python/TS, agent design, RPA/process mining, and AWS skills from JD's must-haves and nice-to-haves.
+

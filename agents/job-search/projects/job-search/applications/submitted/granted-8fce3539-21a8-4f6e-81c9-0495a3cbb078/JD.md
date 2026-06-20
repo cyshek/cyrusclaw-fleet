@@ -1,0 +1,73 @@
+# Growth Product Manager
+
+**Company:** Granted
+**Location:** New York City,  Hybrid
+**Apply:** https://jobs.ashbyhq.com/granted/8fce3539-21a8-4f6e-81c9-0495a3cbb078
+**Ashby Org:** granted
+**Ashby Job ID:** 8fce3539-21a8-4f6e-81c9-0495a3cbb078
+
+---
+
+# 🌿 Mission
+
+The US healthcare system is complex, error-prone, and financially draining. Medical bills and insurance coverage shouldn't be this hard to navigate. At Granted, we're building the one solution every American can turn to for help.
+
+Thanks to AI and new regulations, Granted can fight claim denials, correct billing errors, negotiate bills, and make coverage easier to understand, saving people time, money, and stress. Our goal is simple: to be the #1 platform that empowers all Americans to take charge of their healthcare.
+
+# 🏢 About Us
+
+Founded by a former Oscar Health leader, we're a seed-stage company with $17M in funding. We're backed by the founders and investors at Hugging Face, Rocket Money, Oscar Health, CaseText, Forerunner Ventures, RRE Ventures, Red Sea, and more. We are well-funded for the next few years.
+
+# 🧭 About the Role
+
+Granted is an AI-native company helping U.S. consumers understand and push back against a system designed to confuse them. We're seed-stage, about 22 people, and moving quickly on a problem that touches almost everyone.
+
+We're hiring a Product Manager, Growth to lead the product work that drives how we scale. You'll work closely with our Product Lead and a small cross-functional team of engineers and Healthcare Advocates, based in our Chelsea office (hybrid, 4 days/week).
+
+The growth function at Granted is being built, not inherited. You'll be defining what we measure before we optimize it, running experiments in the product layer, and making roadmap calls based on what you learn. The person we're looking for can operate in that environment without waiting for a complete brief.
+
+# 🛠 What You'll Do
+
+- Own and lead product experiments across activation, onboarding, and retention, with real rigor about what gets learned and what changes as a result
+
+- Decide which metrics actually matter, build the measurement foundation, and own the feedback loop between data and product decisions
+
+- Ship features and flows that move users from "tried it" to "relies on it"
+
+- Granted's Healthcare Advocates talk to users constantly. You'll translate what they hear into product hypotheses and prioritize accordingly
+
+- Partner with marketing on acquisition strategy, and own the product surfaces that make those channels work
+
+# 🧰 You'll Bring
+
+Must-haves:
+
+- At least 3 years of experience in a Product Management role
+
+- Proven track record shipping product in a B2C growth context
+
+- Strong analytics foundation: you've written SQL, worked with behavioral data, and designed experiments that produce usable conclusions
+
+- Experience making the measurement decisions, not just reading dashboards someone else built
+
+- Comfort scoping your own work in an environment with open questions
+
+**Nice-to-haves:**
+
+- Experience in consumer products where trust and friction both matter, healthcare or fintech background in particular
+
+- Familiarity with AI-powered product experiences
+
+- Early-stage startup experience (Series B or earlier)
+
+# ✨ You'll Thrive Here If
+
+- You've gone from zero to one on a growth loop, then taken it to scale
+
+- You make decisions with imperfect data and update quickly when the data contradicts your assumptions
+
+- You're energized by defining the problem before solving it, not just executing against a brief someone else wrote
+
+- You have low ego about what counts as your job at an early stage
+
+- You care about the underlying problem, helping real people navigate a healthcare system that was not built in their favor

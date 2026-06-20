@@ -1,0 +1,58 @@
+# Engineering Program Manager, RISCV
+
+**Company:** Tenstorrent
+**Location:** Austin, Texas, United States
+**Apply:** https://job-boards.greenhouse.io/tenstorrent/jobs/4953547007
+**Greenhouse ID:** 4953547007
+
+---
+
+Tenstorrent is leading the industry on cutting-edge AI technology, revolutionizing performance expectations, ease of use, and cost efficiency. With AI redefining the computing paradigm, solutions must evolve to unify innovations in software models, compilers, platforms, networking, and semiconductors. Our diverse team of technologists have developed a high performance RISC-V CPU from scratch, and share a passion for AI and a deep desire to build the best AI platform possible. We value collaboration, curiosity, and a commitment to solving hard problems. We are growing our team and looking for contributors of all seniorities.
+
+We’re looking for a driven Engineering Program Manager—or a hands-on technical lead ready to step into program management—to help lead the charge on our RISC-V CPU team. In this role, you’ll be at the center of the action, working across architecture, design, verification, physical design, and DFT to drive the full lifecycle of a high-performance CPU—from spec to tapeout to post-silicon debug. You’ll partner with key stakeholders to define bold objectives, lock in milestones, and align the resources needed to bring next-gen compute to life.
+
+This role is hybrid, based out of Austin, TX or Santa Clara, CA.
+
+We welcome candidates at various experience levels for this role. During the interview process, candidates will be assessed for the appropriate level, and offers will align with that level, which may differ from the one in this posting.
+
+ 
+
+**Who You Are**
+
+- A technically strong leader with experience in CPU, SoC, or silicon development.
+
+- Skilled in aligning cross-functional teams to deliver complex, high-performance hardware programs.
+
+- Proactive problem solver who thrives in dynamic, fast-paced environments.
+
+- A clear communicator who can engage engineers and executives alike.
+
+ 
+
+**What We Need**
+
+- Ownership of full-cycle CPU program management—from spec to tapeout and post-silicon debug.
+
+- Ability to define scope, schedule, and resources, and lead execution across architecture, design, verification, and DFT teams.
+
+- Proven experience driving silicon development, managing risk, and delivering milestones.
+
+- Experience with Functional Safety (FuSa) standards and implementation, especially ISO 26262 and an understanding of automotive industry requirements and standards for hardware development is highly desirable.
+
+ 
+
+**What You Will Learn**
+
+- How to lead the delivery of cutting-edge RISC-V CPU IP at scale, both internally and for external customers.
+
+- Partnering with top engineers to resolve real-time design challenges, drive schedule trade-offs, and push forward high-impact decisions.
+
+- Leading project reviews and reporting to senior leadership on metrics, risks, and mitigation plans.
+
+ 
+
+*Compensation for all engineers at Tenstorrent ranges from $100k - $500k including base and variable compensation targets. Experience, skills, education, background and location all impact the actual offer made.*
+
+*Tenstorrent offers a highly competitive compensation package and benefits, and we are an equal opportunity employer.*
+
+*This offer of employment is contingent upon the applicant being eligible to access U.S. export-controlled technology.  Due to U.S. export laws, including those codified in the U.S. Export Administration Regulations (EAR), the Company is required to ensure compliance with these laws when transferring technology to nationals of certain countries (such as EAR Country Groups D:1, E1, and E2).   These requirements apply to persons located in the U.S. and all countries outside the U.S.  As the position offered will have direct and/or indirect access to information, systems, or technologies subject to these laws, the offer may be contingent upon your citizenship/permanent residency status or ability to obtain prior license approval from the U.S. Commerce Department or applicable federal agency.  If employment is not possible due to U.S. export laws, any offer of employment will be rescinded.*

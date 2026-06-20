@@ -1,0 +1,218 @@
+{
+  "role_url": "https://ats.rippling.com/en-US/daloopa/jobs/49ac87b7-4500-4078-b4d5-2ab177710d55",
+  "org": "daloopa",
+  "job_id": "49ac87b7",
+  "ats": "rippling",
+  "job_title": "Product Manager",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-05-24T22:00:00Z",
+  "api_url": null,
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 18,
+    "filled": 9,
+    "unresolved": 5,
+    "declined": 4,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "resume",
+      "label": "Résumé",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "first_name",
+      "label": "First name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "current_company",
+      "label": "Current company",
+      "type": "input_text",
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_company",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city_state",
+      "status": "filled",
+      "matched_rule": "location",
+      "options": null
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn Link",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "sponsor_now",
+      "label": "Do you currently require a visa sponsorship to work inside the United States?",
+      "type": "select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_now",
+      "status": "filled",
+      "matched_rule": "sponsorship_now",
+      "options": ["Yes", "No"]
+    },
+    {
+      "id": "sponsor_future",
+      "label": "Will you, at ANY time in the future, require visa sponsorship to remain employed in the United States?",
+      "type": "select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_future",
+      "status": "filled",
+      "matched_rule": "sponsorship_future",
+      "options": ["Yes", "No"]
+    },
+    {
+      "id": "nyc_hybrid",
+      "label": "This role is based out of our NYC HQ. Do you reside (or plan to relocate at your own expense) near NYC and are willing to come to the office a minimum of 3 days per week?",
+      "type": "select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate",
+      "status": "filled",
+      "matched_rule": "relocate",
+      "options": ["Yes", "No"]
+    },
+    {
+      "id": "essay_product_situation",
+      "label": "Describe a product or major feature you were responsible for bringing into the world. Start with the situation as it existed before your work began, and end with what changed after.",
+      "type": "textarea",
+      "required": true,
+      "value": null,
+      "source": null,
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "essay_after_ship",
+      "label": "What happened after this shipped? Describe one concrete change you made in response to usage, feedback, or results.",
+      "type": "textarea",
+      "required": true,
+      "value": null,
+      "source": null,
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "essay_disagreement",
+      "label": "Describe a moment where product design or engineering disagreed with your direction. What was at stake, and how did it get resolved?",
+      "type": "textarea",
+      "required": true,
+      "value": null,
+      "source": null,
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "essay_unpopular_call",
+      "label": "Describe a product call you made that you're still confident was the right one, even though it was unpopular or risky at the time.",
+      "type": "textarea",
+      "required": true,
+      "value": null,
+      "source": null,
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "essay_gtm_pressure",
+      "label": "Describe a time a GTM request put pressure on your roadmap. What did you do next?",
+      "type": "textarea",
+      "required": true,
+      "value": null,
+      "source": null,
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "sms_consent",
+      "label": "Check Yes or No to indicate your agreement to receive text message updates from Daloopa, Inc. regarding your job application.",
+      "type": "radio",
+      "required": true,
+      "value": "No - I do not consent to receiving text messages",
+      "source": "messaging_opt_in.sms",
+      "status": "filled",
+      "matched_rule": "sms_consent",
+      "options": ["Yes - I consent to receiving text messages", "No - I do not consent to receiving text messages"]
+    },
+    {
+      "id": "additional_info",
+      "label": "Any additional information you'd like to share?",
+      "type": "textarea",
+      "required": false,
+      "value": null,
+      "source": null,
+      "status": "declined",
+      "matched_rule": "optional_skip",
+      "options": null
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/mandolin/84421bfb-dc71-4838-a518-f5b209d69d9a",
+  "org": "mandolin",
+  "job_id": "84421bfb-dc71-4838-a518-f5b209d69d9a",
+  "job_title": "Product Manager",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-03T09:19:25Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86__systemfield_name"
+    },
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86__systemfield_email"
+    },
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86_c1e7848a-40ff-4568-b3b9-be57000b2699",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86_c1e7848a-40ff-4568-b3b9-be57000b2699"
+    },
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86__systemfield_resume"
+    },
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86_9bf7138e-cf83-4629-b18b-09cb1e967835",
+      "label": "The Mandolin office is located in San Francisco, CA. Are you based in the San Francisco Bay Area or willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I'm based in the Bay Area.",
+      "source": "ashby_location_ack (matched relocation target 'san francisco' in label) | smart-matched to option \"Yes, I'm based in the Bay Area.\"",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes, I'm based in the Bay Area.",
+          "value": "Yes, I'm based in the Bay Area."
+        },
+        {
+          "label": "No, but I'm willing to relocate.",
+          "value": "No, but I'm willing to relocate."
+        },
+        {
+          "label": "No, and I'm not willing to relocate.",
+          "value": "No, and I'm not willing to relocate."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86_9bf7138e-cf83-4629-b18b-09cb1e967835"
+    },
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86_25b3d3af-3b7a-4d48-beb3-8f69b0056135",
+      "label": "This in an in-person role, working out of our downtown office 4-5x days a week. Are you able to work in office 4-5 days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "ashby_location_ack (Cyrus in WA, label does not mention a relocation-target city)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86_25b3d3af-3b7a-4d48-beb3-8f69b0056135"
+    },
+    {
+      "id": "4530ae51-5503-4190-bed4-16b62d296e86_a44d9277-d8f5-408c-b8a2-90cf00252965",
+      "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "4530ae51-5503-4190-bed4-16b62d296e86_a44d9277-d8f5-408c-b8a2-90cf00252965"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

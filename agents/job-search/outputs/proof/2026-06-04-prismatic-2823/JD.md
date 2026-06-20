@@ -1,0 +1,107 @@
+# Pre-Sales Solutions Engineer
+
+**Company:** Prismatic
+**Location:** United States
+**Apply:** https://job-boards.greenhouse.io/prismatic/jobs/5147660007
+**Greenhouse ID:** 5147660007
+
+---
+
+[Prismatic](https://prismatic.io/) is the integration platform that helps B2B software companies build integrations fast and deliver them at scale. We're turning integrations from a bottleneck into a growth driver for hundreds of companies, from high-growth startups to Fortune 500s.
+
+Our platform handles everything that breaks at scale, so teams can ship integrations, not infrastructure. It provides flexible, AI-enabled build experiences through code-native, low-code, and an embedded workflow builder, plus self-service configuration and an embedded marketplace.
+
+Prismatic is well-funded with strong product-market fit and a high-agency, driven, collaborative culture.
+
+**About the role:**
+
+Our customers are software companies. Every single one of them is looking for a better way to build, deploy, and manage the integrations their customers depend on. We're hiring a Solutions Engineer to partner closely with our sales team, run the technical side of the deal, and help prospects see how Prismatic fits into their world. You'll lead demos, scope and execute POCs, advise prospects through evaluation, and own the technical narrative from first conversation through close.
+
+ 
+
+Our Solutions Engineers are technical enough to debug a webhook in real time and commercial enough to navigate a Fortune 500 procurement cycle. They thrive in the gap between engineering and sales, equally comfortable in a CTO's office and on a customer's Slack channel.
+
+ 
+
+**Responsibilities:**
+
+- Partner with Account Executives through the full sales cycle: discovery, demo, POC, technical close
+
+- Become a domain expert on Prismatic's platform, including our Code Native Integration (CNI) TypeScript SDK, embedded marketplace, and integration workflow builder, so you can run a credible conversation with engineering leaders and ICs alike
+
+- Lead technical demos and proof-of-concept work that translates Prismatic's capabilities into a prospect's specific integration pain
+
+- Scope and run POCs end-to-end: set success criteria, drive customer engagement, prove out the build
+
+- Translate complex technical concepts for non-technical executive audiences, and translate business priorities back to engineering teams (yours and theirs)
+
+- Own technical content during deals: RFPs, security questionnaires, architecture deep-dives
+
+- Work cross-functionally with Product, Engineering, Customer Success, and Support to remove blockers and accelerate deals
+
+- Feed customer signal back to Product and Marketing to influence roadmap and positioning
+
+- Build and contribute reusable assets (demos, playbooks, technical content) to scale the SE function
+
+**Qualifications:**
+
+- 3+ years in a solutions, sales, or pre-sales engineering role at a B2B software company
+
+- Hands-on experience with APIs (REST, GraphQL, webhooks), authentication patterns (OAuth, API keys), and at least one programming language. TypeScript or JavaScript a plus; they're our SDK's native tongue.
+
+- Proven ability to lead technical conversations with both engineering ICs and executive buyers
+
+- Comfortable running discovery, scoping POCs, and managing the technical side of a deal from first conversation through close
+
+- Fluent with modern AI tooling (Claude, Cursor, ChatGPT, or equivalent) and curious about how it's reshaping technical sales work
+
+- Excellent written and verbal communication. Able to make complex things sound simple.
+
+- Self-directed and biased toward action. Comfortable with ambiguity, ownership-oriented, ready to ship.
+
+**Bonus Points:**
+
+- Experience at a B2B SaaS or developer-tools company
+
+- Prior embedded iPaaS or integration platform experience
+
+- Prior software engineering experience. Our customers are developers, and they regularly ask SEs for guidance on CI/CD, deployment patterns, observability, and engineering best practices.
+
+- Built integrations professionally (not just demoed them). Bonus if you've shipped TypeScript or Node-based integration code.
+
+- Built or customized your own AI workflows (custom prompts, agents, plugins, automations)
+
+### The pay range for this role is...
+
+- Base salary: $150,000-$175,000, depending on experience; plus equity
+
+### Life at Prismatic
+
+#### Our Values
+
+Our values shape everything we do—how we make decisions, collaborate, and operate day to day.
+
+- **Give a Shit** – We bring passion and drive to our work. We believe what we're doing matters and we treat it that way.
+
+- **Progress Over Perfection** – We value daily progress, moving fast, and iterating. We prefer a good solution now over a perfect one later.
+
+- **Same Team** – We recognize that we succeed or fail as a group and help each other out. We don't tolerate assholes.
+
+#### What to expect at Prismatic
+
+We operate with urgency, ownership, and high standards. You'll be joining a team that's highly engaged, customer-obsessed, and constantly solving new problems that help B2B software companies scale their integration strategies.
+
+To support this pace, we're also intentional about sustainability. We offer comprehensive benefits, unlimited PTO, and top-tier equipment for remote work. That said, if you're optimizing for predictable 9-5 schedules, this high-velocity environment may not be the right fit. We want every team member to thrive—not just survive.
+
+#### Benefits
+
+🏡 **Remote work:** Our team works remotely across the US; we travel together 2x times a year for company kick-offs and mid-year meetings.
+🏖️ **Unlimited PTO:** We have an unlimited & flexible paid time off (PTO) policy that encourages our team to recharge when they need to.
+🏥 **Medical, dental & vision:** Prismatic offers high-quality medical (Cigna Medical), dental (Guardian Dental) and vision (VSP) care for full-time employees and their dependents.
+**🛡️ Life insurance:** We provide company-paid life insurance, short-term disability insurance, and long-term disability insurance through Guardian.
+🏦 **401(k):** Our 401(k) plan is through Guideline with 4% company match - 100% of the first 3% and 50% of the next 2%.
+💻 **Computer & technology equipment:** We provide the equipment you need to do your best work, applicable to your role + $1k new hire setup stipend.
+
+### Ready to Help Turn Integrations Into Growth Drivers?
+
+We want diverse perspectives and experiences. If this role excites you but you're not sure you check every box, apply anyway. We consider every application thoughtfully and will either move forward with you, connect you with another team that might be a better fit, or keep in touch for future opportunities.

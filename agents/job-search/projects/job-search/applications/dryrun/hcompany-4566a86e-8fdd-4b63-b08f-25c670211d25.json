@@ -1,0 +1,85 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/hcompany/4566a86e-8fdd-4b63-b08f-25c670211d25",
+  "org": "hcompany",
+  "job_id": "4566a86e-8fdd-4b63-b08f-25c670211d25",
+  "job_title": "Implementation Strategist - US",
+  "job_location": "Hybrid SF/Bay Area",
+  "fetched_at": "2026-06-19T04:03:07Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 4,
+    "filled": 4,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "a41916f6-bfc0-47bd-82c2-174904095ef1__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a41916f6-bfc0-47bd-82c2-174904095ef1__systemfield_name"
+    },
+    {
+      "id": "a41916f6-bfc0-47bd-82c2-174904095ef1__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "a41916f6-bfc0-47bd-82c2-174904095ef1__systemfield_email"
+    },
+    {
+      "id": "a41916f6-bfc0-47bd-82c2-174904095ef1__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "a41916f6-bfc0-47bd-82c2-174904095ef1__systemfield_resume"
+    },
+    {
+      "id": "a41916f6-bfc0-47bd-82c2-174904095ef1_954601ec-bbc7-42cf-9e81-a6e8e1714852",
+      "label": "Have you applied to that same position in the last 3 months?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_applied_to_company",
+      "status": "filled",
+      "matched_rule": "previously_applied",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "a41916f6-bfc0-47bd-82c2-174904095ef1_954601ec-bbc7-42cf-9e81-a6e8e1714852"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

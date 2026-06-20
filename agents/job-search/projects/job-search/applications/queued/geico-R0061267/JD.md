@@ -1,0 +1,3 @@
+# Technical Program Manager - Data Center Hardware Implementation (Implementation Manager - DCE) — GEICO (R0061267)
+
+Oversee Data Center Environment (DCE) implementation, ensuring projects are delivered on time and within budget. Develop and maintain project plans including timelines and milestones. Create and manage ordering schedules for equipment and materials. Coordinate logistics to ensure smooth delivery and installation of data center hardware. Oversee hardware evaluation schedules and associated activities. Identify and manage provisioning, vendor coordination, and cross-functional stakeholder alignment. Requires strong program/project management, technical fluency with data center infrastructure, and data-driven execution.

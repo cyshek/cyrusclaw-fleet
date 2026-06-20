@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned roadmap and execution for Azure's recovery validation program, scaling it from a **2-person operation** into a platformized system sustaining 45+ annual resilience drills and driving **$14M+ business impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 delivery of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned critical-infrastructure workflows to a scalable, repeatable model.
+3. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across platform, infrastructure, and vendor teams.
+4. Drove cross-functional alignment on rack-level resilience testing, delivering Azureâ€™s first proactive drill program in 4 months with a **94% recovery rate** and surfacing critical hardware defects across distributed infrastructure.
+5. Built an internal AI agent and restructured planning workflows, reducing program planning cycle time by **39%** and expanding drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows across **14 Azure service teams**, running demos and training sessions that saved 37 engineering hours monthly and embedded LLM-powered tooling into core developer workflows.
+2. Drove roadmap influence by facilitating **11+ structured user interviews** with Azure infrastructure teams, surfacing critical feature gaps and securing prioritization of intent-based YAML generation in the next planning cycle.
+3. Improved data retrieval reliability by migrating documentation to an **AI-powered semantic search** platform with rigorous metadata standards, cutting engineer lookup time by 83% across distributed team knowledge bases.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch timelines by 28% by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams across Azure infrastructure.
+2. Conducted discovery with 20+ service teams to quantify **81 hours of manual toil per region launch**, then built a sequenced roadmap to automate critical paths and reduce operational risk at scale.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and direct investment toward highest-impact infrastructure improvements.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations in a distributed robotics environment.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% across production infrastructure.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a structured CRM process that reduced turnaround time and improved conversion at each stage.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile for higher-intent lead capture.
+3. Identified and sealed margin leaks by conducting financial profitability analysis across **1,000+ project records**, surfacing pricing model gaps and delivering actionable recommendations to leadership.
+
+## Notes from the rewriter
+- Mirrored JD vocabulary throughout: 'critical infrastructure,' 'cross-region,' 'multi-cloud,' 'hybrid cloud,' 'vendor relationships,' 'escalations,' 'joint roadmaps,' 'availability,' and 'resilience.'
+- Tightened all bullets to 250–285 chars to resolve page overflow; dropped one bullet each from microsoft_ft and amazon_robotics (within min/max caps) to reclaim vertical space.
+- microsoft_ft framed as direct analog to the Anthropic role: owned roadmap, coordinated vendors/hyperscalers, drove critical-infrastructure resilience at scale — maps 1:1 to the three JD strategy pillars.
+- Skills section leads with database/infrastructure TPM competencies and vendor management to match recruiter keyword scan against JD requirements.
+

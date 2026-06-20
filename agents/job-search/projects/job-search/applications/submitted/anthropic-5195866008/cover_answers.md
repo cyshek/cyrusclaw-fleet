@@ -1,0 +1,7 @@
+# Cover answers — Anthropic, Product Management, Human Data Platform (5195866008)
+
+## Why Anthropic?
+
+I want to work on AI that's actually trying to go well, and the Human Data Platform job specifically lines up with the kind of work I've been doing for the last two years. At Microsoft, I'm a TPM on Azure's resilience program — my main project is a 0→1 internal platform that took recovery validation from a 2-person, ticket-driven operation to a self-service system running 45+ drills a year across customers like Databricks, Walmart, SAP, and NetApp. That work has been almost entirely about the same loop this role describes: sitting next to engineers and operators, watching where the one-off requests cluster, and pushing the tooling toward reusable infrastructure instead of letting toil compound. I also build AI agents in Copilot Studio for internal workflows, so I've spent real time on the "what makes a human-in-the-loop pipeline actually produce useful data" side of things.
+
+What pulls me to Anthropic specifically is that the bet on safety, interpretability, and steerability is one I actually agree with, and the Human Data Platform team sits at the exact intersection I care about — research, infrastructure, vendor operations, and data quality, all of which compound or decay together. I'd be excited to bring the same "find the pattern, build the platform, kill the toil" instinct to the tooling that shapes how Claude learns.

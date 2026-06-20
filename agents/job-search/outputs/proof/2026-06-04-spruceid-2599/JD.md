@@ -1,0 +1,142 @@
+# Technical Program Manager (TPM)
+
+**Company:** SpruceID
+**Location:** United States
+**Apply:** https://jobs.ashbyhq.com/spruceid/130c2bb1-35f4-4c19-b252-f64614b4bcb0
+**Ashby Org:** spruceid
+**Ashby Job ID:** 130c2bb1-35f4-4c19-b252-f64614b4bcb0
+
+---
+
+**Technical Program Manager (TPM)**
+
+**Location: **U.S. (Remote but must be based in the continental US; Mountain/Central time zone preferred)**
+Clearance:** Must be eligible and able to pass a government background check
+
+## **About Spruce**
+
+Spruce builds **privacy-preserving, standards-based digital identity and credentialing solutions **that give individuals control of their information while enabling governments and enterprises to deliver secure, interoperable services. We partner with private and public-sector organizations to modernize how identity is issued, verified, and used.
+
+## **The Role**
+
+We are seeking a **Technical Program Manager (TPM) **to lead delivery of complex, high-stakes **identity and credentialing software solutions and programs** across government and enterprise environments.
+
+This is a high-autonomy, highly multifaceted role that blends technical delivery, customer ownership, and operational leadership. In many ways, this role functions as a Technical Success Manager / delivery lead hybrid—serving as the primary point of contact for one or more strategic customers.
+
+The TPM is expected to operate as the connective tissue between engineering teams and external stakeholders, especially CTOs, CIOs, product leaders, and program owners on the customer side.
+
+This role requires someone who can independently understand what the organization is trying to achieve, why it matters, and how to deliver it end-to-end—even when requirements are incomplete or evolving.
+
+## **Core Responsibilities**
+
+### **1. Customer & Program Ownership**
+
+- Serve as the primary point of contact for assigned customer programs
+
+- Build deep, trusted relationships with technical and executive stakeholders (CTOs, CIOs, product leaders, procurement teams)
+
+- Understand customer objectives and uncover the “problem behind the problem”
+
+- Maintain clarity between what is requested vs. what is contractually agreed vs. what is technically feasible
+
+- Operate confidently in public sector and enterprise contracting environments
+
+### **2. Technical Program Delivery**
+
+- Translate customer and policy requirements into executable technical delivery plans
+
+- Partner closely with engineering and product teams to define epics, milestones, and delivery roadmaps
+
+- Participate actively in technical conversations (cloud architecture, APIs, containers, identity systems, digital signatures, etc.)
+
+- Independently field technical questions (e.g., AWS vs GCP tradeoffs, deployment models, integration patterns)
+
+**Must be technically fluent enough to:**
+
+- Participate in architecture-level discussions without relying on engineering escalation
+
+- Understand system design tradeoffs and communicate implications clearly to non-technical stakeholders
+
+### **3. Contract-Aware Execution**
+
+- Read, interpret, and execute against customer contracts and SOWs
+
+- Identify obligations, constraints, and deliverables within agreements
+
+- Ensure delivery aligns with contractual commitments and scope boundaries
+
+- Support translation of contract requirements into technical execution plans
+
+*(This is a core requirement of the role, not optional.)*
+
+### **4. Multi-Program Management**
+
+- Manage multiple concurrent engagements across private and public sector customers
+
+- Prioritize effectively across competing demands and delivery timelines
+
+- Determine when to escalate, when to unblock independently, and when to engage engineering resources
+
+- Protect engineering time by filtering, structuring, and reducing unnecessary meeting load
+
+### **5. Execution Excellence & Stakeholder Management**
+
+- Lead recurring customer meetings, technical working sessions, and executive updates
+
+- Run structured governance cadences across internal and external stakeholders
+
+- Deliver clear communication in high-stakes environments
+
+- Maintain strong alignment across engineering, product, and customer leadership teams
+
+### **6. Risk, Dependency & Delivery Management**
+
+- Identify delivery risks early and proactively mitigate across teams
+
+- Manage dependencies across engineering, product, and customer stakeholders
+
+- Ensure alignment on scope, timelines, and technical feasibility
+
+- Surface gaps between customer expectations and delivery reality
+
+## **What You Bring**
+
+- 3–7+ years in Technical Program Management, implementation delivery, or systems-focused customer success roles
+
+- Strong technical fluency (APIs, cloud infrastructure, system architecture, identity concepts preferred)
+
+- Proven ability to operate in complex, ambiguous, multi-stakeholder environments
+
+- Strong understanding of how software systems are built and delivered
+
+- Ability to independently interpret contracts, SOWs, or technical requirements
+
+- Excellent executive communication and relationship-building skills
+
+- Ability to protect engineering time while maintaining customer satisfaction
+
+## **Nice to Have**
+
+- Experience working with enterprise or government customers
+
+- Experience in identity, IAM / ICAM, zero trust, credentialing, or authentication systems
+
+- Familiarity with FedRAMP, NIST frameworks, or federal security standards
+
+- PMP or other program management certifications
+
+- Consulting, federal contracting, or enterprise transformation background
+
+- Prior engineering or deeply technical systems experience (strong advantage)
+
+## **Why This Role Matters**
+
+- Own delivery of mission-critical identity infrastructure programs
+
+- Work directly with senior government and enterprise stakeholders
+
+- Operate at the intersection of policy, engineering, and real-world systems delivery
+
+- Join a small, high-trust team where autonomy and judgment matter
+
+- Help shape how secure digital identity systems are delivered at scale

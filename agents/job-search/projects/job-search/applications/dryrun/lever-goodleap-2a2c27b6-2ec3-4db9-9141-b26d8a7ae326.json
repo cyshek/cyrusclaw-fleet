@@ -1,0 +1,852 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/goodleap/2a2c27b6-2ec3-4db9-9141-b26d8a7ae326",
+  "apply_url": "https://jobs.lever.co/goodleap/2a2c27b6-2ec3-4db9-9141-b26d8a7ae326/apply",
+  "org": "goodleap",
+  "job_id": "2a2c27b6-2ec3-4db9-9141-b26d8a7ae326",
+  "job_title": "GoodLeap - Product Manager, Payments",
+  "fetched_at": "2026-06-04T10:05:34Z",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 48,
+    "filled": 26,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 18,
+    "blockers": 9
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field0]",
+      "label": "Legal First Name",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field1]",
+      "label": "Legal Last Name",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field2]",
+      "label": "Home Phone",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field3]",
+      "label": "Mailing Address Line 1",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field4]",
+      "label": "Mailing Address Line 2",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field5]",
+      "label": "City",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field6]",
+      "label": "State",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "WA",
+      "source": "address.state",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field7]",
+      "label": "Zip Code",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "98034",
+      "source": "address.zip",
+      "status": "filled",
+      "matched_rule": "zip",
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field8]",
+      "label": "Were you referred by a current employee of GoodLeap LLC?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "39ccf985-d1dd-4f07-a69a-dbb91f06b7a7"
+        },
+        {
+          "label": "No",
+          "value": "0788b644-cd46-41e3-bf4d-6a9255b33de2"
+        }
+      ],
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field9]",
+      "label": "If yes, please list employee name:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please list employee name:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field10]",
+      "label": "Have you previously worked for GoodLeap LLC?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "11cc9fff-ce50-4b01-935e-6b95cebe1fc5"
+        },
+        {
+          "label": "No",
+          "value": "f6fcf095-b31c-4f8a-a905-9b62c3d1dca8"
+        }
+      ],
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field11]",
+      "label": "If yes, please list position:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please list position:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field12]",
+      "label": "Are you subject to any type of agreement with a current or former employer or entity that would restrict your ability to work at GoodLeap LLC (e.g., non-compete, confidentiality, non-disclosure)?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.non_compete_agreement",
+      "status": "filled",
+      "matched_rule": "non_compete",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "0e9acc2a-3157-460c-b943-95476a295a0c"
+        },
+        {
+          "label": "No",
+          "value": "63c546d9-92d9-4278-a689-1f34593f5540"
+        }
+      ],
+      "card_text": "Equal Employment Opportunity: GoodLeap, LLC. (\"GoodLeap\"), is an Equal Opportunity Employer. Federal, state and local laws prohibit discrimination because of race, color, sex, or sexual orientation, age, religion, creed, natural origin, disability, marital status, status as a disabled veteran or Veteran of the Vietnam era, or any other characteristics protected by federal, state or local laws."
+    },
+    {
+      "id": "cards[373e3e90-4593-4ab1-9224-abcaef9fae8e][field0]",
+      "label": "University",
+      "type": "input_text",
+      "lever_type": "university",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "card_text": "Education"
+    },
+    {
+      "id": "cards[373e3e90-4593-4ab1-9224-abcaef9fae8e][field1]",
+      "label": "Degree",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Bachelor of Science",
+      "source": "education.degree",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": null,
+      "card_text": "Education"
+    },
+    {
+      "id": "cards[373e3e90-4593-4ab1-9224-abcaef9fae8e][field2]",
+      "label": "No. of Years Attended",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='No. of Years Attended'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Education"
+    },
+    {
+      "id": "cards[373e3e90-4593-4ab1-9224-abcaef9fae8e][field3]",
+      "label": "Graduated?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Graduated?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "d2132b14-1390-472c-8fb2-c60ab43255f9"
+        },
+        {
+          "label": "No",
+          "value": "f768229a-ea7d-4560-ac39-2e5271c3cd0c"
+        }
+      ],
+      "card_text": "Education"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field0]",
+      "label": "Company 1",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Company 1'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field1]",
+      "label": "Title",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Title'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field2]",
+      "label": "Years Worked",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Years Worked'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field3]",
+      "label": "Company 2",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Company 2'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field4]",
+      "label": "Title",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Title'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field5]",
+      "label": "Years Worked",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Years Worked'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field6]",
+      "label": "Are you legally eligible to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "lever_default (required-select last-resort -> Yes)",
+      "status": "filled_needs_review",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "736c0d60-39d9-4739-ae09-a701db8e306c"
+        },
+        {
+          "label": "No",
+          "value": "f0484e4b-7f6d-42d9-b941-ed9bc1b5585d"
+        }
+      ],
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field7]",
+      "label": "Will you now, or in the future, require visa sponsorship for employment at GoodLeap?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "336281b9-3df2-4966-897f-b8ad2a4a5efd"
+        },
+        {
+          "label": "No",
+          "value": "ca7f22fa-55d2-4746-8530-bafdcaa70486"
+        }
+      ],
+      "card_text": "Employment"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field0]",
+      "label": "In connection with GoodLeap consideration of me for employment, continued employment, promotion, or reassignment, I understand that GoodLeap may obtain a consumer report and/or an investigative consumer report. GoodLeap may also conduct its own investigative inquiries into my background that may include obtaining such things as criminal, driving, personal reference(s), and job reference(s) pertaining to me. These inquiries will be conducted to provide GoodLeap with information regarding my character, general reputation, personal characteristics, mode of living, work records, salary history, characteristics, skills and abilities, education and training, employment experience, past job performance, reasons for termination of previous employment and other pertinent information. (Please initial.)",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='In connection with GoodLeap consideration of me for employment, continued employment, promotion, or reassignment, I understand that GoodLeap may obtain a consumer report and/or an investigative consumer report. GoodLeap may also conduct its own investigative inquiries into my background that may include obtaining such things as criminal, driving, personal reference(s), and job reference(s) pertaining to me. These inquiries will be conducted to provide GoodLeap with information regarding my character, general reputation, personal characteristics, mode of living, work records, salary history, characteristics, skills and abilities, education and training, employment experience, past job performance, reasons for termination of previous employment and other pertinent information. (Please initial.)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Acknowledgements"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field1]",
+      "label": "I understand that for this purpose GoodLeap or persons acting on its behalf will be requesting information from various federal, state, and local governmental agencies, previous employers and their employees, personal acquaintances of mine, and other appropriate resources of information that maintain records or possess knowledge about my education, employment, criminal, driving and other relevant activities, experiences and records, including, but not limited to, my character, general reputation, personal characteristics, and mode of living. I authorize, without reservation, any person or entity contacted by GoodLeap or anyone acting on its behalf, to furnish the above‐stated information, and I release any such person or entity from any and all liability for furnishing such information. I also release GoodLeap from any and all liability for conducting such an investigation. I authorize GoodLeap to disclose my Social Security Number in order to obtain necessary information. I understand that if I refuse to execute this authorization, GoodLeap may refuse to grant employment based on this refusal. A copy of this executed authorization shall be valid as the original. (Please initial.)",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "WA",
+      "source": "address.state",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": null,
+      "card_text": "Acknowledgements"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field2]",
+      "label": "I understand that this employment application and any other documents, including policies, handbooks, guidelines, practices, benefits or manuals, are not intended to create any contractual obligation which in any way conflicts with GoodLeap’s policy that the employment relationship between GoodLeap and each employee is at‐will and can be terminated, with or without cause, and with or without notice at any time, at the option of either GoodLeap or the employee. I further understand that any oral or written statements to the contrary are expressly disavowed and should not and cannot be relied upon. (Please initial.)",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='I understand that this employment application and any other documents, including policies, handbooks, guidelines, practices, benefits or manuals, are not intended to create any contractual obligation which in any way conflicts with GoodLeap’s policy that the employment relationship between GoodLeap and each employee is at‐will and can be terminated, with or without cause, and with or without notice at any time, at the option of either GoodLeap or the employee. I further understand that any oral or written statements to the contrary are expressly disavowed and should not and cannot be relied upon. (Please initial.)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Acknowledgements"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field3]",
+      "label": "I understand that as a condition of employment with GoodLeap successful applicants must provide, within three days after beginning employment, documentation to prove identity and proper authorization to work in the United States. Specific instructions will be given prior to the first day of employment regarding the documents required.  GoodLeap participates in E-Verify at all hiring sites throughout the United States.  Individuals hired at hiring sites enrolled in E-Verify will have their Form I-9 information submitted to E-Verify. (Please initial.)",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='I understand that as a condition of employment with GoodLeap successful applicants must provide, within three days after beginning employment, documentation to prove identity and proper authorization to work in the United States. Specific instructions will be given prior to the first day of employment regarding the documents required.  GoodLeap participates in E-Verify at all hiring sites throughout the United States.  Individuals hired at hiring sites enrolled in E-Verify will have their Form I-9 information submitted to E-Verify. (Please initial.)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Acknowledgements"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field4]",
+      "label": "I hereby acknowledge that I have read the above statements and understand them. I certify that I, the undersigned applicant, have personally completed this application. I declare under penalty of perjury that the facts contained in the application (or any resume or other documents submitted) are true and complete to the best of my knowledge. I understand that any misrepresentations or omissions will disqualify me from further consideration for employment, and will be justification for my dismissal from employment, if discovered at a later date. (Please initial.)",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes)",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": null,
+      "card_text": "Acknowledgements"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field5]",
+      "label": "Please enter your full legal name below as signature:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "card_text": "Acknowledgements"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field0]",
+      "label": "Name",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Name'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "References"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field1]",
+      "label": "Work Relationship",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Work Relationship'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "References"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field2]",
+      "label": "Occupation",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Occupation'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "References"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field3]",
+      "label": "No. of Years Acquainted",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='No. of Years Acquainted'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "References"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field4]",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "card_text": "References"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "required": false,
+      "reason": "portfolio_url is null"
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field9]",
+      "label": "If yes, please list employee name:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please list employee name:'"
+    },
+    {
+      "id": "cards[8ef93096-9b45-43b5-b615-80906d5c28b2][field11]",
+      "label": "If yes, please list position:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please list position:'"
+    },
+    {
+      "id": "cards[373e3e90-4593-4ab1-9224-abcaef9fae8e][field2]",
+      "label": "No. of Years Attended",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='No. of Years Attended'"
+    },
+    {
+      "id": "cards[373e3e90-4593-4ab1-9224-abcaef9fae8e][field3]",
+      "label": "Graduated?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Graduated?'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field0]",
+      "label": "Company 1",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Company 1'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field1]",
+      "label": "Title",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Title'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field2]",
+      "label": "Years Worked",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Years Worked'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field3]",
+      "label": "Company 2",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Company 2'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field4]",
+      "label": "Title",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Title'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field5]",
+      "label": "Years Worked",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Years Worked'"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field0]",
+      "label": "In connection with GoodLeap consideration of me for employment, continued employment, promotion, or reassignment, I understand that GoodLeap may obtain a consumer report and/or an investigative consumer report. GoodLeap may also conduct its own investigative inquiries into my background that may include obtaining such things as criminal, driving, personal reference(s), and job reference(s) pertaining to me. These inquiries will be conducted to provide GoodLeap with information regarding my character, general reputation, personal characteristics, mode of living, work records, salary history, characteristics, skills and abilities, education and training, employment experience, past job performance, reasons for termination of previous employment and other pertinent information. (Please initial.)",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='In connection with GoodLeap consideration of me for employment, continued employment, promotion, or reassignment, I understand that GoodLeap may obtain a consumer report and/or an investigative consumer report. GoodLeap may also conduct its own investigative inquiries into my background that may include obtaining such things as criminal, driving, personal reference(s), and job reference(s) pertaining to me. These inquiries will be conducted to provide GoodLeap with information regarding my character, general reputation, personal characteristics, mode of living, work records, salary history, characteristics, skills and abilities, education and training, employment experience, past job performance, reasons for termination of previous employment and other pertinent information. (Please initial.)'"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field2]",
+      "label": "I understand that this employment application and any other documents, including policies, handbooks, guidelines, practices, benefits or manuals, are not intended to create any contractual obligation which in any way conflicts with GoodLeap’s policy that the employment relationship between GoodLeap and each employee is at‐will and can be terminated, with or without cause, and with or without notice at any time, at the option of either GoodLeap or the employee. I further understand that any oral or written statements to the contrary are expressly disavowed and should not and cannot be relied upon. (Please initial.)",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='I understand that this employment application and any other documents, including policies, handbooks, guidelines, practices, benefits or manuals, are not intended to create any contractual obligation which in any way conflicts with GoodLeap’s policy that the employment relationship between GoodLeap and each employee is at‐will and can be terminated, with or without cause, and with or without notice at any time, at the option of either GoodLeap or the employee. I further understand that any oral or written statements to the contrary are expressly disavowed and should not and cannot be relied upon. (Please initial.)'"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field3]",
+      "label": "I understand that as a condition of employment with GoodLeap successful applicants must provide, within three days after beginning employment, documentation to prove identity and proper authorization to work in the United States. Specific instructions will be given prior to the first day of employment regarding the documents required.  GoodLeap participates in E-Verify at all hiring sites throughout the United States.  Individuals hired at hiring sites enrolled in E-Verify will have their Form I-9 information submitted to E-Verify. (Please initial.)",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='I understand that as a condition of employment with GoodLeap successful applicants must provide, within three days after beginning employment, documentation to prove identity and proper authorization to work in the United States. Specific instructions will be given prior to the first day of employment regarding the documents required.  GoodLeap participates in E-Verify at all hiring sites throughout the United States.  Individuals hired at hiring sites enrolled in E-Verify will have their Form I-9 information submitted to E-Verify. (Please initial.)'"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field0]",
+      "label": "Name",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Name'"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field1]",
+      "label": "Work Relationship",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Work Relationship'"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field2]",
+      "label": "Occupation",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Occupation'"
+    },
+    {
+      "id": "cards[dc289ee2-c3de-4c3e-bfef-9ef8924ff4b8][field3]",
+      "label": "No. of Years Acquainted",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='No. of Years Acquainted'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field0]",
+      "label": "Company 1",
+      "reason": "no LABEL_RULES match for label='Company 1'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field1]",
+      "label": "Title",
+      "reason": "no LABEL_RULES match for label='Title'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field2]",
+      "label": "Years Worked",
+      "reason": "no LABEL_RULES match for label='Years Worked'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field3]",
+      "label": "Company 2",
+      "reason": "no LABEL_RULES match for label='Company 2'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field4]",
+      "label": "Title",
+      "reason": "no LABEL_RULES match for label='Title'"
+    },
+    {
+      "id": "cards[48984c74-285c-44f7-885e-4ca1a5963e32][field5]",
+      "label": "Years Worked",
+      "reason": "no LABEL_RULES match for label='Years Worked'"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field0]",
+      "label": "In connection with GoodLeap consideration of me for employment, continued employment, promotion, or reassignment, I understand that GoodLeap may obtain a consumer report and/or an investigative consumer report. GoodLeap may also conduct its own investigative inquiries into my background that may include obtaining such things as criminal, driving, personal reference(s), and job reference(s) pertaining to me. These inquiries will be conducted to provide GoodLeap with information regarding my character, general reputation, personal characteristics, mode of living, work records, salary history, characteristics, skills and abilities, education and training, employment experience, past job performance, reasons for termination of previous employment and other pertinent information. (Please initial.)",
+      "reason": "no LABEL_RULES match for label='In connection with GoodLeap consideration of me for employment, continued employment, promotion, or reassignment, I understand that GoodLeap may obtain a consumer report and/or an investigative consumer report. GoodLeap may also conduct its own investigative inquiries into my background that may include obtaining such things as criminal, driving, personal reference(s), and job reference(s) pertaining to me. These inquiries will be conducted to provide GoodLeap with information regarding my character, general reputation, personal characteristics, mode of living, work records, salary history, characteristics, skills and abilities, education and training, employment experience, past job performance, reasons for termination of previous employment and other pertinent information. (Please initial.)'"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field2]",
+      "label": "I understand that this employment application and any other documents, including policies, handbooks, guidelines, practices, benefits or manuals, are not intended to create any contractual obligation which in any way conflicts with GoodLeap’s policy that the employment relationship between GoodLeap and each employee is at‐will and can be terminated, with or without cause, and with or without notice at any time, at the option of either GoodLeap or the employee. I further understand that any oral or written statements to the contrary are expressly disavowed and should not and cannot be relied upon. (Please initial.)",
+      "reason": "no LABEL_RULES match for label='I understand that this employment application and any other documents, including policies, handbooks, guidelines, practices, benefits or manuals, are not intended to create any contractual obligation which in any way conflicts with GoodLeap’s policy that the employment relationship between GoodLeap and each employee is at‐will and can be terminated, with or without cause, and with or without notice at any time, at the option of either GoodLeap or the employee. I further understand that any oral or written statements to the contrary are expressly disavowed and should not and cannot be relied upon. (Please initial.)'"
+    },
+    {
+      "id": "cards[9d360eee-047f-46d2-a2f3-bf1b13f537e3][field3]",
+      "label": "I understand that as a condition of employment with GoodLeap successful applicants must provide, within three days after beginning employment, documentation to prove identity and proper authorization to work in the United States. Specific instructions will be given prior to the first day of employment regarding the documents required.  GoodLeap participates in E-Verify at all hiring sites throughout the United States.  Individuals hired at hiring sites enrolled in E-Verify will have their Form I-9 information submitted to E-Verify. (Please initial.)",
+      "reason": "no LABEL_RULES match for label='I understand that as a condition of employment with GoodLeap successful applicants must provide, within three days after beginning employment, documentation to prove identity and proper authorization to work in the United States. Specific instructions will be given prior to the first day of employment regarding the documents required.  GoodLeap participates in E-Verify at all hiring sites throughout the United States.  Individuals hired at hiring sites enrolled in E-Verify will have their Form I-9 information submitted to E-Verify. (Please initial.)'"
+    }
+  ],
+  "meta": {
+    "og_title": "GoodLeap - Product Manager, Payments",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

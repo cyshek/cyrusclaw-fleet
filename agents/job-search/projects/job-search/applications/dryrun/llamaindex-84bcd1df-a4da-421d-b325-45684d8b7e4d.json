@@ -1,0 +1,166 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/llamaindex/84bcd1df-a4da-421d-b325-45684d8b7e4d",
+  "org": "llamaindex",
+  "job_id": "84bcd1df-a4da-421d-b325-45684d8b7e4d",
+  "job_title": "Applied AI Solutions Architect (SF)",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-31T00:16:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4__systemfield_name"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4__systemfield_email"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4__systemfield_resume"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_dc6346a7-ea6c-4470-9669-cf229791c241",
+      "label": "Will you now or in the future require sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_dc6346a7-ea6c-4470-9669-cf229791c241"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_a8aed6ff-cbed-4343-87fc-ba050c822625",
+      "label": "We ask our full-time employees to work out of our San Francisco office at least 3 days a week. Are you able to accommodate that schedule?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_a8aed6ff-cbed-4343-87fc-ba050c822625"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_bdef39fe-ecf2-4ddb-88d1-46c9c7ac6b28",
+      "label": "Which excites you most about working at LlamaIndex?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Which excites you most about working at LlamaIndex?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_bdef39fe-ecf2-4ddb-88d1-46c9c7ac6b28"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_128f3994-041b-4d6d-a66f-d38ac7ef2bf0",
+      "label": "Linkedin URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_128f3994-041b-4d6d-a66f-d38ac7ef2bf0"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_d6a81c8d-c124-4856-95c2-18047ec52bb3",
+      "label": "Twitter URL",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_d6a81c8d-c124-4856-95c2-18047ec52bb3"
+    },
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_ebece8f8-69cd-4596-8557-4e5c2488ccc4",
+      "label": "Other relevant URLs",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "other_links optional -> blank",
+      "status": "filled",
+      "matched_rule": "other_links",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_ebece8f8-69cd-4596-8557-4e5c2488ccc4"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "bcf0cd0a-81a3-4178-aa76-3e9825659fc4_bdef39fe-ecf2-4ddb-88d1-46c9c7ac6b28",
+      "label": "Which excites you most about working at LlamaIndex?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Which excites you most about working at LlamaIndex?'"
+    }
+  ],
+  "blockers": []
+}

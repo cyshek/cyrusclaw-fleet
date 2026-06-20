@@ -1,0 +1,62 @@
+# Forward Deployed Engineer
+
+**Company:** Addepar
+**Location:** Remote, USA
+**Apply:** https://job-boards.greenhouse.io/addepar1/jobs/7760220002
+**Greenhouse ID:** 7760220002
+
+---
+
+**Who We Are**
+
+Addepar is a global data and AI platform empowering investment professionals to turn complex financial information into actionable intelligence. Addepar unifies portfolio, market and client data in a total portfolio view and delivers AI-powered insights within investment and client workflows. More than 1,400 firms in nearly 60 countries use Addepar to manage and advise on nearly $9 trillion in assets. Its open platform integrates with nearly 650 software, data and consulting partners to power end-to-end investment operations across firms of all sizes and complexity. Addepar supports clients worldwide with offices in New York City, Salt Lake City, London, Edinburgh, Pune, Dubai, Geneva and São Paulo. 
+
+#### **The Role**
+
+Forward Deployed Engineers (FDEs) partner directly with key technical & strategic counterparts at Addepar's largest enterprise engagements. From building custom data integrations to extending platform capabilities; an FDE operates with the autonomy and ownership to drive ground-breaking change for Addepar's customers. As an FDE, you will work in small teams with minimal supervision to set priorities, lead client interactions, and be responsible for the end-to-end delivery of critically important projects.
+
+Each engagement will take on a slightly different shape, providing a wide breadth of opportunities to solve complex technical challenges, explore new and emerging technologies, and most importantly deliver high value customer outcomes. As an FDE, you will be responsible for taking lessons learned and value gathered in the field and turning it into scalable and repeatable long term solutions. You will spend time collaborating with teams across Addepar's engineering and product organization; providing valuable insight to inform design strategy and contributing directly to the core product code base.
+
+FDE operates as an extension of the platform rather than a services organization. This distinction allows FDE to partner with customers in a highly collaborative fashion with a focus on measurable outcomes, rather than billable hours. You will partner with other members of the FDE team to continuously evaluate the dynamic landscape of opportunities, strategic priorities, and commitments - ensuring that the team is always focused on solving the most important & impactful problems. 
+
+Addepar takes a market-based approach to pay. A successful candidate’s starting pay will be determined based on the role, job-related skills, experience, qualifications, work location, and market conditions. The range displayed on each job posting reflects the minimum and maximum target base salary for roles in Colorado, California, and New York.
+
+The current range for this role is $107,000 - $168,000 (base salary) + bonus + equity + benefits.
+
+Your recruiter can share more about the specific salary range for your preferred location during the hiring process. Additionally, these ranges reflect the base salary only, and do not include bonus, equity, or benefits.
+
+Applicants must be legally authorized to work in the United States for any employer without requiring current or future visa sponsorship (for example, employment-based visas such as H-1B, F-1/OPT, or similar), and must be authorized to begin work in the U.S. on their first day of employment.
+
+#### **Who You Are**
+
+- 2+ years experience as a professional Software Engineer
+
+- Proficiency with one or more object-oriented programming language (Java and/or Python preferred) and/or compiled language (Go, Rust, Scala preferred)
+
+- Experience building systems with Relational or NoSQL database storage
+
+- BS+ in Computer Science, Software Engineering, Mathematics or other highly technical field paired with software industry experience.
+
+- Ability to lead complex projects, relationships and timelines. Excels working in a cross disciplinary team/environment.
+
+- (Plus) Experience in one or more strongly typed server side programming language (ex: Java, C++).
+
+- (Plus) Experience with distribution storage & execution frameworks (ex. Arrow, Spark, Flink, Storm)
+
+**Our Values **
+
+- **Act Like an Owner - **Think and operate with intention, purpose and care. Own outcomes.
+
+- **Build Together - **Collaborate to unlock the best solutions. Deliver lasting value. 
+
+- **Champion Our Clients - **Exceed client expectations. Our clients’ success is our success. 
+
+- **Drive Innovation - **Be bold and unconstrained in problem solving. Transform the industry. 
+
+- **Embrace Learning - **Engage our community to broaden our perspective. Bring a growth mindset. 
+
+In addition to our core values, Addepar is proud to be an equal opportunity employer. We seek to bring together diverse ideas, experiences, skill sets, perspectives, backgrounds and identities to drive innovative solutions. We commit to promoting a welcoming environment where inclusion and belonging are held as a shared responsibility.
+
+We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.
+
+PHISHING SCAM WARNING: Addepar is among several companies recently made aware of a phishing scam involving con artists posing as hiring managers recruiting via email, text and social media. The imposters are creating misleading email accounts, conducting remote “interviews,” and making fake job offers in order to collect personal and financial information from unsuspecting individuals. Please be aware that no job offers will be made from Addepar without a formal interview process. Additionally, Addepar will not ask you to purchase equipment or supplies as part of your onboarding process. If you have any questions, please reach out to [ta-operations@addepar.com](mailto:tainfo@addepar.com).

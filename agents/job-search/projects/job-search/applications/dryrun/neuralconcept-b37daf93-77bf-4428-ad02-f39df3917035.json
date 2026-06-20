@@ -1,0 +1,224 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/neuralconcept/b37daf93-77bf-4428-ad02-f39df3917035",
+  "org": "neuralconcept",
+  "job_id": "b37daf93-77bf-4428-ad02-f39df3917035",
+  "job_title": "Solutions Engineer",
+  "job_location": "New York Metropolitan Area (Jersey City)",
+  "fetched_at": "2026-06-02T06:54:24Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878__systemfield_name"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878__systemfield_email"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878__systemfield_resume",
+      "label": "CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878__systemfield_resume"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_a21e7659-a5c1-4d61-be5e-914ffdc09ffa",
+      "label": "Your official address",
+      "type": "input_text",
+      "required": true,
+      "value": "12420 NE 120th St #1437, Kirkland, WA, 98034, United States",
+      "source": "ashby_full_address (street+city+state+zip+country)",
+      "status": "filled",
+      "matched_rule": "full_address",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_a21e7659-a5c1-4d61-be5e-914ffdc09ffa"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_fae8e12f-3ad8-4dd8-bf94-afc16defec0d",
+      "label": "Social Network and Web Links",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "ashby_linkedin_url (contact.linkedin)",
+      "status": "filled",
+      "matched_rule": "linkedin_url",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_fae8e12f-3ad8-4dd8-bf94-afc16defec0d"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_93c47015-7e6a-4cb8-814c-f03ac5b28dd5",
+      "label": "Can you confirm your salary expectation? ",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_93c47015-7e6a-4cb8-814c-f03ac5b28dd5"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_8328ac8e-4aa9-4d74-aee2-1a944abd007e",
+      "label": "What is your desired start date?",
+      "type": "input_text",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_8328ac8e-4aa9-4d74-aee2-1a944abd007e"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_e88b5862-421b-4d5a-82b5-67c931714958",
+      "label": "Are you eligible to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am a US citizen, green card holder or VISA that does not require sponsorship",
+      "source": "work_authorization.authorized_to_work_us (matched US-citizen/GC/no-sponsorship-VISA combined option)",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "I am a US citizen, green card holder or VISA that does not require sponsorship",
+          "value": "I am a US citizen, green card holder or VISA that does not require sponsorship"
+        },
+        {
+          "label": "VISA that would require sponsorship",
+          "value": "VISA that would require sponsorship"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_e88b5862-421b-4d5a-82b5-67c931714958"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_083633d2-0e11-4a17-a7da-e4dc57c2aa58",
+      "label": "Do you have an Engineering background (outside of software or computer science)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_083633d2-0e11-4a17-a7da-e4dc57c2aa58"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_84b5d332-ddbe-4f3f-978b-b59cac305410",
+      "label": "How many years of experience (after Master’s) do you have?",
+      "type": "input_text",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_84b5d332-ddbe-4f3f-978b-b59cac305410"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_84144007-cf53-401f-9171-f6a585cca63c",
+      "label": "Do you have past experience in a customer-facing role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_84144007-cf53-401f-9171-f6a585cca63c"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_f21f6bde-6cdd-4c89-b3db-acb8a782b883",
+      "label": "Do you understand this posting is for an ML Application Engineer position (not LLM or ML Engineer)? This means it is a customer-facing position, working on projects that combine physics, simulation ,and ML.  What excites you about the Engineering aspect of the position?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Neuralconcept because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Neuralconcept is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Neuralconcept while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Neuralconcept aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Neuralconcept')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_f21f6bde-6cdd-4c89-b3db-acb8a782b883"
+    },
+    {
+      "id": "556390f8-39fd-461b-8e1f-1947f0631878_0a65d0ea-8f72-4ebe-935e-7ea10aa88965",
+      "label": "Are you familiar with CAD and CAE software? Please be specific and mention any relevant engineering software experience you have.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "556390f8-39fd-461b-8e1f-1947f0631878_0a65d0ea-8f72-4ebe-935e-7ea10aa88965"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

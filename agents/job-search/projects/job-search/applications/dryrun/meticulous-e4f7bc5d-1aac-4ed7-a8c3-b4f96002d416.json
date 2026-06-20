@@ -1,0 +1,111 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/meticulous/e4f7bc5d-1aac-4ed7-a8c3-b4f96002d416",
+  "org": "meticulous",
+  "job_id": "e4f7bc5d-1aac-4ed7-a8c3-b4f96002d416",
+  "job_title": "Forward Deployed Engineer, San Francisco",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-02T03:39:51Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "0b35e18e-21d3-4ffe-913f-08a009ce328b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "0b35e18e-21d3-4ffe-913f-08a009ce328b__systemfield_name"
+    },
+    {
+      "id": "0b35e18e-21d3-4ffe-913f-08a009ce328b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "0b35e18e-21d3-4ffe-913f-08a009ce328b__systemfield_email"
+    },
+    {
+      "id": "0b35e18e-21d3-4ffe-913f-08a009ce328b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "0b35e18e-21d3-4ffe-913f-08a009ce328b__systemfield_resume"
+    },
+    {
+      "id": "0b35e18e-21d3-4ffe-913f-08a009ce328b_3d6a01b6-2859-4dca-b056-269b98730fc1",
+      "label": "Do you need visa sponsorship for your selected location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "0b35e18e-21d3-4ffe-913f-08a009ce328b_3d6a01b6-2859-4dca-b056-269b98730fc1"
+    },
+    {
+      "id": "0b35e18e-21d3-4ffe-913f-08a009ce328b_05abb9dc-d6c7-4a8d-9a9e-465a888b2c8c",
+      "label": "What % mark or GPA did you get at university?",
+      "type": "textarea",
+      "required": true,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "0b35e18e-21d3-4ffe-913f-08a009ce328b_05abb9dc-d6c7-4a8d-9a9e-465a888b2c8c"
+    },
+    {
+      "id": "0b35e18e-21d3-4ffe-913f-08a009ce328b_f7af2243-6f7a-4ef1-8380-2b88f30def78",
+      "label": "In a sentence or two, why are you interested in Meticulous?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Meticulous because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Meticulous is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Meticulous while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Meticulous aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Meticulous')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "0b35e18e-21d3-4ffe-913f-08a009ce328b_f7af2243-6f7a-4ef1-8380-2b88f30def78"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

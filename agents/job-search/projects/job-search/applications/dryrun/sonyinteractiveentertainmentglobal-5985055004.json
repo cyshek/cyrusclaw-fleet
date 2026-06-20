@@ -1,0 +1,614 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/sonyinteractiveentertainmentglobal/jobs/5985055004",
+  "org": "sonyinteractiveentertainmentglobal",
+  "job_id": "5985055004",
+  "job_title": "Product Manager",
+  "job_location": "United States, Remote",
+  "fetched_at": "2026-05-25T17:58:15Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/sonyinteractiveentertainmentglobal/jobs/5985055004?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 29,
+    "filled": 21,
+    "filled_needs_review": 0,
+    "declined": 8,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_17719675004",
+      "label": "Have you ever worked for a Sony company previously?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17719676004",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 79976798004
+        },
+        {
+          "label": "No",
+          "value": 79976799004
+        }
+      ]
+    },
+    {
+      "id": "question_17719677004",
+      "label": "Will you now, or in the future, require sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17719678004",
+      "label": "Will you need relocation assistance to work at this role's specified location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17719679004",
+      "label": "Are you related to, or in a close personal relationship with, anyone who currently works for SIE or any SIE-affiliated studios? (This includes spouses, domestic partners, and significant others.)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "family_relations_at_company (default no)",
+      "status": "filled",
+      "matched_rule": "family_relations_at_company",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17719680004",
+      "label": "If yes, please state their name, the department or studio they work for, and their job title (if you know it).",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "optional field — intentionally blank",
+      "status": "filled",
+      "matched_rule": "optional_blank",
+      "options": null
+    },
+    {
+      "id": "question_17719681004",
+      "label": "By selecting \"Yes\", I am certifying that, to the best of my knowledge, the information I have provided in this employment application is true and correct.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17762952004",
+      "label": "LinkedIn Profile URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_17764113004",
+      "label": "Portfolio Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "demographic_question_4024662004",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Female",
+          "value": 4147150004
+        },
+        {
+          "label": "Male",
+          "value": 4147151004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147152004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024663004",
+      "label": "Gender Identity",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Agender",
+          "value": 4147153004
+        },
+        {
+          "label": "Cisgender/Female",
+          "value": 4147154004
+        },
+        {
+          "label": "Cisgender/Male",
+          "value": 4147155004
+        },
+        {
+          "label": "Female",
+          "value": 4147156004
+        },
+        {
+          "label": "Genderqueer",
+          "value": 4147157004
+        },
+        {
+          "label": "Intersex",
+          "value": 4147158004
+        },
+        {
+          "label": "Male",
+          "value": 4147159004
+        },
+        {
+          "label": "Non-binary/Gender Non-Conforming/Gender Variant",
+          "value": 4147160004
+        },
+        {
+          "label": "Gender Identity Not Listed",
+          "value": 4147161004
+        },
+        {
+          "label": "Transgender",
+          "value": 4147162004
+        },
+        {
+          "label": "Two-Spirit",
+          "value": 4147163004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147164004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024664004",
+      "label": "What are your personal pronouns? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He/Him",
+          "value": 4147165004
+        },
+        {
+          "label": "He/They",
+          "value": 4147166004
+        },
+        {
+          "label": "She/Her",
+          "value": 4147167004
+        },
+        {
+          "label": "She/They",
+          "value": 4147168004
+        },
+        {
+          "label": "They/Them",
+          "value": 4147169004
+        },
+        {
+          "label": "Xe/Xem",
+          "value": 4147170004
+        },
+        {
+          "label": "Ze/Zir",
+          "value": 4147171004
+        },
+        {
+          "label": "Pronouns Not Listed",
+          "value": 4147172004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147173004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024665004",
+      "label": "Sexual Orientation",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4147174004
+        },
+        {
+          "label": "Bisexual",
+          "value": 4147175004
+        },
+        {
+          "label": "Gay/Lesbian",
+          "value": 4147176004
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4147177004
+        },
+        {
+          "label": "Sexual Orientation Not Listed",
+          "value": 4147178004
+        },
+        {
+          "label": "Pansexual",
+          "value": 4147179004
+        },
+        {
+          "label": "Queer",
+          "value": 4147180004
+        },
+        {
+          "label": "Questioning",
+          "value": 4147181004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147182004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024666004",
+      "label": "Are you Hispanic/Latinx?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4147183004
+        },
+        {
+          "label": "No",
+          "value": 4147184004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147185004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024667004",
+      "label": "Please identify your race/ethnicity",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": 4147186004
+        },
+        {
+          "label": "Asian",
+          "value": 4147480004
+        },
+        {
+          "label": "Black or African American",
+          "value": 4147194004
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 4147195004
+        },
+        {
+          "label": "Two or More Races",
+          "value": 4147196004
+        },
+        {
+          "label": "White",
+          "value": 4147197004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147198004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024668004",
+      "label": "Are you a protected veteran? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I identify as one or more of the above categories of “protected veteran”",
+          "value": 4147199004
+        },
+        {
+          "label": "I do not fall into one of the above categories of “protected veteran”",
+          "value": 4147200004
+        },
+        {
+          "label": "I previously served in the military (US), but none of the above apply to me.",
+          "value": 4147201004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147202004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024669004",
+      "label": "Do you have a disability? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have a history/record of having a disability",
+          "value": 4147203004
+        },
+        {
+          "label": "No, I don’t have a disability, or a history/record of having a disability ",
+          "value": 4147204004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147205004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

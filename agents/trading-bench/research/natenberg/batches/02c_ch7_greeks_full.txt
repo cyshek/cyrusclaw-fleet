@@ -1,0 +1,1172 @@
+Risk Measurement I
+
+
+Every trader who enters the marketplace must balance two opposing consider-
+ations—reward and risk. A trader hopes that his analysis of market conditions
+is correct and that this will lead to profitable trading strategies. But no sensible
+trader can afford to ignore the possibility of error. If he is wrong and market
+conditions change in a way that adversely affects his position, how badly might
+the trader be hurt? A trader who fails to consider the risks associated with his
+position is certain to have a short and unhappy career.
+     A trader who purchases stock or a futures contract is concerned almost
+exclusively with the direction in which the market moves. If the trader has a long
+position, he is at risk from a declining market; if he has a short position, he is at
+risk from a rising market. Unfortunately, the risks with which an option trader
+must deal are not so simple. A wide variety of forces can affect an option’s value.
+If a trader uses a theoretical pricing model to evaluate options, any of the in-
+puts into the model can represent a risk because there is always a chance that
+the inputs have been estimated incorrectly. Even if the inputs are correct under
+current market conditions, over time, conditions may change in a way that will
+adversely affect the value of his option position. Because of the many forces af-
+fecting an option’s value, prices can change in ways that may surprise even expe-
+rienced traders. Because decisions often must be made quickly, and sometimes
+without the aid of a computer, much of an option trader’s education focuses on
+understanding the risks associated with an option position and how changing
+market conditions are likely to change the value of the position.
+     Let’s begin by summarizing some basic risk characteristics of options, as
+shown in Figure 7-1. The general effect on option values of changes in the un-
+derlying price, volatility, and time to expiration are well defined regardless of
+the type of option. But the effect of changing interest rates may vary depend-
+ing on the underlying contract and settlement procedure.
+     A change in interest rates can affect options in two ways. First, it may
+change the forward price of the underlying contract. Second, it may change
+the present value of the option. In stock option markets, rising interest rates
+will increase the forward price, causing call values to rise and put values to fall.
+At the same time, higher interest rates will reduce the present value of both
+
+                                                                                        97
+
+     Figure 7-1 effect of changing market conditions on option values.
+
+
+       If….                                                       Call values will….               Put values will….
+       The price of the underlying contract rises                 rise                             fall
+       The price of the underlying contract falls                 fall                             rise
+       Volatility rises                                           rise                             rise
+       Volatility falls                                           fall                             fall
+       Time passes                                                fall*                            fall*
+       *In some unusual cases it may be possible for the value of an option to rise as time passes, even if all other market
+       conditions are unchanged. The circumstances which can cause this will be discussed later.
+
+
+
+     calls and puts. Put values clearly will fall because both results have the effect of
+     reducing put values. For calls, though, the results have opposing effects. The
+     higher forward price will cause the call to increase in value, but the higher in-
+     terest rate will reduce the present value of the call. Because the price of a stock
+     is always greater than the price of an option, the increase in the forward price
+     will always have a greater effect than the reduced present value. Consequently,
+     call options on stocks will rise in value as interest rates rise and fall as interest
+     rates fall. Put options on stocks will do just the opposite, falling in value as inter-
+     est rates rise and rising in value as interest rates fall.
+          The value of a stock option will also depend on whether a trader has a
+     long or short stock position. If a trader’s option position also includes a short
+     stock position, he is effectively reducing the interest rate by the borrowing costs
+     required to sell the stock short (see the section “Short Sales” in Chapter 2). This
+     will reduce the forward price, thereby lowering the value of calls and raising
+     the value of puts. As a consequence, the trader who is carrying a short stock
+     position ought to be willing to sell calls at a lower price or buy puts at a higher
+     price. If the trader either sells calls or buys puts, he will hedge by purchasing
+     stock, which will offset his short stock position.
+          The fact that option values depend on whether the trader hedges with long
+     stock or short stock presents a complication that most traders would prefer to
+     avoid. This leads to a useful rule for stock option traders:
+           Whenever possible a trader should avoid a short stock position.
+     As a corollary, many active option traders prefer to carry some long stock as
+     part of their position. Then, if the trader must sell stock to hedge a position, he
+     will be able to sell the stock long rather than short. The trader need not worry
+     about using a different interest rate because any long stock transaction is always
+     subject to the long, or ordinary, interest rate. Nor will he have to worry about
+     any regulatory restrictions on the short sale of stock.
+          Although stock options are always assumed to be subject to stock-type set-
+     tlement, with immediate cash payment for the option, the settlement proce-
+     dure for options on futures contracts may vary depending on the exchange. In
+     the United States, options on futures are subject to stock-type settlement, while
+     outside the United States, options on futures are usually subject to futures-type
+98   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+settlement. In the latter case, no money changes hands when either the op-
+tion or the underlying futures contract is traded. Consequently, interest rates
+become irrelevant—neither the forward price nor the present value is affected.
+Options on futures that are subject to futures-type settlement are therefore in-
+sensitive to changes in interest rates. If, however, options on futures are subject
+to stock-type settlement, increasing interest rates will leave the forward price
+unchanged but will reduce the option’s present value. As a result, both call and
+put values will decline. The effect, however, is usually small because the value
+of the option, unless it is very deeply in the money, is small relative to the value
+of the underlying contract. Futures options are therefore much less sensitive to
+changes in interest rates than options on stocks.
+     We also might consider the case of foreign-currency options.1 Here the sit-
+uation is more complex because the value of the option is affected by two inter-
+est rates—a domestic rate and a foreign rate. Going back to the forward pricing
+relationships in Chapter 2, where S is the spot exchange rate, we can see that
+the forward price for a foreign currency will fall if we increase the foreign rate
+(the denominator becomes larger) and rise if we reduce the foreign rate (the
+denominator becomes smaller)
+                                                        1 + rd × t
+                                            F =S×
+                                                        1 + rf × t
+
+This means that call values will fall and put values will rise as we increase the
+foreign rate.
+     We can also see that the forward price for a currency will rise if we increase
+the domestic rate (the numerator becomes larger) and fall if we reduce the
+domestic rate (the numerator becomes smaller). But for options that are subject
+to stock-type settlement, an increase in the domestic rate will also reduce the
+present value of the option. As with stock options, the increase in the forward
+price will tend to dominate. Therefore, as we increase the domestic rate, call
+values will rise and put values will fall. The effects of changing interest rates are
+summarized in Figures 7-2 and 7-3.
+     If we are evaluating options on stock and the stock is expected to pay a
+dividend over the life of the option, a change in the dividend will also affect the
+value of the option because it will change the forward price of the stock. In-
+creasing the dividend will reduce the forward price, causing call values to fall
+and put values to rise. Reducing the dividend will increase the forward price,
+causing call values to rise and put values to fall.
+     Even if we are familiar with the general effects of changing market condi-
+tions on option values, we still need to determine the magnitude of the risk. If
+market conditions change, will the change in option values be large or small, rep-
+resenting either a major or minor risk, or something in between? Fortunately, in
+addition to the theoretical value, pricing models generate a variety of other num-
+bers that enable us to determine both the direction and magnitude of the change.
+These numbers, known variously as the Greeks (because they are commonly ab-
+breviated with Greek letters), the risk measures, or (for the mathematically inclined)
+
+1
+ We are referring here to options on the actual foreign currency rather than options on foreign-currency futures.
+In the latter case, the characteristics are the same as for any other futures option.
+
+                                                                                 RIsk MeAsUReMeNT I                 99
+
+      Figure 7-2 effect of changing interest rates on option values.
+
+                                            If domestic     If domestic       If foreign            If foreign
+                                             rates rise       rates fall      rates rise            rates fall
+       stock option calls will             rise             fall           not applicable    not applicable
+       stock option puts will              fall             rise           not applicable    not applicable
+       futures option calls
+       (stock-type settlement)             fall             fall           not applicable    not applicable
+       futures option puts
+       (stock-type settlement)             fall             fall           not applicable    not applicable
+       futures option calls                no               no
+       (futures-type settlement)           effect           effect         not applicable    not applicable
+       futures option puts                 no               no
+       (futures-type settlement)           effect           effect         not applicable    not applicable
+       foreign currency
+          option calls                     rise             fall           fall              rise
+       foreign currency
+          option puts                      fall             rise           rise              fall
+
+
+      Figure 7-3 effect of changing dividends on stock option values.
+
+                                                       If the dividend                 If the dividend
+                                                           is raised                        is cut
+       stock option calls will                               fall                           rise
+       stock option puts will                               rise                            fall
+
+
+
+      the partial derivatives, will not answer all our questions concerning changing market
+      conditions, but they are an important starting point in analyzing the risks associ-
+      ated with both simple and complex option positions.
+
+
+      The Delta
+
+      The delta (Δ) is a measure of an option’s risk with respect to the direction of
+      movement in the underlying contract. A positive delta indicates a desire for
+      upward movement; a negative delta indicates a desire for downward move-
+      ment. The delta has several different interpretations, any of which may be use-
+      ful to a trader depending on the types of strategies being executed.
+
+      Rate of Change
+      At expiration, an option is worth exactly its intrinsic value. Prior to expiration,
+      however, the theoretical value of an option is a curve that will approach intrin-
+      sic value as the option goes very deeply into the money or very far out of the
+
+100   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+money. This is shown in Figure 7-4. As the underlying price rises, the slope of
+the graph approaches +1; as the underlying price falls, the slope of the graph
+approaches zero. The delta of the call at any given underlying price is the slope
+of the graph—the rate of change in the option’s value with respect to move-
+ment in the underlying contract.
+      Assuming that all other market conditions remain unchanged, a call op-
+tion can never gain or lose value more quickly than the underlying contract,
+nor can it move in the opposite direction of the underlying market. The delta
+of a call must therefore have an upper bound of 1.00 if the call is very deeply in
+the money and a lower bound of 0 if the call is very far out of the money. Most
+calls will have deltas somewhere between 0 and 1.00, changing value more
+slowly than changes in the price of the underlying contract. A call with a delta
+of 0.25 will change its value at 25 percent of the rate of change in the price
+of the underlying contract. If the underlying rises (falls) 1.00, the option can
+be expected to rise (fall) 0.25. A call with a delta of 0.75 will change its value
+at 75 percent of the rate of change in the price of the underlying contract. If
+the underlying rises (falls) 0.60, the option can be expected to gain (lose) 0.45 in
+value. A call with a delta close to 0.50 will rise or fall in value at just about half
+the rate of change in the price of the underlying contract.
+      Puts have characteristics similar to calls except that put values move in the
+opposite direction of the underlying market. In Figure 7-5, we can see that
+when the underlying price rises, puts lose value; when the underlying price
+falls, puts gain value. For this reason, puts always have negative deltas, ranging
+from 0 for far out-of-the-money puts to –1.00 for deeply in-the-money puts. As
+with call deltas, put deltas measure the rate of change in the put’s value with re-
+spect to a change in the price of the underlying, but the negative sign indicates
+that the change will be in the opposite direction of the underlying contract.
+
+Figure 7-4 Theoretical value of a call.
+
+
+
+
+                                                                  Slope approaches +1
+
+
+                                                                                               +1
+                                                                      Theoretical
+                                                                        value
+ Call option value
+
+
+
+
+                                                                                          +1
+
+                                                       Exercise
+                                                        price
+
+
+                     Slope approaches zero
+                                                                              Intrinsic
+                                                                               value
+
+
+
+
+                                   Lower underlying prices   Higher underlying prices
+
+
+                                                                             RIsk MeAsUReMeNT I     101
+
+      Figure 7-5 Theoretical value of a put.
+
+
+
+
+                                         Slope approaches –1
+
+
+                             +1                    Theoretical
+          Put option value
+
+
+
+
+                                  –1                 value
+
+
+                                                                 Exercise
+                                                                  price
+                                                                                         Slope approaches
+                                                                                               zero
+                                       Intrinsic
+                                        value
+
+
+
+
+                                         Lower underlying prices       Higher underlying prices
+
+
+
+      A put with a delta of –0.10 will change its value at 10 percent of the rate of
+      change in the price of the underlying contract, but in the opposite direction.
+      If the underlying moves up (down) 0.50, the put can be expected to lose (gain)
+      0.05 in value. A put with a delta of –0.50 will change its value at approximately
+      half the rate of the underlying, but in the opposite direction.
+           An option position is often combined with a position in the underlying
+      contract. To determine the total risk of a combined position, we will need to
+      assign a delta value to the underlying contract. Logically, a position in the un-
+      derlying contract will gain or lose value at exactly the rate of change in the
+      underlying price. Therefore, regardless of whether the underlying is stock, a
+      futures contract, or some other instrument, the underlying contract always has
+      a delta of 1.00.
+           Although delta values range from 0 to 1.00 for calls and from 0 to –1.00
+      for puts, it has become common practice among many option traders to
+      express delta values as a whole number by dropping the decimal point, a con-
+      vention that we will follow in this text.2 Using this format, the delta of a call
+      will fall within the range of 0 to 100, and the delta of a put within the range of
+      –100 to 0. An underlying contract will always have a delta of 100.
+
+      hedge Ratio
+      In Chapter 5, we introduced the concept of a riskless, or neutral, hedge, a
+      position that, within a small price range, will neither gain nor lose value as the
+
+      2
+       This convention originated in the U.S. stock option market, where it became common for stock option trad-
+      ers to equate one delta with one share of stock. Because the underlying contract consisted of 100 shares, trad-
+      ers assigned a delta of 100 to the underlying contract. Many futures option traders also express the delta using
+      this whole-number format.
+
+102   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+price of the underlying contract moves up or down. We can determine the
+proper number of underlying contracts to option contracts required for such
+a hedge by dividing 100 (the delta of the underlying contract) by the option’s
+delta. For a call option with a delta of 50, the proper hedge ratio is 100/50,
+or 2/1. For every two options purchased (sold), we need to sell (buy) one
+underlying contract to establish a neutral hedge. A call option with a delta
+of 40 requires the sale (purchase) of two underlying contracts for every five
+options purchased (sold) because 100/40 = 5/2.
+    The hedge ratio interpretation also applies to puts, except that when we
+buy puts, we need to buy the underlying contract, and when we sell puts, we
+need to sell the underlying contract. A put with a delta of –75 will require the
+purchase (sale) of three underlying contracts for each four puts purchased (sold)
+because 100/–75 = 4/–3.
+    A position is neutrally hedged, or delta neutral, if the total of all the deltas
+that make up the position add up to 0. If we buy two calls with a delta of 50
+each and sell one underlying contract, the total delta position is
+
+                                                  +2 × 50
+                                                  –1 × 100
+                                                         0
+If we sell four puts with a delta of –75 each and sell three underlying contracts,
+the total delta position is
+
+                                                +4 × –75
+                                                 –3 × 100
+                                                        0
+Both positions are delta neutral.3
+     A position that is delta neutral has no particular preference for either up-
+ward or downward movement in the price of the underlying contract. Although
+a trader may take whatever delta position he feels is appropriate, either bullish
+(delta positive) or bearish (delta negative), we will see in Chapter 8 that a trader
+who is trying to capture the theoretical value of an option must start with and
+maintain a delta-neutral position over the entire life of an option.
+
+Theoretical or equivalent Underlying Position
+Many option traders come to the option market after trading in the underly-
+ing contract. Futures option traders often start their careers by trading futures;
+stock option traders often start by trading stock. If a trader has become accus-
+tomed to evaluating his risk in terms of the number of underlying contracts
+bought or sold (either futures contracts or shares of stock), he can use the delta
+to equate the directional risk of an option position with a position of similar
+size in the underlying market.
+     Because an underlying contract always has a delta of 100, in terms of di-
+rectional risk, each 100 deltas in an option position is theoretically equivalent
+
+3
+  It is customary to indicate the purchase of a contract or contracts with a plus sign (a long contract position)
+and the sale of a contract or contracts with a negative sign (a short contract position).
+
+                                                                                 RIsk MeAsUReMeNT I                 103
+
+      to one underlying contract. A trader who owns an option with a delta of 50
+      is long, or controls, approximately half of an underlying contract. If he owns
+      10 such contracts, he is long 500 deltas or, in equivalent terms, five underlying
+      contracts. If the underlying is a futures contract, the trader is theoretically long
+      five such contracts. If the underlying is a stock contract consisting of 100 shares
+      of stock, he is theoretically long 500 shares of stock. The trader has a similar
+      theoretical position if he sells 20 puts with a delta of –25 each because –20 ×
+      –25 = +500.
+           It is important to emphasize the theoretical aspect of the delta interpre-
+      tation as an equivalent to an underlying position. An option is not simply a
+      surrogate for an underlying position. An actual underlying position is almost
+      exclusively sensitive to directional moves in the underlying market. An option
+      position, while sensitive to directional moves, is also sensitive to other changes
+      in market conditions. An option trader who looks only at his delta position may
+      be ignoring other factors that could have a far greater impact on his position.
+      The delta represents an equivalent underlying position only under very nar-
+      rowly defined market conditions.
+           Which interpretation—rate of change in the theoretical value, the hedge
+      ratio, or the equivalent underlying position—should a trader use? That de-
+      pends on how the trader intends to use the delta. A trader who has a delta po-
+      sition of +500 knows that he has a position that is similar to being long five
+      underlying contracts (the equivalent-underlying-position interpretation). If
+      he is a disciplined theoretical trader striving to maintain a delta-neutral po-
+      sition, he must sell five underlying contracts (the hedge-ratio interpretation).
+      And finally, if he is bullish and maintains his current delta position of +500,
+      the value of his position will change at approximately five times, or 500 per-
+      cent, of the rate of change in the price of the underlying contract (the rate-
+      of-change interpretation). If the price of the underlying contract rises by
+      2.00, the trader’s position should gain approximately 10.00. If the price of
+      the underlying contract falls by 1.25, the trader’s position should lose ap-
+      proximately 6.25. Mathematically, all these interpretations are the same. A
+      trader will choose a delta interpretation that is consistent with his approach
+      to trading.
+
+
+      Probability
+      There is one other interpretation of the delta that is perhaps of less practical
+      use, but is still worth mentioning. If we ignore the sign of the delta (positive for
+      calls, negative for puts), the delta is approximately equal to the probability that
+      the option will finish in the money. A call with a delta of 25 or a put with a delta
+      of –25 has approximately a 25 percent chance of finishing in the money. A call
+      with a delta of 75 or a put with a delta of –75 has approximately a 75 percent
+      chance of finishing in the money. As an option’s delta moves closer to 100, or
+      –100 for puts, the option becomes more and more likely to finish in the money.
+      As the delta moves closer to 0, the option becomes less and less likely to finish
+      in the money. This also explains why at-the-money options tend to have deltas
+      close to 50. If we assume that price changes are random, there is half a chance
+
+104   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+that the market will rise (the option goes into the money) and half a chance that
+the market will fall (the option goes out of the money).4
+     Of course, the delta is only an approximation of the probability because
+interest considerations and, in the case of stock options, dividends may dis-
+tort this interpretation. Moreover, most option strategies depend not only on
+whether an option finishes in the money but also by how much. If a trader sells
+an option with a delta of 10 in the belief that the option will expire worthless
+nine times out of 10, he may indeed be correct. But, if on the tenth time he
+loses an amount greater than the total premium he took in the nine times the
+option expired worthless, the trade will result in a negative expected return.
+To trade options intelligently, we need to consider not only how often a strat-
+egy wins or loses but also how much it wins or loses. Every experienced trader
+is willing to accept several small losses if he can occasionally offset these with
+one big win that more than offsets the losses. In the same way, no experienced
+trader will want to pursue a strategy that leads to multiple small profits but
+occasionally results in a disastrous loss.5
+
+
+The Gamma
+
+Figure 7-6 shows call and put delta values using the whole-number format.
+Even though deltas range from 0 to 100 for calls and from –100 to 0 for puts,
+the graphs are not straight lines. As the underlying price rises or falls, the slope
+of the graph changes, approaching 0 at both extremes. If this were not true, the
+delta values of calls could fall below 0 or rise above 100, and the delta values
+of puts could fall below –100 or rise above 0. The slope appears to be greatest
+when the underlying price is close to the option’s exercise price.
+      The gamma (Γ), sometimes referred to as the option’s curvature, is the rate
+of change in the delta as the underlying price changes. The gamma is usually
+expressed in deltas gained or lost per one-point change in the underlying, with
+the delta increasing by the amount of the gamma when the underlying rises and
+falling by the amount of the gamma when the underlying falls. If an option has
+a gamma of 5, for each point rise (fall) in the price of the underlying, the option
+will gain (lose) 5 deltas.6 If the option initially has a delta of 25 and the underly-
+ing moves up (down) one full point, the new delta of the option will be 30 (20).
+If the underlying moves up (down) another point, the new delta will be 35 (15).7
+      From Figure 7-6, we can see that the delta graphs of both calls and puts
+have essentially the same shape and that the graphs always have a positive slope.
+4
+  Because option values are based on the forward price of the underlying contract, it is actually the at-the-for-
+ward option that tends to have a delta closest to 50. This is one reason why options that are seemingly out of
+the money can have deltas greater than 50. With a stock at 100, one year to expiration, and an interest rate of
+10 percent, the forward price for the stock is 110. Under these conditions, the 110 call will have a delta close to
+50, while the 105 call will have a delta greater than 50.
+5
+  In fact, the delta is only an approximation of the probability that an option will finish in the money. We will see
+later that the Black-Scholes model generates a number that more precisely reflects this probability.
+6
+  In fact, the delta is only an approximation of the probability that an option will finish in the money. We will see
+later that the Black-Scholes model generates a number that more precisely reflects this probability.
+7
+  For simplicity, we assume here that the gamma is constant. In reality, the gamma, like all risk measures, will
+change as market conditions change.
+
+
+
+                                                                                    RIsk MeAsUReMeNT I                  105
+
+      Figure 7-6 Delta values.
+
+
+         100
+                                                           Exercise
+                                                            price
+           Call delta value
+
+
+
+
+                                                                           Call deltas
+
+
+
+
+                 0
+           Put delta value
+
+
+
+
+                                      Put deltas
+                                                                              An option’s gamma is the
+                                                                              slope of the delta graph.
+                                                           Exercise
+                                                            price
+        –100
+                                   Lower underlying prices      Higher underlying prices
+
+
+
+      This suggests that calls and puts with the same exercise price and time to ex-
+      piration have the same gamma values and that these values are always posi-
+      tive. This may seem strange to a new trader who, because of the delta, tends
+      to associate positive numbers with calls and negative numbers with puts. But
+      regardless of whether we are working with calls or puts, we always add the
+      gamma to the old delta as the underlying price rises and subtract the gamma
+      from the old delta as the underlying price falls. When a trader is long options,
+      whether calls or puts, he has a long gamma position.
+            For example, consider both an at-the-money call with a delta of 50 and an
+      at-the-money put with a delta of –50. How will the delta change as the under-
+      lying price changes if both options have gamma values of 5? If the underlying
+      price rises one full point, we add the gamma of 5 to the call delta of 50 to get
+      the new delta of 55. To get the new put delta if the underlying contract rises one
+      point, we also add the gamma of 5 to the put delta of –50 to get the new delta
+      of –45. This is intuitively logical—as the underlying price rises, at-the-money
+      calls move into the money and at-the-money puts move out of the money. If the
+      underlying contract falls one full point, in both cases we subtract the gamma,
+      resulting in a call delta of 50 – 5 = 45 and a put delta of –50 – 5 = –55. Now the
+      call is moving out of the money and the put is moving into the money.
+            Because all options individually have positive gamma values, we can create
+      a positive gamma position by buying options, either calls or puts, and a negative
+      gamma position by selling options. For a complex position consisting of many
+      different options, we use the same interpretation of the gamma as we do for in-
+      dividual options, adding the gamma to the old delta as the underlying contract
+
+106   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+rises and subtracting the gamma as the market falls. A positive gamma position
+will gain deltas as the market rises (we are adding a positive number) and lose del-
+tas as the market falls (we are subtracting a positive number). A negative gamma
+position will behave in just the opposite way, losing deltas as the market rises (we
+are adding a negative number) and gaining deltas as the market falls (we are sub-
+tracting a negative number). Moreover, the rate of change in the delta will be deter-
+mined by the size of the gamma position. New traders are often advised to avoid
+large gamma positions, particularly negative ones, because of the speed with
+which the directional risk, as reflected by the delta, can change.
+     While the delta is a measure of how an option’s value will change if the
+underlying price changes, it is important to remember that it represents an
+instantaneous measure. It is only valid for very small price changes. If the
+underlying makes a sizable move, any estimate of the option’s new value using
+a constant delta will become less and less reliable. We can, however, improve
+this estimate if we also take into consideration the gamma.
+     Suppose that at price S1 a call has a theoretical value C, a delta Δ, and a
+gamma Γ. If the price of the underlying changes from S1 to S2, what should be
+the new value of the option? One approach might be to simply multiply the
+change in price, S2 – S1, by the delta and add it to the original value C
+                                           C + [Δ × (S1 – S2) ]
+But this assumes that the delta is constant, which it is not. As the underlying
+price moves from S1 to S2, the delta of the option is also changing. When the
+underlying price reaches S2, the new delta of the option will be
+                                             Δ + (S1 – S2) × Γ
+Which delta should we use for our calculation, the original delta (Δ) or the new
+delta [Δ + (S1 – S2) × Γ]? Rather than use either of these delta values, we might
+logically use the average delta over the price range S1–S2
+           Average delta = [Δ + Δ + (S1 – S2) × Γ]/2 = Δ + (S1 – S2) × Γ/2
+This is not a precise solution because the gamma also changes as the underly-
+ing price changes, but it will yield a better estimate than using a constant delta.
+Using the average delta, the new value of the option should be approximately8
+    C + (S1 – S2) × [Δ + (S1 – S2) × Γ/2] = C + [(S1 – S2) × Δ] + [(S1 – S2)2 × Γ/2]
+This approach applies equally well to puts, as long as we remember that a put
+will have a negative delta.
+     For example, suppose that at an underlying price of 97.50, a call option
+has a theoretical value of 3.65, a delta of 40, and a gamma of 2.5. If the under-
+lying contract rises to 101.50, what should be the option’s new value?
+     At the new underlying price of 101.50, the delta of the option is
+                                            40 + 4 × 2.5 = 50
+
+
+8
+ When using the delta to estimate the change in an option’s value, we need to remember that it is really a percent
+value, or a value between 0 and 1.00.
+
+
+
+                                                                                  RIsk MeAsUReMeNT I                 107
+
+      The average delta as the underlying price rises from 97.50 to 101.50 is
+                                                   (40 + 50)/2 = 45
+      Using the average delta, the new option value is approximately
+                                            3.65 + (4.00 × 0.45) = 5.45
+
+
+      The Theta
+
+      An option’s value is made up of intrinsic value and time value. As time passes,
+      the time-value portion gradually disappears until, at expiration, the option is
+      worth exactly its intrinsic value. This can be seen in Figures 7-7 and 7-8.
+           The theta (Θ), or time decay, is the rate at which an option loses value as time
+      passes, assuming that all other market conditions remain unchanged. It is usu-
+      ally expressed as value lost per one day’s passage of time. An option with a
+      theta of 0.05 will lose 0.05 in value for each day that passes with no movement
+      in the underlying contract. If its theoretical value today is 4.00, one day later it
+      will be worth 3.95. Two days later it will be worth 3.90.
+            Almost all options lose value as time passes. For this reason, it is common
+      to express the theta as a negative number, a convention that we will follow in
+      this text. An option with a theta of –0.05 will lose 0.05 for each day that passes
+      with no changes in any other market conditions.
+           We will look at theta in greater detail in Chapter 9. For now, there is one im-
+      portant characteristic of theta that is worth mentioning: if an option is exactly at
+
+
+
+
+      Figure 7-7 Theoretical value of a call as time passes.
+
+
+
+
+                                                                 Theoretical
+                                                                   value
+        Call option value
+
+
+
+
+                                                           Exercise
+                                                            price
+
+
+
+                                                                                 Intrinsic
+                                                                                  value
+
+
+
+
+                                  Lower underlying prices       Higher underlying prices
+
+
+
+108   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+Figure 7-8 Theoretical value of a put as time passes.
+
+
+
+
+                                  Theoretical
+                                    value
+ Put option value
+
+
+
+
+                                           Exercise
+                                            price
+
+
+
+                    Intrinsic
+                     value
+
+
+
+
+                       Lower underlying prices Higher underlying prices
+
+
+
+
+the money as time passes, the theta of the option increases. With three months
+remaining to expiration, an at-the-money option may have a theta of –0.03.
+However, with three weeks to expiration, the same option, if it is still at the
+money, may have a theta of –0.06. And with three days to expiration, the option
+may have a theta of –0.16. The theta becomes increasingly large as expiration
+approaches.
+     Is it ever possible for an option to have a positive theta such that if nothing
+changes, the option will be worth more tomorrow than it is today? In fact, this
+can happen because of the depressing effect of interest rates. Consider a 60 call
+on an underlying contract that is currently trading at 100. How much might
+this call be worth if we know that at expiration the underlying contract will still
+be at 100? At expiration, the option will be worth 40, its intrinsic value. How-
+ever, if the option is subject to stock-type settlement, today it will only be worth
+the present value of 40, perhaps 39. If the underlying price remains at 100, as
+time passes, the value of the option must rise from 39 (its value today) to 40 (its
+intrinsic value at expiration). The option in effect has negative time value and
+therefore a positive theta. It will be worth slightly more as each day passes. This
+is shown in Figure 7-9.
+     Instances of negative time value and, consequently, positive theta are rela-
+tively rare. At a minimum, the option must be subject to stock-type settlement,
+it must be deeply in the money, and it must also be European with no possibil-
+ity of early exercise. If the option were American, everyone would exercise it
+today in order to earn interest on the intrinsic value. We will discuss this situ-
+ation in greater detail when we take a closer look at early exercise of Ameri-
+can options.
+
+                                                                RIsk MeAsUReMeNT I     109
+
+      Figure 7-9 If an option has negative time value, its theta will be positive; as time passes,
+      the value of the option will rise toward intrinsic value.
+
+
+
+
+                                                                          Theoretical
+          Option value
+
+
+
+
+                                                                            value
+                                                           Exercise
+                                                                                                    Negative
+                                                            price
+                                                                                                   time value
+
+
+
+
+                                                                               Intrinsic
+                                                                                value
+
+
+                                 Lower underlying prices          Higher underlying prices
+
+
+
+
+      The Vega
+
+      Just as option values are sensitive to changes in the underlying price (delta) and
+      to the passage of time (theta), they are also sensitive to changes in volatility.
+      This is shown in Figures 7-10 and 7-11. Although the terms delta, gamma, and
+      theta are used by all option traders, there is no one generally accepted term for
+      the sensitivity of an option’s theoretical value to a change in volatility. The most
+      commonly used term in the trading community is vega, and this is the term that
+      will be used in this text. But this is by no means universal. Because vega is not a
+      Greek letter, a common alternative in academic literature, where Greek letters
+      are preferred, is kappa (Κ).9
+           The vega of an option is usually expressed as the change in theoretical
+      value for each one percentage point change in volatility. Because all options
+      gain value with rising volatility, the vega for both calls and puts is positive. If
+      an option has a vega of 0.15, for each percentage point increase (decrease) in
+      volatility, the option will gain (lose) 0.15 in theoretical value. If the option has
+      a theoretical value of 3.25 at a volatility of 20 percent, then it will have a theo-
+      retical value of 3.40 at a volatility of 21 percent and a theoretical value of 3.10
+      at a volatility of 19 percent.
+
+
+
+      9
+        Traders tend to prefer the term vega because it starts with a v and is therefore a convenient reminder that it
+      is associated with volatility. Vega is sometimes abbreviated with the Greek letter nu (ν) because in written form
+      it is similar to a v.
+
+
+110   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+Figure 7-10 Theoretical value of a call with changing volatility.
+
+
+  Call option value
+
+
+
+
+                                                                   Exercise
+                                                                    price
+
+
+                                                     Lower
+                                                    volatility
+                                   Higher
+                                  volatility
+
+
+                                                                                      Intrinsic
+                                                                                       value
+
+                                          Lower underlying prices       Higher underlying prices
+
+
+
+Figure 7-11 Theoretical value of a put with changing volatility.
+               Put option value
+
+
+
+
+                                                                   Exercise
+                                                                    price
+
+                                                                                     Lower
+                                                                                    volatility
+
+                                                                                                   Higher
+                                        Intrinsic                                                 volatility
+                                         value
+
+
+
+
+                                               Lower underlying prices Higher underlying prices
+
+
+
+
+The Rho
+
+The sensitivity of an option’s theoretical value to a change in interest rates is
+given by its rho (Ρ), usually expressed as the change in theoretical value for each
+one percentage point change in interest rates. Unlike the other sensitivities, one
+cannot generalize about the rho because its characteristics depend on the type
+
+                                                                                           RIsk MeAsUReMeNT I   111
+
+      of underlying instrument and the settlement procedure for the options. The
+      general effects have already been summarized in Figure 7-2. Note that foreign-
+      currency options that require delivery of the currency rather than delivery of a
+      futures contract are affected by both domestic and foreign interest rates. Hence,
+      such options have two interest-rate sensitivities, rho1 (the domestic interest-rate
+      sensitivity) and rho2 (the foreign interest-rate sensitivity). The latter is some-
+      times denoted by the Greek letter phi (Φ).
+            If both the underlying contract and the options are subject to futures-type
+      settlement, the rho must be 0 because no cash flow results from either a trade
+      in the underlying contract or a trade in the options. When options on futures
+      are subject to stock-type settlement, the rho associated with both calls and puts
+      is negative. An increase in interest rates will decrease the value of such options
+      because it raises the cost of carrying the options. In the case of stock options,
+      calls will have positive rho values (an increase in interest rates will make calls a
+      more desirable alternative to buying the stock) and puts will have negative rho
+      values (an increase in interest rates will make puts a less desirable alternative to
+      selling the stock).
+            Although changes in interest rates can affect an option’s theoretical value,
+      the interest rate is usually the least important of the inputs into a pricing model.
+      For this reason, the rho is usually considered less critical than the delta, gamma,
+      theta, or vega. Indeed, few individual traders worry about the rho. However, a
+      firm or trader who has a very large option position should at least be aware of
+      the interest-rate risk associated with the position. As with any risk, if it becomes
+      too large, it may be necessary to take steps to reduce the risk. Because of its rel-
+      atively minor importance, in most examples, we will disregard the rho in ana-
+      lyzing option strategies and managing risk.
+            We know that the delta of an underlying contract is always 100, but what
+      is the gamma, theta, vega, and rho of an underlying contract? The gamma is
+      the rate of change in the delta with respect to movement in the underlying con-
+      tract. But the delta of an underlying contract is always 100 regardless of price
+      changes. Therefore, the gamma must be 0. An underlying contract does not
+      decay, so its theta must also be 0. Nor is the underlying contract subject to vola-
+      tility considerations, so its vega must be 0. And finally, changes in interest rates
+      do not affect the value of an underlying contract, so the rho must also be 0.10
+      The only risk measure we associate with an underlying contract is the delta;
+      everything else is 0. The signs of the risk measures for an underlying contract, for
+      calls, and for puts are summarized in Figure 7-12.
+
+
+      Interpreting the Risk Measures
+
+      If a trader has a position consisting of only a small number of options, it is
+      probably not necessary to do a detailed risk analysis. In all likelihood, the trader
+      already has a fairly clear picture of the potential risks and rewards associated
+
+      10
+        A trader might argue that if interest rates rise or fall, it may change the forward price, which can, in turn, af-
+      fect option values. But, from an option trader’s point of view, the value of an underlying contract is not directly
+      affected by changes in interest rates.
+
+
+112   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+Figure 7-12
+
+
+                                                     Your
+                                 Your delta         gamma            Your theta        Your vega        Your rho
+      If you are . . .           position is       position is       position is       position is     position is
+     Long the
+ underlying contract                   +                 0                 0                 0             0
+     Short the
+ underlying contract                   +                 0                 0                 0             0
+                                                                                                      + (on stock)
+        Long calls                     +                 +                 –                 +       – (on futures)*
+                                                                                                      – (on stock)
+        Short calls                    –                 –                 +                 –       + (on futures)*
+                                                                                                      – (on stock)
+        Long puts                      –                 +                 –                 +       – (on futures)*
+                                                                                                      – (on stock)
+        Short puts                     +                 –                 +                 –       + (on futures)*
+ *This applies when options on futures are subject to stock-type settlement.
+ If options on futures are subject to futures-type settlement, the effective rho is zero.
+
+
+
+
+with the position. However, if the position becomes more complex, with op-
+tions at different expiration dates over a wide range of exercise prices, it may
+not be immediately apparent what risks the trader has taken on. A good start-
+ing point in analyzing the risk of a position is to consider the risk measures
+associated with the position.
+     Figure 7-13 shows a theoretical evaluation for a hypothetical series of
+options on stock, where the underlying contract is 100 shares. Figure 7-14
+shows several different positions with the total delta, gamma, theta, vega, and
+rho for each position. We will assume that each position was initiated at the
+quoted prices.
+     First, note that all risk measures are additive. To determine the total risk mea-
+sure for a position, we multiply each risk measure by the number of contracts (us-
+ing a plus sign for a purchase and a minus sign for a sale), and add everything up.
+     Let’s consider the risk of Position 1 in Figure 7-14. Before doing this, how-
+ever, we might ask a more fundamental question: why might someone take
+such a position in the first place? Like every trader, an option trader wants to
+make trades that result in a profit. To have the best chance of achieving this
+goal, an option trader will try to create positions with a positive theoretical
+edge, either buying options at prices less than theoretical value and/or selling
+options at prices greater than theoretical value. Although this is not a guarantee
+that the position will show a profit, by creating a positive theoretical edge, the
+trader, like a casino, has the laws of probability working in his favor. Therefore,
+a trader should first consider whether a position has a positive theoretical edge.
+     In Position 1, we sold 10 June 95 calls at a price of 8.55, but the theo-
+retical value of the options was 8.33, so the sale created a theoretical edge of
+
+                                                                                            RIsk MeAsUReMeNT I         113
+
+      Figure 7-13
+
+
+        Stock price = 99.50        Time to June expiration = 91 days
+        Volatility = 25%           Expected dividend = 0                             Interest rate = 6.00%
+
+                                                               June Calls
+
+        exercise         Call       Theoretical
+         Price          Price         Value                Delta            Gamma      Theta        Vega          Rho
+
+            90          12.30          11.96                84               2.0      –0.029         0.122        0.178
+
+            95            8.55           8.33               71               2.8      –0.034         0.170        0.155
+
+          100             5.35           5.44               56               3.2      –0.035         0.196        0.124
+
+          105             3.15           3.32               40               3.1      –0.032         0.192        0.091
+
+          110             1.80           1.90               27               2.6      –0.027         0.163        0.062
+
+                                                               June Puts
+
+        exercise         Put        Theoretical
+         Price          Price         Value                Delta            Gamma      Theta        Vega          Rho
+
+            90            1.45          1.12               –16               2.0      –0.014         0.122       –0.043
+
+            95            2.63          2.42               –29               2.8      –0.0.19        0.170       –0.078
+
+          100             4.35          4.45               –44               3.2      –0.019         0.196       –0.121
+
+          105             7.10          7.26               –60               3.1      –0.015         0.195       –0.167
+
+          110           10.70          10.77               –73               2.6      –0.009         0.163       –0.209
+
+
+
+
+      Figure 7-14
+
+                                     Theoretical
+      Position                         edge            Delta            Gamma         Theta         Vega          Rho
+      1. –10 June 95 calls             10 x +.22     –10 x 71          –10 x 2.8    –10 x –.034   –10 x .170   –10 x .155
+         +7 underlying contracts           0         +7 x 100             0              0            0            0
+                                        +2.20          –10               −28           +.34         –1.70        –1.55
+      2. +10 June 100 calls            10 x –.11     +10 x 56          +10 x 3.2    +10 x –.035   +10 x .196   +10 x .124
+         +10 June 100 puts             10 x –.10     +10 x –44         +10 x 3.2    +10 x –.019   +10 x .196   +10 x –.121
+                                        –2.10          +120              +64           −.54         +3.92         +.30
+      3. +10 June 105 puts             10 x +.16     +10 x –60         +10 x 3.1    +10 x –.015   +10 x .192   +10 x –.167
+         –20 June 95 puts              20 x +.21     –20 x –29         –20 x 2.8    –20 x –.019   –20 x .170   –20 x –.078
+                                        +5.80          –10               –25           +.23         –1.48         +.11
+      4. +10 June 100 calls            10 x –.11    +10 x 56           +10 x 3.2    +10 x –.035   +10 x .196   +10 x .124
+         –10 June 90 calls             10 x +.34    −10 x −84          –10 x 2.0    –10 x –.029   –10 x .122   –10 x .178
+                                        +2.30         −280               –12           –.06         +.74         –.54
+      5. –10 June 100 puts             10 x +.10    −10 x −44          –10 x 3.2    –10 x –.019   –10 x .196   –10 x –.121
+         +20 June 105 puts             20 x +.16    +20 x −60          +20 x 3.1    +20 x –.015   +20 x .192   +20 x –.167
+         –10 June 110 puts             10 x –.07    −10 x −73          –10 x 2.6    –10 x –.009   –10 x .163   –10 x –.209
+                                        +3.50         −30                +4            –.02         +.25          –.04
+
+
+
+114   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+0.22 per option. What about the theoretical edge for the trade in the un-
+derlying? From an option trader’s point of view, the theoretical value of an
+underlying contract is simply the price at which it was traded. Consequently,
+the theoretical edge for any underlying trade is always 0. The position has a
+total theoretical edge of +2.20.
+     The total delta of Position 1 is –10. Although this indicates a very slight
+preference for downward movement, for practical purposes, almost all traders
+would consider the position delta neutral.
+     The total gamma of the position is –28. We know that a positive or nega-
+tive delta indicates a desire for upward or downward movement in the price of
+the underlying contract, but what does a positive or negative gamma indicate?
+Consider what will happen to our delta position if the underlying stock starts
+to rise. Just as with an individual option, for each point increase, we add the
+gamma to the old delta to get the new delta. But we are adding a negative num-
+ber (–28). If the stock rises one full point to 100.50, the delta will be
+                               –10 + (–28) = –38
+If the stock rises another point to 101.50, the delta will be
+                               –38 + (–28) = –66
+As the market rises, the delta becomes a larger negative number. Because a
+negative delta indicates a desire for downward movement, the more the market
+rises, the more we would like it to decline.
+     Now consider what will happen to our delta position if the underlying
+stock starts to fall. For each point decline, we subtract the gamma from the
+delta. If the stock falls one point to 98.50, the new delta will be
+                               –10 – (–28) = +18
+    If the stock falls another point to 97.50, the delta will be
+                               +18 – (–28) = +46
+As the market falls, the delta becomes a larger positive number. For the same
+reason we do not want the stock price to rise (we are creating a larger negative
+delta in a rising market), we also do not want the stock price to fall (we are cre-
+ating a larger positive delta in a falling market). If we do not want the market to
+rise and we do not want the market to fall, there is only one favorable outcome
+remaining: we must want the market to sit still. In fact, a negative gamma posi-
+tion is a good indication that a trader either wants the underlying market to sit
+still or move only very slowly. A positive gamma position indicates a desire for
+very large and swift moves in the underlying market.
+      Whereas delta is a measure of directional risk, gamma can be thought of as
+a measure of magnitude risk. Do we want moves of smaller magnitude (a negative
+gamma) or larger magnitude (a positive gamma)? Alternatively, gamma also can
+be thought of as the speed at which we want the market to move. Do we want
+the underlying price to move slowly (a negative gamma) or quickly (a positive
+gamma)? Taken together, the delta and gamma tell us something about the direc-
+tion and speed that will either help or hurt our position. In Position 1, we want a
+slow (negative gamma) downward (negative delta) move in the underlying price.
+
+                                                           RIsk MeAsUReMeNT I         115
+
+      The worst situation would be a swift upward move. Then we would be on the
+      wrong side of both the direction (delta) and speed (gamma) of the market.
+            How will we feel about our position if the stock remains close to 99.50?
+      From the negative gamma, we know that we want the market to remain rela-
+      tively quiet. If the market does what we want it to do, we ought to expect our
+      position to show a profit. Where will this profit come from? The profit will
+      come from the theta of +0.34. For each day that passes with no movement
+      in the underlying price, the position should show a profit of approximately
+      0.34. This underscores an important principle of option risk analysis: gamma
+      and theta are almost always of opposite sign.11 A positive gamma will be
+      accompanied by a negative theta, and vice versa. Moreover, the magnitudes
+      of the risks will tend to correlate. A large gamma will be accompanied by a
+      large theta, but of opposite sign. A small gamma will be accompanied by a
+      small theta. An option trader cannot have it both ways. Either market move-
+      ment will help the position (positive gamma) or the passage of time (positive
+      theta) will—but not both.
+            The vega of Position 1 is –1.70. This indicates a desire for declining vola-
+      tility. For each point decline in volatility, the value of our position, which was
+      initially +2.20, will increase by 1.70; for each point increase, the value will fall
+      by 1.70. This seems to correspond to our gamma risk. If we have a negative
+      gamma, we want the market to remain relatively quiet. Isn’t this the same as
+      saying we want lower volatility? Most traders, however, make an important
+      distinction between the gamma and vega. The gamma is a measure of whether
+      we want higher or lower realized volatility (whether we want the underlying con-
+      tract to be more volatile or less volatile). The vega is a measure of whether we
+      want higher or lower implied volatility. Although the volatility of the underly-
+      ing contract and changes in implied volatility are often correlated, this is not
+      always the case. In some cases, the underlying contract can become more vola-
+      tile while implied volatility is falling. In other cases, the underlying contract can
+      become less volatile while implied volatility is rising. We will look at the condi-
+      tions that can cause this in Chapter 11, where we look at some of the common
+      volatility spreads.
+            Suppose that we raise the volatility of 25 percent in Figure 7-13 to a vola-
+      tility of 26 percent. What should be our theoretical profit now? We know that
+      for each point increase in volatility, we need to add the vega (–1.70) to the old
+      value (+2.20) to get the new value. Our theoretical profit at 26 percent will be
+                                              +2.20 + (–1.70) = +0.50
+      If we raise the volatility another percentage point to 27 percent, our theoreti-
+      cal edge turns negative
+                                              +0.50 + (–1.70) = –1.20
+      We can see that the position has a breakeven volatility of approximately
+                     25(%) + (–2.20/–1.70)(%) = 25(%) + 1.29(%) = 27.29(%)
+
+      11
+       Interest considerations may occasionally result in a position with a gamma and theta of the same sign.
+      However, in such a case, the magnitudes of the numbers are likely to be very small.
+
+116   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+Of course, a more common name for the breakeven volatility is implied vola-
+tility. Although traders most commonly associate implied volatility with indi-
+vidual options, we can also apply the concept to more complex positions. The
+implied volatility of a position is the volatility that must occur over the life of a
+position such that, in theory, the position will just break even. We can make a
+rough estimate of a position’s implied volatility by dividing the total theoretical
+edge by the total vega and adding this number to the volatility used to evaluate
+the position.
+      The last risk measure for Position 1 is the rho of –1.55. For each percent-
+age point decline in the interest rate, the position will show an additional profit
+of 1.55. For each percentage point increase in the interest rate, the position
+profit will be reduced by 1.55. It should not come as a surprise that rho is neg-
+ative because the long stock position will inevitably dominate the cash flow,
+resulting in a debit. If the interest rate falls, it will cost less to carry this debit. If
+the interest rate rises, it will cost more.
+      The risks and rewards associated with each type of risk measure are sum-
+marized in Figure 7-15. The reader should take a few moments to look over
+the risk characteristics of the other positions in Figure 7-14. What combination
+of market conditions (e.g., changes in underlying price, time, implied volatil-
+ity, and interest rate) will most help each position? What combination will most
+hurt each position?
+
+
+Figure 7-15
+
+
+         If your delta position is …               You want the underlying price to…
+
+                  Positive                                         Rise
+
+                 Negative                                          Fall
+
+        If your gamma position is …              You want the underlying contract to…
+
+                  Positive                        Make big moves or move very quickly
+
+                 Negative                              Sit still or move very slowly
+
+         If your theta position is …                   The passage of time will…
+
+                  Positive                         Increase the value of your position
+
+                 Negative                           Reduce the value of your position
+
+         If your vega position is …                  You want implied volatility to…
+
+                  Positive                                         Rise
+
+                 Negative                                          Fall
+
+          If your rho position is …                   You want interest rates to…
+
+                  Positive                                         Rise
+
+                 Negative                                          Fall
+
+
+                                                                  RIsk MeAsUReMeNT I          117
+
+           The alert reader may have noticed something odd about Position 2: it has
+      a negative theoretical edge. This is not a misprint. It indicates that if the inputs into
+      the model are correct, in the long run, the strategy will lose money. Of course,
+      no trader will intentionally put on such a position, but in a market where con-
+      ditions are constantly changing, a position that initially seemed sensible may
+      under new conditions represent a losing strategy. When this occurs, a trader
+      will make every effort to close out the position. The longer the trader holds the
+      position, the more likely it is that it will result in a loss.12
+           One final observation for the prospective trader: all the numbers we have
+      discussed in this chapter—the theoretical value, delta, gamma, theta, vega,
+      and rho—are constantly changing, so the profitability and risks associated
+      with different strategies are constantly changing. The importance of analyzing
+      risk cannot be overemphasized. Most traders who fail at option trading do so
+      because they fail to fully analyze and understand risk. But there is another type
+      of trader, one who attempts to analyze every possible risk. When this happens,
+      the trader finds it difficult to make any trading decisions at all; he is stricken
+      with paralysis through analysis. A trader who is so concerned with risk that he
+      is afraid to make a trade cannot profit, no matter how well he understands
+      options. When a trader enters the marketplace, he has chosen to take on some
+      risk. The delta, gamma, theta, vega, and rho enable him to identify risk; they
+      do not eliminate risk. The intelligent trader uses these numbers to help decide
+      beforehand which risks are acceptable and which risks are not.
+
+
+
+
+      12
+        In theory, a trader will never create a position with a negative theoretical edge, at least as an initial trade.
+      However, once a position has been established, in light of a larger overall position, a trader will sometimes in-
+      tentionally execute a trade with a negative theoretical edge. A trader might be willing to give up a small amount
+      of theoretical profit in order to make the remaining potential profit more secure. This, of course, is the whole
+      objective behind hedging.
+
+
+
+118   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+                                                                            8

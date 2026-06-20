@@ -1,0 +1,413 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/zuora/jobs/7770757",
+  "org": "zuora",
+  "job_id": "7770757",
+  "job_title": "Customer Solution Engineer",
+  "job_location": "Remote - United States",
+  "fetched_at": "2026-06-09T09:08:59Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/zuora/jobs/7770757?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 21,
+    "filled": 16,
+    "filled_needs_review": 0,
+    "declined": 5,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_65058996",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_65058998",
+      "label": "In compliance with federal law, all people hired by Zuora will be required to verify their identity and eligibility to work in the United States and to complete the required employment eligibility verification form upon hire.  If you are hired by Zuora, do you currently have the legal right to work for Zuora in the United States?”",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65058999",
+      "label": "Will you now or in the future require Zuora to commence (“sponsor”) an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)?  ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65059000",
+      "label": "Home address",
+      "type": "input_text",
+      "required": true,
+      "value": "12420 NE 120th St #1437, Kirkland, WA 98034",
+      "source": "address.street+city+state+zip (full one-line address)",
+      "status": "filled",
+      "matched_rule": "full_address",
+      "options": null
+    },
+    {
+      "id": "question_65059001",
+      "label": "Your personal data will be transferred to Zuora, Inc. (as Data Controller) in the United States and affiliates in accordance with Zuora’s Global Applicant Privacy Policy. Please confirm you have reviewed this policy.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I have reviewed Zuora's Global Applicant Privacy Policy",
+      "source": "acknowledge_yes (single option \"Yes, I have reviewed Zuora's Global Applicant Privacy Policy\")",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes, I have reviewed Zuora's Global Applicant Privacy Policy",
+          "value": 664424834
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_707",
+      "label": "Voluntary Self-Identification of Gender Identity: How do you describe your gender identity? ",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man, male or masculine",
+          "value": 3628
+        },
+        {
+          "label": "Woman, female or feminine ",
+          "value": 3629
+        },
+        {
+          "label": "Transgender man, male, or masculine",
+          "value": 3630
+        },
+        {
+          "label": "Transgender woman, female or feminine",
+          "value": 3631
+        },
+        {
+          "label": "Non-binary (e.g. bigender, gender non-conforming, androgynous) ",
+          "value": 3632
+        },
+        {
+          "label": "I prefer not to answer ",
+          "value": 3633
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_708",
+      "label": "Voluntary Self-Identification of Race/Ethnicity: Which category best describes you?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "South Asian",
+          "value": 3634
+        },
+        {
+          "label": "East Asian",
+          "value": 3635
+        },
+        {
+          "label": "South-East Asian",
+          "value": 3636
+        },
+        {
+          "label": "Middle Eastern (Western Asia / North African)",
+          "value": 3637
+        },
+        {
+          "label": "Central Asian",
+          "value": 3638
+        },
+        {
+          "label": "Black or African American",
+          "value": 3639
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 3640
+        },
+        {
+          "label": "Native American or Alaska Native",
+          "value": 3641
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 3642
+        },
+        {
+          "label": "Two or More Races",
+          "value": 3643
+        },
+        {
+          "label": "White",
+          "value": 3644
+        },
+        {
+          "label": "Other",
+          "value": 3645
+        },
+        {
+          "label": "I prefer not to answer ",
+          "value": 3646
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_709",
+      "label": "Voluntary Self-Identification of Sexual Orientation: Do you consider yourself a member of the LGBTQIA+ community? ",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 3647
+        },
+        {
+          "label": "No",
+          "value": 3648
+        },
+        {
+          "label": "I prefer not to answer",
+          "value": 3649
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_796",
+      "label": "Veteran Status",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am not a protected veteran",
+          "value": 4269
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": 4270
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4271
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_797",
+      "label": "Disability Status",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have a history/record of having a disability ",
+          "value": 4272
+        },
+        {
+          "label": "No, I don't have a disability, or a history/record of having a disability",
+          "value": 4273
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4274
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

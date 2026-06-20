@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned **post-deployment technical engagements** for Azure enterprise customers (Databricks, Walmart, SAP, NetApp), scaling resilience validation from a 2-person operation into a platformized program sustaining **45+ annual drills** and driving **$14M+ in business impact**.
+2. Led 0→1 delivery of an internal **Resilience Automation Platform**, authoring product requirements, APIs, and self-service scheduling workflows in Python that cut operational toil **30%** and shifted execution to a scalable, customer-driven model.
+3. Pioneered Azure's first **proactive resilience testing** capability, shipping a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable framework for continuous production validation.
+4. Served as **technical escalation lead** on 14 cross-org recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** with strict latency and isolation requirements.
+5. Built an internal **AI agent** for drill planning using LLM-powered automation and RAG over historical telemetry, reducing planning cycle time **39%** and growing drill capacity **21%** while freeing engineers for high-impact pre-sales and design work.
+6. Partnered with product and engineering teams to translate recurring customer support patterns into **roadmap priorities**, advocating for self-service tooling and documentation that preempted escalations across distributed Azure services.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove adoption of an **AI-driven code generation** developer tool across 14 Azure service teams, running hands-on customer demos, office hours, and enablement sessions that saved **37 engineering hours monthly** and deepened product stickiness.
+2. Influenced the product roadmap toward **intent-based YAML generation** by conducting 11+ structured user interviews with Azure service teams, translating qualitative pain points into prioritized feature requirements for engineering.
+3. Migrated internal documentation to an **AI-powered semantic search** experience with enforced metadata standards, cutting customer lookup time **83%** and reducing inbound support questions on common configuration issues.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by aligning 140+ engineering teams on a unified automation prioritization framework, resolving cross-team dependency conflicts during launch execution.
+2. Led discovery with 20+ service teams to quantify **81 hours of manual toil per region launch**, then built a prioritized automation roadmap targeting the highest-leverage critical-path tasks and shipped it to engineering partners.
+3. Engineered a **Power BI dashboard** aggregating operational toil signals across 140+ teams, enabling leadership to pinpoint automation gaps and direct support investment toward the costliest, most repeatable customer-impacting workflows.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero operational downtime** during a 2,000+ unit legacy OS migration pilot by defining the rollout strategy, mapping dependencies across 1,200+ stations, and coordinating Ops, IT, and Engineering through staged cutover windows.
+2. Facilitated Agile ceremonies — sprint planning, standups, retros — and groomed the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake process and unblocking downstream robotics deployments.
+3. Drove cross-functional alignment to implement **automated CI/CD pipelines** across fleet software, accelerating deployment cycles **25%** and reducing manual release toil for the on-call engineering rotation.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by redesigning the end-to-end scoping and invoicing lifecycle in a new **CRM**, standardizing 200+ monthly proposals and creating repeatable templates that scaled sales ops without added headcount.
+2. Cut **Customer Acquisition Cost 13%** and lifted conversions **2.7%** by executing a digital-first GTM strategy — rebuilding the website, optimizing the Google Business profile, and instrumenting funnel analytics.
+3. Closed margin leaks by running **financial profitability analysis** on 1,000+ historical project records in SQL/Excel, surfacing pricing anomalies that directly informed leadership's updated quoting model.
+
+## Notes from the rewriter
+- Re-cast MSFT FT around post-sales customer engagement, escalation ownership, automation, and AI agent work to mirror the Applied Engineer JD.
+- Surfaced Python, APIs, AI agents/RAG, CI/CD, and cloud keywords; foregrounded customer-facing technical problem solving over pure PM framing.
+- Expanded bullets to ~200–280 chars and added a 6th MSFT FT bullet on translating support patterns into roadmap influence to hit ≥97% page fill.
+

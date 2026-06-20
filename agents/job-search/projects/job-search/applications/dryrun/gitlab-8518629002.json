@@ -1,0 +1,1170 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/gitlab/jobs/8518629002",
+  "org": "gitlab",
+  "job_id": "8518629002",
+  "job_title": "Solutions Architect, Commercial - West",
+  "job_location": "Remote, North America",
+  "fetched_at": "2026-05-13T16:01:01Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/gitlab/jobs/8518629002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 20,
+    "filled": 13,
+    "filled_needs_review": 2,
+    "declined": 4,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_36254043002",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_36254044002",
+      "label": "What's the name you'd prefer us to use throughout the interview process?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"What's the name you'd prefer us to use throughout the interview process?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_36254045002",
+      "label": "This role is only open to candidates in the United States or Canada. Do you live in the US or Canada? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "address.country=United States",
+      "status": "filled",
+      "matched_rule": "us_based_confirm",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36254050002",
+      "label": "What is your current country of residence?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cabo Verde', 'Cambodia', 'Cameroon', 'Canada', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Crimea', 'Democratic Republic of the Congo', 'Republic of the Congo', 'Costa Rica', \"Cote d'Ivoire\", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Eswatini', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kosovo', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Korea', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States of America', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Afghanistan",
+          "value": 239840479002
+        },
+        {
+          "label": "Albania",
+          "value": 239840480002
+        },
+        {
+          "label": "Algeria",
+          "value": 239840481002
+        },
+        {
+          "label": "Andorra",
+          "value": 239840482002
+        },
+        {
+          "label": "Angola",
+          "value": 239840483002
+        },
+        {
+          "label": "Antigua and Barbuda",
+          "value": 239840484002
+        },
+        {
+          "label": "Argentina",
+          "value": 239840485002
+        },
+        {
+          "label": "Armenia",
+          "value": 239840486002
+        },
+        {
+          "label": "Australia",
+          "value": 239840487002
+        },
+        {
+          "label": "Austria",
+          "value": 239840488002
+        },
+        {
+          "label": "Azerbaijan",
+          "value": 239840489002
+        },
+        {
+          "label": "Bahamas",
+          "value": 239840490002
+        },
+        {
+          "label": "Bahrain",
+          "value": 239840491002
+        },
+        {
+          "label": "Bangladesh",
+          "value": 239840492002
+        },
+        {
+          "label": "Barbados",
+          "value": 239840493002
+        },
+        {
+          "label": "Belarus",
+          "value": 239840494002
+        },
+        {
+          "label": "Belgium",
+          "value": 239840495002
+        },
+        {
+          "label": "Belize",
+          "value": 239840496002
+        },
+        {
+          "label": "Benin",
+          "value": 239840497002
+        },
+        {
+          "label": "Bhutan",
+          "value": 239840498002
+        },
+        {
+          "label": "Bolivia",
+          "value": 239840499002
+        },
+        {
+          "label": "Bosnia and Herzegovina",
+          "value": 239840500002
+        },
+        {
+          "label": "Botswana",
+          "value": 239840501002
+        },
+        {
+          "label": "Brazil",
+          "value": 239840502002
+        },
+        {
+          "label": "Brunei",
+          "value": 239840503002
+        },
+        {
+          "label": "Bulgaria",
+          "value": 239840504002
+        },
+        {
+          "label": "Burkina Faso",
+          "value": 239840505002
+        },
+        {
+          "label": "Burundi",
+          "value": 239840506002
+        },
+        {
+          "label": "Cabo Verde",
+          "value": 239840507002
+        },
+        {
+          "label": "Cambodia",
+          "value": 239840508002
+        },
+        {
+          "label": "Cameroon",
+          "value": 239840509002
+        },
+        {
+          "label": "Canada",
+          "value": 239840510002
+        },
+        {
+          "label": "Central African Republic",
+          "value": 239840511002
+        },
+        {
+          "label": "Chad",
+          "value": 239840512002
+        },
+        {
+          "label": "Chile",
+          "value": 239840513002
+        },
+        {
+          "label": "China",
+          "value": 239840514002
+        },
+        {
+          "label": "Colombia",
+          "value": 239840515002
+        },
+        {
+          "label": "Comoros",
+          "value": 239840516002
+        },
+        {
+          "label": "Crimea",
+          "value": 239840517002
+        },
+        {
+          "label": "Democratic Republic of the Congo",
+          "value": 239840518002
+        },
+        {
+          "label": "Republic of the Congo",
+          "value": 239840519002
+        },
+        {
+          "label": "Costa Rica",
+          "value": 239840520002
+        },
+        {
+          "label": "Cote d'Ivoire",
+          "value": 239840521002
+        },
+        {
+          "label": "Croatia",
+          "value": 239840522002
+        },
+        {
+          "label": "Cuba",
+          "value": 239840523002
+        },
+        {
+          "label": "Cyprus",
+          "value": 239840524002
+        },
+        {
+          "label": "Czech Republic",
+          "value": 239840525002
+        },
+        {
+          "label": "Denmark",
+          "value": 239840526002
+        },
+        {
+          "label": "Djibouti",
+          "value": 239840527002
+        },
+        {
+          "label": "Dominica",
+          "value": 239840528002
+        },
+        {
+          "label": "Dominican Republic",
+          "value": 239840529002
+        },
+        {
+          "label": "Ecuador",
+          "value": 239840530002
+        },
+        {
+          "label": "Egypt",
+          "value": 239840531002
+        },
+        {
+          "label": "El Salvador",
+          "value": 239840532002
+        },
+        {
+          "label": "Equatorial Guinea",
+          "value": 239840533002
+        },
+        {
+          "label": "Eritrea",
+          "value": 239840534002
+        },
+        {
+          "label": "Estonia",
+          "value": 239840535002
+        },
+        {
+          "label": "Eswatini",
+          "value": 239840536002
+        },
+        {
+          "label": "Ethiopia",
+          "value": 239840537002
+        },
+        {
+          "label": "Fiji",
+          "value": 239840538002
+        },
+        {
+          "label": "Finland",
+          "value": 239840539002
+        },
+        {
+          "label": "France",
+          "value": 239840540002
+        },
+        {
+          "label": "Gabon",
+          "value": 239840541002
+        },
+        {
+          "label": "Gambia",
+          "value": 239840542002
+        },
+        {
+          "label": "Georgia",
+          "value": 239840543002
+        },
+        {
+          "label": "Germany",
+          "value": 239840544002
+        },
+        {
+          "label": "Ghana",
+          "value": 239840545002
+        },
+        {
+          "label": "Greece",
+          "value": 239840546002
+        },
+        {
+          "label": "Grenada",
+          "value": 239840547002
+        },
+        {
+          "label": "Guatemala",
+          "value": 239840548002
+        },
+        {
+          "label": "Guinea",
+          "value": 239840549002
+        },
+        {
+          "label": "Guinea-Bissau",
+          "value": 239840550002
+        },
+        {
+          "label": "Guyana",
+          "value": 239840551002
+        },
+        {
+          "label": "Haiti",
+          "value": 239840552002
+        },
+        {
+          "label": "Honduras",
+          "value": 239840553002
+        },
+        {
+          "label": "Hungary",
+          "value": 239840554002
+        },
+        {
+          "label": "Iceland",
+          "value": 239840555002
+        },
+        {
+          "label": "India",
+          "value": 239840556002
+        },
+        {
+          "label": "Indonesia",
+          "value": 239840557002
+        },
+        {
+          "label": "Iran",
+          "value": 239840558002
+        },
+        {
+          "label": "Iraq",
+          "value": 239840559002
+        },
+        {
+          "label": "Ireland",
+          "value": 239840560002
+        },
+        {
+          "label": "Israel",
+          "value": 239840561002
+        },
+        {
+          "label": "Italy",
+          "value": 239840562002
+        },
+        {
+          "label": "Jamaica",
+          "value": 239840563002
+        },
+        {
+          "label": "Japan",
+          "value": 239840564002
+        },
+        {
+          "label": "Jordan",
+          "value": 239840565002
+        },
+        {
+          "label": "Kazakhstan",
+          "value": 239840566002
+        },
+        {
+          "label": "Kenya",
+          "value": 239840567002
+        },
+        {
+          "label": "Kiribati",
+          "value": 239840568002
+        },
+        {
+          "label": "Kosovo",
+          "value": 239840569002
+        },
+        {
+          "label": "Kuwait",
+          "value": 239840570002
+        },
+        {
+          "label": "Kyrgyzstan",
+          "value": 239840571002
+        },
+        {
+          "label": "Laos",
+          "value": 239840572002
+        },
+        {
+          "label": "Latvia",
+          "value": 239840573002
+        },
+        {
+          "label": "Lebanon",
+          "value": 239840574002
+        },
+        {
+          "label": "Lesotho",
+          "value": 239840575002
+        },
+        {
+          "label": "Liberia",
+          "value": 239840576002
+        },
+        {
+          "label": "Libya",
+          "value": 239840577002
+        },
+        {
+          "label": "Liechtenstein",
+          "value": 239840578002
+        },
+        {
+          "label": "Lithuania",
+          "value": 239840579002
+        },
+        {
+          "label": "Luxembourg",
+          "value": 239840580002
+        },
+        {
+          "label": "Macedonia",
+          "value": 239840581002
+        },
+        {
+          "label": "Madagascar",
+          "value": 239840582002
+        },
+        {
+          "label": "Malawi",
+          "value": 239840583002
+        },
+        {
+          "label": "Malaysia",
+          "value": 239840584002
+        },
+        {
+          "label": "Maldives",
+          "value": 239840585002
+        },
+        {
+          "label": "Mali",
+          "value": 239840586002
+        },
+        {
+          "label": "Malta",
+          "value": 239840587002
+        },
+        {
+          "label": "Marshall Islands",
+          "value": 239840588002
+        },
+        {
+          "label": "Mauritania",
+          "value": 239840589002
+        },
+        {
+          "label": "Mauritius",
+          "value": 239840590002
+        },
+        {
+          "label": "Mexico",
+          "value": 239840591002
+        },
+        {
+          "label": "Micronesia",
+          "value": 239840592002
+        },
+        {
+          "label": "Moldova",
+          "value": 239840593002
+        },
+        {
+          "label": "Monaco",
+          "value": 239840594002
+        },
+        {
+          "label": "Mongolia",
+          "value": 239840595002
+        },
+        {
+          "label": "Montenegro",
+          "value": 239840596002
+        },
+        {
+          "label": "Morocco",
+          "value": 239840597002
+        },
+        {
+          "label": "Mozambique",
+          "value": 239840598002
+        },
+        {
+          "label": "Myanmar",
+          "value": 239840599002
+        },
+        {
+          "label": "Namibia",
+          "value": 239840600002
+        },
+        {
+          "label": "Nauru",
+          "value": 239840601002
+        },
+        {
+          "label": "Nepal",
+          "value": 239840602002
+        },
+        {
+          "label": "Netherlands",
+          "value": 239840603002
+        },
+        {
+          "label": "New Zealand",
+          "value": 239840604002
+        },
+        {
+          "label": "Nicaragua",
+          "value": 239840605002
+        },
+        {
+          "label": "Niger",
+          "value": 239840606002
+        },
+        {
+          "label": "Nigeria",
+          "value": 239840607002
+        },
+        {
+          "label": "Norway",
+          "value": 239840608002
+        },
+        {
+          "label": "Oman",
+          "value": 239840609002
+        },
+        {
+          "label": "Pakistan",
+          "value": 239840610002
+        },
+        {
+          "label": "Palau",
+          "value": 239840611002
+        },
+        {
+          "label": "Palestine",
+          "value": 239840612002
+        },
+        {
+          "label": "Panama",
+          "value": 239840613002
+        },
+        {
+          "label": "Papua New Guinea",
+          "value": 239840614002
+        },
+        {
+          "label": "Paraguay",
+          "value": 239840615002
+        },
+        {
+          "label": "Peru",
+          "value": 239840616002
+        },
+        {
+          "label": "Philippines",
+          "value": 239840617002
+        },
+        {
+          "label": "Poland",
+          "value": 239840618002
+        },
+        {
+          "label": "Portugal",
+          "value": 239840619002
+        },
+        {
+          "label": "Qatar",
+          "value": 239840620002
+        },
+        {
+          "label": "Romania",
+          "value": 239840621002
+        },
+        {
+          "label": "Russia",
+          "value": 239840622002
+        },
+        {
+          "label": "Rwanda",
+          "value": 239840623002
+        },
+        {
+          "label": "Saint Kitts and Nevis",
+          "value": 239840624002
+        },
+        {
+          "label": "Saint Lucia",
+          "value": 239840625002
+        },
+        {
+          "label": "Saint Vincent and the Grenadines",
+          "value": 239840626002
+        },
+        {
+          "label": "Samoa",
+          "value": 239840627002
+        },
+        {
+          "label": "San Marino",
+          "value": 239840628002
+        },
+        {
+          "label": "Sao Tome and Principe",
+          "value": 239840629002
+        },
+        {
+          "label": "Saudi Arabia",
+          "value": 239840630002
+        },
+        {
+          "label": "Senegal",
+          "value": 239840631002
+        },
+        {
+          "label": "Serbia",
+          "value": 239840632002
+        },
+        {
+          "label": "Seychelles",
+          "value": 239840633002
+        },
+        {
+          "label": "Sierra Leone",
+          "value": 239840634002
+        },
+        {
+          "label": "Singapore",
+          "value": 239840635002
+        },
+        {
+          "label": "Slovakia",
+          "value": 239840636002
+        },
+        {
+          "label": "Slovenia",
+          "value": 239840637002
+        },
+        {
+          "label": "Solomon Islands",
+          "value": 239840638002
+        },
+        {
+          "label": "Somalia",
+          "value": 239840639002
+        },
+        {
+          "label": "South Africa",
+          "value": 239840640002
+        },
+        {
+          "label": "South Korea",
+          "value": 239840641002
+        },
+        {
+          "label": "South Sudan",
+          "value": 239840642002
+        },
+        {
+          "label": "Spain",
+          "value": 239840643002
+        },
+        {
+          "label": "Sri Lanka",
+          "value": 239840644002
+        },
+        {
+          "label": "Sudan",
+          "value": 239840645002
+        },
+        {
+          "label": "Suriname",
+          "value": 239840646002
+        },
+        {
+          "label": "Sweden",
+          "value": 239840647002
+        },
+        {
+          "label": "Switzerland",
+          "value": 239840648002
+        },
+        {
+          "label": "Syria",
+          "value": 239840649002
+        },
+        {
+          "label": "Taiwan",
+          "value": 239840650002
+        },
+        {
+          "label": "Tajikistan",
+          "value": 239840651002
+        },
+        {
+          "label": "Tanzania",
+          "value": 239840652002
+        },
+        {
+          "label": "Thailand",
+          "value": 239840653002
+        },
+        {
+          "label": "Timor-Leste",
+          "value": 239840654002
+        },
+        {
+          "label": "Togo",
+          "value": 239840655002
+        },
+        {
+          "label": "Tonga",
+          "value": 239840656002
+        },
+        {
+          "label": "Trinidad and Tobago",
+          "value": 239840657002
+        },
+        {
+          "label": "Tunisia",
+          "value": 239840658002
+        },
+        {
+          "label": "Turkey",
+          "value": 239840659002
+        },
+        {
+          "label": "Turkmenistan",
+          "value": 239840660002
+        },
+        {
+          "label": "Tuvalu",
+          "value": 239840661002
+        },
+        {
+          "label": "Uganda",
+          "value": 239840662002
+        },
+        {
+          "label": "Ukraine",
+          "value": 239840663002
+        },
+        {
+          "label": "United Arab Emirates",
+          "value": 239840664002
+        },
+        {
+          "label": "United Kingdom",
+          "value": 239840665002
+        },
+        {
+          "label": "United States of America",
+          "value": 239840666002
+        },
+        {
+          "label": "Uruguay",
+          "value": 239840667002
+        },
+        {
+          "label": "Uzbekistan",
+          "value": 239840668002
+        },
+        {
+          "label": "Vanuatu",
+          "value": 239840669002
+        },
+        {
+          "label": "Vatican City",
+          "value": 239840670002
+        },
+        {
+          "label": "Venezuela",
+          "value": 239840671002
+        },
+        {
+          "label": "Vietnam",
+          "value": 239840672002
+        },
+        {
+          "label": "Yemen",
+          "value": 239840673002
+        },
+        {
+          "label": "Zambia",
+          "value": 239840674002
+        },
+        {
+          "label": "Zimbabwe",
+          "value": 239840675002
+        }
+      ]
+    },
+    {
+      "id": "question_36254046002",
+      "label": "Are you subject to any employment agreements and/or post-employment restrictions with your current employer or a past employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer | NOTE: 'Microsoft' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "current_employer",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36254047002",
+      "label": "It is important to us to create an accessible and inclusive interview experience. Please let us know if there are any adjustments we can make to assist you during the hiring and interview process.",
+      "type": "input_text",
+      "required": false,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes)",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": null
+    },
+    {
+      "id": "question_36254048002",
+      "label": "Will you now or in the future require sponsorship for a visa to remain in your current location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "No",
+          "value": 239840472002
+        },
+        {
+          "label": "Yes, Netherlands Highly Skilled Migrant Visa",
+          "value": 239840473002
+        },
+        {
+          "label": "Yes, Ireland Highly Skilled Worker Visa",
+          "value": 239840474002
+        },
+        {
+          "label": "Yes, EU Blue Card",
+          "value": 239840475002
+        },
+        {
+          "label": "Yes, USMCA Professional (TN) Visa (USA)",
+          "value": 239840476002
+        },
+        {
+          "label": "Yes, F-1 Visa OPT (USA)",
+          "value": 239840477002
+        },
+        {
+          "label": "Yes, but not one of the visas listed here",
+          "value": 239840478002
+        }
+      ]
+    },
+    {
+      "id": "question_36254049002",
+      "label": "Have you previously worked at or consulted for GitLab?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_36254044002",
+      "label": "What's the name you'd prefer us to use throughout the interview process?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"What's the name you'd prefer us to use throughout the interview process?\""
+    }
+  ],
+  "blockers": []
+}

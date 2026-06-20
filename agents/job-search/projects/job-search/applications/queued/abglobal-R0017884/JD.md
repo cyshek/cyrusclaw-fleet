@@ -1,0 +1,3 @@
+# Files & Productivity Product Manager — AllianceBernstein (R0017884)
+
+Own the product strategy and roadmap for files and productivity platforms that power employee collaboration across the firm. Define requirements, prioritize the backlog, and drive cross-functional delivery with engineering and infrastructure teams. Manage end-user productivity tooling, document management, and collaboration workflows. Partner with stakeholders to translate business needs into scalable technical solutions. Requires strong product management fundamentals, technical fluency, stakeholder management, and data-driven prioritization.

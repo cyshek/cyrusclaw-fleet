@@ -1,0 +1,93 @@
+# Product Manager
+
+**Company:** Hudu
+**Location:** United States
+**Apply:** https://jobs.ashbyhq.com/hudu/fa361248-7260-4b1b-8800-2e7f37deaccd
+**Ashby Org:** hudu
+**Ashby Job ID:** fa361248-7260-4b1b-8800-2e7f37deaccd
+
+---
+
+## **About Hudu:**
+
+**Hudu is a fast-growing SaaS platform** built exclusively for IT professionals and Managed Service Providers (MSPs). We give teams a single, secure, and beautifully simple place to store, organize, and share everything that keeps modern IT environments running: passwords, network documentation, processes, assets, client knowledge, and more. By replacing scattered spreadsheets, outdated wikis, and a dozen disconnected tools with one unified, customizable solution, Hudu helps thousands of IT teams save time, reduce risk, deliver better service, and scale with confidence.
+
+## **About the Role:**
+
+We're seeking a **Product Manager** to own the full lifecycle of features in a fast-paced, customer-driven environment, often using Agile methodologies. You will be responsible for driving the vision, strategy, and execution for features that empower IT professionals to organize, secure, and streamline their documentation. 
+
+You'll bridge customer needs, business goals, and our engineering, design, sales, and customer success teams to deliver a best-in-class platform known for its rapid innovation, deep integrations, and user-loved experience.
+
+### 
+
+**The essential functions include, but are not limited to the following:**
+
+- **Defining Product Vision and Strategy:** Shape the product vision for Hudu's core areas (e.g., asset management, password vaults, knowledge bases, processes, integrations with PSAs/RMMs like ConnectWise, HaloPSA, NinjaOne).
+
+- **Customer and Market Research:** Engage directly with MSPs, IT teams, and users through interviews, feedback analysis, community forums, and support data to uncover pain points in IT documentation and operations.
+
+- **Roadmap Planning and Prioritization:** Build and maintain a prioritized roadmap, balancing quick wins (e.g., new integrations) with long-term innovations, informed by customer upvotes and usage metrics.
+
+- **Requirements and Feature Definition:** Write clear user stories, specs, and PRDs for features like custom asset layouts, secure password management, workflow automation, or mobile/browser extensions.
+
+- **Cross-Functional Collaboration:** Partner closely with engineering, design, support, sales, and marketing teams to guide development, resolve issues, and ensure seamless launches.
+
+- **Development Oversight and Launch:** Support sprint planning, backlog grooming, QA, and coordinate releases with go-to-market activities (e.g., feature announcements, demos, changelog updates).
+
+- **Performance Analysis and Iteration:** Monitor key SaaS metrics (e.g., adoption, retention, churn, feature usage via analytics), gather post-launch feedback, and iterate rapidly.
+
+- **Stakeholder Management:** Communicate roadmaps, progress, and insights to leadership and the team; contribute to customer-facing content like release notes, blogs, and demos.
+
+## **About You: **
+
+- Education: Bachelor's degree in business, engineering, computer science, or a related field.
+
+- Experience: 3–7+ years in product management, or related roles (e.g., engineering, marketing, UX).
+
+- Technical background in IT infrastructure, networking, or security; experience with APIs/integrations; passion for simplifying complex workflows.
+
+- Experience working in early-stage or high growth startup environments.
+
+- Familiarity with tools like Jira, Linear, Figma, Google Analytics, and Canny.
+
+- Experience in Ruby and Ruby on Rails, PostgreSQL (or similar), Vue/React and JavaScript.
+
+- Advanced experience in Dockerized environments.
+
+- Must possess fluent ability to communicate in English in oral and written format.
+
+- Proficient in Git for version control.
+
+- Collaborative and communicative with a focus on teamwork and problem-solving.
+
+- Excellent time management skills with the ability to multi-task, prioritize, and meet deadlines effectively.
+
+- Strong communication and leadership skills. 
+
+## **Why Work at Hudu:**
+
+- **Innovation & Impact :** Rapid product evolution with regular feature updates and new tools. Building tools that solve real pain points for users.
+
+- **Customer Focus: **High user satisfaction with ease of use, powerful documentation capabilities, and strong product support.
+
+- **Growth Mindset: **A high-growth, startup environment where team members can wear many hats, innovate, and grow with the company.
+
+- **Benefits & Perks:**
+
+- Health Insurance
+
+- 401k plan with company matching
+
+- Paid time-off
+
+- Flexible work hours
+
+- Work Life Balance
+
+Compensation for this role will be determined on several factors, including but not limited to skills, experience, education, and job-related qualifications. If you don’t meet 100% of the preferred qualifications, we still encourage you to apply!
+
+**Hudu is proud to be an Equal Opportunity Employer. **We value diversity and are committed to providing an inclusive workplace environment for all employees and applicants. We do not discriminate based on race, color, religion or religious creed, sexual orientation, gender identity or expression, national origin, age, disability, veteran status, or any other legally protected status. Reasonable accommodations are available upon request throughout the hiring process.
+
+**At Hudu, we believe in fairness and transparency throughout our hiring process. **We use AI-powered tools to support fair, consistent, and efficient candidate evaluation and application review. All final hiring decisions are made by human reviewers, our hiring team. 
+
+**Discover more** and stay up to date with our latest news, growth, and opportunities on our [LinkedIn](https://www.linkedin.com/company/hudu-technologies/posts/?feedView=all)!

@@ -1,0 +1,119 @@
+# Growth PM, Future Platforms | Housing
+
+**Company:** EliseAI
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/eliseai/7d2f5728-1ddf-49d6-87e8-54fc81cba65c
+**Ashby Org:** eliseai
+**Ashby Job ID:** 7d2f5728-1ddf-49d6-87e8-54fc81cba65c
+
+---
+
+**About EliseAI**
+
+At EliseAI, we're improving the industries that matter most: housing and healthcare. Everyone needs a place to live and access to quality healthcare, yet both are often harder to secure than they should be. 
+
+By integrating AI agents deeply into existing workflows, we make them more efficient, reduce costs, and improve the experience for everyone.
+
+- **Housing**: We simplify how renters tour apartments, sign leases, submit maintenance requests, and stay connected with their property team—bringing everything they need for their home into one place.
+
+- **Healthcare**: We make it easy to schedule appointments, complete intake forms, and we help patients communicate with providers, so everyone can focus on health instead of paperwork.
+
+With EliseAI, organizations reduce manual work, improve accessibility, and deliver a seamless experience across essential services. We recently raised a [$250 million Series E round](https://www.eliseai.com/blog/eliseai-raises-250m-series-e) led by Andreessen Horowitz to accelerate this mission.
+
+**The Future Platforms Team - Executing on EliseAI’s Future Products**
+
+The Future Platforms team is responsible for executing on the next generation of AI products and business lines. This team will blend go-to-market, product, operations, and strategy with a mandate to push the frontier of AI and own everything required to take them from idea to market leadership.
+
+Our goal is to take Elise from agentic AI to truly end-to-end autonomous operations, fundamentally transforming how housing operators run their businesses and how residents experience their homes.
+
+Future Platforms will operate as a startup within a startup, run like a Seed or Series A company but with the capital, resources, and market access of a well-funded Series E, deep C-suite involvement (CEO, CRO, CSO, CTO) and founder-level ownership from day one.
+
+**About The Role**
+
+As a Growth PM on the Future Platforms team, you will help found and scale a critical new function at EliseAI. This is a cross-functional, high-autonomy leadership role that sits at the intersection of customer insight, product innovation, and growth execution.
+
+You will own ambiguous, high-impact problems end-to-end—from identifying new opportunities, to shaping product direction, to driving market adoption. You’ll work closely with senior executives and leaders across Sales, Operations, Product, and Strategy to ensure our new platforms win in the market.
+
+This role is ideal for someone who wants to operate like a founder: setting direction, making consequential decisions, and building systems that scale.
+
+**Key Responsibilities**
+
+- Lead 0→1 initiatives: Take new platform ideas from concept to launch to scaled adoption.
+
+- Own cross-functional execution: Partner with Sales, Ops, Product, and Leadership to align strategy and drive results
+
+- Develop go-to-market strategies for new products, including positioning, pricing, early customer adoption, and scaling plans
+
+- Translate customer insight into product direction, blending data, intuition, and experimentation
+
+- Build and refine operating playbooks that can be reused and scaled across Elise’s core business
+
+- Drive decisions under uncertainty, prioritizing speed, learning, and impact over perfection
+
+- Influence and lead without authority, motivating teams toward action and results
+
+- Report directly into senior leadership, with high visibility and ownership over outcomes
+
+- Attract top-tier talent to join our driven team
+
+**Move at rocket speed, build something massive.**
+
+We’re scaling fast, solving real client problems with precision and ambition. Here, you own your impact; full autonomy, no micromanagement, no fluff.
+
+We hire the best, expect the best, and give you the masterclass of your career. It’s hard, it’s intense, and it’s the most rewarding work you’ll ever do. If you’re hungry, driven, and ready to build something massive, climb aboard.
+
+**Requirements**
+
+We’re looking for intensely driven, founder-minded leaders who want to test themselves and build something transformational. You likely:
+
+- Are biased toward action and comfortable making high-stakes decisions with imperfect information
+
+- Have a high degree of autonomy and strong judgment
+
+- Can drive others toward outcomes, even in ambiguous environments
+
+- Have a track record of demonstrated excellence in prior roles
+
+- Naturally build strong relationships and influence across teams
+
+- Enjoy blending strategy, execution, and customer insight
+
+- Want to learn what it truly takes to build and scale a business in the AI era
+
+- Backgrounds often (but not exclusively) include high-growth startups, consulting, banking, strategy & operations, product-adjacent roles, or founder experiences.
+
+- Willingness to work in person at our office 4-5 days a week
+
+**Benefits**
+
+In addition to the growth and impact you’ll have at EliseAI, we offer competitive salaries along with the following benefits:
+
+- Equity in the company
+
+- Medical, Dental and Vision premiums covered at 100%
+
+- Fully paid parental leave
+
+- Commuter benefits
+
+- 401k benefits
+
+- Fitness & home services stipend to cover part of your expenses so you can focus on what matters
+
+- A collaborative in-office environment with an open floor plan, fully stocked kitchen, and all meals covered in the office
+
+- Unlimited vacation and paid holidays
+
+- We'll cover relocation packages and make the move exciting, not painful!
+
+**Job Compensation Range**
+
+The salary range for this role is $150,000 - $250,000. EliseAI offers a competitive total rewards package which includes base salary, equity, and a comprehensive benefits & perks package. Exact compensation is determined based on a number of factors including experience, skill level, location and qualifications which are assessed during the interview process. Additional details about total compensation and benefits will be provided by our Recruiting Team during the hiring process.
+
+EliseAI provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.
+
+Please note that employment with EliseAI is on an "at-will" basis, which means that either the employee or the company may terminate the employment relationship at any time, with or without cause or notice.
+
+Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.
+
+If you need assistance and/or a reasonable accommodation in the application or recruiting process due to a disability, please contact us at [recruiting@eliseai.com](mailto:recruiting@eliseai.com)

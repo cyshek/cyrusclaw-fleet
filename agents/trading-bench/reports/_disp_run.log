@@ -1,0 +1,46 @@
+=== BH-SPY bench (single-name backtest_xsec, full panel) ===
+BH-SPY FP-cont=+0.225 nret=1565 trades=8
+   2022-H1 bear         bear  ret=-15.08% dd=-0.18%
+   2022-Q3 chop         chop  ret=-24.11% dd=-0.24%
+   2023-H1 recovery     bull  ret=+7.93% dd=-0.08%
+   2023-Q3 chop         chop  ret=+9.60% dd=-0.04%
+   2024-Q2 bull         bull  ret=+22.71% dd=-0.08%
+   2025-Q1 tariff bear  bear  ret=-1.36% dd=-0.14%
+   2025-Q3 bull         bull  ret=+9.74% dd=-0.21%
+   2026-recent bull     bull  ret=+14.91% dd=-0.03%
+
+[diag] gauge_vs_SPYvol corr_lb40: corr=0.6530486415267415 n=255
+
+[diag] gauge_vs_SPYvol disp_lb20: corr=-0.06537142793937496 n=255
+
+=== corr_binary_pct ===
+  FP=+0.301 dep=0.489 ann=+2.69 dd=-0.1 tr=76 beatBH=3/8 pnl=$+180.0 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 60, 'threshold_pct': 0.4, 'corr_threshold': None}
+  FP=+0.298 dep=0.569 ann=+2.97 dd=-0.1 tr=100 beatBH=2/8 pnl=$+200.1 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 20, 'threshold_pct': 0.5, 'corr_threshold': None}
+  FP=+0.282 dep=0.654 ann=+3.38 dd=-0.1 tr=53 beatBH=4/8 pnl=$+230.3 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 60, 'threshold_pct': 0.6, 'corr_threshold': None}
+  FP=+0.244 dep=0.665 ann=+2.65 dd=-0.1 tr=94 beatBH=3/8 pnl=$+177.0 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 20, 'threshold_pct': 0.6, 'corr_threshold': None}
+  FP=+0.235 dep=0.725 ann=+2.82 dd=-0.1 tr=47 beatBH=3/8 pnl=$+189.7 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 20, 'threshold_pct': 0.7, 'corr_threshold': None}
+  FP=+0.119 dep=0.578 ann=+1.37 dd=-0.1 tr=70 beatBH=3/8 pnl=$+88.6 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 60, 'threshold_pct': 0.5, 'corr_threshold': None}
+  FP=+0.068 dep=0.562 ann=+0.87 dd=-0.1 tr=82 beatBH=4/8 pnl=$+55.6 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 40, 'threshold_pct': 0.5, 'corr_threshold': None}
+  FP=+0.018 dep=0.691 ann=+0.39 dd=-0.1 tr=37 beatBH=3/8 pnl=$+24.7 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'corr_lookback': 60, 'threshold_pct': 0.7, 'corr_threshold': None}
+
+=== corr_prop ===
+  FP=+0.321 dep=0.479 ann=+2.43 dd=-0.1 tr=303 beatBH=2/8 pnl=$+161.7 {'gauge': 'corr', 'exposure_mode': 'proportional', 'regime_side': 'long_when_low_corr', 'corr_lookback': 20, 'lo_pct': 0.2, 'hi_pct': 0.8}
+  FP=+0.177 dep=0.507 ann=+1.65 dd=-0.1 tr=238 beatBH=2/8 pnl=$+107.6 {'gauge': 'corr', 'exposure_mode': 'proportional', 'regime_side': 'long_when_low_corr', 'corr_lookback': 40, 'lo_pct': 0.2, 'hi_pct': 0.8}
+  FP=+0.110 dep=0.514 ann=+1.21 dd=-0.1 tr=177 beatBH=3/8 pnl=$+78.0 {'gauge': 'corr', 'exposure_mode': 'proportional', 'regime_side': 'long_when_low_corr', 'corr_lookback': 60, 'lo_pct': 0.2, 'hi_pct': 0.8}
+
+=== disp_binary_pct ===
+  FP=+0.568 dep=0.616 ann=+7.25 dd=-0.1 tr=220 beatBH=5/8 pnl=$+548.0 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 20, 'threshold_pct': 0.6, 'corr_threshold': None}
+  FP=+0.533 dep=0.526 ann=+6.24 dd=-0.1 tr=312 beatBH=4/8 pnl=$+459.1 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 10, 'threshold_pct': 0.5, 'corr_threshold': None}
+  FP=+0.477 dep=0.715 ann=+7.00 dd=-0.1 tr=232 beatBH=5/8 pnl=$+525.7 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 20, 'threshold_pct': 0.7, 'corr_threshold': None}
+  FP=+0.448 dep=0.44 ann=+4.97 dd=-0.1 tr=298 beatBH=4/8 pnl=$+353.6 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 10, 'threshold_pct': 0.4, 'corr_threshold': None}
+  FP=+0.338 dep=0.439 ann=+3.75 dd=-0.1 tr=247 beatBH=4/8 pnl=$+258.2 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 20, 'threshold_pct': 0.4, 'corr_threshold': None}
+  FP=+0.311 dep=0.718 ann=+4.08 dd=-0.1 tr=305 beatBH=4/8 pnl=$+283.2 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 10, 'threshold_pct': 0.7, 'corr_threshold': None}
+  FP=+0.279 dep=0.404 ann=+2.86 dd=-0.1 tr=125 beatBH=3/8 pnl=$+192.4 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 40, 'threshold_pct': 0.4, 'corr_threshold': None}
+  FP=+0.190 dep=0.615 ann=+2.48 dd=-0.1 tr=297 beatBH=3/8 pnl=$+165.0 {'gauge': 'dispersion', 'exposure_mode': 'binary', 'regime_side': 'long_when_low_corr', 'disp_lookback': 10, 'threshold_pct': 0.6, 'corr_threshold': None}
+
+=== corr_binary_INVERTED ===
+  FP=+0.505 dep=0.341 ann=+5.40 dd=-0.1 tr=65 beatBH=5/8 pnl=$+388.6 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_high_corr', 'corr_lookback': 40, 'threshold_pct': 0.6, 'corr_threshold': None}
+  FP=+0.387 dep=0.551 ann=+5.06 dd=-0.1 tr=84 beatBH=6/8 pnl=$+361.0 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_high_corr', 'corr_lookback': 40, 'threshold_pct': 0.4, 'corr_threshold': None}
+  FP=+0.245 dep=0.438 ann=+2.98 dd=-0.1 tr=80 beatBH=5/8 pnl=$+201.2 {'gauge': 'corr', 'exposure_mode': 'binary', 'regime_side': 'long_when_high_corr', 'corr_lookback': 40, 'threshold_pct': 0.5, 'corr_threshold': None}
+
+wrote reports/_dispersion_results.json

@@ -1,0 +1,140 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/console/395c3f5b-759f-4bf1-b6ed-38db7f0c76ee",
+  "org": "console",
+  "job_id": "395c3f5b-759f-4bf1-b6ed-38db7f0c76ee",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco (On-site)",
+  "fetched_at": "2026-05-31T06:57:13Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb__systemfield_name"
+    },
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb__systemfield_email"
+    },
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb__systemfield_resume"
+    },
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_9f525ad3-d927-493f-a824-9899de7eb535",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_9f525ad3-d927-493f-a824-9899de7eb535"
+    },
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_d1dddfe3-901e-424c-aa94-ef1582c25c33",
+      "label": "Will you now or in the future require  sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_d1dddfe3-901e-424c-aa94-ef1582c25c33"
+    },
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_acfbbf61-3126-4dd8-b5ad-6898f67f5c59",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_acfbbf61-3126-4dd8-b5ad-6898f67f5c59"
+    },
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_2ff42fe1-02ac-493f-80fe-a96888ced5cf",
+      "label": "What's a project you've worked on that you're most proud of?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"What's a project you've worked on that you're most proud of?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_2ff42fe1-02ac-493f-80fe-a96888ced5cf"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "e5b1110a-d7a5-4477-99d5-fafeca9ad7eb_2ff42fe1-02ac-493f-80fe-a96888ced5cf",
+      "label": "What's a project you've worked on that you're most proud of?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"What's a project you've worked on that you're most proud of?\""
+    }
+  ],
+  "blockers": []
+}

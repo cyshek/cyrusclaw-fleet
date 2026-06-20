@@ -1,0 +1,330 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/snowflake/e39a441a-07e4-4ea3-a687-b483007deb94",
+  "org": "snowflake",
+  "job_id": "e39a441a-07e4-4ea3-a687-b483007deb94",
+  "job_title": "Product Manager - Traffic & Networking",
+  "job_location": "US-CA-Menlo Park",
+  "fetched_at": "2026-05-31T07:20:55Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 17,
+    "filled": 14,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_name"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_email"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_1c1690a4-cce6-4e38-99cb-71dc879c5164"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_resume"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31__systemfield_location"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+      "label": "LinkedIn Profile, if available",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_586e52ac-fc39-495f-821d-1cd0cce9aa2e"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_c773adde-72b8-494f-8f4f-bb9b84608c29",
+      "label": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_c773adde-72b8-494f-8f4f-bb9b84608c29"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_4c8e248b-f134-416f-9fa5-38c9e679f7b1",
+      "label": "In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_4c8e248b-f134-416f-9fa5-38c9e679f7b1"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_b1890667-a914-4163-b3c1-c5b694fd412c",
+      "label": "Additional Attachments",
+      "type": "input_file",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Additional Attachments'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_b1890667-a914-4163-b3c1-c5b694fd412c"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+      "label": "Where have you most recently worked?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_962f2552-c3ca-4d6c-a7d8-b7b1340558ae",
+      "label": "Have you worked at Snowflake in the past in a Full-time, Part-time, contractor or Intern capacity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_962f2552-c3ca-4d6c-a7d8-b7b1340558ae"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_a3cc08ef-4552-444a-b493-c608c65670df",
+      "label": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_a3cc08ef-4552-444a-b493-c608c65670df"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_0a2a2426-a42d-4c4f-a68f-5083d6b8a72a",
+      "label": "A “U.S. person” is a citizen, legal permanent resident, or legal temporary resident (i.e., a refugee or asylee) of the United States. Which of the following best describes your “U.S. person” status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am a U.S. person",
+      "source": "work_authorization.status=us_citizen (matched ITAR option 'I am a U.S. person')",
+      "status": "filled",
+      "matched_rule": "itar_us_person_ack",
+      "options": [
+        {
+          "label": "I am a U.S. person",
+          "value": "I am a U.S. person"
+        },
+        {
+          "label": "I am a citizen of Cuba, Iran, North Korea, or Syria AND I am NOT a U.S. person",
+          "value": "I am a citizen of Cuba, Iran, North Korea, or Syria AND I am NOT a U.S. person"
+        },
+        {
+          "label": "None of the above; I am a citizen of a different country",
+          "value": "None of the above; I am a citizen of a different country"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_0a2a2426-a42d-4c4f-a68f-5083d6b8a72a"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_5c859149-0940-42e7-8962-ec82679d8074",
+      "label": "Due to SEC auditor independence requirements, please let us know whether you have previously worked at, or if currently working at PricewaterhouseCoopers (PwC), who is our independent auditor.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No - I have never been employed by PwC",
+      "source": "ashby_never_no (Cyrus has no prior US gov employment / no security clearance / not citizen of restricted country) | smart-matched to option 'No - I have never been employed by PwC'",
+      "status": "filled",
+      "matched_rule": "never_no",
+      "options": [
+        {
+          "label": "Yes - I have previously worked at, or is currently working at PwC",
+          "value": "Yes - I have previously worked at, or is currently working at PwC"
+        },
+        {
+          "label": "No - I have never been employed by PwC",
+          "value": "No - I have never been employed by PwC"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_5c859149-0940-42e7-8962-ec82679d8074"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+      "label": "Have you ever been directly employed by (1) any government or military entity, state-owned enterprise, or publicly-funded institution, or (2) a government contractor in a role that recommended Snowflake as part of Government procurement?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state (NOTE: 'WA' not literally in options ['Yes', 'No']) | NOTE: 'WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+      "match_attempted": true
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_2633dee9-9a40-40d2-a8d4-4fabd726c126",
+      "label": "In any materials you submit, you may redact or remove age-identifying information such as age, date of birth, or dates of school attendance or graduation. You will not be penalized for redacting or removing this information.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I Acknowledge",
+      "source": "ashby_single_option_ack (auto-checked the only option)",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": [
+        {
+          "label": "I Acknowledge",
+          "value": "I Acknowledge"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_2633dee9-9a40-40d2-a8d4-4fabd726c126"
+    },
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_2ded3ef9-36d5-4e49-a11c-9cd79f053a35",
+      "label": "Snowflake will process your personal information in accordance with the Snowflake Candidate Privacy Notice.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I have read and agree to the Snowflake Candidate Privacy Notice.",
+      "source": "acknowledge_yes (single option 'I have read and agree to the Snowflake Candidate Privacy Notice.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I have read and agree to the Snowflake Candidate Privacy Notice.",
+          "value": "I have read and agree to the Snowflake Candidate Privacy Notice."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_2ded3ef9-36d5-4e49-a11c-9cd79f053a35"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "1e169d55-ca34-42cd-93f9-d1c181ed7c31_b1890667-a914-4163-b3c1-c5b694fd412c",
+      "label": "Additional Attachments",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Additional Attachments'"
+    }
+  ],
+  "blockers": []
+}

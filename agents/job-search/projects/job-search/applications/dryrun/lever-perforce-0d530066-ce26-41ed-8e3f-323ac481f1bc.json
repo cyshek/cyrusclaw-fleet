@@ -1,0 +1,623 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/perforce/0d530066-ce26-41ed-8e3f-323ac481f1bc",
+  "apply_url": "https://jobs.lever.co/perforce/0d530066-ce26-41ed-8e3f-323ac481f1bc/apply",
+  "org": "perforce",
+  "job_id": "0d530066-ce26-41ed-8e3f-323ac481f1bc",
+  "job_title": "Perforce - Sales Engineer - Delphix (US-Northwest Region)",
+  "fetched_at": "2026-06-02T06:15:31Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 27,
+    "filled": 20,
+    "filled_needs_review": 0,
+    "declined": 6,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field0]",
+      "label": "Are you 18 years of age or older?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "50d32087-ab76-49db-a0c8-da77b5740667"
+        },
+        {
+          "label": "No",
+          "value": "e7143e33-cdf7-4e4e-9912-d8feabc44697"
+        }
+      ],
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field1]",
+      "label": "Are you legally authorized to work in the country which you are applying?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "03c96302-57f0-476b-b234-b23f8faea0d3"
+        },
+        {
+          "label": "No",
+          "value": "792b7c4b-dd26-4d63-b609-d9a259807e3f"
+        }
+      ],
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field2]",
+      "label": "Will you now, or in the future, require work visa sponsorship (i.e. visa application, transfer, etc.) to legally work in the Country which you are applying?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "4083046f-49f9-467e-a38f-364e76ec9eb0"
+        },
+        {
+          "label": "No",
+          "value": "ca729ac3-2d5b-4ee8-beba-737fbdcd1ad3"
+        }
+      ],
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field3]",
+      "label": "Available Start Date:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field4]",
+      "label": "How did you hear about this opportunity?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null,
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field5]",
+      "label": "If referred by a current employee, please provide the employee's name:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "",
+      "source": "common_form_answers.referred_by_employee (null -> blank)",
+      "status": "filled",
+      "matched_rule": "referred_by",
+      "options": null,
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field6]",
+      "label": "Are you a current employee of Perforce?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "9430f70e-371a-4477-8f7a-d82166234d1e"
+        },
+        {
+          "label": "No",
+          "value": "e54bcc66-62bc-4ea4-85c0-ba1ed19fd53d"
+        }
+      ],
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field7]",
+      "label": "Are you a prior employee or contractor of Perforce?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "69fc8cf1-0961-4540-850d-83f2fbde6a1c"
+        },
+        {
+          "label": "No",
+          "value": "ad371fbf-0668-4645-94e9-cdf4ecd2832b"
+        }
+      ],
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field8]",
+      "label": "Please provide prior dates/company name, that you were previously employed by Perforce or any of its subsidiaries worldwide.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "No",
+      "source": "common_form_answers.previously_employed_by_company",
+      "status": "filled",
+      "matched_rule": "previously_employed",
+      "options": null,
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field9]",
+      "label": "Desired Compensation:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field10]",
+      "label": "Current City:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "cards[3504fc23-a443-457d-9a4d-351e0e41e58f][field11]",
+      "label": "State",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "WA",
+      "source": "address.state (exact option)",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "AL",
+          "value": "91b535c0-5c35-4307-bb70-929685ff95bd"
+        },
+        {
+          "label": "AK",
+          "value": "d4fa933a-e69c-4114-9d7f-d7ae47f86458"
+        },
+        {
+          "label": "AZ",
+          "value": "478a5490-cb6e-4646-8cc0-3868dcad6e16"
+        },
+        {
+          "label": "AR",
+          "value": "25c8fad8-3062-43c2-a8a0-3d77c3201189"
+        },
+        {
+          "label": "CA",
+          "value": "c41af88e-3c44-4c51-9a49-4891ff62725c"
+        },
+        {
+          "label": "CO",
+          "value": "bc735bd4-9a84-4293-8025-3f14d41c041e"
+        },
+        {
+          "label": "CT",
+          "value": "d6e986b1-b691-41d5-b38f-afcb226a69fa"
+        },
+        {
+          "label": "DE",
+          "value": "5c9539d3-a502-4cf2-a032-4cc4c3b9d056"
+        },
+        {
+          "label": "FL",
+          "value": "b540640f-64a1-49af-b183-6eafbf0ad400"
+        },
+        {
+          "label": "GA",
+          "value": "b48b1965-989a-4bb4-b683-317bcafcb61d"
+        },
+        {
+          "label": "HI",
+          "value": "2cdb8cc7-efcb-408b-a842-7e0b3b64e4ae"
+        },
+        {
+          "label": "ID",
+          "value": "a07f455e-67b8-4b3f-a791-9a09b85836f5"
+        },
+        {
+          "label": "IL",
+          "value": "0bfaaa33-e556-4b52-addb-587c9dcf1268"
+        },
+        {
+          "label": "IN",
+          "value": "74254dfa-2be4-4627-9f87-bbed86bc7f1c"
+        },
+        {
+          "label": "IA",
+          "value": "69c4b264-9a91-4d61-9a73-ef75aad22392"
+        },
+        {
+          "label": "KS",
+          "value": "6b3e7d84-29e6-42c0-86d7-2184c98c4097"
+        },
+        {
+          "label": "KY",
+          "value": "b48dd676-645a-4023-b201-086085203dd9"
+        },
+        {
+          "label": "LA",
+          "value": "7e3b7cb5-b9cf-4128-b53f-a2613dc232c4"
+        },
+        {
+          "label": "ME",
+          "value": "ecb4f7b7-c795-4681-8836-24dd582b0987"
+        },
+        {
+          "label": "MD",
+          "value": "8ffd133b-717e-43ce-b17a-0e9be3a4d2fe"
+        },
+        {
+          "label": "MA",
+          "value": "e1e0aada-68f5-46c2-af26-073cad2171aa"
+        },
+        {
+          "label": "MI",
+          "value": "b5bab90b-2cb6-4da3-8d31-b32838d09a58"
+        },
+        {
+          "label": "MN",
+          "value": "913ef179-59e6-4bd3-8dd9-f19c1c081ab2"
+        },
+        {
+          "label": "MS",
+          "value": "5f0b1027-bb56-490e-98b5-c334015aa424"
+        },
+        {
+          "label": "MO",
+          "value": "3dc852c6-42fb-497d-85b0-f3d0e3b1ec29"
+        },
+        {
+          "label": "MT",
+          "value": "0d5aef25-2ad9-4af0-a600-ac3e800c92ba"
+        },
+        {
+          "label": "NE",
+          "value": "c9148205-b638-4544-a2a1-40a1378fb4c9"
+        },
+        {
+          "label": "NV",
+          "value": "e71b7c3b-ce72-46f1-889d-693f5cbb7e12"
+        },
+        {
+          "label": "NH",
+          "value": "50f2155c-37a1-4ad1-8127-c0ae680a2463"
+        },
+        {
+          "label": "NJ",
+          "value": "54e56821-e2ec-46eb-a47d-6a32c3188522"
+        },
+        {
+          "label": "NM",
+          "value": "729e7b4f-141d-4ad8-b487-8e69230acdeb"
+        },
+        {
+          "label": "NY",
+          "value": "961340b6-dbc4-4a0c-a5e0-9c766d1f897a"
+        },
+        {
+          "label": "NC",
+          "value": "2a946ec4-feb9-4311-a25a-62f2ffc4a403"
+        },
+        {
+          "label": "ND",
+          "value": "cdb87cde-359c-4730-bec3-7bbc2c4bb4e3"
+        },
+        {
+          "label": "OH",
+          "value": "e68e976b-9fe3-4ab3-a54e-5cc4d0bcb55b"
+        },
+        {
+          "label": "OK",
+          "value": "9e2c6367-2703-40a7-a20c-1cd8fd2a6415"
+        },
+        {
+          "label": "OR",
+          "value": "5fa4e07e-c1dc-4e25-b98a-582a5c2a5e1d"
+        },
+        {
+          "label": "PA",
+          "value": "7a8b6af7-e88f-4a6e-8533-d20ce724ffd9"
+        },
+        {
+          "label": "RI",
+          "value": "7fc95e40-d5d6-4860-9abf-b71abd24ff67"
+        },
+        {
+          "label": "SC",
+          "value": "875d0ac2-ed8e-4aed-92c5-9e21a80d1a08"
+        },
+        {
+          "label": "SD",
+          "value": "33706e53-671a-4f0f-a732-15e6d83ed886"
+        },
+        {
+          "label": "TN",
+          "value": "dc2d8d4a-3998-40f4-9d24-e8c8164d53e7"
+        },
+        {
+          "label": "TX",
+          "value": "8f2e8d8a-4692-4aa0-886c-b81494fa24aa"
+        },
+        {
+          "label": "UT",
+          "value": "3e153f42-b2ea-4788-9cea-7b3bd4446259"
+        },
+        {
+          "label": "VT",
+          "value": "5e03fce3-dace-42c3-bf76-addab25e37bb"
+        },
+        {
+          "label": "VA",
+          "value": "342b302e-df79-4673-b20e-e021d74f3d11"
+        },
+        {
+          "label": "WA",
+          "value": "d955a544-671b-40e4-b692-0a2c8351d36b"
+        },
+        {
+          "label": "WV",
+          "value": "ee051892-fd08-4f31-bed0-f89343230319"
+        },
+        {
+          "label": "WI",
+          "value": "884904fd-943f-4311-9690-afc37b63b007"
+        },
+        {
+          "label": "WY",
+          "value": "e30cee1f-6e5d-4ffd-a30c-70406a48f9d6"
+        }
+      ],
+      "card_text": "Application Questions | USA"
+    },
+    {
+      "id": "eeo[disabilitySignatureDate]",
+      "label": "Disabilitysignaturedate",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[disabilitySignature]",
+      "label": "Disabilitysignature",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[disability]",
+      "label": "Disability",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "required": false,
+      "reason": "portfolio_url is null"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "Perforce - Sales Engineer - Delphix (US-Northwest Region)",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

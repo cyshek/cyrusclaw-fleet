@@ -1,0 +1,21 @@
+=== reconcile @ 20260618T133001Z ===
+rc: 0
+Before: {'filled': 50}
+Nothing to do — no non-terminal rows.
+=== cron_tick.sh @ 20260618T133001Z ===
+strategies: breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth breakout_xlk__mut_c382b1 leveraged_long_trend_paper rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo
+tick rc: 0
+--- tick output ---
+[breakout_xlk] SELL 0.547554377 XLK @ $190.34 | reason: close 185.74 < 20-bar low 186.49
+[sma_crossover_qqq] SELL 0.139770306 QQQ @ $736.42 | reason: SMA10=731.13 < SMA30=735.48
+[breakout_xlk_regime] SELL 0.547650345 XLK @ $190.41 | reason: close 185.74 < 20-bar low 186.49
+[sma_crossover_qqq_regime] SELL 0.13973007 QQQ @ $736.86 | reason: SMA10=731.13 < SMA30=735.48
+[breakout_xlk__mut_c382b1] SELL 0.541162503 XLK @ $190.45 | reason: close 185.74 < 20-bar low 186.49
+[tqqq_cot_combo] BUY 1.21589085 TQQQ @ $82.24 | reason: underweight +3sh ($247) | [QQQ] close=722.48 SMA200=627.74 gate=ON | rv=22.6% tgt=40% w=1.000 | COT_scale=0.5 | w_final=0.500 tgt_qty=6 cur_qty=3 thresh=1
+=== end ===
+--- post rc: 1 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+Error: Ambiguous Discord recipient "1508503706545557656". For DMs use "user:1508503706545557656" or "<@1508503706545557656>"; for channels use "channel:1508503706545557656".
+=== posted ===

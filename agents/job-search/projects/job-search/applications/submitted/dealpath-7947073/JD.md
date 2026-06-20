@@ -1,0 +1,96 @@
+# Solutions Engineer
+
+**Company:** Dealpath
+**Location:** New York City, New York
+**Apply:** https://www.dealpath.com/job-post/?gh_jid=7947073
+**Greenhouse ID:** 7947073
+
+---
+
+As a Solutions Engineer you will play a critical role in ensuring our prospects understand how Dealpath can solve their most critical business challenges. You'll collaborate closely with Sales, Product, and Customer Success to design tailored solutions that showcase the value of Dealpath.
+
+**YOU'RE EXCITED ABOUT THIS OPPORTUNITY BECAUSE YOU'LL…**
+
+- Partner with Account Executives as the technical trusted advisor across the full sales cycle — from discovery and demos to proof-of-concept design and executive readouts.
+
+- Lead tailored product demonstrations and technical deep-dives for sophisticated commercial real estate teams, translating their pipeline, deal management, and reporting challenges into compelling Dealpath solutions.
+
+- Design and execute proofs-of-concept that prove value against the customer's real data, real workflows, and real success criteria — not generic templates.
+
+- Serve as the technical voice of the customer back to Product and Engineering, surfacing patterns from your deal work that shape the roadmap.
+
+- Build and refine the Solutions Engineering playbook — discovery frameworks, demo environments, technical objection-handling guides — that scale how the team wins.
+
+- Use AI as a core part of how you work:  Claude Projects, MCP connectors into Salesforce and Slack, and structured prompt workflows to research accounts, pressure-test solutions, and sharpen customer materials. You'll join a team that treats AI fluency as a craft and shares wins openly.
+
+**WE ARE EXCITED THAT YOU ARE…**
+
+- A technical seller at heart and  equally comfortable in a discovery call with a Head of Acquisitions and in a working session with a Director of IT on SSO, data migration, or integrations.
+
+- Skilled at translating ambiguous business problems into clear technical narratives — and equally skilled at simplifying complex product capabilities for non-technical executives.
+
+- Experienced building demo environments, sample datasets, and POC plans that close deals, not just check a box.
+
+- Fluent with the modern SaaS technical stack: REST APIs, SSO/SAML, data import/export patterns, common integrations (Salesforce, Outlook, Excel, BI tools), and basic SQL.
+
+- A deliberate, evolving AI user — you can name the tools you use, the tasks you use them for, and your review process before anything reaches a customer. You're moving past one-shot prompting into persistent context, multi-step workflows, and AI as a thinking partner, and you share what's working with teammates.
+
+- Customer-obsessed, intellectually honest, and energized by a fast-moving environment where the right answer matters more than the loudest opinion.
+
+**QUALIFICATIONS**
+
+- 4+ years in Solutions Engineering, Sales Engineering, Solutions Consulting, or a comparable technical pre-sales role at a B2B SaaS company.
+
+- Demonstrated ability to lead technical discovery, design POCs, and run executive-level demos for enterprise buyers.
+
+- Working knowledge of REST APIs, SSO/SAML, data integration patterns, and common enterprise SaaS architectures.
+
+- Strong written and verbal communication; able to move fluidly between a CFO conversation and an engineering whiteboard session.
+
+- Comfort with SQL, spreadsheets, and structured data analysis sufficient to prepare customer-specific POC environments.
+
+- Consistent, deliberate use of AI tools (Claude, ChatGPT, Copilot, Gemini, or equivalent) across multiple recurring work tasks — account research, discovery prep, objection handling, RFP responses, or similar. Reviews output before it reaches a customer and applies sound judgment about what data belongs in AI tools.
+
+**PREFERRED**
+
+- Experience selling into commercial real estate, real estate private equity, real estate investment, or related verticals.
+
+- Prior experience building reusable demo environments, technical battlecards, or SE enablement assets that other team members adopted.
+
+- Has restructured how you approach complex pre-sales work with AI — persistent context for key accounts (Claude Projects or equivalent), MCP connectors pulling live Salesforce/Slack data, and multi-step generate → pressure-test → refine loops. Shares prompts and workflows with teammates and can point to specific quality improvements, not just speed gains.
+
+- Familiarity with the institutional real estate investment lifecycle (acquisitions, asset management, development, fund reporting).
+
+- Bachelor's degree in a technical, business, or quantitative field, or equivalent practical experience.
+
+**THE PERKS & CULTURE**
+
+- Medical, dental, and vision insurance
+
+- Flexible Spending Account
+
+- Paid parental leave
+
+- 401(k)
+
+- Company-sponsored commuter benefits
+
+- Flexible time off policy
+
+- Hybrid work policy — 4  days in office
+
+- Monthly wellness reimbursement
+
+- Estimated pay range for NYC candidates: $131,200–$152,000 base + $32,800–$38,000 variable (paid based on performance against goals), bringing the on-target earnings (OTE) range to $164,000–$190,000. This role is also eligible for Dealpath's equity plan. Final compensation is determined based on experience, qualifications, location, and interview performance, and will be confirmed in writing at offer.
+
+**ABOUT DEALPATH**
+
+Dealpath is the world's largest and most trusted AI-powered operating system for real estate investing. To date, the platform has powered more than $10 trillion in transactions, partnering with hundreds of firms, including leading global institutions such as Blackstone, Nuveen, LaSalle, CBRE IM, MetLife, Newmark, Oxford Properties, New York Life, UBS, Manulife, DWS, and Principal.
+
+By bringing together the only private exchange for institutional real estate listings, investment data, and intelligent execution workflows into a single platform, Dealpath enables firms to capture more opportunities, make faster decisions, execute efficiently, and deliver superior returns.
+
+Our company is led by an experienced team and backed by a combination of top tier venture capital firms and strategic industry partners including: Blackstone, Nasdaq, 8VC, JLL Spark, WTI, GreenSoil Investments, LeFrak, Milstein, Bechtel, and Morgan Stanley Expansion Capital.
+
+ 
+
+We value your voice! If you get excited about solving real business challenges and working closely with other smart folks in a winning culture — we'd love to meet you!

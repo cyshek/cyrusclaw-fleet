@@ -1,0 +1,802 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/samsara/jobs/7187159",
+  "org": "samsara",
+  "job_id": "7187159",
+  "job_title": "Sales Engineer - Mid-Market Southeast",
+  "job_location": "Remote - US",
+  "fetched_at": "2026-06-04T13:30:05Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/samsara/jobs/7187159?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 33,
+    "filled": 28,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_59608628",
+      "label": "How many years of experience do you have working with  customers in a pre-sales, technical consulting, solutions architect, customer success, or customer/product support capacity role?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2-4 years",
+      "source": "experience_summary.answer_for_years_of_experience_field | smart-matched to option '2-4 years'",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "0-1 years",
+          "value": 584615451
+        },
+        {
+          "label": "2-4 years",
+          "value": 584615452
+        },
+        {
+          "label": "5-7 years",
+          "value": 584615453
+        },
+        {
+          "label": "8-10 years",
+          "value": 584615454
+        },
+        {
+          "label": "10-12 years",
+          "value": 584615455
+        },
+        {
+          "label": "12+ years",
+          "value": 584615456
+        }
+      ]
+    },
+    {
+      "id": "question_59608629",
+      "label": "What is your highest level of education?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Bachelor’s",
+      "source": "education.degree | smart-matched to option 'Bachelor’s'",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "High School Diploma/GED",
+          "value": 584615457
+        },
+        {
+          "label": "Associate",
+          "value": 584615458
+        },
+        {
+          "label": "Bachelor’s",
+          "value": 584615459
+        },
+        {
+          "label": "Master’s",
+          "value": 584615460
+        },
+        {
+          "label": "PhD",
+          "value": 584615461
+        },
+        {
+          "label": "JD",
+          "value": 584615462
+        }
+      ]
+    },
+    {
+      "id": "question_59608630",
+      "label": "Samsara will not provide relocation assistance for this role. Do you require relocation assistance?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_59608631",
+      "label": "Will you now or in the future require Samsara to commence (“sponsor”) an immigration case in order to employ you? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_59608632",
+      "label": "Are you currently legally authorized to work in the country in which this job is based (e.g. you are a citizen, you have a visa, etc.)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_59608633",
+      "label": "What US time-zone are you located in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Pacific",
+      "source": "timezone_pacific (matched 'pacific')",
+      "status": "filled",
+      "matched_rule": "timezone_pacific",
+      "options": [
+        {
+          "label": "Pacific",
+          "value": 584615463
+        },
+        {
+          "label": "Mountain",
+          "value": 584615464
+        },
+        {
+          "label": "Central",
+          "value": 584615465
+        },
+        {
+          "label": "Eastern",
+          "value": 584615466
+        },
+        {
+          "label": "Other",
+          "value": 584615467
+        }
+      ]
+    },
+    {
+      "id": "question_59608634",
+      "label": "What is the zip code of your primary residence?",
+      "type": "input_text",
+      "required": true,
+      "value": "98034",
+      "source": "address.zip",
+      "status": "filled",
+      "matched_rule": "zip",
+      "options": null
+    },
+    {
+      "id": "question_59608635",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_59608636",
+      "label": "Preferred Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_59608637",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_59608638",
+      "label": "At Samsara, we encourage employees to bring their whole selves to work (this includes applicants too!) Feel free to share your preferred name and pronouns (she/her, they/them, he/him, ze/zir etc.).",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_59608639",
+      "label": "Processing of Personal Data",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Acknowledge/Confirm",
+      "source": "answer_yes (affirmative synonym: 'Acknowledge/Confirm')",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Acknowledge/Confirm",
+          "value": 584615468
+        }
+      ]
+    },
+    {
+      "id": "question_59608640",
+      "label": "Have you previously worked at Samsara?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_59608642",
+      "label": "AI Policy for Interviews",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_61567830",
+      "label": "Current Employer (if applicable)",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_66372570",
+      "label": "How did you hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn Jobs",
+      "source": "how_heard fuzzy 'linkedin' -> 'LinkedIn Jobs'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Samsara Careers Site",
+          "value": 706701299
+        },
+        {
+          "label": "LinkedIn Jobs",
+          "value": 706701300
+        },
+        {
+          "label": "LinkedIn Post",
+          "value": 706701302
+        },
+        {
+          "label": "LinkedIn InMail / Message from a Recruiter or Hiring Manager",
+          "value": 706701303
+        },
+        {
+          "label": "Direct Email / Call/ Text from a Recruiter or Hiring Manager",
+          "value": 706701304
+        },
+        {
+          "label": "Indeed / Glassdoor",
+          "value": 706701305
+        },
+        {
+          "label": "Reddit Ad",
+          "value": 706701308
+        },
+        {
+          "label": "BuiltIn",
+          "value": 706701312
+        },
+        {
+          "label": "RepVue",
+          "value": 706701314
+        },
+        {
+          "label": "Women in Sales Club",
+          "value": 706701317
+        },
+        {
+          "label": "Wellfound",
+          "value": 706701320
+        },
+        {
+          "label": "Just Join IT",
+          "value": 706701322
+        },
+        {
+          "label": "Industry Conference or Event",
+          "value": 706701323
+        },
+        {
+          "label": "Samsara Hosted Event",
+          "value": 706701324
+        },
+        {
+          "label": "Instahyre",
+          "value": 706701325
+        },
+        {
+          "label": "Naukri",
+          "value": 706701326
+        },
+        {
+          "label": "University / Campus Recruiting",
+          "value": 706701327
+        },
+        {
+          "label": "School Alumni Job Board or LinkedIn Group",
+          "value": 706701328
+        },
+        {
+          "label": "Company Alumni Job Board or LinkedIn Group",
+          "value": 706701330
+        }
+      ]
+    },
+    {
+      "id": "question_66376418[]",
+      "label": "Where have you learned about Samsara? Select all that apply.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": 704653278
+        },
+        {
+          "label": "Samsara blog or website",
+          "value": 704653280
+        },
+        {
+          "label": "News or press coverage",
+          "value": 704653283
+        },
+        {
+          "label": "Podcast",
+          "value": 704653286
+        },
+        {
+          "label": "Industry event or conference",
+          "value": 704653288
+        },
+        {
+          "label": "Word of mouth (friend, family, or colleague)",
+          "value": 704653291
+        },
+        {
+          "label": "A current Samsara employee",
+          "value": 704653295
+        },
+        {
+          "label": "Glassdoor or Blind",
+          "value": 704653299
+        },
+        {
+          "label": "X / Twitter",
+          "value": 704653303
+        },
+        {
+          "label": "Instagram",
+          "value": 704653306
+        },
+        {
+          "label": "Facebook",
+          "value": 704653309
+        },
+        {
+          "label": "YouTube",
+          "value": 704653312
+        },
+        {
+          "label": "Tiktok",
+          "value": 704653314
+        },
+        {
+          "label": "Other",
+          "value": 704653316
+        },
+        {
+          "label": "I wasn't familiar with Samsara before applying",
+          "value": 704653318
+        }
+      ]
+    },
+    {
+      "id": "question_66380362",
+      "label": "If you selected 'Other' for where you learned about Samsara, please share additional details.",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"If you selected 'Other' for where you learned about Samsara, please share additional details.\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "demographic_question_498",
+      "label": "How do you identify? (gender identity)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Agender",
+          "value": 2532
+        },
+        {
+          "label": "Cis-man",
+          "value": 2533
+        },
+        {
+          "label": "Cis-woman",
+          "value": 2534
+        },
+        {
+          "label": "Gender Fluid",
+          "value": 2535
+        },
+        {
+          "label": "Genderqueer",
+          "value": 2536
+        },
+        {
+          "label": "Man",
+          "value": 2537
+        },
+        {
+          "label": "Non-Binary",
+          "value": 2538
+        },
+        {
+          "label": "Transgender",
+          "value": 2539
+        },
+        {
+          "label": "Trans non-binary",
+          "value": 2541
+        },
+        {
+          "label": "Woman",
+          "value": 2543
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 2544
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4228
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_500",
+      "label": "How do you identify? (race/ethnicity)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Black / of African descent ",
+          "value": 2557
+        },
+        {
+          "label": "East Asian (inclusive of Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)",
+          "value": 2558
+        },
+        {
+          "label": "Latinx / Hispanic",
+          "value": 2559
+        },
+        {
+          "label": "Middle Eastern",
+          "value": 2560
+        },
+        {
+          "label": "Native American or Alaska Native",
+          "value": 2561
+        },
+        {
+          "label": "Pacific Islander or Native Hawaiian",
+          "value": 2562
+        },
+        {
+          "label": "South Asian (inclusive of Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, and Sri Lankan)",
+          "value": 2563
+        },
+        {
+          "label": "Southeast Asian  (inclusive of Burmese, Cambodian, Filipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+          "value": 2564
+        },
+        {
+          "label": "Two or more races",
+          "value": 2565
+        },
+        {
+          "label": "White ",
+          "value": 2566
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 2567
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4230
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_501",
+      "label": "If you are based in the US, what is your veteran status? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am a protected veteran",
+          "value": 2569
+        },
+        {
+          "label": "I am not a protected veteran ",
+          "value": 2570
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 2571
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4231
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_502",
+      "label": "Do you have a physical or mental disability, impairment, or condition that substantially limits major life activity? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes, I have a disability (or previously had a disability) ', 'No, I don’t have a disability', 'I prefer to self describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes, I have a disability (or previously had a disability) ",
+          "value": 2573
+        },
+        {
+          "label": "No, I don’t have a disability",
+          "value": 2574
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 2575
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4232
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_66380362",
+      "label": "If you selected 'Other' for where you learned about Samsara, please share additional details.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"If you selected 'Other' for where you learned about Samsara, please share additional details.\""
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

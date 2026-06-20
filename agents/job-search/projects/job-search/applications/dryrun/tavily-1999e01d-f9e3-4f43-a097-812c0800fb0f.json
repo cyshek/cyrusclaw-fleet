@@ -1,0 +1,220 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/tavily/1999e01d-f9e3-4f43-a097-812c0800fb0f",
+  "org": "tavily",
+  "job_id": "1999e01d-f9e3-4f43-a097-812c0800fb0f",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-05-31T00:27:51Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26__systemfield_name"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26__systemfield_email"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_3d98eaaa-3386-4d76-95fb-8451160a4374",
+      "label": "University",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_3d98eaaa-3386-4d76-95fb-8451160a4374"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_1dca63f8-7c6b-472c-9d5f-3417f86f56e1",
+      "label": "Linkedin URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_1dca63f8-7c6b-472c-9d5f-3417f86f56e1"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_a169e06e-f195-457e-b895-25d19b457e6d",
+      "label": "Github",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_a169e06e-f195-457e-b895-25d19b457e6d"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26__systemfield_resume"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_06055885-ac76-453a-bf37-dee0fbc3e73c",
+      "label": "Are you able to work from our NYC office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_06055885-ac76-453a-bf37-dee0fbc3e73c"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_9ca5ba44-fb81-47d3-bd0e-0cb4ce777fe3",
+      "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_9ca5ba44-fb81-47d3-bd0e-0cb4ce777fe3"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_e0d9d774-b8c0-47c8-90e2-f72a8d3b3f27",
+      "label": "Why Tavily?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Tavily because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Tavily is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Tavily while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Tavily aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Tavily')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_e0d9d774-b8c0-47c8-90e2-f72a8d3b3f27"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_1312dce4-e072-4245-9e92-cb38b71e0370",
+      "label": "This is a technical, client-facing role. Please describe your client-facing experience. If you have none, write N/A.",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='This is a technical, client-facing role. Please describe your client-facing experience. If you have none, write N/A.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_1312dce4-e072-4245-9e92-cb38b71e0370"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_73e03774-50ba-462f-9ad4-b1e42258a50f",
+      "label": "Briefly describe a project you're most proud of. Share the project portfolio, Github URL , or any other supporting material. ",
+      "type": "textarea",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_73e03774-50ba-462f-9ad4-b1e42258a50f"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_cda2b28a-9485-4333-8a3c-893fd41d9596",
+      "label": "Other Relevant Documents",
+      "type": "input_file",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Other Relevant Documents'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_cda2b28a-9485-4333-8a3c-893fd41d9596"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_1312dce4-e072-4245-9e92-cb38b71e0370",
+      "label": "This is a technical, client-facing role. Please describe your client-facing experience. If you have none, write N/A.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='This is a technical, client-facing role. Please describe your client-facing experience. If you have none, write N/A.'"
+    },
+    {
+      "id": "1660b1fa-ca06-494e-8547-d62d7d12ce26_cda2b28a-9485-4333-8a3c-893fd41d9596",
+      "label": "Other Relevant Documents",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Other Relevant Documents'"
+    }
+  ],
+  "blockers": []
+}

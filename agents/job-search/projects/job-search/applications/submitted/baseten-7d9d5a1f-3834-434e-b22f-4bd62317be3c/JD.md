@@ -1,0 +1,89 @@
+# Technical Program Manager, Infrastructure
+
+**Company:** Baseten
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/baseten/7d9d5a1f-3834-434e-b22f-4bd62317be3c
+**Ashby Org:** baseten
+**Ashby Job ID:** 7d9d5a1f-3834-434e-b22f-4bd62317be3c
+
+---
+
+**ABOUT BASETEN**
+
+Baseten powers mission-critical inference for the world's most dynamic AI companies, like Cursor, Notion, OpenEvidence, Abridge, Clay, Gamma and Writer. By uniting applied AI research, flexible infrastructure, and seamless developer tooling, we enable companies operating at the frontier of AI to bring cutting-edge models into production. We're growing quickly and recently raised our [$300M Series E](https://www.baseten.co/blog/announcing-baseten-s-300m-series-e/), backed by investors including BOND, IVP, Spark Capital, Greylock, and Conviction. Join us and help build the platform engineers turn to to ship AI products.
+
+**THE ROLE**
+
+At Baseten, we’re looking for a Technical Program Manager to drive our most complex, cross-cutting infrastructure programs. This role will operate across all domains of AI infrastructure, from the GPUs up to the multi-cluster orchestration layer.
+
+This is an execution-first role. The work is less about owning a single system and more about imposing order on ambiguity: standing up the right structures, driving decisions to closure, and making sure nothing falls through the cracks across dozens of stakeholders. If you take satisfaction in turning a chaotic, half-defined initiative into a predictable, well-governed program, this role is for you.
+
+**RESPONSIBILITIES**
+
+- **Own complex migrations end to end.** Lead large-scale infrastructure migrations across teams and domains. This will involve scoping the work, sequencing dependencies, managing risk, and driving them to completion without surprises.
+
+- **Drive process across infrastructure.** Establish and run the operating rhythms that keep programs healthy: planning cadences, status reporting, decision logs, risk reviews, and escalation paths. Make the process light enough that teams adopt it and rigorous enough that it actually works.
+
+- **Help managers build the right structures.** Partner with engineering managers and leads to design the team structures, ownership boundaries, and working models a program needs to succeed. Spot gaps in accountability before they become problems.
+
+- **Own follow-ups relentlessly.** Be the person who tracks every open item, owns the action register, and closes loops. Drive decisions and unblockers to resolution rather than letting them drift.
+
+- **Create clarity from ambiguity.** Take loosely defined goals and turn them into scoped, sequenced, resourced plans with clear owners and measurable milestones.
+
+- **Manage risk and dependencies.** Maintain a clear-eyed view of cross-team dependencies and risks; surface them early, drive mitigation, and keep leadership informed with honest, signal-rich updates.
+
+- **Communicate up, down, and across.** Translate between deeply technical teams and senior leadership. Run effective program reviews and write the kind of crisp status that lets busy people make fast decisions.
+
+**REQUIREMENTS**
+
+- 3+ years of technical program management experience, with a track record of delivering large, cross-team infrastructure or platform programs.
+
+- Demonstrated ownership of complex migrations or comparable multi-domain initiatives from inception through completion.
+
+- Strong execution discipline: you build the structures, cadences, and tracking that keep programs on the rails, and you hold the line on follow-through.
+
+- Comfort operating across multiple infrastructure domains. You don't need to be the deepest expert in any one, but you can engage credibly with engineers on compute, storage, networking, and data.
+
+- Proven ability to influence without authority, aligning teams and managers who don't report to you around shared plans and commitments.
+
+- Excellent written and verbal communication; you can make complex, technical programs legible to any audience.
+
+- A bias toward closure: you're uncomfortable with open loops and you drive things to done.\
+
+**NICE-TO-HAVES**
+
+- Experience designing team structures or operating models alongside engineering leadership.
+
+- Experience with AI models, their use, and how they operate at the infrastructure level.
+
+- Background in or exposure to software engineering, SRE, or infrastructure operations.
+
+- Familiarity with the tooling that supports program execution at scale (e.g., issue tracking, planning, and reporting systems).
+
+**WHAT SUCCESS LOOKS LIKE**
+
+In your first few months, you'll have taken ownership of one or more in-flight programs, established the operating rhythm they were missing, and built the trust that makes teams want you in the room. 
+
+Within a year, the programs you run are the ones leadership doesn't worry about, the because the structure is clear, the risks are visible early, and the follow-ups always close.
+
+**BENEFITS**
+
+- Competitive compensation, including meaningful equity.
+
+- 100% coverage of medical, dental, and vision insurance for employee and dependents
+
+- Flexible PTO policy including company wide Winter Break (our offices are closed from Christmas Eve to New Year's Day!)
+
+- Paid parental leave
+
+- Fertility and family-building stipend through Carrot
+
+- Company-facilitated 401(k)
+
+- Exposure to a variety of ML startups, offering unparalleled learning and networking opportunities.
+
+**Apply now** to embark on a rewarding journey in shaping the future of AI! If you are a motivated individual with a passion for machine learning and a desire to be part of a collaborative and forward-thinking team, we would love to hear from you.
+
+*At Baseten, we are committed to fostering a diverse and inclusive workplace. We provide equal employment opportunities to all employees and applicants without regard to race, color, religion, gender, sexual orientation, gender identity or expression, national origin, age, genetic information, disability, or veteran status.*
+
+*We are an Equal Opportunity Employer and will consider qualified applicants with criminal histories in a manner consistent with applicable law (by example, the requirements of the San Francisco Fair Chance Ordinance, where applicable).*

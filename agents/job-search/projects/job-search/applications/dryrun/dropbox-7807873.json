@@ -1,0 +1,840 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/dropbox/jobs/7807873",
+  "org": "dropbox",
+  "job_id": "7807873",
+  "job_title": "Product Manager, GTM Systems",
+  "job_location": "Remote - US: Select locations",
+  "fetched_at": "2026-05-23T14:17:01Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/dropbox/jobs/7807873?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 25,
+    "filled": 15,
+    "filled_needs_review": 4,
+    "declined": 5,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_65526108",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_65526109",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_65526110",
+      "label": "What is your legal first name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "question_65526111",
+      "label": "What are your personal pronouns?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "She / Her / Hers",
+          "value": 683484991
+        },
+        {
+          "label": "He / Him / His",
+          "value": 683484992
+        },
+        {
+          "label": "They / Them / Their",
+          "value": 683484993
+        },
+        {
+          "label": "Zie / Ze / Zir / Hir / Zir",
+          "value": 683484994
+        },
+        {
+          "label": "Please use my name",
+          "value": 683484995
+        },
+        {
+          "label": "Multiple pronouns - Please ask me",
+          "value": 683484996
+        },
+        {
+          "label": "Other - Please ask me",
+          "value": 683484997
+        }
+      ]
+    },
+    {
+      "id": "question_65526112",
+      "label": "Current Location",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state | NOTE: 'Kirkland, WA' not literally in options ['Australia', 'Canada - Alberta', 'Canada - British Columbia', 'Canada - Ontario', 'Canada - Quebec', 'Canada - Saskatchewan', 'Canada - New Brunswick', 'Canada - Newfoundland and Labrador', 'Canada - Northwest Territories', 'Canada - Nova Scotia', 'Canada - Nunavut', 'Canada - Manitoba', 'Canada - Prince Edward Island', 'Canada - Yukon', 'United Kingdom', 'France', 'Germany', 'Ireland', 'Israel', 'Japan', 'Mexico', 'Netherlands', 'Poland', 'Singapore', 'Sweden', 'Switzerland', 'Taiwan', 'US - Alabama', 'US - Alaska', 'US - Arizona', 'US - Arkansas', 'US - California', 'US - Colorado', 'US - Connecticut', 'US - Delaware', 'US - Florida', 'US - Georgia', 'US - Hawaii', 'US - Idaho', 'US - Illinois', 'US - Indiana', 'US - Iowa', 'US - Kansas', 'US - Kentucky', 'US - Louisiana', 'US - Maine', 'US - Maryland', 'US - Massachusetts', 'US - Michigan', 'US - Minnesota', 'US - Mississippi', 'US - Missouri', 'US - Montana', 'US - Nebraska', 'US - Nevada', 'US - New Hampshire', 'US - New Jersey', 'US - New Mexico', 'US - New York', 'US - North Carolina', 'US - North Dakota', 'US - Ohio', 'US - Oklahoma', 'US - Oregon', 'US - Pennsylvania', 'US - Rhode Island', 'US - South Carolina', 'US - South Dakota', 'US - Tennessee', 'US - Texas', 'US - Utah', 'US - Vermont', 'US - Virginia', 'US - Washington', 'US - Washington, D.C', 'US - West Virginia', 'US - Wisconsin', 'Other Location']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Australia",
+          "value": 683484998
+        },
+        {
+          "label": "Canada - Alberta",
+          "value": 683484999
+        },
+        {
+          "label": "Canada - British Columbia",
+          "value": 683485000
+        },
+        {
+          "label": "Canada - Ontario",
+          "value": 683485001
+        },
+        {
+          "label": "Canada - Quebec",
+          "value": 683485002
+        },
+        {
+          "label": "Canada - Saskatchewan",
+          "value": 683485003
+        },
+        {
+          "label": "Canada - New Brunswick",
+          "value": 683485004
+        },
+        {
+          "label": "Canada - Newfoundland and Labrador",
+          "value": 683485005
+        },
+        {
+          "label": "Canada - Northwest Territories",
+          "value": 683485006
+        },
+        {
+          "label": "Canada - Nova Scotia",
+          "value": 683485007
+        },
+        {
+          "label": "Canada - Nunavut",
+          "value": 683485008
+        },
+        {
+          "label": "Canada - Manitoba",
+          "value": 683485009
+        },
+        {
+          "label": "Canada - Prince Edward Island",
+          "value": 683485010
+        },
+        {
+          "label": "Canada - Yukon",
+          "value": 683485011
+        },
+        {
+          "label": "United Kingdom",
+          "value": 683485012
+        },
+        {
+          "label": "France",
+          "value": 683485013
+        },
+        {
+          "label": "Germany",
+          "value": 683485014
+        },
+        {
+          "label": "Ireland",
+          "value": 683485015
+        },
+        {
+          "label": "Israel",
+          "value": 683485016
+        },
+        {
+          "label": "Japan",
+          "value": 683485017
+        },
+        {
+          "label": "Mexico",
+          "value": 683485018
+        },
+        {
+          "label": "Netherlands",
+          "value": 683485019
+        },
+        {
+          "label": "Poland",
+          "value": 683485020
+        },
+        {
+          "label": "Singapore",
+          "value": 683485021
+        },
+        {
+          "label": "Sweden",
+          "value": 683485022
+        },
+        {
+          "label": "Switzerland",
+          "value": 683485023
+        },
+        {
+          "label": "Taiwan",
+          "value": 683485024
+        },
+        {
+          "label": "US - Alabama",
+          "value": 683485025
+        },
+        {
+          "label": "US - Alaska",
+          "value": 683485026
+        },
+        {
+          "label": "US - Arizona",
+          "value": 683485027
+        },
+        {
+          "label": "US - Arkansas",
+          "value": 683485028
+        },
+        {
+          "label": "US - California",
+          "value": 683485029
+        },
+        {
+          "label": "US - Colorado",
+          "value": 683485030
+        },
+        {
+          "label": "US - Connecticut",
+          "value": 683485031
+        },
+        {
+          "label": "US - Delaware",
+          "value": 683485032
+        },
+        {
+          "label": "US - Florida",
+          "value": 683485033
+        },
+        {
+          "label": "US - Georgia",
+          "value": 683485034
+        },
+        {
+          "label": "US - Hawaii",
+          "value": 683485035
+        },
+        {
+          "label": "US - Idaho",
+          "value": 683485036
+        },
+        {
+          "label": "US - Illinois",
+          "value": 683485037
+        },
+        {
+          "label": "US - Indiana",
+          "value": 683485038
+        },
+        {
+          "label": "US - Iowa",
+          "value": 683485039
+        },
+        {
+          "label": "US - Kansas",
+          "value": 683485040
+        },
+        {
+          "label": "US - Kentucky",
+          "value": 683485041
+        },
+        {
+          "label": "US - Louisiana",
+          "value": 683485042
+        },
+        {
+          "label": "US - Maine",
+          "value": 683485043
+        },
+        {
+          "label": "US - Maryland",
+          "value": 683485044
+        },
+        {
+          "label": "US - Massachusetts",
+          "value": 683485045
+        },
+        {
+          "label": "US - Michigan",
+          "value": 683485046
+        },
+        {
+          "label": "US - Minnesota",
+          "value": 683485047
+        },
+        {
+          "label": "US - Mississippi",
+          "value": 683485048
+        },
+        {
+          "label": "US - Missouri",
+          "value": 683485049
+        },
+        {
+          "label": "US - Montana",
+          "value": 683485050
+        },
+        {
+          "label": "US - Nebraska",
+          "value": 683485051
+        },
+        {
+          "label": "US - Nevada",
+          "value": 683485052
+        },
+        {
+          "label": "US - New Hampshire",
+          "value": 683485053
+        },
+        {
+          "label": "US - New Jersey",
+          "value": 683485054
+        },
+        {
+          "label": "US - New Mexico",
+          "value": 683485055
+        },
+        {
+          "label": "US - New York",
+          "value": 683485056
+        },
+        {
+          "label": "US - North Carolina",
+          "value": 683485057
+        },
+        {
+          "label": "US - North Dakota",
+          "value": 683485058
+        },
+        {
+          "label": "US - Ohio",
+          "value": 683485059
+        },
+        {
+          "label": "US - Oklahoma",
+          "value": 683485060
+        },
+        {
+          "label": "US - Oregon",
+          "value": 683485061
+        },
+        {
+          "label": "US - Pennsylvania",
+          "value": 683485062
+        },
+        {
+          "label": "US - Rhode Island",
+          "value": 683485063
+        },
+        {
+          "label": "US - South Carolina",
+          "value": 683485064
+        },
+        {
+          "label": "US - South Dakota",
+          "value": 683485065
+        },
+        {
+          "label": "US - Tennessee",
+          "value": 683485066
+        },
+        {
+          "label": "US - Texas",
+          "value": 683485067
+        },
+        {
+          "label": "US - Utah",
+          "value": 683485068
+        },
+        {
+          "label": "US - Vermont",
+          "value": 683485069
+        },
+        {
+          "label": "US - Virginia",
+          "value": 683485070
+        },
+        {
+          "label": "US - Washington",
+          "value": 683485071
+        },
+        {
+          "label": "US - Washington, D.C",
+          "value": 683485072
+        },
+        {
+          "label": "US - West Virginia",
+          "value": 683485073
+        },
+        {
+          "label": "US - Wisconsin",
+          "value": 683485074
+        },
+        {
+          "label": "Other Location",
+          "value": 683485075
+        }
+      ]
+    },
+    {
+      "id": "question_65526113",
+      "label": "Please provide the zip code of your primary residence.",
+      "type": "input_text",
+      "required": true,
+      "value": "98034",
+      "source": "address.zip",
+      "status": "filled",
+      "matched_rule": "zip",
+      "options": null
+    },
+    {
+      "id": "question_65526114",
+      "label": "Are you currently authorized to work for any employer in the country outlined for this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us | NOTE: 'Yes' not literally in options ['I am authorized to work for any employer in the country outlined for this role (e.g., a citizen, permanent resident, etc.)', 'My current work authorization requires a renewal or sponsorship now or in the future (e.g., J-1, F-1 CPT/OPT, H-1B, TN, L-2, H-4, etc.)', 'My status to work in the country in this job location is unknown.']",
+      "status": "filled_needs_review",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "I am authorized to work for any employer in the country outlined for this role (e.g., a citizen, permanent resident, etc.)",
+          "value": 683485076
+        },
+        {
+          "label": "My current work authorization requires a renewal or sponsorship now or in the future (e.g., J-1, F-1 CPT/OPT, H-1B, TN, L-2, H-4, etc.)",
+          "value": 683485077
+        },
+        {
+          "label": "My status to work in the country in this job location is unknown.",
+          "value": 683485078
+        }
+      ]
+    },
+    {
+      "id": "question_65526115[]",
+      "label": "How did you hear about this role? (Please select all that apply)",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "BuiltIn",
+          "value": 683485079
+        },
+        {
+          "label": "Contacted by Recruiter",
+          "value": 683485080
+        },
+        {
+          "label": "Dropbox Career Site",
+          "value": 683485081
+        },
+        {
+          "label": "Dropbox Talent Community",
+          "value": 683485082
+        },
+        {
+          "label": "Facebook",
+          "value": 683485083
+        },
+        {
+          "label": "Glassdoor",
+          "value": 683485084
+        },
+        {
+          "label": "Google Search",
+          "value": 683485085
+        },
+        {
+          "label": "In Person Event",
+          "value": 683485086
+        },
+        {
+          "label": "Indeed",
+          "value": 683485087
+        },
+        {
+          "label": "InHerSight",
+          "value": 683485088
+        },
+        {
+          "label": "Instagram",
+          "value": 683485089
+        },
+        {
+          "label": "LinkedIn",
+          "value": 683485090
+        },
+        {
+          "label": "Referral from Dropboxer",
+          "value": 683485091
+        },
+        {
+          "label": "The Muse",
+          "value": 683485092
+        }
+      ]
+    },
+    {
+      "id": "question_65526116",
+      "label": "Have you previously worked for Dropbox?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No, I have not previously worked for Dropbox",
+      "source": "worked_at_company_before (matched No-prefix 'No, I have not previously worked for Dropbox')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes, former employee",
+          "value": 683485093
+        },
+        {
+          "label": "Yes, former contingent worker or vendor",
+          "value": 683485094
+        },
+        {
+          "label": "No, I have not previously worked for Dropbox",
+          "value": 683485095
+        }
+      ]
+    },
+    {
+      "id": "question_65526117",
+      "label": "Do you have at least 2 years of full time relevant working experience?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65526118",
+      "label": "Please email me about future job openings",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email | NOTE: 'cyshekari@gmail.com' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "email",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65526119",
+      "label": "Location Cost Tier",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state | NOTE: 'Kirkland, WA' not literally in options ['High Cost', 'Mid Cost', 'Low Cost', 'Unknown']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "High Cost",
+          "value": 683485096
+        },
+        {
+          "label": "Mid Cost",
+          "value": 683485097
+        },
+        {
+          "label": "Low Cost",
+          "value": 683485098
+        },
+        {
+          "label": "Unknown",
+          "value": 683485099
+        }
+      ]
+    },
+    {
+      "id": "question_65526120",
+      "label": "Fingerprint",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Fingerprint'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_65526120",
+      "label": "Fingerprint",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Fingerprint'"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,13 @@
+strategy                   fam              sym    med_ret%  med_shrp trades pct_pos sgn_cons  GATE  reason
+-----------------------------------------------------------------------------------------------------------
+momentum_arkk              momentum         ARKK      -0.36     -0.83    118     38%     0.62  FAIL  median return -0.36% ≤ +0.00%; only 38% of windows positive (need ≥50%); median Sharpe -0.83 ≤ 0.50
+rsi_mean_revert_iwm        mean-reversion   IWM       -0.04     -0.28     75     38%     0.62  FAIL  median return -0.04% ≤ +0.00%; only 38% of windows positive (need ≥50%); median Sharpe -0.28 ≤ 0.50
+trend_follow_gld           trend            GLD       -0.08     -1.21     43     25%     0.75  FAIL  median return -0.08% ≤ +0.00%; only 25% of windows positive (need ≥50%); median Sharpe -1.21 ≤ 0.50
+sma_crossover_qqq_rth      trend (SMA-x)    QQQ       +0.33      2.78    142     62%     0.62  PASS  passed
+breakout_xlk               breakout         XLK       +0.40      2.75     96     62%     0.62  PASS  passed
+sma_crossover_qqq          trend (SMA-x)    QQQ       +0.31      2.60    142     62%     0.62  PASS  passed
+breakout_xlk_regime        breakout+regime  XLK       +0.33      3.18     62     75%     0.75  PASS  passed
+sma_crossover_qqq_regime   trend+regime     QQQ       +0.41      2.95     88     75%     0.75  PASS  passed
+
+WROTE reports/_profile_parents_results.json
+DONE

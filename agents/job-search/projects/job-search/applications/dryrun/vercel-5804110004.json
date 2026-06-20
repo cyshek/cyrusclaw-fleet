@@ -1,0 +1,596 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/vercel/jobs/5804110004",
+  "org": "vercel",
+  "job_id": "5804110004",
+  "job_title": "Solutions Architect",
+  "job_location": "Remote - Australia",
+  "fetched_at": "2026-05-13T23:13:25Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/vercel/jobs/5804110004?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 25,
+    "filled": 15,
+    "filled_needs_review": 5,
+    "declined": 5,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_15425768004",
+      "label": "Are you currently based in any of these countries? Please note these are the only countries where we are accepting applications",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "address.based_in_restricted_country (Cyrus 2026-05-07: always No) | NOTE: 'No' not literally in options ['United States', 'Germany', 'United Kingdom', 'Argentina', 'Australia', 'Canada', 'India', 'Japan', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "based_in_restricted_country",
+      "options": [
+        {
+          "label": "United States",
+          "value": 58699068004
+        },
+        {
+          "label": "Germany",
+          "value": 58699069004
+        },
+        {
+          "label": "United Kingdom",
+          "value": 58699070004
+        },
+        {
+          "label": "Argentina",
+          "value": 58699071004
+        },
+        {
+          "label": "Australia",
+          "value": 58699072004
+        },
+        {
+          "label": "Canada",
+          "value": 58699073004
+        },
+        {
+          "label": "India",
+          "value": 58699074004
+        },
+        {
+          "label": "Japan",
+          "value": 58699075004
+        },
+        {
+          "label": "Other",
+          "value": 58699076004
+        }
+      ]
+    },
+    {
+      "id": "question_15425769004",
+      "label": "Will you require Visa Sponsorship now, or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_15425770004",
+      "label": "Your authorization to work in the country where you live. Please choose the option that describes your work authorization.\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us | NOTE: 'Yes' not literally in options ['I am authorized to work in the country due to my nationality', 'I am authorized to work in the country based on a valid work permit and do not need a company to sponsor my visa', 'I am authorized to work in the country based on a valid work permit which needs to be sponsored by the company I work for', 'I am not authorized to work in the country and need visa support', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "I am authorized to work in the country due to my nationality",
+          "value": 58699077004
+        },
+        {
+          "label": "I am authorized to work in the country based on a valid work permit and do not need a company to sponsor my visa",
+          "value": 58699078004
+        },
+        {
+          "label": "I am authorized to work in the country based on a valid work permit which needs to be sponsored by the company I work for",
+          "value": 58699079004
+        },
+        {
+          "label": "I am not authorized to work in the country and need visa support",
+          "value": 58699080004
+        },
+        {
+          "label": "Other",
+          "value": 58699081004
+        }
+      ]
+    },
+    {
+      "id": "question_15425771004",
+      "label": "Do you live in one of the following states?\nAlabama, Alaska, Delaware, Kansas, Maine, Mississippi, Montana, Nebraska, New Mexico, North Dakota, South Dakota, West Virginia, or Wyoming.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "address.based_in_restricted_state (Cyrus is in WA, not on restricted lists)",
+      "status": "filled",
+      "matched_rule": "based_in_restricted_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_15425772004",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_15425773004",
+      "label": "Twitter",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null
+    },
+    {
+      "id": "question_15425774004",
+      "label": "Github",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "question_15425775004",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_15425776004",
+      "label": "By submitting my application, I acknowledge that I have read and understand Vercel’s Job Applicant Privacy Notice - https://vercel.com/legal/job-applicant-privacy-notice ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "privacy_ack (always acknowledge) | NOTE: 'Yes' not literally in options ['Acknowledge/Confirm']",
+      "status": "filled_needs_review",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Acknowledge/Confirm",
+          "value": 58699082004
+        }
+      ]
+    },
+    {
+      "id": "question_15425777004",
+      "label": "Please double-check all the information provided above. Ensuring accuracy is crucial, as any errors or omissions may impact the review of your application.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['I have reviewed and confirmed that all the information provided is accurate and complete.']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I have reviewed and confirmed that all the information provided is accurate and complete.",
+          "value": 58699083004
+        }
+      ]
+    },
+    {
+      "id": "question_17703300004",
+      "label": "Where did you first hear about this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Events",
+          "value": 79904748004
+        },
+        {
+          "label": "Built In",
+          "value": 79904753004
+        },
+        {
+          "label": "LinkedIn",
+          "value": 79904759004
+        },
+        {
+          "label": "Google Search",
+          "value": 79904764004
+        },
+        {
+          "label": "Advertisements",
+          "value": 79904766004
+        },
+        {
+          "label": "Other job boards",
+          "value": 79904769004
+        },
+        {
+          "label": "LLMs (ChatGPT, etc.)",
+          "value": 79904773004
+        },
+        {
+          "label": "I'm a Vercel customer",
+          "value": 79904776004
+        },
+        {
+          "label": "Referral from a Vercel customer",
+          "value": 79904779004
+        },
+        {
+          "label": "Referral from a Vercel team member",
+          "value": 79904781004
+        },
+        {
+          "label": "Social media (X, Instagram, YouTube, etc.)",
+          "value": 79904782004
+        },
+        {
+          "label": "Other Content (news articles, podcasts, blogs)",
+          "value": 79904785004
+        },
+        {
+          "label": "Developer communities (GitHub, Hacker News, Reddit, etc.)",
+          "value": 79904786004
+        },
+        {
+          "label": "Other",
+          "value": 79904787004
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4015790004",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4094149004
+        },
+        {
+          "label": "Non-binary",
+          "value": 4094147004
+        },
+        {
+          "label": "Woman",
+          "value": 4094144004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4094143004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4094141004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4015786004",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4094137004
+        },
+        {
+          "label": "East Asian",
+          "value": 4094135004
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4094133004
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4094131004
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 4094129004
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4094128004
+        },
+        {
+          "label": "South Asian",
+          "value": 4094125004
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4094123004
+        },
+        {
+          "label": "White or European",
+          "value": 4094121004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4094120004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4094119004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4015785004",
+      "label": "How would you describe your sexual orientation? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4094117004
+        },
+        {
+          "label": "Bisexual and/or pansexual",
+          "value": 4094115004
+        },
+        {
+          "label": "Gay",
+          "value": 4094113004
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4094111004
+        },
+        {
+          "label": "Lesbian",
+          "value": 4094110004
+        },
+        {
+          "label": "Queer",
+          "value": 4094109004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4094108004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4094107004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4015783004",
+      "label": "Do you identify as transgender?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4094104004
+        },
+        {
+          "label": "No",
+          "value": 4094102004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4094099004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4094097004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4015781004",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4094093004
+        },
+        {
+          "label": "No",
+          "value": 4094090004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4094088004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4094087004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4015780004",
+      "label": "Are you a veteran or active member of the United States Armed Forces?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 4094083004
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4094081004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4094079004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4094077004
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

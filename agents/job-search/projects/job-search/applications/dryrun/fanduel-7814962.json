@@ -1,0 +1,410 @@
+{
+  "role_url": "https://boards.greenhouse.io/fanduel/jobs/7814962",
+  "org": "fanduel",
+  "job_id": "7814962",
+  "job_title": "Product Manager",
+  "job_location": "Edinburgh / Hybrid",
+  "fetched_at": "2026-06-02T00:47:39Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/fanduel/jobs/7814962?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 20,
+    "filled": 18,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_65604654",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_65604655",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_65604656",
+      "label": "What are your compensation expectations?",
+      "type": "input_text",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_65604657",
+      "label": "Applicant Privacy Notice",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I Acknowledge the Applicant Privacy Notice",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "I Acknowledge the Applicant Privacy Notice",
+          "value": 685675024
+        }
+      ]
+    },
+    {
+      "id": "question_65604658",
+      "label": "Do you require visa sponsorship to work within the country to which you are applying?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65604659",
+      "label": "Please list legal first and last name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_65604660",
+      "label": "How did you hear about this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Career Site",
+          "value": 685675025
+        },
+        {
+          "label": "Campus Career Fair",
+          "value": 685675026
+        },
+        {
+          "label": "Company Referral",
+          "value": 685675027
+        },
+        {
+          "label": "Conference Recruiting Expo",
+          "value": 685675028
+        },
+        {
+          "label": "Friend/Family Member",
+          "value": 685675029
+        },
+        {
+          "label": "FanDuel Recruiter",
+          "value": 685675030
+        },
+        {
+          "label": "Flutter Employee",
+          "value": 685675031
+        },
+        {
+          "label": "LinkedIn",
+          "value": 685675032
+        },
+        {
+          "label": "AISES – American Indian Science and Engineering Society",
+          "value": 685675033
+        },
+        {
+          "label": "Bet on Black",
+          "value": 685675034
+        },
+        {
+          "label": "Black Girls Code",
+          "value": 685675035
+        },
+        {
+          "label": "Black is Tech",
+          "value": 685675036
+        },
+        {
+          "label": "Grace Hopper",
+          "value": 685675037
+        },
+        {
+          "label": "HBCU Connect",
+          "value": 685675038
+        },
+        {
+          "label": "Lesbians Who Tech",
+          "value": 685675039
+        },
+        {
+          "label": "POCIT – People of Color in Tech",
+          "value": 685675040
+        },
+        {
+          "label": "RenderATL",
+          "value": 685675041
+        },
+        {
+          "label": "Techqueria",
+          "value": 685675042
+        },
+        {
+          "label": "Techsgiving",
+          "value": 685675043
+        },
+        {
+          "label": "UNCF - United Negro College Fund",
+          "value": 685675044
+        },
+        {
+          "label": "WISE – Women in Sports Entertainment",
+          "value": 685675045
+        },
+        {
+          "label": "Women in Automation",
+          "value": 685675046
+        },
+        {
+          "label": "Women in Innovation",
+          "value": 685675047
+        },
+        {
+          "label": "Other",
+          "value": 685675048
+        }
+      ]
+    },
+    {
+      "id": "question_65604661",
+      "label": "Are you an employee of Flutter or a Flutter brand?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you an employee of Flutter or a Flutter brand?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65604662",
+      "label": "Are you within commutable distance to Edinburgh?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you within commutable distance to Edinburgh?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_65604661",
+      "label": "Are you an employee of Flutter or a Flutter brand?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you an employee of Flutter or a Flutter brand?'"
+    },
+    {
+      "id": "question_65604662",
+      "label": "Are you within commutable distance to Edinburgh?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you within commutable distance to Edinburgh?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_65604661",
+      "label": "Are you an employee of Flutter or a Flutter brand?",
+      "reason": "no LABEL_RULES match for label='Are you an employee of Flutter or a Flutter brand?'"
+    },
+    {
+      "id": "question_65604662",
+      "label": "Are you within commutable distance to Edinburgh?",
+      "reason": "no LABEL_RULES match for label='Are you within commutable distance to Edinburgh?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

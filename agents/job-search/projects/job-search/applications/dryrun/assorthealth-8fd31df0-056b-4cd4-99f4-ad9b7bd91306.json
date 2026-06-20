@@ -1,0 +1,179 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/assorthealth/8fd31df0-056b-4cd4-99f4-ad9b7bd91306",
+  "org": "assorthealth",
+  "job_id": "8fd31df0-056b-4cd4-99f4-ad9b7bd91306",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-31T06:55:01Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1__systemfield_name",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1__systemfield_resume",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1__systemfield_email",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_a71f54f9-7a2c-42ea-a0a6-19d1f5ff0f3b",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_a71f54f9-7a2c-42ea-a0a6-19d1f5ff0f3b",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_a57ec2b8-6387-4a46-8eaa-48c9fedd89c5",
+      "label": "Linkedin Profile ",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_a57ec2b8-6387-4a46-8eaa-48c9fedd89c5",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_5e21c1ca-91f8-4852-b5aa-a2669502fcb3",
+      "label": "Our work is in office 4 days a week. Does that align with what you're looking for?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_5e21c1ca-91f8-4852-b5aa-a2669502fcb3",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_c6267b62-08a4-4c54-aa77-55481f0fb8a1",
+      "label": "Do you require visa sponsorship now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_c6267b62-08a4-4c54-aa77-55481f0fb8a1",
+      "section": "General Application Questions"
+    },
+    {
+      "id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_01781f90-0389-494f-887d-2740f459383e",
+      "label": "What type of visa will you require? (if applicable to above)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Not applicable",
+      "source": "ashby_visa_type_na (US citizen; matched option 'Not applicable')",
+      "status": "filled",
+      "matched_rule": "visa_type_na",
+      "options": [
+        {
+          "label": "TN Visa",
+          "value": "TN Visa"
+        },
+        {
+          "label": "H1B Transfer",
+          "value": "H1B Transfer"
+        },
+        {
+          "label": "New H1B (with valid current authorization)",
+          "value": "New H1B (with valid current authorization)"
+        },
+        {
+          "label": "New H1B (without valid current authorization)",
+          "value": "New H1B (without valid current authorization)"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        },
+        {
+          "label": "Not applicable",
+          "value": "Not applicable"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fa45f7aa-f05c-4988-a770-6484f99ffeb1_01781f90-0389-494f-887d-2740f459383e",
+      "section": "General Application Questions"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

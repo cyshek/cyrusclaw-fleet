@@ -1,0 +1,7 @@
+# Cover answers — Gatherai, Solutions Engineer (gather-5129108007)
+
+## What excites you about working with Gather AI? How do your skillset and interests align with our mission?
+
+Most of what I do is take complex technical capabilities and turn them into business cases that decision makers actually buy into. At Microsoft I drove adoption of Azure's resilience platform across enterprise clients like Walmart and SAP, translating deep technical work into ROI-based discussions that delivered $14M+ in measurable value. At Amazon Robotics I worked inside a 2,000+ unit warehouse robotics pilot, mapping dependencies across 1,200+ stations and aligning IT, Operations, and Engineering to deliver zero downtime. That combination of consultative, ROI-driven selling and hands-on supply chain automation is exactly what a Solutions Engineer role at Gather AI calls for.
+
+What excites me about Gather AI specifically is the bet you're making: using vision-powered autonomous drones to digitize warehouse workflows that have stayed manual and error-prone for decades. I've seen firsthand how much friction lives in supply chain operations, and a software-only model that rides on existing equipment is a genuinely smart way to make facilities smarter and safer without ripping everything out. I like working at the point where AI meets a vital, unglamorous industry that's ready to be transformed, and helping enterprise customers understand why your platform delivers real value is the kind of problem I want to be solving.

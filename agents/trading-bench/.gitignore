@@ -1,0 +1,32 @@
+# Trading bench - sensitive files
+.env
+.env.*
+!.env.example
+
+# SQLite + caches
+tournament.db
+tournament.db-journal
+tournament.db-wal
+tournament.db-shm
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Killswitch is intentional state, not a secret, but don't track it
+STOP_TRADING
+!STOP_TRADING.example
+
+# Editor cruft
+.venv/
+venv/
+.DS_Store
+
+# LLM-generated strategy candidates (quarantine — never live, never committed)
+strategies_candidates/
+strategies_candidates/**
+
+# Tournament round reports — keep locally, don't commit
+TOURNAMENT_ROUND_*.md
+
+# Tests' temp report dir
+tests/_tmp_reports/

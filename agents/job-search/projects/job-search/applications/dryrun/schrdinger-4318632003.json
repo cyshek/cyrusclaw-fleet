@@ -1,0 +1,400 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/schrdinger/jobs/4318632003",
+  "org": "schrdinger",
+  "job_id": "4318632003",
+  "job_title": "Solutions Architect",
+  "job_location": "Illinois; New York; Cambridge, MA",
+  "fetched_at": "2026-06-04T12:46:28Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/schrdinger/jobs/4318632003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 21,
+    "filled": 13,
+    "filled_needs_review": 2,
+    "declined": 4,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_5372865003",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_5372866003",
+      "label": "Do you now or will you in the future need an employer to sponsor you for a visa to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_5372867003",
+      "label": "How did you find out about this job?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How did you find out about this job?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_7913733003",
+      "label": "Please note that we require all US-based employees to be fully vaccinated against COVID-19. Newly-hired employees must receive vaccinations prior to their start date. As an equal opportunity employer, Schrödinger will provide a reasonable accommodation to those unable to be vaccinated where and when it is not an undue hardship for the company to do so, as provided under federal, state, and local law.   \n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state (NOTE: 'WA' not literally in options ['I acknowledge the above statement']) | NOTE: 'WA' not literally in options ['I acknowledge the above statement']",
+      "status": "filled_needs_review",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "I acknowledge the above statement",
+          "value": 19018784003
+        }
+      ]
+    },
+    {
+      "id": "question_10120431003",
+      "label": "Are you subject to a notice period at your current employer?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer | NOTE: 'Microsoft' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "current_employer",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_10120432003",
+      "label": "If the answer to the question above is yes, what is the length of the notice period?",
+      "type": "input_text",
+      "required": false,
+      "value": "2 weeks",
+      "source": "preferences.notice_period_weeks",
+      "status": "filled",
+      "matched_rule": "notice_period",
+      "options": null
+    },
+    {
+      "id": "question_10120433003",
+      "label": "Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_10121161003",
+      "label": "If the answer to the question above is yes, please provide additional information relating to your obligations and/or employment restrictions.\t\n",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null
+    },
+    {
+      "id": "question_29695046003",
+      "label": "I acknowledge that I have reviewed and understood the Applicant Privacy Policy (link below). ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 155275945003
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_5372867003",
+      "label": "How did you find out about this job?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='How did you find out about this job?'"
+    },
+    {
+      "id": "question_10120433003",
+      "label": "Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?'"
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

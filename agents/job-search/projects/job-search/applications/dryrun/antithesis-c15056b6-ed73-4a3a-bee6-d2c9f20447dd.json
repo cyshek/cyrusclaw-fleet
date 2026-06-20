@@ -1,0 +1,150 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/antithesis/c15056b6-ed73-4a3a-bee6-d2c9f20447dd",
+  "org": "antithesis",
+  "job_id": "c15056b6-ed73-4a3a-bee6-d2c9f20447dd",
+  "job_title": "Solutions Engineer",
+  "job_location": "London, UK",
+  "fetched_at": "2026-06-07T04:33:15Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_name"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_06127878-f26c-433b-8aa5-295e5b0cbf83",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_06127878-f26c-433b-8aa5-295e5b0cbf83"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_email"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_location"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d__systemfield_resume"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_439b61df-2d3b-40ce-a430-67d3c0162df5",
+      "label": "Do you now or will you in the future require employer sponsorship to work in the United Kingdom?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_439b61df-2d3b-40ce-a430-67d3c0162df5"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_f2809502-854e-4bb3-bf9b-16522ad65a26",
+      "label": "Given how quickly we’re scaling and the level of collaboration this work requires, this role is fully onsite with the team. Are you willing to commit to this?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Open to Relocation",
+          "value": "Open to Relocation"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_f2809502-854e-4bb3-bf9b-16522ad65a26"
+    },
+    {
+      "id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_9e19a4a0-1795-4ad8-83db-a1d59e7c25f0",
+      "label": "How will your talents help Antithesis?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e28c8fe5-334f-4047-a3ee-4d45b635254d_9e19a4a0-1795-4ad8-83db-a1d59e7c25f0"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

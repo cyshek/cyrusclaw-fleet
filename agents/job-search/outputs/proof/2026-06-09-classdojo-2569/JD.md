@@ -1,0 +1,87 @@
+# Product Manager, Revenue Growth (Dojo Sparks)
+
+**Company:** ClassDojo
+**Location:** Remote
+**Apply:** https://jobs.ashbyhq.com/classdojo/41f720bf-ec4c-410e-b608-1c2a1a8ffd07
+**Ashby Org:** classdojo
+**Ashby Job ID:** 41f720bf-ec4c-410e-b608-1c2a1a8ffd07
+
+---
+
+ClassDojo's goal is to give every child on Earth an education they love.
+
+We started by building a powerful network for communication. ClassDojo’s flagship app is the #1 communication app connecting K-8 teachers, children, and families globally. Teachers use it to share what’s happening throughout the day through photos, videos, and messages that make parents feel like they’re there. It’s actively used in over 95% of US schools, reaching over 50 million children in 180 countries, with a team of just around 250 people.
+
+We can achieve this impact because we hire for talent density. Our team comprises the most talented, entrepreneurial, and innovative teammates from around the world, with experience in education and top consumer internet training grounds, including Instagram, Lyft, Dropbox, Stripe, Airbnb, Y Combinator, and more. We’re building a company where the most talented people want to work. We believe you’ll do the best work of your life here—and you’ll pioneer the future of education, too.
+
+## **About Dojo Sparks**
+
+Dojo Sparks is ClassDojo's learn-to-read product for kids, built on the science of reading. Sparks has crossed $1M in bookings and found early product-market fit—and now the challenge has shifted from "does this work?" to "how do we scale it to millions of kids?" Every year, millions of new families join ClassDojo with kids in reading ages, giving us an enormous top-of-funnel to convert. The product has meaningful room to improve across conversion, activation, and churn, and we're just beginning to experiment with paid as our first outside-of-network channel.
+
+Outside of growing the product as is, there’s many ways to expand it beyond PreK–3, and we centrally behind Reading, to Math and other subjects.
+
+## **Role Overview**
+
+We're looking for a hands-on Revenue Growth PM to own the full revenue funnel for Dojo Sparks—from the moment a family discovers the product to the day they become a loyal, paying subscriber. Your mission: grow Sparks from $1M+ to $10M+ in annual bookings through rapid experimentation and product changes.
+
+At this stage, growth is about diagnosing the real constraint to revenue—not just optimizing the funnel. You'll need to determine whether the bottleneck is conversion, activation, churn, or the core product experience, then change what needs to change to fix it. That might mean redesigning an onboarding flow, rethinking a paywall, or changing a core mechanic—not just A/B testing button colors.
+
+This is a high-autonomy role embedded with a small and exceptional engineering team (4–5 engineers). You'll thrive here if you've operated in an early-scaling environment, are deeply revenue-minded, and default to learning through shipping.
+
+## **What You'll Do**
+
+- Diagnose the real constraints to revenue growth—whether conversion, activation, churn, or product experience—and prioritize the changes most likely to move the needle
+
+- Own and improve the full Sparks funnel; be willing to redesign onboarding flows, paywalls, and core mechanics when needed, not just run incremental tests
+
+- Ship at least one meaningful experiment per week, with clear hypotheses, instrumentation, and documented learnings
+
+- Build and maintain a prioritized growth roadmap informed by funnel analysis, user research, and data—without relying on dedicated data science support
+
+- Develop a deep understanding of why parents retain or cancel and translate those insights into product improvements
+
+- Partner directly with engineering: write clear specs and work hands-on to get things shipped
+
+- As Sparks begins experimenting with paid acquisition, help design the product loops that make paid channels ROI-positive
+
+## **Qualifications**
+
+- Grown a paid consumer product through the $1M–$10M revenue phase (or equivalent early-scaling stage)—you know what it's like when infrastructure is thin and you have to figure things out yourself
+
+- Owned paid conversion, activation, and retention—not just acquisition or marketing channels
+
+- Fluent in subscription economics: you think in terms of LTV, retention curves, churn cohorts, and what drives them in product
+
+- High-velocity experimentation: you design clear hypotheses, ship fast, and know how to extract signal from imperfect data
+
+- Self-sufficient with data: can write SQL, build dashboards, and analyze funnels without a dedicated data scientist
+
+- Uses AI tools as a daily force multiplier—including prototyping and building PoCs—to move faster than the team size would suggest
+
+- 3+ years in a growth PM or equivalent role at a consumer company, with a consistent shipping cadence and clear metrics to show for it
+
+- No need for large teams, heavy process, or mature infrastructure to be effective—you thrive with constraints
+
+## **Nice to Have**
+
+- Experience with kids/family or edtech products
+
+- Background in games or gamified learning products
+
+- Familiarity with freemium-to-paid model design
+
+- Experience with mobile app growth on iOS/Android
+
+- Founder or early-stage startup experience
+
+## **How We Work**
+
+We design roles around people and believe this leads to win-wins. You'll have high autonomy within Sparks, strong partners across the team, and clear outcomes. Freedom to ship, rigor to measure, and focus on growing the pond.
+
+We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. In accordance with the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records. We are happy to accommodate any disabilities or special needs. We are a distributed company, so we hire regardless of location, as long as you are willing to have significant hours overlap with one of the Americas time zones.
+
+ClassDojo takes a number of factors into consideration when determining compensation, including geographic location, experience, and skillset. Salary ranges (United States):
+
+CA, WA, NY, NJ, CT states: $200,000 - $228,000 (USD)
+
+All other states in the US: $170,000 - $200,000 (USD)

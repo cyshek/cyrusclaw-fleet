@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Built and scaled an enablement-style **platformized system** from a 2-person operation, capturing best practices from top performers into repeatable workflows and playbooks that sustain **45+ annual drills** and drove **$14M+ impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Led 0→1 development of an internal automation platform, defining requirements, **onboarding** content, and self-service scheduling that cut operational toil **30%** and centralized resources into a single hub to reduce friction and accelerate ramp.
+3. Designed Clay-style **certification and reinforcement** habits across a cross-org team, pioneering proactive testing delivered in 4 months with a **94% success rate**, surfacing critical gaps and establishing a repeatable model for continuous execution.
+4. Partnered with leadership to identify **performance gaps** across activity and conversion, directing 14 cross-org executions under executive visibility — including a sovereign-cloud test tied to a **$1.5B+ contract** — and translating outcomes into structured playbooks.
+5. Scaled team leverage through **AI-driven automation**, building an internal AI agent and restructuring planning workflows to reduce cycle time **39%** and increase capacity **21%**, measuring adoption and engagement to prove enablement impact.
+6. Developed and maintained a central hub of templates, frameworks, and talk-track-style runbooks that improved knowledge sharing and ensured enablement translated into **consistent team behaviors** across 140+ partner teams.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven workflows by running user demos and hands-on **training sessions** that lifted utilization across **14 key teams** and saved 37 engineering hours monthly, mirroring outbound enablement reinforcement.
+2. Influenced the roadmap to include intent-based YAML by facilitating **11+ user interviews** with Azure service teams, surfacing critical feature gaps and translating them into clear, repeatable plays that drove adoption.
+3. Optimized knowledge sharing and retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** hub, cutting lookup time **83%** and reducing friction across teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions **28% faster** by securing cross-functional alignment on a unified prioritization framework across **140+ teams**, bringing structure without slowing teams down.
+2. Mobilized a program strategy to mitigate operational toil during launches, running discovery with **20+ service teams** to identify 81 hours of manual effort per region and building a roadmap to automate critical paths.
+3. Enabled leadership to target gaps and prioritize high-impact support by engineering a **Power BI dashboard** to track and measure operational toil across **140+ teams**, surfacing adoption and performance insights.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the migration strategy and mapping dependencies across **1,200+ stations**, coordinating closely across cross-functional GTM and ops partners.
+2. Facilitated **Agile ceremonies** including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize a repeatable developer intake process.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the deployment cycle **25%** and reinforcing consistent team workflows.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing sales operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM process and structured playbook.
+2. Reduced Customer Acquisition Cost **13%** and boosted conversions **2.7%** by executing a digital-first **go-to-market strategy**, optimizing the website and Google profile for higher-quality pipeline.
+3. Improved leadership pricing models by conducting **profitability analysis** across **1,000+ project records** to identify and seal margin leaks, translating findings into repeatable frameworks for the sales team.
+
+## Notes from the rewriter
+- Reframed MSFT FT around enablement vocabulary: playbooks, certifications, onboarding, performance gaps, adoption measurement, central hub.
+- Swapped all titles to Program Manager labels to match the Enablement Program Manager JD.
+- Surfaced SDR/GTM-adjacent skills (outbound motion, pipeline, Notion/Gong/LMS, coaching) and led with strong action verbs; expanded bullets to ~2 lines for full page fill.
+

@@ -1,0 +1,93 @@
+# Forward Deployed Engineer
+
+**Company:** Actively AI
+**Location:** New York City
+**Apply:** http://www.actively.ai/careers?gh_jid=4751497008
+**Greenhouse ID:** 4751497008
+
+---
+
+### About Actively AI
+
+[Actively AI](http://www.actively.ai/) is defining a new category: Intelligence-Led Revenue.
+
+Revenue organizations have always been bottlenecked on human capacity. Reps triage which accounts get attention. Context disappears at every handoff. On any given day, the vast majority of accounts have exactly zero people thinking about them.
+
+Actively addresses this at the structural level. Our platform deploys Per-Account AgentsTM across our customers’ TAM, working 24/7 to research, identify opportunities, and advance next steps without being asked. Leading enterprises including Ramp, Ironclad, and Samsara are already making this shift.
+
+Our co-founders are former Stanford AI researchers, and the team comes from Harvard, CMU, Berkeley, Brex, Scale AI, and Google. We've raised $68M from TCV, First Harmonic, Bain Capital Ventures, First Round Capital, and more.
+
+### **About the Role**
+
+We’re extremely hands-on with customers to learn about their pain points, shape our product, and make it work for them. Today, onboarding a new customer involves data onboarding (connecting to their Salesforce, understanding their data, and transforming it into our standardized format), configuration (wiring up our system to work for them and making sure results look good), potentially structuring and starting a pilot for 2 months during which we iterate to make the product work for them and prove out ROI, and then (post converting a full contract) staying close with the customers to make sure the product is working well for them and continue iterating as needed, based off any feedback on LLM + ML model performance.
+
+This has been working great (we have a 90%+ conversion rate from qualified pilot → paying customer and typically pay for ourselves multiple times over through ROI in the pilot alone), but this takes time and hands-on, customer-focused work.
+
+As we scale rapidly, we’re looking for exceptional Forward Deployed Engineers to join this high-leverage team. You’ll work closely with customers during onboarding and pilot phases — integrating their data, customizing configurations, and iterating in real time — all while identifying opportunities to improve our tooling, deployment playbooks, and product defaults to streamline future implementations.
+
+**This is an incredibly high-leverage role since this is a huge bottleneck to our ability to scale revenue this year and next.**
+
+### Day in the Life
+
+- a Deployed Engineer at a company like Retool (work closely with customers to understand their business and get them to success)
+
+- a Data Scientist (understanding a customer’s data, decent amount of SQL, python, analyzing model performance and digging into data)
+
+- a founder! (extremely high ownership, willing to “do what it takes” to make customers succeed, motivated by customer love… right now our founders do this role themselves)
+
+- a PM (figuring out how to improve the product and build lots of intelligence to make the product work for future customers as “out-of-the-box” as possible)
+
+### **Who You Are**
+
+- **Incredibly detail oriented.** You are going to be working with multiple customers and receive multiple requests from reps, managers, directors, revenue operations, etc. and have to translate into code + manage different asks. Even when onboarding new customers, you are looking at a variety of specific columns.
+
+- **Very strong engineering, ML, and data background.** You have great Python & SQL skills, know ML fundamentals, and interest or experience in working with LLMs. In the past, you’ve built things from scratch and/or learned how to develop an intuitive understanding of complex systems with lots of moving pieces.
+
+- **High autonomy, ambitiousness, and ownership.** You’re pragmatic and love to ship quickly to deliver for customers; you’re excited about owning and leading a major part of our product / one of the company’s top priorities.
+
+- **Excitement about being hands-on and iterating with customers.** You’re a great communicator with blend of technical & GTM skills, and you love to talk to customers and users and make them happy! You’re very scrappy and willing to dig in where needed. You can figure out what customers want and drill that back into their underlying pain points.
+
+- **High slope and desire / ability to learn quickly.** You always want to learn and know how you learn best; you’re able to pick up new skills (technical or non-technical) quickly and seek out the help you need.
+
+- **Stellar career trajectory** & excited to take the next step in your path!
+
+- Ideally: 3+ years of experience in a role working very closely with internal stakeholders or customers (e.g., former founder, Data Scientist, Solutions / Forward Deployed Engineer, etc.)
+
+- Ideally: experience in a role where you owned delivery for customers
+
+- Ideally: experience at a hyper-growth startup or top tech company
+
+ 
+
+*Actively AI provides an estimate of the compensation for roles that may be hired as required by state regulations. Compensation may vary based on (a) location, as Actively AI factors in specific location when benchmarking compensation for most roles; (b) individual candidate skills and qualifications; and (c) individual candidate experience. Additionally, Actively AI leverages current market data to determine compensation, so posted compensation figures are subject to change as new market data becomes available. The salary, other compensation, and benefits information is accurate as of the date of this posting. Actively.ai reserves the right to modify this information at any time, subject to applicable law. *
+
+*Actively AI is committed to equal treatment and opportunity in all aspects of recruitment, selection, and employment without regard to gender, race, religion, national origin, ethnicity, disability, gender identity/expression, sexual orientation, veteran or military status, or any other category protected under the law. Actively AI is an equal opportunity employer; committed to a community of inclusion, and an environment free from discrimination, harassment, and retaliation.*
+
+Compensation Range: 
+$140,000—$180,000 USD
+
+### **Why Join**
+
+At Actively, you write playbooks rather than follow them. You own outcomes, not just tasks, and see directly how your work changes what customers can do — across a product and go-to-market motion that is scaling fast.
+
+The team is high-caliber and low-ego: people who work from first principles, move with urgency, and care deeply about building something that drives real value. If that's the kind of challenge you're looking for, Actively is the right place.
+
+### **Benefits**
+
+- 🚀 Competitive Early-Stage Equity
+
+- ⚕ Health, Dental, Vision Coverage
+
+- 💡 Unlimited PTO + Recharge Days
+
+- 🍽️ Catered Lunch on Tuesday & Friday, Dinners every day!
+
+- 🍿 Fully Stocked Kitchen
+
+- 💻 Cutting-Edge Tech & Tools
+
+- 🌴 Annual Off-sites & Monthly Events
+
+- 🚆 Commuter Benefits
+
+- 🏢 Cozy Office in NYC

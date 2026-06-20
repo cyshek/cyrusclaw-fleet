@@ -1,0 +1,563 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/pinterest/jobs/7782565",
+  "org": "pinterest",
+  "job_id": "7782565",
+  "job_title": "Business Systems Analyst II, Sales Engineering, tvScientific",
+  "job_location": "San Francisco, CA, US; Remote, US",
+  "fetched_at": "2026-05-13T22:37:25Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs/7782565?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 20,
+    "filled": 13,
+    "filled_needs_review": 1,
+    "declined": 4,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_65249838",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_65249839",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_65249840",
+      "label": "Work Experience: Current/Previous Employer",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Work Experience: Current/Previous Employer'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_65249841",
+      "label": "Education: Last University Attended",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null
+    },
+    {
+      "id": "question_65249842",
+      "label": "How did you first hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How did you first hear about this opportunity?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": 675321191
+        },
+        {
+          "label": "Glassdoor",
+          "value": 675321192
+        },
+        {
+          "label": "Twitter",
+          "value": 675321193
+        },
+        {
+          "label": "Instagram",
+          "value": 675321194
+        },
+        {
+          "label": "Pinterest-hosted Recruiting Event",
+          "value": 675321195
+        },
+        {
+          "label": "Current Pinterest Employee",
+          "value": 675321196
+        },
+        {
+          "label": "Google Search",
+          "value": 675321197
+        },
+        {
+          "label": "Other",
+          "value": 675321198
+        }
+      ]
+    },
+    {
+      "id": "question_65249843",
+      "label": "What U.S State do you currently reside in? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state | NOTE: 'WA' not literally in options ['Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'Wisconsin', 'N/A - I do not reside in the above states']",
+      "status": "filled_needs_review",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Alaska",
+          "value": 675321199
+        },
+        {
+          "label": "Arizona",
+          "value": 675321200
+        },
+        {
+          "label": "Arkansas",
+          "value": 675321201
+        },
+        {
+          "label": "California",
+          "value": 675321202
+        },
+        {
+          "label": "Colorado",
+          "value": 675321203
+        },
+        {
+          "label": "Connecticut",
+          "value": 675321204
+        },
+        {
+          "label": "Delaware",
+          "value": 675321205
+        },
+        {
+          "label": "District of Columbia",
+          "value": 675321206
+        },
+        {
+          "label": "Florida",
+          "value": 675321207
+        },
+        {
+          "label": "Georgia",
+          "value": 675321208
+        },
+        {
+          "label": "Hawaii",
+          "value": 675321209
+        },
+        {
+          "label": "Idaho",
+          "value": 675321210
+        },
+        {
+          "label": "Illinois",
+          "value": 675321211
+        },
+        {
+          "label": "Indiana",
+          "value": 675321212
+        },
+        {
+          "label": "Iowa",
+          "value": 675321213
+        },
+        {
+          "label": "Kansas",
+          "value": 675321214
+        },
+        {
+          "label": "Kentucky",
+          "value": 675321215
+        },
+        {
+          "label": "Louisiana",
+          "value": 675321216
+        },
+        {
+          "label": "Maine",
+          "value": 675321217
+        },
+        {
+          "label": "Maryland",
+          "value": 675321218
+        },
+        {
+          "label": "Massachusetts",
+          "value": 675321219
+        },
+        {
+          "label": "Michigan",
+          "value": 675321220
+        },
+        {
+          "label": "Minnesota",
+          "value": 675321221
+        },
+        {
+          "label": "Mississippi",
+          "value": 675321222
+        },
+        {
+          "label": "Missouri",
+          "value": 675321223
+        },
+        {
+          "label": "Nebraska",
+          "value": 675321224
+        },
+        {
+          "label": "Nevada",
+          "value": 675321225
+        },
+        {
+          "label": "New Hampshire",
+          "value": 675321226
+        },
+        {
+          "label": "New Jersey",
+          "value": 675321227
+        },
+        {
+          "label": "New Mexico",
+          "value": 675321228
+        },
+        {
+          "label": "New York",
+          "value": 675321229
+        },
+        {
+          "label": "North Carolina",
+          "value": 675321230
+        },
+        {
+          "label": "Ohio",
+          "value": 675321231
+        },
+        {
+          "label": "Oklahoma",
+          "value": 675321232
+        },
+        {
+          "label": "Oregon",
+          "value": 675321233
+        },
+        {
+          "label": "Pennsylvania",
+          "value": 675321234
+        },
+        {
+          "label": "Rhode Island",
+          "value": 675321235
+        },
+        {
+          "label": "South Carolina",
+          "value": 675321236
+        },
+        {
+          "label": "Tennessee",
+          "value": 675321237
+        },
+        {
+          "label": "Texas",
+          "value": 675321238
+        },
+        {
+          "label": "Utah",
+          "value": 675321239
+        },
+        {
+          "label": "Vermont",
+          "value": 675321240
+        },
+        {
+          "label": "Virginia",
+          "value": 675321241
+        },
+        {
+          "label": "Washington",
+          "value": 675321242
+        },
+        {
+          "label": "Wisconsin",
+          "value": 675321243
+        },
+        {
+          "label": "N/A - I do not reside in the above states",
+          "value": 675321244
+        }
+      ]
+    },
+    {
+      "id": "question_65249844",
+      "label": "Are you currently authorized to work for Pinterest in the country in which you are applying for a position? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_65249845",
+      "label": "Will you require our assistance with work authorization now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_29783",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 181602
+        },
+        {
+          "label": "Female",
+          "value": 181603
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181604
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_29784",
+      "label": "Race/Ethnicity",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": 181605
+        },
+        {
+          "label": "Asian",
+          "value": 181606
+        },
+        {
+          "label": "Black or African American",
+          "value": 181607
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 280430
+        },
+        {
+          "label": "White",
+          "value": 181609
+        },
+        {
+          "label": "Native American or Other Pacific Islander",
+          "value": 181610
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181612
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_29785",
+      "label": "Veteran Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am not a protected veteran",
+          "value": 181613
+        },
+        {
+          "label": "I identify as one or more of the classifications of protected veteran listed above",
+          "value": 181614
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181615
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_29786",
+      "label": "Disability Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability or have a history/record of having a disability",
+          "value": 181616
+        },
+        {
+          "label": "No, I don't have a disability or have a history/record of having a disability",
+          "value": 181617
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181618
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_65249840",
+      "label": "Work Experience: Current/Previous Employer",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Work Experience: Current/Previous Employer'"
+    },
+    {
+      "id": "question_65249842",
+      "label": "How did you first hear about this opportunity?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='How did you first hear about this opportunity?'"
+    }
+  ],
+  "blockers": []
+}

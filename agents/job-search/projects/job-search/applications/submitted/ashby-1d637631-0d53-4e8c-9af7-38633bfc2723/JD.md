@@ -1,0 +1,137 @@
+# Customer Education Program Manager
+
+**Company:** Ashby
+**Location:** Remote - US
+**Apply:** https://jobs.ashbyhq.com/ashby/1d637631-0d53-4e8c-9af7-38633bfc2723
+**Ashby Org:** ashby
+**Ashby Job ID:** 1d637631-0d53-4e8c-9af7-38633bfc2723
+
+---
+
+## About this role
+
+Hi, I'm [Jace](https://www.linkedin.com/in/jacetala/), and I founded Ashby's Customer Education function in 2025. We've expanded the team since then, I now lead the team and am excited to be hiring our next Program Manager! 
+
+Our team is built on a simple belief: Ashby Academy should feel like every customer's personal CSM. Regardless of tier or team size, every Ashby customer deserves content that meets them where they are — practical, accurate, and genuinely useful. That standard shapes everything we build, and it's what's driven the development of our growing [Academy](http://academy.ashbyhq.com) courses, webinar program, and playbook library. We have ambitions to expand both the depth of our content and the formats we deliver it in, and this hire is a meaningful part of getting there.
+
+As our next Customer Education Program Manager, you'll own customer-facing education work end to end. We're looking for someone who knows Ashby well enough to coach users on how to use it, and can translate that coaching into content that scales. You'll turn complex product workflows into clear, practical learning experiences, and partner closely with Customer Success, Product, PMM, and Recruiting Operations Consulting to make sure what we build is grounded in how customers actually work.
+
+This is a hands-on role. You won't be setting strategy and handing it off. You'll be in the work: scoping, writing, building, reviewing, refining, and shipping.
+
+**What you'll do at Ashby**
+
+- Own net-new customer education work from concept through publication, including courses, playbooks, recordings, and other learning assets
+
+- Define the goal and shape of each learning asset — what it should help customers do, for whom, and in what format — then gather SME input, design the approach, and build it
+
+- Refresh and improve existing Academy content so it stays aligned with how Ashby actually works today
+
+- Translate complex Ashby workflows into clear, practical, outcome-oriented education — the kind that helps customers understand not just what to do, but why it matters
+
+- Partner cross-functionally with CS, Product, PMM, and RecOps Consultants to identify high-value education opportunities and get the right assets out at the right time
+
+- Contribute to the systems, standards, and workflows that help Customer Education scale while maintaining high-quality learning experiences
+
+- Help us explore adjacent formats when useful — lighter-weight tutorials, in-app guidance, and other just-in-time learning moments
+
+**Typical workload:** You'll manage 2-3 new courses or major playbooks per quarter, plus ongoing refreshes and maintenance of existing content. Most of your time goes into building the work yourself (writing, recording, designing learning flows).
+
+**Examples of work you might own**
+
+- Build a new Academy course that helps customers adopt a new Ashby feature or module
+
+- Turn product and SME input into a practical playbook tied to a real recruiting outcome
+
+- Record voiceover for a customer-facing learning asset
+
+- Audit and refresh an existing course after a product change so it reflects how Ashby works today
+
+- Partner with RecOps Consulting or other SMEs to build something that helps customers apply a concept, not just understand it
+
+- Experiment with lighter-weight format when a full course isn't the right answer
+
+**Role requirements**
+
+You already know Ashby well. You understand how its workflows are structured, where users can get stuck, and what it takes to use it effectively. Formal customer education experience isn't required. What matters is Ashby fluency and the ability to translate that into coaching and content.
+
+**Beyond your Ashby depth, you could be a great fit if you also have:**
+
+- **You've taught something complex before.** Whether live, through writing, or both, you've helped someone understand a complicated product or process and have ideas on how to turn that into something scalable.
+
+- **You can juggle multiple projects.** You manage several at once without losing momentum when priorities shift.
+
+- **You're a strong writer.** You can make complicated things feel clear and useful on the page.
+
+- **You're comfortable recording voiceovers.** Recording yourself for customer-facing content feels natural, not like a stretch.
+
+- **You own work end-to-end.** You can take something from problem framing through build and launch without needing a fully mapped plan first.
+
+- **You work well with subject matter experts.** You know how to pull what you need from busy stakeholders without losing momentum or clarity.
+
+- **You have good judgment about scope.** You can tell when something should be deep, lightweight, or optimized for speed, and you choose intentionally.
+
+Traditional customer education experience isn't required. The background that matters most is hands-on Ashby experience — as a recruiter, a recruiting ops practitioner, an implementation specialist, a CSM, or someone who has simply used Ashby deeply enough to teach it. If you've owned meaningful work with real autonomy, improved how something gets taught or documented, and cared about outcomes over optics, you'll likely feel at home here.
+
+**This role may not be a fit if**
+
+- **You're still building Ashby fluency. **This role leans on already knowing Ashby well, since you'll be teaching it from day one. If you haven't had the chance to build that hands-on depth yet, this particular role isn't the right fit.
+
+- **You prefer to set strategy and hand it off.** This is a hands-on role. You'll be the one scoping, writing, recording, and shipping, not directing someone else to do it.
+
+- **You need a fully defined scope before you can do your best work.** You'll often be the one deciding what shape an asset takes and how deep to take it, without a fully mapped plan.
+
+- **You'd rather optimize an established system than help shape one.** You'll have the chance to define how this program works and put your stamp on the approach, building something you're proud of rather than fine-tuning what's already set.
+
+- **You want a coordination or project-management role.** This is a maker seat. Most of your time goes into building the work yourself, not managing a queue of other people's.
+
+- **You measure success by how much content ships. **We care about whether the right education gets built and whether customers actually use it: engagement, progress, adoption of the workflows it supports, and reduced dependence on 1:1 support are all signs that the work is landing.
+
+- **You're energized by large, highly structured teams.** You'll often be responsible for identifying where structure is needed and putting it in place yourself
+
+## About Ashby
+
+We’re building the next generation of enterprise software and we’re starting with a suite of products that help talent leaders, recruiters, and hiring managers run their hiring process significantly better. We are well-funded, have incredible product market fit, and are backed by great investors, including Y Combinator, Elad Gil and Lachy Groom
+
+We have notable customers like Notion, Linear, Shopify, and Snowflake. Our growth and retention metrics are best-in-class among our peers: we have tens of millions in ARR, growing >100% year over year, over 4,000 customers, very low churn, and many years of runway. We’ll share more details once we meet, but you now probably have a good idea as to why we're hiring for this role 😅
+
+## Interview process
+
+Our interview process is thorough - we aim to ensure each person who joins the team is the right fit for Ashby and will provide ample information for you to assess if Ashby is the right fit for you. The process for this role is as follows:
+
+- Intro Call with Ashby Recruiting - 30 Minutes
+
+- Hiring Manager Interview - 45 Minutes
+
+- Take Home
+
+- Final Panel Interview - 1.5 hours
+
+- Take Home Deep Dive with Global Head of CS (30 min)
+
+- Collaboration & Communication with VP of CS (30 min)
+
+- CEO Interview (30 min)
+
+## **Benefits**
+
+- You’ll get the time to do things the right way; we put a lot of emphasis on high quality work and avoid quick hacks as much as possible.
+
+- You get to work with a product that our customers are genuinely excited about.
+
+- 10-year exercise window for stock options.
+
+- Unlimited PTO with four weeks recommended per year.
+
+- Twelve weeks of fully paid family leave in the US.
+
+- $100/month education budget with larger development opportunities supported through manager approval.
+
+- Extended health benefits for you and your dependents (subject to availability with our Employer of Record).
+
+- Generous equipment, software, and office furniture budget.
+
+*We're in the talent acquisition software business. We run the end-to-end hiring process through our own platform, and ensure a level playing field for all candidates. Reaching out to hiring managers or recruiters directly won't improve your odds of success. Please focus your energy on the quality of your application.*
+
+*Ashby provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability, genetics, sexual orientation, gender identity, or gender expression. We are committed to a diverse and inclusive workforce and welcome people from all backgrounds, experiences, perspectives, and abilities.*
+
+*Ashby is committed to a fair and transparent hiring process. We confirm that this advertisement is for an active, existing vacancy within our organization. Please be advised that we may use artificial intelligence-driven tools to assist our recruitment team in screening, assessing, and selecting candidates for this position.*

@@ -1,0 +1,95 @@
+# Product Manager WOTC
+
+**Company:** Wizards of the Coast
+**Location:** United States
+**Apply:** https://job-boards.greenhouse.io/hasbro/jobs/4249862009
+**Greenhouse ID:** 4249862009
+
+---
+
+We take play seriously. We’re looking for curious adventurers ready to find their party, fueled by imagination and drive to build what’s never been built before. At Hasbro and Wizards of the Coast, you’ll collaborate with passionate teams to reimagine our iconic brands and create experiences that spark joy, connection, and community through the magic of play. This is your chance to shape legendary play that lasts a lifetime.
+
+At Wizards of the Coast, we connect people around the world through play and imagination. From our genre-defining games like Magic: The Gathering® and Dungeons & Dragons® to our growing multiverse, we continue to innovate and build new ways to foster friendship and connection. That's where you come in!
+
+ 
+
+Secret Lair is where our most expressive, collectible, and wonderfully strange ideas come to life. And we're looking for a **Product Manager** to join the Secret Lair Direct-to-Consumer (DTC) team to bring those products to fans across the globe.
+
+Think of this role as part digital product strategist, part TPM technical navigator, part merchandising wizard, and part cross-functional diplomat. You'll run our digital storefront, shaping how fans discover, shop, and experience some of the most exciting and innovative products in all of Magic.
+
+If you love the intersection of creativity, commerce, and technical problem solving, this adventure might be your next quest!
+
+ 
+
+# **What You'll Do:**
+
+- **Lead product launches**, own the cross-functional launch rooms, triaging issues in real time, keeping teams focused on the correct priorities, and proactively communicating with a multitude of stakeholders and escalating (when necessary) to leaders.
+
+- **Craft the vision,** from concept to deployment, working closely with business partners, marketing, engineering, and UX designers to continuously improve our fans' journey through the Secret Lair shopping experience.
+
+- **Operate with strong TPM instincts, **maintaining meticulous organization, navigating dependencies, refining requirements, and ensuring teams stay aligned.
+
+- **Craft and evolve our** **DTC** **merchandising approach**, using signal-rich data to shape site experience and drive conversion performance; covering evergreen collections, themed campaigns, global expansions, and everything in between.
+
+- **Represent the** **DTC team confidently in client-, partner-, and** **stakeholder-facing settings**, presenting roadmaps, and data-driven findings and recommendations with clarity and polish.
+
+ 
+
+# **What You'll Bring:**
+
+- Demonstrated ability in **DTC** **ecommerce**, digital product management, or merchandising.
+
+- Excellent **project management skills,** with experience in fast-moving, high-stakes launch environments.
+
+- Proven background in **shipping new features**, improving ecommerce journeys, and partnering effectively with engineers and designers.
+
+- Strong communication and presentation abilities, from cross-functional partners to leadership and collaborators; to conveying technical information to non-technical colleagues and interpreting non-technical input for technical audiences.
+
+- Familiarity with **supply chain logistics**: shipping, fulfillment, and warehousing considerations.
+
+ 
+
+## **Nice to Have:**
+
+- Technical Product Management experience
+
+- Background in visual design
+
+ 
+
+**We are an Equal Opportunity Employer**
+
+Wizards of the Coast is committed to equality of opportunity in all aspects of employment. We are committed to making all employment decisions without regard to race, color, religion, sex, sexual orientation, gender identity or expression, national origin, age, marital status, or any other legally protected status.
+
+We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. If you have a disability and require assistance in this application process and need to request an accommodation, please contact your recruiter or coordinator.
+
+ 
+
+#Wizards
+
+The pay transparency range for this role is listed below. The hiring range will vary based on factors such as experience, skills, location and market conditions. Additionally, employees may be eligible for annual and long-term incentives as part of their overall compensation package.
+
+Pay Range
+$96,000—$165,600 USD
+
+Employees may be eligible for annual and long-term incentives as part of their overall compensation package, depending on role, location, and eligibility. Benefits and programs may include:
+
+- Health & Wellness
+
+- Time Off to Recharge
+
+- Financial Well-being
+
+- Life & Family Support
+
+- Volunteer and Community Initiatives
+
+- Learning & Development 
+
+- Exclusive Perks
+
+ 
+
+ 
+
+Please review our [Applicant Privacy Notice](https://docs.hasbro.com/en-us/legal/privacy) to learn how we collect, use, and protect your personal information in connection with the application process.

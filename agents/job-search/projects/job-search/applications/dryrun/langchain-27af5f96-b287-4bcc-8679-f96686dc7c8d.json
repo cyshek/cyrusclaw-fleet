@@ -1,0 +1,76 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/langchain/27af5f96-b287-4bcc-8679-f96686dc7c8d",
+  "org": "langchain",
+  "job_id": "27af5f96-b287-4bcc-8679-f96686dc7c8d",
+  "job_title": "Product Manager, LangSmith",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-05-25T17:39:11Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 4,
+    "filled": 3,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68__systemfield_name"
+    },
+    {
+      "id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68__systemfield_email"
+    },
+    {
+      "id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68__systemfield_resume"
+    },
+    {
+      "id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68_b0f293aa-3ff6-4c90-99fe-38965548a9a9",
+      "label": "Please share your portfolio",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e7a9d760-e39a-4ebc-8cbf-035414e4be68_b0f293aa-3ff6-4c90-99fe-38965548a9a9"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

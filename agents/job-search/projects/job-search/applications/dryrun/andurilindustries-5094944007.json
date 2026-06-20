@@ -1,0 +1,445 @@
+{
+  "role_url": "https://boards.greenhouse.io/andurilindustries/jobs/5094944007?gh_jid=5094944007",
+  "org": "andurilindustries",
+  "job_id": "5094944007",
+  "job_title": "Technical Program Manager, Frontier Systems",
+  "job_location": "Washington, District of Columbia, United States",
+  "fetched_at": "2026-05-13T22:45:37Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs/5094944007?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 21,
+    "filled": 18,
+    "filled_needs_review": 2,
+    "declined": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_11990091007",
+      "label": "CONFLICT OF INTEREST",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11990098007",
+      "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "A United States citizen or national",
+      "source": "work_authorization.status=us_citizen (matched ITAR option 'A United States citizen or national')",
+      "status": "filled",
+      "matched_rule": "itar_us_person_ack",
+      "options": [
+        {
+          "label": "A United States citizen or national",
+          "value": 28059762007
+        },
+        {
+          "label": "A person lawfully admitted for permanent residence of the United States (i.e., “Green Card” holder)",
+          "value": 28059763007
+        },
+        {
+          "label": "A person admitted as a refugee to the United States under 8 U.S.C. 1157",
+          "value": 28059765007
+        },
+        {
+          "label": "A person admitted as an asylee to the United States under 8 U.S.C. 1158",
+          "value": 28059768007
+        },
+        {
+          "label": "None of the above",
+          "value": 28059771007
+        }
+      ]
+    },
+    {
+      "id": "question_11990110007",
+      "label": "Have you ever been employed by Anduril or any company that Anduril has acquired?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11990111007",
+      "label": "HISTORY WITH ANDURIL",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11990116007",
+      "label": "How did you hear about Anduril?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Google job search",
+          "value": 28059806007
+        },
+        {
+          "label": "News coverage of Anduril",
+          "value": 28059810007
+        },
+        {
+          "label": "Don't Work at Anduril campaign",
+          "value": 28059815007
+        },
+        {
+          "label": "Friend/know someone at the company",
+          "value": 28059821007
+        },
+        {
+          "label": "Outreach from an Anduril recruiter",
+          "value": 28059825007
+        },
+        {
+          "label": "JobsOhio",
+          "value": 28059828007
+        },
+        {
+          "label": "BuiltIn",
+          "value": 28059832007
+        },
+        {
+          "label": "Indeed",
+          "value": 28059838007
+        },
+        {
+          "label": "Anduril social media",
+          "value": 28059841007
+        },
+        {
+          "label": "Anduril YouTube videos",
+          "value": 28059844007
+        },
+        {
+          "label": "Podcast featuring an Anduril leader",
+          "value": 28059848007
+        },
+        {
+          "label": "LinkedIn",
+          "value": 28059849007
+        },
+        {
+          "label": "GitHub",
+          "value": 28059851007
+        },
+        {
+          "label": "Handshake",
+          "value": 28059854007
+        },
+        {
+          "label": "Glassdoor",
+          "value": 28059858007
+        },
+        {
+          "label": "Simplify",
+          "value": 28059863007
+        },
+        {
+          "label": "Anduril Website",
+          "value": 28059866007
+        },
+        {
+          "label": "ClearanceJobs",
+          "value": 28059869007
+        },
+        {
+          "label": "University Career Fair",
+          "value": 28059872007
+        },
+        {
+          "label": "Networking Event",
+          "value": 28059875007
+        },
+        {
+          "label": "Hardware FYI",
+          "value": 28059879007
+        },
+        {
+          "label": "Other",
+          "value": 28059882007
+        }
+      ]
+    },
+    {
+      "id": "question_11990146007",
+      "label": "If other, please specify",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If other, please specify'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_11990151007",
+      "label": "If you have held a U.S. security clearance in the past, what clearance level have you held? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "None",
+      "source": "work_authorization.security_clearance | NOTE: 'None' not literally in options ['N/A - have never held U.S. security clearance', 'Confidential', 'Secret', 'Top Secret']",
+      "status": "filled_needs_review",
+      "matched_rule": "security_clearance",
+      "options": [
+        {
+          "label": "N/A - have never held U.S. security clearance",
+          "value": 28059896007
+        },
+        {
+          "label": "Confidential",
+          "value": 28059898007
+        },
+        {
+          "label": "Secret",
+          "value": 28059900007
+        },
+        {
+          "label": "Top Secret",
+          "value": 28059905007
+        }
+      ]
+    },
+    {
+      "id": "question_11990155007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_11990156007",
+      "label": "U.S. WORK AUTHORIZATION",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11990157007",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_11990160007",
+      "label": "Will you require sponsorship from Anduril for employment now or in the future (e.g, H1B visa)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11990995007",
+      "label": "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "None",
+      "source": "work_authorization.security_clearance | NOTE: 'None' not literally in options ['Yes, I hold an active U.S. security clearance', 'Yes, I am eligible for a U.S. security clearance', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "security_clearance",
+      "options": [
+        {
+          "label": "Yes, I hold an active U.S. security clearance",
+          "value": 28062269007
+        },
+        {
+          "label": "Yes, I am eligible for a U.S. security clearance",
+          "value": 28062270007
+        },
+        {
+          "label": "No",
+          "value": 28062271007
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_11990146007",
+      "label": "If other, please specify",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If other, please specify'"
+    }
+  ],
+  "blockers": []
+}

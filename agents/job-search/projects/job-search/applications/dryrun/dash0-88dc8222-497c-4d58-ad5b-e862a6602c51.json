@@ -1,0 +1,317 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/dash0/88dc8222-497c-4d58-ad5b-e862a6602c51",
+  "org": "dash0",
+  "job_id": "88dc8222-497c-4d58-ad5b-e862a6602c51",
+  "job_title": "Commercial Solutions Architect",
+  "job_location": "Amsterdam",
+  "fetched_at": "2026-06-08T21:22:34Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 16,
+    "filled": 14,
+    "filled_needs_review": 2,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_name"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_email"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_resume"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_71cff23a-8fe7-4318-80de-cc5b3fca8a1c",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_71cff23a-8fe7-4318-80de-cc5b3fca8a1c"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_0ab10d1e-9929-439b-8a6b-4638f803f2f1",
+      "label": "Linkedin url",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_0ab10d1e-9929-439b-8a6b-4638f803f2f1"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c__systemfield_location"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_3bfc035e-0db2-4ddf-9fdc-248f277c4e69",
+      "label": "Do you require sponsorship to work in the given location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_3bfc035e-0db2-4ddf-9fdc-248f277c4e69"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_e7e13650-fc0d-4703-89f0-73b25ed766f2",
+      "label": "Available start date",
+      "type": "input_text",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "Date",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_e7e13650-fc0d-4703-89f0-73b25ed766f2"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_87061fb3-af33-4c51-8433-a0a1777ee984",
+      "label": "Yearly Salary Expectation (OTE + split)",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_87061fb3-af33-4c51-8433-a0a1777ee984"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_cd69d90a-c14b-41f7-ac7f-b40edeb0aa84",
+      "label": "Are you fluent in English?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "",
+      "source": "languages_fluent (optional, no options) | NOTE: '' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "languages_fluent",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_cd69d90a-c14b-41f7-ac7f-b40edeb0aa84",
+      "match_attempted": true
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_fa99720d-33e5-41e4-b226-10901e3b8767",
+      "label": "Are you fluent in  any of the following languages? (C1 level)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "",
+      "source": "languages_fluent (optional, no options) | NOTE: '' not literally in options ['German', 'Dutch', 'Nordics (Swedish, Norwegian, Danish, Finnish)']",
+      "status": "filled_needs_review",
+      "matched_rule": "languages_fluent",
+      "options": [
+        {
+          "label": "German",
+          "value": "German"
+        },
+        {
+          "label": "Dutch",
+          "value": "Dutch"
+        },
+        {
+          "label": "Nordics (Swedish, Norwegian, Danish, Finnish)",
+          "value": "Nordics (Swedish, Norwegian, Danish, Finnish)"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_fa99720d-33e5-41e4-b226-10901e3b8767",
+      "match_attempted": true
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_e8aa7370-5d92-4f2d-bbbe-f4c9ac0d9fb5",
+      "label": "Work Arrangement Preference",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Hybrid",
+      "source": "ashby_work_arrangement (matched 'hybrid')",
+      "status": "filled",
+      "matched_rule": "work_arrangement",
+      "options": [
+        {
+          "label": "Onsite",
+          "value": "Onsite"
+        },
+        {
+          "label": "Hybrid",
+          "value": "Hybrid"
+        },
+        {
+          "label": "Remote",
+          "value": "Remote"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_e8aa7370-5d92-4f2d-bbbe-f4c9ac0d9fb5"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_89701348-aa9a-4270-b7f7-e87eeedbd841",
+      "label": "What is your skill level in kubernetes?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Advanced",
+      "source": "proficiency_intermediate (middle option 'Advanced')",
+      "status": "filled",
+      "matched_rule": "proficiency_intermediate",
+      "options": [
+        {
+          "label": "Expert",
+          "value": "Expert"
+        },
+        {
+          "label": "Advanced",
+          "value": "Advanced"
+        },
+        {
+          "label": "Beginner",
+          "value": "Beginner"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_89701348-aa9a-4270-b7f7-e87eeedbd841"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_e9d8bc41-f107-48c4-af94-7d6eb31a6911",
+      "label": "What is your skill level in observabilty?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Advanced",
+      "source": "proficiency_intermediate (middle option 'Advanced')",
+      "status": "filled",
+      "matched_rule": "proficiency_intermediate",
+      "options": [
+        {
+          "label": "Expert",
+          "value": "Expert"
+        },
+        {
+          "label": "Advanced",
+          "value": "Advanced"
+        },
+        {
+          "label": "Beginner",
+          "value": "Beginner"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_e9d8bc41-f107-48c4-af94-7d6eb31a6911"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_8ee464ed-fbaf-410a-96c0-72febc670785",
+      "label": "What is your skill level in OpenTelemetry?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Advanced",
+      "source": "proficiency_intermediate (middle option 'Advanced')",
+      "status": "filled",
+      "matched_rule": "proficiency_intermediate",
+      "options": [
+        {
+          "label": "Expert",
+          "value": "Expert"
+        },
+        {
+          "label": "Advanced",
+          "value": "Advanced"
+        },
+        {
+          "label": "Beginner",
+          "value": "Beginner"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_8ee464ed-fbaf-410a-96c0-72febc670785"
+    },
+    {
+      "id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_88805945-1ba2-4a86-8ebf-c514e417879c",
+      "label": "Why do you want to work for dash0?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Dash0 because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Dash0 is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Dash0 while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Dash0 aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Dash0')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "42cf9382-972f-4ac8-926f-b6474dc4bc9c_88805945-1ba2-4a86-8ebf-c514e417879c"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

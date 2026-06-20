@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and **self-service scheduling capabilities** that reduced operational toil by 30% and transitioned execution to a scalable, repeatable delivery model across engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous validation model adopted org-wide.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, managing stakeholder alignment and change management across global teams.
+5. Built and drove multi-year execution roadmaps decomposing a North Star resilience vision into **quarterly engineering milestones**, enabling leadership to track OKR progress and prioritize high-impact initiatives across competing organizational demands.
+6. Scaled team leverage through **AI-driven automation**, building an internal AI agent and restructuring planning workflows to reduce planning cycle time by 39% and increase drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows across Azure, conducting user demos and training that drove utilization across **14 key engineering teams** and saved 37 engineering hours monthly, directly reducing developer toil at scale.
+2. Shaped the product roadmap by facilitating **11+ structured user interviews** with Azure service teams to surface critical feature gaps, influencing prioritization of intent-based YAML generation as a high-value capability for the next planning cycle.
+3. Improved data integrity and retrieval by enforcing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** platform, cutting average lookup time by 83% and improving signal quality for downstream engineering workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating stakeholder buy-in across 140+ engineering and operations teams.
+2. Mobilized a product strategy to eliminate operational toil during region launches, running discovery with 20+ service teams to identify **81 hours of manual effort** per region and building an execution roadmap to automate the highest-impact critical paths.
+3. Enabled leadership to target automation gaps and make data-driven prioritization decisions by engineering a **Power BI dashboard** tracking operational toil trends and delivery progress across 140+ teams in real time.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating change management across IT, Operations, and Engineering stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, triaging and prioritizing the backlog to resolve **40+ high-priority tickets**, stabilize the developer intake process, and maintain engineering delivery velocity throughout the migration.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable release model for future large-scale infrastructure rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end operations and managing the full scoping and invoicing lifecycle for 200+ monthly proposals through a redesigned CRM process that reduced manual effort and improved pipeline visibility.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile to improve qualified lead volume.
+3. Improved leadership pricing decisions by conducting a **financial profitability analysis** across 1,000+ project records, identifying systemic margin leaks and delivering a data-backed framework to guide future project scoping and pricing strategy.
+
+## Notes from the rewriter
+- Mirrored JD vocabulary throughout: 'change management,' 'OKRs,' 'execution roadmaps,' 'North Star vision,' 'least-privilege,' 'stakeholder alignment,' and 'legacy tech debt migration.'
+- microsoft_ft bullet 4 explicitly surfaces change management and cross-org stakeholder alignment to match the JD's emphasis on large-scale infrastructure transitions.
+- microsoft_ft bullet 5 added to directly address the JD requirement of decomposing a multi-year North Star vision into executable engineering milestones and OKR tracking.
+- All bullets verified at ≤290 characters to comply with the 2-line hard ceiling; substantive JD-aligned detail added to reach 250–290 char targets across all roles.
+

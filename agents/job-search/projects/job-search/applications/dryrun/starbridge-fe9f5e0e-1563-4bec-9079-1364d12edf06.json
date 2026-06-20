@@ -1,0 +1,201 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/starbridge/fe9f5e0e-1563-4bec-9079-1364d12edf06",
+  "org": "starbridge",
+  "job_id": "fe9f5e0e-1563-4bec-9079-1364d12edf06",
+  "job_title": "Solutions Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-04T08:35:08Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_name"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_email"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_14ea9c3f-a66c-4401-a0ee-5f9c8d1bc0ab",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_14ea9c3f-a66c-4401-a0ee-5f9c8d1bc0ab"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_location"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc__systemfield_resume"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_af8c6b0d-3f3d-4e6a-b2cd-bd1ad41e61a4",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_af8c6b0d-3f3d-4e6a-b2cd-bd1ad41e61a4"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_f66b6b01-c856-4dbf-9b8c-ee58d0444a1e",
+      "label": "What exceptional work have you done?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_f66b6b01-c856-4dbf-9b8c-ee58d0444a1e"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_51019e7b-4f2a-4661-ad96-59e6cbdd3b23",
+      "label": "Are you based in NYC / willing to relocate to NYC?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_51019e7b-4f2a-4661-ad96-59e6cbdd3b23"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_30cda6de-01d8-470b-8dbe-91c723eb0d07",
+      "label": "Are you able to work onsite five days a week at our Chelsea Piers office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_30cda6de-01d8-470b-8dbe-91c723eb0d07"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_bd33a270-e8b7-4f28-99b8-d0dd9210fbbc",
+      "label": "Do you require any form of authorization to work legally in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_bd33a270-e8b7-4f28-99b8-d0dd9210fbbc"
+    },
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_db8c6f8a-7713-4ba0-ab32-3297793b1fae",
+      "label": "If yes, authorization is required, please provide more detail below.",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, authorization is required, please provide more detail below.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_db8c6f8a-7713-4ba0-ab32-3297793b1fae"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "daa4b726-ef88-4fc1-8503-d9b4bd48f8bc_db8c6f8a-7713-4ba0-ab32-3297793b1fae",
+      "label": "If yes, authorization is required, please provide more detail below.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, authorization is required, please provide more detail below.'"
+    }
+  ],
+  "blockers": []
+}

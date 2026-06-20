@@ -1,0 +1,25 @@
+You're an isolated subagent for Tessera (trading-bench). Workspace: /home/azureuser/.openclaw/agents/trading-bench/workspace. cd there first.
+
+TASK: run ONE REAL round of the LLM mutation pipeline (n=1 candidate) that actually generates and evaluates a live LLM-written strategy. NOT a dry-run. The real path requires YOU to drive the two-step orchestrator flow and spawn the generation subagent yourself — pure Python cannot call sessions_spawn, which is why run_one_round() alone always falls back to dry-run. Do NOT use --dry-run; do NOT call run_one_round() directly.
+
+STEPS:
+1. cd to the workspace.
+2. PREPARE the round (picks parent+directive, writes the generation prompt to /tmp):
+   python3 -c "from runner._orchestrator_helpers import prepare_round; import json; print(json.dumps(prepare_round(1), default=str))"
+   Capture from the JSON: round_dir, and for the single item: prompt_path, output_path, candidate_name.
+3. READ the prompt file at prompt_path (it contains the full non-negotiable contract, parent strategy, parent-trade profile, gold-standard template, and security rules).
+4. SPAWN ONE generation subagent (sessions_spawn, mode run) whose entire job is: read that exact prompt_path, follow the contract EXACTLY to write one mutated strategy (correct decide() signature + Action dataclass, ONLY allowed imports, mandatory not-enough-bars guard + module docstring, close-logic-before-entry-gate, any filter must not block exits, notional_usd 1000.0, module name = the fixed candidate_name), and write the two required fenced blocks (```python `# === strategy.py ===` then ```json `# === params.json ===`, nothing else) VERBATIM to output_path using the write tool. The generation subagent must NOT run code, backtest, post to any channel, touch strategies/ or strategies_candidates/, or spawn anything — it only writes the one /tmp output file. Wait for its completion (sessions_yield).
+5. After the generation subagent completes, VERIFY output_path exists and contains both a ```python and a ```json block.
+6. FINALIZE the round (parses the output, runs evaluate() = code-review + fitness gate + walk-forward, writes the report and — only if it PROMOTES — a candidate dir):
+   python3 -c "from runner._orchestrator_helpers import finalize_round; import json; print(json.dumps(finalize_round('<round_dir>'), default=str, indent=2))"
+7. Verify disk: the round report exists and is LIVE not dry-run:
+   ls -t TOURNAMENT_ROUND_*.md | head -1 ; grep -m1 'Mode:' "$(ls -t TOURNAMENT_ROUND_*.md | head -1)"
+   ls -t strategies_candidates/ | head -3
+8. Append a one-line entry to memory/$(date -u +%Y-%m-%d).md noting: REAL round (not dry-run), candidate name, verdict (PROMOTE/REJECT_GATE/REJECT_REVIEW/REJECT_CRASH), and the report filename. Date headers in the file are UTC dates.
+
+SAFETY / OUTPUT RULES (unchanged, mandatory):
+- This job has delivery.mode=none and posts NOTHING to any channel. Do NOT attempt to message the channel.
+- NEVER emit strategy.py, params.json, diffs, or any code/code-blocks anywhere in YOUR replies. The disk artifacts (report + optional candidate dir + memory line) ARE the deliverable. Silent-to-disk.
+- Paper/backtest ONLY. No real orders, no live trading, no external spend. evaluate() only backtests into quarantine (strategies_candidates/), it NEVER touches the live strategies/ directory — keep it that way.
+- Do NOT modify the live strategies/ directory. Do NOT modify any cron. Do NOT edit any runner/*.py file. The ONLY subagent you spawn is the single generation subagent in step 4.
+- Reply with exactly NO_REPLY regardless of outcome (the round result lives on disk + in the memory line).

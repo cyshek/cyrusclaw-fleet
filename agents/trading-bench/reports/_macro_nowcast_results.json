@@ -1,0 +1,922 @@
+{
+  "bh": {
+    "fp": 0.6740575095047981,
+    "trades": 8,
+    "per_win": [
+      [
+        "2022-H1 bear",
+        "bear",
+        0.16689215519514436
+      ],
+      [
+        "2022-Q3 chop",
+        "chop",
+        0.10480285926357397
+      ],
+      [
+        "2023-H1 recovery",
+        "bull",
+        0.11613892111133282
+      ],
+      [
+        "2023-Q3 chop",
+        "chop",
+        0.020165143368871555
+      ],
+      [
+        "2024-Q2 bull",
+        "bull",
+        0.2588249444869791
+      ],
+      [
+        "2025-Q1 tariff bear",
+        "bear",
+        0.45413529916089646
+      ],
+      [
+        "2025-Q3 bull",
+        "bull",
+        0.5591824271530613
+      ],
+      [
+        "2026-recent bull",
+        "bull",
+        0.47376921642516867
+      ]
+    ]
+  },
+  "relabel": {
+    "growth+credit+curve lb60": {
+      "n": 143,
+      "corr_vs_spy_return": 0.3409393040014074,
+      "corr_vs_spy_vol": -0.43412353803512094
+    },
+    "all5 lb60": {
+      "n": 143,
+      "corr_vs_spy_return": 0.2943778482016295,
+      "corr_vs_spy_vol": -0.3462752794341504
+    },
+    "growth lb60": {
+      "n": 143,
+      "corr_vs_spy_return": 0.6471320865781564,
+      "corr_vs_spy_vol": -0.4879953791093208
+    },
+    "credit lb60": {
+      "n": 143,
+      "corr_vs_spy_return": 0.3897338313276794,
+      "corr_vs_spy_vol": -0.508523607939611
+    },
+    "curve lb60": {
+      "n": 143,
+      "corr_vs_spy_return": -0.2907956042723,
+      "corr_vs_spy_vol": -0.026153995946813165
+    },
+    "growth+credit+curve lb120": {
+      "n": 143,
+      "corr_vs_spy_return": -0.10598167244718344,
+      "corr_vs_spy_vol": -0.21469062420132956
+    }
+  },
+  "sweeps": {
+    "spy_binary_gcc": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.206,
+        "avg_deploy": 0.629,
+        "worst_dd": -0.15,
+        "trades": 184,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 2.1,
+        "tot_pnl_usd": 451.7
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.023,
+        "avg_deploy": 0.407,
+        "worst_dd": -0.1,
+        "trades": 485,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.81,
+        "tot_pnl_usd": -135.51
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.06,
+        "avg_deploy": 0.568,
+        "worst_dd": -0.12,
+        "trades": 237,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -1.38,
+        "tot_pnl_usd": -220.05
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.4
+        },
+        "fp": -0.082,
+        "avg_deploy": 0.606,
+        "worst_dd": -0.12,
+        "trades": 315,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -1.51,
+        "tot_pnl_usd": -239.24
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.221,
+        "avg_deploy": 0.501,
+        "worst_dd": -0.13,
+        "trades": 473,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -4.64,
+        "tot_pnl_usd": -573.69
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.258,
+        "avg_deploy": 0.491,
+        "worst_dd": -0.11,
+        "trades": 342,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -5.81,
+        "tot_pnl_usd": -658.46
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.292,
+        "avg_deploy": 0.376,
+        "worst_dd": -0.11,
+        "trades": 364,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -5.55,
+        "tot_pnl_usd": -641.07
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.4
+        },
+        "fp": -0.4,
+        "avg_deploy": 0.603,
+        "worst_dd": -0.13,
+        "trades": 319,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -5.93,
+        "tot_pnl_usd": -1063.74
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.409,
+        "avg_deploy": 0.468,
+        "worst_dd": -0.12,
+        "trades": 307,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -6.27,
+        "tot_pnl_usd": -1125.67
+      }
+    ],
+    "spy_binary_all5": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 60,
+          "threshold_pct": 0.6
+        },
+        "fp": 0.171,
+        "avg_deploy": 0.399,
+        "worst_dd": -0.07,
+        "trades": 364,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.28,
+        "tot_pnl_usd": 256.72
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 20,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.086,
+        "avg_deploy": 0.601,
+        "worst_dd": -0.12,
+        "trades": 430,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.8,
+        "tot_pnl_usd": 153.0
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 60,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.071,
+        "avg_deploy": 0.59,
+        "worst_dd": -0.13,
+        "trades": 250,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.45,
+        "tot_pnl_usd": 83.99
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 120,
+          "threshold_pct": 0.5
+        },
+        "fp": 0.042,
+        "avg_deploy": 0.544,
+        "worst_dd": -0.12,
+        "trades": 304,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 0.56,
+        "tot_pnl_usd": 104.94
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 120,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.029,
+        "avg_deploy": 0.65,
+        "worst_dd": -0.15,
+        "trades": 268,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.06,
+        "tot_pnl_usd": 11.28
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 120,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.003,
+        "avg_deploy": 0.45,
+        "worst_dd": -0.11,
+        "trades": 300,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.12,
+        "tot_pnl_usd": -21.21
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 60,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.048,
+        "avg_deploy": 0.516,
+        "worst_dd": -0.07,
+        "trades": 296,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -1.09,
+        "tot_pnl_usd": -179.14
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 20,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.082,
+        "avg_deploy": 0.406,
+        "worst_dd": -0.1,
+        "trades": 484,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -1.36,
+        "tot_pnl_usd": -217.51
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve+inflation+usd",
+          "lookback": 20,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.171,
+        "avg_deploy": 0.499,
+        "worst_dd": -0.12,
+        "trades": 517,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -3.15,
+        "tot_pnl_usd": -436.68
+      }
+    ],
+    "spy_binary_zero": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "zero",
+          "proxies": "growth+credit+curve",
+          "lookback": 120
+        },
+        "fp": 0.501,
+        "avg_deploy": 0.345,
+        "worst_dd": -0.1,
+        "trades": 177,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 3.07,
+        "tot_pnl_usd": 720.58
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "zero",
+          "proxies": "credit+curve",
+          "lookback": 60
+        },
+        "fp": 0.09,
+        "avg_deploy": 0.44,
+        "worst_dd": -0.15,
+        "trades": 329,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.55,
+        "tot_pnl_usd": 103.33
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "zero",
+          "proxies": "credit+curve",
+          "lookback": 120
+        },
+        "fp": 0.086,
+        "avg_deploy": 0.384,
+        "worst_dd": -0.18,
+        "trades": 343,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.68,
+        "tot_pnl_usd": 129.75
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "zero",
+          "proxies": "growth+credit+curve",
+          "lookback": 20
+        },
+        "fp": -0.055,
+        "avg_deploy": 0.482,
+        "worst_dd": -0.1,
+        "trades": 433,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -1.4,
+        "tot_pnl_usd": -223.5
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "zero",
+          "proxies": "growth+credit+curve",
+          "lookback": 60
+        },
+        "fp": -0.079,
+        "avg_deploy": 0.415,
+        "worst_dd": -0.07,
+        "trades": 338,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -1.28,
+        "tot_pnl_usd": -205.78
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "binary",
+          "threshold": "zero",
+          "proxies": "credit+curve",
+          "lookback": 20
+        },
+        "fp": -0.519,
+        "avg_deploy": 0.472,
+        "worst_dd": -0.16,
+        "trades": 457,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -6.51,
+        "tot_pnl_usd": -1168.24
+      }
+    ],
+    "spy_prop_gcc": [
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "proportional",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "resize_band": 0.25
+        },
+        "fp": 0.156,
+        "avg_deploy": 0.487,
+        "worst_dd": -0.12,
+        "trades": 981,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 1.32,
+        "tot_pnl_usd": 264.45
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "proportional",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "resize_band": 0.15
+        },
+        "fp": 0.1,
+        "avg_deploy": 0.436,
+        "worst_dd": -0.09,
+        "trades": 1693,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.7,
+        "tot_pnl_usd": 134.13
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "proportional",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "resize_band": 0.25
+        },
+        "fp": 0.079,
+        "avg_deploy": 0.459,
+        "worst_dd": -0.18,
+        "trades": 335,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.54,
+        "tot_pnl_usd": 101.65
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "proportional",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "resize_band": 0.15
+        },
+        "fp": 0.035,
+        "avg_deploy": 0.421,
+        "worst_dd": -0.11,
+        "trades": 1061,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.03,
+        "tot_pnl_usd": 4.6
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "proportional",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "resize_band": 0.15
+        },
+        "fp": 0.024,
+        "avg_deploy": 0.446,
+        "worst_dd": -0.14,
+        "trades": 636,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.01,
+        "tot_pnl_usd": -2.19
+      },
+      {
+        "params": {
+          "mode": "spy_timing",
+          "exposure_mode": "proportional",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "resize_band": 0.25
+        },
+        "fp": -0.017,
+        "avg_deploy": 0.451,
+        "worst_dd": -0.13,
+        "trades": 598,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.51,
+        "tot_pnl_usd": -87.91
+      }
+    ],
+    "xa_tlt_binary": [
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.025,
+        "avg_deploy": 0.94,
+        "worst_dd": -0.15,
+        "trades": 358,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.84,
+        "tot_pnl_usd": -141.04
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.281,
+        "avg_deploy": 0.996,
+        "worst_dd": -0.1,
+        "trades": 976,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -5.82,
+        "tot_pnl_usd": -1044.38
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.4
+        },
+        "fp": -0.389,
+        "avg_deploy": 0.979,
+        "worst_dd": -0.12,
+        "trades": 626,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -6.9,
+        "tot_pnl_usd": -1238.97
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.396,
+        "avg_deploy": 0.942,
+        "worst_dd": -0.12,
+        "trades": 466,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -7.76,
+        "tot_pnl_usd": -1393.17
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.4
+        },
+        "fp": -0.429,
+        "avg_deploy": 0.995,
+        "worst_dd": -0.13,
+        "trades": 634,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -7.83,
+        "tot_pnl_usd": -1404.96
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.563,
+        "avg_deploy": 0.994,
+        "worst_dd": -0.13,
+        "trades": 946,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -10.66,
+        "tot_pnl_usd": -1913.62
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.593,
+        "avg_deploy": 0.979,
+        "worst_dd": -0.11,
+        "trades": 682,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -11.02,
+        "tot_pnl_usd": -1977.44
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.747,
+        "avg_deploy": 0.939,
+        "worst_dd": -0.12,
+        "trades": 612,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -14.69,
+        "tot_pnl_usd": -2636.4
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "TLT",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.6
+        },
+        "fp": -0.778,
+        "avg_deploy": 0.976,
+        "worst_dd": -0.11,
+        "trades": 732,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -14.3,
+        "tot_pnl_usd": -2565.39
+      }
+    ],
+    "xa_gld_binary": [
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.416,
+        "avg_deploy": 0.944,
+        "worst_dd": -0.15,
+        "trades": 364,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 4.93,
+        "tot_pnl_usd": 1370.19
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.6
+        },
+        "fp": 0.3,
+        "avg_deploy": 0.994,
+        "worst_dd": -0.12,
+        "trades": 976,
+        "beats_bh_win": "3/8",
+        "ann_deployed": 4.41,
+        "tot_pnl_usd": 1168.98
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.6
+        },
+        "fp": 0.179,
+        "avg_deploy": 0.974,
+        "worst_dd": -0.17,
+        "trades": 748,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.09,
+        "tot_pnl_usd": 725.81
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.5
+        },
+        "fp": 0.158,
+        "avg_deploy": 0.947,
+        "worst_dd": -0.14,
+        "trades": 480,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 3.08,
+        "tot_pnl_usd": 722.24
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.5
+        },
+        "fp": 0.143,
+        "avg_deploy": 0.994,
+        "worst_dd": -0.13,
+        "trades": 946,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 2.85,
+        "tot_pnl_usd": 656.32
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 120,
+          "threshold_pct": 0.6
+        },
+        "fp": 0.049,
+        "avg_deploy": 0.945,
+        "worst_dd": -0.14,
+        "trades": 628,
+        "beats_bh_win": "1/8",
+        "ann_deployed": 1.97,
+        "tot_pnl_usd": 418.18
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 20,
+          "threshold_pct": 0.4
+        },
+        "fp": 0.026,
+        "avg_deploy": 0.996,
+        "worst_dd": -0.13,
+        "trades": 634,
+        "beats_bh_win": "2/8",
+        "ann_deployed": 1.22,
+        "tot_pnl_usd": 242.32
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.4
+        },
+        "fp": -0.027,
+        "avg_deploy": 0.976,
+        "worst_dd": -0.17,
+        "trades": 638,
+        "beats_bh_win": "0/8",
+        "ann_deployed": 0.39,
+        "tot_pnl_usd": 72.85
+      },
+      {
+        "params": {
+          "mode": "cross_asset",
+          "safe_asset": "GLD",
+          "exposure_mode": "binary",
+          "threshold": "pct",
+          "proxies": "growth+credit+curve",
+          "lookback": 60,
+          "threshold_pct": 0.5
+        },
+        "fp": -0.088,
+        "avg_deploy": 0.975,
+        "worst_dd": -0.16,
+        "trades": 696,
+        "beats_bh_win": "0/8",
+        "ann_deployed": -0.58,
+        "tot_pnl_usd": -98.72
+      }
+    ]
+  }
+}

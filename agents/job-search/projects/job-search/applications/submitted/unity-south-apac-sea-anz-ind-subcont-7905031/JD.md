@@ -1,0 +1,78 @@
+# Product Manager 
+
+**Company:** Unity South APAC (SEA, ANZ, IND Subcont.)
+**Location:** New York, NY, USA
+**Apply:** https://unity.com/careers/positions/7905031?gh_jid=7905031
+**Greenhouse ID:** 7905031
+
+---
+
+**The opportunity**
+We’re looking for a versatile and strategic Product Manager to join our Marketplace & Commerce team. In this role, you won't be tethered to a single feature. Instead, you will work across multiple workstreams, serving as the connective tissue between our marketing, web, commerce, and individual product layers. Your mission is to understand and optimize the entire user journey—learning how our users move from the top of the funnel (initial discovery) to ongoing, deep usage within our products.
+
+Currently, there is a gap between these organizational layers, and we are looking for a PM who can establish a unified vision where none yet exists. You will lead high-impact work, uncovering hidden opportunities and running with them to drive outcomes that directly influence Unity’s growth and user retention. This is a critical role that will provide product guidance across diverse realms, from supporting Agentic Commerce and expanding asset usage across our ecosystem to defining AI as a driver for Go-To-Market strategy.
+
+**What you'll be doing**
+
+- Own the Funnel: Map and analyze the end-to-end user journey, from marketing touchpoints to the web/commerce layer and into long-term product retention.
+
+- Unify Strategy: Bridge the gaps between marketing, web teams, commerce platforms, and product groups to create a cohesive experience for our users.
+
+- Support Strategic Projects: Provide product leadership on ongoing initiatives, including Magenta commerce, the expansion of our user groups, and broader asset distribution across the Unity ecosystem.
+
+- Uncover Opportunity: Proactively identify untapped areas of growth and retention, build the business case, and lead the cross-functional execution.
+
+- Collaborate & Influence: Work directly with engineers, data scientists, and marketing stakeholders to deliver scalable solutions that meet evolving business needs.
+
+**What we're looking for**
+
+- Proven PM Experience: Solid background in product management, with a track record of handling complex, cross-functional projects in a fast-paced environment.
+
+- Full-Funnel Mindset: Experience analyzing user lifecycles, from acquisition and commerce to retention and churn.
+
+- Ambiguity Navigator: A self-starter who excels at bringing structure to "unclaimed" spaces and can drive progress without a pre-defined roadmap.
+
+- Data Fluency: Ability to interpret funnel metrics, form hypotheses, and make data-driven decisions to optimize user journeys.
+
+- Cross-Functional Collaboration: Success in aligning stakeholders across diverse teams (Marketing, Sales, Engineering) toward a single unified goal.
+
+- Commerce/Marketplace Familiarity: Experience with commerce systems (e.g., Magenta) or marketplace dynamics is a significant plus.
+
+**You might also have**
+
+- Experience in growth product management or lifecycle marketing.
+
+- Knowledge of AI/ML applications in search, recommendations, or GTM strategies.
+
+- Degree in Computer Science, Mathematics, or a related field.
+
+**Additional information**
+
+- Relocation support is not available for this position
+
+- Work visa/immigration sponsorship is not available for this position
+
+**Benefits**
+At Unity, we want our team members to thrive. We offer a wide range of benefits designed to support well-being and work-life balance.
+
+Please note: Benefits eligibility, specific offerings, and coverage vary based on the country and employment status.
+
+While specific benefits vary, here are some of the ways we strive to take care of our eligible team members globally: Comprehensive health, life, and disability insurance | Commute subsidy | Employee stock ownership | Competitive retirement/pension plans | Generous vacation and personal days | Support for new parents through leave and family-care programs | Office food snacks | Mental Health and Wellbeing programs and support | Employee Resource Groups | Global Employee Assistance Program | Training and development programs | Volunteering and donation matching program
+
+**Life at Unity**
+Unity [NYSE: U] is the world’s leading game engine, powering play for more than 3 billion consumers each month. The top mobile games in the world, the most played PC indie titles, the most innovative console games, and virtually all of the top XR and Web Games are developed, deployed, and grown in Unity. Unity also enables teams across industries like automotive, manufacturing, and healthcare to design, simulate, and collaborate in 3D — closing the gap between ideas and reality. For more information, please visit www.unity.com.
+
+*Unity is a proud equal opportunity employer. We are committed to fostering an inclusive, innovative environment and celebrate our employees across age, race, color, ancestry, national origin, religion, disability, sex, gender identity or expression, sexual orientation, or any other protected status in accordance with applicable law. Our differences are strengths that enable us to support the growing and evolving needs of our customers, partners, and collaborators. If you have a disability that means there are preparations or accommodations we can make to help ensure you have a comfortable and positive interview experience, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSdrbRLG1N-apH1eahQ622Gypo-rmiAB6LLTP1UsSWQNu7omxQ/viewform) to let us know.*
+
+*This position requires the incumbent to have a sufficient knowledge of English to have professional verbal and written exchanges in this language since the performance of the duties related to this position requires frequent and regular communication with colleagues and partners located worldwide and whose common language is English.*
+
+*Headhunters and recruitment agencies may not submit resumes/CVs through this website or directly to managers. Unity does not accept unsolicited headhunter and agency resumes. Unity will not pay fees to any third-party agency or company that does not have a signed agreement with Unity.*
+
+*Your privacy is important to us. Please take a moment to review our [Prospect Privacy Policy](https://unity.com/legal/global-data-privacy-notice-to-prospects) and [Applicant Privacy Policy](https://unity.com/de/legal/global-data-privacy-notice-to-applicants). Should you have any concerns about your privacy, please contact us at DPO@unity.com.*
+
+#SEN #LI-CW2
+
+**Note: Certain locations require a good faith disclosure of the base salary range for the role. The actual salary for the successful candidate may differ based on location, experience, and other job-related factors.*
+
+Gross pay salary
+$115,400—$173,000 USD

@@ -1,0 +1,229 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/thought-machine/27781a54-a396-4cad-854e-d200bee24083",
+  "org": "thought-machine",
+  "job_id": "27781a54-a396-4cad-854e-d200bee24083",
+  "job_title": "Engineering Programme Manager",
+  "job_location": "United Kingdom, London",
+  "fetched_at": "2026-06-19T04:00:53Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0__systemfield_name",
+      "section": "General Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0__systemfield_email",
+      "section": "General Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0__systemfield_resume",
+      "section": "General Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_73b6a961-b543-452e-a02e-049bafc88168",
+      "label": "Mobile Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_73b6a961-b543-452e-a02e-049bafc88168",
+      "section": "General Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_25ec01bb-d379-4cb7-bc1b-664124f72261",
+      "label": "What is your notice period?",
+      "type": "input_text",
+      "required": false,
+      "value": "2 weeks",
+      "source": "preferences.notice_period_weeks",
+      "status": "filled",
+      "matched_rule": "notice_period",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_25ec01bb-d379-4cb7-bc1b-664124f72261",
+      "section": "Additional Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_36b75064-6520-4679-b59d-b46cd0c2b755",
+      "label": "Will you now or in the future require visa sponsorship to work for Thought Machine? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_36b75064-6520-4679-b59d-b46cd0c2b755",
+      "section": "Additional Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_e0ffab2f-4d2b-416f-af59-d84ac4e302da",
+      "label": "What is your desired salary?",
+      "type": "input_text",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_e0ffab2f-4d2b-416f-af59-d84ac4e302da",
+      "section": "Additional Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_1deecac8-7f5e-4d69-99dc-43688e066564",
+      "label": "Thought Machine embraces a modern, hybrid work environment that balances collaborative time in the office with the flexibility of remote work. We require a minimum of 3 days a week in the office per week. Does this working model align with your expectations? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_1deecac8-7f5e-4d69-99dc-43688e066564",
+      "section": "Additional Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_e685e708-a5d7-4525-b079-8983f9f45a37",
+      "label": "Where did you hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Industry Event",
+          "value": "Industry Event"
+        },
+        {
+          "label": "Company Website",
+          "value": "Company Website"
+        },
+        {
+          "label": "News Article",
+          "value": "News Article"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_e685e708-a5d7-4525-b079-8983f9f45a37",
+      "section": "Additional Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_2df36b62-3e62-477b-9f36-8ce527304f35",
+      "label": "If other:",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If other:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_2df36b62-3e62-477b-9f36-8ce527304f35",
+      "section": "Additional Information"
+    },
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_d6aebef6-0d0d-482e-b102-f2d58aeac0d3",
+      "label": "By submitting this application I acknowledge my personal data will be processed in accordance with Thought Machine's Recruitment Privacy notice ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_d6aebef6-0d0d-482e-b102-f2d58aeac0d3",
+      "section": "Additional Information"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "8b6f8238-d6d4-4105-9bb2-95e1114cf4a0_2df36b62-3e62-477b-9f36-8ce527304f35",
+      "label": "If other:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If other:'"
+    }
+  ],
+  "blockers": []
+}

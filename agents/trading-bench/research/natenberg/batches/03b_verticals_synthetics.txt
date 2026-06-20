@@ -1,0 +1,2851 @@
+Figure 11-26 Long time butterfly as time passes.
+
+
+
+
+                      Sell one long-term
+                      and one short-term                              –1 May 100 call
+                      option, and buy two                             +2 June 100 calls
+                  intermediate-term options                           –1 July 100 call
+ Position value
+
+
+
+
+                    All options must be                               –1 February 25 put
+                     the same type (all                               +2 June 25 puts
+                    calls or all puts) and                            –1 October 25 put
+                       have the same
+                       exercise price
+                                                    Exercise
+                                                     price
+
+
+
+
+                              Lower underlying prices      Higher underlying prices
+
+
+
+
+Figure 11-27 Long time butterfly as volatility declines.
+
+
+
+
+                                                                         Sell one long-term
+                                                                         and one short-term
+                                                                         option, and buy two
+                                                                     intermediate-term options
+ Position value
+
+
+
+
+                                                                        All options must be
+                                                                         the same type (all
+                                                                        calls or all puts) and
+                                                                           have the same
+                                                                           exercise price
+
+
+
+                                                    Exercise
+                                                     price
+
+
+
+
+                              Lower underlying prices      Higher underlying prices
+
+
+
+                                                                          V O L AT I L I T Y s P R e A D s   193
+           Because there is no carrying cost associated with the purchase or sale of a
+      futures contract, interest rates have only a minor impact on futures options and,
+      consequently, a relatively minor effect on the value of all futures option volatil-
+      ity spreads.8 However, in a stock option market, a change in interest rates will
+      cause the forward price of stocks to change. If all options in a spread expire at
+      the same time, the change in forward price is likely to affect all options equally,
+      causing only small changes in the value of the spread. However, if we have a
+      stock option position involving two different expiration dates, we must consider
+      two different forward prices. And these two forward prices may not be equally
+      sensitive to a change in interest rates.
+           Consider the following situation:
+                        Stock price = 100 interest rate = 8.00% dividend = 0
+      Suppose that a trader buys a call calendar spread:
+                   +10 June 100 calls
+                   –10 March 100 calls
+      If there are three months remaining to March expiration and six months re-
+      maining to June expiration, the forward prices for March stock and June stock
+      are 102.00 and 104.00, respectively. If interest rates rise to 10 percent, the for-
+      ward price for March will be 102.50 and the forward price for June will be 105.
+      With more time remaining to June expiration, the June forward price is more
+      sensitive to a change in interest rates. Assuming that the deltas of both options
+      are approximately equal, the June option will be more affected by the increase
+      in interest rates than the March option, and the calendar spread will expand. In
+      the same way, if interest rates decline, the calendar spread will narrow because
+      the June forward price will fall more quickly than the March forward price. A
+      long call calendar spread in the stock option market must therefore have a posi-
+      tive rho, and a short call calendar spread must have a negative rho.
+            Changes in interest rates have the opposite effect on stock option puts. In
+      our example, if interest rates rise from 8 to 10 percent, the June forward price
+      will rise more than the March forward price. If we assume, again, that the del-
+      tas of both options are approximately equal, and recalling that puts have nega-
+      tive deltas, the June put will show a greater decline in value than the March put.
+      The put calendar spread will therefore narrow. In the same way, if interest rates
+      decline, the put calendar spread will expand. A long put calendar spread in the
+      stock option market must therefore have a negative rho, and a short put calen-
+      dar spread must have a positive rho.
+            The degree to which stock option calendar spreads are affected by changes
+      in interest rates depends primarily on the amount of time between expirations.
+      If there are six months between expirations (e.g., March/September), the ef-
+      fect will be much greater than if there is only one month between expirations
+      (e.g., March/April).
+
+      8
+       Interest rates can, of course, affect the relative value of different futures months. As noted, we can offset this
+      risk by trading a futures spread along with the futures option calendar spread.
+
+
+
+
+194   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+     Changes in dividends can also affect the value of stock option calendar
+spreads because it may change the forward price of the stock. Dividends, how-
+ever, have the opposite effect on stock options as changes in interest rates. An
+increase in the dividend lowers the forward price of stock, while a cut in the
+dividend raises the forward price. If all options expire at the same time, the
+change in the forward price for the stock will have an equal effect on all op-
+tions, and the change in the value of a spread will be negligible. But in a calen-
+dar spread, if at least one dividend payment is expected between the expiration
+dates, an increase in dividends will cause a call calendar spread to narrow and
+put calendar spread to expand. A decrease in dividends will have the opposite
+effect, causing a call calendar spread to widen and a put calendar spread to
+narrow. Even though there is no Greek letter associated with dividend risk, we
+might say that a call calendar spread has negative dividend risk (its value falls
+as dividends rise) and a put calendar spread has positive dividend risk (its value
+rises as dividends rise). Examples of the effects of changing interest rates and
+dividends on stock option calendar spreads are shown in Figure 11-28.
+     In Figure 11-28, we can see that an increase in interest rates will reduce the
+value of a put calendar spread and an increase in dividends will reduce the value
+of a call calendar spread. Indeed, if we raise interest rates high enough, the put
+calendar spread can take on a negative value, with the long-term put having a
+lower value than the short-term put. The same will be true for a call calendar
+spread if we increase dividends enough. If a stock pays no dividends, the value
+of a call calendar spread should always have some value greater than 0. Even
+if volatility is very low, the spread should still be worth a minimum of the cost
+of carry on the stock between expiration months. This is only true, however, if
+a trader can carry a short stock position between expiration months. If a situa-
+tion arises where no stock can be borrowed, the trader who owns a call calendar
+spread may be forced to exercise his long-term option, thereby losing the time
+value associated with the option. This is sometimes referred to as a short squeeze.
+Figure 11-28 effect of changing interest rates and changing dividends on stock option
+calendar spreads.
+
+ Stock price = 100 Volatility = 20% Dividend = 0
+ Time to March expiration = 3 months
+ Time to June expiration = 6 months
+
+ If the interest
+ rate is…              0 percent     3 percent     6 percent      9 percent       12 percent
+
+ June 100 call            5.64          6.37          7.16          7.99              8.87
+
+ March 100 call           3.99          4.36          4.75          5.16              5.58
+
+ Call spread value        1.65          2.01          2.41          2.83              3.29
+
+ June 100 put             5.64          4.88          4.20          3.59              3.05
+
+ March 100 put            3.99          3.61          3.26          2.93              2.63
+
+ Put spread value         1.65          1.27          0.94          0.66              0.42
+
+                                                                                   (continued)
+
+                                                                  V O L AT I L I T Y s P R e A D s   195
+      Figure 11-28 (continued )
+
+        Stock price = 100 Volatility = 20% Interest rate = 6.00%
+        Time to March expiration = 3 months
+        Time to June expiration = 6 months
+
+        If quarterly
+        dividend is…              0                 0.50        1.00   1.50   2.00
+
+        June 100 call             7.16              6.57        6.00   5.47   4.96
+
+        March 100 call            4.75              4.46        4.19   3.93   3.68
+
+        Call spread value         2.41              2.11        1.81   1.54   1.28
+
+        June 100 put              4.20              4.60        5.02   5.47   5.95
+
+        March 100 put             3.26              3.47        3.70   3.93   4.17
+
+        Put spread value          0.94              1.13        1.32   1.54   1.78
+
+
+      Diagonal spreads
+
+      A diagonal spread is similar to a calendar spread except that the options have dif-
+      ferent exercise prices. Although many diagonal spreads are executed one to one
+      (one long-term option for each short-term option), diagonal spreads can also
+      be ratioed, with unequal numbers of long and short market contracts. With the
+      large number of variations in diagonal spreads, it is almost impossible to gener-
+      alize about their characteristics. Each diagonal spread must be analyzed sepa-
+      rately to determine the risks and rewards associated with the spread.
+           There is, however, one type of diagonal spread about which we can gener-
+      alize. If a diagonal spread is done one to one and both options are of the same
+      type and have approximately the same delta, the diagonal spread will act very
+      much like a conventional calendar spread. Examples of this type of diagonal
+      spread are shown in Figure 11-29 (delta values are in parentheses).
+
+            Even though there are many different volatility spreads, traders tend to
+      classify spreads in terms of their basic volatility characteristics. While some vol-
+      atility spreads may prefer movement in one direction rather than the other, a
+      Figure 11-29 Diagonal spreads.
+
+
+        Time to June expiration = 4 months
+        Time to April expiration = 2 months
+        Underlying price = 100
+        Volatility = 30%
+
+        +1 June 115 call                                   2.20 (23)
+
+        –1 April 110 call                                  1.60 (23)
+
+        +1 June 80 put                                     0.72 (–8)
+
+        –1 April 85 put                                    0.48 (–8)
+
+196   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+trader who initiates a volatility spread is concerned primarily with the magni-
+tude of movement in the underlying contract and only secondarily with the di-
+rection of movement. Therefore, all volatility spreads tend to be approximately
+delta neutral. If a trader has a large positive or negative delta such that direc-
+tional considerations become more important than volatility considerations,
+the position can no longer be considered a volatility spread.
+      All spreads that are helped by movement in the underlying market have
+a positive gamma. All spreads that are hurt by movement in the underlying
+market have a negative gamma. A trader who has a positive gamma position
+is said to be long premium and is hoping for a volatile market with large moves
+in the underlying contract. A trader who has a negative gamma is said to be
+short premium and is hoping for a quiet market with only small moves in the un-
+derlying market.
+      Because the effect of market movement and the effect of time decay always
+work in opposite directions, any spread with a positive gamma will necessarily
+have a negative theta, and any spread with a negative gamma will necessarily
+have a positive theta. If market movement helps, the passage of time hurts, and
+if market movement hurts, the passage of time helps. An option trader cannot
+have it both ways.
+      Finally, spreads that are helped by rising volatility have a positive vega.
+Spreads that are helped by falling volatility have a negative vega. In theory, the
+vega refers to the sensitivity of a theoretical value to a change in the volatil-
+ity of the underlying contract over the life of the option. In practice, however,
+traders associate the vega with the sensitivity of an option’s price to a change
+in implied volatility. Spreads with a positive vega will be helped by any increase
+in implied volatility and hurt by any decline; spreads with a negative vega will
+be helped by any decline in implied volatility and hurt by any increase. The
+delta, gamma, theta, and vega characteristics of the primary types of volatility
+spreads are summarized in Figure 11-30.
+      Because volatility spreads tend to be delta neutral and the theta and
+gamma are always of opposite sign, we can place volatility spreads into one of
+four categories depending on the effect of movement in the underlying con-
+tract (positive or negative gamma) and the effect of changes in implied volatil-
+ity (positive or negative vega):
+
+  Gamma        Vega       Conditions that will help the Position
+
+     +           +        More volatile underlying contract; rising implied volatility
+
+     –           –        Less volatile underlying contract; falling implied volatility
+
+     +           –        More volatile underlying contract; falling implied volatility
+
+     –           +        Less volatile underlying contract; rising implied volatility
+
+     Of course, within each of these categories, some spreads will have larger
+gamma or vega values and some spreads will have smaller values. Of these,
+straddles and strangles tend to have the largest gamma and vega values and
+therefore the greatest risk. They will result in the greatest profit when the trader
+is correct in his assessment of market conditions, but they will result in the
+                                                                   V O L AT I L I T Y s P R e A D s   197
+      Figure 11-30 summary of common volatility spreads.
+
+                                                                                      Downside                   Upside
+       spread                       Delta*    Gamma        Theta       Vega          Risk/Reward              Risk/Reward
+       Long straddle                   0          +           –          +       Unlimited reward         Unlimited reward
+       Long strangle                   0          +           –          +       Unlimited reward         Unlimited reward
+       Short butterfly                 0          +           –          +       Limited reward           Limited reward
+       Short condor                    0          +           –          +       Limited reward           Limited reward
+       Call ratio spread
+         (buy more than sell)          0          +           –          +       Limited reward†          Unlimited reward†
+       Put ratio spread
+         (buy more than sell)          0          +           –          +       Unlimited reward†        Limited reward†
+       Short straddle                  0          –           +          –       Unlimited risk           Unlimited risk
+       Short strangle                  0          –           +          –       Unlimited risk           Unlimited risk
+       Long butterfly                  0          –           +          –       Limited risk             Limited risk
+       Long condor                     0          –           +          –       Limited risk             Limited risk
+       Call ratio spread
+         (sell more than buy)          0          –           +          –       Limited risk†            Unlimited risk†
+       Put ratio spread
+         (sell more than buy)          0          –           +          –       Unlimited risk†          Limited risk†
+       Long calendar spread            0          –           +          +       Limited risk             Limited risk
+       Short calendar spread           0          +           –          –       Limited reward           Limited reward
+       *We assume that initially all spreads are approximately delta neutral.
+       †
+         We refer here to the great majority of delta-neutral ratio spreads, which result in a credit when buying more than
+       selling and which result in a debit when selling more than buying.
+
+
+
+      greatest loss when the trader is wrong. Butterflies and condors are at the other
+      end of the spectrum. These spreads yield smaller profits when the trader is
+      right but also result in smaller losses when the trader is wrong. Ratio spreads
+      and Christmas trees fall somewhere in between.
+           Volatility spreads can be further distinguished by their limited or unlim-
+      ited risk-reward characteristics, both on the upside and on the downside. These
+      characteristics are also summarized in Figure 11-30.
+           Figure 11-31 is an evaluation table with the theoretical value, delta,
+      gamma, theta, vega, and rho of several different options. Following this table
+      are examples of volatility spreads of the types discussed in this chapter, along
+      with their total delta, gamma, theta, vega, and rho. (Although the examples in
+      Figure 11-31 assume that the underlying is stock, except for the rho, the charac-
+      teristics of each type of spread will tend to be the same for options on futures.)
+      The reader will see that each spread does indeed have the positive or negative
+      sensitivities summarized in Figure 11-30. Note also that a volatility spread need
+      not be exactly delta neutral. (Indeed, as we saw in Chapter 7, no trader can say
+      with absolute certainty whether a position is really delta neutral.) In practice,
+      a volatility spread should have a delta that is small enough that the directional
+      considerations are less important than the volatility considerations. This is of-
+      ten a subjective judgment.
+           Also included in Figure 11-31 is the theoretical value of each spread. This
+      is simply the cash flow that results if each spread is executed at theoretical
+      value. Purchases of options result in a cash debit (indicated with a negative
+      sign), and sales represent a cash credit (indicated with a positive sign). In com-
+      mon terminology, a trader is said to be long the spread if it results in a cash
+      debit and short the spread if it results in a cash credit.
+198   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+     Note that no price is given for any of the option contracts in Figure 11-31,
+and therefore, no theoretical edge can be calculated for any of the spreads. The
+prices at which a spread is executed may be good or bad, resulting in a posi-
+tive or negative theoretical edge. But, once the spread has been established, the
+market conditions that will help or hurt the spread are determined by its char-
+acteristics, not by the initial prices. Like all traders, an option trader must not
+let his previous trading activity affect his current judgment. A trader’s primary
+concern should not be what happened yesterday but what can be done today to
+make the most of the current situation, whether attempting to maximize a po-
+tential profit or minimize a potential loss.
+
+
+Choosing an Appropriate strategy
+
+With so many spreads available, how can we decide which type of spread is
+best? First and foremost, we will want to choose spreads that have a positive
+theoretical edge to ensure that if we are right about market conditions, we have
+a reasonable expectation of showing a profit. Ideally, we want to construct a
+spread by purchasing options that are underpriced (too cheap) and selling op-
+tions that are overpriced (too expensive). If we can do this, the resulting spread,
+whatever its type, will always have a positive theoretical edge.
+      More often, however, our opinion about volatility will result in all options
+appearing either overpriced or underpriced. When this happens, it will be im-
+possible to both buy and sell options at advantageous prices. Such a market
+can be easily identified by comparing our volatility estimate with the implied
+volatility in the option marketplace. If implied volatility is lower than the vola-
+tility estimate, options will be underpriced. If implied volatility is higher than
+our estimate, options will be overpriced. This leads to the following principle:
+    If implied volatility is low, such that options generally appear underpriced, look for
+    spreads with a positive vega. If implied volatility is high, such that options generally
+    appear overpriced, look for spreads with a negative vega.
+    The theoretical values and deltas in Figure 11-31 have been reproduced in
+Figures 11-32 and 11-33, but now prices have been included, reflecting implied
+volatilities that differ from the volatility input of 20 percent. The prices in Fig-
+ure 11-32 reflect an implied volatility of 17 percent. In this case, only spreads
+with a positive vega will have a positive theoretical edge:
+         Long straddles and strangles
+         Short butterflies and condors
+         Ratio spreads—long more than short (including short Christmas trees)
+         Long calendar spreads
+The prices in Figure 11-33 reflect an implied volatility of 23 percent. Now only
+spreads with a negative vega will have a positive theoretical edge:
+         Short straddles and strangles
+         Long butterflies and condors
+         Ratio spreads—short more than long (including long Christmas trees)
+         Short calendar spreads
+
+                                                                      V O L AT I L I T Y s P R e A D s   199
+                                                                                                                                                                                                                                    ingapore Polytechnic Library 192.99.6.125] at [07/06/16]. Copyright © McGraw-Hill Global Education Holdings, LLC. Not to be redistributed or modified in any way without pe
+200
+O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+
+
+
+                                                     Figure 11-31 examples of common volatility spreads.
+
+                                                                                 Stock price = 100        Time to April expiration = 2 months           Volatility = 20%     Interest rate = 6.00%   Dividend = 0
+                                                                                                                      Calls                                                                             Puts
+                                                      exercise      Theoretical                                                                                Theoretical
+                                                       Price          Value           Delta         Gamma           Theta           Vega            Rho          Value        Delta       Gamma        Theta        Vega    Rho
+                                                     April 90         11.17             93             1.7          −0.023          0.06           0.136           .27          −7           1.7      −0.008        0.06   −0.013
+                                                     April 95          6.98             79             3.6          −0.031          0.12           0.119          1.04        −21            3.6      −0.016        0.12   −0.037
+                                                     April 100         3.76             56             4.8          −0.035          0.16           0.088          2.77        −44            4.8      −0.019        0.16   −0.077
+                                                     April 105         1.71             33             4.4          −0.030          0.15           0.052          5.67        −67            4.4      −0.013        0.15   −0.121
+                                                     April 110         0.65             16             3.0          −0.019          0.10           0.025          9.56*       −84            3.0      −0.001        0.10   −0.156
+
+
+                                                                                 Stock price = 100        Time to June expiration = 4 months            Volatility = 20%     Interest rate = 6.00%   Dividend = 0
+                                                                                                                      Calls                                                                             Puts
+                                                      exercise      Theoretical                                                                                Theoretical
+                                                       Price          Value           Delta         Gamma           Theta           Vega            Rho          Value        Delta       Gamma        Theta        Vega    Rho
+                                                     June 90          12.55             87             1.8          −0.022          0.12           0.249           .76         −13           1.8      −0.008        0.12   −0.045
+                                                     June 95           8.71             75             2.8          −0.026          0.18           0.221          1.83         −25           2.8      −0.011        0.18   −0.089
+                                                     June 100          5.62             59             3.4          −0.027          0.22           0.178          3.64         −41           3.4      −0.011        0.22   −0.148
+                                                     June 105          3.36             42             3.4          −0.025          0.23           0.130          6.28         −58           3.4      −0.008        0.23   −0.213
+                                                     June 110          1.85             28             2.9          −0.020          0.19           0.086         9.68*         −72           2.9      −0.002        0.19   −0.274
+                                                     *The options in this table are assumed to be European, so some values may be less than intrinsic value.
+     It may seem that if one encounters a market where all options are either
+underpriced or overpriced, the sensible strategies are either long straddles and
+strangles or short straddles and strangles. Such strategies will enable a trader
+to take a position with a positive theoretical edge on both sides of the spread.
+Straddles and strangles are certainly possible strategies when all options are too
+cheap or too expensive. But we will see in Chapter 13 that straddles and stran-
+gles, while often having a large positive theoretical edge, can also be among
+the riskiest of all strategies. For this reason, a trader will often want to consider
+other spreads such as ratio spreads and butterflies, even if such spreads entail
+buying some overpriced options or selling some underpriced options.
+     An important assumption in traditional theoretical pricing models is that
+volatility is constant over the life of an option. The volatility input into the
+model is assumed to be the one volatility that best describes price fluctuations in
+the underlying instrument over the life of the option. When all options expire
+at the same time, it is this one volatility that will, in theory, determine whether
+a spread is profitable or unprofitable. But a trader may also believe that implied
+volatility will rise or fall over time.
+     Because calendar spreads are particularly sensitive to changes in implied
+volatility, rising or falling implied volatility will often affect the profitability of
+calendar spreads. Consequently, we can add this corollary to the other spread
+guidelines:
+    Long calendar spreads are likely to be profitable when implied volatility is low but is
+    expected to rise; short calendar spreads are likely to be profitable when implied vola-
+    tility is high but is expected to fall.
+     These are only general guidelines, and an experienced trader may decide
+to violate them if he has reason to believe that the implied volatility will not
+correlate with the volatility of the underlying contract. A long calendar spread
+might still be desirable in a high-implied-volatility market, but the trader must
+make a prediction of how implied volatility might change with changes in re-
+alized volatility. If the market stagnates, with no movement in the underlying
+contract, but the trader feels that implied volatility will remain high, a long cal-
+endar spread is a sensible strategy. The short-term option will decay, while the
+long-term option will retain its value. In the same way, a short calendar spread
+might still be desirable in a low-implied-volatility market if the trader feels that
+the underlying contract is likely to make a large move with no commensurate
+increase in implied volatility.
+
+
+Adjustments
+
+A volatility spread may be delta neutral initially, but the delta of the position
+will change as market conditions change—as the price of the underlying con-
+tract rises or falls, as volatility changes, and as time passes. A spread that is delta
+neutral today is unlikely to be delta neutral tomorrow. The use of a theoretical
+pricing model requires a trader to continuously maintain a delta-neutral po-
+sition throughout the life of the spread. Continuous adjustments are neither
+
+
+                                                                     V O L AT I L I T Y s P R e A D s   201
+      possible nor practical in the real world of trading, so when a trader initiates
+      a spread, he ought to give some thought as to how he will adjust the position.
+      There are essentially four possibilities:
+
+              1. Adjust at regular intervals. In theory, the adjustment process is assumed to
+                 be continuous because volatility is assumed to be a continuous mea-
+                 sure of the speed of the market. In practice, however, volatility is mea-
+                 sured over regular time intervals, so a reasonable approach is to adjust
+                 a position at similar regular intervals. If a trader’s volatility estimate
+                 is based on daily price changes, the trader might adjust daily. If the
+                 estimate is based on weekly price changes, he might adjust weekly. By
+                 doing this, the trader is making the best attempt to emulate the as-
+                 sumptions built into the theoretical pricing model.
+              2. Adjust when the position becomes a predetermined number of deltas long or short.
+                 Very few traders insist on being delta neutral all the time. Most trad-
+                 ers accept that this is not a realistic approach both because a contin-
+                 uous adjustment process is physically impossible and because no one
+                 can be certain that all the assumptions and inputs in a theoretical pric-
+                 ing model, from which the delta is calculated, are correct. Even if one
+                 could be certain that all delta calculations were accurate, a trader might
+                 still be willing to take on some directional risk. But a trader ought to
+                 know just how much directional risk he is willing to accept. If he wants
+                 to pursue delta-neutral strategies but believes that he can comfortably
+                 live with a position that is up to 500 deltas long or short, then he can ad-
+                 just the position any time his delta position reaches this limit. Unlike the
+                 trader who adjusts at regular intervals, a trader who adjusts based on a
+                 fixed number of deltas cannot be sure how often he will need to adjust
+                 his position. In some cases, he may have to adjust very frequently; in
+                 other cases, he may go for long periods of time without adjusting.
+                      The number of deltas, either long or short, that a trader is willing
+                   to accept without adjusting depends on many factors—the typical size
+                   of the trader’s positions, his capitalization, and his trading experience.
+                   A new independent trader may find that he is uncomfortable with a
+                   position that is only 200 deltas long or short. A large trading firm may
+                   consider a position that is several thousand deltas long or short as be-
+                   ing approximately delta neutral.
+              3. Adjust by feel. This suggestion is not made facetiously. Some traders
+                 have good market feel. They can sense when the market is about to
+                 move in one direction or another. If a trader has this ability, there is
+                 no reason why he shouldn’t make use of it. Suppose that the underly-
+                 ing market is at 50.00 and a trader is delta neutral with a gamma of
+                 –200. If the market falls to 48.00, the trader can estimate that he is
+                 approximately 400 deltas long. If 400 deltas is the limit of the risk he
+                 is willing to accept, he might decide to adjust at this point. If, however,
+                 he is also aware that 48.00 represents strong support for the market,
+
+
+202   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+         he might choose not to adjust under the assumption that the market
+         is likely to rebound from the support level. If he is right, he will have
+         avoided an unprofitable adjustment. Of course, if he is wrong and the
+         market continues downward through the support level, he will regret
+         not having adjusted. But if the trader is right more often than not,
+         there is no reason why he shouldn’t take advantage of this skill.
+      4. Don’t adjust at all. This is really an extension of the second possibil-
+         ity, adjusting by the number of deltas. A trader who does not adjust
+         at all is willing to accept a directional risk equal to the maximum
+         number of deltas that the position can take on. If the trader sells five
+         straddles, the position can take on a maximum delta of ±500. The
+         appeal of this approach is that it eliminates all subsequent transac-
+         tion costs. But, if the position takes on a large delta, the directional
+         considerations may become more important than the volatility con-
+         siderations. If the position was initiated because of an opinion about
+         volatility, does it make sense for a trader to subsequently change to
+         an opinion about direction? Usually not. If the trader does not want
+         to adjust the position but he also does not want directional consid-
+         erations to dominate, the only choice left is to close out the position.
+         If the trader decides not to adjust, when he initiates the position, he
+         must decide under what conditions he will be willing to hold the posi-
+         tion and under what conditions he will close the position.
+
+
+submitting a spread Order
+
+We noted in Chapter 10 that a spread order can often be executed all at one
+time and at one single price. This is particularly common in option markets,
+where spreads are quoted with a single bid price and a single offer price regard-
+less of the complexity of the spread. Suppose that a trader is interested in buy-
+ing a straddle and receives a quote from a market maker of 6.25/6.75. If the
+trader wants to sell the straddle, he will have to do so at a price of 6.25 (the bid
+price); if he wants to buy the straddle, he will have to pay 6.75 (the ask price).
+If the trader decides that he is willing to pay 6.75, neither he nor the market
+maker really cares whether the trader pays 3.75 for the call and 3.00 for the put
+or 2.00 for the call and 4.75 for the put or some other combination of call and
+put prices. The only consideration is that the prices of the call and put taken
+together add up to 6.75.
+     A market maker will always endeavor to give one bid price and one ask
+price for an entire spread. If the spread is a common type, such as a straddle,
+strangle, butterfly, or calendar spread, a bid and ask can usually be given very
+quickly. But market makers are only human. If a spread is very complex, in-
+volving several different options in unusual ratios, it may take a market maker
+several minutes to calculate the value of the spread. Regardless of the complex-
+ity of a spread, however, the market maker will make an effort to give his best
+two-sided (bid and ask) market.
+
+
+                                                             V O L AT I L I T Y s P R e A D s   203
+           Spread orders are common in almost all option markets, whether elec-
+      tronic or open outcry. Depending on the trading platform, an electronic
+      exchange will usually allow traders to submit bids or offers for the most com-
+      mon types of spreads—simple call or put spreads, straddles, strangles, and
+      calendar spreads. More complex spreads—butterflies, Christmas trees, and
+      spreads with unusual ratios—must either be executed piecemeal or submit-
+      ted to a broker for execution on an open-outcry exchange where an exact de-
+      scription of the spread can be communicated directly to one or more market
+      makers.
+           Option spread orders may often be submitted with specific instructions as
+      to how the spread is to be executed. Most commonly, a spread will be submit-
+      ted as either a market order (an order to be filled at the current market price)
+      or a limit order (an order to be filled only at a specified price). But the spread
+      may also be submitted as a contingency order with special execution instructions.
+      The following contingency orders, all of which are defined in Appendix A, are
+      often used in option markets:
+                   All or none
+                   Fill or kill
+                   Immediate or cancel
+                   Market if touched
+                   Market on close
+                   Not held
+                   One cancels the other
+                   Stop limit order
+                   Stop loss order
+           A broker executing a spread order is responsible for adhering to any spe-
+      cial instructions that accompany the order. Unless a trader is fully knowledge-
+      able about market conditions or has a great deal of confidence in the broker
+      who will be executing the order, it may be wise to submit specific instructions
+      with the order as to how it is to be executed. Additionally, when one consid-
+      ers all the information that must be communicated with a spread order (i.e.,
+      the quantity, the expiration months, the exercise prices, the type of option,
+      and whether the order is a buy or sell), it is easy to see how incorrect infor-
+      mation might inadvertently be transmitted with the order. For this reason, it
+      is also wise to double-check all orders before submitting them for execution.
+      Option trading can be difficult enough without the additional problems of
+      miscommunication.
+
+
+
+
+204   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-32
+
+Stock price = 100 Time to April expiration = 2 months Volatility = 20% Interest rate = 6.00% Dividend = 0
+                                         Calls                                            Puts
+ exercise Theoretical               Price                   Theoretical             Price
+  Price         Value     (Implied Volatility = 17%) Delta      Value     (Implied Volatility = 17%) Delta
+April 90      11.17               11.03               93          .27                0.13             −7
+April 95       6.98                6.64               79         1.04                0.70            −21
+April 100      3.76                3.28               56         2.77                2.29            −44
+April 105      1.71                1.27               33         5.67                5.23            −67
+April 110       .65                 .38               16         9.56*               9.29            −84
+Stock price = 100 Time to June expiration = 4 months Volatility = 20% Interest rate = 6.00% Dividend = 0
+                                         Calls                                            Puts
+ exercise Theoretical               Price                   Theoretical             Price
+  Price         Value     (Implied Volatility = 17%) Delta      Value     (Implied Volatility = 17%) Delta
+June 90       12.55               12.22               87         0.76                0.44             −13
+June 95        8.71                8.17               75         1.83                1.29             −25
+June 100       5.62                4.95               59         3.64                2.97             −41
+June 105       3.36                2.68               42         6.28                5.60             −58
+June 110       1.85                1.30               28         9.68                9.12             −72
+
+
+
+Figure 11-33
+
+Stock price = 100 Time to April expiration = 2 months Volatility = 20% Interest rate = 6.00% Dividend = 0
+                                         Calls                                            Puts
+ exercise Theoretical               Price                   Theoretical             Price
+  Price         Value     (Implied Volatility = 23%) Delta      Value     (Implied Volatility = 23%) Delta
+April 90      11.17               11.36               93          .27                0.47             −7
+April 95       6.98                7.35               79         1.04                1.41            −21
+April 100      3.76                4.24               56         2.77                3.25            −44
+April 105      1.71                2.16               33         5.67                6.12            −67
+April 110       .65                0.97               16         9.56                9.87            −84
+Stock price = 100 Time to June expiration = 4 months Volatility = 20% Interest rate = 6.00% Dividend = 0
+                                         Calls                                            Puts
+ exercise Theoretical               Price                   Theoretical             Price
+  Price         Value     (Implied Volatility = 23%) Delta      Value     (Implied Volatility = 23%) Delta
+June 90       12.55               12.94               87         .76                 1.15            −13
+June 95        8.71                9.27               75        1.83                 2.39            −25
+June 100       5.62                6.29               59        3.64                 4.31            −41
+June 105       3.36                4.04               42        6.28                 6.96            −58
+June 110       1.85                2.45               28        9.68               10.27             −72
+
+Long Straddle: Buy calls and puts with the same expiration date and exercise price.
+                    Theoretical Value     Total        Total          Total           Total          Total
+                      (Cash Flow)         Delta      Gamma           Theta           Vega             Rho
++10 April 100 calls    10 x −3.76       +10 x 56     +10 x 4.8    +10 x −.035       +10 x .16      +10 x .088
++10 April 100 puts     10 x −2.77       +10 x −44    +10 x 4.8    +10 x −.019       +10 x .16     +10 x −.077
+                         −65.30           +120         +96.0         −.540           +3.20           +.110
++10 June 95 calls      10 x −8.71       +10 x 75     +10 x 2.8    +10 x −.026       +10 x .18      +10 x .221
++30 June 95 puts       30 x −1.83       +30 x −25    +30 x 2.8    +30 x −.011       +30 x .18     +30 x −.089
+                        −142.00             0         +112.0         −.590           +7.20           −.460
+
+                                                                                                  (continued)
+
+
+
+                                                                           V O L AT I L I T Y s P R e A D s   205
+      Figure 11-33 (continued )
+
+       Short Straddle: Sell calls and puts with the same expiration date and exercise price.
+                           Theoretical value      Total         Total         Total           Total           Total
+                              (Cash Flow)         Delta       Gamma           Theta           Vega            Rho
+       −20 April 105 calls     20 x +1.71        −20 x 33    −20 x 4.4     −20 x −.030      −20 x .15      −20 x .052
+       −10 April 105 puts      10 x +5.67       −10 x −67    −10 x 4.4     −10 x −.013      −10 x .15     −10 x −.121
+                                 +90.90            +10        −132.0          +.730           −4.50          −.170
+       −10 June 100 calls      10 x −5.62        −10 x 59    −10 x 3.4     −10 x −.027      −10 x .22      −10 x .178
+       −10 June 100 puts       10 x −3.64       −10 x −41    −10 x 3.4     −10 x −.011      −10 x .22      10 x −.148
+                                 +92.60           −180         −68.0          +.380           −4.40          −.300
+       Long Strangle: Buy calls and puts with the same expiration date but different exercise prices.
+                           Theoretical Value      Total         Total         Total           Total          Total
+                              (Cash Flow)         Delta       Gamma           Theta           Vega            Rho
+       +10 April 95 puts       10 x −0.65       +10 x −21    +10 x 3.6    +10 x −0.016 +10 x 0.12         +10 x −0.037
+       +10 April 110 calls     10 x −1.04        +10 x 16    +10 x 3.0    +10 x −0.019 +10 x 0.10         +10 x 0.025
+                                 −16.90            −50         +66.0          −.350           +2.20         −0.120
+       +20 June 90 puts        20 x −0.76       +20 x −13    +20 x 1.8    +20 x −0.008 +20 x 0.12         +20 x −0.045
+       +10 June 110 calls      10 x −1.85        +10 x 28    +10 x 2.9    +10 x −0.020 +10 x 0.19         +10 x 0.086
+                                 −33.70            −20         +65.0         −0.360           +4.30         −0.040
+       Short Strangle: Sell calls and puts with the same expiration date but different exercise prices.
+                           Theoretical Value      Total         Total         Total           Total          Total
+                              (Cash Flow)         Delta       Gamma           Theta           Vega            Rho
+       −30 April 100 puts      30 x +2.77       −30 x −44    −30 x 4.8    −30 x −0.019 −30 x 0.16         −30 x −0.077
+       −40 April 105 calls     40 x +1.71        −40 x 33    −40 x 4.4    −40 x −0.030 −40 x 0.15         −40 x 0.052
+                                +151.50              0        −320.0         +1.770          −10.80          +.230
+       −10 June 100 calls      10 x +5.62        −10 x 59    −10 x 3.4    −10 x −0.027 −10 x 0.22         −10 x 0.178
+       −10 June 105 puts       10 x +6.28       −10 x −58    −10 x 3.4    −10 x −0.008 −10 x 0.23         −10 x −0.213
+                                +119.00            −10         −68.0         +0.350           −4.50         +0.350
+
+
+       Long Butterfly: Buy one option at a lower exercise price and one option at a higher exercise price, and sell
+       two options at an intermediate exercise price, where all options have the same expiration date and are the
+       same type (either all calls or all puts); there must be an equal amount between exercise prices.
+                             Theoretical Value        Total      Total         Total          Total          Total
+                               (Cash Flow)            Delta     Gamma          Theta          Vega           Rho
+       +10 April 95 calls        10 x −6.98         +10 x 79    +10 x 3.6   +10 x −0.031   +10 x 0.12     +10 x 0.119
+       −20 April 100 calls       20 x +3.76         −20 x 56    −20 x 4.8   −20 x −0.035   −20 x 0.16     −20 x 0.088
+       +10 April 105 calls       10 x −1.71         +10 x 33    +10 x 4.4   +10 x −0.030   +10 x 0.15     +10 x 0.052
+                                  −11.70               0         −16.0        +0.090         −0.50          −0.050
+       +10 June 90 puts          10 x −0.76         +10 x −13   +10 x 1.8   +10 x −0.008   +10 x 0.12     +10 x −0.045
+       −20 June 95 puts          20 x +1.83         −20 x −25   −20 x 2.8   −20 x −0.011   −20 x 0.18     −20 x −0.089
+       +10 June 100 puts         10 x −3.64         +10 x −41   +10 x 3.4   +10 x −0.011   +10 x 0.22     +10 x −0.148
+                                   −7.40              −40         −4.0        +0.030         −0.20          −0.150
+       Short Butterfly: Sell one option at a lower exercise price and one option at a higher exercise price, and buy
+       two options at an intermediate exercise price, where all options have the same expiration date and are the
+       same type (either all calls or all puts); there must be an equal amount between exercise prices.
+                             Theoretical Value        Total      Total         Total          Total          Total
+                               (Cash Flow)            Delta     Gamma          Theta          Vega           Rho
+       −10 April 100 puts        10 x +2.77         −10 x −44   −10 x 4.8   −10 x −0.019   −10 x 0.16     −10 x −0.077
+       +20 April 105 puts        20 x −5.67         +20 x −67   +20 x 4.4   +20 x −0.013   +20 x 0.15     +20 x −0.121
+       −10 April 110 puts        10 x +9.56         −10 x −84   −10 x 3.0   −10 x −0.001   −10 x 0.10     −10 x −0.156
+                                   +9.90              −60        +10.0        −0.060         +0.40          −0.090
+       −10 June 90 calls        10 x +12.55         −10 x 87    −10 x 1.8   −10 x −0.022   −10 x 0.12     −10 x 0.249
+       +20 June 95 calls         20 x +8.71         +20 x 75    +20 x 2.8   +20 x −0.026   +20 x 0.18     +20 x 0.221
+       −10 June 100 calls        10 x −5.62         −10 x 59    −10 x 3.4   −10 x −0.027   −10 x 0.22     −10 x 0.178
+                                   +7.50              +40         +4.0        −0.030         +0.20          +0.150
+
+                                                                                                          (continued)
+206   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-33 (continued )
+
+Long Condor: Buy two options at two outside exercise prices and sell two options at two inside exercise
+prices, where all options have the same expiration date and are the same type (either all calls or all puts);
+there must be an equal amount between the two higher and two lower exercise prices.
+                      Theoretical Value     Total         Total          Total           Total           Total
+                        (Cash Flow)         Delta        Gamma           Theta           Vega            Rho
++10 April 90 calls      10 x −11.17       +10 x 93      +10 x 1.7     +10 x −0.023    +10 x 0.06     +10 x 0.136
+−10 April 95 calls       10 x +6.98       −10 x 79      −10 x 3.6     −10 x −0.031    −10 x 0.16     −10 x 0.119
+−10 April 105 calls      10 x +1.71       −10 x 33      −10 x 4.4     −10 x −0.030    −10 x 0.15     −10 x 0.052
++10 April 110 calls      10 x −0.65       +10 x 16      +10 x 3.0     +10 x −0.019    +10 x 0.10     +10 x 0.025
+                          −31.30            −30          −33.0          +0.190          −1.10          −0.100
++10 June 95 puts         10 x −1.83       +10 x −25     +10 x 2.8     +10 x −0.011    +10 x 0.18    +10 x −0.089
+−10 June 100 puts        10 x +3.64       −10 x −41     −10 x 3.4     −10 x −0.011    −10 x 0.22    −10 x −0.148
+−10 June 105 puts        10 x +6.28       −10 x −58     −10 x 3.4     −10 x −0.008    −10 x 0.23    −10 x −0.213
++10 June 110 puts        10 x −9.68       +10 x −72     +10 x 2.9     +10 x −0.002    +10 x 0.19    +10 x −0.274
+                          −15.90            +20          −11.0          +0.060          −0.80         −0.020
+Short Condor: Sell two options at two outside exercise prices and buy two options at two inside exercise
+prices, where all options have the same expiration date and are the same type (either all calls or all puts);
+there must be an equal amount between the two higher and two lower exercise prices.
+                      Theoretical Value     Total         Total          Total           Total           Total
+                        (Cash Flow)         Delta        Gamma           Theta           Vega            Rho
+−10 April 90 puts         10 x +.27       −10 x −7      −10 x 1.7     −10 x −0.008    −10 x 0.06    −10 x −0.013
++10 April 95 puts        10 x −1.04       +10 x −21     +10 x 3.6     +10 x −0.016    +10 x 0.12    +10 x −0.037
++10 April 100 puts       10 x −2.77       +10 x −44     +10 x 4.8     +10 x −0.019    +10 x 0.16    +10 x −0.077
+−10 April 105 puts       10 x +5.66       −10 x −67     −10 x 4.4     −10 x −0.013    −10 x 0.15    −10 x −0.121
+                           +21.30           +90          +23.0          −0.140          +0.70         +0.200
++10 June 90 calls        10 x −1.83       +10 x 87      +10 x 1.8     +10 x −0.008    +10 x 0.12     +10 x 0.249
+−10 June 95 calls        10 x +3.64       −10 x 75      −10 x 2.8     −10 x −0.011    −10 x 0.18     −10 x 0.221
+−10 June 105 calls       10 x +6.28       −10 x 42      −10 x 3.4     −10 x −0.008    −10 x 0.23     −10 x 0.130
++10 June 110 calls       10 x −9.68       +10 x 28      +10 x 2.9     +10 x −0.002    +10 x 0.19     +10 x 0.086
+                          +23.30            +20          +15.0          −0.090          +1.00          +0.160
+Call Ratio Spread (long more than short): Buy more calls at a higher exercise price and sell fewer calls at a
+lower exercise price where all options have the same expiration date.
+                      Theoretical Value     Total         Total          Total           Total           Total
+                        (Cash Flow)         Delta        Gamma           Theta           Vega            Rho
++20 April 110 calls      20 x −0.65       +20 x 16      +20 x 3.0     +20 x −0.019    +20 x 0.10     +20 x 0.025
+−10 April 105 calls      10 x +1.71       −10 x 33      −10 x 4.4     −10 x −0.030    −10 x 0.15     −10 x 0.052
+                           +4.10            −10          +16.0          −0.080          +0.50          −0.020
++30 June 110 calls       30 x −1.85       +30 x 28      +30 x 2.9     +30 x −0.020    +30 x 0.19     +30 x 0.086
+−10 June 90 calls       10 x +12.55       −10 x 87      −10 x 1.8     −10 x −0.022    −10 x 0.12     −10 x 0.249
+                          +70.00            −30          +69.0          −0.380          +4.50          +0.090
+Call Ratio Spread (short more than long): Sell more calls at a higher exercise price and buy fewer calls at a
+lower exercise price where all options have the same expiration date.
+                      Theoretical Value     Total         Total          Total           Total           Total
+                        (Cash Flow)         Delta        Gamma           Theta           Vega            Rho
++20 April 95 calls       20 x −6.98       +20 x 79      +20 x 3.6     +20 x −0.031    +20 x 0.12     +20 x 0.119
+−30 April 100 calls      30 x +3.76       −30 x 56      −30 x 4.8     −30 x −0.035    −30 x 0.16     −30 x 0.088
+                          −26.80           −100          −72.0          +0.430          −2.40          −0.260
++10 June 100 calls       10 x −5.62       +10 x 59      +10 x 3.4     +10 x −0.027    +10 x 0.22     +10 x 0.178
+−20 June 110 calls       20 x −1.85       −20 x 28      −20 x 2.9     −20 x −0.020    −20 x 0.19     −20 x 0.086
+                          −19.20            +30          −24.0          +0.130          −1.60          +0.060
+                                                                                                     (continued)
+
+
+
+
+                                                                              V O L AT I L I T Y s P R e A D s   207
+      Figure 11-33 (continued )
+
+       Put Ratio Spread (long more than short): Buy more puts at a lower exercise price and sell fewer puts at a
+       higher exercise price where all options have the same expiration date.
+                             Theoretical Value        Total      Total          Total           Total         Total
+                               (Cash Flow)            Delta     Gamma           Theta           Vega          Rho
+       +40 April 95 puts         40 x −1.04         +40 x −21   +40 x 3.6   +40 x −0.016     +40 x 0.12   +40 x −0.037
+       −10 April 110 puts        10 x +9.56         −10 x −84   −10 x 3.0   −10 x −0.001     −10 x 0.10   −10 x −0.156
+                                  +54.00                0        +114.0       −0.630           +3.80        +0.080
+       +50 June 95 puts          50 x −1.83         +50 x −25   +50 x 2.8   +50 x −0.011     +50 x 0.18   +50 x −0.089
+       −20 June 105 puts         20 x +6.28         −20 x −58   −20 x 3.4   −20 x −0.008     −20 x 0.23   −20 x −0.213
+                                  +34.10              −90        +72.0        −0.390           +4.40        −0.190
+       Put Ratio Spread (short more than long): Sell more puts at a lower exercise price and buy fewer puts at a
+       higher exercise price where all options have the same expiration date.
+                             Theoretical Value        Total      Total          Total           Total         Total
+                               (Cash Flow)            Delta     Gamma           Theta           Vega          Rho
+       +10 April 105 puts        10 x −5.67         +10 x −67   +10 x 4.4   +10 x −0.013     +10 x 0.15   +10 x −0.121
+       −30 April 95 puts         30 x +1.04         −30 x −21   −30 x 3.6   −30 x −0.016     −30 x 0.12   −30 x −0.037
+                                  −25.50              −40        −64.0        +0.350           −2.10        −0.100
+       +30 June 105 puts         30 x −6.28         +30 x −58   +30 x 3.4   +30 x −0.008     +30 x 0.23   +30 x −0.213
+       −40 June 100 puts         40 x +3.24         −40 x −41   −40 x 3.4   −40 x −0.011     −40 x 0.22   −40 x −0.148
+                                  −42.80              −100       −34.0        +0.020           −1.90        −0.470
+       Long Call Christmas Tree: Buy a call at at a lower exercise price and sell one call each at two higher exercise
+       prices, where all options have the same expiration date.
+                             Theoretical Value        Total      Total          Total           Total         Total
+                               (Cash Flow)            Delta     Gamma           Theta           Vega          Rho
+       +10 April 100 calls       10 x −3.76         +10 x 56    +10 x 4.8   +10 x −0.035     +10 x 0.16    +10 x 0.088
+       −10 April 105 calls       10 x +1.71         −10 x 33    −10 x 4.4   −10 x −0.030     −10 x 0.15    −10 x 0.052
+       −10 April 110 calls       10 x +0.65         −10 x 16    −10 x 3.0   −10 x −0.019     −10 x 0.10    −10 x 0.025
+                                  −14.00              +70        −26.0        +0.140           −0.90         +0.110
+       +10 June 90 calls        10 x −12.55         +10 x 87    +10 x 1.8   +10 x −0.022     +10 x 0.12    +10 x 0.249
+       −10 June 100 calls        10 x +5.62         −10 x 59    −10 x 3.4   −10 x −0.027     −10 x 0.22    −10 x 0.178
+       −10 June 110 calls        10 x +1.85         −10 x 28    −10 x 2.9   −10 x −0.020     −10 x 0.19    −10 x 0.086
+                                  −50.80               0         −45.0        +0.250           −2.90         −0.150
+       Short Call Christmas Tree: Sell a call at at a lower exercise price and buy one call each at two higher exercise
+       prices, where all options have the same expiration date.
+                             Theoretical Value        Total      Total          Total           Total         Total
+                               (Cash Flow)            Delta     Gamma           Theta           Vega          Rho
+       −10 April 90 calls       10 x +11.17         −10 x 93    −10 x 1.7   −10 x −0.023     −10 x 0.06    −10 x 0.136
+       +10 April 100 calls       10 x −3.76         +10 x 56    +10 x 4.8   +10 x −0.035     +10 x 0.16    +10 x 0.088
+       +10 April 105 calls       10 x −1.71         +10 x 33    +10 x 4.4   +10 x −0.030     +10 x 0.15    +10 x 0.052
+                                  +57.00              −40        +75.0        −0.420           +2.50         +0.040
+       −10 June 95 calls         10 x +8.71         −10 x 75    −10 x 2.8   −10 x −0.026     −10 x 0.18    −10 x 0.221
+       +10 June 105 calls        10 x −3.36         +10 x 42    +10 x 3.4   +10 x −0.025     +10 x 0.23    +10 x 0.130
+       +10 June 110 calls        10 x +1.85         +10 x 28    +10 x 2.9   +10 x −0.020     +10 x 0.19    +10 x 0.086
+                                  +35.00              −50        +35.0        −0.190           +2.40         −0.050
+
+                                                                                                           (continued)
+
+
+
+
+208   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 11-33 (continued )
+
+Long Put Christmas Tree: Sell one put each at two lower exercise prices and buy a put at higher exercise
+price, where all options have the same expiration date.
+                      Theoretical Value     Total       Total          Total           Total           Total
+                        (Cash Flow)         Delta      Gamma           Theta           Vega            Rho
+−10 April 95 puts        10 x +1.04       −10 x −21   −10 x 3.6    −10 x −0.016     −10 x 0.12    −10 x −0.037
+−10 April 100 puts       10 x +2.77       −10 x −44   −10 x 3.8    −10 x −0.019     −10 x 0.16    −10 x −0.077
++10 April 105 puts       10 x −5.67       +10 x −67   +10 x 4.4    +10 x −0.013     +10 x 0.15    +10 x −0.121
+                          −18.60            −20        −30.0         +0.220           −1.30         −0.070
+−10 June 90 puts          10 x +.76       −10 x −13   −10 x 1.8    −10 x −0.008     −10 x 0.12    −10 x −0.045
+−10 June 105 puts        10 x +6.28       −10 x −58   −10 x 3.4    −10 x −0.008     −10 x 0.23    −10 x −0.213
++10 June 110 puts        10 x −9.68       +10 x −72   +10 x 2.9    +10 x −0.002     +10 x 0.19    +10 x −0.274
+                           −26.40           −10        −23.0         +0.140           −1.60         −0.160
+Short Put Christmas Tree: buy one put each at two lower exercise prices and sell a put at a higher exercise
+price, where all options have the same expiration date.
+                      Theoretical Value     Total       Total          Total           Total           Total
+                        (Cash Flow)         Delta      Gamma           Theta           Vega            Rho
++10 April 95 puts        10 x −1.04       +10 x −21   +10 x 3.6    +10 x −0.016     +10 x 0.12    +10 x −0.037
++10 April 105 puts       10 x −5.67       +10 x −67   +10 x 4.4    +10 x −0.013     +10 x 0.15    +10 x −0.121
+−10 April 110 puts       10 x +9.56       −10 x −84   −10 x 3.0    −10 x −0.001     −10 x 0.10    −10 x −0.156
+                          +28.50            −40        +50.0         −0.280           +1.70         −0.020
++10 June 90 puts          10 x −.76       +10 x −13   +10 x 1.8    +10 x −0.008     +10 x 0.12    +10 x −0.045
++10 June 95 puts         10 x −1.83       +10 x −25   +10 x 2.8    +10 x −0.011     +10 x 0.18    +10 x −0.089
+−10 June 100 puts        10 x +3.64       −10 x −41   −10 x 3.4    −10 x −0.011     −10 x 0.22    −10 x −0.148
+                           +10.50           +30        +12.0         −0.080           +0.80         +0.140
+Long Calendar Spread: Buy a long-term option and sell a short-term option where both options have the
+same exercise price and are the same type (either both calls or both puts).
+                      Theoretical Value     Total       Total          Total           Total           Total
+                        (Cash Flow)         Delta      Gamma           Theta           Vega            Rho
++10 June 100 calls       10 x −5.62       +10 x 59    +10 x 3.4    +10 x −0.027     +10 x 0.22     +10 x 0.178
+−10 April 100 calls      10 x +3.76       −10 x 56    −10 x 4.8    −10 x −0.035     −10 x 0.16     −10 x 0.088
+                          −18.60            +30        −14.0         +0.080           +0.60          +0.900
++10 June 95 puts         10 x −1.83       +10 x −25   +10 x 2.8    +10 x −0.011     +10 x 0.18    +10 x −0.089
+−10 April 95 puts        10 x +1.04       −10 x −21   −10 x 3.6    −10 x −0.016     −10 x 0.12    −10 x −0.037
+                           −7.90            −40         −8.0         +0.050           +0.60         −0.520
+Short Calendar Spread: Buy a short-term option and sell a long-term option where both options have the
+same exercise price and are the same type (either both calls or both puts).
+                      Theoretical Value     Total       Total          Total           Total           Total
+                        (Cash Flow)         Delta      Gamma           Theta           Vega            Rho
++10 April 105 calls      10 x −1.71       +10 x 33    +10 x 4.4    +10 x −0.030     +10 x 0.15     +10 x 0.052
+−10 June 105 calls       10 x +3.36       −10 x 42    −10 x 3.4    −10 x −0.025     −10 x 0.23     −10 x 0.130
+                          +16.50            −90        +10.0         −0.050           −0.80          −0.780
++10 April 100 puts       10 x −2.77       +10 x −44   +10 x 4.8    +10 x −0.019     +10 x 0.16    +10 x −0.077
+−10 June 100 puts        10 x −3.64       −10 x −41   −10 x 3.4    −10 x −0.011     −10 x 0.22    −10 x −0.148
+                           +8.70            −30        +14.0         −0.080           −0.60         +0.710
+
+
+
+
+                                                                            V O L AT I L I T Y s P R e A D s   209
+12
+                          Bull and Bear Spreads
+
+
+      Although delta-neutral volatility trading is the foundation of theoretical op-
+      tion pricing, there is no law that requires a trader to initiate and maintain a
+      delta-neutral position. Many traders prefer to trade from a bullish or bear-
+      ish perspective. The trader who wishes to take a directional position has the
+      choice of doing so in either the underlying instrument itself, buying or selling
+      a futures contract or stock, or by taking the position in the option market. If
+      the trader takes a directional position in the option market, he must still be
+      aware of the volatility implications. Otherwise, he may be no better off, and
+      perhaps even worse, than if he had taken an outright position in the under-
+      lying contract.
+
+
+      Naked Positions
+
+      Because the purchase of calls or the sale of puts will create a positive delta
+      position and the sale of calls or purchase of puts will create a negative delta
+      position, we can always take a directional position in a market by taking an ap-
+      propriate naked position in either calls or puts. If implied volatility is high, we
+      can sell puts to create a bullish position or sell calls to create a bearish position.
+      If implied volatility is low, we can buy calls to create a bullish position or buy
+      puts to create a bearish position.
+           The problem with this approach is that there is very little margin for er-
+      ror. If we purchase options, we will lose money not only if the market moves
+      in the wrong direction but also if the market fails to move fast enough to
+      offset the option’s time decay. If we sell options, time will work in our fa-
+      vor, but we face the prospect of unlimited risk if the market moves violently
+      against us. An experienced trader will prefer a strategy that improves the
+      risk-reward tradeoff by looking for positions with the greatest possible mar-
+      gin for error. This philosophy applies no less to directional strategies than
+      to volatility strategies.
+
+
+
+210
+Bull and Bear Ratio spreads
+
+Consider a situation where we believe that implied volatility is too high. One
+possible strategy is a ratio spread where more options are sold than purchased.
+With the underlying market at 101, ten weeks remaining to June expiration,
+and a volatility of 30 percent, a June 100 call has a delta of 56 and a June 110
+call has a delta of 28.1 A delta-neutral spread might consist of
+            Buy 1 June 100 call (56)
+            Sell 2 June 110 calls (28)
+     Because the spread is delta neutral, it has no particular preference for up-
+ward or downward movement in the underlying market.
+     Now suppose that we believe that this ratio spread is a sensible strategy,
+but at the same time, we are also bullish on the market. There is no law that re-
+quires us to do this spread in a delta-neutral ratio. If we want the spread to re-
+flect a bullish sentiment, we might adjust the ratio slightly
+            Buy 2 June 100 calls (56)
+            Sell 3 June 110 calls (28)
+We have essentially the same ratio spread, but with a bullish bias. This is re-
+flected in the total delta of +28.
+      There is, however, an important limitation if we use a ratio strategy to create a
+bullish or bearish position. In our example, we are initially bullish, but the position
+is still a ratio spread with a negative gamma. If the underlying market moves up
+too quickly, the spread can invert from a positive to a negative delta. If the market
+rises far enough, to 130 or 140, eventually all options will go deeply into the money,
+and the deltas of both the June 100 and June 110 calls will approach 100. We will
+be left with a delta position of –100. Even though we may be correct in our bullish
+sentiment, the volatility characteristics of the position will eventually outweigh any
+considerations of market direction. The delta values of both ratios, 1 × 2 and 2 ×
+3, with respect to changes in the underlying price, are shown in Figure 12-1.
+      The delta can also invert in a ratio spread in which more options are pur-
+chased than sold. Unlike a negative gamma position, where the inversion is
+caused by swift price movement in the underlying contract, this type of ratio
+spread can invert when volatility declines or time passes. Suppose that condi-
+tions are the same as in our preceding example, but we believe that implied vol-
+atility is too low. Now we might do the following delta-neutral strategy:
+            Buy 2 June 110 calls (28)
+            Sell 1 June 100 call (56)
+   However, if we are bullish on the market, we can, as in the preceding ex-
+ample, adjust the ratio to reflect this sentiment
+            Buy 3 June 110 calls (28)
+            Sell 1 June 100 call (56)
+The delta position of +28 reflects this bullish bias.
+
+1
+ To generalize this and subsequent examples and to eliminate the differences between stock options and futures
+options, we will assume an interest rate of 0.
+
+                                                                         BULL AND BeAR sPReADs                   211
+      Figure 12-1 Delta of a ratio spread as the underlying price changes.
+
+
+                       +40
+
+                       +30
+
+                       +20
+                                                                              +2 × –3 ratio spread
+                       +10
+
+                         0
+      Position delta
+
+
+
+
+                       –10
+                                        +1 × –2 ratio spread
+                       –20
+
+                       –30
+
+                       –40
+
+                       –50
+
+                       –60
+                          80             90                     100           110                120
+                                                           Underlying price
+
+
+
+
+           We know from Chapter 9 that as time passes or as volatility declines, all deltas
+      move away from 50. If time passes with no movement in the underlying contract,
+      the delta of the June 100 call will tend to rise, while the delta of the June 110 call
+      will tend to decline. If, after a period of time, the delta of the June 100 call rises
+      to 70 and the delta of the June 110 call falls to 15, the delta of the position will no
+      longer be +28 but will instead be –25. Because this strategy is a volatility spread,
+      the primary consideration, as before, is the volatility of the market. Only second-
+      arily are we concerned with the direction of movement. If we overestimate volatil-
+      ity and the market moves more slowly than expected, the spread, which is initially
+      delta positive, can instead become delta negative. The delta values of both posi-
+      tions with respect to the passage of time are shown in Figure 12-2.
+
+
+      Bull and Bear Butterflies and Calendar spreads
+
+      Butterflies and calendar spreads can also be executed in a way that reflects a
+      bullish or bearish bias. As with ratio spreads, though, their delta characteristics
+      can invert as market conditions change.
+           With high implied volatility and the underlying contract at 100, we might
+      create a delta-neutral position by buying the June 95/100/105 call butterfly
+      (buy a 95 call, sell two 100 calls, buy a 105 call). We hope that the underlying
+      will stay close to 100 so that at expiration the butterfly will widen to its maxi-
+      mum value of 5.00. If, however, we want to buy a butterfly but are also bullish
+
+212   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 12-2 Delta of a ratio spread as time passes.
+
+                     +30
+
+                     +20
+
+                     +10
+
+                       0
+                               –1 × +3 ratio spread
+                     –10
+    Position delta
+
+
+
+
+                     –20
+
+                     –30
+                                                                             –1 × +2 ratio spread
+                     –40
+
+                     –50
+
+                     –60
+
+                     –70
+                           0      1       2       3       4       5        6       7     8          9       10
+                                                      Time to expiration (weeks)
+
+
+
+on the market, we can choose a butterfly in which the inside exercise price is
+above the current price of the underlying contract. If the underlying is cur-
+rently at 100, we might choose to buy the June 105/110/115 call butterfly. Be-
+cause this position wants the underlying contract to be at the inside exercise
+price of 110 at expiration and it is currently at 100, the position is a bullish but-
+terfly. This will be reflected in the position having a positive delta.
+     Unfortunately, if the underlying market moves up too far, say, to 120, the
+butterfly will invert from a positive to a negative delta position. Now we want
+the market to fall back from 120 to 110. Whenever the underlying market is be-
+low 110, the position will be bullish; whenever the underlying market is above
+110, the position will be bearish.
+     Conversely, if we are bearish, we can choose to buy a butterfly in which the in-
+side exercise price is below the current price of the underlying market. But again,
+if the market moves down too quickly and goes through the inside exercise price,
+the position will invert from a negative to a positive delta. The delta position of a
+butterfly with respect to changes in the underlying price is shown in Figure 12-3.
+     We can also choose a bullish or bearish calendar spread. A long calendar
+spread always wants the short-term option to expire exactly at the money. A
+long calendar spread will be initially bullish if the exercise price is above the
+current price of the underlying contract.2 With the underlying at 100, the June/
+
+2
+ In the futures market, the situation may be complicated by the fact that different futures months may be trad-
+ing at different prices. Instead of choosing a traditional calendar spread, where both options have the same ex-
+ercise price, the trader may have to choose a diagonal spread to ensure that the position is either bullish (delta
+positive) or bearish (delta negative).
+
+
+                                                                               BULL AND BeAR sPReADs                 213
+      Figure 12-3 Delta of a long butterfly as the underlying price changes.
+
+
+          Positive delta
+
+
+
+
+                           When the underlying price is
+                            below the inside exercise
+                             price, a long butterfly is
+                             bullish (delta positive).
+             0
+
+
+                                                                              When the underlying price is
+          Negative delta
+
+
+
+
+                                                                               above the inside exercise
+                                                                                price, a long butterfly is
+                                                                               bearish (delta negative).
+
+
+
+
+                           Lower underlying prices             Inside     Higher underlying prices
+                                                           exercise price
+
+
+
+      April 110 calendar spread (buy the June 110 option, sell the April 110 option of
+      the same type) will be bullish because the trader will want the underlying price
+      to rise to 110 by April expiration. The June/April 90 calendar spread (buy the
+      June 90 option, sell the April 90 option of the same type) will be bearish be-
+      cause the trader will want the underlying price to fall to 90 by April expiration.
+      But like a long butterfly, a long calendar spread has a negative gamma. If the
+      underlying contract moves through the exercise price, the delta will invert. If
+      the market moves from 100 to 120, the June/April 110 calendar spread, which
+      was initially bullish, will become bearish. If the market moves from 100 to 80,
+      the June/April 90 calendar spread, which was bearish initially, will become
+      bullish. The delta values of long calendar spreads with respect to changes in the
+      underlying price are shown in Figure 12-4.3
+
+
+      Vertical spreads
+
+      Although we may take a bullish or bearish position by choosing an appropriate
+      ratio spread, butterfly, or calendar spread, in each of these positions, volatility
+      is still the primary concern. We can be right about market direction, but if we
+      are wrong about volatility, the spread may not retain the directional character-
+      istics that we originally intended.
+
+      3
+       Figures 12-3 and 12-4 are very similar, and one might conclude that the characteristics of butterflies and cal-
+      endar spreads are similar. But this is only true with respect to changes in the underlying price, as reflected in the
+      delta. The spreads will react quite differently to the passage of time and changes in implied volatility.
+
+
+214   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 12-4 Delta of a long calendar spread as the underlying price changes.
+
+
+
+      Positive delta
+
+
+
+
+                              When the underlying price is
+                              below the exercise price, a
+                               long calendar spread is
+                                bullish (delta positive).
+
+              0
+
+                                                                         When the underlying price is
+                                                                         below the exercise price, a
+      Negative delta
+
+
+
+
+                                                                          long calendar spread is
+                                                                          bearish (delta negative).
+
+
+
+
+                            Lower underlying prices          Exercise   Higher underlying prices
+                                                              price
+
+
+
+     If we want to focus primarily on the direction of the underlying market, we
+might look for a spread in which the directional characteristics are the primary
+concern and the volatility characteristics are only of secondary importance.
+We would like to be certain that if the spread is initially bullish (delta positive), it
+will remain bullish under all possible market conditions, and if it is initially bear-
+ish (delta negative), it will remain bearish under all possible market conditions.
+     The most common class of spreads that meet these requirements are sim-
+ple call and put spreads. One option is purchased and one option is sold, where
+both options are the same type (either both calls or both puts) and expire at the
+same time. The options are distinguished only by their different exercise prices.
+Such spreads may also be referred to as credit and debit spreads or vertical spreads.4
+Typical spreads of this type might be
+                       Buy 1 June 100 call
+                       Sell 1 June 105 call
+or
+                       Buy 1 December 105 put
+                       Sell 1 December 95 put
+     Simple call and put spreads are initially either bullish or bearish, and they
+remain bullish or bearish no matter how market conditions change. Two options
+that have different exercise prices but that are otherwise identical cannot have
+identical deltas. In the first example, where the trader is long a June 100 call
+and short a June 105 call, the June 100 call will always have a delta greater than
+4
+ In the early days of trading on option exchanges, exercise prices were listed vertically on the exchange dis-
+play boards—hence the term vertical spread for strategies consisting of options with difference exercise prices.
+
+                                                                              BULL AND BeAR sPReADs                215
+      the June 105 call. If both options are deeply in the money or very far out of the
+      money, the deltas may tend toward 100 or 0. But even then, the June 100 call
+      will have a delta that is slightly greater than that of the June 105 call. In the sec-
+      ond example, no matter how market conditions change, the December 105 put
+      will always have a greater negative delta than the December 95 put.
+           At expiration, a call or put vertical spread will have a minimum value of 0
+      if both options are out of the money and a maximum value of the amount be-
+      tween exercise prices if both options are in the money. If the underlying con-
+      tract is below 100 at expiration, the June 100/105 call spread will be worthless
+      because both options will be worthless. If the underlying contract is above 105,
+      the spread will be worth 5.00 because the June 100 call will be worth exactly
+      five points more than the June 105 call. Similarly, the March 95/105 put spread
+      will be worthless if the underlying market is above 105 at expiration, and it will
+      be worth 10.00 if the market is below 95.
+           Because a vertical spread at expiration will always have a value between 0
+      and the amount between exercise prices, a trader can expect the price of such
+      a spread to be somewhere within this range. A 100/105 call vertical spread
+      will trade for some amount between 0 and 5.00; a 95/105 put vertical spread
+      will trade for some amount between 0 and 10.00. The exact value will depend
+      on the likelihood of the underlying market finishing below the lower exercise
+      price, above the higher exercise price, or somewhere in between. If the market
+      is currently at 80 and gives little indication of rising, the price of the 100/105
+      call vertical spread will be close to 0, while the price of the 95/105 put vertical
+      spread will be close to 10.00. If the market is currently at 120 with little likeli-
+      hood that it will fall, the price of the 100/105 call vertical spread will be close
+      to 5.00, while the price of the 95/105 put vertical spread will be close to 0.
+           If we want to do a simple bull or bear vertical spread, we have essentially
+      four choices. If we are bullish, we can choose a bull call spread or a bull put
+      spread; if we are bearish, we can choose a bear call spread or a bear put spread.
+      For example,
+                   Bull call spread:                       Buy a June 100 call
+                                                           Sell a June 105 call
+                   Bull put spread:                        Buy a June 100 put
+                                                           Sell a June 105 put
+                   Bear call spread:                       Sell a June 100 call
+                                                           Buy a June 105 call
+                   Bear put spread:                        Sell a June 100 put
+                                                           Buy a June 105 put
+            If we are bullish, we can buy a 100 call and sell a 105 call, or buy a 100 put
+      and sell a 105 put (in both cases, buy the lower exercise price and sell the higher).
+      If we are bearish, we can buy a 105 call and sell a 100 call, or buy a 105 put and
+      sell and 100 put (in both cases, sell the lower exercise price and buy the higher).
+      This may seem counterintuitive because one expects spreads that consist of puts
+      to have characteristics that are the opposite of those that consist of calls. But
+      regardless of whether a spread consists of calls or puts, whenever a trader buys the
+      lower exercise price and sells the higher exercise price, the position is bullish, and whenever a
+      trader buys the higher exercise price and sells the lower exercise price, the position is bearish.
+
+216   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+     We can see why this is true by considering either the deltas of the position
+or the potential profit and loss (P&L) for the position. Consider the two exam-
+ple bull spreads:
+                                     Bull call spread:                         Buy a June 100 call
+                                                                               Sell a June 105 call
+                                     Bull put spread:                          Buy a June 100 put
+                                                                               Sell a June 105 put
+Both spreads must have a positive delta. The June 100 call has a greater positive
+delta than the June 105 call. The June 105 put has a greater negative delta than
+the June 100 put. Multiplying with a positive sign for a purchase and a negative
+sign for a sale and adding up the deltas give a total positive delta in each case.
+     In terms of potential profit or loss, the call spread will be done for a debit
+(the June 100 call will cost more than the June 105 call) and will expand to its
+maximum value of 5.00 if the underlying contract is above 105 at expiration.
+The put spread will be done for a debit (the June 100 put will cost less than the
+June 105 put) but will collapse to 0 if the underlying contract is above 105 at
+expiration. Each spread wants the underlying to rise above 105, so each spread
+must be bullish.
+     Not only will the total delta be very similar for call and put spreads that ex-
+pire at the same time and that consist of the same exercise prices, but the profit
+or loss potential for each spread, whether a call spread or put spread, will be
+approximately the same.5 The expiration P&L profiles for simple bull and bear
+spreads are shown in Figures 12-5 and 12-6.
+
+Figure 12-5 Bull spread.
+
+
+
+                                                           Buy the lower
+                                                           exercise price
+      Profit or loss at expiration
+
+
+
+
+                                     0
+
+
+
+
+                                                                                       Sell the higher
+                                                                                       exercise price
+
+
+                                         Buy an option at a lower exercise price and sell an option at a
+                                         higher exercise price, where both options are the same type (both
+                                         calls or both puts) and expire at the same time
+
+
+
+5
+    We are assuming for the moment that all options are European, with no possibility of early exercise.
+
+
+                                                                                             BULL AND BeAR sPReADs   217
+      Figure 12-6 Bear spread.
+
+
+
+                                                                                          Buy the higher
+                                                                                          exercise price
+        Profit or loss at expiration
+
+
+
+
+                                       0
+
+
+
+
+                                                              Sell the lower
+                                                              exercise price
+                                            Buy an option at a higher exercise price and sell an option at a
+                                            lower exercise price, where both options are the same type (both
+                                            calls or both puts) and expire at the same time
+
+
+
+          Given the many different exercise prices and expiration months available,
+      how can we choose the bull or bear spread that best reflects our directional ex-
+      pectations and that gives us the best chance to profit from those expectations?
+          Because options have fixed expiration dates, a trader who wants to use op-
+      tions to take advantage of an expected market move must first determine his
+      time horizon. Is the movement likely to occur in the next month? In the next
+      three months? In the next nine months? If it is currently May and the trader
+      foresees upward movement but believes that the movement is unlikely to occur
+      within the next two months, it does not make much sense to take a position in
+      June or July options. If his expectations are long term, he may have to take his
+      position in September or even December options. Of course, as he moves far-
+      ther out in time, market liquidity may become a problem. This is a factor that
+      he will have to take into consideration.
+          Next, a trader will have to decide just how bullish or bearish he is. Is he
+      very confident and therefore willing to take a very large directional position?
+      Or is he less certain and willing to take only a limited position? Two factors de-
+      termine the total directional characteristics of the position:
+
+                                           1. The delta of the selected spread
+                                           2. The size in which the spread is executed
+
+          A trader who wants to take a position that is 500 deltas long (equivalent to
+      purchasing five underlying contracts) can choose a spread that is 50 deltas long
+      and execute it 10 times. Or the trader can choose a different spread that is only
+
+
+218   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+25 deltas long but execute it 20 times. Both strategies result in a position that is
+long 500 deltas.
+     In general, if all options expire at the same time and are close to at the money,
+the greater the amount between exercise prices, the greater will be the delta value
+of the spread. A 95/110 bull spread will be more bullish than a 95/105 bull
+spread, which will, in turn, be more bullish than a 95/100 bull spread.6 Moreover,
+increasing the amount between exercise prices will also increase the spread’s maxi-
+mum potential profit or loss. This is shown in Figure 12-7.
+     Once a trader decides on the option expiration in which to take his direc-
+tional position, he must decide which specific spread is best. That is, he must
+decide which exercise prices to use. Consider the following table of theoretical
+values and deltas:
+
+    Time to expiration = 8 weeks
+    Volatility = 25 percent
+
+                                                      95 call          100 call                 105 call
+
+    Theoretical value                                 6.82             3.91                     1.99
+
+    Delta                                             72               52                       32
+
+Suppose that we want to do a bull call spread with these options. One choice
+is to buy the 95 call and sell the 100 call. A second choice is to buy the 100 call
+and sell the 105 call. Which spread is best?
+
+Figure 12-7 As the exercise prices become farther apart, the spread takes on greater
+bullish or bearish characteristics.
+       Profit or loss at expiration
+
+
+
+
+                                      0
+
+                                          Slightly bullish
+
+
+                                          Moderately bullish
+
+
+                                          Very bullish
+
+                                                         Lower                    Higher
+                                                      exercise price          exercise prices
+
+
+
+6
+ This is not necessarily true for very deeply in-the-money spreads or very far out-of-the-money spreads. In such
+cases, the deltas of both options may be very close to 100 or 0, so separating the exercise prices will have little
+effect on the total delta of the spread.
+
+                                                                                   BULL AND BeAR sPReADs              219
+            The theoretical value and delta for each spread are
+
+                                                       95/100 spread                   100/105 spread
+
+        Theoretical value                             6.82 – 3.91 = 2.91          3.91 – 1.99 = 1.92
+
+        Delta                                              72 – 52 = 20                52 – 32 = 20
+
+      In theory, both spreads seem to be equally bullish because they are both long 20
+      deltas. But the 100/105 spread, with a value of 1.92, appears to be cheaper than
+      the 95/100 spread, with a value of 2.91. From this we might conclude that the
+      100/105 spread represents the better value. But is the spread’s value the only
+      consideration? The value of a strategy is only important if we can compare it
+      with the price of the strategy. But nowhere have we said anything about price.
+            From an option trader’s point of view, the price of an option or strategy is
+      determined by the implied volatility in the marketplace. In this example, our
+      best estimate of volatility over the life of the options may be 25 percent, but
+      what will be the prices of the options if the implied volatility is either higher or
+      lower than 25 percent? Let’s expand our table to include option values at vola-
+      tilities of 20 and 30 percent (delta values are in parentheses).
+
+         Volatility      95 Call          95/100 spread        100 Call    100/105 spread       105 Call
+
+            20%          6.18             3.06                 3.12        1.82                 1.30
+
+            25%          6.82 (72)        2.91 (20)            3.91 (52)   1.92 (20)            1.99 (32)
+
+            30%          7.50             2.81                 4.69        1.98                 2.71
+
+      If implied volatility in the marketplace is 20 percent, the prices of the 95/100
+      spread and the 100/105 spread will be 3.06 and 1.82, respectively. If our best vol-
+      atility estimate is 25 percent, we have a choice. We can pay 3.06 for a spread that
+      we believe is worth 2.91 (the 95/100 spread), or we can pay 1.82 for a spread that
+      we believe is worth 1.92 (the 100/105 spread). If creating a positive theoretical
+      edge is our goal, the 100/105 spread, with a theoretical edge of .10, makes more
+      sense than the 95/100 spread with its negative theoretical edge of –.15.
+            Now suppose that implied volatility in the marketplace is 30 percent. The
+      prices of the 95/100 spread and the 100/105 spread are 2.81 and 1.98, respec-
+      tively. Again we have a choice. We can pay 2.81 for a spread that is worth 2.91
+      (the 95/100 spread), or we can pay 1.98 for a spread that is worth 1.92 (the
+      100/105 spread). The 95/100 spread, with its positive theoretical edge of .10,
+      is now the better choice.
+            Even though both spreads have the same delta values, under one volatility
+      scenario, we seem to prefer the 95/100 spread, while under a different scenario,
+      we seem to prefer the 100/105 spread. The reason becomes clear if we recall
+      one of the basic characteristics of option evaluation introduced in Chapter 6:
+            If we consider three options—in the money, at the money, and out of the money—
+            option that are identical except for their exercise prices, the at-the-money option is
+            always the most sensitive in total points to a change in volatility.
+
+220   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+If all options appear overpriced because we believe that implied volatility is too
+high, in total points, the at-the-money option will be the most overpriced. If all
+options appear underpriced because we believe that implied volatility is too low,
+in total points, the at-the-money option will be the most underpriced. This char-
+acteristic leads to a very simple rule for choosing bull and bear vertical spreads:
+    If implied volatility is low, the choice of spreads should focus on purchasing the at-
+    the-money option. If implied volatility is high, the choice should focus on selling the
+    at-the-money option.
+     Now we can see why the 100/105 call spread is a better value if implied
+volatility is 20 percent, whereas the 95/100 spread is a better value if implied
+volatility is 30 percent. If implied volatility is low (20 percent), we prefer to buy
+the at-the-money (100) call. Having done this, we have only one choice if we
+want to create a bull spread—we must sell the out-of-the-money (105) call. On
+the other hand, if implied volatility is high (30 percent), we want to sell the at-
+the-money (100) call. Having done this, we again have only one choice if we
+want to create a bull spread—we must buy the in-the-money (95) call.
+     The same principle is equally true for bull and bear put spreads. We always
+want to focus on the at-the-money option, buying the at-the-money put when
+implied volatility is low and selling the at-the-money put when implied volatility
+is high. This is confirmed in the following table (delta values are in parentheses):
+
+                             95/100
+  Volatility   95 Put        spread            100 Put       100/105 spread        105 Put
+
+    20%        1.18          1.94              3.12          3.18                  6.30
+
+    25%        1.82 (–28)    2.09 (20)         3.91 (–48)    3.08 (20)             6.99 (–68)
+
+    30%        2.50          2.19              4.69          3.02                  7.71
+
+     Suppose that we want to do a bear put spread when implied volatility is
+low. In this case, we want to buy the at-the-money (100) put. Having done this,
+we are forced to sell the out-of-the-money (95) put to create our bear spread
+(buy the higher exercise price, sell the lower). We will pay 1.94 for the spread,
+but the spread is worth 2.09. The result will be a delta position of –20 and a
+positive theoretical edge of .15.
+     Notice that in every case, whether in a low-volatility or high-volatility envi-
+ronment, the spread that includes the in-the-money option always has a higher
+price than the spread that includes the out-of-the-money option. To under-
+stand why, consider the result of choosing between a 95/100 and a 100/105
+bull call spread under three different scenarios. In scenario 1, the market rises
+and is at 110 at expiration. If this happens, both spreads will show a profit be-
+cause they will both widen to their maximum value of 5.00. In scenario 2, the
+market drops and is at 90 at expiration. Now both spreads will show a loss be-
+cause they will both collapse to 0. Finally, consider the case where the under-
+lying market fails to rise but also does not fall. It simply remains at 100 until
+expiration. If this happens, the 100/105 spread will collapse to 0, while the
+
+
+                                                               BULL AND BeAR sPReADs            221
+      95/100 spread will widen to its maximum value of 5.00. The 95/100 spread is
+      always more valuable than the 100/105 spread because it profits in more cases.
+      The 100/105 spread needs the market to rise to show a profit. The 95/100
+      spread does not need the market to rise; it just needs for the market not to
+      fall. Because the 100/105 spread requires movement, it has a positive gamma
+      and, consequently, a negative theta. It will decline in value as time passes. The
+      95/100 spread will profit even if the market sits still. It has a positive theta and,
+      consequently, a negative gamma.
+            Note also the results if the market does move. If the market rises to 110,
+      both spreads will show a profit, but the 100/105 spread will show a greater
+      profit because it was purchased at a lower price. If the market falls to 90, both
+      spreads will show a loss, but the 100/105 spread, because of its lower price, will
+      show a smaller loss. If there is a greater likelihood that the market will move,
+      we will always prefer the 100/105 spread. We will maximize our profits when
+      we are right, and we will minimize our losses when we are wrong. The likeli-
+      hood of movement will depend on our estimate of volatility. If our estimate is
+      higher than the implied volatility, we are saying that there is a greater likelihood
+      of movement, so we prefer the 100/105 spread. If our estimate of volatility is
+      lower than the implied volatility, we are saying that there is a lower likelihood
+      of movement, so we prefer the 95/100 spread.
+            Even though we have focused on the at-the-money option, a trader is
+      not required to execute a bull or bear spread by first buying or selling the at-
+      the-money option. Such spreads always involve two options, and a trader can
+      choose to either execute the complete spread in one transaction or leg into the
+      spread by trading one option at a time. In the latter case, a trader may decide to
+      trade the in-the-money or out-of-the-money option first and trade the at-the-
+      money option at a later time. This is a decision that a trader must make based
+      on practical considerations. But regardless of how the spread is executed, the
+      trader should focus on the at-the-money option, either buying it when implied
+      volatility is low or selling it when implied volatility is high.
+            In practice, it is unlikely that one option will be exactly at the money. If
+      there is no exactly at-the-money option, a trader can focus on an option that
+      is closer to at the money. If the underlying market is at 103, with 95, 100, 105,
+      and 100 calls available, it is logical to focus on the 105 call because it is closest to
+      at the money. If implied volatility is low, a trader will want to buy the 105 call;
+      if implied volatility is high, a trader will want to sell the 105 call. He can then
+      trade a different option in order to create a bull or bear vertical spread.
+            Nor does a trader have to include the option that is closest to the money as
+      part of his spread. A trader who has a strong directional opinion can choose a
+      spread where both options are very far out of the money or very deeply in the
+      money. The delta values of such spreads will be very low, but the trader can cre-
+      ate a highly leveraged position by executing each spread many times. For exam-
+      ple, with the underlying market at 100, a trader who is strongly bullish might
+      buy the 115/120 call spread (assuming that such exercise prices are available).
+      The cost of this spread will be very low because there is a high probability that
+      the spread will expire worthless. But the trader will also be able to execute the
+      spread many times because of its low cost. If he is right and the market does
+      rise above 120, the spread will widen to its maximum value of 5.00, resulting
+
+222   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+in a very large profit. Regardless of the exercise prices chosen, if implied vola-
+tility is low, the trader should buy an option that is closer to the money, and if
+implied volatility is high, the trader should sell an option that is closer to the
+money.
+      Our choice of bull or bear strategies has focused thus far on the at-the-
+money option, typically the option whose delta is closest to 50. This does in-
+deed tend to be the case for options on futures. In other markets, though, the
+at-the-money option may not be the option with a delta closest to 50 because,
+as discussed in Chapter 5, the theoretical value of an option depends not on
+the current price of the underlying contract but on the forward price. For this
+reason, the choice of bull or bear spreads should really focus on the at-the-for-
+ward option. Especially in the stock option market, if interest rates are high and
+there is a significant amount of time to expiration, the at-the-forward option
+may have an exercise price that is considerably higher than the current stock
+price. Having noted this distinction, for practical purposes, a trader will not go
+too far wrong if he focuses on the at-the-money option, buying it when implied
+volatility is low and selling it when implied volatility is high.
+      Before concluding our discussion of bull and bear spreads, it will be use-
+ful to look at graphs of the theoretical value, delta, gamma, vega, and theta
+for a typical bull vertical spread, as shown in Figures 12-8 through 12-13. The
+reader should take some time to look at these graphs not only because they
+highlight some of the important characteristics of this very common class of
+spreads but also because they serve as examples of some of the more important
+characteristics of risk measurement discussed in Chapter 9. This will be espe-
+cially helpful when we take a closer look at risk analysis in later chapters.
+
+Figure 12-8 Value of a bull spread as time passes or volatility declines.
+
+
+
+
+                              Buy the lower
+                              exercise price
+ Position value
+
+
+
+
+                                                    Sell the higher
+                                                    exercise price
+
+                                         Value at expiration
+
+
+
+
+                      Lower underlying prices      Higher underlying prices
+
+
+                                                               BULL AND BeAR sPReADs   223
+      Figure 12-9 Delta of a bull spread as time passes or volatility declines.
+
+
+       100
+
+                                               Lower             Higher
+                                            exercise price    exercise price
+        Position delta
+
+
+
+
+                     0
+                                  Lower underlying prices    Higher underlying prices
+
+
+
+
+      Figure 12-10 Gamma of a bull spread as time passes or volatility declines.
+
+
+
+
+                                                                  Higher
+                                                                 exercise
+                                                                   price
+        Position gamma
+
+
+
+
+                         0
+
+
+
+                                                  Lower
+                                                 exercise
+                                                  price
+
+
+
+
+                                   Lower underlying prices   Higher underlying prices
+
+
+
+
+224   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 12-11 Vega of a bull spread as time passes or volatility declines.
+
+
+
+
+                                                             Higher
+                                                          exercise price
+Position vega
+
+
+
+
+                    0
+
+
+
+
+                                         Lower
+                                      exercise price
+
+
+
+
+                              Lower underlying prices   Higher underlying prices
+
+
+
+
+Figure 12-12 Theta of a bull spread as volatility declines.
+
+
+
+
+                                          Lower
+                                         exercise
+                                           price
+         Position theta
+
+
+
+
+                          0
+
+
+
+
+                                                             Higher
+                                                            exercise
+                                                              price
+
+
+
+
+                              Lower underlying prices   Higher underlying prices
+
+
+
+
+                                                                  BULL AND BeAR sPReADs   225
+      Figure 12-13 Theta of a bull spread as time passes.
+
+
+
+
+                                                 Lower
+                                                exercise
+                                                  price
+        Position theta
+
+
+
+
+                         0
+
+
+
+
+                                                                Higher
+                                                               exercise
+                                                                 price
+
+
+
+
+                                  Lower underlying prices   Higher underlying prices
+
+
+
+
+           For the graphs of theoretical value, delta, gamma, and vega (Figures 12-8
+      through 12-11), the effect of time passing or volatility declining is similar.
+      For the theta, however, there are slight differences, so separate theta graphs
+      for declining volatility (Figure 12-12) and the passage of time (Figure 12-13)
+      are shown. Note also that the maximum gamma, vega, and theta for vertical
+      spreads tend to occur when the underlying price is either just below the lowest
+      exercise price or just above the highest exercise price.
+           Finally, we might ask why a trader with a directional opinion might prefer
+      a vertical spread to an outright long or short position in the underlying instru-
+      ment. For one thing, a vertical spread is much less risky than an outright posi-
+      tion. A trader who wants to take a position that is 500 deltas long can either buy
+      5 underlying contracts or buy 25 vertical call spreads with a delta of 20 each.
+      The 25 vertical spreads may sound riskier than 5 underlying contracts, until we
+      remember that a vertical spread has limited risk, whereas the position in the
+      underlying has open-ended risk. Of course, greater risk also means greater re-
+      ward. A trader with a long or short position in the underlying market can reap
+      huge rewards if the market makes a large move in his favor. By contrast, the
+      vertical spreader’s profits are limited, but he will also be much less bloodied if
+      the market makes an unexpected move in the wrong direction.
+           Ignoring interest considerations, the only way to profit from trading the
+      underlying contract is to be right about direction. If we buy the underlying
+      contract, the market must rise. If we sell the underlying, the market must fall.
+      But, with options, one need not necessarily be right about market direction.
+
+
+226   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Options also offer the additional dimension of volatility. Depending on the ex-
+ercise prices that have been chosen, if the trader has correctly estimated vola-
+tility, a bull spread can be profitable if the market fails to rise or in some cases
+even if it declines. A bear spread can be profitable even if the market fails
+to fall. This flexibility is just one of the factors that has lead to the dramatic
+growth in option markets.
+
+
+
+
+                                                       BULL AND BeAR sPReADs           227
+13
+                               Risk Considerations
+
+
+      When choosing a strategy, a trader must always try to find a reasonable bal-
+      ance between two opposing considerations—reward and risk. Ideally, a trader
+      would like the greatest possible profit at the smallest possible risk. In the real
+      world, however, high profit usually goes hand in hand with high risk, while low
+      risk goes hand in hand with low profit. How should a trader balance these two
+      considerations? Certainly, a strategy should have an expected profit that makes
+      it worth executing. At the same time, the risk associated with the strategy must
+      be kept within reasonable bounds. And whatever the risk, it should never be
+      greater than what is commensurate with the potential reward.
+           In option trading, the reward is typically expressed in terms of theoretical
+      edge—the average profit resulting from a strategy, assuming that the trader’s
+      assessment of market conditions is correct. Unfortunately, although the theo-
+      retical edge can be expressed as one number, the risk associated with an option
+      position cannot be expressed in the same way. We know that options are subject
+      to many different risks. If we want to intelligently analyze a strategy, we may
+      be required to consider a variety of risks. A strategy may be reasonable with
+      respect to some risks but unacceptable with respect to others.
+           Before proceeding further in our discussion, let’s summarize the basic risks
+      associated with an option position:
+
+      Delta (Directional) Risk. The risk that the underlying market will move
+      in one direction rather than another. When we create a position that is delta
+      neutral, we are trying to ensure that initially the position has no bias as to the
+      direction in which the underlying instrument will move. A delta-neutral posi-
+      tion does not necessarily eliminate all directional risk, but the position is typi-
+      cally immune to directional risks within a limited range.
+
+      Gamma (Curvature) Risk. The risk of a large move in the underly-
+      ing contract, regardless of direction. The gamma position is a measure of how
+      sensitive a position is to such moves. A positive gamma position does not really
+      have gamma risk because such a position will, in theory, increase in value with
+      movement in the underlying contract. A negative gamma position, however,
+
+228
+can quickly lose its theoretical edge with a large move in the underlying con-
+tract. The effect of such a move must always be a consideration when analyz-
+ing the relative merits of different positions.
+
+Theta (Time Decay) Risk. This is the opposite side of gamma risk. Positions
+with positive gamma become more valuable with large moves in the underlying.
+But if movement helps, the passage of time hurts. A positive gamma always goes
+hand in hand with a negative theta; a negative gamma always goes hand in hand
+with a positive theta. A trader with a negative theta must consider the risk in terms
+of how much time can pass before the spread’s theoretical edge disappears. The
+position wants movement, but if the movement fails to occur over the next day, next
+week, or next month, will the spread, in theory, still be profitable?
+
+Vega (Volatility) Risk. The risk that the volatility that we input into the the-
+oretical pricing model will be incorrect. If we use the wrong volatility, we have the
+wrong probability distribution for the underlying contract. Because some posi-
+tions have a positive vega and are hurt by declining volatility and some positions
+have a negative vega and are hurt by rising volatility, vega represents a risk to
+every position. A trader must always consider how much the volatility can move
+against him before the potential profit from a position disappears. Most traders
+prefer to interpret vega as the sensitivity of a position to a change in implied vola-
+tility. If implied volatility rises or falls, how will that change the prices of options
+that make up a position? If the changes hurt the position, will the trader be able
+to maintain the position in the face of adverse market conditions?
+
+Rho (Interest-Rate) Risk. The risk that the interest rate will change over
+the life of the option. A position with a positive rho will be helped by rising in-
+terest rates and hurt by declining rates; a position with a negative rho has just
+the opposite characteristics.1 Except for special situations, the interest rate is the
+least important of the inputs into a theoretical pricing model. Consequently,
+rho is usually considered the least important of the risk measures.
+
+     Let’s look at the relative importance of the various risks by considering sev-
+eral different option strategies.
+
+Volatility Risk
+For an option trader, volatility risk comes in two forms—the risk that he has
+incorrectly estimated the realized volatility of the underlying contract over the
+life of a strategy and the risk that implied volatility in the option market will
+change. Any spread that has a nonzero gamma or vega has volatility risk.
+     Consider the prices and values in the theoretical evaluation table in Figure
+13-1.2 What types of volatility strategies might be profitable under these condi-
+tions? Whether we compare option prices with their theoretical values or the
+1
+  We are considering only the interest-rate risk as it applies to the evaluation of options. Changes in interest
+rates can also affect the evaluation of an underlying contract, such as a bond, or even the shares in a company.
+But that is a separate matter.
+2
+  In order to focus only on volatility, we have assumed an interest rate of 0.
+
+                                                                               R I s k C O N s I D e R AT I O N s   229
+                                                                                                                                                                                                                               ingapore Polytechnic Library 192.99.6.125] at [07/06/16]. Copyright © McGraw-Hill Global Education Holdings, LLC. Not to be redistributed or modified in any way without pe
+230
+
+
+                                                     Figure 13-1
+O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+
+
+
+                                                         Underlying price = 48.40                 Time to May expiration = 56 days                    Volatility = 18%                       Interest rate = 0%
+                                                                                                     Calls                                                                         Puts
+                                                      exercise             Theoretical                                           Implied               Theoretical                                                Implied
+                                                       Price       Price     Value       Delta     Gamma       Theta     Vega    Volatility   Price      Value           Delta   Gamma         Theta     Vega     Volatility
+                                                         44        4.59       4.53        92          4.5     −0.0046 0.029      19.83%       0.20         0.13           −8     4.5          −0.0046 0.029       20.12%
+                                                         46        2.99       2.86        78          8.8     −0.0091 0.057      20.25%       0.58         0.46          −22     8.8          −0.0091 0.057       20.09%
+                                                         48        1.75       1.56        56         11.6     −0.0121 0.075      20.48%       1.35         1.16          −44     11.6         −0.0121 0.075       20.48%
+                                                         50        0.93       0.73        33         10.7     −0.0111 0.069      20.88%       2.53         2.33          −67     10.7         −0.0111 0.069       20.88%
+                                                         52        0.47       0.28        16          7.2     −0.0075 0.047      21.63%       4.06         3.88          −84     7.2          −0.0075 0.047       21.45%
+                                                         54        0.23       0.09        6           3.7     −0.0038 0.024      22.46%       5.84         5.69          −94     3.7          −0.0038 0.024       22.73%
+
+                                                                                                 Time to July expiration = 112 days                   Volatility = 18%                  Interest rate = 0%
+
+                                                                                                     Calls                                                                         Puts
+                                                                           Theoretical                                           Implied               Theoretical                                                Implied
+                                                                   Price     Value       Delta     Gamma       Theta     Vega    Volatility   Price      Value           Delta   Gamma         Theta     Vega     Volatility
+                                                         44        4.96       4.82        84          5.0     −0.0052 0.064      20.12%       0.56         0.42          −16     5.0          −0.0052 0.064       20.12%
+                                                         46        3.52       3.32        71          7.1     −0.0074 0.091      20.21%       1.13         0.92          −29     7.1          −0.0074 0.091       20.31%
+                                                         48        2.38       2.12        55          8.2     −0.0085 0.106      20.42%       1.98         1.72          −45     8.2          −0.0085 0.106       20.42%
+                                                         50        1.55       1.24        39          8.0     −0.0083 0.103      20.80%       3.14         2.86          −61     8.0          −0.0083 0.103       20.71%
+                                                         52        0.97       0.69        25          6.6     −0.0069 0.085      21.14%       4.58         4.29          −75     6.6          −0.0069 0.085       21.25%
+                                                         54        0.60       0.35        15          4.8     −0.0050 0.062      21.64%       6.21         5.95          −85     4.8          −0.0050 0.062       21.78%
+implied volatilities of the options with the volatility input of 18 percent, we will
+reach the same conclusion: all options are overpriced. Recalling the general
+guidelines in Chapter 11, under these conditions, a trader will want to consider
+spreads with a negative vega:
+         Short straddles and strangles
+         Call or put ratio spreads—sell more than buy
+         Long butterflies
+         Short calendar spreads
+Which of these categories is likely to represent the best spreading opportunity?
+And within each category, which specific spread might represent the best risk-
+reward tradeoff?
+      For the moment, let’s focus on May options. Having eliminated the possibility
+of calendar spreads, any spread we choose will necessarily have a negative gamma
+and negative vega. But with 12 different May options available (6 calls and 6 puts),
+it’s possible to construct a number of spreads that fall into this category. How can
+we make an intelligent decision about which spread might be best?
+      Initially, let’s consider the three strategies shown in Figure 13-2: a short
+straddle that has been done in a 4:3 ratio to make it closer to delta neutral
+(Spread 1), a ratio call spread (Spread 2), and a long put butterfly (Spread 3).
+Each spread is approximately delta neutral and, as we would expect, has a posi-
+tive theoretical edge. How can we evaluate the relative merits of each spread?
+      Initially, it may appear that Spread 1 is best because it has the greatest the-
+oretical edge. If the volatility estimate of 18 percent turns out to be correct,
+Spread 1 will show a profit of 6.65, Spread 2 a profit of 1.80, and Spread 3 a
+profit of only .60.
+      But is theoretical edge our only concern? If this is true, we can simply do
+each spread in larger and larger size to make the theoretical edge as big as we
+want. Instead of doing Spread 2 in our original size of 10 × 20, we can increase
+the size fivefold to 50 × 100. This will also increase the theoretical edge fivefold
+to 9.00. This ostensibly makes Spread 2 a better strategy than Spreads 1 and 3.
+Clearly, theoretical edge cannot be the only consideration.
+Figure13-2
+
+                                             Theoretical
+                                               edge                        Delta
+
+ Spread 1:       −15 May 48 calls            15 x +0.19                 −15 x +56
+                 −20 May 48 puts             20 x +0.19                 −20 x −44
+                                               +6.65                      +40
+
+ Spread 2:       +10 May 50 calls            10 x −0.20                 +10 x +34
+                 −20 May 52 calls            20 x +0.19                 −20 x +16
+                                               +1.80                      +20
+
+ Spread 3:       +10 May 46 puts             10 x −0.12                 +10 x −22
+                 −20 May 48 puts             20 x +0.19                 −20 x −44
+                 +10 May 50 puts             10 x −0.20                 +10 x −67
+                                               +0.60                      −10
+
+
+                                                            R I s k C O N s I D e R AT I O N s   231
+            Theoretical edge is only an indication of what we expect to earn if we are
+      right about market conditions. Because there is no guarantee that we will be
+      right, we must give at least as much consideration to the question of risk. If we
+      are wrong about market conditions, how badly might we be hurt?
+            In order to focus on the risk considerations, let’s change the size of Spreads 2
+      and 3 so that their theoretical edge is approximately equal to that of Spread 1.
+      We can achieve this by increasing the size of Spread 2 to 35 × 70 and increasing
+      the size of Spread 3 to 100 × 200 × 100. The spreads in their new sizes with
+      their total theoretical edge and risk sensitivities are shown in Figure 13-3. With
+      all three spreads having a similar theoretical edge, we can now focus on the
+      risks associated with each spread.
+            As with all volatility positions, one consideration is the possibility of a large
+      price move in the underlying contract. Because each strategy has a negative
+      gamma, any large move will hurt the position. But will each spread be hurt to
+      the same degree? Because Spread 2 has the smallest negative gamma (–165.5),
+      we might conclude that it has the smallest risk with respect to a large move. But
+      this is true only under current market conditions. As market conditions change,
+      all risk measures, including the gamma, will almost certainly change. If the un-
+      derlying contract makes a very large move such that current market conditions
+      no longer apply, it may not be clear what will happen to the risks associated
+      with each spread.
+            It will be easier to analyze the relative risks of the spreads if we construct a
+      graph of the theoretical profit or loss with respect to movement in the underly-
+      ing contract. This has been done in Figure 13-4. We can see that each spread
+      does indeed lose value as the underlying price moves either up or down.3 How-
+      ever, we can also see that if there is a very large move, the spread characteristics
+      begin to diverge. On both the upside and downside, the losses from Spread 1,
+      the short straddle, continue to increase, resulting in potentially unlimited risk in
+      either direction. Spread 2, the ratio spread, has unlimited upside risk. On the
+      downside, though, it flattens out and eventually results in a very small profit.
+      Spread 3, the long butterfly, flattens out on both the upside and downside, so its
+      risk is limited regardless of direction.
+
+      Figure 13-3
+
+                                           Theoretical
+                                             edge             Delta         Gamma             Theta              Vega
+          Spread 1:   −15 May 48 calls      15 x +0.19     −15 x +56       −15 x 11.6     −15 x −0.0121      −15 x 0.075
+                      −20 May 48 puts       20 x +0.19     −20 x −44       −20 x 11.6     −20 x −0.0121      −20 x 0.075
+                                              +6.65          +40            −406.0          +0.4235            −2.625
+          Spread 2:   +35 May 50 calls       35 x −.20     +35 x +34       +35 x 10.7     +35 x −0.0111      +35 x 0.069
+                      −70 May 52 calls      70 x +0.19     −70 x +16       −75 x 7.2      −70 x −0.0075      −70 x 0.047
+                                              +6.30          +70            −165.5          +0.1365            −0.875
+          Spread 3:   +100 May 46 puts 100 x −0.12         +100 x −22 +100 x 8.8 +100 x −0.0091 +100 x 0.057
+                      −200 May 48 puts 200 x +0.19         −200 x −44 −200 x 11.6 −200 x −0.0121 −200 x 0.075
+                      +100 May 50 puts 100 x −0.20         +100 x −67 +100 x 10.7 +100 x −0.0111 +100 x 0.069
+                                         +6.00               −100       −370.0       +0.4000       −2.400
+
+
+
+      3
+        Spreads 1 and 2, with their slightly positive delta, initially show a small gain as the market rises. Spread 3, with
+      its slight negative delta, initially shows a small gain as the market falls.
+
+232   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 13-4
+
+
+                              +10
+                               +5
+                                0
+
+                               –5
+ Theoretical profit or loss
+
+
+
+
+                              –10
+
+                              –15
+
+                              –20                     At an underlying price of
+                                                      48.40, all three spreads
+                              –25
+                                                      show approximately the
+                              –30                     same theoretical profit.
+
+                              –35
+
+                              –40                Spread 1 (short straddle)
+                                                 Spread 2 (ratio spread)
+                              –45                Spread 3 (long butterfly)
+                              –50
+                                 38   40   42   44     46     48      50          52       54        56        58
+                                                       Underlying price
+
+
+
+
+      Which spread is best? That depends on what the trader is worried about. If
+the trader is oblivious to the risk, it won’t matter which spread he chooses. On
+average, each position will show a profit of approximately 6.00. If, however, the
+trader is more worried about a large downward move in the market, then per-
+haps Spread 2 is best. And if the trader is unwilling to accept the risk of unlim-
+ited loss in either direction, then perhaps Spread 3 is best.
+      In addition to the possibility of a large move, all three positions are exposed
+to the risk of an incorrect volatility estimate. Because each spread has a nega-
+tive vega, there will be no problem if, over the life of the option, volatility turns
+out to be lower than 18 percent. In such a case, the spreads will show a profit
+greater than originally expected. On the other hand, if volatility turns out to be
+greater than 18 percent, this could present a problem. What will happen if vola-
+tility turns out to be 20 or 25 percent or some higher number? Each spread will
+be hurt because of the negative vega, but will they be hurt to the same degree?
+      Because Spread 2 has the smallest vega (–.875), we might initially conclude
+that it has the smallest volatility risk. But the vega, like the gamma, changes
+as market conditions change. If we raise volatility, the vega of Spread 1, the
+short straddle, will remain essentially unchanged because the vega of an at-the-
+money option is constant with respect to changes in volatility. But the vega of
+Spread 3, the long butterfly, will decline because the vega of in-the-money and
+out-of-the-money options (the May 46 and May 50 puts) will tend to increase as
+volatility rises. With Spread 2, the vega of both options, the May 50 call and the
+May 52 call, will begin to increase, so it’s not immediately clear what will hap-
+pen if we increase volatility.
+
+                                                                                  R I s k C O N s I D e R AT I O N s   233
+           We can analyze the volatility characteristics of each spread by constructing
+      a graph of each spread’s value with respect to changing volatility. This is shown
+      in Figure 13-5. With a large change in volatility, the values of the three posi-
+      tions begin to diverge. If volatility rises, the spreads begin to lose value until, at
+      some point, the potential profit becomes a loss. In terms of volatility risk, we
+      might logically ask, how high can volatility rise before we begin to lose money?
+      That is, we might want to determine the breakeven volatility, or implied volatility,
+      for each spread. This is simply an extension of the general definition of implied
+      volatility: the volatility over the life of an option, or options, at which the posi-
+      tion will, in theory, show neither a profit nor a loss. In Figure 13-5, we can see
+      that the breakeven volatility for Spread 1 (the short straddle) is approximately
+      21 percent, for Spread 2 (the ratio spread) approximately 23 percent, and for
+      Spread 3 (the long butterfly) approximately 21.5 percent. This seems to con-
+      firm that Spread 2, the ratio spread, is the least risky with respect to volatility.
+           However, if volatility turns out to be higher than expected, why should it
+      stop at 23 percent? What will happen if volatility turns out to be much higher,
+      perhaps 30 percent or even 40 percent? Eventually, Spread 2, the ratio spread,
+      which initially seemed to carry the least volatility risk, will begin to lose value
+      at almost the same rate as Spread 1, the short straddle. On the other hand, at
+      higher volatilities, the graph of Spread 3, the long butterfly, begins to flatten
+      out, suggesting that there is a limit to how much it can lose. Of course, we know
+      this because a butterfly has both limited profit potential and limited risk.
+           Although we might worry that volatility will increase to some value greater
+      than 18 percent, we might also consider what will happen if volatility turns out
+      to be less than 18 percent. For the same reason that rising volatility will hurt,
+
+
+      Figure 13-5
+
+
+                                    +40
+                                                                         Spread 1 (short straddle)
+                                    +30                                  Spread 2 (ratio spread)
+                                                                         Spread 3 (long butterfly)
+
+                                    +20
+       Theoretical profit or loss
+
+
+
+
+                                                                              At a volatility of 18%,
+                                                                             all three spreads show
+                                    +10                                     approximately the same
+                                                                                 theoretical profit.
+                                      0
+
+                                                     Breakeven
+                                    –10
+                                                     volatilities
+
+                                    –20
+
+
+                                    –30
+
+                                    –40
+                                          5%   10%       15%        20%         25%      30%            35%   40%
+                                                                       Volatility
+
+
+234   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+falling volatility should help. In Figure 13-5, we can see that as volatility falls
+below 18 percent, the profit resulting from each spread does indeed increase.
+However, as volatility falls well below 18 percent, the profit from Spread 2
+begins to decline, eventually falling to almost 0. On the other hand, the profit
+from Spread 3 begins to accelerate.
+      The shapes of the graphs in Figure 13-5 are a result of each position’s
+volga—the sensitivity of the vega to a change in volatility. (For a discussion of
+the volga, see Chapter 9, specifically Figure 9-15.) Spread 1 has a volga close
+to 0; its vega remains constant regardless of changes in volatility. Spread 2 has
+a negative volga. As volatility rises, the vega becomes more negative; as volatil-
+ity falls, the vega becomes less negative. This means that as volatility rises or falls,
+changes in volatility work against the position, accelerating the rate of loss as vol-
+atility rises and reducing the rate of profit as volatility falls. In contrast, Spread 3
+has positive volga. Changes in volatility work in favor of the position, reducing
+the rate of loss as volatility rises and increasing the rate of profit as volatility falls.
+      Although Figure 13-5 can be interpreted as the risk of using an incorrect vol-
+atility over the life of the options, it can also be interpreted as the risk of a sudden
+change in implied volatility. In terms of implied volatility risk, Spread 3 probably
+represents the best value. If implied volatility begins to rise, Spread 3 will initially
+lose money more quickly than Spread 2, but if implied volatility rises dramati-
+cally, Spread 3 will begin to outperform both Spreads 1 and 2 because the rate
+of loss will decline. And if implied volatility falls, Spread 3 will outperform both
+Spreads 1 and 2, increasing in value more quickly at lower volatilities.
+      Why are risk considerations so important? Every trader knows that there
+are times when a strategy will result in a profit and times when it will result in
+a loss. No one wins all the time. In the long run, however, a good trader’s prof-
+its will more than offset his losses. For example, suppose that a trader chooses
+a strategy that will show a profit of $7,000 half the time and will show a loss
+of $5,000 the other half of the time. In the long run, the trader will show an
+average profit of $1,000. Suppose, though, that the first time that the trader
+executes the strategy, she loses $5,000, and the trader only has $3,000? Now
+the trader will not be able to stay in business for all those times when he is fortu-
+nate enough to show a profit of $7,000. Every trader knows that it is only over
+long periods of time that good luck and bad luck even out. Hence no trader
+will initiate a strategy where short-term bad luck might end his trading career.
+      Financial officers at large firms know that it is much easier to manage a
+steady cash flow than one that swings wildly. In a sense, every trader is his own
+financial officer. He must sensibly manage his finances so that he can avoid be-
+ing ruined by the periods of back luck that will inevitably occur, no matter how
+skillfully he trades.
+
+
+Practical Considerations
+
+Considering only the gamma and vega risk, Spread 3 probably has the best
+risk characteristics. It has limited risk if there is a large move in either direc-
+tion and performs better than either Spread 1 or Spread 2 if there is a dramatic
+change in volatility. This does not mean that Spread 3 performs better under
+
+                                                                R I s k C O N s I D e R AT I O N s   235
+      all conditions. If the underlying market makes any downward move or there
+      is a small to moderate upward move, Spread 2 outperforms Spreads 1 and 3.
+      Spread 2 also has an advantage if there is a moderate increase in volatility.
+           Even if we assume that Spread 3, the long butterfly, offers the best theoreti-
+      cal risk-reward tradeoff, it may have some practical drawbacks. Butterflies are
+      actively traded in many markets, but Spread 3 is a three-sided spread, as op-
+      posed to Spreads 1 and 2, which are two-sided spreads. A three-sided spread
+      may be more difficult to execute in the marketplace and also may cost more in
+      terms of the bid-ask spread. If a trader wants to execute the complete spread
+      at one time, he may not be able to do so at his target prices. And if he tries to
+      execute one leg at a time, he will be at risk from adverse changes in the market
+      until the other legs can be executed.
+           Additionally, there is the question of market liquidity. In order to obtain a
+      theoretical edge commensurate with Spreads 1 and 2, it was necessary to increase
+      the size of the butterfly to 100 × 200 × 100. If there is insufficient liquidity in the
+      May 46, 48, and 50 puts to support this size, it may not be possible to execute the
+      butterfly in the size required to meet the trader’s profit objective. Alternatively, it
+      may be possible to execute part of the spread at favorable prices, but as the size
+      increases, the prices may become less satisfactory. Moreover, for a retail customer,
+      the increased size may entail greater transaction costs.
+           If trading considerations make Spread 3 impractical, a trader may have to
+      choose between Spreads 1 (short straddle) and 2 (ratio spread). If this happens,
+      Spread 2 is the clear winner. It allows for a much greater margin for error in
+      both underlying price change (gamma risk) and volatility (vega risk). A trader
+      who is given a choice between these two spreads will strongly prefer Spread 2.
+           In the real world, the choice of spreads is not always clear. One spread may
+      be superior with respect to one type of risk, while a different spread may be
+      superior with respect to a different risk. The ease with which a spread can be
+      executed, as well as the cost of execution, will also play a role.
+           Let’s consider three new spreads—Spread 4 (a short put calendar spread),
+      Spread 5 (a diagonal call spread), and Spread 6 (a put diagonal ratio spread). In
+      order to again focus on risk, the size of each spread has been adjusted so that
+      the theoretical edge of all three spreads is similar. The total theoretical edge
+      and risk sensitivities of each spread (all taken from the theoretical evaluation
+      table in Figure 13-1) are shown in Figure 13-6.
+
+
+      Figure 13-6
+
+                                           Theoretical
+                                             edge            Delta       Gamma           Theta          Vega
+       Spread 4:     +85 May 48 puts       85 x −0.19      +85 x −44    +85 x 11.6   +85 x −0.0121   +85 x 0.075
+                     −85 July 48 puts      85 x +0.26      −85 x −45    −85 x 8.2    −85 x −0.0085   −85 x 0.106
+                                             +5.95           +85         +289.0        −0.3060         −2.635
+       Spread 5:     +100 May 52 calls 100 x −0.19         +100 x +16   +100 x 7.2   +100 x −0.0075 +100 x 0.047
+                     −100 July 54 calls 100 x +0.25        −100 x +15   −100 x 4.8   −100 x −0.0050 −100 x 0.062
+                                          +6.00              +100        +240.0         −0.2500       −1.500
+       Spread 6:     +30 May 48 puts       30 x −0.19      +30 x −44    +30 x 11.6   +30 x −0.0121   +30 x 0.075
+                     −80 July 44 puts      80 x +0.14      −80 x +16    −80 x 5.0    −80 x −0.0052   −80 x 0.064
+                                             +5.50           −40          −52.0        +0.0530         −2.870
+
+236   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+      Because each spread has a negative vega, we will again want to consider the
+risk that volatility will turn out to be greater than our estimate of 18 percent. The
+sensitivity of each spread to increasing volatility is shown in Figure 13-7. We can
+see that Spread 4 has an implied volatility of approximately 20.5 percent, Spread
+5 approximately 22 percent, and Spread 6 approximately 20 percent. If rising
+volatility is our primary concern, Spread 5, the diagonal call spread, seems to en-
+tail the lowest risk. However, although Spread 5 loses the least in a rising-volatility
+market, it also shows a smaller profit in a falling-volatility market. This may seem
+like a reasonable tradeoff, except that with Spread 5, the positive effects of fall-
+ing volatility begin to decline very quickly. This is due to the negative volga asso-
+ciated with the position. As volatility falls, the vega becomes less negative until,
+at a volatility of approximately 10 percent, the vega falls to 0. Spread 6, the put
+diagonal ratio spread, has an even larger negative volga; its vega turns positive if
+volatility falls below 11 percent. In contrast to both Spreads 4 and 6, Spread 5,
+the short calendar spread, has a volga of 0. Its vega remains constant regardless
+of whether volatility rises or falls. It offers an equal tradeoff between losses when
+volatility rises and profits when volatility falls.
+      What about the gamma risk of each spread? Here we have a situation
+where not all the spreads have a gamma with the same sign. Spread 6, the
+diagonal ratio spread, has a negative gamma, so it should be hurt by a large
+move in the underlying. Spreads 4 and 5, however, have a positive gamma and
+should profit from a large move. The graphs of the positions with respect to
+changes in the underlying price are shown in Figure 13-8.
+      We can see in Figure 13-8 that although Spread 6, the diagonal ratio
+spread, will be hurt by a move in the price of the underlying contract, the degree
+
+Figure 13-7
+
+                               +40
+                                                            Spread 4 (short calendar spread)
+                               +30                          Spread 5 (diagonal call spread)
+                                                            Spread 6 (diagonal ratio spread)
+
+                               +20
+                                                                       At a volatility of 18%, all
+  Theoretical profit or loss
+
+
+
+
+                                                                         three spreads show
+                               +10                                     approximately the same
+                                                                           theoretical profit.
+                                 0
+
+                                             Breakeven
+                               –10
+                                             volatilities
+
+                               –20
+
+
+                               –30
+
+
+                               –40
+                                  5%   10%      15%         20%         25%        30%          35%          40%
+                                                               Volatility
+
+
+
+                                                                                     R I s k C O N s I D e R AT I O N s   237
+      Figure 13-8
+
+                                        +60
+
+                                        +50
+                                                               At an underlying price of
+                                        +40                    48.40, all three spreads
+                                                               show approximately the
+           Theoretical profit or loss
+
+
+
+
+                                        +30                    same theoretical profit.
+
+                                        +20
+
+                                        +10
+
+                                          0
+
+                                        –10
+                                                                 Spread 4 (short calendar spread)
+                                        –20                      Spread 5 (diagonal call spread)
+                                                                 Spread 6 (diagonal ratio spread)
+                                        –30
+                                           38   40   42   44     46     48       50        52   54      56       58
+                                                                  Underlying price
+
+
+
+      to which the move will hurt depends on the direction. With an upward move,
+      the potential profit will decline. But even with a very large upward move, the
+      spread will always retain some profit. On the downside, however, the spread’s
+      profit rapidly disappears, turning into a potentially unlimited loss if the down-
+      ward move is large enough.
+           Spread 4, the short put calendar spread, and Spread 5, the diagonal call
+      spread, both have positive gamma and will profit from a large move. Unlike
+      Spread 4, though, which shows approximately equal profit in either direction,
+      Spread 5 shows a greater profit in an upward move and a smaller profit in a
+      downward move.4
+           There is, of course, a tradeoff between gamma and theta. If movement
+      in the underlying price will increase the value of Spreads 4 and 5 (positive
+      gamma), the passage of time with no movement will reduce the value (nega-
+      tive theta). It may be worthwhile to look at how much time can pass before each
+      spread loses its theoretical edge. This is shown in Figure 13-9.
+           In Figure 13-9, Spread 4 exhibits the typical decay profile for a short calen-
+      dar spread that is approximately at the money. As time passes, the position loses
+      value at an increasingly greater rate. Spread 5, the diagonal call spread, also
+      loses value as time passes. But after five weeks the decay turns positive, so that
+      if nothing happens in the underlying market the position will eventually show a
+      small profit. Spread 6, the diagonal ratio spread, initially shows a small increase
+      in value as time passes. Eventually, though, this position is also subject to decay.
+      After seven weeks, its potential profit disappears completely.
+
+      4
+        It may appear from Figure 13-8 that Spread 5 has unlimited upside profit potential. In reality, the profit is lim-
+      ited by the fact that the spread between the value of the May 52 call and the July 54 call can never be greater
+      than 2.00. This will occur if both options go very deeply into the money.
+
+238   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 13-9
+
+                              +10
+
+
+                              +5
+
+
+                                0
+ Theoretical profit or loss
+
+
+
+
+                              –5
+
+
+                              –10
+
+
+                              –15
+
+                                                        Spread 4 (short calender spread)
+                              –20                       Spread 5 (diagonal call spread)
+                                                        Spread 6 (diagonal ratio spread)
+
+                              –25
+                                    7   14   21          28          35         42            49            56
+                                                  Time to May expiration (days)
+
+
+
+     As must be obvious by now, the choice of spreads is never simple. As with
+all trading decisions, it is a question of risk and reward. Although there are
+many risks with which an option trader must deal, he will often have to ask him-
+self which risk represents the greatest threat. Sometimes, in order to avoid one
+type of risk, he will be forced to accept a different risk. Even if the trader is will-
+ing to accept some risk in a certain area, he may decide that he will only do so
+to a limited degree. Then he may have to accept increased risks in other areas.
+     If given the choice between several different strategies, a trader can use a com-
+puter to determine the risk characteristics of the strategies under different market
+conditions. Unfortunately, it may not always be possible to analyze the choices in
+such detail. A trader may not have immediate access to the necessary computer
+support, or market conditions may be changing so rapidly that if he fails to make an
+immediate decision, opportunity may quickly pass him by. In such cases, the trader
+will often have to rely on his instincts in choosing a strategy. Although there is no
+substitute for experience, most traders quickly learn an important rule: straddles and
+strangles are the riskiest of all spreads. This is true whether one buys or sells these strate-
+gies. New traders sometimes assume that the purchase of straddles and strangles is
+not especially risky because the risk is limited. However, it can be just as painful to
+lose money day after day when one buys a straddle or strangle and the market fails
+to move as it is to lose the same amount of money all at once when one sells a strad-
+dle and the market makes a violent move. Of course, a trader who is right about
+volatility can reap large rewards from straddles and strangles. But an experienced
+trader knows that such strategies offer the least margin for error and will therefore
+prefer strategies with more desirable risk characteristics.
+
+
+                                                                               R I s k C O N s I D e R AT I O N s   239
+      how Much Margin for error?
+
+      What is a reasonable margin for error in assessing the risk of a position, partic-
+      ularly when it comes to volatility risk? There is no clear answer because it will
+      usually depend on the volatility characteristics of a particular market, as well as
+      the trader’s experience in that market. In some cases, 5 percentage points may
+      be an extremely large margin for error, and the trader will feel very confident
+      with any strategy passing such a test. In other cases, 5 percentage points may
+      be almost no margin for error at all, and the trader will find that the strategy is
+      a constant source of worry.
+           Rather than focusing on margin for error, a better approach might be to
+      focus on the correct size in which to do a spread given a known margin for
+      error. Practical trading considerations aside, a trader should always choose the
+      spread with the best risk-reward characteristics. But sometimes even the best
+      spread will have only a small margin for error and consequently will entail sig-
+      nificant risk. In such a case, a trader, if he wants to make a trade, ought to do so
+      in small size. If, however, a trader can execute a spread with a very large margin
+      for error, he ought to be willing to do the spread in a much larger size.
+           Consider a trader whose best estimate of volatility in a certain market is
+      25 percent. If implied volatility is lower than 25 percent, the trader will look
+      for positions with a positive vega. If the best positive-vega strategy the trader
+      can find is a 2 × 1 ratio spread with an implied volatility of 23 percent (only
+      a 2-percentage-point margin for error), he will almost certainly keep the size
+      of his strategy small, perhaps executing the spread only 10 times (20 × 10).
+      If, however, the same spread has an implied volatility of 18 percent
+      (a 7-percentage-point margin for error) and the trader believes that such a low
+      volatility is extremely rare, he may have the confidence to execute the spread in
+      a much larger size, perhaps 100 × 50.5 The size of a trader’s positions should
+      depend on the riskiness of the positions, and this, in turn, depends on how
+      much can go wrong before the strategy turns against the trader.
+
+
+      Dividends and Interest
+
+      In addition to the delta, gamma, theta, and vega risks that apply to all traders,
+      stock option traders may also have to consider the risk of changes in interest rates
+      and dividends.6 When all options expire at the same time, the risk associated with
+      changes in interest rates and dividends tends to be relatively small. Straddles,
+      strangles, ratio spreads, and butterflies may change slightly because a change in
+      interest rates or dividends will raise or lower the forward price. But all options are
+      evaluated using one and the same forward price. For calendar spreads, however,
+      where the options are evaluated using two different forward prices, long-term
+      and short-term options can react differently to changes in these inputs.
+
+      5
+       Size, of course, is relative. To a well-capitalized, experienced trader, even 100 × 50 may be a small trade.
+      6
+       Depending on the settlement procedure, changes in interest rates can also affect futures options. But the effect,
+      as discussed in Chapter 7, is usually quite small. Changes in interest rates can also affect futures options because
+      they may change the price of the underlying futures contract. But this can be assessed as the risk of a change in
+      the underlying price, not a change in interest rates.
+
+240   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+     Consider the evaluation table for stock options shown in Figure 13-10. With
+implied volatilities below the forecast of 29 percent, it makes sense to look for
+spreads with positive vegas. Suppose that we focus on the four spreads shown in
+Figure 13-11. Spreads 7 and 8 are long calendar spreads, while Spreads 9 and
+10 are diagonal spreads. What are the relative merits of each spread?
+     Because all four spreads fall into the long calendar spread category, they
+all have the typical negative-gamma and positive-vega characteristics associ-
+ated with such spreads. This is shown in Figures 13-12 and 13-13. Movement
+in the price of the underlying contract or falling volatility will reduce the value
+of the spread. Rising volatility will increase the value of the spread. (Spreads 7
+and 8 have essentially identical volatility characteristics and are almost indistin-
+guishable from each other in Figure 13-13.) Initially, the choice of spreads will
+depend on the risk of movement in the underlying contract as well as the risk
+of changes in implied volatility.
+     Because we are dealing with stock options, there are two additional risks—
+the risk of changing interest rates and the risk of changing dividends, assum-
+ing that at least one dividend payment falls between expirations. We know
+from Chapter 7 that stock option calls and puts react in just the opposite
+way to changes in interest rates and dividends. Rising interest rates or fall-
+ing dividends cause calls to rise in value and puts to fall; falling interest rates
+and rising dividends cause calls to fall in value and puts to rise. Moreover, the
+impact of a change in either of these inputs will be greater for long-term
+options than for short-term options. We can measure the risk of changing in-
+terest rates by determining the total rho value for each spread. Even though
+there is no Greek for the dividend sensitivity, we can still use a computer to de-
+termine the dividend risk associated with each spread. The sensitivities for the
+individual options, as well as the total spread sensitivities, to changing interest
+rates and dividends are shown in Figure 13-14.
+     The call spreads (Spreads 7 and 9) have a positive rho and negative divi-
+dend sensitivity. The put spreads (Spreads 8 and 10) have a negative rho and
+positive dividend sensitivity. The value of each spread with respect to changes
+in these inputs is shown in Figures 13-15 and 13-16.
+     The interest-rate and dividend risk associated with volatility spreads is usu-
+ally small compared with the volatility (gamma and vega) risk. Nonetheless, a
+trader ought to be aware of these risks, especially when a position is large and
+there is significant risk of a change in either interest rates or dividends.
+
+
+what Is a Good spread?
+
+Option traders, being human, would rather talk about their successes than
+their disasters. If one were to eavesdrop on conversations among traders, it
+would probably seem that no one ever made a losing trade. Disasters, when
+they do occur, only happen to other traders. The fact is that every successful
+option trader has had his share of disasters. What separates successful traders
+from the unsuccessful ones is the ability to survive such occurrences.
+    Consider the trader who initiates a spread with a good theoretical edge
+and a large margin for error in almost every risk category. If the trader still
+
+                                                           R I s k C O N s I D e R AT I O N s   241
+                                                                                                                                                                                                                               ingapore Polytechnic Library 192.99.6.125] at [07/06/16]. Copyright © McGraw-Hill Global Education Holdings, LLC. Not to be redistributed or modified in any way without pe
+242
+
+
+                                                     Figure 13-10
+O P T I O N V O L AT I L I T Y A N D P R I C I N G
+
+
+
+
+                                                              stock price = 99.25                   expected dividend = 0.50 in 4 weeks and every 13 weeks thereafter
+                                                                                          Time to March expiration = 8 weeks                Volatility = 29%                       Interest rate = 6%
+                                                                                                    Calls                                                                               Puts
+                                                      exercise              Theoretical                                        Implied                         Theoretical                                        Implied
+                                                       Price        Price     Value        Delta   Gamma      Theta     Vega   Volatility             Price      Value       Delta    Gamma        Theta   Vega   Volatility
+                                                         85        14.90      10.91         93       1.2     −0.0264 0.053     28.82%                 0.37        0.38        −7      1.2        −0.0125 0.053    28.84%
+                                                         90        10.51      10.65         83       2.3     −0.0371 0.098     27.53%                 0.94        1.07       −17      2.3        −0.0224 0.098    27.61%
+                                                         95        6.74        7.06         68       3.2     −0.0457 0.138     26.64%                 2.11        2.44       −32      3.2        −0.0316 0.138    26.59%
+                                                        100        3.85        4.32         51       3.6     −0.0477 0.154     25.98%                 4.18        4.65       −49      3.6        −0.0314 0.154    25.97%
+                                                        105        1.95        2.42         34       3.3     −0.0421 0.142     25.62%                 7.23        7.71       −66      3.3        −0.0250 0.142    25.58%
+                                                        110        0.88        1.25         21       2.6     −0.0319 0.111     25.47%                 11.12      11.49       −79      2.6        −0.0140 0.111    25.47%
+
+                                                                                          Time to June expiration = 21 weeks                Volatility = 29%                       Interest rate = 6%
+
+                                                                                                    Calls                                                                               Puts
+                                                      exercise              Theoretical                                        Implied                         Theoretical                                        Implied
+                                                       Price        Price     Value        Delta   Gamma      Theta     Vega   Volatility             Price      Value       Delta    Gamma        Theta   Vega   Volatility
+                                                         85        16.70      16.90         84       1.3     −0.0256 0.149     27.64%                 1.40        1.61       −16      1.3        −0.0120 0.149    27.58%
+                                                         90        12.85      13.25         76       1.7     −0.0293 0.195     26.92%                 2.44        2.84       −24      1.7        −0.0149 0.195    26.93%
+                                                         95        9.52       10.11         66       2.0     −0.0316 0.229     26.41%                 3.99        4.58       −34      2.0        −0.0164 0.229    26.41%
+                                                        100        6.78        7.51         55       2.2     −0.0320 0.247     26.04%                 6.13        6.86       −45      2.2        −0.0085 0.247    26.04%
+                                                        105        4.64        5.44         45       2.2     −0.0306 0.246     25.76%                 8.87        9.67       −55      2.2        −0.0138 0.246    25.76%
+                                                        110        3.06        3.84         35       2.0     −0.0278 0.231     25.58%                 12.18      12.95       −65      2.0        −0.0101 0.231    25.61%
+Figure 13-11
+
+                                           Theoretical
+                                             edge        Delta    Gamma          Theta             Vega
+Spread 7:  +20 June 100 calls 20 x +0.73 +20 x +55 +20 x 2.2 +20 x −0.0320 +20 x 0.247
+          −20 March 100 calls 20 x −0.47 −20 x +51 −20 x 3.6 −20 x −0.0477 −20 x 0.154
+                                +5.40      +80      −28.0      +0.3140       +1.860
+Spread 8: +20 June 95 puts 20 x +0.59 +20 x −34 +20 x 2.0 +20 x −0.0164 +20 x 0.229
+           −20 March 95 puts 20 x −0.33 −20 x −32 −20 x 3.2 −20 x −0.0316 −20 x 0.138
+                                +5.20      −40      −20.0      +0.3030       +1.820
+Spread 9: +17 June 110 calls 17 x +0.78 +17 x +35 +17 x 2.0 +17 x −0.0278 +17 x 0.231
+          −17 March 105 calls 17 x −0.47 −17 x +34 −17 x 3.3 −17 x −0.0421 −17 x 0.142
+                                +5.27      +17      −22.1      +0.2431       +1.513
+Spread 10: +65 June 85 puts 65 x +0.21 +65 x −16 +65 x 1.3 +65 x −0.0120 +65 x 0.149
+           −65 March 90 puts 65 x −0.13 −65 x −17 −65 x 2.3 −65 x −0.0224 −65 x 0.098
+                                +5.20      +65      −65.0      +0.6760       +3.315
+
+
+ends up losing money on the spread, does this mean that the trader has made
+a poor choice of spreads? Maybe a similar spread, but one with less margin for
+error, would have resulted in an even greater loss, perhaps a loss from which the
+trader could not recover.
+     It is impossible to take into consideration every possible risk. A spread that
+passed every risk test would probably have so little theoretical edge that it would
+not be worth doing. But the trader who allows himself a reasonable margin for
+error will find that even his losses will not lead to financial ruin. A good spread
+is not necessarily the one that shows the greatest profit when things go well; it
+
+Figure 13-12
+
+
+                              +10
+
+
+                               +5
+
+
+                                0
+ Theoretical profit or loss
+
+
+
+
+                               –5
+
+
+                              –10
+
+
+                              –15
+
+
+                              –20                   Spread 7 (call calendar spread)
+                                                    Spread 8 (put calendar spread)
+                                                    Spread 9 (call diagonal spread)
+                              –25                   Spread 10 (put diagonal spread)
+
+                              –30
+                                 85   90     95          100          105              110             115
+                                                   Underlying price
+
+                                                                            R I s k C O N s I D e R AT I O N s   243
+      Figure 13-13
+
+                                        +20
+
+
+                                        +15
+
+
+                                        +10
+           Theoretical profit or loss
+
+
+
+
+                                        +5
+
+
+                                          0
+
+
+                                        –5
+                                                                Spread 7 (call calendar spread)
+                                                                Spread 8 (put calendar spread)
+                                        –10                     Spread 9 (call diagonal spread)
+                                                                Spread 10 (put diagonal spread)
+                                        –15
+
+
+                                        –20
+                                          20%   22%   24%     26%      28%       30%    32%     34%       36%        38%
+                                                                         Volatility
+
+
+
+      Figure 13-14 Interest-rate and dividend sensitivity.
+
+                                                                    March Options
+                       exercise                       Call              Put            Call Dividend       Put Dividend
+                        Price                         Rho*              Rho*            sensitivity†        sensitivity†
+                                        85            0.118            −0.012             −0.924                0.072
+                                        90            0.109            −0.027             −0.826                0.169
+                                        95            0.093            −0.052             −0.681                0.315
+                                 100                  0.071            −0.081             −0.509                0.487
+                                 105                  0.048            −0.111             −0.342                0.653
+                                 110                  0.030            −0.138             −0.208                0.788
+                                                                    June Options
+                       exercise                       Call              Put            Call Dividend       Put Dividend
+                        Price                         Rho*              Rho*            sensitivity†        sensitivity†
+                                        85            0.266            −0.068             −1.668                0.308
+                                        90            0.247            −0.107             −1.498                0.478
+                                        95            0.220            −0.154             −1.300                0.676
+                                 100                  0.188            −0.205             −1.089                0.887
+                                 105                  0.154            −0.258             −0.880                1.096
+                                 110                  0.122            −0.310             −0.688                1.288
+       *The interest-rate sensitivity is given as the point change in option value for each one-percentage-point (1.00%)
+       change in interest rates.
+       †
+        The dividend sensitivity is given as the point change in option value for each point change in the dividend.
+
+                                                                                                                 (continued)
+
+244   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 13-14 (continued)
+
+                                                                                 Total                  Total Dividend
+                                                                                 Rho                      Sensitivity
+ Spread 7:                                       +20 June 100 calls          +20 x +0.188              +20 x −1.089
+                                                 −20 March 100 calls         −20 x +0.071              −20 x −0.509
+                                                                               +2.340                    −11.600
+ Spread 8:                                       +20 June 95 puts            +20 x −0.154              +20 x +0.676
+                                                 −20 March 95 puts           −20 x −0.052              −20 x +0.315
+                                                                               −2.040                    +7.220
+ Spread 9:                                       +17 June 110 calls          +17 x +0.122              +17 x −0.688
+                                                 −17 March 105 calls         −17 x +0.048              −17 x −0.342
+                                                                               +1.258                    −5.882
+ Spread 10:                                      +65 June 85 puts            +65 x −0.068              +65 x +0.308
+                                                 −65 March 90 puts           −65 x −0.027              −65 x +0.169
+                                                                               −2.665                    +9.035
+
+may be the one that shows the least loss when things go badly. Winning trades
+always take care of themselves. Losing trades that do not give back all the prof-
+its from the winning ones are just as important.
+
+efficiency
+One method that traders sometimes use to compare the relative riskiness of
+potential strategies focuses on the risk-reward ratio, or efficiency, of the strat-
+egies. Suppose that a trader is considering two possible spreads, both with
+a positive gamma and a negative theta. The reward is represented by the
+Figure 13-15 Interest-rate sensitivity.
+
+                                +20
+
+
+
+                                +15
+   Theoretical profit or loss
+
+
+
+
+                                +10
+
+
+
+                                +5
+
+
+
+                                  0
+
+
+                                                     Spread 7 (call calendar spread)
+                                –5                   Spread 8 (put calendar spread)
+                                                     Spread 9 (call diagonal spread)
+                                                     Spread 10 (put diagonal spread)
+                                –10
+                                      0%   1%   2%    3%    4%    5% 6% 7%             8%   9%      10%     11%     12%
+                                                                    Interest rate
+
+
+                                                                                            R I s k C O N s I D e R AT I O N s   245
+      Figure 13-16 Dividend sensitivity.
+
+                                       +12
+
+                                                             Spread 7 (call calendar spread)
+                                                             Spread 8 (put calendar spread)
+                                       +10                   Spread 9 (call diagonal spread)
+                                                             Spread 10 (put diagonal spread)
+          Theoretical profit or loss
+
+
+
+
+                                       +8
+
+
+
+                                       +6
+
+
+
+                                       +4
+
+
+
+                                       +2
+
+
+                                        0
+                                             0   .10   .20    .30    .40    .50      .60     .70   .80      .90   1.00
+                                                                 Expected quarterly dividend
+
+
+
+      gamma, the potential profit when the underlying market moves. The risk is
+      the theta, the money that will be lost through the passage of time if the un-
+      derlying market fails to make sufficiently large moves. The trader would like
+      the reward (the gamma) to be as large as possible compared with the risk (the
+      theta). We might express this relationship as a ratio
+                                                                    gamma/theta
+      The larger the absolute value of this ratio, the more efficient the position.
+           In the same way, a trader who has a negative gamma and a positive theta
+      wants the risk (the gamma) to be as small as possible compared with the reward
+      (the theta). He therefore wants the absolute value of the gamma/theta ratio to
+      be as large as possible.
+           For example, we might go back and calculate the efficiency of Spreads 1
+      through 3 in Figure 13-3. The efficiencies are
+
+                                                                     Gamma/Theta                    efficiency
+       Spread 1                                                      −406.0/0.4235                       959
+       Spread 2                                                      −165.5/0.1365                       1,212
+       Spread 3                                                      −370.0/0.4000                       925
+
+      Because each spread has a negative gamma and positive theta, we want the effi-
+      ciency to be as small as possible. We can see that Spread 3 is best, which is consis-
+      tent with our previous analysis of each spread.
+           Assuming that all strategies have approximately the same theoretical edge,
+      the efficiency can be a reasonable method of quickly comparing strategies
+      where all options expire at the same time. In such cases, the gamma and theta
+
+246   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+are the primary risks to the position. If a strategy consists of options that expire
+at different times, the efficiency is only one consideration, and the sensitivity of
+the positions to changes in implied volatility (the vega) may also become impor-
+tant, as they were in our other spread examples. In such cases, a more detailed
+risk analysis will be necessary.
+
+Adjustments
+In Chapter 11, we considered the question of when a trader should adjust a po-
+sition to remain delta neutral. In addition to deciding when to adjust, the trader
+also must consider how best to adjust because there are many different ways to
+adjust the total delta position. An adjustment to a trader’s delta position may
+reduce his directional risk, but if he simultaneously increases his gamma, theta,
+or vega risk, he may inadvertently be exchanging one type of risk for another.
+     A delta adjustment made with the underlying contract is essentially a risk-
+neutral adjustment. The gamma, theta, and vega of an underlying contract are
+0, so an adjustment made with the underlying contract will not change any of
+these risks. If a trader wants to adjust his delta position but wants to leave the
+other characteristics of the position unaffected, he can do so by purchasing or
+selling an appropriate number of underlying contracts.
+     An adjustment made with options will also reduce the delta risk, but at
+the same time, it will change the other risk characteristics. Because every
+option has not only a delta but also a gamma, theta, and vega, when an option
+is added to or subtracted from a position, it necessarily changes the total delta,
+gamma, theta, and vega of the position. This is something that new traders
+sometimes forget.
+     Consider a stock option market where the underlying contract is trading
+at 99.25 and all options appear to be overpriced. Suppose that a trader decides
+to sell the 95/105 strangle (sell the 95 put, sell the 105 call), with put and call
+deltas of –32 and 34, respectively. If the trader sells 20 strangles, the position is
+initially slightly delta negative because
+                        (–20 × +34) + (–20 × –32) = –40
+     Suppose that a week passes and the underlying market has fallen to 97.00,
+with new delta values for the 95 put and 105 call of –39 and +25. Assuming
+that no adjustments have been made, the trader’s delta position is now
+                       (–20 × –39) + (–20 × +25) = +280
+   If the trader wants to hold the position but also wants to remain approxi-
+mately delta neutral, he has three basic choices:
+
+      1. Sell underlying contracts.
+      2. Sell calls.
+      3. Buy puts.
+
+Which method is best?
+
+                                                            R I s k C O N s I D e R AT I O N s   247
+

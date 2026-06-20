@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Drove **cross-functional technical programs** spanning Azure's distributed systems ecosystem, scaling recovery validation from a 2-person operation into a platformized system sustaining **45+ annual drills** and **$14M+ business impact** across enterprise users (Databricks, Walmart, SAP, NetApp).
+2. Led **0→1 definition and execution** of an internal Resilience Automation Platform, authoring written proposals, scoping requirements with Engineering Managers and Tech Leads, and shipping self-service scheduling that **cut operational toil 30%**.
+3. Defined and delivered Azure's first proactive rack-level resilience testing program in **4 months** with a **94% recovery rate**, partnering deeply with engineering to identify trade-offs and surface critical hardware defects at scale.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** while building consensus across ambiguous, multi-domain stakeholders.
+5. Built and iterated on **program management frameworks and KPIs** with clear success criteria, driving consistency and alignment across engineering teams via widely-circulated plans and structured written communications.
+6. Elevated team execution by shipping an **internal AI agent** and restructuring planning workflows, **reducing planning cycle time 39%** and **increasing drill capacity 21%** through LLM-powered automation.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** of AI-driven code generation across **14 Azure service teams**, running demos, training, and stakeholder enablement that **saved 37 engineering hours monthly**.
+2. Shaped the product roadmap for **intent-based YAML generation** by facilitating **11+ user interviews** with Azure engineering partners to distill pain points into prioritized requirements.
+3. Migrated internal documentation to an **AI-powered semantic search** platform with rigorous metadata standards, **cutting lookup time 83%** and improving data integrity for downstream users.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ engineering teams**.
+2. Defined a program strategy to mitigate operational toil during region launches, running discovery with **20+ service teams** to quantify **81 hours of manual effort per region** and roadmap critical-path automation.
+3. Engineered a **Power BI dashboard** tracking toil KPIs across **140+ teams**, enabling leadership to target automation gaps and prioritize high-impact engineering investment.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero operational downtime** during a **2,000+ unit pilot** by defining the legacy OS migration program and mapping distributed system dependencies across **1,200+ stations**.
+2. Ran **Agile ceremonies** including sprint planning and retros, prioritizing backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process end-to-end.
+3. Aligned IT, Operations, and Engineering on **automated CI/CD pipelines**, **accelerating software deployment 25%** through cross-functional technical program execution.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by re-architecting the CRM/sales ops lifecycle and managing end-to-end scoping and invoicing for **200+ monthly proposals**.
+2. Reduced **Customer Acquisition Cost 13%** and lifted conversions **2.7%** by executing a digital-first GTM strategy across web and Google business surfaces.
+3. Improved leadership pricing models by running **SQL-driven profitability analysis** across **1,000+ project records** to seal margin leaks and inform finance decisions.
+
+## Notes from the rewriter
+- Swapped titles to Technical Program Manager to mirror Stripe JD vocabulary.
+- Led MSFT FT bullets with cross-functional TPM verbs, distributed systems, written proposals, KPIs/frameworks, and consensus-building under ambiguity.
+- Surfaced SQL, GTM/Finance adjacency, and platform 0→1 experience to hit preferred qualifications.
+

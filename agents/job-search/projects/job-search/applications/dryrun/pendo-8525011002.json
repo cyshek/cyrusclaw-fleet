@@ -1,0 +1,269 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/pendo/jobs/8525011002",
+  "org": "pendo",
+  "job_id": "8525011002",
+  "job_title": "Pre- & Post-Sales Customer Engineer, Commercial",
+  "job_location": "Raleigh, NC",
+  "fetched_at": "2026-05-14T00:43:28Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/pendo/jobs/8525011002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 16,
+    "filled": 14,
+    "filled_needs_review": 2,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_36309659002",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_36309660002",
+      "label": "Will you now or in the future require sponsorship for employment in the country in which the job is posted?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36309661002",
+      "label": "How did you hear about Pendo?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us | NOTE: 'LinkedIn' not literally in options ['Word of Mouth (my network)', 'A Pendo Customer', 'Linkedin Job Posting', 'Linkedin post by a Pendo Employee', 'Glassdoor', 'Event / Conference', 'Google Search', 'News / Press', 'University Recruiting (Career Fair, Job Board)', 'YouTube', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Word of Mouth (my network)",
+          "value": 240556960002
+        },
+        {
+          "label": "A Pendo Customer",
+          "value": 240556961002
+        },
+        {
+          "label": "Linkedin Job Posting",
+          "value": 240556962002
+        },
+        {
+          "label": "Linkedin post by a Pendo Employee",
+          "value": 240556963002
+        },
+        {
+          "label": "Glassdoor",
+          "value": 240556964002
+        },
+        {
+          "label": "Event / Conference",
+          "value": 240556965002
+        },
+        {
+          "label": "Google Search",
+          "value": 240556966002
+        },
+        {
+          "label": "News / Press",
+          "value": 240556967002
+        },
+        {
+          "label": "University Recruiting (Career Fair, Job Board)",
+          "value": 240556968002
+        },
+        {
+          "label": "YouTube",
+          "value": 240556969002
+        },
+        {
+          "label": "Other",
+          "value": 240556970002
+        }
+      ]
+    },
+    {
+      "id": "question_36309662002",
+      "label": "Applicant Privacy Notice",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "privacy_ack (always acknowledge) | NOTE: 'Yes' not literally in options ['Acknowledge/confirm']",
+      "status": "filled_needs_review",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Acknowledge/confirm",
+          "value": 240556971002
+        }
+      ]
+    },
+    {
+      "id": "question_36309663002",
+      "label": "Have you been employed by Pendo before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

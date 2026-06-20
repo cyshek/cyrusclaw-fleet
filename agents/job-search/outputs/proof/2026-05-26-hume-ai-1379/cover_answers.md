@@ -1,0 +1,7 @@
+# Cover answers — Humeai, Product Manager, Growth (hume-ai-4856037008)
+
+## Why Hume?
+
+At Microsoft, I've spent the last year and a half driving growth and adoption for technical products, including building an AI agent for drill planning that cut planning cycle time by 39% and converting developer teams from manual workflows to a self-serve platform that now sustains 45+ annual drills and $14M+ in business impact. Earlier, at Pro Painters, I ran the more classic growth playbook directly, lifting conversion 2.7% and cutting CAC 13% through website, SEO, and paid/organic iteration. The Growth PM role at Hume sits right at the intersection of those two muscles: hands-on creator and developer activation, plus the technical fluency to actually understand the product.
+
+What pulls me to Hume specifically is the bet on voice as the interface and the fact that Octave and EVI are already rated above OpenAI on empathy and naturalness at sub-300ms latency. Voice AI is the rare area where the technical ceiling is high enough that growth isn't just funnel optimization, it's figuring out which creators and developers unlock entirely new use cases. I want to spend the next chapter helping a frontier AI product find its wedge in the creator economy and developer ecosystem, and Hume's combination of research depth and a mission tied to human well-being is the version of that I'd most want to work on.

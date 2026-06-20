@@ -1,0 +1,78 @@
+# Adobe Workfront Solution Architect
+
+**Company:** Credera
+**Location:** New York, NY
+**Apply:** https://www.credera.com/en-us/careers/jobs/7967308?gh_jid=7967308
+**Greenhouse ID:** 7967308
+
+---
+
+Credera is a global consulting firm that combines transformational consulting capabilities, deep industry knowledge, AI and technology expertise to deliver valuable customer experiences and accelerated growth across various industries. We continuously evolve our services to meet the needs of future organizations and reflect modern best practices. Our unique global approach provides tailored solutions, transforming the most influential brands and organizations worldwide. 
+
+Our employees, the lifeblood of our company, are passionate about making an extraordinary impact on our clients, colleagues, and communities. This passion drives how we spend our time, resources, and talents. Our commitment to our people and work has been recognized globally.
+
+LeapPoint has fully integrated into Credera to form a unified global Adobe Practice for their parent company, Omnicom. The combination of Credera’s transformation consulting expertise and LeapPoint’s award-winning Adobe capabilities, integrated into Omnicom’s leading connected capabilities in media, creative, commerce, data, and identity solutions, offers comprehensive, end-to-end transformations at enterprise scale. [https://credera.com/en-us/insights/omnicoms-transformation-consultancy-strengthens-capabilities-with-the-launch](https://credera.com/en-us/insights/omnicoms-transformation-consultancy-strengthens-capabilities-with-the-launch)
+
+We are seeking an Adobe Workfront Architect to design and implement a connected ecosystem of platforms that drive hyper-personalization, data-driven decisions, and successful outcomes for our clients. As an Adobe Workfront Architect, you will lead new and existing implementation engagements with a focus on designing and implementing Content Supply Chain solutions for global brands. This position is ideal for someone with an aptitude for learning new platforms, contributing to new solution designs, and delivering results as a key member of a larger engagement team.
+
+**What You Will Do **
+
+- **Solution Design & Implementation:** design and deliver Adobe Workfront to streamline content supply chain processes, including Generative AI enablement of content creation to help clients achieve their business objectives and goals   
+
+- **Consulting Leadership:** partner with client teams (marketing, creative, IT) to assess needs, recommend Workfront customizations, and deliver scalable solutions that align with business goals 
+
+- **Content Supply Chain Optimization:** leverage Workfront to improve content lifecycle management—tracking assets from ideation to publication, reducing bottlenecks, and ensuring timely delivery across platforms. Leverage automation and GenAI to improve speed, scalability, and ROI 
+
+- **Integration Management:** integrate Workfront with DAM systems (e.g. AEM Assets), creative tools (e.g. Adobe Creative Suite), and GenAI (e.g. Firefly, GenStudio) to create a cohesive content ecosystem
+
+- **Stakeholder Collaboration:** build relationships and act as a trusted advisor, translating technical capabilities into business value for executives, project managers, and creative professionals 
+
+- **Documentation:** create, deliver, and maintain detailed technical design documentation, including requirements mapping, technical process flows and visualizations, and Adobe Workfront best practices. 
+
+- **Digital Transformation:** provide best practices for business workflows, change management, user adoption, and system governance  
+
+ **Who You Are **
+
+- 3+ years of Adobe Workfront design and implementation experience, or same experience in the design and implementation of workflow management and automation tools and/or systems 
+
+- Experienced in leadership of technical project teams 
+
+- Experienced in guiding clients in content supply chain journeys and delivering technology-led transformation aiming to enhance each customer’s digital experience 
+
+- In-depth knowledge of Adobe Workfront architecture, features, and functionalities 
+
+- Experience with system integrations using Adobe Workfront Fusion, connectors, and APIs preferred  
+
+- Strong written, verbal, and visual communication skills, and the ability to translate complex technical concepts into business-friendly narratives for stakeholders 
+
+- Ability to work on multiple tasks/projects and able to prioritize personal workload 
+
+- Results-driven, adaptable, and collaborative, with a passion for driving innovation and impact. Track record of doing things that haven’t been done before and thriving in ambiguity 
+
+**Certifications:** Adobe Certified Professional / Expert - Adobe Workfront Core Developer is highly desirable  
+
+**Travel: **This position may require approximately 10-20% travel  
+
+For individuals hired to work in New York, Credera is required by law to include a reasonable estimate of the compensation range for this role. This compensation range is specific to the State of New York and includes the range of factors considered in making compensation decisions including but not limited to skill sets; experience and training; certifications; etc. We would not anticipate that the individual hired into this role would be near the top end of the compensation range, but that decision will be dependent on the facts associated with each specific individual’s relevant experience for the role.
+
+New York City Pay Range
+$160,000—$200,000 USD
+
+***Learn More****:**** **Credera is part of Omnicom Precision Marketing that delivers transformative solutions rooted in data, technology, and AI. Omnicom Precision Marketing delivers precisely targeted and meaningful customer experiences at scale. Using its universal framework of connected data, connected intelligence and connected experiences, OPM provides services that include data-driven product / service design, technology strategy and implementation, CRM / loyalty strategy and activation, econometric and attribution modelling, technical and business consulting and digital experience design and development.  *
+
+***Compensation: **T**he salary range listed is provided for informational purposes only. Credera treats all applicants as individuals, considering, but not limited to, their professional and academic experience, specialized training, certifications, and associated responsibilities as they relate to our specific industry. The salary range listed is just one component of our total compensation package for each unique employee.*
+
+*We believe in recognizing and rewarding contributions at every level. While senior-level employees are eligible for a variable component as part of their compensation package, we are committed to supporting the growth and development of all team members. As employees progress in their careers, everyone will have opportunities to take on new responsibilities and become eligible for additional rewards. We strive to create an environment where everyone is empowered to succeed and advance.*
+
+***Benefits****: **Credera provides a competitive salary and a comprehensive benefits plan. Benefits include health, mental health, vision, dental, and life insurance, prescriptions, fertility and adoption benefits, community service days, paid parental leave, PTO, 14 paid holidays, matching 401(k), Healthcare & Dependent Flexible Spending Accounts, and disability benefits. For more information regarding Omnicom benefits, please visit** **[**www.omnicombenefits.com**](http://www.omnicombenefits.com/).  *
+
+***Hybrid Working Model: **Our employees have the flexibility to work remotely two days a week. We expect team members to spend three days in person, with the freedom to choose the days and times that best suit them, their project, and their teams. You'll collaborate with your project team to balance flexibility with the benefits of in-person connection, delivering outstanding results for our clients. **The Why****: **In-person engagement is essential for building strong relationships with clients and colleagues. It fosters trust, encourages learning, and helps us grow as consultants and professionals. *
+
+***Travel****: **For our consulting roles, our goal is to minimize travel, and most projects do not require extensive travel. While some projects may involve up to 80% travel for a period, the annual average for team members is typically 10%–30%. We take a personal approach to travel by considering your submitted preferences when assigning roles. *
+
+*Applicants must be authorized to work in the U.S. without the need for employment-based visa sponsorship now or in the future; Credera will not sponsor applicants for U.S. work visa status for this opportunity (no sponsorship is available for H-1B, L-1, TN, O-1, E-3, H-1B1, F-1, J-1, OPT, CPT, or any other employment-based visa).
+*
+
+*All qualified applicants will receive consideration for employment without regard to race, color, religion, gender identity, sexual orientation, national origin, age, genetic information, veteran status, or disability.   *
+
+*Credera will never ask for money up front and will not use apps such as Facebook Messenger, WhatsApp or Google Hangouts for communicating with you. You should be very wary of, and carefully scrutinize, any job opportunity that asks for money prior to starting and/or one where all communications take place exclusively via chat.  *

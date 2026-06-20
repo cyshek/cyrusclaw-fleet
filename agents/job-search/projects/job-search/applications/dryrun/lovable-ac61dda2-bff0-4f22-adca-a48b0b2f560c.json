@@ -1,0 +1,124 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/lovable/ac61dda2-bff0-4f22-adca-a48b0b2f560c",
+  "org": "lovable",
+  "job_id": "ac61dda2-bff0-4f22-adca-a48b0b2f560c",
+  "job_title": "Solutions Architect",
+  "job_location": "Boston",
+  "fetched_at": "2026-06-03T08:47:01Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_name"
+    },
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_email",
+      "label": "Email ID",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_email"
+    },
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823_3e386864-3ba3-4892-9825-854813d2aa19",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823_3e386864-3ba3-4892-9825-854813d2aa19"
+    },
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_location"
+    },
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823__systemfield_resume"
+    },
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823_21adf2e4-c6e0-4520-be1b-26fc62b23e32",
+      "label": "LinkedIn Profile URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823_21adf2e4-c6e0-4520-be1b-26fc62b23e32"
+    },
+    {
+      "id": "525c801f-3269-4067-abfb-0c438084f823_c7900a1a-1366-49c3-86c7-d90460fbb853",
+      "label": "Will you now or in the future require visa sponsorship (including transfers) to be eligible for work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "525c801f-3269-4067-abfb-0c438084f823_c7900a1a-1366-49c3-86c7-d90460fbb853"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

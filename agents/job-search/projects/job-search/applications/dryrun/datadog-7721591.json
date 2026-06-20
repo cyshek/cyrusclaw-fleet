@@ -1,0 +1,789 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/datadog/jobs/7721591",
+  "org": "datadog",
+  "job_id": "7721591",
+  "job_title": "Sales Engineer (Customer Success - Portuguese speaking)",
+  "job_location": "Boston, Massachusetts, USA; New York, New York, USA",
+  "fetched_at": "2026-05-23T14:07:20Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/datadog/jobs/7721591?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 19,
+    "filled": 11,
+    "filled_needs_review": 4,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_64538085",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_64538086",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_64538087",
+      "label": "I certify that the information provided in this application is true and correct to the best of my knowledge. I understand that any false statements or omissions may result in disqualification from employment consideration or, if employed, in termination.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64538088",
+      "label": "I understand my application will be processed in accordance with Datadog’s Candidate Privacy Policy.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64538089",
+      "label": "Are you legally authorised to work full-time in the country where this job is based?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes, no restriction.', 'Yes, but I will need sponsorship in the future.', 'No, I need sponsorship now.']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes, no restriction.",
+          "value": 650652956
+        },
+        {
+          "label": "Yes, but I will need sponsorship in the future.",
+          "value": 650652957
+        },
+        {
+          "label": "No, I need sponsorship now.",
+          "value": 650652958
+        }
+      ]
+    },
+    {
+      "id": "question_64538090[]",
+      "label": "In what cities are you available to work?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Open to relocating anywhere in the United States. Currently based in Kirkland, WA (Seattle area).",
+      "source": "cities_available_to_work | NOTE: 'Open to relocating anywhere in the United States. Currently based in Kirkland, WA (Seattle area).' not literally in options ['Amsterdam', 'Atlanta', 'Bangalore', 'Barcelona', 'Barueri São Paulo', 'Bordeaux', 'Boston', 'Chicago', 'Copenhagen', 'Denver', 'Dubai', 'Dublin', 'Grenoble', 'Hamburg', 'Jakarta', 'Lisbon', 'London', 'Lyon', 'Madrid', 'Melbourne', 'Mexico City', 'Montpellier', 'Mumbai', 'Nantes', 'New York City', 'Nice', 'Osaka', 'Paris', 'Remote', 'Riyadh', 'Salt Lake City', 'San Francisco', 'San Jose (Campbell)', 'San Sebastian', 'São Paulo', 'Seattle', 'Seoul', 'Singapore', 'Sophia Antipolis', 'Stockholm', 'Sydney', 'Tel Aviv', 'Tokyo', 'Toronto']",
+      "status": "filled_needs_review",
+      "matched_rule": "cities_available",
+      "options": [
+        {
+          "label": "Amsterdam",
+          "value": 718476788
+        },
+        {
+          "label": "Atlanta",
+          "value": 718476789
+        },
+        {
+          "label": "Bangalore",
+          "value": 718476790
+        },
+        {
+          "label": "Barcelona",
+          "value": 718476791
+        },
+        {
+          "label": "Barueri São Paulo",
+          "value": 718476792
+        },
+        {
+          "label": "Bordeaux",
+          "value": 718476794
+        },
+        {
+          "label": "Boston",
+          "value": 718476795
+        },
+        {
+          "label": "Chicago",
+          "value": 718476796
+        },
+        {
+          "label": "Copenhagen",
+          "value": 718476797
+        },
+        {
+          "label": "Denver",
+          "value": 718476798
+        },
+        {
+          "label": "Dubai",
+          "value": 718476799
+        },
+        {
+          "label": "Dublin",
+          "value": 718476800
+        },
+        {
+          "label": "Grenoble",
+          "value": 718476801
+        },
+        {
+          "label": "Hamburg",
+          "value": 718476802
+        },
+        {
+          "label": "Jakarta",
+          "value": 718476803
+        },
+        {
+          "label": "Lisbon",
+          "value": 718476804
+        },
+        {
+          "label": "London",
+          "value": 718476805
+        },
+        {
+          "label": "Lyon",
+          "value": 718476806
+        },
+        {
+          "label": "Madrid",
+          "value": 718476807
+        },
+        {
+          "label": "Melbourne",
+          "value": 718476808
+        },
+        {
+          "label": "Mexico City",
+          "value": 718476809
+        },
+        {
+          "label": "Montpellier",
+          "value": 718476811
+        },
+        {
+          "label": "Mumbai",
+          "value": 718476812
+        },
+        {
+          "label": "Nantes",
+          "value": 718476813
+        },
+        {
+          "label": "New York City",
+          "value": 718476814
+        },
+        {
+          "label": "Nice",
+          "value": 718476815
+        },
+        {
+          "label": "Osaka",
+          "value": 718476816
+        },
+        {
+          "label": "Paris",
+          "value": 718476817
+        },
+        {
+          "label": "Remote",
+          "value": 718476818
+        },
+        {
+          "label": "Riyadh",
+          "value": 718476819
+        },
+        {
+          "label": "Salt Lake City",
+          "value": 718476820
+        },
+        {
+          "label": "San Francisco",
+          "value": 718476821
+        },
+        {
+          "label": "San Jose (Campbell)",
+          "value": 718476822
+        },
+        {
+          "label": "San Sebastian",
+          "value": 718476823
+        },
+        {
+          "label": "São Paulo",
+          "value": 718476824
+        },
+        {
+          "label": "Seattle",
+          "value": 718476825
+        },
+        {
+          "label": "Seoul",
+          "value": 718476826
+        },
+        {
+          "label": "Singapore",
+          "value": 718476827
+        },
+        {
+          "label": "Sophia Antipolis",
+          "value": 718476828
+        },
+        {
+          "label": "Stockholm",
+          "value": 718476829
+        },
+        {
+          "label": "Sydney",
+          "value": 718476830
+        },
+        {
+          "label": "Tel Aviv",
+          "value": 718476831
+        },
+        {
+          "label": "Tokyo",
+          "value": 718476832
+        },
+        {
+          "label": "Toronto",
+          "value": 718476833
+        }
+      ]
+    },
+    {
+      "id": "question_64538091[]",
+      "label": "Please select all the languages you speak fluently.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "",
+      "source": "optional field — intentionally blank | NOTE: '' not literally in options ['Arabic', 'Bahasa Indonesia', 'Bulgarian', 'Cantonese', 'Croatian', 'Czech', 'Danish', 'Dutch', 'English', 'Estonian', 'Finnish', 'French', 'German', 'Greek', 'Hebrew', 'Hindi', 'Hungarian', 'Italian', 'Japanese', 'Korean', 'Latvian', 'Lithuanian', 'Malay', 'Mandarin', 'Norwegian', 'Polish', 'Portuguese', 'Portuguese (Brazilian)', 'Romanian', 'Russian', 'Slovak', 'Slovenian', 'Spanish', 'Swedish', 'Tagalog', 'Thai', 'Turkish', 'Vietnamese']",
+      "status": "filled_needs_review",
+      "matched_rule": "optional_blank",
+      "options": [
+        {
+          "label": "Arabic",
+          "value": 650652998
+        },
+        {
+          "label": "Bahasa Indonesia",
+          "value": 650652999
+        },
+        {
+          "label": "Bulgarian",
+          "value": 650653000
+        },
+        {
+          "label": "Cantonese",
+          "value": 650653001
+        },
+        {
+          "label": "Croatian",
+          "value": 650653002
+        },
+        {
+          "label": "Czech",
+          "value": 650653003
+        },
+        {
+          "label": "Danish",
+          "value": 650653004
+        },
+        {
+          "label": "Dutch",
+          "value": 650653005
+        },
+        {
+          "label": "English",
+          "value": 650653006
+        },
+        {
+          "label": "Estonian",
+          "value": 650653007
+        },
+        {
+          "label": "Finnish",
+          "value": 650653008
+        },
+        {
+          "label": "French",
+          "value": 650653009
+        },
+        {
+          "label": "German",
+          "value": 650653010
+        },
+        {
+          "label": "Greek",
+          "value": 650653011
+        },
+        {
+          "label": "Hebrew",
+          "value": 650653012
+        },
+        {
+          "label": "Hindi",
+          "value": 650653013
+        },
+        {
+          "label": "Hungarian",
+          "value": 650653014
+        },
+        {
+          "label": "Italian",
+          "value": 650653015
+        },
+        {
+          "label": "Japanese",
+          "value": 650653016
+        },
+        {
+          "label": "Korean",
+          "value": 650653017
+        },
+        {
+          "label": "Latvian",
+          "value": 650653018
+        },
+        {
+          "label": "Lithuanian",
+          "value": 650653019
+        },
+        {
+          "label": "Malay",
+          "value": 650653020
+        },
+        {
+          "label": "Mandarin",
+          "value": 650653021
+        },
+        {
+          "label": "Norwegian",
+          "value": 650653022
+        },
+        {
+          "label": "Polish",
+          "value": 650653023
+        },
+        {
+          "label": "Portuguese",
+          "value": 650653024
+        },
+        {
+          "label": "Portuguese (Brazilian)",
+          "value": 650653025
+        },
+        {
+          "label": "Romanian",
+          "value": 650653026
+        },
+        {
+          "label": "Russian",
+          "value": 650653027
+        },
+        {
+          "label": "Slovak",
+          "value": 650653028
+        },
+        {
+          "label": "Slovenian",
+          "value": 650653029
+        },
+        {
+          "label": "Spanish",
+          "value": 650653030
+        },
+        {
+          "label": "Swedish",
+          "value": 650653031
+        },
+        {
+          "label": "Tagalog",
+          "value": 650653032
+        },
+        {
+          "label": "Thai",
+          "value": 650653033
+        },
+        {
+          "label": "Turkish",
+          "value": 650653034
+        },
+        {
+          "label": "Vietnamese",
+          "value": 650653035
+        }
+      ]
+    },
+    {
+      "id": "question_64538092",
+      "label": "How did you hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us | NOTE: 'LinkedIn' not literally in options ['AfroTech', 'Angelist', 'Blind App', 'Break Through Tech', 'BuiltIn Boston', 'BuiltIn NYC', 'ColorStack', 'Campus Event', 'Datadog Employee', \"Datadog's Careers Page\", 'Event', 'Flexjobs', 'Girls Who Code', 'Github', 'Glassdoor', 'Hacker News', 'Hired', 'Hiretual', \"I love Datadog's product!\", 'Instagram', 'JobTeaser', 'LinkedIn (Datadog Page)', 'LinkedIn (Job Posting)', 'Rewriting the Code', 'School job board', 'The Muse', 'Thrive', 'Underdog', 'Welcome to the Jungle', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "AfroTech",
+          "value": 650653036
+        },
+        {
+          "label": "Angelist",
+          "value": 650653037
+        },
+        {
+          "label": "Blind App",
+          "value": 650653038
+        },
+        {
+          "label": "Break Through Tech",
+          "value": 650653039
+        },
+        {
+          "label": "BuiltIn Boston",
+          "value": 650653040
+        },
+        {
+          "label": "BuiltIn NYC",
+          "value": 650653041
+        },
+        {
+          "label": "ColorStack",
+          "value": 650653042
+        },
+        {
+          "label": "Campus Event",
+          "value": 650653043
+        },
+        {
+          "label": "Datadog Employee",
+          "value": 650653044
+        },
+        {
+          "label": "Datadog's Careers Page",
+          "value": 650653045
+        },
+        {
+          "label": "Event",
+          "value": 650653046
+        },
+        {
+          "label": "Flexjobs",
+          "value": 650653047
+        },
+        {
+          "label": "Girls Who Code",
+          "value": 650653048
+        },
+        {
+          "label": "Github",
+          "value": 650653049
+        },
+        {
+          "label": "Glassdoor",
+          "value": 650653050
+        },
+        {
+          "label": "Hacker News",
+          "value": 650653051
+        },
+        {
+          "label": "Hired",
+          "value": 650653052
+        },
+        {
+          "label": "Hiretual",
+          "value": 650653053
+        },
+        {
+          "label": "I love Datadog's product!",
+          "value": 650653054
+        },
+        {
+          "label": "Instagram",
+          "value": 650653055
+        },
+        {
+          "label": "JobTeaser",
+          "value": 650653056
+        },
+        {
+          "label": "LinkedIn (Datadog Page)",
+          "value": 650653057
+        },
+        {
+          "label": "LinkedIn (Job Posting)",
+          "value": 650653058
+        },
+        {
+          "label": "Rewriting the Code",
+          "value": 650653059
+        },
+        {
+          "label": "School job board",
+          "value": 650653060
+        },
+        {
+          "label": "The Muse",
+          "value": 650653061
+        },
+        {
+          "label": "Thrive",
+          "value": 650653062
+        },
+        {
+          "label": "Underdog",
+          "value": 650653063
+        },
+        {
+          "label": "Welcome to the Jungle",
+          "value": 650653064
+        },
+        {
+          "label": "Other",
+          "value": 650653065
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

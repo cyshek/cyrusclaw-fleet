@@ -1,0 +1,19 @@
+{
+  "openai": {
+    "kind": "cap_exceeded",
+    "first_seen": "2026-05-05T13:25:00Z",
+    "evidence": "runs/20260505-132352-openai-product-manager-api-infrastructure/04-after-submit.png shows yellow Ashby banner: 'we have set up limits for applications across roles. Candidates may not apply more than 5 times in any 180 day span'. Backfilled manually because run predates ashby.py classifier refactor."
+  },
+  "sierra": {
+    "kind": "spam_rejected",
+    "first_seen": "2026-05-05T13:36:00Z",
+    "evidence": "runs/20260505-133400-sierra-product-manager-agent-studio rejected 16 minutes after Sierra Agent SDK SUCCESS. User observed RED 'flagged as possible spam' banner. Classifier emitted kind=rejected because validation_visible:true masked the spam banner phrase. Manually backfilled to enforce 72h tenant cooldown."
+  },
+  "modal": {
+    "kind": "spam_rejected",
+    "first_seen": "2026-05-05T19:31:00Z",
+    "evidence": "runs/20260505-192937-modal-customer-engineer — User clicked submit in --prep mode (real human click, only 3 fields: name/email/resume). Ashby flagged the application as possible spam. Confirms that --prep alone does NOT defeat Ashby's anti-bot detection; browser fingerprint / fill timing / IP-rep are also signals."
+  }
+}
+
+

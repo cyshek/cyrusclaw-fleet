@@ -1,0 +1,195 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/knowtex/7c657d94-b72a-4af8-9933-4591f2a57cb7",
+  "org": "knowtex",
+  "job_id": "7c657d94-b72a-4af8-9933-4591f2a57cb7",
+  "job_title": "Founding Technical Product Manager",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-10T15:48:22Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 9,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc__systemfield_name"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc__systemfield_email"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc__systemfield_resume"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_d67c48ae-047b-458a-8ad2-64ea49cf1afe",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_d67c48ae-047b-458a-8ad2-64ea49cf1afe"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_e8e7477a-40c3-4d33-a3fb-f47bb8c5538c",
+      "label": "Are you legally authorized to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_e8e7477a-40c3-4d33-a3fb-f47bb8c5538c"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_200fc7ee-26e8-4245-92d6-384f3f65eea0",
+      "label": "Will you now or in the future require visa sponsorship for employment?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_200fc7ee-26e8-4245-92d6-384f3f65eea0"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_5258aa7c-0baf-4c6a-9239-6cd9580c09c7",
+      "label": "What are your compensation expectations for this role?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_5258aa7c-0baf-4c6a-9239-6cd9580c09c7"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_e0057766-890c-409a-8c56-f9b0dd71c466",
+      "label": "What excites you about working at Knowtex?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Knowtex because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Knowtex is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Knowtex while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Knowtex aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Knowtex')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_e0057766-890c-409a-8c56-f9b0dd71c466"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_f5d160fb-9b98-403a-ba10-59f3dabe1816",
+      "label": "Tell us about a project or accomplishment you’re proud of and your role in it",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_f5d160fb-9b98-403a-ba10-59f3dabe1816"
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_e5172a96-d2fa-4c60-acc2-0bdb4bf53b42",
+      "label": "Do you have 2+ years of experience in this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_e5172a96-d2fa-4c60-acc2-0bdb4bf53b42",
+      "match_attempted": true
+    },
+    {
+      "id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_fbf3c16f-cbe8-4a79-bc86-437af0ebede2",
+      "label": "Linkedin profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "f0ecad6c-ccf9-46b9-a67c-23cbec29d0cc_fbf3c16f-cbe8-4a79-bc86-437af0ebede2"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

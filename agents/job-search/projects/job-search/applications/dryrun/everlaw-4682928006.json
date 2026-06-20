@@ -1,0 +1,507 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/everlaw/jobs/4682928006",
+  "org": "everlaw",
+  "job_id": "4682928006",
+  "job_title": "Pre-Sales Solutions Architect II",
+  "job_location": "Oakland, California, United States",
+  "fetched_at": "2026-06-08T17:53:26Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/everlaw/jobs/4682928006?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 26,
+    "filled": 19,
+    "filled_needs_review": 2,
+    "declined": 4,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_8459341006",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_8459342006",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_8459343006",
+      "label": "Please confirm the city AND state you currently reside in:",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_8479707006",
+      "label": "This position will be based in one of our 3 offices: Oakland, CA, New York City or Washington D.C., with a hybrid work schedule of being in office M/W/Th and the option to work from home on Tu/Fr. \n\nAre you located within a commutable distance to one of the 3 offices listed above or willing to relocate if offered the position?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Yes, I live within a commutable distance to one of the 3 offices and can follow the hybrid schedule.', 'I currently do not live near an office but am willing to relocate if offered the position.', 'No, I am only looking for remote roles and am not willing to relocate at this time.']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Yes, I live within a commutable distance to one of the 3 offices and can follow the hybrid schedule.",
+          "value": 17628035006
+        },
+        {
+          "label": "I currently do not live near an office but am willing to relocate if offered the position.",
+          "value": 17628053006
+        },
+        {
+          "label": "No, I am only looking for remote roles and am not willing to relocate at this time.",
+          "value": 17628037006
+        }
+      ]
+    },
+    {
+      "id": "question_8459344006",
+      "label": "Is there a nickname, preferred name, or chosen name we should call you by?",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_8459345006",
+      "label": "Are you authorized to work in the United States without restrictions?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8459346006",
+      "label": "Will you now or in the future require any type of sponsorship for employment visa status (e.g. H1-B status)?)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8459347006",
+      "label": "Have you previously worked in the e-discovery or legal tech/services industry?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8459348006",
+      "label": "Are you subject to a non-compete agreement, non-disclosure agreement, confidentiality agreement, or other similar restrictive covenant agreement that could prohibit your being able to perform the duties associated with the position you are applying for?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.non_compete_agreement",
+      "status": "filled",
+      "matched_rule": "non_compete",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8459349006",
+      "label": "I understand, affirm, and agree that I am strictly prohibited from taking, using, or disclosing any information, electronic or otherwise, that any current or former employer treats or characterizes as trade secret, confidential, or proprietary.\n\nThis prohibition applies to all stages of my relationship with Everlaw, including the application process, the interview process, and if hired, throughout my employment. I further understand and agree that I am strictly prohibited from placing or storing any such information on any of Everlaw’s systems or devices, including but not limited to computers, cell phones, or cloud storage.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Agree",
+      "source": "answer_yes (affirmative synonym: 'Agree')",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Agree",
+          "value": 17563628006
+        }
+      ]
+    },
+    {
+      "id": "question_8459350006",
+      "label": "By agreeing to the affirmations above, I acknowledge my continuing legal obligations to my current and former employers. If I am subject to any prior written agreements that may restrict my ability to perform the duties of the position for which I am applying, I will detail those restrictions in the “Additional Information” section below and provide copies of such agreements to Everlaw.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "",
+      "source": "intentionally blank (optional) | NOTE: '' not literally in options ['Agree']",
+      "status": "filled_needs_review",
+      "matched_rule": "additional_info",
+      "options": [
+        {
+          "label": "Agree",
+          "value": 17563629006
+        }
+      ]
+    },
+    {
+      "id": "question_8459351006",
+      "label": "Additional Information",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null
+    },
+    {
+      "id": "question_8459352006",
+      "label": "​​How did you hear about Everlaw?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": 17563630006
+        },
+        {
+          "label": "Indeed",
+          "value": 17563631006
+        },
+        {
+          "label": "Handshake",
+          "value": 17563632006
+        },
+        {
+          "label": "Google Jobs",
+          "value": 17563633006
+        },
+        {
+          "label": "Google/Web search",
+          "value": 17563634006
+        },
+        {
+          "label": "Repvue",
+          "value": 17563635006
+        },
+        {
+          "label": "Everlaw Recruiter",
+          "value": 17563636006
+        },
+        {
+          "label": "Agency Recruiter",
+          "value": 17563637006
+        },
+        {
+          "label": "Other job board",
+          "value": 17563638006
+        },
+        {
+          "label": "Career Fair or Event",
+          "value": 17563639006
+        },
+        {
+          "label": "Other",
+          "value": 17563640006
+        }
+      ]
+    },
+    {
+      "id": "question_8459353006",
+      "label": "​​If you selected Other, Career Fair, or Agency, please specify here",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='\\u200b\\u200bIf you selected Other, Career Fair, or Agency, please specify here'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_8459353006",
+      "label": "​​If you selected Other, Career Fair, or Agency, please specify here",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='\\u200b\\u200bIf you selected Other, Career Fair, or Agency, please specify here'"
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

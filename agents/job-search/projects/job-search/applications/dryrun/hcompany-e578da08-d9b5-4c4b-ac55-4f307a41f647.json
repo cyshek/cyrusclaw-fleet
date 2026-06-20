@@ -1,0 +1,98 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/hcompany/e578da08-d9b5-4c4b-ac55-4f307a41f647",
+  "org": "hcompany",
+  "job_id": "e578da08-d9b5-4c4b-ac55-4f307a41f647",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "Hybrid Austin",
+  "fetched_at": "2026-05-31T05:57:18Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f51f6499-07d1-4fea-8956-a74673cbd00b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f51f6499-07d1-4fea-8956-a74673cbd00b__systemfield_name"
+    },
+    {
+      "id": "f51f6499-07d1-4fea-8956-a74673cbd00b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f51f6499-07d1-4fea-8956-a74673cbd00b__systemfield_email"
+    },
+    {
+      "id": "f51f6499-07d1-4fea-8956-a74673cbd00b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f51f6499-07d1-4fea-8956-a74673cbd00b__systemfield_resume"
+    },
+    {
+      "id": "f51f6499-07d1-4fea-8956-a74673cbd00b_013d6bfc-c95b-45a7-bbd8-e9d0d892de4a",
+      "label": "Have you applied to that same position in the last 3 months?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_applied_to_company",
+      "status": "filled",
+      "matched_rule": "previously_applied",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f51f6499-07d1-4fea-8956-a74673cbd00b_013d6bfc-c95b-45a7-bbd8-e9d0d892de4a"
+    },
+    {
+      "id": "f51f6499-07d1-4fea-8956-a74673cbd00b_fb3da4cd-1e96-4c1a-ac1f-bda162202916",
+      "label": "To help us prevent fraudulent applications, please send us a 30-second video or voice recording stating your full name and the position you are applying for. ",
+      "type": "input_file",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f51f6499-07d1-4fea-8956-a74673cbd00b_fb3da4cd-1e96-4c1a-ac1f-bda162202916"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

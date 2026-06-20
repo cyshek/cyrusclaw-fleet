@@ -1,0 +1,449 @@
+{
+  "role_url": "https://boards.greenhouse.io/chime/jobs/8535236002?gh_jid=8535236002",
+  "org": "chime",
+  "job_id": "8535236002",
+  "job_title": "Program Manager, Performance Effectiveness",
+  "job_location": "Remote, USA",
+  "fetched_at": "2026-05-25T15:38:49Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/chime/jobs/8535236002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 21,
+    "filled": 15,
+    "filled_needs_review": 0,
+    "declined": 6,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_36400049002",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_36400050002",
+      "label": "How did you hear about this job?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_36400051002",
+      "label": "Are you currently eligible to work legally in the United States of America?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "No",
+          "value": 241100031002
+        },
+        {
+          "label": "Yes",
+          "value": 241100032002
+        }
+      ]
+    },
+    {
+      "id": "question_36400052002",
+      "label": "Do you now or in the future require immigration support or visa sponsorship to continue working in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "No",
+          "value": 241100033002
+        },
+        {
+          "label": "Yes",
+          "value": 241100034002
+        }
+      ]
+    },
+    {
+      "id": "question_36400053002",
+      "label": "Do you acknowledge that this is a hybrid role based in San Francisco and you will be required to come into the office four days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.remote_preference (acks hybrid)",
+      "status": "filled",
+      "matched_rule": "ack_hybrid",
+      "options": [
+        {
+          "label": "No",
+          "value": 241100035002
+        },
+        {
+          "label": "Yes",
+          "value": 241100036002
+        }
+      ]
+    },
+    {
+      "id": "question_36400055002",
+      "label": "Are you currently subject to any agreement with a former employer/third party (such as a non-solicitation or non-compete agreement) that may potentially limit your ability to perform the duties of the position you are applying for? If yes, you may be asked to provide a copy for review. Please note, answering \"yes\" will not disqualify your application from consideration.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.non_compete_agreement",
+      "status": "filled",
+      "matched_rule": "non_compete",
+      "options": [
+        {
+          "label": "No",
+          "value": 241100039002
+        },
+        {
+          "label": "Yes",
+          "value": 241100040002
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4024620002",
+      "label": "I identify my gender as:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4147471002
+        },
+        {
+          "label": "Non-binary/third gender (Inclusive of bigender, agender, androgynous, gender fluid, gender non-conforming)",
+          "value": 4147472002
+        },
+        {
+          "label": "Woman",
+          "value": 4147473002
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4147496002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147475002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024621002",
+      "label": "I identify as:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Cisgender",
+          "value": 4147476002
+        },
+        {
+          "label": "Transgender",
+          "value": 4147477002
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4147497002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147479002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024622002",
+      "label": "I identify my sexual orientation as:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4147480002
+        },
+        {
+          "label": "Bisexual",
+          "value": 4147481002
+        },
+        {
+          "label": "Gay or Lesbian",
+          "value": 4147482002
+        },
+        {
+          "label": "Queer",
+          "value": 4147483002
+        },
+        {
+          "label": "Pansexual",
+          "value": 4147484002
+        },
+        {
+          "label": "Straight/Heterosexual",
+          "value": 4147485002
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4147498002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147487002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024623002",
+      "label": "Veteran Status:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "Yes, I am a veteran",
+          "value": 4147488002
+        },
+        {
+          "label": "No, I am not a veteran",
+          "value": 4147489002
+        },
+        {
+          "label": "I identify as one of more of the classification of protected veterans",
+          "value": 4147490002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147491002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024624002",
+      "label": "I have a disability:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4147492002
+        },
+        {
+          "label": "No",
+          "value": 4147493002
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4147499002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147495002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4024625002",
+      "label": "I identify my race/ethnicity as (please mark all that apply):",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Alaskan Native / American Indian / Indigenous American / Native American (A person having origins in any of the original peoples of North and South America (including Central America), and who maintain tribal affiliation or community attachment.)",
+          "value": 4147500002
+        },
+        {
+          "label": "Black / Of African descent (A person having origins in any of the Black racial groups of Africa.)",
+          "value": 4147501002
+        },
+        {
+          "label": "Central Asian (inclusive  of the peoples of Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, or Uzbekistan)",
+          "value": 4147502002
+        },
+        {
+          "label": "East Asian (inclusive of Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)",
+          "value": 4147503002
+        },
+        {
+          "label": "Hispanic, Latino, Latina, or Latinx (inclusive of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race.)",
+          "value": 4147504002
+        },
+        {
+          "label": "Middle Eastern or North African (inclusive of the peoples of Algeria, Bahrain, Egypt, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon, Libya, Morocco, Oman, Palestine, Qatar, Saudi Arabia, Syria, Tunisia, United Arab Emirates and Yemen)",
+          "value": 4147505002
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander (inclusive of the peoples of Hawaii, Guam, Samoa, or other Pacific Islands)",
+          "value": 4147506002
+        },
+        {
+          "label": "South Asian (inclusive of the peoples of Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka)",
+          "value": 4147507002
+        },
+        {
+          "label": "Southeast Asian (inclusive of Burmese, Cambodian, Filipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+          "value": 4147508002
+        },
+        {
+          "label": "White (A person having origins in any of the original peoples of Europe)",
+          "value": 4147509002
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4147510002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4147511002
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

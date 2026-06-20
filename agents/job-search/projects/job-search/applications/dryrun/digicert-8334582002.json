@@ -1,0 +1,643 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/digicert/jobs/8334582002",
+  "org": "digicert",
+  "job_id": "8334582002",
+  "job_title": "DevOps Product Manager",
+  "job_location": "Sunnyvale, CA",
+  "fetched_at": "2026-06-10T07:54:55Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/digicert/jobs/8334582002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 26,
+    "filled": 21,
+    "filled_needs_review": 1,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_34570348002[]",
+      "label": "What is your highest level of completed education",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Bachelors Degree",
+      "source": "education.degree | smart-matched to option 'Bachelors Degree'",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "High school diploma",
+          "value": 217438978002
+        },
+        {
+          "label": "GED",
+          "value": 217438979002
+        },
+        {
+          "label": "Bachelors Degree",
+          "value": 217438980002
+        },
+        {
+          "label": "Masters Degree",
+          "value": 217438981002
+        },
+        {
+          "label": "PHD",
+          "value": 217438982002
+        }
+      ]
+    },
+    {
+      "id": "question_34570349002",
+      "label": "Are you legally authorized to work in the country in which this role is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36633156002",
+      "label": "This position is not eligible for employment-based visa sponsorship. Applicants must possess unrestricted authorization to work in the United States permanently and independently without the need for current or future sponsorship. Will you now or in the future require any form of work-based sponsorship? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_34570351002",
+      "label": "What state are you currently located in? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Washington   ",
+      "source": "address.state (mapped WA -> Washington) | smart-matched to option 'Washington \\xa0\\xa0'",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Alabama   ",
+          "value": 242186443002
+        },
+        {
+          "label": "Arizona   ",
+          "value": 242186444002
+        },
+        {
+          "label": "Arkansas   ",
+          "value": 242186445002
+        },
+        {
+          "label": "California   ",
+          "value": 242186446002
+        },
+        {
+          "label": "Colorado   ",
+          "value": 242186447002
+        },
+        {
+          "label": "Connecticut   ",
+          "value": 242186448002
+        },
+        {
+          "label": "Florida   ",
+          "value": 242186449002
+        },
+        {
+          "label": "Georgia   ",
+          "value": 242186450002
+        },
+        {
+          "label": "Idaho   ",
+          "value": 242186451002
+        },
+        {
+          "label": "Illinois   ",
+          "value": 242186452002
+        },
+        {
+          "label": "Indiana   ",
+          "value": 242186453002
+        },
+        {
+          "label": "Iowa   ",
+          "value": 242186454002
+        },
+        {
+          "label": "Kansas   ",
+          "value": 242186455002
+        },
+        {
+          "label": "Kentucky   ",
+          "value": 242186456002
+        },
+        {
+          "label": "Maine   ",
+          "value": 242186457002
+        },
+        {
+          "label": "Maryland   ",
+          "value": 242186458002
+        },
+        {
+          "label": "Massachusetts  ",
+          "value": 242186459002
+        },
+        {
+          "label": "Michigan   ",
+          "value": 242186460002
+        },
+        {
+          "label": "Minnesota   ",
+          "value": 242186461002
+        },
+        {
+          "label": "Missouri   ",
+          "value": 242186462002
+        },
+        {
+          "label": "Nevada   ",
+          "value": 242186463002
+        },
+        {
+          "label": "New Hampshire   ",
+          "value": 242186464002
+        },
+        {
+          "label": "New Jersey   ",
+          "value": 242186465002
+        },
+        {
+          "label": "New Mexico   ",
+          "value": 242186466002
+        },
+        {
+          "label": "New York   ",
+          "value": 242186467002
+        },
+        {
+          "label": "North Carolina   ",
+          "value": 242186468002
+        },
+        {
+          "label": "Ohio   ",
+          "value": 242186469002
+        },
+        {
+          "label": "Oklahoma   ",
+          "value": 242186470002
+        },
+        {
+          "label": "Oregon   ",
+          "value": 242186471002
+        },
+        {
+          "label": "Pennsylvania   ",
+          "value": 242186472002
+        },
+        {
+          "label": "Rhode Island   ",
+          "value": 242186473002
+        },
+        {
+          "label": "South Carolina   ",
+          "value": 242186474002
+        },
+        {
+          "label": "South Dakota   ",
+          "value": 242186475002
+        },
+        {
+          "label": "Tennessee   ",
+          "value": 242186476002
+        },
+        {
+          "label": "Texas   ",
+          "value": 242186477002
+        },
+        {
+          "label": "Utah   ",
+          "value": 242186478002
+        },
+        {
+          "label": "Virginia   ",
+          "value": 242186479002
+        },
+        {
+          "label": "Washington   ",
+          "value": 242186480002
+        },
+        {
+          "label": "Washington, DC   ",
+          "value": 242186481002
+        },
+        {
+          "label": "West Virginia   ",
+          "value": 242186482002
+        },
+        {
+          "label": "Wisconsin   ",
+          "value": 242186483002
+        },
+        {
+          "label": "State not listed ",
+          "value": 242186484002
+        }
+      ]
+    },
+    {
+      "id": "question_34570352002",
+      "label": "If the state you currently live in is NOT listed in the question above, please confirm in which you live?",
+      "type": "input_text",
+      "required": false,
+      "value": "WA",
+      "source": "address.state",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": null
+    },
+    {
+      "id": "question_34570353002",
+      "label": "What are your salary expectations for this role?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_34570354002",
+      "label": "Were you referred for this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_34570355002",
+      "label": "If you were referred for this position, please provide the full name of the referrer",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "question_36633157002",
+      "label": "As part of the employment process, all candidates are subject to employment and education verification, as well as a comprehensive background check, in accordance with applicable laws and company policies. I understand that I will be provided with additional information and asked to provide authorization before any such checks are conducted. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "common_form_answers.willing_to_complete_background_check",
+      "status": "filled",
+      "matched_rule": "background_check",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36633158002",
+      "label": "I understand that all information provided in my application must be accurate and truthful, and that any misrepresentation may result in disqualification from the hiring process or termination of employment if discovered after hire. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36725838002",
+      "label": "By providing your phone number and checking this box, you consent to receive text messages from DigiCert and its representatives regarding your job application, recruiting, interview scheduling, job opportunities and related employment communications. You understand that these messages may be sent using an automated telephone dialing system or other technology. Consent is not a condition of employment. \n\nMessage and data rates may apply. Message frequency will vary. You may opt out at any time by replying STOP or informing your recruiter. May we contact you via text message?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone | NOTE: '346-804-0227' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "phone",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

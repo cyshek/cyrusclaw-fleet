@@ -1,0 +1,13 @@
+{
+  "symbol": "XLK",
+  "timeframe": "1Hour",
+  "bar_limit": 80,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "take_profit_pct": 0.023,
+
+  "_take_profit_note": "0.023 (=2.30%) chosen below the parent's median per-trade max runup (+2.60%) so it would have locked in >50% of historical winners, and above the p25 runup (+1.26%) so it does not clip ordinary moves. p75 runup is +4.11%; a target above that would be inert. Take-profit fires only when the parent would otherwise hold; the parent's Donchian-low close always runs first.",
+
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

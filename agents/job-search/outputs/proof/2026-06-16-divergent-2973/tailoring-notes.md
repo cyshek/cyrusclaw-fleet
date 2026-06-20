@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Architected and deployed an internal **AI agent** for drill planning using LLM-powered automation, cutting planning cycle time by **39%** and increasing resilience drill capacity by 21% across Azure's enterprise validation program.
+2. Built a 0→1 internal Resilience Automation Platform with **self-service scheduling** and RAG-backed workflows, reducing operational toil by 30% and scaling the program to sustain 45+ annual drills with $14M+ business impact.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a production-grade program in 4 months with a **94% recovery rate** and surfacing critical hardware defects across live infrastructure.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** with a global OEM partner.
+5. Translated complex technical resilience requirements for non-technical stakeholders across Databricks, Walmart, SAP, and NetApp, driving cross-functional alignment and standardizing workflows across 45+ annual drills.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **AI adoption** for LLM-driven code generation workflows, delivering user training sessions and enablement playbooks that drove utilization across 14 key Azure teams and saved **37 engineering hours** monthly.
+2. Gathered feedback via 11+ structured user interviews with Azure service teams to surface critical feature gaps, directly influencing the product roadmap to prioritize **intent-based YAML generation** capabilities.
+3. Improved AI-powered retrieval quality by implementing semantic search migration and rigorous metadata standards, cutting documentation lookup time by **83%** and establishing reusable standards across the platform.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering teams.
+2. Conducted discovery interviews with 20+ service teams to identify **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths and reduce operational overhead at scale.
+3. Engineered a **Power BI dashboard** to surface automation gaps across 140+ teams, enabling leadership to prioritize high-impact investments and track operational toil reduction in real time.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy for a **2,000+ unit pilot** at zero operational downtime, mapping dependencies across 1,200+ stations and coordinating rollout across IT, Operations, and Engineering teams.
+2. Drove implementation of **automated CI/CD pipelines** by aligning cross-functional stakeholders, accelerating the software deployment cycle by 25% and reducing manual release overhead for robotics firmware.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across the robotics platform team.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, deploying a new CRM process that standardized the sales operations lifecycle.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile for local search performance.
+3. Improved leadership pricing decisions by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks that had eroded per-job contribution across service lines.
+
+## Notes from the rewriter
+- Foregrounded AI agent build + RAG in the FT role to directly mirror JD's 'develop domain-specific AI software using RAG and Agentic AI' requirement.
+- Reframed 2023 intern role around AI adoption, enablement playbooks, and user feedback loops — the three pillars of the JD's AI Enablement section.
+- Dropped weakest bullets within caps to tighten page fit: pro_painters capped at 3, amazon_robotics at 3, microsoft_2022 at 3, microsoft_ft at 5.
+- Skills section reordered to lead with JD-critical AI stack terms (Agentic AI, RAG, LLMs, LangChain) before PM/TPM skills.
+

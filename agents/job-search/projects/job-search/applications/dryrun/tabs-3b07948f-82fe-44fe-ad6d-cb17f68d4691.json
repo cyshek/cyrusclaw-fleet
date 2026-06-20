@@ -1,0 +1,204 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/tabs/3b07948f-82fe-44fe-ad6d-cb17f68d4691",
+  "org": "tabs",
+  "job_id": "3b07948f-82fe-44fe-ad6d-cb17f68d4691",
+  "job_title": "Sales Engineer",
+  "job_location": "New York City, NY",
+  "fetched_at": "2026-06-07T04:29:59Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_name"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_email"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837_e211cb75-052f-46f4-8fca-2c75608472c2",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837_e211cb75-052f-46f4-8fca-2c75608472c2"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_resume"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837__systemfield_location"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837_683c32ab-8156-4d93-b585-221b17ae3ab7",
+      "label": "Linkedin Profile URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837_683c32ab-8156-4d93-b585-221b17ae3ab7"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837_d2215bf3-d1fd-4726-a18c-1c93d136483f",
+      "label": "Will you now or in the future require sponsorship for an employment visa?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837_d2215bf3-d1fd-4726-a18c-1c93d136483f"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837_9a3fb145-8e19-43d3-a97b-0ac712f15e0f",
+      "label": "If you answered “Yes” to the previous question, please indicate the type of visa you would require sponsorship for.",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Not Applicable",
+      "source": "work_authorization.sponsorship_required_* | smart-matched to option 'Not Applicable'",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "H-1B",
+          "value": "H-1B"
+        },
+        {
+          "label": "TN",
+          "value": "TN"
+        },
+        {
+          "label": "L-1",
+          "value": "L-1"
+        },
+        {
+          "label": "O-1",
+          "value": "O-1"
+        },
+        {
+          "label": "J-1",
+          "value": "J-1"
+        },
+        {
+          "label": "H-2B",
+          "value": "H-2B"
+        },
+        {
+          "label": "Employment-Based Green Card (EB-1 / EB-2 / EB-3)",
+          "value": "Employment-Based Green Card (EB-1 / EB-2 / EB-3)"
+        },
+        {
+          "label": "Dependent Work Authorization (H-4, L-2, J-2)",
+          "value": "Dependent Work Authorization (H-4, L-2, J-2)"
+        },
+        {
+          "label": "E-3",
+          "value": "E-3"
+        },
+        {
+          "label": "Not Applicable",
+          "value": "Not Applicable"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837_9a3fb145-8e19-43d3-a97b-0ac712f15e0f"
+    },
+    {
+      "id": "55707f1b-95f5-42c1-9f37-65445bf00837_1fa2fccb-e398-4671-9aae-7c35bf0f23be",
+      "label": "This role requires being onsite at our NYC office the majority of the time. Are you able to meet this requirement?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "55707f1b-95f5-42c1-9f37-65445bf00837_1fa2fccb-e398-4671-9aae-7c35bf0f23be"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,170 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sana-roles/5bc6ac55-783e-445f-845c-10477b134427",
+  "org": "sana-roles",
+  "job_id": "5bc6ac55-783e-445f-845c-10477b134427",
+  "job_title": "Solutions Engineer",
+  "job_location": "New York",
+  "fetched_at": "2026-06-02T06:13:47Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e__systemfield_name",
+      "label": "Welcome to Sana. Please enter your full name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e__systemfield_name",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e__systemfield_email",
+      "label": "Could you please share your email?",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e__systemfield_email",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_4905f991-8e8b-4934-847d-7f55c3bffaa2",
+      "label": "Please share your LinkedIn profile with us",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_4905f991-8e8b-4934-847d-7f55c3bffaa2",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e__systemfield_resume",
+      "label": "Feel free to share your CV with us",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e__systemfield_resume",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_36d69161-0e9e-46da-bb03-4a4d66cb2731",
+      "label": "We are an office-first company and currently only build our team around our offices. Would you be open to relocating to one of our offices (Stockholm, London, or New York)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (matched relocation target 'new york' in label)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_36d69161-0e9e-46da-bb03-4a4d66cb2731",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_b0d82e7a-87bb-434d-abde-2818dce2f331",
+      "label": "Do you now or in the future require any immigration filing/visa sponsorship to be authorised to work? (This includes new sponsorships, renewal/extension of a work permit etc.) Please answer with yes or no. If yes, please state what kind of immigration filing/visa sponsorship",
+      "type": "textarea",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_b0d82e7a-87bb-434d-abde-2818dce2f331",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_9bd9b93f-bf91-4f80-9473-c75c97c89029",
+      "label": "Are you a current citizen, national, or resident of any of the following countries/regions?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "No",
+      "source": "ashby_never_no (Cyrus has no prior US gov employment / no security clearance / not citizen of restricted country)",
+      "status": "filled",
+      "matched_rule": "never_no",
+      "options": [
+        {
+          "label": "Iran  ",
+          "value": "Iran  "
+        },
+        {
+          "label": "Cuba",
+          "value": "Cuba"
+        },
+        {
+          "label": "North Korea",
+          "value": "North Korea"
+        },
+        {
+          "label": "Syria",
+          "value": "Syria"
+        },
+        {
+          "label": "Ukraine",
+          "value": "Ukraine"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_9bd9b93f-bf91-4f80-9473-c75c97c89029",
+      "section": "Applicant Information"
+    },
+    {
+      "id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_e9594e2b-86ec-4373-9f17-b19502cb7f2d",
+      "label": "Are you subject to any non-compete or non-solicitation restrictions at your current or most recent employer? Please answer with yes or no. If yes, please state from which employer.",
+      "type": "textarea",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f59b1683-b987-46db-aa93-cd7292ddcb0e_e9594e2b-86ec-4373-9f17-b19502cb7f2d",
+      "section": "Applicant Information"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

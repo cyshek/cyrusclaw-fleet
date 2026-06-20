@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/higharc/6e1c2e07-b812-4e3e-ae44-9a55ed2c7f3f",
+  "org": "higharc",
+  "job_id": "6e1c2e07-b812-4e3e-ae44-9a55ed2c7f3f",
+  "job_title": "Solutions Engineer",
+  "job_location": "Remote (United States)",
+  "fetched_at": "2026-06-11T07:10:17Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262__systemfield_name"
+    },
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262__systemfield_email"
+    },
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262__systemfield_resume"
+    },
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_057f4315-7286-4e0d-a5aa-7030273a2f89",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_057f4315-7286-4e0d-a5aa-7030273a2f89"
+    },
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_62e783dc-5218-4903-a8ae-5da577260089",
+      "label": "Where are you currently located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['United States', 'Canada', 'South or Central America', 'Europe', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "United States",
+          "value": "United States"
+        },
+        {
+          "label": "Canada",
+          "value": "Canada"
+        },
+        {
+          "label": "South or Central America",
+          "value": "South or Central America"
+        },
+        {
+          "label": "Europe",
+          "value": "Europe"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_62e783dc-5218-4903-a8ae-5da577260089",
+      "match_attempted": true
+    },
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_86469fd3-d2cf-4c88-b926-039df19fd459",
+      "label": "If you are applying for a US-based role, do you require visa sponsorship or renewal to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No, I do not require visa sponsorship or renewal",
+      "source": "work_authorization.sponsorship_required_* | smart-matched to option 'No, I do not require visa sponsorship or renewal'",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes, I require visa sponsorship or renewal",
+          "value": "Yes, I require visa sponsorship or renewal"
+        },
+        {
+          "label": "No, I do not require visa sponsorship or renewal",
+          "value": "No, I do not require visa sponsorship or renewal"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_86469fd3-d2cf-4c88-b926-039df19fd459"
+    },
+    {
+      "id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_df42af54-6eec-449d-b8d7-6bd0e51d7d6d",
+      "label": "Why Higharc?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Higharc because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Higharc is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Higharc while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Higharc aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Higharc')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "fd4da945-3001-44ab-8fa9-5be8dd43f262_df42af54-6eec-449d-b8d7-6bd0e51d7d6d"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

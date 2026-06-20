@@ -1,0 +1,25 @@
+=== cron_tick.sh @ 20260529T050501Z ===
+strategies: buy_and_hold_btc sma_crossover_btc rsi_mean_revert_eth breakout_ltc momentum_sol
+tick rc: 0
+--- tick output ---
+[sma_crossover_btc] BUY 0.001333984 BTC/USD @ $73502.24 | reason: SMA10=73435.15 > SMA30=73385.64
+=== end ===
+--- post rc: 0 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+{
+  "action": "send",
+  "channel": "discord",
+  "dryRun": false,
+  "handledBy": "plugin",
+  "messageId": "1509784639685001249",
+  "payload": {
+    "ok": true,
+    "result": {
+      "messageId": "1509784639685001249",
+      "channelId": "1508503706545557656"
+    }
+  }
+}
+=== posted ===

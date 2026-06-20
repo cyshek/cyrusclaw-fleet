@@ -1,0 +1,9 @@
+# Cover answers — Restate, Forward Deployed Engineer (restate-ac039096-a44d-4ae6-9f57-50ab4b7d97d6)
+
+## Tell us about a time you helped a customer go from early POC to successful production. What were the hardest blockers, and what did you do to unblock them?
+
+At Microsoft, I partnered hands-on with Databricks engineers to take an Azure resilience validation capability from an early proof-of-concept into a production rollout tied to one of our largest enterprise contracts. The PoC worked in a controlled environment, but going to production meant integrating with their actual Kubernetes footprint, observability stack, and networking/security boundaries, and proving it wouldn't disrupt live workloads. I owned the architecture guidance, reference implementations, and rollout playbook that bridged that gap.
+
+The hardest blockers were on the operational edges, not the core logic. First, observability gaps: when drills failed, we couldn't always tell whether it was the customer's workload, the network path, or our orchestration. I worked with their engineers to add instrumentation hooks and wire telemetry into a shared dashboard so failures were attributable in minutes instead of hours. Second, ingress and sovereign-cloud network isolation constraints kept breaking assumptions baked into the PoC. For one $1.5B+ contract scenario I was bridge lead on a network isolation test that forced us to redesign the rollout sequence around their security boundaries rather than ours.
+
+What actually unblocked production was turning each painful one-off into a reusable asset, runbooks, templates, and a self-service scheduling layer, so the next customer didn't hit the same wall. That pattern scaled the program to 45+ annual drills at a 94% recovery rate and fed concrete papercuts back into the engineering team to harden the platform's docs, SDKs, and core surfaces.

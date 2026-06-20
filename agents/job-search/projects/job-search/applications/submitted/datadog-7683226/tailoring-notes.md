@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a platformized **observability** system, standardizing **DevOps monitoring** workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers like Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling that reduced operational toil by **30%** and transitioned execution to a scalable, self-service model adopted across partner service teams.
+3. Delivered technical presentations and product demos of Azure's first proactive resilience testing capability, shipping a rack-level drill program in 4 months with a **94% recovery rate** that surfaced critical hardware defects and established a new model for continuous validation.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud **network isolation test** tied to a **$1.5B+ enterprise contract**, partnering across Windows and Linux systems teams to resolve escalated issues.
+5. Scaled team leverage by architecting an internal **AI agent** for drill planning, restructuring workflows to cut planning cycle time by **39%** and increase drill capacity by 21% while continually building competitive technical knowledge across the stack.
+6. Served as a technical ambassador with a direct line to product teams, channeling customer, partner, and competitive feedback to **prioritize features** and resolve roadblocks during enterprise onboarding and evaluation cycles.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows by delivering hands-on user demos and training sessions, driving utilization across **14 key teams** and saving 37 engineering hours monthly.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, translating customer pain points into prioritized feature gaps for the product team.
+3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered **semantic search** tool, cutting lookup time by **83%** for engineers and support staff.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams.
+2. Mobilized a product strategy to mitigate operational toil during region launches, conducting discovery with **20+ service teams** to identify 81 hours of manual effort per region and building a roadmap to automate critical paths.
+3. Enabled leadership to target automation gaps and prioritize high-impact support by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, surfacing actionable monitoring insights.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations in a distributed Linux/Windows environment.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+3. Drove strategic alignment between IT, Operations, and Engineering teams to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%**.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing sales operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new **CRM** process.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first **go-to-market** strategy, optimizing the website and Google profile.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+
+## Notes from the rewriter
+- Reframed MSFT FT bullets around DevOps monitoring, observability, technical demos, and product-feedback loop to mirror Datadog Sales Engineer language.
+- Surfaced Linux/Windows systems administration and POC/pre-sales themes to match 'Who You Are' qualifications.
+- Added a 6th MSFT FT bullet on technical ambassadorship and feature prioritization to fill the page and hit JD keywords.
+- Used TPM title labels across roles to emphasize technical credibility for a Sales Engineer pivot.
+

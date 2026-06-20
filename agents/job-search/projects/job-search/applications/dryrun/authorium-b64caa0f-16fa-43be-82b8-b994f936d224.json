@@ -1,0 +1,163 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/authorium/b64caa0f-16fa-43be-82b8-b994f936d224",
+  "org": "authorium",
+  "job_id": "b64caa0f-16fa-43be-82b8-b994f936d224",
+  "job_title": "Associate Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-02T03:32:18Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 3,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_name"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_email"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6_d54b8a90-60a6-4d6c-98a7-14752da6d3b6",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6_d54b8a90-60a6-4d6c-98a7-14752da6d3b6"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_location"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6__systemfield_resume"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6_42bb8dde-bd70-4f6d-a60f-a3fe15401e17",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6_42bb8dde-bd70-4f6d-a60f-a3fe15401e17"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6_3741ac87-adf5-4ae4-97d6-bac566f09f6e",
+      "label": "Are you able to work hybrid  from our San Francisco or Washington DC office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6_3741ac87-adf5-4ae4-97d6-bac566f09f6e"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6_4622f28e-3d48-4dc1-96a0-31a95cd7c77f",
+      "label": "Describe a time when a customer asked you to configure a solution in a way that you knew was inefficient or unscalable. How did you guide them toward a better decision without damaging the relationship?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6_4622f28e-3d48-4dc1-96a0-31a95cd7c77f"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6_ca68ca7b-7763-40c2-be6f-deccf932bf6c",
+      "label": "Walk us through a specific complex workflow or process you owned from discovery to configuration. How did you document the logic, and how did you validate that it actually met the business need?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6_ca68ca7b-7763-40c2-be6f-deccf932bf6c"
+    },
+    {
+      "id": "61d2894f-b20b-4854-a6a0-a013000e52f6_8920cbec-c3eb-414b-8b5d-9c5a733d32c8",
+      "label": "Tell us about a time during a project delivery when you realized a deadline was at risk due to a technical blocker or a change in scope. How did you communicate this to stakeholders?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "61d2894f-b20b-4854-a6a0-a013000e52f6_8920cbec-c3eb-414b-8b5d-9c5a733d32c8"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

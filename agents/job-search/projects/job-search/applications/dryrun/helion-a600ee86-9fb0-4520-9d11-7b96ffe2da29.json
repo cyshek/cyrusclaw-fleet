@@ -1,0 +1,263 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/helion/a600ee86-9fb0-4520-9d11-7b96ffe2da29",
+  "org": "helion",
+  "job_id": "a600ee86-9fb0-4520-9d11-7b96ffe2da29",
+  "job_title": "Technical Program Manager, Orion - Reporting to the CTO",
+  "job_location": "Everett, WA",
+  "fetched_at": "2026-06-16T19:17:09Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_name"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_email"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_1ccd31ca-cb6a-4ddd-94e7-736130949432",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_1ccd31ca-cb6a-4ddd-94e7-736130949432"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_b15eefac-e695-44e9-a819-a85023146386",
+      "label": "In order for us to create a more inclusive environment, we would like to know what are your pronouns?",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_b15eefac-e695-44e9-a819-a85023146386"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_resume"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_8022751b-7bc9-4218-8165-35cbcbce8645",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_8022751b-7bc9-4218-8165-35cbcbce8645"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_2d12778f-1af0-435f-b135-dba6868d7494",
+      "label": "Who is your current employer?",
+      "type": "textarea",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_2d12778f-1af0-435f-b135-dba6868d7494"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_75ab7d6f-a7f5-4577-b732-b40f02fa39cb",
+      "label": "Do you currently or have you in the past worked for Helion Energy?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have not worked for Helion",
+      "source": "worked_at_company_before (matched 'i have not worked' -> 'I have not worked for Helion')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "I have not worked for Helion",
+          "value": "I have not worked for Helion"
+        },
+        {
+          "label": "I am a former Helion Employee",
+          "value": "I am a former Helion Employee"
+        },
+        {
+          "label": "I am a current Helion Employee",
+          "value": "I am a current Helion Employee"
+        },
+        {
+          "label": "I am a contractor working at Helion",
+          "value": "I am a contractor working at Helion"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_75ab7d6f-a7f5-4577-b732-b40f02fa39cb"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_1d212400-b034-4937-a138-1aa698507712",
+      "label": "The following questions are intended to help us best support candidates with immigration needs. Are you currently eligible to work in the United States of America?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_1d212400-b034-4937-a138-1aa698507712"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_ea662f11-517d-4566-bf3d-ddabaf763dbe",
+      "label": "Do you now or in the future require visa or green card sponsorship to work for Helion Energy in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_ea662f11-517d-4566-bf3d-ddabaf763dbe"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_c7809855-c995-4348-ad67-031e755300fa",
+      "label": "The Company complies with U.S. export-control laws and may need to determine whether export authorization is required for this role. For export-control purposes only, are you a “U.S. person”? For this purpose, a “U.S. person” includes a U.S. citizen, U.S. national, lawful permanent resident/green card holder, person granted asylum or refugee status, or other protected individual under 8 U.S.C. § 1324b(a)(3).",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.status=us_citizen (INVERTED export Q 'the company complies with u.s. export-co...' -> No)",
+      "status": "filled",
+      "matched_rule": "itar_us_person_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_c7809855-c995-4348-ad67-031e755300fa"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_da11580a-7848-4498-8c8f-c26a8f16b1cb",
+      "label": "If you are not a U.S Person or are currently a citizen of multiple countries, please provide your current countries of citizenship or permanent residency. If you are a U.S Person please enter N/A.",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_da11580a-7848-4498-8c8f-c26a8f16b1cb"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_location",
+      "label": "Where are you currently residing ? Please list it as City, State, Country",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a__systemfield_location"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_ebb8a7e6-f81a-4984-8902-3c97650673c9",
+      "label": "How did you hear about Helion?",
+      "type": "textarea",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_ebb8a7e6-f81a-4984-8902-3c97650673c9"
+    },
+    {
+      "id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_45dd1c98-def0-45f0-bda6-5f407fe3e976",
+      "label": "By typing my legal name below, I certify that I have read and understood the statement and questions above and that the answers that I have provided are true and correct to the best of my knowledge and belief.",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes)",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df12bf77-a8e0-4ef5-b55f-04687c0f0f2a_45dd1c98-def0-45f0-bda6-5f407fe3e976"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

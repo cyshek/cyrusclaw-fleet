@@ -1,0 +1,97 @@
+# Solutions Architect - Data & AI
+
+**Company:** Rescale
+**Location:** Remote (United States)
+**Apply:** https://jobs.ashbyhq.com/rescale/2f43e26a-a331-4648-8523-d83c258bd8a2
+**Ashby Org:** rescale
+**Ashby Job ID:** 2f43e26a-a331-4648-8523-d83c258bd8a2
+
+---
+
+Rescale is pioneering the future of engineering and scientific discovery. As the leader in digital engineering, we’re transforming how products are developed—through intelligent automation, applied AI, data management, and the integration of the world’s largest network of engineering and R&D applications. Joining Rescale means becoming part of a diverse, collaborative, and mission-driven team that’s unlocking faster innovation across industries like aerospace, energy, life sciences, and manufacturing. We’re solving complex challenges that traditional HPC can’t—and we’re seeking passionate, curious minds to help build the next wave of breakthroughs.
+
+We are seeking an experienced ***Solutions Architect*** to join our team.
+
+**About the Forge Team**
+
+The **Forge Team** is Rescale’s innovation engine, a fast-moving, cross-functional group building our next-generation products: **Rescale Data Intelligence** and **Rescale AI Physics**. We partner closely with customers, technical fellows, and product teams to **validate ideas quickly, fail fast, and iterate rapidly**. Our mission is to deliver transformative solutions that enable engineering organizations to harness **data intelligence, AI Physics models, and emerging agentic engineering workflows** to accelerate innovation.
+
+# Role Summary
+
+We are seeking a **Solutions Architect** to join the **Strategic Solutions / GTM team** within Forge. In this role, you’ll work on the **cutting edge of Data Intelligence and AI Physics**, engaging with strategic customers to understand their engineering workflows, shape adoption strategies, and influence product direction.
+
+This is a highly collaborative, customer-facing role where you will **bridge customers, product teams, and field teams**, helping validate hypotheses, accelerate adoption, and deliver value from **next-generation, AI-driven engineering workflows**, including **agentic engineering** and **AI Physics simulation models**.
+
+# Key Responsibilities
+
+- Partner with account teams to engage with **strategic customers**, uncovering workflows and technical needs across simulation, data, and AI.
+
+- Design **end-to-end solutions** leveraging **Rescale Data Intelligence** and **Rescale AI Physics** to enable next-generation engineering workflows.
+
+- Set the **strategic vision** for engagement by aligning Rescale’s **Data Intelligence and AI Physics capabilities** with customer priorities in simulation, AI, and digital engineering.
+
+- Build trusted relationships with technical leaders and stakeholders, from engineers to **technical fellows,** to influence adoption strategies and long-term technology roadmaps.
+
+- Capture and document **customer requirements**, workflow gaps, and adoption blockers.
+
+- Provide structured **field feedback** to Product and Engineering to guide roadmap prioritization and the evolution of **agentic engineering capabilities**.
+
+- Collaborate on **iterative testing cycles** to validate new features and capabilities before GA release.
+
+- Develop technical collateral, including **solution briefs, integration guides, and best practices** for **AI Physics and agentic engineering workflows**.
+
+- Support internal enablement by contributing to **training materials and field readiness resources** for Data & AI.
+
+- Work with Marketing, Sales, and Customer Success to **accelerate adoption** and drive measurable impact of **Data Intelligence** and **AI Physics** solutions.
+
+- Operate as a **strategic overlay** on top of Rescale’s core team, providing **Data & AI guidance** to elevate customer engagements, define **strategic implementation plans**, and ensure successful adoption.
+
+# Qualifications
+
+- **Experience**
+
+- 3–6 years in **solutions architecture, customer success, technical consulting, or product-facing engineering** roles.
+
+- Track record of working effectively in **fast-moving, experimental environments**, where iteration and adaptability are key.
+
+- **Technical & Strategic Expertise**
+
+- Familiarity with **simulation workflows, engineering data management, or AI/ML integration**.
+
+- Understanding of **AI Physics models**, **agentic engineering workflows**, or next-generation digital engineering strategies.
+
+- Ability to translate complex technical workflows into **clear customer value and strategic implementation plans**.
+
+- **Customer Engagement & Communication**
+
+- Skilled in conducting **technical and executive discovery sessions**, building trust with engineering leaders and technical fellows.
+
+- Strong communicator, able to articulate **strategy, technical value, and AI-driven innovation** across audiences from engineers to executives.
+
+- **Product & Adoption Focus**
+
+- A strong business mindset able to drive **customer adoption**, inform product direction, and influence commercial outcomes.
+
+- Experience running pilots or early-access programs that **validate product-market fit** and lead to broader adoption.
+
+- **Mindset & Cultural Fit**
+
+- Strategic thinker who thrives in ambiguity, with a **bias for action and a fail-fast, learn-fast mindset**.
+
+- Passionate about **innovation, AI-driven engineering**, and helping customers adopt cutting-edge technologies.
+
+- **Nice to Have**
+
+- **Domain experience** in one or more of Rescale’s key verticals: **automotive, aerospace, energy, manufacturing, life sciences, or semiconductors**.
+
+# Why This Role Is Unique
+
+- Work on **futuristic, category-defining technology**, including **agentic engineering workflows**, **AI Physics models**, and **data intelligence platforms**.
+
+- Influence product direction at an early stage while seeing your work translate to **real customer impact and revenue growth**.
+
+- Partner directly with some of the **most advanced engineering organizations in the world** to redefine how they innovate.
+
+Be part of a **high-visibility innovation team** where experimentation, iteration, and rapid learning shape Rescale’s future.
+
+Rescale is an equal opportunities employer and welcomes applications from all qualified persons regardless of their race, sex, disability, religion/belief, sexual orientation or age. As part of our standard hiring process for new employees, employment with Rescale will be contingent upon successful completion of a comprehensive background check. *Here at Rescale, we are committed to being transparent in our policies around candidate privacy. For more details on the information Rescale collects in your application, please view the *[*Rescale Applicant Privacy Policy*](https://rescale.com/company/legal/applicant-privacy-notice/)* here.*

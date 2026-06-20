@@ -1,0 +1,105 @@
+{
+  "full": {
+    "span": "2020-12-14..2026-06-03",
+    "years": 5.47,
+    "ret_pct": 625.9,
+    "ann_ret_pct_on_deployed": 43.7,
+    "inst_dd_pct": -26.62,
+    "nav_dd_pct": -45.79,
+    "n_trades": 43,
+    "n_buys": 22,
+    "n_closes": 21,
+    "fp_cont_sharpe": 0.973,
+    "n_ticks": 1373
+  },
+  "in_sample": {
+    "span": "2020-12-14..2024-12-31",
+    "n_bars": 1018,
+    "ret_pct": 156.3,
+    "inst_dd_pct": -16.5,
+    "n_trades": 28,
+    "fp_cont_sharpe": 0.705
+  },
+  "held_out": {
+    "scored_span": "2025-01-02..2026-06-03",
+    "warmup_head_bars": 140,
+    "n_scored_bars": 355,
+    "ret_pct_incl_warmup": 469.6,
+    "ann_ret_pct": 241.83,
+    "inst_dd_pct": -26.62,
+    "n_trades": 15,
+    "fp_cont_sharpe": 1.57
+  },
+  "panel": {
+    "panel_fp_cont_sharpe": 0.716,
+    "total_trades": 65,
+    "final_holdout_window": "2026-recent bull",
+    "final_holdout_fp_alone": 1.831,
+    "per_window": [
+      {
+        "label": "2022-H1 bear",
+        "regime": "bear",
+        "ret_pct": 12.73,
+        "inst_dd_pct": -9.52,
+        "trades": 6,
+        "fp_alone": 0.427
+      },
+      {
+        "label": "2022-Q3 chop",
+        "regime": "chop",
+        "ret_pct": 15.13,
+        "inst_dd_pct": -0.83,
+        "trades": 2,
+        "fp_alone": 0.464
+      },
+      {
+        "label": "2023-H1 recovery",
+        "regime": "bull",
+        "ret_pct": 34.55,
+        "inst_dd_pct": -16.5,
+        "trades": 7,
+        "fp_alone": 0.685
+      },
+      {
+        "label": "2023-Q3 chop",
+        "regime": "chop",
+        "ret_pct": -6.02,
+        "inst_dd_pct": -16.5,
+        "trades": 20,
+        "fp_alone": 0.296
+      },
+      {
+        "label": "2024-Q2 bull",
+        "regime": "bull",
+        "ret_pct": 113.32,
+        "inst_dd_pct": -18.75,
+        "trades": 10,
+        "fp_alone": 1.234
+      },
+      {
+        "label": "2025-Q1 tariff bear",
+        "regime": "bear",
+        "ret_pct": -31.51,
+        "inst_dd_pct": -26.62,
+        "trades": 4,
+        "fp_alone": -1.053
+      },
+      {
+        "label": "2025-Q3 bull",
+        "regime": "bull",
+        "ret_pct": 37.97,
+        "inst_dd_pct": -26.62,
+        "trades": 5,
+        "fp_alone": 0.75
+      },
+      {
+        "label": "2026-recent bull",
+        "regime": "bull",
+        "ret_pct": 295.72,
+        "inst_dd_pct": -16.67,
+        "trades": 11,
+        "fp_alone": 1.831
+      }
+    ]
+  }
+}

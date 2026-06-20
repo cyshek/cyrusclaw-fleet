@@ -1,0 +1,199 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/pointclickcare/116ecefc-4316-44ae-87ed-889bd206fca6",
+  "apply_url": "https://jobs.lever.co/pointclickcare/116ecefc-4316-44ae-87ed-889bd206fca6/apply",
+  "org": "pointclickcare",
+  "job_id": "116ecefc-4316-44ae-87ed-889bd206fca6",
+  "job_title": "PointClickCare - Associate Product Manager - Data Projects",
+  "fetched_at": "2026-06-04T10:56:19Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 11,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[7956c432-2259-4372-a675-69148c5aa24a][field0]",
+      "label": "Are you legally authorized to work in the United States for our Company?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "b3ec5fb6-0f51-41fd-a25e-e1bcc693b1b3"
+        },
+        {
+          "label": "No",
+          "value": "5e0cf01b-a344-4277-bb29-1bd2ac8e2b31"
+        }
+      ],
+      "card_text": "Work Eligibility - USA"
+    },
+    {
+      "id": "cards[7956c432-2259-4372-a675-69148c5aa24a][field1]",
+      "label": "Do you now, or will you in the future, require sponsorship for employment visa status (e.g., H-1B visa status, etc.) to work legally for our Company in the United States?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "ff70d393-f4ae-4d01-b215-bbfb77a66a0f"
+        },
+        {
+          "label": "No",
+          "value": "5682e72a-7819-419a-a939-7568b693e5b5"
+        }
+      ],
+      "card_text": "Work Eligibility - USA"
+    },
+    {
+      "id": "cards[5655b5d3-5bc5-4104-b37b-6710f09e7fe7][field0]",
+      "label": "What is your minimum yearly base salary expectation (not including total rewards)?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "card_text": "Salary Expectations"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "required": false,
+      "reason": "portfolio_url is null"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "PointClickCare - Associate Product Manager - Data Projects",
+    "structured_location": true,
+    "has_resume_input": true
+  }
+}

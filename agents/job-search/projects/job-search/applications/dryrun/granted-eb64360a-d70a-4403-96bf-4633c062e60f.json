@@ -1,0 +1,159 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/granted/eb64360a-d70a-4403-96bf-4633c062e60f",
+  "org": "granted",
+  "job_id": "eb64360a-d70a-4403-96bf-4633c062e60f",
+  "job_title": "Agent Product Manager",
+  "job_location": "New York City,  Hybrid",
+  "fetched_at": "2026-06-15T03:23:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5__systemfield_name"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5__systemfield_email"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5__systemfield_resume"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_a2f7d4d5-6965-4ab6-a583-643c7c931106",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_a2f7d4d5-6965-4ab6-a583-643c7c931106"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_8826c875-c135-4fac-84d8-3ec0a0981982",
+      "label": "Why are you a good fit for working at Granted?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Granted because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Granted is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Granted while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Granted aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Granted')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_8826c875-c135-4fac-84d8-3ec0a0981982"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_d52a2d4c-0199-4cbf-98b1-dfcde2cc007f",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_d52a2d4c-0199-4cbf-98b1-dfcde2cc007f"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_0e6e461f-fe3f-40ac-a273-8f67ee18435e",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_0e6e461f-fe3f-40ac-a273-8f67ee18435e"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_6457035f-a439-4660-b873-d6010a08b6e2",
+      "label": "What are your salary expectations for this role?",
+      "type": "textarea",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_6457035f-a439-4660-b873-d6010a08b6e2"
+    },
+    {
+      "id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_0d12eab1-1f78-4a89-827d-23877475aab1",
+      "label": "When are you looking to start your new adventure?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1b1fc8de-13d9-4360-bbcf-c8f0905dd3b5_0d12eab1-1f78-4a89-827d-23877475aab1"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

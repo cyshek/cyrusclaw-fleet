@@ -1,0 +1,288 @@
+{
+  "slug": "stripe-7589234",
+  "wrapper_url": "https://job-boards.greenhouse.io/embed/job_app?for=stripe&token=7589234",
+  "dry_run": false,
+  "events": [
+    {
+      "step": "text_fields",
+      "result": {
+        "first_name": {
+          "ok": true,
+          "value_after": "Cyrus"
+        },
+        "last_name": {
+          "ok": true,
+          "value_after": "Shekari"
+        },
+        "preferred_name": {
+          "ok": true,
+          "value_after": "Cyrus"
+        },
+        "email": {
+          "ok": true,
+          "value_after": "cyshekari@gmail.com"
+        },
+        "phone": {
+          "ok": true,
+          "value_after": "3468040227"
+        },
+        "question_63239386": {
+          "ok": true,
+          "value_after": "https://linkedin.com/in/cyshekari"
+        },
+        "question_63573512": {
+          "ok": true,
+          "value_after": "Microsoft. I've worked there since March 2024 as a Technical"
+        },
+        "question_63573597": {
+          "ok": true,
+          "value_after": "Technical Program Manager."
+        },
+        "question_64191677": {
+          "ok": true,
+          "value_after": "Kirkland"
+        },
+        "location": {
+          "ok": false,
+          "err": "no element"
+        }
+      }
+    },
+    {
+      "step": "country_dropdowns",
+      "result": [
+        {
+          "id": "country",
+          "want": "United States",
+          "got": "+1",
+          "picked": "United States +1"
+        },
+        {
+          "id": "candidate-location",
+          "want": "Kirkland, WA",
+          "got": "Kirkland, Washington, United States",
+          "picked": "Kirkland, Washington, United States"
+        }
+      ]
+    },
+    {
+      "step": "candidate_location",
+      "result": {
+        "ok": true,
+        "already": "Kirkland, Washington, United States"
+      }
+    },
+    {
+      "step": "education_panel",
+      "result": {
+        "ok": true,
+        "found": false,
+        "note": "no education section in DOM (this is fine \u2014 many GH boards omit it)"
+      }
+    },
+    {
+      "step": "phone_iti",
+      "result": {
+        "ok": true,
+        "iti": true,
+        "value_after": "(346) 804-0227",
+        "country": "United States"
+      }
+    },
+    {
+      "step": "decline_demographics",
+      "result": [
+        {
+          "id": "gender",
+          "label": "Gender",
+          "picked": "Decline To Self Identify",
+          "got": "Decline To Self Identify"
+        },
+        {
+          "id": "hispanic_ethnicity",
+          "label": "Are you Hispanic/Latino?",
+          "picked": "Decline To Self Identify",
+          "got": "Decline To Self Identify"
+        },
+        {
+          "id": "veteran_status",
+          "label": "Veteran Status",
+          "picked": "I don't wish to answer",
+          "got": "I don't wish to answer"
+        },
+        {
+          "id": "disability_status",
+          "label": "Disability Status",
+          "picked": "I do not want to answer",
+          "got": "I do not want to answer"
+        }
+      ]
+    },
+    {
+      "step": "gdpr",
+      "result": []
+    },
+    {
+      "step": "country_select",
+      "result": {
+        "selected": "+1"
+      }
+    },
+    {
+      "step": "work_experience_block",
+      "result": {
+        "detected": false,
+        "filled": [],
+        "skipped": [],
+        "errors": []
+      }
+    },
+    {
+      "step": "unplanned_dropdowns_scan",
+      "result": []
+    },
+    {
+      "step": "resume_attempt_0_datatransfer_first",
+      "result": {
+        "ok": true,
+        "err": null,
+        "injected": {
+          "ok": true,
+          "files_after": 1,
+          "name_after": "Cyrus_Shekari_Resume_stripe_7589234_v2.pdf"
+        }
+      }
+    },
+    {
+      "step": "resume_attempt_a_filechooser",
+      "result": {
+        "ok": true,
+        "err": "skipped (attempt-0 already bound)"
+      }
+    },
+    {
+      "step": "verify_resume",
+      "result": {
+        "ok": true,
+        "filename_visible": false,
+        "input_still_in_dom": true,
+        "files_in_input": 1,
+        "expected": "Cyrus_Shekari_Resume_stripe_7589234_v2.pdf",
+        "strict_bound": true
+      }
+    },
+    {
+      "step": "submit",
+      "result": {
+        "ok": true,
+        "label": "Submit application",
+        "invisible_captcha": 1,
+        "bypassed_visible_captcha": true
+      }
+    },
+    {
+      "step": "verification_code_submit",
+      "result": {
+        "ok": true,
+        "filled": [
+          "O",
+          "F",
+          "D",
+          "x",
+          "J",
+          "8",
+          "X",
+          "0"
+        ],
+        "button": "Submit application"
+      }
+    }
+  ],
+  "final_url": "https://job-boards.greenhouse.io/embed/job_app?for=stripe&token=7589234",
+  "iframe_url": "https://job-boards.greenhouse.io/embed/job_app?for=stripe&token=7589234",
+  "has_validity_token": false,
+  "gh_s3_upload": {
+    "enabled": true,
+    "fetch_patched": true,
+    "fetch_patch_result": {
+      "ok": true
+    },
+    "presigned": {
+      "ok": true,
+      "baseUrl": "https://grnhse-prod-jben-us-east-1.s3.amazonaws.com",
+      "key": "stash/applications/resumes/{timestamp}-{unique_id}-e8e284147528895592eb7d51194d6c66"
+    },
+    "upload": {
+      "ok": true,
+      "status": 201,
+      "fileUrl": "https://grnhse-prod-jben-us-east-1.s3.amazonaws.com/stash/applications/resumes/1780469850922-q6nvym5xsdbaxb-e8e284147528895592eb7d51194d6c66",
+      "finalKey": "stash/applications/resumes/1780469850922-q6nvym5xsdbaxb-e8e284147528895592eb7d51194d6c66"
+    },
+    "inject": {
+      "ok": true,
+      "resume_url": "https://grnhse-prod-jben-us-east-1.s3.amazonaws.com/stash/applications/resumes/1780469850922-q6nvym5xsdbaxb-e8e284147528895592eb7d51194d6c66",
+      "resume_url_filename": "Cyrus_Shekari_Resume_stripe_7589234_v2.pdf"
+    },
+    "react_trigger": {
+      "triggered": true,
+      "input_selector": "#resume",
+      "input_found": true,
+      "files_before": 1,
+      "files_after": 1,
+      "native_setter_used": true,
+      "change_dispatched": true,
+      "err": null
+    },
+    "react_trigger_post": {
+      "input_present": false,
+      "files_in_input": 0,
+      "filename_chip_visible": false,
+      "chip_text": null,
+      "react_marker": {
+        "at": 1780469851352,
+        "filename": "Cyrus_Shekari_Resume_stripe_7589234_v2.pdf"
+      }
+    },
+    "submit_seen": null,
+    "submit_mutated": null
+  },
+  "pre_submit": {
+    "submitDisabled": false,
+    "submitText": "Submit application",
+    "grecapErrText": ""
+  },
+  "captcha_presubmit": {
+    "enabled": true,
+    "injected": true,
+    "sitekey": "6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+    "enterprise": true,
+    "token_len": 2425,
+    "inject": {
+      "injected_into": [
+        "g-recaptcha-response",
+        "g-recaptcha-response-100000"
+      ],
+      "created": [
+        "g-recaptcha-response"
+      ],
+      "token_len": 2425
+    },
+    "detect": {
+      "sitekey": "6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+      "page_url": "https://job-boards.greenhouse.io/embed/job_app?for=stripe&token=7589234",
+      "loader_src": "https://www.recaptcha.net/recaptcha/enterprise.js?render=6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+      "enterprise": true,
+      "source": "loader"
+    }
+  },
+  "verification_code_used": "OFDxJ8X0",
+  "outcome": "SUBMITTED",
+  "post_submit": {
+    "grecapErrText": "",
+    "fieldErrs": [],
+    "submitDisabled": null,
+    "conf": true,
+    "url": "https://job-boards.greenhouse.io/embed/job_app/confirmation?for=stripe&token=7589234",
+    "secBoxes": 0
+  }
+}

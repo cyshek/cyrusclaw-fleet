@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned **product definition and multi-quarter roadmap** for Azure's recovery validation platform, scaling a 2-person operation into a platformized **B2B SaaS** system sustaining 45+ annual resilience drills and driving **$14M+ business impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Led **0→1 product development** of an internal Resilience Automation Platform, defining PRDs, success metrics, and self-service scheduling capabilities that **reduced operational toil by 30%** and shifted execution to a scalable, self-serve model.
+3. Pioneered Azure's first **proactive resilience testing** capability by synthesizing customer pain points into a rack-level drill program, shipping in 4 months with a **94% recovery rate** and surfacing critical hardware defects across the fleet.
+4. Drove cross-functional execution across Engineering, Data, and GTM on 14 executive-visibility recovery executions, including bridge-leading a **sovereign-cloud network isolation** test tied to a **$1.5B+ enterprise contract**.
+5. Leveraged **AI-native tooling** (LLM agents, Copilot Studio) to build an internal planning agent that **cut planning cycle time 39%** and **increased drill capacity 21%**, setting a new craft bar for AI-accelerated PM execution.
+6. Partnered with Product Marketing, Sales, and Customer Success to tighten field feedback loops, translating customer security pain points into prioritized roadmap bets and **measurable adoption and retention gains** across enterprise accounts.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for an AI-native code generation tool by running customer demos and enablement across 14 Azure service teams, **saving 37 engineering hours/month** and establishing tight feedback loops back into the roadmap.
+2. Shaped the product roadmap to include **intent-based YAML generation** by leading 11+ customer discovery interviews with Azure service teams, structuring qualitative input into prioritized opportunities and clear product hypotheses.
+3. Improved retrieval quality and adoption by defining metadata standards and migrating documentation onto an **AI-powered semantic search** platform, **cutting lookup time by 83%** for engineering users.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by defining a unified automation prioritization framework and aligning 140+ cross-functional teams behind shared success metrics.
+2. Led discovery with 20+ service teams to quantify **81 hours of manual toil per region launch**, translating findings into a prioritized roadmap of automation investments tied to clear business outcomes.
+3. Shipped a **Power BI analytics dashboard** tracking operational toil across 140+ teams, enabling leadership to make **data-informed prioritization decisions** on automation investments.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Owned the **legacy OS migration** product strategy across 1,200+ stations, mapping technical dependencies and sequencing rollout to achieve **zero operational downtime** during a 2,000+ unit pilot transition.
+2. Facilitated Agile ceremonies (sprint planning, retros, backlog grooming) to resolve **40+ high-priority tickets** and stabilize the developer intake process, partnering closely with engineering on tradeoffs and timelines.
+3. Aligned IT, Operations, and Engineering on **automated CI/CD pipelines**, accelerating software deployment cycles **25%** and improving release quality across robotics fleet software.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. **Increased job bookings 26%** by redesigning the CRM-driven scoping and invoicing lifecycle for 200+ monthly proposals, instrumenting the funnel to track conversion and iterate on customer experience.
+2. **Cut Customer Acquisition Cost 13%** and lifted conversion 2.7% by executing a digital-first GTM strategy, including website and Google Business Profile optimization informed by funnel analytics.
+3. Influenced leadership pricing strategy by analyzing profitability across 1,000+ project records, surfacing margin leaks and recommending **data-informed pricing changes** that improved unit economics.
+
+## Notes from the rewriter
+- Mirrored JD language: product definition, multi-quarter roadmap, AI-native, customer discovery, GTM partnership.
+- Led Microsoft FT with B2B SaaS platform ownership, 0→1 PRDs, and AI-native tooling to match PM II must-haves.
+- Surfaced cybersecurity-adjacent resilience/security work and added 6th FT bullet on GTM partnership to fill the page.
+

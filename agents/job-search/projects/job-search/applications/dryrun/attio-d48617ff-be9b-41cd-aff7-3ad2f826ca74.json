@@ -1,0 +1,218 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/attio/d48617ff-be9b-41cd-aff7-3ad2f826ca74",
+  "org": "attio",
+  "job_id": "d48617ff-be9b-41cd-aff7-3ad2f826ca74",
+  "job_title": "Solutions Engineer [Pre and Post-Sales] - Mid-Market",
+  "job_location": "New York",
+  "fetched_at": "2026-05-31T03:09:47Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_name",
+      "section": "Personal Information"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_email",
+      "section": "Personal Information"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_6519e647-ef30-4f54-af4d-86bc0f4f2b04",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_6519e647-ef30-4f54-af4d-86bc0f4f2b04",
+      "section": "Personal Information"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_location",
+      "section": "Personal Information"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_resume",
+      "label": "CV/Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa__systemfield_resume",
+      "section": "Personal Information"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_89b76b31-d1f6-4281-bd59-0cfd33b1617d",
+      "label": "Optional Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_89b76b31-d1f6-4281-bd59-0cfd33b1617d",
+      "section": "Personal Information"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_22e77eb2-8d37-420b-bf67-d70b2de9640e",
+      "label": "Do you currently have the right to work in the location in which you have applied?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes, I have ongoing right to work', 'Yes, although I may need support from Attio in the future', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes, I have ongoing right to work",
+          "value": "Yes, I have ongoing right to work"
+        },
+        {
+          "label": "Yes, although I may need support from Attio in the future",
+          "value": "Yes, although I may need support from Attio in the future"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_22e77eb2-8d37-420b-bf67-d70b2de9640e",
+      "section": "Right to work",
+      "match_attempted": true
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_fd545d0b-a958-4cb9-9b26-48be8ac8710c",
+      "label": "How did you hear about Attio? ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Event",
+          "value": "Event"
+        },
+        {
+          "label": "Google",
+          "value": "Google"
+        },
+        {
+          "label": "Investor Job board",
+          "value": "Investor Job board"
+        },
+        {
+          "label": "Job Board (e.g. Welcome To The Jungle)",
+          "value": "Job Board (e.g. Welcome To The Jungle)"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Newsletter",
+          "value": "Newsletter"
+        },
+        {
+          "label": "Podcast",
+          "value": "Podcast"
+        },
+        {
+          "label": "Slack Community",
+          "value": "Slack Community"
+        },
+        {
+          "label": "X.com",
+          "value": "X.com"
+        },
+        {
+          "label": "Referral (Friend, Coworker)",
+          "value": "Referral (Friend, Coworker)"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_fd545d0b-a958-4cb9-9b26-48be8ac8710c",
+      "section": "Awareness"
+    },
+    {
+      "id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_79f6a4f8-6569-4d5a-b641-f898a50c333a",
+      "label": "I have read, understand and accept the content of Attio's privacy notice and consent to the processing of my data as part of this application",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "76747c9e-f323-4ddf-b223-ca7f1b5722fa_79f6a4f8-6569-4d5a-b641-f898a50c333a",
+      "section": "Privacy Policy"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

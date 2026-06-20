@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new standard for continuous validation at scale.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, aligning engineering, compliance, and partner stakeholders.
+5. Scaled team leverage through **AI-driven automation**, building an internal AI agent and restructuring planning workflows to cut planning cycle time by 39% and increase drill capacity by 21%, eliminating repetitive work without sacrificing rigor.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across Azure, running structured demos and training sessions that drove utilization across 14 key engineering teams and saved **37 engineering hours** monthly in developer toil.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ discovery interviews with Azure service teams, surfacing critical feature gaps and translating raw user pain into prioritized backlog items.
+3. Accelerated data retrieval and improved documentation quality by migrating to an **AI-powered semantic search** tool with rigorous metadata standards, cutting average lookup time by 83% across internal engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ service teams across engineering and operations.
+2. Mobilized a product strategy to reduce launch toil by running structured discovery with 20+ service teams, identifying **81 hours of manual effort** per region, and building a roadmap to automate the highest-impact critical paths.
+3. Enabled leadership to target automation gaps and prioritize high-impact investments by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, turning fragmented data into a single actionable view.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping software and hardware dependencies across 1,200+ stations, and coordinating rollout across IT and Operations.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **resolving 40+ high-priority tickets** by rigorously prioritizing the backlog and stabilizing the developer intake process for the embedded robotics engineering team.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release overhead for a fleet of 2,000+ robotic units.
+4. Produced integration documentation and dependency maps that served as the technical reference for a cross-functional migration spanning three internal teams, ensuring **repeatable, auditable** rollout of the new OS at scale.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end sales operations, managing scoping and invoicing workflows for 200+ monthly proposals through a new CRM process that cut proposal turnaround time and improved close rates.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website, Google Business profile, and paid search targeting for local service demand.
+3. Improved leadership pricing accuracy by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering data-backed recommendations that tightened pricing models across service lines.
+
+## Notes from the rewriter
+- Mirrored Sendbird/Delight.ai JD language throughout: 'agentic workflows,' 'AI-driven automation,' 'discovery,' 'self-service,' 'scalable model,' 'technical narrative,' and 'integration workflows.'
+- Reframed Microsoft FT AI agent bullet to foreground agentic tooling and workflow automation, directly echoing the JD's emphasis on using AI natively to eliminate repetitive SE work.
+- Added a fourth Amazon Robotics bullet (within cap) featuring 'integration documentation' and 'auditable rollout' to signal SE-relevant technical depth and structured pre-sales communication skills.
+- All bullets verified ≤290 chars; targeted 250–285 range for full 2-line visual density without overflow.
+

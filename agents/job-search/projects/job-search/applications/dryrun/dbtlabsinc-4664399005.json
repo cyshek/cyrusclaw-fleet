@@ -1,0 +1,507 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/dbtlabsinc/jobs/4664399005",
+  "org": "dbtlabsinc",
+  "job_id": "4664399005",
+  "job_title": "Customer Solutions Architect (Austin)",
+  "job_location": "Austin, Texas",
+  "fetched_at": "2026-05-07T22:40:34Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/dbtlabsinc/jobs/4664399005?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 25,
+    "filled": 17,
+    "filled_needs_review": 1,
+    "declined": 5,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_8421188005",
+      "label": "Are you currently based in Austin, TX? If not, are you willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8421189005",
+      "label": "Do you have current authorization to work in the country of this job post without requiring visa sponsorship, now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8421190005",
+      "label": "Do you have knowledge of data warehouse architecture or have worked with data modeling/ETL?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have knowledge of data warehouse architecture or have worked with data modeling/ETL?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8421191005",
+      "label": "How would you rate your SQL expertise below?\n ",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How would you rate your SQL expertise below?\\n '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_8421192005",
+      "label": "Why is dbt Labs and this role appealing to you? ",
+      "type": "input_text",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at dbt Labs because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about dbt Labs is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to dbt Labs while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, dbt Labs aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='dbt Labs')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_8421193005",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_8421194005",
+      "label": "What is your preferred last name? If your legal last name and preferred last name are the same please input your legal last name. ",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_8421195005",
+      "label": "What is your preferred first name? If your legal first name and preferred first name are the same please input your legal first name. ",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "demographic_question_4011324005",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4067828005
+        },
+        {
+          "label": "Non-binary",
+          "value": 4067824005
+        },
+        {
+          "label": "Woman",
+          "value": 4067822005
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4067820005
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4067818005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4011321005",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4067815005
+        },
+        {
+          "label": "East Asian",
+          "value": 4067813005
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4067811005
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4067809005
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 4067808005
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4067807005
+        },
+        {
+          "label": "South Asian",
+          "value": 4067806005
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4067804005
+        },
+        {
+          "label": "White or European",
+          "value": 4067802005
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4067800005
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4067798005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4011319005",
+      "label": "How would you describe your sexual orientation? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4067796005
+        },
+        {
+          "label": "Bisexual and/or pansexual",
+          "value": 4067794005
+        },
+        {
+          "label": "Gay",
+          "value": 4067792005
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4067790005
+        },
+        {
+          "label": "Lesbian",
+          "value": 4067789005
+        },
+        {
+          "label": "Queer",
+          "value": 4067788005
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4067786005
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4067784005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4011317005",
+      "label": "Do you identify as transgender?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4067781005
+        },
+        {
+          "label": "No",
+          "value": 4067780005
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4067779005
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4067778005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4011316005",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4067776005
+        },
+        {
+          "label": "No",
+          "value": 4067774005
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4067772005
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4067770005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4011314005",
+      "label": "Are you a veteran or active member of the United States Armed Forces?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 4067768005
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4067767005
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4067765005
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4067763005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_8421190005",
+      "label": "Do you have knowledge of data warehouse architecture or have worked with data modeling/ETL?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have knowledge of data warehouse architecture or have worked with data modeling/ETL?'"
+    },
+    {
+      "id": "question_8421191005",
+      "label": "How would you rate your SQL expertise below?\n ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='How would you rate your SQL expertise below?\\n '"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_8421190005",
+      "label": "Do you have knowledge of data warehouse architecture or have worked with data modeling/ETL?",
+      "reason": "no LABEL_RULES match for label='Do you have knowledge of data warehouse architecture or have worked with data modeling/ETL?'"
+    },
+    {
+      "id": "question_8421191005",
+      "label": "How would you rate your SQL expertise below?\n ",
+      "reason": "no LABEL_RULES match for label='How would you rate your SQL expertise below?\\n '"
+    }
+  ]
+}

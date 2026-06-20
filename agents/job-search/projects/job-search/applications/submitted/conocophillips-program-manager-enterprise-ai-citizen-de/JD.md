@@ -1,0 +1,141 @@
+# Program Manager – Enterprise AI Citizen Development Enablement
+
+**Company:** ConocoPhillips
+**Location:** Houston, TX
+**Apply:** https://conocophillips.wd1.myworkdayjobs.com/External/job/Houston-TX/Program-Manager---Enterprise-AI-Citizen-Development-Enablement_REQ-006145/apply
+**Workday tenant:** conocophillips
+**Req ID:** Program-Manager-Enterprise-AI-Citizen-De
+**Posted on:** Posted 8 Days Ago
+**Submit mode:** MANUAL (Workday auto-submit not implemented)
+
+---
+
+Welcome to ConocoPhillips, where innovation and excellence create a platform for opportunity and growth. Come realize your full potential here.
+
+**Who We Are **
+
+We are one of the world’s largest independent exploration and production companies, based on proved reserves and production of liquids and natural gas. With operations and activities in 13 countries, we explore for, develop, and produce crude oil and natural gas globally. We are challenged with an important job to safely find and deliver energy to the world. Our employees are critical to our success, and with them we power civilization. 
+
+We’re grounded by our SPIRIT Values – safety, people, integrity, responsibility, innovation, and teamwork. These values position us to deliver strong performance in a dynamic business – but not at all costs. We believe it’s not just what we do – it’s how we do it – that sets us apart.
+
+**Fostering an Inclusive Work Environment**
+
+To deliver superior performance, we create an environment that respects the contributions and differences of every individual. Wherever possible, we use these differences to drive competitive business advantage, personal growth and, ultimately, create business success.
+
+**Job Summary**
+
+The Program Manager will lead the transformation of the citizen development program into an enterprise AI enablement capability for our global organization, enabling business-led innovation by empowering citizen developers and scaling AI tools and solutions across the enterprise. In doing so, this role will drive cross-functional collaboration across Digital Technology, HR L&D, Business Units, functions, and external partners to deliver structured, business-aligned solutions, while leading AI community engagement and organizational enablement efforts.
+
+This role is about more than technology; it’s about enabling smarter decisions, fostering an innovative culture, and ensuring responsible use of AI across our global operations, while maintaining a strong understanding of AI platforms, tools, and solution development practices to effectively guide and scale enterprise adoption.
+
+This position is based in Houston, TX.
+
+**Position Overview**
+
+**Your responsibilities may include: **
+
+- Lead the transformation of the enterprise citizen development and AI enablement initiatives across business and technology teams
+
+- Collaborate with Digital Technology, HR L&D, Cyber Security, Legal, business units, functions, and external partners to align technology solutions with business objectives
+
+- Drive platform adoption and establish scalable, repeatable enterprise wide operational processes
+
+- Serve as a central point of coordination between business and technology teams to ensure successful delivery of AI and digital transformation programs
+
+- Develop and maintain governance frameworks, and AI guardrails to support responsible AI practices
+
+- Manage the full lifecycle process of the AI user development including intake, use case development, deployment, adoption, and decommissioning
+
+- Coordinate AI use case portfolio management, including prioritization, execution tracking, and providing guidance on AI tools and solution approaches
+
+- Develop and own performance metrics, and reporting processes to measure adoption, effectiveness, and value realization
+
+- Lead enablement efforts through training programs, workshops and community engagement initiatives
+
+- Facilitate cross-functional communication and stakeholder engagement to support organizational alignment and change management
+
+- Partner with third-party providers to support platform implementation and operational success
+
+- Ability to lead small teams
+
+- Support continuous improvement initiatives by identifying opportunities for process optimization and operational efficiency
+
+- Stay informed on emerging AI technologies, enterprise trends, and industry best practices to drive innovation and strategic growth
+
+**Success Profile:**
+
+To thrive in this role, you’ll demonstrate the following leadership competencies:
+
+- **Accountability & Integrity:** Takes ownership of actions and outcomes, follows through on commitments, and demonstrates sound judgment and professionalism
+
+- **Results Orientation:** Drives measurable outcomes through effective prioritization, execution, and goal setting
+
+- **Decision-Making:** Navigates complex, ambiguous environments by making timely, well-informed decisions and driving alignment across diverse stakeholders
+
+- **Collaboration**: Builds strong partnerships across technical, functional, and business teams, using strategic influence to drive alignment and advance initiatives in a matrixed environment
+
+**Basic Qualifications **
+
+- Legally authorized to work in the United States
+
+- Bachelor’s degree or higher or foreign equivalent in Business, Technology, Computer Science, Engineering, or other related field
+
+- 5 or more years of experience of program management or digital transformation
+
+- 3 or more years of experience working within an IT organization or working across business and technology teams, including IT, Cybersecurity, Data, or related functions
+
+- 3 or more years of experience with AI technologies, AI governance, and responsible AI practices
+
+- 3 or more years of experience communicating with stakeholder management
+
+- Intermediate level of knowledge leading cross-functional teams and collaborating with business units, HR, IT, security and third-party providers
+
+- Intermediate level of knowledge with enablement programs, training initiatives, and community engagement
+
+- Intermediate level of knowledge in organizational leadership
+
+- Intermediate level of knowledge using AI tools and solutions (e.g., Microsoft suite of Copilot’s, GitHub Copilot, or similar)
+
+**Preferred Qualifications: **
+
+- Oil and gas industry experience
+
+- Familiarity with governance frameworks, compliance standards, data privacy, and risk management
+
+- Strong understanding of Generative AI, Responsible AI, and AI governance frameworks
+
+- Experience working with enterprise AI tools such as Microsoft’s Copilot suite of tools, Azure AI, Glean, Power BI, Power Apps, Snowflake Cortex Code, AI coding platforms or similar platforms
+
+- Strategic mindset with strong problem-solving and execution skills
+
+**Apply By:** 
+
+Jun 18, 2026
+
+**Sponsorship: **
+
+ConocoPhillips’ sponsorship for employment authorization in the U.S. is NOT available for this position.
+
+**Benefits Overview**
+
+ConocoPhillips offers a competitive and comprehensive benefits package designed to support your well-being and career growth:
+
+- **Taking Care of Your Health & Wellness**: Medical, dental, vision, mental health support, and wellness programs.
+
+- **Supporting and Building Financial Security**: Competitive base pay, annual performance bonuses, and retirement savings plans.
+
+- **Promoting Work-Life Balance**: Paid time off, paid parental leave, and family support resources.
+
+- **Offering Career Development**: Access to training, mentoring, and internal career mobility tools.
+
+- **Guiding Recognition & Inclusion**: Peer-nominated awards, inclusive culture, and employee resource groups.
+
+**Why ConocoPhillips**
+
+At ConocoPhillips, we believe our people power the future of energy. We’re committed to creating a workplace where employees feel valued, supported, and inspired to grow—professionally and personally.
+
+We don’t just offer jobs—we offer meaningful careers in a company that values how we work as much as what we achieve.
+
+**EEO: **
+
+In the US, ConocoPhillips is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, national origin, age, disability, veteran status, gender identity or expression, genetic information, or any other legally protected status.

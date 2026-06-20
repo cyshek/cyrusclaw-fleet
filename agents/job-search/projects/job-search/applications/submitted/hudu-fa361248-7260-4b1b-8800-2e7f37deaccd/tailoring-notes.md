@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned full lifecycle of Azure resilience features, scaling a 2-person effort into a platformized system that sustains **45+ annual drills** and drove **$14M+ business impact** across enterprise customers like Databricks, Walmart, SAP, and NetApp.
+2. Drove 0→1 product vision and strategy for an internal Resilience Automation Platform, writing PRDs and self-service scheduling specs that **cut operational toil 30%** and shifted execution to a scalable model.
+3. Defined and launched Azure's first proactive resilience testing capability in 4 months, delivering a **94% recovery rate**, surfacing critical defects, and establishing a model for continuous validation and rapid iteration.
+4. Partnered cross-functionally across engineering, design, and leadership on 14 recovery executions, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Built an internal AI agent and restructured planning workflows, **cutting planning cycle time 39%** and increasing drill capacity 21% while balancing quick wins against long-term roadmap innovations.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove product adoption for AI-driven code generation workflows, running user demos and training that **scaled utilization across 14 teams** and saved 37 engineering hours monthly in a fast-paced developer environment.
+2. Shaped the roadmap to include intent-based YAML generation by conducting **11+ user interviews** with Azure service teams, translating pain points into prioritized feature definitions and clear user stories.
+3. Improved data integrity and retrieval by setting metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time 83%** and streamlining a complex internal workflow.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by aligning 140+ teams on a unified automation prioritization framework, balancing quick wins with long-term roadmap planning.
+2. Drove product strategy to reduce launch toil, conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a roadmap to automate critical paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps, prioritize high-impact support, and inform roadmap decisions with usage metrics.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining a legacy OS migration strategy and mapping feature dependencies across 1,200+ stations in a customer-driven environment.
+2. Facilitated Agile ceremonies including sprint planning, backlog grooming, and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+3. Drove alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle 25% and ensuring seamless, reliable releases.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM process.
+2. Reduced Customer Acquisition Cost 13% and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to drive measurable adoption.
+3. Improved leadership pricing models by running financial profitability analysis across **1,000+ project records** to identify and seal margin leaks across the business.
+
+## Notes from the rewriter
+- Tightened all bullets toward the lower-mid cap and dropped 2 weakest bullets from microsoft_ft to fit one page while keeping every role at or above its min.
+- Mirrored Hudu JD vocab: full lifecycle ownership, product vision/strategy, roadmap prioritization, PRDs/user stories, Agile ceremonies, SaaS metrics, APIs/integrations.
+- Led with action verbs and surfaced IT/SaaS-relevant skills (integrations, analytics tools, Git, IT infra) to position Cyrus as built for an MSP-focused PM role.
+

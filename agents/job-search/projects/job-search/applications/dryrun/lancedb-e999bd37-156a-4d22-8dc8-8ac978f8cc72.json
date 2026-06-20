@@ -1,0 +1,111 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/lancedb/e999bd37-156a-4d22-8dc8-8ac978f8cc72",
+  "org": "lancedb",
+  "job_id": "e999bd37-156a-4d22-8dc8-8ac978f8cc72",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-31T06:03:44Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_name"
+    },
+    {
+      "id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_email"
+    },
+    {
+      "id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_resume"
+    },
+    {
+      "id": "df76fd27-0846-4dce-a9fd-dc755969861f_4bdc628a-7bb3-4d76-8735-1c41085d41c2",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df76fd27-0846-4dce-a9fd-dc755969861f_4bdc628a-7bb3-4d76-8735-1c41085d41c2"
+    },
+    {
+      "id": "df76fd27-0846-4dce-a9fd-dc755969861f_cef57f64-ef50-4be7-9ded-66e512bc1966",
+      "label": "Are you located in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "address.country=United States",
+      "status": "filled",
+      "matched_rule": "us_based_confirm",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df76fd27-0846-4dce-a9fd-dc755969861f_cef57f64-ef50-4be7-9ded-66e512bc1966"
+    },
+    {
+      "id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "df76fd27-0846-4dce-a9fd-dc755969861f__systemfield_location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

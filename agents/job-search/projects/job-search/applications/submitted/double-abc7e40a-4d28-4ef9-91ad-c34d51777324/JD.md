@@ -1,0 +1,55 @@
+# Product Manager
+
+**Company:** Double
+**Location:** New York Office (or Remote)
+**Apply:** https://jobs.ashbyhq.com/double/abc7e40a-4d28-4ef9-91ad-c34d51777324
+**Ashby Org:** double
+**Ashby Job ID:** abc7e40a-4d28-4ef9-91ad-c34d51777324
+
+---
+
+# About Double
+
+Bookkeepers today are stuck working in excel spreadsheets and homegrown project management solutions to support their clients. Double is on a mission to change that.
+
+With our all-in-one tool, bookkeepers can manage their work, communicate with clients, catch hard-to-find errors, and deliver reports to help their small business customers make smarter strategic decisions. 
+
+Founded in 2021, Double has raised $13M in funding, backed by leading tech investors like Y Combinator and founders at top startups like Lattice, Front, Superhuman, Plaid, and more. Double currently helps thousands of bookkeepers and accountants manage the books for startups and small businesses across the US.
+
+We're growing fast, and we're looking for a Product Manager to ship high-leverage product improvements.
+
+# What You'll Do
+
+- Work with the CEO, CTO, designers, and engineering team to design new features and improve existing features
+
+- Talk to lots of customers and prospects to understand what's important to them
+
+- Talk to the Sales, Customer Success, and Support teams to prioritize features that would help them achieve company goals
+
+- Write lots of tickets and answer clarifying questions from the engineers
+
+- Use product as a lever to drive business outcomes (MRR, new product adoption, etc.)
+
+# Who You Are
+
+- You yearn to ship
+
+- You care intensely about user experience
+
+- You use AI tools daily and are extremely AI-pilled
+
+- Some accounting experience or experience with accounting-related products is required
+
+# Benefits
+
+- Competitive pay and equity
+
+- Unlimited PTO
+
+- Health, dental, and vision insurance
+
+Double provides equal employment opportunities (EEO) to all employees and applicants for employment without regard to race, color, religion, sex, national origin, age, disability, genetics, sexual orientation, gender identity, or gender expression. We are committed to a diverse and inclusive workforce and welcome people from all backgrounds, experiences, perspectives, and abilities.
+
+--
+
+If you've read this job posting and think you're a great fit, there's one more thing you can do to stand out ahead of the pack: answer the loom recording question.

@@ -1,0 +1,185 @@
+        A("```")
+        A("**Key limitation:** YoY growth != analyst consensus surprise. A structurally fast-growing company "
+          "may appear as a perpetual 'large beat' even when it misses consensus; a declining company may "
+          "show 'large miss' even when beating expectations. This proxy is a rougher signal.")
+    A("")
+    A("| Date | Rows | W/Estimate | W/Actual | W/Surprise% |")
+    A("|------|------|-----------|---------|------------|")
+    for d,v in sorted(nprobe.items()):
+        A(f"| {d} | {v['total']} | {v['w_est']} | {v['w_act']} | {v['w_surp']} |")
+    A("")
+    A("### 1c. Yahoo Finance Price Data — STATUS: WORKS")
+    A("")
+    A("- Endpoint: `query1.finance.yahoo.com/v8/finance/chart/{SYM}?interval=1d&events=div,split`")
+    A("- Returns split+div-adjusted closes (use `adjclose`, not raw close)")
+    A("- SPX from 1970; major equities from IPO date; all 5 feasibility tickers pulled cleanly")
+    A("")
+    A("### 1d. Join Feasibility")
+    A("")
+    A("- EDGAR x Yahoo join on ticker + `filed` date: **clean** for all 5 test tickers")
+    A("- Backtest window 2012-2024 provides full XBRL coverage + 3-year YoY lookback buffer")
+    A("- Analyst estimates: free-tier limitation means we're testing YoY proxy, not true PEAD")
+    A("")
+    A("---")
+    A("")
+    A("## 2. Signal Construction")
+    A("")
+    A("```")
+    A("Earnings Surprise (EDGAR YoY proxy):")
+    A("  surprise_pct = (EPS_Q_actual - EPS_same_Q_prior_year) / |EPS_same_Q_prior_year| * 100")
+    A("")
+    A("Classification:")
+    A("  Large Beat  : surprise_pct > +10%   <- TRADE: long 21 days")
+    A("  Beat        : +2% to +10%           <- skip (flat)")
+    A("  In-line     : -2% to +2%            <- skip (flat)")
+    A("  Miss        : -10% to -2%           <- skip (flat)")
+    A("  Large Miss  : < -10%                <- skip (no short rail)")
+    A("")
+    A("Cost model: 5 bps entry + 5 bps exit = 10 bps round-trip")
+    A("  net_return = (exit/entry) * (1 - 0.0005)^2 - 1")
+    A("```")
+    A("")
+    A("### Average Drift by Classification (5-Ticker Sample, 2012-2024)")
+    A("")
+    A("| Classification | N | +5d% | +10d% | +21d% | +63d% |")
+    A("|---------------|---|------|-------|-------|-------|")
+    for cls in ["large_beat","beat","inline","miss","large_miss"]:
+        d = dbc.get(cls,{})
+        n = len(d.get("d5",[]))
+        def m(k): return np.mean(d[k]) if d.get(k) else float("nan")
+        A(f"| {cls} | {n} | {sf(m('d5'))} | {sf(m('d10'))} | {sf(m('d21'))} | {sf(m('d63'))} |")
+    A("")
+    A("*Note: sample sizes small (5 tickers x ~48 events each). Direction more reliable than magnitude.*")
+    A("")
+    A("---")
+    A("")
+    A("## 3. Backtest Results")
+    A("")
+    A("**Universe:** Top 50 S&P 500 by EDGAR+Yahoo availability  ")
+    A("**Hold:** 21 trading days  |  **Cost:** 5 bps/side  |  **Signal:** YoY EPS surprise > +10%")
+    A("")
+    A("### 3a. Full Period: 2012-2024")
+    A("")
+    A("| Metric | PEAD Strategy | SPX Buy-Hold |")
+    A("|--------|--------------|-------------|")
+    if "error" not in sff:
+        beats_str = "YES" if result["beats_spx_raw"] else "NO"
+        A(f"| Total Return | **{result['full_period_return_pct']:.1f}%** | **{spx_f:.1f}%** |")
+        A(f"| Annual Sharpe (sqrt-12 monthly) | {result['full_period_sharpe']:.2f} | ~0.65 (hist.) |")
+        A(f"| Max Drawdown | {result['max_drawdown_pct']:.1f}% | ~-34% (2020) |")
+        A(f"| Win Rate | {result['win_rate_pct']:.1f}% | N/A |")
+        A(f"| Avg Trade Return | {result['avg_trade_ret_pct']:.2f}% | N/A |")
+        A(f"| N Trades | {result['n_trades_full']} | N/A |")
+        A(f"| N Months Active | {sff.get('n_months',0)} | 156 |")
+        A(f"| Beats SPX Raw Return | **{beats_str}** | — |")
+    else:
+        A(f"| Error | {sff.get('error')} | — |")
+    A("")
+    A("### 3b. Walk-Forward: In-Sample vs Out-of-Sample")
+    A("")
+    A("| Period | Trades | Return | Sharpe | Max DD | SPX |")
+    A("|--------|--------|--------|--------|--------|-----|")
+    if "error" not in sfi:
+        A(f"| IS 2012-2018 | {sfi['n_trades']} | {sfi['total_return_pct']:.1f}% | "
+          f"{sfi['annual_sharpe']:.2f} | {sfi['max_drawdown_pct']:.1f}% | {spx_i:.1f}% |")
+    else:
+        A(f"| IS 2012-2018 | 0 | {sfi.get('error','err')} | — | — | {spx_i:.1f}% |")
+    if "error" not in sfo:
+        A(f"| OOS 2019-2024 | {sfo['n_trades']} | {sfo['total_return_pct']:.1f}% | "
+          f"{sfo['annual_sharpe']:.2f} | {sfo['max_drawdown_pct']:.1f}% | {spx_o:.1f}% |")
+    else:
+        A(f"| OOS 2019-2024 | 0 | {sfo.get('error','err')} | — | — | {spx_o:.1f}% |")
+    A("")
+    A("### 3c. Temporal Degradation (3-Year Buckets)")
+    A("")
+    A("| Period | Trades | Return | Sharpe | SPX |")
+    A("|--------|--------|--------|--------|-----|")
+    for p in pstats:
+        A(f"| {p['period']} | {p['n_trades']} | {p['return_pct']:.1f}% | "
+          f"{p['sharpe']:.2f} | {p['spx_return_pct']:.1f}% |")
+    A("")
+    A("*Sharpe trend indicates whether signal is strengthening, stable, or degrading across eras.*")
+    A("")
+    A("---")
+    A("")
+    A("## 4. Honest Verdict")
+    A("")
+    A(f"### `{result['verdict']}`")
+    A("")
+
+    if result["verdict"] == "PROMISING":
+        A("The PEAD signal delivers compelling risk-adjusted returns on top-50 S&P 500 names. "
+          "Sharpe ratio and total return both beat the SPX benchmark. ")
+        A("")
+        A("**However — critical caveats before acting:**")
+        A("1. This uses a YoY proxy, not true analyst consensus. The actual PEAD anomaly requires "
+          "consensus vs. actual EPS surprise data (not available free-tier).")
+        A("2. OOS performance must be validated. If Sharpe degrades materially OOS, the IS period "
+          "may have benefited from structural bull-market bias (large beats in bull run = momentum).")
+        A("3. Top-50 S&P 500 names are among the most arbitraged in the world. Published PEAD research "
+          "shows strongest effects in small/mid-cap, low-coverage stocks.")
+    elif result["verdict"] == "MARGINAL":
+        A("The PEAD signal shows moderate alpha but doesn't clearly dominate SPX on a risk-adjusted basis. "
+          "This is consistent with academic literature:")
+        A("")
+        A("- Simple PEAD in large-cap stocks has been substantially arbitraged since ~2010-2015 "
+          "(Chordia et al. 2014, Green et al. 2017)")
+        A("- The YoY proxy is a rougher signal than true analyst consensus, understating actual alpha")
+        A("- Long-only restriction eliminates the short leg (Large Miss), which historically carries "
+          "comparable or stronger alpha")
+        A("")
+        A("**Residual value likely in:** small/mid-cap names, true analyst consensus data, "
+          "combined with post-earnings revision momentum.")
+    else:  # DEAD
+        A("The PEAD signal generates negligible alpha over this period. Multiple confounders:")
+        A("")
+        A("1. **Arbitrage:** Large-cap PEAD has been heavily arbitraged since ~2015 by event-driven funds")
+        A("2. **Proxy degradation:** YoY comparison is a rough signal; the real PEAD effect "
+          "requires analyst consensus surprise")
+        A("3. **Universe:** Top-50 S&P 500 = most efficient, most followed. PEAD lives in dark corners")
+        A("4. **Long-only bias:** Bull market distorts 'large beat' classification (growth stocks always win YoY)")
+
+    A("")
+    A("### Caveats and Limitations")
+    A("")
+    A("| # | Caveat | Severity |")
+    A("|---|--------|---------|")
+    A("| 1 | YoY proxy != analyst consensus — this is the biggest flaw in the analysis | HIGH |")
+    A("| 2 | Top-50 S&P 500 = most arbitraged universe; PEAD academic evidence is stronger in small-cap | HIGH |")
+    A("| 3 | Long-only only: no short leg on Large Miss, which historically carries comparable alpha | MEDIUM |")
+    A("| 4 | No slippage model: 5bps assumes best execution; real impact around earnings can be 20-50bps | MEDIUM |")
+    A("| 5 | Trade aggregation: monthly average overstates concentration risk in busy earnings weeks | LOW |")
+    A("| 6 | 2020 COVID distorts YoY EPS comparisons (massive misses + beats) | LOW |")
+    A("")
+    A("### Academic Context")
+    A("")
+    A("- **Original PEAD:** Ball & Brown (1968), refined by Foster, Olsen & Shevlin (1984)")
+    A("- **Still profitable as of:** ~2012-2015 in large-caps; ~2018 in small-caps (Chordia et al.)")
+    A("- **Why it persists:** limits to arbitrage (cost of capital, short-sale constraints, announcement uncertainty)")
+    A("- **Why it decays:** algorithmic arbitrage, better analyst coverage, faster price discovery")
+    A("")
+    A("---")
+    A("")
+    A("## 5. Recommended Next Steps (if pursuing further)")
+    A("")
+    A("1. **Get true analyst estimates** — Finnhub free tier has 1 year of history; "
+      "build a forward-collection pipeline from Nasdaq calendar for future quarters")
+    A("2. **Expand universe** — Include Russell 1000 (mid-cap) and small-caps; test separately")
+    A("3. **Shorter hold** — 5-10 day hold captures drift before it decays; test grid 5/10/21d")
+    A("4. **Add short leg** — If account allows, short Large Miss for full L/S portfolio")
+    A("5. **Combine filters** — (a) High analyst dispersion (uncertainty = more drift), "
+      "(b) Low institutional ownership, (c) Acceleration in EPS growth (not just level)")
+    A("6. **Consider PEAD + momentum** — Jegadeesh & Titman (1993) momentum often co-moves with PEAD; "
+      "combine for cleaner signal")
+    A("")
+    A("---")
+    A("")
+    A("*Generated by trading-bench subagent — 2026-06-14*  ")
+    A(f"*Script: `scripts/pead_research.py` | Cache: `cache/pead/` | JSON: `/tmp/pead_result.json`*")
+
+    report_path = os.path.join(REPORTS_DIR, "PEAD_RESEARCH_20260614.md")
+    with open(report_path, "w") as f: f.write("\n".join(L))
+
+
+if __name__ == "__main__":
+    main()

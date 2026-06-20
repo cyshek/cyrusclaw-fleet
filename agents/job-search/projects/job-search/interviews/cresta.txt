@@ -1,0 +1,64 @@
+CRESTA — Interview Prep (Tue May 26, 9:30am PDT)
+Role: Platform Product Manager (R-5114374008) — Remote, US
+Comp: $130K–$190K base + equity
+
+What Cresta is / does:
+- Enterprise AI platform for the contact center. Real-time agent assist, AI agents that handle conversations end-to-end, conversation intelligence + analytics, and live coaching for reps. They train their own models on contact-center data.
+- Born from Stanford AI lab. Chairman/co-founder Sebastian Thrun (Google X, Waymo, Udacity). CEO Ping Wu co-founded Google Contact Center AI + Vertex AI. Co-founder Tim Shi was early at OpenAI.
+- Investors: a16z, Greylock, Sequoia. Customers: Intuit, Cox, Hilton, CarMax. Recognized by Forbes / Bain as a top private AI company.
+- TL;DR: enterprise AI for contact centers — agents + agent-assist + analytics, deployed in regulated, complex enterprise environments.
+
+What this role actually is:
+- Platform PM owning foundational platform capabilities, starting with IAM (auth, authz, user management, access control, auditability).
+- Sits at the center of how the enterprise AI platform scales — who can access what, how systems integrate, how customers operate securely across complex environments.
+- Supports both human workflows AND AI agents (this is the interesting wrinkle — agent identity, agent-level permissions, audit of agent actions).
+- Partners across engineering, security, Solution Architects, implementation teams, other PMs. Integrations with HRIS, CCaaS, ITSM, identity providers (Okta, Azure AD, etc.), SCIM, SSO.
+- Explicitly: "you don't need to be an IAM expert on day one" — they want product judgment, technical fluency, ownership, and bias to action.
+- Likely to expand into other shared platform capabilities over time.
+
+Why I want to leave Microsoft:
+- 2+ years at Azure scaling resilience from a 2-person op into a $14M+ business-impact platform supporting 45+ enterprise drills/yr. I've earned the cross-org execution muscle and want to apply it where the product loop is faster and AI is the whole bet, not one of many.
+- At Microsoft, AI gets layered onto a 20-year-old platform. At Cresta, AI is the product. I want to be in a place where the loop between customer signal and product decision is tight.
+- I want speed. Microsoft moves deliberately; I'm ready for a stage where a smart decision ships in a week, not a quarter — but with the enterprise-grade rigor I'm used to.
+
+Why I want to be a PM (under a TPM title at MSFT, this has effectively been PM work):
+- 0→1'd Azure's Resilience Automation Platform — defined requirements, built self-service capabilities, drove adoption across 14+ internal customer teams.
+- 0→1'd Azure's first proactive rack-level resilience testing capability in 4 months — 94% recovery rate, surfaced critical hardware defects, established a new model for continuous validation.
+- Built an internal AI agent + restructured planning workflows — cut planning-cycle time 39%, increased drill capacity 21%.
+- The part of the job I love most is the PM-shaped part: holding the customer's pain in my head, making decisions under ambiguity, and owning the "what" and "why," not just the "when."
+
+Why Cresta, why this role specifically:
+- Real, deployed enterprise AI in a hard domain — measurable ROI, not a demo.
+- Leadership has actually shipped AI platforms before (Google CCAI + Vertex + OpenAI). I'd learn a lot.
+- Stage is right: post-PMF, real enterprise customers, still small enough that owning IAM end-to-end actually means owning a meaningful surface on day one.
+- Platform PM specifically: enterprise IAM / identity / access for an AI platform is exactly the kind of "boring but load-bearing" surface I've been working on at Azure. Recovery + resilience drills at Azure scale go deep into tenant isolation, sovereign cloud, access control patterns — that translates directly.
+- The agent-identity angle is genuinely interesting: when AI agents are first-class actors in the system, the IAM model has to extend to non-human principals (least privilege for agents, audit trails for agent actions, scoping agent reach). That's a frontier problem most enterprise SaaS hasn't had to solve yet.
+
+Why me — direct mapping to their bar:
+- 3+ yrs technical PM-adjacent (TPM at Azure infra): ✅ comfortable in APIs, system behavior, architecture, tradeoffs, implementation detail with engineering teams.
+- Product judgment under ambiguity: 0→1 platform + 0→1 proactive testing program + sovereign cloud isolation bridge lead. All "systems-level, ambiguous, high-stakes."
+- High ownership / bias to action / strong follow-through: $14M+ business impact, 14 exec-visibility executions, 30% toil reduction, 39% faster planning cycles.
+- Cross-functional: every Azure drill touches Compute, Networking, Storage, Datacenter eng + customer-facing eng at Databricks/Walmart/SAP/NetApp simultaneously.
+- Enterprise readiness instinct: $1.5B+ sovereign cloud contract bridge lead — I know what "enterprise-ready" means in regulated environments (audit, isolation, accreditation).
+
+Honest about IAM specifically:
+- I haven't shipped an IAM product (auth flows, RBAC, SSO, SCIM). I have worked deeply on the enterprise side of access — tenant isolation for sovereign cloud, customer-facing access patterns for $1.5B+ engagements, audit trails for recovery events. I ramp fast on technical adjacent domains and the JD explicitly says day-one IAM expertise isn't required.
+
+Quick stats to drop:
+- $14M+ business impact, 45+ annual drills, 94% recovery rate on first proactive program.
+- 30% toil reduction, 39% faster planning, 21% more drill capacity.
+- $1.5B+ sovereign-cloud contract — bridge lead on isolation test.
+- 0→1 platform + 0→1 proactive program + 0→1 internal AI agent.
+- 14 exec-visibility recovery executions.
+
+Questions I'll ask:
+- IAM is the starting point — what's the next platform capability you'd hand to this role after IAM is in a good place? How long is the runway on IAM alone?
+- Agent identity is a frontier — how is Cresta thinking about IAM for AI agents vs. humans? Where do those models diverge?
+- What's the biggest open product question on IAM today that you'd hand to whoever takes this seat?
+- How does the Platform PM team partner with the AI/model teams? Where do platform tradeoffs (auth, multi-tenancy, audit) get prioritized vs. AI-feature work?
+- How "enterprise-ready" is Cresta today vs. where it needs to be in 12 months? Where are the biggest gaps that platform PM lands on?
+- What does "great" look like 6 months in?
+- What's the partnership look like with Security and Solution Architects in practice?
+
+Things worth being honest about:
+- Strong systems / platform PM with deep enterprise infra experience, ramping fast on the IAM-specific surface. I've proven I ramp quickly on technical adjacent domains (did exactly this with Azure networking and storage for resilience drills).

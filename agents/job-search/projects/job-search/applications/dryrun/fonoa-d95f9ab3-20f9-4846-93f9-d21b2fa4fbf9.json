@@ -1,0 +1,111 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/fonoa/d95f9ab3-20f9-4846-93f9-d21b2fa4fbf9",
+  "org": "fonoa",
+  "job_id": "d95f9ab3-20f9-4846-93f9-d21b2fa4fbf9",
+  "job_title": "Solutions Engineer",
+  "job_location": "New York, US",
+  "fetched_at": "2026-05-30T18:03:36Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "07bde6d9-5742-4129-b370-fd47e6915df8__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "07bde6d9-5742-4129-b370-fd47e6915df8__systemfield_name"
+    },
+    {
+      "id": "07bde6d9-5742-4129-b370-fd47e6915df8__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "07bde6d9-5742-4129-b370-fd47e6915df8__systemfield_email"
+    },
+    {
+      "id": "07bde6d9-5742-4129-b370-fd47e6915df8_11e84ca3-8cea-4341-aa17-2473b62915b8",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "07bde6d9-5742-4129-b370-fd47e6915df8_11e84ca3-8cea-4341-aa17-2473b62915b8"
+    },
+    {
+      "id": "07bde6d9-5742-4129-b370-fd47e6915df8__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "07bde6d9-5742-4129-b370-fd47e6915df8__systemfield_resume"
+    },
+    {
+      "id": "07bde6d9-5742-4129-b370-fd47e6915df8_d635c3b5-2cec-420d-ad22-06cd6e3e3e34",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "07bde6d9-5742-4129-b370-fd47e6915df8_d635c3b5-2cec-420d-ad22-06cd6e3e3e34"
+    },
+    {
+      "id": "07bde6d9-5742-4129-b370-fd47e6915df8_4a90c470-8dbb-4e13-b4df-5ff1ffcd12ee",
+      "label": "Do you require visa sponsorship now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "07bde6d9-5742-4129-b370-fd47e6915df8_4a90c470-8dbb-4e13-b4df-5ff1ffcd12ee"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/pylon/03572ab3-63c0-4979-b099-044e01ff292a",
+  "org": "pylon",
+  "job_id": "03572ab3-63c0-4979-b099-044e01ff292a",
+  "job_title": "Senior Product Manager",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-06-08T22:54:02Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f__systemfield_name"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f__systemfield_email"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f__systemfield_resume"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_c02cf697-e6c8-4aae-bff5-4525e568604f",
+      "label": "Linkedin",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_c02cf697-e6c8-4aae-bff5-4525e568604f"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_56bfd3c9-529c-45e1-9da5-dacb52bd52cc",
+      "label": "Github",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_56bfd3c9-529c-45e1-9da5-dacb52bd52cc"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_6a5fc67f-f1e6-46a4-8b48-7a54fd10c233",
+      "label": "Will you require any sponsorship to work in the US now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_6a5fc67f-f1e6-46a4-8b48-7a54fd10c233"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_9aa794a7-4b39-444a-a5c5-44b1cd7dedf8",
+      "label": "Are you comfortable with an onsite role in either Palo Alto or NYC?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_9aa794a7-4b39-444a-a5c5-44b1cd7dedf8"
+    },
+    {
+      "id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_c650afc8-6181-4c70-8c4e-e58889827c3d",
+      "label": "Do you have experience working with a startup?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "aabadd35-e70a-4e10-9230-31c4c2bb263f_c650afc8-6181-4c70-8c4e-e58889827c3d"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,63 @@
+# Product Manager
+
+**Company:** Mandolin
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/mandolin/84421bfb-dc71-4838-a518-f5b209d69d9a
+**Ashby Org:** mandolin
+**Ashby Job ID:** 84421bfb-dc71-4838-a518-f5b209d69d9a
+
+---
+
+### **About Mandolin**
+
+Nearly every disease will become treatable in our lifetimes. Mandolin is laying the clinical and financial infrastructure to get groundbreaking treatments to patients faster, powered by AI agents.
+
+Mandolin partners closely with the largest healthcare institutions in the US, covering more than $10B drug spend across the country. We're backed by Greylock, SV Angel, Maverick, SignalFire, and the founders of Vercel, Decagon, and Yahoo.
+
+### **Why we need you**
+
+Mandolin’s agent platform is redefining how healthcare and life sciences organizations operate—bringing AI-driven decision-making and automation to some of the most complex, high-stakes workflows in the industry. Our Product Managers sit at the intersection of **deep technical problem solving** and **customer-centric discovery**.
+
+As a Product Manager at Mandolin, you’ll own core modules of our platform while also embedding with customers to understand their most complex workflows. You’ll translate those insights into AI-driven solutions that are reliable, intuitive, and scalable. This is a highly cross-functional, customer-facing role that will shape both Mandolin’s product and the way healthcare organizations operate.
+
+### **What you’ll do**
+
+- Own the **strategy, roadmap, and execution** for one or more core product modules.
+
+- Partner directly with **customers, clinicians, and enterprise stakeholders** to uncover workflows and pain points.
+
+- Translate field insights into **actionable requirements** and a clear roadmap for Engineering and Design.
+
+- Drive the **full product lifecycle**—discovery, design, launch, and iteration—balancing speed with long-term scalability.
+
+- Define and track **success metrics** using data and customer feedback to guide prioritization.
+
+- Collaborate closely with Engineering, Customer Success, and Deployment Strategists to ensure end-to-end delivery and adoption.
+
+- Advocate for customer needs while aligning with Mandolin’s broader company strategy.
+
+### **Must-have experience**
+
+- 5+ years of product management (or equivalent) in **enterprise SaaS, AI/automation, or complex workflows**.
+
+- Proven ability to **own a product area end-to-end**—from strategy through delivery.
+
+- Strong **technical fluency**; able to engage engineers on APIs, integrations, systems tradeoffs, and AI-powered workflows.
+
+- Excellent **customer-facing skills**—adept at embedding with users, conducting research, and translating insights into solutions.
+
+- Strong communicator with **relationship-building skills** across technical and business stakeholders.
+
+- Comfortable operating in **fast-paced, ambiguous, and early-stage environments**.
+
+### **Nice-to-haves**
+
+- Experience building or deploying **AI/LLM-powered products** in production.
+
+- Domain expertise in **healthcare, life sciences, biotech, or enterprise operations**.
+
+- Prior customer-facing experience in **deployment strategy, solutions engineering, or consulting**.
+
+- Familiarity with **agent frameworks** (e.g., AutoGen, CrewAI, LangGraph) or workflow orchestration tools.
+
+- Strong product instincts with a bias toward **experimentation and iteration**.

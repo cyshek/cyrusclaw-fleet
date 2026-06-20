@@ -1,0 +1,544 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/beyondtrust/jobs/7687021",
+  "org": "beyondtrust",
+  "job_id": "7687021",
+  "job_title": "Solutions Engineer",
+  "job_location": "Remote United States | PST/MST ",
+  "fetched_at": "2026-06-04T12:26:27Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/beyondtrust/jobs/7687021?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 23,
+    "filled": 13,
+    "filled_needs_review": 2,
+    "declined": 3,
+    "unresolved": 5,
+    "blockers": 4
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_64794889",
+      "label": "How did you hear about this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn Posting",
+      "source": "how_heard fuzzy 'linkedin' -> 'LinkedIn Posting'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "BeyondTrust Website",
+          "value": 656711739
+        },
+        {
+          "label": "Recruiter",
+          "value": 656711740
+        },
+        {
+          "label": "I was Referred",
+          "value": 656711741
+        },
+        {
+          "label": "LinkedIn Posting",
+          "value": 656711742
+        },
+        {
+          "label": "Job Fair or Networking Event",
+          "value": 656711743
+        },
+        {
+          "label": "Other",
+          "value": 656711744
+        }
+      ]
+    },
+    {
+      "id": "question_64794890",
+      "label": "If you were referred to BeyondTrust please enter their name below",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you were referred to BeyondTrust please enter their name below'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_66664714",
+      "label": "Do you have hands-on experience with Privileged Access Management (PAM) or Identity Security solutions?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66665402",
+      "label": "Which best describes for technical experience? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Which best describes for technical experience? '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Pre-sales Engineering",
+          "value": 712088279
+        },
+        {
+          "label": "DevOps",
+          "value": 712088280
+        },
+        {
+          "label": "Software Engineering",
+          "value": 712088281
+        },
+        {
+          "label": "Implementation",
+          "value": 712088282
+        },
+        {
+          "label": "Technical Support",
+          "value": 712088283
+        },
+        {
+          "label": "Other",
+          "value": 712088284
+        }
+      ]
+    },
+    {
+      "id": "question_65569027",
+      "label": "In which timezone do you reside?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='In which timezone do you reside?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "EST",
+          "value": 712088285
+        },
+        {
+          "label": "CST",
+          "value": 712088286
+        },
+        {
+          "label": "MST",
+          "value": 712088287
+        },
+        {
+          "label": "PST",
+          "value": 712088288
+        }
+      ]
+    },
+    {
+      "id": "question_64794893",
+      "label": "What is your desired OTE range (base + variable)?",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What is your desired OTE range (base + variable)?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_64794894",
+      "label": "Please confirm the basis of your right to work in the country of employment:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['I have the right to work in the country of employment on a permanent basis', 'I have or will obtain a work permit not requiring sponsorship/immigration support from BeyondTrust', 'I will require sponsorship or other immigration support to obtain the right to work in the country of employment']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "I have the right to work in the country of employment on a permanent basis",
+          "value": 656711745
+        },
+        {
+          "label": "I have or will obtain a work permit not requiring sponsorship/immigration support from BeyondTrust",
+          "value": 656711746
+        },
+        {
+          "label": "I will require sponsorship or other immigration support to obtain the right to work in the country of employment",
+          "value": 656711747
+        }
+      ]
+    },
+    {
+      "id": "question_64794895",
+      "label": "Please review and acknowledge BeyondTrust's",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"Please review and acknowledge BeyondTrust's\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Acknowledge/Confirm",
+          "value": 656711748
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_31771",
+      "label": " How would you describe your gender identity? ",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 194294
+        },
+        {
+          "label": "Female",
+          "value": 194295
+        },
+        {
+          "label": "Non-binary/third gender (Inclusive of bigender, agender, androgynous, gender fluid, gender non-conforming)",
+          "value": 194296
+        },
+        {
+          "label": "Transgender",
+          "value": 194297
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 194298
+        },
+        {
+          "label": "I don't wish to self-identify",
+          "value": 194299
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_31772",
+      "label": "How would you describe your racial/ethnic background? ",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Alaskan Native / American Indian / Indigenous American / Native American",
+          "value": 194300
+        },
+        {
+          "label": "Black or of African descent",
+          "value": 194301
+        },
+        {
+          "label": "East Asian (inclusive of Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)",
+          "value": 194302
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 194303
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 194304
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 194305
+        },
+        {
+          "label": "South Asian (inclusive of Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, and Sri Lankan)",
+          "value": 194306
+        },
+        {
+          "label": "Southeast Asian  (inclusive of Burmese, Cambodian, Filipino, Hmong, Indonesian, Laotian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)",
+          "value": 194307
+        },
+        {
+          "label": "White or European",
+          "value": 194308
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 194309
+        },
+        {
+          "label": "I don't wish to self-identify",
+          "value": 194310
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_31774",
+      "label": "Are you a Veteran or an active / reserve member of the Armed Forces or other Military organization ",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 194315
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 194316
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 194317
+        },
+        {
+          "label": "I don't wish to self-identify",
+          "value": 194318
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_41756",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication, and learning?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to self-identify\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 252302
+        },
+        {
+          "label": "No",
+          "value": 252303
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 252306
+        },
+        {
+          "label": "I don't wish to self-identify",
+          "value": 252307
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_64794890",
+      "label": "If you were referred to BeyondTrust please enter their name below",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you were referred to BeyondTrust please enter their name below'"
+    },
+    {
+      "id": "question_66665402",
+      "label": "Which best describes for technical experience? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Which best describes for technical experience? '"
+    },
+    {
+      "id": "question_65569027",
+      "label": "In which timezone do you reside?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='In which timezone do you reside?'"
+    },
+    {
+      "id": "question_64794893",
+      "label": "What is your desired OTE range (base + variable)?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='What is your desired OTE range (base + variable)?'"
+    },
+    {
+      "id": "question_64794895",
+      "label": "Please review and acknowledge BeyondTrust's",
+      "required": true,
+      "reason": "no LABEL_RULES match for label=\"Please review and acknowledge BeyondTrust's\""
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_66665402",
+      "label": "Which best describes for technical experience? ",
+      "reason": "no LABEL_RULES match for label='Which best describes for technical experience? '"
+    },
+    {
+      "id": "question_65569027",
+      "label": "In which timezone do you reside?",
+      "reason": "no LABEL_RULES match for label='In which timezone do you reside?'"
+    },
+    {
+      "id": "question_64794893",
+      "label": "What is your desired OTE range (base + variable)?",
+      "reason": "no LABEL_RULES match for label='What is your desired OTE range (base + variable)?'"
+    },
+    {
+      "id": "question_64794895",
+      "label": "Please review and acknowledge BeyondTrust's",
+      "reason": "no LABEL_RULES match for label=\"Please review and acknowledge BeyondTrust's\""
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

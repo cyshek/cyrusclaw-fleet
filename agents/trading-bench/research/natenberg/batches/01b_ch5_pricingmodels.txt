@@ -1,0 +1,892 @@
+Figure 3-3 In-, at-, and out-of-the-money options.
+
+
+                                  Current underlying price
+
+             In-the-money calls                                Out-of-the-money calls
+
+            Lower exercise prices                               Higher exercise prices
+
+          Out-of-the-money puts                                   In-the-money puts
+
+                              At-the-money calls and puts
+
+
+
+
+Automatic exercise
+At expiration an in-the-money option will always have some intrinsic value. A
+trader can capture this value by either selling the option in the marketplace prior
+to expiration or exercising the option and immediately closing the underlying
+position. When exchange-traded options were first introduced, anyone wish-
+ing to exercise an option was required to formally submit an exercise notice to the
+exchange. If someone forgot to submit an exercise notice for an in-the-money
+option, the option would expire unexercised, and the trader would lose the in-
+trinsic value. This is an outcome that no rational person would accept. Unfortu-
+nately, in the early days of option trading, this occurred occasionally for various
+reasons: perhaps the trader was unaware that he was required to submit an ex-
+ercise notice, perhaps the trader was out of communication with the exchange
+and was therefore unable to submit an exercise notice, or perhaps there was an
+error on the part of the clearing firm in processing the exercise notice.
+     To avoid a situation where an in-the-money option expires unexercised,
+which would be an embarrassment to both the individual trader and the ex-
+change, most exchanges have instituted an automatic exercise policy. The exchange
+will exercise on behalf of the option holder any in-the-money option at expi-
+ration, even if an exercise notice has not been submitted. The criteria for au-
+tomatic exercise may vary from one exchange to another and may also vary
+depending on who holds the option. For example, because of transaction costs,
+it may not be economically worthwhile to exercise an option that is only very
+slightly in the money. Therefore, the exchange may automatically exercise only
+options that are in the money by some predetermined amount. If the auto-
+matic exercise threshold is 0.05, then an option must be in the money by at
+least 0.05 in order for the exchange to exercise the option. If the option is in the
+money by 0.03, a trader may still exercise the option but must do so by submit-
+ting an exercise notice. On the opposite side, if the option is in the money by
+0.06, a trader who feels that the option is not worth exercising may submit a do
+not exercise notice. Otherwise, the exchange will automatically exercise the option
+on the trader’s behalf.
+     Because professional traders and retail customers have different cost
+structures, the exchange may have a different automatic exercise threshold for
+
+
+                          C O N T R A C T s P e C I F I C AT I O N s A N D O P T I O N T e R M I N O L O G Y   35
+     each party. The threshold may be 0.05 for retail customers but only 0.02 for
+     professionals. To determine who is a professional trader and who is not, an ex-
+     change will usually specify the criteria necessary for inclusion in each category.
+
+     Option Margining
+     Depending on the exchange and the type of underlying contract, options can
+     be subject to either stock-type settlement or futures-type settlement. However,
+     once an option trade is made, there are additional risks that the clearinghouse
+     must consider. Is the risk to an option position limited or unlimited? If unlim-
+     ited, how should the clearinghouse protect itself ?
+          When the risk of an option position is limited, the margin that must be de-
+     posited with the clearinghouse will never be greater than the maximum risk to
+     the position. The buyer of an option can never have risk greater than the pre-
+     mium paid for the option, and the clearinghouse will never require a margin
+     deposit greater than this amount. Even if an option position is very complex, as
+     long as there is a maximum risk to the position, there will also be a maximum
+     margin requirement.
+          Some option positions, however, have unlimited risk. For such positions,
+     the clearinghouse must consider the risk associated with a wide variety of out-
+     comes. Once this is done, the clearinghouse can require a margin deposit com-
+     mensurate with the perceived risk of the position. Unlike futures margining,
+     where the clearinghouse sets a fixed margin deposit for each open futures po-
+     sition, there is no single method of determining the margin for a complex op-
+     tion position. However, all methods are risk-based, requiring an analysis of the
+     position’s risk under a broad range of market conditions. In the United States,
+     the Options Clearing Corporation has developed its own risked-based margin-
+     ing system for stock and index options. The most widely used margining sys-
+     tem on futures exchanges is the Standard Portfolio Analysis of Risk (SPAN) system
+     developed by the Chicago Mercantile Exchange. Both margining systems cre-
+     ate an array of possible outcomes with respect to both the underlying price and
+     the perceived speed with which the underlying price can change. The clear-
+     inghouse then uses this array to determine a reasonable margin requirement.5
+
+
+
+
+     5
+      A description of SPAN margining can be found at http://www.cmegroup.com/clearing/risk-management. A
+     description of the risk-based margining system used by the Options Clearing Corporation can be found at http://
+     www.optionsclearing.com/risk-management/margins/.
+
+
+
+36   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+                                                                              4
+Expiration Profit
+and Loss
+
+
+The trader who enters an option market for the first time may find himself sub-
+jected to a form of contract shock. Unlike a trader in equities or futures, whose
+choices are limited to a small number of instruments, an option trader must of-
+ten deal with a bewildering assortment of contracts. With several expiration
+months, with multiple exercise prices available in each month, and with both
+calls and puts at each exercise price, it is not unusual for an option trader to be
+faced with what at first seems like an overwhelming number of different con-
+tracts. With so many choices available, a trader needs some logical method of
+deciding which options actually represent profit opportunities. Which should he
+buy? Which should he sell? Which should he avoid? The choices are so numer-
+ous that a prospective option trader might be inclined to give up in frustration.
+     To begin, a trader might ask a very obvious question: what is an option
+worth? The question may be obvious, but the answer, unfortunately, is not, be-
+cause option prices can be affected by many different market forces. However,
+there is one time in an option’s life when everyone ought to be able to agree on
+the option’s value. At expiration, an option is worth exactly its intrinsic value:
+zero if it is out of the money or the difference between the underlying price and
+the exercise price if it is in the money.
+     Following is a series of underlying prices and the value at expiration for
+two options, a $95 call and $110 put:
+
+ Underlying Price           95 Call                     110 Put
+
+   80                        0                          30
+   85                        0                          25
+   90                        0                          20
+   95                        0                          15
+  100                        5                          10
+
+                                                                                      37
+      Underlying Price                       95 Call                        110 Put
+
+        105                                   10                            5
+        110                                   15                            0
+        115                                   20                            0
+        120                                   25                            0
+        125                                   30                            0
+
+          For the 95 call, if the underlying price at expiration is 95 or below, the call is
+     out of the money and therefore worthless. If, however, the underlying price rises
+     above 95, the 95 call will go into the money, gaining one point in value for each
+     point that the underlying price rises above 95. For the 110 put, if the underlying
+     price is 110 or above, the put is out of the money and therefore worthless. But
+     if the underlying price falls below 110, the 110 put goes into the money, gaining
+     one point in value for each point decline in the underlying price.
+
+
+     Parity Graphs
+
+     For someone who has bought an option, the intrinsic value represents a credit,
+     or positive value. The buyer of the option will be able to buy low and sell high.
+     For someone who has sold an option, the intrinsic value represents a debit, or
+     negative value. The seller of the option will be forced to buy high and sell low.
+     We can use an option’s intrinsic value to draw a graph of the value of an op-
+     tion position at expiration as a function of the price of the underlying contract.
+     Figure 4-1 shows such a graph for a long call position. Below the exercise price,
+     the option has no value. Above the exercise price, the option gains one point in
+     value for each point increase in the underlying price.
+
+     Figure 4-1 Long call.
+
+
+
+
+                                                          Exercise           +1
+                                                           price
+                                                                       +1
+        Position value
+
+
+
+
+                         0
+                                 Lower underlying prices        Higher underlying prices
+
+
+
+
+38   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 4-2 short call.
+
+
+  Position value
+
+
+
+
+                         Lower underlying prices      Higher underlying prices
+                   0
+
+                                                              +1
+                                               Exercise
+                                                price               –1
+
+
+
+
+     Figure 4-2 shows the value of a short call position at expiration. Now, if the
+option is in the money, the value of the position is negative. For every point the
+underlying rises above the exercise price, the position loses one point in value.
+     We can create the same type of expiration graphs for long and short put
+positions, as shown in Figures 4-3 and 4-4. For a long or short put, the value of
+the position is zero if the underlying price is above the exercise price. For a long
+put, the position gains one point for each point decline in the underlying price.
+For a short put, the position loses one point in value for each point decline in
+the underlying price.
+     A parity graph represents the value of an option position at expiration,
+parity being another name for intrinsic value. Because of their shapes, traders
+
+Figure 4-3 Long put.
+
+
+
+
+                                   +1          Exercise
+                                                price
+                                        –1
+  Position value
+
+
+
+
+                   0
+                         Lower underlying prices      Higher underlying prices
+
+
+
+
+                                                          e x P I R AT I O N P R O F I T A N D L O s s   39
+     Figure 4-4 short put.
+
+
+         Position value
+
+
+
+
+                                Lower underlying prices               Higher underlying prices
+                          0
+
+                                                    –1
+                                                            Exercise
+                                              –1             price
+
+
+
+
+     sometimes refer to the four basic parity graphs (long and short call and long
+     and short put) as the hockey-stick diagrams.
+          The four basic parity graphs highlight one of the most important charac-
+     teristics of option trading. Buyers of options have limited risk (they can never
+     lose more than the price of the option) and unlimited profit potential. Sellers of
+     options have limited profit potential (they can never make more than the price
+     of the option) and unlimited risk.1
+          Given the apparently unbalanced risk-reward tradeoff, new option traders
+     tend to have the same reaction: why would anyone do anything other than buy
+     options? The purchase of an option results in a position with limited risk and un-
+     limited profit, which certainly seems more desirable than the limited profit and
+     unlimited risk that result from the sale of an option. Yet, in every option market,
+     there are traders who are willing to sell options. Why are they willing to do this in
+     the face of this apparently unbalanced risk-reward tradeoff? The answer has to
+     do with not just the best and worst that can happen but also with the likelihood
+     of those occurrences. It’s true that someone who sells an option is exposed to un-
+     limited risk, but if the amount received for the option is great enough and the
+     perceived risk is low enough, a trader might be willing to take that risk. In later
+     chapters we will see the very important role probability plays in option pricing.
+
+     slope
+     From the parity graphs, we can see that if an option is out of the money, its value
+     is unaffected by changes in the price of the underlying contract. If the option
+     is in the money, it will either gain or lose value as the underlying price changes.
+
+     1
+      Admittedly, in traditional stock and commodity markets, a put does not represent unlimited profit potential to
+     the buyer nor unlimited risk to the seller because the underlying contract cannot fall below zero. But for practi-
+     cal purposes most traders think of both calls and puts as having unlimited potential value.
+
+
+40   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+The slope of the graph is the change in value of the option position with respect
+to changes in the price of the underlying contract, often expressed as a fraction
+
+                                   change in position value
+                        slope =
+                                  change in underlying price
+
+We can summarize the slopes of the basic positions as follows:
+
+ Position                                            slope
+
+ Long or short any out-of-the-money option              0
+ Long an in-the-money call                            +1
+ Short an in-the-money call                           –1
+ Long an in-the-money put                             –1
+ Short an in-the-money put                            +1
+
+      In addition to parity graphs for individual options, we can also create par-
+ity graphs for positions consisting of multiple options by adding up the slopes
+of the individual options. Figure 4-5 is the parity graph of a position consisting
+of a long call and long put at the same exercise price. We can calculate the to-
+tal slopes as follows:
+
+ Below the exercise price                       slope
+
+ Call is out of the money                        0
+ Put is in the money                            –1
+ Total slope below the exercise price           –1
+
+
+
+ Above the exercise price                       slope
+
+ Put is out of the money                         0
+ Call is in the money                           +1
+ Total slope above the exercise price           +1
+
+The combined position will gain value if the underlying price moves in either
+direction away from the exercise price. The position is typical of many option
+strategies that may be sensitive to the magnitude of movement in the underly-
+ing contract rather than the direction of movement.
+     Many option strategies involve combining options with the underlying
+contract, so we will also want to consider the slope of an underlying position.
+As shown in Figure 4-6, the slope of a long underlying position is always +1,
+and the slope of a short underlying position is always –1. The slopes are con-
+stant regardless of the underlying price. This is an important distinction be-
+tween an option position and an underlying position. Because of the insurance
+
+
+                                                     e x P I R AT I O N P R O F I T A N D L O s s   41
+     Figure 4-5 (a ) Long call and long put at the same exercise price. (b ) Combined position.
+
+
+
+
+                                          Long put     +1           Exercise               +1       Long call
+                                                                     price
+                                                            –1                       +1
+           Position value
+
+
+
+
+                               0
+
+                                            Lower underlying prices            Higher underlying prices
+
+
+                                                                       (a)
+
+
+
+
+                                                       +1           Exercise              +1       Long call
+                                                                     price
+                                                            –1                      +1
+                     Position value
+
+
+
+
+                                      0
+                                             Lower underlying prices         Higher underlying prices
+
+
+                                                                       (b)
+
+
+
+
+     Figure 4-6 Long and short underlying position.
+
+
+                                                                      Long an
+                                                                 underlying contract
+
+
+
+                                                     +1                                    –1
+        Position value
+
+
+
+
+                                                            –1                       +1
+                                            Lower underlying prices          Higher underlying prices
+                            0
+
+                                                            –1                       +1
+
+                                                     –1                                    –1
+
+
+                                                                     Short an
+                                                                 underlying contract
+
+
+
+
+42   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+feature of an option, the parity graph of an option position will always bend at
+the exercise price.
+     Figure 4-7 shows the parity graph of a position that combines two long
+call options at the same exercise price and with a short underlying contract.
+Below the exercise price, the total slope is –1 (0 for the out-of-the-money calls,
+–1 for the short underlying). Above the exercise price, the total slope is +1 (+2
+for the in-the-money calls, –1 for the short underlying contract). This parity
+graph is identical to the position in Figure 4-5, which must mean that the same
+option strategy can be constructed in more than one way. This is an impor-
+tant characteristic of options that we will look at in more detail in Chapter 14.
+Note also that the location of the underlying position is irrelevant to the parity
+graph. Regardless of the price of the underlying, the slope is always either +1
+for a long underlying position or –1 for a short underlying position.
+
+
+Figure 4-7 (a ) Long two calls and short an underlying contract. (b ) Combined position.
+
+
+
+
+                                                                         +2
+                                                                                   Long 2 calls
+                       Short underlying +1              Exercise
+                                                         price
+                                             –1                    +1
+  Position value
+
+
+
+
+                   0
+                                  Lower underlying prices     Higher underlying prices
+
+
+
+
+                                                       (a)
+
+
+
+
+                                             +1         Exercise              +1
+                                                         price
+                                                  –1                    +1
+  Position value
+
+
+
+
+                   0
+                                 Lower underlying prices       Higher underlying prices
+
+
+                                                       (b)
+
+
+
+
+                                                                   e x P I R AT I O N P R O F I T A N D L O s s   43
+          Figure 4-8 is the parity graph of a long call and short put at the same exer-
+     cise price. Below the exercise price, the total slope is +1 (0 for the long out-of-
+     the-money call, +1 for the short in-the-money put). Above the exercise price,
+     the total slope is also +1 (+1 for the in-the-money call, 0 for the out-of-the-
+     money put). The slope of the entire position is always +1, exactly the same as a
+     long underlying contract.
+          If a position consists of many different contracts, including underlying
+     contracts and calls and puts over a wide range of exercise prices, the parity
+     graph for the position may be quite complex. But the procedure for construct-
+     ing the graph is always the same: determine the slopes of the graph below the
+     lowest exercise price, above the highest exercise price, and between all the in-
+     termediate exercise prices, and then connect all the line segments.
+
+
+     Figure 4-8 (a ) Long call and short put at the same exercise price. (b ) Combined position.
+
+
+
+
+                                                               Exercise            +1
+                                                                                           Long call
+                                                                price
+                                                                              +1
+        Position value
+
+
+
+
+                         0
+                               Lower underlying prices                Higher underlying prices
+
+                             Short put
+                                                          –1
+
+                                                  –1
+
+
+
+                                                               (a)
+
+
+
+
+                                                               Exercise            +1
+                                                                price
+                                                                              +1
+        Position value
+
+
+
+
+                         0
+                             Lower underlying prices                      Higher underlying prices
+
+
+                                                          –1
+
+                                                  –1
+
+
+
+                                                               (b)
+
+
+44   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+      Consider this position:
+       –4 underlying contracts
+       +3 65 calls                          +2 65 puts
+       +2 70 calls                          –4 70 puts
+       –6 75 calls                          +3 75 puts
+       +4 80 calls                          –2 80 puts
+What should the parity graph look like?
+     To determine the slopes of a complex position, it may be helpful to con-
+struct a table showing the slopes of the individual contracts over all intervals. We
+can then add up the individual slopes to get the total slope over each interval.
+
+ Contract                       Below 65          65–70             70–75         75–80         Above 80
+
+ +3 65 calls                       0              +3                 +3               +3         +3
+ +2 65 puts                      –2                 0                  0               0          0
+ +2 70 calls                       0                0                +2               +2         +2
+ –4    70 puts                   +4               +4                   0               0          0
+ –6    75 calls                    0                0                  0              –6         –6
+ +3 75 puts                      –3                –3                –3                0          0
+ +4 80 calls                       0                0                  0               0         +4
+ –2    80 puts                   +2               +2                 +2               +2          0
+ –4    Underlying contracts      –4                –4                –4               –4         –4
+ Total                           –3               +2                   0              –3         –1
+
+    The entire parity graph is shown in Figure 4-9. Note that for this graph
+there is no y-axis. For complex graphs where options are bought and sold at
+
+Figure 4-9
+
+
+ Position
+ –4 underlying contracts
+ +3 65 calls   +2 65 puts
+ +2 70 calls   –4 70 puts         +3
+ –6 75 calls   +3 75 puts                                 +2
+ +4 80 calls   –2 80 puts              –1           +1
+                                                                                 +3
+
+                                                                                      –1
+ Slopes
+ Below 65               –3
+ Between 65 and 70      +2
+ Between 70 and 75       0      Slope = –3 Slope = +2 Slope = 0 Slope = –3 Slope = –1
+ Between 75 and 80      –3
+ Above 80               –1                                                                      –1
+                                             65            70               75             80
+                                                                                                     +1
+
+
+
+
+                                                               e x P I R AT I O N P R O F I T A N D L O s s   45
+     many different exercise prices, it may not be possible to position the graph
+     along the y-axis. Nevertheless, the parity graph tells us something about the
+     characteristics of the position. Here we can see that the potential profit on
+     the downside, as well as the potential loss on the upside, is unlimited.
+
+     expiration Profit and Loss
+     A parity graph may tell us the characteristics of an option position at expi-
+     ration, but an equally important consideration will be the profit or loss that
+     results from the position. Whether the position makes or loses money will de-
+     pend on the prices at which the contracts are bought and sold. The purchase
+     of options will create a debit, whereas the sale of options will create a credit.
+     For a simple option position, the expiration profit and loss (P&L) graph will be
+     the parity graph shifted downward by the amount of any debit or upward by
+     the amount of any credit.
+          Consider the following option prices with the underlying contract trading
+     at a price of 98.00:
+
+                                            85      90            95        100         105            110    115
+
+       Calls                               14.25   9.75          6.25       3.50        1.75        0.75      0.25
+       Puts                                 0.25   1.00          2.25       4.50        7.75      11.75      16.25
+
+         Figure 4-10 shows the parity graph of a long 100 call position. If the
+     option is purchased at a price of 3.50, we can construct the expiration P&L
+
+
+     Figure 4-10 Long a 100 call at a price of 3.50.
+
+
+                                                                                        Parity graph
+
+
+
+
+                                                                        Expiration P&L graph
+        Profit or loss at expiration
+
+
+
+
+                                                                             100
+
+
+                                       0
+
+                                                         –3.50                           +1
+                                                                                               Breakeven
+                                                                                   +1            103.50
+
+
+
+
+46   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+graph by shifting the entire parity graph down by this amount. If the under-
+lying is anywhere below 100 at expiration, the option will be worthless, and
+the position will lose 3.50. With the underlying above 100, the slope of the
+graph is +1; the option will gain one point in value for each point increase
+in the price of the underlying. We can also see that there is a breakeven price at
+which the option position will be worth exactly 3.50. Logically, this must oc-
+cur at an underlying price of 103.50.
+     Figure 4-11 shows the parity graph of a short 95 put position. If the op-
+tion is sold at a price of 2.25, we can construct the expiration P&L graph by
+shifting the entire graph up by this amount. With an underlying price any-
+where above 95 at expiration, the option will be worthless, and the position
+will show a profit of 2.25. With an underlying price below 95, the slope of the
+graph is +1; the position will lose one point for each point decline in the price
+of the underlying. The breakeven price for the position is 92.75, the price at
+which the 95 put will be worth exactly 2.25.
+     The relative expiration value of long option positions at different exercise
+prices—95, 100, and 105—is shown in Figure 4-12. The same relative value
+for long put positions is shown in Figure 4-13. Calls with lower exercise prices
+have greater values (i.e., they enable the holder to buy at a lower price), whereas
+puts with higher exercise prices have greater values (i.e., they enable the holder
+to sell at a higher price).
+     For more complex positions, it may not be immediately clear whether
+the position will result in a credit or debit. In this case, we can construct an
+expiration P&L graph by first determining the slopes of the graph over all
+the intervals. Then we can calculate the P&L at one point, and from this
+one P&L point, we can use the slopes to determine the P&L at all other
+points.
+
+
+
+Figure 4-11 short a 95 put at a price of 2.25.
+
+
+
+
+                                                        95
+                                      Breakeven
+  Profit or loss at expiration
+
+
+
+
+                                        92.75
+
+
+                                                                      +2.25
+                                 0
+                                          –1
+
+                                     –1
+
+                                                     Parity graph
+
+
+
+                                               Expiration P&L graph
+
+
+
+
+                                                                          e x P I R AT I O N P R O F I T A N D L O s s   47
+     Figure 4-12 Long a 95 call –6.25; long a 100 call –3.50; long a 105 call –1.75.
+
+
+                                                                                            105 call
+                                            Long a 95 Call –6.25
+                                            Long a 100 Call –3.50                       100 call
+                                            Long a 105 Call –1.75
+                                                                                        95 call
+        Profit or loss at expiration
+
+
+
+
+                                                            95                 100                 105
+
+
+                                       0
+
+                                           –1.75
+
+                                           –3.50
+
+                                                                                 101.25 103.50           106.75
+                                           –6.25                                        Breakeven prices
+
+
+
+
+     Figure 4-13 Long a 95 put –2.25; long a 100 put –4.50; long a 105 put –7.75.
+
+
+                                                                                                       Long a 95 Put –2.25
+                                                                                                       Long a 100 Put –4.50
+                                                        95 put                                         Long a 105 Put –7.75
+                                                                    100 put
+
+                                                                              105 put
+        Profit or loss at expiration
+
+
+
+
+                                                            95                 100                 105
+
+                                       0
+
+
+                                                                                                                    –2.25
+
+
+                                                                                                                    –4.50
+                                                    92.75    95.50 97.25
+                                                      Breakeven prices
+
+                                                                                                                    –7.75
+
+
+
+
+48   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+      Consider the following position
+
+ Position                                  Contract Price
+
+ +1 95 call                                  6.25
+ –1 105 call                                 1.75
+ –2 105 puts                                 7.75
+ –2 Underlying contracts                    98.00
+
+The slopes of the position are
+
+ Contract                       Below 95          95–105              Above 105
+
+ +1 95 call                       0                 +1                  +1
+ –1    105 call                   0                  0                  –1
+ –2    105 puts                  +2                 +2                    0
+ –2    Underlying contracts      –2                 –2                  –2
+ Total                            0                 +1                  –2
+
+    It is usually easiest to determine the P&L at an exercise price, so let’s use
+95. The P&L at an underlying price of 95 is
+
+                              Contract      Contract        Contract P&L       Total
+ Position                     Price         Value at 95     at 95              Contract P&L
+
+ +1 95 call                     6.25          0              –6.25               –6.25
+ –1 105 call                    1.75          0              +1.75              +1.75
+ –2 105 puts                    7.75         10.00           –2.25               –4.50
+ –2 Underlying contracts       98.00         95.00           +3.00              +6.00
+ Total P&L at 95.00                                                              –3.00
+
+     Figure 4-14 shows the entire expiration P&L graph for the position. Below
+95, the slope of the graph is 0, so the P&L is always –3.00. Between 95 and 105,
+the slope is +1, so the P&L at 105 (10 points higher) is –3.00 + 10.00 = +7.00.
+Above 105, the slope is –2, with the position losing one point for each point in-
+crease in the price of the underlying.
+     The position has two breakeven prices, one between 95 and 105 and one
+above 105. With a P&L of –3.00 at 95 and a slope of +1 between 95 and 105,
+the first breakeven is
+
+                              95.00 + (3.00/1) = 98.00
+
+
+
+
+                                                     e x P I R AT I O N P R O F I T A N D L O s s   49
+     Figure 4-14
+
+
+                                            +1 95 call –6.25
+                                            –1 105 call –1.75
+                                            –2 105 puts –7.75
+                                            –2 underlying contracts –98.00
+                                                                                          +7.00
+
+
+
+                                                                      Breakeven                            Breakeven
+                                                                        98.00                                108.50
+         Profit or loss at expiration
+
+
+
+
+                                        0
+
+                                                                             +1                                +1
+
+                                              –3.00                    +1
+                                                                                                                    –2
+
+
+
+                                                                 95                           105
+
+
+
+
+     With a P&L of +7.00 at 105 and a slope above 105 of –2, the second breakeven is
+
+                                                                 105.00 + (7.00/2) = 108.50
+
+         Finally, let’s go back to the parity-graph position shown in Figure 4-9.
+     Suppose that we are told that at expiration with an underlying price of 62.00
+     the position will show a profit of 2.10. What will be the P&L at expiration if
+     the underlying price is 81.50? Using the slopes, we can work our way from
+     62.00 to 81.50
+
+      Interval                                            Beginning P&L       slope     ending P&L
+
+        62.00–65.00                                         +2.10                 –3            +2.10 – (3 × 3) = –6.90
+        65.00–70.00                                         –6.90                 +2            –6.90 + (2 × 5) = +3.50
+        70.00–75.00                                         +3.10                  0                            +3.50
+        75.00–80.00                                         +3.10                 –3           +3.50 – (3 × 5) = –11.90
+        80.00–81.50                                        –11.90                 –1    –11.90 – (1 × 1.50) = –13.40
+
+
+
+
+50   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+At an underlying price of 81.50, the position will show a loss of 13.40. We can
+also see that there are three breakeven prices for the position:
+      Between 62.00 and 65.00           62.00 + 2.10/3 = 62.70
+      Between 65.00 and 70.00           65.00 + 6.90/2 = 68.45
+      Between 75.00 and 80.00           75.00 + 3.10/3 ≈ 76.03
+All critical points for the position are shown in Figure 4-15.
+
+
+Figure 4-15
+
+
+   Position
+                                   62
+   –4 underlying contracts
+   +3 65 calls    +2 65 puts                    +3.10                        +3.10
+   +2 70 calls    –4 70 puts
+                               +2.10
+   –5 75 calls    +3 75 puts
+   +3 80 calls    –2 80 puts
+
+                                   +3               +2
+                           Breakeven                      Breakeven
+                                     –1        +1           68.45   +3
+                             62.70                                                        Breakeven
+                                           –6.90                                –1          76.03
+   Slopes
+   Below 65              –3
+   Between 65 and 70     +2     Slope = –3 Slope = +2 Slope = 0                           Slope = –1
+                                                                         Slope = –3
+   Between 70 and 75      0
+   Between 75 and 80     –3                                                    –11.90
+                                                                                            –13.40
+   Above 80              –1
+                                          65             70             75           80     –1
+                                                                                                 +1
+                                                                                        81.50
+
+
+
+
+                                                              e x P I R AT I O N P R O F I T A N D L O s s   51
+

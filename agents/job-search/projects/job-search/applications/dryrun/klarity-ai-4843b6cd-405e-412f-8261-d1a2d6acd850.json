@@ -1,0 +1,132 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/klarity-ai/4843b6cd-405e-412f-8261-d1a2d6acd850",
+  "org": "klarity-ai",
+  "job_id": "4843b6cd-405e-412f-8261-d1a2d6acd850",
+  "job_title": "Technical Product Manager",
+  "job_location": "San Francisco (Klarity HQ)",
+  "fetched_at": "2026-06-10T19:47:39Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "41c77254-9449-4abd-9753-7bb75b4ecc59__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "41c77254-9449-4abd-9753-7bb75b4ecc59__systemfield_name"
+    },
+    {
+      "id": "41c77254-9449-4abd-9753-7bb75b4ecc59__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "41c77254-9449-4abd-9753-7bb75b4ecc59__systemfield_email"
+    },
+    {
+      "id": "41c77254-9449-4abd-9753-7bb75b4ecc59_988ea71d-2e8f-424b-a2d5-b21752d94c8a",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "41c77254-9449-4abd-9753-7bb75b4ecc59_988ea71d-2e8f-424b-a2d5-b21752d94c8a"
+    },
+    {
+      "id": "41c77254-9449-4abd-9753-7bb75b4ecc59__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "41c77254-9449-4abd-9753-7bb75b4ecc59__systemfield_resume"
+    },
+    {
+      "id": "41c77254-9449-4abd-9753-7bb75b4ecc59_b4ff3fea-a627-4945-b958-9df48cbc63fd",
+      "label": "Our positions are based out of our San Francisco office, and have a hybrid employment setup (3-4 days in the office each week). Are you open to this?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am open to relocating to San Francisco",
+      "source": "preferences.willing_to_travel_pct (>=25%) | NOTE: 'Yes' not literally in options ['I am based in San Francisco', 'I am open to relocating to San Francisco', 'I am not willing to relocate at this time'] | ashby_smart_match(relocation,picked='I am open to relocating to San Francisco')",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "I am based in San Francisco",
+          "value": "I am based in San Francisco"
+        },
+        {
+          "label": "I am open to relocating to San Francisco",
+          "value": "I am open to relocating to San Francisco"
+        },
+        {
+          "label": "I am not willing to relocate at this time",
+          "value": "I am not willing to relocate at this time"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "41c77254-9449-4abd-9753-7bb75b4ecc59_b4ff3fea-a627-4945-b958-9df48cbc63fd"
+    },
+    {
+      "id": "41c77254-9449-4abd-9753-7bb75b4ecc59_5658b589-ea7a-4582-b9c7-92a4c5809fbd",
+      "label": "Do you require sponsorship now or in the future to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am a US Citizen / Green Card Holder",
+      "source": "work_authorization.sponsorship_required_* | NOTE: 'No' not literally in options ['I am a US Citizen / Green Card Holder', 'I have an H-1B and will require transfer', 'I have an H-1B, I-140 approved, and will require transfer', 'I have OPT from Academics'] | ashby_smart_match(workauth_citizen_status,picked='I am a US Citizen / Green Card Holder')",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "I am a US Citizen / Green Card Holder",
+          "value": "I am a US Citizen / Green Card Holder"
+        },
+        {
+          "label": "I have an H-1B and will require transfer",
+          "value": "I have an H-1B and will require transfer"
+        },
+        {
+          "label": "I have an H-1B, I-140 approved, and will require transfer",
+          "value": "I have an H-1B, I-140 approved, and will require transfer"
+        },
+        {
+          "label": "I have OPT from Academics",
+          "value": "I have OPT from Academics"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "41c77254-9449-4abd-9753-7bb75b4ecc59_5658b589-ea7a-4582-b9c7-92a4c5809fbd"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,13 @@
+{
+  "symbol": "XLK",
+  "timeframe": "1Hour",
+  "bar_limit": 96,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "max_hold_bars": 43,
+
+  "_directive_note": "Time-stop variant of breakout_xlk. max_hold_bars=43 is the parent profile's p75 holding-bars value (p25=14, median=34, p75=43), chosen to force out only the slowest ~25% of trades while leaving the fast/normal majority on the parent's native Donchian exit.",
+
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

@@ -1,0 +1,89 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/ready/586fd053-b5b9-463f-a9dd-2df68856adb0",
+  "org": "ready",
+  "job_id": "586fd053-b5b9-463f-a9dd-2df68856adb0",
+  "job_title": "Product Solutions Engineer",
+  "job_location": "Austin, Texas Office",
+  "fetched_at": "2026-06-09T07:21:49Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 4,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c__systemfield_name"
+    },
+    {
+      "id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c__systemfield_email"
+    },
+    {
+      "id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c__systemfield_resume"
+    },
+    {
+      "id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c_d1ed6317-87da-402a-b8c3-ba3a44b247ce",
+      "label": "Additional Social links (Twitter, Medium, Blog, GitHub, etc.)",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c_d1ed6317-87da-402a-b8c3-ba3a44b247ce"
+    },
+    {
+      "id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c_1215ddba-3e09-444c-82a6-be53ef7c1709",
+      "label": "What interests you about working at Ready? ",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "542e8a92-2e1a-44ff-a328-1fbc208fcc8c_1215ddba-3e09-444c-82a6-be53ef7c1709"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

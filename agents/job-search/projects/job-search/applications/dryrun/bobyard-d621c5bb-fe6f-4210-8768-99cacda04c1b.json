@@ -1,0 +1,189 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/bobyard/d621c5bb-fe6f-4210-8768-99cacda04c1b",
+  "org": "bobyard",
+  "job_id": "d621c5bb-fe6f-4210-8768-99cacda04c1b",
+  "job_title": "Product Manager",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-04T09:29:25Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381__systemfield_name",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381__systemfield_email",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381__systemfield_resume",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_0ea0409a-0165-46f2-a43c-45c4199778e4",
+      "label": "Cover Letter ",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_0ea0409a-0165-46f2-a43c-45c4199778e4",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_92ecb739-51c7-4296-a2d5-e3da25fb0153",
+      "label": "Linkedin",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_92ecb739-51c7-4296-a2d5-e3da25fb0153",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_ebbae292-d8c4-4e6b-8733-be59047b9875",
+      "label": "How did you hear about us?",
+      "type": "textarea",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_ebbae292-d8c4-4e6b-8733-be59047b9875",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_353cde76-6517-4468-a62a-592f53873d2f",
+      "label": "What interests you about Bobyard?  ",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What interests you about Bobyard?\\xa0\\xa0'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_353cde76-6517-4468-a62a-592f53873d2f",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_332d419f-2e3e-4f17-8387-f9c2e69a308e",
+      "label": "This role is in person SF, is that do-able? ",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_332d419f-2e3e-4f17-8387-f9c2e69a308e",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_1f70dc21-44ac-4c3a-921f-5cf5c7784d47",
+      "label": "Are you authorized to work in the United States ?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_1f70dc21-44ac-4c3a-921f-5cf5c7784d47",
+      "section": "Get started"
+    },
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_bae9ecc8-b0aa-4034-96d4-e184582eef50",
+      "label": "Do you require sponsorship?",
+      "type": "textarea",
+      "required": false,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "41012e31-4362-467c-9299-dd4ab5d68381_bae9ecc8-b0aa-4034-96d4-e184582eef50",
+      "section": "Get started"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "41012e31-4362-467c-9299-dd4ab5d68381_353cde76-6517-4468-a62a-592f53873d2f",
+      "label": "What interests you about Bobyard?  ",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='What interests you about Bobyard?\\xa0\\xa0'"
+    }
+  ],
+  "blockers": []
+}

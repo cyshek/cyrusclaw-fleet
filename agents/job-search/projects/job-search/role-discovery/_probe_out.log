@@ -1,0 +1,38 @@
+[probe] resume=/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/resume/Cyrus_Shekari_Resume_master.docx
+[wd] account-decision[exfo]: SIGN-IN to existing FRESH alias cyshekari+wd-exfo-202606091904@gmail.com (mode=signin_fresh)
+[probe] account: email=cyshekari+wd-exfo-202606091904@gmail.com mode=signin_fresh pw_len=22
+[probe] goto apply url
+[probe] ensure_signed_in
+[wd] create-account form shown on cold start -> trying Sign In toggle first
+[wd] recover_to_step: re-nav to base (try 0) body='Skip to main contentCareersEnglishSettingscyshekari+wd-exfo'
+[wd] signed in OK (via toggle)
+[probe] signed_in=True
+[probe] step iter 0: 'My Information'
+[wd] step: My Information
+[wd] source already selected, skipping
+[wd] dropdown[countryPhoneCode] already committed -> skip
+[probe] step iter 1: 'My Experience'
+[probe] ON My Experience OK
+[probe] running handle_experience (upload + populate) to get blocks
+[wd] step: My Experience (resume upload)
+[wd]   resume already uploaded -> skip re-upload
+[wd]   populate: detected we_idx=None ed_idx=None
+[wd]   FRESH-ACCOUNT ASSERT OK: work-history starts EMPTY -> filling from tailored resume (no saved-profile reuse)
+[wd]   FRESH-FILL SOURCE: tailored resume / WORK_HISTORY (not profile autofill)
+[wd]   WE-fill start: total_blocks=0 empty=0
+[wd]   kbd-filled roleDescription on work-exp[8]
+[wd]   kbd-filled work-exp[8]: jobTitle now='Technical Program Manager'
+[wd]   work exp [8] Technical Program Manager @ Microsoft: blocks 1->1 (empty 1->0)
+[wd]   kbd-filled roleDescription on work-exp[37]
+[wd]   kbd-filled work-exp[37]: jobTitle now='Technical Program Manager Intern'
+[wd]   work exp [37] Technical Program Manager Intern @ Amazon Robotics: blocks 2->2 (empty 1->0)
+[wd]   kbd-filled roleDescription on work-exp[64]
+[wd]   kbd-filled work-exp[64]: jobTitle now='Program Manager Intern'
+[wd]   work exp [64] Program Manager Intern @ Pro Painters: blocks 3->3 (empty 1->0)
+[wd]   WE convergence pass 0: total=3 empty=0
+[wd]   WE-fill done: filled=3 final total_blocks=3 empty=0
+[wd]   roledesc sweep: nothing to fill (none empty/required, or no textarea rendered)
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-95--jobTitle :: Job Title*","workExperience-95--companyName :: Company*","workExperience-95--location :: Location*","workExperience-95--roleDescription :: Role Description*"]
+[probe] discovered startDate base = None
+[probe] NO date section. workExp input ids: ["workExperience-8--jobTitle", "workExperience-8--companyName", "workExperience-8--location", "workExperience-8--currentlyWorkHere", "workExperience-8--startDate-dateSectionMonth-input", "workExperience-8--startDate-dateSectionYear-input", "workExperience-37--jobTitle", "workExperience-37--companyName", "workExperience-37--location", "workExperience-37--currentlyWorkHere", "workExperience-37--startDate-dateSectionMonth-input", "workExperience-37--startDate-dateSectionYear-input", "workExperience-37--endDate-dateSectionMonth-input", "workExperience-37--endDate-dateSectionYear-input", "workExperience-64--jobTitle", "workExperience-64--companyName", "workExperience-64--location", "workExperience-64--currentlyWorkHere", "workExperience-64--startDate-dateSectionMonth-input", "workExperience-64--startDate-dateSectionYear-input", "workExperience-64--endDate-dateSectionMonth-input", "workExperience-64--endDate-dateSectionYear-input", "workExperience-95--jobTitle", "workExperience-95--companyName", "workExperience-95--location", "workExperience-95--currentlyWorkHere", "workExperience-95--startDate-dateSectionMonth-input", "workExperience-95--startDate-dateSectionYear-input", "workExperience-95--endDate-dateSectionMonth-input", "workExperience-95--endDate-dateSectionYear-input"]
+[probe] any 'date' ids: ["navigationItem-Candidate Home", "formField-startDate", "workExperience-8--startDate", "workExperience-8--startDate-dateSectionMonth-display", "workExperience-8--startDate-dateSectionMonth-input", "workExperience-8--startDate-dateSectionYear-display", "workExperience-8--startDate-dateSectionYear-input", "dateIcon", "formField-startDate", "workExperience-37--startDate", "workExperience-37--startDate-dateSectionMonth-display", "workExperience-37--startDate-dateSectionMonth-input", "workExperience-37--startDate-dateSectionYear-display", "workExperience-37--startDate-dateSectionYear-input", "dateIcon", "formField-endDate", "workExperience-37--endDate", "workExperience-37--endDate-dateSectionMonth-display", "workExperience-37--endDate-dateSectionMonth-input", "workExperience-37--endDate-dateSectionYear-display", "workExperience-37--endDate-dateSectionYear-input", "dateIcon", "formField-startDate", "workExperience-64--startDate", "workExperience-64--startDate-dateSectionMonth-display", "workExperience-64--startDate-dateSectionMonth-input", "workExperience-64--startDate-dateSectionYear-display", "workExperience-64--startDate-dateSectionYear-input", "dateIcon", "formField-endDate", "workExperience-64--endDate", "workExperience-64--endDate-dateSectionMonth-display", "workExperience-64--endDate-dateSectionMonth-input", "workExperience-64--endDate-dateSectionYear-display", "workExperience-64--endDate-dateSectionYear-input", "dateIcon", "formField-startDate", "workExperience-95--startDate", "workExperience-95--startDate-dateSectionMonth-display", "workExperience-95--startDate-dateSectionMonth-input"]

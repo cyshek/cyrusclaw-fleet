@@ -1,0 +1,211 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/distyl/ec9e338a-4040-4aa2-b049-424cd343f5f5",
+  "org": "distyl",
+  "job_id": "ec9e338a-4040-4aa2-b049-424cd343f5f5",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-31T11:45:36Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be__systemfield_name"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be__systemfield_email"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be__systemfield_resume"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_d46d123e-2896-4149-87db-686eb4c43e51",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_d46d123e-2896-4149-87db-686eb4c43e51"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_5e470046-e733-42c6-a464-e469976b941b",
+      "label": "Github",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_5e470046-e733-42c6-a464-e469976b941b"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_ba6cd412-bdfc-4a40-a3d1-569d09a332b2",
+      "label": "Personal Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_ba6cd412-bdfc-4a40-a3d1-569d09a332b2"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_dfba8d36-4d56-4940-be10-e8fff3d4c7ff",
+      "label": "This role requires commuting to our New York or San Francisco office three days per week. Which location would you be able to work from or relocate to?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I would not be able to work from or relocate to either office location",
+      "source": "preferences.willing_to_travel_pct (>=25%) | NOTE: 'Yes' not literally in options ['San Francisco', 'New York', 'I would not be able to work from or relocate to either office location'] | ashby_smart_match(relocation,picked='I would not be able to work from or relocate to either office location')",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "San Francisco",
+          "value": "San Francisco"
+        },
+        {
+          "label": "New York",
+          "value": "New York"
+        },
+        {
+          "label": "I would not be able to work from or relocate to either office location",
+          "value": "I would not be able to work from or relocate to either office location"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_dfba8d36-4d56-4940-be10-e8fff3d4c7ff"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_44f2235c-e97e-40f2-a599-0ee0b7b85c74",
+      "label": "Are you authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_44f2235c-e97e-40f2-a599-0ee0b7b85c74"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_cefdf988-1dfc-48fc-a40a-3f146f059e7f",
+      "label": "Will you now, or in the future, require sponsorship for an immigration-related employment benefit (e.g., H-1B, O-1, TN, E-3, etc.) to legally work for Distyl in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_cefdf988-1dfc-48fc-a40a-3f146f059e7f"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_b404054d-f019-4b60-8d1e-2020a211193b",
+      "label": "Why do you want to work at Distyl specifically?",
+      "type": "input_text",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Distyl because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Distyl is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Distyl while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Distyl aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Distyl')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_b404054d-f019-4b60-8d1e-2020a211193b"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_6c6f701c-64f1-4ef0-a832-b5c431efeab4",
+      "label": "What is your current AI workflow, and when do you not use AI?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_6c6f701c-64f1-4ef0-a832-b5c431efeab4"
+    },
+    {
+      "id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_cb80ddc2-e521-48bf-aba1-48a9b3da4793",
+      "label": "What's something you have built or shipped recently that you are proud of?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "efdd3f67-8d99-4460-ad6a-646b6fe4d9be_cb80ddc2-e521-48bf-aba1-48a9b3da4793"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

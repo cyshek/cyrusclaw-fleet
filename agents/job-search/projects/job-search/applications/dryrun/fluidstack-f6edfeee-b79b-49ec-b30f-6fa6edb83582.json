@@ -1,0 +1,333 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/fluidstack/f6edfeee-b79b-49ec-b30f-6fa6edb83582",
+  "org": "fluidstack",
+  "job_id": "f6edfeee-b79b-49ec-b30f-6fa6edb83582",
+  "job_title": "Technical Program Manager, Design & Engineering",
+  "job_location": "Austin, TX",
+  "fetched_at": "2026-06-16T20:52:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 11,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b__systemfield_name"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b__systemfield_email"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b__systemfield_resume"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_c9c7c3a9-f6a7-483e-8997-aed8d130de98",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_c9c7c3a9-f6a7-483e-8997-aed8d130de98"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_5df0bb68-23d3-4875-885c-e35c72834546",
+      "label": "Are you open to travel?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_travel",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_5df0bb68-23d3-4875-885c-e35c72834546"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_f300a0a2-6685-4fbb-8e0a-e1303eb26aae",
+      "label": "Are you  open to relocation?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_f300a0a2-6685-4fbb-8e0a-e1303eb26aae"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_74248c07-31cc-410b-b5d4-737b3b32ca18",
+      "label": "Office Location",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%) | NOTE: 'Yes' not literally in options ['Austin, Texas', 'London, United Kingdom', 'New York, New York', 'San Francisco, California']",
+      "status": "filled_needs_review",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Austin, Texas",
+          "value": "Austin, Texas"
+        },
+        {
+          "label": "London, United Kingdom",
+          "value": "London, United Kingdom"
+        },
+        {
+          "label": "New York, New York",
+          "value": "New York, New York"
+        },
+        {
+          "label": "San Francisco, California",
+          "value": "San Francisco, California"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_74248c07-31cc-410b-b5d4-737b3b32ca18",
+      "match_attempted": true
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_98aa22d6-26c2-45ab-8c72-b3e79353c62b",
+      "label": "I am authorized to work in the United States.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_98aa22d6-26c2-45ab-8c72-b3e79353c62b"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_1834e765-110e-4eae-affc-94053e2d51df",
+      "label": "I will now or in the future need assistance with a work visa.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_1834e765-110e-4eae-affc-94053e2d51df"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_03d16dd0-a3be-4824-bcf3-fa91894d73b0",
+      "label": "Are you currently subject to any agreement (such as a non‑compete, non‑solicitation, non‑disclosure, or similar restriction) that could limit your ability to perform this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Not Sure",
+          "value": "Not Sure"
+        },
+        {
+          "label": "N/A",
+          "value": "N/A"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_03d16dd0-a3be-4824-bcf3-fa91894d73b0"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_42efa6dc-6a04-4117-8af3-a9501ce6e283",
+      "label": "If presented with an offer, when would be the earliest you would be available to start?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Two weeks",
+      "source": "preferences.earliest_start_date (matched select option 'Two weeks')",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": [
+        {
+          "label": "One week",
+          "value": "One week"
+        },
+        {
+          "label": "Two weeks",
+          "value": "Two weeks"
+        },
+        {
+          "label": "Three weeks",
+          "value": "Three weeks"
+        },
+        {
+          "label": "One month",
+          "value": "One month"
+        },
+        {
+          "label": "One month +",
+          "value": "One month +"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_42efa6dc-6a04-4117-8af3-a9501ce6e283"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_b2b11053-b228-45bb-937c-89cd9aa549f6",
+      "label": "Tell us about something you’ve built/done that you think is genuinely cool, big or small, work or personal.",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Tell us about something you’ve built/done that you think is genuinely cool, big or small, work or personal.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_b2b11053-b228-45bb-937c-89cd9aa549f6"
+    },
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_b56eec34-98a1-4910-b31d-1927828f7404",
+      "label": "How did you hear about this job opportunity?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Agency or Non-Fluidstack Recruiter",
+          "value": "Agency or Non-Fluidstack Recruiter"
+        },
+        {
+          "label": "Fluidstack Recruiter",
+          "value": "Fluidstack Recruiter"
+        },
+        {
+          "label": "Fluidstack Website",
+          "value": "Fluidstack Website"
+        },
+        {
+          "label": "Job Board (Indeed, Glassdoor, etc.)",
+          "value": "Job Board (Indeed, Glassdoor, etc.)"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Newsletter",
+          "value": "Newsletter"
+        },
+        {
+          "label": "Recruiting Event",
+          "value": "Recruiting Event"
+        },
+        {
+          "label": "Referral",
+          "value": "Referral"
+        },
+        {
+          "label": "X",
+          "value": "X"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_b56eec34-98a1-4910-b31d-1927828f7404"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "433ac1ff-2f4b-4fd5-9f7f-e2f8ce583e0b_b2b11053-b228-45bb-937c-89cd9aa549f6",
+      "label": "Tell us about something you’ve built/done that you think is genuinely cool, big or small, work or personal.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Tell us about something you’ve built/done that you think is genuinely cool, big or small, work or personal.'"
+    }
+  ],
+  "blockers": []
+}

@@ -1,0 +1,7 @@
+# Cover answers — Higharc, Solutions Engineer (higharc-6e1c2e07-b812-4e3e-ae44-9a55ed2c7f3f)
+
+## Why Higharc?
+
+My closest analog to what Higharc is doing is the work I did at Pro Painters, where I redesigned the sales ops lifecycle for 200+ monthly proposals and rebuilt scoping, quoting, and invoicing around a CRM workflow that actually fit how field crews and homeowners operate. That experience taught me how much friction lives between design, sales, and estimating in the residential trades, and how much leverage there is when you replace spreadsheets and tribal knowledge with a real data model. At Microsoft I now do the enterprise version of that same motion, running discovery with customers like Databricks and Walmart, translating their workflows into a platformized program, and building ROI narratives that turn technical work into executive-aligned business cases tied to $14M+ in impact.
+
+Higharc is the rare company attacking homebuilding with a genuine product platform instead of another point tool bolted onto AutoCAD exports. The Solutions Engineer role sits exactly where I want to operate next: leading discovery with builders across Design, Sales, Purchasing, and Estimating, running demos that help them see their business reimagined, and feeding the field back into messaging and roadmap. The Challenger framing in the JD also matches how I already sell internally at Microsoft, reframing how partner teams think about a problem rather than just answering RFP-style questions, and I'd like to do that for an industry that needs it.

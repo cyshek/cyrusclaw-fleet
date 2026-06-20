@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Defined program roadmaps and managed the end-to-end lifecycle of Azure resilience initiatives, scaling a 2-person operation into a platformized system that sustained **45+ annual drills** and drove **$14M+ business impact** across enterprise customers.
+2. Led 0→1 delivery of an internal Resilience Automation Platform, translating stakeholder needs into functional requirements and self-service scheduling that **reduced operational toil 30%** on time and on budget.
+3. Managed all project phases for 14 cross-org recovery executions under executive visibility, including bridge-leading a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**, on time and high quality.
+4. Collaborated with functional, operational, and technical teams to deliver Azure's first proactive testing capability in 4 months, achieving a **94% recovery rate** and establishing a continuous validation model.
+5. Built an internal AI agent and restructured planning workflows using PM best practices, **cutting cycle time 39%** and increasing drill capacity 21% while leading cross-functional teams without authority.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove program adoption for AI-driven code generation, running user demos and training that scaled utilization across **14 teams** and saved 37 engineering hours monthly, leading without authority.
+2. Identified and translated stakeholder needs into functional requirements by facilitating **11+ user interviews** with Azure service teams, shaping the roadmap to include intent-based YAML generation.
+3. Maintained data integrity and documentation by enforcing metadata standards and migrating to an AI-powered semantic search tool, **cutting lookup time 83%**.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across **140+ teams**.
+2. Drove discovery with 20+ service teams to identify **81 hours of manual effort** per region, building a roadmap and program to automate critical paths and mitigate launch toil.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact support.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+3. Drove alignment between IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating deployment 25%**.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new CRM process.
+2. Reduced Customer Acquisition Cost 13% and boosted conversions 2.7% by executing a digital-first go-to-market strategy across the website and Google profile.
+3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+
+## Notes from the rewriter
+- Tightened all bullets and trimmed FT role to 5 to fit one page.
+- Mirrored JD language: program roadmaps, lifecycle, functional requirements, UAT, lead without authority.
+- Surfaced PM methodology, SmartSheet, Jira/Confluence, SharePoint, and DTC/retail ops for the Nintendo Stores fit.
+

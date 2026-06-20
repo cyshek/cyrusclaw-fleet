@@ -1,0 +1,72 @@
+=== BH-SPY bench ===
+BH-SPY FP-cont=+0.660 trades=8
+   2022-H1 bear           bear  ret=+16.69%
+   2022-Q3 chop           chop  ret=+10.48%
+   2023-H1 recovery       bull  ret=+26.61%
+   2023-Q3 chop           chop  ret=+32.16%
+   2024-Q2 bull           bull  ret=+47.88%
+   2025-Q1 tariff bear    bear  ret=+22.90%
+   2025-Q3 bull           bull  ret=+49.85%
+   2026-recent bull       bull  ret=+86.89%
+
+=== COT CONTRACT PROVENANCE ===
+  ES: ['E-MINI S&P 500 - CHICAGO MERCANTILE EXCHANGE', 'E-MINI S&P 500 STOCK INDEX - CHICAGO MERCANTILE EXCHANGE']
+  NQ: ['NASDAQ MINI - CHICAGO MERCANTILE EXCHANGE', 'NASDAQ-100 STOCK INDEX (MINI) - CHICAGO MERCANTILE EXCHANGE']
+  ZN: ['10-YEAR U.S. TREASURY NOTES - CHICAGO BOARD OF TRADE', 'UST 10Y NOTE - CHICAGO BOARD OF TRADE']
+
+=== RELABEL DIAGNOSTIC (COT crowding-z vs SPY return / vol) ===
+  lev_net_oi z156        n=  55 corr_vs_SPYret=-0.205 corr_vs_SPYvol=+0.451
+  lev_net_oi z104        n=  55 corr_vs_SPYret=-0.354 corr_vs_SPYvol=+0.528
+  am_net_oi z156         n=  55 corr_vs_SPYret=+0.113 corr_vs_SPYvol=-0.114
+  deal_net_oi z156       n=  55 corr_vs_SPYret=+0.236 corr_vs_SPYvol=-0.438
+  NQ lev_net_oi z156     n=  55 corr_vs_SPYret=+0.221 corr_vs_SPYvol=-0.207
+
+=== spy_contrarian_lev (symbols=('SPY',)) ===
+  FP=+0.450 dep=0.7 ann=+3.56 dd=-0.1 tr=207 beatBH=0/8 pnl=$+1311.1 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.0}
+  FP=+0.155 dep=0.279 ann=+1.02 dd=-0.1 tr=118 beatBH=0/8 pnl=$+275.5 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 1.0}
+  FP=+0.129 dep=0.29 ann=+0.77 dd=-0.1 tr=126 beatBH=0/8 pnl=$+202.3 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 1.0}
+  FP=+0.085 dep=0.54 ann=+0.53 dd=-0.2 tr=142 beatBH=0/8 pnl=$+133.7 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.0}
+  FP=-0.016 dep=0.471 ann=-0.89 dd=-0.1 tr=205 beatBH=0/8 pnl=$-192.4 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.5}
+
+=== spy_momentum_lev (symbols=('SPY',)) ===
+  FP=+0.930 dep=0.469 ann=+5.32 dd=-0.2 tr=158 beatBH=3/8 pnl=$+2458.6 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'momentum', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.0}
+  FP=+0.508 dep=0.316 ann=+3.51 dd=-0.2 tr=189 beatBH=0/8 pnl=$+1285.7 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'momentum', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.0}
+  FP=+0.359 dep=0.288 ann=+2.46 dd=-0.2 tr=166 beatBH=0/8 pnl=$+790.1 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'momentum', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.5}
+  FP=+0.286 dep=0.184 ann=+1.67 dd=-0.1 tr=125 beatBH=0/8 pnl=$+487.8 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'momentum', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 1.0}
+  FP=+0.240 dep=0.129 ann=+1.26 dd=-0.1 tr=68 beatBH=0/8 pnl=$+348.1 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'momentum', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 1.0}
+
+=== spy_contrarian_lev_prop (symbols=('SPY',)) ===
+  FP=+0.423 dep=0.605 ann=+3.17 dd=-0.1 tr=695 beatBH=0/8 pnl=$+1111.2 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'proportional', 'z_weeks': 156, 'ramp_band': 1.0}
+  FP=+0.393 dep=0.578 ann=+2.90 dd=-0.1 tr=641 beatBH=0/8 pnl=$+984.5 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'proportional', 'z_weeks': 156, 'ramp_band': 1.5}
+  FP=+0.252 dep=0.513 ann=+1.93 dd=-0.1 tr=704 beatBH=0/8 pnl=$+580.5 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'proportional', 'z_weeks': 104, 'ramp_band': 1.0}
+  FP=+0.158 dep=0.514 ann=+1.15 dd=-0.1 tr=694 beatBH=0/8 pnl=$+316.1 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'proportional', 'z_weeks': 104, 'ramp_band': 1.5}
+
+=== spy_contrarian_am (symbols=('SPY',)) ===
+  FP=+0.260 dep=0.356 ann=+2.06 dd=-0.2 tr=138 beatBH=0/8 pnl=$+631.3 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'am_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.0}
+  FP=+0.144 dep=0.216 ann=+0.95 dd=-0.2 tr=142 beatBH=0/8 pnl=$+254.2 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'am_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.5}
+  FP=+0.123 dep=0.203 ann=+0.74 dd=-0.2 tr=108 beatBH=0/8 pnl=$+193.4 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'am_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.5}
+  FP=+0.120 dep=0.316 ann=+0.72 dd=-0.2 tr=95 beatBH=0/8 pnl=$+187.4 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'am_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.0}
+  FP=+0.058 dep=0.16 ann=+0.10 dd=-0.2 tr=38 beatBH=0/8 pnl=$+25.4 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'am_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 1.0}
+
+=== spy_contrarian_deal (symbols=('SPY',)) ===
+  FP=+0.869 dep=0.615 ann=+5.02 dd=-0.2 tr=65 beatBH=1/8 pnl=$+2229.7 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'deal_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.0}
+  FP=+0.570 dep=0.52 ann=+3.73 dd=-0.1 tr=79 beatBH=0/8 pnl=$+1406.5 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'deal_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.5}
+  FP=+0.479 dep=0.278 ann=+2.60 dd=-0.2 tr=90 beatBH=0/8 pnl=$+848.7 {'mode': 'spy_timing', 'market': 'ES', 'feature': 'deal_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 1.0}
+
+=== xa_ief_contrarian_lev (symbols=('SPY', 'IEF', 'GLD')) ===
+  FP=+0.307 dep=1.011 ann=+2.65 dd=-0.1 tr=396 beatBH=0/8 pnl=$+869.1 {'mode': 'cross_asset', 'safe_asset': 'IEF', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.0}
+  FP=-0.013 dep=0.998 ann=-0.56 dd=-0.2 tr=282 beatBH=0/8 pnl=$-125.5 {'mode': 'cross_asset', 'safe_asset': 'IEF', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.0}
+  FP=-0.153 dep=1.006 ann=-4.39 dd=-0.1 tr=408 beatBH=0/8 pnl=$-658.5 {'mode': 'cross_asset', 'safe_asset': 'IEF', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.5}
+  FP=-0.246 dep=1.005 ann=-10.12 dd=-0.1 tr=312 beatBH=0/8 pnl=$-922.3 {'mode': 'cross_asset', 'safe_asset': 'IEF', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.5}
+
+=== xa_gld_contrarian_lev (symbols=('SPY', 'IEF', 'GLD')) ===
+  FP=+0.492 dep=1.015 ann=+4.24 dd=-0.1 tr=402 beatBH=0/8 pnl=$+1706.4 {'mode': 'cross_asset', 'safe_asset': 'GLD', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.0}
+  FP=+0.292 dep=1.007 ann=+3.23 dd=-0.1 tr=414 beatBH=1/8 pnl=$+1139.1 {'mode': 'cross_asset', 'safe_asset': 'GLD', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 156, 'thr_z': 0.5}
+  FP=+0.271 dep=0.992 ann=+2.98 dd=-0.2 tr=288 beatBH=1/8 pnl=$+1021.5 {'mode': 'cross_asset', 'safe_asset': 'GLD', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.0}
+  FP=+0.264 dep=1.009 ann=+3.16 dd=-0.1 tr=334 beatBH=1/8 pnl=$+1109.1 {'mode': 'cross_asset', 'safe_asset': 'GLD', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'contrarian', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.5}
+
+=== BEST CELL ACROSS ALL SWEEPS ===
+  FP=+0.930 spy_momentum_lev {'mode': 'spy_timing', 'market': 'ES', 'feature': 'lev_net_oi', 'direction': 'momentum', 'exposure_mode': 'binary', 'z_weeks': 104, 'thr_z': 0.0} trades=158 dep=0.46861281989315456 worst_dd=-0.16330823039227083
+  GATE = 1.0 FP-cont-Sharpe -> REJECT
+
+wrote reports/_cot_positioning_results.json

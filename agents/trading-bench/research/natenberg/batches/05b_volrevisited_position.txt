@@ -1,0 +1,2898 @@
+            In the foregoing examples, we used only four historical volatilities. But the
+      more volatility data that are available, the more accurate any volatility forecast
+      is likely to be. Not only will more data, covering different periods of time, give
+      a better overview of the volatility characteristics of an underlying instrument,
+      they will also enable a trader to more closely match historical volatilities to op-
+      tions with different periods of time to expiration. In our examples, we used his-
+      torical volatilities over the last 12 and 26 weeks as approximations to forecast
+      volatilities over the next six and three months. Ideally, we would like historical
+      data covering exactly six- and three-month periods.
+            This approach to forecasting volatility is one that many traders use intui-
+      tively. It depends on identifying the typical characteristics of volatility and then
+      projecting a volatility over some future period.
+            The analysis of a data series in order to predict future values falls into an
+      area of study usually referred to as time-series analysis. We might wish to apply
+      time-series models to volatility forecasting, but to do so, we need a series of data
+      points where each point is independent of every other point. In our examples,
+      the volatilities we used to make our prediction do not form a true time series be-
+      cause the volatilities overlap and, as such, are not really independent of each
+      other. The 52-week volatility overlaps the 26-, 12-, and 6-week volatilities. The
+      26-week volatility overlaps the 12- and 6-week volatilities. And the 12-week vola-
+      tility overlaps the 6-week volatility. But suppose that instead of using as our data
+      points, the historical volatilities, we use the underlying returns. These returns
+      create a true time series to which we might be able to apply a time-series model.
+            One time-series model often used to estimate future volatility is the ex-
+      ponentially weighted moving average (EWMA) model. In this model, greater weight
+      is always given to more recent returns, with older returns given progressively
+      smaller weightings. If α is the weighting assigned to each return r, then the es-
+      timated variance (the square of the standard deviation) σ2 over the next period
+      of time is given by
+
+                                     σ 2 = α1r12 + α 2r22 +  + α n −1rn2−1 + α nr
+                                                                                 n
+                                                                                  2
+
+
+
+
+      where rn is the most recent return. The constraints are that all the weightings
+      must add up to 1.00
+                                                           n
+
+                                                       ∑ α = 1.00
+                                                                i
+                                                       i =1
+
+
+      and that the more recent the return, the greater is the weighting
+                                                           α n > α n −1
+
+      By choosing a variable λ between 0 and 1.00, the constraints will be met if
+
+                                                               λ i −1 (1 − λ )
+                                                    αi =
+                                                                  1 − λn
+
+
+394   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+As we reduce the value of λ, more recent returns are assigned progressively
+greater weight—the variance estimate tends to discount the effect of older
+returns. As we increase the value of λ, the estimate makes less and less dis-
+tinction between returns—older returns become just as important as newer
+returns. As λ approaches 1.00 (it can never be exactly 1.00), the weight for all
+returns converges to a single value, 1.00/n. A common choice for λ in many
+risk-management programs is something close to 0.94.
+      The EWMA model is relatively simple method for predicting volatility.
+Two factors that it ignores are the likely correlation between successive returns
+and the mean-reversion characteristic of volatility. The time-series models
+most often used to forecast volatility were an outgrowth of the autoregressive con-
+ditional heteroskedasticity (ARCH) model first proposed by Robert Engle in 1982.6
+The techniques used in ARCH models have subsequently been refined and
+extended into what is now commonly referred to as the generalized autoregres-
+sive conditional heteroskedasticity (GARCH) family of volatility forecasting mod-
+els. GARCH models consist of three components: a volatility estimate, such
+as EWMA; a correlation component reflecting the fact that the magnitude of
+successive returns tends to be correlated (i.e., large returns tend to be followed
+by large returns, and small returns tend to be followed by small returns); and a
+mean-reversion component specifying how fast volatility tends to revert to its
+mean. An in-depth discussion of GARCH models is beyond the scope of this
+text, but further information on these models is available in most advanced
+texts on time-series analysis.
+
+
+Implied Volatility as a Predictor of Future Volatility
+
+If, as many traders believe, prices in the marketplace reflect all available infor-
+mation affecting the value of a contract,7 the best predictor of the future real-
+ized volatility ought to be the implied volatility. Just how good a predictor of
+future volatility is implied volatility? Although it may be impossible to answer
+this question definitively, because that would require a detailed study of many
+markets over long periods of time, we still might gain some insight by looking
+at sample data.
+     Figure 20-9 shows the three-month realized volatility (approximately 63
+trading days) for the S&P 500 Index and a rolling implied volatility for three-
+month at-the-money options8 on the index from 2002 through 2010. However,
+the values for the three-month realized volatility have been shifted forward
+so that each data point represents the future realized volatility of the index
+over the next three months. If implied volatility is a perfect predictor of future
+volatility, both graphs would be identical, but obviously, this is not the case.
+
+6
+  Robert F. Engle, “Autoregressive Conditional Heteroskedsticity with Estimates of the Variance of United
+Kingdom Inflation,” Econometrica 50(4):987–1000, 1982. Engle was awarded the 2003 Nobel Prize in
+Economics.
+7
+  This is known in finance as the efficient-market hypothesis.
+8
+  The three-month implied volatility was calculated by interpolating between the implied volatility of options
+bracketing three months.
+
+
+
+                                                                              V O L AT I L I T Y R e V I s I T e D   395
+      In general, the volatility of the S&P 500 Index tends to lead the implied vola-
+      tility. If the index becomes more volatile, implied volatility rises; if the index
+      becomes less volatile, implied volatility falls. The marketplace seems to react
+      to the volatility of the index. This was particularly evident during 2008, when
+      implied volatility rose following the dramatic increase in volatility of the index,
+      and in 2009, when implied volatility fell as the index itself became less volatile.
+            We can do the same comparison using a 12-month period. Figure 20-10
+      shows the 12-month future realized volatility of the S&P 500 Index (approxi-
+      mately 252 trading days) versus a rolling 12-month at-the-money implied vola-
+      tility over the same time period. Here the lag is even more evident due to the
+      longer time frame.
+            Clearly, the implied volatility in our examples did not accurately predict
+      future volatility. But, even if the implied volatility was not a totally accurate
+      predictor, perhaps we can draw some conclusions by looking at the difference
+      between the implied volatility and the future realized volatility. This is shown in
+      Figure 20-11 for both 3- and 12-month options. A positive value indicates an
+      implied volatility that was too low (the future realized volatility turned out to be
+      higher), while a negative value indicates an implied volatility that was too high
+      (the future realized volatility turned out to be lower).
+            We can see in Figure 20-11 that for much of the period in question,
+      implied volatility seemed to predict a future volatility that was too high by up
+      to 10 percentage points. But there are some dramatic exceptions. During 2008,
+
+
+
+      Figure 20-9 s&P 500 Index three-month future volatility versus the three-month implied
+      volatility.
+
+                                80%
+
+                                      3-month future realized volatility
+                                70%
+                                      3-month implied volatility
+
+
+                                60%
+        Annualized volatility
+
+
+
+
+                                50%
+
+
+                                40%
+
+
+                                30%
+
+
+                                20%
+
+
+                                10%
+
+
+                                0%
+                                 Dec-01 Dec-02 Dec-03 Dec-04 Dec-05 Dec-06 Dec-07 Dec-08 Dec-09 Dec-10
+
+
+
+
+396   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 20-10 s&P 500 Index 12-month future volatility versus the 12-month implied volatility.
+
+                                                        80%
+
+                                                               12-month future realized volatility
+                                                        70%
+                                                               12-month implied volatility
+
+
+                                                        60%
+               Annualized volatility
+
+
+
+
+                                                        50%
+
+
+                                                        40%
+
+
+                                                        30%
+
+
+                                                        20%
+
+
+                                                        10%
+
+
+                                                         0%
+                                                         Dec-01 Dec-02 Dec-03 Dec-04 Dec-05 Dec-06 Dec-07 Dec-08 Dec-09 Dec-10
+
+
+
+
+the three-month implied volatility at one point predicted a future volatility that
+was too low by almost 50 percentage points and at another point predicted a
+volatility that was too high by 20 percentage points. Admittedly, 2008 was a year
+
+Figure 20-11 Difference between future volatility and implied volatility for the s&P 500 Index.
+
+                                                        +50%
+                                                                September 8, 2008: 3-month future volatility = 72%
+                                                                                   Implied volatility = 22%
+                                                        +40%
+  Future realized volatility minus implied volatility
+
+
+
+
+                                                               3-month future volatility less 3-month implied volatility
+
+                                                        +30%   12-month future volatility less 12-month implied volatility
+
+
+
+                                                        +20%
+
+
+                                                        +10%
+
+
+                                                         0%
+
+
+                                                        –10%
+
+
+                                                        –20%
+                                                                    November 20, 2008: 3-month future volatility = 45%
+                                                                                       Implied volatility = 65%
+                                                        –30%
+                                                          Dec-01 Dec-02 Dec-03 Dec-04 Dec-05 Dec-06 Dec-07 Dec-08 Dec-09 Dec-10
+
+
+
+
+                                                                                                                             V O L AT I L I T Y R e V I s I T e D   397
+      of extremes, but even during other years, a difference of 10 percentage points
+      between implied volatility and future volatility was not uncommon.
+           Implied volatility is at best an imperfect predictor of future volatility.
+      What else might we conclude from these graphs? Under normal conditions,
+      implied volatility seems to be too high—options tend to be overpriced. Buyers of
+      options may be willing to pay this extra premium in return for the few occa-
+      sions when implied volatility is dramatically too low and there is a subsequent
+      volatility explosion. This is analogous to insurance. A rational buyer of insur-
+      ance is aware that the price of an insurance contract is almost certainly higher
+      than its value. Otherwise, the insurance company would have no profit expec-
+      tation. But buyers of insurance are willing to pay this extra premium for those
+      rare occasions when an unforeseen event occurs and the insurance becomes
+      absolutely necessary.
+           There are, of course, other reasons why options tend to be overpriced. For
+      the seller of an option, such as a market maker, there may be a cost to repli-
+      cating the option through the dynamic hedging process, a cost that the market
+      maker is likely to pass on to the customer. Moreover, there may be weak-
+      nesses in the theoretical pricing model from which implied volatility is derived.
+      Taken together, these factors may in fact justify the seemingly inflated prices of
+      options in the marketplace.
+
+      The Term structure of Implied Volatility
+      If held to expiration, the sole determinant of an option position’s value is, in
+      theory, the realized volatility of the underlying contract. However, a trader
+      may decide for a variety of reasons that a position should be closed prior to ex-
+      piration. The position may have achieved its expected profit potential prior to
+      expiration. Or the position, even if it hasn’t achieved its expected profit, may
+      have become too risky. Or holding the position may require a large amount
+      of capital, capital that could be put to better use. Regardless of why a trader
+      decides to close out a position prior to expiration, there is usually one primary
+      cause: changes in implied volatility. Although we have emphasized the impor-
+      tance of realized volatility, in the real world of option trading, changes in im-
+      plied volatility can often make or break a strategy. For this reason, a sensible
+      trader will give some thought to how changes in implied volatility will affect a
+      position.
+            It may seem that determining the sensitivity of a position to changes in
+      implied volatility is relatively simple. We need only determine the total posi-
+      tion vega, which we can do by adding up all the individual vega values. Unfor-
+      tunately, determining the true implied volatility risk can be significantly more
+      complex. We know that vega values change with changing market conditions,
+      so today’s vega may not be tomorrow’s vega. Moreover, the vega values across
+      different exercise prices and expiration months may not be a true reflection of
+      implied-volatility risk.
+            Consider a market where there are three expiration months, all in the same
+      calendar year—March, June, and September. Let’s assume that the mean vol-
+      atility in this market is 25 percent, and although this almost never happens,
+
+
+398   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+let’s also assume that the current implied volatility for every month is the same,
+25 percent.
+
+                          March              June                   september
+ Implied volatility       25%                25%                    25%
+
+     Suppose that the volatility of the underlying contract begins to rise. What
+will happen to implied volatility? Implied volatility will almost certainly rise,
+but will it rise at the same rate for each month? If the implied volatility for
+March rises to 30 percent, will the implied volatility of June and September
+also rise to 30 percent? Traders know that volatility is mean reverting, and there
+is a greater likelihood that volatility will revert to its mean over long periods of
+time than over short periods. Therefore, as we move to more distant expira-
+tions, implied volatility is likely to remain closer to its mean, in this case, 25 per-
+cent. The new implied volatilities might be
+
+                                 March              June                  september
+ Implied volatility              30%                28%                   26%
+
+    Mean reversion will also affect falling implied volatility. If the underlying
+market becomes less volatile and implied volatility in March falls to 20 percent,
+the new implied volatilities might be
+
+                                 March            June                september
+Implied volatility               20%              22%                 24%
+
+     Even if there is a large change in the implied volatility of short-term
+options, the implied volatility of long-term options will tend to change less
+because of the mean-reversion characteristics of volatility. Figure 20-12 shows
+the typical term structure of implied volatility.
+     The fact that implied volatilities across different expiration months change
+at different rates can have important implications for risk analysis. Consider an
+option position consisting of four different expiration months with the follow-
+ing vega values for each month:
+
+                         April           June              August            October
+ Time to expiration      2 months        4 months          6 months          8 months
+ Total vega              +15.00          –36.00            –21.00            +42.00
+
+What is the implied-volatility risk of the position? We might begin by adding
+up all the vegas
+
+                       +15.00 – 36.00 – 21.00 + 42.00 = 0
+
+With a total vega of 0, it might appear that there is no implied-volatility risk.
+This, however, assumes that implied volatility will change at the same rate
+across all months. But we know that this is unlikely. The implied volatility of
+
+
+                                                               V O L AT I L I T Y R e V I s I T e D   399
+      Figure 20-12 The term structure of implied volatility.
+
+
+          Implied volatility
+
+
+
+
+                               Mean volatility
+
+
+
+
+                                                 Short-term options         Long-term options
+                                                              Time to expiration
+
+
+
+
+      short-term options will tend to change more quickly than the implied vola-
+      tility of long-term options. Given this, how should we determine our total
+      implied-volatility risk?
+            Suppose that the mean volatility in this market is 25 percent and that we
+      believe that the term structure of implied volatility is similar to that shown
+      in Figure 20-13. If April implied volatility rises to 28 percent, what will be
+      the profit or loss to the position? If there are two months remaining to April
+      expiration and implied volatility in April rises to 28 percent, we expect June
+      implied volatility to rise to only 27 percent, August implied volatility to only
+      26.5 percent, and October to only 26.1 percent. Adjusting for the different
+      rates of change, the result is a loss because
+
+                               (3 × 15.00) – (2 × 36.00) – (1.5 × 21.00) + (1.1 × 42.00) = –12.30
+
+      And if April implied volatility falls to 22 percent, the result will be reversed;
+      we will show a profit of 12.30. Clearly, the position is not vega neutral. We would
+      much prefer implied volatility to fall than rise.
+          In order to form a more accurate picture of the implied-volatility risk, we
+      must adjust the vega values for each month. We know that for each percentage
+      point change in April implied volatility, June implied volatility will change by
+
+                                                               2/3 = 0.67
+
+
+400   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 20-13 Relative changes in implied volatility for April, June, August, and October options.
+
+
+                     30%
+
+                     29%
+
+                     28%
+
+                     27%
+                                3.0
+Implied volatility
+
+
+
+
+                     26%                   2.0
+                                                        1.5          1.1
+                     25%
+                                                        1.5          1.1
+                     24%                   2.0
+                                3.0
+                     23%
+
+                     22%
+
+                     21%
+
+                     20%
+                           0     2           4           6             8                 10                12
+                               (April)    (June)     (August)      (October)
+                                                Months to expiration
+
+
+
+
+For each percentage point change in April implied volatility, August implied
+volatility will change by
+
+                                                 1.5/3 = 0.50
+
+And for each percentage point change in April implied volatility, October
+implied volatility will change by
+
+                                                 1.1/3 = 0.37
+
+If we want to know our total implied-volatility risk in terms of changes in April
+implied volatility, we can adjust our vega values accordingly
+
+                                  June vega = –36.00 × 0.67 = –24.12
+                                  August vega = –21.00 × 0.5 = –10.50
+                                 October vega = +42.00 × 0.37 = +15.54
+
+Adding everything up, we can see that we do indeed have a short vega position.
+For each percentage point change in April implied volatility, the value of the
+total position will change by
+
+                                  +15.00 – 24.12 – 10.50 +15.54 = –4.08
+
+
+                                                                           V O L AT I L I T Y R e V I s I T e D   401
+            In order to accurately assess implied-volatility risk, a trader will need some
+      method of determining how implied volatilities are likely to change across mul-
+      tiple expirations. This usually takes the form of an implied-volatility term-
+      structure model. There is no single model that all traders use. Models are often
+      “home grown,” with a trader trying to develop a model that is consistent with his
+      mathematical sophistication, as well as his experience in the marketplace. What-
+      ever the model, it will usually require at least three inputs: a primary month against
+      which all other months will be compared, a mean volatility to which implied
+      volatility tends to revert, and a “whippiness” factor that specifies how implied
+      volatility changes across other expirations with respect to changes in the primary
+      month. The primary month will often be the front month, where trading activ-
+      ity tends to be concentrated. But this is not always the case. In agricultural mar-
+      kets, trading activity is often concentrated in expiration months that fall close to
+      either the planting or harvesting calendar. If this is the case, one of these months
+      may be a better choice as the primary month. Additionally, implied volatility in
+      the front month can be unstable, especially as expiration approaches. It often
+      changes in ways that are inconsistent with the term structure of other expiration
+      months. As a result, many traders evaluate their position in front-month con-
+      tracts separately from their positions in other months, with the volatility term-
+      structure model applying to all months except the front month. The primary
+      month chosen in this approach will be something other than the front month.
+            Figure 20-14 shows how the term structure of implied volatility can evolve
+      over time. The values represent the implied volatilities during 2010 of at-
+      the-money options on the EuroStoxx 50 Index for expirations extending out
+      24 months. Values were calculated at two-month intervals, on the first Friday
+      of February, April, June, August, October, and December. The reader may
+      find it useful to compare the changes in the term-structure graphs with the
+      30-day historical volatility of the EuroStoxx 50 Index during this period,
+      shown in Figure 20-15. In early February, the term-structure graph was down-
+      ward sloping: long-term options were trading at lower implied volatilities than
+      short-term options. By April, as a result of declining index volatility, not only
+      had implied volatility declined, but the term-structure graph had inverted and
+      was upward sloping: long-term options were trading at higher implied volatili-
+      ties than short-term options. After a dramatic increase in index volatility, the
+      June term-structure graph again became downward sloping. Finally, after de-
+      clining index volatility in the last half of 2010, implied volatilities seemed to
+      settle into a middle area, with a relatively flat term structure.
+            Note one other important point: the disconnect between the front-month
+      implied volatility and the remainder of the term-structure graph in December.
+      The graph is generally upward sloping, but the front-month implied volatility
+      is still much higher than all other months. This is a common characteristic in
+      many option markets. The front-month implied volatility can often trade in a
+      way that is inconsistent with the term structure of other months.
+            The term structure in Figure 20-12 is typical of markets where the only
+      factors that tend to affect implied volatility are the recent volatility of the un-
+      derlying contract and the mean volatility. However, in some markets, there may
+      also be a seasonal volatility factor.
+
+
+402   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 20-14 Implied-volatility term structure for eurostoxx 50 Index options during 2010.
+
+
+                       34%
+
+                       32%
+                                                                                  June 4, 2010
+                       30%
+                                 February 5, 2010
+                       28%
+                                                         October 1, 2010             August 6, 2010
+  Implied volatility
+
+
+
+
+                       26%
+
+                       24%
+
+                       22%
+                                  December 3, 2010
+                       20%
+
+                       18%
+                                                                                   April 1, 2010
+                       16%
+
+                       14%
+                             0         3         6      9       12         15        18            21           24
+                                                        Months to expiration
+
+
+
+
+Figure 20-15 eurostoxx 50 Index 30-day historical volatility during 2010.
+
+
+                       60%
+
+
+
+
+                       50%
+
+
+
+
+                       40%
+Volatility
+
+
+
+
+                       30%
+
+
+
+
+                       20%
+
+
+
+
+                       10%
+                          Jan    Feb       Mar   Apr   May   Jun   Jul     Aug   Sep       Oct       Nov       Dec
+
+
+
+
+                                                                                 V O L AT I L I T Y R e V I s I T e D   403
+           Given the possibility of extremely hot temperatures, as well as droughts,
+      summer expiration months in agricultural markets typically trade at higher
+      implied volatilities than other months, regardless of the time of year. In
+      energy markets where fuel is needed for heating in the winter and cooling in
+      the summer, the possibility of very cold winters and very hot summers may
+      result in some months trading at persistently higher implied volatilities than
+      other months. In such markets, it can be difficult to create a reliable term-
+      structure model.
+           Figure 20-16 shows the changing term structure of implied volatility for
+      options on natural gas futures during 2009. Although not as obvious as the Eu-
+      rostox 50 Index in Figure 20-14, we can still detect the tendency of long-term
+      implied volatility to revert to a mean, perhaps around 40 percent. But in addi-
+      tion, there is also a seasonal volatility factor. Note the implied volatility of the
+      October option contract, which has been highlighted with a circle. Regard-
+      less of the term structure, October options always seem to trade at an inflated
+      implied volatility. This is perhaps easier to see in Figure 20-17, which shows
+      the average implied volatility of each expiration month during 2009. October
+      clearly carries a higher implied volatility than any other month. The reason
+      for this has to do primarily with the Atlantic hurricane season, which extends
+      from approximately early June to late November, with the height of the season
+      falling in August and September. During this period, any major hurricane can
+
+
+
+      Figure 20-16 Implied-volatility term structure for options on natural gas futures during 2009.
+
+
+                           85%
+                                            August 7, 2009
+                           80%
+                                                             June 5, 2009            = October implied volatility
+                           75%
+
+                           70%
+      Implied volatility
+
+
+
+
+                           65%
+                                                                            April 3, 2009
+                           60%
+
+                           55%
+                                                                                                December 4, 2009
+                           50%
+                                 February 6, 2009
+                           45%
+                                                        October 2, 2009
+                           40%
+
+                           35%
+                                     1     2        3   4     5    6      7      8      9     10    11     12
+                                                              Months to expiration
+
+
+
+404   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 20-17 Average implied volatility by expiration month of options on natural gas
+futures during 2009.
+
+
+                             62%
+
+                             60%
+
+                             58%
+Average implied volatility
+
+
+
+
+                             56%
+
+                             54%
+
+                             52%
+
+                             50%
+
+                             48%
+
+                             46%
+
+                             44%
+                                   Jan   Feb   Mar   Apr   May Jun Jul Aug Sep     Oct     Nov Dec
+                                                            Expiration month
+
+
+
+
+disrupt natural gas operations, which in the United States are concentrated
+along the northern coast of the Gulf of Mexico. October options, which expire
+toward the end of September, will capture any volatility occurring during the
+height of the hurricane season. Consequently, October options tend to trade at
+consistently higher implied volatilities than other months.
+
+
+Forward Volatility
+
+Let’s return to the term-structure graphs of implied volatilities across expira-
+tion months shown in Figure 20-14. Can we identify any trading opportunities
+from these graphs? We might simply decide that implied volatility is either too
+high, in which case we will prefer to sell options, or too low, in which case we
+will prefer to buy options. In either case, we can, in theory, capture a perceived
+mispricing by dynamically hedging the position with the underlying contract.
+But we might also ask a different question: are any expiration months mispriced
+with respect to other expiration months? Should we consider some type of cal-
+endar spread, selling options in one month and buying options in a different
+month?
+
+
+                                                                           V O L AT I L I T Y R e V I s I T e D   405
+            Let’s focus on one graph from Figure 20-14, the term structure of Eurostoxx
+      50 Index options on February 5, 2010. This is shown in Figure 20-18. The large
+      dots represent the at-the-money implied volatilities, with the solid black line rep-
+      resenting the best fit generated by a term-structure model. We can see that some
+      contract months seem to deviate from the best-fit line. June 2010 implied volatil-
+      ity falls below the line, whiles September and December 2010 fall above the line.
+      Assuming that each month is in fact trading at the indicated implied volatility,9
+      do these deviations represent a trading opportunity? Should we be buying June
+      options and selling September or December options?
+            One method that traders use to determine the mispricing of a calendar
+      spread is to consider the spread’s implied volatility. That is, what single volatility
+      applied to both expiration months will cause the value of the spread to be equal
+      to its price in the marketplace? To better understand this, let’s use the volatilities
+      in Figure 20-18 to calculate the prices of several calendar spreads. For simplic-
+      ity, we will assume that the underlying contract is trading at 100 and that there
+      are no interest-rate considerations. The relevant data is shown in Figure 20-19.
+            Looking at the February/March calendar spread, the implied volatilities for
+      the two months are 29.61 percent for February and 28.06 percent for March.
+
+      Figure 20-18 Implied volatility for at-the-money eurostoxx 50 Index options on February
+      5, 2010.
+
+
+                               30%
+                                         February 2010 – 29.61%
+                               29%
+                                           March 2010 – 28.01%
+                               28%
+                                               April 2010 – 27.15%
+                               27%
+          Implied volatility
+
+
+
+
+                               26%
+                                     June 2010 – 25.61%        September 2010 – 25.08%
+                               25%
+                                                                          December 2010 – 24.71%
+                                                                                              June 2011 – 23.99%
+                               24%
+                                                                                              December 2011 – 23.80%
+                               23%
+
+                               22%
+
+                               21%
+
+                               20%
+                                     0         3          6          9       12         15        18        21         24
+                                                                     Months to expiration
+
+
+
+
+      9
+       We make this proviso because option settlement prices do not necessarily reflect actual trading activity. When
+      this happens, anyone using settlement prices as a guide to potential trading strategies may be disappointed to
+      find that the settlement price is not an accurate reflection of where an option can actually be traded.
+
+406   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 20-19 Calendar spread values using implied volatilities on February 5, 2010.
+
+      expiration            Time to                Implied            Price of             Vega of
+        Month           expiration (days)          Volatility       the 100 Call         the 100 Call
+    February 2010                14                29.61%               2.31                 0.078
+     March 2010                  42                28.06%               3.80                 0.135
+      April 2010                 70                27.15%               4.74                 0.174
+      June 2010                 133                25.61%               6.15                 0.240
+   September 2010               224                25.08%               7.82                 0.311
+   December 2010                315                24.71%               9.14                 0.368
+      June 2011                 497                23.99%              11.13                 0.461
+   December 2011                679                23.80%              12.89                 0.537
+                                                                Spread Implied
+          Calendar Spread             Spread Price                 Volatility            Spread Vega
+    February 2010 / March 2010              1.49                   25.94%                    0.057
+      March 2010 / April 2010               0.94                   24.02%                    0.039
+       April 2010 / June 2010               1.41                   21.50%                    0.066
+    June 2010 / September 2010              1.67                   23.28%                    0.071
+ September 2010 / December 2010             1.32                   22.70%                    0.071
+    December 2010 / June 2011               1.99                   21.13%                    0.093
+    June 2011 / December 2011               1.76                   22.67%                    0.076
+
+
+
+
+The values of the at-the-money calls are 2.31 and 3.80, with a spread value of
+1.49. If we evaluate these options using the same volatility, what single volatility
+will yield a value equal to the price of 1.49? Logically, this volatility has to be less
+than 28.06 percent because at this volatility the March option is fairly priced, but
+the February option is too expensive. The entire spread will be worth more than
+1.49. We need to reduce the volatility until we find the single volatility that will
+cause the spread to be worth 1.49. Using a computer, we find that the February/
+March calendar spread has an implied volatility of 25.94 percent.
+      We can go through this process for each successive calendar spread, calcu-
+lating the implied volatility of each spread. These volatilities are shown at the
+bottom of Figure 20-19. How will these calendar spread implied volatilities
+look if we overlay them on Figure 20-18? This is shown in Figure 20-20. We
+can see clearly that the June 2010 options are significantly underpriced in the
+marketplace compared with nearby expirations, while the September 2010 op-
+tions are significantly overpriced. If given a choice of strategies, it might make
+sense to buy the April/June 2010 calendar spread and sell the June/September
+2010 calendar spread. Together these spreads make up a time butterfly.
+      We use these implied volatilities not to determine whether implied volatil-
+ity in the entire option complex is either too high or too low but rather to deter-
+mine whether particular months are mispriced with respect to other months.
+
+                                                                        V O L AT I L I T Y R e V I s I T e D   407
+      Figure 20-20 eurostoxx 50 Index calendar spread implied volatilities on February 5, 2010.
+
+
+                              30%
+                                         February 2010
+                              29%
+                                            March 2010
+                              28%
+                                              April 2010
+                              27%
+                                        Feb–Mar
+         Implied volatility
+
+
+
+
+                              26%                        June 2010
+                                                                September 2010
+                              25%
+                                                                           December 2010
+                                               Mar–Apr                                       June 2011   December 2011
+                              24%
+                                                            Jun–Sep
+                              23%                                          Sep–Dec
+                                                                                                             Jun–Dec
+                              22%
+                                                  Apr–Jun
+                              21%                                                          Dec–Jun
+
+                              20%
+                                    0          3            6         9       12        15        18        21       24
+                                                                      Months to expiration
+
+
+
+
+      The implied-volatility graph acts as a magnifying glass, enabling us to more
+      easily determine which months are overpriced and which are underpriced.
+           When the term-structure graph is downward sloping, as it is in Figure
+      20-20, all calendar spread implied volatilities will fall below the term-structure
+      graph. Alternatively, if the term-structure graph is upward sloping, all calendar
+      spread implied volatilities will fall above the graph. If all implied volatilities fall
+      exactly along the best-fit graph, regardless of whether the graph is upward or
+      downward sloping, the implied-volatility curve will be smooth, suggesting that
+      there are no obviously mispriced calendar spreads.
+           Determining the exact implied volatility of a calendar spread usually re-
+      quires a computer programmed with a pricing model. However, it is often pos-
+      sible to estimate the implied volatility of an at-the-money calendar spread if we
+      recall that the vega of an at-the-money option is relatively constant with respect
+      to changes in volatility. Suppose that we know both the prices O1 and O2 and the
+      vega values V1 and V2 of the two options that make up the calendar spread. The
+      price of the spread is O2 – O1, and the vega of the spread is V2 – V1. The implied
+      volatility of the spread, given as a whole number, is approximately equal to the
+      price of the spread divided by its vega
+                                                                                      O2 − O1
+                                                      Spread implied volicity =
+                                                                                      V2 − V1
+
+
+
+408   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+This method is not exact because there is likely to be rounding error, and the
+vega does change slightly as we change volatility. However, this approach may
+be useful if a trader needs to make a quick estimate of whether a calendar
+spread is overpriced or underpriced.
+     The vega values for the individual options, as well as for the various calen-
+dar spreads, are given in Figure 20-20. The reader may find it worthwhile to
+estimate the implied volatility of each spread using this method and then com-
+pare the result with the true implied volatility of the spread.
+     Instead of analyzing the volatility term structure by looking at the implied
+volatility of successive calendar spreads, we might take a slightly more theo-
+retical approach. Suppose that we have two option expirations, a short-term
+option expiring at t1 and a long-term option expiring at t2. If the implied volatil-
+ity of the short-term expiration is σ1 and the implied volatility of the long-term
+expiration is σ2, we might ask this question: what forward volatility σf is the mar-
+ketplace implying between expiration of the short-term option and expiration
+of the long-term option?
+
+
+
+
+                                                       t1                                     t2
+
+
+
+This is analogous to a forward rate in an interest-rate market. Given a short-term
+interest rate and a long-term interest rate, what rate must apply between the
+two maturities such that no arbitrage opportunity exists? Unlike interest rates,
+which are directly proportional to time, volatility is proportional to the square
+root of time. Using this, we can calculate the forward volatility10
+
+                                              ( σ 22 × t2 ) − ( σ12 × t1 )
+                                   σf =
+                                                        t2 − t1
+
+    We can expand this relationship to any number of volatilities over any
+number of consecutive time periods. Given forward volatilities σi covering the
+time from ti–1 to ti, the volatility over the entire time period from t0 to tn must be
+
+                                               n   σ 2t − ( t −1) × (t i − t i −1 )
+                                 σ t −t =
+                                    n   0
+                                              ∑        i    i
+
+                                                               tn − t0
+                                              i =1
+
+
+
+
+10
+ Some readers may recognize that the forward volatility calculation results from the fact that the square of
+volatility or variance σ2 is directly proportional to time
+σf2 × (t2 – t1) = (σ22 × t2) – (σ12 × t1)
+
+
+
+                                                                                      V O L AT I L I T Y R e V I s I T e D   409
+      Figure 20-21
+
+
+                              30%
+                                        February 2010                            Expiration month implied volatilities
+                              29%                                                Calendar spread implied volatilities
+                                                                                 Forward volatilities
+                                          March 2010
+                              28%
+                                             April 2010
+                              27%
+         Implied volatility
+
+
+
+
+                              26%
+                                                        June 2010
+                                                                September 2010
+                              25%
+                                                                         December 2010
+                                                                                            June 2011       December 2011
+                              24%
+
+                              23%
+
+                              22%
+
+                              21%
+
+                              20%
+                                    0        3            6        9       12        15             18           21      24
+                                                                   Months to expiration
+
+
+
+
+            Suppose that we calculate the forward volatilities for the volatility term
+      structure in Figure 20-20. How would this compare with the implied volatili-
+      ties of the calendar spreads? This is shown in Figure 20-21. The forward vola-
+      tility graph has the same general structure as the calendar spread graph. Both
+      graphs serve the same purpose—to highlight any mispricing of a particular
+      expiration month.
+            Every experienced option trader knows that dealing with volatility can be
+      a difficult task. To facilitate the decision-making process, we have attempted to
+      make some generalizations about volatility characteristics. Even then, it may
+      not be clear what the right strategy is. Moreover, looking at a limited number of
+      examples makes the generalizations even less reliable. Every market has its own
+      characteristics, and understanding the volatility characteristics of a particular
+      market, whether interest rates, foreign currencies, stocks, or commodities, is at
+      least as important as knowing the technical characteristics of volatility. And this
+      knowledge can only come from careful study of a market combined with actual
+      trading experience.
+
+
+
+
+410   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+                                                                          21
+Position Analysis
+
+
+Investors or speculators in option markets often have a particular view of mar-
+ket conditions in terms of either direction or volatility. They attempt to profit
+from this view through the selection of spreading strategies such as those dis-
+cussed in Chapters 11 and 12. In Chapter 13, we looked at the risk character-
+istics of some of these strategies under changing market conditions. Because
+each spread consisted of a limited number of contracts, it was a relatively sim-
+ple matter to determine the risks that each spread entailed.
+     An active option trader, such as a market maker, may build up much more
+complex positions consisting of many different options across a wide range of
+exercise prices and expiration months. Unlike simple strategies, where the risks
+are relatively easy to identify, analysis of a complex position can be particularly
+difficult because of the many ways in which risks can change as market con-
+ditions change. If a trader cannot determine the risks of a position, he will be
+unprepared to take the necessary action to protect himself when market condi-
+tions move against him or to take advantage of his good fortune when market
+conditions move in his favor.
+     Before theoretical pricing models came into widespread use, analyzing a
+complex position made up of many different options was often an impossible
+task. Even if a trader had some idea of how each option changed as market
+conditions changed, combining many different options often caused the entire
+position to change in unexpected ways. Still, if he expected to survive, an intel-
+ligent trader needed to make some effort to analyze the position.
+     In the early days of option trading, one common approach to analyzing
+risk was to use synthetic relationships to rewrite a position in a more easily rec-
+ognizable form. If the rewritten position conformed to a strategy with which
+the trader was familiar, the trader might then be able to determine the risks of
+the position.
+     For example, consider this position:
+      +29 underlying contracts
+      –44 March 65 calls
+      +44 March 65 puts
+
+                                                                                      411
+              –7 March 70 calls
+              +49 March 70 puts
+              –33 March 75 calls
+              –51 March 75 puts
+              +30 March 80 calls
+              +12 March 80 puts
+           Suppose that the underlying contract is trading at a price of 71.50. What
+      is the delta of this position—positive, negative, or neutral? Without a theoreti-
+      cal pricing model, this may look like an impossible question to answer. And,
+      indeed, without a model, there is no way of knowing the exact delta of the
+      position. But even if we cannot determine the exact delta, perhaps we can
+      determine the direction in which we want the underlying contract to move.
+           Using synthetic relationships, positions that consist of both calls and puts
+      can be rewritten so that they consist of a single type of option, either all calls or
+      all puts. This can sometimes make a position easier to analyze. Let’s take our
+      position and rewrite it so that it consists only of calls, rewriting each put as its
+      synthetic equivalent:
+
+              +29 underlying contracts
+              –19 March 65 calls
+              +19 March 65 puts +19 March 65 calls/–19 underlying contracts
+              –7 March 70 calls
+              +49 March 70 puts +49 March 70 calls/–49 underlying contracts
+              –33 March 75 calls
+              –51 March 75 puts –51 March 75 calls/+51 underlying contracts
+              +30 March 80 calls
+              +12 March 80 puts +12 March 80 calls/–12 underlying contracts
+
+            If we total all the contracts, what are we left with?
+
+              Underlying                 +29         –19   –49   +51   –12   =        0
+                contracts
+
+              March 65 calls             +19         +19                     =        0
+
+              March 70 calls               –7        +49                     =     +42
+
+              March 75 calls –33         –51                                 =     –84
+
+              March 80 calls +30         +12                                 =     +42
+
+
+      We really have this position.
+
+              +42 March 70 calls
+              –84 March 75 calls
+              +42 March 65 calls
+
+         As complex as the position first appeared, it was simply a long butterfly.
+      And a long butterfly always wants the underlying contract to move toward the
+
+412   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+inside exercise price, in this case, 75. With the underlying contract currently
+trading at 71.50, the position must be delta positive. If we had rewritten the
+position so that it consisted only of puts, the result would have been the same
+because a call and put butterfly have essentially the same characteristics.
+     The foregoing example was admittedly created so that when the position was
+rewritten in terms of synthetic equivalents, its risk characteristics were relatively
+easy to identify. In reality, the risk characteristics of a complex position rarely fall
+neatly into place. Analysis of a complex position will almost always require a theo-
+retical pricing model. Even then, the model may not tell the entire story.
+     Suppose that we have the following market conditions:
+
+        Underlying price = 99.60
+        Time to September expiration = 9 weeks
+        Volatility = 18 percent
+        Interest rate1 = 0
+
+The September 95 put and September 105 call have these risk characteristics:
+
+                                  Delta               Gamma                 Theta                 Vega
+
+    September 95 put               25                 4.3                   –0.019                0.132
+
+    September 105 call            –25                 4.3                   –0.019                0.132
+
+What are the risks if we have the following position2:
+
+        Long 10 September 95 puts
+        Short 10 September 105 calls
+        Long 5 underlying contracts
+
+       The total risk sensitivities for the position are
+
+        Delta:           (10 × –25) – (10 × 25) + (5 – 100) = 0
+        Gamma:           (10 × 4.3) – (10 × 4.3) = 0
+        Theta:           (10 × –0.019) – (10 × –0.019) = 0
+        Vega:            (10 × 0.132) – (10 × –0.132) = 0
+
+It appears that we have no directional risk (delta is 0), no realized volatility risk
+(gamma is 0), no risk with respect to the passage of time (theta is 0), and no
+implied volatility risk (vega is 0). If the position was initiated with some positive
+theoretical edge and the risk sensitivities associated with the position are all 0,
+then the position is certain to show a profit. So what’s the problem?
+     The problem is that the delta, gamma, theta, and vega are only measures
+of the position’s risk under current market conditions. But today’s market con-
+ditions may not be—in fact, cannot be—tomorrow’s conditions. Even if the
+
+1
+  In order to focus on the volatility characteristics of the positions, we assume an interest rate of 0 in this and
+other examples.
+2
+  Some readers may recognize this position as a risk reversal or split strike conversion. More on this in Chapter 24.
+
+
+                                                                                       P O s I T I O N A N A LY s I s   413
+      underlying price and volatility remain unchanged, time will pass. And we know
+      that the passage of time can change a position’s characteristics. Looking at a
+      position’s characteristics under current market conditions is only the first step
+      in analyzing risk. We need to ask not only what the risks are right now but also
+      what the risks might be under different market conditions. What will happen
+      if the underlying contract moves up or down in price? What will happen if
+      implied volatility rises or falls? What will happen as time passes?
+           We can expand our analysis by using what we already know about how
+      risk sensitivities change as market conditions change. Suppose that the under-
+      lying price begins to fall. How might our risk change? We know that gamma
+      is greatest for at-the-money options. As the underlying price begins to fall, it is
+      moving toward the lower exercise price, 95, and away from the higher exer-
+      cise price, 105. The gamma of the September 95 put must be increasing, while
+      the gamma of the September 105 call must be declining. Because we are long
+      the 95 put and short the 105 call, the total gamma position is becoming positive.
+      Moreover, if we have a positive gamma, as the market falls, our position, which
+      was initially delta neutral, will become delta negative.
+           What if the underlying price begins to rise? Now the market is moving
+      away from 95 and toward 105: the gamma of the September 95 put is declin-
+      ing, and the gamma of the September 105 call is increasing. The entire posi-
+      tion is now becoming gamma negative. Consequently, as the market rises, our
+      position will become delta negative.
+           This seems odd. The position becomes delta negative if the underlying
+      price falls or rises. The explanation is the changing gamma: the position becomes
+      gamma positive on the way down but gamma negative on the way up.
+           Now let’s consider what will happen if volatility rises. As volatility
+      increases, the delta of calls moves toward 50, and the delta of puts moves
+      toward –50, while the delta of the underlying contract remains constant at 100.
+      Because we are long puts, now with a delta greater (in absolute value) than –25,
+      and short calls, now with a delta greater than 25, the position is becoming delta
+      negative. If the delta of the September 95 put goes to –30 and the delta of the
+      105 call goes to +30, the total delta position will be
+
+                                 (10 × –30) – (10 × 30) + (5 × 100) = –100
+
+          In the same way, reducing volatility causes delta values to move away
+      from 50. If the delta of the September 95 put goes to –20 and the delta of the
+      105 call goes to +20, the total delta position would be
+
+                                 (10 × –20) – (10 × 20) + (5 × 100) = +100
+
+      Summarizing, if volatility rises, we want the underlying market to fall. If vola-
+      tility falls, we want the underlying market to rise.
+            What will happen to the position as time passes? Reducing time, like
+      reducing volatility, causes delta values to move away from 50. With no change
+      in the underlying price as time passes, the call and put will move further out of
+      the money. The five underlying contracts will tend to dominate the position,
+      resulting in a positive delta.
+
+
+414   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+     We have initially focused on the delta and gamma, but we can also infer
+what will happen to the theta and vega because these values, like the gamma,
+are greatest for at-the-money options. If the underlying contract begins
+to fall, our theta position will become negative (the passage of time will begin to
+hurt), and our vega position will become positive (we will want implied volatil-
+ity to increase). If the underlying contract begins to rise, our theta position will
+become positive (the passage of time will begin to help), and our vega position
+will become negative (we will want implied volatility to decline). If the under-
+lying price does not change, the gamma, theta, and vega of the position are
+unlikely to be significantly affected by changes in either time or volatility. We
+can summarize the effect of changing market conditions on the risk character-
+istics of the position as follows:
+
+ Change in Market     Resulting        Resulting Gamma Resulting Theta       Resulting
+ Conditions           Delta Position   Position        Position              Vega Position
+
+ Rising underlying    Negative         Positive         Negative             Positive
+    price
+
+ Falling underlying   Negative         Positive         Negative             Positive
+    price
+
+ Time passes          Positive         0                0                    0
+
+ Volatility rises     Negative         0                0                    0
+
+ Volatility falls     Positive         0                0                    0
+
+     If a position is not overly complex, a trader may be able to do this type of
+analysis, first looking at the initial risk sensitivities and then considering how the
+sensitivities might change as market conditions change. However, a trader can get
+a more complete picture of a position’s risk by looking at a graph of the position’s
+value over a broad range of conditions. Let’s do this for the current position:
+        Long 10 September 95 puts
+        Short 10 September 105 calls
+        Long 5 underlying contracts
+    Figure 21-1 shows the value of the position with respect to movement in
+the underlying contract. The three graphs represent the value at the current
+volatility of 18 percent, as well as at volatilities of 14 and 22 percent. From
+Figure 21-1, we can see the graphic interpretation of delta and gamma. For
+a negative delta position, the graph extends from the upper left to the lower
+right—as the underlying price rises, the position loses value. For a positive
+delta position, the graph extends from the lower left to the upper right—as the
+underlying price rises, the position gains value. In our example, the position is
+always delta negative at higher volatilities. Around the current underlying price
+of 99.60, the position is delta neutral—the graph is exactly horizontal. At lower
+volatilities, the delta will become positive around the current underlying price.
+    For a negative gamma position, the graph curves downward, taking on the
+shape of a frown; price movement in either direction decreases the value of
+
+
+                                                                   P O s I T I O N A N A LY s I s   415
+      Figure 21-1 Position value as the underlying price and volatility change.
+
+
+                           40
+
+                           30
+                                                                 99.60
+                           20
+                                                                                  Volatility = 14%
+        Theoretical P&L
+
+
+
+
+                           10
+                                                                                            Volatility = 18%
+                            0
+
+                          –10
+                                                                         Volatility = 22%
+                          –20     Long 10 September 95 puts
+                                  Short 10 September 105 calls
+                          –30     Long 5 underlying contracts
+
+                          –40
+                             85           90          95         100            105             110            115
+                                                            Underlying price
+
+
+
+
+      the position. For a positive gamma position, the graph curves upward, taking
+      on the shape of a smile; price movement in either direction increases the value
+      of the position. Our position has a positive gamma below the current price of
+      99.60 and a negative gamma above 99.60. At lower volatilities, the gamma is
+      magnified (there is greater curvature), while at higher volatilities, the gamma
+      is muted (there is less curvature). The current underlying price of 99.60 is an
+      inflection point—the gamma is changing from positive to negative. At this price,
+      the graph is essentially a straight line. The graphic interpretations of a positive
+      and negative delta and gamma are shown in Figure 21-2.
+            Because gamma and theta are of opposite signs, a positive gamma position
+      will lose value as time passes with no movement in the underlying contract. A
+      negative gamma will gain value. This is shown in Figures 21-3 and 21-4.
+            Although gamma and theta are always of opposite signs, gamma and
+      vega may be either the same or the opposite. Regardless of whether we have
+      a positive gamma (we want the underlying contract to move) or a negative
+      gamma (we want the underlying contract to sit still), we can have either a
+      positive vega (we want implied volatility to rise) or a negative vega (we want
+      implied volatility to fall). The graphic representations of these positions are
+      shown in Figures 21-5 and 21-6.
+            It may also be useful to look at graphs of the risk sensitivities as market con-
+      ditions change. In Figure 21-7, we can see the changing delta as the underly-
+      ing price and volatility change. Close to the current underlying price of 99.60,
+      raising volatility causes the delta to become negative, while lowering volatility
+      causes the delta to become positive. As we have already seen, if the underlying
+
+
+416   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-2 Positive and negative delta and gamma.
+
+
+                                                Positive gamma
+                                                  (a “smile”)
+
+
+
+
+                                                 Delta neutral
+                   Negative delta                                                     Positive delta
+ Theoretical P&L
+
+
+
+
+                   Positive delta                                                  Negative delta
+
+
+
+
+                                               Negative gamma
+                                                 (a “frown”)
+
+                                                Underlying price
+
+
+
+
+contract either rises or falls, the delta becomes negative. In Figure 21-8, we can
+see the changing gamma as the underlying price and volatility change. Close to
+the current underlying price of 99.60, the gamma is unaffected by changes in
+volatility. The gamma becomes positive if the underlying price falls or negative
+if the underlying contract rises.
+
+Figure 21-3 Positive gamma, negative theta position as time passes.
+
+
+
+                                    With no movement in the underlying price,
+                                     the position loses value as time passes.
+                                         The graph is shifted downward.
+ Theoretical P&L
+
+
+
+
+                                                Underlying price
+
+
+
+                                                                            P O s I T I O N A N A LY s I s   417
+      Figure 21-4 Negative gamma, positive theta position as time passes.
+
+
+        Theoretical P&L
+
+
+
+
+                                       With no movement in the underlying price,
+                                        the position gains value as time passes.
+                                              The graph is shifted upward.
+
+
+
+                                                           Underlying price
+
+
+
+           In addition to considering the risk sensitivities—delta, gamma, theta, and
+      vega—and the way in which these values change as market conditions change,
+      traders are well advised to look at the net contract position. If the market makes a
+      dramatic downward move such that all calls move far out of the money while
+      all puts go deeply into the money, or the market makes a dramatic upward
+      move such that all puts move far out of the money while all calls go deeply into
+
+
+      Figure 21-5 Positive gamma position as volatility changes.
+
+
+                             Positive vega – the position gains value as volatility rises.
+                             Negative vega – the position gains value as volatility falls.
+                                     In both cases, the graph is shifted upward.
+        Theoretical P&L
+
+
+
+
+                             Positive vega – the position loses value as volatility falls.
+                            Negative vega – the position loses value as volatility rises.
+                                   In both cases, the graph is shifted downward.
+
+                                                           Underlying price
+
+
+418   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-6 Negative gamma position as volatility changes.
+
+
+                                    Positive vega – the position gains value as volatility rises.
+                                    Negative vega – the position gains value as volatility falls.
+                                            In both cases, the graph is shifted upward.
+ Theoretical P&L
+
+
+
+
+                                    Positive vega – the position loses value as volatility falls.
+                                   Negative vega – the position loses value as volatility rises.
+                                          In both cases, the graph is shifted downward.
+
+                                                          Underlying price
+
+
+
+the money, what will be the result? In other words, if the market falls and all
+puts begin to act like short underlying contracts, or the market rises and all calls
+begin to act like long underlying contracts, what is the trader left with? In our
+position, the downside contract position is short five. At very low underlying prices,
+the long 10 September 95 puts together combined with the long 5 underly-
+ing contracts will act like a position that is short 5 underlying contracts. The
+
+
+Figure 21-7 Position delta as the underlying price and volatility change.
+
+
+                      200
+                              Long 10 September 95 puts                      Volatility = 18%
+                              Short 10 September 105 calls
+                      100     Long 5 underlying contracts
+                                                                                      Volatility = 14%
+                        0
+    Position delta
+
+
+
+
+                     –100
+
+
+                     –200
+                                                                      Volatility = 22%
+                     –300
+                                                                 99.60
+                     –400
+
+
+                     –500
+                         85            90            95           100           105             110            115
+                                                             Underlying price
+
+
+                                                                                         P O s I T I O N A N A LY s I s   419
+      Figure 21-8 Position gamma as the underlying price and volatility change.
+
+
+                          80
+                                                       Volatility = 14%       Long 10 September 95 puts
+                                                                              Short 10 September 105 calls
+                          60
+                                                                              Long 5 underlying contracts
+
+                          40
+        Position gamma
+
+
+
+
+                          20
+                                 Volatility = 18%
+                           0
+                                            Volatility = 22%
+                         –20
+                                                               99.60
+                         –40
+
+
+                         –60
+                            85    90              95             100             105          110            115
+                                                           Underlying price
+
+
+
+
+      upside contract position is also short five. At very high underlying prices, the short
+      10 September 105 calls combined with the long 5 underlying contracts will
+      act like a position that is also short 5 underlying contracts. This is apparent in
+      Figure 21-7; the delta approaches –500 in either direction.
+           The net contract position may sometimes seem irrelevant, particularly if a
+      position consists of very far out-of-the-money options. After all, how likely is it
+      that they will go so deeply into the money that they will act like underlying con-
+      tracts? But traders have learned, sometimes through painful experience, that
+      big moves occur more often in the real world than one might expect. Extraor-
+      dinary and unpredictable events—political and economic upheavals, scientific
+      breakthroughs, natural disasters, corporate takeovers—can sometimes cause
+      markets to move dramatically. When this occurs, a trader may find that options
+      that “couldn’t possibly go into the money” have done just that.
+           A trader who is short very far out-of-the-money options may believe that
+      there is so little chance that the options will go into the money that there is no point
+      in buying them back. This may be true, but the clearinghouse will still require
+      a margin deposit for each short option. In order to eliminate this requirement,
+      and perhaps put the money to better use, the trader may want to buy back the
+      options. Of course, he will only want to do this if the price is reasonable. Certainly,
+      the price that the trader will be willing to pay ought to be less than the margin
+      requirement. In the same way, a trader who is long very far out-of-the-money
+      options that he believes are worthless will usually be happy to sell the options at
+      whatever price he can. After all, something is better than nothing, which is what
+      the options will be worth if they expire out of the money.
+           Very often the price at which traders are willing to buy or sell very far
+      out-of-the money options is less than the minimum price that the exchange
+420   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+normally allows. For this reason, many exchanges permit options to trade at a
+cabinet bid, a bid usually made at a price of one currency unit. For example, if
+the minimum price for an option on a U.S. exchange is $5.00, an exchange may
+permit options to trade at a cabinet bid of $1.00. This will allow traders who
+are either long or short options that they believe to be worthless to remove them
+from their accounts. The conditions under which cabinet bids are permissible
+are specified by each exchange.
+     Now let’s consider the more complex position shown in Figure 21-9. The
+position consists of options that all expire at the same time, but it includes calls
+
+Figure 21.9
+
+
+ Underlying price = 101.25 Time to expiration = 6 weeks Volatility = 27.00%          Interest rate = 0%
+
+                                      Calls                                              Puts
+
+ exercise
+  Price        Delta         Gamma             Theta      Vega        Delta     Gamma           Theta   Vega
+
+  90            90.9           1.77           –0.0181      0.056       –9.1       1.77      –0.0181     0.056
+
+  95            77.1           3.27           –0.0335      0.104      –22.9       3.27      –0.0335     0.104
+
+100             57.2           4.23           –0.0433      0.135      –42.8       4.23      –0.0433     0.135
+
+105             36.3           4.04           –0.0414      0.129      –63.7       4.04      –0.0414     0.129
+
+110             19.5           2.97           –0.0304      0.095      –80.5       2.97      –0.0304     0.095
+
+
+                                               Delta       Gamma               Theta               Vega
+ Option                       Position        Position     Position           Position            Position
+
+ 90 C                           –4            –363.6        –7.08             +0.0724              –0.224
+
+ 95 C                          –12            –925.2       –39.24             +0.4020              –1.248
+
+ 100 C                         +14            +800.8       +59.22             –0.6062             +1.890
+
+ 105 C                         –17            –617.1       –68.68             +0.7038              –2.193
+
+ 110 C                         +12            +234.0       +35.64             –0.3648             +1.140
+ Call totals                    –7            –871.1       –20.14              +.2072             –0.635
+
+
+ 90 P                          +13            –118.3       +23.01             –0.2353             +0.728
+
+ 95 P                          –20            +458.0       –65.40             +0.6700              –2.080
+
+ 100 P                          –8            +342.4       –33.84             +0.3464              –1.080
+
+ 105 P                         +12            –764.4       +48.48             –0.4968             +1.548
+
+ 110 P                          +8            –644.0       +23.76             –0.2432             +0.760
+ Put totals                     +5            –726.3        –3.99             +0.0411             –0.124
+
+
+ Underlying contracts          +13             1,300             0                  0                   0
+
+ Totals                                       –297.4       –24.13             +0.2483              –0.759
+
+
+
+                                                                                P O s I T I O N A N A LY s I s   421
+      and puts at five different exercise prices, together with a position in the underly-
+      ing contract. As before, we assume that the position has some positive theoreti-
+      cal edge. Otherwise, the immediate goal would be to liquidate the position in
+      order to avoid a loss or to alter it in order to create a positive theoretical edge.
+      What are the risks of holding this position?
+           Beginning with a quick look at the sensitivities, we can see that we are at
+      risk from a decline in the underlying market (negative delta), from an increase
+      in realized volatility (negative gamma), and from an increase in implied volatil-
+      ity (negative vega). Looking only at the delta and gamma, the most favorable
+      outcome seems to be a slow downward move in the underlying market. The
+      least favorable outcome seems to be a swift upward move.
+           What else can we say about this position? From the negative delta, it’s clear
+      that we would like downward movement in the underlying price. But how far
+      down? The current price is 101.25. Do we want the market to fall to 100?
+      To 95? To 90? Perhaps we want an unlimited decline. However, the negative
+      gamma indicates that a swift and violent downward move cannot be good for
+      this position. Taken together with the delta, we can approximate just how far
+      we want the underlying to fall if we realize that a negative gamma position always
+      wants to become delta neutral. The profit resulting from a negative gamma position
+      will tend to be maximized when it is delta neutral.
+           Where will our position be delta neutral if the market starts to fall? For
+      each point decline in the underlying market, we must subtract the gamma,
+      –25.8, from our delta. By dividing the current delta by the gamma, we can esti-
+      mate that the position is approximately delta neutral at an underlying price of
+
+                           101.25 – (297.4/24.13) = 101.25 – 12.32 = 88.93
+
+      Of course, this is only an approximation because we are assuming that the
+      gamma is constant, which it is not. An increasing or declining gamma as the
+      underlying price changes will alter our conclusion. However, if we have to
+      make a quick estimate of what we would like to occur, a slow downward move
+      to around 89.00 seems best.
+           We have also surmised that a swift upward move will hurt this position.
+      Now both the delta and gamma are working against the position. Suppose that
+      the worst happens—the underlying contract suddenly leaps to 150. Will the
+      result be disastrous for us? Here we return to the net contract position: if
+      the market makes a dramatic move such that all contracts move into or out
+      of the money, what are we left with? In a large upward move, all the puts will
+      collapse to 0, while all the calls will eventually begin to act like underlying
+      contracts. Our position is net short a total of 7 calls. But we are also long 13
+      underlying contracts. This gives us a net upside contract position of +6. If the
+      market makes a really big upward move, we will have a position that is long 6
+      underlying contracts, giving us a potentially unlimited profit. We can conclude
+      that as the market moves up, at some point our gamma must turn positive,
+      causing the delta to eventually become positive.
+           The downside contract position is not so favorable. Now all the calls will
+      collapse to 0, while all the puts will act like short underlying contracts. We are
+      net long 5 puts, but we are also long the same 13 underlying contracts. Our
+
+422   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+net downside contract position is +8. If the market makes a violent downward
+move, we will have a position that is long 8 underlying contracts, with poten-
+tially disastrous results.
+     Because we are focusing on the risk characteristics of our position, no
+prices or theoretical values are given for the options in Figure 21-9. We have
+simply made the assumption that the position has some positive theoreti-
+cal edge. However, the size of the theoretical edge—how much, in theory,
+we expect to make with the position if our volatility estimate of 27 percent
+is correct—can be an important consideration in analyzing the risk of the
+position. For example, let’s assume that the position has a positive theoreti-
+cal edge of 6.00. If 27 percent turns out to be the correct volatility over the
+six-week life of the position and we go through the delta-neutral dynamic
+hedging process,3 we expect to show a profit of 6.00.
+     The theoretical edge and vega can help us estimate our volatility risk.
+From the vega position of –0.759, we know that any increase in volatility will
+hurt. Consequently, we might ask this question: how much can volatility rise
+before our potential profit turns into a potential loss? For each percentage point
+increase in volatility our potential profit will be reduced by the amount of the
+vega. By dividing the theoretical edge by the vega, we can estimate that the
+position will break even at a volatility of approximately
+
+                    27.00 + (6.00/0.759) = 27.00 + 7.90 = 34.90 (%)
+
+Assuming a theoretical edge of 6.00, if volatility turns out to be no higher than
+34.90 percent, the position will do no worse than break even. Above 34.90 per-
+cent, the position will begin to show a loss. We discussed this concept—the
+breakeven volatility of a position—in Chapter 7. This can be thought of as
+the implied volatility of the entire position. It tells us that we have a margin for
+error of 7.90 volatility points in our volatility estimate. Whether this represents
+a small or large margin of error depends on the volatility characteristics of this
+particular market.
+     How can we increase the margin for error in our volatility estimate? We
+can do so by either increasing the theoretical edge (without increasing the vega)
+or by reducing the vega (without reducing the theoretical edge). If we can
+increase the theoretical edge to 8.00 without increasing the vega, the implied
+volatility of the position will be
+
+                   27.00 + (8.00/0.759) = 27.00 + 10.54 = 37.54 (%)
+
+Alternatively, if we can reduce the vega to –0.65, the implied volatility will be
+
+                     27.00 + (6.00/0.65) = 27.00 + 9.23 = 36.23 (%)
+
+Unfortunately, it may not be possible to do either. In this case, we will have to
+decide whether the vega risk of –0.759 is reasonable given the potential profit
+of 6.00.
+
+3
+ The position is, of course, not currently delta neutral. If we want to dynamically hedge the position, we must
+begin by offsetting the current delta of –297, perhaps by purchasing three underlying contracts.
+
+
+                                                                                  P O s I T I O N A N A LY s I s   423
+           We know that the risk sensitivities of the position—delta, gamma, theta,
+      and vega—are likely to change as market conditions change. It is almost
+      impossible to do a detailed analysis of these changes without computer sup-
+      port. However, we may be able to say something about how the delta changes
+      as time and volatility change if we recall that delta values move either toward
+      50 or away from 50 with changes in time to expiration and volatility.
+           Consider what will happen if volatility begins to rise. All call deltas will
+      move toward 50 and put deltas toward –50. Because we are net short 7 calls
+      and net long 5 puts, in the extreme, the call delta position will be
+
+                                                    –7 × 50 = –350
+
+      and the put delta position will be
+
+                                                    5 × –50 = –250
+
+      Together with the 13 long underlying contracts, the total delta will be
+
+                                           –350 – 250 + 1,300 = +700
+
+           Of course, we would have to raise volatility dramatically for all the del-
+      tas to actually approach 50. But, as we begin to raise volatility, the current
+      delta of –297 will become less negative and eventually will turn positive. In
+      a high-volatility market, we will prefer upward movement in the underlying
+      contract.
+           What about a decline in volatility or the passage of time, both of which will
+      cause delta values to move away from 50? The delta values of out-of-the-money
+      options will move toward 0, while the delta values of in-the-money options will
+      move toward 100. Because we are currently net short 2 in-the-money calls (the
+      90, 95, and 100 calls) and net long 20 in-the-money puts (the 105 and 110 puts),
+      in the extreme, our total delta will be
+
+                                          –200 – 2,000 + 1,300 = –900
+
+      If we reduce volatility or time passes, we will prefer downward movement in
+      the underlying contract.
+           For a new trader, using a basic knowledge of delta, gamma, theta, and vega
+      characteristics to analyze the risk of a position can be a useful exercise. How-
+      ever, when computer support is available, it is almost always easier and more
+      efficient to look at graphs of the position’s risk. This has been done for the cur-
+      rent position in Figures 21-10 through 21-13.
+           In Figure 21-10, we can see that at a volatility of 27 percent, the maximum
+      profit on the downside will occur at a price of approximately 95.00, at which
+      point the position delta is 0. This differs considerably from our estimate of 88.93
+      because the gamma, which was initially –24.13, becomes a much larger negative
+      number as the market drops. The negative delta of –297 is more rapidly offset by
+      the increasing gamma. In Figure 21-12, we see that on the downside, the gamma
+      reaches its maximum of approximately –80 at an underlying price of 93.
+           If the market moves up, we will initially lose money. But, at an underlying
+      price of 104, the gamma becomes positive. Our negative delta begins to turn
+
+424   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-10 Position value as the underlying price and volatility change.
+
+
+                    40
+                                                                101.25
+                    20                                                   Time to expiration = 6 weeks
+
+
+                     0
+ Theoretical P&L
+
+
+
+
+                   –20
+
+
+                   –40
+
+                                 Volatility = 22%
+                   –60           Volatility = 27%
+                                 Volatility = 32%
+
+                   –80
+                      80        85        90        95        100         105        110        115          120
+                                                         Underlying price
+
+
+
+
+around and at a price of 112 actually becomes positive (Figure 21-11). We will
+continue to lose money above 112, but at some point the position will begin
+to show a profit. Figure 21-10 only goes up to an underlying price of 120, but
+a more extensive analysis would show that at an underlying price of 124, the
+position will begin to show a profit.
+
+
+Figure 21-11 Position delta as the underlying price and volatility change.
+
+
+                   1,000
+                                                                101.25          Volatility = 22%
+                    800                                                         Volatility = 27%
+                                                                                Volatility = 32%
+                    600
+
+                    400
+ Position delta
+
+
+
+
+                    200
+
+                         0
+
+                   –200
+
+                   –400
+                             Time to expiration = 6 weeks
+                   –600
+                       80        85        90       95         100        105        110           115       120
+                                                         Underlying price
+
+
+
+                                                                                      P O s I T I O N A N A LY s I s   425
+           In Chapter 9, we looked at some of the nontraditional higher-order risk
+      measures. Figure 21-12 shows that between the underlying prices of 93 and
+      114, the position has a positive speed; as the price rises, the gamma increases.
+      Below 93 and above 114, the position has a negative speed; as the price rises,
+      the gamma declines. We can also see that changing the volatility causes the
+      gamma and, consequently, the delta to change at a different rate. Lowering
+      volatility causes the speed to increase, while raising volatility causes the speed
+      to decline.
+           Figure 21-13 shows the sensitivity of the position to changes in implied
+      volatility, assuming a constant underlying price of 101.25. The position clearly
+      has a negative vega. Any decline in implied volatility will help the position; any
+      increase in implied volatility will hurt the position. Given a theoretical edge,
+      we can estimate the breakeven (implied) volatility for the entire position by
+      dividing the total theoretical edge by the vega. If, for example, we have a
+      total edge of 6.00, we estimated that the position has an implied volatility of
+      approximately 34.90 percent. In fact, we can see in Figure 21-13 that the implied
+      volatility is somewhat higher than 34.90 percent. The six-week graph crosses
+      –6.00, which would exactly offset a theoretical edge of +6.00, at a volatility of
+      approximately 36 percent. The reason the breakeven volatility is greater than
+      our estimate is that the six-week graph has a positive volga—it curves upward
+      slightly. As volatility rises, the vega becomes more positive or less negative. As
+      volatility falls, the vega becomes more negative or less positive. Even though the
+      current volga is positive, we can see that as time passes, the volga of the position
+      becomes slightly negative. The four-week graph is approximately a straight
+      line, while the two-week graph curves slightly downward.
+
+
+
+      Figure 21-12 Position gamma as the underlying price and volatility change.
+
+
+                          80
+
+                          60     Time to expiration = 6 weeks
+
+                          40
+                                                                    101.25
+                          20
+       Position gamma
+
+
+
+
+                           0
+
+                        –20
+
+                        –40
+                        –60                                                  Volatility = 22%
+                                                                             Volatility = 27%
+                        –80                                                  Volatility = 32%
+                        –100
+
+                        –120
+                            80        85        90       95         100      105       110      115   120
+                                                              Underlying price
+
+
+426   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-13 Position value as volatility changes and time passes.
+
+
+                    14
+
+                    12                                                 Underlying price = 101.25
+                    10
+                     8
+  Theoretical P&L
+
+
+
+
+                     6
+                     4
+                     2
+                     0
+                    –2
+                           6 weeks to expiration
+                    –4     4 weeks to expiration
+                    –6     2 weeks to expiration
+
+                    –8
+                     17%    19%     21%    23%     25%     27%        29%   31%    33%       35%       37%
+                                                         Volatility
+
+
+
+
+     What should we conclude about the position in Figure 21-9? The reason for
+doing an analysis is to help us determine beforehand what actions to take to either
+maximize our profits if conditions move in our favor or minimize losses if condi-
+tions move against us. We currently have a negative delta. If we wish to maintain
+a downward bias, then no action is necessary. If, however, we are trading from a
+purely theoretical standpoint, then perhaps we ought to buy the 297 deltas that we
+are short. The easiest way to do this is to buy three underlying contracts.
+     If we maintain our current position and the market begins to decline, what
+action should we take? If the decline is slow (clearly a very good outcome given
+our delta and gamma) and there is no increase in implied volatility, perhaps
+we ought to consider buying puts at lower exercise prices. This will have the
+effect of offsetting our downside net contract risk and reducing our negative
+vega while locking in some of the theoretical edge. If, however, the decline
+is swift, we may have to ignore theoretical considerations and buy puts at the
+market price. This may be the cost of having a bad position, something that
+will inevitably occur at some point in every trader’s career. If we are forced to
+buy puts at inflated prices, especially if there is an increase in implied volatility,
+we may lose money. But if the decline is very swift, the primary objective may
+be survival. And in the long run, simply surviving, in order to be able to take
+advantage of those subsequent occasions when conditions work in our favor,
+can mean the difference between success and failure in option trading.
+     What action should we take if the market begins to rise? We ought to
+be prepared for one course of action if the move is slow (the delta is working
+against us, while the gamma is working for us), but a different course of action if
+the move is swift (the delta and gamma are initially working against us, but if the
+upward move is large enough, these numbers may eventually work in our favor).
+                                                                                  P O s I T I O N A N A LY s I s   427
+          A detailed position analysis will help us prepare for a variety of changes
+      in market conditions. But no matter how detailed our analysis, we may still
+      encounter situations where we are in uncharted territory. When conditions do
+      change, we can never know for certain how the marketplace will react. If the
+      underlying price begins to rise or fall, depending on the specific market, we
+      may expect implied volatility to change in a certain way. But we may find that it
+      has changed in a completely different way. We may have to accept the fact that
+      our analysis was incorrect and take whatever action we can to reduce our losses
+      or maximize our profits under these new and unexpected conditions.
+
+      some Thoughts on Market Making
+
+      In order to ensure liquidity in a market, exchanges may appoint one or more
+      market makers in a product. A market maker guarantees that he will continuously
+      quote both a price at which he is willing to buy and a price at which he is willing
+      to sell. As a consequence, a buyer or seller can always be certain that there will
+      be someone in the marketplace willing to take the opposite side of the trade.
+      This does not mean that a customer is required to trade with a market maker.
+      If other market participants are willing to buy at a higher price or sell at a lower
+      price, the customer is always free to trade at the best available price. But by con-
+      tinuously quoting a bid-ask spread, the market maker fulfills his role as the buyer
+      or seller of last resort
+           A market maker must comply with rules established by the exchange con-
+      cerning the width of the bid-ask spread as well as the minimum number of
+      contracts that the market maker must be willing to trade. If exchange rules
+      dictate that a market maker may quote a bid-ask spread no wider than 2.00, then
+      a bid price of 63.00 for a contract implies an offer price that is no higher than
+      65.00. Similarly, an offer price of 47.00 implies a bid price that is no lower
+      than 45.00. The market maker may quote a tighter bid-ask spread, for exam-
+      ple, 63.50–64.50 in the former case or 45.75–46.25 in the latter, but the spread
+      may be no wider than that specified under the exchange rules.
+           In addition to quoting a bid-ask spread, a market maker must be willing
+      to trade a minimum number of contracts at the quoted prices. If the exchange
+      minimum is 100 contracts, the market maker must be willing to buy or sell a
+      minimum of 100 contracts at his quoted prices. He may offer to trade more
+      than the minimum, in which case he will usually quote his size along with the
+      bid-ask spread, for example,
+                                                       63.50–64.50
+                                                        200 × 200
+      The market maker is willing to buy at least 200 contracts at a price of 63.50 or sell
+      at least 200 contracts at a price of 64.50. The quoted size need not be balanced:
+                                                       63.50–64.50
+                                                        500 × 200
+      Here the market maker is willing to buy 500 contracts but only willing to sell
+      200 contracts.
+
+428   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+     Rules governing the width of a market maker’s bid-ask spread usually
+apply only to the minimum size that the market maker must be prepared to
+do. If a customer wants to trade a very large number of contracts, a market
+maker is permitted to widen the spread because of the increased risk asso-
+ciated with the trade. In response to a customer who wants to trade 1,000
+contracts, a market maker might quote a spread of 62.00–66.00. To facili-
+tate trading, when a customer has a large order, he will usually indicate that
+he wants a quote for size.
+     In return for fulfilling his obligations, a market maker will receive special
+considerations from the exchange. These may come in the form of very low
+exchange fees or preferential treatment when competing against other market
+participants. If a customer is willing to sell at the market maker’s bid price and
+two other market participants are also quoting the same bid price, the market
+maker may be entitled to 50 percent of the order, while the other two bidders
+may onlybe entitled to 25 percent each.
+     Unlike investors, speculators, or hedgers, who can choose the strategies
+that best fit their needs and who can also determine when to enter and exit a
+market, a market maker has less control over the positions he takes. This does
+not mean that a market maker is totally at the mercy of his customers. He may
+be forced to take on a position, but he at least has some choice as to the price
+at which he does so. Moreover, by adjusting his bid-ask spread, he can to some
+extent determine the types of positions he acquires. But having done so, he
+may still find that he has taken on a position that he would prefer not to have.
+     Although market makers typically represent only a small percentage of
+option market participants, they can play a crucial role in trading, often deter-
+mining the success or failure of an exchange-listed product.4 For this reason, it
+may be useful to take a closer look at how an option market maker goes about
+his business.
+     A successful market maker must ask three questions:
+
+        1. What does the marketplace think an option is worth?
+        2. What do I (the market maker) think the option is worth?
+        3. What positions am I currently carrying?
+
+The answers to these questions will determine how a market maker prices
+options and how he manages risk.
+     The answer to the first question—what does the marketplace think an
+option is worth?—is the basis for the simplest of all market-making techniques.
+In this approach, the market maker attempts to profit solely from the bid-ask
+spread, constantly buying at the bid price and selling at the offer price. No spe-
+cial knowledge of option pricing theory is required, but in order to succeed, the
+market maker must be able to identify an equilibrium price around which there
+
+4
+ Customers sometimes believe that market makers “fix” the prices of exchange-traded contracts. This may be
+true for short periods of time, usually at the beginning of the trading day when very little information is avail-
+able. Ultimately, however, a market maker’s quotes reflect current market activity. A market maker does not set
+prices any more than a thermometer sets the temperature.
+
+
+                                                                                    P O s I T I O N A N A LY s I s   429
+      are an equal number of buyers and sellers.5 If he can correctly determine this
+      equilibrium price, he is in a position to act as a middleman, showing a small
+      profit on each trade while carrying positions for only short periods of time. Of
+      course, the equilibrium price is constantly changing as new buyers and sellers
+      enter the market. Although a market maker will constantly monitor market
+      activity to determine changes in buying and selling pressure, even an expe-
+      rienced market maker will sometimes find, especially in a very fast-moving
+      market, that he has the wrong equilibrium price. When this occurs, he may find
+      that he has either bought or sold many more contracts than he desires.
+           In addition to profiting from the bid-ask spread, by answering the second
+      question—what do I think the option is worth?—an option market maker will
+      also try to profit from a theoretically mispriced option. The mispricing may be
+      the result of an unbalanced arbitrage relationship, in which case the market
+      maker will attempt to “lock in” the profit by completing the arbitrage. Or the
+      mispricing may be the result of using a theoretical pricing model. In this case,
+      if the market maker buys at a price below or sells at a price above his presumed
+      theoretical value, he can dynamically hedge the position to expiration or until
+      the option is again trading at theoretical value. If his theoretical value is cor-
+      rect, the dynamic hedging process should, in theory, result in a profit.
+           Once the market maker begins to acquire positions, he must consider the
+      possibility that market conditions might move against him. This brings us to
+      the final question—what positions am I currently carrying? Although there
+      is some risk associated with every position, if the risk becomes too great, an
+      adverse change in market conditions might put the market maker in a situa-
+      tion where he is unable to freely trade and therefore unable to benefit from his
+      position as a market maker. In an extreme case, he may be forced out of busi-
+      ness because he is no longer able to fulfill his obligations as a market maker.
+           A market maker must consider a variety of risks. Initially, he will probably
+      determine a maximum risk he is willing to carry under current market condi-
+      tions. This may mean limiting the size of his position with respect to the various
+      risk parameters—delta, gamma, theta, vega, and rho. When a limit is reached,
+      the market maker will begin to focus on making markets that will have the effect
+      of reducing his risk. If a market maker is approaching the maximum negative
+      gamma position that he is willing to accept, as he gets closer to this limit, he will
+      increasingly focus on reducing or at least limiting this risk. As a market maker,
+      he still must quote both a bid price and an offer price, but he would much prefer
+      to buy options because this will have the effect of reducing his negative gamma
+      position. Under normal conditions, if asked to make a market, he will likely do
+      so around the presumed theoretical value. If the value of the option is 64.00,
+      he might quote a market of 63.00–65.00, but if the market maker is intent on
+      reducing his negative gamma risk, he will clearly prefer to buy options rather
+      than sell. To reflect this preference, he can adjust his bid-ask spread, perhaps
+      quoting a market of 63.50–65.50. The fact that he has raised both his bid and
+      offer makes it more likely that he will buy options rather than sell. Of course, he
+
+      5
+       A trader who tries to profit solely from the bid-ask spread, buying at the bid price and selling at the ask price
+      without regard to theoretical value, is sometimes referred to as a scalper. Scalping is a common trading tech-
+      nique in open-outcry markets.
+
+430   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+may still be required to sell if the offer of 65.50 is accepted. But at least he has
+done so at a more advantageous price.
+     A market maker must consider not only the risks under current market
+conditions but also how those risks might change as market conditions change.
+Suppose that in a rising market the market maker has reached the maximum
+negative gamma he is willing to accept. However, in analyzing the position, he
+has also noted that if the underlying contract continues to rise, the gamma risk
+will begin to decline.6 If the underlying does move, the market maker may still
+be hurt because he has a negative gamma position. But he may decide that he
+can live with this risk because the gamma risk will begin to decline.
+     In addition to monitoring the various risk sensitivities, a market maker
+must also intelligently manage his inventory. As conditions change, a position
+that includes a concentrated risk may evolve into a serious threat to the market
+maker. Consider a market maker who has the following gamma position spread
+out over 10 different exercise prices:
+
+      75        80         85         90         95         100        105        110        115         120
+
+    +110     +425       +300        +68       –2,388        +92      +244       +616        +338       +195
+
+Even if the total gamma risk is relatively small (indeed, the total gamma in
+this case is 0), the fact that such a large negative gamma is concentrated at one
+exercise price, 95, is likely to be of concern to the market maker. If these are long-
+term options, the situation may not be critical today. But as time passes, if the
+underlying market approaches 95, the position will take on increasingly greater
+risk. Rather than let this risk increase, an intelligent market maker will focus on
+spreading out his risk more evenly across exercise prices. In the same way that
+a wise investor will seek to diversify his risk, a market maker will strive for a simi-
+lar goal.
+      In this example, the risk was concentrated at one exercise price. But any
+concentration of risk at a specific exercise price or expiration date or in terms
+of a single large risk sensitivity should be a cause for concern. It may not
+always be feasible because market conditions do not always cooperate, but a
+market maker’s ultimate objective should be to diversify his position as much
+as possible.
+      Consider the stock option position shown in Figure 21-14. This position
+does not fall into any easily recognizable category and represents the type of
+mixed collection of options that a market maker might accumulate over time
+as a result of buying and selling by customers.7 The current market conditions
+(i.e., underlying share price, time to expiration, implied volatility, and expected
+dividends) are also shown in Figure 21-14.
+      To fully analyze the position, we will need to make some assumptions
+about the term structure of implied volatility. Here we will assume that April
+
+6
+  In this case, the market maker has a positive speed position. His gamma position becomes more positive or less
+negative as the price of the underlying contract rises.
+7
+  An active market maker’s position is likely to be much larger than the position shown, with hundreds or even
+thousands of options at each exercise price. For simplicity, the position shown has been scaled down. But the
+risk-analysis process will be the same.
+
+                                                                                   P O s I T I O N A N A LY s I s   431
+      Figure 21-14
+
+          Underlying share price = 68.76           Interest rate = 4.95%    Expected dividend = 0.58 in 10 weeks
+          Time to April expiration = 4 weeks       April implied volatility = 34.27%
+          Time to June expiration = 13 weeks       June implied volatility = 33.20%
+          Time to August expiration = 21 weeks August implied volatility = 32.14%
+                                   April                           June                          August
+
+             exercise
+              Price        Calls            Puts           Calls           Puts               Calls           Puts
+
+                  55        +77             +47                            –103                                +32
+
+                  60       –162            +111             +3             +81                 +24             –46
+
+                  65        +13             –77            +92              –25
+
+                  70       +106             –19        –110                 –49                –26             –20
+
+                  75         –8            +122            +86               –2                 +8             –25
+
+                  80        –31             –18            +21                                 +30
+
+                  85       –135             +46            –25              +7                 –72
+
+
+                           Calls            Puts           Delta   Gamma          Theta   Adjusted Vega        Rho
+
+          April            –140            +212      –12,615        +504          –2.51      +6.26           –7.50
+
+          June              +67             –91       +6,093         +13          –0.62      +0.36           +9.75
+
+          August            –36             –59       +3,425        –252          +1.25     –11.19         +10.45
+
+          Shares         +3,300                       +3,300
+
+          Totals                                           +203     +265          –1.88      –4.57         +12.70
+
+
+
+
+      is the primary month and that the mean volatility for this market is 30 percent.
+      We will also assume that the implied volatility for June changes at 75 percent
+      of the rate of change in April and the implied volatility for August changes at
+      50 percent of the rate of change in April.8 We can see that the current implied
+      volatilities are consistent with this term structure:
+                   April (primary month) implied volatility = 34.27%
+                     Difference from the mean = 34.27% – 30.00% = 4.27%
+                   June implied volatility = 33.20%
+                     Difference from the mean = 33.20% – 30.00% = 3.20% ≈ 0.75 × 4.27%
+                   August implied volatility = 32.14%
+                     Difference from the mean = 32.14% – 30.00% = 2.14% ≈ 0.50 × 4.27%
+
+      8
+       We might also make assumptions about the term structure of interest rates, as well as how implied volatility
+      is distributed across exercise prices. In order not to overly complicate the current example, we will assume a
+      constant interest rate across expiration months, as well as uniform implied volatilities across exercise prices. We
+      leave the discussion of volatility skews to a later chapter.
+
+432   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-15 Position value as the underlying price and volatility change.
+
+
+                      +350
+                                                                       68.76
+                      +300
+                                 Current volatility
+                      +250
+                                 Volatility down 20%
+                      +200       Volatility up 20%
+    Theoretical P&L
+
+
+
+
+                      +150
+                      +100
+                       +50
+                         0
+                       –50
+
+                      –100
+                      –150
+                      –200
+                          45           50        55      60       65     70       75         80       85         90        95
+                                                                   Underlying price
+
+
+
+    The primary risk characteristics of the position9—theoretical profit and loss
+(P&L), delta, gamma, and vega—are shown in Figures 21-15 through 21-18.10
+From these graphs, it is evident that the risks of the position can change signifi-
+cantly as market conditions change, with the delta, gamma, and vega gyrating
+between positive and negative. Given this, how should we analyze the position?
+    A market maker’s ultimate goal is to establish positions with a positive
+profit expectation while intelligently managing risk. Indeed, were it not for the
+complexities of the marketplace and the unique characteristics of options, a
+market maker’s life might be thought of as quite boring because he is trying to
+do the same thing over and over:
+                       Get an edge….                  Control the risk….
+                       Get an edge….                  Control the risk….
+                       Get an edge….                  Control the risk….
+                       Get an edge….                  Control the risk….
+
+9
+ In this example, we have assumed that the options are European and have made all calculations using the
+Black-Scholes model. The risk-analysis process would be the same if the options were American, although
+the calculations necessarily would have to be made using an American pricing model.
+10
+   Because of the term structure of volatility, the changes in volatility in Figures 21-15, through 21-18 are
+expressed in percent terms rather than percentage points. Given our assumptions (i.e., mean volatility = 30 per-
+cent, June implied volatility changes 75 percent as fast as April, August implied volatility changes 50 percent as
+fast as April), a 20 percent increase in volatility from the current levels results in
+                             April:      1.20 × 34.27% ≈ 41.12%
+                             June:       30.00% + 0.75 × (41.12% – 30.00%) ≈ 38.34%
+                             August:     30.00% + 0.50 × (41.12% – 30.00%) ≈ 35.56%
+                             while a 20 percent decline from the current levels results in
+
+                             April:         0.80 × 34.27% ≈ 27.42%
+                             June:          30.00% – 0.75 × (30.00% – 27.42%) ≈ 28.06%
+                             August:        30.00% – 0.50 × (30.00% – 27.42%) ≈ 28.71%
+
+                                                                                                  P O s I T I O N A N A LY s I s   433
+      Figure 21-16 Position delta as the underlying price and volatility change.
+
+
+                      +4,000
+                                                                 68.76
+                      +3,000
+
+                      +2,000
+
+                      +1,000
+
+                             0
+       Total delta
+
+
+
+
+                      –1,000
+
+                      –2,000
+
+                      –3,000                     Current volatility
+                                                 Volatility down 20%
+                      –4,000                     Volatility up 20%
+                      –5,000
+
+                      –6,000
+                            45    50    55       60         65     70       75       80     85         90   95
+                                                             Underlying price
+
+
+
+
+          Once a position with a positive theoretical edge has been established, the
+      market maker ideally would like to reduce all risks to 0 without giving up any
+      potential profit. This would be identical to turning the graph in Figure 21-15
+      into a single horizontal line with a positive theoretical P&L. In reality, with a
+      large and complex position, it is virtually impossible to achieve such a goal.
+
+
+      Figure 21-17 Position gamma as the underlying price and volatility change.
+
+
+                      +800
+                                                                 68.76           Current volatility
+                      +600                                                       Volatility down 20%
+                                                                                 Volatility up 20%
+                      +400
+
+                      +200
+        Total gamma
+
+
+
+
+                         0
+
+                      –200
+
+                      –400
+
+                      –600
+
+                      –800
+                          45     50    55       60         65     70       75       80      85     90       95
+                                                            Underlying price
+
+
+434   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-18 Position vega as the underlying price and volatility change.
+
+
+                         +5
+                                                           68.76
+
+
+                          0
+  Total adjusted vega
+
+
+
+
+                         –5
+
+
+
+                        –10
+
+
+
+                        –15     Current volatility
+                                Volatility down 20%
+                                Volatility up 20%
+                        –20
+                           45      50      55     60   65     70       75   80       85        90        95
+                                                        Underlying price
+
+
+
+
+A more practical approach is to ask what changes in market conditions repre-
+sent the greatest immediate threat to the position and what steps can be taken
+to mitigate those risks. Even this will depend on many subjective factors: the
+trader’s appetite for risk, his capitalization, the extent of his trading experience,
+and his familiarity with the market. Unfortunately, there are very few easy an-
+swers when it comes to risk analysis.
+     Some risk limitations will be set by the firm for which the trader works or
+by the trader’s clearing firm. For example, a clearing firm may require that a
+trader maintain enough capital to withstand a 20 percent move in the under-
+lying contract in either direction. Or the firm may require enough capital to
+withstand a doubling of implied volatility. If the trader currently has insuf-
+ficient capital to meet these requirements, he must either deposit additional
+money with the clearing firm or reduce the size of the position so that it falls
+within the clearing firm’s guidelines.
+     How should we analyze the risk of the position in Figure 21-14? Risk anal-
+ysis is important because it enables a trader to plan ahead—to decide what
+course of action is best—given a change in market conditions. An option trader
+may have to consider many different market scenarios, but it is often best to
+begin with three basic questions:
+
+                         1. What will I do if market conditions move against me?
+                         2. What will I do if market conditions move in my favor? (Risk analysis
+                            should focus not only on protecting against the bad things that might
+                            occur but also on taking advantage of the good things.)
+                         3. What can I do now to avoid the adverse effects of conditions moving
+                            against me at a later time?
+                                                                                 P O s I T I O N A N A LY s I s   435
+           What are the bad things that can happen to the position? Clearly, the
+      greatest threat is a violent upward move. Above a stock price of 85, the position
+      will take on a negative delta and from that point on will continue to lose money
+      as the market rises (Figures 21-15 and 21-16). The upside contract position (the
+      sum of all calls and underlying contracts) is –76.
+           With a current delta of +203, there is also some risk of a declining stock
+      price. This may not be of immediate concern, but note that as the stock
+      price declines toward 62, the position takes on an increasingly negative vega
+      (Figure 21-18). This means that the position is at risk if the stock price falls
+      moderately while implied volatility rises.
+           In Figure 21-17, we can see that the position has a maximum positive gamma
+      at stock prices of approximately 53 and 72. If the market were to approach either
+      of these prices and remain there, the position would most likely take on its maxi-
+      mum negative theta and consequently begin to decay very rapidly.
+           Given the various risks, what should be the immediate concern? The
+      answer must necessarily be subjective and will depend on what this trader
+      knows about the characteristics of this stock. If there is some possibility of a
+      really large upward move, for example, the company is a takeover target, it is
+      incumbent on the trader to cover at least some of his upside risk, perhaps by
+      purchasing higher-exercise-price calls. Admittedly, if the prices of the upside
+      calls are inflated because the company is known to be a takeover target, the cost
+      of protecting the upside may be high. But, if a takeover could result in the trad-
+      er’s demise, this may be a price that he will have to pay.
+           Of course, the trader may believe that a large upward move is so unlikely
+      that he is willing to accept the risk. Then he may want to focus on some of the
+      lesser threats to the position. If he is a disciplined theoretical trader, he may
+      want to cover his current delta position of +203, although this too may repre-
+      sent such a small risk that it is not of immediate concern. Otherwise, he may
+      want to sell approximately 200 deltas in some form—sell stock, sell calls, or buy
+      puts. The last choice, buying puts, especially those with exercise prices of 60 or
+      65, will have the effect not only of reducing the delta but also reducing the neg-
+      ative vega in the range of 60 to 65. If given the choice, the purchase of April
+      60 or 65 puts will probably show the greatest benefit to the position. If the stock
+      price does decline to between 60 and 65, these options will be at the money, and
+      at-the-money short-term options have the greatest gamma. As such, they will
+      do the most to offset the negative gamma in this range.
+           What changes in market conditions might help the position? Below a stock
+      price of 55, the position will take on a negative delta, so a collapse in the stock
+      price will obviously prove beneficial. The downside contract position (the sum
+      of all puts and underlying contracts) is –29. If the stock price should climb
+      toward 85, especially with falling implied volatility, this will also be very favor-
+      able. Indeed, almost any decline in implied volatility will help the position, as
+      shown by the vega in Figure 21-18.
+           Even though time decay may not be an immediate concern, it may still be
+      worth considering how the passage of time will affect the position. The posi-
+      tion has a negative theta (consistent with a positive gamma), so the passage of
+      time will work against the position if there is no change in the underlying stock
+      price. The total theta of –1.90 may be small, but note that most of the theta is
+
+436   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+concentrated in April. And the April position consists of a large long position
+in April 70 calls. As time passes, the theta of these options, which are close to at
+the money, will accelerate, causing the position to lose value at an increasingly
+greater rate. If the market remains close to 70, it is also likely that there will be a
+decline in implied volatility. Given the position’s negative vega, this will work in
+the position’s favor. Still, it may be worth thinking about what action to take if
+the stock price remains close to 70. The value of the position after the passage
+of one and two weeks is shown in Figure 21-19.
+      What else might hurt this position? We have assumed that the stock will pay
+a dividend of 0.58 in 10 weeks. If the company has not officially announced
+the dividend, perhaps the actual dividend will be more than or less than this
+amount. The April options, which expire in four weeks, will be unaffected by
+a change in the dividend. But how will the overall position be affected? We
+can run a computer simulation at higher or lower dividend amounts, but per-
+haps an easier approach is to note that the position is long 3,300 shares of
+stock. Because we own stock and therefore receive the dividend, any increase
+in the dividend will cause the position value to rise, and any decrease will cause
+the position value to fall. The change in value will be approximately equal to
+the change in the dividend multiplied by the number of shares of stock, in this
+case, 3,300.
+      If there is a real possibility that the dividend will be reduced, one way to
+eliminate the risk is to replace the long stock position with synthetic long stock:
+sell the stock, and buy calls and sell puts at the same exercise price. This is sim-
+ilar to reducing the risk of a conversion or reverse conversion by turning the
+position into a box (see Chapter 15).
+
+
+
+Figure 21-19 Position value as the underlying price changes and time passes.
+
+
+                   +400
+                                                        68.76
+                            Now
+                   +350
+                            After one week
+                   +300     After two weeks
+
+                   +250
+ Theoretical P&L
+
+
+
+
+                   +200
+
+                   +150
+
+                   +100
+
+                    +50
+
+                      0
+
+                    –50
+
+                   –100
+                       45      50      55     60   65     70     75   80       85         90        95
+                                                   Underlying price
+
+
+                                                                           P O s I T I O N A N A LY s I s   437
+      Figure 21-20 Risk sensitivities as the underlying price changes
+
+      Stock price          45       50       55        60     65       70      75       80     85       90       95
+
+      Theoretical P&L    +179      +32       –25       –1     +4       +5      +74     +182   +221    +131      –76
+
+      Total delta       –3,206 –2,306        –14     +533    –232     +571    +2,083 +1,805 –439      –3,092   –5,046
+
+      Total gamma          +2      +391     +378     –134    –46      +325    +179     –292   –544     –479     –301
+
+      Total adjusted     –0.94    +0.86     +0.81    –3.97   –4.01   +0.11    –2.09    –9.68 –14.84 –14.27     –10.70
+      vega
+
+      Total theta        +0.61    –1.06     –1.53    +0.99   +0.51    –2.50   –1.74    +2.91 +6.50    +6.77    +5.18
+
+      Total rho           +19      +19       +18      +17    +15      +12      +10      +7     +3       –1       –4
+
+      Total vanna          –5      +28       –98     –115    +34      +16     –131     –149    –30     +74      +100
+
+      Total charm         –15      –41       +33      +39    –55      –38      +68     +98     +38     –21      –36
+
+      Total speed         +45      +77       –90      –63    +81      +34      –82     –84     –14     +32      +34
+
+      Total color        –8.00    –4.47    –16.60 –15.53 –12.74 +18.10 +17.62 –5.65 –14.77            –7.36     +.54
+
+      Total volga       –0.0004 –0.0008 –0.0023 –0.0005       0      –0.0015 –0.0015    0     +.0002 –0.0009 –0.0017
+
+      Total vega decay +0.037 +0.065 –0.030 +0.092 +0.134 –0.046 –0.0117 –0.035 –0.052 –0.179                  –0.247
+
+      Total zomma         +10       –8       –28      +24    +21      –26      –22     +15     +27     +13       –1
+
+
+
+
+           The total rho of +12.70 also indicates that there is some risk of falling
+      interest rates. For each full-point decline (100 basis points11) in interest rates, the
+      position value will fall by 12.70.
+           It is usually easiest to analyze risk by generating graphs of a position’s char-
+      acteristics, as we have done in Figures 21-15 to 21-19. However, some trad-
+      ers prefer to create a table showing the risk sensitivities at various underlying
+      prices. This has been done in Figure 21-20, beginning with a stock price of
+      45 and continuing at five-point increments up to a stock price of 95. The
+      table includes not only the traditional risk measures but also the nontraditional
+      higher-order measures discussed in Chapter 9. These higher-order measures
+      can often give a trader a more complete picture of how the risks of his position
+      will change as market conditions change. For convenience, we list these mea-
+      sures below:
+              Vanna:      Sensitivity of the delta to a change in volatility
+              Charm:      Sensitivity of the delta to the passage of time
+              Speed:      Sensitivity of the gamma to a change in the underlying price
+              Color:      Sensitivity of the gamma to the passage of time
+              Volga:      Sensitivity of the vega to a change in volatility
+              Vega decay: Sensitivity of the vega to the passage of time
+              Zomma:      Sensitivity of the gamma to a change in volatility
+
+      11
+        Traders commonly express changes in interest rates in basis points. One basis point is equal to 1/100 of a per-
+      centage point, or 0.0001.
+
+438   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+stock splits
+
+To conclude our discussion, let’s consider one last change in market condi-
+tions—a stock split. This often happens when a company wants to reduce its
+stock price to promote trading in the stock or to encourage wider ownership of
+the stock. If the stock price remains high, trading activity tends to be limited,
+with ownership of the stock concentrated in fewer hands.
+     Suppose that the stock in our example splits 2 for 1, resulting in a new stock
+price of 68.76/2 = 34.38. What will happen to the position? Where the trader
+previously owned 3,300 shares, he will now own 2 × 3,300 = 6,600 shares.
+To maintain the same relationship between each exercise price and the stock
+price, as a result of the split, the clearinghouse will divide all the exercise prices
+by 2. The 55 exercise price will become 27½, the 60 exercise price will become
+30, and so on. The underlying contract will remain 100 shares of stock, but in
+order to maintain equity, the clearinghouse will double the trader’s position
+at each exercise price. Instead of being long 77 April 55 calls, the trader will
+now be long 154 April 27½ calls. Instead of being short 162 April 60 calls, the
+trader will now be short 324 April 30 calls.
+     How will the trader’s risk position look now? In order to understand what
+happens, let’s consider a simple example. With an underlying stock trading at
+60.00, we own a May 60 call with a delta of 50 and a gamma of 5. If the stock
+splits 2 for 1, our position will now be
+
+                              Before split                After split
+
+ Stock price                  60                          30
+
+ Position                     +1 May 60 call              +2 May 30 calls
+
+ Underlying contract          100 shares                  100 shares
+
+ Delta position               +50                         +100
+
+Because the option is still at the money, the delta will be 50. But now we own
+two calls, so our delta position will double to +100.
+     What about the gamma? Because the gamma is the change in delta per
+point change in the underlying stock price, if we can determine the new delta
+position at a stock price of 31, we will know the gamma. Suppose that the stock
+price rises to 31. This is equivalent to the stock price rising to 62 prior to the
+split. At a stock price of 62 (prior to the split), our delta position would have
+been +50 + (2 × 5) = +60. But the stock split caused our delta to double, so
+the new delta position at a stock price of 31 must be 2 × +60 = +120. If the
+delta rises from 100 to 120 with a stock price change from 30 to 31, the gamma
+of the position must be +20.
+     If a stock splits Y for X (each X number of shares will be replaced with Y
+number of shares), we can summarize the new conditions as follows:
+
+      New stock price:                 Old stock price × X/Y
+      New exercise price:              Old exercise price × X/Y
+      New option position:             Old option position × Y/X
+                                                                 P O s I T I O N A N A LY s I s   439
+              Underlying contract:                         Unchanged (100 shares)
+              New delta position:                          Old delta position × Y/X
+              New gamma position:                          Old gamma position × (X/Y)2
+
+          These calculations hold true as long as the split is Y for 1, where Y is a whole
+      number (e.g., 2 for 1, 3 for 1, 4 for 1, etc.). If Y is not a whole number, the num-
+      ber of shares in the underlying contract may have to be adjusted. For example,
+      using our stock price of 60, what will happen if the stock is split 3 for 2? Now Y is
+      not a whole number because the split is equivalent to 1½ to 1. If we own a May
+      60 call, we can make the following calculations:
+
+              New stock price                              60 × 2/3 = 40
+              New exercise price                           60 × 2/3 = 40
+              New option position                          +1 × 3/2 = +1½ May 40 calls
+              Underlying contract                          Unchanged (100 shares)
+              New delta position                           +50 × 3/2 = 75
+              New gamma position                           +5 × (3/2)2 = +11.25
+
+          The problem here is that the clearinghouse does not allow fractional
+      option positions (+1½ May 40 calls). In order to eliminate the fraction, the
+      clearinghouse will replace each May 60 call before the split with one May
+      40 call after the split. At the same time, the underlying contract will be adjusted
+      so that the new underlying contract is equal to the old underlying contract
+      multiplied by the split ratio
+
+                                         100 shares × 3/2 = 150 shares
+
+      Using these adjustments, the delta and gamma now make sense. The option
+      is at the money, so it should be equivalent to approximately 50 percent of the
+      underlying contract, or 75 shares. If the stock price rises to 41, equal to a price
+      of 61½ before the split, the old delta would have been
+
+                                                50 + (1.5 × 5) = 57.5
+
+      The option would have been equivalent to 57.5 percent of the underlying con-
+      tract. Therefore, the new option (the 40 call) should be equivalent to
+
+                                       0.575 – 150 shares = 86.25 shares
+
+      As expected, this is the same as the delta (75) plus the gamma (11.25).
+           What happens to the other risk measures—theta, vega, and rho—if a
+      stock splits? These numbers remain unchanged. The passage of time, changes
+      in volatility, and changes in interest rates have the same effect on a position
+      after a split as before a split. Only the delta and gamma must be adjusted.
+      Indeed, assuming that all other conditions remain unchanged, a stock split has
+      no real effect on a trader’s position. It simply results in an accounting change in
+      such a way that equity is maintained. Of course, all other conditions may not
+
+
+440   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+Figure 21-21 The effect of a 2-for-1 stock split.
+
+ Underlying share price = 34.38             Interest rate = 4.95%   Expected dividend = 0.29 in 10 weeks
+ Time to April expiration = 4 weeks         April implied volatility = 34.27%
+ Time to June expiration = 13 weeks         June implied volatility = 32.95%
+ Time to August expiration = 21 weeks       August implied volatility = 31.64%
+                            April                     June                   August
+   exercise
+    Price            Calls          Puts     Calls           Puts    Calls          Puts
+         27½          154           +94                  –206                       +64
+
+         30          –324           +222         +6          162      +48            –92
+
+         32½          +26           –154      +184           –50
+
+         35          +212             –38     –220           –98      –52            –40
+
+         37½          –16           +122      +172            –4      +16            –50
+
+         40           –62             –36       +42                   +60
+
+         42½         –270           +92         –50          +14     –144
+
+
+                                                                                 Adjusted
+                     Calls          Puts     Delta      Gamma        Theta        Vega               Rho
+
+ April               –280           +424    –25,230     +2,016       –2.51         +6.26            –7.50
+
+ June                +134           –182    +12,186          +52     –0.62         +0.36            +9.75
+
+ August               –72           –118     +6,850     –1,008       +1.25        –11.19           +10.45
+
+ Shares            +6,600                    +6,600
+
+ Totals                                        +406     +1,060       –1.88         –4.57           +12.70
+
+
+
+
+remain unchanged. When a stock splits, we might assume that the dividend
+also will be split proportionally. But this is not necessarily the case. A stock split
+often indicates that a company is doing well, and it is not unusual for the split
+to be accompanied by an increase in the dividend. Any change in the expected
+dividend will change the value of an option position. Figure 21-21 shows the
+characteristics of our original position after a 2-for-1 stock split with no change
+in the expected dividend.
+
+
+
+
+                                                                                 P O s I T I O N A N A LY s I s   441
+22
+                                Stock Index Futures
+                                       and Options
+
+
+      Because stock index futures and options are among the most actively traded
+      of all derivatives, it will be worthwhile to take a closer look at these contracts.
+      Even though the focus of this book is primarily options, stock index futures and
+      options are so closely related, and so many strategies involve both contracts,
+      that it is almost impossible to discuss one without discussing the other. We will
+      therefore include both instruments in our discussion.
+
+      what Is an Index?
+
+      An index is a number that represents the composite value of a group of items.
+      In the case of a stock index, the value of the index is determined by the mar-
+      ket prices of the stocks that make up the index. As the stocks in the index rise
+      in price, the value of the index rises; as the stocks fall in price, the value of the
+      index falls. If some stocks in the index rise while others fall, the offsetting
+      changes in stock prices may result in the index itself remaining unchanged,
+      even though the price of every stock in the index may have changed. Although
+      the index is made up of individual stocks, the value of the index always reflects
+      the total value of the stocks that make up the index.
+           Stock indexes are often classified as being either broad based or narrow based.
+      A broad-based index is usually made up of a large number of stocks and is
+      intended to represent the value of the market as a whole or at least a large por-
+      tion of the market. Below are some widely followed broad-based indexes.
+
+       Index                    Country or Region             Number of stocks in the Index
+       S&P 500                  United States                             500
+       Nasdaq 100               United States                             100
+       Russell 2000             United States                           2,000
+
+                                                                                  (continued)
+442
+ Index                      Country or Region                    Number of stocks in the Index
+ FTSE 100                   United Kingdom                                   100
+ Nikkei 225                 Japan                                            225
+ ASX 200                    Australia                                        200
+ KOSPI 200                  South Korea                                      200
+ BOVESPA                    Brazil                                            67
+ TSE                        Canada                                            60
+ MSCI EAFE                  Australia, Europe, and Far East                1,500
+ CSI 300                    China                                            300
+
+    The designation of an index as broad based can be somewhat subjective.
+Even if an index is composed of a smaller number of stocks, it may still be con-
+sidered broad based if the companies that make up the index represent a wide
+cross section of the economy in a country or region.
+
+ Index                      Country or Region                 Number of stocks in the Index
+ Dow Jones Industrials      United States                                    30
+ DAX                        Germany                                          30
+ CAC 40                     France                                           40
+ Eurostoxx 50               Europe                                           50
+ OMX 30                     Sweden                                           30
+ FTSE MIB                   Italy                                            40
+ AEX                        Netherlands                                      25
+ Hang Seng                  Hong Kong                                        30
+ Sensex 30                  India                                            30
+ IPC                        Mexico                                           35
+ Tel Aviv 25                Israel                                           25
+ Straits Times              Singapore                                        30
+ Swiss Market               Switzerland                                      20
+
+    A narrow-based index is usually composed of a small number of stocks
+and reflects the value of a particular market segment.
+
+                                                                            Number of stocks
+ Index                          Markey segment                              in the Index
+ Dow Jones Transportation       U.S. Transportation Companies                      20
+ S&P Utilities                  U.S. Electrical Energy Companies                   31
+
+                                                                                        (continued)
+
+
+
+                                                sTOCk INDex FUTURes AND OPTIONs                       443
+                                                                                          Number of stocks
+        Index                                  Markey segment                             in the Index
+        Bank Index                             U.S. Banks and Financial Institutions           24
+        Semiconductor Index                    U.S. Semiconductor Companies                    30
+        Oil Service                            U.S. Oil Service Companies                      15
+        UK Homebuilders                        U.K. Housing Construction                        6
+        EuroStoxx Technology                   European Technology Companies                   16
+        FTSE Mining                            Worldwide Mining Companies                      24
+
+
+
+      Calculating an Index
+      There are several methods that can be used to calculate the value of a stock
+      index, but the most common methods focus on either the prices of the stocks in
+      the index or the capitalization of the companies that make up the index. To see
+      how these methods work, consider the ABC Index composed of the following
+      three stocks:
+
+        stock                  Price                 Total shares Outstanding          Market Capitalization
+        A                      80                              100                            8,000
+        B                       20                           2,000                           40,000
+        C                       50                             400                           20,000
+
+
+      The market capitalization of each company is equal to the stock price multi-
+      plied by the number of outstanding shares. This represents the total value of
+      all stock in the company.
+            If an index is price weighted, the value of the index is the sum of the individ-
+      ual stock prices
+
+                   ABC Index (price weighted) = ∑ pricei = 80 + 20 + 50 = 150
+
+      If an index is capitalization weighted (cap weighted for short), the value of the index
+      is the sum of the individual capitalizations
+
+                ABC Index (cap weighted) = ∑ (pricei × sharesi) = 8,000 + 40,000
+                                         + 20,000 = 68,000
+
+          Suppose that the price of Stock A rises 10 percent to 88. How will the
+      value of the ABC Index change if the index is price weighted? The new index
+      value will be
+
+                                                 88 + 20 + 50 = 158
+
+
+444   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+In percent terms, this is an increase of
+
+                                 8/150 = 5.33%
+
+We can make the same calculation for the price-weighted index if Stock B rises
+10 percent to 22 or if Stock C rises 10 percent to 55. The percent increases in
+the index are
+      Stock B: 2/150 = 1.33%
+      Stock C: 5/150 = 3.33%
+In percent terms, changes in the highest-priced stock, Stock A, have the great-
+est effect on the value of the index. Stock A has the greatest index weighting—
+it accounts for the largest portion of the index. We can calculate the role that
+each stock plays in the index by calculating the individual weightings:
+      Stock A:    80/150 = 53.33%
+      Stock B:    20/150 = 13.33%
+      Stock C:    50/150 = 33.33%
+    We can also calculate the weightings for each stock (with small rounding
+errors) if the ABC Index is capitalization weighted:
+      Stock A:    8,000/68,000 = 11.76%
+      Stock B:    40,000/68,000 = 58.82%
+      Stock C:    20,000/68,000 = 29.41%
+Now Stock B, the stock with the greatest capitalization, has the greatest index
+weighting.
+      In a price-weighted index, stocks with the highest price have the greatest
+index weighting. In a capitalization-weighted index, stocks with the greatest
+capitalization (stocks with a large number of outstanding shares) have the great-
+est weighting.
+      We can also create an equal-weighted index where, in percent terms, each
+stock plays exactly the same role in the index. We can do this by making the ini-
+tial contribution of each stock to the index identical. For example, suppose that
+initially the value of our index is
+
+                        ∑ (pricei/pricei) = 1 + 1 + 1 = 3
+
+Here each stock contributes exactly 33.33 percent to the index. Of course, if
+we always divide each stock by itself, the value of the index will never change.
+But this is only the value when the index is first introduced. Subsequently, as the
+price of each stock changes, the new price is divided by the old price to deter-
+mine the new value of the index. If any one stock in the index rises 10 percent,
+the effect on the index will be the same because
+
+                            88/80 = 22/20 = 55/50
+
+If all three stocks rise 10 percent, the new value of the index will be
+
+             88/80 + 22/20 + 55/50 = 1.10 + 1.10 + 1.10 = 3.30
+
+                                           sTOCk INDex FUTURes AND OPTIONs            445
+      The index will rise exactly 10 percent.1
+           As time passes and some stocks in an equal-weighted index outperform
+      other stocks, the weighting of the stocks will change so that the index will
+      no longer be equal weighted. In order to ensure that each stock in the index
+      accounts for approximately the same value, equal-weighted indexes are peri-
+      odically rebalanced.
+           Suppose that at a later date the prices of Stocks A, B, and C are 76, 25, and
+      51, respectively. The value of the equal-weighted index now will be
+
+                        76/80 + 25/20 + 51/50 = 0.95 + 1.25 + 1.02 = 3.22
+
+      Stock B now accounts for a greater portion of the index than either Stock A or
+      Stock C. To ensure that all stocks again have an equal weighting, the index is
+      now rebalanced
+
+                                         76/76 + 25/25 + 51/51 = 3.00
+
+      Of course, the index value of 3.00 seems inconsistent with the preceding index
+      value of 3.22. In order to generate a continuous index value, the index value
+      after the rebalancing must be multiplied by the percent increase in the index
+      during the previous rebalancing period. In our example, the index after the
+      rebalancing, we must multiply the index value by
+
+                                                  3.22/3.00 = 1.0733
+
+      because the index rose by 7.33 percent over the last rebalancing period.
+           It is a relatively easy task to add up a list of individual stock prices. Con-
+      sequently, the earliest indexes were price weighted. The Dow Jones Industrial
+      Average, introduced in 1896, is probably the best known of all price-weighted
+      indexes. However, a capitalization-weighted index gives a more accurate pic-
+      ture of each company’s value. With the advent of computer technology to
+      make the calculations, most widely followed indexes are now capitalization
+      weighted.
+           The total capitalization of a company depends on the number of out-
+      standing shares in the company. However, company restrictions may prevent
+      some of these shares from being available for trading. Shares held in the com-
+      pany treasury, by company officers, or in employee investment plans may not
+      be available to the public. The shares that are available for trading are referred
+      to as the free float, and it is the number of shares in the free float that typically is
+      used to calculate the value of a capitalization-weighted index.
+
+
+
+      1
+       A less common variation on an equal-weighted index involves weighting the stocks geometrically rather than
+      arithmetically. The value of a geometric-weighted index made up of n stocks is the nth root of the product of the
+      price ratios. If our ABC Index is geometric weighted, the initial index value will be
+                   (80/80 × 20/20 × 50/50)1/3 = 1.00
+                   As the prices of the component stocks change, the value of the index will be
+                   [Π(today’s pricei/yesterday’s pricei)]1/n
+
+
+
+446   O P T I O N V O L AT I L I T Y A N D P R I C I N G
+

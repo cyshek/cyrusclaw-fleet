@@ -1,0 +1,666 @@
+{
+  "ts": "2026-05-25T00:02:05+00:00",
+  "stripe_total_rows": 21,
+  "stripe_open_before": 2,
+  "stripe_open_after": 0,
+  "skipped": 2,
+  "remaining_open": 0,
+  "row_1180": {
+    "id": 1180,
+    "status": "skip",
+    "exp_req": "exp:7+yrs",
+    "llm_yoe_required": 7,
+    "llm_is_people_manager": 0,
+    "llm_seniority": "lead",
+    "llm_fit_score": 25,
+    "llm_reason": "Requires 7+ yrs technical sales + 3 yrs embedded finance. Candidate has ~3 yrs total experience, falling short by 4-7 yrs. Role is senior IC/specialist, not entry-level.",
+    "flags": "linkedin-offsite-unresolved;llm-overreach;auto-skip-stripe-backfill"
+  },
+  "row_1249": {
+    "id": 1249,
+    "status": "skip",
+    "exp_req": "exp:6+yrs",
+    "llm_yoe_required": 6,
+    "llm_is_people_manager": 0,
+    "llm_seniority": "lead",
+    "llm_fit_score": 25,
+    "llm_reason": "IC candidate has 3 yrs exp; role requires 6+ yrs PM/founder exp. No direct reports, but seniority mismatch disqualifies.",
+    "flags": "posted:2026-05-12;linkedin-offsite-unresolved;llm-overreach;auto-skip-stripe-backfill"
+  },
+  "submitted_today_diagnostics": {
+    "1019": {
+      "id": 1019,
+      "role": "Product Manager, Startup Products",
+      "exp_req": "exp:6+yrs",
+      "llm_yoe_required": 6,
+      "llm_is_people_manager": 0,
+      "llm_seniority": "lead",
+      "llm_fit_score": 25,
+      "llm_reason": "Role requires 6+ YOE (candidate has 3); positioned as senior IC/lead, not junior. Candidate significantly underqualified."
+    },
+    "1049": {
+      "id": 1049,
+      "role": "Product Manager, Payments",
+      "exp_req": "exp:12+yrs",
+      "llm_yoe_required": 7,
+      "llm_is_people_manager": 0,
+      "llm_seniority": "director+",
+      "llm_fit_score": 15,
+      "llm_reason": "JD requires 7-12+ YOE in payments PM; candidate has 3 YOE. Role demands senior-level strategy ownership and stakeholder influence unsuitable for junior IC."
+    },
+    "1055": {
+      "id": 1055,
+      "role": "Product Manager, Commerce Systems",
+      "exp_req": "exp:7+yrs",
+      "llm_yoe_required": 7,
+      "llm_is_people_manager": 0,
+      "llm_seniority": "director+",
+      "llm_fit_score": 15,
+      "llm_reason": "Role requires 7+ YOE (candidate has 3); JD emphasizes 'architect', 'strategy', 'leader', 'change agent'\u2014signals director-level scope, not IC. Candidate is underqualified."
+    },
+    "1171": {
+      "id": 1171,
+      "role": "Partner Solutions Architect - AWS",
+      "exp_req": "exp:10+yrs",
+      "llm_yoe_required": 10,
+      "llm_is_people_manager": 0,
+      "llm_seniority": "director+",
+      "llm_fit_score": 5,
+      "llm_reason": "Requires 10+ years experience; candidate has ~3 years. Role is director+ level despite IC title; massive YOE gap disqualifies."
+    },
+    "1175": {
+      "id": 1175,
+      "role": "Specialist Solutions Architect, Payments",
+      "exp_req": "exp:7+yrs",
+      "llm_yoe_required": 7,
+      "llm_is_people_manager": 0,
+      "llm_seniority": "lead",
+      "llm_fit_score": 25,
+      "llm_reason": "Requires 7+ YOE (candidate has 3); senior IC/thought leader role with mentoring duties ('uplevel broader team', 'coaching teams'). Experience gap too large."
+    },
+    "1177": {
+      "id": 1177,
+      "role": "Solutions Architect, Enterprise (Pre-sales)",
+      "exp_req": "exp:7+yrs",
+      "llm_yoe_required": 7,
+      "llm_is_people_manager": 0,
+      "llm_seniority": "lead",
+      "llm_fit_score": 25,
+      "llm_reason": "Role requires 7+ YOE (candidate has 3). While IC-focused, seniority level (lead/senior SA) and enterprise scope exceed candidate's experience band."
+    }
+  },
+  "results": [
+    {
+      "role_id": 877,
+      "title": "Collections Program Manager",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7815794",
+      "status_before": "skip",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:3+yrs",
+      "flags_before": "posted:2026-05-08 \u2014",
+      "gh_jid": "7815794",
+      "exp_req_after": "exp:3+yrs",
+      "overreach_yoe_cap4": {
+        "hit": false,
+        "reason": ""
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n[llm-classifier] backed up DB -> tracker.db.bak.20260525-0000-llm-run\n  [1/1] id=877 Stripe               | yoe=3 mgr=False sen=ic fit=85\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "skip",
+        "flags": "posted:2026-05-08;\u2014;auto-skip-stripe-backfill",
+        "llm_classified_at": "2026-05-25T00:00:34+00:00",
+        "llm_yoe_required": 3,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "ic",
+        "llm_fit_score": 85,
+        "llm_reason": "True IC role with 3yr YOE match. Hands-on casework + program strategy, no team management. Excellent fit for experienced individual contributor."
+      },
+      "status_after": "skip"
+    },
+    {
+      "role_id": 878,
+      "title": "Operations Program Manager, Managed Operations",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7812209",
+      "status_before": "",
+      "applied_by": "auto",
+      "applied_on": "2026-05-19",
+      "exp_req_before": "exp:2+yrs",
+      "flags_before": "posted:2026-05-08 title-heuristic demote 2026-05-07; restored 2026-05-07 (PM/SE/FDE keep)",
+      "gh_jid": "7812209",
+      "exp_req_after": "exp:2+yrs",
+      "overreach_yoe_cap4": {
+        "hit": false,
+        "reason": ""
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=878 Stripe               | yoe=2 mgr=False sen=ic fit=75\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "",
+        "flags": "posted:2026-05-08 title-heuristic demote 2026-05-07; restored 2026-05-07 (PM/SE/FDE keep)",
+        "llm_classified_at": "2026-05-25T00:00:40+00:00",
+        "llm_yoe_required": 2,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "ic",
+        "llm_fit_score": 75,
+        "llm_reason": "IC-level role aligned with 3 YOE candidate. No direct report management required. Strong project/operations focus fits candidate profile, though 'lead' language may imply informal leadership."
+      },
+      "status_after": ""
+    },
+    {
+      "role_id": 879,
+      "title": "Product Manager IC-02",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7812346",
+      "status_before": "",
+      "applied_by": "auto",
+      "applied_on": "2026-05-19",
+      "exp_req_before": "exp:3+yrs",
+      "flags_before": "posted:2026-05-08 title-heuristic demote 2026-05-07; restored 2026-05-07 (PM/SE/FDE keep)",
+      "gh_jid": "7812346",
+      "exp_req_after": "exp:3+yrs",
+      "overreach_yoe_cap4": {
+        "hit": false,
+        "reason": ""
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=879 Stripe               | yoe=3 mgr=False sen=ic fit=85\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "",
+        "flags": "posted:2026-05-08 title-heuristic demote 2026-05-07; restored 2026-05-07 (PM/SE/FDE keep)",
+        "llm_classified_at": "2026-05-25T00:00:46+00:00",
+        "llm_yoe_required": 3,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "ic",
+        "llm_fit_score": 85,
+        "llm_reason": "IC-02 PM role at Stripe requires 3 yrs YOE matching candidate profile. No management duties, cross-functional leadership only. Candidate slightly underexperienced on GenAI fintech specificity but meets core IC PM expectations."
+      },
+      "status_after": ""
+    },
+    {
+      "role_id": 880,
+      "title": "Technical Program Manager, Internal Systems",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7680365",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:2+yrs",
+      "flags_before": "posted:2026-05-08 \u2014",
+      "gh_jid": "7680365",
+      "error": "fetch:HTTPError:404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7680365"
+    },
+    {
+      "role_id": 881,
+      "title": "Enterprise Solutions Architecture Manager, AMER",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7779497",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:3+yrs",
+      "flags_before": "auto-closed: not in latest sweep",
+      "gh_jid": "7779497",
+      "exp_req_after": "exp:10+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:10>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=881 Stripe               | yoe=10 mgr=True sen=manager fit=5 [FLIPPED\u2192skip]\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "closed",
+        "flags": "auto-closed: not in latest sweep",
+        "llm_classified_at": "2026-05-25T00:00:53+00:00",
+        "llm_yoe_required": 10,
+        "llm_is_people_manager": 1,
+        "llm_seniority": "manager",
+        "llm_fit_score": 5,
+        "llm_reason": "Role explicitly requires managing direct reports, building teams, and 10+ yrs experience. Candidate is IC-only with 3 yrs YOE\u2014major mismatch."
+      },
+      "status_after": "closed"
+    },
+    {
+      "role_id": 882,
+      "title": "Marketing Operations Program Manager",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7639823",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:3+yrs",
+      "flags_before": "auto-closed: not in latest sweep",
+      "gh_jid": "7639823",
+      "error": "fetch:HTTPError:404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7639823"
+    },
+    {
+      "role_id": 883,
+      "title": "Program Manager, Risk Ops Enablement",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7214197",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:2+yrs",
+      "flags_before": "auto-closed: not in latest sweep",
+      "gh_jid": "7214197",
+      "error": "fetch:HTTPError:404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7214197"
+    },
+    {
+      "role_id": 884,
+      "title": "Solutions Architect, Platforms",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7396509",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:3+yrs",
+      "flags_before": "\u2014 auto-closed: not in latest sweep",
+      "gh_jid": "7396509",
+      "exp_req_after": "exp:3+yrs",
+      "overreach_yoe_cap4": {
+        "hit": false,
+        "reason": ""
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=884 Stripe               | yoe=3 mgr=False sen=ic fit=85\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "closed",
+        "flags": "\u2014 auto-closed: not in latest sweep",
+        "llm_classified_at": "2026-05-25T00:00:59+00:00",
+        "llm_yoe_required": 3,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "ic",
+        "llm_fit_score": 85,
+        "llm_reason": "Perfect YOE match (3+ yrs), pure IC role with no management duties. Strong technical SA focus aligns with candidate background and goals."
+      },
+      "status_after": "closed"
+    },
+    {
+      "role_id": 885,
+      "title": "Solutions Architect, SMB",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7361440",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:2+yrs",
+      "flags_before": "auto-closed: not in latest sweep",
+      "gh_jid": "7361440",
+      "exp_req_after": "exp:5+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:5>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=885 Stripe               | yoe=5 mgr=False sen=lead fit=35\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "closed",
+        "flags": "auto-closed: not in latest sweep",
+        "llm_classified_at": "2026-05-25T00:01:05+00:00",
+        "llm_yoe_required": 5,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 35,
+        "llm_reason": "Role requires 5+ YOE and 2+ years SA/SE experience; candidate has only 3 YOE total. No management duties, but seniority mismatch is significant."
+      },
+      "status_after": "closed"
+    },
+    {
+      "role_id": 886,
+      "title": "Specialist Solutions Architect, Crypto & Stablecoins",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7120766",
+      "status_before": "closed",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:3+yrs",
+      "flags_before": "auto-closed: not in latest sweep",
+      "gh_jid": "7120766",
+      "exp_req_after": "exp:7+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:7>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n[llm-classifier] backed up DB -> tracker.db.bak.20260525-0001-llm-run\n  [1/1] id=886 Stripe               | yoe=7 mgr=False sen=lead fit=35\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "closed",
+        "flags": "auto-closed: not in latest sweep",
+        "llm_classified_at": "2026-05-25T00:01:11+00:00",
+        "llm_yoe_required": 7,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 35,
+        "llm_reason": "Role requires 7+ YOE (candidate has 3), but is IC-focused with no direct reports. Significant experience gap disqualifies despite strong IC fit."
+      },
+      "status_after": "closed"
+    },
+    {
+      "role_id": 950,
+      "title": "Commercial Solutions Program Manager",
+      "source_key": "https://stripe.com/jobs/search?gh_jid=7206336",
+      "status_before": "",
+      "applied_by": "auto",
+      "applied_on": "2026-05-19",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "posted:2026-05-12",
+      "gh_jid": "7206336",
+      "exp_req_after": "exp:unstated",
+      "overreach_yoe_cap4": {
+        "hit": false,
+        "reason": ""
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=950 Stripe               | yoe=None mgr=False sen=lead fit=35\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "",
+        "flags": "posted:2026-05-12",
+        "llm_classified_at": "2026-05-25T00:01:17+00:00",
+        "llm_yoe_required": null,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 35,
+        "llm_reason": "Role requires senior IC/tech lead capability (6-9 yrs equiv) for large-scale cross-functional programs. Candidate has only 3 yrs; lacks depth for complex Stripe-wide initiatives and executive presence expected."
+      },
+      "status_after": ""
+    },
+    {
+      "role_id": 1019,
+      "title": "Product Manager, Startup Products",
+      "source_key": "linkedin:4413498431",
+      "status_before": "applied",
+      "applied_by": "auto",
+      "applied_on": "2026-05-24",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7901987",
+      "exp_req_after": "exp:6+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:6>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1019 Stripe               | yoe=6 mgr=False sen=lead fit=25\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "applied",
+        "flags": "linkedin-offsite-unresolved",
+        "llm_classified_at": "2026-05-25T00:01:23+00:00",
+        "llm_yoe_required": 6,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 25,
+        "llm_reason": "Role requires 6+ YOE (candidate has 3); positioned as senior IC/lead, not junior. Candidate significantly underqualified."
+      },
+      "status_after": "applied"
+    },
+    {
+      "role_id": 1049,
+      "title": "Product Manager, Payments",
+      "source_key": "linkedin:4413477816",
+      "status_before": "applied",
+      "applied_by": "auto",
+      "applied_on": "2026-05-24",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7176530",
+      "exp_req_after": "exp:12+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:12>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1049 Stripe               | yoe=7 mgr=False sen=director+ fit=15 [FLIPPED\u2192skip]\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "applied",
+        "flags": "linkedin-offsite-unresolved",
+        "llm_classified_at": "2026-05-25T00:01:29+00:00",
+        "llm_yoe_required": 7,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "director+",
+        "llm_fit_score": 15,
+        "llm_reason": "JD requires 7-12+ YOE in payments PM; candidate has 3 YOE. Role demands senior-level strategy ownership and stakeholder influence unsuitable for junior IC."
+      },
+      "status_after": "applied"
+    },
+    {
+      "role_id": 1055,
+      "title": "Product Manager, Commerce Systems",
+      "source_key": "linkedin:4413485615",
+      "status_before": "applied",
+      "applied_by": "auto",
+      "applied_on": "2026-05-24",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7561551",
+      "exp_req_after": "exp:7+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:7>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1055 Stripe               | yoe=7 mgr=False sen=director+ fit=15 [FLIPPED\u2192skip]\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "applied",
+        "flags": "linkedin-offsite-unresolved",
+        "llm_classified_at": "2026-05-25T00:01:35+00:00",
+        "llm_yoe_required": 7,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "director+",
+        "llm_fit_score": 15,
+        "llm_reason": "Role requires 7+ YOE (candidate has 3); JD emphasizes 'architect', 'strategy', 'leader', 'change agent'\u2014signals director-level scope, not IC. Candidate is underqualified."
+      },
+      "status_after": "applied"
+    },
+    {
+      "role_id": 1080,
+      "title": "Technical Program Manager, Payments Experiences",
+      "source_key": "linkedin:4413487671",
+      "status_before": "skip",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:unstated",
+      "flags_before": "manual-apply,llm-overreach",
+      "gh_jid": null,
+      "error": "no_gh_jid"
+    },
+    {
+      "role_id": 1171,
+      "title": "Partner Solutions Architect - AWS",
+      "source_key": "linkedin:4413494569",
+      "status_before": "applied",
+      "applied_by": "auto",
+      "applied_on": "2026-05-24",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7607761",
+      "exp_req_after": "exp:10+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:10>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1171 Stripe               | yoe=10 mgr=False sen=director+ fit=5 [FLIPPED\u2192skip]\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "applied",
+        "flags": "linkedin-offsite-unresolved",
+        "llm_classified_at": "2026-05-25T00:01:41+00:00",
+        "llm_yoe_required": 10,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "director+",
+        "llm_fit_score": 5,
+        "llm_reason": "Requires 10+ years experience; candidate has ~3 years. Role is director+ level despite IC title; massive YOE gap disqualifies."
+      },
+      "status_after": "applied"
+    },
+    {
+      "role_id": 1175,
+      "title": "Specialist Solutions Architect, Payments",
+      "source_key": "linkedin:4413488627",
+      "status_before": "applied",
+      "applied_by": "auto",
+      "applied_on": "2026-05-24",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7377591",
+      "exp_req_after": "exp:7+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:7>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1175 Stripe               | yoe=7 mgr=False sen=lead fit=25\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=6s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "applied",
+        "flags": "linkedin-offsite-unresolved",
+        "llm_classified_at": "2026-05-25T00:01:47+00:00",
+        "llm_yoe_required": 7,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 25,
+        "llm_reason": "Requires 7+ YOE (candidate has 3); senior IC/thought leader role with mentoring duties ('uplevel broader team', 'coaching teams'). Experience gap too large."
+      },
+      "status_after": "applied"
+    },
+    {
+      "role_id": 1177,
+      "title": "Solutions Architect, Enterprise (Pre-sales)",
+      "source_key": "linkedin:4414997554",
+      "status_before": "applied",
+      "applied_by": "auto",
+      "applied_on": "2026-05-24",
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7827184",
+      "exp_req_after": "exp:7+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:7>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1177 Stripe               | yoe=7 mgr=False sen=lead fit=25\n[llm-classifier] DONE classified=1 flipped_to_skip=0 errors=0 elapsed=5s\nLLM classifier: 1 classified, 0 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "applied",
+        "flags": "linkedin-offsite-unresolved",
+        "llm_classified_at": "2026-05-25T00:01:53+00:00",
+        "llm_yoe_required": 7,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 25,
+        "llm_reason": "Role requires 7+ YOE (candidate has 3). While IC-focused, seniority level (lead/senior SA) and enterprise scope exceed candidate's experience band."
+      },
+      "status_after": "applied"
+    },
+    {
+      "role_id": 1180,
+      "title": "Specialist Solutions Architect, Money Management",
+      "source_key": "linkedin:4413484637",
+      "status_before": "",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:unstated",
+      "flags_before": "linkedin-offsite-unresolved",
+      "gh_jid": "7380371",
+      "exp_req_after": "exp:7+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:7>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n  [1/1] id=1180 Stripe               | yoe=7 mgr=False sen=lead fit=25\n[llm-classifier] DONE classified=1 flipped_to_skip=1 errors=0 elapsed=5s\nLLM classifier: 1 classified, 1 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "skip",
+        "flags": "linkedin-offsite-unresolved;llm-overreach;auto-skip-stripe-backfill",
+        "llm_classified_at": "2026-05-25T00:01:59+00:00",
+        "llm_yoe_required": 7,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 25,
+        "llm_reason": "Requires 7+ yrs technical sales + 3 yrs embedded finance. Candidate has ~3 yrs total experience, falling short by 4-7 yrs. Role is senior IC/specialist, not entry-level."
+      },
+      "status_after": "skip"
+    },
+    {
+      "role_id": 1249,
+      "title": "Product Manager, Startup Products",
+      "source_key": "linkedin:4413479731",
+      "status_before": "",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:unstated",
+      "flags_before": "posted:2026-05-12 linkedin-offsite-unresolved",
+      "gh_jid": "7901987",
+      "exp_req_after": "exp:6+yrs",
+      "overreach_yoe_cap4": {
+        "hit": true,
+        "reason": "yoe:6>=4"
+      },
+      "llm_run": {
+        "rc": 0,
+        "stdout": "[llm-classifier] 1 rows to process (dry_run=False)\n[llm-classifier] backed up DB -> tracker.db.bak.20260525-0002-llm-run\n  [1/1] id=1249 Stripe               | yoe=6 mgr=False sen=lead fit=25\n[llm-classifier] DONE classified=1 flipped_to_skip=1 errors=0 elapsed=5s\nLLM classifier: 1 classified, 1 flagged as overreach, 0 errors.\n",
+        "stderr": ""
+      },
+      "after": {
+        "status": "skip",
+        "flags": "posted:2026-05-12;linkedin-offsite-unresolved;llm-overreach;auto-skip-stripe-backfill",
+        "llm_classified_at": "2026-05-25T00:02:05+00:00",
+        "llm_yoe_required": 6,
+        "llm_is_people_manager": 0,
+        "llm_seniority": "lead",
+        "llm_fit_score": 25,
+        "llm_reason": "IC candidate has 3 yrs exp; role requires 6+ yrs PM/founder exp. No direct reports, but seniority mismatch disqualifies."
+      },
+      "status_after": "skip"
+    },
+    {
+      "role_id": 1263,
+      "title": "Technical Program Manager, Payments Experiences",
+      "source_key": "linkedin:4413498497",
+      "status_before": "skip",
+      "applied_by": null,
+      "applied_on": null,
+      "exp_req_before": "exp:unstated",
+      "flags_before": "posted:2026-05-12 manual-apply,llm-overreach",
+      "gh_jid": null,
+      "error": "no_gh_jid"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+# Solutions Architect - Langfuse 
+
+**Company:** ClickHouse
+**Location:** San Francisco, CA
+**Apply:** https://job-boards.greenhouse.io/clickhouse/jobs/5990921004
+**Greenhouse ID:** 5990921004
+
+---
+
+### About ClickHouse
+
+Recognized on the 2025 Forbes Cloud 100 list, ClickHouse is one of the most innovative and fast-growing private cloud companies. With more than 3,000 customers and ARR that has grown over 250 percent year over year, ClickHouse leads the market in real-time analytics, data warehousing, observability, and AI workloads.
+
+The company’s sustained, accelerating momentum was recently validated by a $400M Series D financing round. Over the past three months, customers including Capital One, Lovable, Decagon, Polymarket, and Airwallex have adopted the platform or expanded existing deployments. These customers join an established base of AI innovators and global brands such as Meta, Cursor, Sony, and Tesla.
+
+We’re on a mission to transform how companies use data. Come be a part of our journey!
+
+## **About the Role**
+
+AI applications are being built faster than teams can monitor, debug, or trust them. ClickHouse recently acquired Langfuse — the leading open source LLM observability platform — making it a core part of the ClickHouse product stack. Together, ClickHouse and Langfuse offer engineering teams the most powerful combination in the market: real-time, high-performance analytics infrastructure paired with best-in-class LLM tracing, evaluation, and observability tooling. This role sits at the center of that combined story.
+
+We're looking for a Langfuse Solutions Architect who is already embedded in the AI observability ecosystem — someone who understands how engineering teams instrument and evaluate LLM applications, and can credibly represent the full ClickHouse + Langfuse platform to the teams that need it most.
+
+This is not a generalist SA role. You'll be our dedicated technical presence in the LLM observability space — opening doors through the Langfuse community, deepening relationships with AI engineering teams, and helping them get the most out of a platform that now spans from raw data infrastructure to production LLM monitoring. You'll work at the intersection of community, pre-sales, and technical advisory, and you'll be the person who makes the ClickHouse + Langfuse stack the obvious choice for teams building serious AI applications.
+
+## **What You'll Be Doing**
+
+**Pre-Sales & Technical Advisory**
+
+- Lead technical evaluations with AI engineering teams considering ClickHouse as their observability data store, from initial architecture review through POC and production deployment
+
+- Engage directly with data engineers, ML engineers, and platform architects to understand their LLM application stack, trace volumes, evaluation workflows, and query patterns — and map those requirements to ClickHouse | Lanfguse capabilities
+
+- Work across all levels of customer organizations, from individual contributors building LLM pipelines to CTOs making infrastructure decisions
+
+- Design and deliver reference implementations, schema designs, and ingestion patterns optimized for LLM trace data at scale
+
+**Pipeline & Revenue Contribution**
+
+- Source and qualify pipeline directly through ecosystem relationships and community engagement — this role is expected to open doors, not just walk through them
+
+- Partner with ClickHouse AEs to progress and close opportunities within the AI and LLM observability segment
+
+- Advocate internally for product improvements and integration enhancements that strengthen the ClickHouse + Langfuse story
+
+**Ecosystem & Community Presence**
+
+- Serve as ClickHouse's primary technical voice in the Langfuse community — contributing to forums, engaging on GitHub, participating in events, and building authentic credibility with AI engineers and developers
+
+- Develop relationships with the Langfuse core team and ecosystem partners to identify joint GTM opportunities and integration improvements
+
+- Create technical content — blog posts, tutorials, reference architectures, and demo environments — that showcases ClickHouse| Langfuse as the analytics backbone for LLM observability workloads
+
+## **What You Bring**
+
+- **Hands-on experience in the LLM observability or AI monitoring space** — whether at a vendor or as a practitioner building and operating LLM applications in production
+
+- **Technical depth in the modern AI stack** — you're comfortable discussing prompt engineering, RAG architectures, evaluation frameworks, token economics, and the data infrastructure that supports them
+
+- **Customer-facing experience** — pre-sales, solutions engineering, developer advocacy, or technical account management. You've navigated technical conversations with real stakes and know how to build trust with engineering teams
+
+- **Strong foundation in data infrastructure** — experience with analytical databases, distributed systems, and cloud infrastructure. Familiarity with ClickHouse, Postgres, or columnar databases is a strong plus
+
+- **Open source orientation** — you understand how open source communities work, how developer trust is earned, and how to contribute authentically rather than just promote
+
+#LI-CL1
+
+The typical starting salary for this role in the US is
+$225,000—$275,000 USD
+
+The typical starting salary for this role in US Premium Markets is
+$275,000—$300,000 USD
+
+### **Compensation**
+
+For roles based in the **United States**, the typical starting salary range for this position is listed above. In certain locations, such as the San Francisco Bay Area and the New York City Metro Area, a premium market range may apply, as listed.
+
+These salary ranges reflect what we reasonably and in good faith believe to be the minimum and maximum pay for this role at the time of posting. The actual compensation may be higher or lower than the amounts listed, and the ranges may be subject to future adjustments.
+
+An individual’s placement within the range will depend on various factors, including (but not limited to) education, qualifications, certifications, experience, skills, location, performance, and the needs of the business or organization.
+
+If you have any questions or comments about compensation as a candidate, please get in touch with us at [paytransparency@clickhouse.com](mailto:paytransparency@clickhouse.com).
+
+### **Perks**
+
+- **Flexible work environment** - ClickHouse is a globally distributed company and remote-friendly. We currently operate in over 20 countries.
+
+- **Healthcare** - Employer contributions towards your healthcare.
+
+- **Equity in the company** - Every new team member who joins our company receives stock options.
+
+- **Time off** - Flexible time off in the US, generous entitlement in other countries.
+
+- **A $500 Home office setup **if you’re a remote employee.
+
+- **Global Gatherings **– We believe in the power of in-person connection and offer opportunities to engage with colleagues at company-wide offsites.
+
+**Culture - We All Shape It**
+
+As part of a rapidly scaling start up, you will be instrumental in shaping our culture. 
+
+Are you interested in finding out more about our culture?  Learn more about our values [here](https://clickhouse.com/company/careers).  Check out our[ blog posts](https://clickhouse.com/blog) or follow us on [LinkedIn](https://www.linkedin.com/company/clickhouseinc/life/0c1ee7f4-2129-488d-b413-e7f6270659fd/?viewAsMember=true) to find out more about what’s happening at ClickHouse.
+
+**Equal Opportunity & Privacy **
+
+ClickHouse provides equal employment opportunities to all employees and applicants and prohibits discrimination and harassment of any type based on factors such as race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws. 
+
+Please see [here](https://clickhouse.com/legal/applicant-privacy-notice) for our Privacy Statement.

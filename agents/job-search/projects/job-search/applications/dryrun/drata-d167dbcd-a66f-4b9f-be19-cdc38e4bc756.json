@@ -1,0 +1,159 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/drata/d167dbcd-a66f-4b9f-be19-cdc38e4bc756",
+  "org": "drata",
+  "job_id": "d167dbcd-a66f-4b9f-be19-cdc38e4bc756",
+  "job_title": "Solutions Engineer, Commercial - West",
+  "job_location": "Remote - US ",
+  "fetched_at": "2026-05-26T05:20:10Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8__systemfield_name"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8_45f3f88b-bdf5-4095-b20e-bfc0eb2223f9",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8_45f3f88b-bdf5-4095-b20e-bfc0eb2223f9"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8__systemfield_email"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8_109b1a7f-8ac7-4c39-9c1b-7cd10295463f",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8_109b1a7f-8ac7-4c39-9c1b-7cd10295463f"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8__systemfield_resume"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8_c9a404b8-3a1c-44fb-934b-da65fcc4f1b4",
+      "label": "Please list your current city, state, and zip code.",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8_c9a404b8-3a1c-44fb-934b-da65fcc4f1b4"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8_c94bbe64-9f91-40db-ba3f-3d7952cb7ed1",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8_c94bbe64-9f91-40db-ba3f-3d7952cb7ed1"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8_7e63ed23-bab6-418e-9530-bb389def3511",
+      "label": "Will you now or in the future require sponsorship to work within the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8_7e63ed23-bab6-418e-9530-bb389def3511"
+    },
+    {
+      "id": "55563b76-6684-4f4e-894e-14148d2fd4d8_7679ae4b-d069-49b4-84fb-94901bd661f9",
+      "label": "Are you located in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "address.country=United States",
+      "status": "filled",
+      "matched_rule": "us_based_confirm",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "55563b76-6684-4f4e-894e-14148d2fd4d8_7679ae4b-d069-49b4-84fb-94901bd661f9"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

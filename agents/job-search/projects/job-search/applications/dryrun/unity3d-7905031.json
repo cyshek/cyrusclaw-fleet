@@ -1,0 +1,556 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/unity3d/jobs/7905031",
+  "org": "unity3d",
+  "job_id": "7905031",
+  "job_title": "Product Manager ",
+  "job_location": "New York, NY, USA",
+  "fetched_at": "2026-06-02T14:09:04Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/unity3d/jobs/7905031?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 24,
+    "filled": 17,
+    "filled_needs_review": 1,
+    "declined": 4,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_66625612",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_66625613",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_66625614",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Other",
+          "value": 710597797
+        },
+        {
+          "label": "AfroTech",
+          "value": 710597798
+        },
+        {
+          "label": "BuiltIn",
+          "value": 710597799
+        },
+        {
+          "label": "Brilliant Black Minds",
+          "value": 710597800
+        },
+        {
+          "label": "Glassdoor",
+          "value": 710597801
+        },
+        {
+          "label": "Grace Hopper Celebration",
+          "value": 710597802
+        },
+        {
+          "label": "Indeed",
+          "value": 710597803
+        },
+        {
+          "label": "Latinx in Gaming",
+          "value": 710597804
+        },
+        {
+          "label": "LinkedIn",
+          "value": 710597805
+        },
+        {
+          "label": "National Society of Black Engineers",
+          "value": 710597806
+        },
+        {
+          "label": "QueerTech",
+          "value": 710597807
+        },
+        {
+          "label": "Society of Hispanic Engineers",
+          "value": 710597808
+        },
+        {
+          "label": "UNCF HBCU Summit",
+          "value": 710597809
+        },
+        {
+          "label": "Unity Blog",
+          "value": 710597810
+        },
+        {
+          "label": "Unity Career Page",
+          "value": 710597811
+        },
+        {
+          "label": "Unity Employee",
+          "value": 710597812
+        },
+        {
+          "label": "Unity Event",
+          "value": 710597813
+        },
+        {
+          "label": "Unity Pathways",
+          "value": 710597814
+        }
+      ]
+    },
+    {
+      "id": "question_66625615",
+      "label": "Are you legally eligible to work in the country in which this position is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66625616",
+      "label": "Will you now or in the future require Work Visa Sponsorship to work for Unity in the country where this position is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66625617",
+      "label": "For the purpose of determining if an export control license may be required, are you currently a citizen or permanent resident of any of the following countries/regions? If you are not, please select 'Not Applicable.'",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "ITAR field has no US-citizen / Yes option among ['Not Applicable', 'Cuba', 'Iran', 'North Korea', 'Syria', 'Crimea region of Ukraine', 'Luhansk region of Ukraine', 'Donetsk Region of Ukraine']",
+      "status": "unresolved",
+      "matched_rule": "itar_us_person_ack",
+      "options": [
+        {
+          "label": "Not Applicable",
+          "value": 710597815
+        },
+        {
+          "label": "Cuba",
+          "value": 710597816
+        },
+        {
+          "label": "Iran",
+          "value": 710597817
+        },
+        {
+          "label": "North Korea",
+          "value": 710597818
+        },
+        {
+          "label": "Syria",
+          "value": 710597819
+        },
+        {
+          "label": "Crimea region of Ukraine",
+          "value": 710597820
+        },
+        {
+          "label": "Luhansk region of Ukraine",
+          "value": 710597821
+        },
+        {
+          "label": "Donetsk Region of Ukraine",
+          "value": 710597822
+        }
+      ]
+    },
+    {
+      "id": "question_66625618",
+      "label": "Have you previously worked at Unity, and if so, in what capacity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "No",
+          "value": 710597823
+        },
+        {
+          "label": "Yes, as a Former Employee",
+          "value": 710597824
+        },
+        {
+          "label": "Yes, as a Former Contractor",
+          "value": 710597825
+        },
+        {
+          "label": "Yes, as a Former Vendor",
+          "value": 710597826
+        }
+      ]
+    },
+    {
+      "id": "question_66625619",
+      "label": "Global Data Privacy Notice to Applicants",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Acknowledged",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Acknowledged",
+          "value": 710597827
+        }
+      ]
+    },
+    {
+      "id": "question_66625620",
+      "label": "Do you consent to the use of AI to create written transcripts and summaries of your interviews?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you consent to the use of AI to create written transcripts and summaries of your interviews?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_66625617",
+      "label": "For the purpose of determining if an export control license may be required, are you currently a citizen or permanent resident of any of the following countries/regions? If you are not, please select 'Not Applicable.'",
+      "required": true,
+      "reason": "ITAR field has no US-citizen / Yes option among ['Not Applicable', 'Cuba', 'Iran', 'North Korea', 'Syria', 'Crimea region of Ukraine', 'Luhansk region of Ukraine', 'Donetsk Region of Ukraine']"
+    },
+    {
+      "id": "question_66625620",
+      "label": "Do you consent to the use of AI to create written transcripts and summaries of your interviews?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you consent to the use of AI to create written transcripts and summaries of your interviews?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_66625617",
+      "label": "For the purpose of determining if an export control license may be required, are you currently a citizen or permanent resident of any of the following countries/regions? If you are not, please select 'Not Applicable.'",
+      "reason": "ITAR field has no US-citizen / Yes option among ['Not Applicable', 'Cuba', 'Iran', 'North Korea', 'Syria', 'Crimea region of Ukraine', 'Luhansk region of Ukraine', 'Donetsk Region of Ukraine']"
+    },
+    {
+      "id": "question_66625620",
+      "label": "Do you consent to the use of AI to create written transcripts and summaries of your interviews?",
+      "reason": "no LABEL_RULES match for label='Do you consent to the use of AI to create written transcripts and summaries of your interviews?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

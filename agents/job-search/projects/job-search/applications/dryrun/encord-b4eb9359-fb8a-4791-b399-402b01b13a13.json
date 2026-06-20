@@ -1,0 +1,234 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/encord/b4eb9359-fb8a-4791-b399-402b01b13a13",
+  "org": "encord",
+  "job_id": "b4eb9359-fb8a-4791-b399-402b01b13a13",
+  "job_title": "Human Data Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-02T03:35:26Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 9,
+    "filled_needs_review": 1,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93__systemfield_name"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_c127792f-36fc-43f1-9fb2-9f6507c8b73a",
+      "label": "How do you pronounce your name?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How do you pronounce your name?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_c127792f-36fc-43f1-9fb2-9f6507c8b73a"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_d01e03ae-da9b-4d4f-941a-834e3ef3c536",
+      "label": "What are your preferred pronouns?",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_d01e03ae-da9b-4d4f-941a-834e3ef3c536"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93__systemfield_email"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93__systemfield_resume"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_58c1c3c1-cce7-40d7-b719-cf3f2dc86809",
+      "label": "Linkedin Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_58c1c3c1-cce7-40d7-b719-cf3f2dc86809"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_1102e507-0461-48fb-948d-847277ca1492",
+      "label": "This role is based out of our office in the city where it is posted, with an expectation of 4 days a week in-person at your assigned location. Does that work for you?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_1102e507-0461-48fb-948d-847277ca1492",
+      "match_attempted": true
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_a9cdee31-053a-4742-877c-ff22cc21b1c3",
+      "label": "Are you open to relocation for this role?",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_a9cdee31-053a-4742-877c-ff22cc21b1c3"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_082d0890-a1e0-489d-acae-2741f012d8a7",
+      "label": "Will you now or in the future require visa sponsorship to work in the country where this role is based?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_082d0890-a1e0-489d-acae-2741f012d8a7"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_3730940b-02e7-476c-98ab-fddc44790580",
+      "label": "What is the earliest you would want to start?",
+      "type": "input_text",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_3730940b-02e7-476c-98ab-fddc44790580"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_41a6273c-bf51-4caa-a947-be1544d7ce17",
+      "label": "Do you have any deadlines or time constraints we should be aware of?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have any deadlines or time constraints we should be aware of?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_41a6273c-bf51-4caa-a947-be1544d7ce17"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_7d43c59d-0a15-43e4-a9c4-8a7641974b85",
+      "label": "Why do you want to work at Encord? (Great answers are often 200-400 words)",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Encord because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Encord is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Encord while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Encord aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Encord')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_7d43c59d-0a15-43e4-a9c4-8a7641974b85"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_248af278-a1eb-4f95-90d7-d9b06cb01a41",
+      "label": "I certify that the facts set forth in this application are true and complete to the best of my knowledge. I understand that any misrepresentation or omission may result in disqualification from consideration or, if hired, dismissal from employment.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1cccc34b-2833-4e13-abf7-e64cca373b93_248af278-a1eb-4f95-90d7-d9b06cb01a41"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_c127792f-36fc-43f1-9fb2-9f6507c8b73a",
+      "label": "How do you pronounce your name?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='How do you pronounce your name?'"
+    },
+    {
+      "id": "1cccc34b-2833-4e13-abf7-e64cca373b93_41a6273c-bf51-4caa-a947-be1544d7ce17",
+      "label": "Do you have any deadlines or time constraints we should be aware of?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Do you have any deadlines or time constraints we should be aware of?'"
+    }
+  ],
+  "blockers": []
+}

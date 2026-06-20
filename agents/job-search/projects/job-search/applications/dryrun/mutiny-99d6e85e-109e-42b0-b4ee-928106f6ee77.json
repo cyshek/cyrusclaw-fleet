@@ -1,0 +1,141 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/mutiny/99d6e85e-109e-42b0-b4ee-928106f6ee77",
+  "org": "mutiny",
+  "job_id": "99d6e85e-109e-42b0-b4ee-928106f6ee77",
+  "job_title": "Growth PM",
+  "job_location": "In person in New York City",
+  "fetched_at": "2026-06-09T07:55:03Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 5,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e__systemfield_name"
+    },
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e__systemfield_email"
+    },
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e__systemfield_resume"
+    },
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_5c33c13a-4369-41f7-be9d-1e2a9930b8f7",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_5c33c13a-4369-41f7-be9d-1e2a9930b8f7"
+    },
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_0e34feeb-8c32-446a-939b-c3da663de79a",
+      "label": "Are you currently based in the New York City area, or are you willing to relocate here prior to starting this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_0e34feeb-8c32-446a-939b-c3da663de79a",
+      "match_attempted": true
+    },
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_8cb785ea-1ecd-4f3c-a722-af76e4c6c1b8",
+      "label": "Are you willing and able to work from our NYC office 5 days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_8cb785ea-1ecd-4f3c-a722-af76e4c6c1b8"
+    },
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_0728f7d7-b382-49fd-acaf-df970b6ebafc",
+      "label": "Optional, but helpful given our application volume: share an example of work you're proud of (portfolio, model, project, tool, thought leadership piece, campaign, etc.).",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "portfolio_url is null",
+      "status": "unresolved",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_0728f7d7-b382-49fd-acaf-df970b6ebafc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "af8aa171-2899-45b8-a73a-52940aaa6a8e_0728f7d7-b382-49fd-acaf-df970b6ebafc",
+      "label": "Optional, but helpful given our application volume: share an example of work you're proud of (portfolio, model, project, tool, thought leadership piece, campaign, etc.).",
+      "required": false,
+      "reason": "portfolio_url is null"
+    }
+  ],
+  "blockers": []
+}

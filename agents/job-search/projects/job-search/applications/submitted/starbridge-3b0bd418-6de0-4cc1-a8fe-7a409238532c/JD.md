@@ -1,0 +1,71 @@
+# Customer Solutions Architect
+
+**Company:** Starbridge
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/starbridge/3b0bd418-6de0-4cc1-a8fe-7a409238532c
+**Ashby Org:** starbridge
+**Ashby Job ID:** 3b0bd418-6de0-4cc1-a8fe-7a409238532c
+
+---
+
+We’re hiring a** Customer Solutions Architect** to partner with our customers on all things functional and technical to drive adoption & value realization from their investment in Starbridge. This is a hands-on, high-impact role where you’ll define processes, drive customer adoption, and ensure long-term success. You’ll work closely with the CS, Product, and Sales organizations, reporting directly to the Chief Product Officer, with visibility across the entire company. If you thrive in fast-moving environments, enjoy solving complex problems, and want to make a **direct impact on customer delight and retention**, this role is for you.
+
+**Key Responsibilities**
+
+- **Onboard & Train** - Own customer onboarding and training to achieve high adoption. Develop and refine training materials as you scale.
+
+- **Be the Voice of the Customer** - Gather feedback, advocate for feature improvements, and work with the product team to enhance the customer experience.
+
+- **Scale Support** - Be the frontline for customer inquiries, and continuously improve processes through automation and documentation.
+
+- **Monitor & Optimize** - Define and track customer health metrics, proactively addressing risks and opportunities.
+
+- **Drive Renewals & Expansion** - Build deep relationships with customers, identify growth opportunities, and increase platform utilization.
+
+**This is the role for you if:**
+
+- You want to get your hands dirty making our early customers our greatest advocates as well as build the structures around how we scale the overall Customer Success function as we scale.
+
+- Problems make you angry and solutions bring you joy - you’re the type of person who will do whatever it takes to solve a problem, no matter how big or small. If you’ve sent a dozen cold emails or taught yourself basic Python to solve a problem in the past, you’re this person. 
+
+- You’re excited to be exposed to and work alongside every function of a fast paced, quickly growing startup, from engineering to GTM.
+
+**Skills Knowledge And Expertise**
+
+- 3+ years in Customer Success, Solutions Engineering/Consulting, Deployments or Implementation, Account Management, or a related role in B2B SaaS. If you’re coming from a different background and think you’d be a great fit, tell us why!
+
+- **Process Builder** - You’ve built systems from scratch and thrive in ambiguity.
+
+- **Data Driven** - Comfortable building process around, tracking, and making decisions based on customer data.
+
+- **Customer Centric** - A natural relationship builder who can drive adoption and retention.
+
+- **Technical Aptitude** - Able to understand and explain a data-driven SaaS platform. 
+
+**Interview Process**
+
+We move fast — really fast. Getting back to someone today beats tomorrow, and our interview process reflects that mindset. Please keep us posted on your timeline so we can move quickly and speed things up where needed.
+
+**How We Work**
+
+- **Build Bridges to Help Customers Win -** We pride ourselves on being obsessively customer-centric.
+
+- **Shooting Star Speed -** We move with extreme speed. We value momentum, decisiveness, and the ability to accelerate when it matters.
+
+- **Fun Is a Feature -** Fun is a Feature means we intentionally design Starbridge to be an energizing place to do hard work. Joy, humor, and camaraderie make great teams faster, sharper, and more resilient.
+
+- **In the Arena -** We believe the best ideas come from living close to the work, feeling the friction, hearing the nuance, and experiencing the details firsthand.
+
+## **Benefits include:**
+
+- Competitive salary + early-stage equity
+
+- Comprehensive medical, dental, and vision insurance
+
+- Company provided lunch in office everyday
+
+- 75% coverage of Chelsea Piers Fitness membership
+
+- Unlimited PTO
+
+- Regular offsites (NYC + global locations)

@@ -1,0 +1,27 @@
+=== cron_tick.sh @ 20260604T133001Z ===
+strategies: breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth
+tick rc: 0
+--- tick output ---
+[sma_crossover_qqq] SELL 0.137348676 QQQ @ $734.83 | reason: SMA10=742.32 < SMA30=742.74
+[sma_crossover_qqq_regime] SELL 0.137278535 QQQ @ $734.61 | reason: SMA10=742.32 < SMA30=742.74
+[sma_crossover_qqq_rth] SELL 0.137011451 QQQ @ $734.79 | reason: SMA10=742.32 < SMA30=742.74
+=== end ===
+--- post rc: 0 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+{
+  "action": "send",
+  "channel": "discord",
+  "dryRun": false,
+  "handledBy": "plugin",
+  "messageId": "1512086077727576066",
+  "payload": {
+    "ok": true,
+    "result": {
+      "messageId": "1512086077727576066",
+      "channelId": "1508503706545557656"
+    }
+  }
+}
+=== posted ===

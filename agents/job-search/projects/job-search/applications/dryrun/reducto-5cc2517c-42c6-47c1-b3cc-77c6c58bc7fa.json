@@ -1,0 +1,194 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/reducto/5cc2517c-42c6-47c1-b3cc-77c6c58bc7fa",
+  "org": "reducto",
+  "job_id": "5cc2517c-42c6-47c1-b3cc-77c6c58bc7fa",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco Office",
+  "fetched_at": "2026-06-04T06:57:10Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_name"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_email"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_0d03df81-4e86-4607-986e-99db54d35917",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_0d03df81-4e86-4607-986e-99db54d35917"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_location"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_d6dce285-6ed7-4a45-a056-fae67690cff0",
+      "label": "Pronouns",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_d6dce285-6ed7-4a45-a056-fae67690cff0"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_d60d6d31-aa94-4223-9f5c-1936f833f6a2",
+      "label": "LinkedIn",
+      "type": "textarea",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_d60d6d31-aa94-4223-9f5c-1936f833f6a2"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_3c036661-f6a1-44ca-814b-fc7d8680b05d",
+      "label": "Are you open to working 5 days a week onsite in San Francisco?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (matched relocation target 'san francisco' in label)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_3c036661-f6a1-44ca-814b-fc7d8680b05d"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_aebc5597-72ea-4d5e-8872-c3fb8bbbb1a5",
+      "label": "If you have a college degree, what institution(s) did you graduate from?",
+      "type": "input_text",
+      "required": true,
+      "value": "Bachelor of Science",
+      "source": "education.degree",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_aebc5597-72ea-4d5e-8872-c3fb8bbbb1a5"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_168ca2b4-0547-46e7-8ff2-b5ce837225bd",
+      "label": "Have you worked at a startup?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_168ca2b4-0547-46e7-8ff2-b5ce837225bd"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c_a35bd22c-95ba-4169-a2cb-c88939894696",
+      "label": "Will you now or in the future require Reducto to commence or sponsor an immigration case in order to employ you (for example H1-B or other employment based immigration) in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c_a35bd22c-95ba-4169-a2cb-c88939894696"
+    },
+    {
+      "id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "905168ec-cefa-4db5-a876-6eddeaa9086c__systemfield_resume"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

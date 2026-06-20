@@ -1,0 +1,87 @@
+# Human Data Solutions Engineer
+
+**Company:** Encord
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/encord/b4eb9359-fb8a-4791-b399-402b01b13a13
+**Ashby Org:** encord
+**Ashby Job ID:** b4eb9359-fb8a-4791-b399-402b01b13a13
+
+---
+
+## **About us**
+
+Encord is the universal data layer for AI that helps 300+ AI teams train and run models on the right data. Our platform indexes, curates, annotates, and evaluates data across the full AI lifecycle, from development through production.
+
+Trusted by Woven by Toyota, AXA, UiPath, Zipline, and more. We're an ambitious team of 100+ working at the frontier of AI and have raised $60M in Series C funding from Wellington Management, CRV, Next47 and Y Combinator.
+
+**The role**
+
+As a Human Data Operations & Solutions Engineer at Encord, you will sit at the intersection of technical sales and hands-on data operations. You are the expert who takes a prospect from first demo to a working proof of concept — not just by showing the platform, but by actually delivering a small-scale, high-quality annotation sample that demonstrates what best-in-class data operations looks like in practice.
+
+You'll own the full arc: leading technical discovery on demo calls, designing the annotation workflow, managing the delivery of sample datasets, and translating the results into a compelling case for the client. With a strong focus on robotics and autonomous driving, you'll be working with some of the most technically complex and data-intensive AI use cases in the industry.
+
+**What you’ll do**
+
+- Partner with Account Executives to lead the technical and operational strategy for complex enterprise sales cycles, co-owning the path to a successful proof of concept
+
+- Lead deep technical discovery sessions with ML Engineers, MLOps leaders, and non-technical stakeholders to understand data requirements and design the right annotation workflow
+
+- Manage end-to-end delivery of small-scale annotation POCs — translating complex AI requirements into clear instructions for annotation specialists, auditing outputs, and iterating on quality until the sample is client-ready
+
+- Build and deliver tailored demonstrations that combine platform capability with live, real-world annotation results — particularly for robotics, autonomous driving, and multimodal sensor data (LiDAR, camera fusion, etc.)
+
+- Act as a trusted advisor to clients on annotation workflow design, data quality, and the operational processes that underpin model performance
+
+- Provide structured feedback and guidance to annotation teams during POC delivery, ensuring outputs meet the quality bar required to win client confidence
+
+- Translate findings and operational results into clear value propositions for senior, non-technical stakeholders
+
+- Serve as the voice of the customer to Product and Engineering, channelling detailed technical feedback from enterprise clients to shape the roadmap
+
+**Who we're looking for**
+
+- A sharp operator who combines structured, consulting-style thinking with hands-on execution — you're equally comfortable designing a workflow on a whiteboard and auditing annotation outputs in a spreadsheet
+
+- Technically fluent: you can query a database, write a Python script to automate a workflow, or dig into annotation outputs to identify quality issues — and you know enough about ML pipelines to speak credibly with engineers
+
+- A natural communicator who can run a compelling demo, walk through a POC delivery, and explain what it all means to a VP in plain language
+
+- Genuinely passionate about AI, with particular interest in robotics, autonomous driving, and the data operations challenges that come with physical AI
+
+- Entrepreneurial and collaborative — you take ownership, move fast, and thrive when the work is ambiguous and high-stakes
+
+**Experience requirements**
+
+- 1-3 years of professional experience, ideally spanning strategy consulting, AI/technology operations, or customer-facing technical roles (Solutions Engineering, Technical Account Management, or similar)
+
+- Proven ability to own complex, multi-stakeholder workflows end-to-end — from scoping and planning through execution, quality assurance, and client communication
+
+- Working proficiency in Python or SQL, with the ability to query data, automate workflows, or audit annotation outputs
+
+- Experience designing or optimising data operations processes with a strong eye for quality, consistency, and scalability — ideally involving human-in-the-loop or structured labelling workflows
+
+- Demonstrated ability to engage effectively with both technical stakeholders (ML engineers, data scientists) and non-technical clients
+
+- Hands-on experience with at least one major cloud platform (GCP, AWS, or Azure), including data storage and ML workflow patterns
+
+- Bonus: hands-on experience with computer vision, LiDAR, robotics sensor data, or autonomous driving datasets; prior exposure to data annotation platforms or quality management frameworks; experience in a customer-facing technical role at an AI company
+
+**Why Encord**
+
+- Competitive salary, commission, and meaningful equity in a high-growth start-up
+
+- Clear, accelerated growth opportunities as the company scales rapidly
+
+- Strong in-person culture: 4 days/week in our newly launched North Beach loft office
+
+- Flexible PTO to fully recharge
+
+- 18 paid vacation days in the U.S. plus federal holidays
+
+- Annual learning & development budget
+
+- Comprehensive health, dental, and vision coverage
+
+- Frequent travel opportunities across the U.S., London, and Europe
+
+- Bi-annual company offsites, twice-weekly team lunches, and monthly socials

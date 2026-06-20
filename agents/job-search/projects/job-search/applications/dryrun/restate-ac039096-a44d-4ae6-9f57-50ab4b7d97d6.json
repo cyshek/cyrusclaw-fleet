@@ -1,0 +1,182 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/restate/ac039096-a44d-4ae6-9f57-50ab4b7d97d6",
+  "org": "restate",
+  "job_id": "ac039096-a44d-4ae6-9f57-50ab4b7d97d6",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "United States",
+  "fetched_at": "2026-05-31T06:01:17Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da__systemfield_name",
+      "section": "Contact Details"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da__systemfield_email",
+      "section": "Contact Details"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da__systemfield_resume",
+      "section": "Contact Details"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_456254ea-7ba3-414d-bf93-c1e36549f54f",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_456254ea-7ba3-414d-bf93-c1e36549f54f",
+      "section": "Contact Details"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_9dabff82-d259-4507-8583-421331607f2a",
+      "label": "GitHub",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_9dabff82-d259-4507-8583-421331607f2a",
+      "section": "Links"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_619cba95-84e9-45da-b58c-dcaa05bfa26d",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_619cba95-84e9-45da-b58c-dcaa05bfa26d",
+      "section": "Links"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_6e08023c-8002-4211-9962-38ba25f9e4de",
+      "label": "Twitter/X",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_6e08023c-8002-4211-9962-38ba25f9e4de",
+      "section": "Links"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_e302c190-beb9-4539-9979-767db2b5a761",
+      "label": "Are you based in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "ashby_location_ack (Cyrus in WA, label does not mention a relocation-target city)",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_e302c190-beb9-4539-9979-767db2b5a761",
+      "section": "Location"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_07a26d20-400d-495a-8527-46f44b2fd5fd",
+      "label": "Are you authorized to work in the US without visa sponsorship, now and in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_07a26d20-400d-495a-8527-46f44b2fd5fd",
+      "section": "Location"
+    },
+    {
+      "id": "d0d45490-4c06-457a-abbc-118b859236da_7a51199b-7065-46cf-a957-074e0e57899f",
+      "label": "Tell us about a time you helped a customer  go from early POC to successful production. What were the hardest blockers, and what did you do to unblock them?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "d0d45490-4c06-457a-abbc-118b859236da_7a51199b-7065-46cf-a957-074e0e57899f",
+      "section": "Tell us more"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

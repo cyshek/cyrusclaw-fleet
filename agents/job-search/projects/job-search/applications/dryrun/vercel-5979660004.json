@@ -1,0 +1,374 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/vercel/jobs/5979660004",
+  "org": "vercel",
+  "job_id": "5979660004",
+  "job_title": "Pricing Product Manager",
+  "job_location": "Hybrid - San Francisco",
+  "fetched_at": "2026-05-07T22:40:39Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/vercel/jobs/5979660004?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 19,
+    "filled": 15,
+    "filled_needs_review": 4,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_17667509004",
+      "label": "Are you currently based in any of these countries? Please note these are the only countries where we are accepting applications",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "address.based_in_restricted_country (Cyrus 2026-05-07: always No) | NOTE: 'No' not literally in options ['United States', 'Germany', 'United Kingdom', 'Argentina', 'Australia', 'Canada', 'India', 'Japan', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "based_in_restricted_country",
+      "options": [
+        {
+          "label": "United States",
+          "value": 79680737004
+        },
+        {
+          "label": "Germany",
+          "value": 79680738004
+        },
+        {
+          "label": "United Kingdom",
+          "value": 79680739004
+        },
+        {
+          "label": "Argentina",
+          "value": 79680740004
+        },
+        {
+          "label": "Australia",
+          "value": 79680741004
+        },
+        {
+          "label": "Canada",
+          "value": 79680742004
+        },
+        {
+          "label": "India",
+          "value": 79680743004
+        },
+        {
+          "label": "Japan",
+          "value": 79680744004
+        },
+        {
+          "label": "Other",
+          "value": 79680745004
+        }
+      ]
+    },
+    {
+      "id": "question_17667510004",
+      "label": "Will you require Visa Sponsorship now, or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17667511004",
+      "label": "Your authorization to work in the country where you live. Please choose the option that describes your work authorization.\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['I am authorized to work in the country due to my nationality', 'I am authorized to work in the country based on a valid work permit and do not need a company to sponsor my visa', 'I am authorized to work in the country based on a valid work permit which needs to be sponsored by the company I work for', 'I am not authorized to work in the country and need visa support', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "I am authorized to work in the country due to my nationality",
+          "value": 79680746004
+        },
+        {
+          "label": "I am authorized to work in the country based on a valid work permit and do not need a company to sponsor my visa",
+          "value": 79680747004
+        },
+        {
+          "label": "I am authorized to work in the country based on a valid work permit which needs to be sponsored by the company I work for",
+          "value": 79680748004
+        },
+        {
+          "label": "I am not authorized to work in the country and need visa support",
+          "value": 79680749004
+        },
+        {
+          "label": "Other",
+          "value": 79680750004
+        }
+      ]
+    },
+    {
+      "id": "question_17667512004",
+      "label": "Do you live in one of the following states?\nAlabama, Alaska, Delaware, Kansas, Maine, Mississippi, Montana, Nebraska, New Mexico, North Dakota, South Dakota, West Virginia, or Wyoming.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "address.based_in_restricted_state (Cyrus is in WA, not on restricted lists)",
+      "status": "filled",
+      "matched_rule": "based_in_restricted_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17667513004",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_17667514004",
+      "label": "Twitter",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null
+    },
+    {
+      "id": "question_17667515004",
+      "label": "Github",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "question_17667516004",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_17667517004",
+      "label": "By submitting my application, I acknowledge that I have read and understand Vercel’s Job Applicant Privacy Notice - https://vercel.com/legal/job-applicant-privacy-notice ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['Acknowledge/Confirm']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Acknowledge/Confirm",
+          "value": 79680751004
+        }
+      ]
+    },
+    {
+      "id": "question_17667518004",
+      "label": "Please double-check all the information provided above. Ensuring accuracy is crucial, as any errors or omissions may impact the review of your application.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['I have reviewed and confirmed that all the information provided is accurate and complete.']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I have reviewed and confirmed that all the information provided is accurate and complete.",
+          "value": 79680752004
+        }
+      ]
+    },
+    {
+      "id": "question_17703418004",
+      "label": "Where did you first hear about this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Events",
+          "value": 79906403004
+        },
+        {
+          "label": "Built In",
+          "value": 79906409004
+        },
+        {
+          "label": "LinkedIn",
+          "value": 79906412004
+        },
+        {
+          "label": "Google Search",
+          "value": 79906415004
+        },
+        {
+          "label": "Advertisements",
+          "value": 79906420004
+        },
+        {
+          "label": "Other job boards",
+          "value": 79906424004
+        },
+        {
+          "label": "LLMs (ChatGPT, etc.)",
+          "value": 79906427004
+        },
+        {
+          "label": "I'm a Vercel customer",
+          "value": 79906433004
+        },
+        {
+          "label": "Referral from a Vercel customer",
+          "value": 79906434004
+        },
+        {
+          "label": "Referral from a Vercel team member",
+          "value": 79906437004
+        },
+        {
+          "label": "Social media (X, Instagram, YouTube, etc.)",
+          "value": 79906440004
+        },
+        {
+          "label": "Other Content (news articles, podcasts, blogs)",
+          "value": 79906444004
+        },
+        {
+          "label": "Developer communities (GitHub, Hacker News, Reddit, etc.)",
+          "value": 79906446004
+        },
+        {
+          "label": "Other",
+          "value": 79906452004
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

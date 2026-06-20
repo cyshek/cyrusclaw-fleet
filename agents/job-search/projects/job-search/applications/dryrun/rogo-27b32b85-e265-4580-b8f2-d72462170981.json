@@ -1,0 +1,244 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/rogo/27b32b85-e265-4580-b8f2-d72462170981",
+  "org": "rogo",
+  "job_id": "27b32b85-e265-4580-b8f2-d72462170981",
+  "job_title": "Solutions Architect",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-08T18:03:37Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_name"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_f6edc64a-2ba9-4e76-95c4-66b3f188b308",
+      "label": "Linkedin URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_f6edc64a-2ba9-4e76-95c4-66b3f188b308"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_email"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_b00c4af5-e5bf-4e59-b701-b8cbfe4c493f",
+      "label": "Are you able, willing, and excited to work full-time in an office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_b00c4af5-e5bf-4e59-b701-b8cbfe4c493f"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_8f502f94-db1f-4b20-9581-a33f46cd234e",
+      "label": "Why are you interested in Rogo?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Rogo because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Rogo is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Rogo while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Rogo aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Rogo')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_8f502f94-db1f-4b20-9581-a33f46cd234e"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_fb963743-2125-4983-97df-e0a2b0c55617",
+      "label": "How many years of relevant experience do you have? ",
+      "type": "input_text",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_fb963743-2125-4983-97df-e0a2b0c55617"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_6aaec2c2-140f-4550-9e87-a6930ef2f35a",
+      "label": "Where did you go to University?",
+      "type": "input_text",
+      "required": true,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_6aaec2c2-140f-4550-9e87-a6930ef2f35a"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_resume",
+      "label": "Please Upload Your Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_resume"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_5bda8249-9897-4371-98ca-898e1b79491e",
+      "label": "How did you hear about this role?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Other",
+      "source": "ashby_how_did_you_hear (matched 'other')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Social Media",
+          "value": "Social Media"
+        },
+        {
+          "label": "News/Podcast",
+          "value": "News/Podcast"
+        },
+        {
+          "label": "Recruiter",
+          "value": "Recruiter"
+        },
+        {
+          "label": "Job Board",
+          "value": "Job Board"
+        },
+        {
+          "label": "Employee Referral",
+          "value": "Employee Referral"
+        },
+        {
+          "label": "Event/Conference",
+          "value": "Event/Conference"
+        },
+        {
+          "label": "Online Advertisement",
+          "value": "Online Advertisement"
+        },
+        {
+          "label": "Professional Network",
+          "value": "Professional Network"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_5bda8249-9897-4371-98ca-898e1b79491e"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d__systemfield_location"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_ed782834-1d0f-4515-8c9d-5de498e5704c",
+      "label": "Are you legally authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_ed782834-1d0f-4515-8c9d-5de498e5704c"
+    },
+    {
+      "id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_4c271150-7d49-43bf-b665-c45f2c9a035c",
+      "label": "Will you now or in the future require sponsorship for an immigration-related employement benefit?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "568504e1-7d1d-4055-a32f-3a732bae5f1d_4c271150-7d49-43bf-b665-c45f2c9a035c"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

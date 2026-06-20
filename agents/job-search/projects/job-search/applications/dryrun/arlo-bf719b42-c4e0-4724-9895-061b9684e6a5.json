@@ -1,0 +1,102 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/arlo/bf719b42-c4e0-4724-9895-061b9684e6a5",
+  "org": "arlo",
+  "job_id": "bf719b42-c4e0-4724-9895-061b9684e6a5",
+  "job_title": "AI Forward Deployed Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-05-30T23:55:48Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_name"
+    },
+    {
+      "id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_email"
+    },
+    {
+      "id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_resume"
+    },
+    {
+      "id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "92ebe447-7b80-49dd-a98e-523d8319fa16__systemfield_location"
+    },
+    {
+      "id": "92ebe447-7b80-49dd-a98e-523d8319fa16_bbdd40f5-f8e7-4982-b4ee-2bb89ba91723",
+      "label": "Why would you like to work at Arlo?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Arlo because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Arlo is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Arlo while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Arlo aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Arlo')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "92ebe447-7b80-49dd-a98e-523d8319fa16_bbdd40f5-f8e7-4982-b4ee-2bb89ba91723"
+    },
+    {
+      "id": "92ebe447-7b80-49dd-a98e-523d8319fa16_5e8d2114-d699-4a3c-849b-2bcf0f339db2",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "92ebe447-7b80-49dd-a98e-523d8319fa16_5e8d2114-d699-4a3c-849b-2bcf0f339db2"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

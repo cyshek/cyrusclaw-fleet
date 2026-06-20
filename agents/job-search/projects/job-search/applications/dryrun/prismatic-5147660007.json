@@ -1,0 +1,548 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/prismatic/jobs/5147660007",
+  "org": "prismatic",
+  "job_id": "5147660007",
+  "job_title": "Pre-Sales Solutions Engineer",
+  "job_location": "United States",
+  "fetched_at": "2026-06-07T04:09:02Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/prismatic/jobs/5147660007?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 24,
+    "filled": 14,
+    "filled_needs_review": 1,
+    "declined": 9,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_12111319007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_12111320007",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_12111321007",
+      "label": "Why Prismatic? What drew you to this role?",
+      "type": "input_text",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Prismatic because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Prismatic is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Prismatic while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Prismatic aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Prismatic')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_12111325007",
+      "label": "We are an all-remote team distributed across the US. Where will you be working from?\n",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to remote, hybrid, or onsite",
+      "source": "preferences.remote_preference",
+      "status": "filled",
+      "matched_rule": "remote_pref",
+      "options": null
+    },
+    {
+      "id": "question_12111326007",
+      "label": "Will you now or in the future require visa sponsorship for employment at Prismatic?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_12111327007",
+      "label": "Are you legally authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4002586007",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4015503007
+        },
+        {
+          "label": "Non-binary",
+          "value": 4015504007
+        },
+        {
+          "label": "Woman",
+          "value": 4015505007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4015506007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4015507007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002587007",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4015508007
+        },
+        {
+          "label": "East Asian",
+          "value": 4015509007
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4015510007
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4015511007
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 4015512007
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4015513007
+        },
+        {
+          "label": "South Asian",
+          "value": 4015514007
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4015515007
+        },
+        {
+          "label": "White or European",
+          "value": 4015516007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4015517007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4015518007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002588007",
+      "label": "How would you describe your sexual orientation? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4015519007
+        },
+        {
+          "label": "Bisexual and/or pansexual",
+          "value": 4015520007
+        },
+        {
+          "label": "Gay",
+          "value": 4015521007
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4015522007
+        },
+        {
+          "label": "Lesbian",
+          "value": 4015523007
+        },
+        {
+          "label": "Queer",
+          "value": 4015524007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4015525007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4015526007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002589007",
+      "label": "Do you identify as transgender? (select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4015527007
+        },
+        {
+          "label": "No",
+          "value": 4015528007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4015529007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4015530007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002590007",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning? (select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4015531007
+        },
+        {
+          "label": "No",
+          "value": 4015532007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4015533007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4015534007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002591007",
+      "label": "Are you a veteran or active member of the United States Armed Forces? (select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 4015535007
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4015536007
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4015537007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4015538007
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

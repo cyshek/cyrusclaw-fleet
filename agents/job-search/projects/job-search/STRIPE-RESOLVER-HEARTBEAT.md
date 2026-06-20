@@ -1,0 +1,9 @@
+# Stripe Resolver Heartbeat
+
+- 2026-05-24 ~17:45 UTC — Phase 1 starting. Tracker confirmed: 10 target IDs all status='' applied_by=None. Investigating stripe.com/jobs/search backing API.
+
+- 2026-05-24 17:50 UTC — **Phase 1 DONE**. Resolved 8/10 LinkedIn-only tracker rows to Stripe canonical apply URLs via the public Greenhouse board (`boards-api.greenhouse.io/v1/boards/stripe/jobs`, 496 active jobs). Stripe ID == GH JID. 2 unmatched: ids 1080+1263 ("TPM, Payments Experiences") — not on Stripe's current GH board (delisted or rebranded). tracker.db backed up to `tracker.db.bak.20260524-stripe-resolver`. Moving to Phase 2: captcha probe.
+
+- 2026-05-24 17:55 UTC — **Phase 2 DONE**. Probed Stripe-wrapper vs direct GH embed for gh_jid 7176530 (PM Payments) and 7607761 (Partner SA AWS). KEY FINDING: Stripe's `/apply` wrapper iframe src is the **bare** `?for=stripe&token=<id>` URL — **NO validityToken**. Stripe's wrapper provides **zero captcha-context advantage** over direct embed (unlike Databricks, where wrapper does carry validityToken). On initial render, NO `.grecaptcha-error` and NO recaptcha iframes appear — so the captcha gate has historically fired only on submit-click. Plan: ONE end-to-end attempt on role 1171 (Partner SA AWS, gh_jid 7607761, highest-confidence resolved role) to get fresh signal on whether the post-submit captcha fail mode still reproduces. Stop after that; no LLM credit spend on 2 more if it fails.
+
+- 2026-05-24 18:05 UTC — **Phase 3 SKIPPED (decision documented)**, **Phase 4 DONE**. Caught + fixed an idempotency bug in `apply_matches` (was writing a marker on rerun pointing at the already-mutated jd_url). Tracker now clean: 1 marker per resolved row, all pointing at the original LinkedIn URL. Report at `applications/_stripe-resolver-report-20260524-1751Z.md`. BACKLOG + MEMORY updated. COMPANY-PUBLIC-LISTINGS-RESOLVER.md sketched with Anthropic/OpenAI/Netflix TODOs. Wrapping up.

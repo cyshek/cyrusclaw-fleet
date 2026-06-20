@@ -1,0 +1,505 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/twilio/jobs/7963689",
+  "org": "twilio",
+  "job_id": "7963689",
+  "job_title": "Product Manager, L2",
+  "job_location": "Remote - US",
+  "fetched_at": "2026-06-02T02:16:35Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/twilio/jobs/7963689?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 24,
+    "filled": 17,
+    "filled_needs_review": 0,
+    "declined": 5,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67246136",
+      "label": "LinkedIn Profile URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67246137[]",
+      "label": "How did you hear about Twilio?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Careers Website",
+          "value": 724706038
+        },
+        {
+          "label": "LinkedIn",
+          "value": 724706039
+        },
+        {
+          "label": "Twitter",
+          "value": 724706040
+        },
+        {
+          "label": "Glassdoor",
+          "value": 724706041
+        },
+        {
+          "label": "Indeed",
+          "value": 724706042
+        },
+        {
+          "label": "Twilio Blog",
+          "value": 724706043
+        },
+        {
+          "label": "Conference or Event",
+          "value": 724706044
+        },
+        {
+          "label": "Content (e.g. videos, ads, billboards etc)",
+          "value": 724706045
+        },
+        {
+          "label": "Other",
+          "value": 724706046
+        }
+      ]
+    },
+    {
+      "id": "question_67246138",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67246139",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67246140",
+      "label": "Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.\\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67246141[]",
+      "label": "By clicking the \"Acknowledge\" button, you acknowledge that Twilio processes data in accordance with the Twilio Applicant Privacy Policy.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Acknowledge",
+      "source": "acknowledge_yes (matched 'Acknowledge')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Acknowledge",
+          "value": 724706047
+        }
+      ]
+    },
+    {
+      "id": "question_67246142[]",
+      "label": "By checking this box, I confirm I have read, reviewed and understood the guidelines outlined in the Candidate AI Responsible Use Policy. I affirm that all the information and materials I submit throughout my application and candidacy will reflect my own work and experience.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='By checking this box, I confirm I have read, reviewed and understood the guidelines outlined in the Candidate AI Responsible Use Policy. I affirm that all the information and materials I submit throughout my application and candidacy will reflect my own work and experience.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Acknowledge",
+          "value": 724706048
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_1712",
+      "label": "Disability Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": 12111
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": 12112
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 12113
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1713",
+      "label": "Voluntary Self-Identification of Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 12114
+        },
+        {
+          "label": "Female",
+          "value": 12115
+        },
+        {
+          "label": "Transgender",
+          "value": 12116
+        },
+        {
+          "label": "Gender Nonconforming",
+          "value": 12117
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 12118
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1714",
+      "label": "Voluntary Self-Identification of Race/Ethnicity ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Native American or Alaska Native ",
+          "value": 12119
+        },
+        {
+          "label": "Asian",
+          "value": 12120
+        },
+        {
+          "label": "Black or African American",
+          "value": 12121
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 12122
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 12123
+        },
+        {
+          "label": "White",
+          "value": 12124
+        },
+        {
+          "label": "Two or More Races",
+          "value": 12125
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 12126
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1715",
+      "label": "Protected Veteran Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am not a protected veteran",
+          "value": 12127
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": 12128
+        },
+        {
+          "label": "I identify as a veteran but not a protected veteran",
+          "value": 12129
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 12130
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1716",
+      "label": "Voluntary Self-Identification of Sexual Orientation",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Bisexual",
+          "value": 12131
+        },
+        {
+          "label": "Heterosexual",
+          "value": 12132
+        },
+        {
+          "label": "Homosexual",
+          "value": 12133
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 12134
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67246140",
+      "label": "Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.\n",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.\\n'"
+    },
+    {
+      "id": "question_67246142[]",
+      "label": "By checking this box, I confirm I have read, reviewed and understood the guidelines outlined in the Candidate AI Responsible Use Policy. I affirm that all the information and materials I submit throughout my application and candidacy will reflect my own work and experience.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='By checking this box, I confirm I have read, reviewed and understood the guidelines outlined in the Candidate AI Responsible Use Policy. I affirm that all the information and materials I submit throughout my application and candidacy will reflect my own work and experience.'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67246140",
+      "label": "Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.\n",
+      "reason": "no LABEL_RULES match for label='Please indicate whether you are either a citizen or resident of any of the following countries: Cuba, Iran, North Korea, Syria or Crimea Region of Ukraine.\\n'"
+    },
+    {
+      "id": "question_67246142[]",
+      "label": "By checking this box, I confirm I have read, reviewed and understood the guidelines outlined in the Candidate AI Responsible Use Policy. I affirm that all the information and materials I submit throughout my application and candidacy will reflect my own work and experience.",
+      "reason": "no LABEL_RULES match for label='By checking this box, I confirm I have read, reviewed and understood the guidelines outlined in the Candidate AI Responsible Use Policy. I affirm that all the information and materials I submit throughout my application and candidacy will reflect my own work and experience.'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

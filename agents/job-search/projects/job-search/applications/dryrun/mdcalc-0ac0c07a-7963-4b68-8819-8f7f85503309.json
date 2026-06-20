@@ -1,0 +1,111 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/mdcalc/0ac0c07a-7963-4b68-8819-8f7f85503309",
+  "org": "mdcalc",
+  "job_id": "0ac0c07a-7963-4b68-8819-8f7f85503309",
+  "job_title": "Product Manager (User Product)",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-06-04T09:26:30Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_name"
+    },
+    {
+      "id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_email"
+    },
+    {
+      "id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_resume"
+    },
+    {
+      "id": "8ba22787-7193-4190-93a2-7d460131d3de_29272a1b-54e6-432a-9177-470dc778a7bd",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de_29272a1b-54e6-432a-9177-470dc778a7bd"
+    },
+    {
+      "id": "8ba22787-7193-4190-93a2-7d460131d3de_adda7134-7187-4758-aa17-ba27db6dba1b",
+      "label": "Will you now or in the future require sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de_adda7134-7187-4758-aa17-ba27db6dba1b"
+    },
+    {
+      "id": "8ba22787-7193-4190-93a2-7d460131d3de_9695380f-a601-4974-9a2a-0396d08d85f0",
+      "label": "Describe a project where you had significant ownership in building a product, feature, or system. Be specific about what you built, the key decisions you made, your level of ownership, and the outcome.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de_9695380f-a601-4974-9a2a-0396d08d85f0"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

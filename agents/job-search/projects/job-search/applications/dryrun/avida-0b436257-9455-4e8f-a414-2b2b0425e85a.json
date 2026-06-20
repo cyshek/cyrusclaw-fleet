@@ -1,0 +1,164 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/avida/0b436257-9455-4e8f-a414-2b2b0425e85a",
+  "org": "avida",
+  "job_id": "0b436257-9455-4e8f-a414-2b2b0425e85a",
+  "job_title": "Associate Product Manager",
+  "job_location": "Remote",
+  "fetched_at": "2026-05-26T18:39:11Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be__systemfield_name"
+    },
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be__systemfield_email"
+    },
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_0b4f004a-baf4-4a30-b6de-7dd2cef10a0d",
+      "label": "Phone number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_0b4f004a-baf4-4a30-b6de-7dd2cef10a0d"
+    },
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be__systemfield_resume"
+    },
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_50386628-0edb-4cad-a768-5ca4ad55450b",
+      "label": "Have you worked at a sub-100 pre-IPO start up?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_50386628-0edb-4cad-a768-5ca4ad55450b"
+    },
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_f7f76419-b91b-4379-bbb4-bde870b6e366",
+      "label": "Please list startup companies including name, size, and length of employment",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please list startup companies including name, size, and length of employment'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_f7f76419-b91b-4379-bbb4-bde870b6e366"
+    },
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_0a2ece82-b09f-4621-97a9-d5b8cff86a43",
+      "label": "Which timezone do you live in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Pacific Time Zone (PST): UTC-8. ",
+      "source": "ashby_us_timezone (pacific match) | ashby_smart_match(substring_unique,picked='Pacific Time Zone (PST): UTC-8. ')",
+      "status": "filled",
+      "matched_rule": "us_timezone",
+      "options": [
+        {
+          "label": "Hawaii-Aleutian Time Zone (HAST): UTC-10. ",
+          "value": "Hawaii-Aleutian Time Zone (HAST): UTC-10. "
+        },
+        {
+          "label": "Alaska Time Zone (AKST): UTC-9. ",
+          "value": "Alaska Time Zone (AKST): UTC-9. "
+        },
+        {
+          "label": "Pacific Time Zone (PST): UTC-8. ",
+          "value": "Pacific Time Zone (PST): UTC-8. "
+        },
+        {
+          "label": "Mountain Time Zone (MST): UTC-7. ",
+          "value": "Mountain Time Zone (MST): UTC-7. "
+        },
+        {
+          "label": "Central Time Zone (CST): UTC-6. ",
+          "value": "Central Time Zone (CST): UTC-6. "
+        },
+        {
+          "label": "Eastern Time Zone (EST): UTC-5. ",
+          "value": "Eastern Time Zone (EST): UTC-5. "
+        },
+        {
+          "label": "Atlantic Time Zone (AST): UTC-4.",
+          "value": "Atlantic Time Zone (AST): UTC-4."
+        },
+        {
+          "label": "None of the above",
+          "value": "None of the above"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_0a2ece82-b09f-4621-97a9-d5b8cff86a43"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "ddb2d5ce-f87b-4609-9d33-fdfc702b43be_f7f76419-b91b-4379-bbb4-bde870b6e366",
+      "label": "Please list startup companies including name, size, and length of employment",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Please list startup companies including name, size, and length of employment'"
+    }
+  ],
+  "blockers": []
+}

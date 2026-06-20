@@ -1,0 +1,39 @@
+[wd] account-decision[exfo]: SIGN-IN to existing FRESH alias cyshekari+wd-exfo-202606091904@gmail.com (mode=signin_fresh)
+[p6] account cyshekari+wd-exfo-202606091904@gmail.com
+[wd] create-account form shown on cold start -> trying Sign In toggle first
+[wd] recover_to_step: re-nav to base (try 0) body='Skip to main contentCareersEnglishSettingscyshekari+wd-exfo'
+[wd] signed in OK (via toggle)
+[p6] nav step 0: My Information
+[wd] step: My Information
+[wd] source already selected, skipping
+[wd] dropdown[countryPhoneCode] already committed -> skip
+[p6] nav step 1: My Experience
+[p6] ON My Experience -> handle_experience
+[wd] step: My Experience (resume upload)
+[wd]   resume already uploaded -> skip re-upload
+[wd]   populate: detected we_idx=None ed_idx=None
+[wd]   FRESH-ACCOUNT ASSERT OK: work-history starts EMPTY -> filling from tailored resume (no saved-profile reuse)
+[wd]   FRESH-FILL SOURCE: tailored resume / WORK_HISTORY (not profile autofill)
+[wd]   WE-fill start: total_blocks=0 empty=0
+[wd]   kbd-filled roleDescription on work-exp[8]
+[wd]   kbd-filled work-exp[8]: jobTitle now='Technical Program Manager'
+[wd]   work exp [8] Technical Program Manager @ Microsoft: blocks 1->1 (empty 1->0)
+[wd]   kbd-filled roleDescription on work-exp[37]
+[wd]   kbd-filled work-exp[37]: jobTitle now='Technical Program Manager Intern'
+[wd]   work exp [37] Technical Program Manager Intern @ Amazon Robotics: blocks 2->2 (empty 1->0)
+[wd]   kbd-filled roleDescription on work-exp[64]
+[wd]   kbd-filled work-exp[64]: jobTitle now='Program Manager Intern'
+[wd]   work exp [64] Program Manager Intern @ Pro Painters: blocks 3->3 (empty 1->0)
+[wd]   WE convergence pass 0: total=3 empty=0
+[wd]   WE-fill done: filled=3 final total_blocks=3 empty=0
+[wd]   roledesc sweep: nothing to fill (none empty/required, or no textarea rendered)
+[wd]   STILL-REQUIRED-EMPTY: ["workExperience-95--jobTitle :: Job Title*","workExperience-95--companyName :: Company*","workExperience-95--location :: Location*","workExperience-95--roleDescription :: Role Description*"]
+[p6] idxs [8, 37, 64, 95]
+[p6] KB on empty block 95
+[wd]   kbd-filled roleDescription on work-exp[95]
+[wd]   kbd-filled work-exp[95]: jobTitle now='Probe Role'
+[p6] KB -> {"mon": "8", "yr": "2022", "mon_ok": true, "yr_ok": true, "both_ok": true, "err_clear": true, "errors": []} raw mon='8' yr='2022' VT='8'/'2022'
+[p6] KBA block None
+[p6] PICK block None
+[p6] WINNER = KB_focus_type_persection
+[p6] WROTE _probe6_results.json. DONE (no submit).

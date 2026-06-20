@@ -1,0 +1,221 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/claylabs/494dd605-64a7-4647-bf86-cb1034f2327c",
+  "org": "claylabs",
+  "job_id": "494dd605-64a7-4647-bf86-cb1034f2327c",
+  "job_title": "Technical Enablement Program Manager",
+  "job_location": "New York",
+  "fetched_at": "2026-05-31T07:13:22Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 12,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03__systemfield_name"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_3785e904-9622-434d-9ee8-506bc29dde7a",
+      "label": "Preferred Name",
+      "type": "textarea",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_3785e904-9622-434d-9ee8-506bc29dde7a"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03__systemfield_email"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_9709d7d7-ee3c-4a17-a3a0-3b5e969e1e18",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_9709d7d7-ee3c-4a17-a3a0-3b5e969e1e18"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03__systemfield_resume"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_ea9a43a3-3cec-4cf5-8f67-898c9d6790c3",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_ea9a43a3-3cec-4cf5-8f67-898c9d6790c3"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_21b0acc0-79bf-485d-a726-13c394f0b062",
+      "label": "Other Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_21b0acc0-79bf-485d-a726-13c394f0b062"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_3c0c3f52-27e0-4828-b2c1-443a796f1465",
+      "label": "Are you currently legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_3c0c3f52-27e0-4828-b2c1-443a796f1465"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_74fe00e5-3fbc-484f-843c-57eb9a8e58d2",
+      "label": "Will you now, or in the future, require sponsorship (i.e. H-1B visa, etc.) to legally work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_74fe00e5-3fbc-484f-843c-57eb9a8e58d2"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_98920799-4cc2-46db-8363-a244f2bf0c32",
+      "label": "This position is based in NYC. Are you located in the tri-state area or are you planning to relocate within commuting distance?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state (NOTE: 'WA' not literally in options ['Yes', 'No']) | NOTE: 'WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_98920799-4cc2-46db-8363-a244f2bf0c32",
+      "match_attempted": true
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_cbf41a90-e835-4813-9fe0-b07c11b55407",
+      "label": "Most Clay employees are in office 3+ days a week. Does that work for you?",
+      "type": "textarea",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_cbf41a90-e835-4813-9fe0-b07c11b55407"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_9a5561cb-0e9c-407f-a686-93b792174fbf",
+      "label": "How did you hear about us?",
+      "type": "textarea",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_9a5561cb-0e9c-407f-a686-93b792174fbf"
+    },
+    {
+      "id": "ab4a3beb-bc79-4101-83f9-591a45776a03_59e02f6a-8823-43b2-8eb1-30f1f807be4c",
+      "label": "Additional Information ",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ab4a3beb-bc79-4101-83f9-591a45776a03_59e02f6a-8823-43b2-8eb1-30f1f807be4c"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

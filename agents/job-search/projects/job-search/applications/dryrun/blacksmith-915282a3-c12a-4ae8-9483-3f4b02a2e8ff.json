@@ -1,0 +1,142 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/blacksmith/915282a3-c12a-4ae8-9483-3f4b02a2e8ff",
+  "org": "blacksmith",
+  "job_id": "915282a3-c12a-4ae8-9483-3f4b02a2e8ff",
+  "job_title": " Solutions Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-05-31T07:08:21Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 5,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255__systemfield_name"
+    },
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255__systemfield_email"
+    },
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255__systemfield_resume"
+    },
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_6d2eb4ef-2851-4eb3-bd5a-49eda3173387",
+      "label": "Do you require US visa sponsorship?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "I'm already on an H1B or I'm a Canadian Citizen",
+          "value": "I'm already on an H1B or I'm a Canadian Citizen"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_6d2eb4ef-2851-4eb3-bd5a-49eda3173387"
+    },
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_7705ce90-235d-4023-bb34-30c4f25417a3",
+      "label": "Your GitHub URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_7705ce90-235d-4023-bb34-30c4f25417a3"
+    },
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_33bd9258-e6cd-4ef0-b4d4-44e3d2481aa1",
+      "label": "What are you most proud of building? Feel free to share a link or demo.",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_33bd9258-e6cd-4ef0-b4d4-44e3d2481aa1"
+    },
+    {
+      "id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_15c877cd-832f-45b6-985c-aa604d15e0bc",
+      "label": "Do you have a location preference?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['NYC', 'SF', 'Either works']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "NYC",
+          "value": "NYC"
+        },
+        {
+          "label": "SF",
+          "value": "SF"
+        },
+        {
+          "label": "Either works",
+          "value": "Either works"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "53d3762c-7055-43e8-8f2a-9ec7975fe255_15c877cd-832f-45b6-985c-aa604d15e0bc",
+      "match_attempted": true
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

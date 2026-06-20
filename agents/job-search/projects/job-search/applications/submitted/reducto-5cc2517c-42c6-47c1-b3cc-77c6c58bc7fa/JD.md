@@ -1,0 +1,104 @@
+# Solutions Engineer
+
+**Company:** Reducto
+**Location:** San Francisco Office
+**Apply:** https://jobs.ashbyhq.com/reducto/5cc2517c-42c6-47c1-b3cc-77c6c58bc7fa
+**Ashby Org:** reducto
+**Ashby Job ID:** 5cc2517c-42c6-47c1-b3cc-77c6c58bc7fa
+
+---
+
+### About Us 
+
+Reducto helps AI teams ingest real world enterprise data with state of the art accuracy.
+
+The vast majority of enterprise data — from financial statements to health records — is locked in unstructured file formats like PDFs and spreadsheets. We train vision models to read those documents the way a human would, and make it possible to build products, train models, and automate processes at scale.
+
+We’ve grown incredibly quickly, growing revenue by 7x YOY, and now work with hundreds of companies ranging from leading AI teams (Harvey, Vanta, Scale), through to enterprise (FAANG, top 3 trading firm).
+
+We're raised over 100M from world class investors like A16z, Benchmark, and First Round Capital, and are hiring a Founding Account Executive who can help us capitalize on our early momentum and catalyze our GTM function.
+
+ 
+
+### The Opportunity
+
+As an early member for the solutions team at Reducto, you’ll be at the front lines with our customers—enabling sales and implementations through your technical expertise. You’ll bridge the gap between our GTM team, core engineering team, and the unique, complex needs of our enterprise users. Moreover, you’ll build out the foundation of how this org will grow and expand. 
+
+### We would love to meet you if:
+
+- You are your own worst critic. You have a high bar for quality and don’t rest until the job is done right—no settling for 90%. We want someone who ships fast, with high agency, and who doesn't just voice problems but actively jumps in to fix them.
+
+- You have 3 to 6 years of experience working with enterprise or regulated customers.
+
+- You're excellent with Python and can navigate Bash and infrastructure as needed. 
+
+- You're very comfortable with Kubernetes.
+
+- Tools: Build your own tools as needed—like a quick Streamlit app to test hypotheses or create a dataset.
+
+- Approach: A quantitative approach to building products. Ability to debug, experiment, and iterate fast. You should be comfortable getting hands-on with the full development lifecycle, from ideation to shipping to users.
+
+### The core work will include:
+
+- Work with our GTM team to demonstrate our product capabilities for their specific environments through demos and proof-of-concepts
+
+- Designing and advising on system architecture or data flow to best integrate the product
+
+- Writing scripts or coding to help customers better leverage the best of Reducto's products code (e.g., API calls, connectors, dashboards)
+
+- Collaborating closely with customers, support, and core engineers to identify high-impact improvements.
+
+- Acting as a feedback loop to the product and infra teams—surfacing usability gaps, unmet needs, and opportunities to deepen customer value.
+
+- Working directly with the founders and customers to shape the product direction and engineering strategy
+
+### Bonus points if you:
+
+- Have prior experience founding a company or building products at early stages
+
+- Are ambitious and driven, and care a lot about doing great work with great people
+
+- Keep up with the latest developments in ML/AI
+
+This is an in person role at our office in SF. We’re an early stage company which means that the role requires working hard and moving quickly. Please only apply if that excites you.
+
+## 
+About Reducto
+
+*Nearly 80% of enterprise data is in unstructured formats like PDFs*
+
+PDFs are the status quo for enterprise knowledge in nearly every industry. Insurance claims, financial statements, invoices, and health records are all stored in a structure that’s simply impractical for use in digital workflows. This isn’t an inconvenience—it’s a critical bottleneck that leads to [dozens of wasted hours every week](https://www.reducto.ai/blog/the-real-cost-of-manual-document-processing).
+
+*Traditional approaches fail at reliably extracting information in complex PDFs*
+
+OCR and even more sophisticated ML approaches work for simple text documents but are unreliable for anything more complex. Text from different columns are jumbled together, figures are ignored, and tables are a nightmare to get right. Overcoming this usually requires a large engineering effort dedicated to building specialized pipelines for every document type you work with.
+
+[Reducto](https://www.reducto.ai/) breaks document layouts into subsections and then contextually parses each depending on the type of content. This is made possible by a combination of vision models, LLMs, and a suite of heuristics we built over time. Put simply, we can help you:
+
+- Accurately extract text and tables even with nonstandard layouts
+
+- Automatically convert graphs to tabular data and summarize images in documents
+
+- Extract important fields from complex forms with simple, natural language instructions
+
+- Build powerful retrieval pipelines using Reducto’s document metadata
+
+- Intelligently chunk information using the document’s layout data
+
+## Benefits at Reducto
+
+*At Reducto, we’re invested in the well-being and growth of our team. Here’s what we currently offer:*
+
+- Unlimited PTO: We believe great work requires recharging.
+
+- Lunch: Receive a free lunch to eat with your teammates daily at the office
+
+- Reimbursed Transportation: Provide us with your receipts and we’ll take care of the costs
+
+- Insurance: Generous health insurance covering medical, dental, and vision.
+
+- Health and Wellness Budget: We provide up to $150/mo reimbursement for health and wellness spending, such as gym memberships, fitness classes, or similar.
+
+- Parental Leave: Work with us to build a leave schedule that works for you and your family
+
+Reducto is an Equal Opportunity Employer committed to diversity and inclusion in the workplace. All qualified applicants will receive consideration for employment without regard to sex, race, color, age, national origin, religion, physical and mental disability, genetic information, marital status, sexual orientation, gender identity/assignment, citizenship, pregnancy or maternity, protected veteran status, or any other status prohibited by applicable national, federal, state or local law.

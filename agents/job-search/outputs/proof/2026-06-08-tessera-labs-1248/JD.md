@@ -1,0 +1,97 @@
+# Product Manager
+
+**Company:** Tessera Labs
+**Location:** San Jose Office (HQ)
+**Apply:** https://jobs.ashbyhq.com/tessera-labs/ea05dfd6-92d7-4ccc-aa53-2f31a85928c5
+**Ashby Org:** tessera-labs
+**Ashby Job ID:** ea05dfd6-92d7-4ccc-aa53-2f31a85928c5
+
+---
+
+## **Product Manager**
+
+### **About Tessera Labs**
+
+Tessera Labs is redefining how enterprises adopt and operationalize Artificial Intelligence. Backed by Foundation Capital and led by a world-class founding team, we build multi-agent AI systems that automate complex business workflows across platforms such as SAP, Salesforce, Workday, Snowflake, MuleSoft, and more.
+
+Our mission is to bring real AI automation to the enterprise—delivering speed, precision, and measurable impact. We operate with extreme ownership, move quickly, and build at the frontier of applied AI.
+
+### **Role Overview**
+
+We are seeking a Product Manager to join our growing product organization. This role is a hands-on individual contributor position with high ownership and visibility, responsible for shaping product strategy and execution across key product areas.This role sits at the intersection of product management, data science, engineering, and customer outcomes, and is responsible for turning AI capabilities—LLMs, ML models, knowledge systems, and agentic workflows—into scalable, reliable, and valuable products.
+
+You will own AI-driven features end-to-end: from problem discovery and model-informed product strategy to execution, iteration, and measurable business impact. You will work closely with Engineering, Delivery, Sales, and GTM teams to define, prioritize, and deliver AI-driven enterprise products that solve real customer problems.
+
+### **What You’ll Do**
+
+- Conduct market and customer analysis to identify pain points and unmet needs
+
+- Define product strategy, roadmap, and success metrics for assigned product areas
+
+- Identify high-value AI use cases and prioritize them based on ROI, feasibility, risk, and time-to-value
+
+- Work closely with customers, sales, and solutions teams to understand real-world workflows and pain points
+
+- Build clear, prioritized product requirements and translate them into an actionable engineering backlog
+
+- Partner closely with Engineering in an agile development environment to deliver high-quality features quickly
+
+- Provide ongoing feedback and clarification to engineering teams throughout the development lifecycle
+
+- Collaborate with Sales, Marketing, and GTM teams to support product positioning, storytelling, and launches
+
+- Work directly with customer teams during implementations to ensure successful product adoption
+
+- Act as a product leader—clearly articulating customer needs, tradeoffs, and priorities while driving execution
+
+### **What We’re Looking For**
+
+**Must-Have Qualifications**
+
+- Experience building and scaling B2B products
+
+- Strong background in ERP or enterprise platforms (e.g., Salesforce, SAP, Oracle, ServiceNow)
+
+- AI-first product mindset with experience building or launching AI-driven products
+
+- Comfortable build high-fidelity requirements with conceptual prototypes with tools like Cursor, Replit or Loveable
+
+- Excellent written and verbal communication skills
+
+- Strong analytical skills with a bias toward measurable outcomes and experimentation
+
+- Proven ability to think strategically, prioritize effectively, and exercise strong judgment
+
+- Deep understanding of agile product development methodologies
+
+- Strong collaboration skills across engineering, GTM, and customer-facing teams
+
+- Engineering-aware (comfortable discussing platforms, architectures, and tradeoffs without being hands-on coding)
+
+**Nice-to-Have / Domain Specializations**
+
+- Experience in one or more of the following product areas:
+
+- Workflow engines
+
+- Data harmonization across multiple enterprise platforms
+
+- Industry-specific enterprise solutions
+
+- Code remediation or platform modernization
+
+- Strong product storytelling and go-to-market experience
+
+- UX sensibility and ability to visualize AI-driven user experiences
+
+### **Why Tessera Labs**
+
+- Build AI products that solve complex, real-world enterprise problems
+
+- Work at the intersection of AI, ERP systems, and automation
+
+- High ownership, high impact, and direct influence on product direction
+
+- Collaborate with a deeply technical and customer-focused team
+
+No third party may recruit, solicit candidates, publish job opportunities, use Tessera Labs’ name or branding, or represent that they are acting on behalf of Tessera Labs without prior written authorization. Any such activity conducted without explicit written consent is strictly prohibited.

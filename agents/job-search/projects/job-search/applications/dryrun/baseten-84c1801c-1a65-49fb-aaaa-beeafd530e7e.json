@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/baseten/84c1801c-1a65-49fb-aaaa-beeafd530e7e",
+  "org": "baseten",
+  "job_id": "84c1801c-1a65-49fb-aaaa-beeafd530e7e",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-05-30T18:42:36Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f__systemfield_name"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_7ddfeb40-1aea-4a19-ab70-1915f292c169",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_7ddfeb40-1aea-4a19-ab70-1915f292c169"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f__systemfield_email"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f__systemfield_resume"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_bc661585-ae31-4e40-963e-afafc464cc34",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_bc661585-ae31-4e40-963e-afafc464cc34"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_9643d331-f5ad-42da-8f0e-79d3428e634f",
+      "label": "Current Company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_9643d331-f5ad-42da-8f0e-79d3428e634f"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_8cf49029-fcad-4e05-b28e-a41f908a45e9",
+      "label": "Do you currently have unrestricted work authorization in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_8cf49029-fcad-4e05-b28e-a41f908a45e9"
+    },
+    {
+      "id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_c4e71b19-9e0e-4a2c-bdb6-dd4696b25b09",
+      "label": "Will you now, or in the future, require employment-based visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "31eb68ae-e560-43c4-b716-d6f7cd3c3e0f_c4e71b19-9e0e-4a2c-bdb6-dd4696b25b09"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

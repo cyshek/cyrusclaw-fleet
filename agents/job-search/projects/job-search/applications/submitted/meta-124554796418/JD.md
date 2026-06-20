@@ -1,0 +1,3 @@
+# Operations Program Manager (Core Technologies)
+
+The Operations Program Manager is the Single Threaded Leader (STL) for their core technology modules and is the primary Operations interface to the prod...

@@ -1,0 +1,16 @@
+{
+  "chain": "rippling-adapter-2026-05-30",
+  "purpose": "end-to-end submit pipeline verification (NOT a real application)",
+  "timestamp_utc": "2026-05-30T17:43:15Z",
+  "tenant_slug": "hammerspace",
+  "job_id": "2c09a9fe-fedd-472a-9198-f2f6001934bc",
+  "applicant_data": "TEST-DO-NOT-PROCESS sentinel (first_name=Test, last_name=Test, email=delete-me-test@example.com, current_company=TEST-DO-NOT-PROCESS)",
+  "steps": {
+    "1_file_upload_url": "HTTP 200 — presigned POST returned",
+    "2_s3_multipart_upload": "HTTP 204 — 299-byte test PDF uploaded",
+    "3_turnstile_solve": "CapSolver AntiTurnstileTaskProxyless — token len 816, latency 5.2s, balance ticked $5.9888 → $5.9878",
+    "4_apply_post": "HTTP 200 — response body {\"ok\": true}"
+  },
+  "outcome": "Pipeline VERIFIED. A real application WAS created on Hammerspace's side under the TEST-DO-NOT-PROCESS marker. Future smoke tests should hit dry-run mode or use the captcha-failure path (no token → 401) to avoid polluting tenant pipelines.",
+  "guardrails_added": "rippling_filler.py supports --dry-run (uploads file + solves captcha but skips POST /apply) and --no-captcha (forces 401, useful for verifying connectivity without creating a real submission)."
+}

@@ -1,0 +1,137 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/avoca/260e5ea9-87c2-4261-9fea-301f46578173",
+  "org": "avoca",
+  "job_id": "260e5ea9-87c2-4261-9fea-301f46578173",
+  "job_title": "Agent Product Manager ",
+  "job_location": "New York HQ ",
+  "fetched_at": "2026-06-09T07:41:07Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b__systemfield_name"
+    },
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b__systemfield_email"
+    },
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b_320aa971-f837-4a6f-a522-501aafb901ad",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b_320aa971-f837-4a6f-a522-501aafb901ad"
+    },
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b__systemfield_resume"
+    },
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b_b957ad9e-1866-4fd9-a555-6770bf4e59ce",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b_b957ad9e-1866-4fd9-a555-6770bf4e59ce"
+    },
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b_1bf92982-0221-4af0-a153-ea734a1b8638",
+      "label": "Do you already live in or are you willing to relocate to NYC? We are in the office 5x/week.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am willing to relocate and work from the NYC office 5x/week.",
+      "source": "preferences.willing_to_relocate (matched 'willing to relocate' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "I live in NYC and I'm willing to be in-office 5x/week.",
+          "value": "I live in NYC and I'm willing to be in-office 5x/week."
+        },
+        {
+          "label": "I am willing to relocate and work from the NYC office 5x/week.",
+          "value": "I am willing to relocate and work from the NYC office 5x/week."
+        },
+        {
+          "label": "I do not live in NYC or I'm not willing to relocate or work in the office 5x/week.",
+          "value": "I do not live in NYC or I'm not willing to relocate or work in the office 5x/week."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b_1bf92982-0221-4af0-a153-ea734a1b8638"
+    },
+    {
+      "id": "44b92a89-930e-4878-9fda-28985cfcbe8b_46cbb360-ea8f-42ff-b459-33f10b34ec03",
+      "label": "Do you require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "44b92a89-930e-4878-9fda-28985cfcbe8b_46cbb360-ea8f-42ff-b459-33f10b34ec03"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

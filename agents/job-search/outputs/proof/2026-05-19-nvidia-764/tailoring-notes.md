@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Led a **cross-functional partner enablement** program scaling Azure's recovery validation from a 2-person operation into a platformized system, sustaining **45+ annual resilience drills** and driving $14M+ business impact across Tier-1 customers (Databricks, Walmart, SAP, NetApp).
+2. Directed **0→1 development** of an internal Resilience Automation Platform, defining system-level requirements, test plans, and self-service workflows that **reduced operational toil by 30%** and transitioned execution to a scalable enablement model.
+3. Pioneered Azure's first proactive **rack-level resilience testing** capability in 4 months, achieving a **94% recovery rate** while surfacing critical hardware defects and feeding laser-focused feedback to HW design, firmware, and validation teams.
+4. Orchestrated **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** through NPI, integration, validation, and production stages.
+5. Architected an internal **AI agent** and restructured planning workflows across hardware, software, and validation partners, cutting planning cycle time by **39%** and increasing drill capacity by 21%.
+6. Partnered with multidisciplinary HW, firmware, SW, sensors validation, and AI algorithm teams to define embedded validation specs, optimizing system performance and integration across NVIDIA-scale customer deployments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across 14 Azure service teams via hands-on demos and enablement sessions, saving **37 engineering hours monthly** and accelerating developer integration.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ technical user interviews with Azure service teams to surface critical integration feature gaps.
+3. Optimized data integrity and retrieval by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting engineering lookup time by **83%**.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by driving cross-functional alignment on a unified automation prioritization framework across 140+ engineering teams.
+2. Defined a product strategy to mitigate operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort** per region and roadmapping automation of critical integration paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact enablement investments.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero operational downtime** during a 2,000+ unit robotics pilot transition by defining the legacy OS migration strategy and mapping hardware/software dependencies across **1,200+ stations**.
+2. Facilitated Agile ceremonies across HW, SW, and Ops teams, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for embedded systems.
+3. Drove alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycle time by **25%** across robotic fleet stations.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** via a new CRM process.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy across the website and Google business profile.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+
+## Notes from the rewriter
+- Reframed MSFT FT bullets around partner enablement, HW/SW/validation collaboration, and NPI-to-production lifecycle to mirror NVIDIA's Customer Solution Architect language.
+- Added a 6th MSFT FT bullet to highlight multidisciplinary HW/firmware/sensors/AI team leadership called out in the JD.
+

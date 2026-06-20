@@ -1,0 +1,61 @@
+# Solutions Architect
+
+**Company:** Modern Treasury
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/moderntreasury/5aceb245-03e3-49ea-9f99-14e541f5ad4a
+**Ashby Org:** moderntreasury
+**Ashby Job ID:** 5aceb245-03e3-49ea-9f99-14e541f5ad4a
+
+---
+
+# **Overview**
+
+Modern Treasury is hiring a Solutions Architect to design and guide the implementation of complex payment systems for our customers.
+
+You will work closely with Sales Engineers and Technical Account Managers in the post-sale process to lead deep discovery into customers’ technical, financial, and operational needs. You will use this to design and guide the implementation of reliable money movement systems using Modern Treasury’s APIs.
+
+This includes whiteboarding solutions, producing detailed architecture and design documents, and guiding customer development teams through implementation and early production. You will own ledger design, including how funds are tracked, reconciled, and represented across systems.
+
+You will act as a trusted advisor during critical build phases, debug complex issues with real financial impact, and partner closely with Engineering and Product to shape solutions and influence the roadmap.
+
+Modern Treasury leverages AI heavily. This role is best suited for someone who is already using AI tools and is eager to continue pushing the envelope on AI best practices.
+
+## **About Modern Treasury**
+
+Modern Treasury provides trusted infrastructure for money movement. The company helps teams launch and scale payment experiences in days, not months. With best-in-class developer tools and a single API for fiat and stablecoins—plus built-in compliance, ledgering, and reporting—Modern Treasury enables businesses to move money instantly, reliably, and at scale.
+
+# **What You’ll Do**
+
+- Lead discovery and design of end-to-end payment, reconciliation, and ledger systems
+
+- Drive onboarding from solution design through launch
+
+- Guide architecture decisions across scalability, reliability, and complexity
+
+- Troubleshoot complex issues across APIs and production systems
+
+- Partner cross-functionally to deliver solutions and improve the product
+
+- Act as the voice of the customer by identifying product gaps and opportunities
+
+# **Who We're Looking For**
+
+- 3+ years in customer-facing technical roles such as Solutions Architect or Solutions Engineer
+
+- Strong experience with REST APIs and system design
+
+- Comfortable debugging issues across integrations and production systems
+
+- Ability to lead technical discovery, architecture discussions, implementation and manage technical stakeholders
+
+- Experience using AI agents in a work environment
+
+- Experience writing code or building applications is a plus
+
+- Background in fintech, payments, or financial systems is a plus
+
+- Familiarity with ledgering, reconciliation, or accounting concepts is a plus
+
+*Modern Treasury is committed to equal employment opportunity and does not discriminate in any employment opportunities or practices based on an individual's race, color, creed, gender (including gender identity and gender expression), religion (all aspects of religious beliefs, observance or practice, including religious dress or grooming practices), marital status, registered domestic partner status, age, national origin or ancestry (including language use restrictions and possession of a driver’s license issued under California Vehicle Code section 12801.9), natural hair, physical or mental disability, political affiliation, medical condition (including cancer or a record or history of cancer, and genetic characteristics), sex (including pregnancy, childbirth, breastfeeding or related medical condition), genetic information, sexual orientation, military and veteran status or any other consideration made unlawful by federal, state, or local laws. It also prohibits unlawful discrimination based on the perception that anyone has any of those characteristics, or is associated with a person who has or is perceived as having any of those characteristics.*
+
+*Modern Treasury participates in E-Verify and will provide the federal government with your Form I-9 information to confirm that you are authorized to work in the U.S.*

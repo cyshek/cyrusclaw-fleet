@@ -1,0 +1,3 @@
+# Technical Program Manager, Core Infrastructure
+
+Meta&#x2019;s Core Infrastructure team seeks a Technical Program Manager (TPM) to lead complex, large-scale projects focused on advancing language model scalin...

@@ -1,0 +1,177 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/mercor/9c546843-035f-4400-9d0d-d5de5f7205ff",
+  "org": "mercor",
+  "job_id": "9c546843-035f-4400-9d0d-d5de5f7205ff",
+  "job_title": "Research Program Manager",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-08T22:22:29Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_name"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_email"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_resume"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_location",
+      "label": "Where are you currently located?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441__systemfield_location"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_dabf600b-4b2c-46ce-8b54-ba1b4619be7d",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_dabf600b-4b2c-46ce-8b54-ba1b4619be7d"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_7663b541-a868-442c-a938-b9c697d03220",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_7663b541-a868-442c-a938-b9c697d03220"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_29fefa95-4f71-4abb-9d8f-258417ef178d",
+      "label": "Will you require work sponsorship now and/or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_29fefa95-4f71-4abb-9d8f-258417ef178d"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_ee7b9818-b2ed-485c-bace-8bce75b1913f",
+      "label": "Are you located in  San Francisco or NYC, and/or willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_ee7b9818-b2ed-485c-bace-8bce75b1913f"
+    },
+    {
+      "id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_7054581f-4346-4d2b-88b2-f81a1bfd9dd8",
+      "label": "Are you willing to work on-site in our San Francisco or NYC office Monday-Friday?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "deb88fbd-fdcc-4eb8-bb8f-eb62260a5441_7054581f-4346-4d2b-88b2-f81a1bfd9dd8"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

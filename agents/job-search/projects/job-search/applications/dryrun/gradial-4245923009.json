@@ -1,0 +1,442 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/gradial/jobs/4245923009",
+  "org": "gradial",
+  "job_id": "4245923009",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "Seattle, WA",
+  "fetched_at": "2026-05-25T02:26:37Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/gradial/jobs/4245923009?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 14,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_6084976009",
+      "label": "What excites you most about working in AI today?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Gradial because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Gradial is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Gradial while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Gradial aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Gradial')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_6084977009",
+      "label": "We maintain a five-day in-office work week at our Seattle headquarters. We've found this enables the close collaboration and rapid iteration that's core to our culture as a growing startup. Are you able to commit to a five-day in-office work week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_6084978009",
+      "label": "Are you legally authorized to work in the United States without the need for current or future employer sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_6084979009",
+      "label": "What US state are you currently located in? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state | NOTE: 'WA' not literally in options ['N/A', 'Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Virgin Islands', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']",
+      "status": "filled_needs_review",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "N/A",
+          "value": 14712673009
+        },
+        {
+          "label": "Alabama",
+          "value": 14712674009
+        },
+        {
+          "label": "Alaska",
+          "value": 14712675009
+        },
+        {
+          "label": "American Samoa",
+          "value": 14712676009
+        },
+        {
+          "label": "Arizona",
+          "value": 14712677009
+        },
+        {
+          "label": "Arkansas",
+          "value": 14712678009
+        },
+        {
+          "label": "California",
+          "value": 14712679009
+        },
+        {
+          "label": "Colorado",
+          "value": 14712680009
+        },
+        {
+          "label": "Connecticut",
+          "value": 14712681009
+        },
+        {
+          "label": "Delaware",
+          "value": 14712682009
+        },
+        {
+          "label": "District of Columbia",
+          "value": 14712683009
+        },
+        {
+          "label": "Florida",
+          "value": 14712684009
+        },
+        {
+          "label": "Georgia",
+          "value": 14712685009
+        },
+        {
+          "label": "Guam",
+          "value": 14712686009
+        },
+        {
+          "label": "Hawaii",
+          "value": 14712687009
+        },
+        {
+          "label": "Idaho",
+          "value": 14712688009
+        },
+        {
+          "label": "Illinois",
+          "value": 14712689009
+        },
+        {
+          "label": "Indiana",
+          "value": 14712690009
+        },
+        {
+          "label": "Iowa",
+          "value": 14712691009
+        },
+        {
+          "label": "Kansas",
+          "value": 14712692009
+        },
+        {
+          "label": "Kentucky",
+          "value": 14712693009
+        },
+        {
+          "label": "Louisiana",
+          "value": 14712694009
+        },
+        {
+          "label": "Maine",
+          "value": 14712695009
+        },
+        {
+          "label": "Marshall Islands",
+          "value": 14712696009
+        },
+        {
+          "label": "Maryland",
+          "value": 14712697009
+        },
+        {
+          "label": "Massachusetts",
+          "value": 14712698009
+        },
+        {
+          "label": "Michigan",
+          "value": 14712699009
+        },
+        {
+          "label": "Minnesota",
+          "value": 14712700009
+        },
+        {
+          "label": "Mississippi",
+          "value": 14712701009
+        },
+        {
+          "label": "Missouri",
+          "value": 14712702009
+        },
+        {
+          "label": "Montana",
+          "value": 14712703009
+        },
+        {
+          "label": "Nebraska",
+          "value": 14712704009
+        },
+        {
+          "label": "Nevada",
+          "value": 14712705009
+        },
+        {
+          "label": "New Hampshire",
+          "value": 14712706009
+        },
+        {
+          "label": "New Jersey",
+          "value": 14712707009
+        },
+        {
+          "label": "New Mexico",
+          "value": 14712708009
+        },
+        {
+          "label": "New York",
+          "value": 14712709009
+        },
+        {
+          "label": "North Carolina",
+          "value": 14712710009
+        },
+        {
+          "label": "North Dakota",
+          "value": 14712711009
+        },
+        {
+          "label": "Northern Mariana Islands",
+          "value": 14712712009
+        },
+        {
+          "label": "Ohio",
+          "value": 14712713009
+        },
+        {
+          "label": "Oklahoma",
+          "value": 14712714009
+        },
+        {
+          "label": "Oregon",
+          "value": 14712715009
+        },
+        {
+          "label": "Palau",
+          "value": 14712716009
+        },
+        {
+          "label": "Pennsylvania",
+          "value": 14712717009
+        },
+        {
+          "label": "Puerto Rico",
+          "value": 14712718009
+        },
+        {
+          "label": "Rhode Island",
+          "value": 14712719009
+        },
+        {
+          "label": "South Carolina",
+          "value": 14712720009
+        },
+        {
+          "label": "South Dakota",
+          "value": 14712721009
+        },
+        {
+          "label": "Tennessee",
+          "value": 14712722009
+        },
+        {
+          "label": "Texas",
+          "value": 14712723009
+        },
+        {
+          "label": "Utah",
+          "value": 14712724009
+        },
+        {
+          "label": "Vermont",
+          "value": 14712725009
+        },
+        {
+          "label": "Virginia",
+          "value": 14712726009
+        },
+        {
+          "label": "Virgin Islands",
+          "value": 14712727009
+        },
+        {
+          "label": "Washington",
+          "value": 14712728009
+        },
+        {
+          "label": "West Virginia",
+          "value": 14712729009
+        },
+        {
+          "label": "Wisconsin",
+          "value": 14712730009
+        },
+        {
+          "label": "Wyoming",
+          "value": 14712731009
+        }
+      ]
+    },
+    {
+      "id": "question_6084980009",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_6084981009",
+      "label": "Website (Personal/GitHub)",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

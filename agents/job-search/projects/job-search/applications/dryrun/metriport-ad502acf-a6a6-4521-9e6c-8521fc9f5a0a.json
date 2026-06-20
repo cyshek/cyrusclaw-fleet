@@ -1,0 +1,85 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/metriport/ad502acf-a6a6-4521-9e6c-8521fc9f5a0a",
+  "org": "metriport",
+  "job_id": "ad502acf-a6a6-4521-9e6c-8521fc9f5a0a",
+  "job_title": "Solutions Architect",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-16T19:11:33Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 4,
+    "filled": 4,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e519a1ed-d8f2-4378-a45f-466a8268d407__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e519a1ed-d8f2-4378-a45f-466a8268d407__systemfield_name"
+    },
+    {
+      "id": "e519a1ed-d8f2-4378-a45f-466a8268d407__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e519a1ed-d8f2-4378-a45f-466a8268d407__systemfield_email"
+    },
+    {
+      "id": "e519a1ed-d8f2-4378-a45f-466a8268d407__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e519a1ed-d8f2-4378-a45f-466a8268d407__systemfield_resume"
+    },
+    {
+      "id": "e519a1ed-d8f2-4378-a45f-466a8268d407_06354cc0-233c-437c-873b-c763b6ced8b0",
+      "label": "Will you now or in the future require U.S. Work Authorization?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e519a1ed-d8f2-4378-a45f-466a8268d407_06354cc0-233c-437c-873b-c763b6ced8b0"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

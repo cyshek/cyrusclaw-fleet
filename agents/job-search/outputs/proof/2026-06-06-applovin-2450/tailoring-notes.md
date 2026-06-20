@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Technical Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Owned the **end-to-end technical relationship** with strategic 3P integration partners (Databricks, Walmart, SAP, NetApp), guiding correct implementation of Azure resilience APIs and data infrastructure to sustain 45+ annual drills and drive **$14M+ business impact**.
+2. Operated as a forward-deployed engineer at the intersection of product and engineering, translating recurring partner friction into concrete roadmap recommendations and building the **internal fix** rather than burying issues in a ticket queue.
+3. Led 0→1 development of a Resilience Automation Platform, defining product requirements and self-service APIs that **reduced operational toil by 30%** and let core engineering stay focused on building integration flows at scale.
+4. Served as primary technical point of contact for partner-specific integration pilots, owning sandbox validation and proactively resolving misconfigurations before they impacted performance across a **$1.5B+ enterprise contract**.
+5. Built internal tooling and an **AI agent** to automate validation and accelerate partner debugging, restructuring planning workflows to cut cycle time by 39% and increase drill capacity by 21%.
+6. Acted as connective tissue between partners and Microsoft engineering teams, ensuring partner feedback directly **influenced API roadmap** decisions through data-centric presentations to leadership under executive visibility.
+7. Investigated and reproduced complex integration issues across distributed Azure systems, pinpointing root causes through data analysis and delivering a rack-level drill program with a **94% recovery rate** in 4 months.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove adoption of AI-driven code generation by guiding **14 service teams** through correct implementation, running technical demos and enablement sessions that saved 37 engineering hours monthly across dynamic production environments.
+2. Translated complex technical requirements into actionable guidance for both technical and non-technical audiences, facilitating **11+ partner interviews** to surface critical API gaps and influence the intent-based YAML roadmap.
+3. Built scripting and metadata tooling to streamline troubleshooting and validation, migrating documentation to an **AI-powered semantic search** tool that cut integration lookup time by 83% for engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering teams.
+2. Investigated operational friction by conducting discovery with **20+ service teams**, pinpointing 81 hours of manual effort per region and architecting a roadmap to automate critical integration paths at scale.
+3. Engineered a **Power BI dashboard** querying large data sets to surface anomalies and toil patterns across 140+ teams, enabling leadership to prioritize high-impact automation through data-centric insights.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining a legacy OS migration strategy and mapping technical dependencies across 1,200+ stations in a fast-moving, ambiguous environment.
+2. Facilitated Agile ceremonies and owned backlog prioritization to resolve **40+ high-priority tickets**, stabilizing the developer intake process and accelerating proactive issue resolution.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing recurring integration friction.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing operations and owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new CRM and tracking process.
+2. Reduced Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a digital-first **go-to-market strategy**, optimizing the website, Google profile, and measurement signals.
+3. Improved leadership pricing models by querying **1,000+ project records** to debug margin leaks, surfacing data-driven insights that sealed profitability gaps across the business.
+
+## Notes from the rewriter
+- Reframed MSFT FT as forward-deployed/partner-facing engineering: owning 3P technical relationships, sandbox validation, and feeding friction back into API roadmap to mirror the JD.
+- Surfaced scripting (Python/JS), SQL querying of large data sets, and internal tooling/automation to hit the hands-on 10% and analytical problem-solving asks.
+- Used JD vocabulary throughout: integration partners, root cause, misconfigurations, API gaps, data-centric, ambiguous environment, and connective tissue between partners and engineering.
+

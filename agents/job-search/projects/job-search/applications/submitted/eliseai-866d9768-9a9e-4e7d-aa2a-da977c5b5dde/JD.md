@@ -1,0 +1,105 @@
+# Solutions Engineer (Product Expert) | Housing
+
+**Company:** EliseAI
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/eliseai/866d9768-9a9e-4e7d-aa2a-da977c5b5dde
+**Ashby Org:** eliseai
+**Ashby Job ID:** 866d9768-9a9e-4e7d-aa2a-da977c5b5dde
+
+---
+
+**About EliseAI**
+
+At EliseAI, we're improving the industries that matter most: housing and healthcare. Everyone needs a place to live and access to quality healthcare, yet both are often harder to secure than they should be. 
+
+By integrating AI agents deeply into existing workflows, we make them more efficient, reduce costs, and improve the experience for everyone.
+
+- **Housing**: We simplify how renters tour apartments, sign leases, submit maintenance requests, and stay connected with their property team—bringing everything they need for their home into one place.
+
+- **Healthcare**: We make it easy to schedule appointments, complete intake forms, and we help patients communicate with providers, so everyone can focus on health instead of paperwork.
+
+With EliseAI, organizations reduce manual work, improve accessibility, and deliver a seamless experience across essential services. We recently raised a [$250 million Series E round](https://www.eliseai.com/blog/eliseai-raises-250m-series-e) led by Andreessen Horowitz to accelerate this mission.
+
+**About The Role**
+
+As a Solutions Engineer at EliseAI, you will be integral to our product launch and support processes. You will work closely with clients, support engineers, and customer success managers to ensure smooth product implementations and troubleshooting. Your role involves developing launch tools, understanding product functionalities in-depth, and providing training and escalation support.
+
+**Key Responsibilities**
+
+- Conduct thorough discovery sessions with new clients to understand their product area and requirements
+
+- Act as the representative for Support Engineers within your product area, ensuring alignment and collaboration
+
+- Develop and maintain roadmaps for self-serve launch tools and internal launch settings, including quality assurance processes
+
+- Provide in-depth technical support and guidance to prospects, including product demonstrations, presentations, and explanations of complex technical concepts
+
+- Guide Customer Success Managers through product implementations and act as a partner for training and escalation issues
+
+- Provide troubleshooting support for clients post-launch, addressing and resolving any issues within your product area
+
+- Gain an in-depth understanding of how the product works to meet client needs effectively, ensuring comprehensive knowledge transfer and support
+
+- Attract top-tier talent to join our driven team
+
+**Requirements**
+
+- 3+ years of experience in a Solutions Engineer role at a SaaS company
+
+- Willingness to travel up to 20% to meet and engage with prospective clients
+
+- Strong understanding of product development and launch processes
+
+- Excellent problem-solving skills and the ability to troubleshoot technical issues
+
+- Experience working with cross-functional teams, including engineering, operations, and product management
+
+- Strong communication skills, with the ability to explain complex technical concepts to non-technical stakeholders
+
+- Familiarity with customer relationship management (CRM) tools and support ticketing systems
+
+- Ability to manage multiple tasks and priorities in a fast-paced environment
+
+- Experience with QA processes and developing self-serve tools is a plus
+
+- Ability to work independently and as part of a team, with a proactive approach to problem-solving and support
+
+- Willing to work in person at our office 4-5 days per week
+
+**Why Join**
+
+Growth and impact. It’s not often that you can get in on the ground floor of a funded ([unicorn!](https://www.eliseai.com/blog/eliseai-world-leader-in-ai-enabled-solutions-for-housing-raises-75-million-series-d-round-valuing-company-in-excess-of-1-billion)) startup that’s scaling. That means that instead of following a playbook, you’ll be writing it. Every single day you will be challenged to identify how we can scale and execute on it. You’ll learn what works when you succeed and what doesn’t when you fail. Either way, the rest of the team will be here to support you.
+
+**Benefits**
+
+In addition to the growth and impact you’ll have at EliseAI, we offer competitive salaries along with the following benefits:
+
+- Equity in the company
+
+- Medical, Dental and Vision premiums covered at 100%
+
+- Fully paid parental leave
+
+- Commuter benefits
+
+- 401k benefits
+
+- Fitness & home services stipend to cover part of your expenses so you can focus on what matters
+
+- A collaborative in-office environment with an open floor plan, fully stocked kitchen, and all meals covered in the office
+
+- Unlimited vacation and paid holidays
+
+- We'll cover relocation packages and make the move exciting, not painful!
+
+**Job Compensation Range**
+
+The salary range for this role is $135,000 - $180,000 USD. EliseAI offers a competitive total rewards package which includes base salary, equity, and a comprehensive benefits & perks package. Exact compensation is determined based on a number of factors including experience, skill level, location and qualifications which are assessed during the interview process. Additional details about total compensation and benefits will be provided by our Recruiting Team during the hiring process.
+
+EliseAI provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.
+
+Please note that employment with EliseAI is on an "at-will" basis, which means that either the employee or the company may terminate the employment relationship at any time, with or without cause or notice.
+
+Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.
+
+If you need assistance and/or a reasonable accommodation in the application or recruiting process due to a disability, please contact us at [recruiting@eliseai.com](mailto:recruiting@eliseai.com)

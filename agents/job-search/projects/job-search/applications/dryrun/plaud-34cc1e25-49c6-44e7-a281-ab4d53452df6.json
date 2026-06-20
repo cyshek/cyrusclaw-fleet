@@ -1,0 +1,142 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/plaud/34cc1e25-49c6-44e7-a281-ab4d53452df6",
+  "org": "plaud",
+  "job_id": "34cc1e25-49c6-44e7-a281-ab4d53452df6",
+  "job_title": "Technical Program Manager",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-04T07:47:29Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597__systemfield_name"
+    },
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597__systemfield_email"
+    },
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597__systemfield_resume"
+    },
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_1bface43-6fb4-4ef5-948f-6051f0cb012d",
+      "label": "Phone number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_1bface43-6fb4-4ef5-948f-6051f0cb012d"
+    },
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_b7b7c859-4f6a-4df0-8866-553f91484e69",
+      "label": "Would you require our sponsorship for your work visa application?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_b7b7c859-4f6a-4df0-8866-553f91484e69"
+    },
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_e8c3f894-32be-4a9f-981c-e14b0a91c97e",
+      "label": "Are you currently based in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_e8c3f894-32be-4a9f-981c-e14b0a91c97e"
+    },
+    {
+      "id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_ba8fe397-c1a6-4442-8c62-650228947729",
+      "label": "Would you be able to come to the office in either San Francisco or Palo Alto at least 3 days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "18bd5427-fb5f-42a7-8c90-4976d2da9597_ba8fe397-c1a6-4442-8c62-650228947729"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned planning and execution of Azure's resilience validation product, prioritizing customer needs into a platformized system that sustained **45+ annual drills** and drove **$14M+ business impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Led **0→1 delivery** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling that cut operational toil **30%** and launched a scalable model adopted across multiple expert engineering teams.
+3. Launched Azure's first proactive resilience testing product in 4 months, delivering a **94% recovery rate** rack-level drill program that surfaced critical hardware defects and established a new model for continuous, data-driven validation.
+4. Drove **14 cross-org product initiatives** under executive visibility, collaborating with engineering, data science, and operations as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Established and reported objectively on product performance metrics, restructuring planning workflows and shipping an internal AI agent that cut planning cycle time **39%** and increased drill capacity **21%** without added headcount.
+6. Maintained deep domain expertise on the resilience market and competing approaches, influencing cross-functional teams without formal authority to align roadmaps, prioritize post-launch optimizations, and ensure transparency with org stakeholders.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Assessed product opportunities for AI-driven code generation, running user demos and training that drove **adoption across 14 teams** and saved **37 engineering hours monthly**, validating demand through objective usage data.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, interpreting feedback quickly to identify and prioritize the highest-impact feature gaps.
+3. Optimized data integrity and retrieval by defining metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time 83%** and improving self-service discovery for downstream engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions **28% faster** by driving cross-functional alignment on a unified automation prioritization framework spanning **140+ teams** without formal authority.
+2. Shaped a product strategy to reduce operational toil during region launches, conducting discovery with **20+ service teams** to quantify **81 hours of manual effort** per region and building a roadmap to automate critical paths.
+3. Enabled leadership to target automation gaps and prioritize high-impact support by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, turning raw data into objective, decision-ready performance metrics.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across **1,200+ stations** under tight delivery timelines.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilizing the developer intake process across multiple stakeholders.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating the deployment cycle 25%** and improving release reliability for the robotics software platform.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings **26%** by optimizing sales operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM-driven process.
+2. Reduced Customer Acquisition Cost **13%** and lifted conversions **2.7%** by executing a digital-first go-to-market strategy, optimizing the website and Google business profile against measured performance data.
+3. Improved leadership pricing models by running profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to inform data-driven, accountable business decisions.
+
+## Notes from the rewriter
+- Swapped all roles to Product Manager labels to mirror the Sportsbook PM title and family.
+- Led bullets with JD vocabulary: product opportunities, roadmap, cross-functional, performance metrics, domain expertise, influence without authority.
+- Emphasized numerical/analytical skills (Power BI, data-driven decisions, metrics reporting) to match the JD's data-fluency requirement.
+- Highlighted launching successful/innovative products and ownership/accountability to align with the 3+ year PM bar.
+
