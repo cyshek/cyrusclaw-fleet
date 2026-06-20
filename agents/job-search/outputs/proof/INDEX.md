@@ -1,6 +1,6 @@
 # Proof Archive — submitted applications
 
-_Auto-maintained by `proof_archiver.py`. Last run: 2026-06-20T04:15:01+00:00._
+_Auto-maintained by `proof_archiver.py`. Last run: 2026-06-20T08:15:01+00:00._
 
 Resume + filled-fields saved for EVERY submission. Live pre-submit screenshot sampled every 5th role (look for `screenshot: pending/done`).
 
