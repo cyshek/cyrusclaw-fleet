@@ -65,6 +65,8 @@ rsync -a --delete \
   --exclude='BOOTSTRAP.md' \
   --exclude='GATE.md' \
   --exclude='grind-brief.txt' \
+  --exclude='*cookies*' \
+  --exclude='*.txt' \
   --exclude='resume_text.txt' \
   --exclude='Cyrus_*' \
   --exclude='state/' \
