@@ -1,15 +1,15 @@
-MAINTENANCE_RETRY — 2026-06-19T03:13:17+00:00
+STATUS: REQ-CLOSED
+closed_at: 2026-06-20T20:54:00+00:00
+exit_code: 6
 
 role_id: 2925
-ats: workday
-apply_url: https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/New-York-New-York/Technical-Program-Manager--Level-4_R0045662-1/apply
-reason: HTTP 403
-http_status: 403
-final_url: https://wd1.myworkdaysite.com/wday/cxs/snapchat/snap/job/New-York-New-York/Technical-Program-Manager--Level-4_R0045662-1
+ats: workday (tenant: snapchat)
+company: Snap
+role: Technical Program Manager, Level 4
+location: New York, New York
 
-Workday CXS detail endpoint is unreachable. Cron will retry on the
-next scheduled run. No tailored resume / cover answers were
-generated (nothing to tailor against without a JD body).
+The Workday runner returned EXIT 6 (req CLOSED/removed). The job listing page
+returns HTTP 200 but the application flow indicates the req is no longer accepting
+applications. CXS API returns 403 for this role (may be geo-restricted or closed).
 
-Do NOT mark applied_on / prep_status='manual_ready' — this packet
-is incomplete.
+Tracker updated: status=closed, block_reason=req-closed-workday-exit6, prep_status=closed

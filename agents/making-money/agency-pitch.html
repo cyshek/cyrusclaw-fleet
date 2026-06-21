@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#06070b" />
+<title>Automate. — We build the systems. You keep the clients.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root {
+    --bg: #06070b;
+    --bg-soft: #0b0d14;
+    --panel: #0e1019;
+    --panel-2: #12141f;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+    --text: #f3f5fa;
+    --muted: #9aa3b7;
+    --muted-2: #6b7488;
+    --accent: #6d5efc;
+    --accent-2: #21d4fd;
+    --accent-3: #b16cff;
+    --green: #2fe6a8;
+    --grad: linear-gradient(120deg, #6d5efc 0%, #21d4fd 50%, #b16cff 100%);
+    --grad-soft: linear-gradient(120deg, rgba(109,94,252,0.16), rgba(33,212,253,0.10), rgba(177,108,255,0.14));
+    --shadow: 0 24px 60px -20px rgba(0,0,0,0.7);
+    --radius: 20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Ambient background glows */
+  .bg-fx {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .bg-fx .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+  }
+  .orb.o1 { width: 600px; height: 600px; background: #6d5efc; top: -200px; left: -150px; opacity: 0.28; animation: float1 18s ease-in-out infinite; }
+  .orb.o2 { width: 520px; height: 520px; background: #21d4fd; top: 20%; right: -180px; opacity: 0.20; animation: float2 22s ease-in-out infinite; }
+  .orb.o3 { width: 480px; height: 480px; background: #b16cff; bottom: -160px; left: 30%; opacity: 0.20; animation: float3 26s ease-in-out infinite; }
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  }
+  @keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,30px)} }
+  @keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-50px,40px)} }
+  @keyframes float3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-40px)} }
+
+  .wrap { position: relative; z-index: 1; }
+  .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(6,7,11,0.6);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  nav.scrolled { border-bottom-color: var(--border); background: rgba(6,7,11,0.82); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .logo { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
+  .logo .dot {
+    width: 11px; height: 11px; border-radius: 3px;
+    background: var(--grad);
+    box-shadow: 0 0 18px rgba(109,94,252,0.8);
+  }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    padding: 9px 18px; border-radius: 11px; font-size: 14px; font-weight: 600;
+    background: var(--text); color: #07080d; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 26px -8px rgba(255,255,255,0.35); }
+  @media (max-width: 820px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* Hero */
+  header { padding: 76px 0 28px; text-align: center; position: relative; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 15px; border-radius: 100px;
+    border: 1px solid var(--border-strong);
+    background: var(--grad-soft);
+    font-size: 13.5px; font-weight: 500; color: #e3e7f1;
+    margin-bottom: 26px;
+  }
+  .badge .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(47,230,168,0.6); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(47,230,168,0.5)} 70%{box-shadow:0 0 0 9px rgba(47,230,168,0)} 100%{box-shadow:0 0 0 0 rgba(47,230,168,0)} }
+
+  h1 {
+    font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+  /* Horizontal gradient accent on a single phrase, full opacity, crisp. */
+  h1 .grad {
+    background: linear-gradient(120deg, #8b7bff 0%, #21d4fd 52%, #c98bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .hero-sub {
+    font-size: clamp(16.5px, 2.2vw, 20px);
+    color: #d7dce8;
+    max-width: 620px;
+    margin: 0 auto 34px;
+  }
+  .hero-sub strong { color: #ffffff; font-weight: 700; }
+  .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 15px 28px; border-radius: 13px;
+    font-weight: 600; font-size: 15.5px; text-decoration: none;
+    cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.25s, filter 0.2s;
+  }
+  .btn svg { width: 18px; height: 18px; }
+  .btn-primary {
+    background: var(--grad); color: #fff;
+    box-shadow: 0 14px 40px -12px rgba(109,94,252,0.8), inset 0 1px 0 rgba(255,255,255,0.25);
+    background-size: 160% 160%;
+    animation: shimmer 6s ease infinite;
+  }
+  @keyframes shimmer { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 20px 50px -12px rgba(109,94,252,0.95); }
+  .btn-ghost {
+    background: rgba(255,255,255,0.04); color: var(--text);
+    border: 1px solid var(--border-strong);
+  }
+  .btn-ghost:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Hero content is ALWAYS visible at full opacity — intentionally NOT gated
+     behind any entrance animation. This guarantees the headline, subhead,
+     CTAs and stats render complete the instant the page loads (and in static
+     screenshots / JS-off), with no dead space and nothing stuck at opacity:0.
+     Ambient motion on the page comes from the background orbs, the primary
+     button shimmer, and the scroll-reveal sections below the fold. */
+
+  /* Stats bar */
+  .stats {
+    margin-top: 50px;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .stat {
+    position: relative;
+    padding: 30px 22px; border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+    border: 1px solid var(--border);
+    text-align: center;
+    overflow: hidden;
+  }
+  .stat::before {
+    content: ""; position: absolute; inset: 0;
+    background: var(--grad-soft); opacity: 0; transition: opacity 0.35s;
+  }
+  .stat:hover::before { opacity: 1; }
+  .stat .num {
+    font-size: clamp(34px, 5vw, 50px); font-weight: 900; letter-spacing: -0.03em;
+    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    position: relative;
+  }
+  .stat .label { color: var(--muted); font-size: 14.5px; font-weight: 500; position: relative; margin-top: 4px; }
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  /* Sections */
+  section { padding: 88px 0; position: relative; }
+  /* First section sits right under the hero — tighten the top so the stats
+     row and the opening section feel connected, not sparse. */
+  #work { padding-top: 22px; }
+  .sec-head { text-align: center; max-width: 640px; margin: 0 auto 54px; }
+  /* The opening section's heading sits closest to the hero — trim its bottom
+     margin a touch so the hero→content transition reads tight, not loose. */
+  #work .sec-head { margin-bottom: 46px; }
+  .eyebrow {
+    text-transform: uppercase; letter-spacing: 0.18em; font-size: 12.5px; font-weight: 700;
+    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    margin-bottom: 14px; display: block;
+  }
+  h2 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+  .sec-head p { color: var(--muted); font-size: 17px; }
+
+  /* Reveal on scroll */
+  /* Reveal on scroll — default state is fully VISIBLE so content is never
+     stuck faded/shifted if JS hasn't run or a screenshot is captured early.
+     JS adds .will-reveal ONLY to off-screen elements, which hides them and
+     arms the fade-up; the IntersectionObserver then adds .in to play it.
+     Elements already on screen at load are left untouched = instantly solid. */
+  .reveal { opacity: 1; transform: none; }
+  .reveal.will-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.will-reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Case cards (expandable) */
+  .cases { display: grid; gap: 18px; }
+  .case {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .case:hover { border-color: var(--border-strong); box-shadow: var(--shadow); }
+  .case.open { border-color: rgba(109,94,252,0.45); box-shadow: 0 24px 60px -22px rgba(109,94,252,0.4); }
+  .case-head {
+    display: flex; align-items: center; gap: 18px;
+    padding: 24px 26px; cursor: pointer; user-select: none;
+  }
+  .case-ico {
+    flex: 0 0 auto; width: 52px; height: 52px; border-radius: 14px;
+    display: grid; place-items: center;
+    background: var(--grad-soft); border: 1px solid var(--border-strong);
+    color: var(--accent-2);
+  }
+  .case-ico svg { width: 24px; height: 24px; }
+  .case-meta { flex: 1; min-width: 0; }
+  .case-type { font-size: 13px; color: var(--accent-2); font-weight: 600; letter-spacing: 0.02em; }
+  .case-title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-top: 2px; }
+  .case-result-pill {
+    flex: 0 0 auto;
+    font-size: 13px; font-weight: 700; color: var(--green);
+    background: rgba(47,230,168,0.10); border: 1px solid rgba(47,230,168,0.25);
+    padding: 6px 13px; border-radius: 100px;
+    white-space: nowrap;
+  }
+  .case-chev { flex: 0 0 auto; color: var(--muted); transition: transform 0.35s; }
+  .case.open .case-chev { transform: rotate(180deg); color: var(--text); }
+  .case-chev svg { width: 20px; height: 20px; display: block; }
+
+  .case-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(.2,.7,.2,1);
+  }
+  .case-body-inner { padding: 4px 26px 28px; }
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .cg-item {
+    padding: 18px; border-radius: 14px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border);
+  }
+  .cg-item h4 {
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--muted-2); font-weight: 700; margin-bottom: 9px;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .cg-item h4 svg { width: 14px; height: 14px; }
+  .cg-item.problem h4 { color: #ff8b8b; }
+  .cg-item.built h4 { color: var(--accent-2); }
+  .cg-item.result h4 { color: var(--green); }
+  .cg-item p { font-size: 14.5px; color: #cfd5e4; }
+  .cg-item.result p { color: var(--text); font-weight: 500; }
+  @media (max-width: 760px) {
+    .case-grid { grid-template-columns: 1fr; }
+    .case-result-pill { display: none; }
+    .case-head { padding: 20px; gap: 14px; }
+    .case-body-inner { padding: 0 20px 22px; }
+  }
+
+  .hint { text-align: center; color: var(--muted-2); font-size: 13.5px; margin-top: 22px; display: flex; align-items: center; justify-content: center; gap: 7px; }
+  .hint svg { width: 15px; height: 15px; }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .svc {
+    position: relative;
+    padding: 30px 26px; border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+  }
+  .svc::after {
+    content: ""; position: absolute; top: -40%; left: -40%; width: 80%; height: 80%;
+    background: radial-gradient(circle, rgba(109,94,252,0.18), transparent 70%);
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
+  }
+  .svc:hover { transform: translateY(-5px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+  .svc:hover::after { opacity: 1; }
+  .svc-ico {
+    width: 50px; height: 50px; border-radius: 14px; display: grid; place-items: center;
+    background: var(--grad); color: #fff; margin-bottom: 20px;
+    box-shadow: 0 12px 30px -10px rgba(109,94,252,0.8);
+  }
+  .svc-ico svg { width: 24px; height: 24px; }
+  .svc h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 9px; }
+  .svc p { color: var(--muted); font-size: 15px; }
+  @media (max-width: 820px) { .services { grid-template-columns: 1fr; } }
+
+  /* How it works */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
+  .step {
+    position: relative;
+    padding: 30px 26px; border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+    border: 1px solid var(--border);
+  }
+  .step-num {
+    font-size: 15px; font-weight: 800; width: 40px; height: 40px; border-radius: 12px;
+    display: grid; place-items: center; margin-bottom: 18px;
+    background: var(--grad-soft); border: 1px solid var(--border-strong);
+    background-clip: padding-box;
+  }
+  .step-num span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .step p { color: var(--muted); font-size: 14.5px; }
+  .step .tag { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--accent-2); background: rgba(33,212,253,0.08); border: 1px solid rgba(33,212,253,0.22); padding: 4px 11px; border-radius: 100px; font-weight: 600; }
+  @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+
+  /* Pricing */
+  .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+  .plan {
+    position: relative;
+    display: flex; flex-direction: column;
+    padding: 32px 28px; border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .plan:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+  .plan.featured {
+    border-color: rgba(109,94,252,0.5);
+    background: linear-gradient(180deg, rgba(109,94,252,0.10), var(--bg-soft));
+    box-shadow: 0 30px 70px -28px rgba(109,94,252,0.55);
+  }
+  .plan-tag {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--grad); color: #fff; font-size: 12px; font-weight: 700;
+    padding: 5px 14px; border-radius: 100px; letter-spacing: 0.03em;
+    box-shadow: 0 8px 22px -8px rgba(109,94,252,0.9);
+  }
+  .plan-name { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .plan-price { margin: 16px 0 4px; font-size: 34px; font-weight: 900; letter-spacing: -0.03em; }
+  .plan-price .small { font-size: 15px; font-weight: 600; color: var(--muted); }
+  .plan-mo { color: var(--accent-2); font-weight: 600; font-size: 15px; margin-bottom: 18px; }
+  .plan-desc { color: var(--muted); font-size: 14px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .plan ul { list-style: none; flex: 1; margin-bottom: 24px; }
+  .plan li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; color: #d4d9e6; padding: 7px 0; }
+  .plan li svg { width: 17px; height: 17px; color: var(--green); flex: 0 0 auto; margin-top: 2px; }
+  .plan .btn { width: 100%; justify-content: center; }
+  .plan .btn-outline {
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border-strong); color: var(--text);
+  }
+  .plan .btn-outline:hover { background: rgba(255,255,255,0.09); transform: translateY(-2px); }
+  @media (max-width: 880px) { .pricing { grid-template-columns: 1fr; } .plan.featured { order: -1; } }
+
+  .guarantee {
+    margin-top: 26px; text-align: center;
+    padding: 20px 24px; border-radius: 16px;
+    background: var(--grad-soft); border: 1px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+    font-size: 16px; font-weight: 500;
+  }
+  .guarantee svg { width: 22px; height: 22px; color: var(--green); }
+  .guarantee strong { color: var(--text); font-weight: 700; }
+
+  /* CTA */
+  .cta-final { text-align: center; padding: 100px 0 90px; }
+  .cta-card {
+    position: relative;
+    max-width: 760px; margin: 0 auto;
+    padding: 60px 40px; border-radius: 28px;
+    background: linear-gradient(180deg, rgba(109,94,252,0.14), rgba(33,212,253,0.06));
+    border: 1px solid var(--border-strong);
+    overflow: hidden;
+  }
+  .cta-card::before {
+    content: ""; position: absolute; inset: -2px;
+    background: radial-gradient(ellipse 70% 80% at 50% 0%, rgba(109,94,252,0.35), transparent 70%);
+    pointer-events: none;
+  }
+  .cta-card h2 { font-size: clamp(28px, 5vw, 46px); margin-bottom: 14px; position: relative; }
+  .cta-card p { color: var(--muted); font-size: 18px; max-width: 480px; margin: 0 auto 32px; position: relative; }
+  .cta-card .btn { position: relative; font-size: 17px; padding: 17px 36px; }
+  .cta-sub { margin-top: 20px; font-size: 13.5px; color: var(--muted-2); position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+  .cta-sub svg { width: 15px; height: 15px; color: var(--green); }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border); padding: 36px 0; }
+  .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  .foot-inner .logo { font-size: 17px; }
+  .foot-inner p { color: var(--muted-2); font-size: 13.5px; }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--panel-2); border: 1px solid var(--border-strong);
+    color: var(--text); padding: 14px 22px; border-radius: 14px;
+    font-size: 14.5px; font-weight: 500; box-shadow: var(--shadow);
+    display: flex; align-items: center; gap: 11px;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast svg { width: 19px; height: 19px; color: var(--green); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+<noscript>
+  <style>
+    /* If JS is disabled, IntersectionObserver never fires — keep all
+       scroll-reveal content fully visible instead of stuck at opacity:0. */
+    .reveal { opacity: 1 !important; transform: none !important; }
+  </style>
+</noscript>
+</head>
+<body>
+
+<div class="bg-fx">
+  <div class="bg-grid"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <div class="logo"><span class="dot"></span> Automate<span style="color:var(--accent)">.</span></div>
+      <div class="nav-links">
+        <a href="#work">Our Work</a>
+        <a href="#services">Services</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#book" class="nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="container">
+      <div class="badge"><span class="pulse"></span> AI automation for agencies that want to scale without hiring</div>
+      <h1>We build the systems.<br><span class="grad">You keep the clients.</span></h1>
+      <p class="hero-sub">AI-powered automations that save your agency <strong>20+ hours every week</strong> &mdash; and make your clients <strong>impossible to churn.</strong></p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-primary"><i data-lucide="calendar-check"></i> Book a Free Audit Call</a>
+        <a href="#work" class="btn btn-ghost"><i data-lucide="play"></i> See Real Examples</a>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats">
+        <div class="stat">
+          <div class="num"><span class="count" data-target="20" data-suffix="+">20+</span></div>
+          <div class="label">Hours saved per week</div>
+        </div>
+        <div class="stat">
+          <div class="num"><span class="count" data-target="3" data-suffix="x">3x</span></div>
+          <div class="label">Faster lead response</div>
+        </div>
+        <div class="stat">
+          <div class="num"><span class="count" data-target="0" data-prefix="$" data-suffix="">$0</span></div>
+          <div class="label">Extra headcount needed</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WORK / CASE STUDIES -->
+  <section id="work">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Real automations, real results</span>
+        <h2>What we've built for agencies like yours</h2>
+        <p>Three systems running in production right now. Tap any card to see the problem, the build, and the numbers.</p>
+      </div>
+
+      <div class="cases">
+
+        <!-- CASE 1 -->
+        <div class="case reveal" data-case>
+          <div class="case-head">
+            <div class="case-ico"><i data-lucide="bar-chart-3"></i></div>
+            <div class="case-meta">
+              <div class="case-type">Digital Marketing Agency</div>
+              <div class="case-title">Automated weekly client reporting</div>
+            </div>
+            <div class="case-result-pill">15 hrs/week back</div>
+            <div class="case-chev"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="case-body">
+            <div class="case-body-inner">
+              <div class="case-grid">
+                <div class="cg-item problem">
+                  <h4><i data-lucide="alert-triangle"></i> The Problem</h4>
+                  <p>Manual weekly reporting across 12 clients was eating <strong>15 hours every week</strong> &mdash; pulling numbers, building decks, formatting, sending.</p>
+                </div>
+                <div class="cg-item built">
+                  <h4><i data-lucide="wrench"></i> What We Built</h4>
+                  <p>Auto-pulls Google Ads + Meta data, generates a branded, formatted PDF report, and auto-emails it to each client every Monday morning.</p>
+                </div>
+                <div class="cg-item result">
+                  <h4><i data-lucide="trending-up"></i> The Result</h4>
+                  <p>15 hours a week back. Clients get reports faster and more consistently &mdash; and the agency looks dramatically more professional.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 2 -->
+        <div class="case reveal" data-case>
+          <div class="case-head">
+            <div class="case-ico"><i data-lucide="scale"></i></div>
+            <div class="case-meta">
+              <div class="case-type">Personal Injury Law Firm</div>
+              <div class="case-title">Instant lead response &amp; follow-up</div>
+            </div>
+            <div class="case-result-pill">40% &rarr; 85% contact rate</div>
+            <div class="case-chev"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="case-body">
+            <div class="case-body-inner">
+              <div class="case-grid">
+                <div class="cg-item problem">
+                  <h4><i data-lucide="alert-triangle"></i> The Problem</h4>
+                  <p>Leads from Google Ads sat in an inbox for hours and went cold. Every minute of delay meant fewer signed consultations.</p>
+                </div>
+                <div class="cg-item built">
+                  <h4><i data-lucide="wrench"></i> What We Built</h4>
+                  <p>Instant SMS + email to the lead on form submit, intake team alerted via Slack, auto follow-up if no contact in 30 min, and every outcome logged automatically.</p>
+                </div>
+                <div class="cg-item result">
+                  <h4><i data-lucide="trending-up"></i> The Result</h4>
+                  <p>Contact rate jumped from <strong>40% to 85%</strong> &mdash; far more consultations booked from the exact same ad spend.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE 3 -->
+        <div class="case reveal" data-case>
+          <div class="case-head">
+            <div class="case-ico"><i data-lucide="wrench"></i></div>
+            <div class="case-meta">
+              <div class="case-type">Local HVAC Company</div>
+              <div class="case-title">Automated invoicing &amp; payment chasing</div>
+            </div>
+            <div class="case-result-pill">23 days &rarr; 6 days to pay</div>
+            <div class="case-chev"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="case-body">
+            <div class="case-body-inner">
+              <div class="case-grid">
+                <div class="cg-item problem">
+                  <h4><i data-lucide="alert-triangle"></i> The Problem</h4>
+                  <p>After a job wrapped, the owner manually sent invoices and chased payments weeks later &mdash; cash flow constantly stuck in limbo.</p>
+                </div>
+                <div class="cg-item built">
+                  <h4><i data-lucide="wrench"></i> What We Built</h4>
+                  <p>Job marked complete &rarr; invoice auto-generated + sent &rarr; reminder at 7 days &rarr; escalation call/SMS at 14 days &rarr; everything logged to QuickBooks.</p>
+                </div>
+                <div class="cg-item result">
+                  <h4><i data-lucide="trending-up"></i> The Result</h4>
+                  <p>Average payment time dropped from <strong>23 days to 6 days</strong> &mdash; with zero manual chasing from the owner.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="hint"><i data-lucide="mouse-pointer-click"></i> Click a card to expand the full breakdown</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>Three ways we put your agency on autopilot</h2>
+        <p>Pick one to start, or stack all three. Every system is built around your tools and your workflow.</p>
+      </div>
+      <div class="services">
+        <div class="svc reveal">
+          <div class="svc-ico"><i data-lucide="megaphone"></i></div>
+          <h3>Ad Automation</h3>
+          <p>AI copy generation, real-time performance alerts, and auto-pausing of underperformers &mdash; so budget never bleeds on a losing ad again.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="svc-ico"><i data-lucide="zap"></i></div>
+          <h3>Lead Follow-Up</h3>
+          <p>Instant response sequences, automatic CRM logging, and intake alerts the second a lead comes in &mdash; no hot lead ever goes cold.</p>
+        </div>
+        <div class="svc reveal">
+          <div class="svc-ico"><i data-lucide="file-bar-chart"></i></div>
+          <h3>Client Reporting</h3>
+          <p>Weekly automated reports pulled from any platform, branded to your agency, and delivered on schedule &mdash; zero manual work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Dead simple</span>
+        <h2>How it works</h2>
+        <p>From first call to fully automated in under two weeks. You barely lift a finger.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num"><span>01</span></div>
+          <h3>We audit your time sinks</h3>
+          <p>A free 30-minute call where we find the repetitive, manual work quietly draining your team's week.</p>
+          <span class="tag">Free &middot; 30 min</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num"><span>02</span></div>
+          <h3>We build the automation</h3>
+          <p>We design, build, and test the system end-to-end &mdash; wired into the exact tools you already use.</p>
+          <span class="tag">1&ndash;2 weeks</span>
+        </div>
+        <div class="step reveal">
+          <div class="step-num"><span>03</span></div>
+          <h3>It runs itself</h3>
+          <p>We maintain and monitor it. You collect the hours back and reinvest them in growth &mdash; or your weekend.</p>
+          <span class="tag">Hands-off</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple plans. Outsized returns.</h2>
+        <p>One automation usually pays for itself in saved hours within the first month.</p>
+      </div>
+      <div class="pricing">
+        <div class="plan reveal">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price">$1,500 <span class="small">setup</span></div>
+          <div class="plan-mo">+ $750/mo</div>
+          <div class="plan-desc">One automation, fully built and maintained. Perfect for proving the model.</div>
+          <ul>
+            <li><i data-lucide="check"></i> 1 custom automation</li>
+            <li><i data-lucide="check"></i> Full build + integration</li>
+            <li><i data-lucide="check"></i> Ongoing maintenance &amp; monitoring</li>
+            <li><i data-lucide="check"></i> Email support</li>
+          </ul>
+          <a href="#book" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <div class="plan featured reveal">
+          <div class="plan-tag">MOST POPULAR</div>
+          <div class="plan-name">Growth</div>
+          <div class="plan-price">$2,500 <span class="small">setup</span></div>
+          <div class="plan-mo">+ $1,500/mo</div>
+          <div class="plan-desc">Up to three automations working together. For agencies ready to scale.</div>
+          <ul>
+            <li><i data-lucide="check"></i> Up to 3 custom automations</li>
+            <li><i data-lucide="check"></i> Priority build queue</li>
+            <li><i data-lucide="check"></i> Maintenance &amp; optimization</li>
+            <li><i data-lucide="check"></i> Slack + priority support</li>
+            <li><i data-lucide="check"></i> Quarterly automation reviews</li>
+          </ul>
+          <a href="#book" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="plan reveal">
+          <div class="plan-name">Agency</div>
+          <div class="plan-price">Custom</div>
+          <div class="plan-mo">Let's talk</div>
+          <div class="plan-desc">Full automation stack, white-label ready &mdash; resell it to your own clients.</div>
+          <ul>
+            <li><i data-lucide="check"></i> Unlimited automations</li>
+            <li><i data-lucide="check"></i> White-label ready</li>
+            <li><i data-lucide="check"></i> Dedicated build team</li>
+            <li><i data-lucide="check"></i> SLA + dedicated support</li>
+          </ul>
+          <a href="#book" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="guarantee reveal">
+        <i data-lucide="shield-check"></i>
+        <span><strong>First automation free for the first 60 days.</strong> We prove it works before you pay a cent.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="book" class="cta-final">
+    <div class="container">
+      <div class="cta-card reveal">
+        <h2>Ready to see what we'd automate first?</h2>
+        <p>Book a free 30-minute audit. We'll map your biggest time sinks and show you exactly what we'd build.</p>
+        <a href="#book" class="btn btn-primary" id="bookBtn"><i data-lucide="calendar-check"></i> Book a Free Audit Call</a>
+        <div class="cta-sub"><i data-lucide="shield-check"></i> No commitment &middot; No pressure &middot; You'll leave with a plan either way</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot-inner">
+      <div class="logo"><span class="dot"></span> Automate<span style="color:var(--accent)">.</span></div>
+      <p>We build the systems. You keep the clients.</p>
+      <p>&copy; 2026 Automate. &mdash; AI Automation for Agencies</p>
+    </div>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast"><i data-lucide="check-circle"></i> <span>Let's get that call booked &mdash; drop your email and we'll reach out.</span></div>
+
+<script>
+  // Lucide icons
+  if (window.lucide) lucide.createIcons();
+
+  // Nav shadow on scroll
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 12); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Animated counters
+  function animateCount(el) {
+    var target = parseFloat(el.dataset.target);
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var dur = 1500;
+    var start = performance.now();
+    function tick(now) {
+      var p = Math.min((now - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      var val = Math.round(target * eased);
+      el.textContent = prefix + val + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = prefix + target + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  var counters = document.querySelectorAll('.count');
+  // Default markup already shows the final figure (so static/JS-off renders
+  // are correct). With JS on we still want the count-up flourish, but ONLY
+  // for stats that are scrolled into view AFTER load — stats already on screen
+  // at first paint keep their final value so the hero never shows a partial
+  // "1x"/"4+" number on load.
+  function inViewport(el) {
+    var r = el.getBoundingClientRect();
+    return r.top < (window.innerHeight || document.documentElement.clientHeight) && r.bottom > 0;
+  }
+  var cObs = new IntersectionObserver(function(entries, obs) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { animateCount(e.target); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(function(el) {
+    if (inViewport(el)) return; // already visible on load — leave final value
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    el.textContent = prefix + '0' + suffix; // reset, then animate on scroll-in
+    cObs.observe(el);
+  });
+
+  // Reveal on scroll. Elements already in the viewport on load stay fully
+  // visible and solid (never armed for fade-in), so above-the-fold content
+  // never looks faded/unfinished. Off-screen elements get .will-reveal (which
+  // hides + arms them) and animate in as they scroll into view.
+  function revealInView(el) {
+    var r = el.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    return r.top < vh * 0.96 && r.bottom > 0;
+  }
+  var rObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    if (revealInView(el)) return; // already visible — leave solid
+    el.classList.add('will-reveal'); // hide + arm fade-up
+    rObs.observe(el);
+  });
+
+  // Expandable case cards (accordion)
+  document.querySelectorAll('[data-case]').forEach(function(card) {
+    var head = card.querySelector('.case-head');
+    var body = card.querySelector('.case-body');
+    head.addEventListener('click', function() {
+      var isOpen = card.classList.contains('open');
+      document.querySelectorAll('[data-case].open').forEach(function(other) {
+        if (other !== card) {
+          other.classList.remove('open');
+          other.querySelector('.case-body').style.maxHeight = null;
+        }
+      });
+      if (isOpen) {
+        card.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        card.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+  window.addEventListener('resize', function() {
+    var open = document.querySelector('[data-case].open');
+    if (open) { var b = open.querySelector('.case-body'); b.style.maxHeight = b.scrollHeight + 'px'; }
+  });
+
+  // Toast on CTA clicks
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast() {
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function() { toast.classList.remove('show'); }, 3600);
+  }
+  document.querySelectorAll('a[href="#book"]').forEach(function(a) {
+    a.addEventListener('click', function() { setTimeout(showToast, 350); });
+  });
+</script>
+</body>
+</html>

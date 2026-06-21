@@ -115,6 +115,7 @@ SKILLS_PARA = {
 # Family detection
 
 FAMILY_PATTERNS = [
+    # FDE must match before SWE (forward-deployed is more specific).
     ("fde", re.compile(r"forward[-\s]?deployed", re.I)),
     ("se",  re.compile(r"\b(solutions?|sales|customer|ai)\s+engineer\b", re.I)),
     ("se",  re.compile(r"\bsolutions?\s+architect\b", re.I)),
@@ -123,6 +124,16 @@ FAMILY_PATTERNS = [
     ("pgm", re.compile(r"\b(engineering\s+)?program\s+manager\b", re.I)),
     ("pm",  re.compile(r"\bproduct\s+manager\b", re.I)),
     ("pm",  re.compile(r"\bproduct\s+builder\b", re.I)),
+    # SWE / ML / data families — added 2026-06-20 (Cyrus full-unblock directive).
+    # These roles now flow through the pipeline; detect them so bullet_rewriter
+    # uses technical framing instead of defaulting to the PM family prompt.
+    ("ml",   re.compile(r"\b(machine\s+learning|ml)\s+(engineer|scientist|researcher|infrastructure|platform)\b", re.I)),
+    ("ml",   re.compile(r"\bapplied\s+(scientist|ml|ai)\b", re.I)),
+    ("data", re.compile(r"\bdata\s+(engineer|scientist|analyst|platform|infrastructure|pipeline)\b", re.I)),
+    # swe must come LAST — broadest pattern, catches what nothing else matched.
+    ("swe",  re.compile(r"\b(software|backend|frontend|full.?stack|mobile|systems?|platform|infrastructure|infra)\s+(engineer|developer|dev)\b", re.I)),
+    ("swe",  re.compile(r"\bSWE\b")),
+    ("swe",  re.compile(r"\bSDE\b")),
 ]
 
 def detect_family(title: str) -> str:
@@ -804,7 +815,7 @@ def run_pipeline(
     # in title_swaps)` silently skipped coerce for empty rewrites.json
     # title_swaps dicts, leaving intern slots at master defaults (bug 2026-06-14).
     _coerce_family = fam or rewrites.get("family") or ""
-    if _coerce_family in ("pm", "tpm", "pgm", "se", "fde") or any(k in ALLOWED_TITLE_LABELS for k in title_swaps):
+    if _coerce_family in ("pm", "tpm", "pgm", "se", "fde", "swe", "ml", "data") or any(k in ALLOWED_TITLE_LABELS for k in title_swaps):
         track_src = faithful_headline or title_swaps.get("microsoft_ft") or "Program Manager"
         before_coerce = dict(title_swaps)
         title_swaps = coerce_title_track(title_swaps, track_src)
@@ -1077,7 +1088,7 @@ def main():
                     help="JSON file of bullet rewrites; defaults to "
                          "<out-dir>/rewrites.json")
     ap.add_argument("--family", default=None,
-                    choices=["pm", "tpm", "pgm", "se", "fde"])
+                    choices=["pm", "tpm", "pgm", "se", "fde", "swe", "ml", "data"])
     ap.add_argument("--out-dir", default=None)
     ap.add_argument("--suffix", default="_v2")
     ap.add_argument("--auto-rewrite", action="store_true",

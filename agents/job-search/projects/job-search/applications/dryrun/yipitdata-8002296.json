@@ -1,0 +1,429 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/yipitdata/jobs/8002296",
+  "org": "yipitdata",
+  "job_id": "8002296",
+  "job_title": "Data Product Manager",
+  "job_location": "US Remote",
+  "fetched_at": "2026-06-20T20:55:25Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/yipitdata/jobs/8002296?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 23,
+    "filled": 18,
+    "filled_needs_review": 1,
+    "declined": 1,
+    "unresolved": 3,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67587520",
+      "label": "How did you hear about this job? (If through one of our current employees, could you please share their names and your relationship with them so we know?)",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_67587521",
+      "label": "Do you have any experience in B2C product management, focused on building consumer mobile applications?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone | NOTE: '346-804-0227' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "phone",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67587522",
+      "label": "Why are you looking for new opportunities right now?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at YipitData because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about YipitData is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to YipitData while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, YipitData aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='YipitData')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_67587523",
+      "label": "What about this role in particular interests you?  And why do you think you are the right candidate for this position (based on your background and our job description)? ",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at YipitData because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about YipitData is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to YipitData while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, YipitData aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='YipitData')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_67587524",
+      "label": "What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_67587525",
+      "label": "What is your minimum required base salary (in USD) to consider this position?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_67587526",
+      "label": "YipitData is an equal opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion.\n\nHere is set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. If you choose to fill them out, the responses will be used (in aggregate only) to help us identify areas for improvement in our process.\n\nYour responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='YipitData is an equal opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion.\\n\\nHere is set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. If you choose to fill them out, the responses will be used (in aggregate only) to help us identify areas for improvement in our process.\\n\\nYour responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Female",
+          "value": 728328409
+        },
+        {
+          "label": "Male",
+          "value": 728328410
+        },
+        {
+          "label": "Non-binary",
+          "value": 728328411
+        },
+        {
+          "label": "Third gender",
+          "value": 728328412
+        },
+        {
+          "label": "Other",
+          "value": 728328413
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 728328414
+        }
+      ]
+    },
+    {
+      "id": "question_67587527",
+      "label": "I identify my sexual orientation as:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='I identify my sexual orientation as:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Heterosexual",
+          "value": 728328415
+        },
+        {
+          "label": "Homosexual (Gay / Lesbian)",
+          "value": 728328416
+        },
+        {
+          "label": "Bisexual / Pansexual",
+          "value": 728328417
+        },
+        {
+          "label": "Asexual",
+          "value": 728328418
+        },
+        {
+          "label": "Other",
+          "value": 728328419
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 728328420
+        }
+      ]
+    },
+    {
+      "id": "question_67587528[]",
+      "label": "I identify my ethnicity as (mark all that apply):",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian / Alaskan Native",
+          "value": 728328421
+        },
+        {
+          "label": "Asian",
+          "value": 728328422
+        },
+        {
+          "label": "Black or African American",
+          "value": 728328423
+        },
+        {
+          "label": "Hispanic / Latinx",
+          "value": 728328424
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 728328425
+        },
+        {
+          "label": "Pacific Islander or Native Hawaiian",
+          "value": 728328426
+        },
+        {
+          "label": "White",
+          "value": 728328427
+        },
+        {
+          "label": "Other",
+          "value": 728328428
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 728328429
+        }
+      ]
+    },
+    {
+      "id": "question_67587529",
+      "label": "Kindly share your LinkedIn profile with us!",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67587530",
+      "label": "Are you legally authorized to work in the United States for our Company?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67587531",
+      "label": "Do you now, or will you in the future, require sponsorship for employment visa status (e.g., H-1B visa status, etc.) to work legally for our Company in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67587524",
+      "label": "What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label=\"What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?\""
+    },
+    {
+      "id": "question_67587526",
+      "label": "YipitData is an equal opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion.\n\nHere is set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. If you choose to fill them out, the responses will be used (in aggregate only) to help us identify areas for improvement in our process.\n\nYour responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='YipitData is an equal opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion.\\n\\nHere is set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. If you choose to fill them out, the responses will be used (in aggregate only) to help us identify areas for improvement in our process.\\n\\nYour responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.'"
+    },
+    {
+      "id": "question_67587527",
+      "label": "I identify my sexual orientation as:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='I identify my sexual orientation as:'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67587524",
+      "label": "What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?",
+      "reason": "no LABEL_RULES match for label=\"What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?\""
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

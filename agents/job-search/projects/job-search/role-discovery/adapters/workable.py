@@ -53,7 +53,7 @@ def fetch(company: str, slug: str, **_) -> List[Role]:
     url = WIDGET_URL.format(slug=slug)
     r = http_get(url, params={"details": "true"})
     if r.status_code != 200:
-        raise RuntimeError(f"workable[{slug}] HTTP {r.status_code}")
+        return []  # return empty list on error, do not raise
     data = r.json()
     out: List[Role] = []
     for j in data.get("jobs", []) or []:

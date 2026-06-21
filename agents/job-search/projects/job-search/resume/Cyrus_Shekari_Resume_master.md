@@ -6,6 +6,12 @@
 > Tags: `pm` (Product Manager), `tpm` (Technical Program Manager),
 > `pgm` (Program Manager), `se` (Solutions / Sales Engineer),
 > `fde` (Forward Deployed Engineer), `general` (use anywhere).
+> **SWE / ML / data role routing (added 2026-06-20):** `swe`, `ml`, `data` families
+> route to the `[se,fde]`-tagged bullets as their base framing (technical, delivery-focused),
+> then the family-specific prompt guidance pushes further toward implementation depth (swe),
+> ML pipeline/model work (ml), or data infrastructure (data). No new bullet tags needed
+> in this file — the LLM reframes from the se/fde base. Title swaps: none (like se/fde,
+> master titles are kept as-is for SWE/ML/data roles).
 >
 > Title swaps allowed for PM ↔ TPM ↔ Program Manager ↔ Product Manager
 > (Cyrus confirmed his employer is fine with this), and the same family

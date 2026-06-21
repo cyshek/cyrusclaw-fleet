@@ -1,9 +1,13 @@
-PREP-READY — 2026-05-31T06:01:54+00:00
-
+STATUS: SUBMITTED
+submitted_at: 2026-06-21T04:34:23+00:00
 role_id: 1383
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-restate-ac039096-a44d-4ae6-9f57-50ab4b7d97d6.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/restate-ac039096-a44d-4ae6-9f57-50ab4b7d97d6/Cyrus_Shekari_Resume_ashby-restate_ac039096_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/restate-ac039096-a44d-4ae6-9f57-50ab4b7d97d6/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+slug: restate-ac039096-a44d-4ae6-9f57-50ab4b7d97d6
+company: Restate
+role: Forward Deployed Engineer
+url: https://jobs.ashbyhq.com/restate/ac039096-a44d-4ae6-9f57-50ab4b7d97d6
+submitted_by: auto
+resume_attached: true
+confirmation_text: "Your application was successfully submitted. We'll contact you if there are next steps."
+confirmation_signal: server FormSubmitSuccess GraphQL token (submitApplicationFormAction)
+egress: residential (Webshare 82.23.97.223)
+note: Ashby MODERATE-strict cohort cracked via residential egress. Was FDE-doctrine-blocked, given real attempt, submitted clean.

@@ -1,0 +1,98 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/plaud/de70e9b7-0f95-4aae-b8fb-3339ecebb5e3",
+  "org": "plaud",
+  "job_id": "de70e9b7-0f95-4aae-b8fb-3339ecebb5e3",
+  "job_title": "Growth Product Manager, AI Commercialization",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-21T00:34:54Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "79db083e-6337-4943-ba50-20eca663b84f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "79db083e-6337-4943-ba50-20eca663b84f__systemfield_name"
+    },
+    {
+      "id": "79db083e-6337-4943-ba50-20eca663b84f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "79db083e-6337-4943-ba50-20eca663b84f__systemfield_email"
+    },
+    {
+      "id": "79db083e-6337-4943-ba50-20eca663b84f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "79db083e-6337-4943-ba50-20eca663b84f__systemfield_resume"
+    },
+    {
+      "id": "79db083e-6337-4943-ba50-20eca663b84f_cc0eb2d8-06df-4a5d-8516-e810e5b9174f",
+      "label": "Phone number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "79db083e-6337-4943-ba50-20eca663b84f_cc0eb2d8-06df-4a5d-8516-e810e5b9174f"
+    },
+    {
+      "id": "79db083e-6337-4943-ba50-20eca663b84f_d4400c31-cb81-472b-8a50-744c1207bed4",
+      "label": "Would you require our sponsorship for your work visa application?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "79db083e-6337-4943-ba50-20eca663b84f_d4400c31-cb81-472b-8a50-744c1207bed4"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

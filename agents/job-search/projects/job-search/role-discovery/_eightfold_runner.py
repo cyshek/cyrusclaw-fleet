@@ -694,8 +694,12 @@ def run_eightfold(
                     _click_select_option(sid_label, "I choose not to disclose", timeout=4000)
 
         # 2) Checkbox-group self-ID (gender identity, race/ethnicity, sexual orientation)
-        # These are DIV[role=group] containers with hidden checkbox inputs targeted via labels.
-        # Click the label for "I choose not to disclose" in each group.
+        # These are DIV[role=group] containers with checkbox inputs. The reliable
+        # commit is Playwright .check() on the actual checkbox INPUT by id
+        # (label.click() leaves React state uncommitted -> SPA silently blocks the
+        # submit POST with a required-field validation, 2026-06-20 fix).
+        # Each option's input id is f"{grp_id}-{value}-{index}"; 'I choose not to
+        # disclose' is what we want. We resolve its exact id from the DOM.
         checkbox_selfid_groups = [
             "Self_ID_Questions_US_genderIdentity",
             "Self_ID_Questions_US_raceEthnicity",
@@ -706,18 +710,46 @@ def run_eightfold(
             if grp.count() == 0:
                 logger.debug(f"[Eightfold] Checkbox self-ID group not found: {grp_id}")
                 continue
-            # Find the label for 'I choose not to disclose' within this group
-            lbl = grp.locator('label').filter(has_text='I choose not to disclose')
-            if lbl.count() > 0:
-                lbl.first.click(timeout=4000)
-                logger.info(f"[Eightfold] Clicked 'I choose not to disclose' checkbox for {grp_id}")
-                page.wait_for_timeout(300)
+            # Resolve the exact checkbox-input id for 'I choose not to disclose'
+            decline_id = page.evaluate(
+                """(gid) => {
+                    const g = document.getElementById(gid);
+                    if (!g) return null;
+                    const cbs = Array.from(g.querySelectorAll('input[type=checkbox]'));
+                    const m = cbs.find(c => (c.value||'').toLowerCase().includes('not to disclose'))
+                              || cbs.find(c => /not to disclose/i.test(c.id));
+                    return m ? m.id : null;
+                }""",
+                grp_id,
+            )
+            committed = False
+            if decline_id:
+                try:
+                    page.locator(f'input[id="{decline_id}"]').check(timeout=5000)
+                    page.wait_for_timeout(250)
+                    committed = bool(page.evaluate(
+                        "(id)=>{const e=document.getElementById(id); return e? e.checked: false;}",
+                        decline_id,
+                    ))
+                except Exception as _cex:
+                    logger.warning(f"[Eightfold] check() failed for {grp_id} ({decline_id}): {_cex}")
+            if committed:
+                logger.info(f"[Eightfold] Committed 'I choose not to disclose' checkbox for {grp_id} (id={decline_id})")
             else:
-                # Fallback: click any label (first option)
-                first_lbl = grp.locator('label').first
-                if first_lbl.count() > 0:
-                    first_lbl.click(timeout=3000)
-                    logger.warning(f"[Eightfold] 'I choose not to disclose' not found in {grp_id}, clicked first option")
+                # Fallback: label click (legacy path)
+                lbl = grp.locator('label').filter(has_text='I choose not to disclose')
+                if lbl.count() > 0:
+                    try:
+                        lbl.first.click(timeout=4000)
+                        logger.warning(f"[Eightfold] .check() did not commit {grp_id}; fell back to label click")
+                        page.wait_for_timeout(300)
+                    except Exception:
+                        pass
+                else:
+                    first_lbl = grp.locator('label').first
+                    if first_lbl.count() > 0:
+                        first_lbl.click(timeout=3000)
+                        logger.warning(f"[Eightfold] 'I choose not to disclose' not found in {grp_id}, clicked first option")
 
         # Application questions from page state -- DOM fill only (also captured for API submit below)
         # Add wait after Self-ID to ensure no stuck dropdown from previous interaction

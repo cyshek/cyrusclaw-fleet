@@ -1,0 +1,370 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/camunda/987fb6e0-1e22-45e5-b152-57acbcb59cb2",
+  "org": "camunda",
+  "job_id": "987fb6e0-1e22-45e5-b152-57acbcb59cb2",
+  "job_title": "AI Process Forward Deployed Engineer",
+  "job_location": "Remote",
+  "fetched_at": "2026-06-21T08:42:36Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 14,
+    "filled": 8,
+    "filled_needs_review": 2,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 3,
+    "blockers": 3
+  },
+  "fields": [
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_name"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_email"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_resume"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_34946691-ffd0-4131-8960-f74b0fa7ccfe",
+      "label": "Are you legally eligible to work in the country where you’re planning to work from?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_34946691-ffd0-4131-8960-f74b0fa7ccfe",
+      "match_attempted": true
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3__systemfield_location"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
+      "label": "If you are eligible, please select the status that allows you to work and live in that Country",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['I am a citizen / permanent resident of the country where I plan to live & work from.', 'I have a work visa in the country where I plan to live & work from.', 'I require sponsorship / employer support from Camunda in the country where I plan to live & work from.']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "I am a citizen / permanent resident of the country where I plan to live & work from.",
+          "value": "I am a citizen / permanent resident of the country where I plan to live & work from."
+        },
+        {
+          "label": "I have a work visa in the country where I plan to live & work from.",
+          "value": "I have a work visa in the country where I plan to live & work from."
+        },
+        {
+          "label": "I require sponsorship / employer support from Camunda in the country where I plan to live & work from.",
+          "value": "I require sponsorship / employer support from Camunda in the country where I plan to live & work from."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
+      "match_attempted": true
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_5ab51c64-65c5-4d45-855e-73f5323304d1",
+      "label": "What are your pronouns for others to use when referring to you?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He/Him",
+          "value": "He/Him"
+        },
+        {
+          "label": "She/Her",
+          "value": "She/Her"
+        },
+        {
+          "label": "They/Them",
+          "value": "They/Them"
+        },
+        {
+          "label": "They/He",
+          "value": "They/He"
+        },
+        {
+          "label": "They/She",
+          "value": "They/She"
+        },
+        {
+          "label": "Ey/Em",
+          "value": "Ey/Em"
+        },
+        {
+          "label": "Ze/Hir",
+          "value": "Ze/Hir"
+        },
+        {
+          "label": "Ze/Zir",
+          "value": "Ze/Zir"
+        },
+        {
+          "label": "Zie/Hir",
+          "value": "Zie/Hir"
+        },
+        {
+          "label": "Zie/Zir",
+          "value": "Zie/Zir"
+        },
+        {
+          "label": "Xe/Xem",
+          "value": "Xe/Xem"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_5ab51c64-65c5-4d45-855e-73f5323304d1"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_9f8dc958-ffde-455c-88fa-0e7abb555e29",
+      "label": "Are you able and willing to work remotely?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you able and willing to work remotely?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_9f8dc958-ffde-455c-88fa-0e7abb555e29"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_094217ef-b27e-40a5-aa82-0bd4f9919364",
+      "label": "What are your salary expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_094217ef-b27e-40a5-aa82-0bd4f9919364"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_a2e5bf15-f611-4af4-9189-46f34088339e",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_a2e5bf15-f611-4af4-9189-46f34088339e"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_97d71de0-9a30-4822-8786-ecd3300492b2",
+      "label": "If you have discussed this role with a current Camunda employee, please enter their full name here",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_97d71de0-9a30-4822-8786-ecd3300492b2"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_87c4752c-8816-44a3-99b5-b64327a0b058",
+      "label": "What best describes your production experience at a large enterprise?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What best describes your production experience at a large enterprise?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I have shipped and operated a system in a large enterprise (1,000+ employees) including production support.",
+          "value": "I have shipped and operated a system in a large enterprise (1,000+ employees) including production support."
+        },
+        {
+          "label": "I have shipped at a large enterprise but did not own production operations.",
+          "value": "I have shipped at a large enterprise but did not own production operations."
+        },
+        {
+          "label": "I have only shipped in smaller companies or startups. ",
+          "value": "I have only shipped in smaller companies or startups. "
+        },
+        {
+          "label": "No production deployment experience.",
+          "value": "No production deployment experience."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_87c4752c-8816-44a3-99b5-b64327a0b058"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_e684e6cc-31a8-44f9-ac2a-322b42651e77",
+      "label": "Which best describes your experience with AI agents or agentic workflows?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No experience with AI agents",
+      "source": "ai_familiarity_high (last option default)",
+      "status": "filled",
+      "matched_rule": "ai_familiarity_high",
+      "options": [
+        {
+          "label": "I have built and operated agentic systems in production, including testing for non-determinism and failure recovery.",
+          "value": "I have built and operated agentic systems in production, including testing for non-determinism and failure recovery."
+        },
+        {
+          "label": "I have built agents in staging or demo environments but not in production.",
+          "value": "I have built agents in staging or demo environments but not in production."
+        },
+        {
+          "label": "I have only used off-the-shelf AI tools; I have not built agent systems. ",
+          "value": "I have only used off-the-shelf AI tools; I have not built agent systems. "
+        },
+        {
+          "label": "No experience with AI agents",
+          "value": "No experience with AI agents"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_e684e6cc-31a8-44f9-ac2a-322b42651e77"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_8d225fc3-bd78-4864-acd4-64f73cc1de30",
+      "label": "Which best describes your experience with workflow automation or BPMN?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Which best describes your experience with workflow automation or BPMN?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I have configured, debugged, or written BPMN workflows in a production environment.",
+          "value": "I have configured, debugged, or written BPMN workflows in a production environment."
+        },
+        {
+          "label": "I have worked with workflow tools conceptually or in a design capacity but not technically.",
+          "value": "I have worked with workflow tools conceptually or in a design capacity but not technically."
+        },
+        {
+          "label": "No experience with BPMN or workflow automation",
+          "value": "No experience with BPMN or workflow automation"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_8d225fc3-bd78-4864-acd4-64f73cc1de30"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_9f8dc958-ffde-455c-88fa-0e7abb555e29",
+      "label": "Are you able and willing to work remotely?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you able and willing to work remotely?'"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_87c4752c-8816-44a3-99b5-b64327a0b058",
+      "label": "What best describes your production experience at a large enterprise?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='What best describes your production experience at a large enterprise?'"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_8d225fc3-bd78-4864-acd4-64f73cc1de30",
+      "label": "Which best describes your experience with workflow automation or BPMN?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Which best describes your experience with workflow automation or BPMN?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_9f8dc958-ffde-455c-88fa-0e7abb555e29",
+      "label": "Are you able and willing to work remotely?",
+      "reason": "no LABEL_RULES match for label='Are you able and willing to work remotely?'"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_87c4752c-8816-44a3-99b5-b64327a0b058",
+      "label": "What best describes your production experience at a large enterprise?",
+      "reason": "no LABEL_RULES match for label='What best describes your production experience at a large enterprise?'"
+    },
+    {
+      "id": "81987012-f4ba-4b0f-bd2d-e67cd09332e3_8d225fc3-bd78-4864-acd4-64f73cc1de30",
+      "label": "Which best describes your experience with workflow automation or BPMN?",
+      "reason": "no LABEL_RULES match for label='Which best describes your experience with workflow automation or BPMN?'"
+    }
+  ]
+}

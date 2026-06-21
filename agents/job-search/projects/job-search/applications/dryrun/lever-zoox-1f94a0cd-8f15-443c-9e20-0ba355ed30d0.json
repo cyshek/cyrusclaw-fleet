@@ -1,0 +1,289 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/zoox/1f94a0cd-8f15-443c-9e20-0ba355ed30d0",
+  "apply_url": "https://jobs.lever.co/zoox/1f94a0cd-8f15-443c-9e20-0ba355ed30d0/apply",
+  "org": "zoox",
+  "job_id": "1f94a0cd-8f15-443c-9e20-0ba355ed30d0",
+  "job_title": "Zoox - Program Manager, Infrastructure Operations",
+  "fetched_at": "2026-06-21T07:22:57Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 17,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 3,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[c62ec44a-0482-4f8f-9630-94a6aac1e3c3][field0]",
+      "label": "What is your preferred first name and last name? If your legal first and last name is your preferred name, you do not need to respond.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "card_text": "A few more questions..."
+    },
+    {
+      "id": "cards[c62ec44a-0482-4f8f-9630-94a6aac1e3c3][field1]",
+      "label": "Export Control and Compliance: For the sole purpose of determining export licensing requirements, please list any countries of which you are a citizen or legal permanent resident, and when you obtained such status.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.status (ITAR/EAR US-person ack)",
+      "status": "filled",
+      "matched_rule": "itar_us_person_ack",
+      "options": null,
+      "card_text": "A few more questions..."
+    },
+    {
+      "id": "cards[c62ec44a-0482-4f8f-9630-94a6aac1e3c3][field2]",
+      "label": "Sponsorship: Do you require sponsorship, or will you require sponsorship in the future for employment authorization in the United States?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "18d09961-cb56-4eda-98ea-573ab04e6ed3"
+        },
+        {
+          "label": "No",
+          "value": "4482983a-3e5a-44d5-a0d8-4d51079ff03e"
+        }
+      ],
+      "card_text": "A few more questions..."
+    },
+    {
+      "id": "cards[c62ec44a-0482-4f8f-9630-94a6aac1e3c3][field3]",
+      "label": "How did you hear about us?",
+      "type": "multi_value_multi_select",
+      "lever_type": "multiple-select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Zoox Ads / Social Media",
+          "value": "62287410-061f-4586-9c14-18bf2a2fb049"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "8588b1ff-675e-4879-883e-66e73e728686"
+        },
+        {
+          "label": "Event, Media Interview, or other PR",
+          "value": "cf0f55dd-ea7e-4131-bd86-0b50387b18e1"
+        },
+        {
+          "label": "Recruiter Outreach",
+          "value": "83d065ed-7991-4c94-ad93-f16c9ed4edc6"
+        },
+        {
+          "label": "Employee Referral",
+          "value": "8f2d3973-01e4-43d1-b9ff-df93c013bc43"
+        },
+        {
+          "label": "CVPR Conference",
+          "value": "602ae33e-e95c-4dff-bed5-8f6bb63e65c8"
+        },
+        {
+          "label": "SHPE Conference",
+          "value": "3d4c0ab1-296e-4dc8-8f3b-ecdbb49343ad"
+        },
+        {
+          "label": "Other",
+          "value": "3f724fea-bb96-455a-b843-56cb5f913e16"
+        }
+      ],
+      "card_text": "A few more questions..."
+    },
+    {
+      "id": "cards[c62ec44a-0482-4f8f-9630-94a6aac1e3c3][field4]",
+      "label": "If you attended an on-campus or virtual event, which did you attend?",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you attended an on-campus or virtual event, which did you attend?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "A few more questions..."
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "cards[c62ec44a-0482-4f8f-9630-94a6aac1e3c3][field4]",
+      "label": "If you attended an on-campus or virtual event, which did you attend?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you attended an on-campus or virtual event, which did you attend?'"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "Zoox - Program Manager, Infrastructure Operations",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

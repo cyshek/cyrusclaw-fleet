@@ -2,7 +2,8 @@
 from . import greenhouse, ashby, lever, workday, smartrecruiters
 from . import microsoft, google, apple, meta, eightfold
 from . import linkedin, rippling, uber, snap, bytedance, workable
-from . import jobright
+from . import jobright, bamboohr
+from . import remotive, remoteok, himalayas
 
 REGISTRY = {
     "greenhouse": greenhouse.fetch,
@@ -11,6 +12,8 @@ REGISTRY = {
     "workable": workable.fetch,
     "workday": workday.fetch,
     "smartrecruiters": smartrecruiters.fetch,
+    "bamboohr": bamboohr.fetch,
+    "himalayas": himalayas.fetch,
     "eightfold": eightfold.fetch,
     "microsoft": microsoft.fetch,
     "google": google.fetch,
@@ -23,4 +26,6 @@ REGISTRY = {
     "bytedance": bytedance.fetch_bytedance,
     "tiktok": bytedance.fetch_tiktok,
     "jobright": jobright.fetch,
+    "remotive": remotive.fetch,
+    "remoteok": remoteok.fetch,
 }

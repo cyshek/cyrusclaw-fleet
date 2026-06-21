@@ -3597,24 +3597,1697 @@ companies:
   adapter: greenhouse
   slug: gremlin
   note: li-resolved
-# JobRight.ai — DISCOVERY-ONLY source (added 2026-06-11). Harvests the public,
-# unauthenticated /remote-jobs/<category> feed (~12 categories, newest-first)
-# via adapters/jobright.py. Every row's app_url is a jobright.ai/jobs/info/<id>
-# WRAPPER (not a direct ATS URL), so tracker_merger tags these manual-apply +
-# discovery-only and the auto-submit/burndown queue excludes them. Freshness/
-# discovery signal only. slug is unused (this is a SOURCE, not one company).
 - name: JobRight
   adapter: jobright
   slug: ''
-
-# Meta Careers — guest apply via metacareers.com (no auth, Playwright runner).
-# Discovery via adapters/meta.py (GraphQL search or HTML scrape).
-# Runner: role-discovery/_meta_runner.py
-# Note: Meta Platforms is the parent company; Facebook, Instagram, WhatsApp, and
-# Oculus are all brands under Meta. All roles go through metacareers.com.
-# There is no separate careers site for the sub-brands.
 - name: Meta Platforms
   adapter: meta
   slug: ''
   note: meta-runner-2026-06-17
-  # aliases: Facebook, Instagram, WhatsApp, Oculus (all careers via metacareers.com)
+- name: Remotive (product)
+  adapter: remotive
+  slug: product
+- name: Remotive (management)
+  adapter: remotive
+  slug: management-finance
+- name: Remotive (sales)
+  adapter: remotive
+  slug: sales
+- name: RemoteOK (PM)
+  adapter: remoteok
+  slug: product-manager
+- name: RemoteOK (TPM)
+  adapter: remoteok
+  slug: technical-program-manager
+- name: RemoteOK (SE)
+  adapter: remoteok
+  slug: solutions-engineer
+- name: Himalayas (PM)
+  adapter: himalayas
+  slug: product manager
+- name: Himalayas (TPM)
+  adapter: himalayas
+  slug: technical program manager
+- name: Himalayas (SE)
+  adapter: himalayas
+  slug: solutions engineer
+- name: Himalayas (SA)
+  adapter: himalayas
+  slug: solutions architect
+- name: Metal
+  adapter: ashby
+  slug: metal
+- name: Flex
+  adapter: greenhouse
+  slug: flex
+- name: Scout
+  adapter: ashby
+  slug: scout
+- name: Healthtech 1
+  adapter: ashby
+  slug: healthtech-1
+- name: Feanix Biotechnologies
+  adapter: greenhouse
+  slug: feanixbiotechnologies
+- name: Blacksmith
+  adapter: ashby
+  slug: blacksmith
+- name: Conductor
+  adapter: ashby
+  slug: conductor
+- name: Village Labs
+  adapter: greenhouse
+  slug: village
+- name: Mercura
+  adapter: ashby
+  slug: mercura
+- name: Cedar
+  adapter: ashby
+  slug: cedar
+- name: Loom
+  adapter: ashby
+  slug: loom
+- name: Railway
+  adapter: ashby
+  slug: railway
+- name: RunPod
+  adapter: greenhouse
+  slug: runpod
+- name: Count
+  adapter: ashby
+  slug: count
+- name: Lightdash
+  adapter: ashby
+  slug: lightdash
+- name: Vast.ai
+  adapter: ashby
+  slug: vastai
+- name: Stytch
+  adapter: ashby
+  slug: stytch
+- name: WorkOS
+  adapter: ashby
+  slug: workos
+- name: Remote
+  adapter: greenhouse
+  slug: remote
+- name: Luma AI
+  adapter: ashby
+  slug: luma
+- name: Honeycomb
+  adapter: greenhouse
+  slug: honeycomb
+- name: GitBook
+  adapter: ashby
+  slug: gitbook
+- name: Plain
+  adapter: ashby
+  slug: plain
+- name: Oyster HR
+  adapter: ashby
+  slug: oyster
+- name: Grafana Labs
+  adapter: greenhouse
+  slug: grafanalabs
+- name: Culture Amp
+  adapter: greenhouse
+  slug: cultureamp
+- name: Kustomer
+  adapter: ashby
+  slug: kustomer
+- name: Pave
+  adapter: ashby
+  slug: pave
+- name: Leapsome
+  adapter: ashby
+  slug: leapsome
+- name: BetterUp
+  adapter: ashby
+  slug: betterup
+- name: Trigger.dev
+  adapter: ashby
+  slug: triggerdev
+- name: Waymo
+  adapter: greenhouse
+  slug: waymo
+- name: Workato
+  adapter: smartrecruiters
+  slug: Workato
+  note: integration-platform; 3 US/remote roles confirmed
+- name: Visa
+  adapter: smartrecruiters
+  slug: Visa
+  note: fintech; 6 US roles confirmed
+- name: Uphold
+  adapter: bamboohr
+  slug: uphold
+  note: crypto fintech; 15 US/NY roles confirmed
+- name: Wistia
+  adapter: bamboohr
+  slug: wistia
+  note: video platform; valid endpoint, 0 now (hiring fluctuates)
+- name: Asana
+  adapter: bamboohr
+  slug: asana
+  note: project management; valid endpoint, 0 now (hiring fluctuates)
+- name: Zapier
+  adapter: bamboohr
+  slug: zapier
+  note: automation; valid endpoint, 0 now (hiring fluctuates)
+- name: Basecamp
+  adapter: bamboohr
+  slug: basecamp
+  note: project management; valid endpoint, 0 now
+- name: Teachable
+  adapter: bamboohr
+  slug: teachable
+  note: learning platform; valid endpoint
+- name: Thinkific
+  adapter: bamboohr
+  slug: thinkific
+  note: learning platform; valid endpoint
+- name: A Thinking Ape
+  adapter: greenhouse
+  slug: athinkingape
+- name: Zencoder
+  adapter: greenhouse
+  slug: zencoder
+- name: Close
+  adapter: ashby
+  slug: close
+- name: GoCardless
+  adapter: greenhouse
+  slug: gocardless
+- name: Apollo
+  adapter: greenhouse
+  slug: apollo
+- name: Realm
+  adapter: greenhouse
+  slug: realm
+- name: Genius
+  adapter: greenhouse
+  slug: genius
+- name: Clutch
+  adapter: greenhouse
+  slug: clutch
+- name: CircuitHub
+  adapter: ashby
+  slug: circuithub
+- name: Tilt
+  adapter: ashby
+  slug: tilt
+- name: Ark
+  adapter: greenhouse
+  slug: ark
+- name: Clever
+  adapter: greenhouse
+  slug: clever
+- name: Canopy Labs
+  adapter: ashby
+  slug: canopy
+- name: CareMessage
+  adapter: ashby
+  slug: caremessage
+- name: Abacus
+  adapter: greenhouse
+  slug: abacus
+- name: Oklo
+  adapter: greenhouse
+  slug: oklo
+- name: UserGems
+  adapter: greenhouse
+  slug: usergems
+- name: SFOX
+  adapter: greenhouse
+  slug: sfox
+- name: PicnicAI
+  adapter: greenhouse
+  slug: picnicai
+- name: Ginkgo Bioworks
+  adapter: greenhouse
+  slug: ginkgobioworks
+- name: Permutive
+  adapter: ashby
+  slug: permutive
+- name: Tenjin
+  adapter: ashby
+  slug: tenjin
+- name: Protocol Labs
+  adapter: ashby
+  slug: protocol
+- name: Product Hunt
+  adapter: ashby
+  slug: producthunt
+- name: Aptible
+  adapter: ashby
+  slug: aptible
+- name: Cheddar
+  adapter: greenhouse
+  slug: cheddar
+- name: Seed
+  adapter: greenhouse
+  slug: seed
+- name: Raven Tech
+  adapter: greenhouse
+  slug: raven
+- name: Shift Labs
+  adapter: ashby
+  slug: shift
+- name: Notable Labs
+  adapter: ashby
+  slug: notable
+- name: Xendit
+  adapter: greenhouse
+  slug: xendit
+- name: 80,000 Hours
+  adapter: ashby
+  slug: 80000hours
+- name: PartnerStack
+  adapter: greenhouse
+  slug: partnerstack
+- name: Assembly
+  adapter: ashby
+  slug: assembly
+- name: New Story
+  adapter: ashby
+  slug: new-story
+- name: Fetch
+  adapter: greenhouse
+  slug: fetch
+- name: Truebill
+  adapter: greenhouse
+  slug: truebill
+- name: Paystack
+  adapter: greenhouse
+  slug: paystack
+- name: Podium
+  adapter: ashby
+  slug: podium
+- name: Silver
+  adapter: ashby
+  slug: silver
+- name: Bird
+  adapter: greenhouse
+  slug: bird
+- name: OneChronos
+  adapter: ashby
+  slug: onechronos
+- name: Miso
+  adapter: ashby
+  slug: miso
+- name: Saleswhale
+  adapter: greenhouse
+  slug: saleswhale
+- name: Pursuit
+  adapter: greenhouse
+  slug: pursuit
+- name: Multiply Labs
+  adapter: ashby
+  slug: multiply
+- name: UpKeep
+  adapter: greenhouse
+  slug: upkeep
+- name: Tetra
+  adapter: greenhouse
+  slug: tetra
+- name: Breaker
+  adapter: ashby
+  slug: breaker
+- name: Armory
+  adapter: ashby
+  slug: armory
+- name: Scribe
+  adapter: ashby
+  slug: scribe
+- name: Firsthand
+  adapter: greenhouse
+  slug: firsthand
+- name: BillionToOne
+  adapter: greenhouse
+  slug: billiontoone
+- name: Pearl
+  adapter: ashby
+  slug: pearl
+- name: Cairns Health
+  adapter: ashby
+  slug: cairns-health
+- name: Headstart
+  adapter: ashby
+  slug: headstart
+- name: Truepill
+  adapter: greenhouse
+  slug: truepill
+- name: Polly
+  adapter: ashby
+  slug: polly
+- name: Groww
+  adapter: greenhouse
+  slug: groww
+- name: Super
+  adapter: greenhouse
+  slug: super
+- name: Runa
+  adapter: ashby
+  slug: runa
+- name: Culture Biosciences
+  adapter: greenhouse
+  slug: culturebiosciences
+- name: Universe
+  adapter: ashby
+  slug: universe
+- name: CoinTracker
+  adapter: ashby
+  slug: cointracker
+- name: Simetrik
+  adapter: ashby
+  slug: simetrik
+- name: Quantstamp
+  adapter: ashby
+  slug: quantstamp
+- name: Squad
+  adapter: greenhouse
+  slug: squad
+- name: Ben
+  adapter: ashby
+  slug: ben
+- name: Momentus
+  adapter: greenhouse
+  slug: momentus
+- name: Skip
+  adapter: ashby
+  slug: skip
+- name: Duffel
+  adapter: ashby
+  slug: duffel
+- name: The Good Food Institute
+  adapter: greenhouse
+  slug: thegoodfoodinstitute
+- name: Grin
+  adapter: greenhouse
+  slug: grin
+- name: Verto
+  adapter: ashby
+  slug: verto
+- name: OutRival, Inc.
+  adapter: ashby
+  slug: outrival
+- name: Caribou
+  adapter: greenhouse
+  slug: caribou
+- name: Emi Labs
+  adapter: greenhouse
+  slug: emi
+- name: Doppler
+  adapter: ashby
+  slug: doppler
+- name: Convictional
+  adapter: ashby
+  slug: convictional
+- name: Sunsama
+  adapter: ashby
+  slug: sunsama
+- name: Catch
+  adapter: ashby
+  slug: catch
+- name: Memfault
+  adapter: ashby
+  slug: memfault
+- name: Cocoon
+  adapter: greenhouse
+  slug: cocoon
+- name: Hatch
+  adapter: ashby
+  slug: hatch
+- name: Cherry
+  adapter: greenhouse
+  slug: cherry
+- name: Fuse
+  adapter: ashby
+  slug: fuse
+- name: Gather
+  adapter: greenhouse
+  slug: gather
+- name: Rutter
+  adapter: ashby
+  slug: rutter
+- name: Prolific
+  adapter: greenhouse
+  slug: prolific
+- name: Rosebud AI
+  adapter: greenhouse
+  slug: rosebud
+- name: Compound
+  adapter: ashby
+  slug: compound
+- name: Sable
+  adapter: ashby
+  slug: sable
+- name: Odin
+  adapter: ashby
+  slug: odin
+- name: Revel
+  adapter: greenhouse
+  slug: revel
+- name: Prompt
+  adapter: ashby
+  slug: prompt
+- name: Playground
+  adapter: ashby
+  slug: playground
+- name: SEND
+  adapter: greenhouse
+  slug: send
+- name: Tajir
+  adapter: ashby
+  slug: tajir
+- name: Recall.ai
+  adapter: greenhouse
+  slug: recall
+- name: Raycast
+  adapter: ashby
+  slug: raycast
+- name: DeepSource
+  adapter: ashby
+  slug: deepsource
+- name: Junction
+  adapter: ashby
+  slug: junction
+- name: Jitter
+  adapter: ashby
+  slug: jitter
+- name: Modernbanc
+  adapter: ashby
+  slug: modernbanc
+- name: MindsDB
+  adapter: greenhouse
+  slug: mindsdb
+- name: Polytomic
+  adapter: ashby
+  slug: polytomic
+- name: Paragon
+  adapter: ashby
+  slug: paragon
+- name: PowerX
+  adapter: greenhouse
+  slug: powerx
+- name: Able
+  adapter: greenhouse
+  slug: able
+- name: Savvy
+  adapter: ashby
+  slug: savvy
+- name: Syncro
+  adapter: greenhouse
+  slug: syncro
+- name: Phonic
+  adapter: ashby
+  slug: phonic
+- name: Nimbus
+  adapter: greenhouse
+  slug: nimbus
+- name: Multiverse
+  adapter: ashby
+  slug: multiverse
+- name: Pantheon
+  adapter: greenhouse
+  slug: pantheon
+- name: CarbonChain
+  adapter: greenhouse
+  slug: carbonchain
+- name: Taktile
+  adapter: ashby
+  slug: taktile
+- name: Stacker
+  adapter: ashby
+  slug: stacker
+- name: Arist
+  adapter: ashby
+  slug: arist
+- name: PowerUs
+  adapter: ashby
+  slug: powerus
+- name: Volopay
+  adapter: ashby
+  slug: volopay
+- name: Thndr
+  adapter: ashby
+  slug: thndr
+- name: Recurrency
+  adapter: ashby
+  slug: recurrency
+- name: Omni
+  adapter: ashby
+  slug: omni
+- name: Momence
+  adapter: greenhouse
+  slug: momence
+- name: Fig
+  adapter: ashby
+  slug: fig
+- name: Ladder
+  adapter: ashby
+  slug: ladder
+- name: Bento
+  adapter: ashby
+  slug: bento
+- name: Bloom
+  adapter: greenhouse
+  slug: bloom
+- name: Triomics
+  adapter: ashby
+  slug: triomics
+- name: Prospa
+  adapter: greenhouse
+  slug: prospa
+- name: Navattic
+  adapter: ashby
+  slug: navattic
+- name: FlutterFlow
+  adapter: ashby
+  slug: flutterflow
+- name: Infracost
+  adapter: ashby
+  slug: infracost
+- name: Ziina
+  adapter: ashby
+  slug: ziina
+- name: Homebase
+  adapter: ashby
+  slug: homebase
+- name: Enode
+  adapter: ashby
+  slug: enode
+- name: Anima
+  adapter: ashby
+  slug: anima
+- name: Pesto
+  adapter: ashby
+  slug: pesto
+- name: Axiom.ai
+  adapter: greenhouse
+  slug: axiom
+- name: Humaans
+  adapter: ashby
+  slug: humaans
+- name: Journey
+  adapter: greenhouse
+  slug: journey
+- name: Atrato
+  adapter: ashby
+  slug: atrato
+- name: Atomic Industries
+  adapter: ashby
+  slug: atomicindustries
+- name: R2
+  adapter: ashby
+  slug: r2
+- name: Galaxy
+  adapter: greenhouse
+  slug: galaxy
+- name: Noble
+  adapter: greenhouse
+  slug: noble
+- name: Fable
+  adapter: ashby
+  slug: fable
+- name: Aerotime
+  adapter: ashby
+  slug: aerotime
+- name: Faction
+  adapter: ashby
+  slug: faction
+- name: Finary
+  adapter: ashby
+  slug: finary
+- name: Luminate
+  adapter: greenhouse
+  slug: luminate
+- name: Bolster
+  adapter: greenhouse
+  slug: bolster
+- name: Adaptyv
+  adapter: ashby
+  slug: adaptyv
+- name: Formance
+  adapter: ashby
+  slug: formance
+- name: LemFi
+  adapter: ashby
+  slug: lemfi
+- name: Hypercore
+  adapter: ashby
+  slug: hypercore
+- name: ARQ
+  adapter: ashby
+  slug: arq
+- name: Pipekit
+  adapter: ashby
+  slug: pipekit
+- name: Hive Health
+  adapter: ashby
+  slug: hivehealth
+- name: Level
+  adapter: ashby
+  slug: level
+- name: Cache
+  adapter: ashby
+  slug: cache
+- name: Nexus
+  adapter: greenhouse
+  slug: nexus
+- name: Wabi
+  adapter: ashby
+  slug: wabi
+- name: Koko
+  adapter: greenhouse
+  slug: koko
+- name: Fleek
+  adapter: ashby
+  slug: fleek
+- name: Broccoli AI
+  adapter: ashby
+  slug: broccoli
+- name: voize
+  adapter: ashby
+  slug: voize
+- name: Phase Biolabs
+  adapter: ashby
+  slug: phasebiolabs
+- name: Happl
+  adapter: ashby
+  slug: happl
+- name: Aspora
+  adapter: ashby
+  slug: aspora
+- name: Sei AI
+  adapter: greenhouse
+  slug: sei
+- name: Nira Energy
+  adapter: greenhouse
+  slug: niraenergy
+- name: SkyLink
+  adapter: ashby
+  slug: skylink
+- name: Bifrost
+  adapter: ashby
+  slug: bifrost
+- name: autone
+  adapter: ashby
+  slug: autone
+- name: Oneleet
+  adapter: ashby
+  slug: oneleet
+- name: Kombo
+  adapter: ashby
+  slug: kombo
+- name: Bitstack
+  adapter: ashby
+  slug: bitstack
+- name: Windmill
+  adapter: ashby
+  slug: windmill
+- name: Aragorn AI
+  adapter: ashby
+  slug: aragorn
+- name: Boostly
+  adapter: ashby
+  slug: boostly
+- name: Craze
+  adapter: ashby
+  slug: craze
+- name: Tailor
+  adapter: ashby
+  slug: tailor
+- name: Array Labs
+  adapter: greenhouse
+  slug: array
+- name: Ciro
+  adapter: ashby
+  slug: ciro
+- name: CAPSULE
+  adapter: ashby
+  slug: capsule
+- name: Manatee
+  adapter: greenhouse
+  slug: manatee
+- name: Grai
+  adapter: ashby
+  slug: grai
+- name: Stellar
+  adapter: ashby
+  slug: stellar
+- name: Mercator
+  adapter: ashby
+  slug: mercator
+- name: Finni Health
+  adapter: ashby
+  slug: finni-health
+- name: Wallbit
+  adapter: ashby
+  slug: wallbit
+- name: Vellum
+  adapter: ashby
+  slug: vellum
+- name: Rivet
+  adapter: ashby
+  slug: rivet
+- name: Invopop
+  adapter: ashby
+  slug: invopop
+- name: Clueso
+  adapter: ashby
+  slug: clueso
+- name: Corgi Labs
+  adapter: ashby
+  slug: corgi
+- name: David
+  adapter: greenhouse
+  slug: david
+- name: Honeydew
+  adapter: ashby
+  slug: honeydew
+- name: Extend
+  adapter: greenhouse
+  slug: extend
+- name: Sage AI
+  adapter: greenhouse
+  slug: sage
+- name: Bluedot
+  adapter: ashby
+  slug: bluedot
+- name: Alloy
+  adapter: greenhouse
+  slug: alloy
+- name: Cosine
+  adapter: ashby
+  slug: cosine
+- name: Depot
+  adapter: ashby
+  slug: depot
+- name: Latent
+  adapter: ashby
+  slug: latent
+- name: Keep
+  adapter: ashby
+  slug: keep
+- name: Langfuse
+  adapter: ashby
+  slug: langfuse
+- name: Credal.ai
+  adapter: ashby
+  slug: credal
+- name: Echo
+  adapter: ashby
+  slug: echo
+- name: Affinity
+  adapter: greenhouse
+  slug: affinity
+- name: Foundation
+  adapter: ashby
+  slug: foundation
+- name: Shadeform
+  adapter: ashby
+  slug: shadeform
+- name: Nanograb
+  adapter: ashby
+  slug: nanograb
+- name: Langdock
+  adapter: ashby
+  slug: langdock
+- name: Glade
+  adapter: ashby
+  slug: glade
+- name: Hiro
+  adapter: greenhouse
+  slug: hiro
+- name: Kite
+  adapter: greenhouse
+  slug: kite
+- name: Subsets
+  adapter: ashby
+  slug: subsets
+- name: Capi Money
+  adapter: ashby
+  slug: capimoney
+- name: Solve Intelligence
+  adapter: ashby
+  slug: solveintelligence
+- name: Nectar
+  adapter: greenhouse
+  slug: nectar
+- name: Y/n
+  adapter: ashby
+  slug: y-n
+- name: Ora AI
+  adapter: greenhouse
+  slug: ora
+- name: Elyos AI
+  adapter: ashby
+  slug: elyos
+- name: Branch AI
+  adapter: greenhouse
+  slug: branch
+- name: Forge
+  adapter: ashby
+  slug: forge
+- name: Polar
+  adapter: ashby
+  slug: polar
+- name: CommodityAI
+  adapter: ashby
+  slug: commodityai
+- name: Aqua Voice
+  adapter: ashby
+  slug: aqua-voice
+- name: Focal
+  adapter: ashby
+  slug: focal
+- name: Hazel
+  adapter: greenhouse
+  slug: hazel
+- name: Opencall
+  adapter: ashby
+  slug: opencall
+- name: Toma
+  adapter: ashby
+  slug: toma
+- name: Parallel
+  adapter: greenhouse
+  slug: parallel
+- name: Solari AI
+  adapter: greenhouse
+  slug: solari
+- name: Tuesday Labs
+  adapter: ashby
+  slug: tuesday-labs
+- name: Trellis AI
+  adapter: ashby
+  slug: trellis
+- name: Tekton Dynamics
+  adapter: ashby
+  slug: tekton-dynamics
+- name: Gumloop
+  adapter: ashby
+  slug: gumloop
+- name: Argon AI, Inc.
+  adapter: ashby
+  slug: argon-ai
+- name: Pharos
+  adapter: ashby
+  slug: pharos
+- name: Bucket Robotics
+  adapter: ashby
+  slug: bucket-robotics
+- name: Quetzal
+  adapter: greenhouse
+  slug: quetzal
+- name: Vera Health
+  adapter: ashby
+  slug: verahealth
+- name: Starcloud
+  adapter: greenhouse
+  slug: starcloud
+- name: Helium
+  adapter: greenhouse
+  slug: helium
+- name: Dataleap
+  adapter: ashby
+  slug: dataleap
+- name: Sensei
+  adapter: greenhouse
+  slug: sensei
+- name: Zeit AI
+  adapter: ashby
+  slug: zeit-ai
+- name: Vibe
+  adapter: ashby
+  slug: vibe
+- name: Saturn
+  adapter: ashby
+  slug: saturn
+- name: Conveo
+  adapter: ashby
+  slug: conveo
+- name: Anthrogen
+  adapter: ashby
+  slug: anthrogen
+- name: Plume
+  adapter: greenhouse
+  slug: plume
+- name: Modus
+  adapter: ashby
+  slug: modus
+- name: FINNY AI
+  adapter: ashby
+  slug: finny
+- name: Sorcerer
+  adapter: ashby
+  slug: sorcerer
+- name: Phonely
+  adapter: ashby
+  slug: phonely
+- name: ClaimSorted
+  adapter: ashby
+  slug: claimsorted
+- name: Doublezero
+  adapter: ashby
+  slug: doublezero
+- name: Understood Care
+  adapter: greenhouse
+  slug: understoodcare
+- name: Spur
+  adapter: ashby
+  slug: spur
+- name: Spaceium Inc
+  adapter: greenhouse
+  slug: spaceium
+- name: Poka Labs
+  adapter: greenhouse
+  slug: poka
+- name: Butter
+  adapter: ashby
+  slug: butter
+- name: Retrofit
+  adapter: greenhouse
+  slug: retrofit
+- name: Mastra
+  adapter: ashby
+  slug: mastra
+- name: Olive
+  adapter: ashby
+  slug: olive
+- name: Pave Robotics
+  adapter: ashby
+  slug: pave-robotics
+- name: Outship
+  adapter: ashby
+  slug: outship
+- name: Uplift AI
+  adapter: greenhouse
+  slug: uplift
+- name: KERNEL
+  adapter: ashby
+  slug: kernel
+- name: Opennote
+  adapter: ashby
+  slug: opennote
+- name: Finto
+  adapter: ashby
+  slug: finto
+- name: Solva
+  adapter: ashby
+  slug: solva
+- name: Comena
+  adapter: ashby
+  slug: comena
+- name: Minimal AI
+  adapter: greenhouse
+  slug: minimal
+- name: Fulcrum
+  adapter: ashby
+  slug: fulcrum
+- name: Interface
+  adapter: ashby
+  slug: interface
+- name: Doe
+  adapter: ashby
+  slug: doe
+- name: CareSwift
+  adapter: ashby
+  slug: careswift
+- name: b12 Labs
+  adapter: greenhouse
+  slug: b12
+- name: Lark
+  adapter: ashby
+  slug: lark
+- name: OnDeck AI
+  adapter: ashby
+  slug: ondeck
+- name: Moss
+  adapter: ashby
+  slug: moss
+- name: Pingo AI
+  adapter: ashby
+  slug: pingo
+- name: Mantle
+  adapter: ashby
+  slug: mantle
+- name: Primer
+  adapter: ashby
+  slug: primer
+- name: Sol
+  adapter: ashby
+  slug: sol
+- name: Thesis
+  adapter: ashby
+  slug: thesis
+- name: SF Tensor
+  adapter: ashby
+  slug: sf-tensor
+- name: AnswerThis
+  adapter: ashby
+  slug: answerthis
+- name: Vela
+  adapter: ashby
+  slug: vela
+- name: The Token Company
+  adapter: ashby
+  slug: the-token-company
+- name: Maven
+  adapter: ashby
+  slug: maven
+- name: Valence
+  adapter: ashby
+  slug: valence
+- name: Chamber
+  adapter: ashby
+  slug: chamber
+- name: Cardboard
+  adapter: ashby
+  slug: cardboard
+- name: Stilta
+  adapter: ashby
+  slug: stilta
+- name: Perfectly
+  adapter: ashby
+  slug: perfectly
+- name: Beyond Reach Labs
+  adapter: ashby
+  slug: beyondreachlabs
+- name: Cascade
+  adapter: ashby
+  slug: cascade
+- name: Mantis
+  adapter: greenhouse
+  slug: mantis
+- name: Panacea
+  adapter: ashby
+  slug: panacea
+- name: Harbor
+  adapter: greenhouse
+  slug: harbor
+- name: Complir
+  adapter: ashby
+  slug: complir
+- name: Sidekick
+  adapter: ashby
+  slug: sidekick
+- name: Juno
+  adapter: greenhouse
+  slug: juno
+- name: Hexa
+  adapter: ashby
+  slug: hexa
+- name: Stage
+  adapter: greenhouse
+  slug: stage
+- name: Dispatch
+  adapter: greenhouse
+  slug: dispatch
+- name: Sazabi
+  adapter: ashby
+  slug: sazabi
+- name: Foresight
+  adapter: ashby
+  slug: foresight
+- name: GUILD
+  adapter: greenhouse
+  slug: guild
+- name: Nuro
+  adapter: greenhouse
+  slug: nuro
+- name: Motional
+  adapter: greenhouse
+  slug: motional
+- name: Kodiak Robotics
+  adapter: greenhouse
+  slug: kodiak
+- name: Stack AV
+  adapter: greenhouse
+  slug: stackav
+- name: Rebellion Defense
+  adapter: greenhouse
+  slug: rebelliondefense
+- name: Labelbox
+  adapter: greenhouse
+  slug: labelbox
+- name: Veeva Systems
+  adapter: lever
+  slug: veeva
+- name: Wiz
+  adapter: ashby
+  slug: wiz
+- name: Cerebras
+  adapter: ashby
+  slug: cerebras
+- name: Figure AI
+  adapter: ashby
+  slug: figure
+- name: 1X Technologies
+  adapter: ashby
+  slug: 1x
+- name: Moonshot AI
+  adapter: ashby
+  slug: moonshot
+- name: Apptronik
+  adapter: greenhouse
+  slug: apptronik
+# --- levels.fyi internship >=$40/hr companies (added 20260621) ---
+- name: "Tower Research Capital"
+  adapter: greenhouse
+  slug: "towerresearchcapital"
+- name: "Aquatic"
+  adapter: ashby
+  slug: "aquatic"
+- name: "Quadrature Capital"
+  adapter: greenhouse
+  slug: "quadraturecapital"
+- name: "Walleye Capital"
+  adapter: greenhouse
+  slug: "walleyecapital"
+- name: "Schonfeld"
+  adapter: greenhouse
+  slug: "schonfeld"
+- name: "Weiss Asset Management"
+  adapter: greenhouse
+  slug: "weissassetmanagement"
+- name: "Point72"
+  adapter: greenhouse
+  slug: "point72"
+- name: "BlackEdge Capital"
+  adapter: greenhouse
+  slug: "blackedgecapital"
+- name: "Aptos Labs"
+  adapter: greenhouse
+  slug: "aptoslabs"
+- name: "PDT Partners"
+  adapter: greenhouse
+  slug: "pdtpartners"
+- name: "Aven"
+  adapter: ashby
+  slug: "aven"
+- name: "Niantic"
+  adapter: ashby
+  slug: "niantic"
+- name: "Belvedere Trading"
+  adapter: lever
+  slug: "belvederetrading"
+- name: "Squarepoint Capital"
+  adapter: greenhouse
+  slug: "squarepointcapital"
+- name: "Marshall Wace"
+  adapter: greenhouse
+  slug: "marshallwace"
+- name: "Endex"
+  adapter: ashby
+  slug: "endex"
+- name: "Flow Traders"
+  adapter: greenhouse
+  slug: "flowtraders"
+- name: "Geneva Trading"
+  adapter: greenhouse
+  slug: "genevatrading"
+- name: "Headway"
+  adapter: ashby
+  slug: "headway"
+- name: "Upstart"
+  adapter: greenhouse
+  slug: "upstart"
+- name: "Anterior"
+  adapter: ashby
+  slug: "anterior"
+- name: "Calico Labs"
+  adapter: greenhouse
+  slug: "calicolabs"
+- name: "Quantcast"
+  adapter: ashby
+  slug: "quantcast"
+- name: "Wing"
+  adapter: greenhouse
+  slug: "wing"
+- name: "Stitch Fix"
+  adapter: greenhouse
+  slug: "stitchfix"
+- name: "Dandy"
+  adapter: ashby
+  slug: "dandy"
+- name: "Expensify"
+  adapter: ashby
+  slug: "expensify"
+- name: "Kikoff"
+  adapter: greenhouse
+  slug: "kikoff"
+- name: "Man Group"
+  adapter: greenhouse
+  slug: "mangroup"
+- name: "Worldquant"
+  adapter: greenhouse
+  slug: "worldquant"
+- name: "Blueshift"
+  adapter: greenhouse
+  slug: "blueshift"
+- name: "Watershed"
+  adapter: greenhouse
+  slug: "watershed"
+- name: "Moloco"
+  adapter: greenhouse
+  slug: "moloco"
+- name: "Valkyrie Trading"
+  adapter: lever
+  slug: "valkyrietrading"
+- name: "AngelList"
+  adapter: lever
+  slug: "angellist"
+- name: "Dfinity"
+  adapter: greenhouse
+  slug: "dfinity"
+- name: "AQR"
+  adapter: greenhouse
+  slug: "aqr"
+- name: "Samsung Research America"
+  adapter: greenhouse
+  slug: "samsungresearchamerica"
+- name: "Yugabyte"
+  adapter: greenhouse
+  slug: "yugabyte"
+- name: "Egra"
+  adapter: ashby
+  slug: "egra"
+- name: "Braze"
+  adapter: greenhouse
+  slug: "braze"
+- name: "Celonis"
+  adapter: greenhouse
+  slug: "celonis"
+- name: "d-Matrix"
+  adapter: ashby
+  slug: "d-matrix"
+- name: "Insitro"
+  adapter: ashby
+  slug: "insitro"
+- name: "OpenGov"
+  adapter: ashby
+  slug: "opengov"
+- name: "Bill.com"
+  adapter: greenhouse
+  slug: "billcom"
+- name: "Semgrep"
+  adapter: ashby
+  slug: "semgrep"
+- name: "Rubrik"
+  adapter: greenhouse
+  slug: "rubrik"
+- name: "SeatGeek"
+  adapter: greenhouse
+  slug: "seatgeek"
+- name: "Taxbit"
+  adapter: greenhouse
+  slug: "taxbit"
+- name: "Solana Labs"
+  adapter: ashby
+  slug: "solanalabs"
+- name: "Waabi"
+  adapter: lever
+  slug: "waabi"
+- name: "Planet"
+  adapter: ashby
+  slug: "planet"
+- name: "Indeed"
+  adapter: greenhouse
+  slug: "indeed"
+- name: "Quadric"
+  adapter: ashby
+  slug: "quadric"
+- name: "Anaplan"
+  adapter: greenhouse
+  slug: "anaplan"
+- name: "Coursera"
+  adapter: greenhouse
+  slug: "coursera"
+- name: "Riot Games"
+  adapter: greenhouse
+  slug: "riotgames"
+- name: "Appen"
+  adapter: lever
+  slug: "appen"
+- name: "Statsig"
+  adapter: ashby
+  slug: "statsig"
+- name: "Uniswap Labs"
+  adapter: ashby
+  slug: "uniswap"
+- name: "Mysten Labs"
+  adapter: ashby
+  slug: "mystenlabs"
+- name: "PathAI"
+  adapter: greenhouse
+  slug: "pathai"
+- name: "Credit Karma"
+  adapter: greenhouse
+  slug: "creditkarma"
+- name: "GameChanger"
+  adapter: ashby
+  slug: "gamechanger"
+- name: "BitGo"
+  adapter: greenhouse
+  slug: "bitgo"
+- name: "Illumio"
+  adapter: ashby
+  slug: "illumio"
+- name: "Ripple"
+  adapter: greenhouse
+  slug: "ripple"
+- name: "SoFi"
+  adapter: greenhouse
+  slug: "sofi"
+- name: "One Medical"
+  adapter: greenhouse
+  slug: "onemedical"
+- name: "ZipRecruiter"
+  adapter: greenhouse
+  slug: "ziprecruiter"
+- name: "Teamworks"
+  adapter: ashby
+  slug: "teamworks"
+- name: "Sumo Logic"
+  adapter: greenhouse
+  slug: "sumologic"
+- name: "GoPuff"
+  adapter: lever
+  slug: "gopuff"
+- name: "HubSpot"
+  adapter: greenhouse
+  slug: "hubspot"
+- name: "Chan Zuckerberg Initiative"
+  adapter: greenhouse
+  slug: "chanzuckerberginitiative"
+- name: "Instabase"
+  adapter: greenhouse
+  slug: "instabase"
+- name: "ICapital Network"
+  adapter: greenhouse
+  slug: "icapitalnetwork"
+- name: "Navan"
+  adapter: greenhouse
+  slug: "tripactions"
+- name: "Walrus"
+  adapter: ashby
+  slug: "walrus"
+- name: "Sixth Street"
+  adapter: greenhouse
+  slug: "sixthstreet"
+- name: "GSA Capital"
+  adapter: greenhouse
+  slug: "gsacapital"
+- name: "Flatiron Health"
+  adapter: greenhouse
+  slug: "flatironhealth"
+- name: "Aviatrix"
+  adapter: greenhouse
+  slug: "aviatrix"
+- name: "UiPath"
+  adapter: ashby
+  slug: "uipath"
+- name: "Udemy"
+  adapter: greenhouse
+  slug: "udemy"
+- name: "MetLife"
+  adapter: lever
+  slug: "metlife"
+- name: "Tatari"
+  adapter: greenhouse
+  slug: "tatari"
+- name: "Bungie"
+  adapter: greenhouse
+  slug: "bungie"
+- name: "Pocket Gems"
+  adapter: greenhouse
+  slug: "pocketgems"
+- name: "HyperScience"
+  adapter: ashby
+  slug: "hyperscience"
+- name: "bubble.io"
+  adapter: ashby
+  slug: "bubble"
+- name: "Appian"
+  adapter: greenhouse
+  slug: "appian"
+- name: "Alo Yoga"
+  adapter: greenhouse
+  slug: "aloyoga"
+- name: "Gen Digital"
+  adapter: ashby
+  slug: "gen-digital"
+- name: "Talos Trading"
+  adapter: ashby
+  slug: "talos-trading"
+- name: "FreeNome"
+  adapter: greenhouse
+  slug: "freenome"
+- name: "Second Dinner"
+  adapter: ashby
+  slug: "seconddinner"
+- name: "NewsBreak"
+  adapter: greenhouse
+  slug: "newsbreak"
+- name: "Wealthsimple"
+  adapter: ashby
+  slug: "wealthsimple"
+- name: "StarTree"
+  adapter: greenhouse
+  slug: "startree"
+- name: "Praetorian"
+  adapter: greenhouse
+  slug: "praetorian"
+- name: "ExtraHop Networks"
+  adapter: greenhouse
+  slug: "extrahopnetworks"
+- name: "Yext"
+  adapter: greenhouse
+  slug: "yext"
+- name: "Weride.ai"
+  adapter: lever
+  slug: "weride"
+- name: "Blue Origin"
+  adapter: lever
+  slug: "blueorigin"
+- name: "Spectrum Labs"
+  adapter: lever
+  slug: "spectrum"
+- name: "Handshake"
+  adapter: ashby
+  slug: "handshake"
+- name: "Formlabs"
+  adapter: greenhouse
+  slug: "formlabs"
+- name: "Nextdoor"
+  adapter: greenhouse
+  slug: "nextdoor"
+- name: "Peloton"
+  adapter: greenhouse
+  slug: "peloton"
+- name: "SeekOut"
+  adapter: greenhouse
+  slug: "seekout"
+- name: "Zwift"
+  adapter: greenhouse
+  slug: "zwift"
+- name: "CertiK"
+  adapter: lever
+  slug: "certik"
+- name: "Khan Academy"
+  adapter: greenhouse
+  slug: "khanacademy"
+- name: "IXL Learning"
+  adapter: greenhouse
+  slug: "ixllearning"
+- name: "MIO Partners"
+  adapter: greenhouse
+  slug: "miopartners"
+- name: "GenBio AI"
+  adapter: lever
+  slug: "genbio"
+- name: "Apollo GraphQL"
+  adapter: ashby
+  slug: "apollo-graphql"
+- name: "Esri"
+  adapter: greenhouse
+  slug: "esri"
+- name: "NextRoll"
+  adapter: greenhouse
+  slug: "nextroll"
+- name: "SurveyMonkey"
+  adapter: greenhouse
+  slug: "surveymonkey"
+- name: "Astera Labs"
+  adapter: greenhouse
+  slug: "asteralabs"
+- name: "Eikon Therapeutics"
+  adapter: greenhouse
+  slug: "eikontherapeutics"
+- name: "Inorsa"
+  adapter: greenhouse
+  slug: "inorsa"
+- name: "AllTrails"
+  adapter: lever
+  slug: "alltrails"
+- name: "InterSystems"
+  adapter: greenhouse
+  slug: "intersystems"
+- name: "Muon Space"
+  adapter: greenhouse
+  slug: "muonspace"
+- name: "Mark43"
+  adapter: greenhouse
+  slug: "mark43"
+- name: "Borealis AI"
+  adapter: greenhouse
+  slug: "borealisai"
+- name: "KeepTruckin"
+  adapter: ashby
+  slug: "keeptruckin"
+- name: "Poshmark"
+  adapter: greenhouse
+  slug: "poshmark"
+- name: "KPMG"
+  adapter: lever
+  slug: "kpmg"
+- name: "McMaster-Carr"
+  adapter: greenhouse
+  slug: "mcmaster-carr"
+- name: "Reliable Robotics"
+  adapter: ashby
+  slug: "reliable-robotics"
+- name: "Regard"
+  adapter: ashby
+  slug: "regard"
+- name: "TeamDynamix"
+  adapter: ashby
+  slug: "teamdynamix"
+- name: "Mozilla"
+  adapter: greenhouse
+  slug: "mozilla"
+- name: "Match Group"
+  adapter: lever
+  slug: "matchgroup"
+- name: "OpenTable"
+  adapter: greenhouse
+  slug: "opentable"
+- name: "Productiv"
+  adapter: greenhouse
+  slug: "productiv"
+- name: "Demandbase"
+  adapter: ashby
+  slug: "demandbase"
+- name: "Elsevier"
+  adapter: greenhouse
+  slug: "elsevier"
+- name: "Ridgeline"
+  adapter: greenhouse
+  slug: "ridgeline"
+- name: "Neptune Medical"
+  adapter: greenhouse
+  slug: "neptunemedical"
+- name: "DV Trading"
+  adapter: greenhouse
+  slug: "dvtrading"
+- name: "Coupang"
+  adapter: greenhouse
+  slug: "coupang"
+- name: "Koch"
+  adapter: greenhouse
+  slug: "koch"
+- name: "Georgian"
+  adapter: ashby
+  slug: "georgian"
+- name: "BetterHelp"
+  adapter: greenhouse
+  slug: "betterhelp"
+- name: "NerdWallet"
+  adapter: ashby
+  slug: "nerdwallet"
+- name: "Socotra"
+  adapter: ashby
+  slug: "socotra"
+- name: "StackAdapt"
+  adapter: greenhouse
+  slug: "stackadapt"
+- name: "Benevity"
+  adapter: ashby
+  slug: "benevity"
+- name: "Foursquare"
+  adapter: ashby
+  slug: "foursquare"
+- name: "AlixPartners"
+  adapter: greenhouse
+  slug: "alixpartners"
+- name: "ActiveCampaign"
+  adapter: lever
+  slug: "activecampaign"
+- name: "Ibotta"
+  adapter: ashby
+  slug: "ibotta"
+- name: "Aeva"
+  adapter: lever
+  slug: "aeva"
+- name: "Relativity"
+  adapter: greenhouse
+  slug: "relativity"
+- name: "Path Robotics"
+  adapter: greenhouse
+  slug: "pathrobotics"
+- name: "Replicant"
+  adapter: ashby
+  slug: "replicant"
+- name: "Kitware"
+  adapter: lever
+  slug: "kitware"
+- name: "Strava"
+  adapter: ashby
+  slug: "strava"
+- name: "Roadie"
+  adapter: greenhouse
+  slug: "roadie"
+- name: "TrustLab"
+  adapter: ashby
+  slug: "trustlab"
+- name: "Voldex"
+  adapter: ashby
+  slug: "voldex"
+- name: "Sage Bionetworks"
+  adapter: greenhouse
+  slug: "sagebionetworks"
+- name: "Skyryse"
+  adapter: greenhouse
+  slug: "skyryse"
+- name: "The New York Times"
+  adapter: greenhouse
+  slug: "thenewyorktimes"
+- name: "Zocdoc"
+  adapter: greenhouse
+  slug: "zocdoc"
+- name: "Magic Leap"
+  adapter: greenhouse
+  slug: "magicleap"
+- name: "Hyannis Port Research"
+  adapter: greenhouse
+  slug: "hyannisportresearch"
+- name: "Beacon Platform"
+  adapter: greenhouse
+  slug: "beaconplatform"
+- name: "Emerson Collective"
+  adapter: lever
+  slug: "emersoncollective"
+- name: "Glassdoor"
+  adapter: greenhouse
+  slug: "glassdoor"
+- name: "Lumen"
+  adapter: ashby
+  slug: "lumen"
+- name: "MyCase"
+  adapter: greenhouse
+  slug: "mycase"
+- name: "Tackle.io"
+  adapter: lever
+  slug: "tackle"

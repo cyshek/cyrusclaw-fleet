@@ -10,7 +10,7 @@ For each open role missing `llm_classified_at`:
 
 Simplified gate logic (Cyrus 2026-05-29):
   GATE 1 (YOE-from-JD): regex-scan JD body for "N year(s) [of] experience".
-    If a number >= YOE_THRESHOLD (=4) is found -> skip with 'yoe-threshold'.
+    If a number >= YOE_THRESHOLD (=6) is found -> skip with 'yoe-threshold'.
   GATE 2 (title fallback, ONLY when JD had no YOE): title-keyword blocklist
     (Senior / Staff / Principal / Director / Head / VP / Chief / Lead / etc.).
     Match -> skip with 'senior-title'.
@@ -701,46 +701,27 @@ HARD_BLOCKLIST = [
     ("vice president", r"\bvice\s+president\b"),
     ("senior",        r"\bsenior\b"),
     ("sr",            r"\bsr\.?\b"),
-    ("staff",         r"\bstaff\+?\b"),
-    ("lead",          r"\blead\b"),
     ("mgr",           r"\bmgr\b"),
+    # NOTE: 'staff' and 'lead' moved to _ROLE_TYPE_RE (target-role carve-out)
+    # so 'Lead TPM' / 'Staff TPM' are KEPT but 'Lead Engineer' / 'Staff SWE' skip.
+    # 2026-06-20 Cyrus directive.
 ]
 _HARD_RE = [(k, re.compile(p, re.I)) for k, p in HARD_BLOCKLIST]
 
-# Role-type blocklist (added 2026-05-30 per Cyrus): FDE + pure-engineering
-# disciplines. UNLIKE HARD_BLOCKLIST above, these YIELD to a target-role match
-# in `title_has_target_role` — e.g. "Customer Solutions Engineer (Full Stack)"
-# contains "full stack" (skip) AND "solutions engineer" (target) -> KEEP.
-# Without the carve-out, the SWE-class blocklist would eat legitimate
-# Solutions/Sales/Customer Engineer roles that have an engineering-discipline
-# qualifier in their title.
+# Role-type blocklist (CLEARED 2026-06-20 per Cyrus full-unblock directive).
+# FDE + all SWE discipline blocks removed — pipeline now applies to all role
+# types including FDE, SWE IC, ML, data, infra, frontend, backend, mobile.
+# Only staff/lead remain here (still carve out for Lead TPM / Staff TPM).
 ROLE_TYPE_BLOCKLIST = [
-    ("forward deployed", r"\bforward\s+deployed\b"),
-    ("fde",           r"\bFDE\b"),
-    ("software engineer", r"\bsoftware\s+engineer\b"),
-    ("swe",           r"\bSWE\b"),
-    ("product engineer", r"\bproduct\s+engineer\b"),
-    ("full stack",    r"\bfull[\s-]?stack\b"),
-    ("frontend",      r"\bfront[\s-]?end\s+engineer\b"),
-    ("backend",       r"\bback[\s-]?end\s+engineer\b"),
-    ("ml engineer",   r"\b(?:ml|machine\s+learning)\s+engineer\b"),
-    ("data engineer", r"\bdata\s+engineer\b"),
-    ("infra engineer", r"\b(?:infra(?:structure)?|platform|devops|sre|site\s+reliability|systems)\s+engineer\b"),
-    ("security engineer", r"\bsecurity\s+engineer\b"),
-    ("mobile engineer", r"\b(?:mobile|ios|android)\s+engineer\b"),
+    # staff/lead: skip unless paired with a target role (Lead TPM = KEEP, Lead Engineer = SKIP)
+    # Moved from HARD_BLOCKLIST 2026-06-20 (Cyrus directive).
+    ("staff",         r"\bstaff\b"),
+    ("lead",          r"\blead\b"),
 ]
 _ROLE_TYPE_RE = [(k, re.compile(p, re.I)) for k, p in ROLE_TYPE_BLOCKLIST]
 
-# FDE is a HARD role-type block (Cyrus directive 2026-05-30, re-confirmed
-# 2026-06-02). UNLIKE the rest of ROLE_TYPE_BLOCKLIST, FDE must NOT yield to a
-# target-role match: titles like "Forward Deployed Engineer, Solutions" or
-# "FDE, Applied AI" brush "solutions engineer"/"SE"/"SA" and were leaking through
-# the carve-out (17 FDE roles wrongly applied 05-30..06-02 before this fix).
-# These regexes are checked BEFORE title_has_target_role can rescue them.
-_FDE_HARD_RE = [
-    ("forward deployed", re.compile(r"\bforward\s+deployed\b", re.I)),
-    ("fde", re.compile(r"\bFDE\b")),
-]
+# FDE hard block REMOVED 2026-06-20 (Cyrus full-unblock directive).
+_FDE_HARD_RE = []
 
 # Positional senior-signal: "Group <PM-like> Manager" or "Group PM/TPM/EPM".
 _POSITIONAL_PREFIX_RE = re.compile(
@@ -771,9 +752,7 @@ TARGET_ROLE_SUBSTRINGS = [
     "solution architect",
     "customer engineer",
 ]
-# DROPPED 2026-05-30 per Cyrus:
-#   - forward deployed engineer / FDE  (treated as skip-keywords in _HARD_RE)
-#   - software engineer / product engineer / full stack / frontend / backend  (treated as skip-keywords in _HARD_RE)
+# NOTE 2026-06-20: FDE + all SWE discipline keywords REMOVED from blocklist per Cyrus full-unblock directive.
 _TARGET_ROLE_ABBREV_RE = re.compile(
     r"\b(?:PM|TPM|EPM|PgM|SE|SA|APM|TPgM)\b"
 )
@@ -806,10 +785,7 @@ def extract_title_skip(title: Optional[str]) -> Optional[str]:
     for kw, rx in _HARD_RE:
         if rx.search(title):
             return kw
-    # FDE: hard block, never carved out (Cyrus 2026-05-30 / re-confirmed 06-02).
-    for kw, rx in _FDE_HARD_RE:
-        if rx.search(title):
-            return kw
+    # FDE hard block removed 2026-06-20 (Cyrus full-unblock).
     if not title_has_target_role(title):
         for kw, rx in _ROLE_TYPE_RE:
             if rx.search(title):
@@ -824,7 +800,7 @@ def extract_title_skip(title: Optional[str]) -> Optional[str]:
 
 
 # --- YOE regex extraction ---------------------------------------------------
-YOE_THRESHOLD = 4  # JD-stated minimum YOE >= this -> deterministic skip
+YOE_THRESHOLD = 6  # JD-stated minimum YOE >= this -> deterministic skip (raised 4->6 2026-06-20: keeps '3-5' and '5+' roles)
 
 # Company-level blocklist (Cyrus handles these himself, 2026-05-31).
 # Matched case-insensitively as a word against the `company` field. Keep this

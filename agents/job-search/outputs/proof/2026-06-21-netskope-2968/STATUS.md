@@ -1,0 +1,17 @@
+PREP-READY-IFRAME-RUNNER — 2026-06-21T01:52:13+00:00
+
+role_id: 2968
+slug:    netskope-7821946
+plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-netskope-7821946.json
+pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/netskope-7821946/Cyrus_Shekari_Resume_netskope_7821946_v2.pdf
+cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/netskope-7821946/cover_answers.md
+wrapper: https://www.netskope.com/company/careers/open-positions/?gh_jid=7821946
+
+Calling agent / cron: do NOT execute the browser plan with the
+generic browser tool — the canonical /embed/job_app URL is
+reCAPTCHA-Enterprise gated. Instead run:
+
+    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug netskope-7821946
+
+and overwrite this STATUS.md with the runner's outcome block
+(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).

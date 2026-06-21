@@ -192,3 +192,183 @@ def test_try_solve_hcaptcha_no_vendor(monkeypatch):
     token, reason = ir.try_solve_hcaptcha("sitekey", "https://x/login")
     assert token is None
     assert reason == "icims-hcaptcha-no-vendor"
+
+
+# ===========================================================================
+# Email-OTP verification tests (gate detect + Gmail fetch + fill + EXIT 10).
+# ===========================================================================
+import gmail_imap as gi
+
+
+def test_extract_icims_otp_plaintext():
+    assert gi._extract_icims_otp("Your verification code is 482913.", "") == "482913"
+
+
+def test_extract_icims_otp_html_element():
+    body = "<html><body><p>Enter the code</p><h1>730145</h1></body></html>"
+    assert gi._extract_icims_otp(body, "Verify your email") == "730145"
+
+
+def test_extract_icims_otp_keyword_anchored():
+    assert gi._extract_icims_otp("Use 6-digit code 884412 to continue.", "") == "884412"
+
+
+def test_extract_icims_otp_rejects_8char_alnum_and_empty():
+    # 8-char Greenhouse-style code must NOT be returned by the 6-digit extractor.
+    assert gi._extract_icims_otp("Your verification code is AB12CD34", "") is None
+    assert gi._extract_icims_otp("Welcome to iCIMS, no code here", "") is None
+
+
+def test_looks_like_icims_accepts_icims_rejects_workday():
+    assert gi._looks_like_icims("Your iCIMS Verification Code",
+                                "no-reply@icims.com",
+                                "Your verification code is 111111") is True
+    # A Workday code in the inbox must not be claimed by the iCIMS filter.
+    assert gi._looks_like_icims("Verify your candidate account",
+                                "no-reply@otp.workday.com",
+                                "Your code is 222222") is False
+
+
+# ---- Fake page/frame for OTP gate detection + fill --------------------------
+class OtpFrame:
+    """Frame stub that answers the OTP detect/fill/continue JS by substring and
+    records fill/continue invocations. `detect` is the dict returned by the
+    detect JS (or {present:False})."""
+    def __init__(self, url="inner", detect=None, fill_result="ok:482913",
+                 seg_result="seg_ok:6", continue_result="Verify"):
+        self.url = url
+        self._detect = detect or {"present": False}
+        self._fill_result = fill_result
+        self._seg_result = seg_result
+        self._continue_result = continue_result
+        self.fill_calls = []
+        self.continue_calls = []
+        self._detect_calls = 0
+        # toggled True after a successful fill+continue so re-detect clears.
+        self.cleared = False
+
+    def evaluate(self, fn, arg=None):
+        if "singles.length" in fn:            # _OTP_DETECT_JS
+            self._detect_calls += 1
+            if self.cleared:
+                return {"present": False}
+            return dict(self._detect)
+        if "OTP_INPUT_MISSING" in fn:         # _OTP_FILL_SINGLE_JS
+            self.fill_calls.append(("single", arg))
+            return self._fill_result
+        if "SEG_TOO_FEW" in fn:               # _OTP_FILL_SEGMENTED_JS
+            self.fill_calls.append(("seg", arg))
+            return self._seg_result
+        if "verify code" in fn.lower() or "x.value||x.textContent" in fn:  # continue
+            self.continue_calls.append(arg)
+            self.cleared = True               # gate clears after continue
+            return self._continue_result
+        return None
+
+    def query_selector(self, sel):
+        return None
+
+
+class OtpPage:
+    def __init__(self, frames, url="https://x.icims.com/jobs/1/x/login"):
+        self.frames = frames
+        self.url = url
+    def wait_for_timeout(self, ms):
+        pass
+    def set_default_timeout(self, ms):
+        pass
+    def screenshot(self, **k):
+        pass
+
+
+class FakeGmail:
+    """Stand-in for gmail_imap with a programmable wait_for_icims_otp."""
+    def __init__(self, code=None, raise_timeout=False):
+        self._code = code
+        self._raise = raise_timeout
+        self.calls = 0
+    def wait_for_icims_otp(self, timeout_seconds=90, since_epoch=None):
+        self.calls += 1
+        if self._raise:
+            raise TimeoutError("No iCIMS OTP within %ss" % timeout_seconds)
+        return self._code
+
+
+def test_detect_otp_gate_named_field():
+    fr = OtpFrame(detect={"present": True, "segmented": False, "n": 1,
+                          "sel": "#otp", "why": "named:otp"})
+    res = ir.detect_otp_gate(OtpPage([fr]))
+    assert res["present"] and res["segmented"] is False and res["sel"] == "#otp"
+
+
+def test_detect_otp_gate_segmented():
+    fr = OtpFrame(detect={"present": True, "segmented": True, "n": 6,
+                          "sel": None, "why": "segmented:6"})
+    res = ir.detect_otp_gate(OtpPage([fr]))
+    assert res["present"] and res["segmented"] is True and res["n"] == 6
+
+
+def test_detect_otp_gate_absent():
+    fr = OtpFrame(detect={"present": False})
+    assert ir.detect_otp_gate(OtpPage([fr]))["present"] is False
+
+
+def test_handle_otp_gate_happy_path():
+    fr = OtpFrame(detect={"present": True, "segmented": False, "n": 1,
+                          "sel": "#otp", "why": "named:otp"})
+    page = OtpPage([fr])
+    gmail = FakeGmail(code="482913")
+    res = ir.handle_otp_gate(page, gmail_mod=gmail, timeout=5)
+    assert res["status"] == "passed"
+    assert gmail.calls == 1
+    assert fr.fill_calls and fr.continue_calls
+    # exit code for a passed OTP run continues; uncertain/applied decide final code
+    assert ir.exit_code_for({"status": "applied"}) == 0
+
+
+def test_handle_otp_gate_segmented_fill():
+    fr = OtpFrame(detect={"present": True, "segmented": True, "n": 6,
+                          "sel": None, "why": "segmented:6"})
+    res = ir.handle_otp_gate(OtpPage([fr]), gmail_mod=FakeGmail(code="730145"), timeout=5)
+    assert res["status"] == "passed"
+    assert fr.fill_calls[0][0] == "seg"          # used segmented fill path
+    assert fr.fill_calls[0][1] == [list("730145")]  # digits passed per-cell
+
+
+def test_handle_otp_gate_absent_noop():
+    fr = OtpFrame(detect={"present": False})
+    gmail = FakeGmail(code="999999")
+    res = ir.handle_otp_gate(OtpPage([fr]), gmail_mod=gmail, timeout=5)
+    assert res["status"] == "absent"
+    assert gmail.calls == 0                       # never queried Gmail
+
+
+def test_handle_otp_gate_timeout_maps_exit_10():
+    fr = OtpFrame(detect={"present": True, "segmented": False, "n": 1,
+                          "sel": "#otp", "why": "named:otp"})
+    res = ir.handle_otp_gate(OtpPage([fr]), gmail_mod=FakeGmail(raise_timeout=True), timeout=2)
+    assert res["status"] == "timeout"
+    # The run() flow stamps status='otp_timeout' on this -> EXIT 10.
+    assert ir.exit_code_for({"status": "otp_timeout"}) == 10
+    assert ir.exit_code_for({"status": "blocked",
+                             "block_reason": "icims-otp-timeout:empty-code"}) == 10
+
+
+def test_fill_otp_single_strips_nondigits():
+    fr = OtpFrame()
+    out = ir.fill_otp(fr, " 48-29 13 ", segmented=False, n=1)
+    assert out == "ok:482913"
+    # single-field path passes [None, "482913"]
+    assert fr.fill_calls[0] == ("single", [None, "482913"])
+
+
+def test_exit_code_map_full():
+    cases = {
+        "applied": 0, "dryrun-ready": 0, "already_applied": 7, "closed": 6,
+        "otp_timeout": 10, "uncertain": 3,
+    }
+    for st, code in cases.items():
+        assert ir.exit_code_for({"status": st}) == code
+    assert ir.exit_code_for({"status": "blocked",
+                             "block_reason": "icims-no-submit-button"}) == 4
+    assert ir.exit_code_for({"status": "blocked"}) == 2

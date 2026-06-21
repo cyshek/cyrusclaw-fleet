@@ -1,15 +1,45 @@
 # Proof Archive — submitted applications
 
-_Auto-maintained by `proof_archiver.py`. Last run: 2026-06-20T08:15:01+00:00._
+_Auto-maintained by `proof_archiver.py`. Last run: 2026-06-21T08:15:01+00:00._
 
 Resume + filled-fields saved for EVERY submission. Live pre-submit screenshot sampled every 5th role (look for `screenshot: pending/done`).
 
 **Not posted to channel** — Cyrus shares on request only.
 
-Total archived: **639**
+Total archived: **665**
 
 | # | Date | Company | Role | id | Resume | Screenshot | Folder |
 |---|------|---------|------|----|--------|-----------|--------|
+| 678 | 2026-06-21 | Restate | Forward Deployed Engineer | 1383 | ✅ | n/a | `2026-06-21-restate-1383` |
+| 677 | 2026-06-21 | Thought Machine | Forward Deployed Engineer  | 1367 | ✅ | n/a | `2026-06-21-thought-machine-1367` |
+| 676 | 2026-06-21 | Brellium | Forward Deployed Engineer | 1331 | ✅ | n/a | `2026-06-21-brellium-1331` |
+| 675 | 2026-06-21 | Picogrid | Forward Deployed Engineer | 1321 | ✅ | pending | `2026-06-21-picogrid-1321` |
+| 674 | 2026-06-21 | Clera | Founding Product Manager | 2906 | ✅ | n/a | `2026-06-21-clera-2906` |
+| 673 | 2026-06-21 | Netflix | Product Manager, Ads (Media Planning & Ord | 2871 | — | n/a | `2026-06-21-netflix-2871` |
+| 672 | 2026-06-21 | Netflix | Product Manager, Partner Commerce | 2860 | — | n/a | `2026-06-21-netflix-2860` |
+| 671 | 2026-06-21 | Netflix | Product Manager - Netflix Artist Experienc | 2854 | — | n/a | `2026-06-21-netflix-2854` |
+| 670 | 2026-06-21 | Netflix | Product Manager, Ads Platform - Ads Report | 2853 | — | pending | `2026-06-21-netflix-2853` |
+| 669 | 2026-06-21 | AirOps | Forward Deployed Engineer | 2795 | ✅ | n/a | `2026-06-21-airops-2795` |
+| 668 | 2026-06-21 | Bobyard | Sales Engineer | 2788 | ✅ | n/a | `2026-06-21-bobyard-2788` |
+| 667 | 2026-06-21 | Adobe | Product Manager | 2629 | ✅ | n/a | `2026-06-21-adobe-2629` |
+| 666 | 2026-06-21 | Arini | Forward Deployed Engineer | 2611 | ✅ | n/a | `2026-06-21-arini-2611` |
+| 665 | 2026-06-21 | AiPrise | Forward Deployed Engineer (USA) | 2582 | ✅ | pending | `2026-06-21-aiprise-2582` |
+| 664 | 2026-06-21 | Intel | Advanced Packaging Supplier Technology Dev | 2225 | ✅ | n/a | `2026-06-21-intel-2225` |
+| 663 | 2026-06-21 | Bobyard | Sales Engineer - HVAC | 2099 | ✅ | n/a | `2026-06-21-bobyard-2099` |
+| 662 | 2026-06-21 | Nvidia | Product Program Manager | 1935 | ✅ | n/a | `2026-06-21-nvidia-1935` |
+| 661 | 2026-06-21 | Adobe | Forward Deployed AI Product Manager | 16 | ✅ | n/a | `2026-06-21-adobe-16` |
+| 660 | 2026-06-21 | Netskope | Solutions Engineer - SDWAN | 2968 | ✅ | pending | `2026-06-21-netskope-2968` |
+| 659 | 2026-06-21 | Anduril | Technical Program Manager, PES  | 2952 | ✅ | n/a | `2026-06-21-anduril-2952` |
+| 658 | 2026-06-21 | Cresta | Associate Forward Deployed Product Manager | 2898 | ✅ | n/a | `2026-06-21-cresta-2898` |
+| 657 | 2026-06-21 | Securitize | Onboarding Product Manager | 2809 | ✅ | n/a | `2026-06-21-securitize-2809` |
+| 656 | 2026-06-21 | AppLovin | Associate Product Manager | 2771 | ✅ | n/a | `2026-06-21-applovin-2771` |
+| 655 | 2026-06-21 | Scopely | Product Manager - WWE Champions  | 2672 | ✅ | pending | `2026-06-21-scopely-2672` |
+| 654 | 2026-06-21 | OneSchema | Forward Deployed PM | 2609 | ✅ | n/a | `2026-06-21-oneschema-2609` |
+| 653 | 2026-06-21 | Skydio | Hardware Engineering Program Manager | 2242 | ✅ | n/a | `2026-06-21-skydio-2242` |
+| 652 | 2026-06-21 | Fireworks AI | Forward Deployed Product Manager | 2240 | ✅ | n/a | `2026-06-21-fireworks-ai-2240` |
+| 651 | 2026-06-21 | Roblox | Developer Program Manager, Compliance | 2222 | ✅ | n/a | `2026-06-21-roblox-2222` |
+| 650 | 2026-06-21 | Redwood Materials | Hardware Technical Program Manager, Energy | 1980 | ✅ | pending | `2026-06-21-redwood-materials-1980` |
+| 649 | 2026-06-20 | YipitData | Data Product Manager | 2922 | ✅ | n/a | `2026-06-20-yipitdata-2922` |
 | 648 | 2026-06-19 | Stripe | Program Manager | 2612 | ✅ | n/a | `2026-06-19-stripe-2612` |
 | 647 | 2026-06-19 | TikTok | TikTok Shop - Angel Oncall Program Manager | 2543 | — | n/a | `2026-06-19-tiktok-2543` |
 | 646 | 2026-06-19 | The Pipeline Group | Client Program Manager – SDR Performance ( | 2917 | — | n/a | `2026-06-19-the-pipeline-group-2917` |
@@ -133,10 +163,6 @@ Total archived: **639**
 | 523 | 2026-06-09 | Drata | Partner Solutions Engineer | 2548 | ✅ | n/a | `2026-06-09-drata-2548` |
 | 522 | 2026-06-09 | Credera | Adobe Workfront Solution Architect | 2504 | ✅ | n/a | `2026-06-09-credera-2504` |
 | 521 | 2026-06-09 | Harness | AppSec Sales Engineer | 2410 | ✅ | n/a | `2026-06-09-harness-2410` |
-| 581 | 2026-06-08 | Mercor | Research Program Manager | 1237 | ✅ | n/a | `2026-06-08-mercor-1237` |
-| 580 | 2026-06-08 | Baseten | Solution Architect | 947 | ✅ | pending | `2026-06-08-baseten-947` |
-| 579 | 2026-06-08 | Baseten | AI Solutions Engineer | 946 | ✅ | n/a | `2026-06-08-baseten-946` |
-| 578 | 2026-06-08 | Baseten | Solution Architect (AI/LLM Inference) | 944 | ✅ | n/a | `2026-06-08-baseten-944` |
 | 519 | 2026-06-08 | Starbridge | Customer Solutions Architect | 2805 | ✅ | n/a | `2026-06-08-starbridge-2805` |
 | 518 | 2026-06-08 | Tessera Labs | Product Manager | 2802 | ✅ | n/a | `2026-06-08-tessera-labs-2802` |
 | 517 | 2026-06-08 | Anrok | Solutions Engineer, Pre Sales | 2797 | ✅ | n/a | `2026-06-08-anrok-2797` |

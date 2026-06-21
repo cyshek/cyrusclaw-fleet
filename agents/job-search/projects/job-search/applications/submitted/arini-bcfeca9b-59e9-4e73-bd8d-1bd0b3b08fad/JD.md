@@ -1,0 +1,61 @@
+# Forward Deployed Engineer
+
+**Company:** Arini
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/arini/bcfeca9b-59e9-4e73-bd8d-1bd0b3b08fad
+**Ashby Org:** arini
+**Ashby Job ID:** bcfeca9b-59e9-4e73-bd8d-1bd0b3b08fad
+
+---
+
+## The AI Operating System for Healthcare
+
+Healthcare runs on legacy software that was last updated a decade ago. Systems don’t talk to each other. Interfaces lag. “Automation” means someone copy-pasting data between tabs.
+
+At **Arini**, we’re leap-frogging the SaaS era. No more EHRs, no more outdated dashboards, just agents and a database. We’re building the **AI operating system for healthcare systems**, starting with dental enterprises. Our platform automates phones, scheduling, insurance verification, and workflows across the stack.
+
+We partner with the largest healthcare enterprises, understand their bottlenecks, and build well architected system to optimize their operations.
+
+## The Team
+
+We’re a small, elite team of builders and operators who move fast and own outcomes. Our team comes from Meta, SpaceX, Tesla, MIT, Berkeley, Harvard, and other YC startups and were previously founders who’ve built and exited healthtech companies.
+
+We’re obsessed with reliability, real impact, and replacing slow legacy systems with software that *just works.*
+
+## The Role
+
+You’ll work side-by-side with some of the largest healthcare enterprises in North America. Embedding yourself with their teams to understand workflows, automate them, and deploy production-grade AI systems. Think Palantir-style engineering, but for healthcare automation.
+
+This roles requires a special flavor of engineers: those that are technical enough, yet also excited to own customer relationships. You will present to board rooms, CEOs, and VPs at some of the largest healthcare enterprises.
+
+### What you’ll do
+
+- Lead discovery with operations and revenue cycle teams to deeply understand problems.
+
+- Design, prototype, and deploy AI agents and automation workflows directly with customers.
+
+- Write production code to integrate into enterprise systems.
+
+- Own outcomes: you ship automation that saves millions in cost and/or hours.
+
+### Preferred Qualifications
+
+- A systems thinker with strong communication and empathy for operators.
+
+- Comfortable writing code, analyzing data, and owning enterprise outcomes.
+
+- Excited by fast iteration, ambiguity, and delivering visible business impact.
+
+- Willing to travel for on-site deployments (1–2 weeks every month).
+
+## Benefits
+
+- Competitive salary with meaningful equity
+
+- Travel/lodging is 100% covered
+
+- Free health, dental, and vision insurance
+
+- Free in-office lunch and dinners
+
+- Unlimited PTO

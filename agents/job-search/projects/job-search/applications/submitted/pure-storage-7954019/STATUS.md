@@ -1,6 +1,6 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-04T12:26:34+00:00
+ABORT-JD-FETCH — 2026-06-21T00:01:42+00:00
 
 role_id: 2688
-phase: dryrun-blockers
+phase: jd-fetch
 error:
-dryrun has blockers: [{"id": "question_67360134", "label": "How many years of Technical Support experience do you currently have?", "reason": "no LABEL_RULES match for label='How many years of Technical Support experience do you currently have?'"}, {"id": "question_67360135", "label": "How many years of knowledge do you have with the following:\n (Linux, Windows, VMware) and Storage Area Networks (SAN).", "reason": "no LABEL_RULES match for label='How many years of knowledge do you have with the following:\\n (Linux
+HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/purestorage/jobs/7954019

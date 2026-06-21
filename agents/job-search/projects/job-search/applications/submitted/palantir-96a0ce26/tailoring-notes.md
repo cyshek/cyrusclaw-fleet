@@ -2,44 +2,44 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Technical Program Manager Intern**
-- `microsoft_2022` → **Technical Program Manager Intern**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Technical Program Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Embedded directly with enterprise customers (Databricks, Walmart, SAP, NetApp) to architect and scale Azure's recovery validation from a 2-person operation into a **platformized system**, standardizing end-to-end workflows that sustain 45+ annual resilience drills and drove **$14M+ business impact**.
-2. Owned **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling that reduced operational toil by 30% and transitioned high-stakes drill execution to a scalable, customer-facing self-service model.
-3. Pioneered Azure's first proactive resilience testing capability, troubleshooting issues from physical hardware to application layer to ship a **rack-level drill program in 4 months** with a 94% recovery rate, surfacing critical hardware defects and establishing continuous validation.
-4. Directed 14 cross-org recovery executions under executive visibility, engaging stakeholders from technical teams to leadership and serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
-5. Accelerated critical operations using AI by building an internal **AI agent** and restructuring planning workflows around large-scale telemetry, cutting planning cycle time by **39%** and increasing drill capacity by 21% across small, agile teams.
-6. Collaborated cross-discipline with engineers and non-technical operators on architecture and design decisions, burning down bureaucracy to drive projects from ideation to deployment in a dynamic environment with evolving objectives.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. **Scaled Azure's forward-deployed resilience program** from a 2-person operation into a platformized system, standardizing end-to-end execution workflows to sustain 45+ annual drills and drive **$14M+ impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining self-service scheduling requirements that cut operational toil by 30% and transitioned drill execution to a scalable, customer-ready deployment model.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a full drill program in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation standard.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract with strict operational constraints.
+5. Built an internal **AI agent for drill planning automation**, restructuring planning workflows to cut cycle time by 39% and increase drill capacity by 21% — directly analogous to wrangling complex operational data to accelerate mission-critical decisions.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed product adoption for **AI-driven code generation** workflows, conducting hands-on user demos and training sessions that drove utilization across **14 key Azure teams** and saved 37 engineering hours monthly.
-2. Influenced the product roadmap to include intent-based **YAML generation** by facilitating 11+ user interviews with Azure service teams, iterating directly with users to identify and close critical feature gaps.
-3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time by **83%** across engineering workflows.
+1. **Championed deployment of AI-driven code generation** workflows across 14 Azure service teams, conducting hands-on demos and training sessions that drove sustained adoption and saved **37 engineering hours monthly**.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with technical stakeholders, identifying critical feature gaps and translating field feedback into actionable engineering requirements.
+3. Accelerated data retrieval for internal teams by **83%** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool — demonstrating hands-on use of LLM tooling to solve real operational problems.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ teams**.
-2. Mobilized a product strategy to mitigate operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort** per region and building a roadmap to automate critical paths.
-3. Engineered a **Power BI dashboard** to track operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact support investments with data.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering and operations teams.
+2. Mobilized a product strategy to eliminate manual toil during region launches, conducting discovery with **20+ service teams** to quantify 81 hours of manual effort per region and building a roadmap to automate critical deployment paths.
+3. Enabled leadership to **target automation gaps** and prioritize high-impact investments by engineering a Power BI dashboard tracking operational toil across 140+ teams — delivering data-driven decision support at enterprise scale.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping hardware-software dependencies across **1,200+ stations** on the factory floor.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize a previously brittle developer intake process.
-3. Drove strategic alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%** and reducing manual release toil.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ robotic stations, and coordinating cross-functional deployment execution on the factory floor.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing manual integration overhead for embedded robotics systems.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, **resolving 40+ high-priority tickets** to stabilize the developer intake process and keep a hardware-dependent deployment timeline on track.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** via a new CRM process.
-2. Reduced Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a digital-first **go-to-market strategy**, optimizing the website and Google business profile.
-3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, deploying a new CRM process that brought structure and repeatability to a previously manual sales operation.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-driven go-to-market strategy, optimizing the website and Google profile through iterative testing and performance analysis.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks to directly strengthen bottom-line outcomes.
 
 ## Notes from the rewriter
-- Reframed FT role as forward-deployed customer-embedded engineering with hardware-to-application troubleshooting and AI-accelerated large-scale data work.
-- Surfaced JD vocabulary: 0→1 delivery, agile teams, ideation-to-deployment, burning down bureaucracy, evolving objectives, stakeholder range.
-- Prioritized JD languages (Python/Java/TS/C#/Go) and Unity/Android/CI/CD tooling at top of skills.
-- Expanded bullets to fuller 2-line versions and added a 6th FT bullet to push page fill ≥99%.
+- JD term 'forward-deployed' woven into microsoft_ft bullet 1 ('forward-deployed resilience program') and skills section to mirror Palantir's FDSE identity directly.
+- JD phrase 'wrangling massive-scale data to accelerate critical operations' directly echoed in microsoft_ft bullet 5 to mirror Palantir's exact language around AI and operational data use.
+- JD term 'deployment' and 'on-site / factory floor' context surfaced in amazon_robotics bullet 1 ('deployment execution on the factory floor') to connect robotics field work to Palantir MRG's factory-floor mission.
+- JD tools 'CI/CD, GitHub, Gradle' and 'Android/build tooling' mirrored in amazon_robotics bullet 2 and skills section to signal direct toolchain familiarity.
+- JD phrase 'end-to-end execution and implementation of high-stakes projects' reflected in microsoft_ft bullet 4 ('14 cross-org recovery executions under executive visibility') to align with Palantir's ownership model.
+- JD domain 'customer stakeholders from technical teams to executives' addressed in microsoft_ft bullet 4 and amazon_robotics bullet 3 to demonstrate the stakeholder range Palantir explicitly values.
 

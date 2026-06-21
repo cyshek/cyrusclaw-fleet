@@ -1,0 +1,159 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/arini/bcfeca9b-59e9-4e73-bd8d-1bd0b3b08fad",
+  "org": "arini",
+  "job_id": "bcfeca9b-59e9-4e73-bd8d-1bd0b3b08fad",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-21T02:32:34Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b__systemfield_name"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b__systemfield_email"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b__systemfield_resume"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b_48f52c5a-1f5a-4f3a-9efd-d233234a7319",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b_48f52c5a-1f5a-4f3a-9efd-d233234a7319"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b_42810828-a0b7-4e12-b41d-84e70db1797e",
+      "label": "GitHub Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b_42810828-a0b7-4e12-b41d-84e70db1797e"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b_7dd7d547-0e60-4cb8-81d8-97971de844ae",
+      "label": "Why do you want to join Arini?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Arini because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Arini is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Arini while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Arini aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Arini')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b_7dd7d547-0e60-4cb8-81d8-97971de844ae"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b_8a219c46-9308-4ab5-bed0-444ad7a48e77",
+      "label": "What's the coolest thing you've built?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b_8a219c46-9308-4ab5-bed0-444ad7a48e77"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b_9815c12d-f5af-44f4-8a2b-c8730991c118",
+      "label": "Do you currently live in San Francisco or will you relocate to San Francisco for this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b_9815c12d-f5af-44f4-8a2b-c8730991c118"
+    },
+    {
+      "id": "d6ca0053-007f-40ae-96b4-0021ca65698b_df9d1c21-00a5-4209-b2d9-fd1cc291178b",
+      "label": "Will you now or in the future require US sponsorship for employment visa status (e.g., H-1B, TN, etc.)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "d6ca0053-007f-40ae-96b4-0021ca65698b_df9d1c21-00a5-4209-b2d9-fd1cc291178b"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,273 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/claim-health/c9512763-dcae-40ed-a929-37d16d915ed0",
+  "org": "claim-health",
+  "job_id": "c9512763-dcae-40ed-a929-37d16d915ed0",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-21T08:52:11Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 14,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 3,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_name",
+      "section": "Candidate Information"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_email",
+      "section": "Candidate Information"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_899f02eb-b9aa-4ea5-a450-90d87e37e2f7",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_899f02eb-b9aa-4ea5-a450-90d87e37e2f7",
+      "section": "Candidate Information"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_location",
+      "label": "Current Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_location",
+      "section": "Candidate Information"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_10641fb7-7614-432a-b6c0-c68786b65111",
+      "label": "Are you able to work in-person in NYC?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you able to work in-person in NYC?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_10641fb7-7614-432a-b6c0-c68786b65111",
+      "section": "Work Authorization & Location"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_a46c3597-e5af-4c30-b992-d612069e7664",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_a46c3597-e5af-4c30-b992-d612069e7664",
+      "section": "Work Authorization & Location"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5__systemfield_resume",
+      "section": "Experience Snapshot"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_713b9366-3f6d-4a87-8e03-d78f118d89cd",
+      "label": "Have you worked at an early-stage startup (Seed–Series A)?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_713b9366-3f6d-4a87-8e03-d78f118d89cd",
+      "section": "Experience Snapshot"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_9cf21dc7-c445-4f8d-8660-daa083b37cb6",
+      "label": "Describe a system or product you owned end-to-end. What problem did it solve, and what tradeoffs did you make?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_9cf21dc7-c445-4f8d-8660-daa083b37cb6",
+      "section": "Ownership"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_6a62f117-793f-41bf-bc03-bd100a9697b9",
+      "label": "What excites you about building foundational systems at an early-stage company like Claim Health?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Claim Health because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Claim Health is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Claim Health while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Claim Health aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Claim Health')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_6a62f117-793f-41bf-bc03-bd100a9697b9",
+      "section": "Motivation & Fit"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_ae84beb6-c839-453c-950d-6770c8c7881a",
+      "label": "Describe a messy or ambiguous problem you enjoyed working on. Why?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Describe a messy or ambiguous problem you enjoyed working on. Why?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_ae84beb6-c839-453c-950d-6770c8c7881a",
+      "section": "Motivation & Fit"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_debeb4b3-3616-4b0a-aba7-da6d57920740",
+      "label": "Earliest start date",
+      "type": "input_date",
+      "required": false,
+      "value": "2026-07-05",
+      "source": "preferences.earliest_start_date (date picker -> today+14d)",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "Date",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_debeb4b3-3616-4b0a-aba7-da6d57920740",
+      "section": "Logistics",
+      "_ashby_date_iso": "2026-07-05"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_19b8ac46-0dea-4ece-916f-c5e2a0c09188",
+      "label": "Compensation expectations",
+      "type": "input_text",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_19b8ac46-0dea-4ece-916f-c5e2a0c09188",
+      "section": "Logistics"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
+      "label": "Anything else we should know about you?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Anything else we should know about you?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "53764e0d-24f7-486e-875c-f65b288b22d5_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
+      "section": "Logistics"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_10641fb7-7614-432a-b6c0-c68786b65111",
+      "label": "Are you able to work in-person in NYC?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you able to work in-person in NYC?'"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_ae84beb6-c839-453c-950d-6770c8c7881a",
+      "label": "Describe a messy or ambiguous problem you enjoyed working on. Why?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Describe a messy or ambiguous problem you enjoyed working on. Why?'"
+    },
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
+      "label": "Anything else we should know about you?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Anything else we should know about you?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "53764e0d-24f7-486e-875c-f65b288b22d5_10641fb7-7614-432a-b6c0-c68786b65111",
+      "label": "Are you able to work in-person in NYC?",
+      "reason": "no LABEL_RULES match for label='Are you able to work in-person in NYC?'"
+    }
+  ]
+}

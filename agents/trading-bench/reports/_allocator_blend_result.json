@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "common_window": [
+      "2010-02-12",
+      "2026-06-18"
+    ],
+    "n_days": 4112,
+    "tqqq_full_window": [
+      "2010-02-11",
+      "2026-06-18"
+    ],
+    "rot_full_window": [
+      "2005-01-03",
+      "2026-06-18"
+    ],
+    "note": "Sleeve return streams reproduced from validated engines; intra-sleeve costs already in each stream; blend adds only inter-sleeve monthly rebalance cost (2bps one-way on sleeve turnover)."
+  },
+  "standalone_common_window": {
+    "tqqq_voltarget": {
+      "full": {
+        "sharpe": 0.8642017460489856,
+        "cagr_pct": 20.813507358013773,
+        "maxdd_pct": -34.52349548950734,
+        "vol_pct": 25.753667074976,
+        "total_return_pct": 2087.339983764004
+      },
+      "is_2010_2018": {
+        "total_return_pct": 315.2722719437933,
+        "cagr_pct": 17.40508193129957,
+        "max_drawdown_pct": -33.15672539750821,
+        "ann_vol_pct": 26.148364661783287,
+        "sharpe": 0.7454881162810294,
+        "pct_in_market": 100.0,
+        "n_switches": 0,
+        "years": 8.873015873015873,
+        "final_equity": 4.152722719437933
+      },
+      "oos_2019_today": {
+        "total_return_pct": 426.72430391886564,
+        "cagr_pct": 25.02037674410913,
+        "max_drawdown_pct": -24.40888262861177,
+        "ann_vol_pct": 25.280323576868152,
+        "sharpe": 1.0111929875858716,
+        "pct_in_market": 100.0,
+        "n_switches": 0,
+        "years": 7.440476190476191,
+        "final_equity": 5.267243039188656
+      }
+    },
+    "sector_rotation_top2": {
+      "full": {
+        "sharpe": 0.9285245483323511,
+        "cagr_pct": 12.971639154913772,
+        "maxdd_pct": -28.982610936622212,
+        "vol_pct": 14.231801103562738,
+        "total_return_pct": 631.689082231181
+      },
+      "is_2010_2018": {
+        "total_return_pct": 178.8823732042657,
+        "cagr_pct": 12.253402016308357,
+        "max_drawdown_pct": -22.463311161603084,
+        "ann_vol_pct": 12.789018864443879,
+        "sharpe": 0.9680700858611665,
+        "pct_in_market": 100.0,
+        "n_switches": 0,
+        "years": 8.873015873015873,
+        "final_equity": 2.788823732042657
+      },
+      "oos_2019_today": {
+        "total_return_pct": 161.58956529888746,
+        "cagr_pct": 13.796311109515047,
+        "max_drawdown_pct": -28.982610936622212,
+        "ann_vol_pct": 15.783799664616327,
+        "sharpe": 0.8981526637118433,
+        "pct_in_market": 100.0,
+        "n_switches": 0,
+        "years": 7.440476190476191,
+        "final_equity": 2.6158956529888746
+      }
+    },
+    "spx_raw": {
+      "full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329,
+        "vol_pct": 17.240602619434263,
+        "total_return_pct": 588.021020447939
+      },
+      "oos_2019_today": {
+        "total_return_pct": 195.6179811017965,
+        "cagr_pct": 15.682116498768295,
+        "max_drawdown_pct": -33.92496000265329,
+        "ann_vol_pct": 19.624715075979797,
+        "sharpe": 0.8409978401904566,
+        "pct_in_market": 100.0,
+        "n_switches": 0,
+        "years": 7.440476190476191,
+        "final_equity": 2.956179811017965
+      }
+    }
+  },
+  "correlation": {
+    "full": 0.581008700551585,
+    "n_full": 4112,
+    "drawdown_windows": {
+      "2011_summer_crisis": {
+        "corr": -0.08108020606670328,
+        "n": 170,
+        "window": [
+          "2011-05-02",
+          "2011-12-30"
+        ]
+      },
+      "2015_2016_selloff": {
+        "corr": 0.530998407490915,
+        "n": 167,
+        "window": [
+          "2015-07-01",
+          "2016-02-29"
+        ]
+      },
+      "2018_Q4": {
+        "corr": 0.6602150108598751,
+        "n": 63,
+        "window": [
+          "2018-10-01",
+          "2018-12-31"
+        ]
+      },
+      "2020_Q1_covid": {
+        "corr": 0.2927859466462577,
+        "n": 62,
+        "window": [
+          "2020-02-03",
+          "2020-04-30"
+        ]
+      },
+      "2022_bear": {
+        "corr": 0.24779598606104306,
+        "n": 251,
+        "window": [
+          "2022-01-03",
+          "2022-12-30"
+        ]
+      }
+    }
+  },
+  "sleeve_full_vols": {
+    "tqqq": 0.25753667074976,
+    "rot": 0.14231801103562736
+  },
+  "blends": {
+    "50_50": {
+      "label": "50_50",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-18",
+        "n_days": 4112
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.023268680721453806,
+      "full": {
+        "sharpe": 0.9838698671880955,
+        "cagr_pct": 17.440964660524738,
+        "maxdd_pct": -24.999697214998516,
+        "vol_pct": 17.999928907557667,
+        "total_return_pct": 1277.2147066946893
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9031891925964555,
+        "cagr_pct": 15.455728791692325,
+        "maxdd_pct": -24.865074185833823
+      },
+      "oos_2019_today": {
+        "sharpe": 1.0757513466221924,
+        "cagr_pct": 19.83857753815579,
+        "maxdd_pct": -24.999697214998516,
+        "total_return_pct": 284.4115860321202
+      },
+      "spx_full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8409978401904566,
+        "cagr_pct": 15.682116498768295
+      },
+      "avg_w_tqqq": 0.5
+    },
+    "60_40_tqqq": {
+      "label": "60_40_tqqq",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-18",
+        "n_days": 4112
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.02232464786206184,
+      "full": {
+        "sharpe": 0.9620630441947653,
+        "cagr_pct": 18.20770549400297,
+        "maxdd_pct": -26.52840627877888,
+        "vol_pct": 19.348906349196476,
+        "total_return_pct": 1431.4628858735127
+      },
+      "is_2010_2018": {
+        "sharpe": 0.868117835467417,
+        "cagr_pct": 15.949991087531036,
+        "maxdd_pct": -26.52840627877888
+      },
+      "oos_2019_today": {
+        "sharpe": 1.0715271074117565,
+        "cagr_pct": 20.948073398929033,
+        "maxdd_pct": -24.223185132622373,
+        "total_return_pct": 311.69496591177494
+      },
+      "spx_full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8409978401904566,
+        "cagr_pct": 15.682116498768295
+      },
+      "avg_w_tqqq": 0.6
+    },
+    "40_60_tqqq": {
+      "label": "40_60_tqqq",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-18",
+        "n_days": 4112
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.022354598638581257,
+      "full": {
+        "sharpe": 1.0002486623743732,
+        "cagr_pct": 16.63051506641051,
+        "maxdd_pct": -25.78325603479884,
+        "vol_pct": 16.802373668926013,
+        "total_return_pct": 1130.099351590516
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9372575869589566,
+        "cagr_pct": 14.911569278683645,
+        "maxdd_pct": -23.18882528665548
+      },
+      "oos_2019_today": {
+        "sharpe": 1.0704538395064274,
+        "cagr_pct": 18.69465302876887,
+        "maxdd_pct": -25.78325603479884,
+        "total_return_pct": 257.9342345811347
+      },
+      "spx_full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8409978401904566,
+        "cagr_pct": 15.682116498768295
+      },
+      "avg_w_tqqq": 0.4
+    },
+    "70_30_tqqq": {
+      "label": "70_30_tqqq",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-18",
+        "n_days": 4112
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.01952541097352167,
+      "full": {
+        "sharpe": 0.9376694479425939,
+        "cagr_pct": 18.92980211010251,
+        "maxdd_pct": -28.178382837807415,
+        "vol_pct": 20.820290213799904,
+        "total_return_pct": 1591.430570893694
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8340826572534215,
+        "cagr_pct": 16.393613534093852,
+        "maxdd_pct": -28.178382837807415
+      },
+      "oos_2019_today": {
+        "sharpe": 1.0608271745205513,
+        "cagr_pct": 22.022066780047943,
+        "maxdd_pct": -23.45398838315641,
+        "total_return_pct": 339.6860467894584
+      },
+      "spx_full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8409978401904566,
+        "cagr_pct": 15.682116498768295
+      },
+      "avg_w_tqqq": 0.7
+    },
+    "30_70_tqqq": {
+      "label": "30_70_tqqq",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-18",
+        "n_days": 4112
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.019577807088797375,
+      "full": {
+        "sharpe": 1.007293283708817,
+        "cagr_pct": 15.777304617143129,
+        "maxdd_pct": -26.573593636053182,
+        "vol_pct": 15.790448740182123,
+        "total_return_pct": 991.2402996120325
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9667724271722583,
+        "cagr_pct": 14.318274654772667,
+        "maxdd_pct": -21.500107758653396
+      },
+      "oos_2019_today": {
+        "sharpe": 1.0522812872060345,
+        "cagr_pct": 17.517378700637742,
+        "maxdd_pct": -26.573593636053182,
+        "total_return_pct": 232.3479266615429
+      },
+      "spx_full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8409978401904566,
+        "cagr_pct": 15.682116498768295
+      },
+      "avg_w_tqqq": 0.3
+    },
+    "invvol_63d": {
+      "label": "invvol_63d",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-18",
+        "n_days": 4112
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.09328858039379628,
+      "full": {
+        "sharpe": 1.0144314257014924,
+        "cagr_pct": 15.922144725145326,
+        "maxdd_pct": -23.89724349206045,
+        "vol_pct": 15.805343661622206,
+        "total_return_pct": 1013.7255455841206
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8919373267702579,
+        "cagr_pct": 12.937220798663285,
+        "maxdd_pct": -23.89724349206045
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1465745999539807,
+        "cagr_pct": 19.56569202299361,
+        "maxdd_pct": -21.88181978358241,
+        "total_return_pct": 277.94614864596235
+      },
+      "spx_full": {
+        "sharpe": 0.7721886164376702,
+        "cagr_pct": 12.546403694953788,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8409978401904566,
+        "cagr_pct": 15.682116498768295
+      },
+      "avg_w_tqqq": 0.3485259302525716
+    }
+  },
+  "verdict": {
+    "tqqq_solo_full_sharpe": 0.8642017460489856,
+    "rot_solo_full_sharpe": 0.9285245483323511,
+    "best_blend_name": "invvol_63d",
+    "best_blend_full_sharpe": 1.0144314257014924,
+    "best_blend_full_maxdd": -23.89724349206045,
+    "beats_both_standalone_sharpe": true
+  }
+}

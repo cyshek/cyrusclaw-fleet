@@ -1,0 +1,275 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/vivenu/06099ee7-9d31-4d7a-b6aa-0d8abe23f6e0",
+  "apply_url": "https://jobs.lever.co/vivenu/06099ee7-9d31-4d7a-b6aa-0d8abe23f6e0/apply",
+  "org": "vivenu",
+  "job_id": "06099ee7-9d31-4d7a-b6aa-0d8abe23f6e0",
+  "job_title": "vivenu GmbH - Solution Architect",
+  "fetched_at": "2026-06-21T08:09:48Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 14,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[d5b60dc7-f484-4ef8-ac38-9db3f7e30c99][field0]",
+      "label": "This is a full-time on-site position at our Tampa, FL office. Can you work at our Tampa, FL office 5 days a week?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (default Yes)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": null,
+      "card_text": "Tampa In-Office Requirement"
+    },
+    {
+      "id": "cards[13db9143-5527-4b70-83a8-4eec85459e06][field0]",
+      "label": "What are your salary expectations for this position?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "card_text": "Salary Expectations"
+    },
+    {
+      "id": "cards[2007cc8d-73ba-4e02-aeb2-d1adbed815e7][field0]",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "vivenu careers page",
+          "value": "56d26eff-56c2-4064-b01e-b67a9a122e47"
+        },
+        {
+          "label": "LinkedIn Ads",
+          "value": "41986551-767a-4cb2-8091-2dd13e97ff9f"
+        },
+        {
+          "label": "Indeed",
+          "value": "b77629ee-bb5a-4728-8a5c-55dbedcc9f81"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "cd600454-b4ee-40c7-a481-27c4345eb007"
+        },
+        {
+          "label": "TeamWork Online",
+          "value": "2d5d8aff-5efe-45c6-9570-bd36e00d0b2e"
+        },
+        {
+          "label": "Recruiter",
+          "value": "05491dad-c9fb-4820-a561-14b24a782578"
+        },
+        {
+          "label": "Employee Referral",
+          "value": "1537492d-82af-4f0c-a51c-947664d2b0f2"
+        },
+        {
+          "label": "University Career Center",
+          "value": "0e75d007-ae89-4f4f-97b8-bf916c4abade"
+        },
+        {
+          "label": "Others (Please specify in the field below)",
+          "value": "94dcdc82-7d56-4ee1-8c85-2b9820701d12"
+        }
+      ],
+      "card_text": "Application Source"
+    },
+    {
+      "id": "cards[2007cc8d-73ba-4e02-aeb2-d1adbed815e7][field1]",
+      "label": "Others:",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Others:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Application Source"
+    },
+    {
+      "id": "cards[03b53323-dd8d-47fd-9fc2-f844d1355623][field0]",
+      "label": "Are you legally authorized to work in the United States of America?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "e40927e1-123a-4080-b36b-ea5603efa9b0"
+        },
+        {
+          "label": "No",
+          "value": "4843b669-8d88-4937-acde-143789949e97"
+        }
+      ],
+      "card_text": "US Work Authorization"
+    },
+    {
+      "id": "cards[03b53323-dd8d-47fd-9fc2-f844d1355623][field1]",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States of America?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "4f3f3235-e3b3-49cd-8115-1cc099018d50"
+        },
+        {
+          "label": "No",
+          "value": "bc1f5d60-ab21-44c9-a1c9-2a83a01e45f2"
+        }
+      ],
+      "card_text": "US Work Authorization"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "cards[2007cc8d-73ba-4e02-aeb2-d1adbed815e7][field1]",
+      "label": "Others:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Others:'"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "vivenu GmbH - Solution Architect",
+    "structured_location": true,
+    "has_resume_input": true
+  }
+}

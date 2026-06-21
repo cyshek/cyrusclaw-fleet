@@ -1,0 +1,284 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/netskope/jobs/7821946",
+  "org": "netskope",
+  "job_id": "7821946",
+  "job_title": "Solutions Engineer - SDWAN",
+  "job_location": "Illinois, United States",
+  "fetched_at": "2026-06-21T01:47:44Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/netskope/jobs/7821946?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 18,
+    "filled": 17,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_65677107",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_65677108",
+      "label": "How did you hear about this job?",
+      "type": "input_text",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_65677110",
+      "label": "This role supports the Central region. Do you reside in this region?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67710459",
+      "label": "Do you have the legal right to work in the country where you are applying to work?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67711427",
+      "label": "Will you now or in the future require a work permit, visa or additional right to work support for the country where you are applying to work?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_29477",
+      "label": "To help us better understand how you would like to be addressed, please feel free to share your personal pronouns by selecting an option below, or skip to the next question:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "she/her/hers",
+          "value": 179058
+        },
+        {
+          "label": "he/him/his",
+          "value": 179059
+        },
+        {
+          "label": "they/them/theirs",
+          "value": 179060
+        },
+        {
+          "label": "Self-Describe",
+          "value": 179062
+        },
+        {
+          "label": "Prefer not to say",
+          "value": 179063
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

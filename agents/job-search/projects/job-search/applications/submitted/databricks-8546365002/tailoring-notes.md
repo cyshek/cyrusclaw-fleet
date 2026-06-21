@@ -1,0 +1,51 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's resilience validation program from a 2-person operation into a **platformized system**, standardizing GenAI-adjacent workflows to sustain 45+ annual drills and drive **$14M+ business impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, repeatable deployment model used across teams.
+3. Built an internal **AI agent** for drill planning using LLM-powered automation, restructuring end-to-end planning workflows to reduce cycle time by 39% and increase drill capacity by 21%, directly enabling faster customer-facing production rollouts.
+4. Directed 14 high-visibility cross-org recovery executions, including serving as bridge lead for a sovereign-cloud **network isolation test** tied to a $1.5B+ federal enterprise contract requiring precise technical coordination across classified environments.
+5. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a full drill program in **4 months** with a 94% recovery rate, surfacing critical hardware defects and establishing a reusable model for continuous production validation.
+6. Served as **trusted technical advisor** to enterprise customers across Databricks and federal-adjacent workloads, translating complex distributed systems requirements into actionable resilience strategies and presenting findings to executive stakeholders.
+7. Collaborated cross-functionally with engineering and product teams to shape the **AI-driven automation roadmap**, influencing prioritization of self-service capabilities that expanded program capacity without proportional headcount growth.
+
+### `microsoft_2023` (4 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across Azure, conducting customer-facing demos and technical training sessions that drove utilization across 14 key engineering teams and saved **37 engineering hours** monthly in production environments.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical GenAI feature gaps and translating findings into prioritized requirements for engineering.
+3. Accelerated developer productivity by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool — cutting average lookup time by 83% and improving retrieval accuracy across large-scale distributed knowledge bases.
+4. Presented technical findings and AI tooling recommendations to both engineering and non-technical stakeholders, demonstrating the communication versatility essential to **forward-deployed customer engagements** and cross-functional product influence.
+
+### `microsoft_2022` (4 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams — demonstrating the stakeholder influence core to customer-facing FDE engagements.
+2. Executed discovery with 20+ service teams to identify **81 hours of manual toil** per region launch, then built a prioritized roadmap to automate critical paths — mirroring the production-grade deployment optimization work central to this GenAI engineering role.
+3. Engineered a **Power BI dashboard** to surface operational toil signals across 140+ teams, enabling leadership to identify high-impact automation gaps and allocate engineering capacity toward the highest-ROI infrastructure improvements.
+4. Defined a product strategy to accelerate region launch velocity by mapping cross-team dependencies, standardizing intake workflows, and building alignment across distributed stakeholders to drive **scalable, repeatable execution** across Azure's global infrastructure.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating cross-functional execution across IT, Operations, and Engineering teams.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **resolving 40+ high-priority tickets** to stabilize the developer intake process and maintain velocity during a complex, multi-team production system migration.
+3. Drove cross-org alignment to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable release model — directly analogous to productionizing GenAI applications for enterprise customers.
+4. Communicated migration risks and dependency maps to both technical engineers and non-technical operations leads, building the **cross-audience technical communication** skill that forward-deployed AI engineering roles demand in customer-facing engagements.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping, invoicing, and proposal workflows for 200+ monthly engagements via a redesigned CRM process — demonstrating customer-facing operational ownership at production scale.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a data-driven digital go-to-market strategy, optimizing web presence and Google profile to improve lead quality and funnel efficiency.
+3. Improved leadership pricing accuracy by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks — applying the quantitative, data science-grounded thinking essential to ML and AI business value delivery.
+
+## Notes from the rewriter
+- 'AI agent' and 'LLM-powered automation' woven into microsoft_ft bullet#3 — directly mirrors JD's 'multi-agent systems' and 'GenAI applications' language.
+- 'Production rollouts' and 'productionizing GenAI applications' framing inserted into microsoft_2022 bullet#2 and amazon_robotics bullet#3 — echoes JD's 'Own production rollouts' responsibility.
+- 'Trusted technical advisor' phrase used verbatim from JD in microsoft_ft bullet#6, grounding Cyrus's enterprise customer work in FDE-specific language.
+- 'Forward-deployed customer engagements' and 'cross-audience technical communication' inserted into microsoft_2023 bullet#4 and amazon_robotics bullet#4 — mirrors JD's emphasis on communicating to both technical and non-technical audiences.
+- 'Semantic search' and 'intent-based generation' in microsoft_2023 bullets#2–3 align with JD's RAG/Text2SQL/GenAI tooling expectations and Databricks AI research framing.
+- 'Scalable, repeatable deployment model' in microsoft_ft bullet#2 and 'scalable, repeatable execution' in microsoft_2022 bullet#4 mirror JD's 'production-grade' deployment expertise requirement.
+

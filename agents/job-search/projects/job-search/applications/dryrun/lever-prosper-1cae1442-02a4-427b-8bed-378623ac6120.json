@@ -1,0 +1,390 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/prosper/1cae1442-02a4-427b-8bed-378623ac6120",
+  "apply_url": "https://jobs.lever.co/prosper/1cae1442-02a4-427b-8bed-378623ac6120/apply",
+  "org": "prosper",
+  "job_id": "1cae1442-02a4-427b-8bed-378623ac6120",
+  "job_title": "Prosper - Product Manager (Customer Service Tools)",
+  "fetched_at": "2026-06-21T07:00:02Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 20,
+    "filled": 13,
+    "filled_needs_review": 4,
+    "declined": 3,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[cee3e447-014d-4763-9446-be84f8c6f908][field0]",
+      "label": "Do you have the right to work in the US indefinitely without any sponsorship or other legal support from your employer?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "c52fb951-ddc3-4be7-a6aa-fead60b272d4"
+        },
+        {
+          "label": "No",
+          "value": "cc349c50-1dad-43b4-acdc-6a3006888222"
+        }
+      ],
+      "card_text": "External Applicants - SF"
+    },
+    {
+      "id": "cards[cee3e447-014d-4763-9446-be84f8c6f908][field1]",
+      "label": "If no, please explain the support you would need from your employer. If this does not apply please state \"N/A.\"",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "WA",
+      "source": "address.state",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": null,
+      "card_text": "External Applicants - SF"
+    },
+    {
+      "id": "cards[cee3e447-014d-4763-9446-be84f8c6f908][field2]",
+      "label": "Do you live in the San Francisco Bay Area?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "e51eea92-0fc9-4588-9996-406f8ee49243"
+        },
+        {
+          "label": "No",
+          "value": "b93af90c-ed87-4fb6-957b-d35e22e1fd1a"
+        }
+      ],
+      "card_text": "External Applicants - SF"
+    },
+    {
+      "id": "cards[cee3e447-014d-4763-9446-be84f8c6f908][field3]",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Blind",
+          "value": "3ff3aaff-f0db-49a7-98e8-4f0c0821e99f"
+        },
+        {
+          "label": "College/University posting",
+          "value": "a82e0c63-5f1b-4efd-a1d4-d3887cf6caa2"
+        },
+        {
+          "label": "Glassdoor",
+          "value": "1805ded3-5323-4128-8694-2f4c2c8f0754"
+        },
+        {
+          "label": "Indeed",
+          "value": "d8b9fc3c-44d0-4535-a016-cac17c63dcaf"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "13aacc94-2e88-4172-977b-db8b7154aa70"
+        },
+        {
+          "label": "NSBE email or site",
+          "value": "33d67912-9842-48e2-a54c-b9f855c4cecd"
+        },
+        {
+          "label": "Otta",
+          "value": "2408bb27-0de2-416a-975e-da90fc631673"
+        },
+        {
+          "label": "Prosper Site",
+          "value": "920ee1e9-3de5-4293-8f4c-b96925a36d88"
+        },
+        {
+          "label": "Referral",
+          "value": "e1647673-d86c-4b58-a7ab-bcf46da3e2d0"
+        },
+        {
+          "label": "Wellfound",
+          "value": "f568edaf-7c0d-4ab8-8eda-1cf392bc2136"
+        },
+        {
+          "label": "Other",
+          "value": "b81c6d70-4e1d-40ae-b4a8-b21c2c566301"
+        }
+      ],
+      "card_text": "External Applicants - SF"
+    },
+    {
+      "id": "cards[cee3e447-014d-4763-9446-be84f8c6f908][field4]",
+      "label": "Would you like to receive updates about the interview process via Text/SMS? If you change your mind, you can reply STOP to opt-out.",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "lever_default (required-select last-resort -> Yes)",
+      "status": "filled_needs_review",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "abd322cb-fa9e-4977-a0d0-914d8140d897"
+        },
+        {
+          "label": "No",
+          "value": "93b370c8-c91b-4d14-8fd6-73537dd355ba"
+        }
+      ],
+      "card_text": "External Applicants - SF"
+    },
+    {
+      "id": "cards[cee3e447-014d-4763-9446-be84f8c6f908][field5]",
+      "label": "At Prosper, we support the use of approved AI tools to enhance efficiency and productivity in day-to-day work. While AI can assist with your resume or cover letter preparation, your application should accurately reflect your qualifications. During the interview process, please refrain from using AI tools. This allows us to genuinely assess your personal interest in Prosper and evaluate your natural communication skills without AI assistance. Please confirm your understanding and agreement by indicating 'Yes' below.",
+      "type": "multi_value_multi_select",
+      "lever_type": "multiple-select",
+      "required": true,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank) | NOTE: '' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "cover_letter",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "3130b91e-e900-424a-9942-67e276c71d5c"
+        }
+      ],
+      "card_text": "External Applicants - SF"
+    },
+    {
+      "id": "cards[d4b8bf4f-ed33-4279-b13c-df15e0a8d21f][field0]",
+      "label": "What is your highest completed level of education?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Bachelor of Science",
+      "source": "education.degree | NOTE: 'Bachelor of Science' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "PhD",
+          "value": "fefb16d6-1f03-47b7-85b1-63f6dbb64b58"
+        },
+        {
+          "label": "JD",
+          "value": "372052b2-a19d-45bd-afe5-c1f4c2ef9017"
+        },
+        {
+          "label": "Master's",
+          "value": "4f43035e-4fce-4dea-bc32-209d9d7e92d3"
+        },
+        {
+          "label": "Bachelor's",
+          "value": "57291654-5cb1-4a10-897c-df8605d90bf1"
+        },
+        {
+          "label": "No degree",
+          "value": "0bede55b-3452-4224-8151-5c2a6c582fcb"
+        }
+      ],
+      "card_text": "DEGREE REQUIRED (EDUCATION LEVEL)"
+    },
+    {
+      "id": "cards[ce8f4b93-8f71-4790-b6c1-74cb14e280aa][field0]",
+      "label": "How many years of experience do you have as a full cycle Product Manager for consumer facing products?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "0 - 2 years",
+          "value": "a9131a8e-d392-4fb9-83a1-4705b30644e0"
+        },
+        {
+          "label": "3 - 4 years",
+          "value": "7f2db17f-ee89-4b78-8272-11866331ba2f"
+        },
+        {
+          "label": "5+ years",
+          "value": "e0230915-a3c9-43fe-a09e-305a549e7d19"
+        }
+      ],
+      "card_text": "Product Management Experience"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "meta": {
+    "og_title": "Prosper - Product Manager (Customer Service Tools)",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

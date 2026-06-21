@@ -1,0 +1,629 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/tractian/a1211269-6ac0-4c85-a9f7-441765657b8e",
+  "apply_url": "https://jobs.lever.co/tractian/a1211269-6ac0-4c85-a9f7-441765657b8e/apply",
+  "org": "tractian",
+  "job_id": "a1211269-6ac0-4c85-a9f7-441765657b8e",
+  "job_title": "Tractian - Sales Engineer - Automation",
+  "fetched_at": "2026-06-21T07:59:30Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 23,
+    "filled": 14,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 5,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field0]",
+      "label": "City and State of Residence",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field1]",
+      "label": "Country of Residence",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "United States",
+      "source": "address.country",
+      "status": "filled",
+      "matched_rule": "country",
+      "options": null,
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field2]",
+      "label": "Share a link of something you've done or describe a successful case!",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field3]",
+      "label": "How did you find out about the role?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How did you find out about the role?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Others",
+          "value": "8482c210-a4a0-4d2f-9db4-91a56df896ed"
+        },
+        {
+          "label": "Tractian's Employee Referral",
+          "value": "c86776d4-d271-4d6a-a82e-16162c295ea8"
+        },
+        {
+          "label": "Events",
+          "value": "ed3d632e-73c8-4d6a-8710-e21c0c4e01a5"
+        },
+        {
+          "label": "LinkedIn Job Posting",
+          "value": "8a7979c0-9d55-4d4d-a21b-3f95bbf06715"
+        },
+        {
+          "label": "Newsletter",
+          "value": "ece94881-077d-4622-b543-5f632a880d3b"
+        },
+        {
+          "label": "RepVue",
+          "value": "acaa91a2-6767-42cd-9159-485e8f1d0e07"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field4]",
+      "label": "Name of Tractian Employee that Referred",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field5]",
+      "label": "How did you find out about the role? (Others Field)",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field6]",
+      "label": "What level of English do you have?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What level of English do you have?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Elementary (A1 / A2)",
+          "value": "96c84cb8-abb0-4e10-99e0-36fd88312f67"
+        },
+        {
+          "label": "Intermediate (B1 / B2)",
+          "value": "30603547-c3f8-4b15-bd9b-fa273fb220ce"
+        },
+        {
+          "label": "Fluent (C1 / C2)",
+          "value": "0c845bf6-9c7b-438d-8c9c-f5297416c9cf"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field7]",
+      "label": "Educational Background",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Educational Background'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Community College",
+          "value": "3da72345-ac95-46e6-8ac5-a996fbfe8496"
+        },
+        {
+          "label": "Public University",
+          "value": "3a79add7-732e-42f4-9de7-883dbba9d730"
+        },
+        {
+          "label": "State University",
+          "value": "58555dcb-4f61-4984-82c6-eee2c66f5e42"
+        },
+        {
+          "label": "Private University",
+          "value": "9a77fcf1-78f6-4a2a-8e17-6d1ab3685973"
+        },
+        {
+          "label": "Private with Scholarship",
+          "value": "4247a330-c3f4-41fe-bb2c-c2f78e5e5dc8"
+        },
+        {
+          "label": "Others",
+          "value": "ae84a19e-3c25-4a9e-92ab-88f256392a27"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field8]",
+      "label": "Degree/Course of Study:",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": false,
+      "value": "Bachelor of Science",
+      "source": "education.degree | NOTE: 'Bachelor of Science' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "Accounting",
+          "value": "19fe159d-98c7-4240-a9fa-00fb34d2e186"
+        },
+        {
+          "label": "Agronomy",
+          "value": "c632567b-092a-4884-8e05-9739018d6255"
+        },
+        {
+          "label": "Artificial Intelligence",
+          "value": "0a631b08-36d2-46e2-86fe-5c009b5a41f5"
+        },
+        {
+          "label": "Business Administration",
+          "value": "7c27b399-c765-4d6b-ab45-73b3a542eb00"
+        },
+        {
+          "label": "Communications",
+          "value": "25815040-8f4e-48dd-a6d6-220799b327e4"
+        },
+        {
+          "label": "Computer Science",
+          "value": "06c01459-56da-4488-8eee-37c43b98089c"
+        },
+        {
+          "label": "Cybersecurity",
+          "value": "c4be3585-b324-475f-941e-931bd12025ca"
+        },
+        {
+          "label": "Data Science",
+          "value": "9bfa0d77-6188-4376-b5a9-078bdd453b34"
+        },
+        {
+          "label": "Economics",
+          "value": "d51492e3-9d97-41f9-b4d0-bbc9d9f862d3"
+        },
+        {
+          "label": "Engineering",
+          "value": "ddbb58c3-cadd-486f-961d-79196743f27d"
+        },
+        {
+          "label": "Game Design",
+          "value": "c3153eca-86b1-4b97-88c5-cca81414cc65"
+        },
+        {
+          "label": "Graphic Design",
+          "value": "0e494b19-4b6e-4ba6-84de-405cfadb6573"
+        },
+        {
+          "label": "Design",
+          "value": "ff71230a-e4be-443e-89d9-a55a9036d9ba"
+        },
+        {
+          "label": "Human Resources Management",
+          "value": "8a027bab-0e05-42ca-a539-55f4cbc04c8b"
+        },
+        {
+          "label": "Information Technology",
+          "value": "b8627f5a-dd2e-462f-82cf-84e4f9c90885"
+        },
+        {
+          "label": "International Business",
+          "value": "0302e2ec-8283-4d08-b1e0-5ee48643d344"
+        },
+        {
+          "label": "International Relations",
+          "value": "f9681167-dd7e-4bfd-99f1-029cab76d3a0"
+        },
+        {
+          "label": "Journalism",
+          "value": "a4d802c1-464e-4a3d-9802-070054074d0f"
+        },
+        {
+          "label": "Law",
+          "value": "df3bbec9-b0f6-4f78-bf79-045f2dc6bc21"
+        },
+        {
+          "label": "Marketing",
+          "value": "db746243-51ba-4c86-b06d-f88f079d3ea1"
+        },
+        {
+          "label": "Mathematics",
+          "value": "2bfa18da-9ca7-4230-a55e-1061c1201652"
+        },
+        {
+          "label": "Other",
+          "value": "99bae42a-6e3c-47f4-bbaa-f5f27037324d"
+        },
+        {
+          "label": "Psychology",
+          "value": "9d8ab8e8-b392-4ed7-87ad-8d938dbd0252"
+        },
+        {
+          "label": "Statistics",
+          "value": "58574d5b-3419-41ff-8104-6378fd11d35a"
+        },
+        {
+          "label": "Supply Chain Management",
+          "value": "dc0ca497-cc07-4434-98f6-0e37d043cb80"
+        },
+        {
+          "label": "Information Systems",
+          "value": "ab07ede3-6fee-40ac-b399-8b6aa624a1d2"
+        },
+        {
+          "label": "I don't have",
+          "value": "1ef0942c-415b-42c5-907f-7ec54d08fb02"
+        },
+        {
+          "label": "Logistics",
+          "value": "0106b3eb-0175-4cf2-9c63-35ff62f0e9e9"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field9]",
+      "label": "What is Your Gender Identity?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": "9bc98157-ad02-47b5-9bdc-5f4eb663ffd1"
+        },
+        {
+          "label": "Female",
+          "value": "0cf7ce5d-8f88-4264-b760-4fd7c2a89bb5"
+        },
+        {
+          "label": "Transgender Man",
+          "value": "f23016b1-9b21-4ba1-b1aa-84c25681fe42"
+        },
+        {
+          "label": "Transgender Woman",
+          "value": "33823cbf-b4e7-42ac-bea9-322d5250389a"
+        },
+        {
+          "label": "Non-binary",
+          "value": "a193d9e0-53a5-4762-a87e-a2342c14c9ff"
+        },
+        {
+          "label": "Prefer not to inform",
+          "value": "7f72e2b8-79bf-4b4c-8cce-4bf08f67de18"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field10]",
+      "label": "What is Your Sexual Orientation?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What is Your Sexual Orientation?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Heterosexual",
+          "value": "fb44f07b-dfb7-4289-b593-04790a5652f8"
+        },
+        {
+          "label": "Gay/Lesbian",
+          "value": "cf614bb1-587c-4733-8cfb-8ac822fc6ae2"
+        },
+        {
+          "label": "Bisexual",
+          "value": "ab0b7c97-0194-4f08-abbb-e6b5ac615d57"
+        },
+        {
+          "label": "Pansexual",
+          "value": "f52a668d-c286-44b9-aded-e27693a4ad5d"
+        },
+        {
+          "label": "Asexual",
+          "value": "b219ed06-da6f-4f23-9124-8a22e7e6886a"
+        },
+        {
+          "label": "Queer",
+          "value": "a79bede9-8f07-4a5b-9bf3-fd7430baa996"
+        },
+        {
+          "label": "I choose not to self-identify",
+          "value": "0cf41202-9152-43f8-9604-6ae83e956661"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field11]",
+      "label": "What is Your Race/Ethnic Background?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Asian (not Hispanic or Latino)",
+          "value": "de780e43-c007-4a70-93a2-783da281781b"
+        },
+        {
+          "label": "Hispanic/Latino",
+          "value": "76111153-16d7-41d4-ae51-bf7dc03ff4f2"
+        },
+        {
+          "label": "White (not Hispanic or Latino)",
+          "value": "b6d5ed67-1860-47fe-b8f6-53a848385f42"
+        },
+        {
+          "label": "Black or African",
+          "value": "67b0dabe-c3ad-46c7-917e-0a44397d2044"
+        },
+        {
+          "label": "Indigenous Peoples",
+          "value": "7ef8064a-6956-4ede-bfea-33ba6b02c0e9"
+        },
+        {
+          "label": "Prefer not to inform",
+          "value": "fe6f02ed-4b93-4665-903b-b2f4ffa1089b"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field12]",
+      "label": "Do you consider yourself to be a disabled person?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you consider yourself to be a disabled person?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "3b60cd46-ad13-43e8-9dac-2e7c884c1340"
+        },
+        {
+          "label": "No",
+          "value": "8b3f59d3-7ad1-4429-9719-1a1002fb861f"
+        },
+        {
+          "label": "Prefer not to inform",
+          "value": "7078a5c5-7925-442d-8d51-55b64f809659"
+        }
+      ],
+      "card_text": "Forms Default"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field13]",
+      "label": "What is your Veteran status?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am a veteran",
+          "value": "c6d144d3-c81e-4c28-984e-8ce7bf04286c"
+        },
+        {
+          "label": "I am not a veteran",
+          "value": "a1dceea9-ea44-49ef-a460-b5f8a67b124b"
+        },
+        {
+          "label": "Prefer not to inform",
+          "value": "0396e978-eed0-4fcb-9e80-f5d71058fcd6"
+        }
+      ],
+      "card_text": "Forms Default"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field3]",
+      "label": "How did you find out about the role?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='How did you find out about the role?'"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field6]",
+      "label": "What level of English do you have?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='What level of English do you have?'"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field7]",
+      "label": "Educational Background",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Educational Background'"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field10]",
+      "label": "What is Your Sexual Orientation?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='What is Your Sexual Orientation?'"
+    },
+    {
+      "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field12]",
+      "label": "Do you consider yourself to be a disabled person?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Do you consider yourself to be a disabled person?'"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "Tractian - Sales Engineer - Automation",
+    "structured_location": true,
+    "has_resume_input": true
+  }
+}

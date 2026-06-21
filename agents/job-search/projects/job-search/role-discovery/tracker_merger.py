@@ -74,6 +74,38 @@ def role_to_db_row(r: dict) -> dict:
         # is recovered from the wrapper URL.
         m = re.search(r"/jobs/info/([0-9a-fA-F]{24})", url)
         src_key = f"jobright:{m.group(1)}" if m else normalize_url(url)
+    elif source == "remotive":
+        # Remotive discovery rows: URL is https://remotive.com/remote-jobs/<category>/<slug>-<id>
+        # Extract numeric id from the tail of the URL path.
+        m = re.search(r"-(\d+)$", url.rstrip("/"))
+        src_key = f"remotive:{m.group(1)}" if m else normalize_url(url)
+    elif source == "remoteok":
+        # RemoteOK discovery rows: URL contains numeric id at the end of the slug.
+        # e.g. https://remoteOK.com/remote-jobs/remote-staff-product-manager-...-1133598
+        m = re.search(r"-(\d+)$", url.rstrip("/"))
+        src_key = f"remoteok:{m.group(1)}" if m else normalize_url(url)
+    elif source == "himalayas":
+        # Himalayas discovery rows: guid/applicationLink is a stable himalayas.app URL.
+        # Use the full normalized URL as the stable key (no numeric id to extract).
+        src_key = f"himalayas:{normalize_url(url)}"
+    elif source == "smartrecruiters":
+        # SmartRecruiters rows: URL is https://jobs.smartrecruiters.com/{Company}/{id}
+        # Extract numeric posting id from the path.
+        m = re.search(r"/([0-9]{10,})(?:-|$)", url)
+        src_key = f"smartrecruiters:{m.group(1)}" if m else normalize_url(url)
+    elif source == "workable":
+        # Workable rows: URL is https://apply.workable.com/{slug}/j/{shortcode}/apply
+        # or https://{co}.workable.com/jobs/{shortcode}
+        # Extract the shortcode (8-char alphanumeric) as the stable key.
+        m = re.search(r"/j/([A-Z0-9]{8,})", url, re.I)
+        if not m:
+            m = re.search(r"/jobs/([A-Z0-9]{8,})", url, re.I)
+        src_key = f"workable:{m.group(1).upper()}" if m else normalize_url(url)
+    elif source == "bamboohr":
+        # BambooHR rows: URL is https://{slug}.bamboohr.com/careers/{id}
+        # Extract slug + id as the stable key.
+        m = re.search(r"https?://([^.]+)\.bamboohr\.com/careers/(\d+)", url)
+        src_key = f"bamboohr:{m.group(1)}:{m.group(2)}" if m else normalize_url(url)
     else:
         src_key = normalize_url(url)
     return dict(

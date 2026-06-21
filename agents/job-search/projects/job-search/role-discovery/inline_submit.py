@@ -120,6 +120,10 @@ RIPPLING_RX = re.compile(r"ats\.rippling\.com/(?:[a-z]{2}-[A-Z]{2}/)?([^/?#]+)/j
 # (<tenant>.bamboohr.com/careers/<id>, /jobs/view.php?id=<n>, /jobs/embed2.php?id=<n>).
 BAMBOOHR_RX = re.compile(r"([a-z0-9-]+)\.bamboohr\.com/(?:careers/(\d+)|jobs/(?:view|embed2)\.php\?id=(\d+))", re.I)
 
+# iCIMS career portals: careers-<co>.icims.com/jobs/<reqId>/<slug>/job (also
+# jobs.icims.com/... and <co>.icims.com/...). Capture the tenant host + reqId.
+ICIMS_RX = re.compile(r"https?://([a-z0-9-]+)\.icims\.com/jobs/(\d+)", re.I)
+
 # Greenhouse-iframe wrappers (Datadog, Databricks, Stripe, etc. — CUSTOM-ATS-SCOUT-2026-05-13).
 sys.path.insert(0, str(HERE / "adapters"))
 from greenhouse_iframe import (  # noqa: E402
@@ -128,6 +132,9 @@ from greenhouse_iframe import (  # noqa: E402
     embed_iframe_url as _gh_iframe_embed_url,
     synthetic_jd_url as _gh_iframe_synth_url,
 )
+
+
+NL_CONST = chr(10)
 
 
 def detect_ats(url: str) -> str:
@@ -147,6 +154,8 @@ def detect_ats(url: str) -> str:
         return "bamboohr"
     if "metacareers.com" in u:
         return "meta"
+    if ICIMS_RX.search(u) or ".icims.com" in u:
+        return "icims"
     if _gh_iframe_slug(u) and _gh_iframe_jid(u):
         return "greenhouse_iframe"
     return "unknown"
@@ -160,6 +169,19 @@ def parse_bamboohr_url(url: str) -> tuple[str, str] | None:
     tenant = m.group(1)
     job_id = m.group(2) or m.group(3)
     return (tenant, job_id) if job_id else None
+
+
+def parse_icims_url(url: str) -> tuple[str, str] | None:
+    """Return (tenant_host, req_id) or None for an iCIMS career-portal URL.
+
+    iCIMS URL shape: https://careers-<co>.icims.com/jobs/<reqId>/<slug>/job
+    (also jobs.icims.com/jobs/<reqId>/... and <co>.icims.com/jobs/<reqId>/...).
+    The runner (_icims_runner.py) drives JD -> Apply -> email/OTP -> form ->
+    submit over CDP, so we only need the tenant host + reqId for bookkeeping."""
+    m = ICIMS_RX.search(url or "")
+    if not m:
+        return None
+    return m.group(1), m.group(2)
 
 
 def parse_rippling_url(url: str) -> tuple[str, str] | None:
@@ -456,6 +478,16 @@ def resolve_role(role_id: int, conn: sqlite3.Connection) -> dict:
             "role_id": row["id"], "company": row["company"], "role": row["role"],
             "loc": row["loc"], "exp_req": row["exp_req"], "url": url,
             "ats": "meta", "job_id": job_id,
+            "slug": slug, "flags": row["flags"],
+        }
+    if ats == "icims":
+        ic = parse_icims_url(url)
+        ic_host, ic_reqid = ic if ic else ("", "")
+        slug = f"{slugify(row['company'])}-{ic_reqid}" if ic_reqid else slugify(row["company"])
+        return {
+            "role_id": row["id"], "company": row["company"], "role": row["role"],
+            "loc": row["loc"], "exp_req": row["exp_req"], "url": url,
+            "ats": "icims", "icims_host": ic_host, "icims_reqid": ic_reqid,
             "slug": slug, "flags": row["flags"],
         }
     raise ValueError(f"role id={role_id} has unsupported ATS URL: {url}")
@@ -1843,6 +1875,76 @@ def _extract_meta_jd(job_id: str) -> tuple[str, str]:
     return title, desc
 
 
+def prep_role_icims(role: dict, dry_run: bool = False) -> dict:
+    """iCIMS prep -> runner. The runner (_icims_runner.py) drives the full
+    JD -> Apply -> email/OTP -> form -> submit flow over CDP and uploads the
+    standard resume itself, so prep is thin: create the packet folder, record
+    tenant/reqId, and write STATUS-PREP-READY-ICIMS-RUNNER with the exact CLI.
+    The role is flipped prep_status='manual_ready' so it is not re-prepped.
+
+    NOTE: some iCIMS tenants gate the email-entry step behind hCaptcha BEFORE
+    the OTP (block_reason icims-hcaptcha-no-vendor). On those the runner exits
+    2 until a captcha vendor is provisioned; the OTP handling (EXIT 10 on miss)
+    runs the moment human-verification is passed.
+    """
+    slug = role["slug"]
+    workdir = SUBMITTED_DIR / slug
+    workdir.mkdir(parents=True, exist_ok=True)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    result = {
+        "slug": slug, "role_id": role["role_id"], "company": role["company"],
+        "role": role["role"], "ok": False, "workdir": str(workdir),
+        "ats": "icims", "submit_mode": "runner", "started_at": now,
+    }
+    try:
+        import json as _json
+        icims_doc = {
+            "role_id": role["role_id"], "company": role["company"],
+            "role": role["role"], "ats": "icims", "url": role["url"],
+            "icims_host": role.get("icims_host", ""),
+            "icims_reqid": role.get("icims_reqid", ""),
+            "loc": role.get("loc", ""), "exp_req": role.get("exp_req", ""),
+            "slug": slug,
+        }
+        (workdir / "icims.json").write_text(_json.dumps(icims_doc, indent=2) + NL_CONST)
+        runner_cmd = (
+            f"    .venv/bin/python role-discovery/_icims_runner.py "
+            f"--url {role['url']} --apply --debug .icims-debug/{slug}"
+        )
+        (workdir / "STATUS.md").write_text(
+            f"PREP-READY-ICIMS-RUNNER \u2014 {now}" + NL_CONST + NL_CONST
+            + f"role_id: {role['role_id']}" + NL_CONST
+            + f"slug:    {slug}" + NL_CONST
+            + f"url:     {role['url']}" + NL_CONST
+            + f"tenant:  {role.get('icims_host', '')}  reqId: {role.get('icims_reqid', '')}" + NL_CONST + NL_CONST
+            + "iCIMS apply is driven by the CDP runner (handles email-OTP via" + NL_CONST
+            + "Gmail IMAP, EXIT 10 on OTP timeout). Run:" + NL_CONST + NL_CONST
+            + runner_cmd + NL_CONST + NL_CONST
+            + "EXIT: 0=submitted/dryrun 2=auth/hcaptcha-wall 3=no-confirm" + NL_CONST
+            + "4=no-submit 5=cap 6=closed 7=already-applied 10=otp-timeout" + NL_CONST
+        )
+        result["ok"] = True
+        result["status_file"] = str(workdir / "STATUS.md")
+    except Exception as e:
+        result["error"] = f"{type(e).__name__}: {e}"
+        (workdir / "STATUS.md").write_text(f"ABORT-ICIMS-PREP \u2014 {now}" + NL_CONST + result["error"] + NL_CONST)
+        return result
+    # Flip prep_status so it is not re-prepped (mirrors Workday manual_ready).
+    if not dry_run:
+        try:
+            conn = sqlite3.connect(str(DB_PATH))
+            conn.execute(
+                "UPDATE roles SET prep_status='manual_ready' WHERE id=?",
+                (role["role_id"],),
+            )
+            conn.commit(); conn.close()
+            result["tracker_updated"] = True
+        except Exception as e:
+            result["tracker_update_error"] = f"{type(e).__name__}: {e}"
+    result["ended_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return result
+
+
 def prep_role_meta(role: dict, dry_run: bool = False) -> dict:
     """Meta Careers prep+submit pipeline.
 
@@ -2111,6 +2213,10 @@ def prep_role(role: dict, dry_run: bool = False, ignore_csp_block: bool = False,
     # Meta Careers — full prep+submit via _meta_runner.py (guest apply, no auth).
     if role.get("ats") == "meta":
         return prep_role_meta(role, dry_run=dry_run)
+
+    # iCIMS — full prep+submit via _icims_runner.py (CDP; email-OTP handled).
+    if role.get("ats") == "icims":
+        return prep_role_icims(role, dry_run=dry_run)
 
     # chain_005 P5 (2026-05-26): HEAD-probe the URL before any other work.
     # Cursor 933 lost a full prep cycle to a page-not-found. Probe runs after

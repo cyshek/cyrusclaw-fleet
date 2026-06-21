@@ -1,0 +1,306 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/aircall/4965256f-b814-46a5-b6f6-e83bec714120",
+  "apply_url": "https://jobs.lever.co/aircall/4965256f-b814-46a5-b6f6-e83bec714120/apply",
+  "org": "aircall",
+  "job_id": "4965256f-b814-46a5-b6f6-e83bec714120",
+  "job_title": "Aircall - Forward Deployed Engineer - AI Solutions Engineering",
+  "fetched_at": "2026-06-21T07:42:12Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 20,
+    "filled": 15,
+    "filled_needs_review": 1,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[d166ad30-4f0b-4277-a3f5-dc9bf799de1a][field0]",
+      "label": "Will you now or in the future require sponsorship to work for an employer in the US?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_* | NOTE: 'No' not literally in options",
+      "status": "filled_needs_review",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes - I do/will require sponsorship",
+          "value": "e30a2c7c-e1fd-4af7-9942-ab8d1c5772b3"
+        },
+        {
+          "label": "No - I do not/will not require sponsorship, and I am authorized to work for any employer in the US",
+          "value": "c61e76a2-2878-49f1-a709-ae098844f04a"
+        }
+      ],
+      "card_text": "US: Please confirm your legal work authorization status"
+    },
+    {
+      "id": "cards[d166ad30-4f0b-4277-a3f5-dc9bf799de1a][field1]",
+      "label": "If you currently require sponsorship (or will require sponsorship in the future), please include: 1. The type of visa or sponsorship you currently have (or will require in the future). 2. The timing of when you will require sponsorship. 3. Any additional information that Aircall may need to know in determining whether or not we will be able to provide sponsorship.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "card_text": "US: Please confirm your legal work authorization status"
+    },
+    {
+      "id": "cards[859844bf-bb0f-49bb-9090-8ef2a5cf6867][field0]",
+      "label": "What are your pronouns?",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null,
+      "card_text": "Pronouns "
+    },
+    {
+      "id": "cards[3bcbe39d-bcd3-4d6b-972e-552952658158][field0]",
+      "label": "What is your desired salary (annually)? If your target number includes bonuses/commissions, please specify the breakdown.",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "card_text": "Compensation"
+    },
+    {
+      "id": "cards[05c7333d-b63a-4129-ab70-b723024a00a0][field0]",
+      "label": "What is most exciting to you about this role?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Here are two quick questions for you. There are no right answers — we just want to get to know you better!"
+    },
+    {
+      "id": "cards[05c7333d-b63a-4129-ab70-b723024a00a0][field1]",
+      "label": "Why would we be excited to work with you?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Aircall because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Aircall is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Aircall while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Aircall aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Aircall')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "card_text": "Here are two quick questions for you. There are no right answers — we just want to get to know you better!"
+    },
+    {
+      "id": "cards[8c2e3ff1-155d-41f7-9543-c139e746038d][field0]",
+      "label": "This role is a hybrid role and requires some regular in office time. Are you comfortable with being in the office 3 days per week?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "cc574961-704b-4f04-82ca-0bfc4a7d3ac9"
+        },
+        {
+          "label": "No",
+          "value": "be47877d-9a2d-4f4f-9725-c0f0de0bbf4d"
+        }
+      ],
+      "card_text": "Hybrid Work"
+    },
+    {
+      "id": "cards[c21077b1-acdd-41eb-b7d2-434bf2bdf937][field0]",
+      "label": "If you are currently residing outside of NYC, are you willing to relocate for this role?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": false,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "cc5a2f63-6bef-4a7f-88b3-b0fdfa29c8ca"
+        },
+        {
+          "label": "No",
+          "value": "87054c8f-695b-4e53-99df-7e4ebcd458e1"
+        }
+      ],
+      "card_text": "NYC Relocation"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "meta": {
+    "og_title": "Aircall - Forward Deployed Engineer - AI Solutions Engineering",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

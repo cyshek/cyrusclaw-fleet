@@ -1,57 +1,22 @@
 # PEER_STATE.md
 
 _Auto-generated digest of peer agents' latest daily memory + current BACKLOG.md._
-_Generated: 2026-06-19 11:00 UTC_
+_Generated: 2026-06-20 11:00 UTC_
 
 ---
 
 ## job-search
 
-### Latest daily memory: `memory/2026-06-19.md`
+### Latest daily memory: `memory/2026-06-20.md`
 
-# 2026-06-19
+# 2026-06-20 Daily Log
 
-## Summary
-Heavy overnight run (all activity crossed into Jun 19 UTC from Jun 18 PDT sessions). Most entries already in 2026-06-18.md — this file captures the 24:00 UTC boundary crossing items.
-
-## Carry-forward / Status at EOD Jun 19 UTC 07:25
-- **Total applied: 667** (Nordstrom 3002 pushed it there)
-- **Manual-ready: ~27**, Blocked: **41**, Open: ~4, Interviews: 25
-
-## Shipped Jun 18 PDT → Jun 19 UTC (captured here for UTC-date completeness)
-- ✅ Brellium PM (3000) + Distyl PMM (3001): SUBMITTED via Ashby residential (confirmed FormSubmitSuccess)
-- ✅ Nordstrom PM1-Merchandising (3002): Workday EXIT 0, confirmed "Application Submitted"
-- ✅ ConocoPhillips (2935): Workday EXIT 0, full activation-link verify path
-- ✅ Snap 2924 (Technical PM, Palo Alto): Workday EXIT 0, confirmed via JD re-nav
-- ✅ Canopy Tax (2436): Greenhouse submitted via _gh_submit.py (LinkedIn no-external-apply resolver run)
-- ✅ Pipeline Group (2917): submitted (caught post-context-overflow via disk verify)
-
-## Deepgram lesson (2026-06-19 ~04:30 PDT)
-- All 3 Deepgram roles blocked: TPM (2997) + SA (2999) = 60-day re-apply window (FDE app 2026-05-31, clears ~2026-07-30); Pre-Sales SE (2998) = HARD ashby captcha + same email block
-- Timezone resolver fix shipped: "Are you currently based within Eastern or Pacific Time?" → answer_yes (boolean Q, not a picker)
-- DO NOT retry Deepgram until ~2026-07-30
-
-## myworkdaysite.com fix (shipped)
-- `inline_submit.py` and `workday_dryrun.py` now handle `myworkdaysite.com` (tenant in path, not host). Snap 2924 was the first beneficiary.
-
-## Ashby radio-location fix (chain_035b, commit b710f1d)
-- `final_clobber_guard` now skips typeahead refill when location was set via a US-state radio. Thumbtack 2287 unblocked (but role may have Canada-only location = actual knockout; separate issue).
-
-## Blocked — no retry (new verdicts this cycle)
-- GEICO 2464: ghost req (CXS 404), marked req-closed-workday-404
-- Spot AI 2307/2438: TeamTailor ATS, no runner
-- Amazon 2914: proprietary ATS, no runner
-- JobDiva roles (2915/2916): staffing portal, not hiring company ATS
-- Oracle HCM (2921): no automated runner (Macy's recipe is browser-manual only)
-- Tecan 2919: contactrh custom ATS, no runner
-- LinkedIn no-ats-found batch (14 roles): AceStack/Apex/Archon/Atlas/AvtechTyee/CHAMP/Chromalox/Cindavi/Cisco/Copeland/Dartronics/Dexian/Dorner/ELLWOOD — no ATS found
-- ConocoPhillips citizenship Q: unrecognized Q about Cuba/NK/Syria/Iran defaulted YES (wrong); correct=No. Note for UNRECOGNIZED_QUESTION_RULES improvement.
-
-## Standing
-- OpenAI hold still in effect (Cyrus hit application limit)
-- Deepgram: retry after 2026-07-30
-- Palantir 816/817/818: hCaptcha-Enterprise, CapSolver confirmed unsupported (probed live 06-18)
-- bootstrap-guard trimmed job-search/MEMORY.md: 21536→19981 chars (backup kept); trading-bench/MEMORY.md: 20787→19812 chars (backup kept)
+## Nightly distill cron (12:25 AM PDT)
+- No new activity on 2026-06-20. All work from the prior session is in 2026-06-19.md.
+- Reviewed MEMORY.md + BACKLOG.md — both current, no stale entries found.
+- DEBUNKED ledger in MEMORY.md already has the 2026-06-19 hCaptcha + Stripe fixes.
+- No promotions needed tonight; yesterday's distill (2026-06-19 evening) was complete.
+- bootstrap-guard trimmed job-search/MEMORY.md: 20773→19836 chars (backup kept)
 
 ### BACKLOG.md
 
@@ -182,14 +147,15 @@ _…(truncated; 263 total lines in source)_
 
 ## openclaw-updates
 
-### Latest daily memory: `memory/2026-06-19.md`
+### Latest daily memory: `memory/2026-06-20.md`
 
-# 2026-06-19
+# 2026-06-20
 
 ## Nightly Distill (01:00 PDT / 08:00 UTC)
-- No interactive work today (Jun 19).
-- **Kernel reboot completed** — VM now running **6.17.0-1018-azure** (Ubuntu 6.17.0-1018.18~24.04.1-azure). `/var/run/reboot-required` cleared. Reboot happened between Jun 18 distill (still pending 2+ days) and now; exact window unknown — likely `unattended-reboot` or Cyrus manually. Previous kernel was 6.8.0-1059-azure.
-- Nothing else to report — quiet day.
+- No interactive work today (Jun 20). Quiet Saturday.
+- No kernel/apt/openclaw changes detected.
+- No Cyrus requests or escalations.
+- BACKLOG unchanged from Jun 19 — "Harden kernel reboot flow" still pending (auto, no Cyrus action needed).
 
 ### BACKLOG.md
 
@@ -287,56 +253,23 @@ _(none yet — will populate as trip ideas come in)_
 
 ## trading-bench
 
-### Latest daily memory: `memory/2026-06-19.md`
+### Latest daily memory: `memory/2026-06-20.md`
 
-# 2026-06-19 (UTC)
+# 2026-06-20 (UTC)
 
-## Nightly Post-Market Review — 2026-06-19 ~00:00 UTC (Thu Jun 18, 5pm PT)
+## Nightly distill — 2026-06-20 09:00 UTC (2:00 AM PT)
 
-### Trades Today
-- **0 trades** executed (0 decisions, 0 runs logged for today's UTC date)
-- No non-filled orders in trailing 7 days — clean order status
-
-### Leaderboard (cumulative all-time)
-1. `breakout_xlk__mut_c382b1` — $+44.05 | trades=3, win%=100%, turnover=$2019
-2. `breakout_xlk_regime` — $+4.68 | trades=4, win%=100%
-3. `breakout_xlk` — $+4.57 | trades=4, win%=100%
-4. `sma_crossover_qqq` — $+3.87 | trades=4, win%=100%
-5. `sma_crossover_qqq_regime` — $+3.82 | trades=4, win%=100%
-- Notable negatives: `backstop_test` -$120 (6 trades, 0% win — likely a deliberate backstop test); `buy_and_hold_btc` -$5.19 unrealized; `sma_crossover_btc` -$2.04 realized (9 trades, 0% win)
-- All strategies show tiny absolute PnL — sample sizes still very small (all < 10 trades)
-
-### Candidates in strategies_candidates/
-- `leveraged_long_trend`, `credit_stress`, `fx_lane`, `sma_crossover_qqq_macrogate` — backtest/eval files present but **no PROMOTE flags found**; none cleared the gate today
-- Last TOURNAMENT_ROUND was 2026-06-14: `sma_crossover_qqq_regime__mut_0b11ed` → REJECT_GATE (median return +0.33% vs parent +0.41%; failed +0.10pp hurdle)
-- `_archive/` subfolder present — old candidates archived
-
-### Anomalies
-- None. No unfilled orders, no MAX_TRADES_PER_DAY hits, no error runs.
-- Runners appear quiet (no run records for today's UTC date) — possibly regime-gated or market closed early/holiday adjacent
-
-### Status
-Routine quiet close. No PROMOTE candidates pending review. No anomalies.
-
-## 2026-06-19 — PEAD real consensus backtest
-- Completed subagent task: Nasdaq real analyst-consensus PEAD crawler/backtest under strategies_candidates/pead_real; 93,025 earnings events, 32,164 trades; OOS win 56.3%, avg +1.313%, CAGR 10.83%, Sharpe 0.583 vs SPY 14.95% CAGR; verdict REJECT per gate despite real positive signal.
-
-## PEAD v2 Refined Backtest (subagent, 2026-06-19)
-- Ran 4 combos: large-cap_5d_trend, large-cap_10d_trend, large-cap_20d_trend, all-cap_5d_trend
-- ALL 4 gate combos: REJECT (OOS Sharpe 0.125-0.498, all worse than baseline 0.583)
-- Key discoveries:
-  - Large-cap filter (n_est>=8) HELPS: +0.074 Sharpe → 0.657 (still below 0.7)
-  - SPY 50d SMA gate DESTROYS alpha: 0.657→0.202 (-0.455). PEAD is company-specific, not market beta
-  - Shorter hold (5d/10d) hurts badly: avg trade 0.084% vs 1.451% for 20d
-  - MAX_POSITIONS=20 cap creates slot starvation (70% trades rejected for large-cap_20d)
-- Best found: LC-only + 20d + no gate + no cap → OOS Sharpe=0.657, CAGR=13.02% vs SPY 14.95%
-- Final verdict: MARGINAL (0.043 short of 0.7 threshold)
-- Files: backtest_pead_v2.py, GATE_RESULT_V2.md, backtest_results_v2.json
-
-## 2:00 AM PT — Nightly distill (UTC 2026-06-19 09:00)
-- No new interactive work since PEAD v2 + crypto carry entries above. State unchanged.
-- BACKLOG.md: PEAD lane status updated — analyst consensus data IS available (Nasdaq Earnings Calendar, free, keyless); PEAD result now MARGINAL/REJECT (OOS Sharpe 0.657, short of 0.7 gate). Crypto carry: CONDITIONAL-GO historically, but 2026 YTD regime shift makes it unattractive now.
-- MEMORY.md: promoted PEAD real-consensus findings + crypto carry verdict.
+- No interactive work today (Saturday). All substantive activity was logged yesterday (2026-06-19):
+  - PEAD v2, PEAD market-neutral (both REJECT)
+  - TQQQ stress test (robust, 2022 DD is universal binding constraint)
+  - Intraday data spike (Alpaca SIP confirmed free; path unblocked for future use)
+  - Intraday mean-reversion backtest (REJECT — edge = cost, structurally backwards in bull markets)
+  - Bear-regime complement backtest (GLD only viable; no combo passes PROMOTE gate; C3-TQQQ+GLD best risk-adjusted at Sharpe 1.081, MaxDD -15%)
+  - Cache purge: data_cache/yahoo/ cleared (4.1G)
+  - Nightly post-market reviews (0 trades both days, leaderboard unchanged)
+- MEMORY.md: no new durable lessons to promote today
+- BACKLOG.md: no changes needed; `leveraged_long_trend` still pending formal gate write-up; all others resolved
+- State: quiet weekend, no anomalies, no runners fired
 
 ### BACKLOG.md
 
@@ -467,19 +400,18 @@ _…(truncated; 216 total lines in source)_
 
 ## making-money
 
-### Latest daily memory: `memory/2026-06-19.md`
+### Latest daily memory: `memory/2026-06-20.md`
 
-# 2026-06-19 — making-money daily log
+# 2026-06-20 — making-money daily log
 
 ## No new activity today
 
 Nightly distill ran ~2:20am PT. No Cyrus interaction, no new work initiated.
 
-## Carried state (from 2026-06-18)
-- EXP-2 outreach: 89 emails sent total; 2-4 week K-factor window running; reply-monitor cron active (every 2h, job b2ac77a9)
-- EXP-3 (PagePeek Chrome extension): submitted 2026-06-17, review expected ~June 20 — check tomorrow
-- sitelume.app: live on nohup + @reboot crontab after pm2 ESM fix
-- Hunter.io: ~16/25 monthly searches used
+## Key watch items
+- **EXP-3 PagePeek Chrome review** — expected ~Jun 20 (1–3 business days from Jun 17 submission). Check Chrome dev console tomorrow if Cyrus hasn't heard.
+- **EXP-2 K-factor window** — 89 emails sent Jun 18; 2–4 week measurement window running. Reply-monitor cron active (job b2ac77a9, every 2h).
+- **Hunter.io usage:** ~16/25 monthly searches used.
 
 ### BACKLOG.md
 

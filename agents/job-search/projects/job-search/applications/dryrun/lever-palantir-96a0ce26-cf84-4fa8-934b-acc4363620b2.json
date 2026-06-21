@@ -5,14 +5,14 @@
   "org": "palantir",
   "job_id": "96a0ce26-cf84-4fa8-934b-acc4363620b2",
   "job_title": "Palantir Technologies - Forward Deployed Engineer - Mixed Reality",
-  "fetched_at": "2026-05-31T11:58:53Z",
+  "fetched_at": "2026-06-21T04:11:13Z",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 23,
-    "filled": 17,
+    "filled": 18,
     "filled_needs_review": 1,
     "declined": 4,
-    "unresolved": 1,
+    "unresolved": 0,
     "blockers": 0
   },
   "fields": [
@@ -106,9 +106,9 @@
       "type": "input_text",
       "lever_type": null,
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "portfolio_url is null",
-      "status": "unresolved",
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
       "matched_rule": "portfolio",
       "options": null
     },
@@ -13576,6 +13576,10 @@
           "value": "1d6a506d-2ed9-4003-8156-da4108b0c794"
         },
         {
+          "label": "BuiltIn",
+          "value": "44b3fa00-619f-4299-8e6d-9d66bd14b69b"
+        },
+        {
           "label": "Campus Ambassador",
           "value": "63990bea-9b6f-4705-a3cb-8f199b31965a"
         },
@@ -13648,10 +13652,10 @@
       "type": "textarea",
       "lever_type": "textarea",
       "required": false,
-      "value": "<<COVER_ANSWER>>",
-      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
       "status": "filled",
-      "matched_rule": null,
+      "matched_rule": "customer_facing_essay",
       "options": null,
       "card_text": "Additional Questions"
     },
@@ -13743,14 +13747,7 @@
       "compliance": "eeo"
     }
   ],
-  "unresolved": [
-    {
-      "id": "urls[Portfolio]",
-      "label": "Portfolio URL",
-      "required": false,
-      "reason": "portfolio_url is null"
-    }
-  ],
+  "unresolved": [],
   "blockers": [],
   "meta": {
     "og_title": "Palantir Technologies - Forward Deployed Engineer - Mixed Reality",

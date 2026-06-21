@@ -15,18 +15,33 @@ browser rather than launching its own — iCIMS tenants sit behind bot defenses 
 the persistent profile carries candidate cookies for re-login. It drives the
 JD -> Apply -> login/register -> form -> submit flow for the queued tenants.
 
+=== EMAIL-OTP VERIFICATION (shipped 2026-06-20) ===
+Effective Apr-2025 iCIMS Universal Login (Auth0) and the candidate career-portal
+apply gate verify the candidate email with a **6-digit one-time code** emailed from
+an icims.com host (`no-reply@icims.com` / `*@hire.icims.com` / `*@talent.icims.com`,
+or Auth0-on-behalf-of-iCIMS). After the email-entry step the portal renders a
+"Verification Code" input and mails the code. This runner now clears that gate
+automatically via `handle_otp_gate()`:
+  1. detect the OTP input (name/id/aria with otp|code|verification|pin, or a 6-cell
+     segmented input, or body text "verification code" / "enter the code"),
+  2. read the freshest 6-digit iCIMS code from Gmail (gmail_imap.wait_for_icims_otp,
+     90s budget, app password at projects/job-search/.gmail-app-password),
+  3. type it (segmented inputs filled per-cell) + click Verify/Continue/Submit,
+  4. confirm the gate cleared. If no code arrives in the window -> EXIT 10.
+
 === KNOWN HARD WALL (verified live 2026-06-03, Joby careers-jobyaviation) ===
-The iCIMS email-entry gate (`/login`, the FIRST step) is protected by **hCaptcha**
-(sitekey e.g. `94fee806-5cac-4582-9738-384a0f4ea6f8`, a real
-`newassets.hcaptcha.com` challenge frame). Submitting the email WITHOUT a valid
-`h-captcha-response` token does nothing — the page re-renders on `/login`. Per
-TOOLS.md, **CapSolver has discontinued all hCaptcha solving** and no nopecha key is
-configured, so the gate is a HARD BLOCK in the same class as the Palantir Lever
-hCaptcha wall. The runner ATTEMPTS a solve via the shared CaptchaSolver; on
-SolverNotConfigured / vendor-reject it returns block_reason
-`icims-hcaptcha-no-vendor` so the moment Cyrus provisions a working hCaptcha vendor
-(nopecha, or a capsolver plan that supports hCaptcha) this runner completes with NO
-code change.
+The iCIMS email-entry gate (`/login`, the FIRST step) is on some tenants ALSO
+protected by an hCaptcha "Verify you are human" checkbox that PRECEDES the OTP.
+Where that checkbox is a hard hCaptcha challenge (sitekey e.g.
+`94fee806-5cac-4582-9738-384a0f4ea6f8`, a real `newassets.hcaptcha.com` frame),
+submitting the email without a valid `h-captcha-response` token does nothing — the
+page re-renders on `/login`. Per TOOLS.md, CapSolver discontinued hCaptcha and no
+nopecha key is configured, so on THOSE tenants the gate is a HARD BLOCK
+(`icims-hcaptcha-no-vendor`) BEFORE the OTP step is reachable. The runner ATTEMPTS a
+solve via the shared CaptchaSolver; on SolverNotConfigured / vendor-reject it
+returns that reason. The OTP handling runs the moment human-verification is passed
+(a no-captcha tenant, a warmed/recognized profile where the checkbox auto-passes, or
+once a vendor is provisioned) — NO further code change needed.
 
 Other queued tenants are walled for DIFFERENT precise reasons (set per-row):
   - AMD (internal-amd.icims.com) / SiriusXM (employees-siriusxmradio.icims.com):
@@ -38,6 +53,16 @@ Other queued tenants are walled for DIFFERENT precise reasons (set per-row):
 Usage:
   python3 _icims_runner.py --url <jobUrl> [--dryrun] [--debug DIR] [--cdp ...]
   --dryrun : drive the flow, fill what's reachable, stop before final Submit.
+
+EXIT codes (consumed by inline_submit dispatch):
+  0  = submitted / dryrun-ready
+  2  = login/auth block (incl. hCaptcha-no-vendor, no-email-gate)
+  3  = submitted but no confirmation observed
+  4  = could not click submit (no submit button)
+  5  = loop / time cap
+  6  = requisition closed / removed
+  7  = already applied
+  10 = OTP timeout (gate detected, no 6-digit iCIMS code arrived within budget)
 """
 import sys, os, time, json, argparse, re
 
@@ -255,6 +280,174 @@ def detect_confirmation(page):
 
 
 # ---------------------------------------------------------------------------
+# Email-OTP verification gate (iCIMS Universal Login / Auth0, Apr-2025+).
+# After the email-entry step iCIMS mails a 6-digit code and renders a code input.
+# We detect it, read the code from Gmail, type it, and continue. EXIT 10 on no-code.
+# ---------------------------------------------------------------------------
+_OTP_DETECT_JS = r"""()=>{
+  const all=[...document.querySelectorAll('input')];
+  const vis=el=>{const r=el.getBoundingClientRect();const s=getComputedStyle(el);
+    return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none';};
+  const txt=el=>((el.name||'')+' '+(el.id||'')+' '+(el.getAttribute('aria-label')||'')+
+    ' '+(el.placeholder||'')+' '+(el.getAttribute('autocomplete')||'')).toLowerCase();
+  const codeRe=/otp|one[-_ ]?time|onetime|verification|verif(y|ication)?code|\bcode\b|passcode|pin|securitycode|mfa|2fa/;
+  // 1. A single explicit code field.
+  for(const el of all){
+    if(!vis(el)) continue;
+    const t=txt(el);
+    if((el.type==='text'||el.type==='tel'||el.type==='number'||el.type==='')&&codeRe.test(t)){
+      return {present:true, segmented:false, n:1, sel: el.id?('#'+CSS.escape(el.id)):
+              (el.name?('input[name="'+el.name+'"]'):null), why:'named:'+t.trim().slice(0,40)};
+    }
+  }
+  // 2. A segmented code input: 4-8 visible single-char text/number inputs in a row.
+  const singles=all.filter(el=>vis(el)&&(el.type==='text'||el.type==='tel'||el.type==='number')&&
+    (el.maxLength===1|| (el.getAttribute('maxlength')==='1')) );
+  if(singles.length>=4 && singles.length<=8){
+    return {present:true, segmented:true, n:singles.length, sel:null, why:'segmented:'+singles.length};
+  }
+  // 3. Body text indicates a code step (and we are NOT on the bare email-only step).
+  const bt=(document.body.innerText||'').toLowerCase();
+  const emailStep=/enter your email|email address/.test(bt) && !/verification|enter the code|we (sent|emailed)|6-digit|six-digit/.test(bt);
+  const codeStep=/verification code|enter the code|we (sent|emailed|just sent)|6-digit code|six-digit code|one-time (code|passcode|password)|check your email for/.test(bt);
+  if(codeStep && !emailStep){
+    return {present:true, segmented:false, n:1, sel:null, why:'bodytext'};
+  }
+  return {present:false};
+}"""
+
+_OTP_FILL_SINGLE_JS = r"""([sel,val])=>{
+  const el = sel ? document.querySelector(sel)
+    : [...document.querySelectorAll('input')].find(e=>{
+        const r=e.getBoundingClientRect();
+        const t=((e.name||'')+' '+(e.id||'')+' '+(e.getAttribute('aria-label')||'')+' '+(e.placeholder||'')).toLowerCase();
+        return r.width>0&&r.height>0&&/otp|code|verif|passcode|pin/.test(t);
+      });
+  if(!el) return 'OTP_INPUT_MISSING';
+  const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+  el.scrollIntoView({block:'center'}); el.focus(); d.set.call(el,val);
+  el.dispatchEvent(new Event('input',{bubbles:true}));
+  el.dispatchEvent(new Event('change',{bubbles:true}));
+  el.blur(); return 'ok:'+el.value;
+}"""
+
+_OTP_FILL_SEGMENTED_JS = r"""([digits])=>{
+  const all=[...document.querySelectorAll('input')].filter(el=>{
+    const r=el.getBoundingClientRect();const s=getComputedStyle(el);
+    return r.width>0&&r.height>0&&s.visibility!=='hidden'&&
+      (el.type==='text'||el.type==='tel'||el.type==='number')&&
+      (el.maxLength===1||el.getAttribute('maxlength')==='1');
+  });
+  if(all.length<digits.length) return 'SEG_TOO_FEW:'+all.length;
+  const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+  for(let i=0;i<digits.length;i++){
+    const el=all[i]; el.focus(); d.set.call(el,digits[i]);
+    el.dispatchEvent(new Event('input',{bubbles:true}));
+    el.dispatchEvent(new KeyboardEvent('keyup',{bubbles:true,key:digits[i]}));
+    el.dispatchEvent(new Event('change',{bubbles:true}));
+  }
+  all[Math.min(digits.length,all.length)-1].blur();
+  return 'seg_ok:'+digits.length;
+}"""
+
+_OTP_CONTINUE_JS = r"""()=>{
+  const b=[...document.querySelectorAll('button,input[type=submit],input[type=button],a')]
+    .find(x=>/^(verify|continue|submit|next|confirm|log ?in|sign ?in|verify code|verify email)$/i
+      .test((x.value||x.textContent||'').trim()));
+  if(b){b.scrollIntoView({block:'center'}); b.click(); return (b.value||b.textContent||'').trim();}
+  return null;
+}"""
+
+
+def detect_otp_gate(page):
+    """Scan all frames for an iCIMS email-OTP input. Returns
+    {present, frame(_url), segmented, n, sel, why} (present False if none)."""
+    for fr in page.frames:
+        try:
+            res = fr.evaluate(_OTP_DETECT_JS)
+        except Exception:
+            continue
+        if res and res.get("present"):
+            res["frame"] = fr.url
+            res["_frame_obj"] = fr
+            return res
+    return {"present": False}
+
+
+def fill_otp(fr, code, segmented=False, n=1):
+    """Type the OTP code into a frame's code input(s). Single field or segmented
+    per-cell. Returns the JS result string."""
+    code = re.sub(r"\D", "", str(code or ""))
+    if segmented:
+        return frame_eval(fr, _OTP_FILL_SEGMENTED_JS, [list(code)])
+    return frame_eval(fr, _OTP_FILL_SINGLE_JS, [None, code])
+
+
+def click_otp_continue(page):
+    """Click the Verify/Continue/Submit button on the OTP step (any frame)."""
+    for fr in page.frames:
+        r = frame_eval(fr, _OTP_CONTINUE_JS)
+        if r and not str(r).startswith("EVALERR") and r != "null" and r is not None:
+            return r
+    return None
+
+
+def _read_icims_otp(gmail_mod, timeout, since_epoch):
+    """Indirection so tests can inject a fake gmail module. Returns code or raises
+    TimeoutError."""
+    if gmail_mod is None:
+        import gmail_imap as gmail_mod  # noqa: WPS433
+    return gmail_mod.wait_for_icims_otp(timeout_seconds=timeout, since_epoch=since_epoch)
+
+
+def handle_otp_gate(page, debug=None, gmail_mod=None, timeout=90, since_epoch=None):
+    """Detect + clear the iCIMS email-OTP gate.
+
+    Returns a dict with `status` in:
+      - 'absent'  : no OTP gate present (nothing to do; caller proceeds)
+      - 'passed'  : code entered and the gate cleared
+      - 'timeout' : gate present but no 6-digit iCIMS code arrived (-> EXIT 10)
+      - 'entered_unconfirmed' : code typed + continue clicked, gate still showing
+      - 'no_input': gate text seen but no fillable input found
+    """
+    det = detect_otp_gate(page)
+    if not det.get("present"):
+        return {"status": "absent"}
+    log("OTP gate detected:", det.get("why"), "segmented=", det.get("segmented"))
+    shot(page, debug, "OTP-00-detected")
+    # Request window starts slightly before now (email was just triggered).
+    if since_epoch is None:
+        since_epoch = time.time() - 60
+    try:
+        code = _read_icims_otp(gmail_mod, timeout, since_epoch)
+    except TimeoutError as e:
+        log("OTP timeout:", e)
+        shot(page, debug, "OTP-timeout")
+        return {"status": "timeout", "detail": str(e), "detect": det.get("why")}
+    if not code:
+        shot(page, debug, "OTP-timeout")
+        return {"status": "timeout", "detail": "empty-code", "detect": det.get("why")}
+    log("OTP code received (masked):", str(code)[:2] + "****")
+    fr = det.get("_frame_obj") or find_form_frame(page, "input")
+    fill_res = fill_otp(fr, code, det.get("segmented", False), det.get("n", 1))
+    log("OTP fill:", fill_res)
+    if isinstance(fill_res, str) and ("MISSING" in fill_res or "TOO_FEW" in fill_res):
+        shot(page, debug, "OTP-no-input")
+        return {"status": "no_input", "fill": fill_res, "code_len": len(str(code))}
+    page.wait_for_timeout(800)
+    btn = click_otp_continue(page)
+    log("OTP continue click:", btn)
+    # Poll for the gate to clear (code field gone or advanced past it).
+    for _ in range(8):
+        page.wait_for_timeout(1500)
+        if not detect_otp_gate(page).get("present"):
+            shot(page, debug, "OTP-01-passed")
+            return {"status": "passed", "code_len": len(str(code)), "btn": btn}
+    shot(page, debug, "OTP-unconfirmed")
+    return {"status": "entered_unconfirmed", "code_len": len(str(code)), "btn": btn}
+
+
+# ---------------------------------------------------------------------------
 # hCaptcha solve attempt via shared CaptchaSolver. Returns (token|None, reason).
 # ---------------------------------------------------------------------------
 def try_solve_hcaptcha(sitekey, page_url):
@@ -447,6 +640,24 @@ def run(args):
         page.wait_for_timeout(5000)
         shot(page, args.debug, "02-post-email")
 
+        # --- Email-OTP verification gate (iCIMS Universal Login / Auth0, Apr-2025+) ---
+        # After the email step iCIMS mails a 6-digit code and renders a code input.
+        # Clear it automatically by reading the code from Gmail. A detected-but-
+        # unfulfilled gate is terminal: EXIT 10 (otp-timeout).
+        otp = handle_otp_gate(page, debug=args.debug,
+                              timeout=getattr(args, "otp_timeout", 90))
+        result["otp"] = otp
+        if otp.get("status") == "timeout":
+            result.update(status="otp_timeout",
+                          block_reason="icims-otp-timeout:" + str(otp.get("detail", "")))
+            print(json.dumps(result)); _close(page, args); return result
+        if otp.get("status") == "no_input":
+            result.update(status="blocked",
+                          block_reason="icims-otp-no-input")
+            print(json.dumps(result)); _close(page, args); return result
+        if otp.get("status") != "absent":
+            page.wait_for_timeout(3000)
+
         term = detect_terminal(page)
         if term == "already_applied":
             result.update(status="already_applied", block_reason="already-applied")
@@ -507,6 +718,36 @@ def _close(page, args):
             pass
 
 
+# Map a run() result status -> process EXIT code (see module docstring).
+_STATUS_EXIT = {
+    "applied": 0,
+    "dryrun-ready": 0,
+    "already_applied": 7,
+    "closed": 6,
+    "otp_timeout": 10,
+    "uncertain": 3,            # submitted but unconfirmed
+}
+
+
+def exit_code_for(result: dict) -> int:
+    """Translate a run() result dict into the documented EXIT code. Defaults:
+    a generic blocked/auth state -> 2; an explicit no-submit-button -> 4; a
+    time/loop cap -> 5."""
+    status = (result or {}).get("status")
+    if status in _STATUS_EXIT:
+        return _STATUS_EXIT[status]
+    reason = str((result or {}).get("block_reason") or "")
+    if "no-submit-button" in reason:
+        return 4
+    if "time-cap" in reason or "loop" in reason:
+        return 5
+    if "otp-timeout" in reason:
+        return 10
+    if "closed" in reason or "already-applied" in reason:
+        return 7 if "already" in reason else 6
+    return 2
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--url", required=True)
@@ -515,17 +756,20 @@ def main():
     ap.add_argument("--debug", default=None, help="screenshot dir")
     ap.add_argument("--cdp", default=CDP_DEFAULT)
     ap.add_argument("--max-seconds", type=int, default=600)
+    ap.add_argument("--otp-timeout", type=int, default=90,
+                    help="seconds to wait for the iCIMS email OTP (EXIT 10 on miss)")
     ap.add_argument("--keep-open", action="store_true")
     args = ap.parse_args()
     r = run(args)
-    ok = r.get("status") in ("applied", "dryrun-ready")
+    code = exit_code_for(r)
+    ok = code == 0
     try:
         from debug_shots import prune_step_shots_on_success
         if args.debug:
-            prune_step_shots_on_success(args.debug, None, 0 if ok else 2, success_codes=(0,))
+            prune_step_shots_on_success(args.debug, None, code, success_codes=(0,))
     except Exception as e:
         print(f"[icims] debug-shot prune skipped: {e}")
-    sys.exit(0 if ok else 2)
+    sys.exit(code)
 
 
 if __name__ == "__main__":

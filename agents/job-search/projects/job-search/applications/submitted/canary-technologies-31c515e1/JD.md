@@ -1,0 +1,85 @@
+# Sales Engineer
+
+**Company:** Canary Technologies
+**Location:** New York, NY
+**Apply:** https://jobs.lever.co/canarytechnologies/31c515e1-0ddc-442e-8227-8c94033855ea/apply
+**Lever ID:** 31c515e1-0ddc-442e-8227-8c94033855ea
+
+---
+
+About Us
+Canary Technologies is changing the game for hotels with modern software powered by Canary's hospitality-specific AI platform.
+ 
+Canary is utilized by 20,000+ hoteliers in 100+ countries to equip hoteliers with the technology they need to work smarter and wow their guests. Major hotel brands such as Wyndham, Marriott, IHG, Four Seasons, Rosewood, and Best Western trust Canary to deliver results. 
+ 
+Canary was named a 2024 Deloitte Technology Fast 500™ company, a Most Innovative Company by Fast Company and a HotelTechReport Best Place to Work — and is backed by top Silicon Valley investors like Y Combinator, F-Prime, Brighton Park Capital and Insight Partners. 
+ 
+Join us in shaping the future of hospitality!
+ 
+
+
+About the Role
+Canary Technologies is hiring a Sales Engineer to partner closely with Sales, Product, and Customer Success to drive technical validation and value articulation throughout the sales cycle. This role will own demos, technical discovery, solution design, and assist / coordinate RFP and RFI responses, ensuring accuracy, differentiation, and alignment with buyer requirements. The ideal candidate is technically fluent, commercially sharp, and comfortable operating in an early-stage, high-ownership environment. Prior experience supporting B2B SaaS sales teams, is strongly preferred.
+
+
+## Responsibilities
+
+- Establish and execute standard demo workflows, including customization patterns and coverage for newly launched features.
+
+- Define and document technical discovery SOPs to consistently map customer systems, integrations, data flows, and constraints.
+
+- Create repeatable solution design frameworks and proof plans in partnership with Engineering and Product.
+
+- Build and maintain standardized RFP/RFI response processes, including accurate, differentiated technical content and internal coordination.
+
+- Develop processes to validate early-stage product features, capture field feedback, and prepare them for sales enablement.
+
+- Partner with Sales to formalize deal execution playbooks covering objection handling, stakeholder alignment, and proof milestones.
+
+- Document and maintain security and compliance artifacts to support buyer reviews and risk assessments.
+
+- Produce scalable enablement assets, including playbooks, guides, and reusable demo components.
+
+## Qualifications
+
+- **Experience:** 3–5+ years in a Sales Engineering role supporting B2B SaaS sales.
+
+- **Domain exposure:** Familiarity with hospitality systems (PMS preferred) or similarly complex integration environments.
+
+- **Technical fluency:** Working knowledge of APIs (REST, webhooks) and light scripting to support demos and proofs.
+
+- **Security/compliance:** Experience supporting security, privacy, and compliance reviews with enterprise buyers.
+
+- **RFP/RFI:** Proven experience owning or significantly contributing to technical RFP/RFI responses.
+
+- **Early-stage product:** Demonstrated ability to validate v0/v1 features and convert field feedback into sales enablement.
+
+- **Sales partnership:** Track record of effective technical discovery, objection handling, and stakeholder alignment.
+
+- **Communication:** Clear, concise, executive-level written and verbal communication.
+
+- **Ownership mindset:** Comfortable operating autonomously in fast-moving, ambiguous environments with an outcome-driven mindset.
+
+## Compensation
+
+*Target cash compensation ranges from*  *including a fixed annual salary **$150,000 - $190,000**, and* *uncapped commission paid monthly. *
+
+*This role also includes a stock option grant, subject to board approval.
+
+Actual compensation will be commensurate with the candidate's skill level, experience, and specific work location.*
+
+We also work hard to ensure Canary is a fun and exciting place to work! Here are some of the additional benefits:
+ 
+Canary Days:  As a company we want to ensure that the team has time to recharge. Each month we provide company wide days off to ensure there is at least one extended weekend or day off.
+ 
+Self Improvement Club: We meet each month and share our personal goals for the month. Each individual is provided a budget towards any purchases that help us achieve these goals.
+ 
+Professional Development Chats: We provide budget to help drive cross functional professional development conversations across the organization.
+ 
+Travel Reimbursement: Team members are able to visit our offices across New York, San Francisco or Dallas when they choose, and are provided a travel stipend for doing so.  Spend time working with the team in their office, and use the rest of your time exploring a new city!
+ 
+Personal Travel Reimbursement: If you stay at a hotel that Canary works with, we provide a credit towards your stay.
+ 
+Canary Technologies is an equal opportunity employer. We recruit, employ, train, compensate and promote talent regardless of race, religion, ethnicity, national origin, citizenship, gender, gender identity, sexual orientation, age, veteran status, disability, genetic information or any other protected characteristic.
+ 
+

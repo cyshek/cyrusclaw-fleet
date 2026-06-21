@@ -100,7 +100,13 @@ class TestTitleSkip(unittest.TestCase):
         self.assertEqual(J.extract_title_skip("Sr. Solutions Engineer"), "sr")
 
     def test_staff_skips(self):
+        # Staff without target role = skip
         self.assertEqual(J.extract_title_skip("Staff Engineer"), "staff")
+
+    def test_staff_tpm_keeps(self):
+        # Staff + target role = KEEP (carve-out, 2026-06-20)
+        self.assertIsNone(J.extract_title_skip("Staff TPM"))
+        self.assertIsNone(J.extract_title_skip("Staff Technical Program Manager"))
 
     def test_principal_skips(self):
         self.assertEqual(J.extract_title_skip("Principal PM"), "principal")
@@ -121,8 +127,14 @@ class TestTitleSkip(unittest.TestCase):
         self.assertEqual(J.extract_title_skip("Chief of Staff"), "chief")
 
     def test_lead_skips(self):
-        # Per existing policy: 'lead' is intentionally aggressive
+        # Lead without target role = skip
         self.assertEqual(J.extract_title_skip("Lead Engineer"), "lead")
+
+    def test_lead_tpm_keeps(self):
+        # Lead + target role = KEEP (carve-out, 2026-06-20)
+        self.assertIsNone(J.extract_title_skip("Lead TPM"))
+        self.assertIsNone(J.extract_title_skip("Lead Product Manager"))
+        self.assertIsNone(J.extract_title_skip("Lead Program Manager"))
 
     def test_program_manager_ii_keeps(self):
         # Cyrus's example: target-role + no senior keyword -> KEEP
@@ -202,14 +214,20 @@ class TestDecideSkip(unittest.TestCase):
         self.assertNotIn("yoe-threshold", flags)
 
     def test_threshold_boundary(self):
-        # Threshold is >=4 (current YOE_THRESHOLD value)
-        self.assertEqual(J.YOE_THRESHOLD, 4)
-        flags4, _, _ = J.decide_skip(
+        # Threshold is >=6 (raised from 4 on 2026-06-20: keeps '3-5' and '5+' roles)
+        self.assertEqual(J.YOE_THRESHOLD, 6)
+        flags6, _, _ = J.decide_skip(
             "Product Manager",
-            "Requires 4+ years of relevant experience.",
+            "Requires 6+ years of relevant experience.",
             "SF, CA",
         )
-        self.assertIn("yoe-threshold", flags4)
+        self.assertIn("yoe-threshold", flags6)
+        flags5, _, _ = J.decide_skip(
+            "Product Manager",
+            "Requires 5+ years of relevant experience.",
+            "SF, CA",
+        )
+        self.assertNotIn("yoe-threshold", flags5)
         flags3, _, _ = J.decide_skip(
             "Product Manager",
             "Requires 3+ years of relevant experience.",
@@ -345,39 +363,34 @@ if __name__ == "__main__":
     unittest.main()
 
 
-def test_fde_is_hard_block_no_carveout():
-    """Cyrus directive 2026-05-30 (re-confirmed 06-02): FDE must NOT yield to a
-    target-role match. Regression for the 17-role leak (05-30..06-02)."""
+def test_fde_unblocked_2026_06_20():
+    """Cyrus 2026-06-20 full-unblock: FDE + all SWE discipline blocks removed.
+    FDE, Software Engineer, full-stack, backend, ML engineer, etc. all KEEP now."""
     import jd_llm_classifier as c
-    # bare FDE -> skip
-    assert c.extract_title_skip("Forward Deployed Engineer") == "forward deployed"
-    assert c.extract_title_skip("FDE, Applied AI") == "fde"
-    # FDE + target keyword in same title used to leak via carve-out -> now skips
-    assert c.extract_title_skip("Forward Deployed Engineer, Solutions Engineer") == "forward deployed"
-    assert c.extract_title_skip("Forward Deployed Engineer, Applied AI") == "forward deployed"
-    # legit target roles still KEEP (no false positive)
+    # FDE titles now KEEP (not skipped)
+    assert c.extract_title_skip("Forward Deployed Engineer") is None
+    assert c.extract_title_skip("FDE, Applied AI") is None
+    assert c.extract_title_skip("Forward Deployed Engineer, Solutions Engineer") is None
+    # SWE disciplines now KEEP
+    assert c.extract_title_skip("Software Engineer, Backend") is None
+    assert c.extract_title_skip("ML Engineer") is None
+    assert c.extract_title_skip("Full Stack Engineer") is None
+    assert c.extract_title_skip("Data Engineer") is None
+    assert c.extract_title_skip("Infrastructure Engineer") is None
+    # Target roles still KEEP (unchanged)
     assert c.extract_title_skip("Solutions Engineer") is None
     assert c.extract_title_skip("Customer Solutions Engineer (Full Stack)") is None
 
 
-def test_fde_hard_block_survives_subthreshold_yoe():
-    """Regression for the 2026-06-03 li-resolve leak: an FDE role whose JD parses
-    a SUB-threshold YOE (e.g. "3 years") must STILL be flagged fde-block. The old
-    code only ran the title/FDE check in the `jd_yoe is None` branch, so a parsed
-    low YOE bypassed the FDE hard block and 6 FDE rows leaked as keep (Addepar,
-    PubMatic, Actively AI, Charta Health, Console, Scaled Cognition)."""
+def test_fde_unblocked_survives_yoe_check():
+    """FDE with sub-threshold YOE should now be KEEP (no fde-block flag)."""
     import jd_llm_classifier as c
-    # FDE + low parsed YOE -> fde-block present
     flags, reasons, yoe = c.decide_skip(
         "Forward Deployed Engineer", "We are looking for 3 years of experience.",
         None, company="Addepar")
-    assert "fde-block" in flags, f"FDE leaked with sub-threshold YOE: {flags}"
-    # FDE + no YOE signal -> still fde-block
+    assert "fde-block" not in flags, f"FDE still blocked unexpectedly: {flags}"
+    # SWE with low YOE also KEEP
     flags2, _, _ = c.decide_skip(
-        "Forward Deployed AI Product Manager", "", None, company="X")
-    assert "fde-block" in flags2
-    # legit SE with low YOE stays keep (no false positive)
-    flags3, _, _ = c.decide_skip(
-        "Enterprise Sales Engineer", "2 years experience preferred.", None,
+        "Software Engineer, Backend", "2 years experience preferred.", None,
         company="X")
-    assert not flags3, f"false positive on legit SE: {flags3}"
+    assert "fde-block" not in flags2

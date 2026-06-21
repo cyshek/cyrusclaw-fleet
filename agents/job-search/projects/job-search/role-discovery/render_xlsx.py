@@ -1,9 +1,15 @@
 """Render tracker.db -> styled XLSX (modern minimalist).
 
-Sheets:
-  - Open       : roles not yet applied to and not skipped/closed/dead.
-  - Applied    : roles where Cyrus (or the agent) has submitted an application.
-  - Interviews : companies/roles where Cyrus received an interview (from interviews table).
+Sheets (Cyrus 2026-06-20 — consolidated to 4):
+  - Open         : roles not yet applied to and not skipped/closed/dead/blocked/manual.
+  - Applied      : roles where Cyrus (or the agent) has submitted an application.
+  - Manual Apply : EVERY non-auto-submitted role in ONE sheet — prepped-but-not-
+                   submitted (prep_status='manual_ready', e.g. Workday packets),
+                   hard-walled (status='blocked': OpenAI hold, Deepgram, captcha,
+                   custom ATS), and apply-by-hand (status='manual-apply': Google
+                   SSO, LinkedIn, Apple ID). A 'Why' column gives the short reason.
+                   (Replaces the former separate "Manual Ready" + "Blocked" sheets.)
+  - Interviews   : companies/roles where Cyrus received an interview (interviews table).
 """
 from __future__ import annotations
 import sys
@@ -183,6 +189,116 @@ def _format_response(r: dict) -> str:
     return when or status or ""
 
 
+def _is_workday_url(u: str) -> bool:
+    """True if the apply URL points at a Workday tenant (any wdN host)."""
+    s = (u or "").lower()
+    return (
+        "myworkdayjobs" in s
+        or "workday" in s
+        or any(f"wd{n}." in s for n in range(1, 13))
+    )
+
+
+def _why_label(r: dict) -> str:
+    """Human-readable short 'Why' label for the consolidated Manual Apply sheet.
+
+    The consolidated sheet folds together THREE prior buckets — prepped-but-not-
+    submitted (prep_status='manual_ready'), hard-walled (status='blocked'), and
+    apply-by-hand (status='manual-apply'). block_reason values in the DB range
+    from tidy slugs ('openai-applimit-180d') to multi-line audit essays, so this
+    maps by PREFIX/substring to a stable short label. Order matters: the most
+    specific / highest-signal checks come first. Falls back to a truncated
+    block_reason (or a prep/url-derived label) so nothing is ever unlabeled.
+    """
+    br = (r.get("block_reason") or "").strip()
+    brl = br.lower()
+    status = (r.get("status") or "").lower()
+    prep = (r.get("prep_status") or "").lower()
+    url = r.get("app_url") or r.get("jd_url") or ""
+
+    # --- highest-signal known walls (substring/prefix tolerant) ---
+    if "openai-applimit" in brl or "openai-180" in brl:
+        return "OpenAI 180-day hold"
+    if "deepgram-email-blocked" in brl or brl.startswith("deepgram"):
+        return "Deepgram email-blocked until ~Jul 30"
+    if "google-sso" in brl:
+        return "Google SSO (Cyrus)"
+    if "linkedin-no-external-apply" in brl:
+        return "LinkedIn (no external apply)"
+    if "linkedin-no-ats-found" in brl:
+        return "LinkedIn (no ATS found)"
+    if "linkedin" in brl:
+        # LinkedIn-auth-stranded / li_at-unusable / stranded variants.
+        return "LinkedIn (auth-stranded)"
+    if "lever-hcaptcha" in brl or ("lever" in brl and "hcaptcha" in brl):
+        return "Lever hCaptcha (need nopecha)"
+    if "ashby-hard-recaptcha" in brl or "ashby-hard-score" in brl \
+            or "ashby-score-gate" in brl or "recaptcha_score_below_threshold" in brl \
+            or "recaptcha-spam-flag" in brl:
+        return "Ashby reCAPTCHA (need residential IP)"
+    if "ashby-knockout" in brl:
+        return "Ashby knockout question"
+    if "icims" in brl and "hcaptcha" in brl:
+        return "iCIMS hCaptcha (no solver)"
+    if "icims" in brl:
+        return "iCIMS (account/req gate)"
+    if "bytedance" in brl or "tiktok" in brl:
+        return "ByteDance/TikTok OTP-captcha"
+    if "apple-id" in brl or "need-runner-apple" in brl:
+        return "Apple ID SSO (Cyrus)"
+    if "company-blocklist" in brl:
+        return "Blocklisted (Cyrus handles)"
+    if "senior-title" in brl:
+        return "Senior-title out of scope"
+    if "sf-bay-area" in brl or "sf-office" in brl:
+        return "SF Bay Area required"
+    if brl.startswith("need-runner-") or "-no-runner" in brl or "no-runner" in brl:
+        return "Custom ATS (no runner)"
+    if brl.startswith("gh-custom-q") or "gh-uncertain" in brl:
+        return "Greenhouse custom Q (unanswered)"
+    if "workday" in brl:
+        # workday dupe-class / how-did-you-hear / fuzzy-match notes.
+        return "Workday (manual verify)"
+    if "teamtailor" in brl:
+        return "Teamtailor (no runner)"
+    if "jobdiva" in brl or "ripplehire" in brl or "contactrh" in brl \
+            or "oracle-hcm" in brl or "amazon-custom" in brl or "snap-no-public" in brl:
+        return "Custom ATS (no runner)"
+    if "manual-apply-only" in brl or "manual-apply" in brl:
+        return "Manual apply only"
+
+    # --- no explicit block_reason: derive from prep_status / url ---
+    if not br:
+        if prep == "manual_ready":
+            if _is_workday_url(url):
+                return "Workday (prepped, click Submit)"
+            return "Prepped, needs runner attempt"
+        if status == "manual-apply":
+            return "Manual apply (by hand)"
+        if status in ("blocked", "scan-blocked"):
+            return "Blocked (see notes)"
+        return ""
+
+    # --- fallback: truncated raw block_reason (first line, capped) ---
+    first_line = br.splitlines()[0]
+    return first_line if len(first_line) <= 60 else first_line[:57] + "…"
+
+
+def _manual_apply_sort_key(r: dict):
+    """Sort the consolidated Manual Apply sheet.
+
+    Cyrus 2026-06-20: Workday-prepped rows (actionable — he just clicks Submit)
+    sort FIRST, then everything else by company alpha. Within Workday-prepped,
+    also company alpha then role.
+    """
+    prep = (r.get("prep_status") or "").lower()
+    url = r.get("app_url") or r.get("jd_url") or ""
+    is_wd_prepped = 0 if (prep == "manual_ready" and _is_workday_url(url)) else 1
+    company = (r.get("company") or "").lower()
+    role = (r.get("role") or "").lower()
+    return (is_wd_prepped, company, role)
+
+
 def write_sheet(ws, rows, columns, header_bg, zebra_fill):
     header_fill = PatternFill("solid", fgColor=header_bg)
     for col_idx, (field, label, _w) in enumerate(columns, 1):
@@ -196,6 +312,8 @@ def write_sheet(ws, rows, columns, header_bg, zebra_fill):
         for col_idx, (field, _label, _w) in enumerate(columns, 1):
             if field == "url":
                 val = _pick_url(r)
+            elif field == "why":
+                val = _why_label(r)
             elif field == "response":
                 val = _format_response(r)
             elif field == "est_tc":
@@ -241,36 +359,37 @@ def build():
     open_rows.sort(key=_open_sort_key)
     applied_rows = [r for r in all_rows if r["applied_by"]]
     applied_rows.sort(key=lambda r: (r["applied_on"] or "", r["company"].lower()), reverse=True)
-    manual_ready_rows = [
-        r for r in all_rows
-        if (r.get("prep_status") or "") == "manual_ready"
-        and not r["applied_by"]
-    ]
-    manual_ready_rows.sort(key=lambda r: (r["company"].lower(), _NegStr(_recency_key(r)), (r["role"] or "").lower()))
-
-    # Manual Apply: roles Cyrus applies to BY HAND, NO prep (e.g. Apple = Apple-ID
-    # SSO + 2FA, not auto-submittable). status='manual-apply'. (Cyrus 2026-06-08:
-    # "do not prep anything that needs manual apply unless I say; just move them to
-    # the Manual Apply sheet.") Distinct from Manual Ready (which IS prepped).
-    manual_apply_rows = [
-        r for r in all_rows
-        if not r["applied_by"]
-        and (r["status"] or "") == "manual-apply"
-    ]
-    # Sort newest-first so fresh JobRight roles surface at top (Cyrus 2026-06-14)
-    manual_apply_rows.sort(key=lambda r: (_NegStr(_recency_key(r)), r["company"].lower(), (r["role"] or "").lower()))
-
-    # Blocked: rows walled by a real blocker (captcha/proxy/account/req-closed-via-block
-    # etc). Split OUT of Open so Cyrus's Open triage shows only actionable rows. Not
-    # applied, not manual-ready, status in the blocked family. Ordered by reason then
-    # freshest so similar walls group together. (Cyrus 2026-06-08 — Open-tab declutter.)
-    blocked_rows = [
-        r for r in all_rows
-        if not r["applied_by"]
-        and (r.get("prep_status") or "") != "manual_ready"
-        and (r["status"] or "") in ("blocked", "scan-blocked")
-    ]
-    blocked_rows.sort(key=lambda r: ((r.get("block_reason") or "~").lower(), _NegStr(_recency_key(r)), (r["company"] or "").lower()))
+    # ── CONSOLIDATED "Manual Apply" set (Cyrus 2026-06-20) ──────────────────────
+    # ONE sheet for every role that is NOT auto-submitted — i.e. every role that
+    # genuinely exhausted (or can't use) the automated path. Folds together three
+    # former buckets:
+    #   (a) prep_status='manual_ready'  — prepped but not submitted (Workday packets
+    #       Cyrus clicks Submit on; captcha/score-walled Ashby/Lever prepped rows).
+    #   (b) status='blocked' / 'scan-blocked' — hard walls (OpenAI 180-day hold,
+    #       Deepgram email-block, Ashby HARD reCAPTCHA, Lever hCaptcha, custom ATS).
+    #   (c) status='manual-apply' — apply-by-hand (Google SSO, LinkedIn, Apple ID,
+    #       custom ATSes with no runner).
+    # A 'Why' column (via _why_label) gives each row a short human reason. Workday-
+    # prepped rows sort FIRST (actionable: just click Submit), then company alpha.
+    # The old separate "Manual Ready" and "Blocked" sheets are REMOVED.
+    seen_ids = set()
+    consolidated_rows = []
+    for r in all_rows:
+        if r["applied_by"]:
+            continue
+        prep = (r.get("prep_status") or "")
+        status = (r["status"] or "")
+        include = (
+            prep == "manual_ready"
+            or status in ("blocked", "scan-blocked", "manual-apply")
+        )
+        if not include:
+            continue
+        if r["id"] in seen_ids:
+            continue
+        seen_ids.add(r["id"])
+        consolidated_rows.append(r)
+    consolidated_rows.sort(key=_manual_apply_sort_key)
 
     wb = openpyxl.Workbook()
     wb.remove(wb.active)
@@ -311,55 +430,27 @@ def build():
     write_sheet(ws_app, applied_rows, applied_cols,
                 header_bg=HEADER_BG_APPLIED, zebra_fill=PatternFill("solid", fgColor=APPLIED_TINT))
 
-    # Manual Ready: prepped Workday packets awaiting Cyrus's click-Submit.
-    ws_mr = wb.create_sheet(f"Manual Ready ({len(manual_ready_rows)})")
-    manual_cols = [
-        ("company",     "Company",      20),
-        ("role",         "Role",         48),
-        ("loc",          "Location",     24),
-        ("exp_req",      "Experience",   13),
-        ("posted_on",    "Posted",       12),
-        ("url",          "Apply URL",    55),
-        ("prep_path",    "Packet path",  60),
-        ("cyrus_notes",  "Cyrus notes",  46),
-        ("agent_notes",  "Agent notes",  46),
-    ]
-    write_sheet(ws_mr, manual_ready_rows, manual_cols,
-                header_bg=HEADER_BG_MANUAL, zebra_fill=PatternFill("solid", fgColor=ZEBRA_BG))
-
-    # Manual Apply: NOT prepped — Cyrus applies by hand (SSO/2FA-gated ATSes). Just
-    # the role + apply URL + why-manual so he can knock them out himself.
-    ws_ma = wb.create_sheet(f"Manual Apply ({len(manual_apply_rows)})")
+    # ── Manual Apply (CONSOLIDATED) ───────────────────────────────────
+    # ONE sheet for every non-auto-submitted role (prepped-not-submitted + blocked +
+    # apply-by-hand). The 'Why' column carries a short human reason (_why_label).
+    # Workday-prepped rows sort first (actionable). Replaces the old separate
+    # "Manual Ready" and "Blocked" sheets, which are now REMOVED.
+    ws_ma = wb.create_sheet(f"Manual Apply ({len(consolidated_rows)})")
     manual_apply_cols = [
-        ("posted_on",    "Posted",         12),
         ("company",      "Company",        20),
         ("role",         "Role",           48),
-        ("loc",          "Location",       24),
+        ("why",          "Why",            34),
+        ("loc",          "Location",       22),
         ("exp_req",      "Experience",     13),
+        ("posted_on",    "Posted",         12),
         ("url",          "Apply URL",      55),
-        ("source_key",   "Source",         18),
-        ("block_reason", "Why manual",     34),
+        ("source_key",   "Source",         16),
+        ("prep_path",    "Packet path",    50),
         ("cyrus_notes",  "Cyrus notes",    40),
+        ("agent_notes",  "Agent notes",    40),
     ]
-    write_sheet(ws_ma, manual_apply_rows, manual_apply_cols,
+    write_sheet(ws_ma, consolidated_rows, manual_apply_cols,
                 header_bg=HEADER_BG_MANUAL, zebra_fill=PatternFill("solid", fgColor=ZEBRA_BG))
-
-    # Blocked: walled rows pulled OUT of Open so triage stays actionable. Shows the
-    # blocker reason + status + when first seen so Cyrus can scan what's stuck and why.
-    ws_bl = wb.create_sheet(f"Blocked ({len(blocked_rows)})")
-    blocked_cols = [
-        ("company",      "Company",       20),
-        ("role",         "Role",          48),
-        ("loc",          "Location",      24),
-        ("status",       "Status",        14),
-        ("block_reason", "Blocked reason",40),
-        ("first_seen",   "First seen",    12),
-        ("posted_on",    "Posted",        12),
-        ("url",          "Apply URL",     50),
-        ("agent_notes",  "Agent notes",   60),
-    ]
-    write_sheet(ws_bl, blocked_rows, blocked_cols,
-                header_bg=HEADER_BG_BLOCKED, zebra_fill=PatternFill("solid", fgColor=ZEBRA_BG))
 
     # Interviews: companies where Cyrus received an interview invitation.
     cur = conn.execute("""
@@ -391,12 +482,10 @@ def build():
     conn.close()
     wb.save(OUT)
     print(f"Wrote: {OUT}")
-    print(f"  Open:       {len(open_rows)}")
-    print(f"  Applied:    {len(applied_rows)}")
-    print(f"  Manual Ready: {len(manual_ready_rows)}")
-    print(f"  Manual Apply: {len(manual_apply_rows)}")
-    print(f"  Blocked:    {len(blocked_rows)}")
-    print(f"  Interviews: {len(interview_rows)}")
+    print(f"  Open:         {len(open_rows)}")
+    print(f"  Applied:      {len(applied_rows)}")
+    print(f"  Manual Apply: {len(consolidated_rows)}")
+    print(f"  Interviews:   {len(interview_rows)}")
 
 
 if __name__ == "__main__":

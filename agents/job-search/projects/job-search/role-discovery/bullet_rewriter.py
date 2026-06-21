@@ -200,6 +200,24 @@ F. Per-JD differentiation (MANDATORY): This resume must read as written
    actually wove in and WHERE (which role/bullet).
 """
 
+    _FAMILY_GUIDANCE = {
+        "pm":  "PM (product strategy, roadmaps, customer research, go-to-market).",
+        "tpm": "TPM (technical program/project delivery, cross-team execution, eng-partnership).",
+        "pgm": "PgM (program delivery, Agile execution, dependencies, stakeholder alignment).",
+        "se":  "SE/SA (solutions engineering, customer-facing technical work, demos, pre-sales, integrations, value proofs).",
+        "fde":  "FDE (forward-deployed engineering, on-site customer integrations, deployment, custom tooling, technical partnership).",
+        "swe":  "SWE/SDE (software engineering IC — emphasize code, system design, implementation, shipped features, technical depth, scalability). "
+               "Prefer the [se,fde]-tagged master bullets as the base framing (they are technical/delivery-focused) "
+               "and push even harder on implementation detail, code ownership, and engineering impact.",
+        "ml":   "ML Engineer (model development, experimentation, ML pipelines, model deployment, metrics/eval, data quality, MLOps). "
+               "Use [se,fde]-tagged master bullets as base; emphasize ML/AI tooling, training runs, model lifecycle, "
+               "and measurable model performance improvements.",
+        "data": "Data Engineer/Scientist (data pipelines, ETL, warehouse, analytics, SQL, streaming, data quality, dashboards). "
+               "Use [se,fde]-tagged master bullets as base; emphasize data infrastructure, pipeline reliability, "
+               "query performance, and data-driven impact.",
+    }
+    family_guidance = _FAMILY_GUIDANCE.get(family, f"Role family: {family}.")
+
     return (
         "You are tailoring Cyrus Shekari's resume to win a specific role.\n\n"
         "PRIMARY DIRECTIVE: Make Cyrus the top candidate for this role. Rewrite\n"
@@ -207,7 +225,7 @@ F. Per-JD differentiation (MANDATORY): This resume must read as written
         "would think 'this person was built for this job.' Mirror the JD's\n"
         "vocabulary, surface the most relevant skills/tools/outcomes, and lead\n"
         "with strong action verbs.\n\n"
-        f"Detected family: {family}.\n\n"
+        f"Detected family: {family} — {family_guidance}\n\n"
         f"=== JOB DESCRIPTION ===\n{jd_text.strip()}\n\n"
         f"=== MASTER RESUME ROLES ===\n" + "\n".join(role_blocks) +
         f"\n{skills_text}\n"
@@ -828,7 +846,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--org", required=True)
     ap.add_argument("--job-id", required=True)
-    ap.add_argument("--family", default=None, choices=["pm", "tpm", "pgm", "se", "fde"])
+    ap.add_argument("--family", default=None, choices=["pm", "tpm", "pgm", "se", "fde", "swe", "ml", "data"])
     ap.add_argument("--out", default=None)
     ap.add_argument("--out-dir", default=None,
                     help="Staging directory for JD.md, rewrites.json, tailoring-notes.md, "

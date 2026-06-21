@@ -136,3 +136,22 @@ echo "$REF_OUT" | grep -E "EMAILED|No new|Nothing|ready:|skip" | sed 's/^/  /' |
 
 log "=== Weekly run complete ==="
 log ""
+
+# --- 6. Auto-apply: submit next 50 open roles across all ATS ---
+# Runs immediately after crawl+classify so freshly-discovered roles get submitted
+# the same run. Capped at 50 per full-crawl run to stay under rate limits.
+log "Step 6: Auto-apply batch (up to 200 roles)..."
+APPLY_OUT=$($PY inline_submit.py --batch 200 2>&1)
+APPLY_RC=$?
+echo "$APPLY_OUT" | tee -a "$LOG" >/dev/null
+APPLY_OK=$(echo "$APPLY_OUT" | grep -c '"ok": true' || echo 0)
+APPLY_TOTAL=$(echo "$APPLY_OUT" | grep -oP '"total": \K\d+' | tail -1 || echo 0)
+log "  Auto-apply: ${APPLY_OK}/${APPLY_TOTAL} submitted (exit $APPLY_RC)"
+
+# Re-render XLSX after apply batch so sheet counts are current
+$PY render_xlsx.py 2>&1 | tee -a "$LOG" | grep -E 'Wrote:|Applied:|Open:' | sed 's/^/  /' | tee -a "$LOG" >/dev/null
+
+# Step 6b: Gmail response tracker removed 2026-06-20 (Cyrus handles interview tracking manually)
+
+log "=== Weekly run fully complete ==="
+log ""

@@ -1,0 +1,300 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/canarytechnologies/31c515e1-0ddc-442e-8227-8c94033855ea",
+  "apply_url": "https://jobs.lever.co/canarytechnologies/31c515e1-0ddc-442e-8227-8c94033855ea/apply",
+  "org": "canarytechnologies",
+  "job_id": "31c515e1-0ddc-442e-8227-8c94033855ea",
+  "job_title": "Canary Technologies Corp - Sales Engineer",
+  "fetched_at": "2026-06-21T07:47:07Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 20,
+    "filled": 17,
+    "filled_needs_review": 0,
+    "declined": 3,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[623515c9-af08-4e04-862b-422c4298e73f][field0]",
+      "label": "What are your total compensation expectations for this role?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "card_text": "Canary Technologies - Application Questions"
+    },
+    {
+      "id": "cards[623515c9-af08-4e04-862b-422c4298e73f][field1]",
+      "label": "If located outside of the posting location, are you open to relocation at your own expense?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "card_text": "Canary Technologies - Application Questions"
+    },
+    {
+      "id": "cards[623515c9-af08-4e04-862b-422c4298e73f][field2]",
+      "label": "When would you be available to start a new position?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "card_text": "Canary Technologies - Application Questions"
+    },
+    {
+      "id": "cards[623515c9-af08-4e04-862b-422c4298e73f][field3]",
+      "label": "Are you legally authorized to work in the country this job is posted in without requiring visa sponsorship now or in the future?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "card_text": "Canary Technologies - Application Questions"
+    },
+    {
+      "id": "cards[623515c9-af08-4e04-862b-422c4298e73f][field4]",
+      "label": "If no, please specify the type of visa you hold or will require.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Canary Technologies - Application Questions"
+    },
+    {
+      "id": "cards[623515c9-af08-4e04-862b-422c4298e73f][field5]",
+      "label": "Why are you interested in Canary Technologies?",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Canary Technologies Corp because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Canary Technologies Corp is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Canary Technologies Corp while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Canary Technologies Corp aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Canary Technologies Corp')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "card_text": "Canary Technologies - Application Questions"
+    },
+    {
+      "id": "cards[d296bb06-b84a-4e5a-ba9f-7fc438d3926f][field0]",
+      "label": "This role follows a hybrid work schedule. We are typically in the office Mondays, Wednesdays and Thursdays. Is this a schedule you could commit to?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "e5fd4a02-6024-494e-b561-037547e3400f"
+        },
+        {
+          "label": "No",
+          "value": "55b39050-4d59-4379-bd7f-c0aff90beebf"
+        }
+      ],
+      "card_text": "Hybrid Work Environment"
+    },
+    {
+      "id": "opportunityLocationId",
+      "label": "Which location are you applying for?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "New York, NY",
+      "source": "lever_posting_location (first US office; relocation-OK)",
+      "status": "filled",
+      "matched_rule": "posting_location",
+      "options": [
+        {
+          "label": "New York, NY",
+          "value": "15237b8b-3e07-4768-bfc7-5048a1264e75"
+        },
+        {
+          "label": "Dallas, TX",
+          "value": "33fa917d-cc09-4120-a567-2812f1c0aa1b"
+        },
+        {
+          "label": "San Francisco, CA",
+          "value": "3d1b65b5-74b7-4b20-8fdb-27c57e652ec3"
+        }
+      ]
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "meta": {
+    "og_title": "Canary Technologies Corp - Sales Engineer",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

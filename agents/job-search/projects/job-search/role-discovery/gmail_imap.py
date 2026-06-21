@@ -31,7 +31,7 @@ IMAP_PORT = 993
 # Gmail labels (XLIST/SELECT names). Inbox + Spam.
 MAILBOXES = ["INBOX", '"[Gmail]/Spam"', '"[Gmail]/All Mail"']
 
-SENDER_HINTS = ("greenhouse", "no-reply", "noreply", "candidate", "anthropic", "verification", "workday", "myworkdayjobs", "workdaysite", "talent", "careers")
+SENDER_HINTS = ("greenhouse", "no-reply", "noreply", "candidate", "anthropic", "verification", "workday", "myworkdayjobs", "workdaysite", "talent", "careers", "icims", "auth0")
 SUBJECT_HINTS = ("verification code", "verify your email", "verify your application", "confirm your application", "verification", "security code", "verify your account", "verify account", "verify your", "account verification")
 BODY_HINTS = ("verification code", "verify your email", "verify your application", "confirm your", "security code", "verify your account", "account verification")
 
@@ -217,6 +217,130 @@ def wait_for_activation_link(timeout_seconds=180, poll_seconds=5,
             last_err = e
         time.sleep(poll_seconds)
     raise TimeoutError("No activation link within %ss%s" % (
+        timeout_seconds, (" (last_err=%s)" % last_err) if last_err else ""))
+
+
+def _looks_like_icims(subject: str, sender: str, body: str) -> bool:
+    """Tighter filter for iCIMS one-time-code mail. iCIMS career-portal /
+    Universal-Login (Auth0) verification mail is branded: the sender domain is an
+    icims.com host (e.g. ``no-reply@icims.com``, ``*@hire.icims.com``,
+    ``*@talent.icims.com``) or Auth0-on-behalf-of-iCIMS, and the subject/body
+    mentions a verification code. Requiring an iCIMS/Auth0 signal prevents an
+    unrelated Workday/Greenhouse code sitting in the inbox from being grabbed
+    mid-iCIMS-run."""
+    s = (subject or "").lower()
+    f = (sender or "").lower()
+    b = (body or "").lower()
+    brand = ("icims" in f) or ("icims" in s) or ("icims" in b) or ("auth0" in f)
+    code_ctx = any(h in s or h in b for h in (
+        "verification code", "one-time", "one time", "passcode", "security code",
+        "verify your", "your code", "6-digit", "6 digit"))
+    return bool(brand and code_ctx)
+
+
+def _extract_icims_otp(body: str, subject: str = "") -> str | None:
+    """Extract an iCIMS one-time verification code. iCIMS Universal Login (Auth0,
+    effective Apr-2025) and candidate career-portal verification both deliver a
+    **6-digit numeric** code. We anchor on the code keyword where possible, then
+    fall back to a styled HTML cell (``<h1>/<strong>/<span>/<td>123456</td>``),
+    then a standalone 6-digit token. Returns the 6-digit string, or None.
+
+    Deliberately STRICT to 6 digits (the Auth0/iCIMS shape) so we never mistype a
+    zip code, year, or phone fragment into the OTP field. Distinct from the
+    generic Greenhouse 8-char alnum / Workday 4-8 digit extractor."""
+    raw = body or ""
+    # 1. Styled HTML element holding ONLY the code (iCIMS/Auth0 email layout).
+    for m in re.finditer(r"<(?:h1|h2|strong|b|span|td|div|p)[^>]*>\s*(\d{6})\s*</",
+                         raw, re.IGNORECASE):
+        return m.group(1)
+    # Strip tags for text-based matching.
+    plain = re.sub(r"<[^>]+>", " ", raw)
+    plain = re.sub(r"&nbsp;|&#xA0;|&#160;", " ", plain)
+    haystacks = [subject or "", plain]
+    # 2. Keyword-anchored 6-digit code ("verification code: 123456",
+    #    "your code is 123456", "one-time passcode 123456").
+    for hay in haystacks:
+        m = re.search(
+            r"(?:verification code|security code|one[- ]time(?: passcode| password| code)?|"
+            r"passcode|your code(?: is)?|code is|enter (?:the )?code|6[- ]digit code)"
+            r"[^0-9]{0,40}(\d{6})\b",
+            hay, re.IGNORECASE)
+        if m:
+            return m.group(1)
+    # 3. Fallback: a standalone 6-digit token NOT adjacent to other digits and not
+    #    a 4-digit-year-looking sequence inside a longer number.
+    for hay in haystacks:
+        for m in re.finditer(r"(?<!\d)(\d{6})(?!\d)", hay):
+            tok = m.group(1)
+            # Reject an obvious year-prefixed token like 202612 only if it also
+            # appears in a date context; otherwise a 6-digit OTP is fine.
+            return tok
+    return None
+
+
+def wait_for_icims_otp(timeout_seconds: int = 90, poll_seconds: int = 5,
+                       since_epoch: float | None = None) -> str:
+    """Poll Gmail until an iCIMS one-time verification code arrives; return the
+    6-digit string. Mirrors wait_for_verification_code but uses the iCIMS-branded
+    sender/subject filter and the strict 6-digit extractor, and defaults to a
+    90s budget (the iCIMS code is fast and short-lived). Raises TimeoutError if
+    none arrives in the window -> caller maps that to EXIT 10 (otp-timeout).
+
+    Args:
+        timeout_seconds: total wall-clock budget (default 90).
+        poll_seconds: sleep between IMAP polls.
+        since_epoch: only consider mail received at-or-after this epoch. Defaults
+            to now-180 (the email is requested moments before this is called).
+    """
+    if since_epoch is None:
+        since_epoch = time.time() - 180
+    deadline = time.time() + timeout_seconds
+    last_err: Exception | None = None
+    while time.time() < deadline:
+        try:
+            M = _connect()
+            try:
+                for mbox in MAILBOXES:
+                    typ, _ = M.select(mbox)
+                    if typ != "OK":
+                        continue
+                    since_str = time.strftime("%d-%b-%Y",
+                                              time.gmtime(since_epoch - 86400))
+                    typ, data = M.search(None, "(SINCE %s)" % since_str)
+                    if typ != "OK" or not data or not data[0]:
+                        continue
+                    for msg_id in list(reversed(data[0].split()))[:50]:
+                        typ, md = M.fetch(msg_id, "(RFC822)")
+                        if typ != "OK" or not md or not md[0]:
+                            continue
+                        msg = email.message_from_bytes(md[0][1])
+                        try:
+                            dt = parsedate_to_datetime(msg.get("Date"))
+                            if dt and dt.timestamp() < since_epoch - 5:
+                                break
+                        except Exception:
+                            pass
+                        subject = _decode(msg.get("Subject", ""))
+                        sender = _decode(msg.get("From", ""))
+                        body = _msg_text(msg)
+                        if not _looks_like_icims(subject, sender, body):
+                            continue
+                        code = _extract_icims_otp(body, subject)
+                        if code:
+                            try:
+                                M.store(msg_id, "+FLAGS", "\\Seen")
+                            except Exception:
+                                pass
+                            return code
+            finally:
+                try:
+                    M.logout()
+                except Exception:
+                    pass
+        except Exception as e:
+            last_err = e
+        time.sleep(poll_seconds)
+    raise TimeoutError("No iCIMS OTP within %ss%s" % (
         timeout_seconds, (" (last_err=%s)" % last_err) if last_err else ""))
 
 

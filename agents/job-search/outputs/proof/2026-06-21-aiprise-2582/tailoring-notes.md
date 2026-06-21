@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills across enterprise customers like Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 deployment** of an internal Resilience Automation Platform, defining self-service scheduling requirements and custom integration specs that reduced operational toil by 30% and enabled scalable, repeatable execution.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation model.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Built an internal **AI agent** to automate drill planning workflows, cutting planning cycle time by 39% and increasing drill capacity by 21% — turning a one-off script into a reusable, team-wide automation pattern.
+6. Translated customer-facing compliance and recovery requirements into actionable product specs, bridging engineering and partner teams to ship vendor-specific integration fixes directly into production workflows.
+7. Authored runbooks and internal tooling documentation that standardized deployment patterns across partner integrations, reducing onboarding time for new drill configurations and enabling faster reuse across the team.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **adoption of AI-driven workflows**, running customer demos and training sessions that drove utilization across 14 Azure service teams and saved 37 engineering hours monthly on code generation tasks.
+2. Shaped the product roadmap by facilitating **11+ user interviews** with Azure service teams, surfacing critical feature gaps and securing inclusion of intent-based YAML generation as a prioritized platform capability.
+3. Improved data retrieval speed by **83%** by enforcing metadata standards and migrating documentation to an AI-powered semantic search tool, enabling faster lookup across distributed engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and cut region launch timelines by 28% by driving cross-functional alignment on a unified automation prioritization framework spanning 140+ Azure service teams.
+2. Scoped and mobilized a product strategy to eliminate launch toil, conducting discovery across 20+ service teams to identify **81 hours of manual effort** per region and building a roadmap to automate the highest-impact paths.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership a live signal to target automation gaps and allocate engineering resources toward the highest-ROI support work.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating cross-functional deployment execution.
+2. Prioritized and resolved **40+ high-priority tickets** by facilitating Agile sprint planning and retrospectives, stabilizing the developer intake process and unblocking downstream integration work across engineering teams.
+3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable release pattern for future rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, deploying a new CRM workflow that cut manual processing time and improved conversion at each funnel stage.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile for local search and lead quality.
+3. Identified and sealed margin leaks by analyzing **1,000+ project records**, delivering a financial profitability model that gave leadership accurate pricing signals and improved bid accuracy across service lines.
+
+## Notes from the rewriter
+- 'Custom integration' and 'vendor integrations' from the JD woven into microsoft_ft bullets #2 and #6 — directly mirrors AiPrise's 80+ vendor integration context.
+- 'Reusable patterns' and 'runbooks' from the JD's 'Scale what works' section woven into microsoft_ft bullets #5 and #7 — signals Cyrus builds for scale, not just one-offs.
+- 'Deployment' and 'production workflows' language from the JD's 'build and ship fast' section woven into microsoft_ft bullet #6 and amazon_robotics bullet #1 — matches FDE ship-same-day framing.
+- 'AI agent' terminology from the JD's compliance agent product vision woven into microsoft_ft bullet #5 — positions Cyrus as already building the type of tooling AiPrise is developing.
+- 'Customer-facing' and 'translate business language into technical requirements' framing from the JD woven into microsoft_ft bullet #6 and microsoft_2023 bullet #1 — directly mirrors the FDE customer-facing engineering requirement.
+

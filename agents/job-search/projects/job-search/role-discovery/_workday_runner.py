@@ -1760,6 +1760,106 @@ def post_next_we_guard(page, max_rounds=4):
     return fe == 0
 
 
+def _verify_we_dates_persisted(page, max_pass=3):
+    """workday-we-date-reverify (2026-06-20): after the WE-block COUNT plateaus, do a FINAL
+    full re-read pass over every FILLED work-exp block and re-commit any date section that
+    reads back empty. Closes the one residual gap in harden_my_experience_before_next, which
+    proved the block COUNT but never re-verified the committed DATES on the real blocks right
+    before click_next.
+
+    Why this is safe + additive: _fill_wd_date already does blur+verify+retry+calendar-fallback
+    internally (returns True only on a successful multi-source read-back). Here we only RE-READ
+    each filled block's start (and end, if not current) date via _wd_read_date_section (the
+    probe-proven value || aria-valuetext path) and ONLY re-invoke _fill_wd_date for a section
+    that is actually blank. A fully-committed block is a no-op. Matches each block to
+    WORK_HISTORY by companyName (substring either direction) so we never fabricate a date.
+
+    Returns True iff, after up to `max_pass` re-commit passes, no FILLED block has an empty
+    required start date (end dates are best-effort: a still-empty end on a non-current block is
+    logged but not treated as a hard failure, since some tenants accept an open end on Next).
+    No-op-safe: returns True when there are no filled WE blocks or no WORK_HISTORY.
+    """
+    if not WORK_HISTORY:
+        return True
+    for _pass in range(max_pass):
+        try:
+            blocks = page.evaluate(
+                "()=>[...document.querySelectorAll('input')]"
+                ".filter(x=>/workExperience-\\d+--companyName/.test(x.id||'')&&(x.value||'').trim())"
+                ".map(x=>({idx:(x.id.match(/workExperience-(\\d+)--/)||[])[1], company:(x.value||'').trim()}))"
+            )
+        except Exception as _e:
+            log("  date-reverify enumerate err", str(_e)[:70]); return True
+        if not blocks:
+            return True  # no filled WE blocks (step may not require work-exp)
+        repaired = 0
+        still_empty = []
+        for b in (blocks or []):
+            bidx = b.get("idx"); comp = (b.get("company") or "").lower()
+            if not bidx or not comp:
+                continue
+            job = next((j for j in WORK_HISTORY
+                        if j["company"].lower() in comp or comp in j["company"].lower()), None)
+            if not job:
+                continue
+            # is this block marked current? (an empty start on a current block is still wrong)
+            try:
+                is_cur = bool(page.evaluate(
+                    "(ix)=>{const c=[...document.querySelectorAll('input[type=checkbox]')]"
+                    ".find(e=>(e.id||'').includes('workExperience-'+ix+'--currentlyWorkHere'));"
+                    "return !!(c&&c.checked);}", bidx))
+            except Exception:
+                is_cur = bool(job.get("current"))
+            # --- start date ---
+            sm = _find_id_suffix(page, f"workExperience-{bidx}--startDate-dateSectionMonth-input")
+            sy = _find_id_suffix(page, f"workExperience-{bidx}--startDate-dateSectionYear-input")
+            sm_v = _wd_read_date_section(page, sm)
+            sy_v = _wd_read_date_section(page, sy)
+            if not (sm_v and sy_v):
+                log(f"  date-reverify pass{_pass} block[{bidx}] {job['company']}: "
+                    f"start blank (mon='{sm_v}' yr='{sy_v}') -> re-commit")
+                ok = _fill_wd_date(page, f"workExperience-{bidx}--startDate",
+                                   job["start"][0], job["start"][1])
+                if ok:
+                    repaired += 1
+                else:
+                    still_empty.append(f"{job['company']}:start")
+            # --- end date (only when the block is NOT current and the job has an end) ---
+            if not is_cur and job.get("end"):
+                em = _find_id_suffix(page, f"workExperience-{bidx}--endDate-dateSectionMonth-input")
+                ey = _find_id_suffix(page, f"workExperience-{bidx}--endDate-dateSectionYear-input")
+                em_v = _wd_read_date_section(page, em)
+                ey_v = _wd_read_date_section(page, ey)
+                if not (em_v and ey_v):
+                    log(f"  date-reverify pass{_pass} block[{bidx}] {job['company']}: "
+                        f"end blank (mon='{em_v}' yr='{ey_v}') -> re-commit")
+                    _fill_wd_date(page, f"workExperience-{bidx}--endDate",
+                                  job["end"][0], job["end"][1])
+        if repaired == 0 and not still_empty:
+            log(f"  date-reverify: all filled WE start-dates persisted (pass {_pass}) -> clean")
+            return True
+        if still_empty:
+            log(f"  date-reverify pass{_pass}: {len(still_empty)} section(s) STILL blank after re-commit: {still_empty}")
+        page.wait_for_timeout(400)
+    # final read: a still-empty required START date is the real blocker -> report it
+    try:
+        bad = page.evaluate(
+            "()=>{const out=[];"
+            "const names=[...document.querySelectorAll('input')]"
+            ".filter(x=>/workExperience-\\d+--companyName/.test(x.id||'')&&(x.value||'').trim());"
+            "for(const n of names){const m=(n.id||'').match(/workExperience-(\\d+)--/); if(!m)continue; const ix=m[1];"
+            "const sm=document.getElementById('workExperience-'+ix+'--startDate-dateSectionMonth-input');"
+            "const cur=[...document.querySelectorAll('input[type=checkbox]')].find(e=>(e.id||'').includes('workExperience-'+ix+'--currentlyWorkHere'));"
+            "if(sm&&!(sm.value||'').trim())out.push((n.value||'').trim()||('block'+ix));}"
+            "return out;}")
+        if bad:
+            log(f"  date-reverify: FILLED block(s) with empty required start-date remain: {bad}")
+            return False
+    except Exception:
+        pass
+    return True
+
+
 def harden_my_experience_before_next(page, max_rounds=6):
     """workday-we-persist-fix (2026-06-11 run4): make the WE-block COUNT PLATEAU before we
     click Next on My Experience.
@@ -1831,12 +1931,25 @@ def harden_my_experience_before_next(page, max_rounds=6):
             stable_hits += 1
             if stable_hits >= 1:  # 2 consecutive equal readings (prev + this)
                 log(f"  harden: WE count plateaued clean (total={total} empty=0, stable) -> safe to Next")
+                # workday-we-date-reverify (2026-06-20): COUNT is stable; now PROVE every filled
+                # block's required date(s) are still committed (re-commit any that read back
+                # blank) before we let click_next fire. Additive: a clean block is a no-op.
+                try:
+                    _verify_we_dates_persisted(page)
+                except Exception as _dre:
+                    log("  harden date-reverify err", str(_dre)[:80])
                 return True
         else:
             stable_hits = 0
         prev_total = total
     ft, fe = _count_we_blocks(page)
     log(f"  harden: WE count did NOT fully plateau after {max_rounds} rounds (total={ft} empty={fe})")
+    if fe == 0:
+        # count is clean even though the stability gate timed out -> still re-verify dates.
+        try:
+            _verify_we_dates_persisted(page)
+        except Exception as _dre:
+            log("  harden date-reverify (final) err", str(_dre)[:80])
     return fe == 0
 
 def _wd_section_add(page, section_kw):

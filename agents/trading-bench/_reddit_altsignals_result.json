@@ -1,0 +1,477 @@
+{
+  "generated": "2026-06-21T03:45:00.225145Z",
+  "data_window": {
+    "start": "2020-01-01",
+    "end": "2024-01-07"
+  },
+  "cost_bps_oneway": 2,
+  "spy_benchmark_full": {
+    "sharpe": 0.5865,
+    "cagr": 0.1124,
+    "max_dd": -0.3372,
+    "total_ret": 0.5339
+  },
+  "spy_benchmark_oos": {
+    "sharpe": 0.1241,
+    "cagr": 0.0052,
+    "max_dd": -0.245,
+    "total_ret": 0.0105
+  },
+  "n_prices_loaded": 184,
+  "n_prices_failed": 10,
+  "results": {
+    "H1": {
+      "name": "H1_highscore",
+      "hold": 5,
+      "side": "long",
+      "n_signals_full": 409,
+      "full": {
+        "n_trades": 190,
+        "win_rate": 0.4737,
+        "avg_return": 0.0083,
+        "sharpe": 0.479,
+        "cagr": -0.2643,
+        "max_dd": -0.9637,
+        "beta": 0.619
+      },
+      "ex_mania": {
+        "n_trades": 181,
+        "win_rate": 0.4751,
+        "avg_return": 0.0038,
+        "sharpe": 0.394,
+        "cagr": -0.0862,
+        "max_dd": -0.9507,
+        "beta": 1.392
+      },
+      "oos_post2022": {
+        "n_trades": 57,
+        "win_rate": 0.5439,
+        "avg_return": 0.0085,
+        "sharpe": 0.987,
+        "cagr": 0.2524,
+        "max_dd": -0.3339,
+        "beta": 1.791
+      }
+    },
+    "H2": {
+      "name": "H2_contrarian_short",
+      "hold": 3,
+      "side": "short",
+      "n_signals_full": 678,
+      "full": {
+        "n_trades": 362,
+        "win_rate": 0.6464,
+        "avg_return": -0.0115,
+        "sharpe": 0.136,
+        "cagr": 0.184,
+        "max_dd": -1.5067,
+        "beta": 1.768
+      },
+      "ex_mania": {
+        "n_trades": 339,
+        "win_rate": 0.646,
+        "avg_return": 0.0108,
+        "sharpe": 0.637,
+        "cagr": null,
+        "max_dd": -1.5072,
+        "beta": -1.77
+      },
+      "oos_post2022": {
+        "n_trades": 121,
+        "win_rate": 0.5868,
+        "avg_return": 0.0062,
+        "sharpe": 0.347,
+        "cagr": -0.0025,
+        "max_dd": -0.4445,
+        "beta": -1.354
+      }
+    },
+    "H3": {
+      "name": "H3_sustained",
+      "hold": 10,
+      "side": "long",
+      "n_signals_full": 13597,
+      "full": {
+        "n_trades": 470,
+        "win_rate": 0.3766,
+        "avg_return": 0.0065,
+        "sharpe": -0.19,
+        "cagr": -0.3666,
+        "max_dd": -0.9641,
+        "beta": 2.2
+      },
+      "ex_mania": {
+        "n_trades": 430,
+        "win_rate": 0.386,
+        "avg_return": 0.0013,
+        "sharpe": -0.453,
+        "cagr": -0.4227,
+        "max_dd": -0.9733,
+        "beta": 1.211
+      },
+      "oos_post2022": {
+        "n_trades": 140,
+        "win_rate": 0.4571,
+        "avg_return": 0.0042,
+        "sharpe": 0.184,
+        "cagr": 0.0011,
+        "max_dd": -0.1039,
+        "beta": 2.404
+      }
+    },
+    "H4": {
+      "name": "H4_sentfilter",
+      "hold": 5,
+      "side": "long",
+      "n_signals_full": 446,
+      "full": {
+        "n_trades": 221,
+        "win_rate": 0.3484,
+        "avg_return": -0.0171,
+        "sharpe": -0.751,
+        "cagr": -0.7339,
+        "max_dd": -0.9958,
+        "beta": 0.804
+      },
+      "ex_mania": {
+        "n_trades": 210,
+        "win_rate": 0.3524,
+        "avg_return": -0.0125,
+        "sharpe": -0.614,
+        "cagr": -0.6612,
+        "max_dd": -0.9889,
+        "beta": 1.061
+      },
+      "oos_post2022": {
+        "n_trades": 76,
+        "win_rate": 0.3947,
+        "avg_return": -0.019,
+        "sharpe": -1.406,
+        "cagr": -0.4824,
+        "max_dd": -0.7527,
+        "beta": 1.57
+      }
+    }
+  },
+  "best_long_hyp": "H1",
+  "year_by_year_best": {
+    "2020": {
+      "n_trades": 90,
+      "win_rate": 0.4222,
+      "sharpe": -1.631,
+      "cagr": -0.9043,
+      "spy_sharpe": 0.644,
+      "spy_cagr": 0.1725
+    },
+    "2021": {
+      "n_trades": 43,
+      "win_rate": 0.4884,
+      "sharpe": 1.736,
+      "cagr": 0.9368,
+      "spy_sharpe": 2.133,
+      "spy_cagr": 0.3062
+    },
+    "2022": {
+      "n_trades": 4,
+      "win_rate": 0.0,
+      "sharpe": null,
+      "cagr": -0.3512,
+      "spy_sharpe": -0.735,
+      "spy_cagr": -0.187
+    },
+    "2023": {
+      "n_trades": 53,
+      "win_rate": 0.5849,
+      "sharpe": 1.7,
+      "cagr": 1.4296,
+      "spy_sharpe": 1.896,
+      "spy_cagr": 0.2681
+    }
+  },
+  "year_by_year_H2_short": {
+    "2020": {
+      "n_trades": 170,
+      "win_rate": 0.6706,
+      "sharpe": 1.685,
+      "cagr": 4.2834,
+      "spy_sharpe": 0.644,
+      "spy_cagr": 0.1725
+    },
+    "2021": {
+      "n_trades": 71,
+      "win_rate": 0.6901,
+      "sharpe": -1.049,
+      "cagr": -0.626,
+      "spy_sharpe": 2.133,
+      "spy_cagr": 0.3062
+    },
+    "2022": {
+      "n_trades": 6,
+      "win_rate": 0.8333,
+      "sharpe": null,
+      "cagr": 0.4093,
+      "spy_sharpe": -0.735,
+      "spy_cagr": -0.187
+    },
+    "2023": {
+      "n_trades": 113,
+      "win_rate": 0.5752,
+      "sharpe": -0.264,
+      "cagr": -0.2969,
+      "spy_sharpe": 1.896,
+      "spy_cagr": 0.2681
+    },
+    "2024": {
+      "n_trades": 2,
+      "win_rate": 0.5,
+      "sharpe": null,
+      "cagr": 0.0042,
+      "spy_sharpe": -11.115,
+      "spy_cagr": -0.01
+    }
+  },
+  "top_tickers_best": [
+    {
+      "ticker": "GME",
+      "total_return": 3.6197,
+      "n": 16,
+      "avg_return": 0.2262,
+      "win_rate": 0.8125
+    },
+    {
+      "ticker": "TSLA",
+      "total_return": 1.3658,
+      "n": 20,
+      "avg_return": 0.0683,
+      "win_rate": 0.7
+    },
+    {
+      "ticker": "BB",
+      "total_return": 0.8684,
+      "n": 5,
+      "avg_return": 0.1737,
+      "win_rate": 0.4
+    },
+    {
+      "ticker": "AMC",
+      "total_return": 0.7698,
+      "n": 11,
+      "avg_return": 0.07,
+      "win_rate": 0.6364
+    },
+    {
+      "ticker": "META",
+      "total_return": 0.4785,
+      "n": 7,
+      "avg_return": 0.0684,
+      "win_rate": 0.8571
+    },
+    {
+      "ticker": "PLTR",
+      "total_return": 0.3408,
+      "n": 7,
+      "avg_return": 0.0487,
+      "win_rate": 0.8571
+    },
+    {
+      "ticker": "LYFT",
+      "total_return": 0.298,
+      "n": 1,
+      "avg_return": 0.298,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "RIVN",
+      "total_return": 0.251,
+      "n": 1,
+      "avg_return": 0.251,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "NVDA",
+      "total_return": 0.1739,
+      "n": 7,
+      "avg_return": 0.0248,
+      "win_rate": 0.8571
+    },
+    {
+      "ticker": "LULU",
+      "total_return": 0.1472,
+      "n": 1,
+      "avg_return": 0.1472,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "BBBY",
+      "total_return": 0.1445,
+      "n": 2,
+      "avg_return": 0.0723,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "DDOG",
+      "total_return": 0.0587,
+      "n": 1,
+      "avg_return": 0.0587,
+      "win_rate": 1.0
+    }
+  ],
+  "top_tickers_H2_short": [
+    {
+      "ticker": "SPY",
+      "total_return": 1.5561,
+      "n": 26,
+      "avg_return": 0.0599,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "UPS",
+      "total_return": 0.8493,
+      "n": 4,
+      "avg_return": 0.2123,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "NOK",
+      "total_return": 0.7751,
+      "n": 5,
+      "avg_return": 0.155,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "GILD",
+      "total_return": 0.67,
+      "n": 3,
+      "avg_return": 0.2233,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "JNUG",
+      "total_return": 0.6423,
+      "n": 1,
+      "avg_return": 0.6423,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "INTC",
+      "total_return": 0.6281,
+      "n": 5,
+      "avg_return": 0.1256,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "PFE",
+      "total_return": 0.5765,
+      "n": 2,
+      "avg_return": 0.2882,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "MSFT",
+      "total_return": 0.5527,
+      "n": 15,
+      "avg_return": 0.0368,
+      "win_rate": 0.8
+    },
+    {
+      "ticker": "COST",
+      "total_return": 0.5312,
+      "n": 10,
+      "avg_return": 0.0531,
+      "win_rate": 0.9
+    },
+    {
+      "ticker": "MRNA",
+      "total_return": 0.4701,
+      "n": 4,
+      "avg_return": 0.1175,
+      "win_rate": 1.0
+    },
+    {
+      "ticker": "DIS",
+      "total_return": 0.3816,
+      "n": 7,
+      "avg_return": 0.0545,
+      "win_rate": 0.8571
+    },
+    {
+      "ticker": "AAPL",
+      "total_return": 0.3488,
+      "n": 17,
+      "avg_return": 0.0205,
+      "win_rate": 0.6471
+    }
+  ],
+  "bottom_tickers_H2_short": [
+    {
+      "ticker": "GME",
+      "total_return": -6.5609,
+      "n": 15,
+      "avg_return": -0.4374,
+      "win_rate": 0.6667
+    },
+    {
+      "ticker": "AMC",
+      "total_return": -3.3151,
+      "n": 15,
+      "avg_return": -0.221,
+      "win_rate": 0.5333
+    },
+    {
+      "ticker": "BB",
+      "total_return": -1.5501,
+      "n": 6,
+      "avg_return": -0.2584,
+      "win_rate": 0.3333
+    },
+    {
+      "ticker": "TSLA",
+      "total_return": -1.1425,
+      "n": 35,
+      "avg_return": -0.0326,
+      "win_rate": 0.4286
+    },
+    {
+      "ticker": "ULTA",
+      "total_return": -0.3791,
+      "n": 1,
+      "avg_return": -0.3791,
+      "win_rate": 0.0
+    },
+    {
+      "ticker": "CLOV",
+      "total_return": -0.345,
+      "n": 5,
+      "avg_return": -0.069,
+      "win_rate": 0.8
+    },
+    {
+      "ticker": "AMD",
+      "total_return": -0.3431,
+      "n": 18,
+      "avg_return": -0.0191,
+      "win_rate": 0.4444
+    },
+    {
+      "ticker": "PLTR",
+      "total_return": -0.3388,
+      "n": 14,
+      "avg_return": -0.0242,
+      "win_rate": 0.5
+    },
+    {
+      "ticker": "NVDA",
+      "total_return": -0.2675,
+      "n": 15,
+      "avg_return": -0.0178,
+      "win_rate": 0.5333
+    },
+    {
+      "ticker": "RIVN",
+      "total_return": -0.2325,
+      "n": 1,
+      "avg_return": -0.2325,
+      "win_rate": 0.0
+    }
+  ]
+}

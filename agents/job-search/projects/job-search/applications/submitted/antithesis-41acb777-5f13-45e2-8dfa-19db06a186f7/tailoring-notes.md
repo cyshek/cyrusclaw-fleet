@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing onboarding workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned drill execution to a scalable, repeatable deployment model.
+3. Pioneered Azure's first **proactive resilience testing** capability — delivered a rack-level drill program in 4 months with a 94% recovery rate, surfacing critical hardware defects and establishing a new continuous validation model for distributed systems.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, coordinating engineers and customer leadership across time zones.
+5. Built an internal **AI agent for drill planning**, restructuring end-to-end workflows to cut planning cycle time by 39% and increase drill capacity by 21%, directly expanding the team's ability to onboard and support additional enterprise customers.
+6. Identified and surfaced missing platform capabilities by embedding with partner engineering teams at Databricks and SAP, translating on-site technical findings into **product requirements** that shaped the resilience roadmap for the next two quarters.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across Azure, conducting hands-on customer-facing demos and technical training sessions that drove active utilization across 14 engineering teams and saved **37 engineering hours monthly**.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical feature gaps and translating customer pain points into actionable requirements for engineering.
+3. Improved system correctness and retrieval reliability by enforcing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting average lookup time by 83% and reducing toil for on-call engineers.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch timelines by 28% by securing cross-functional alignment on a unified automation prioritization framework, coordinating execution across 140+ service teams with competing deployment priorities.
+2. Conducted deep-dive discovery with 20+ service teams to map **81 hours of manual toil per region launch**, then built a phased roadmap to automate critical paths — directly improving system reliability and reducing error-prone handoffs during deployments.
+3. Engineered a **Power BI dashboard** to surface operational toil across 140+ teams in real time, enabling leadership to identify automation gaps, prioritize high-impact investments, and make data-driven decisions on deployment sequencing and resource allocation.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the legacy OS migration strategy end-to-end, mapping software and hardware dependencies across 1,200+ stations to ensure a reliable, sequenced deployment with no production disruptions.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets**, stabilize the developer intake process, and maintain velocity across a distributed engineering team under tight delivery timelines.
+3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable release process that reduced manual intervention and improved system correctness.
+4. Partnered directly with on-site operations teams to debug deployment blockers and communicate technical findings to cross-functional stakeholders, serving as the primary **technical liaison** between software engineers and warehouse floor leadership.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, building a CRM-based workflow that standardized handoffs, reduced errors, and gave leadership real-time visibility into pipeline health.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile with data-driven copy and targeted local search improvements.
+3. Conducted financial profitability analysis across **1,000+ project records** to identify margin leaks in labor and materials pricing, delivering a revised pricing model that improved gross margins and helped leadership prioritize higher-value customer segments.
+
+## Notes from the rewriter
+- 'resilience testing' and 'recovery validation' (JD: 'system resilience, correctness') woven into microsoft_ft bullets 1, 3, 4 — mirrors Antithesis's core platform mission of testing distributed systems.
+- 'distributed systems' (JD: 'distributed systems, databases, streaming platforms') surfaced in microsoft_ft bullet 3 and amazon_robotics bullet 1 — directly maps to the FDE bonus-points criteria.
+- 'onboarding' and 'customer lifecycle' (JD: 'customer lifecycle, from onboarding to delivering customizations') embedded in microsoft_ft bullets 1 and 6, framing Cyrus's work as forward-deployed partnership, not just internal PM.
+- 'surfacing missing product features / new requirements' (JD: 'identifying missing product features, surfacing new requirements') directly echoed in microsoft_ft bullet 6 with on-site partner embedding at Databricks and SAP.
+- 'on-site / customer-facing' (JD: 'onsite with a customer', 'tip of the spear') reinforced in microsoft_ft bullet 6 and amazon_robotics bullet 4, positioning Cyrus as comfortable working directly with customer engineers and leadership.
+- 'system correctness' (JD: 'system correctness and reliability') woven into microsoft_2022 bullet 2 and amazon_robotics bullet 3 to signal domain fluency with Antithesis's core value proposition around correctness guarantees.
+

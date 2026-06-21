@@ -61,6 +61,44 @@ sys.path.insert(0, str(HERE / "adapters"))
 from tracker_db import DB_PATH  # noqa: E402
 
 ROOT = HERE.parent
+
+# ---------------------------------------------------------------------------
+# .env loader — populate BRAVE_SEARCH_API_KEY (and proxy vars) from the
+# workspace .env when the script is run standalone (not via weekly_run.sh,
+# which sources .env itself). Mirrors the capsolver_client.py pattern.
+# ---------------------------------------------------------------------------
+_ENV_PATHS = [
+    Path("/home/azureuser/.openclaw/agents/job-search/workspace/.env"),
+    HERE.parent.parent / ".env",  # projects/job-search/.env (if ever added)
+    Path(os.path.expanduser("~/.openclaw/.env")),
+]
+
+
+def _load_env_file() -> None:
+    """Load BRAVE_SEARCH_API_KEY and proxy env vars from workspace .env if
+    they are not already set. Called once at import time."""
+    needed = {"BRAVE_SEARCH_API_KEY", "JOBSEARCH_SEARCH_PROXY",
+              "RESIDENTIAL_PROXY", "PROXY_2CAPTCHA"}
+    if all(os.environ.get(k, "").strip() for k in {"BRAVE_SEARCH_API_KEY"}):
+        return  # already injected (e.g. by weekly_run.sh)
+    for path in _ENV_PATHS:
+        if not path.exists():
+            continue
+        try:
+            for line in path.read_text().splitlines():
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                k, _, v = line.partition("=")
+                k = k.strip()
+                if k in needed and not os.environ.get(k, "").strip():
+                    os.environ[k] = v.strip()
+        except OSError:
+            pass
+        break  # stop at first readable file
+
+
+_load_env_file()
 COMPANIES_YAML = HERE / "companies.yaml"
 
 UA = (
@@ -507,16 +545,33 @@ def _search_html(query: str, proxy: str) -> str:
     return ""
 
 
+# Site filter for Brave API site:-scoped queries. These are the ATS hosts
+# whose job-posting URLs match ATS_PATTERNS above.
+_BRAVE_SITE_FILTER = (
+    "site:myworkdayjobs.com OR site:boards.greenhouse.io OR site:job-boards.greenhouse.io "
+    "OR site:jobs.ashbyhq.com OR site:jobs.lever.co OR site:jobs.smartrecruiters.com"
+)
+
+
 def tactic3_websearch(res: Resolution) -> bool:
     res.attempted.append("websearch")
+    # Generic query (used for proxy-scrape fallback; Brave API uses site-scoped query below)
     query = f'{res.company} {res.role_title} apply greenhouse lever ashby workday'
     candidates: list[tuple[str, str]] = []
 
     key = _brave_api_key()
     if key:
         # Preferred: Brave Search API — reliable, ranked, no IP games.
-        for url in _brave_api_urls(query, key):
+        # Use site: operators so results are actual ATS job-posting URLs, not
+        # blog posts or marketing pages.
+        site_query = f'{res.company} {res.role_title} {_BRAVE_SITE_FILTER}'
+        for url in _brave_api_urls(site_query, key):
             candidates.extend(_extract_ats_links(url))
+        # If site-scoped query returned nothing, try a generic query as fallback
+        # (covers edge cases like custom Workday subdomains not in the filter).
+        if not candidates:
+            for url in _brave_api_urls(query, key):
+                candidates.extend(_extract_ats_links(url))
     else:
         # Fallback: flaky proxy-scrape (no-op cleanly if no proxy either).
         proxy = _search_proxy()
@@ -540,8 +595,35 @@ def tactic3_websearch(res: Resolution) -> bool:
             continue
         seen.add(url)
         url_l = url.lower()
-        if co_toks and not any(t in url_l for t in co_toks):
-            continue  # URL slug doesn't mention the company -> skip
+        # --- Company-token guard ---
+        # For Workday URLs, the employer is always the SUBDOMAIN
+        # (e.g. cisco.wd5.myworkdayjobs.com). Check the subdomain, NOT the
+        # full URL (avoids false positives where the company name appears as a
+        # customer/technology in the job-slug, e.g. 'google' in
+        # 'Technical-Program-Manager---Google-Cloud-Platform' at Salesforce).
+        _CO_GENERIC = {"cloud", "systems", "solutions", "tech", "technologies",
+                       "group", "labs", "services", "global", "digital",
+                       "software", "data", "network", "networks", "platform"}
+        strict_co_toks = {t for t in co_toks if t not in _CO_GENERIC and len(t) > 3}
+        effective_co_toks = strict_co_toks or co_toks
+        if effective_co_toks:
+            if "myworkdayjobs.com" in url_l:
+                try:
+                    wd_host = urllib.parse.urlparse(url).hostname or ""
+                    wd_host = wd_host.lower()
+                except Exception:
+                    wd_host = ""
+                if not any(
+                    re.search(r'(?<![a-z0-9])' + re.escape(t) + r'(?![a-z0-9])', wd_host)
+                    for t in effective_co_toks
+                ):
+                    continue  # company not in WD subdomain -> wrong employer
+            else:
+                if not any(
+                    re.search(r'(?<![a-z0-9])' + re.escape(t) + r'(?![a-z0-9])', url_l)
+                    for t in effective_co_toks
+                ):
+                    continue  # URL slug doesn't mention the company -> skip
         j = _validate_ats_url(ats_kind, url, res.role_title)
         if j >= TITLE_MIN_JACCARD:
             res.ats_url = url
@@ -588,11 +670,63 @@ def tactic4_linkedin_jd(res: Resolution, jd_url: str) -> bool:
     return False
 
 
+_WD_JOB_SLUG_RE = re.compile(
+    # Match the last /job/ slug that looks like a title before a req-ID suffix.
+    # Supports: /job/<title>_<id>, /job/<loc>/<title>_<id>, /job/<loc>/<title>_JR<id>,
+    # /job/<loc>/<title>_REF<id>W-<n>, etc. The req-ID can be alphanumeric.
+    r"/job/(?:[^/]+/)*([A-Za-z][A-Za-z0-9._%-]+?)_(?:[A-Za-z]{1,4})?\d{4,}[A-Za-z0-9_-]*(?:/|$)"
+)
+
+
+def _title_from_workday_url(url: str) -> str:
+    """Extract job title from a Workday URL slug.
+
+    e.g. .../job/Solutions-Engineer_2015414-1 -> 'Solutions Engineer'
+         .../job/Remote---US/Technical-Sales-Engineer_JR113798 -> 'Technical Sales Engineer'
+    Works because Workday URL slugs encode the job title in the path segment
+    before the requisition-ID suffix, even when the JS page renders blank.
+    Returns '' if no slug can be parsed.
+    """
+    m = _WD_JOB_SLUG_RE.search(url)
+    if not m:
+        return ""
+    slug = m.group(1)
+    # Replace hyphens/underscores with spaces; strip leftover digits
+    title = re.sub(r"[-_]+", " ", slug).strip()
+    # Remove location tokens (all-caps 2-letter state codes at end)
+    title = re.sub(r"\s+[A-Z]{2}$", "", title)
+    return title
+
+
 def _validate_ats_url(ats_kind: str, url: str, expected_title: str) -> float:
     """Fetch the ATS apply page, extract title-ish text, return jaccard.
 
+    For Workday URLs, first try extracting the title from the URL slug
+    (fast-path, no HTTP): Workday pages are JS-rendered and return empty
+    <title> on static fetch, but the slug encodes the job title.
+
     Try the residential proxy first when available (some ATS pages soft-block
     datacenter IPs); fall back to the bare default session."""
+    # --- Workday fast-path: extract title from URL slug (no HTTP needed) ---
+    if ats_kind == "workday" and "myworkdayjobs.com" in url:
+        slug_title = _title_from_workday_url(url)
+        if slug_title:
+            j = title_jaccard(expected_title, slug_title)
+            cov = title_coverage(expected_title, slug_title)
+            # For URL-slug matching, use the STRICTER of jaccard and coverage
+            # (not max). The slug is already sanitized; coverage alone is too
+            # loose and causes false positives like 'Technical Sales Engineer'
+            # matching 'Engineer Technical Support' (overlap on 'technical' +
+            # 'engineer' tokens gives cov=0.67 even though 'sales' is absent).
+            # We require BOTH jaccard AND coverage to exceed the threshold, OR
+            # jaccard alone at a slightly lower bar (0.45) for when branded
+            # titles have minor differences.
+            if j >= TITLE_MIN_JACCARD and cov >= TITLE_MIN_JACCARD:
+                return max(j, cov)
+            if j >= 0.45 and cov >= 0.75:  # asymmetric but high-coverage case
+                return max(j, cov)
+            return 0.0  # don't fall through to HTTP fetch for Workday
+    # --- HTTP fetch (Greenhouse, Ashby, Lever, and Workday fallback) ---
     text = ""
     proxy = _search_proxy()
     if proxy:

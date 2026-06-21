@@ -712,3 +712,119 @@ def test_post_next_we_guard_called_on_revisit_before_handle_experience():
     window = branch[max(0, idx_guard - 300):idx_guard]
     assert "_step_revisits" in window and "2" in window, \
         "post_next_we_guard must be gated on revisit count >= 2"
+
+
+# ---------------------------------------------------------------------------
+# 6. DATE RE-VERIFY PASS (workday-we-date-reverify 2026-06-20)
+#    After the WE-block COUNT plateaus, harden must do a FINAL re-read over every
+#    FILLED block's required date(s) and re-commit any section that reads back
+#    blank, before letting click_next fire. Closes the residual gap where harden
+#    proved the block COUNT but never re-verified the committed DATES.
+# ---------------------------------------------------------------------------
+
+def test_date_reverify_helper_exists():
+    assert callable(getattr(wd, "_verify_we_dates_persisted", None)), \
+        "_verify_we_dates_persisted must exist and be callable"
+
+
+def test_harden_calls_date_reverify_on_clean_plateau():
+    """Source-level contract: harden_my_experience_before_next must call
+    _verify_we_dates_persisted on the clean-plateau return path so dates are
+    re-verified right before click_next."""
+    src = _src()
+    h = src[src.index("def harden_my_experience_before_next"):src.index("def _wd_section_add")]
+    assert "_verify_we_dates_persisted(page)" in h, \
+        "harden must call _verify_we_dates_persisted before returning a clean plateau"
+    assert "workday-we-date-reverify" in src, \
+        "_workday_runner.py must carry the workday-we-date-reverify fix tag for auditability"
+
+
+class DateReverifyPage:
+    """Models ONE filled WE block (company='Amazon') whose start-date reads back BLANK on the
+    first read (mimicking a date that didn't fully persist) and only becomes non-blank after
+    _fill_wd_date is invoked for that block's startDate. Proves the re-read + re-commit loop.
+    """
+    def __init__(self):
+        # start blank; _fill_wd_date(...startDate...) flips this to committed
+        self.start_committed = False
+        self.fill_calls = []
+
+    class _KB:
+        def press(self, *a, **k): pass
+        def type(self, *a, **k): pass
+    keyboard = _KB()
+
+    def wait_for_timeout(self, *a, **k): pass
+
+    def evaluate(self, js, *a, **k):
+        arg = a[0] if a else None
+        # enumerate filled companyName blocks
+        if "workExperience-\\d+--companyName/.test" in js and "company:(x.value" in js:
+            return [{"idx": "4", "company": "Amazon"}]
+        # currentlyWorkHere checked? -> not current
+        if "currentlyWorkHere" in js and "c.checked" in js:
+            return False
+        # _wd_read_date_section: month reads back blank until committed; year mirrors it.
+        if "aria-valuetext" in js and "el.value" in js:
+            if isinstance(arg, str) and "startDate-dateSectionMonth" in arg:
+                return "8" if self.start_committed else ""
+            if isinstance(arg, str) and "startDate-dateSectionYear" in arg:
+                return "2022" if self.start_committed else ""
+            return ""
+        # final bad-block probe -> none bad once committed
+        if "out.push((n.value" in js:
+            return [] if self.start_committed else ["Amazon"]
+        return None
+
+
+def test_date_reverify_recommits_blank_start_date(monkeypatch):
+    """A filled block whose start-date reads back blank must trigger a _fill_wd_date
+    re-commit; once committed the verifier returns True."""
+    amazon = {"title": "PM", "company": "Amazon", "location": "Seattle, WA",
+              "start": ("08", "2022"), "end": ("03", "2024"), "current": False, "desc": "y"}
+    monkeypatch.setattr(wd, "WORK_HISTORY", [amazon])
+    # _find_id_suffix is called for the section ids; return the suffix itself so the read
+    # helper sees the right *-startDate-dateSectionMonth/Year-* token.
+    monkeypatch.setattr(wd, "_find_id_suffix", lambda page, suf: suf)
+
+    page = DateReverifyPage()
+
+    def _fake_fill(p, base_suffix, mm, yyyy):
+        p.fill_calls.append((base_suffix, mm, yyyy))
+        if "startDate" in base_suffix:
+            p.start_committed = True  # simulate a successful commit + read-back
+        return True
+    monkeypatch.setattr(wd, "_fill_wd_date", _fake_fill)
+
+    ok = wd._verify_we_dates_persisted(page, max_pass=3)
+    assert ok is True, "verifier must return True once the start date is committed"
+    assert any("startDate" in c[0] for c in page.fill_calls), \
+        "verifier must have re-committed the blank start date via _fill_wd_date"
+    # it must pass the REAL job dates, never fabricate
+    sd = next(c for c in page.fill_calls if "startDate" in c[0])
+    assert sd[1] == "08" and sd[2] == "2022", f"start date must come from WORK_HISTORY, got {sd}"
+
+
+def test_date_reverify_noop_when_no_work_history(monkeypatch):
+    monkeypatch.setattr(wd, "WORK_HISTORY", [])
+    class _P:
+        def wait_for_timeout(self, *a, **k): pass
+        def evaluate(self, *a, **k): return None
+    assert wd._verify_we_dates_persisted(_P()) is True
+
+
+def test_date_reverify_noop_when_no_filled_blocks(monkeypatch):
+    """No filled WE blocks (step doesn't require work-exp) -> returns True without re-commit."""
+    amazon = {"title": "PM", "company": "Amazon", "location": "X",
+              "start": ("08", "2022"), "end": None, "current": True, "desc": ""}
+    monkeypatch.setattr(wd, "WORK_HISTORY", [amazon])
+    calls = []
+    monkeypatch.setattr(wd, "_fill_wd_date", lambda *a, **k: calls.append(a) or True)
+    class _P:
+        def wait_for_timeout(self, *a, **k): pass
+        def evaluate(self, js, *a, **k):
+            if "company:(x.value" in js:
+                return []   # no filled blocks
+            return None
+    assert wd._verify_we_dates_persisted(_P()) is True
+    assert not calls, "no date re-commit should happen when there are no filled blocks"
