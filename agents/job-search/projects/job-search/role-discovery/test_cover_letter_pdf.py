@@ -3,10 +3,13 @@
 Run: python -m pytest role-discovery/test_cover_letter_pdf.py -q
 """
 import sys
+import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+_PI_REAL = json.loads((HERE.parent / "personal-info.json").read_text())
+_FULL_NAME = _PI_REAL["identity"]["first_name"] + " " + _PI_REAL["identity"]["last_name"]
 
 import cover_letter_pdf as clp  # noqa: E402
 
@@ -15,7 +18,7 @@ def test_sanitize_strips_salutation_and_signoff():
     raw = ("Dear Forbes Hiring Team,\n"
            "I am excited about this role.\n\n"
            "My experience fits well.\n\n"
-           "Sincerely,\nCyrus Shekari")
+           f"Sincerely,\n{_FULL_NAME}")
     out = clp.sanitize_body(raw)
     assert "Dear Forbes" not in out
     assert "Sincerely" not in out
@@ -55,7 +58,7 @@ def test_validate_passes_clean_body():
 
 def test_build_prompt_contains_truthfulness_rules():
     p = clp.build_prompt("Forbes", "Product Manager", "JD text", "RESUME text",
-                         {"identity": {"full_name": "Cyrus Shekari"}})
+                         {"identity": {"full_name": _FULL_NAME}})
     assert "truthful" in p.lower()
     assert "Forbes" in p
     assert "Product Manager" in p

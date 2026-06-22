@@ -30,16 +30,19 @@ import sys, os, time, json, argparse, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-FIRST = "Cyrus"
-LAST = "Shekari"
-PREFERRED = "Cyrus"
-EMAIL = "cyshekari@gmail.com"
-PHONE = "3468040227"
-ADDRESS = "12420 NE 120th St #1437"
-CITY = "Kirkland"
+_PI_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+with open(_PI_PATH) as _pf:
+    _PI = __import__("json").load(_pf)
+FIRST = _PI["identity"]["first_name"]
+LAST = _PI["identity"]["last_name"]
+PREFERRED = _PI["identity"].get("preferred_name", FIRST)
+EMAIL = _PI["contact"]["email"]
+PHONE = _PI["contact"]["phone"].replace("-", "")  # 10-digit no-dash
+ADDRESS = _PI["address"]["street"]
+CITY = _PI["address"]["city"]
 STATE = "Washington"  # select label; falls back to WA value-match
-STATE_CODE = "WA"
-ZIP = "98034"
+STATE_CODE = _PI["address"]["state"]
+ZIP = _PI["address"]["zip"]
 COUNTRY = "United States"  # falls back to USA/US
 SOURCE = "LinkedIn"
 

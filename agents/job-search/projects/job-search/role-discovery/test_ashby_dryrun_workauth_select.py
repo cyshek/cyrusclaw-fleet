@@ -18,6 +18,8 @@ fixture so it runs offline.
 import json
 import os
 import sys
+from pathlib import Path
+_PI_REAL = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 sys.path.insert(0, os.path.dirname(__file__))
 import ashby_dryrun as a  # noqa: E402
@@ -26,8 +28,8 @@ FIXTURE = os.path.join(os.path.dirname(__file__), "_fixture_klarity_form.json")
 ROLE_URL = "https://jobs.ashbyhq.com/klarity-ai/4843b6cd-405e-412f-8261-d1a2d6acd850"
 
 CITIZEN_PERSONAL = {
-    "identity": {"first_name": "Cyrus", "last_name": "Shekari"},
-    "contact": {"email": "cyshekari@gmail.com", "linkedin": "https://linkedin.com/in/cyshekari"},
+    "identity": {"first_name": _PI_REAL["identity"]["first_name"], "last_name": _PI_REAL["identity"]["last_name"]},
+    "contact": {"email": _PI_REAL["contact"]["email"], "linkedin": _PI_REAL["contact"].get("linkedin", "https://linkedin.com/in/cyshekari")},
     "files": {"resume_path": "resume/Cyrus_Shekari_Resume.pdf"},
     "work_authorization": {
         "authorized_to_work_us": "yes",

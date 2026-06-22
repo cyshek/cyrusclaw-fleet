@@ -1,0 +1,249 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/rillet/a182464e-76c1-4f0b-af78-76ba8a611281",
+  "org": "rillet",
+  "job_id": "a182464e-76c1-4f0b-af78-76ba8a611281",
+  "job_title": "Product Manager ",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-22T07:56:08Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 12,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f__systemfield_name"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f__systemfield_email"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_54f5676c-c63e-48a1-8651-670b7e3a4079",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_54f5676c-c63e-48a1-8651-670b7e3a4079"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f__systemfield_resume"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_e350c277-8ee9-4bc2-96a8-985fe1879b69",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_e350c277-8ee9-4bc2-96a8-985fe1879b69"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_4149c7d6-d2d7-4c55-8b4c-22b9725c9a70",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_4149c7d6-d2d7-4c55-8b4c-22b9725c9a70"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_cb700b0e-2cf5-4dd7-ac56-c33ba8f40657",
+      "label": "Are you legally authorized to work in the USA, Canada, or Barcelona?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_cb700b0e-2cf5-4dd7-ac56-c33ba8f40657"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_723175bc-02e0-4ca7-b37d-cac5222acda0",
+      "label": "Do you now or will you in the future require sponsorship for work authorization to work in the US, Canada, or Barcelona?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_723175bc-02e0-4ca7-b37d-cac5222acda0"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_59dc4ee8-b834-4351-9698-a64781ad056a",
+      "label": "Are you open and able to work east coast hours?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you open and able to work east coast hours?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_59dc4ee8-b834-4351-9698-a64781ad056a"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_cf0ed60e-8f2e-47b1-8149-60e1151e94d8",
+      "label": "Do you have experience working on a consumer facing product?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_cf0ed60e-8f2e-47b1-8149-60e1151e94d8"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_1be9a239-22fb-475e-91da-ea9c1e9f6acd",
+      "label": "Do you have operational accounting experience or your CPA?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have operational accounting experience or your CPA?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_1be9a239-22fb-475e-91da-ea9c1e9f6acd"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_eda1e0a3-cddb-4008-b915-1a52166d1d02",
+      "label": "We're a high-growth startup looking to work with ambitious people with a history of exceptional performance. Do you have one or two examples of exceptional performance you want to highlight?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "db2de521-efb7-44b8-a043-d06951235f6f_eda1e0a3-cddb-4008-b915-1a52166d1d02"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_59dc4ee8-b834-4351-9698-a64781ad056a",
+      "label": "Are you open and able to work east coast hours?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you open and able to work east coast hours?'"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_1be9a239-22fb-475e-91da-ea9c1e9f6acd",
+      "label": "Do you have operational accounting experience or your CPA?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have operational accounting experience or your CPA?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_59dc4ee8-b834-4351-9698-a64781ad056a",
+      "label": "Are you open and able to work east coast hours?",
+      "reason": "no LABEL_RULES match for label='Are you open and able to work east coast hours?'"
+    },
+    {
+      "id": "db2de521-efb7-44b8-a043-d06951235f6f_1be9a239-22fb-475e-91da-ea9c1e9f6acd",
+      "label": "Do you have operational accounting experience or your CPA?",
+      "reason": "no LABEL_RULES match for label='Do you have operational accounting experience or your CPA?'"
+    }
+  ]
+}

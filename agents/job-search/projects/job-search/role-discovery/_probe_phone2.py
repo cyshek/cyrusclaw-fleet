@@ -2,6 +2,9 @@ import sys, json
 sys.path.insert(0, '.')
 import _ashby_runner as m
 from playwright.sync_api import sync_playwright
+import json as _json
+from pathlib import Path as _Path
+_PI = _json.loads((_Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 CDP = "http://127.0.0.1:19223"
 URL = "https://jobs.ashbyhq.com/curri/0da884e4-ad46-44a2-9a87-3acfefe42026/application"
@@ -26,7 +29,7 @@ with sync_playwright() as pw:
     print("BEFORE:", json.dumps(page.evaluate(CHECK, PHONE_FID)))
 
     # method A: the no-bounce commit JS
-    res = page.evaluate(m._FINAL_TEXT_COMMIT_NO_BOUNCE_JS, {"fields":[{"fid":PHONE_FID,"val":"346-804-0227"}]})
+    res = page.evaluate(m._FINAL_TEXT_COMMIT_NO_BOUNCE_JS, {"fields":[{"fid":PHONE_FID,"val":_PI["contact"]["phone"]}]})
     print("no-bounce commit result:", json.dumps(res))
     page.wait_for_timeout(300)
     print("AFTER no-bounce:", json.dumps(page.evaluate(CHECK, PHONE_FID)))
@@ -34,7 +37,7 @@ with sync_playwright() as pw:
     # method B: Playwright native .fill() (real keystrokes/trusted)
     try:
         loc = page.locator(f'#{PHONE_FID}, [name="{PHONE_FID}"]').first
-        loc.fill("346-804-0227", timeout=4000)
+        loc.fill(_PI["contact"]["phone"], timeout=4000)
         page.wait_for_timeout(300)
         print("AFTER playwright.fill:", json.dumps(page.evaluate(CHECK, PHONE_FID)))
     except Exception as e:
@@ -46,7 +49,7 @@ with sync_playwright() as pw:
         loc.click(timeout=3000)
         loc.press("Control+a")
         loc.press("Delete")
-        loc.type("346-804-0227", delay=30)
+        loc.type(_PI["contact"]["phone"], delay=30)
         page.wait_for_timeout(300)
         print("AFTER type-by-char:", json.dumps(page.evaluate(CHECK, PHONE_FID)))
     except Exception as e:

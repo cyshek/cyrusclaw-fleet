@@ -1,0 +1,161 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/rerun/ee28fed0-9ada-40ac-b828-f1ed633f60e6",
+  "org": "rerun",
+  "job_id": "ee28fed0-9ada-40ac-b828-f1ed633f60e6",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "Remote US, West Coast",
+  "fetched_at": "2026-06-22T03:31:42Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 8,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_name"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_email"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_resume"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097__systemfield_location"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_c6f33da9-a14c-4b56-90f6-ecb2f9257921",
+      "label": "Do you require visa sponsorship? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_c6f33da9-a14c-4b56-90f6-ecb2f9257921"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_c5cf9f38-cfb4-461e-8a8b-a37b7d7a4d08",
+      "label": "LinkedIn Profile URL:",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_c5cf9f38-cfb4-461e-8a8b-a37b7d7a4d08"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_7ca50678-32b3-488e-87bb-9ea671382547",
+      "label": "Some cool things you've made (links)",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"Some cool things you've made (links)\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_7ca50678-32b3-488e-87bb-9ea671382547"
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_904b24d9-0840-40ab-9214-9d1eac548c02",
+      "label": "Customer impact & user empathy",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Customer impact & user empathy'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_904b24d9-0840-40ab-9214-9d1eac548c02"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_7ca50678-32b3-488e-87bb-9ea671382547",
+      "label": "Some cool things you've made (links)",
+      "required": true,
+      "reason": "no LABEL_RULES match for label=\"Some cool things you've made (links)\""
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_904b24d9-0840-40ab-9214-9d1eac548c02",
+      "label": "Customer impact & user empathy",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Customer impact & user empathy'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_7ca50678-32b3-488e-87bb-9ea671382547",
+      "label": "Some cool things you've made (links)",
+      "reason": "no LABEL_RULES match for label=\"Some cool things you've made (links)\""
+    },
+    {
+      "id": "9a034645-aa25-4ea5-b2b8-68d146f1b097_904b24d9-0840-40ab-9214-9d1eac548c02",
+      "label": "Customer impact & user empathy",
+      "reason": "no LABEL_RULES match for label='Customer impact & user empathy'"
+    }
+  ]
+}

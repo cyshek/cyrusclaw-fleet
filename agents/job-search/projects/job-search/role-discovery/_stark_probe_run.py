@@ -1,5 +1,8 @@
 from playwright.sync_api import sync_playwright
 import json, time
+import json as _json
+from pathlib import Path as _Path
+_PI = _json.loads((_Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 APPLY_URL = "https://careers.starktech.com/us/en/apply?jobSeqNo=STNSTLUSP100275EXTERNALENUS"
 RESUME = "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/resume/Cyrus_Shekari_Resume.pdf"
@@ -8,7 +11,8 @@ def pw_fill(page, sel_id, val):
     try:
         page.fill("#" + sel_id, val)
         return sel_id + ":ok"
-    except Exception as e:\n+        return sel_id + ":ERR:" + str(e)[:60]
+    except Exception as e:
+        return sel_id + ":ERR:" + str(e)[:60]
 
 def pw_select(page, sel_id, val):
     try:
@@ -21,7 +25,8 @@ def pw_select(page, sel_id, val):
         except Exception as e2:
             return sel_id + ":ERR:" + str(e2)[:60]
 
-with sync_playwright() as p:\n+    browser = p.chromium.connect_over_cdp("http://127.0.0.1:18800")
+with sync_playwright() as p:
+    browser = p.chromium.connect_over_cdp("http://127.0.0.1:18800")
     ctx = browser.contexts[0]
     page = ctx.new_page()
     page.set_default_timeout(20000)
@@ -37,13 +42,13 @@ with sync_playwright() as p:\n+    browser = p.chromium.connect_over_cdp("http:/
     print("upload_alerts:", upload_alerts)
 
     r = {}
-    r["firstName"] = pw_fill(page, "firstName", "Cyrus")
-    r["lastName"] = pw_fill(page, "lastName", "Shekari")
-    r["email"] = pw_fill(page, "email", "cyshekari@gmail.com")
-    r["phone"] = pw_fill(page, "phone", "3468040227")
-    r["candidateAddress"] = pw_fill(page, "candidateAddress", "12420 NE 120th St #1437")
-    r["city"] = pw_fill(page, "city", "Kirkland")
-    r["zipCode"] = pw_fill(page, "zipCode", "98033")
+    r["firstName"] = pw_fill(page, "firstName", _PI["identity"]["first_name"])
+    r["lastName"] = pw_fill(page, "lastName", _PI["identity"]["last_name"])
+    r["email"] = pw_fill(page, "email", _PI["contact"]["email"])
+    r["phone"] = pw_fill(page, "phone", _PI["contact"]["phone"].replace("-", ""))
+    r["candidateAddress"] = pw_fill(page, "candidateAddress", _PI["address"]["street"])
+    r["city"] = pw_fill(page, "city", _PI["address"]["city"])
+    r["zipCode"] = pw_fill(page, "zipCode", _PI["address"]["zip"])
     r["country"] = pw_select(page, "country", "United States of America")
     page.wait_for_timeout(800)
     r["state"] = pw_select(page, "state", "Washington")
@@ -67,7 +72,8 @@ with sync_playwright() as p:\n+    browser = p.chromium.connect_over_cdp("http:/
         review_btn.scroll_into_view_if_needed()
         review_btn.click()
         print("clicked: Review")
-    except Exception as e:\n+        print("click_err:", e)
+    except Exception as e:
+        print("click_err:", e)
     page.wait_for_timeout(3000)
 
     step_url = page.evaluate("location.href")

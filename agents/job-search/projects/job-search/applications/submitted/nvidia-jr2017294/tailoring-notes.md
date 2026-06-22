@@ -1,0 +1,42 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned drill execution to a scalable, infrastructure-as-code model.
+3. Pioneered Azure's first **proactive resilience testing** capability, delivering a rack-level drill program in 4 months with a 94% recovery rate, surfacing critical hardware defects across the data center stack and establishing a new continuous validation standard.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring strict Linux-based environment controls.
+5. Built an **internal AI agent** and restructured planning workflows using Python-based automation to reduce drill planning cycle time by 39% and increase cluster validation capacity by 21% without additional headcount.
+6. Partnered with cross-functional engineering and SRE teams to document proof-of-concept methodologies, **sharing key takeaways** across partner orgs and embedding resilience best practices into Azure's AI infrastructure deployment playbook.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across Azure infrastructure teams, conducting hands-on demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours** monthly.
+2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured interviews with Azure service teams, surfacing critical feature gaps and translating partner technical needs into actionable requirements.
+3. Optimized data retrieval for HPC and AI workloads by implementing metadata standards and migrating documentation to an **AI-powered semantic search** tool built with Python and RAG pipelines, cutting lookup time by 83% across engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ service and infrastructure teams.
+2. Mobilized a product strategy to reduce operational toil during **region launches**, conducting discovery with 20+ service teams to surface 81 hours of manual effort per region and building a roadmap to automate critical deployment paths.
+3. Engineered a **Power BI dashboard** tracking operational toil and CI/CD bottlenecks across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact infrastructure improvements with data-driven precision.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and validating system integrity across the full hardware-to-software stack.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for robotics cluster administration workflows.
+3. Drove alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable DevOps patterns for distributed robotics infrastructure.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, building a new CRM process that mirrored structured data validation practices used in technical deployment pipelines.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, leveraging data analytics to optimize web presence and reallocate spend to highest-performing channels.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering a Python-assisted data summary that informed strategic operational decisions.
+
+## Notes from the rewriter
+- JD term 'proof of concept' woven into microsoft_ft bullet#6 and skills — framed Cyrus's platform work as PoC methodology documentation matching NVIDIA's SA engagement model.
+- JD term 'data center infrastructure' and 'hardware up through technology stack' surfaced in microsoft_ft bullet#3 (rack-level, hardware defects, data center stack) and amazon_robotics bullet#1 (hardware-to-software stack).
+- JD term 'DevOps' and 'CI/CD' directly mirrored in amazon_robotics bullet#3 and microsoft_2022 bullet#3, aligning Cyrus's CI/CD automation experience to NVIDIA's OEM AI Factory DevOps scope.
+- JD term 'educating partners through hands-on trainings' matched in microsoft_2023 bullet#1 (hands-on demos and training sessions) and microsoft_ft bullet#6 (sharing key takeaways across partner orgs).
+- JD term 'Linux' explicitly referenced in microsoft_ft bullet#4 (Linux-based environment controls) to surface Cyrus's relevant systems background for NVIDIA's Linux administration requirement.
+

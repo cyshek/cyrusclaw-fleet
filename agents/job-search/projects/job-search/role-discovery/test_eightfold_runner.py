@@ -6,6 +6,8 @@ import json, sys, types, unittest
 from pathlib import Path
 from unittest.mock import MagicMock, patch, PropertyMock
 
+_PI_REAL = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
+
 sys.path.insert(0, str(Path(__file__).parent))
 
 # ---------------------------------------------------------------------------
@@ -163,9 +165,9 @@ def _make_page(csrf="test-csrf-token", pids="790316069889", extra_qs=None):
 
 
 PERSONAL_INFO = {
-    "identity": {"first_name": "Cyrus", "last_name": "Shekari"},
-    "contact": {"email": "cyshekari@gmail.com", "phone": "346-804-0227"},
-    "address": {"city": "Kirkland", "state": "WA"},
+    "identity": {"first_name": _PI_REAL["identity"]["first_name"], "last_name": _PI_REAL["identity"]["last_name"]},
+    "contact": {"email": _PI_REAL["contact"]["email"], "phone": _PI_REAL["contact"]["phone"]},
+    "address": {"city": _PI_REAL["address"]["city"], "state": _PI_REAL["address"]["state"]},
     "work_authorization": {"authorized_to_work_us": "yes", "status": "us_citizen"},
     "common_form_answers": {"how_did_you_hear_about_us": "LinkedIn"},
 }

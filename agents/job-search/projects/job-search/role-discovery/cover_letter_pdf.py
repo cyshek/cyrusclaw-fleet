@@ -206,7 +206,7 @@ def render_pdf(body: str, company: str, role: str, personal_info: dict,
 
     ident = personal_info.get("identity", {}) or {}
     contact = personal_info.get("contact", {}) or {}
-    name = ident.get("full_name") or ident.get("name") or "Cyrus Shekari"
+    name = ident.get("full_name") or ident.get("name") or (ident.get("first_name", "") + " " + ident.get("last_name", "")).strip() or ""
     email = contact.get("email", "")
     phone = contact.get("phone", "")
     loc = (personal_info.get("address", {}) or {}).get("city_state") or "Kirkland, WA"

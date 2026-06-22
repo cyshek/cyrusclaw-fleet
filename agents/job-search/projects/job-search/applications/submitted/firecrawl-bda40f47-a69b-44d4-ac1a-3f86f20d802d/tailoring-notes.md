@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned **end-to-end deployment** of Azure's recovery validation program, scaling from a 2-person operation to a platformized system sustaining 45+ annual resilience drills and driving **$14M+ impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining API-driven self-service scheduling requirements that cut operational toil by 30% and transitioned execution to a scalable, customer-ready model.
+3. Delivered Azure's first proactive rack-level resilience testing capability in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable validation framework adopted across enterprise accounts.
+4. Served as **technical bridge lead** for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, directing 14 cross-org recovery executions under executive visibility and fielding live escalations.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and expanding drill capacity by 21% — directly freeing bandwidth for deeper customer-facing engagement.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation tooling by running live demos and onboarding sessions with 14 Azure service teams, converting skeptical technical buyers and saving **37 engineering hours monthly**.
+2. Surfaced critical adoption blockers through 11+ structured discovery interviews with Azure engineering teams, translating customer feedback into a roadmap addition — **intent-based YAML generation** — that unblocked key use cases.
+3. Accelerated LLM-ready data retrieval by migrating documentation to an **AI-powered semantic search** pipeline with rigorous metadata standards, cutting lookup time by 83% and improving onboarding speed for new teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams — driven by hands-on discovery, not top-down mandate.
+2. Conducted onboarding-style discovery with 20+ service teams to map **81 hours of manual toil** per region launch, then built and socialized a roadmap to automate critical deployment paths and reduce time-to-production.
+3. Built a **Power BI dashboard** to surface automation gaps and toil distribution across 140+ teams, giving leadership the product intelligence needed to prioritize high-impact integrations and expansion investments.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot deployment by owning the full legacy OS migration strategy — mapping dependencies across 1,200+ stations and driving adoption from kickoff through production.
+2. Partnered with IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and removing integration blockers that had stalled cross-team delivery.
+3. Prioritized 40+ high-severity tickets and stabilized the developer intake process by leading Agile ceremonies — translating customer-facing operational pain directly into backlog decisions that **unblocked production.**
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end customer proposal lifecycle — scoping, pricing, and closing 200+ monthly engagements via a new CRM workflow that made onboarding faster and conversion more consistent.
+2. Cut **Customer Acquisition Cost by 13%** and lifted conversions 2.7% by executing a digital-first GTM strategy, optimizing web and search presence to attract higher-intent buyers and shorten the sales cycle.
+3. Identified and closed margin leaks by analyzing **1,000+ project records**, delivering a profitability framework that gave leadership the data intelligence needed to reprice services and expand into higher-margin accounts.
+
+## Notes from the rewriter
+- 'End-to-end deployment' and 'customer-ready model' (microsoft_ft bullets 1–2) mirror JD language 'own customer onboarding end to end' and 'production deployment.'
+- 'POC development' and 'converting skeptical technical buyers' (microsoft_2023 bullet 1) directly echo JD phrases 'build POCs that close deals' and 'technical buyers.'
+- 'Product intelligence' and 'surfacing adoption blockers' (microsoft_2023 bullet 2, microsoft_2022 bullet 3) mirror JD section 'Feed product intelligence back to the team' and 'what's blocking adoption.'
+- 'Account expansion' framing in pro_painters bullet 3 ('expand into higher-margin accounts') maps to JD emphasis on growth-minded expansion thinking beyond support tickets.
+- 'Live escalations' and 'technical bridge lead' (microsoft_ft bullet 4) align with JD: 'handle escalations' and 'technical face of Firecrawl' in business reviews.
+

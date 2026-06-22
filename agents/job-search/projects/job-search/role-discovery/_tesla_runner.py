@@ -36,10 +36,14 @@ Usage:
 """
 import sys, os, time, json, argparse, re
 
-EMAIL = "cyshekari@gmail.com"
-FIRST = "Cyrus"
-LAST = "Shekari"
-PHONE = "3468040227"
+_PI_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "personal-info.json")
+with open(_PI_PATH) as _f:
+    _PI = json.load(_f)
+
+EMAIL = _PI["contact"]["email"]
+FIRST = _PI["identity"]["first_name"]
+LAST = _PI["identity"]["last_name"]
+PHONE = _PI["contact"]["phone"].replace("-", "")  # 10-digit no-dash
 LINKEDIN = "https://www.linkedin.com/in/cyrus-shekari"
 EVIDENCE = ("Led 0-to-1 Resilience Automation Platform at Microsoft Azure, driving 14M-plus "
             "dollars business impact; scaled recovery validation into a platformized system "

@@ -1,0 +1,112 @@
+# Product Manager (Customer Service Tools)
+
+**Company:** Prosper
+**Location:** San Francisco, CA
+**Apply:** https://jobs.lever.co/prosper/1cae1442-02a4-427b-8bed-378623ac6120/apply
+**Lever ID:** 1cae1442-02a4-427b-8bed-378623ac6120
+
+---
+
+Your role in our mission
+As Product Manager for the Agent Platform, you'll help shape the in-house tooling our frontline agents use to serve customers. The platform brings customer data and agent capabilities together in one place, and we're extending it with AI-enabled assistance to make agent work faster and more effective. You'll partner closely with Operations leaders and spend time understanding how work actually gets done, and use that understanding to set the roadmap.
+
+
+## How you’ll make an impact
+
+- **User Research:** Spend time with frontline agents. Observe live calls, sit with teams, run structured interviews, and build first-hand understanding of how work gets done today and where there is friction.
+
+- **Stakeholder Partnership:** Build strong working relationships with stakeholders across Operations, Legal, Compliance, and elsewhere in the company. Understand their goals and use that understanding to define the product roadmap and the solutions on it.
+
+- **Discovery Beyond Stated Needs:** Get past surface-level requests to identify the underlying problem. Use research, data, and your own judgment to design solutions that address root causes.
+
+- **Strategic Roadmap:** Own the roadmap for your area of the Agent Platform. Sequence work to deliver near-term wins for agents while building toward a more capable, AI-enabled platform over time.
+
+- **AI-Enabled Capability:** Help define how practical AI/ML features assist human operators behind the scenes.
+
+- **Product Execution:** Lead initiatives end-to-end with your engineering and design partners. Move from problem definition through launch and iteration, while pushing the team on pace and quality.
+
+- 
+
+**Measurement and Iteration:** Define the metrics that matter (such as agent productivity, customer outcomes, quality, adoption), evaluate what's working against them, and iterate based on what you learn.
+
+## Skills that will help you thrive
+
+- **Education:** Bachelor's degree in business, economics, computer science, or a related field.
+
+- **Experience:** 5+ years of product management experience. Experience building internal tools, agent or operations platforms, or workflow software is a strong plus but not required for the right candidate.
+
+- **Discovery Skills:** Track record of getting past stated needs to uncover what people actually require. Comfortable using user research and data together to inform product decisions.
+
+- **Strategic Thinking:** Able to connect today's product work to a longer-term vision for the platform. Comfortable making sequencing trade-offs that balance near-term value with longer-horizon investment.
+
+- **Stakeholder Partnership:** Excellent at building trust with operational stakeholders. Skilled at gathering input from many voices and synthesizing it into a clear point of view.
+
+- **Communication Skills:** Strong written and verbal communication. Able to influence without authority and present clearly to working-level partners and leaders alike.
+
+- **Execution:** Track record of shipping product end-to-end with engineering and design teams using agile methodologies.
+
+- **Analytical Skills:** Comfortable with data analysis and product metrics. Experience with tools such as Heap, PostHog, or BigQuery is a plus.
+
+- 
+
+**Curiosity:** You're interested in how work actually gets done. You would rather watch an agent handle a call for an hour than read a five-page brief about it.
+
+## Resources to help you prosper
+
+- **A hybrid connection:**** **We believe in the "best of both worlds" - a hybrid environment (2 days/week in our SF office) that balances high-touch collaboration with the flexibility of remote work
+
+- **Invested in your future:**** **A competitive salary and a 401(k) with a 5% company match to help you build long-term financial security
+
+- **Holistic well-being:**** **We provide the resources you need to thrive, from flexible time off and paid parental leave to an annual wellness allowance and comprehensive health coverage
+
+- **Professional & personal growth:**** **Take advantage of a suite of premium perks, including Udemy access, childcare assistance, pet insurance, and a bevy of additional savings through Beneplace
+
+## Interview Process 
+
+- **Recruiter Call: **A brief screening to discuss your experience and initial questions.
+
+- **Department Interview: **Deeper dive into technical skills and project alignment with the Hiring Manager or team member.
+
+- **Team/Virtual Interview: **Meet team members for collaborative discussions, problem-solving, or technical exercises.
+
+- **Case Study Round:** Analyze a real-world problem, propose solutions, and present findings, evaluating analytical, strategic thinking, and presentation skills.
+
+#LI-AW1
+#IND1
+ 
+
+
+About Us
+Prosper introduced U.S. consumers to an innovative approach to personal finance as the first peer-to-peer lending platform in the country. Since 2005, Prosper has helped over 2 million customers achieve financial well-being through a comprehensive suite of digital personal finance products.
+Prosper’s flagship personal loan* marketplace continues to offer unique value for both borrowers and investors, while the Prosper® Card¹ provides essential access to credit and flexibility for those managing their financial journey. Guided by its mission to advance financial well-being, Prosper is dedicated to helping people thrive by meeting people where they are with simple, trusted, and affordable financial solutions. Learn more at www.prosper.com.
+We’re on a mission to hire the very best, and we are committed to creating exceptional employee experiences where everyone is respected and has access to equal opportunity. We realize that new ideas can come from everywhere. It is important to us that every hire connects with our vision, mission, and core values. Join a leading fintech company that’s democratizing finance for all!  
+ 
+Our Values
+Diversity expands opportunities
+Collaboration creates better solutions
+Curiosity fuels our innovation
+Integrity defines all our relationships
+Excellence leads to longevity 
+Simplicity guides our user experience 
+Accountability at all levels drives results
+ 
+www.prosper.com
+Our Story & Team  //   Our Blog 
+ 
+Applicants have rights under Federal Employment Laws.
+Family & Medical Leave Act (FMLA)
+Equal Employment Opportunity (EEO)
+Employee Polygraph Protection Act (EPPA) 
+ 
+California applicants: please click here to view our California Consumer Privacy Act (“CCPA”) Notice for Applicants, which describes your rights under the CCPA.
+ 
+Illinois applicants: please click here to view our Artificial Intelligence Notice for Applicants. 
+ 
+At Prosper, we're looking for people with passion, integrity, and a hunger to learn. We encourage you to apply even if your experience doesn't precisely match the job description. Your unique skill set and diverse perspective will stand out and set you apart from other candidates. Prosper thrives with people who think outside of the box and aren't afraid to challenge the status quo. We invite you to join us on our mission to advance financial well-being.
+ 
+Prosper is committed to an inclusive and diverse workplace. All aspects of employment including the decision to hire, promote, discipline, or discharge, will be based on merit, competence, performance, and business needs. We do not discriminate on the basis of race, color, religion, marital status, age, national origin, ancestry, physical or mental disability, medical​​​ condition, pregnancy, genetic information, gender, sexual orientation, gender identity or expression, veteran status, or any other status protected under federal, state, or local law, including the San Francisco Fair Chance Ordinance. Prosper will consider for employment qualified applicants who are non-US citizens and will provide green card sponsorship.
+ 
+ 
+*All personal loans are made by WebBank.
+¹The Prosper® Card is an unsecured credit card issued by Coastal Community Bank, Member FDIC, pursuant to license by Mastercard® International.
+

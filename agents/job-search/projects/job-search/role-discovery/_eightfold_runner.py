@@ -479,12 +479,12 @@ def run_eightfold(
     contact = personal_info.get("contact", {})
     address = personal_info.get("address", {})
 
-    firstname = identity.get("first_name", "Cyrus")
-    lastname = identity.get("last_name", "Shekari")
-    email = contact.get("email", "cyshekari@gmail.com")
-    phone = contact.get("phone", "346-804-0227")
-    city = address.get("city", "Kirkland")
-    state = address.get("state", "WA")
+    firstname = identity.get("first_name", "")
+    lastname = identity.get("last_name", "")
+    email = contact.get("email", "")
+    phone = contact.get("phone", "")
+    city = address.get("city", "")
+    state = address.get("state", "")
 
     state_map = {
         "WA": "Washington", "CA": "California", "TX": "Texas", "NY": "New York",

@@ -132,6 +132,66 @@ def _books_for_clamp(books: Dict[str, dict]) -> Dict[str, _PosBook]:
     return out
 
 
+_QTY_EPS = 1e-9
+
+
+def _resolve_trim_sell_qty(action, held_qty: float,
+                           price: Optional[float]) -> tuple:
+    """Resolve a partial-trim (or legacy `sell`) leg into an exact, held-
+    clamped share qty. Mirrors the single-symbol runner.py trim normalizer
+    so the two runners stay behaviorally identical.
+
+    Inputs:
+      action   : the strategy Action for this leg (reads .qty / .notional_usd).
+      held_qty : the leg's CURRENT strategy-attributed qty (from
+                 db.strategy_position via _build_leg_position) -- the hard
+                 clamp ceiling. NEVER oversell past this.
+      price    : last visible price for this leg, used to derive qty from a
+                 notional request when no explicit .qty is given.
+
+    Returns one of:
+      ("hold",  None)      : nothing attributed, or qty unresolvable, or <=0
+                             -> fail safe to HOLD (no broker call).
+      ("close", None)      : the requested sell sweeps >= the whole leg
+                             -> degrade to a full CLOSE (go cleanly flat +
+                             clear leg state) rather than leave dust.
+      ("trim",  sell_qty)  : a strict partial reduction; stay long. sell_qty
+                             is clamped to (held_qty - eps).
+
+    IMPORTANT: qty is resolved from the action's ORIGINAL notional, NOT the
+    basket-clamped notional. A trim/sell is de-risking; the basket clamp
+    (which only scales fresh buys up to MAX_POSITION) must not shrink a
+    reduction. The clamp-to-held below is the hard no-oversell rail; it is
+    independent of, and in addition to, db.strategy_position's own
+    min(sell_qty, running) clamp during reconstruction (two guards).
+    """
+    if held_qty <= _QTY_EPS:
+        return ("hold", None)
+    req_qty = None
+    a_qty = getattr(action, "qty", None)
+    if a_qty is not None:
+        try:
+            a_qty = float(a_qty)
+            if a_qty > 0:
+                req_qty = a_qty
+        except (TypeError, ValueError):
+            req_qty = None
+    if req_qty is None:
+        try:
+            req_notional = float(getattr(action, "notional_usd", 0.0) or 0.0)
+        except (TypeError, ValueError):
+            req_notional = 0.0
+        if req_notional > 0 and price and float(price) > 0:
+            req_qty = req_notional / float(price)
+    if req_qty is None or req_qty <= _QTY_EPS:
+        return ("hold", None)
+    sell_qty = min(req_qty, held_qty)
+    if sell_qty >= held_qty - _QTY_EPS:
+        # Sweeps the whole leg -> treat as a CLOSE (clean flat + clear state).
+        return ("close", None)
+    return ("trim", sell_qty)
+
+
 def run(strategy_name: str) -> int:
     """Returns process exit code (0 = ok, 1 = error)."""
     db.init_db()
@@ -333,11 +393,21 @@ def run(strategy_name: str) -> int:
             db.clear_strategy_state(strategy_name, sym)
             n_trades_executed += 1
 
-        # --- pass 2: buys/sells ---
+        # --- pass 2: buys / trims / sells ---
+        # `buy`  -> add notional (basket-clamped); existing behavior, unchanged.
+        # `trim` -> partial-reduce-while-long: resolve an exact share qty,
+        #           CLAMP to the leg's attributed held qty (never oversell past
+        #           flat), submit a QTY order, log a `sell` row so
+        #           db.strategy_position subtracts exactly that qty, and do NOT
+        #           clear leg state (the leg stays long). A full sweep degrades
+        #           to the CLOSE path below.
+        # `sell` -> legacy alias; routed to the SAME qty-clamped trim path so a
+        #           bare `sell` can never go through the notional-submit branch
+        #           and oversell a leg (the latent-bug fix).
         for sym in ordered_syms:
             a = clean_actions[sym]
             act = getattr(a, "action", "hold")
-            if act not in ("buy", "sell"):
+            if act not in ("buy", "sell", "trim"):
                 # hold or close (already handled) — record hold rows for
                 # explicit hold actions so the decision log shows what the
                 # strategy thought, mirroring runner.py.
@@ -349,6 +419,86 @@ def run(strategy_name: str) -> int:
                     db.log_decision(strategy_name, "error", symbol=sym,
                                     reason=f"unknown action {act!r}")
                 continue
+
+            book = books.get(sym) or {}
+            held_qty = float(book.get("qty", 0.0) or 0.0)
+            leg_price = live_price_by_sym.get(sym)
+            pos_usd = held_qty * float(
+                leg_price or book.get("avg_entry_price", 0.0) or 0.0)
+
+            # ---- TRIM / legacy SELL: qty-clamped partial reduction ----
+            if act in ("trim", "sell"):
+                kind, sell_qty = _resolve_trim_sell_qty(a, held_qty, leg_price)
+                if kind == "hold":
+                    # Nothing attributed, or qty unresolvable -> fail safe HOLD
+                    # (no broker call). Mirrors runner.py trim_no_pos /
+                    # trim_unresolved.
+                    db.log_decision(
+                        strategy_name, "hold", symbol=sym,
+                        reason=("trim requested but no attributed position / "
+                                f"qty unresolved ({getattr(a, 'reason', '')})"))
+                    continue
+                # A trim/close is DE-RISKING: consult risk with close-semantics
+                # (daily-trade-cap only; never blocked by the position cap;
+                # notional passed as 0). The no-oversell guarantee is the qty
+                # clamp above; risk.py stays unchanged.
+                rc = risk.check_trade(strategy_name, sym, "close", 0.0, pos_usd,
+                                      max_trades_per_day=max_trades_per_day)
+                if not rc.ok:
+                    n_legs_rejected += 1
+                    db.log_decision(strategy_name, "skip_risk", symbol=sym,
+                                    reason=rc.reason)
+                    continue
+                if kind == "close":
+                    # Full sweep -> liquidate the whole attributed qty and clear
+                    # leg state, via the same close mechanics as pass 1.
+                    try:
+                        order = client.submit_market_order(sym, "sell",
+                                                           qty=held_qty)
+                    except AlpacaError as oe:
+                        n_legs_rejected += 1
+                        db.log_decision(strategy_name, "error", symbol=sym,
+                                        reason=f"submit trim->close failed: {oe}")
+                        continue
+                    _record_fill(strategy_name, sym, "sell", order, held_qty,
+                                 notional_hint=pos_usd,
+                                 price_hint=leg_price,
+                                 reason=f"trim>=full->close: "
+                                        f"{getattr(a, 'reason', '')}")
+                    db.clear_strategy_state(strategy_name, sym)
+                    n_trades_executed += 1
+                    fill_price = order.get("filled_avg_price") or leg_price
+                    price_str = (f"${float(fill_price):.2f}"
+                                 if fill_price else "mkt")
+                    print(f"[{strategy_name}] CLOSE {held_qty} {sym} "
+                          f"@ {price_str} | reason: "
+                          f"trim>=full->close: {getattr(a, 'reason', '')}")
+                    continue
+                # Strict partial: submit by clamped QTY and STAY LONG.
+                trim_notional = sell_qty * float(
+                    leg_price or book.get("avg_entry_price", 0.0) or 0.0)
+                try:
+                    order = client.submit_market_order(sym, "sell",
+                                                       qty=sell_qty)
+                except AlpacaError as oe:
+                    n_legs_rejected += 1
+                    db.log_decision(strategy_name, "error", symbol=sym,
+                                    reason=f"submit trim failed: {oe}")
+                    continue
+                # qty_hint=sell_qty so the recorded `sell` row carries the EXACT
+                # qty the attribution layer subtracts. Do NOT clear leg state.
+                _record_fill(strategy_name, sym, "sell", order, sell_qty,
+                             notional_hint=trim_notional,
+                             price_hint=leg_price,
+                             reason=getattr(a, "reason", ""))
+                n_trades_executed += 1
+                fill_price = order.get("filled_avg_price") or leg_price
+                price_str = f"${float(fill_price):.2f}" if fill_price else "mkt"
+                print(f"[{strategy_name}] TRIM {sell_qty} {sym} "
+                      f"@ {price_str} | reason: {getattr(a, 'reason', '')}")
+                continue
+
+            # ---- BUY: add notional (basket-clamped). Unchanged behavior. ----
             requested = float(getattr(a, "notional_usd", 0.0) or 0.0)
             notional = float(clamped_buys.get(sym, requested) or 0.0)
             if notional <= 0:
@@ -358,10 +508,6 @@ def run(strategy_name: str) -> int:
                                 reason=("basket clamp -> 0 "
                                         f"(requested {requested:.2f})"))
                 continue
-            book = books.get(sym) or {}
-            pos_usd = float(book.get("qty", 0.0)) * float(
-                live_price_by_sym.get(sym)
-                or book.get("avg_entry_price", 0.0) or 0.0)
             rc = risk.check_trade(strategy_name, sym, act, notional, pos_usd,
                                   max_trades_per_day=max_trades_per_day)
             if not rc.ok:

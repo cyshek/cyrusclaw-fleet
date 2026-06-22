@@ -72,18 +72,21 @@ sys.path.insert(0, HERE)
 CDP_DEFAULT = "http://127.0.0.1:18800"
 RESUME = os.path.abspath(os.path.join(HERE, "..", "resume", "Cyrus_Shekari_Resume.pdf"))
 
-# ---- Identity (single source of truth; tested) ----------------------------
-FIRST = "Cyrus"
-LAST = "Shekari"
-EMAIL = "cyshekari@gmail.com"
-PHONE = "3468040227"
-PHONE_FMT = "346-804-0227"
-ADDR_STREET = "12420 NE 120th St #1437"
-ADDR_CITY = "Kirkland"
-ADDR_STATE = "WA"
-ADDR_ZIP = "98034"
-ADDR_COUNTRY = "United States"
-LINKEDIN = "https://linkedin.com/in/cyshekari"
+# ---- Identity (loaded from personal-info.json) ----------------------------
+_PI_PATH = os.path.join(HERE, "..", "personal-info.json")
+with open(_PI_PATH) as _f:
+    _PI = json.load(_f)
+FIRST = _PI["identity"]["first_name"]
+LAST = _PI["identity"]["last_name"]
+EMAIL = _PI["contact"]["email"]
+PHONE = _PI["contact"]["phone"].replace("-", "")  # 10-digit no-dash
+PHONE_FMT = _PI["contact"]["phone"]
+ADDR_STREET = _PI["address"]["street"]
+ADDR_CITY = _PI["address"]["city"]
+ADDR_STATE = _PI["address"]["state"]
+ADDR_ZIP = _PI["address"]["zip"]
+ADDR_COUNTRY = _PI["address"].get("country", "United States")
+LINKEDIN = _PI["contact"].get("linkedin", "https://linkedin.com/in/cyshekari")
 
 # ---- Knockout / screening answer heuristics (TRUTHFUL only) ----------------
 # Cyrus: US citizen, authorized to work in US, NO sponsorship now or future, no

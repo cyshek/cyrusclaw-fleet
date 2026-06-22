@@ -31,6 +31,8 @@ from pathlib import Path
 # Reuse static maps from tailor_resume.py
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
+_FULL_NAME = _PI["identity"]["first_name"] + " " + _PI["identity"]["last_name"]
 from tailor_resume import (  # type: ignore
     APPS_DIR,
     PROJECT,
@@ -219,8 +221,8 @@ F. Per-JD differentiation (MANDATORY): This resume must read as written
     family_guidance = _FAMILY_GUIDANCE.get(family, f"Role family: {family}.")
 
     return (
-        "You are tailoring Cyrus Shekari's resume to win a specific role.\n\n"
-        "PRIMARY DIRECTIVE: Make Cyrus the top candidate for this role. Rewrite\n"
+        f"You are tailoring {_FULL_NAME}'s resume to win a specific role.\n\n"
+        f"PRIMARY DIRECTIVE: Make {_PI['identity']['first_name']} the top candidate for this role. Rewrite\n"
         "the resume bullets so a recruiter or hiring manager reading the JD\n"
         "would think 'this person was built for this job.' Mirror the JD's\n"
         "vocabulary, surface the most relevant skills/tools/outcomes, and lead\n"

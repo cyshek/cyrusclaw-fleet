@@ -1,0 +1,35 @@
+# Cover answers — Firecrawl, Forward Deployed Engineer (firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d)
+
+## Full Name
+
+Cyrus Shekari
+
+## What's your go-to stack of tools for getting things done?
+
+For day-to-day execution I lean on a combination of Azure-native tooling, Power BI for surfacing data and patterns, and Python or Go for scripting and automation. When I'm building internal tools or POCs I'll reach for API-first architectures and wire things together fast rather than over-engineer from the start. I also use LLM-powered tools heavily for workflow automation - I built an internal AI agent at Microsoft that cut planning cycle time by 39%, so I'm comfortable using and building on top of these models, not just consuming them. For communication and coordination across distributed stakeholders, I keep things lightweight: structured docs, async updates, and live working sessions when something needs real-time resolution.
+
+## Years of Experience
+
+3
+
+## Walk us through a recent project where you turned a rough mock or wireframe into a polished production UI using Next.js, Tailwind, and Framer Motion. What were the hardest parts, and how did you solve them?
+
+I haven't shipped a production UI specifically in Next.js, Tailwind, and Framer Motion, so I won't pretend otherwise. My frontend exposure has been more utilitarian - dashboards, internal tooling, data visualization in Power BI. What I can speak to is the pattern of taking something rough and making it real under time pressure. At Microsoft I took an early-stage concept for a Resilience Automation Platform, worked through ambiguous requirements with engineering and customer-facing teams, and drove it from 0 to a platformized system that now supports 45+ annual resilience drills. The hardest parts were always the same: aligning on what 'done' looks like early, and cutting scope ruthlessly to ship something usable before iterating. If Firecrawl needs someone who can ramp on a specific frontend stack fast and apply that same discipline to customer-facing surfaces, I'm confident I can do that - but I'd rather be upfront about where I'm starting from than oversell.
+
+## Describe a time you improved perceived or actual performance in a frontend you've built - e.g. shaving milliseconds, optimizing animations, or improving interactivity. What did you measure, and what was the user impact?
+
+The closest analog from my actual work is the documentation migration I led during my 2023 Microsoft internship. The existing setup required manual keyword searches across disconnected docs, which was slow and friction-heavy for new teams trying to onboard. I migrated the documentation to an AI-powered semantic search pipeline with rigorous metadata standards, and the result was an 83% reduction in lookup time. The user impact was concrete - onboarding speed improved measurably for new Azure service teams, and the change freed up engineering time that had been lost to dead-end searches. It wasn't frontend performance in the traditional sense, but the principle is the same: identify where users are losing time, measure the baseline, make a targeted change, and validate the improvement. I apply that same lens whether I'm optimizing a data pipeline or evaluating where a UI interaction is introducing friction.
+
+## Tell us about a proof-of-concept or experiment you shipped rapidly - maybe a novel interactive experience or motion-driven feature. What was the setup, and did it become production?
+
+The most relevant rapid POC I've shipped is the internal AI agent I built at Microsoft to automate drill planning workflows. The setup was straightforward: I identified that planning cycles for resilience drills involved a lot of repetitive, rule-based coordination work that was eating into time I could spend on customer-facing engagement. I scoped the MVP tightly, built the agent on top of existing LLM tooling, and validated it against real planning cycles before rolling it out. It reduced planning cycle time by 39% and expanded drill capacity by 21%, and it did go into regular production use. The key to shipping it fast was resisting the urge to generalize - I built exactly what was needed for one workflow, confirmed it worked, and expanded scope only after the core value was proven. That approach translates directly to building POCs for prospects: build what's needed to answer the specific question, not the full product.
+
+## What common pitfalls have you encountered using Next.js, Tailwind, or Framer Motion? How did you identify and mitigate issues like layout jank, hydration bugs, or animation pauses?
+
+I haven't worked extensively enough with this specific stack to give you a credible answer drawn from real debugging experience, and I'd rather tell you that directly than fabricate war stories. What I can say is that the diagnostic pattern for frontend performance issues - isolate, measure, hypothesize, validate - is the same pattern I've applied in other technical contexts. At Microsoft, when resilience drills were surfacing unexpected hardware defects, I built a repeatable validation framework to systematically identify and triage root causes rather than guessing. The instinct to instrument first and assume second transfers across domains. If you bring me into a customer scenario involving Firecrawl's stack and something breaks, I'll be honest about what I know, dig into the right resources fast, and get to a working answer - that's a more durable skill than familiarity with any specific framework.
+
+## What interests you about working at Firecrawl? What should we know about you?
+
+A lot of what I've done at Microsoft maps directly to what this role is asking for. I owned end-to-end deployment of Azure's recovery validation program across enterprise customers including Databricks, Walmart, SAP, and NetApp - running the full lifecycle from scoping and onboarding to live escalations under executive visibility. I ran discovery with engineering teams to surface adoption blockers and translate those into roadmap decisions. I built POCs and internal tools fast when something needed to exist before a conversation could move forward. The 70/30 split this role describes - mostly customer-facing, some building - is basically how I've been operating. I'm more energized by a high-stakes customer call than a quiet sprint, and the credibility I bring to those calls comes from being able to go deep technically when it matters.
+
+Firecrawl specifically appeals to me because it's infrastructure that's directly in the path of how LLM-powered products get built. I've seen firsthand how much friction exists in getting reliable, structured data into AI systems - during my intern year I built a semantic search pipeline specifically to solve that problem for Azure teams. Firecrawl is solving that at scale, for the broader ecosystem, and doing it fast. Eight figures in ARR and 120k GitHub stars in a year is a signal that the market pull is real. I want to be the engineer customers ask for by name at a company that's building something that will matter - and I think this is that company.

@@ -1,0 +1,192 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/gecko-robotics/1ae83c3f-565a-48c9-85f7-55ab1c75593d",
+  "org": "gecko-robotics",
+  "job_id": "1ae83c3f-565a-48c9-85f7-55ab1c75593d",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-21T09:23:19Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f__systemfield_name",
+      "label": "Full Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f__systemfield_name"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_187cd0e9-cd4f-4be4-9879-ddfdbc3f0856",
+      "label": "Preferred Name / Nickname",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_187cd0e9-cd4f-4be4-9879-ddfdbc3f0856"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f__systemfield_email"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f__systemfield_resume"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_ae75ea65-ea1d-4394-8651-15c588cdb458",
+      "label": "Are you legally authorized to work in the United States for any employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_ae75ea65-ea1d-4394-8651-15c588cdb458"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_ebaea558-baa5-4f90-96b5-6e31f3705d40",
+      "label": "Will you now or will you in the future require employment visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_ebaea558-baa5-4f90-96b5-6e31f3705d40"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_8b6daa4e-adb5-42c2-93d3-25ca054ffbd6",
+      "label": "I acknowledge that Gecko has an in-office culture, and that I am willing and able to work in the office location listed on the job description.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I am able and willing to work in the office location listed in the job description. ",
+      "source": "preferences.willing_to_travel_pct (>=25%) | smart-matched to option 'Yes, I am able and willing to work in the office location listed in the job description. ' | ashby_smart_match(substring_unique,picked='Yes, I am able and willing to work in the office location listed in the job description. ')",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes, I am able and willing to work in the office location listed in the job description. ",
+          "value": "Yes, I am able and willing to work in the office location listed in the job description. "
+        },
+        {
+          "label": "No, I am unable and/or unwilling to work in the office location listed in the job description. ",
+          "value": "No, I am unable and/or unwilling to work in the office location listed in the job description. "
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_8b6daa4e-adb5-42c2-93d3-25ca054ffbd6"
+    },
+    {
+      "id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_cffb2c37-44ff-4d88-bbcb-2ff4663ff719",
+      "label": "How did you hear about Gecko? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Gecko's LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Gecko's Recruiting Team",
+          "value": "Gecko's Recruiting Team"
+        },
+        {
+          "label": "Gecko's LinkedIn",
+          "value": "Gecko's LinkedIn"
+        },
+        {
+          "label": "Gecko's Instagram",
+          "value": "Gecko's Instagram"
+        },
+        {
+          "label": "Career Fair or On-campus Engagement",
+          "value": "Career Fair or On-campus Engagement"
+        },
+        {
+          "label": "Friend or Referral",
+          "value": "Friend or Referral"
+        },
+        {
+          "label": "Handshake",
+          "value": "Handshake"
+        },
+        {
+          "label": "LinkedIn Jobs",
+          "value": "LinkedIn Jobs"
+        },
+        {
+          "label": "Search Engine",
+          "value": "Search Engine"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "ab6b3f37-84bd-4bd1-9b81-66f0b99cee7f_cffb2c37-44ff-4d88-bbcb-2ff4663ff719"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

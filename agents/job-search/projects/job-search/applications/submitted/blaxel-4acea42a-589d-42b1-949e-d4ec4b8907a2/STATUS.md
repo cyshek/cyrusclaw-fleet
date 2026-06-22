@@ -1,6 +1,9 @@
-ABORT-DRYRUN-BLOCKERS — 2026-05-25T17:59:44+00:00
+PREP-READY — 2026-06-22T03:27:43+00:00
 
 role_id: 1360
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "44a6c99e-3650-4a25-9ce3-5088eda4197a_82eceae8-0039-4305-8093-01ed244353b6", "label": "Are you allowed to work in the US?", "reason": "no LABEL_RULES match for label='Are you allowed to work in the US?'"}, {"id": "44a6c99e-3650-4a25-9ce3-5088eda4197a_73bff995-9767-45c3-8d52-30817cfb87a3", "label": "Are you open to working full-time (5 days a week) from our SF office?", "reason": "no LABEL_RULES match for label='Are you open to working full-time (5 days a week) from our SF office?'"}]
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-blaxel-4acea42a-589d-42b1-949e-d4ec4b8907a2.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/blaxel-4acea42a-589d-42b1-949e-d4ec4b8907a2/Cyrus_Shekari_Resume_ashby-blaxel_4acea42a_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/blaxel-4acea42a-589d-42b1-949e-d4ec4b8907a2/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

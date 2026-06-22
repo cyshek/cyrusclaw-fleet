@@ -1,43 +1,44 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_ft` → **Technical Program Manager**
 - `microsoft_2023` → **Technical Product Manager Intern**
-- `microsoft_2022` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain **45+ annual resilience drills** and drive **$14M+ business impact** across enterprise customers like Databricks, Walmart, SAP, and NetApp deployed on-prem and in private cloud.
-2. Led **0→1 development** of an internal Resilience Automation Platform, writing PRDs and self-service scheduling capabilities deployed on Kubernetes-backed infra that **reduced operational toil by 30%** and shifted execution to a scalable, API-driven model used by 20+ partner service teams.
-3. Pioneered Azure's first **proactive resilience testing** capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects in distributed systems and establishing a new model for continuous validation across the fleet.
-4. Directed **14 cross-org recovery executions** under executive visibility, embedding directly with operators as bridge lead for a **sovereign-cloud network isolation test** tied to a **$1.5B+ enterprise contract** in a classified-equivalent, mission-critical environment.
-5. Shipped an internal **AI agent** for drill planning using LLM-powered retrieval and prompt-engineered workflows, **cutting planning cycle time by 39%** and **increasing drill capacity by 21%** — pattern-matching the SITREP/knowledge-retrieval automations Mattermost FDEs are deploying today.
-6. Partnered side-by-side with engineers and operators at Databricks, Walmart, SAP, and NetApp to **debug constrained production systems**, prototype integrations against partner APIs, and iterate on capabilities based on direct operator feedback from live recovery exercises.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing deployment workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 build of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned drill execution to a scalable, operator-driven model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a **rack-level drill program** in 4 months with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation model for mission-critical infrastructure.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract in a constrained, high-stakes operational environment.
+5. Built an **AI agent for drill planning** and restructured operational workflows to cut planning cycle time by 39% and increase drill capacity by 21%, piloting AI-enabled automation in a security-sensitive infrastructure context.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed product adoption for **AI-driven code generation** workflows across Azure service teams, running hands-on demos and enablement sessions that drove utilization across **14 key teams** and saved **37 engineering hours monthly** in repetitive infra authoring.
-2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating **11+ operator interviews** with Azure service teams, translating ambiguous user pain into prioritized feature gaps and shipping prototypes for early feedback.
-3. Optimized data integrity and retrieval by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** tool with RAG-style lookup, **cutting lookup time by 83%** and unblocking on-call engineers debugging live incidents.
+1. Championed adoption of **AI-driven code generation workflows**, conducting user demos and training sessions that drove utilization across 14 key Azure service teams and saved **37 engineering hours monthly** in operational toil.
+2. Influenced the product roadmap to include intent-based **YAML generation** by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps and translating operator feedback directly into actionable requirements.
+3. Improved knowledge retrieval across engineering documentation by implementing rigorous metadata standards and migrating content to an **AI-powered semantic search** tool, cutting lookup time by 83% for distributed engineering teams.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ service teams** across infrastructure, networking, and platform orgs.
-2. Mobilized a product strategy to mitigate operational toil during region launches, conducting discovery with **20+ service teams** to quantify **81 hours of manual effort per region**, then built a roadmap to automate the critical path end-to-end.
-3. Enabled leadership to target automation gaps and prioritize high-impact investments by engineering a **Power BI dashboard** wired to SQL pipelines tracking operational toil signals across **140+ teams** in near real time.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams across constrained, high-coordination environments.
+2. Drove discovery with 20+ service teams to identify **81 hours of manual toil** per region launch, then built a roadmap to automate critical deployment paths — directly mirroring FDE-style problem identification and operational workflow design.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to surface automation gaps, prioritize high-impact integrations, and make data-driven infrastructure investment decisions.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a **2,000+ unit pilot transition** by defining the legacy OS migration strategy and mapping software/hardware dependencies across **1,200+ robotic stations** in active fulfillment centers.
-2. Facilitated Agile ceremonies — sprint planning, standups, and retrospectives — prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for a distributed engineering team.
-3. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines** for edge robotics software, **accelerating the deployment cycle by 25%** and reducing manual release risk in constrained production environments.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping system dependencies across 1,200+ stations in a constrained, mission-critical deployment environment.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing integration toil across a distributed robotics infrastructure.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across a cross-functional engineering team.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing operations and owning the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM-driven workflow with automated handoffs between sales and crews.
-2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by **2.7%** by executing a digital-first go-to-market strategy, rebuilding the website funnel and Google Business profile against measured A/B baselines.
-3. Improved leadership pricing models by running **financial profitability analysis across 1,000+ project records** in SQL/Excel to identify margin leaks and seal underpriced service categories driving recurring loss.
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, deploying a new CRM integration that standardized the operational pipeline and reduced manual processing toil.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-driven go-to-market strategy, optimizing the website and Google profile to improve discoverability in targeted local markets.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks that had persisted across multiple service lines.
 
 ## Notes from the rewriter
-- Reframed MSFT FT bullets around operator-embedded delivery, classified-equivalent missions, AI agents, and distributed-systems debugging to mirror FDE JD.
-- Surfaced Go/TypeScript/Kubernetes/RAG/plugins keywords and added a 6th MSFT FT bullet to fill the page while preserving master substance.
+- Wove 'operational toil' (JD: 'debug complex systems, constrained environments') into microsoft_ft bullet 2, microsoft_2022 bullet 2, and pro_painters bullet 1 to mirror FDE workflow language.
+- Used 'mission-critical deployment environment' and 'constrained environments' (direct JD phrases) in amazon_robotics bullet 1 and microsoft_ft bullet 3 to frame infra work as FDE-relevant.
+- Surfaced 'AI agent' (JD: 'AI agents that summarize operational channels, generate SITREPs') explicitly in microsoft_ft bullet 5 and 'AI-powered semantic search' / 'knowledge retrieval' in microsoft_2023 bullet 3 to match the AI-Forward Engineering section.
+- Used 'sovereign-cloud network isolation' in microsoft_ft bullet 4 to directly echo JD language around classified and secure environments.
+- Reframed microsoft_2022 bullet 2 with 'FDE-style problem identification and operational workflow design' to tie discovery/roadmap work to the JD's core FDE motion.
 

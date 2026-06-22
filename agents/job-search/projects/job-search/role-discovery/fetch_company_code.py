@@ -20,9 +20,11 @@ import time
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+import json as _json
 ROOT = Path(__file__).resolve().parents[1]
 APP_PW = (ROOT / ".gmail-app-password").read_text().strip().replace(" ", "")
-GMAIL_USER = "cyshekari@gmail.com"
+_PI = _json.loads((ROOT / "personal-info.json").read_text())
+GMAIL_USER = _PI["contact"]["email"]
 
 CODE_RE_H1 = re.compile(r"<h1[^>]*>\s*([A-Za-z0-9]{8})\s*</h1>", re.I)
 CODE_RE_NEAR = re.compile(

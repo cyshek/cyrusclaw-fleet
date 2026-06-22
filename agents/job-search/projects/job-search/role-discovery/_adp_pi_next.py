@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ONE continuous flow: fill PersonalInfo address (country->places), Next, report advance/errors."""
 import time, json
+import json as _json; from pathlib import Path as _Path; _PI = _json.loads((_Path('/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/../personal-info.json').read_text()))
 from playwright.sync_api import sync_playwright
 
 CDP = "http://127.0.0.1:18800"
@@ -27,7 +28,7 @@ def fill_personal():
     # places address
     line1 = page.locator("#PersonalAddress_address_line1")
     line1.click(timeout=4000); line1.fill("", timeout=2000)
-    line1.type("12420 NE 120th St, Kirkland, WA 98034", delay=55, timeout=8000)
+    line1.type(f"{_PI['address']['street']}, {_PI['address']['city']}, {_PI['address']['state']} {_PI['address']['zip']}", delay=55, timeout=8000)
     time.sleep(2.5)
     n = page.evaluate("() => [...document.querySelectorAll('.pac-container .pac-item')].length")
     print("pac items:", n)

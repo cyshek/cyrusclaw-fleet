@@ -4,7 +4,9 @@ FakeFrame/FakeInput stubs (NO live browser/LLM). Run:
 
 Importing the module is safe — playwright is imported lazily inside run().
 """
-import importlib.util, os
+import importlib.util, os, json
+from pathlib import Path
+_PI = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 _spec = importlib.util.spec_from_file_location(
     "_icims_runner", os.path.join(os.path.dirname(__file__), "_icims_runner.py"))
@@ -66,10 +68,10 @@ def test_knockout_answers_table_truthful():
 
 
 def test_identity_constants():
-    assert ir.EMAIL == "cyshekari@gmail.com"
-    assert ir.PHONE == "3468040227"
-    assert ir.FIRST == "Cyrus" and ir.LAST == "Shekari"
-    assert ir.ADDR_STATE == "WA" and ir.ADDR_CITY == "Kirkland"
+    assert ir.EMAIL == _PI["contact"]["email"]
+    assert ir.PHONE == _PI["contact"]["phone"].replace("-", "")
+    assert ir.FIRST == _PI["identity"]["first_name"] and ir.LAST == _PI["identity"]["last_name"]
+    assert ir.ADDR_STATE == _PI["address"]["state"] and ir.ADDR_CITY == _PI["address"]["city"]
 
 
 # ---- Fake page/frame stubs (no live browser) ------------------------------

@@ -53,6 +53,7 @@ from model_config import model_run_cmd  # noqa: E402
 import subprocess  # noqa: E402
 
 PERSONAL_INFO = PROJECT / "personal-info.json"
+_PI = json.loads(PERSONAL_INFO.read_text()) if PERSONAL_INFO.exists() else {}
 RESUME_TXT = PROJECT / "resume" / "Cyrus_Shekari_Resume.txt"
 
 import tailor_resume as _tr  # noqa: E402
@@ -101,7 +102,7 @@ def load_jd_text(jd_file: Path | None) -> str:
 
 
 def build_prompt(company: str, role: str, jd_text: str, resume_text: str) -> str:
-    return f"""You are helping a real product/program manager named Cyrus Shekari
+    return f"""You are helping a real product/program manager named {_PI.get('identity', {}).get('first_name', '')} {_PI.get('identity', {}).get('last_name', '')}
 assemble a SANITIZED product brief / PRD to attach to a job application. The
 target role is "{role}" at "{company}".
 
@@ -209,7 +210,7 @@ def render_pdf(data: dict, company: str, role: str, personal_info: dict,
 
     ident = personal_info.get("identity", {}) or {}
     contact = personal_info.get("contact", {}) or {}
-    name = ident.get("full_name") or ident.get("name") or "Cyrus Shekari"
+    name = ident.get("full_name") or ident.get("name") or (ident.get("first_name", "") + " " + ident.get("last_name", "")).strip() or ""
     email = contact.get("email", "")
     phone = contact.get("phone", "")
 

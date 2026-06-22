@@ -127,7 +127,7 @@ $PY delta_digest.py 2>&1 | tee -a "$LOG" | grep -E "NEW:|Markdown summary" | sed
 # --- 5b. Email Cyrus newly-discovered REFERRAL-HOLD roles (NEVER apply) ---
 # Cyrus 2026-06-01: discover Uber/ByteDance/TikTok but hold for referral. This
 # step tailors a resume for each NEW fit and emails him link + HIS referral link
-# + PDF (cyshekari@gmail.com), then flags the row `emailed-referral` so it never
+# + PDF (personal-info.json: contact.email), then flags the row `emailed-referral` so it never
 # re-sends. Best-effort: email/SMTP issues must NOT fail the weekly run.
 log "Step 5b: Referral-hold email (Uber/ByteDance/TikTok)..."
 REF_OUT=$($PY email_referral_roles.py 2>&1)
@@ -141,7 +141,7 @@ log ""
 # Runs immediately after crawl+classify so freshly-discovered roles get submitted
 # the same run. Capped at 50 per full-crawl run to stay under rate limits.
 log "Step 6: Auto-apply batch (up to 200 roles)..."
-APPLY_OUT=$($PY inline_submit.py --batch 200 2>&1)
+APPLY_OUT=$(python3 inline_submit.py --batch 500 2>&1)
 APPLY_RC=$?
 echo "$APPLY_OUT" | tee -a "$LOG" >/dev/null
 APPLY_OK=$(echo "$APPLY_OUT" | grep -c '"ok": true' || echo 0)

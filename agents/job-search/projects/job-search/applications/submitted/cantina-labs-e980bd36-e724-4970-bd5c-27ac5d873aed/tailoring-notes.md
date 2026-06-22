@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned end-to-end **product roadmap** for Azure's resilience validation platform, prioritizing a backlog of 45+ annual drills and driving **$14M+ business impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining self-service scheduling requirements that reduced operational toil by 30% and scaled execution without growing headcount.
+3. Pioneered Azure's first proactive rack-level testing capability, shipping in 4 months with a **94% recovery rate** and surfacing critical hardware defects that established a new continuous validation standard.
+4. Directed 14 cross-org recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Built an internal AI agent and restructured sprint planning workflows, cutting planning cycle time by **39%** and expanding drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-powered code generation workflows by running user demos and training sessions across 14 Azure teams, saving 37 engineering hours monthly and accelerating creator onboarding.
+2. Shaped the **product roadmap** by conducting 11+ user interviews with Azure service teams to surface critical feature gaps, directly influencing the prioritization of intent-based YAML generation.
+3. Improved platform performance and retrieval quality by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83%.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across 140+ teams on a unified automation prioritization framework, **launching regions 28% faster** and generating $3M in accelerated revenue.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths and reduce operational drag at scale.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact investments in the execution workflow.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy and mapped dependencies across 1,200+ stations, achieving **zero operational downtime** during a 2,000+ unit pilot transition for the robotics fleet.
+2. Facilitated Agile sprint planning and backlog grooming for a cross-functional engineering team, resolving **40+ high-priority tickets** and stabilizing the developer intake and prioritization process.
+3. Aligned IT, Operations, and Engineering on automated CI/CD pipelines, **accelerating software deployment cycles by 25%** and improving release cadence for a globally distributed team.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end proposal and invoicing workflow for 200+ monthly projects, improving creator-side conversion through a streamlined CRM process.
+2. Executed a **digital-first go-to-market strategy** — optimizing the website and Google profile — reducing Customer Acquisition Cost by 13% and lifting conversions by 2.7%.
+3. Identified and closed margin leaks by analyzing **1,000+ project records**, delivering profitability insights that directly improved leadership's pricing and scoping models.
+
+## Notes from the rewriter
+- 'Product roadmap' and 'backlog prioritization' from the JD woven into microsoft_ft bullet 1 and amazon_robotics bullet 2, mirroring JD language around Jira/sprint planning ownership.
+- 'Creator' and 'creator onboarding' from the JD's 'skilled creator base' language inserted into microsoft_2023 bullet 1 and pro_painters bullet 1 to frame Cyrus's user empathy in creator-product terms.
+- 'Go-to-market strategy' from the JD's GTM/marketing partnership angle surfaced explicitly in pro_painters bullet 2, and 'digital-first' framing mirrors Cantina's web-first product context.
+- 'Workflow' terminology (execution workflow, creator-side conversion, continuous validation) used across all roles to echo the JD's emphasis on 'video creation and editing workflows, trimming, publishing, and sharing.'
+

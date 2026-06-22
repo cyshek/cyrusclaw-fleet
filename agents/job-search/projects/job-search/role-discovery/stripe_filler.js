@@ -1,6 +1,13 @@
 // Generic Stripe v2 filler. Inputs all driven by LABEL matching, not field id.
 // Persona is hardcoded for now; production version will read from prefill.json.
+// TODO: PII — replace hardcoded values below with prefill.json lookup before use.
+// To decouple: call page.evaluate(`const PI=${JSON.stringify(pi)}; ${script}`) from Python
 async () => {
+  // PII constants — should be injected from personal-info.json by the Python caller
+  const FILL_FIRST = window.__PI_FIRST || 'REPLACE_FIRST';
+  const FILL_LAST  = window.__PI_LAST  || 'REPLACE_LAST';
+  const FILL_EMAIL = window.__PI_EMAIL || 'REPLACE_EMAIL';
+  const FILL_PHONE = window.__PI_PHONE || 'REPLACE_PHONE';
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const fire = (el, type, x, y) => el.dispatchEvent(new MouseEvent(type, {bubbles: true, cancelable: true, view: window, button: 0, clientX: x||0, clientY: y||0}));
   const setNative = (el, val) => {
@@ -67,13 +74,13 @@ async () => {
   }
 
   const out = {};
-  out.first = await setTextByLabel(/^First Name/, 'Cyrus');
-  out.last = await setTextByLabel(/^Last Name/, 'Shekari');
-  out.email = await setTextByLabel(/^Email/, 'cyshekari@gmail.com');
-  out.phone = await setTextByLabel(/^Phone\*?$/, '3468040227');
+  out.first = await setTextByLabel(/^First Name/, FILL_FIRST);
+  out.last = await setTextByLabel(/^Last Name/, FILL_LAST);
+  out.email = await setTextByLabel(/^Email/, FILL_EMAIL);
+  out.phone = await setTextByLabel(/^Phone\*?$/, FILL_PHONE);
   // Reformat phone (iti formats on second setNative)
   const ph = document.getElementById('phone');
-  if (ph) { setNative(ph, ''); setNative(ph, '3468040227'); }
+  if (ph) { setNative(ph, ''); setNative(ph, FILL_PHONE); }
   out.employer = await setTextByLabel(/current or previous employer/i, 'Microsoft');
   out.title = await setTextByLabel(/current or previous job title/i, 'Technical Program Manager');
   out.school = await setTextByLabel(/most recent school/i, 'University of Houston');

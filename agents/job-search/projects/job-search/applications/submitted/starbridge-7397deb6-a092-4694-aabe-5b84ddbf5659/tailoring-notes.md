@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned **end-to-end technical execution** of Azure's recovery validation program, scaling it from a 2-person operation into a platformized system sustaining 45+ annual resilience drills across enterprise deployments with Databricks, Walmart, SAP, and NetApp.
+2. Built and **shipped a 0→1 internal Resilience Automation Platform** — defined data pipeline requirements, self-service scheduling, and integration architecture — reducing operational toil by 30% and enabling a fully scalable execution model.
+3. Made independent technical calls to deliver Azure's first rack-level proactive drill program in **4 months**, achieving a 94% recovery rate and surfacing critical hardware defects that reshaped the validation roadmap.
+4. Served as bridge lead for a sovereign-cloud **network isolation deployment** tied to a $1.5B+ enterprise contract, directing 14 cross-org recovery executions under executive visibility with zero escalation failures.
+5. Built an internal **AI agent for drill planning**, restructuring pipeline workflows to cut planning cycle time by 39% and expand drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **production adoption of AI-powered code generation** across 14 Azure service teams — conducted hands-on deployment sessions and integration demos that eliminated 37 engineering hours of manual pipeline work monthly.
+2. Identified critical gaps in the existing data infrastructure by running **11+ on-site user interviews** with Azure engineering teams, directly influencing the roadmap to include intent-based YAML generation as a core capability.
+3. Rebuilt the documentation layer by enforcing metadata standards and **migrating to a semantic search integration**, cutting data-retrieval lookup time by 83% and improving pipeline accuracy across downstream tooling.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, accelerating region launches by 28% and generating $3M in pull-forward revenue from faster deployment cycles.
+2. Ran discovery with 20+ service teams to map **81 hours of manual toil per region launch**, then built a data pipeline roadmap targeting the highest-impact automation paths for immediate execution.
+3. Engineered a **Power BI integration dashboard** tracking operational toil and automation coverage across 140+ teams, giving leadership the data infrastructure needed to prioritize custom tooling investments.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the **legacy OS migration strategy** and mapped integration dependencies across 1,200+ stations for a 2,000+ unit pilot deployment — delivered zero operational downtime across the full transition.
+2. Aligned IT, Operations, and Engineering stakeholders to deploy **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and eliminating a manual integration bottleneck across the production floor.
+3. Owned backlog prioritization and Agile ceremonies, resolving **40+ high-priority integration tickets** and stabilizing the developer intake process to unblock a release-critical deployment timeline.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Deployed a new **CRM-based data pipeline** for scoping and invoicing, managing 200+ monthly proposals end-to-end and driving a 26% increase in job bookings through faster, more accurate customer-side execution.
+2. Cut Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a data-driven go-to-market strategy — rebuilt the digital presence and integrated tracking to connect spend directly to booked revenue.
+3. Conducted **profitability analysis across 1,000+ project records** to surface margin leaks in pricing models, delivering a structured data layer that leadership used to reprice high-volume service tiers.
+
+## Notes from the rewriter
+- 'End-to-end technical execution' (JD phrase) woven into microsoft_ft bullet 1 and title framing across all roles.
+- 'Data pipelines and integrations on top of existing data infrastructure' (core JD qualification) surfaced in microsoft_ft bullet 2, microsoft_2022 bullet 2, and amazon_robotics bullet 2.
+- 'Production software' and 'custom application layer' (JD vocabulary) embedded in microsoft_ft bullet 2 and pro_painters bullet 1 to mirror Starbridge's exact technical framing.
+- 'Independent technical calls' (JD phrase) echoed in microsoft_ft bullet 3 to show decisiveness without committee dependency.
+- 'On-site / forward-deployed' engagement pattern reflected in microsoft_2023 bullet 2 ('on-site user interviews') and amazon_robotics context to signal comfort with the weekly customer-site travel requirement.
+

@@ -1,7 +1,9 @@
 """Tests for _tesla_runner answer heuristics (Cyrus: US citizen, no sponsorship,
 authorized, open to relocate/onsite). Run: python3 -m pytest test_tesla_runner.py -q
 Importing the module is safe — playwright is imported lazily inside run()."""
-import importlib.util, os
+import importlib.util, os, json
+from pathlib import Path
+_PI = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 _spec = importlib.util.spec_from_file_location(
     "_tesla_runner", os.path.join(os.path.dirname(__file__), "_tesla_runner.py"))
@@ -37,9 +39,9 @@ def test_eeo_all_decline():
 
 
 def test_personal_constants():
-    assert tr.EMAIL == "cyshekari@gmail.com"
-    assert tr.PHONE == "3468040227"
-    assert tr.FIRST == "Cyrus" and tr.LAST == "Shekari"
+    assert tr.EMAIL == _PI["contact"]["email"]
+    assert tr.PHONE == _PI["contact"]["phone"].replace("-", "")
+    assert tr.FIRST == _PI["identity"]["first_name"] and tr.LAST == _PI["identity"]["last_name"]
 
 
 def test_no_yes_radio_values_only():

@@ -1,0 +1,292 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/firecrawl/bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+  "org": "firecrawl",
+  "job_id": "bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco, CA (Hybrid) OR Remote (Americas, UTC-3 to UTC-10)",
+  "fetched_at": "2026-06-21T09:13:40Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 17,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 6,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_email"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_resume"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_3e6ffce2-d96a-4455-bd47-5213f50e450c",
+      "label": "Linkedln",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Linkedln'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_3e6ffce2-d96a-4455-bd47-5213f50e450c"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_dc3d8b0d-0975-48c9-b3de-48fc617f83ce",
+      "label": "GitHub",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_dc3d8b0d-0975-48c9-b3de-48fc617f83ce"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_d1a26457-b424-4bef-9545-76fce248f64f",
+      "label": "Portfolio",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_d1a26457-b424-4bef-9545-76fce248f64f"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35",
+      "label": "What’s your go-to stack of tools for getting things done?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465",
+      "label": "Years of Experience",
+      "type": "input_text",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1",
+      "label": "Walk us through a recent project where you turned a rough mock or wireframe into a polished production UI using Next.js, Tailwind, and Framer Motion. What were the hardest parts, and how did you solve them?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19",
+      "label": "Describe a time you improved perceived or actual performance in a frontend you've built — e.g. shaving milliseconds, optimizing animations, or improving interactivity. What did you measure, and what was the user impact?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6",
+      "label": "Tell us about a proof-of-concept or experiment you shipped rapidly—maybe a novel interactive experience or motion-driven feature. What was the setup, and did it become production?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c",
+      "label": "What common pitfalls have you encountered using Next.js, Tailwind, or Framer Motion? How did you identify and mitigate issues like layout jank, hydration bugs, or animation pauses?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865",
+      "label": "What interests you about working at Firecrawl? What should we know about you?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_94315f91-4355-4343-9dba-1735b3649ba8",
+      "label": "For this role, it is important to be able to communicate effectively with in English both by writing and speaking. How comfortable are you with writing and speaking in English?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I'm not very comfortable with writing and speaking in English.",
+      "source": "english_comfort_high (matched \"I'm not very comfortable with writing and speaking in English.\")",
+      "status": "filled",
+      "matched_rule": "english_comfort_high",
+      "options": [
+        {
+          "label": "I'm not very comfortable with writing and speaking in English.",
+          "value": "I'm not very comfortable with writing and speaking in English."
+        },
+        {
+          "label": "I'm pretty comfortable with writing and speaking in English.",
+          "value": "I'm pretty comfortable with writing and speaking in English."
+        },
+        {
+          "label": "I'm very comfortable with writing and speaking in English.",
+          "value": "I'm very comfortable with writing and speaking in English."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_94315f91-4355-4343-9dba-1735b3649ba8"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_bd53e1be-57c1-4a21-9a14-49e03cbf7f42",
+      "label": "Are you located in the Bay Area or are you willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_bd53e1be-57c1-4a21-9a14-49e03cbf7f42"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_a089d1be-69e4-43e0-9fdf-e1a2f151567b",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_a089d1be-69e4-43e0-9fdf-e1a2f151567b"
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_d25b99ca-12c3-4e6c-852a-75a1ff2913fd",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "6ea7832b-47db-4666-9e28-33d231b88a8f_d25b99ca-12c3-4e6c-852a-75a1ff2913fd"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_3e6ffce2-d96a-4455-bd47-5213f50e450c",
+      "label": "Linkedln",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Linkedln'"
+    }
+  ],
+  "blockers": []
+}

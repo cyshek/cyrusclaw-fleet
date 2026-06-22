@@ -1,5 +1,8 @@
 import os, sys, base64
 from playwright.sync_api import sync_playwright
+import json as _json
+from pathlib import Path as _Path
+_PI = _json.loads((_Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 CDP_URL = os.environ.get("JOBSEARCH_CDP", "http://127.0.0.1:18800")
 PID = sys.argv[1] if len(sys.argv) > 1 else "790315472265"
@@ -30,7 +33,7 @@ with sync_playwright() as p:
     }""", [csrf, pdf_b64])
     print("UPLOAD encId:", enc)
     page.wait_for_timeout(1500)
-    for sel, val in [("#Contact_Information_email", "cyshekari@gmail.com"), ("#Contact_Information_firstname", "Cyrus"), ("#Contact_Information_lastname", "Shekari"), ("#Contact_Information_phone", "346-804-0227"), ("#Contact_Information_city", "Kirkland")]:
+    for sel, val in [("#Contact_Information_email", _PI["contact"]["email"]), ("#Contact_Information_firstname", "Cyrus"), ("#Contact_Information_lastname", "Shekari"), ("#Contact_Information_phone", _PI["contact"]["phone"]), ("#Contact_Information_city", "Kirkland")]:
         try:
             page.fill(sel, val)
         except Exception as e:

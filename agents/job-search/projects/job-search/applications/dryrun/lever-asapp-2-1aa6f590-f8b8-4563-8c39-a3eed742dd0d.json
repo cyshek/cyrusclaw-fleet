@@ -1,0 +1,259 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/asapp-2/1aa6f590-f8b8-4563-8c39-a3eed742dd0d",
+  "apply_url": "https://jobs.lever.co/asapp-2/1aa6f590-f8b8-4563-8c39-a3eed742dd0d/apply",
+  "org": "asapp-2",
+  "job_id": "1aa6f590-f8b8-4563-8c39-a3eed742dd0d",
+  "job_title": "ASAPP - Solutions Engineer",
+  "fetched_at": "2026-06-22T08:05:12Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 10,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[501b72d1-0fa1-4b78-87ec-3ae91e69c253][field0]",
+      "label": "Will you now, or in the future, require sponsorship for employment visa status (e.g. H-1B visa status)?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "b5c59bc0-516d-4a40-be52-c12c4208c3c3"
+        },
+        {
+          "label": "No",
+          "value": "c3397ddd-aa1a-4056-bfb4-3466b44c1c2d"
+        }
+      ],
+      "card_text": "Employment Sponsorship"
+    },
+    {
+      "id": "cards[1ea18de8-e065-4d64-8fa7-e1690062a424][field0]",
+      "label": "Please select one of the options below",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "ASAPP Career Website",
+      "source": "lever_default (required-select last-resort -> ASAPP Career Website)",
+      "status": "filled_needs_review",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "ASAPP Career Website",
+          "value": "a3e5e2b2-3b7e-49be-9197-4137a1f735a8"
+        },
+        {
+          "label": "ASAPP Employee",
+          "value": "49d0e56f-c3ec-4076-8f49-2ca6ccec9df6"
+        },
+        {
+          "label": "Women Who Code",
+          "value": "deebf98b-5e18-41c7-8c2d-688c95d2a729"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "69536ec2-a64e-4f18-a092-2cd69d75e8a7"
+        },
+        {
+          "label": "Twitter",
+          "value": "e97ca193-3e59-4542-ae7c-8581fc20c38c"
+        },
+        {
+          "label": "Event",
+          "value": "ad8adac7-2d67-49b5-aa7c-89d81daa64ef"
+        },
+        {
+          "label": "Other",
+          "value": "70e859ef-f2eb-488f-8f92-293a973a9fdc"
+        }
+      ],
+      "card_text": "How did you hear about us?"
+    },
+    {
+      "id": "cards[1ea18de8-e065-4d64-8fa7-e1690062a424][field1]",
+      "label": "If Other, please specify",
+      "type": "input_text",
+      "lever_type": "text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If Other, please specify'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "How did you hear about us?"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "cards[1ea18de8-e065-4d64-8fa7-e1690062a424][field1]",
+      "label": "If Other, please specify",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If Other, please specify'"
+    }
+  ],
+  "blockers": [],
+  "meta": {
+    "og_title": "ASAPP - Solutions Engineer",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

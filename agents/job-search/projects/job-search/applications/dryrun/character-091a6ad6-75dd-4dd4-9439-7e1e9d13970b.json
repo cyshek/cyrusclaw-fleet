@@ -1,0 +1,208 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/character/091a6ad6-75dd-4dd4-9439-7e1e9d13970b",
+  "org": "character",
+  "job_id": "091a6ad6-75dd-4dd4-9439-7e1e9d13970b",
+  "job_title": "Technical Program Manager, Model Alignment and Deployment ",
+  "job_location": "Redwood City, CA",
+  "fetched_at": "2026-06-22T07:21:22Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38__systemfield_name"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38__systemfield_email"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_7492fe29-0b42-4998-9479-ce5b3a91a97a",
+      "label": "Linkedin Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_7492fe29-0b42-4998-9479-ce5b3a91a97a"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38__systemfield_resume"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_bafe0992-e211-4e9c-827f-32573a746fb5",
+      "label": "Are you open to working in a hybrid setup, with 3 days/week onsite at our Redwood City office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_bafe0992-e211-4e9c-827f-32573a746fb5"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_16718d91-59c0-4e57-8521-f72d798a6210",
+      "label": "When could you start working?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_16718d91-59c0-4e57-8521-f72d798a6210"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_3097477a-cae1-494a-aec9-42ca6c1002d2",
+      "label": "Are you authorized to work lawfully in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Complicated - would want to discuss",
+          "value": "Complicated - would want to discuss"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_3097477a-cae1-494a-aec9-42ca6c1002d2"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_b5a44e7b-1684-46b7-8b8a-c8f8cb146aa0",
+      "label": "How did you hear about Character AI?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Linkedin",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Linkedin",
+          "value": "Linkedin"
+        },
+        {
+          "label": "Indeed",
+          "value": "Indeed"
+        },
+        {
+          "label": "Glassdoor",
+          "value": "Glassdoor"
+        },
+        {
+          "label": "Referral",
+          "value": "Referral"
+        },
+        {
+          "label": "Character Careers Page",
+          "value": "Character Careers Page"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_b5a44e7b-1684-46b7-8b8a-c8f8cb146aa0"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_2d859c4e-c365-49e5-a674-571812b785e4",
+      "label": "Why are you interested in working at Character AI?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Character because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Character is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Character while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Character aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Character')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_2d859c4e-c365-49e5-a674-571812b785e4"
+    },
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_a4199f51-389a-4708-9293-dc792a8e703d",
+      "label": "[Optional] What is one feature you would be excited to add or improve?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='[Optional] What is one feature you would be excited to add or improve?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_a4199f51-389a-4708-9293-dc792a8e703d"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "07bab6ab-5947-451a-ac2c-a3c1d4147f38_a4199f51-389a-4708-9293-dc792a8e703d",
+      "label": "[Optional] What is one feature you would be excited to add or improve?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='[Optional] What is one feature you would be excited to add or improve?'"
+    }
+  ],
+  "blockers": []
+}

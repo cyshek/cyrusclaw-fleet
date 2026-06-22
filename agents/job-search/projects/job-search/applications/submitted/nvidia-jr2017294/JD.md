@@ -1,0 +1,69 @@
+# Solutions Architect, OEM AI Factory Infrastructure
+
+**Company:** NVIDIA
+**Location:** US, CA, Santa Clara
+**Apply:** https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Solutions-Architect--OEM-AI-Factory-Infrastructure_JR2017294/apply
+**Workday tenant:** nvidia
+**Req ID:** JR2017294
+**Posted on:** Posted 30+ Days Ago
+**Submit mode:** MANUAL (Workday auto-submit not implemented)
+
+---
+
+In this role, you will be a contributing member of the OEM AI Factory SA team. Our work encompasses MEP (Mechanical Electrical Plumbing), Ethernet and Infiniband networking, DevOps, HPC/AI workloads, Cluster Administration and Site Reliability Engineering. You will acquire insight into various facets of AI Factories deployments. Applicants should be familiar with Linux system administration, Python, and networking concepts. Solid understanding of Slurm and data sciences is a plus.
+
+Our Team is responsible for OEM AI factory build engagements - which means that we work with our OEM partners (Dell, HPE, Lenovo and others) to use NVIDIA solutions integrated in their platforms. NVIDIA certified servers include GB200/300 NVL72, along with our software stack that assists with the deployment, configuring, validating and monitoring for the AI Factories of the future.
+
+**What you’ll be doing:**
+
+- Collaborating with solution architects, engineering or product teams!
+
+- Understanding technical needs of partners and customers
+
+- Developing proof of concept projects with NVIDIA technologies.
+
+- Assisting with key takeaways, documenting and sharing.
+
+- Educating our Partners through hands-on trainings.
+
+**What we need to see:**
+
+- BS, MS, or PhD in Computer Science, Computer Architecture, Electrical Engineering, Math, Physics, Data Science, or related technical fields (or equivalent experience)
+
+- 5+ years experience
+
+- Strong skills in one or more programming languages (Python, C, C++, etc.)
+
+- Excellent presentation, communication and collaboration skills
+
+- Ability to work independently and with a cross-functional team
+
+- Comfortable multi-tasking in a fast-paced environment with changing requirements
+
+- Strong analytical and problem-solving skills
+
+**Ways to stand out from the crowd:**
+
+- Experience with NVIDIA GPUs and software libraries
+
+- Work experience within an engineering or research community
+
+- A computer architecture, software engineering, or data science foundation
+
+- Academic or industry familiarity with GPUs, AI, CUDA, or related technologies
+
+- Ability and eagerness to dig into unfamiliar territories to take on problems relying on experience from previous work with data center infrastructure experience, from hardware up through technology stack
+
+NVIDIA is renowned as one of the most coveted employers in the tech world. We’re home to some of the industry's brightest and most innovative minds. If you’re excited about witnessing how a global technology leader stays at the cutting edge, we'd love to hear from you!
+
+Your base salary will be determined based on your location, experience, and the pay of employees in similar positions. The base salary range is 152,000 USD - 241,500 USD for Level 3, and 184,000 USD - 287,500 USD for Level 4.
+
+You will also be eligible for equity and [benefits](https://www.nvidia.com/en-us/benefits/).
+
+Applications for this job will be accepted at least until May 11, 2026.
+
+This posting is for an existing vacancy. 
+
+NVIDIA uses AI tools in its recruiting processes.
+
+NVIDIA is committed to fostering a diverse work environment and proud to be an equal opportunity employer. As we highly value diversity in our current and future employees, we do not discriminate (including in our hiring and promotion practices) on the basis of race, religion, color, national origin, gender, gender expression, sexual orientation, age, marital status, veteran status, disability status or any other characteristic protected by law.

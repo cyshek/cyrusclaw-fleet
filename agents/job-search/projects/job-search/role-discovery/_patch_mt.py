@@ -1,9 +1,11 @@
 import json
+from pathlib import Path
+_PI = json.loads(Path(__file__).resolve().parents[1].joinpath("personal-info.json").read_text())
 fp = "output/inline-plan-modern-treasury-5aceb245-03e3-49ea-9f99-14e541f5ad4a.json"
 p = json.load(open(fp))
 PHONE_ID = "2a7d75fc-0b77-4fee-96dc-1f4c5142a78f_d3d8a905-5394-4379-9b66-8139f4c5ea3e"
 LOC_ID = "2a7d75fc-0b77-4fee-96dc-1f4c5142a78f__systemfield_location"
-PHONE = "346-804-0227"
+PHONE = _PI["contact"]["phone"]
 LOC = "Kirkland, WA"
 changed = []
 for st in p.get("steps", []):

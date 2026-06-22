@@ -39,6 +39,8 @@ import json
 import pathlib
 import re
 import string
+
+_PI_REAL = json.loads((pathlib.Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 import tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -60,7 +62,7 @@ def _temp_creds(tenants):
     temp Path. The real .workday-creds.json is NEVER touched."""
     tmp = pathlib.Path(tempfile.mkdtemp())
     creds = {
-        "shared_email": "cyshekari@gmail.com",
+        "shared_email": _PI_REAL["contact"]["email"],
         "shared_password": "SharedPW123!",
         "tenants": tenants,
     }

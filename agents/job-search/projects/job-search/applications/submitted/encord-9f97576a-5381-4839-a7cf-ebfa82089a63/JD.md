@@ -1,0 +1,85 @@
+# Forward Deployed Engineer
+
+**Company:** Encord
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/encord/9f97576a-5381-4839-a7cf-ebfa82089a63
+**Ashby Org:** encord
+**Ashby Job ID:** 9f97576a-5381-4839-a7cf-ebfa82089a63
+
+---
+
+**About us**
+
+Encord is the universal data layer for AI that helps 300+ AI teams train and run models on the right data. Our platform indexes, curates, annotates, and evaluates data across the full AI lifecycle, from development through production. Trusted by Woven by Toyota, AXA, UiPath, Zipline, and more.
+
+ 
+We're an ambitious team of 100+ working at the frontier of AI and have raised $60M in Series C funding from Wellington Management, CRV, Next47 and Y Combinator.
+
+ 
+**The role**
+
+We're looking for an exceptional Forward Deployed Engineer (FDE) to join our product engineering team. Our FDEs own the deployment of the Encord platform in our most strategic and advanced use cases — working with customers daily to drive adoption and value delivery.
+
+As an early member of the Forward Deployed team, you will have an outsized impact shaping a critical function for Encord and our customers, and stepping into a role which can accelerate your career in a fast-paced, high-growth environment. You will become a product expert and work with internal teams — both technical and commercial — to build a well-oiled engine that consistently enables customers to get up and running successfully, at scale.
+
+As an end-to-end owner of the deployment process, you will work across a variety of problems: technical engineering, operational excellence, and strategic product work. Expect to build data integrations, guide customers with best practices, demo the product, and contribute to the product roadmap.
+
+**What you'll do**
+
+- Own the end-to-end deployment of the Encord platform for our most strategic customers
+
+- Build data integrations and technical solutions to support customer onboarding and adoption
+
+- Guide customers with best practices, run demos, and host workshops
+
+- Communicate project plans and progress to both technical teams and executive stakeholders
+
+- Collaborate closely with product, engineering, and commercial teams to feed customer insights back into the roadmap
+
+- Help define and scale the Forward Deployed function as an early team member
+
+**Who we're looking for**
+
+- Strong experience in a client-facing role in a high-intensity, fast-paced environment
+
+- Equally comfortable handling in-the-weeds product configuration queries and communicating with executives about a project plan
+
+- A great communicator who is motivated by building customer relationships and solving customer problems
+
+- Highly organised with strong time management across many competing priorities
+
+- Energised by owning and successfully completing projects, with the ability to balance detail-focus and big-picture thinking
+
+- Ambitious, hardworking, and consistently performed in the top percentile of whatever environment you've been in — whether in academia, business, sport, or work
+
+**Experience requirements**
+
+- 3–8 years in a technical, client-facing or solutions engineering role
+
+- Experience building or working with data integrations and APIs
+
+- Strong written and verbal communication skills
+
+- Ability to thrive in ambiguity and take ownership without being told what to do
+
+- Prior experience at a high-growth startup is a plus
+
+**Why Encord**
+
+- Competitive salary, commission, and meaningful equity in a high-growth startup
+
+- Clear, accelerated growth opportunities as the company scales rapidly
+
+- Strong in-person culture: 4–5 days/week in our newly launched North Beach loft office
+
+- Flexible PTO to fully recharge
+
+- 18 paid vacation days in the U.S. plus federal holidays
+
+- Annual learning & development budget
+
+- Comprehensive health, dental, and vision coverage
+
+- Frequent travel opportunities across the U.S., London, and Europe
+
+- Bi-annual company offsites, twice-weekly team lunches, and monthly socials

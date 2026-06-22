@@ -46,7 +46,9 @@ sys.path.insert(0, str(HERE))
 import gmail_imap
 
 # ---- Cyrus profile ----
-EMAIL = "cyshekari@gmail.com"
+import json as _json
+_PI = _json.loads((ROOT / "personal-info.json").read_text())
+EMAIL = _PI["contact"]["email"]
 PW = (ROOT / ".tiktok-password").read_text().strip()
 
 def load_tenant_creds(tenant):
@@ -281,15 +283,15 @@ def resolve_account_for_tenant(tenant, force_fresh=None):
     return email, pw, "signin_legacy"
 
 
-FIRST = "Cyrus"
-LAST = "Shekari"
-PHONE = "3468040227"
+FIRST = _PI["identity"]["first_name"]
+LAST = _PI["identity"]["last_name"]
+PHONE = _PI["contact"]["phone"].replace("-", "")  # 10-digit no-dash
 ADDR1 = "Kirkland"   # placeholder; real line set below
 ADDRESS_LINE1 = "11800 NE 128th St"  # generic Kirkland address; Workday rarely verifies
 CITY = "Kirkland"
 STATE = "Washington"
 STATE_ABBR = "WA"
-POSTAL = "98034"
+POSTAL = _PI["address"]["zip"]
 COUNTRY = "United States of America"
 LINKEDIN = "https://www.linkedin.com/in/cyrus-shekari"
 SOURCE_DEFAULT = "LinkedIn"
@@ -1078,7 +1080,39 @@ def pick_workday_source(page):
         log("source already selected, skipping"); return True
     src = page.locator("input#source--source").first
     if not src.count():
-        return True  # no source field on this step
+        # Fallback: some tenants (e.g. Cisco wd5) render 'How Did You Hear About Us?'
+        # as a standard Workday single-select listbox with a different ID pattern.
+        # Detect by label text and attempt _commit_wd_dropdown.
+        try:
+            hw_label = page.evaluate("""()=>{
+                const labels = [...document.querySelectorAll('label')];
+                for (const l of labels) {
+                    const t = (l.textContent||'').toLowerCase();
+                    if (t.includes('hear about') || t.includes('how did you')) {
+                        return l.getAttribute('for') || l.id || 'FOUND';
+                    }
+                }
+                return null;
+            }""")
+            if hw_label:
+                log("source: fallback label-based field detected:", hw_label)
+                committed = _commit_wd_dropdown(page, hw_label,
+                    "LinkedIn",
+                    want_alts=["LinkedIn", "Indeed", "Job Board", "Other", "Internet"])
+                if committed:
+                    log("source COMMITTED via label-fallback")
+                    return True
+                # If _commit_wd_dropdown fails, try generic promptOption pick
+                src_fb = page.locator(f"input#{hw_label}").first if hw_label != 'FOUND' else None
+                if src_fb and src_fb.count():
+                    src = src_fb  # fall through to main flow below
+                else:
+                    return True  # unknown widget variant; don't block submission
+            else:
+                return True  # no source field on this step
+        except Exception as e:
+            log("source label-fallback fail", str(e)[:80])
+            return True  # don't block on this field
     # ONE-TIME DOM probe (grind-resolver): dump the source widget structure so we use the
     # right commit selector. Guarded by env WD_SOURCE_PROBE=1.
     import os as _os

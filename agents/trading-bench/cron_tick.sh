@@ -60,6 +60,23 @@ TICK_RC=$?
     echo "=== end ==="
 } >> "$LOG"
 
+# --- Allocator paper-clock tracker (out-of-band; NO live orders) -------------
+# Re-runs the validated inv-vol blend engine to the latest close and logs an
+# idempotent daily snapshot to allocator_paper.db. Safe to run any day: the DB
+# insert is keyed on the latest TRADING date, so a weekend/holiday run just
+# re-confirms the last trading day's row (no double-insert). Non-fatal: a tracker
+# failure is logged but never blocks or fails the tick.
+ALLOC_OUT=$(python3 runner/allocator_paper_tracker.py 2>&1)
+ALLOC_RC=$?
+{
+    echo "=== allocator_paper_tracker @ $TS (rc=$ALLOC_RC) ==="
+    echo "$ALLOC_OUT"
+    echo "=== end allocator_paper ==="
+} >> "$LOG_DIR/allocator_paper.log"
+if [ "$ALLOC_RC" -ne 0 ]; then
+    echo "[allocator_paper] WARNING: tracker exited rc=$ALLOC_RC (non-fatal; see $LOG_DIR/allocator_paper.log)" >&2
+fi
+
 # Build the message body. Trade receipts first, errors second.
 TRADE_LINES=$(echo "$TICK_OUT" | grep -E '^\[[^]]+\] (BUY|SELL) ' || true)
 ERROR_LINES=$(echo "$TICK_OUT" | grep -E '^\[[^]]+\] ERROR:' || true)

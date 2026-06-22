@@ -1,0 +1,186 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/spiceai/147430d4-920c-4f9e-9c7a-81ee0fee641b",
+  "apply_url": "https://jobs.lever.co/spiceai/147430d4-920c-4f9e-9c7a-81ee0fee641b/apply",
+  "org": "spiceai",
+  "job_id": "147430d4-920c-4f9e-9c7a-81ee0fee641b",
+  "job_title": "Spice AI - Forward Deployed Engineer (Rust)",
+  "fetched_at": "2026-06-21T11:23:03Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[73396208-1665-49b0-b38c-29fb42f06982][field0]",
+      "label": "Please provide links to any essay style pieces you've written (essays, blogs, articles, papers, etc.)",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": true,
+      "value": "<<COVER_ANSWER>>",
+      "source": "lever_default (textarea → deferred to cover_answer_generator)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "card_text": "Examples of written materials"
+    },
+    {
+      "id": "cards[a4bdaf7b-c35a-4797-8b91-bc66c5b58317][field0]",
+      "label": "Are you authorized to work in the United States? If so, provide details.",
+      "type": "textarea",
+      "lever_type": "textarea",
+      "required": false,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": null,
+      "card_text": "Work Authorization"
+    },
+    {
+      "id": "opportunityLocationId",
+      "label": "Which location are you applying for?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "Bellevue, Washington",
+      "source": "lever_posting_location (first US office; relocation-OK)",
+      "status": "filled",
+      "matched_rule": "posting_location",
+      "options": [
+        {
+          "label": "Bellevue, Washington",
+          "value": "9f19a2ef-a505-47f4-98a8-59c15572df98"
+        },
+        {
+          "label": "Bay Area, California",
+          "value": "a7bfdf04-8d00-4b8c-b8a1-1340f1fa50a9"
+        },
+        {
+          "label": "Seattle, Washington",
+          "value": "d1e5e6c0-f13c-40cb-b554-ac380a823725"
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "meta": {
+    "og_title": "Spice AI - Forward Deployed Engineer (Rust)",
+    "structured_location": true,
+    "has_resume_input": true
+  }
+}

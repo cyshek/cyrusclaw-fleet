@@ -386,7 +386,7 @@ class DryRunNoMutationTest(unittest.TestCase):
             ]}
             with patch.object(brute.requests, "get",
                               return_value=_mock_response(200, jobs_payload)):
-                rc = brute.main(["--db", str(db), "--map", str(mp), "--quiet"])
+                rc = brute.main(["--db", str(db), "--map", str(mp), "--no-dynamic", "--quiet"])
             self.assertEqual(rc, 0)
             # DB unchanged for row 1
             con = sqlite3.connect(str(db))
@@ -412,7 +412,7 @@ class ApplyMutatesTest(unittest.TestCase):
             ]}
             with patch.object(brute.requests, "get",
                               return_value=_mock_response(200, jobs_payload)):
-                rc = brute.main(["--db", str(db), "--map", str(mp), "--apply", "--quiet"])
+                rc = brute.main(["--db", str(db), "--map", str(mp), "--apply", "--no-dynamic", "--quiet"])
             self.assertEqual(rc, 0)
             con = sqlite3.connect(str(db))
             row1 = con.execute(
@@ -446,7 +446,7 @@ class BackupTest(unittest.TestCase):
             mp = TmpDBHelper.make_map(tdp)
             with patch.object(brute.requests, "get",
                               return_value=_mock_response(200, {"jobs": []})):
-                rc = brute.main(["--db", str(db), "--map", str(mp), "--apply", "--quiet"])
+                rc = brute.main(["--db", str(db), "--map", str(mp), "--apply", "--no-dynamic", "--quiet"])
             self.assertEqual(rc, 0)
             baks = list(tdp.glob("tracker.db.bak.*-linkedin-brute-resolver"))
             self.assertEqual(len(baks), 1)
@@ -513,3 +513,58 @@ class StatusSelectionTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DynamicFallbackWiredTest(unittest.TestCase):
+    """Regression guard: dynamic_ats_entry() must actually be CALLED from
+    main() when the static map has no usable ATS entry. The probe function
+    existed for weeks but was never wired into the loop (fixed 2026-06-22),
+    so every long-tail startup resolved to NO-ATS. This test fails if the
+    wiring is ever removed."""
+
+    def test_dynamic_probe_is_invoked_for_unknown_company(self):
+        with tempfile.TemporaryDirectory() as td:
+            tdp = Path(td)
+            db = TmpDBHelper.make_tracker(tdp)
+            mp = TmpDBHelper.make_map(tdp)
+            seen = []
+
+            def fake_dynamic(company):
+                seen.append(company)
+                # Pretend we discovered a greenhouse board for the bogus co.
+                return {"ats": "greenhouse", "slug": "randombogusco", "dynamic": True}
+
+            payload = {"jobs": [{"title": "Forward Deployed Engineer",
+                                 "absolute_url": "https://boards.greenhouse.io/randombogusco/jobs/1",
+                                 "id": 1,
+                                 "location": {"name": "SF"}}]}
+            with patch.object(brute, "dynamic_ats_entry", side_effect=fake_dynamic), \
+                 patch.object(brute.requests, "get",
+                              return_value=_mock_response(200, payload)):
+                rc = brute.main(["--db", str(db), "--map", str(mp),
+                                 "--apply", "--quiet"])
+            self.assertEqual(rc, 0)
+            # The UNKNOWN-ATS company (RandomBogusCo) MUST have hit the probe.
+            self.assertIn("RandomBogusCo", seen)
+            con = sqlite3.connect(str(db))
+            row2 = con.execute("SELECT app_url, agent_notes FROM roles WHERE id=2").fetchone()
+            con.close()
+            # And it should now resolve to the dynamically-probed greenhouse board.
+            self.assertIn("greenhouse.io/randombogusco", row2[0])
+            self.assertIn("LINKEDIN-BRUTE-DONE", row2[1])
+
+    def test_no_dynamic_flag_disables_probe(self):
+        with tempfile.TemporaryDirectory() as td:
+            tdp = Path(td)
+            db = TmpDBHelper.make_tracker(tdp)
+            mp = TmpDBHelper.make_map(tdp)
+            seen = []
+            with patch.object(brute, "dynamic_ats_entry",
+                              side_effect=lambda c: seen.append(c)), \
+                 patch.object(brute.requests, "get",
+                              return_value=_mock_response(200, {"jobs": []})):
+                rc = brute.main(["--db", str(db), "--map", str(mp),
+                                 "--apply", "--no-dynamic", "--quiet"])
+            self.assertEqual(rc, 0)
+            # With --no-dynamic the probe must NOT be called at all.
+            self.assertEqual(seen, [])

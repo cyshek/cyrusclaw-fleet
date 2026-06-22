@@ -1,0 +1,193 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/nice/jobs/4851567101",
+  "org": "nice",
+  "job_id": "4851567101",
+  "job_title": "Lead Product Manager",
+  "job_location": "Germany - Berlin",
+  "fetched_at": "2026-06-22T07:37:54Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/nice/jobs/4851567101?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 2,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_8770285101",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_8770286101",
+      "label": "Do you have any first-degree relatives (spouse, parent, child, sibling) that are currently employed by NICE or any of its subsidiaries?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Bachelor of Science",
+      "source": "education.degree | NOTE: 'Bachelor of Science' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8770287101",
+      "label": "Have you ever worked at NICE or any of it's subsidiaries?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8770288101",
+      "label": "Would you need a visa / work permit for the role in the location you are applying for?   ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

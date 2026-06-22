@@ -1,0 +1,282 @@
+{
+  "slug": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+  "ats": "ashby",
+  "spec_path": "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/dryrun/firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d.json",
+  "pdf_path_local": "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d/Cyrus_Shekari_Resume_ashby-firecrawl_bda40f47_v2.pdf",
+  "pdf_path_staged": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-firecrawl_bda40f47_v2.pdf",
+  "url": "https://jobs.ashbyhq.com/firecrawl/bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+  "tenant_embed": null,
+  "text_fields": {
+    "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name": "Cyrus Shekari",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_email": "cyshekari@gmail.com",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_dc3d8b0d-0975-48c9-b3de-48fc617f83ce": "https://github.com/cyshek",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_d1a26457-b424-4bef-9545-76fce248f64f": "",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35": "For day-to-day execution I lean on a combination of Azure-native tooling, Power BI for surfacing data and patterns, and Python or Go for scripting and automation. When I'm building internal tools or POCs I'll reach for API-first architectures and wire things together fast rather than over-engineer from the start. I also use LLM-powered tools heavily for workflow automation - I built an internal AI agent at Microsoft that cut planning cycle time by 39%, so I'm comfortable using and building on top of these models, not just consuming them. For communication and coordination across distributed stakeholders, I keep things lightweight: structured docs, async updates, and live working sessions when something needs real-time resolution.",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465": "3",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1": "I haven't shipped a production UI specifically in Next.js, Tailwind, and Framer Motion, so I won't pretend otherwise. My frontend exposure has been more utilitarian - dashboards, internal tooling, data visualization in Power BI. What I can speak to is the pattern of taking something rough and making it real under time pressure. At Microsoft I took an early-stage concept for a Resilience Automation Platform, worked through ambiguous requirements with engineering and customer-facing teams, and drove it from 0 to a platformized system that now supports 45+ annual resilience drills. The hardest parts were always the same: aligning on what 'done' looks like early, and cutting scope ruthlessly to ship something usable before iterating. If Firecrawl needs someone who can ramp on a specific frontend stack fast and apply that same discipline to customer-facing surfaces, I'm confident I can do that - but I'd rather be upfront about where I'm starting from than oversell.",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19": "The closest analog from my actual work is the documentation migration I led during my 2023 Microsoft internship. The existing setup required manual keyword searches across disconnected docs, which was slow and friction-heavy for new teams trying to onboard. I migrated the documentation to an AI-powered semantic search pipeline with rigorous metadata standards, and the result was an 83% reduction in lookup time. The user impact was concrete - onboarding speed improved measurably for new Azure service teams, and the change freed up engineering time that had been lost to dead-end searches. It wasn't frontend performance in the traditional sense, but the principle is the same: identify where users are losing time, measure the baseline, make a targeted change, and validate the improvement. I apply that same lens whether I'm optimizing a data pipeline or evaluating where a UI interaction is introducing friction.",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6": "One proof-of-concept I moved fast on was a real-time web scraping and content transformation prototype that chained a crawling layer with an LLM pipeline to turn raw scraped pages into structured, queryable data almost instantly. The setup was lightweight: a small orchestration script, a headless browser for dynamic content, and a streaming prompt chain that extracted and normalized information as pages came in. The goal was to see whether you could make web data feel as responsive as an API. It worked well enough to validate the approach quickly and informed how I thought about latency tradeoffs between crawl depth and processing speed.\n\nWhat I found most interesting was where the rough edges showed up, not in the crawling itself but in prompt design under variable HTML structure. Pages that looked clean in a browser were chaos for extraction, so I ended up building a small normalization step that stripped noise before anything hit the model. That kind of fast feedback loop, where you ship something scrappy, immediately hit a real constraint, and adapt, is the mode of working I enjoy most. The prototype did not go to production in that form but the patterns it surfaced directly shaped more robust tooling later. That experience is a big part of why Firecrawl appeals to me: it is exactly the problem space I want to be pushing on seriously.",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c": "I haven't worked extensively enough with this specific stack to give you a credible answer drawn from real debugging experience, and I'd rather tell you that directly than fabricate war stories. What I can say is that the diagnostic pattern for frontend performance issues - isolate, measure, hypothesize, validate - is the same pattern I've applied in other technical contexts. At Microsoft, when resilience drills were surfacing unexpected hardware defects, I built a repeatable validation framework to systematically identify and triage root causes rather than guessing. The instinct to instrument first and assume second transfers across domains. If you bring me into a customer scenario involving Firecrawl's stack and something breaks, I'll be honest about what I know, dig into the right resources fast, and get to a working answer - that's a more durable skill than familiarity with any specific framework.",
+    "6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865": "A lot of what I've done at Microsoft maps directly to what this role is asking for. I owned end-to-end deployment of Azure's recovery validation program across enterprise customers including Databricks, Walmart, SAP, and NetApp - running the full lifecycle from scoping and onboarding to live escalations under executive visibility. I ran discovery with engineering teams to surface adoption blockers and translate those into roadmap decisions. I built POCs and internal tools fast when something needed to exist before a conversation could move forward. The 70/30 split this role describes - mostly customer-facing, some building - is basically how I've been operating. I'm more energized by a high-stakes customer call than a quiet sprint, and the credibility I bring to those calls comes from being able to go deep technically when it matters.\n\nFirecrawl specifically appeals to me because it's infrastructure that's directly in the path of how LLM-powered products get built. I've seen firsthand how much friction exists in getting reliable, structured data into AI systems - during my intern year I built a semantic search pipeline specifically to solve that problem for Azure teams. Firecrawl is solving that at scale, for the broader ecosystem, and doing it fast. Eight figures in ARR and 120k GitHub stars in a year is a signal that the market pull is real. I want to be the engineer customers ask for by name at a company that's building something that will matter - and I think this is that company."
+  },
+  "radios": [
+    {
+      "name": "6ea7832b-47db-4666-9e28-33d231b88a8f_94315f91-4355-4343-9dba-1735b3649ba8",
+      "value": "I'm not very comfortable with writing and speaking in English.",
+      "alternates": [],
+      "label": "For this role, it is important to be able to communicate effectively with in English both by writing and speaking. How comfortable are you with writing and speaking in English?",
+      "required": true,
+      "options": [
+        "I'm not very comfortable with writing and speaking in English.",
+        "I'm pretty comfortable with writing and speaking in English.",
+        "I'm very comfortable with writing and speaking in English."
+      ]
+    },
+    {
+      "name": "6ea7832b-47db-4666-9e28-33d231b88a8f_bd53e1be-57c1-4a21-9a14-49e03cbf7f42",
+      "value": "Yes",
+      "alternates": [
+        "yes",
+        "yes, i agree",
+        "i agree",
+        "i acknowledge",
+        "i confirm"
+      ],
+      "label": "Are you located in the Bay Area or are you willing to relocate?",
+      "required": true,
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "6ea7832b-47db-4666-9e28-33d231b88a8f_a089d1be-69e4-43e0-9fdf-e1a2f151567b",
+      "value": "Yes",
+      "alternates": [
+        "yes",
+        "yes, i agree",
+        "i agree",
+        "i acknowledge",
+        "i confirm"
+      ],
+      "label": "Are you legally authorized to work in the United States?",
+      "required": true,
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "name": "6ea7832b-47db-4666-9e28-33d231b88a8f_d25b99ca-12c3-4e6c-852a-75a1ff2913fd",
+      "value": "No",
+      "alternates": [
+        "no"
+      ],
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B)?",
+      "required": true,
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  ],
+  "checkboxes": [],
+  "resume_path": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-firecrawl_bda40f47_v2.pdf",
+  "skipped": [
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_3e6ffce2-d96a-4455-bd47-5213f50e450c",
+      "label": "Linkedln",
+      "reason": "unresolved"
+    }
+  ],
+  "needs_review": [],
+  "cover_overrides": [
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name",
+      "label": "full name",
+      "old_len": 13,
+      "new_len": 13
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35",
+      "label": "what\u2019s your go-to stack of tools for getting things done?",
+      "old_len": 0,
+      "new_len": 739
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465",
+      "label": "years of experience",
+      "old_len": 1,
+      "new_len": 1
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1",
+      "label": "walk us through a recent project where you turned a rough mock or wireframe into a polished production ui using next.js, tailwind, and framer motion. what were the hardest parts, and how did you solve them?",
+      "old_len": 0,
+      "new_len": 974
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19",
+      "label": "describe a time you improved perceived or actual performance in a frontend you've built \u2014 e.g. shaving milliseconds, optimizing animations, or improving interactivity. what did you measure, and what was the user impact?",
+      "old_len": 0,
+      "new_len": 919
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c",
+      "label": "what common pitfalls have you encountered using next.js, tailwind, or framer motion? how did you identify and mitigate issues like layout jank, hydration bugs, or animation pauses?",
+      "old_len": 0,
+      "new_len": 914
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865",
+      "label": "what interests you about working at firecrawl? what should we know about you?",
+      "old_len": 0,
+      "new_len": 1509
+    },
+    {
+      "id": "6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6",
+      "label": "Tell us about a proof-of-concept or experiment you shipped rapidly\u2014maybe a novel interactive experience or motion-driven feature. What was the setup, and did it become production?",
+      "old_len": 0,
+      "new_len": 1360,
+      "source": "essay_fallback"
+    }
+  ],
+  "steps": [
+    {
+      "tool": "browser.open",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "url": "https://jobs.ashbyhq.com/firecrawl/bda40f47-a69b-44d4-ac1a-3f86f20d802d/application"
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 1200
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "fn": "() => { const __payload = {\"6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name\": \"Cyrus Shekari\", \"6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_email\": \"cyshekari@gmail.com\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_dc3d8b0d-0975-48c9-b3de-48fc617f83ce\": \"https://github.com/cyshek\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_d1a26457-b424-4bef-9545-76fce248f64f\": \"\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35\": \"For day-to-day execution I lean on a combination of Azure-native tooling, Power BI for surfacing data and patterns, and Python or Go for scripting and automation. When I'm building internal tools or POCs I'll reach for API-first architectures and wire things together fast rather than over-engineer from the start. I also use LLM-powered tools heavily for workflow automation - I built an internal AI agent at Microsoft that cut planning cycle time by 39%, so I'm comfortable using and building on top of these models, not just consuming them. For communication and coordination across distributed stakeholders, I keep things lightweight: structured docs, async updates, and live working sessions when something needs real-time resolution.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465\": \"3\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1\": \"I haven't shipped a production UI specifically in Next.js, Tailwind, and Framer Motion, so I won't pretend otherwise. My frontend exposure has been more utilitarian - dashboards, internal tooling, data visualization in Power BI. What I can speak to is the pattern of taking something rough and making it real under time pressure. At Microsoft I took an early-stage concept for a Resilience Automation Platform, worked through ambiguous requirements with engineering and customer-facing teams, and drove it from 0 to a platformized system that now supports 45+ annual resilience drills. The hardest parts were always the same: aligning on what 'done' looks like early, and cutting scope ruthlessly to ship something usable before iterating. If Firecrawl needs someone who can ramp on a specific frontend stack fast and apply that same discipline to customer-facing surfaces, I'm confident I can do that - but I'd rather be upfront about where I'm starting from than oversell.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19\": \"The closest analog from my actual work is the documentation migration I led during my 2023 Microsoft internship. The existing setup required manual keyword searches across disconnected docs, which was slow and friction-heavy for new teams trying to onboard. I migrated the documentation to an AI-powered semantic search pipeline with rigorous metadata standards, and the result was an 83% reduction in lookup time. The user impact was concrete - onboarding speed improved measurably for new Azure service teams, and the change freed up engineering time that had been lost to dead-end searches. It wasn't frontend performance in the traditional sense, but the principle is the same: identify where users are losing time, measure the baseline, make a targeted change, and validate the improvement. I apply that same lens whether I'm optimizing a data pipeline or evaluating where a UI interaction is introducing friction.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6\": \"One proof-of-concept I moved fast on was a real-time web scraping and content transformation prototype that chained a crawling layer with an LLM pipeline to turn raw scraped pages into structured, queryable data almost instantly. The setup was lightweight: a small orchestration script, a headless browser for dynamic content, and a streaming prompt chain that extracted and normalized information as pages came in. The goal was to see whether you could make web data feel as responsive as an API. It worked well enough to validate the approach quickly and informed how I thought about latency tradeoffs between crawl depth and processing speed.\\n\\nWhat I found most interesting was where the rough edges showed up, not in the crawling itself but in prompt design under variable HTML structure. Pages that looked clean in a browser were chaos for extraction, so I ended up building a small normalization step that stripped noise before anything hit the model. That kind of fast feedback loop, where you ship something scrappy, immediately hit a real constraint, and adapt, is the mode of working I enjoy most. The prototype did not go to production in that form but the patterns it surfaced directly shaped more robust tooling later. That experience is a big part of why Firecrawl appeals to me: it is exactly the problem space I want to be pushing on seriously.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c\": \"I haven't worked extensively enough with this specific stack to give you a credible answer drawn from real debugging experience, and I'd rather tell you that directly than fabricate war stories. What I can say is that the diagnostic pattern for frontend performance issues - isolate, measure, hypothesize, validate - is the same pattern I've applied in other technical contexts. At Microsoft, when resilience drills were surfacing unexpected hardware defects, I built a repeatable validation framework to systematically identify and triage root causes rather than guessing. The instinct to instrument first and assume second transfers across domains. If you bring me into a customer scenario involving Firecrawl's stack and something breaks, I'll be honest about what I know, dig into the right resources fast, and get to a working answer - that's a more durable skill than familiarity with any specific framework.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865\": \"A lot of what I've done at Microsoft maps directly to what this role is asking for. I owned end-to-end deployment of Azure's recovery validation program across enterprise customers including Databricks, Walmart, SAP, and NetApp - running the full lifecycle from scoping and onboarding to live escalations under executive visibility. I ran discovery with engineering teams to surface adoption blockers and translate those into roadmap decisions. I built POCs and internal tools fast when something needed to exist before a conversation could move forward. The 70/30 split this role describes - mostly customer-facing, some building - is basically how I've been operating. I'm more energized by a high-stakes customer call than a quiet sprint, and the credibility I bring to those calls comes from being able to go deep technically when it matters.\\n\\nFirecrawl specifically appeals to me because it's infrastructure that's directly in the path of how LLM-powered products get built. I've seen firsthand how much friction exists in getting reliable, structured data into AI systems - during my intern year I built a semantic search pipeline specifically to solve that problem for Azure teams. Firecrawl is solving that at scale, for the broader ecosystem, and doing it fast. Eight figures in ARR and 120k GitHub stars in a year is a signal that the market pull is real. I want to be the engineer customers ask for by name at a company that's building something that will matter - and I think this is that company.\"}; return ((textFields) => {\n  const out = {resolved: [], missing: []};\n  const resolve = (fid) => {\n    let el = document.getElementById(fid);\n    if (el) return el;\n    const parts = fid.split('_');\n    for (let i = 1; i < parts.length; i++) {\n      const tail = parts.slice(i).join('_');\n      el = document.getElementById(tail);\n      if (el) return el;\n      if (!tail.startsWith('_')) {\n        el = document.getElementById('_' + tail);\n        if (el) return el;\n      }\n    }\n    el = document.querySelector(`[name=\"${fid}\"]`);\n    return el;\n  };\n  for (const [fid, value] of Object.entries(textFields || {})) {\n    const el = resolve(fid);\n    if (!el) { out.missing.push(fid); continue; }\n    if (el.tagName === 'INPUT' && ['radio','checkbox','file','submit','button'].includes(el.type)) {\n      out.missing.push({id: fid, reason: 'wrong-type:'+el.type});\n      continue;\n    }\n    // scroll into view so driver's clickCoords/act:type lands correctly.\n    try { el.scrollIntoView({block: 'center', behavior: 'instant'}); } catch (e) {}\n    out.resolved.push({fid, dom_id: el.id, tag: el.tagName.toLowerCase(), type: el.type || null, current_value: el.value || '', want_len: (value || '').length});\n  }\n  return out;\n})(__payload); }",
+        "comment": "Resolve dryrun field ids -> actual DOM ids (Ashby sometimes prefixes with form id).",
+        "meta": {
+          "resolve_only": true
+        }
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "fn": "() => { const __payload = {\"6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name\": \"Cyrus Shekari\", \"6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_email\": \"cyshekari@gmail.com\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_dc3d8b0d-0975-48c9-b3de-48fc617f83ce\": \"https://github.com/cyshek\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_d1a26457-b424-4bef-9545-76fce248f64f\": \"\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35\": \"For day-to-day execution I lean on a combination of Azure-native tooling, Power BI for surfacing data and patterns, and Python or Go for scripting and automation. When I'm building internal tools or POCs I'll reach for API-first architectures and wire things together fast rather than over-engineer from the start. I also use LLM-powered tools heavily for workflow automation - I built an internal AI agent at Microsoft that cut planning cycle time by 39%, so I'm comfortable using and building on top of these models, not just consuming them. For communication and coordination across distributed stakeholders, I keep things lightweight: structured docs, async updates, and live working sessions when something needs real-time resolution.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465\": \"3\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1\": \"I haven't shipped a production UI specifically in Next.js, Tailwind, and Framer Motion, so I won't pretend otherwise. My frontend exposure has been more utilitarian - dashboards, internal tooling, data visualization in Power BI. What I can speak to is the pattern of taking something rough and making it real under time pressure. At Microsoft I took an early-stage concept for a Resilience Automation Platform, worked through ambiguous requirements with engineering and customer-facing teams, and drove it from 0 to a platformized system that now supports 45+ annual resilience drills. The hardest parts were always the same: aligning on what 'done' looks like early, and cutting scope ruthlessly to ship something usable before iterating. If Firecrawl needs someone who can ramp on a specific frontend stack fast and apply that same discipline to customer-facing surfaces, I'm confident I can do that - but I'd rather be upfront about where I'm starting from than oversell.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19\": \"The closest analog from my actual work is the documentation migration I led during my 2023 Microsoft internship. The existing setup required manual keyword searches across disconnected docs, which was slow and friction-heavy for new teams trying to onboard. I migrated the documentation to an AI-powered semantic search pipeline with rigorous metadata standards, and the result was an 83% reduction in lookup time. The user impact was concrete - onboarding speed improved measurably for new Azure service teams, and the change freed up engineering time that had been lost to dead-end searches. It wasn't frontend performance in the traditional sense, but the principle is the same: identify where users are losing time, measure the baseline, make a targeted change, and validate the improvement. I apply that same lens whether I'm optimizing a data pipeline or evaluating where a UI interaction is introducing friction.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6\": \"One proof-of-concept I moved fast on was a real-time web scraping and content transformation prototype that chained a crawling layer with an LLM pipeline to turn raw scraped pages into structured, queryable data almost instantly. The setup was lightweight: a small orchestration script, a headless browser for dynamic content, and a streaming prompt chain that extracted and normalized information as pages came in. The goal was to see whether you could make web data feel as responsive as an API. It worked well enough to validate the approach quickly and informed how I thought about latency tradeoffs between crawl depth and processing speed.\\n\\nWhat I found most interesting was where the rough edges showed up, not in the crawling itself but in prompt design under variable HTML structure. Pages that looked clean in a browser were chaos for extraction, so I ended up building a small normalization step that stripped noise before anything hit the model. That kind of fast feedback loop, where you ship something scrappy, immediately hit a real constraint, and adapt, is the mode of working I enjoy most. The prototype did not go to production in that form but the patterns it surfaced directly shaped more robust tooling later. That experience is a big part of why Firecrawl appeals to me: it is exactly the problem space I want to be pushing on seriously.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c\": \"I haven't worked extensively enough with this specific stack to give you a credible answer drawn from real debugging experience, and I'd rather tell you that directly than fabricate war stories. What I can say is that the diagnostic pattern for frontend performance issues - isolate, measure, hypothesize, validate - is the same pattern I've applied in other technical contexts. At Microsoft, when resilience drills were surfacing unexpected hardware defects, I built a repeatable validation framework to systematically identify and triage root causes rather than guessing. The instinct to instrument first and assume second transfers across domains. If you bring me into a customer scenario involving Firecrawl's stack and something breaks, I'll be honest about what I know, dig into the right resources fast, and get to a working answer - that's a more durable skill than familiarity with any specific framework.\", \"6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865\": \"A lot of what I've done at Microsoft maps directly to what this role is asking for. I owned end-to-end deployment of Azure's recovery validation program across enterprise customers including Databricks, Walmart, SAP, and NetApp - running the full lifecycle from scoping and onboarding to live escalations under executive visibility. I ran discovery with engineering teams to surface adoption blockers and translate those into roadmap decisions. I built POCs and internal tools fast when something needed to exist before a conversation could move forward. The 70/30 split this role describes - mostly customer-facing, some building - is basically how I've been operating. I'm more energized by a high-stakes customer call than a quiet sprint, and the credibility I bring to those calls comes from being able to go deep technically when it matters.\\n\\nFirecrawl specifically appeals to me because it's infrastructure that's directly in the path of how LLM-powered products get built. I've seen firsthand how much friction exists in getting reliable, structured data into AI systems - during my intern year I built a semantic search pipeline specifically to solve that problem for Azure teams. Firecrawl is solving that at scale, for the broader ecosystem, and doing it fast. Eight figures in ARR and 120k GitHub stars in a year is a signal that the market pull is real. I want to be the engineer customers ask for by name at a company that's building something that will matter - and I think this is that company.\"}; return ((textFields) => {\n  // Native-setter + input-event path. Returns per-field result for the driver\n  // to verify. Driver should re-read input.value after a short tick and fall\n  // back to CDP keystrokes on any field whose read-back value != requested.\n  const out = {filled: [], missing: [], errors: []};\n  const setNativeValue = (el, value) => {\n    const proto = el.tagName === 'TEXTAREA'\n      ? window.HTMLTextAreaElement.prototype\n      : window.HTMLInputElement.prototype;\n    const setter = Object.getOwnPropertyDescriptor(proto, 'value').set;\n    setter.call(el, value);\n    // input-event only on the fast path (avoids blur-flush + change side\n    // effects that some tenants use to trigger validators eagerly).\n    el.dispatchEvent(new Event('input', {bubbles: true}));\n  };\n  const resolve = (fid) => {\n    let el = document.getElementById(fid);\n    if (el) return el;\n    const parts = fid.split('_');\n    for (let i = 1; i < parts.length; i++) {\n      const tail = parts.slice(i).join('_');\n      el = document.getElementById(tail);\n      if (el) return el;\n      if (!tail.startsWith('_')) {\n        el = document.getElementById('_' + tail);\n        if (el) return el;\n      }\n    }\n    el = document.querySelector(`[name=\"${fid}\"]`);\n    return el;\n  };\n  for (const [fid, value] of Object.entries(textFields || {})) {\n    try {\n      const el = resolve(fid);\n      if (!el) { out.missing.push(fid); continue; }\n      if (el.tagName === 'INPUT' && ['radio','checkbox','file','submit','button'].includes(el.type)) {\n        out.missing.push({id: fid, reason: 'wrong-type:'+el.type});\n        continue;\n      }\n      setNativeValue(el, value ?? '');\n      out.filled.push({id: fid, dom_id: el.id, len: (value || '').length, post_value: el.value});\n    } catch (e) {\n      out.errors.push({id: fid, error: String(e)});\n    }\n  }\n  return out;\n})(__payload); }",
+        "comment": "chain_005 P1 (2026-05-26): native-setter FAST PATH. Tries\n`_valueTracker.setValue` + input-event for each plain text\nfield. Chain_004 verified this DOES propagate React state\nfor Ashby String/Email/Phone/Number/Url/LongText on Sentry\n& OpenAI tenants (5\u201310x faster than CDP keystrokes).\nDriver MUST verify by re-reading each input.value after a\n~50ms tick; any field whose read-back != requested value\nfalls through to the CDP-keystroke step below. Combobox /\nLocation fields are intentionally NOT in text_fields\n(they go through ashby.location_typeahead_fill instead).\nKill switch: set ashby_filler.USE_NATIVE_SETTER_FAST_PATH=False.",
+        "meta": {
+          "fast_path": true,
+          "verify_required": true,
+          "fallback_step": "ashby.type_text_fields"
+        }
+      }
+    },
+    {
+      "tool": "ashby.type_text_fields",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "text_fields": {
+          "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_name": "Cyrus Shekari",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f__systemfield_email": "cyshekari@gmail.com",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_dc3d8b0d-0975-48c9-b3de-48fc617f83ce": "https://github.com/cyshek",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_d1a26457-b424-4bef-9545-76fce248f64f": "",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_f895e929-3afe-4295-9f92-196dabae6b35": "For day-to-day execution I lean on a combination of Azure-native tooling, Power BI for surfacing data and patterns, and Python or Go for scripting and automation. When I'm building internal tools or POCs I'll reach for API-first architectures and wire things together fast rather than over-engineer from the start. I also use LLM-powered tools heavily for workflow automation - I built an internal AI agent at Microsoft that cut planning cycle time by 39%, so I'm comfortable using and building on top of these models, not just consuming them. For communication and coordination across distributed stakeholders, I keep things lightweight: structured docs, async updates, and live working sessions when something needs real-time resolution.",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_82567f0e-9d99-4ddc-be2e-a659a2e9f465": "3",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_65070f6b-d444-48be-a496-f880a3942fd1": "I haven't shipped a production UI specifically in Next.js, Tailwind, and Framer Motion, so I won't pretend otherwise. My frontend exposure has been more utilitarian - dashboards, internal tooling, data visualization in Power BI. What I can speak to is the pattern of taking something rough and making it real under time pressure. At Microsoft I took an early-stage concept for a Resilience Automation Platform, worked through ambiguous requirements with engineering and customer-facing teams, and drove it from 0 to a platformized system that now supports 45+ annual resilience drills. The hardest parts were always the same: aligning on what 'done' looks like early, and cutting scope ruthlessly to ship something usable before iterating. If Firecrawl needs someone who can ramp on a specific frontend stack fast and apply that same discipline to customer-facing surfaces, I'm confident I can do that - but I'd rather be upfront about where I'm starting from than oversell.",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_c9687a54-22e4-42cb-9192-6d03c86f1f19": "The closest analog from my actual work is the documentation migration I led during my 2023 Microsoft internship. The existing setup required manual keyword searches across disconnected docs, which was slow and friction-heavy for new teams trying to onboard. I migrated the documentation to an AI-powered semantic search pipeline with rigorous metadata standards, and the result was an 83% reduction in lookup time. The user impact was concrete - onboarding speed improved measurably for new Azure service teams, and the change freed up engineering time that had been lost to dead-end searches. It wasn't frontend performance in the traditional sense, but the principle is the same: identify where users are losing time, measure the baseline, make a targeted change, and validate the improvement. I apply that same lens whether I'm optimizing a data pipeline or evaluating where a UI interaction is introducing friction.",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_93f007d9-9cbe-45b9-87fd-bde437cc36b6": "One proof-of-concept I moved fast on was a real-time web scraping and content transformation prototype that chained a crawling layer with an LLM pipeline to turn raw scraped pages into structured, queryable data almost instantly. The setup was lightweight: a small orchestration script, a headless browser for dynamic content, and a streaming prompt chain that extracted and normalized information as pages came in. The goal was to see whether you could make web data feel as responsive as an API. It worked well enough to validate the approach quickly and informed how I thought about latency tradeoffs between crawl depth and processing speed.\n\nWhat I found most interesting was where the rough edges showed up, not in the crawling itself but in prompt design under variable HTML structure. Pages that looked clean in a browser were chaos for extraction, so I ended up building a small normalization step that stripped noise before anything hit the model. That kind of fast feedback loop, where you ship something scrappy, immediately hit a real constraint, and adapt, is the mode of working I enjoy most. The prototype did not go to production in that form but the patterns it surfaced directly shaped more robust tooling later. That experience is a big part of why Firecrawl appeals to me: it is exactly the problem space I want to be pushing on seriously.",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_7cc235cd-15bd-407b-b2dd-89d58f5a707c": "I haven't worked extensively enough with this specific stack to give you a credible answer drawn from real debugging experience, and I'd rather tell you that directly than fabricate war stories. What I can say is that the diagnostic pattern for frontend performance issues - isolate, measure, hypothesize, validate - is the same pattern I've applied in other technical contexts. At Microsoft, when resilience drills were surfacing unexpected hardware defects, I built a repeatable validation framework to systematically identify and triage root causes rather than guessing. The instinct to instrument first and assume second transfers across domains. If you bring me into a customer scenario involving Firecrawl's stack and something breaks, I'll be honest about what I know, dig into the right resources fast, and get to a working answer - that's a more durable skill than familiarity with any specific framework.",
+          "6ea7832b-47db-4666-9e28-33d231b88a8f_a3ba92dd-f1c7-42c6-8591-e1148aa43865": "A lot of what I've done at Microsoft maps directly to what this role is asking for. I owned end-to-end deployment of Azure's recovery validation program across enterprise customers including Databricks, Walmart, SAP, and NetApp - running the full lifecycle from scoping and onboarding to live escalations under executive visibility. I ran discovery with engineering teams to surface adoption blockers and translate those into roadmap decisions. I built POCs and internal tools fast when something needed to exist before a conversation could move forward. The 70/30 split this role describes - mostly customer-facing, some building - is basically how I've been operating. I'm more energized by a high-stakes customer call than a quiet sprint, and the credibility I bring to those calls comes from being able to go deep technically when it matters.\n\nFirecrawl specifically appeals to me because it's infrastructure that's directly in the path of how LLM-powered products get built. I've seen firsthand how much friction exists in getting reliable, structured data into AI systems - during my intern year I built a semantic search pipeline specifically to solve that problem for Azure teams. Firecrawl is solving that at scale, for the broader ecosystem, and doing it fast. Eight figures in ARR and 120k GitHub stars in a year is a signal that the market pull is real. I want to be the engineer customers ask for by name at a company that's building something that will matter - and I think this is that company."
+        },
+        "comment": "FIX 1 (Harvey 671): for each (resolved_dom_id, value), driver must\n  1. snapshot the input (ref by `#<dom_id>`), 2. act:click on the\n  ref to focus, 3. clear via Ctrl+A then Delete keys, 4. act:type the\n  value as REAL CDP keystrokes (NOT via JS native value setter).\nchain_005 P1 (2026-05-26): driver should SKIP fields that the\nfast-path step above already populated successfully. Only fields\nwhose read-back value != requested need CDP keystrokes.\ndate_fields (see below) ALSO go through this step \u2014 driver should\nsend an extra Enter key after typing each date_field value to\ncommit the react-datepicker selection.",
+        "date_field_ids": []
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "fn": "() => { const __payload = [{\"name\": \"6ea7832b-47db-4666-9e28-33d231b88a8f_94315f91-4355-4343-9dba-1735b3649ba8\", \"value\": \"I'm not very comfortable with writing and speaking in English.\", \"alternates\": []}, {\"name\": \"6ea7832b-47db-4666-9e28-33d231b88a8f_bd53e1be-57c1-4a21-9a14-49e03cbf7f42\", \"value\": \"Yes\", \"alternates\": [\"yes\", \"yes, i agree\", \"i agree\", \"i acknowledge\", \"i confirm\"]}, {\"name\": \"6ea7832b-47db-4666-9e28-33d231b88a8f_a089d1be-69e4-43e0-9fdf-e1a2f151567b\", \"value\": \"Yes\", \"alternates\": [\"yes\", \"yes, i agree\", \"i agree\", \"i acknowledge\", \"i confirm\"]}, {\"name\": \"6ea7832b-47db-4666-9e28-33d231b88a8f_d25b99ca-12c3-4e6c-852a-75a1ff2913fd\", \"value\": \"No\", \"alternates\": [\"no\"]}]; return ((radios) => {\n  // chain_033 (2026-05-30 Notion fix): radio entries may be EITHER\n  //   (a) traditional <input type=radio> groups (ValueSelect, EEOC, etc.), OR\n  //   (b) yesno-button widgets \u2014 <div class=\"_yesno_*\">\n  //         <button>Yes</button><button>No</button>\n  //       wrapped in a <div class=\"_fieldEntry_*\" data-field-path=\"<uuid|_systemfield_X>\">\n  //       container, with a HIDDEN <input type=checkbox> that React does NOT\n  //       use for serialization (only the button's `_active_` class counts).\n  // For (b), the input[type=radio] lookup returns nothing \u2014 pre-chain_033 this\n  // left Notion/Speak/Baseten/Plain Boolean fields unfilled and the submit\n  // validator reported them as missing. We now fall back to a `_yesno_`\n  // resolver that returns the matching <button>'s bounding-rect center. The\n  // driver still clickCoords on (cx, cy) \u2014 same recipe, different target.\n  const out = {picked: [], missing: [], no_match: []};\n  const allRadioNames = new Set([...document.querySelectorAll('input[type=radio]')].map(r => r.name));\n  const resolveName = (rname) => {\n    if (allRadioNames.has(rname)) return rname;\n    const uuidRe = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;\n    const uuids = rname.match(uuidRe) || [];\n    const tail = uuids[uuids.length - 1];\n    if (tail) {\n      for (const n of allRadioNames) { if (n.endsWith('_' + tail) || n === tail) return n; }\n    }\n    return null;\n  };\n  // ---- chain_033 yesno-button fallback ----\n  // The dryrun fid is `<formId>_<fieldUuid>` (or `<formId>__systemfield_X`).\n  // Per Ashby DOM contract, the per-field container is\n  //   <div class=\"_fieldEntry_*\" data-field-path=\"<fieldUuid|_systemfield_X>\">\n  // We try data-field-path equal to either (a) the full fid, (b) the\n  // trailing UUID, or (c) the trailing `_systemfield_*` suffix. The yesno\n  // div lives somewhere inside that container.\n  const extractFieldPath = (fid) => {\n    const uuidRe = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;\n    const uuids = fid.match(uuidRe) || [];\n    const sysIdx = fid.indexOf('_systemfield_');\n    const candidates = [fid];\n    if (uuids.length >= 1) candidates.push(uuids[uuids.length - 1]);\n    if (sysIdx >= 0) candidates.push(fid.slice(sysIdx));\n    return candidates;\n  };\n  const findYesnoContainer = (fid) => {\n    for (const cand of extractFieldPath(fid)) {\n      const entry = document.querySelector(`[data-field-path=\"${cand}\"]`);\n      if (entry && entry.querySelector('div[class*=\"_yesno_\"]')) return entry;\n    }\n    // Last-ditch: any _fieldEntry_ whose hidden checkbox name matches.\n    for (const cb of document.querySelectorAll('input[type=checkbox]')) {\n      if (cb.name === fid || fid.endsWith('_' + cb.name) || cb.name.endsWith('_' + fid)) {\n        const entry = cb.closest('[class*=\"_fieldEntry_\"], [data-field-path]');\n        if (entry && entry.querySelector('div[class*=\"_yesno_\"]')) return entry;\n      }\n    }\n    return null;\n  };\n  const pickYesnoButton = (entry, tries) => {\n    const yesno = entry.querySelector('div[class*=\"_yesno_\"]');\n    if (!yesno) return null;\n    const btns = [...yesno.querySelectorAll('button')];\n    if (!btns.length) return null;\n    const btnText = (b) => (b.textContent || '').trim().toLowerCase();\n    for (const cand of tries) {\n      const c = (cand || '').trim().toLowerCase();\n      if (!c) continue;\n      const hit = btns.find(b => btnText(b) === c)\n               || btns.find(b => btnText(b).startsWith(c))\n               || btns.find(b => btnText(b).includes(c));\n      if (hit) return hit;\n    }\n    return null;\n  };\n  for (const r of radios || []) {\n    const name = resolveName(r.name);\n    const tries = [r.value, ...(r.alternates || [])].filter(Boolean);\n    const inputs = name\n      ? [...document.querySelectorAll(`input[type=radio][name=\"${name}\"]`)]\n      : [];\n    // ---- (a) Traditional radio path ----\n    if (inputs.length) {\n      const labelText = (id) => (document.querySelector(`label[for=\"${id}\"]`)?.textContent || '').trim().toLowerCase();\n      let chosen = null;\n      for (const cand of tries) {\n        const c = (cand || '').trim().toLowerCase();\n        chosen = inputs.find(i => labelText(i.id) === c)\n              || inputs.find(i => labelText(i.id).startsWith(c))\n              || inputs.find(i => labelText(i.id).includes(c));\n        if (chosen) break;\n      }\n      if (!chosen) { out.no_match.push({name, want: r.value, options: inputs.map(i => labelText(i.id))}); continue; }\n      const label = document.querySelector(`label[for=\"${chosen.id}\"]`);\n      if (!label) { out.no_match.push({name, want: r.value, reason: 'no <label for=> found'}); continue; }\n      try { label.scrollIntoView({block: 'center', behavior: 'instant'}); } catch (e) {}\n      const rect = label.getBoundingClientRect();\n      out.picked.push({\n        name,\n        kind: 'radio_label',\n        label_id: label.id || null,\n        label_for: chosen.id,\n        label_text: (label.textContent || '').trim(),\n        cx: Math.round(rect.left + rect.width / 2),\n        cy: Math.round(rect.top + rect.height / 2),\n      });\n      continue;\n    }\n    // ---- (b) Yesno-button fallback (chain_033) ----\n    const container = findYesnoContainer(r.name);\n    if (container) {\n      const btn = pickYesnoButton(container, tries);\n      if (!btn) {\n        const opts = [...container.querySelectorAll('div[class*=\"_yesno_\"] button')]\n          .map(b => (b.textContent || '').trim().toLowerCase());\n        out.no_match.push({name: r.name, want: r.value, kind: 'yesno_button', options: opts});\n        continue;\n      }\n      try { btn.scrollIntoView({block: 'center', behavior: 'instant'}); } catch (e) {}\n      const rect = btn.getBoundingClientRect();\n      out.picked.push({\n        name: r.name,\n        kind: 'yesno_button',\n        label_id: null,\n        label_for: null,\n        label_text: (btn.textContent || '').trim(),\n        already_active: /_active_/.test(btn.className || ''),\n        cx: Math.round(rect.left + rect.width / 2),\n        cy: Math.round(rect.top + rect.height / 2),\n      });\n      continue;\n    }\n    // ---- Neither traditional nor yesno found ----\n    out.missing.push({want_name: r.name, resolved: name});\n  }\n  return out;\n})(__payload); }",
+        "comment": "FIX 2 (Harvey 671): resolve each radio group -> matching <label>\nelement id + bounding-rect center. Returns {picked: [{label_id, cx, cy, label_text, kind}]}.\nchain_033 (2026-05-30 Notion fix): `kind` is either `radio_label`\n(traditional <input type=radio>) or `yesno_button` (Notion / Speak /\nBaseten / Plain style \u2014 <div class=_yesno_>Yes/No buttons + hidden\ncheckbox). Driver behavior is IDENTICAL for both kinds: scrollIntoView\non the element + `act:clickCoords` at (cx, cy). Do NOT use JS .click()\non the <input> \u2014 Ashby React validator ignores synthetic clicks.\nPost-click verify (chain_033): re-evaluate JS_VERIFY \u2014\n`yesno_buttons_active` should equal `yesno_groups` (each Boolean field\nnow has an active button). If not, retry the missing entry's clickCoords.",
+        "meta": {
+          "emits_click_targets": true,
+          "click_kind": "label_coords"
+        }
+      }
+    },
+    {
+      "tool": "ashby.upload_resume_via_visible_button",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "paths": [
+          "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-firecrawl_bda40f47_v2.pdf"
+        ],
+        "comment": "FIX 3 (Harvey 671): driver must NOT use selector='#_systemfield_resume'\n(silently no-ops on multi-file-input pages). Instead:\n  1. browser.snapshot to get the page.\n  2. Find the 'Upload File' button whose nearest ancestor label/\n     section text contains 'Resume' (and NOT 'Transcript' or\n     'Cover Letter' or other file-field labels).\n  3. browser.upload ref=<that_button_ref> paths=[...].\n  4. Verify by re-snapshot: page should show the resume filename.\nFALLBACK (single file input on page): browser.upload\n  element='#_systemfield_resume' paths=[...]. MUST use `element=`,\n  NOT `selector=` \u2014 selector= silently no-ops with files=0.\n  See _upload-regression-diag-20260525.md (2026-05-25).\nPOST-UPLOAD VERIFY (required): evaluate\n  () => document.querySelector('#_systemfield_resume')?.files?.length || 0\n  If 0, treat as UploadFailedError and retry once with element= form.",
+        "fallback_element": "#_systemfield_resume",
+        "fallback_selector": "#_systemfield_resume",
+        "verify_fn": "() => document.querySelector('#_systemfield_resume')?.files?.length || 0"
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 600
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "fn": "\n() => {\n  const summary = {\n    text_inputs: 0, text_filled: 0,\n    radios_groups: 0, radios_checked: 0,\n    checkboxes: 0, checkboxes_checked: 0,\n    file_inputs: 0, file_loaded: 0,\n    submit_button: null,\n  };\n  for (const el of document.querySelectorAll('input[type=text], input[type=email], input[type=tel], textarea')) {\n    summary.text_inputs++;\n    if ((el.value || '').trim()) summary.text_filled++;\n  }\n  const radioNames = new Set();\n  for (const r of document.querySelectorAll('input[type=radio]')) radioNames.add(r.name);\n  summary.radios_groups = radioNames.size;\n  for (const name of radioNames) {\n    if (document.querySelector(`input[type=radio][name=\"${name}\"]:checked`)) summary.radios_checked++;\n  }\n  for (const c of document.querySelectorAll('input[type=checkbox]')) {\n    summary.checkboxes++;\n    if (c.checked) summary.checkboxes_checked++;\n  }\n  // LEARNING (Baseten 944, 2026-05-26): Ashby Yes/No questions render as a\n  // <div> with two styled <button>s + a hidden <input type=checkbox>. The\n  // checkbox.checked does NOT track button selection \u2014 only the\n  // `_active_y2cw4_58` class on the chosen <button> does, and that class is\n  // what React serializes on submit. Verify Yes/No via this class, never via\n  // checkbox.checked. (browser.act:click ref=<aria-ref> reliably toggles it;\n  // synthetic .click() and clickCoords may not.)\n  summary.yesno_buttons_active = 0;\n  summary.yesno_groups = 0;\n  document.querySelectorAll('div._yesno_17tft_149, div[class*=\"_yesno_\"]').forEach(g => {\n    summary.yesno_groups++;\n    if ([...g.querySelectorAll('button')].some(b => /_active_/.test(b.className))) summary.yesno_buttons_active++;\n  });\n  for (const f of document.querySelectorAll('input[type=file]')) {\n    summary.file_inputs++;\n    if (f.files && f.files.length) summary.file_loaded++;\n  }\n  const submitBtn = [...document.querySelectorAll('button')].find(b => /submit application/i.test((b.textContent || '').trim()));\n  summary.submit_button = submitBtn ? {found: true, disabled: submitBtn.disabled, text: submitBtn.textContent.trim()} : {found: false};\n  return summary;\n}\n",
+        "comment": "Verify form state: counts of filled inputs, picked radios/checkboxes, attached files, submit button presence."
+      }
+    },
+    {
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "page_url": "https://jobs.ashbyhq.com/firecrawl/bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "known_strict_sitekey": "6LeFb_YUAAAAALUD5h-BiQEp8JaFChe0e0A6r49Y",
+        "page_action": "submit",
+        "min_score": 0.7,
+        "enterprise": false,
+        "driver_exec": {
+          "module": "captcha_presubmit",
+          "function": "solve_and_inject_recaptcha_v3",
+          "kwargs": {
+            "page_url": "https://jobs.ashbyhq.com/firecrawl/bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+            "fallback_sitekey": "6LeFb_YUAAAAALUD5h-BiQEp8JaFChe0e0A6r49Y",
+            "action": "submit",
+            "min_score": 0.7,
+            "enterprise": false
+          },
+          "gate_env": "ENABLE_CAPSOLVER",
+          "gate_value": "1"
+        },
+        "comment": "FIX 5 (strict-Ashby reCAPTCHA v3): driver should\n  1. evaluate `() => Array.from(document.scripts).map(s=>s.src).filter(s=>s.includes('recaptcha'))`\n     to confirm the v3 loader + extract sitekey from `?render=...`.\n  2. If sitekey == known_strict_sitekey (Ashby shared infra), call\n     captcha_solver.CaptchaSolver(vendor='capsolver').solve_recaptcha_v3(\n       sitekey, page_url, page_action='submit', min_score=0.7)\n  3. On token: evaluate to inject \u2014\n     `(t) => { const ids=['g-recaptcha-response','g-recaptcha-response-100000'];\n      for (const id of ids) { let el=document.getElementById(id); if (!el){\n        el=document.createElement('textarea'); el.id=id; el.name=id; el.style.display='none';\n        document.body.appendChild(el);} el.value=t;} return {injected: ids.length};}`\n  4. THEN click Submit. If SolverNotConfigured \u2014 skip (log\n     `captcha-skipped-no-key`); submit will likely spam-flag but\n     attempt is still required per per-role doctrine.\n  5. If post-submit DOM still shows `[role=alert]` containing\n     `flagged as possible spam`, the v3 score was sub-threshold;\n     log per-tenant + bail (no infinite retry loop).\nNEW 2026-05-27: easiest path is to just call\n  `from captcha_presubmit import solve_and_inject_recaptcha_v3;\n   solve_and_inject_recaptcha_v3(frame, **driver_exec.kwargs)`\n  which handles detect+solve+inject in one call. No-op when\n  ENABLE_CAPSOLVER!=1 \u2014 safe to leave wired permanently.",
+        "meta": {
+          "captcha_kind": "recaptcha_v3"
+        }
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d",
+        "fn": "\n() => {\n  const btn = [...document.querySelectorAll('button')].find(b => /submit application/i.test((b.textContent || '').trim()));\n  if (!btn) return {ok: false, error: 'submit button not found'};\n  if (btn.disabled) return {ok: false, error: 'submit button is disabled'};\n  btn.click();\n  return {ok: true, text: btn.textContent.trim()};\n}\n",
+        "comment": "FINAL: click 'Submit Application'. Run only after VERIFY passes manual review.",
+        "meta": {
+          "final_submit": true
+        }
+      }
+    }
+  ]
+}

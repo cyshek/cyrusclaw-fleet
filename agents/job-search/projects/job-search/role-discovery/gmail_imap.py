@@ -24,7 +24,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP_PW_FILE = ROOT / ".gmail-app-password"
-GMAIL_USER = "cyshekari@gmail.com"
+import json as _json
+_PI = _json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
+GMAIL_USER = _PI["contact"]["email"]
 IMAP_HOST = "imap.gmail.com"
 IMAP_PORT = 993
 

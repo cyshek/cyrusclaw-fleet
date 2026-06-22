@@ -42,7 +42,9 @@ WORKSPACE = ROOT.parent.parent                       # workspace/
 APP_PW_FILE = ROOT / ".gmail-app-password"
 DB_FILE = ROOT / "tracker.db"
 
-GMAIL_USER = "cyshekari@gmail.com"
+import json as _json
+_PI = _json.loads((ROOT / "personal-info.json").read_text())
+GMAIL_USER = _PI["contact"]["email"]
 IMAP_HOST  = "imap.gmail.com"
 IMAP_PORT  = 993
 

@@ -304,7 +304,86 @@ def run(strategy_name: str) -> int:
                        int((time.monotonic() - t0) * 1000), detail="hold")
             return 0
 
-        if action.action not in ("buy", "sell", "close"):
+        # ----- PARTIAL TRIM normalization (partial-sell-while-staying-long) -----
+        # A `trim` (or legacy `sell`) action REDUCES the strategy-attributed
+        # position without going flat. We translate it here into an exact
+        # share quantity to sell, then CLAMP it to the attributed held qty so
+        # we can never oversell past flat (no long->short flip on this
+        # paper/long-only account). The clamp is the hard safety rail; risk.py
+        # is consulted below with close-semantics (de-risking) for the daily
+        # trade cap only.
+        #
+        # Why a QTY order (not a notional sell): the attribution layer
+        # (db.strategy_position) reconstructs each (strategy,symbol) qty by
+        # walking trade rows — a `sell` row subtracts min(sell_qty, running)
+        # and scales cost basis proportionally. Logging the EXACT qty we sold
+        # keeps the books synced by construction. A raw notional sell would
+        # round on the broker side and could drift attribution / oversell.
+        #
+        # Fail-safe ladder:
+        #   * flat / no attributed qty                  -> HOLD (no broker call)
+        #   * computed sell qty <= ~0                    -> HOLD
+        #   * sell qty >= full attributed qty (clamped)  -> degrade to CLOSE
+        #                                                   (full liquidation +
+        #                                                   clear strategy state)
+        #   * otherwise                                  -> partial trim, stay long
+        trim_qty = None  # set to the exact share qty when this is a partial trim
+        _QTY_EPS = 1e-9
+        if action.action in ("trim", "sell"):
+            held_qty = 0.0
+            held_pos = position_state.get(action.symbol)
+            if held_pos:
+                try:
+                    held_qty = float(held_pos.get("qty", 0.0) or 0.0)
+                except (TypeError, ValueError):
+                    held_qty = 0.0
+            if held_qty <= _QTY_EPS:
+                # Nothing attributed to this strategy here -> fail safe to HOLD.
+                db.log_decision(strategy_name, "hold", symbol=action.symbol,
+                                reason=("trim requested but no attributed "
+                                        f"position ({action.reason})"))
+                db.log_run(strategy_name, "ok",
+                           int((time.monotonic() - t0) * 1000),
+                           detail="trim_no_pos")
+                return 0
+            # Resolve requested sell qty: explicit action.qty wins; else derive
+            # from notional / current price. If neither is usable -> HOLD.
+            req_qty = None
+            a_qty = getattr(action, "qty", None)
+            if a_qty is not None:
+                try:
+                    a_qty = float(a_qty)
+                    if a_qty > 0:
+                        req_qty = a_qty
+                except (TypeError, ValueError):
+                    req_qty = None
+            if req_qty is None:
+                req_notional = float(action.notional_usd or 0.0)
+                if req_notional > 0 and price and float(price) > 0:
+                    req_qty = req_notional / float(price)
+            if req_qty is None or req_qty <= _QTY_EPS:
+                db.log_decision(strategy_name, "hold", symbol=action.symbol,
+                                reason=("trim qty unresolved (need qty or "
+                                        f"notional+price); {action.reason}"))
+                db.log_run(strategy_name, "ok",
+                           int((time.monotonic() - t0) * 1000),
+                           detail="trim_unresolved")
+                return 0
+            # Clamp to attributed holdings — NEVER oversell past flat.
+            sell_qty = min(req_qty, held_qty)
+            if sell_qty >= held_qty - _QTY_EPS:
+                # Trim sweeps the whole position -> treat as a CLOSE so we go
+                # cleanly flat (and clear strategy state) via the proven close
+                # path, rather than leaving a dust remainder.
+                action = _SyntheticAction(
+                    action="close",
+                    symbol=action.symbol,
+                    reason=f"trim>=full->close: {action.reason}",
+                )
+            else:
+                trim_qty = sell_qty
+
+        if action.action not in ("buy", "sell", "close", "trim"):
             db.log_decision(strategy_name, "error", symbol=action.symbol,
                             reason=f"unknown action {action.action!r}")
             db.log_run(strategy_name, "error",
@@ -351,8 +430,15 @@ def run(strategy_name: str) -> int:
 
         # Risk check
         pos_usd = current_position_usd(position_state, action.symbol)
-        rc = risk.check_trade(strategy_name, action.symbol, action.action,
-                              notional, pos_usd,
+        # A partial trim is de-risking (strictly reduces attributed qty), so we
+        # consult risk with CLOSE-semantics: daily-trade-cap only, never blocked
+        # by the position cap, and the generic notional checks are bypassed
+        # (notional passed as 0). The no-oversell guarantee is already enforced
+        # by the qty clamp above; risk.py is unchanged.
+        risk_side = "close" if trim_qty is not None else action.action
+        risk_notional = 0.0 if trim_qty is not None else notional
+        rc = risk.check_trade(strategy_name, action.symbol, risk_side,
+                              risk_notional, pos_usd,
                               max_trades_per_day=risk.resolve_trades_per_day(params))
         if not rc.ok:
             db.log_decision(strategy_name, "skip_risk", symbol=action.symbol,
@@ -381,6 +467,20 @@ def run(strategy_name: str) -> int:
             # Position is now flat — drop any strategy bookkeeping state so a
             # stale running_max can't leak into the next trade.
             db.clear_strategy_state(strategy_name, action.symbol)
+        elif trim_qty is not None:
+            # PARTIAL TRIM: sell an EXACT, attribution-clamped share qty and
+            # STAY LONG. Submit by qty (never a notional sell) so the logged
+            # `sell` row carries the precise qty the attribution layer will
+            # subtract. Do NOT clear strategy state — the position persists.
+            order = client.submit_market_order(action.symbol, "sell",
+                                               qty=trim_qty)
+            effective_side = "sell"
+            # Record notional as cost-at-fill for the trade row / receipt.
+            if not notional:
+                avg_px = 0.0
+                _hp = position_state.get(action.symbol) or {}
+                avg_px = float(_hp.get("avg_entry_price", 0.0) or 0.0)
+                notional = trim_qty * (float(price) if price else avg_px)
         else:
             order = client.submit_market_order(action.symbol, action.action,
                                                notional_usd=notional)

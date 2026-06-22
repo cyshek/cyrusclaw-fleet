@@ -9,9 +9,11 @@ import argparse, email, imaplib, re, ssl, sys, time
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+import json as _json
 ROOT = Path(__file__).resolve().parents[1]
 APP_PW = (ROOT / ".gmail-app-password").read_text().strip().replace(" ", "")
-GMAIL_USER = "cyshekari@gmail.com"
+_PI = _json.loads((ROOT / "personal-info.json").read_text())
+GMAIL_USER = _PI["contact"]["email"]
 MAILBOXES = ['"[Gmail]/All Mail"', "INBOX"]
 
 NEAR_RE = re.compile(r"(?:verification code|security code|one[- ]time|passcode|code is|your code)[^0-9]{0,40}(\d{4,8})\b", re.I)

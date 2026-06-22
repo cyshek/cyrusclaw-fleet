@@ -65,6 +65,8 @@ HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parent  # projects/job-search
 DB_PATH = PROJECT / "tracker.db"
 PERSONAL_INFO = PROJECT / "personal-info.json"
+_PI = json.loads(PERSONAL_INFO.read_text()) if PERSONAL_INFO.exists() else {}
+_FULL_NAME = (_PI.get("identity", {}).get("first_name", "") + " " + _PI.get("identity", {}).get("last_name", "")).strip()
 QUEUED_DIR = PROJECT / "applications" / "queued"
 SUBMITTED_DIR = PROJECT / "applications" / "submitted"
 DRYRUN_DIR = PROJECT / "applications" / "dryrun"
@@ -497,7 +499,27 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
     """Pick next N open Greenhouse OR Ashby roles not yet applied and not in queued/.
     ats_filter: 'greenhouse' | 'ashby' | None (both)."""
     queued = set(os.listdir(QUEUED_DIR)) if QUEUED_DIR.exists() else set()
-    submitted = set(os.listdir(SUBMITTED_DIR)) if SUBMITTED_DIR.exists() else set()
+    # submitted: only count dirs with a real confirmation STATUS.md; ABORT-*/PREP-READY
+    # dirs are failed/pending prep runs and should not block re-attempts.
+    _confirmed_keywords = ('confirmation_url', 'confirmation_text', 'submitted_by')
+    _abort_keywords = ('ABORT-', 'PREP-READY', 'MAINTENANCE_RETRY')
+    submitted = set()
+    if SUBMITTED_DIR.exists():
+        for _slug in os.listdir(SUBMITTED_DIR):
+            _slug_path = SUBMITTED_DIR / _slug
+            _status_path = _slug_path / 'STATUS.md'
+            if os.path.islink(str(_slug_path)):
+                # symlink → queued cross-reference; treat as confirmed
+                submitted.add(_slug)
+                continue
+            if not _status_path.exists():
+                # no STATUS.md → prep artifacts only, not a real submission
+                continue
+            _txt = _status_path.read_text(errors='ignore')
+            if any(k in _txt for k in _abort_keywords):
+                # failed/pending prep run — do NOT block re-attempt
+                continue
+            submitted.add(_slug)
     where_url = []
     if ats_filter in (None, "greenhouse"):
         where_url.append("app_url LIKE '%greenhouse.io%' OR jd_url LIKE '%greenhouse.io%'")
@@ -551,7 +573,7 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
         if ats == "greenhouse":
             gh = parse_gh_url(url)
             if not gh:
-                continue
+                _dbg_counts["gh_no_parse"] = _dbg_counts.get("gh_no_parse",0)+1; continue
             org, jid = gh
             slug = f"{slugify(r['company'])}-{jid}"
             entry = {
@@ -563,7 +585,7 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
         elif ats == "ashby":
             ash = parse_ashby_url(url)
             if not ash:
-                continue
+                _dbg_counts["ash_no_parse"] = _dbg_counts.get("ash_no_parse",0)+1; continue
             org, jid = ash
             slug = f"{slugify(r['company'])}-{jid}"
             entry = {
@@ -1036,7 +1058,7 @@ def _fallback_essay_answer(plan: dict, spec: dict, label: str) -> str:
     try:
         prompt = (
             f"You are writing a first-person application answer as job applicant "
-            f"Cyrus Shekari, applying to {company_disp}"
+            f"{_FULL_NAME}, applying to {company_disp}"
             + (f" for the {title} role" if title else "")
             + f".\n\nApplication question:\n{label}\n\n"
             "Write a focused, specific, confident answer in Cyrus's voice. "

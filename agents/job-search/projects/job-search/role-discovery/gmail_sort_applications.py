@@ -33,9 +33,11 @@ from __future__ import annotations
 import argparse, email, imaplib, pathlib, re, ssl, sys, time
 from email.header import decode_header
 
+import json as _json
 ROOT = pathlib.Path("/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search")
 PW_FILE = ROOT / ".gmail-app-password"
-GMAIL_USER = "cyshekari@gmail.com"
+_PI = _json.loads((ROOT / "personal-info.json").read_text())
+GMAIL_USER = _PI["contact"]["email"]
 IMAP_HOST, IMAP_PORT = "imap.gmail.com", 993
 LABEL = "Job Applications"
 

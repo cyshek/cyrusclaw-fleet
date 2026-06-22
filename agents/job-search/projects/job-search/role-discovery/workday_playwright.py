@@ -19,6 +19,16 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeoutError, Page, BrowserContext
 
 HERE = Path(__file__).resolve().parent
+# Module-level PI cache for places where full personal_info dict isn't passed in
+_PI_CACHE = None
+def _get_pi():
+    global _PI_CACHE
+    if _PI_CACHE is None:
+        try:
+            _PI_CACHE = json.loads(PERSONAL_INFO_FILE.read_text())
+        except Exception:
+            _PI_CACHE = {}
+    return _PI_CACHE
 PROJECT_ROOT = HERE.parent
 WORKSPACE_ROOT = PROJECT_ROOT.parent.parent
 CREDS_FILE = PROJECT_ROOT / ".workday-creds.json"
@@ -1047,7 +1057,10 @@ def fill_application_questions(page: Page, info: dict, slug: str) -> dict:
                 answer_text = "LinkedIn"
             elif (("name and current date" in ql) or "state your name" in ql or "sign and date" in ql or "signature" in ql or ("name" in ql and "date" in ql and "box" in ql)):
                 from datetime import datetime as _dt
-                answer_text = f"Cyrus Shekari, {_dt.utcnow().strftime('%m/%d/%Y')}"
+                _pi = _get_pi()
+                _first = _pi.get("identity", {}).get("first_name", "")
+                _last = _pi.get("identity", {}).get("last_name", "")
+                answer_text = f"{_first} {_last}".strip() + f", {_dt.utcnow().strftime('%m/%d/%Y')}"
             # NOTE 2026-05-26 (Peterson 1269 fix): Peterson Workday tenants ask 6 long-form
             # essay/text questions that have no canned LABEL match. Provide generic on-script
             # answers so the application can submit. These should help any tenant asking

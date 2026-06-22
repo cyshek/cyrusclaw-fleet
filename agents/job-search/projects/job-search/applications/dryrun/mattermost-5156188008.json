@@ -4,13 +4,13 @@
   "job_id": "5156188008",
   "job_title": "Forward Deployed Engineer ",
   "job_location": "United States",
-  "fetched_at": "2026-05-29T18:38:21Z",
+  "fetched_at": "2026-06-22T03:29:58Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/mattermost/jobs/5156188008?questions=true",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 19,
-    "filled": 18,
-    "filled_needs_review": 0,
+    "total_fields": 21,
+    "filled": 19,
+    "filled_needs_review": 1,
     "declined": 0,
     "unresolved": 1,
     "blockers": 0
@@ -211,6 +211,49 @@
       ]
     },
     {
+      "id": "question_16220269008",
+      "label": "What is your current U.S. Government security clearance status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "None",
+      "source": "work_authorization.security_clearance | NOTE: 'None' not literally in options ['Active TS/SCI', 'Active Secret', 'Active Confidential', 'Eligible but no active clearance', 'No clearance / Ineligible']",
+      "status": "filled_needs_review",
+      "matched_rule": "security_clearance",
+      "options": [
+        {
+          "label": "Active TS/SCI",
+          "value": 34422360008
+        },
+        {
+          "label": "Active Secret",
+          "value": 34422361008
+        },
+        {
+          "label": "Active Confidential",
+          "value": 34422362008
+        },
+        {
+          "label": "Eligible but no active clearance",
+          "value": 34422363008
+        },
+        {
+          "label": "No clearance / Ineligible",
+          "value": 34422364008
+        }
+      ]
+    },
+    {
+      "id": "question_16411951008",
+      "label": "What is your legal name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
       "id": "longitude",
       "label": "Longitude",
       "type": "input_hidden",
@@ -260,8 +303,12 @@
     "school": "University of Houston",
     "degree": "Bachelor's degree",
     "discipline": "Computer Science",
+    "minor": "Mathematics",
     "gpa_undergrad": "3.8",
     "gpa_grad": null,
-    "gpa_doctorate": null
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
   }
 }

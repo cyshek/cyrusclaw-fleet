@@ -10,8 +10,14 @@ Usage: _gh_submit.py <plan_json_path> [--no-submit]
 Prints JSON result with confirmed/blocked/error + reason.
 """
 import sys, json, time, re, os
+from pathlib import Path
 from playwright.sync_api import sync_playwright
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Module-level PI for inline JS fallbacks that don't receive the personal dict
+_PI_PATH = Path(__file__).resolve().parents[1] / "personal-info.json"
+_PI_MODULE = json.loads(_PI_PATH.read_text()) if _PI_PATH.exists() else {}
+_PI_PHONE_RAW = _PI_MODULE.get("contact", {}).get("phone", "").replace("-", "")
 
 CDP = "http://127.0.0.1:18800"
 
@@ -879,9 +885,9 @@ def main():
         r = page.evaluate(PHONE_ITI, phone)
         result['steps']['phone'] = r
     else:
-        # ensure plain #phone filled
-        page.evaluate("""()=>{const el=document.getElementById('phone');if(el&&!el.value){const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');d.set.call(el,'3468040227');el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));}}""")
-
+        # ensure plain #phone filled (phone loaded from personal-info.json at module level)
+        _ph_js = """()=>{const el=document.getElementById('phone');if(el&&!el.value){const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');d.set.call(el,'__PHONE__');el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));}}""".replace("__PHONE__", _PI_PHONE_RAW)
+        page.evaluate(_ph_js)
     # demographics decline
     r = page.evaluate(DECLINE, {"declines": DECLINES})
     result['steps']['declines'] = r

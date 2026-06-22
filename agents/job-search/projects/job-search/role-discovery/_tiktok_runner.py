@@ -82,7 +82,8 @@ ROOT = '/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-searc
 sys.path.insert(0, ROOT + '/role-discovery')
 from playwright.sync_api import sync_playwright  # noqa: E402
 
-CDP = "http://127.0.0.1:18800"
+_PI = json.loads(Path(ROOT).joinpath("personal-info.json").read_text())
+EMAIL = _PI["contact"]["email"]
 REFERRALS = Path(ROOT) / ".referrals.json"
 PASSWORD_FILE = Path(ROOT) / ".tiktok-password"
 
@@ -96,7 +97,7 @@ def _password_file(brand: str) -> Path:
         if bd.exists():
             return bd
     return PASSWORD_FILE
-EMAIL = "cyshekari@gmail.com"
+# EMAIL loaded from personal-info.json above
 
 HOSTS = {"tiktok": "lifeattiktok.com", "bytedance": "jobs.bytedance.com"}
 

@@ -7,12 +7,14 @@ import os, sys, json, time, pathlib
 os.environ.setdefault("JOBSEARCH_CDP", "http://127.0.0.1:19223")
 from playwright.sync_api import sync_playwright
 
+_PI = json.loads((pathlib.Path(__file__).resolve().parent.parent / "personal-info.json").read_text())
+
 URL = "https://jobs.ashbyhq.com/klarity-ai/4843b6cd-405e-412f-8261-d1a2d6acd850/application"
 CDP = os.environ["JOBSEARCH_CDP"]
 PROJ = pathlib.Path(__file__).resolve().parent.parent
 RESUME = str(PROJ / "applications/submitted/klarity-4843b6cd-405e-412f-8261-d1a2d6acd850/Cyrus_Shekari_Resume_ashby-klarity-ai_4843b6cd_v2.pdf")
 SF_UUID="b4ff3fea-a627-4945-b958-9df48cbc63fd"; SPON_UUID="5658b589-ea7a-4582-b9c7-92a4c5809fbd"
-TEXT_FIELDS={"_systemfield_name":"Cyrus Shekari","_systemfield_email":"cyshekari@gmail.com","988ea71d-2e8f-424b-a2d5-b21752d94c8a":"https://linkedin.com/in/cyshekari"}
+TEXT_FIELDS={"_systemfield_name": _PI["identity"]["first_name"] + " " + _PI["identity"]["last_name"], "_systemfield_email": _PI["contact"]["email"], "988ea71d-2e8f-424b-a2d5-b21752d94c8a": _PI["contact"].get("linkedin", "https://linkedin.com/in/cyshekari")}
 RADIO_TARGETS=[(SPON_UUID,"I am a US Citizen / Green Card Holder"),(SF_UUID,"I am open to relocating to San Francisco")]
 SITEKEY="6LeFb_YUAAAAALUD5h-BiQEp8JaFChe0e0A6r49Y"
 

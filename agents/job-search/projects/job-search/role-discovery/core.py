@@ -309,7 +309,7 @@ def exp_lower_bound(exp_required: str) -> int | None:
 
 def is_overreach(exp_required: str | None, jd_text: str | None = None,
                  role_title: str | None = None,
-                 yoe_cap: int = 8) -> tuple[bool, str]:
+                 yoe_cap: int = 6) -> tuple[bool, str]:
     """Return (is_overreach, reason). Used as the auto-submit guard.
 
     Overreach when:
@@ -335,10 +335,10 @@ def is_overreach(exp_required: str | None, jd_text: str | None = None,
 
 
 def is_qualifying_experience(exp_required: str) -> bool:
-    """Apply exp filter (Cyrus rule, 2026-05-06):
+    """Apply exp filter (Cyrus rule, updated 2026-06-21):
     - unstated -> KEEP
-    - min stated <= 3 yrs -> KEEP (regardless of upper bound)
-    - min stated >= 4 yrs -> DROP
+    - min stated <= 5 yrs -> KEEP (incl. "3+", "5+", "3-5")
+    - min stated >= 6 yrs -> DROP
     """
     if not exp_required or "unstated" in exp_required:
         return True
@@ -346,7 +346,7 @@ def is_qualifying_experience(exp_required: str) -> bool:
     if not m:
         return True
     lo = int(m.group(1))
-    return lo <= 3
+    return lo <= 5
 
 
 _NON_US_COUNTRIES = (

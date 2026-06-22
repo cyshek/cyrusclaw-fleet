@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # daily_apply.sh — drain the open queue every day at 8am PDT
-# Runs inline_submit.py --batch 200 (all ATS types) and re-renders XLSX.
+# Runs inline_submit.py --batch 500 (all ATS types) and re-renders XLSX.
 # Separate from the Mon/Thu full crawl so the queue drains continuously.
 
 set -euo pipefail
@@ -13,7 +13,7 @@ log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG"; }
 
 log "=== Daily apply run start ==="
 
-APPLY_OUT=$($PY "$SCRIPT_DIR/inline_submit.py" --batch 200 2>&1)
+APPLY_OUT=$($PY "$SCRIPT_DIR/inline_submit.py" --batch 500 2>&1)
 APPLY_RC=$?
 echo "$APPLY_OUT" >> "$LOG"
 

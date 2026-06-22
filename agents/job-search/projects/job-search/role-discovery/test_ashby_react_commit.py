@@ -24,6 +24,9 @@ import pathlib
 import shutil
 import subprocess
 
+_PI_REAL = json.loads((pathlib.Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
+_FULL_NAME = _PI_REAL["identity"]["first_name"] + " " + _PI_REAL["identity"]["last_name"]
+
 import _ashby_runner
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -105,7 +108,7 @@ def test_fiber_commit_lands_value_when_native_ignored():
       nodeType: 1,
       tagName: 'INPUT',
       type: 'text',
-      value: 'Cyrus Shekari',          // DOM value already correct (native path "worked")
+      value: '%FULL_NAME%',          // DOM value already correct (native path "worked")
       parentElement: null,
     };
     // attach a React props bag with onChange that drives controlled state
@@ -113,12 +116,12 @@ def test_fiber_commit_lands_value_when_native_ignored():
       onChange: (e) => { reactState.calls++; reactState.committed = e.target.value; },
     };
     Object.keys(el);  // ensure key enumeration works
-    const fired = globalThis.reactOnChangeCommit(el, 'Cyrus Shekari');
+    const fired = globalThis.reactOnChangeCommit(el, '%FULL_NAME%');
     console.log(JSON.stringify({ fired, committed: reactState.committed, calls: reactState.calls }));
-    """
+    """.replace('%FULL_NAME%', _FULL_NAME)
     res = _run_node(harness)
     assert res["fired"] is True, "must fire the fiber onChange"
-    assert res["committed"] == "Cyrus Shekari", "value must land in controlled React state"
+    assert res["committed"] == _FULL_NAME, "value must land in controlled React state"
     assert res["calls"] == 1
 
 

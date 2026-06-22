@@ -606,8 +606,47 @@ def tactic3_websearch(res: Resolution) -> bool:
                        "software", "data", "network", "networks", "platform"}
         strict_co_toks = {t for t in co_toks if t not in _CO_GENERIC and len(t) > 3}
         effective_co_toks = strict_co_toks or co_toks
+        if not effective_co_toks:
+            # No usable company token (e.g. very short names like 'Xe', 'X').
+            # We cannot verify the ATS URL belongs to THIS employer, so a
+            # generic-title brave/websearch match here is unsafe (proven
+            # 2026-06-22: 'Xe.com' falsely matched an 'Easygenerator' ashby
+            # board on a bare 'Product Manager' title). Reject rather than
+            # accept an unverifiable cross-company URL.
+            continue
         if effective_co_toks:
-            if "myworkdayjobs.com" in url_l:
+            # For path-based ATS hosts (smartrecruiters/greenhouse/lever/ashby)
+            # the EMPLOYER is the first path segment (the org slug), e.g.
+            # jobs.smartrecruiters.com/<Org>/<job>. Matching the company token
+            # against the org slug (not the whole URL) avoids false positives
+            # where a SHORT company token coincidentally appears inside the
+            # job-title slug of a DIFFERENT employer (proven 2026-06-22: 'Gen'
+            # matched ServiceNow's '...forward-deployed-...-gen-ai' slug). The
+            # org-slug check is applied for these hosts; other hosts fall back
+            # to the whole-URL check below.
+            _ORG_SLUG_HOSTS = ("smartrecruiters.com", "greenhouse.io",
+                               "lever.co", "ashbyhq.com")
+            try:
+                _p = urllib.parse.urlparse(url)
+                _host_l = (_p.hostname or "").lower()
+                _org_slug = ""
+                if any(h in _host_l for h in _ORG_SLUG_HOSTS):
+                    _segs = [s for s in (_p.path or "").split("/") if s]
+                    # greenhouse embed uses ?for=<org>; handle that form too
+                    if "job_app" in (_p.path or "") and "for=" in (_p.query or ""):
+                        _q = urllib.parse.parse_qs(_p.query or "")
+                        _org_slug = (_q.get("for", [""])[0] or "").lower()
+                    elif _segs:
+                        _org_slug = _segs[0].lower()
+            except Exception:
+                _org_slug = ""
+            if _org_slug:
+                if not any(
+                    re.search(r'(?<![a-z0-9])' + re.escape(t) + r'(?![a-z0-9])', _org_slug)
+                    for t in effective_co_toks
+                ):
+                    continue  # company token not in ATS org slug -> wrong employer
+            elif "myworkdayjobs.com" in url_l:
                 try:
                     wd_host = urllib.parse.urlparse(url).hostname or ""
                     wd_host = wd_host.lower()

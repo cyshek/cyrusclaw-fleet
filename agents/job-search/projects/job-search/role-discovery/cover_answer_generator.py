@@ -50,6 +50,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parent
+_PI = json.loads((PROJECT / "personal-info.json").read_text())
+_FULL_NAME = _PI["identity"]["first_name"] + " " + _PI["identity"]["last_name"]
 QUEUED_DIR = PROJECT / "applications" / "queued"
 SUBMITTED_DIR = PROJECT / "applications" / "submitted"
 DRYRUN_DIR = PROJECT / "applications" / "dryrun"
@@ -298,10 +300,10 @@ def build_prompt(jd_text: str, resume_text: str, personal_info: dict,
         q_block.append(f"Q{i} [{bucket}{' / required' if q['required'] else ''}]: {q['label']}")
     questions_text = "\n\n".join(q_block)
 
-    rules = """\
+    rules = f"""\
 ANSWER POLICY (mandatory — read carefully):
 
-1. Voice: Cyrus Shekari, first person, conversational, professional but NOT
+1. Voice: {_FULL_NAME}, first person, conversational, professional but NOT
    corporate-stiff. Direct, specific, plainspoken. Avoid em dashes; use commas
    or regular dashes. Do not start with "I am writing to" or other letter-y
    openings. Do not gush.
@@ -362,7 +364,7 @@ ANSWER POLICY (mandatory — read carefully):
 """
 
     prompt = (
-        f"You are writing first-person application answers for Cyrus Shekari, "
+        f"You are writing first-person application answers for {_FULL_NAME}, "
         f"applying to {company}.\n\n"
         f"=== JOB DESCRIPTION ===\n{jd_text.strip()}\n\n"
         f"=== CANDIDATE FACTS (personal-info.json excerpt) ===\n{pi_brief}\n\n"

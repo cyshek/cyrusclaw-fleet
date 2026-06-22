@@ -1,5 +1,9 @@
 import sys, time, json
+from pathlib import Path
 from playwright.sync_api import sync_playwright
+_PI = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
+_PHONE_RAW = _PI["contact"]["phone"].replace("-", "")  # 10-digit: 3468040227
+_PHONE_FMT = _PI["contact"]["phone"]  # 346-804-0227
 CDP = "http://127.0.0.1:18800"
 job = sys.argv[1]
 pw = sync_playwright().start()
@@ -43,7 +47,7 @@ def try_format(val):
     return st['ariaInvalid'] != 'true'
 
 
-for fmt in ["3468040227", "+13468040227", "(346) 804-0227", "346-804-0227", "13468040227"]:
+for fmt in [_PHONE_RAW, f"+1{_PHONE_RAW}", f"({_PHONE_RAW[:3]}) {_PHONE_RAW[3:6]}-{_PHONE_RAW[6:]}", _PHONE_FMT, f"1{_PHONE_RAW}"]:
     if try_format(fmt):
         print("VALID_FORMAT:", fmt)
         break

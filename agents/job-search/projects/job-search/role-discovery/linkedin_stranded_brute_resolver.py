@@ -651,6 +651,10 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
     ap.add_argument("--map", default=str(DEFAULT_MAP),
                     help="Path to _linkedin_stranded_ats_map.json (company→ATS)")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--no-dynamic", action="store_true",
+                    help="Disable the dynamic ATS-slug probe fallback "
+                         "(by default, companies missing from the static map "
+                         "are probed for a public GH/Ashby/Lever board).")
     args = ap.parse_args(list(argv) if argv is not None else None)
 
     write_mode = args.apply and not args.dry_run
@@ -683,6 +687,7 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
     counts = {"resolved": 0, "unresolved": 0, "errored": 0, "no_ats": 0, "non_linkedin_skip": 0}
     by_ats: dict[str, int] = {}
     by_unresolved_ats: dict[str, int] = {}
+    dynamic_resolved = [0]  # mutable counter for resolutions via dynamic probe
     samples: list[dict] = []
     jobs_cache: dict[str, tuple[list[dict], Optional[str]]] = {}
 
@@ -698,6 +703,22 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
             continue
 
         ats_entry = mapping.get(company or "")
+        # Dynamic fallback: the static map covers only a handful of companies
+        # (mostly UNKNOWN). When it has no usable ATS entry for this company,
+        # probe its name for a public GH/Ashby/Lever board. This is the path
+        # that resolves the long tail of freshly-stranded startups that were
+        # never hand-added to _linkedin_stranded_ats_map.json. The probe is
+        # memoized per company name (see dynamic_ats_entry) so repeated rows at
+        # the same company cost one probe. resolve_one()'s conservative title
+        # guard still gates every rewrite, so a wrong-company probe hit that
+        # lacks a matching title yields UNRESOLVED, never a false RESOLVED.
+        used_dynamic = False
+        if (not args.no_dynamic
+                and (not ats_entry or ats_entry.get("ats") in (None, "UNKNOWN"))):
+            dyn = dynamic_ats_entry(company or "")
+            if dyn:
+                ats_entry = dyn
+                used_dynamic = True
         outcome, job, score, reason = resolve_one(
             company or "", role_title or "", loc or "", ats_entry or {}, jobs_cache,
         )
@@ -707,11 +728,14 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
             sk = derive_source_key(new_url, ats_entry.get("ats"))
             slug_or_tenant = ats_entry.get("slug") or ats_entry.get("tenant") or "?"
             counts["resolved"] += 1
+            if used_dynamic:
+                dynamic_resolved[0] += 1
             by_ats[ats_entry["ats"]] = by_ats.get(ats_entry["ats"], 0) + 1
             samples.append({
                 "id": rid, "company": company, "role": role_title,
                 "ats": ats_entry["ats"], "slug": slug_or_tenant,
                 "score": round(score, 3), "reason": reason,
+                "dynamic": used_dynamic,
                 "linkedin_url": app_url, "new_url": new_url,
             })
             if write_mode:
@@ -719,7 +743,8 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
                     con, rid, new_url, sk, ats_entry["ats"], slug_or_tenant,
                     score, reason, app_url, stamp,
                 )
-            log(f"  [{i}] R {company} → {ats_entry['ats']}({slug_or_tenant}) {score:.2f}", flush=True)
+            tag = "R*" if used_dynamic else "R"
+            log(f"  [{i}] {tag} {company} → {ats_entry['ats']}({slug_or_tenant}) {score:.2f}", flush=True)
         elif outcome == "UNRESOLVED":
             counts["unresolved"] += 1
             ats = (ats_entry or {}).get("ats", "?")
@@ -752,6 +777,7 @@ def main(argv: Optional[Iterable[str]] = None) -> int:
         "attempted": sum(counts.values()),
         **counts,
         "by_resolved_ats": by_ats,
+        "resolved_via_dynamic_probe": dynamic_resolved[0],
         "by_unresolved_ats": by_unresolved_ats,
         "elapsed_sec": int(time.time() - start),
         "sample_resolved": samples[:5],

@@ -10,7 +10,10 @@ Covers:
 """
 import sys
 import unittest
+import json
 from pathlib import Path
+
+_PI_REAL = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -258,7 +261,7 @@ class TestChain028LocationGuard(unittest.TestCase):
         # exactly one self-contained evaluate step.
         spec = _spec_with([
             {"id": "de256c32__systemfield_name", "label": "Full Name",
-             "value": "Cyrus Shekari", "status": "filled",
+             "value": _PI_REAL["identity"]["first_name"] + " " + _PI_REAL["identity"]["last_name"], "status": "filled",
              "_ashby_type": "String", "required": True},
             {"id": "de256c32__systemfield_location", "label": "Location",
              "value": "Kirkland, WA", "status": "filled",

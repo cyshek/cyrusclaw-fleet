@@ -14,6 +14,9 @@ the suffix-fallback resolver and the clobber-repair loop are exercised without a
 live browser.
 """
 import re
+import json as _json
+from pathlib import Path as _Path
+_PI = _json.loads((_Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 import _ashby_runner
 
 
@@ -92,10 +95,10 @@ class FakePage:
 
 
 # Authoritative values straight from personal-info.json (truthful).
-EMAIL = "cyshekari@gmail.com"
-NAME = "Cyrus Shekari"
-LINKEDIN = "https://linkedin.com/in/cyshekari"
-PHONE = "346-804-0227"
+EMAIL = _PI["contact"]["email"]
+NAME = _PI["identity"]["first_name"] + " " + _PI["identity"]["last_name"]
+LINKEDIN = _PI["contact"].get("linkedin", "https://linkedin.com/in/cyshekari")
+PHONE = _PI["contact"]["phone"]
 
 FORM = "905168ec-cefa-4db5-a876-6eddeaa9086c"
 # Planned fids (what the dryrun emits) vs the LIVE DOM input ids (suffix only).

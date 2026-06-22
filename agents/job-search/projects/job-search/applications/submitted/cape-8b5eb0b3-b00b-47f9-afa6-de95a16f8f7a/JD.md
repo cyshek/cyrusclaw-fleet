@@ -1,0 +1,121 @@
+# Technical Program Manager, Product & Engineering
+
+**Company:** Cape
+**Location:** New York, NY
+**Apply:** https://jobs.ashbyhq.com/cape/8b5eb0b3-b00b-47f9-afa6-de95a16f8f7a
+**Ashby Org:** cape
+**Ashby Job ID:** 8b5eb0b3-b00b-47f9-afa6-de95a16f8f7a
+
+---
+
+# **About Cape**
+
+Cape is America’s privacy-first mobile carrier. Our mission is to be a force for good in global wireless. Cape was founded in 2022 by people who believe privacy is a fundamental right, not a luxury to be traded away. Our journey began when our founder recognized a critical vulnerability in our modern world: everyone relies on the same stagnant cellular infrastructure and legacy systems that track our every movement, monitor and profile our connections, and lose and sell our personal data.
+
+Instead of accepting the status quo, we decided to fix it. National security professionals, journalists, parents, and everyone in between can stay connected *and* have privacy.
+
+We didn’t just build a layer on top of old tech; we built America’s most private and secure mobile carrier from the ground up. By building our own network from scratch, we are able to design and build a suite of privacy and security features that no other carrier on the planet can offer.
+
+Today, Cape provides our secure network to consumers, businesses, and government agencies alike. We closed our Series C in March 2026, and we are scaling rapidly, with the goal of giving people back control of their most personal information.
+
+# **The Team**
+
+At Cape, we are the architects of a privacy-centric movement that is just getting started. We are relentless builders, constantly innovating at the edge of what’s possible in telecommunications. We operate on a foundation of high trust and high expectations. As a member of our team, you will collaborate with world-class engineers, architects, and visionaries, and work across organizational lines to solve "impossible" problems and deliver mission-critical results for our users every single day.
+
+# **The Role**
+
+We are looking for a Technical Program Manager (TPM) to join our security, engineering, and product teams and make an immediate impact. In this role, you will drive the execution of complex, cross-functional programs and projects that are pivotal to enabling core technologies and functionality critical to our business. You will be responsible for designing, implementing, and optimizing processes to streamline workflows, reduce friction, and ensure the seamless integration of technologies across our platforms.
+
+As a TPM, you will take ownership of tracking and stabilizing projects, removing roadblocks, and anticipating both internal and external customer needs. Your primary goal is to empower our engineers by ensuring they can focus on solving the technical challenges they’re best equipped to handle, while you handle the operational complexity. You will be at the forefront of driving initiatives that integrate technologies to serve our diverse customer base, including Government, Enterprise, and Consumer sectors.
+
+# **Here are some ways you’ll make an impact**
+
+- On-time, high-quality delivery of projects that enable the core technologies essential to the business.
+
+- Reduced friction and streamlined workflows across engineering and product teams.
+
+- Clear, proactive communication and resolution of potential risks or issues before they impact progress.
+
+- Empowered engineering teams that can focus on high-value technical problems, without being hindered by operational challenges.
+
+- Successful integration of technologies that meet the needs of Government, Enterprise, and Consumer customers.
+
+# **Are you the candidate we are looking for? **(Requirements for the role) You have:
+
+- Program Execution & Leadership: Proven ability to manage complex, cross-functional projects and drive them to successful completion with minimal oversight.
+
+- Process Optimization: Expertise in identifying inefficiencies, optimizing workflows, and implementing scalable processes that improve team productivity and collaboration.
+
+- Cross-Functional Influence: Strong collaboration and communication skills to work effectively with engineering, product, and other stakeholders, driving alignment and buy-in on key initiatives.
+
+- Problem-Solving & Risk Management: Strong ability to foresee potential challenges, mitigate risks, and resolve issues swiftly to keep projects on track.
+
+- Customer-Centric Mindset: A deep understanding of customer needs, with the ability to ensure product and technology solutions align with both internal goals and customer expectations.
+
+- Technical Understanding: Familiarity with technical concepts and the ability to engage with engineering teams to understand technical challenges, priorities, and dependencies.
+
+- Adaptability: Comfortable working in a fast-paced, evolving environment with a strong ability to adjust priorities and tactics as needed.
+
+- Bachelor's degree in a relevant field, or equivalent practical experience.
+
+- 5 years of experience in program management or equivalent field.
+
+- 3 years of experience managing cross-functional and/or cross-team projects.
+
+**Bonus Points: **(Some nice to haves for this role)
+
+- Prior experience supporting consumer products.
+
+- Prior experience supporting government or defense products.
+
+- Prior experience in a startup environment.
+
+# **Competencies**
+
+**Cape-specific competencies**
+
+- Do Excellent Work
+
+- Respect The Opportunity (each other, the user)
+
+- Overshare
+
+- Bias Towards Action
+
+# Compensation
+
+We offer competitive compensation that is **geo-adjusted** based on **your location**, along with meaningful equity so you share in the value you help create. Salary range for this role in New York, NY is $170,000-$190,000 depending on experience and interview performance.
+
+Our benefits include:
+
+- 401(k) match
+
+- Unlimited PTO
+
+- 100% coverage of medical, dental, and vision premiums for you and your dependents
+
+- 12 weeks paid parental leave (for all parents, no waiting period)
+
+- Stipends for
+
+- Family-forming needs
+
+- Gender-affirming care
+
+# **Our Culture & Values**
+
+- We hire excellent people, give them outsized responsibility, and trust them to execute. Every person at Cape has a proven track record of tackling hard problems and winning.
+
+- We believe that personal privacy and national security are not at odds, and that they can be reconciled through strong technology.
+
+- We believe companies exist to build awesome things and take care of the people who build them, so we offer top-tier healthcare, 401(k) matching, and a generous vacation policy that our team actually uses to recharge.
+
+- We believe that a stronger company and a better product are built by people from all walks of life. We hire without regard to race, color, ancestry, religion, sex, national origin, sexual orientation, gender identity, age, marital status, disability, or Veteran status. If you are great at what you do, you belong here.
+
+# **How to apply**
+
+Click the link below to apply.
+
+We reserve the right to make use of any unsolicited resumes received from outside recruiting agencies and / or individual recruiters without being responsible for payment of any fees asserted from the use of unsolicited resumes.
+
+We are an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, or national origin, and without regard to disability or status as a protected veteran, or any other status protected by law.

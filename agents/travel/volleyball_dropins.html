@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greater Seattle Indoor Volleyball Drop-In Guide 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f0f4f8; color: #2d3748; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #1a2a4a 0%, #2d3e6b 60%, #1e3a5f 100%); color: #fff; padding: 48px 24px 40px; text-align: center; }
+    header h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 10px; }
+    header p { font-size: 1rem; color: #a8c0e0; max-width: 620px; margin: 0 auto; }
+    .header-badge { display: inline-block; margin-top: 16px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); color: #d0e4ff; font-size: 0.78rem; font-weight: 500; padding: 5px 14px; border-radius: 20px; }
+    main { max-width: 1100px; margin: 0 auto; padding: 36px 16px 60px; }
+    .section-header { display: flex; align-items: center; gap: 12px; margin: 48px 0 20px; }
+    .section-header:first-child { margin-top: 0; }
+    .section-pill { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; white-space: nowrap; }
+    .pill-live { background: #c6f6d5; color: #22543d; }
+    .pill-other { background: #bee3f8; color: #1a365d; }
+    .pill-old { background: #fed7d7; color: #742a2a; }
+    .section-header h2 { font-size: 1.35rem; font-weight: 700; color: #1a2a4a; }
+    .weekend-filter-note { background: #fffbeb; border-left: 4px solid #f6ad55; border-radius: 0 8px 8px 0; padding: 10px 16px; font-size: 0.85rem; color: #744210; margin-bottom: 14px; }
+    .table-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.9rem; }
+    thead tr { background: #1a2a4a; color: #e2eaf8; }
+    thead th { padding: 13px 16px; text-align: left; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; }
+    tbody tr:nth-child(even) { background: #f7faff; }
+    tbody tr:nth-child(odd) { background: #ffffff; }
+    tbody tr:hover { background: #edf2ff; }
+    tbody td { padding: 12px 16px; vertical-align: top; border-bottom: 1px solid #e8ecf4; }
+    tbody tr:last-child td { border-bottom: none; }
+    .venue-name { font-weight: 600; color: #1a2a4a; }
+    .day-tag { display: inline-block; background: #e8f0fe; color: #2b4acb; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin: 2px 2px 2px 0; white-space: nowrap; }
+    .time-text { color: #3a4a6b; font-size: 0.88rem; }
+    .note-text { color: #555; font-size: 0.84rem; }
+    .badge-free { display: inline-block; background: #c6f6d5; color: #22543d; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 4px; vertical-align: middle; }
+    .badge-special { display: inline-block; background: #fefcbf; color: #744210; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-top: 3px; }
+    .parks-note { background: #ebf4ff; border-left: 4px solid #3b82f6; border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 0.85rem; color: #1e3a5f; margin-top: 14px; }
+    .parks-note a { color: #2b6cb0; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 20px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); overflow: hidden; }
+    .card-head { padding: 16px 20px 12px; border-bottom: 1px solid #e8ecf4; background: #f7faff; }
+    .card-head h3 { font-size: 1.05rem; font-weight: 700; color: #1a2a4a; margin-bottom: 4px; }
+    .card-address { font-size: 0.82rem; color: #667; line-height: 1.4; }
+    .card-body { padding: 16px 20px; }
+    .card-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 11px; font-size: 0.88rem; }
+    .card-row:last-child { margin-bottom: 0; }
+    .card-label { min-width: 76px; font-weight: 600; color: #445; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.3px; padding-top: 1px; flex-shrink: 0; }
+    .card-val { color: #2d3748; flex: 1; line-height: 1.5; }
+    .card-val a { color: #3b82f6; text-decoration: none; }
+    .card-val a:hover { text-decoration: underline; }
+    .cancelled-badge { display: inline-block; background: #fed7d7; color: #742a2a; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-top: 4px; }
+    .warning-banner { background: #fff5f5; border: 2px solid #fc8181; border-radius: 12px; padding: 16px 20px; margin-bottom: 18px; display: flex; align-items: flex-start; gap: 12px; }
+    .warning-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .warning-text h4 { font-size: 0.95rem; font-weight: 700; color: #742a2a; margin-bottom: 4px; }
+    .warning-text p { font-size: 0.84rem; color: #822; }
+    .disclaimer { margin-top: 48px; padding: 20px 24px; background: #fff; border-radius: 12px; box-shadow: 0 1px 6px rgba(0,0,0,0.06); font-size: 0.82rem; color: #556; border-left: 4px solid #a0aec0; }
+    .disclaimer strong { color: #2d3748; }
+    .disclaimer a { color: #3b82f6; text-decoration: none; }
+    .disclaimer a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      thead th { padding: 10px; font-size: 0.7rem; }
+      tbody td { padding: 10px; font-size: 0.82rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .section-header h2 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>&#x1F3D0; Greater Seattle Indoor Volleyball</h1>
+  <p>Open Play &amp; Drop-In Guide &mdash; Summer 2026</p>
+  <span class="header-badge">Updated June 2026 &middot; Seattle Parks &middot; Bellevue SBCC &middot; Go Time Athletics</span>
+</header>
+<main>
+
+<div class="section-header">
+  <span class="section-pill pill-live">&#10003; Live 2026</span>
+  <h2>Seattle Parks &amp; Recreation &mdash; Summer 2026</h2>
+</div>
+<div class="weekend-filter-note">
+  &#128197; <strong>Showing Saturday &amp; Sunday sessions only.</strong> Seattle Parks has additional weekday sessions (Mon&ndash;Fri) not listed here &mdash; check seattle.gov/parks for the full schedule.
+</div>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>#</th><th>Venue</th><th>Address</th><th>Day</th>
+      <th>Time</th><th>Session Dates</th><th>Ages</th><th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">1</td>
+      <td><span class="venue-name">Delridge Community Center</span></td>
+      <td class="note-text">4501 Delridge Way SW</td>
+      <td><span class="day-tag">Sat</span></td>
+      <td><span class="time-text">10:00 AM&ndash;2:00 PM</span></td>
+      <td class="note-text">Jun 27&ndash;Aug 15, 2026</td>
+      <td class="note-text">18+</td>
+      <td class="note-text">Activity #89379</td>
+    </tr>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">2</td>
+      <td><span class="venue-name">Rainier Community Center</span></td>
+      <td class="note-text">4600 38th Ave S</td>
+      <td><span class="day-tag">Sat</span></td>
+      <td><span class="time-text">9:30 AM&ndash;1:30 PM</span></td>
+      <td class="note-text">Jun 25&ndash;Sep 5, 2026</td>
+      <td class="note-text">18+</td>
+      <td class="note-text">Activity #91972 &middot; <span class="badge-special">Also has Thu drop-in</span></td>
+    </tr>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">3</td>
+      <td><span class="venue-name">Rainier Beach Community Center</span></td>
+      <td class="note-text">8825 Rainier Ave S</td>
+      <td><span class="day-tag">Sun</span></td>
+      <td><span class="time-text">9:00 AM&ndash;Noon</span></td>
+      <td class="note-text">Jun 28&ndash;Sep 6, 2026</td>
+      <td class="note-text">18+</td>
+      <td class="note-text">Activity #90267</td>
+    </tr>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">4</td>
+      <td><span class="venue-name">International District / Chinatown CC</span></td>
+      <td class="note-text">719 8th Ave S</td>
+      <td><span class="day-tag">Sat</span></td>
+      <td><span class="time-text">9:00&ndash;11:30 AM</span></td>
+      <td class="note-text">Jul 1&ndash;Aug 29, 2026</td>
+      <td class="note-text">18+</td>
+      <td class="note-text">Activity #89878 &middot; <span class="badge-special">Also has Thu drop-in</span></td>
+    </tr>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">5</td>
+      <td><span class="venue-name">Magnolia Community Center</span></td>
+      <td class="note-text">2530 34th Ave W</td>
+      <td><span class="day-tag">Sat</span></td>
+      <td><span class="time-text">11:30 AM&ndash;2:00 PM</span></td>
+      <td class="note-text">Jul 4&ndash;Aug 29, 2026</td>
+      <td class="note-text">15+</td>
+      <td class="note-text">Activity #91919 &middot; <span class="badge-special">Also has Wed drop-in</span></td>
+    </tr>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">6</td>
+      <td><span class="venue-name">Yesler Community Center</span></td>
+      <td class="note-text">917 E Yesler Way</td>
+      <td><span class="day-tag">Sat</span></td>
+      <td><span class="time-text">Noon&ndash;4:00 PM</span></td>
+      <td class="note-text">Jun 27&ndash;Sep 5, 2026</td>
+      <td class="note-text">18+</td>
+      <td class="note-text">Activity #89821</td>
+    </tr>
+    <tr>
+      <td style="color:#a0aec0;font-size:0.8rem;">7</td>
+      <td><span class="venue-name">Meadowbrook Community Center</span></td>
+      <td class="note-text">10517 35th Ave NE</td>
+      <td><span class="day-tag">Sat</span></td>
+      <td><span class="time-text">11:30 AM&ndash;1:30 PM</span></td>
+      <td class="note-text">Jul&ndash;Aug 2026 <em>(confirm exact dates)</em></td>
+      <td class="note-text">12+</td>
+      <td class="note-text">Activity #91010 &middot; <span class="badge-special">Also has Wed adult drop-in</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="parks-note">
+  <strong>&#x1F4CB; Seattle Parks Registration:</strong> All sessions are <strong>FREE</strong> and require pre-registration. Register at
+  <a href="https://seattle.gov/parks" target="_blank">seattle.gov/parks</a> or call <strong>206-684-5177</strong>.
+  Adults 18+ unless otherwise noted.
+</div>
+
+<div class="section-header">
+  <span class="section-pill pill-other">&#10003; Live 2026</span>
+  <h2>Other 2026 Venues</h2>
+</div>
+<div class="cards-grid">
+
+  <div class="card">
+    <div class="card-head">
+      <h3>South Bellevue Community Center</h3>
+      <div class="card-address">14509 SE Newport Way, Bellevue, WA 98006</div>
+    </div>
+    <div class="card-body">
+      <div class="card-row">
+        <div class="card-label">Hours</div>
+        <div class="card-val">Mon&ndash;Thu: 6:00 AM&ndash;9:00 PM<br>Fri: 6:00 AM&ndash;8:00 PM<br>Sat&ndash;Sun: 8:00 AM&ndash;5:00 PM</div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Courts</div>
+        <div class="card-val">Up to 2 courts &mdash; staff raises basketball hoops on request</div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Bring</div>
+        <div class="card-val">Your own volleyball</div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Phone</div>
+        <div class="card-val"><a href="tel:4254524240">425-452-4240</a></div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Email</div>
+        <div class="card-val"><a href="mailto:SBCC@bellevuewa.gov">SBCC@bellevuewa.gov</a></div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Schedule</div>
+        <div class="card-val">Current schedule PDF at <a href="https://bellevuewa.gov" target="_blank">bellevuewa.gov</a> &mdash; contact SBCC for current drop-in volleyball times</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <h3>Go Time Athletics</h3>
+      <div class="card-address">
+        4835 West Marginal Way SW, Seattle, WA 98106 &mdash; <em style="color:#888;">West Seattle</em><br>
+        <span style="font-size:0.79rem;color:#aaa;">Also: 661 South Orcas St., Seattle, WA 98108 (Georgetown)</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-row">
+        <div class="card-label">Day</div>
+        <div class="card-val"><span class="day-tag">Sun</span> Adult Open Gym &mdash; 18+ only</div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Sessions</div>
+        <div class="card-val">
+          Intermediate: <strong>1:00&ndash;3:00 PM</strong><br>
+          Intermediate: <strong>3:00&ndash;5:00 PM</strong><br>
+          <span class="cancelled-badge">&#9888; Advanced 5&ndash;7 PM: Currently Cancelled</span>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Cost</div>
+        <div class="card-val"><strong>$10 + tax</strong> per player per session</div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Capacity</div>
+        <div class="card-val">Max 14 players/session &middot; Pre-register required (no walk-ins unless space is available)</div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Waiver</div>
+        <div class="card-val">Required before arrival: <a href="https://gotimeathletics.com/waiver-form" target="_blank">gotimeathletics.com/waiver-form</a></div>
+      </div>
+      <div class="card-row">
+        <div class="card-label">Book</div>
+        <div class="card-val"><a href="https://gotimeathletics.com/volleyball-open-gym" target="_blank">gotimeathletics.com/volleyball-open-gym</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-header">
+  <span class="section-pill pill-old">&#9888; Confirm First</span>
+  <h2>Older Listings &mdash; SeattleVolleyball.net</h2>
+</div>
+<div class="warning-banner">
+  <div class="warning-icon">&#9888;&#65039;</div>
+  <div class="warning-text">
+    <h4>These listings are from 2013 &mdash; verify before visiting</h4>
+    <p>The following venues were sourced from SeattleVolleyball.net (last updated 2013). Days, times, costs, and availability may have changed significantly. <strong>Always call or check the venue website before making the trip.</strong></p>
+  </div>
+</div>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Venue</th><th>Address</th><th>Day / Time</th><th>Level</th><th>Cost</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="venue-name">Kirkland Parks</span><br><span style="font-size:0.78rem;color:#888;">Kamiakin Jr. High</span></td>
+      <td class="note-text">14111 132nd Ave NE<br>Kirkland</td>
+      <td><span class="day-tag">Sun</span><br><span class="time-text">5:00&ndash;8:00 PM</span></td>
+      <td class="note-text">A / B</td>
+      <td class="note-text">&mdash;</td>
+      <td class="note-text">3 volleyball courts</td>
+    </tr>
+    <tr>
+      <td><span class="venue-name">Issaquah Community Center</span></td>
+      <td class="note-text">301 Rainier Blvd S<br>Issaquah</td>
+      <td><span class="day-tag">Mon</span><br><span class="time-text">6:00&ndash;9:00 PM</span></td>
+      <td class="note-text">B / A</td>
+      <td class="note-text">$4 (18+)<br>$3 (16&ndash;17)</td>
+      <td class="note-text">2 nets</td>
+    </tr>
+    <tr>
+      <td><span class="venue-name">East Beach Volleyball Center</span></td>
+      <td class="note-text">2120 116th Ave NE Bldg B<br>Bellevue</td>
+      <td class="note-text">Varies</td>
+      <td class="note-text">Open / A / AA / B / BB</td>
+      <td class="note-text">&mdash;</td>
+      <td class="note-text">Indoor sand &middot; 1&ndash;3 courts always open</td>
+    </tr>
+    <tr>
+      <td><span class="venue-name">Overlake Christian Church</span></td>
+      <td class="note-text">9900 Willows Rd NE<br>Redmond</td>
+      <td><span class="day-tag">Tue</span><br><span class="time-text">12:00&ndash;2:00 PM</span></td>
+      <td class="note-text">C / B</td>
+      <td class="note-text">&mdash;</td>
+      <td class="note-text">2 nets &middot; Coed sixes</td>
+    </tr>
+    <tr>
+      <td><span class="venue-name">Renton Carco Community Center</span></td>
+      <td class="note-text">1715 Maple Valley Hwy<br>Renton</td>
+      <td><span class="day-tag">Tue</span><br><span class="time-text">7:00&ndash;9:30 PM</span></td>
+      <td class="note-text">Recreational</td>
+      <td class="note-text">$3</td>
+      <td class="note-text">2 nets &middot; Coed sixes</td>
+    </tr>
+    <tr>
+      <td><span class="venue-name">Shoreline Parks</span><br><span style="font-size:0.78rem;color:#888;">Spartan Rec Ctr</span></td>
+      <td class="note-text">18560 1st Ave NE<br>Shoreline</td>
+      <td class="note-text">&mdash;</td>
+      <td class="note-text">&mdash;</td>
+      <td class="note-text">&mdash;</td>
+      <td class="note-text">Call: (206) 418-3383</td>
+    </tr>
+    <tr>
+      <td><span class="venue-name">Mountlake Terrace</span><br><span style="font-size:0.78rem;color:#888;">Terrace Park School</span></td>
+      <td class="note-text">5303 228th St SW<br>Mountlake Terrace</td>
+      <td>
+        <span class="day-tag">Thu</span> <span class="time-text">8:30&ndash;10:00 PM</span><br>
+        <span class="day-tag">Tue</span> <span class="time-text">5:00&ndash;7:00 PM</span>
+      </td>
+      <td class="note-text">Adults / Seniors 55+</td>
+      <td class="note-text">$4 adults</td>
+      <td class="note-text">2 nets &middot; Thu: adults &middot; Tue: seniors 55+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="disclaimer">
+  <strong>&#x1F4CC; Note:</strong>
+  Seattle Parks &amp; Recreation sessions are free and require pre-registration at
+  <a href="https://seattle.gov/parks" target="_blank">seattle.gov/parks</a> or by calling 206-684-5177.
+  Walk-ins are generally not accepted. Older listings (Section 3) are from 2013 and may be significantly out of date &mdash;
+  call ahead before visiting. Information provided for convenience only; always verify with the venue for current schedules and pricing.
+</div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,680 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/yipitdatajobs/jobs/7905789",
+  "org": "yipitdatajobs",
+  "job_id": "7905789",
+  "job_title": "Product Manager",
+  "job_location": "US Remote",
+  "fetched_at": "2026-06-22T08:05:10Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/yipitdatajobs/jobs/7905789?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 33,
+    "filled": 18,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 11,
+    "blockers": 7
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_66631253",
+      "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "unexpected resume field type: multi_value_single_select",
+      "status": "unresolved",
+      "matched_rule": "resume",
+      "options": [
+        {
+          "label": "I have submitted a PDF version of my resume.",
+          "value": 710611754
+        }
+      ]
+    },
+    {
+      "id": "question_66631254",
+      "label": "How did you hear about this job? (If through one of our current employees, please share their name and your relationship with them.)",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_66631255",
+      "label": "Why are you interested in this role at YipitData? What about this job opportunity compels you?",
+      "type": "input_text",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at YipitData (Alternative) because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about YipitData (Alternative) is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to YipitData (Alternative) while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, YipitData (Alternative) aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='YipitData (Alternative)')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_66631256",
+      "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_66631257",
+      "label": "Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 710611755
+        },
+        {
+          "label": "No",
+          "value": 710611756
+        }
+      ]
+    },
+    {
+      "id": "question_66631258",
+      "label": "Please rank the top 3 skill sets that you'd like to further develop at YipitData.",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"Please rank the top 3 skill sets that you'd like to further develop at YipitData.\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_66631259",
+      "label": "Why are you looking for a new opportunity at this time?",
+      "type": "input_text",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at YipitData (Alternative) because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about YipitData (Alternative) is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to YipitData (Alternative) while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, YipitData (Alternative) aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='YipitData (Alternative)')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_66631260",
+      "label": "What is your minimum required yearly salary (in USD) to consider this position?",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What is your minimum required yearly salary (in USD) to consider this position?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_66631261",
+      "label": "When is the earliest you can start this position? If you do not have a date in mind, please share with us what kind of notice you would need to give your current employer. (Note: your desired start date will NOT affect your candidacy).",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_66631262",
+      "label": "Please explain any employment gaps in your work history. If none, say “N/A.”",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please explain any employment gaps in your work history. If none, say “N/A.”'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_66631263",
+      "label": "Kindly share your LinkedIn profile with us!",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_66631264",
+      "label": "Are you legally authorized to work in the United States for YipitData?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66631265",
+      "label": "Will you *now* OR *in the future* require employer-based sponsorship for immigration-related employment benefit(s) or visa status (e.g., H-1B, TN, I-140, etc.) to work for YipitData? \n\n(Immigration-related employment benefits include, for instance, H-1B, TN, O, E, and other nonimmigrant work visa/status; employment based “green card”/immigrant sponsorship, such as a labor certification, I-140 immigrant petition for alien worker, adjustment of status, consular processing, etc.)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_66631266",
+      "label": "I acknowledge that for remote-based US roles, depending upon where the remote work is performed, INCOME COULD BE SUBJECT TO NYS TAX WITHHOLDINGS.\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Open to remote, hybrid, or onsite",
+      "source": "preferences.remote_preference | NOTE: 'Open to remote, hybrid, or onsite' not literally in options ['Yes, I acknowledge this.']",
+      "status": "filled_needs_review",
+      "matched_rule": "remote_pref",
+      "options": [
+        {
+          "label": "Yes, I acknowledge this.",
+          "value": 710611757
+        }
+      ]
+    },
+    {
+      "id": "question_66631267",
+      "label": "A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I acknowledge this.",
+          "value": 710611758
+        }
+      ]
+    },
+    {
+      "id": "question_66631268",
+      "label": "YipitData is an equal-opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion. Here is a set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. You may choose not to answer the questions below. If you do choose to answer, your responses will be used (in aggregate form only) to help us identify areas for improvement in our process. Your responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='YipitData is an equal-opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion. Here is a set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. You may choose not to answer the questions below. If you do choose to answer, your responses will be used (in aggregate form only) to help us identify areas for improvement in our process. Your responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Female",
+          "value": 710611759
+        },
+        {
+          "label": "Male",
+          "value": 710611760
+        },
+        {
+          "label": "Non-binary",
+          "value": 710611761
+        },
+        {
+          "label": "Third gender",
+          "value": 710611762
+        },
+        {
+          "label": "Other",
+          "value": 710611763
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611764
+        }
+      ]
+    },
+    {
+      "id": "question_66631269[]",
+      "label": "Please specify the race/ethnicity you identify with (select any/all that apply):",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian / Alaskan Native",
+          "value": 710611765
+        },
+        {
+          "label": "Asian",
+          "value": 710611766
+        },
+        {
+          "label": "Black or African American",
+          "value": 710611767
+        },
+        {
+          "label": "Hispanic / Latinx",
+          "value": 710611768
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 710611769
+        },
+        {
+          "label": "Pacific Islander or Native Hawaiian",
+          "value": 710611770
+        },
+        {
+          "label": "White",
+          "value": 710611771
+        },
+        {
+          "label": "Other",
+          "value": 710611772
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611773
+        }
+      ]
+    },
+    {
+      "id": "question_66631270",
+      "label": "Do you identify as a member of the LGBTQIA+ community?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you identify as a member of the LGBTQIA+ community?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 710611774
+        },
+        {
+          "label": "No",
+          "value": 710611775
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611776
+        }
+      ]
+    },
+    {
+      "id": "question_66631271",
+      "label": "Do you identify as non-binary and/or transgender?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you identify as non-binary and/or transgender?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 710611777
+        },
+        {
+          "label": "No",
+          "value": 710611778
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611779
+        }
+      ]
+    },
+    {
+      "id": "question_66631272[]",
+      "label": " What are your pronouns? (select any/all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He/Him",
+          "value": 710611780
+        },
+        {
+          "label": "She/Her",
+          "value": 710611781
+        },
+        {
+          "label": "They/Them",
+          "value": 710611782
+        },
+        {
+          "label": "Other",
+          "value": 710611783
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611784
+        }
+      ]
+    },
+    {
+      "id": "question_66631273",
+      "label": "The Americans with Disabilities Act (ADA) is a federal civil rights law that prohibits discrimination against people with disabilities in everyday activities.",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='The Americans with Disabilities Act (ADA) is a federal civil rights law that prohibits discrimination against people with disabilities in everyday activities.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes, I have a disability and/or a history/record of having a disability",
+          "value": 710611785
+        },
+        {
+          "label": "No, I don't have a disability and/or a history/record of having a disability",
+          "value": 710611786
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611788
+        }
+      ]
+    },
+    {
+      "id": "question_66631274",
+      "label": "What is your veteran status?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am a protected veteran",
+          "value": 710611789
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": 710611790
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 710611792
+        }
+      ]
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_66631253",
+      "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.",
+      "required": true,
+      "reason": "unexpected resume field type: multi_value_single_select"
+    },
+    {
+      "id": "question_66631256",
+      "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.'"
+    },
+    {
+      "id": "question_66631257",
+      "label": "Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?'"
+    },
+    {
+      "id": "question_66631258",
+      "label": "Please rank the top 3 skill sets that you'd like to further develop at YipitData.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label=\"Please rank the top 3 skill sets that you'd like to further develop at YipitData.\""
+    },
+    {
+      "id": "question_66631260",
+      "label": "What is your minimum required yearly salary (in USD) to consider this position?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='What is your minimum required yearly salary (in USD) to consider this position?'"
+    },
+    {
+      "id": "question_66631262",
+      "label": "Please explain any employment gaps in your work history. If none, say “N/A.”",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Please explain any employment gaps in your work history. If none, say “N/A.”'"
+    },
+    {
+      "id": "question_66631267",
+      "label": "A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. '"
+    },
+    {
+      "id": "question_66631268",
+      "label": "YipitData is an equal-opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion. Here is a set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. You may choose not to answer the questions below. If you do choose to answer, your responses will be used (in aggregate form only) to help us identify areas for improvement in our process. Your responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='YipitData is an equal-opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion. Here is a set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. You may choose not to answer the questions below. If you do choose to answer, your responses will be used (in aggregate form only) to help us identify areas for improvement in our process. Your responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.'"
+    },
+    {
+      "id": "question_66631270",
+      "label": "Do you identify as a member of the LGBTQIA+ community?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Do you identify as a member of the LGBTQIA+ community?'"
+    },
+    {
+      "id": "question_66631271",
+      "label": "Do you identify as non-binary and/or transgender?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Do you identify as non-binary and/or transgender?'"
+    },
+    {
+      "id": "question_66631273",
+      "label": "The Americans with Disabilities Act (ADA) is a federal civil rights law that prohibits discrimination against people with disabilities in everyday activities.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='The Americans with Disabilities Act (ADA) is a federal civil rights law that prohibits discrimination against people with disabilities in everyday activities.'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_66631253",
+      "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.",
+      "reason": "unexpected resume field type: multi_value_single_select"
+    },
+    {
+      "id": "question_66631256",
+      "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.",
+      "reason": "no LABEL_RULES match for label='Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.'"
+    },
+    {
+      "id": "question_66631257",
+      "label": "Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?",
+      "reason": "no LABEL_RULES match for label='Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?'"
+    },
+    {
+      "id": "question_66631258",
+      "label": "Please rank the top 3 skill sets that you'd like to further develop at YipitData.",
+      "reason": "no LABEL_RULES match for label=\"Please rank the top 3 skill sets that you'd like to further develop at YipitData.\""
+    },
+    {
+      "id": "question_66631260",
+      "label": "What is your minimum required yearly salary (in USD) to consider this position?",
+      "reason": "no LABEL_RULES match for label='What is your minimum required yearly salary (in USD) to consider this position?'"
+    },
+    {
+      "id": "question_66631262",
+      "label": "Please explain any employment gaps in your work history. If none, say “N/A.”",
+      "reason": "no LABEL_RULES match for label='Please explain any employment gaps in your work history. If none, say “N/A.”'"
+    },
+    {
+      "id": "question_66631267",
+      "label": "A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. ",
+      "reason": "no LABEL_RULES match for label='A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. '"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

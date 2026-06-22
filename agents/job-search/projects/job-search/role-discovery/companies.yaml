@@ -317,8 +317,8 @@ companies:
   adapter: greenhouse
   slug: databricks
 - name: Confluent
-  skip: true
-  reason: no public Greenhouse/Ashby/Lever board found; uses proprietary careers.confluent.io
+  adapter: ashby
+  slug: confluent
 - name: Pinterest
   adapter: greenhouse
   slug: pinterest
@@ -332,8 +332,8 @@ companies:
   adapter: greenhouse
   slug: coinbase
 - name: Hugging Face
-  skip: true
-  reason: careers requires login; no public board API found
+  adapter: workable
+  slug: huggingface
 - name: Perplexity
   adapter: ashby
   slug: perplexity
@@ -405,7 +405,8 @@ companies:
   slug: cursor
 - name: Replicate
   skip: true
-  reason: no public Greenhouse/Ashby/Lever board found
+  reason: Acquired by Cloudflare; careers redirect to Cloudflare Greenhouse (already
+    indexed as Cloudflare above)
 - name: Modal Labs
   adapter: ashby
   slug: modal
@@ -471,8 +472,8 @@ companies:
   adapter: greenhouse
   slug: affirm
 - name: Wealthfront
-  skip: true
-  reason: no public job board API
+  adapter: lever
+  slug: wealthfront
 - name: Palantir
   adapter: lever
   slug: palantir
@@ -591,8 +592,8 @@ companies:
   adapter: greenhouse
   slug: webflow
 - name: Canva
-  skip: true
-  reason: no public Greenhouse/Ashby board found; canva.com/careers/jobs returns 403
+  adapter: smartrecruiters
+  slug: canva
 - name: Atlassian Cloud
   skip: true
   reason: duplicate of Atlassian Workday entry
@@ -5291,3 +5292,165 @@ companies:
 - name: "Tackle.io"
   adapter: lever
   slug: "tackle"
+
+# --- Workday expansion batch (2026-06-22): verified external WD boards ---
+- name: Autodesk
+  adapter: workday
+  host: autodesk.wd1.myworkdayjobs.com
+  tenant: autodesk
+  site: Ext
+- name: Micron
+  adapter: workday
+  host: micron.wd1.myworkdayjobs.com
+  tenant: micron
+  site: External
+- name: Analog Devices
+  adapter: workday
+  host: analogdevices.wd1.myworkdayjobs.com
+  tenant: analogdevices
+  site: External
+- name: KLA
+  adapter: workday
+  host: kla.wd1.myworkdayjobs.com
+  tenant: kla
+  site: Search
+- name: Applied Materials
+  adapter: workday
+  host: amat.wd1.myworkdayjobs.com
+  tenant: amat
+  site: External
+- name: Marvell
+  adapter: workday
+  host: marvell.wd1.myworkdayjobs.com
+  tenant: marvell
+  site: MarvellCareers
+- name: Cadence
+  adapter: workday
+  host: cadence.wd1.myworkdayjobs.com
+  tenant: cadence
+  site: External_Careers
+- name: 3M
+  adapter: workday
+  host: 3m.wd1.myworkdayjobs.com
+  tenant: 3m
+  site: Search
+- name: Wells Fargo
+  adapter: workday
+  host: wf.wd1.myworkdayjobs.com
+  tenant: wf
+  site: WellsFargoJobs
+- name: Citi
+  adapter: workday
+  host: citi.wd5.myworkdayjobs.com
+  tenant: citi
+  site: 2
+- name: Morgan Stanley
+  adapter: workday
+  host: ms.wd5.myworkdayjobs.com
+  tenant: ms
+  site: External
+- name: BlackRock
+  adapter: workday
+  host: blackrock.wd1.myworkdayjobs.com
+  tenant: blackrock
+  site: BlackRock_Professional
+- name: Nasdaq
+  adapter: workday
+  host: nasdaq.wd1.myworkdayjobs.com
+  tenant: nasdaq
+  site: Global_External_Site
+- name: Target
+  adapter: workday
+  host: target.wd5.myworkdayjobs.com
+  tenant: target
+  site: targetcareers
+- name: Comcast
+  adapter: workday
+  host: comcast.wd5.myworkdayjobs.com
+  tenant: comcast
+  site: Comcast_Careers
+- name: Warner Bros Discovery
+  adapter: workday
+  host: warnerbros.wd5.myworkdayjobs.com
+  tenant: warnerbros
+  site: global
+- name: Pfizer
+  adapter: workday
+  host: pfizer.wd1.myworkdayjobs.com
+  tenant: pfizer
+  site: PfizerCareers
+- name: Gilead
+  adapter: workday
+  host: gilead.wd1.myworkdayjobs.com
+  tenant: gilead
+  site: gileadcareers
+- name: T-Mobile
+  adapter: workday
+  host: tmobile.wd1.myworkdayjobs.com
+  tenant: tmobile
+  site: External
+- name: Zendesk
+  adapter: workday
+  host: zendesk.wd1.myworkdayjobs.com
+  tenant: zendesk
+  site: zendesk
+- name: CrowdStrike
+  adapter: workday
+  host: crowdstrike.wd5.myworkdayjobs.com
+  tenant: crowdstrike
+  site: crowdstrikecareers
+- name: Hitachi
+  adapter: workday
+  host: hitachi.wd1.myworkdayjobs.com
+  tenant: hitachi
+  site: hitachi
+- name: Genesys
+  adapter: workday
+  host: genesys.wd1.myworkdayjobs.com
+  tenant: genesys
+  site: Genesys
+- name: Stryker
+  adapter: workday
+  host: stryker.wd1.myworkdayjobs.com
+  tenant: stryker
+  site: StrykerCareers
+- name: Abbott
+  adapter: workday
+  host: abbott.wd5.myworkdayjobs.com
+  tenant: abbott
+  site: abbottcareers
+- name: Illumina
+  adapter: workday
+  host: illumina.wd1.myworkdayjobs.com
+  tenant: illumina
+  site: illumina-careers
+- name: Amgen
+  adapter: workday
+  host: amgen.wd1.myworkdayjobs.com
+  tenant: amgen
+  site: Careers
+- name: PNC
+  adapter: workday
+  host: pnc.wd5.myworkdayjobs.com
+  tenant: pnc
+  site: External
+- name: Fiserv
+  adapter: workday
+  host: fiserv.wd5.myworkdayjobs.com
+  tenant: fiserv
+  site: EXT
+- name: FIS
+  adapter: workday
+  host: fis.wd5.myworkdayjobs.com
+  tenant: fis
+  site: SearchJobs
+- name: Broadridge
+  adapter: workday
+  host: broadridge.wd5.myworkdayjobs.com
+  tenant: broadridge
+  site: careers
+- name: ServiceTitan
+  adapter: workday
+  host: servicetitan.wd1.myworkdayjobs.com
+  tenant: servicetitan
+  site: ServiceTitan

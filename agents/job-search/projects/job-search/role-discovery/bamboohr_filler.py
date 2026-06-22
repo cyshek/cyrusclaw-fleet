@@ -63,6 +63,7 @@ from urllib.parse import urlparse, parse_qs
 HERE = Path(__file__).resolve().parent
 DRYRUN_DIR = HERE.parent / "applications" / "dryrun"
 
+_PI = json.loads((HERE.parent / "personal-info.json").read_text())
 
 # ---------------------------------------------------------------------------
 # URL parsing
@@ -688,7 +689,7 @@ def _smoke_spec_for(tenant: str, job_id: str) -> dict:
         "answers": {
             "first_name": "Cyrus",
             "last_name": "Yari",
-            "email": "cyshekari@gmail.com",
+            "email": _PI["contact"]["email"],
             "phone": "+1 415 555 1234",
             "street": "123 Fake St",
             "city": "Kirkland",

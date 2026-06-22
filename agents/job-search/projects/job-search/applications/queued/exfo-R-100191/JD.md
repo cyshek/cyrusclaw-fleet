@@ -1,3 +1,0 @@
-# Solutions Engineer - US NEMs and Labs Team — EXFO (R-100191)
-
-Support sales growth by working closely with the US Network Equipment Manufacturer (NEM) and LAB teams. Provide technical pre-sales support for EXFO test and measurement solutions across photonics, optical networking, and network test domains. Assess new and existing applications of EXFO solutions to meet customer needs; deliver demos, proofs of concept, and technical presentations. Partner with sales and product teams; keep sales management current on product application options. Requires strong technical fluency in networking/optical test, customer-facing communication, and solution-selling skills.

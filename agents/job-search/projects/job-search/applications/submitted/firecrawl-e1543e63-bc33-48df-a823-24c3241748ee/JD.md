@@ -1,0 +1,131 @@
+# Forward Deployed Engineer (Integrations)
+
+**Company:** Firecrawl
+**Location:** San Francisco, CA (Hybrid)
+**Apply:** https://jobs.ashbyhq.com/firecrawl/e1543e63-bc33-48df-a823-24c3241748ee
+**Ashby Org:** firecrawl
+**Ashby Job ID:** e1543e63-bc33-48df-a823-24c3241748ee
+
+---
+
+# Forward Deployed Engineer (Integrations)
+
+You'll work directly with customers to get Firecrawl integrated, running, and scaling inside their products. That means writing real code, debugging real systems, and turning customer needs into shipped solutions — fast. This is not a support role. It's a technical ownership role with a customer face.
+
+**Salary Range:** $160,000 to $220,000/year (Range shown is for U.S.-based employees in San Francisco, CA. Compensation outside the U.S. is adjusted fairly based on your country's cost of living.)
+
+**Equity Range:** Up to 0.10%
+
+**Location:** San Francisco, CA (or Bay Area)
+
+**Job Type:** Full-Time
+
+**Experience:** 3+ years or equivalent shipped systems
+
+**Visa:** US Citizenship/Visa required
+
+# About Firecrawl
+
+Firecrawl is the easiest way to extract data from the web. Developers use us to reliably convert URLs into LLM-ready markdown or structured data with a single API call. In just over a year, we've hit 8 figures in ARR and 100k+ GitHub stars by building the fastest way for developers to get clean, structured web data.
+
+We're a small, fast-moving, technical team building essential infrastructure for the AI era. We ship fast and deep.
+
+# What You'll Do
+
+- Own technical integration delivery for priority customers — from first API call through production scale
+
+- Write TypeScript/Node.js code to build, customize, and debug integrations with payments systems, cloud platforms, and third-party APIs
+
+- Debug complex real-world issues live with customers — crawling edge cases, data pipeline failures, infra constraints
+
+- Build reusable solutions and playbooks that turn one-off customer problems into repeatable wins for the team
+
+- Translate customer friction into clear product and engineering insights and route them to the right people
+
+- Work closely with core engineering on reliability, performance, and DX improvements driven by what you're seeing in the field
+
+# What We're Looking For
+
+**A strong TypeScript/Node.js engineer.** You write clean, production-quality code and you're fast. You've built integrations with external APIs and you understand what makes them brittle.
+
+**Experienced with payments and cloud platforms.** You've worked with Stripe or similar billing systems. You've integrated with GCP, Vercel, or comparable cloud providers. You don't need to Google the basics.
+
+**Solid on backend and data fundamentals.** You can design a system, model a schema, and reason about data at scale. You know when to reach for a relational database and when not to.
+
+**Security-aware.** You understand the common auth patterns — OAuth, API keys, JWTs — and you know where the traps are when integrating third-party systems.
+
+**High ownership with customers.** You're comfortable in ambiguous, high-stakes situations with real customers. You communicate clearly, set expectations honestly, and follow through.
+
+Backgrounds that often do well: integration or platform engineers, solutions engineers who write real code, early engineers at API-first startups who owned customer-facing technical work.
+
+# What We're NOT Looking For
+
+- Engineers who hand off customer problems to someone else after the first call
+
+- Solutions engineers who demo well but can't ship production code
+
+- Anyone who needs a fully-scoped ticket before they can start moving
+
+# A Note On Pace
+
+We're a small team doing a lot. Roles here are loosely defined on purpose — you'll own things that don't have a clear owner yet, and that's a feature, not a bug. If you need your scope fully defined before you can move, this probably isn't the right fit. If you want to build something that matters inside one of the fastest-growing AI infrastructure companies in the world, let's talk.
+
+# Benefits & Perks
+
+## **Available to all employees**
+
+Salary that makes sense — $160,000–$220,000/year (SF, U.S.-based), based on impact, not tenure
+
+Own a piece — Up to 0.1% equity in what you're helping build
+
+Generous PTO — 15 days mandatory, anything after 24 days, just ask (holidays excluded); take the time you need to recharge
+
+Parental leave — 12 weeks fully paid, for moms and dads
+
+Wellness stipend — $100/month for the gym, therapy, massages, or whatever keeps you human
+
+Learning & Development — Expense up to $1,000/year toward anything that helps you grow professionally
+
+Team offsites — A change of scenery, minus the trust falls
+
+Sabbatical — 3 paid months off after 4 years, do something fun and new
+
+## **Available to US-based full-time employees**
+
+Full coverage, no red tape — Medical, dental, and vision (100% for employees, 50% for spouse/kids) — no weird loopholes, just care that works
+
+Life & Disability insurance — Employer-paid short-term disability, long-term disability, and life insurance — coverage for life's curveballs
+
+Supplemental options — Optional accident, critical illness, hospital indemnity, and voluntary life insurance for extra peace of mind
+
+Doctegrity telehealth — Talk to a doctor from your couch
+
+401(k) plan — Retirement might be a ways off, but future-you will thank you
+
+Pre-tax benefits — Access to FSAs and commuter benefits (US-only) to help your wallet out a bit
+
+Pet insurance — Because fur babies are family too
+
+## **Available to SF-based employees**
+
+SF HQ perks — Snacks, drinks, team lunches, intense ping pong, and peak startup energy
+
+E-Bike transportation — A loaner electric bike to get you around the city, on us
+
+# Interview Process
+
+**Application Review** — Send us your work: integrations you've built, systems you've owned, or customer-facing technical projects you've shipped. A quick note on what excites you about this role specifically.
+
+**Intro Chat (~20 min)** — Quick alignment call. We'll talk about what you've built, how you work with customers under pressure, and what you'd want to tackle first.
+
+**Deep Dive Chat (~60 min)** — A hands-on integration problem. We're evaluating how you debug, how you communicate your reasoning, and how you make decisions when the requirements are incomplete.
+
+**Founder Chat (~30 min)** — Culture, pace, ownership, and how you like to work. Time for your questions too.
+
+**Paid Work Trial (1–2 weeks)** — Work on a real integration challenge with an actual customer use case. We evaluate on code quality, problem-solving, and how you handle ambiguity.
+
+**Decision** — We move fast after the trial.
+
+If you want to be the engineer who gets Firecrawl running inside the products that matter — and you're as comfortable with customers as you are with code — this is your shot.
+
+👉 **Apply now.**

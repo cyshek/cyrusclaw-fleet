@@ -1,0 +1,63 @@
+# Founding Forward Deployed Engineer
+
+**Company:** Starbridge
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/starbridge/7397deb6-a092-4694-aabe-5b84ddbf5659
+**Ashby Org:** starbridge
+**Ashby Job ID:** 7397deb6-a092-4694-aabe-5b84ddbf5659
+
+---
+
+## About the role
+
+This is the founding Forward Deployed Engineer seat at Starbridge. You will define what the FDE practice looks like at the company. There is no playbook to execute yet; you write it.
+
+You will be paired with a Deployment Strategist who owns the institutional customer relationship. You focus on shipping production software: data pipelines, integrations, and the custom application layer built on top of the customer's existing data infrastructure.
+
+Our first engagement is with a major public higher education institution with real scope, real budget, and a multi-million dollar P&L. The technical DNA you build into this first engagement becomes the substrate that compounds across every engagement Starbridge runs next.
+
+**What you'll do:**
+
+- Own end-to-end technical execution: data pipelines, integrations, and the custom application layer on top of existing data infrastructure
+
+- Make independent technical calls without waiting for committees, and recover quickly when one turns out wrong
+
+- Partner with a Deployment Strategist who owns the customer relationship
+
+- Set the technical bar for every future Starbridge FDE engagement
+
+**Qualifications:**
+
+- 2-5 years of software engineering experience
+
+- Demonstrated experience building data pipelines and integrations on top of existing data infrastructure
+
+- Ability to travel one day a week to customer sites
+
+## Interview Process
+
+We move fast — really fast. Getting back to someone today beats tomorrow, and our interview process reflects that mindset. Please keep us posted on your timeline so we can move quickly and speed things up where needed. All interviews are conducted via Google Meet.
+
+### How We Work
+
+- **Build Bridges to Help Customers Win -** We pride ourselves on being obsessively customer-centric.
+
+- **Shooting Star Speed -** We move with extreme speed. We value momentum, decisiveness, and the ability to accelerate when it matters.
+
+- **Fun Is a Feature -** Fun is a Feature means we intentionally design Starbridge to be an energizing place to do hard work. Joy, humor, and camaraderie make great teams faster, sharper, and more resilient.
+
+- **In the Arena -** We believe the best ideas come from living close to the work, feeling the friction, hearing the nuance, and experiencing the details firsthand.
+
+## **Benefits include:**
+
+- Competitive salary + early-stage equity
+
+- Comprehensive medical, dental, and vision insurance
+
+- Company provided lunch in office everyday
+
+- 75% coverage of Chelsea Piers Fitness membership
+
+- Unlimited PTO
+
+- Regular offsites (NYC + global locations)

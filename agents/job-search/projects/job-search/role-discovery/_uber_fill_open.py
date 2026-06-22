@@ -4,7 +4,10 @@ Operates on the already-signed-in form page via CDP. Month dropdowns handled sep
 Usage: _uber_fill_open.py <job_id> <resume_pdf>
 """
 import sys, json, time
+from pathlib import Path
 from playwright.sync_api import sync_playwright
+
+_PI = json.loads((Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 CDP="http://127.0.0.1:18800"
 job_id=sys.argv[1]
@@ -29,10 +32,10 @@ def fill(name, val):
     print("MISS field", name); return False
 
 # Basic info
-fill("firstName","Cyrus")
-fill("lastName","Shekari")
+fill("firstName", _PI["identity"]["first_name"])
+fill("lastName", _PI["identity"]["last_name"])
 # phone: digits only, no country code
-fill("mobileNumber","3468040227")
+fill("mobileNumber", _PI["contact"]["phone"].replace("-", ""))
 
 # Experience 0 (Microsoft TPM, current)
 fill("experiences.0.companyName","Microsoft")
@@ -57,8 +60,8 @@ fill("educations.0.startDate.year","2021")
 fill("educations.0.endDate.year","2024")
 
 # Links
-fill("linkedin","https://linkedin.com/in/cyshekari")
-fill("github","https://github.com/cyshek")
+fill("linkedin", _PI.get("contact", {}).get("linkedin", "https://linkedin.com/in/cyshekari"))
+fill("github", _PI.get("contact", {}).get("github", "https://github.com/cyshek"))
 
 # Resume upload -> the file input with accept=.doc,.docx,.pdf,.rtf (2nd file input)
 import os

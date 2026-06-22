@@ -2,6 +2,9 @@ import sys, json, re
 sys.path.insert(0, '.')
 import _ashby_runner as m
 from playwright.sync_api import sync_playwright
+import json as _json
+from pathlib import Path as _Path
+_PI = _json.loads((_Path(__file__).resolve().parents[1] / "personal-info.json").read_text())
 
 CDP = "http://127.0.0.1:19223"
 URL = "https://jobs.ashbyhq.com/curri/0da884e4-ad46-44a2-9a87-3acfefe42026/application"
@@ -27,18 +30,18 @@ def run(method):
         page.wait_for_timeout(3500)
 
         # Minimal fill: name, email, phone only via the chosen method, then submit and read server error
-        page.fill(f'[name="{NAME_FID}"], #{NAME_FID}', "Cyrus Shekari", timeout=4000)
-        page.fill(f'[name="{EMAIL_FID}"], #{EMAIL_FID}', "cyshekari@gmail.com", timeout=4000)
+        page.fill(f'[name="{NAME_FID}"], #{NAME_FID}', _PI["identity"]["first_name"] + " " + _PI["identity"]["last_name"], timeout=4000)
+        page.fill(f'[name="{EMAIL_FID}"], #{EMAIL_FID}', _PI["contact"]["email"], timeout=4000)
 
         loc = page.locator(f'#{PHONE_FID}, [name="{PHONE_FID}"]').first
         if method == "fill":
-            loc.fill("346-804-0227", timeout=4000)
+            loc.fill(_PI["contact"]["phone"], timeout=4000)
         elif method == "type":
             loc.click(timeout=3000); loc.press("Control+a"); loc.press("Delete")
-            loc.type("346-804-0227", delay=40)
+            loc.type(_PI["contact"]["phone"], delay=40)
         elif method == "pressSequentially":
             loc.click(timeout=3000); loc.press("Control+a"); loc.press("Delete")
-            loc.press_sequentially("346-804-0227", delay=40)
+            loc.press_sequentially(_PI["contact"]["phone"], delay=40)
         page.wait_for_timeout(400)
         # read react prop value for phone
         chk = page.evaluate("""(fid)=>{const el=document.getElementById(fid)||document.querySelector(`[name="${fid}"]`);const k=Object.keys(el).find(x=>x.startsWith('__reactProps$'));return {dom:el.value, react:k?el[k].value:null};}""", PHONE_FID)
