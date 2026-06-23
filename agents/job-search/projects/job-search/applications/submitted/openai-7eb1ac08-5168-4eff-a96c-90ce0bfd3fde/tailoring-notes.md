@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned end-to-end **DAQ-analog program delivery** for Azure's recovery validation platform, scaling from a 2-person operation to 45+ annual resilience drills and driving **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling workflows that reduced operational toil by 30% and transitioned execution to a repeatable, scalable model with clear SLAs.
+3. Drove cross-functional integration across hardware, software, and infrastructure teams to deliver Azure's first rack-level proactive validation program in **4 months**, achieving a 94% recovery rate and surfacing critical hardware defects across production systems.
+4. Directed **14 high-visibility cross-org executions**, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, managing risk mitigation across technical and operational domains under executive scrutiny.
+5. Built an internal AI agent to automate drill planning workflows, reducing planning cycle time by **39%** and increasing throughput capacity by 21% — directly modeling the capacity and utilization gains needed to meet evolving data-collection demands at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **adoption of AI-driven workflows** across 14 Azure service teams, conducting user demos and training sessions that drove sustained utilization and saved **37 engineering hours monthly** in code generation pipelines.
+2. Surfaced critical feature gaps in data-collection tooling by facilitating **11+ user interviews** with engineering stakeholders, directly influencing the product roadmap to prioritize intent-based YAML generation for scalable operator workflows.
+3. Enforced **data integrity standards** and migrated documentation to an AI-powered semantic search system, cutting retrieval time by 83% and establishing consistent, downstream-usable data across internal infrastructure teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, launching regions 28% faster and generating $3M in accelerated revenue by eliminating execution bottlenecks across deployment workflows.
+2. Translated ambiguous operational research into a **scalable roadmap**, conducting discovery with 20+ service teams to surface 81 hours of manual toil per region launch and defining the automation program plan to eliminate critical-path inefficiencies.
+3. Built a **Power BI throughput dashboard** to track operational toil across 140+ teams, enabling leadership to model capacity gaps, target automation investments, and prioritize highest-impact infrastructure improvements.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot by owning the legacy OS migration strategy for robotic stations, mapping hardware-software dependencies across 1,200+ stations to ensure system readiness before full deployment.
+2. Drove cross-functional integration between IT, Operations, and Engineering to implement **automated CI/CD pipelines** for robotic software deployment, accelerating release cycles by 25% and improving fleet-wide system reliability.
+3. Facilitated Agile ceremonies and prioritized a backlog of **40+ high-priority tickets**, stabilizing the developer intake process and enforcing data quality standards to reduce downstream defects in robotic platform workflows.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Operationalized **end-to-end workflow systems** for 200+ monthly proposals by designing a new CRM process to manage scoping, scheduling, and invoicing lifecycle — increasing job bookings by 26% through repeatable, scalable execution.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a data-informed digital go-to-market strategy, optimizing web and search channels with instrumented feedback loops to drive continuous improvement.
+3. Improved leadership pricing decisions by conducting **profitability analysis** across 1,000+ project records to identify margin leaks and build a quantitative model for cost and throughput planning across service lines.
+
+## Notes from the rewriter
+- JD term 'DAQ program delivery' woven into microsoft_ft bullet 1 as the direct analog to Azure's validation platform scaling work.
+- JD term 'system readiness & deployment' used in amazon_robotics bullet 1 — the 1,200-station dependency mapping maps directly to DAQ station validation before production use.
+- JD term 'capacity & throughput planning' woven into microsoft_2022 bullet 3 (Power BI throughput dashboard) and microsoft_ft bullet 5 (AI agent increasing drill capacity by 21%).
+- JD term 'operationalize' and 'repeatable, scalable' processes used in microsoft_ft bullet 2 and pro_painters bullet 1 to mirror JD language around translating research workflows into production systems.
+- JD term 'data integrity' surfaced in microsoft_2023 bullet 3 and amazon_robotics bullet 3 to align with the role's quality and downstream model-training oversight responsibilities.
+

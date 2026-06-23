@@ -2,7 +2,7 @@
   "_archetype": "Multi-sleeve ALLOCATOR BLEND (inverse-vol 63d risk-parity of a TQQQ vol-target sleeve + a sector-rotation top-2 sleeve). The bench's first multi-sleeve allocator wired to live PAPER trading.",
   "_validated": "reports/ALLOCATOR_BLEND_20260621.md — full Sharpe 1.014 / OOS 1.147 / maxDD -23.9%, beats BOTH sleeves standalone. Promoted config: invvol_63d.",
   "_thesis": "Trade the validated blend's CURRENT per-underlying target weights faithfully on a paper clock, using the new partial-trim primitive in runner_xsec.py so legs can be reduced-while-long instead of only bought/closed. Weights are REUSED verbatim from runner.allocator_paper_tracker.compute_blend_state() (the validated decomposition) — zero sleeve-math reimplementation, lookahead-safe by construction.",
-  "_paper_only": "PAPER ONLY. No real money. Not yet scheduled in crontab/cron_tick.sh — wiring into the schedule is a separate reviewed step.",
+  "_paper_only": "PAPER ONLY. No real money. Scheduled in crontab + cron_tick.sh as of 2026-06-22 (reviewed/greenlit by main). Seed fills 2026-06-22 16:09 UTC; first cron-driven tick expected next trading day 07-13 UTC window.",
 
   "basket": ["TQQQ", "SPY", "QQQ", "GLD", "TLT"],
   "timeframe": "1Day",

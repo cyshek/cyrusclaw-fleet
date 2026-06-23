@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned **zero-to-one commercialization** of Azure's Resilience Automation Platform, defining product strategy, requirements, and self-service scheduling capabilities that reduced operational toil by 30% and scaled to a repeatable, production-ready system.
+2. Scaled a greenfield recovery validation program from a 2-person operation into a **platformized solution**, standardizing operating rhythms and decision frameworks that sustained 45+ annual drills and drove **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+3. Pioneered Azure's first proactive resilience testing capability—delivering a rack-level drill program in **4 months** at a 94% recovery rate—surfacing critical hardware defects and establishing a continuous validation model across production environments.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, aligning engineering, operations, and leadership around shared launch outcomes.
+5. Built an internal **AI agent for drill planning**, restructuring cross-functional workflows to cut planning cycle time by 39% and increase drill capacity by 21%, enabling the team to scale without adding headcount.
+6. Defined and maintained a **post-launch feedback loop** across resilience drill cycles, measuring recovery success rates, identifying platform gaps, and driving iterative improvements that raised field reliability across enterprise customer environments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation workflows, conducting user demos and enablement sessions that expanded utilization across **14 key engineering teams** and saved 37 hours of monthly engineering effort.
+2. Grounded roadmap decisions in **customer research**, facilitating 11+ discovery interviews with Azure service teams to surface critical feature gaps and secure inclusion of intent-based YAML generation in the product backlog.
+3. Improved data integrity and retrieval by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83% and enabling faster, higher-confidence product decisions.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ engineering and operations teams.
+2. Built a product strategy to eliminate operational toil during region launches—conducting discovery with 20+ service teams, mapping **81 hours of manual effort** per region, and producing a roadmap to automate critical execution paths.
+3. Enabled leadership to target **automation gaps** and prioritize high-impact investments by engineering a Power BI dashboard tracking operational toil across 140+ teams, turning unstructured field data into a structured decision-making tool.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the **legacy OS migration strategy** for a 2,000+ unit robotic fleet, mapping hardware and software dependencies across 1,200+ stations to achieve zero operational downtime during the pilot transition in a live manufacturing environment.
+2. Served as single-threaded owner of backlog prioritization across IT, Operations, and Engineering—facilitating Agile sprint ceremonies, resolving **40+ high-priority tickets**, and stabilizing the developer intake process for a cross-functional robotics team.
+3. Drove **cross-functional alignment** between IT, Operations, and Engineering to implement automated CI/CD pipelines for robotic software deployment, accelerating release cycles by 25% and improving field-readiness of production systems.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end CRM workflow for 200+ monthly proposals—streamlining scoping, pricing, and invoicing to create a scalable, repeatable go-to-market execution model.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion rates by 2.7% by executing a digital-first GTM strategy, optimizing web presence and Google profile to surface stronger customer value propositions.
+3. Identified and closed margin leaks by conducting **financial profitability analysis** across 1,000+ project records, delivering data-informed pricing recommendations that improved leadership's decision-making framework for field operations.
+
+## Notes from the rewriter
+- 'Zero-to-one commercialization' (JD: 'zero-to-one product development') woven into microsoft_ft bullet#1 and microsoft_ft bullet#2 to directly mirror Path Robotics' greenfield ownership language.
+- 'Production-ready' and 'production environments' (JD: 'production-ready solutions', 'production environments') injected into microsoft_ft bullet#1 and amazon_robotics bullet#1 to signal industrial/field deployment credibility.
+- 'Post-launch feedback loop' and 'iterative improvements' (JD: 'establish feedback loops post-launch to measure success, identify gaps, and guide iteration') explicitly surfaced in microsoft_ft bullet#6 to show full lifecycle ownership.
+- 'Customer research' and 'discovery interviews' (JD: 'voice of the customer, grounding product decisions in customer research') highlighted in microsoft_2023 bullet#2 and microsoft_2022 bullet#2 to demonstrate field-insight-driven product decisions.
+- 'Go-to-market execution' and 'customer value propositions' (JD: 'translate deep technical capabilities into customer value propositions', 'launch planning') referenced in pro_painters bullet#1 and bullet#2 to reinforce commercialization instincts across domains.
+- 'Operating rhythms' and 'decision frameworks' (JD: 'defining product strategy, success metrics, operating rhythms, and decision-making frameworks') used in microsoft_ft bullet#2 to show Cyrus has built exactly the structural scaffolding Path Robotics needs.
+

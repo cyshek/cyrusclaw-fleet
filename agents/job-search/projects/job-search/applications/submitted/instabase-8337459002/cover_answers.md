@@ -1,0 +1,9 @@
+# Cover answers — Instabase, Sales Engineer, Applied AI (instabase-8337459002)
+
+## This role requires a blend of technical expertise and strategic client management. Tell us about a time you acted as a technical advisor to a client. What was the seniority level of your primary points of contact, and how did your technical leadership specifically accelerate their adoption of the platform?
+
+During my 2023 internship at Microsoft, I led the rollout of AI-driven code-generation workflows across 14 Azure service teams. My primary points of contact were senior engineers and engineering leads, people who were skeptical of new tooling and protective of their existing workflows. The challenge wasn't the technology itself, it was earning credibility fast enough to actually move them.
+
+I ran live demos using real examples from their own codebases, not generic slides, and paired those with hands-on training sessions where I walked through prompt-engineering best practices and intent-based YAML generation directly in their environment. I also conducted 11+ discovery interviews beforehand to understand where each team's actual pain was, which let me frame the tool around their specific problems rather than generic capabilities. That discovery work fed directly into a roadmap item that eventually shipped to production. The result was 37 engineering hours saved monthly and measurably faster time-to-value for the teams involved.
+
+What made the difference was treating each team lead as a decision-maker with real constraints, not just an end user to train. I translated technical capability into workflow-level outcomes they could defend to their own managers. That same pattern, uncovering the real business pain, building a targeted demonstration around the customer's own data, and advising on best practices without overwhelming them with implementation detail, is exactly what I'd bring to the Sales Engineer role at Instabase.

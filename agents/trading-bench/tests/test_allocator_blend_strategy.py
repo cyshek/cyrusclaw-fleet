@@ -83,34 +83,45 @@ class TestColdStartBuys:
         ps = _position_state({}, PRICES)
         acts = strat.decide_xsec(ms, ps, _params())
 
-        # TQQQ: floor(13.19 / 80) = 0 -> tiny weight floors to flat, no order.
-        assert "TQQQ" not in acts or acts["TQQQ"].action in ("hold",)
-        # SPY: floor(27.9 / 600) = 0 as well at this price -> also flat.
-        # Use cheaper prices to get real buys (next test); here assert no crash
-        # and that no leg flips short / no close-from-flat is emitted.
+        # REGRESSION GUARD (2026-06-22): FRACTIONAL sizing. At realistic prices
+        # (PRICES has TQQQ ~$80, SPY ~$600, QQQ ~$500) and $100 total notional,
+        # each leg's dollar slice is far below ONE whole share. The old
+        # whole-share floor() zeroed every leg -> empty actions -> the allocator
+        # could never take a position (the bug found on the supervised first
+        # tick). Now each non-zero-target leg MUST emit a fractional buy.
+        nonzero = [s for s in ("TQQQ", "SPY", "QQQ") if WEIGHTS.get(s, 0) > 0]
+        for sym in nonzero:
+            assert sym in acts, (
+                f"{sym} must emit a fractional buy, not floor to flat")
+            assert acts[sym].action == "buy"
+            assert acts[sym].qty is not None and acts[sym].qty > 0
+            assert acts[sym].qty < 1.0  # fractional at these prices
+            assert acts[sym].notional_usd > 0
+        # No leg may flip short or close-from-flat.
         for sym, a in acts.items():
-            assert a.action in ("buy", "hold")  # never trim/close from flat
-            if a.action == "buy":
-                assert a.qty is not None and a.qty > 0
+            assert a.action in ("buy", "hold")
 
     def test_buys_have_correct_qty_with_tradeable_prices(self, monkeypatch):
         _patch_weights(monkeypatch, WEIGHTS)
-        # Cheaper prices so target notionals floor to >0 shares.
         prices = {"TQQQ": 8.0, "SPY": 6.0, "QQQ": 5.0, "GLD": 25.0, "TLT": 9.0}
         ms = _market_state(prices)
         ps = _position_state({}, prices)
         acts = strat.decide_xsec(ms, ps, _params(max_notional_usd=1000.0))
 
-        # tgt_notional = w * 1000; qty = floor(notional/px).
+        # FRACTIONAL: qty = notional/px (NO floor). notional = w * 1000.
         exp = {
-            "TQQQ": math.floor(0.1319 * 1000 / 8.0),   # 131.9/8 = 16
-            "SPY": math.floor(0.279 * 1000 / 6.0),     # 279/6   = 46
-            "QQQ": math.floor(0.279 * 1000 / 5.0),     # 279/5   = 55
+            "TQQQ": (0.1319 * 1000) / 8.0,   # 131.90/8 = 16.4875
+            "SPY": (0.279 * 1000) / 6.0,     # 279.00/6 = 46.5
+            "QQQ": (0.279 * 1000) / 5.0,     # 279.00/5 = 55.8
         }
         for sym, q in exp.items():
             assert sym in acts, f"{sym} should be bought"
             assert acts[sym].action == "buy"
-            assert acts[sym].qty == float(q), f"{sym} qty {acts[sym].qty} != {q}"
+            assert acts[sym].qty == pytest.approx(q), (
+                f"{sym} qty {acts[sym].qty} != {q}")
+            # notional == dollar delta from flat = qty*px (== w*1000).
+            assert acts[sym].notional_usd == pytest.approx(
+                round(q * prices[sym], 2))
         # GLD/TLT have zero target weight -> not bought.
         assert "GLD" not in acts
         assert "TLT" not in acts
@@ -131,7 +142,8 @@ class TestOverweightTrims:
         assert "SPY" in acts
         a = acts["SPY"]
         assert a.action == "trim", f"expected trim, got {a.action}"
-        assert a.qty == float(80 - 46)   # reduce by exactly 34 shares
+        # FRACTIONAL: SPY target = 0.279*1000/6 = 46.5; hold 80 -> trim 33.5.
+        assert a.qty == pytest.approx(80 - 46.5)
         assert a.qty > 0
         # Trim keeps it long (target>0): must NOT be a close.
         assert a.action != "close"

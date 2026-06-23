@@ -6,16 +6,16 @@ Cyrus Shekari
 
 ## Share a link of something you've done or describe a successful case!
 
-At Microsoft, I built and scaled Azure's resilience monitoring program into a platformized system that drove over $14M in business impact. The core of that work was sitting down with enterprise clients like Databricks, Walmart, SAP, and NetApp to understand their asset reliability needs, then positioning automated validation as the solution that actually solved them. That mix of technical depth plus customer-facing translation is exactly what a Sales Engineer role demands.
+At Microsoft, I scaled Azure's recovery validation program from a 2-person operation into a fully platformized system that now sustains 45+ annual resilience drills across enterprise clients like Databricks, Walmart, SAP, and NetApp - driving $14M+ in business impact. The core of that work was understanding complex technical requirements, translating them into a repeatable execution model, and communicating value clearly to both engineering teams and executive stakeholders.
 
-The case I'm proudest of: I pioneered Azure's first proactive resilience testing capability and delivered a rack-level monitoring program in four months that hit a 94% recovery rate, surfacing critical hardware defects and boosting machine reliability. To get adoption, I ran detailed technical demonstrations of the monitoring solution for partner teams, gathered their feedback, and tailored the system to account-specific requirements. It's the same loop Smart Trac runs on, understand the asset monitoring need, demo the technical advantage, prove the ROI.
+One highlight was serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract. I coordinated all technical and client-facing deliverables, kept cross-org teams aligned under tight timelines, and made sure the client understood exactly what we were doing and why it mattered. That combination of technical depth and client communication is exactly what I'd bring to the Sales Engineer role at Tractian.
 
-You can see more at linkedin.com/in/cyshekari and github.com/cyshek.
+On the automation side, I built an internal AI agent that cut drill planning cycle time by 39% and increased capacity by 21% - directly expanding how many enterprise accounts the program could serve. That ROI-focused mindset, building something technical and then quantifying its business value, maps directly to how I'd approach demonstrating Smart Trac's advantages to prospective clients. LinkedIn: https://linkedin.com/in/cyshekari
 
 ## Name of Tractian Employee that Referred
 
-N/A. I was not referred by a Tractian employee.
+
 
 ## How did you find out about the role? (Others Field)
 
-I found the role through Tractian's careers page on Lever while researching companies in industrial monitoring and asset reliability technology.
+Found the role through an online job board while researching industrial IoT and predictive maintenance companies.

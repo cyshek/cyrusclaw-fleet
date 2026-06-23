@@ -1,0 +1,354 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/xai/jobs/5136287007",
+  "org": "xai",
+  "job_id": "5136287007",
+  "job_title": "X Developer Platform – Forward Deployed Engineer, X API",
+  "job_location": "New York, NY; Palo Alto, CA",
+  "fetched_at": "2026-06-23T05:21:32Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/xai/jobs/5136287007?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 19,
+    "filled": 15,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "unresolved": 4,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_12198097007",
+      "label": "Full Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "question_12198099007",
+      "label": "Full Legal Name in Native Language (e.g. Chinese Characters, Cyrillic, Farsi etc)",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "question_12022834007",
+      "label": "Current company",
+      "type": "input_text",
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_12022835007",
+      "label": "Current title",
+      "type": "input_text",
+      "required": false,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null
+    },
+    {
+      "id": "question_12022836007",
+      "label": "X Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='X Profile'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_12022837007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_12022838007",
+      "label": "GitHub Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "question_12022839007",
+      "label": "Google Scholar ",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Google Scholar '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_12198102007",
+      "label": "Your Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "question_12198110007",
+      "label": "If working in the US, will you now, or in the future, require sponsorship for employment visa status (e.g., H-1B visa) to legally work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 33429545007
+        },
+        {
+          "label": "No",
+          "value": 33429546007
+        }
+      ]
+    },
+    {
+      "id": "question_12198104007",
+      "label": "Have you ever worked at xAI, X, Twitter, or SpaceX before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "twitter required but not provided",
+      "status": "unresolved",
+      "matched_rule": "twitter",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 33429541007
+        },
+        {
+          "label": "No",
+          "value": 33429542007
+        }
+      ]
+    },
+    {
+      "id": "question_12198107007",
+      "label": "What exceptional work have you done?",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='What exceptional work have you done?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_12199276007",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Company careers page / website",
+          "value": 33435023007
+        },
+        {
+          "label": "LinkedIn",
+          "value": 33435025007
+        },
+        {
+          "label": "Indeed",
+          "value": 33435028007
+        },
+        {
+          "label": "Glassdoor",
+          "value": 33435030007
+        },
+        {
+          "label": "Google search (or other search engine)",
+          "value": 33435033007
+        },
+        {
+          "label": "Employee referral",
+          "value": 33435035007
+        },
+        {
+          "label": "Friend, family, or personal network",
+          "value": 33435038007
+        },
+        {
+          "label": "Recruiter or staffing agency",
+          "value": 33435040007
+        },
+        {
+          "label": "X (Twitter)",
+          "value": 33435042007
+        },
+        {
+          "label": "Other social media",
+          "value": 33435043007
+        },
+        {
+          "label": "University / school (career services, professor, Handshake, etc.)",
+          "value": 33435044007
+        },
+        {
+          "label": "Job fair, conference, or event",
+          "value": 33435045007
+        },
+        {
+          "label": "Previously employed with the company",
+          "value": 33435046007
+        },
+        {
+          "label": "Other",
+          "value": 33435047007
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_12022836007",
+      "label": "X Profile",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='X Profile'"
+    },
+    {
+      "id": "question_12022839007",
+      "label": "Google Scholar ",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Google Scholar '"
+    },
+    {
+      "id": "question_12198104007",
+      "label": "Have you ever worked at xAI, X, Twitter, or SpaceX before?",
+      "required": true,
+      "reason": "twitter required but not provided"
+    },
+    {
+      "id": "question_12198107007",
+      "label": "What exceptional work have you done?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='What exceptional work have you done?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_12198104007",
+      "label": "Have you ever worked at xAI, X, Twitter, or SpaceX before?",
+      "reason": "twitter required but not provided"
+    },
+    {
+      "id": "question_12198107007",
+      "label": "What exceptional work have you done?",
+      "reason": "no LABEL_RULES match for label='What exceptional work have you done?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

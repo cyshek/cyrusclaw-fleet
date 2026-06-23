@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned Azure resilience products end to end (idea, spec, build, deploy, rollout, iterate), turning a 2-person operation into a platformized system sustaining **45+ annual drills** and driving **$14M+ impact** for Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 build of an internal Resilience Automation Platform, writing tight specs engineers shipped from without clarification meetings and delivering self-service scheduling that **cut operational toil 30%** and moved execution to a scalable model.
+3. Pioneered Azure's first proactive resilience testing capability by shipping a rack-level v1 in 4 months over a perfect future design, hitting a **94% recovery rate** and surfacing critical hardware defects that changed how the org validated continuously.
+4. Prioritized ruthlessly across 14 cross-org recovery executions under executive visibility, saying no to good ideas to ship great ones, including bridge-leading a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**.
+5. Coded lightly to move faster, building an internal **AI agent** and prototyping restructured planning workflows myself to **cut planning cycle time 39%** and lift drill capacity 21%, living in the stack and making it faster every week.
+6. Ran the weekly product review and owned the operating cadence end to end, sitting with operators and partner teams to watch them use each feature and iterate on what shipped instead of guessing from a dashboard.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove adoption of **AI-driven code generation** by demoing and training operators on the floor of 14 service teams, watching real users hit friction and iterating, which **saved 37 engineering hours monthly** across the org.
+2. Shaped the roadmap toward intent-based YAML by running **11+ user interviews** with Azure teams to decompose a fuzzy problem into specs engineers could build from immediately without ten clarification meetings.
+3. Shipped a metadata standard and migrated docs to an **AI-powered semantic search** tool, **cutting lookup time 83%** so buyers and engineers found answers fast instead of waiting, improving day-to-day data integrity and retrieval.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M accelerated revenue** and launched regions **28% faster** by writing a unified automation prioritization framework and getting 140+ teams aligned on what to ship first versus what to ruthlessly cut.
+2. Walked region-launch workflows myself with **20+ service teams** to find **81 hours** of manual effort per region, then wrote a roadmap and specs to automate the critical paths and ship a v1 quickly rather than design a perfect later version.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams so leadership could target automation gaps with real data, turning a fuzzy backlog into a prioritized, high-agency operating cadence.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Owned a legacy OS migration end to end, mapping dependencies across **1,200+ stations** and shipping a phased rollout that hit **zero operational downtime** during a 2,000+ unit pilot on a live physical shop floor.
+2. Ran Agile sprint planning and retrospectives as the operating cadence, prioritizing the backlog ruthlessly to clear **40+ high-priority tickets** and stabilize a developer intake process that had stalled real users.
+3. Aligned IT, Operations, and Engineering to ship automated **CI/CD pipelines**, accelerating the deployment cycle **25%** so small changes reached the floor faster instead of waiting on slow manual releases.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Grew job bookings **26%** by rebuilding the CRM process and owning the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals**, sitting with the sales ops team to ship workflow fixes they actually used.
+2. Cut **Customer Acquisition Cost 13%** and lifted conversions 2.7% by shipping a digital-first go-to-market strategy, prototyping website and Google profile changes myself and iterating on what converted real customers.
+3. Sealed margin leaks by running a profitability analysis across **1,000+ project records**, turning messy data into a pricing model leadership shipped, with a bias for getting a working v1 live fast.
+
+## Notes from the rewriter
+- Swapped all roles to Product Manager labels to mirror the JD's single-PM framing and end-to-end ownership language.
+- Led FT bullets with JD verbs: own end to end, write tight specs, prioritize ruthlessly, code lightly, run weekly product reviews/operating cadence.
+- Emphasized 'sit with operators/walk the floor' and shipping v1 fast to hit the shop-floor, manufacturing, and bias-for-shipping signals.
+- Surfaced light-coding + AI-tools-in-the-stack and physical-operations experience (Amazon Robotics) as the closest nice-to-have match for industrial product.
+

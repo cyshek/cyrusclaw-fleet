@@ -1,0 +1,492 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/legionhealth/0ffded39-1242-4a35-9bc3-0e5b0ce22276",
+  "org": "legionhealth",
+  "job_id": "0ffded39-1242-4a35-9bc3-0e5b0ce22276",
+  "job_title": "Technical Product Manager, Consumer + AI (backed by Y Combinator, $5M+ ARR, $20M+ raised)",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T08:15:29Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 13,
+    "filled": 4,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 6,
+    "blockers": 6
+  },
+  "fields": [
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_name",
+      "label": "👤 Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_name",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_email",
+      "label": "📧 Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_email",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_resume",
+      "label": "📄 Current Resume or CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_resume",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_f0baa4dd-df22-453c-a009-20e9349eba5a",
+      "label": "💡 We’re looking for someone who is:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='💡 We’re looking for someone who is:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_f0baa4dd-df22-453c-a009-20e9349eba5a",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_location",
+      "label": "🏠 What is your current place of residence? ",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='🏠 What is your current place of residence?\\xa0'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_location",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_ed264953-f7fe-4c52-a100-0c95412b1f8f",
+      "label": "📍 Which statement best describes your current location and flexibility?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['I currently live in the San Francisco Bay Area and can work in-person as needed.', 'I’m excited to relocate to San Francisco within 60 days if hired.', \"I'm excited to relocate to San Francisco by the end of this year if hired.\", 'I prefer a fully remote position and/or cannot relocate.']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "I currently live in the San Francisco Bay Area and can work in-person as needed.",
+          "value": "I currently live in the San Francisco Bay Area and can work in-person as needed."
+        },
+        {
+          "label": "I’m excited to relocate to San Francisco within 60 days if hired.",
+          "value": "I’m excited to relocate to San Francisco within 60 days if hired."
+        },
+        {
+          "label": "I'm excited to relocate to San Francisco by the end of this year if hired.",
+          "value": "I'm excited to relocate to San Francisco by the end of this year if hired."
+        },
+        {
+          "label": "I prefer a fully remote position and/or cannot relocate.",
+          "value": "I prefer a fully remote position and/or cannot relocate."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_ed264953-f7fe-4c52-a100-0c95412b1f8f",
+      "section": "Application Information",
+      "match_attempted": true
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_94eaa5fd-40d9-4bee-942e-380bb11fd401",
+      "label": "🌍 Do you require visa sponsorship to work in the United States?",
+      "type": "input_text",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_94eaa5fd-40d9-4bee-942e-380bb11fd401",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_58d5e4b4-d9ce-4f2a-97d6-7cdb06d6f21b",
+      "label": "⚖️ Which motivates you more?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='⚖️ Which motivates you more?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Higher cash (salary + bonus)",
+          "value": "Higher cash (salary + bonus)"
+        },
+        {
+          "label": "Higher equity (ownership in Legion)",
+          "value": "Higher equity (ownership in Legion)"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_58d5e4b4-d9ce-4f2a-97d6-7cdb06d6f21b",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_c2a600ff-0e4e-443f-b233-0c2b54e8b673",
+      "label": "💸 What’s the minimum annual cash salary for this role below which you wouldn’t feel motivated or happy working at Legion Health?",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='💸 What’s the minimum annual cash salary for this role below which you wouldn’t feel motivated or happy working at Legion Health?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_c2a600ff-0e4e-443f-b233-0c2b54e8b673",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_7f3ee6f4-22ca-47c5-b31a-c55bb3b948cd",
+      "label": "✅ To ensure a strong mutual fit, we typically begin with a short contract period before moving to a full-time position. Would you be open to this arrangement?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='✅ To ensure a strong mutual fit, we typically begin with a short contract period before moving to a full-time position. Would you be open to this arrangement?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_7f3ee6f4-22ca-47c5-b31a-c55bb3b948cd",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_eb637ce0-3cb8-4ba7-8ab9-c3bd79422c5a",
+      "label": "👨‍💻 Which coding agents have you personally used in the last 30 days?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='👨\\u200d💻 Which coding agents have you personally used in the last 30 days?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Cursor",
+          "value": "Cursor"
+        },
+        {
+          "label": "Claude Code",
+          "value": "Claude Code"
+        },
+        {
+          "label": "OpenAI Codex",
+          "value": "OpenAI Codex"
+        },
+        {
+          "label": "Codex CLI",
+          "value": "Codex CLI"
+        },
+        {
+          "label": "Devin Desktop, formerly Windsurf / Codeium Cascade",
+          "value": "Devin Desktop, formerly Windsurf / Codeium Cascade"
+        },
+        {
+          "label": "Devin Cloud",
+          "value": "Devin Cloud"
+        },
+        {
+          "label": "Devin CLI / Devin Local",
+          "value": "Devin CLI / Devin Local"
+        },
+        {
+          "label": "GitHub Copilot Agent Mode",
+          "value": "GitHub Copilot Agent Mode"
+        },
+        {
+          "label": "GitHub Copilot Cloud Agent",
+          "value": "GitHub Copilot Cloud Agent"
+        },
+        {
+          "label": "Google Antigravity / Antigravity CLI",
+          "value": "Google Antigravity / Antigravity CLI"
+        },
+        {
+          "label": "Gemini Code Assist / Gemini CLI",
+          "value": "Gemini Code Assist / Gemini CLI"
+        },
+        {
+          "label": "Google Jules",
+          "value": "Google Jules"
+        },
+        {
+          "label": "Google AI Studio Build Mode",
+          "value": "Google AI Studio Build Mode"
+        },
+        {
+          "label": "Firebase Studio",
+          "value": "Firebase Studio"
+        },
+        {
+          "label": "JetBrains Junie / Junie CLI",
+          "value": "JetBrains Junie / Junie CLI"
+        },
+        {
+          "label": "AWS Kiro",
+          "value": "AWS Kiro"
+        },
+        {
+          "label": "Amazon Q Developer",
+          "value": "Amazon Q Developer"
+        },
+        {
+          "label": "Augment Code / Auggie",
+          "value": "Augment Code / Auggie"
+        },
+        {
+          "label": "Factory Droid",
+          "value": "Factory Droid"
+        },
+        {
+          "label": "Amp",
+          "value": "Amp"
+        },
+        {
+          "label": "Cline",
+          "value": "Cline"
+        },
+        {
+          "label": "Kilo Code",
+          "value": "Kilo Code"
+        },
+        {
+          "label": "ZooCode / Roo Code legacy",
+          "value": "ZooCode / Roo Code legacy"
+        },
+        {
+          "label": "OpenCode",
+          "value": "OpenCode"
+        },
+        {
+          "label": "Aider",
+          "value": "Aider"
+        },
+        {
+          "label": "Continue",
+          "value": "Continue"
+        },
+        {
+          "label": "Goose",
+          "value": "Goose"
+        },
+        {
+          "label": "Qwen Code",
+          "value": "Qwen Code"
+        },
+        {
+          "label": "OpenHands",
+          "value": "OpenHands"
+        },
+        {
+          "label": "Zed AI",
+          "value": "Zed AI"
+        },
+        {
+          "label": "Replit Agent",
+          "value": "Replit Agent"
+        },
+        {
+          "label": "Lovable",
+          "value": "Lovable"
+        },
+        {
+          "label": "Bolt.new / StackBlitz Bolt",
+          "value": "Bolt.new / StackBlitz Bolt"
+        },
+        {
+          "label": "Vercel v0",
+          "value": "Vercel v0"
+        },
+        {
+          "label": "Vercel Agent",
+          "value": "Vercel Agent"
+        },
+        {
+          "label": "CodeRabbit",
+          "value": "CodeRabbit"
+        },
+        {
+          "label": "Qodo Code Review",
+          "value": "Qodo Code Review"
+        },
+        {
+          "label": "Graphite Agent",
+          "value": "Graphite Agent"
+        },
+        {
+          "label": "Other IDE/editor coding agent",
+          "value": "Other IDE/editor coding agent"
+        },
+        {
+          "label": "Other terminal/CLI coding agent",
+          "value": "Other terminal/CLI coding agent"
+        },
+        {
+          "label": "Other cloud/background coding agent",
+          "value": "Other cloud/background coding agent"
+        },
+        {
+          "label": "Other AI app builder",
+          "value": "Other AI app builder"
+        },
+        {
+          "label": "I have not used an AI coding agent in the last 30 days",
+          "value": "I have not used an AI coding agent in the last 30 days"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_eb637ce0-3cb8-4ba7-8ab9-c3bd79422c5a",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_ab053dd1-5661-4391-9576-170933579eda",
+      "label": "🤖 What’s the thing you’ve built, automated, or accomplished using AI/coding tools that you're most proud of?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_ab053dd1-5661-4391-9576-170933579eda",
+      "section": "Application Information"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_d961aaff-03a2-4922-907c-34470e790fdb",
+      "label": "🏆 Please share the most impressive accomplishment you’ve had—solo or as the clear lead—in the last 12 months.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_d961aaff-03a2-4922-907c-34470e790fdb",
+      "section": "Application Information"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_f0baa4dd-df22-453c-a009-20e9349eba5a",
+      "label": "💡 We’re looking for someone who is:",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='💡 We’re looking for someone who is:'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_location",
+      "label": "🏠 What is your current place of residence? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='🏠 What is your current place of residence?\\xa0'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_58d5e4b4-d9ce-4f2a-97d6-7cdb06d6f21b",
+      "label": "⚖️ Which motivates you more?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='⚖️ Which motivates you more?'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_c2a600ff-0e4e-443f-b233-0c2b54e8b673",
+      "label": "💸 What’s the minimum annual cash salary for this role below which you wouldn’t feel motivated or happy working at Legion Health?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='💸 What’s the minimum annual cash salary for this role below which you wouldn’t feel motivated or happy working at Legion Health?'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_7f3ee6f4-22ca-47c5-b31a-c55bb3b948cd",
+      "label": "✅ To ensure a strong mutual fit, we typically begin with a short contract period before moving to a full-time position. Would you be open to this arrangement?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='✅ To ensure a strong mutual fit, we typically begin with a short contract period before moving to a full-time position. Would you be open to this arrangement?'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_eb637ce0-3cb8-4ba7-8ab9-c3bd79422c5a",
+      "label": "👨‍💻 Which coding agents have you personally used in the last 30 days?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='👨\\u200d💻 Which coding agents have you personally used in the last 30 days?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_f0baa4dd-df22-453c-a009-20e9349eba5a",
+      "label": "💡 We’re looking for someone who is:",
+      "reason": "no LABEL_RULES match for label='💡 We’re looking for someone who is:'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e__systemfield_location",
+      "label": "🏠 What is your current place of residence? ",
+      "reason": "no LABEL_RULES match for label='🏠 What is your current place of residence?\\xa0'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_58d5e4b4-d9ce-4f2a-97d6-7cdb06d6f21b",
+      "label": "⚖️ Which motivates you more?",
+      "reason": "no LABEL_RULES match for label='⚖️ Which motivates you more?'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_c2a600ff-0e4e-443f-b233-0c2b54e8b673",
+      "label": "💸 What’s the minimum annual cash salary for this role below which you wouldn’t feel motivated or happy working at Legion Health?",
+      "reason": "no LABEL_RULES match for label='💸 What’s the minimum annual cash salary for this role below which you wouldn’t feel motivated or happy working at Legion Health?'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_7f3ee6f4-22ca-47c5-b31a-c55bb3b948cd",
+      "label": "✅ To ensure a strong mutual fit, we typically begin with a short contract period before moving to a full-time position. Would you be open to this arrangement?",
+      "reason": "no LABEL_RULES match for label='✅ To ensure a strong mutual fit, we typically begin with a short contract period before moving to a full-time position. Would you be open to this arrangement?'"
+    },
+    {
+      "id": "8b3a3293-a5ad-46b1-9198-5123fc43524e_eb637ce0-3cb8-4ba7-8ab9-c3bd79422c5a",
+      "label": "👨‍💻 Which coding agents have you personally used in the last 30 days?",
+      "reason": "no LABEL_RULES match for label='👨\\u200d💻 Which coding agents have you personally used in the last 30 days?'"
+    }
+  ]
+}

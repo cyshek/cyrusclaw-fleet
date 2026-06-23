@@ -1,0 +1,513 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/discord/jobs/8497292002",
+  "org": "discord",
+  "job_id": "8497292002",
+  "job_title": "Legal Vendor Program Manager",
+  "job_location": "San Francisco Bay Area",
+  "fetched_at": "2026-06-23T01:27:38Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/discord/jobs/8497292002?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 26,
+    "filled": 19,
+    "filled_needs_review": 0,
+    "declined": 7,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_36046652002",
+      "label": "Why do you want to work at Discord?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Discord because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Discord is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Discord while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Discord aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Discord')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_36046653002",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_36046654002",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_36046655002",
+      "label": "How did you hear about this job?",
+      "type": "input_text",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_36046656002",
+      "label": "Are you legally authorized to work in the United States for our Company?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36046657002",
+      "label": "Are you currently located in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36046658002",
+      "label": "Are you currently based in or willing to relocate to the Bay Area for this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_36154492002",
+      "label": "Are you able and willing to come into our offices at 444 de Haro Ave. a minimum of 2 days per week? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4033064002",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 4196776002
+        },
+        {
+          "label": "Female",
+          "value": 4196777002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196778002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4033065002",
+      "label": "Race and Ethnicity",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaska Native",
+          "value": 4196779002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196780002
+        },
+        {
+          "label": "Asian",
+          "value": 4196781002
+        },
+        {
+          "label": "Black or African American",
+          "value": 4196782002
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 4196783002
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 4196784002
+        },
+        {
+          "label": "Two or More Races",
+          "value": 4196785002
+        },
+        {
+          "label": "White",
+          "value": 4196786002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4033066002",
+      "label": "Veteran Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am not a protected veteran",
+          "value": 4196787002
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": 4196788002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196789002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4033067002",
+      "label": "Disability Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": 4196790002
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": 4196791002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196792002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4033068002",
+      "label": "Gender Identity (optional)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4196793002
+        },
+        {
+          "label": "Woman",
+          "value": 4196794002
+        },
+        {
+          "label": "Non-binary or third gender",
+          "value": 4196795002
+        },
+        {
+          "label": "Genderqueer",
+          "value": 4196796002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196797002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4033069002",
+      "label": "Race or Ethnicity (optional)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4196798002
+        },
+        {
+          "label": "East Asian",
+          "value": 4196799002
+        },
+        {
+          "label": "Hispanic, Latine or of Spanish Origin",
+          "value": 4196800002
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4196801002
+        },
+        {
+          "label": "Middle Eastern or North African Native",
+          "value": 4196802002
+        },
+        {
+          "label": "Hawaiian or Pacific Islander",
+          "value": 4196803002
+        },
+        {
+          "label": "South Asian",
+          "value": 4196804002
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4196805002
+        },
+        {
+          "label": "White or European",
+          "value": 4196806002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196807002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4033070002",
+      "label": "I consider myself a member of the LGBTQ+ community. (optional)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4196808002
+        },
+        {
+          "label": "No",
+          "value": 4196809002
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4196810002
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

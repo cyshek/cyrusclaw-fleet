@@ -813,5 +813,120 @@ class TestDeployedCapitalDrawdown(unittest.TestCase):
         self.assertIn("PASS", reason)
 
 
+# ---------------------------------------------------------------------------
+# 11. Loader candidate-path support (load_xsec_strategy candidate=...)
+#     Pins: live path unchanged; candidate=True reads strategies_candidates/;
+#     error messages name the right tree; decide_xsec export check still fires.
+#     Hermetic: writes throwaway strategy packages under temp roots that are
+#     monkeypatched into the module, then cleans them up. No real candidate
+#     dir is depended on, and nothing is left on disk.
+# ---------------------------------------------------------------------------
+class TestLoadXsecStrategyCandidatePath(unittest.TestCase):
+    def setUp(self):
+        import tempfile
+        import importlib
+        import runner.backtest_xsec as bx
+        self.bx = bx
+        # Two temp roots standing in for strategies/ and strategies_candidates/.
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        root = Path(self._tmp.name)
+        self.live_root = root / "strategies"
+        self.cand_root = root / "strategies_candidates"
+        self.live_root.mkdir()
+        self.cand_root.mkdir()
+        (self.live_root / "__init__.py").write_text("")
+        (self.cand_root / "__init__.py").write_text("")
+        # CRITICAL for suite-order independence: earlier tests import the REAL
+        # `strategies` / `strategies_candidates` packages, which get cached in
+        # sys.modules with their real __path__. importlib.import_module() then
+        # resolves OUR throwaway submodules against that real path and misses
+        # them. So evict the parent packages (saving them), put the temp root
+        # FIRST on sys.path, and restore the real packages in cleanup. This
+        # makes the test hermetic whether it runs alone or mid-suite.
+        self._saved_mods = {}
+        for key in list(sys.modules):
+            if key == "strategies" or key.startswith("strategies.") \
+               or key == "strategies_candidates" \
+               or key.startswith("strategies_candidates."):
+                self._saved_mods[key] = sys.modules.pop(key)
+        sys.path.insert(0, str(root))
+        self.addCleanup(self._restore_path_and_mods, str(root))
+        # Point the module's roots at our temp trees.
+        self._orig_live = bx.STRATEGIES_ROOT
+        self._orig_cand = bx.CANDIDATES_ROOT
+        bx.STRATEGIES_ROOT = self.live_root
+        bx.CANDIDATES_ROOT = self.cand_root
+        def _restore_roots():
+            bx.STRATEGIES_ROOT = self._orig_live
+            bx.CANDIDATES_ROOT = self._orig_cand
+        self.addCleanup(_restore_roots)
+        self._importlib = importlib
+
+    def _restore_path_and_mods(self, root_str: str):
+        if root_str in sys.path:
+            sys.path.remove(root_str)
+        # Drop any temp submodules we imported, then restore the real packages.
+        for key in list(sys.modules):
+            if key == "strategies" or key.startswith("strategies.") \
+               or key == "strategies_candidates" \
+               or key.startswith("strategies_candidates."):
+                sys.modules.pop(key, None)
+        sys.modules.update(self._saved_mods)
+
+    def _write_strategy(self, root: Path, name: str, *, with_decide=True):
+        d = root / name
+        d.mkdir()
+        (d / "__init__.py").write_text("")
+        body = (
+            "def decide_xsec(market_state, position_state, params):\n"
+            "    return {}\n"
+        ) if with_decide else (
+            "def decide(market_state, position_state, params):\n"
+            "    return None\n"
+        )
+        (d / "strategy.py").write_text(body)
+        (d / "params.json").write_text('{"basket": ["AAA", "BBB"], "k": 1}')
+
+    def test_live_path_unchanged(self):
+        self._write_strategy(self.live_root, "xs_live")
+        fn, params = self.bx.load_xsec_strategy("xs_live")
+        self.assertTrue(callable(fn))
+        self.assertEqual(params["basket"], ["AAA", "BBB"])
+        self.assertEqual(fn({}, {}, {}), {})
+
+    def test_candidate_path_loads_from_candidates_tree(self):
+        # Same name in BOTH trees, different params, to prove which tree won.
+        self._write_strategy(self.live_root, "xs_dup")
+        d = self.cand_root / "xs_dup"
+        d.mkdir()
+        (d / "__init__.py").write_text("")
+        (d / "strategy.py").write_text(
+            "def decide_xsec(m, p, params):\n    return {'CAND': 1}\n")
+        (d / "params.json").write_text('{"basket": ["ZZZ"], "k": 9}')
+        fn, params = self.bx.load_xsec_strategy("xs_dup", candidate=True)
+        self.assertEqual(params["basket"], ["ZZZ"])  # candidate tree, not live
+        self.assertEqual(params["k"], 9)
+        self.assertEqual(fn(None, None, None), {"CAND": 1})
+
+    def test_candidate_missing_dir_message(self):
+        with self.assertRaises(FileNotFoundError) as ctx:
+            self.bx.load_xsec_strategy("does_not_exist", candidate=True)
+        self.assertIn("candidate dir", str(ctx.exception))
+        self.assertIn("strategies_candidates", str(ctx.exception))
+
+    def test_live_missing_dir_message_unchanged(self):
+        with self.assertRaises(FileNotFoundError) as ctx:
+            self.bx.load_xsec_strategy("does_not_exist")
+        self.assertIn("strategy dir", str(ctx.exception))
+
+    def test_candidate_without_decide_xsec_raises(self):
+        self._write_strategy(self.cand_root, "xs_nodecide", with_decide=False)
+        with self.assertRaises(AttributeError) as ctx:
+            self.bx.load_xsec_strategy("xs_nodecide", candidate=True)
+        self.assertIn("decide_xsec", str(ctx.exception))
+        self.assertIn("strategies_candidates", str(ctx.exception))
+
+
 if __name__ == "__main__":
     unittest.main()

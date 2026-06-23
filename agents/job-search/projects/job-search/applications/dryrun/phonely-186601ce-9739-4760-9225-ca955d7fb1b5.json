@@ -1,0 +1,200 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/phonely/186601ce-9739-4760-9225-ca955d7fb1b5",
+  "org": "phonely",
+  "job_id": "186601ce-9739-4760-9225-ca955d7fb1b5",
+  "job_title": "Sales Engineer",
+  "job_location": "San Francisco, California",
+  "fetched_at": "2026-06-23T07:18:54Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 10,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f__systemfield_name"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f__systemfield_email"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f__systemfield_resume"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_f46ec098-f8c6-4df9-81a3-7073cf130809",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_f46ec098-f8c6-4df9-81a3-7073cf130809"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_decab17e-4e02-4e4b-b51f-8d277889d26f",
+      "label": "Work at a Start Up Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Work at a Start Up Profile'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_decab17e-4e02-4e4b-b51f-8d277889d26f"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_53819da7-b3f0-4fe1-9b80-d76b5d4c0838",
+      "label": "Role Applying for",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Role Applying for'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_53819da7-b3f0-4fe1-9b80-d76b5d4c0838"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_e79b0e0f-ca76-403d-9667-f03145f873e3",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_e79b0e0f-ca76-403d-9667-f03145f873e3"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_47d92ec5-89a7-44b4-b68e-1f7708e912d4",
+      "label": "Will you now or in the future require sponsorship for employment visa status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_47d92ec5-89a7-44b4-b68e-1f7708e912d4"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_0f43b288-3efc-47a5-a0cf-dfe36efbb181",
+      "label": "Are you willing to work 5-days in office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_0f43b288-3efc-47a5-a0cf-dfe36efbb181"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_89ddbfe3-162e-4e07-8dab-32f04b78b9ad",
+      "label": "GitHub Profile (For Engineering Roles)",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_89ddbfe3-162e-4e07-8dab-32f04b78b9ad"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_decab17e-4e02-4e4b-b51f-8d277889d26f",
+      "label": "Work at a Start Up Profile",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Work at a Start Up Profile'"
+    },
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_53819da7-b3f0-4fe1-9b80-d76b5d4c0838",
+      "label": "Role Applying for",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Role Applying for'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "cd424917-74c7-4b21-ac61-fc789fa2dc8f_53819da7-b3f0-4fe1-9b80-d76b5d4c0838",
+      "label": "Role Applying for",
+      "reason": "no LABEL_RULES match for label='Role Applying for'"
+    }
+  ]
+}

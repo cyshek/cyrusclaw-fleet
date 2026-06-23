@@ -1,0 +1,275 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/writer/07259efd-497e-4fd3-9931-f651ec6128a9",
+  "org": "writer",
+  "job_id": "07259efd-497e-4fd3-9931-f651ec6128a9",
+  "job_title": "Solutions architect (Central) ",
+  "job_location": "Chicago, IL",
+  "fetched_at": "2026-06-23T08:03:21Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91__systemfield_name",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91__systemfield_email",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_34e6558c-7070-4733-8a0e-663f2d6fd6a5",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_34e6558c-7070-4733-8a0e-663f2d6fd6a5",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91__systemfield_resume",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_b105e23c-5d51-4bce-8a9d-58ec81e4e2ad",
+      "label": "Linkedin Profile ",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_b105e23c-5d51-4bce-8a9d-58ec81e4e2ad",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_1230e70e-6868-4809-8965-c77601973fd8",
+      "label": "Portfolio / Github URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_1230e70e-6868-4809-8965-c77601973fd8",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_1d77c39a-91f8-4a3c-8b50-75c5b48765fd",
+      "label": "Are you located within 50 miles of one of the following office hubs",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "No, but willing to relocate",
+      "source": "preferences.willing_to_travel_pct (>=25%) | NOTE: 'Yes' not literally in options ['San Francisco (Union Square)', 'New York (Manhattan)', 'Austin, Texas', 'Chicago, Illinois', 'Seattle, Washington', 'London, UK', 'No, but willing to relocate', 'No, and not willing to relocate'] | ashby_smart_match(relocation,picked='No, but willing to relocate')",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "San Francisco (Union Square)",
+          "value": "San Francisco (Union Square)"
+        },
+        {
+          "label": "New York (Manhattan)",
+          "value": "New York (Manhattan)"
+        },
+        {
+          "label": "Austin, Texas",
+          "value": "Austin, Texas"
+        },
+        {
+          "label": "Chicago, Illinois",
+          "value": "Chicago, Illinois"
+        },
+        {
+          "label": "Seattle, Washington",
+          "value": "Seattle, Washington"
+        },
+        {
+          "label": "London, UK",
+          "value": "London, UK"
+        },
+        {
+          "label": "No, but willing to relocate",
+          "value": "No, but willing to relocate"
+        },
+        {
+          "label": "No, and not willing to relocate",
+          "value": "No, and not willing to relocate"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_1d77c39a-91f8-4a3c-8b50-75c5b48765fd",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_4d73cff6-024f-4350-9842-021270af5b32",
+      "label": "Are you able and excited to join us for in  person, collaborative working sessions in office 2-3 days / week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_4d73cff6-024f-4350-9842-021270af5b32",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_0b43208a-905a-45fb-84b5-154e673a0fe8",
+      "label": "Why are you interested in joining WRITER?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Writer because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Writer is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Writer while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Writer aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Writer')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_0b43208a-905a-45fb-84b5-154e673a0fe8",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_9776654b-fcbf-46fa-ba45-2183f2d5f5b6",
+      "label": "Please give an example from your professional experience that aligns with one or more of our cultural values: ",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_9776654b-fcbf-46fa-ba45-2183f2d5f5b6",
+      "section": "Details"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_e97f0eea-31be-42ab-9398-f9b68bdc14f9",
+      "label": "Are you at least 18 years of age?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_e97f0eea-31be-42ab-9398-f9b68bdc14f9",
+      "section": "Work Authorization"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_8fde26ba-237d-47af-8460-6cc8b242af33",
+      "label": "Are you legally authorized to work in the country in which the job you are applying for is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_8fde26ba-237d-47af-8460-6cc8b242af33",
+      "section": "Work Authorization"
+    },
+    {
+      "id": "f716c08a-ece5-477f-9260-3a7117bf9e91_cecc7c81-34f0-4a29-998e-0994597be6d9",
+      "label": "Will you now or in the future require employment visa sponsorship to work in the country in which the job you're applying for is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f716c08a-ece5-477f-9260-3a7117bf9e91_cecc7c81-34f0-4a29-998e-0994597be6d9",
+      "section": "Work Authorization"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

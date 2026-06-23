@@ -1,0 +1,29 @@
+=== ASHBY RESIDENTIAL DRAIN PASS 4 ===
+Date: 2026-06-23
+CDP: http://127.0.0.1:19223 (residential proxy)
+Roles attempted: 7 (agave-685cc476 excluded — Seon bot-detection)
+
+--- RESULTS ---
+SUBMITTED (7):
+  1. nash-9c68397b         | role_id=3261 | Nash: Logistics Product Manager, NA
+  2. niural-ai-2a92b0d2    | role_id=2274 | Niural AI: Product Manager - Integrations
+  3. norm-ai-3fd0b773      | role_id=3357 | Norm Ai: Security Program Manager [PLAN PATCHED: NYC-yesno mapped to 'No']
+  4. nox-metals-79aa78c8   | role_id=3257 | Nox Metals: Shift Supervisor - 2nd Shift
+  5. numeral-2e247048      | role_id=3260 | Numeral: Product Manager
+  6. oneleet-6d865ca7      | role_id=3386 | Oneleet: Product Manager
+  7. oneleet-acb72f78      | role_id=3385 | Oneleet: Security Program Manager
+
+HARD-RECAPTCHA: 0
+OTHER-FAIL: 0
+
+--- NOTES ---
+- norm-ai plan had radio value 'Kirkland' for 'Are you located in New York City?' 
+  (dryrun resolver couldn't map location string -> Yes/No). Patched in-run to 'No'. 
+  Submitted successfully on retry.
+- All 7 confirmed via FormSubmitSuccess server response token.
+- _backfill_drain_status.py ran: flipped 7 rows -> applied (auto-residential)
+- render_xlsx.py: Applied=883, Open=475, Manual=331, Interviews=25
+
+--- TRACKER STATE POST-RUN ---
+Submitted today: 7
+Total applied: 883

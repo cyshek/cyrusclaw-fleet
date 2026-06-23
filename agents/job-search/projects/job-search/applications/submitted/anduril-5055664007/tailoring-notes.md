@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing end-to-end workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 technical delivery** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model aligned to engineering standards.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new model for continuous, milestone-driven validation across production environments.
+4. Directed **14 cross-org recovery executions** under executive visibility, bridging program managers and functional engineering teams to maintain schedule integrity, manage technical risk, and ensure all deliverables met contractual and operational standards.
+5. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating across internal engineering, external partners, and customer stakeholders to deliver on-time with zero scope deviation.
+6. Built and implemented lightweight program planning processes — including risk registers, dependency maps, and execution metrics — enabling rapid iteration and **end-to-end technical scope ownership** across multiple simultaneous high-visibility programs.
+7. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to cut **planning cycle time by 39%** and increase drill execution capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation workflows across Azure engineering, conducting user demos and targeted training sessions that achieved utilization across 14 key teams and saved **37 engineering hours monthly** through process optimization.
+2. Shaped the product roadmap by facilitating **11+ structured user interviews** with Azure service teams, identifying critical feature gaps that led to prioritization of intent-based YAML generation — directly influencing technical delivery scope and engineering planning cycles.
+3. Improved data integrity and retrieval performance by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time by 83%** and reducing friction for cross-functional engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch timelines by 28% by driving cross-functional alignment on a unified automation prioritization framework, coordinating across 140+ engineering and operations teams to close execution gaps.
+2. Built a product strategy to eliminate operational toil during region launches — conducting discovery with **20+ service teams**, identifying 81 hours of manual effort per region, and defining a roadmap to automate critical delivery paths across the program lifecycle.
+3. Engineered a **Power BI execution dashboard** to track and surface operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and make data-driven program planning decisions at scale.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by owning the legacy OS migration strategy end-to-end — mapping system dependencies across 1,200+ stations and managing technical risk through each phase of the product lifecycle.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **owning backlog prioritization** to resolve 40+ high-priority engineering tickets and stabilize the developer intake process across cross-functional hardware and software teams.
+3. Drove **cross-functional technical alignment** between IT, Operations, and Engineering to implement automated CI/CD pipelines, accelerating the software deployment cycle by 25% and establishing a repeatable execution model for future autonomous systems rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a structured CRM process that improved execution speed, reduced errors, and created a scalable operational model.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy — optimizing the company website and Google profile to tighten the customer feedback loop and accelerate qualified lead flow.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks that had gone undetected and delivering actionable recommendations tied to measurable cost and revenue outcomes.
+
+## Notes from the rewriter
+- 'End-to-end technical delivery' and 'technical scope ownership' from the JD's core responsibilities woven into microsoft_ft bullets #2 and #6 to mirror Anduril's program ownership language.
+- 'Dependency mapping' and 'technical risk' from the JD's systems-mindset requirement surfaced in amazon_robotics bullet #1 and microsoft_ft bullet #4 to align with the Chief Engineer/functional team partnership model.
+- 'Customer feedback loop' from the JD's collaborative partnership facet embedded in pro_painters bullet #2 and microsoft_ft bullet #5 to demonstrate Anduril's DOW customer relationship framing.
+- 'Lightweight processes, tools, and metrics' language from the JD's execution section directly reflected in microsoft_ft bullet #6, using near-verbatim JD phrasing to signal direct role fit.
+- 'Milestone-driven validation' and 'contractual requirements' from the JD's engineering deliverables mandate woven into microsoft_ft bullet #3 and bullet #4 to match Anduril's delivery excellence standard.
+

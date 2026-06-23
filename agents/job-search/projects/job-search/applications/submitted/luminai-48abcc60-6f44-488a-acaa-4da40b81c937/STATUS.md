@@ -1,9 +1,17 @@
-PREP-READY — 2026-06-21T09:40:18+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-22
 role_id: 2577
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-luminai-48abcc60-6f44-488a-acaa-4da40b81c937.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/luminai-48abcc60-6f44-488a-acaa-4da40b81c937/Cyrus_Shekari_Resume_ashby-luminai_48abcc60_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/luminai-48abcc60-6f44-488a-acaa-4da40b81c937/cover_answers.md
+submitted_at: 2026-06-22T23:12:00+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+ngleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] cover-letter upload: input-vanished
+[runner] reassert-text pass 1: repaired=0 [] missing=3
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

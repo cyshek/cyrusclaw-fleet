@@ -1,0 +1,43 @@
+# Ashby Residential Drain Pass 5
+# Date: 2026-06-23
+# Egress: residential 82.23.97.223 (Webshare) via proxy relay PID 432726
+# CDP: http://127.0.0.1:19223
+
+## Roles Processed
+
+1. plaid-15f90e4b-7653-46d5-9479-d23ac4047e71 (role_id=3095)
+   Company: Plaid
+   Role: Integration Operations Program Manager
+   Result: SUBMITTED (exit 0)
+   Confirmation: FormSubmitSuccess — "Your application was successfully submitted"
+   Comp: $172.8K–$237.6K + equity (Plaid Zone 1)
+
+2. primer-54541971-7c91-4c38-a5da-aac7f21eb28c (role_id=3397)
+   Company: Primer
+   Role: Product Manager
+   Result: SUBMITTED (exit 0, after plan patch)
+   Confirmation: FormSubmitSuccess — "Your application was successfully submitted"
+   Notes: Plan had empty required field "What's the compensation you are seeking..."
+          Patched to "$160,000 - $200,000 base" and re-ran. Deadline July 31, 2026.
+
+3. probably-genetic-895c7b43-6abb-47f7-8cb7-8ab7a01cf8dc (role_id=3274)
+   Company: Probably Genetic
+   Role: Forward Deployed Product Manager
+   Result: SUBMITTED (exit 0)
+   Confirmation: FormSubmitSuccess — "You did it! Your application is in"
+   Comp: L5 $155K–$175K / L6 $175K–$195K + equity
+
+## Summary
+- submitted: 3
+- hard-recaptcha: 0
+- other-fail: 0
+
+## Post-run
+- _backfill_drain_status.py: 3 backfilled, 3 DB rows flipped
+- render_xlsx.py: Applied=904, Open=455, Manual=331, Interviews=25
+
+## Notes
+- Plaid checkbox field resolved to 'San Francisco HQ' / "Plaid's Mission" (first checkbox options)
+  -- these are multi-option checkboxes and the runner picks the first; Kirkland, WA was
+  correctly filled in the location typeahead (picked "Kirkland, Washington, United States").
+- All 3 used residential egress; reCAPTCHA v3 solved in-browser ~0.2-0.3s each.

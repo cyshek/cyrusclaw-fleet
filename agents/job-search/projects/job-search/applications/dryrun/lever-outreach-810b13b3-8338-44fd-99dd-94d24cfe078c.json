@@ -5,14 +5,14 @@
   "org": "outreach",
   "job_id": "810b13b3-8338-44fd-99dd-94d24cfe078c",
   "job_title": "Outreach - Technical Program Manager - Security",
-  "fetched_at": "2026-06-03T06:40:41Z",
+  "fetched_at": "2026-06-22T23:43:35Z",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 12,
-    "filled": 8,
+    "filled": 9,
     "filled_needs_review": 0,
     "declined": 3,
-    "unresolved": 1,
+    "unresolved": 0,
     "blockers": 0
   },
   "fields": [
@@ -106,9 +106,9 @@
       "type": "input_text",
       "lever_type": null,
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "portfolio_url is null",
-      "status": "unresolved",
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
       "matched_rule": "portfolio",
       "options": null
     },
@@ -164,14 +164,7 @@
       "compliance": "eeo"
     }
   ],
-  "unresolved": [
-    {
-      "id": "urls[Portfolio]",
-      "label": "Portfolio URL",
-      "required": false,
-      "reason": "portfolio_url is null"
-    }
-  ],
+  "unresolved": [],
   "blockers": [],
   "meta": {
     "og_title": "Outreach - Technical Program Manager - Security",

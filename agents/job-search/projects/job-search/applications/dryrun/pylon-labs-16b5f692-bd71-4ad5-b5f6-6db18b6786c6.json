@@ -1,0 +1,154 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/pylon-labs/16b5f692-bd71-4ad5-b5f6-6db18b6786c6",
+  "org": "pylon-labs",
+  "job_id": "16b5f692-bd71-4ad5-b5f6-6db18b6786c6",
+  "job_title": "Forward Deployed Implementation Specialist",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-22T09:50:41Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340__systemfield_name"
+    },
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340__systemfield_email"
+    },
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340_265c3c94-0a08-46ed-9eb9-85b720c3e49d",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340_265c3c94-0a08-46ed-9eb9-85b720c3e49d"
+    },
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340__systemfield_resume"
+    },
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340_9a2c58a0-9f43-4c86-b7d2-24cc118e4fcf",
+      "label": "Are you currently based in the SF Bay Area, or ready to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you currently based in the SF Bay Area, or ready to relocate?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes, I'm in SF / Bay Area and willing to work on-site 5-days per week",
+          "value": "Yes, I'm in SF / Bay Area and willing to work on-site 5-days per week"
+        },
+        {
+          "label": "Yes - I can relocate within 30 days (if offered the role)",
+          "value": "Yes - I can relocate within 30 days (if offered the role)"
+        },
+        {
+          "label": "Yes - I can relocate within 1–2 months (if offered the role)",
+          "value": "Yes - I can relocate within 1–2 months (if offered the role)"
+        },
+        {
+          "label": "No - I am not in SF, and will not be able to relocate anytime soon",
+          "value": "No - I am not in SF, and will not be able to relocate anytime soon"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340_9a2c58a0-9f43-4c86-b7d2-24cc118e4fcf"
+    },
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340_6c37e676-e0c3-45b7-99fb-661fe93bc270",
+      "label": "Have you worked with any startups previously? If so, list and describe.",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340_6c37e676-e0c3-45b7-99fb-661fe93bc270"
+    },
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340_9909d194-9e85-4a35-ac83-eede95f0c979",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "40560b67-ebab-4928-b3cc-d9be5e36f340_9909d194-9e85-4a35-ac83-eede95f0c979"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340_9a2c58a0-9f43-4c86-b7d2-24cc118e4fcf",
+      "label": "Are you currently based in the SF Bay Area, or ready to relocate?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you currently based in the SF Bay Area, or ready to relocate?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "40560b67-ebab-4928-b3cc-d9be5e36f340_9a2c58a0-9f43-4c86-b7d2-24cc118e4fcf",
+      "label": "Are you currently based in the SF Bay Area, or ready to relocate?",
+      "reason": "no LABEL_RULES match for label='Are you currently based in the SF Bay Area, or ready to relocate?'"
+    }
+  ]
+}

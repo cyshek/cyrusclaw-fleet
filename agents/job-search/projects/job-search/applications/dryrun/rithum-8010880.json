@@ -1,0 +1,560 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/rithum/jobs/8010880",
+  "org": "rithum",
+  "job_id": "8010880",
+  "job_title": "Product Manager - Technical",
+  "job_location": "United States - Remote",
+  "fetched_at": "2026-06-23T02:55:49Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/rithum/jobs/8010880?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 30,
+    "filled": 21,
+    "filled_needs_review": 2,
+    "declined": 4,
+    "unresolved": 3,
+    "blockers": 3
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67651407",
+      "label": "Do you have 2+ years of Technical Product Management, Product Management, or technical project leadership experience at a software company. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649893",
+      "label": "This role requires that you currently reside and work from the US. Do you meet this location requirement?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649894",
+      "label": "What city and state do you live in?",
+      "type": "textarea",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_67649895",
+      "label": "Are you legally authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649896",
+      "label": "Do you require immigration support either now OR in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649897",
+      "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_67649898",
+      "label": "For this position, the expected base pay range is: $75,000-$130,000 per year. Does this meet your compensation expectations?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation | NOTE: 'Open to discuss' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "compensation",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649899",
+      "label": "LinkedIn Profile (List N/A if you do not have one.)",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67649900",
+      "label": "Have you been previously employed by Rithum?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_employed_by_company",
+      "status": "filled",
+      "matched_rule": "previously_employed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649901",
+      "label": "Do you have any relatives or friends that work for Rithum? If yes, please list their names. If you answered no, you can answer N/A.",
+      "type": "textarea",
+      "required": true,
+      "value": "No",
+      "source": "family_relations_at_company (default no)",
+      "status": "filled",
+      "matched_rule": "family_relations_at_company",
+      "options": null
+    },
+    {
+      "id": "question_67649902",
+      "label": "Did a current Rithum employee refer you to this role? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649903",
+      "label": "If yes, who referred you? If you answered no, you can enter N/A. ",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, who referred you? If you answered no, you can enter N/A. '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_67649904",
+      "label": "Do you have any non-compete obligations that would restrict your ability to work for Rithum?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.non_compete_agreement",
+      "status": "filled",
+      "matched_rule": "non_compete",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67649905",
+      "label": "At Rithum, we take your privacy seriously and want to make sure your personal information is safe and secure. Please take a few moments to review any notices that are applicable to your region here: https://www.rithum.com/candidate-notices/. \n\nBy selecting Yes, you attest that you have reviewed Rithum's Candidate Data Privacy Notices.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 728958494
+        }
+      ]
+    },
+    {
+      "id": "question_67649906",
+      "label": "By clicking \"Yes\" below and submitting this application to Rithum Technologies, LLC (“Rithum”): I affirm that the information contained in this application and any related materials I provide, and shared by me in interviews, is true and correct in all respects; I acknowledge that all such information is subject to verification by Rithum and that any false or misleading information or material omission may disqualify me from further consideration for employment or may be grounds for termination of employment if I am hired; I acknowledge that, if I am interviewed by Rithum, Rithum's confidential information may be shared or become otherwise available to me, and I agree that this information must not be used or disseminated by me other than as may be expressly authorized by Rithum; and I agree that, to the fullest extent permitted by applicable law, any claim, lawsuit or other action (including, without limitation, any administrative action) that relates in any way to your application for employment with, actual employment with or other service to Rithum (including, without limitation, any termination thereof) must be filed no more than 180 days after the date of the event giving rise to such action, (b) you will not commence any such action after such 180-day period has expired and (c) you waive any statute of limitations to the contrary.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 728958495
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67649897",
+      "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'"
+    },
+    {
+      "id": "question_67649902",
+      "label": "Did a current Rithum employee refer you to this role? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '"
+    },
+    {
+      "id": "question_67649903",
+      "label": "If yes, who referred you? If you answered no, you can enter N/A. ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='If yes, who referred you? If you answered no, you can enter N/A. '"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67649897",
+      "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.",
+      "reason": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'"
+    },
+    {
+      "id": "question_67649902",
+      "label": "Did a current Rithum employee refer you to this role? ",
+      "reason": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '"
+    },
+    {
+      "id": "question_67649903",
+      "label": "If yes, who referred you? If you answered no, you can enter N/A. ",
+      "reason": "no LABEL_RULES match for label='If yes, who referred you? If you answered no, you can enter N/A. '"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

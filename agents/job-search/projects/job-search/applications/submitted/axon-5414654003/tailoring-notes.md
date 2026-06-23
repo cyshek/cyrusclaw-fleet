@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized integration system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise clients including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining data pipeline requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a fully scalable, self-service deployment model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable validation framework adopted across sovereign-cloud environments.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating technical and non-technical agency-level stakeholders throughout.
+5. Leveraged **AI-driven automation** to build an internal AI agent and restructure integration planning workflows, reducing planning cycle time by 39% and increasing drill execution capacity by 21% across the data and integrations delivery team.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed product adoption for **AI-driven code generation** workflows, conducting client-facing demos and training sessions that drove utilization across 14 key Azure service teams and saved **37 engineering hours** monthly in integration and pipeline configuration tasks.
+2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical ETL configuration gaps and translating findings into actionable integration requirements for engineering.
+3. Optimized **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by 83% and improving data accessibility for cross-functional integration teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating data pipeline and deployment dependencies across 140+ engineering teams.
+2. Built a scalable **ETL and deployment roadmap** by conducting integration discovery with 20+ service teams, identifying 81 hours of manual effort per region launch and designing automated workflows to eliminate critical-path toil across cloud deployment cycles.
+3. Engineered a **Power BI analytics dashboard** to surface operational toil and integration gaps across 140+ teams, enabling leadership to prioritize high-impact automation efforts and validate data-driven deployment decisions at scale.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by architecting the legacy OS migration strategy, mapping system integration dependencies across 1,200+ stations, and validating end-to-end data flows before full production deployment.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the integration backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for a cross-functional robotics software delivery team.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment lifecycle by 25% and establishing validated, repeatable deployment processes across containerized environments.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, designing and deploying a new CRM integration process that standardized data capture and accelerated client-facing project delivery cycles.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a data-driven digital go-to-market strategy, integrating website analytics and optimizing Google profile data to surface actionable acquisition insights for leadership.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through structured data mapping and delivering recommendations that directly informed operational budget decisions.
+
+## Notes from the rewriter
+- JD term 'ETL (Extract, Transform, Load)' woven into microsoft_2022 bullet#2 and skills, directly mirroring the JD's data-mapping project language.
+- JD term 'YAML' (for configuring builds and releases) woven into microsoft_2023 bullet#2 as 'intent-based YAML generation', grounding the master content in Axon's specific config/deployment context.
+- JD term 'data pipelines' woven into microsoft_ft bullet#2 (pipeline requirements) and microsoft_2022 bullet#1 (data pipeline dependencies), mirroring Axon's 'develop and maintain pipelines' language.
+- JD term 'AI tools and techniques to optimize integration processes' woven into microsoft_ft bullet#5, framing the AI agent work explicitly around integration planning efficiency.
+- JD phrase 'legacy systems' migration woven into amazon_robotics bullet#1 as 'legacy OS migration strategy' with 'system integration dependencies', directly paralleling Axon's requirement to assess legacy-to-cloud integration needs.
+

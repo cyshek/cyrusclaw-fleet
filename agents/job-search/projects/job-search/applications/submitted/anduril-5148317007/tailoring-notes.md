@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing SOPs and workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical defects and establishing a new continuous-validation standard.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as **bridge lead** for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
+5. Built an internal AI agent and restructured planning workflows to cut planning cycle time by **39%** and increase drill capacity by 21%, scaling team leverage without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows, conducting user demos and training that drove utilization across **14 key teams** and saved 37 engineering hours monthly.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ structured interviews** with Azure service teams to surface and document critical feature gaps.
+3. Improved data integrity and retrieval speed by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time by 83%**.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a roadmap to automate critical paths and reduce recurring operational toil.
+3. Engineered a Power BI dashboard tracking operational toil across 140+ teams, enabling leadership to **target automation gaps** and prioritize high-impact corrective actions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+3. Drove cross-functional alignment across IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating software deployment cycles by 25%**.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a redesigned CRM workflow.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile.
+3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records** to identify and close margin leaks across recurring service lines.
+
+## Notes from the rewriter
+- Wove in 'SOPs and workflows' (JD: 'maintain safety policies, standard operating procedures') into microsoft_ft bullet 1 to mirror the standards/documentation language.
+- Used 'continuous-validation standard' and 'surfacing critical defects' (JD: 'track statistical data, trend analysis, corrective recommendations') in microsoft_ft bullet 3 to echo the safety-trend and predictive-analysis framing.
+- Embedded 'operational toil' and 'corrective actions' (JD: 'root cause analysis to root cause corrective actions') in microsoft_2022 bullet 3 and amazon_robotics bullet 1 to align with the incident-closure and SMS improvement themes.
+- Used 'operational readiness' framing (JD: 'lead internal readiness reviews') via 'zero operational downtime' and 'stabilize the developer intake process' in amazon_robotics to reflect the readiness-review and compliance-audit responsibilities.
+

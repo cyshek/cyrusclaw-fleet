@@ -352,12 +352,12 @@ ANSWER POLICY (mandatory — read carefully):
 
 8. Output: STRICT JSON only, no markdown fences, exact shape:
 
-   {
+   {{
      "answers": [
-       { "question": "<verbatim question text>", "answer": "<answer text>" },
+       {{ "question": "<verbatim question text>", "answer": "<answer text>" }},
        ...
      ]
-   }
+   }}
 
    Emit one entry per question, in the order shown, using the exact
    question text from the prompt as the "question" value.
@@ -370,7 +370,7 @@ ANSWER POLICY (mandatory — read carefully):
         f"=== CANDIDATE FACTS (personal-info.json excerpt) ===\n{pi_brief}\n\n"
         f"=== TAILORED RESUME TEXT ===\n{resume_text.strip()}\n\n"
         f"=== QUESTIONS TO ANSWER ===\n{questions_text}\n\n"
-        f"=== {rules}\n"
+        "=== " + rules + "\n"
     )
     if retry_violations:
         prompt += (

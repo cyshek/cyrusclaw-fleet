@@ -1,0 +1,271 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/labelbox/jobs/5101187007",
+  "org": "labelbox",
+  "job_id": "5101187007",
+  "job_title": "Forward Deployed Engineer, RL Environments",
+  "job_location": "San Francisco Bay Area",
+  "fetched_at": "2026-06-23T04:59:50Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/labelbox/jobs/5101187007?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 13,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_11731286007",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_11731287007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_11731288007",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": 23308943007
+        },
+        {
+          "label": "Glassdoor",
+          "value": 23308944007
+        },
+        {
+          "label": "Wellfound (formerly AngelList)",
+          "value": 23308945007
+        },
+        {
+          "label": "Comparably",
+          "value": 23308946007
+        },
+        {
+          "label": "BuiltIn",
+          "value": 23308947007
+        },
+        {
+          "label": "Justjoinit",
+          "value": 23308948007
+        },
+        {
+          "label": "No Fluff Jobs",
+          "value": 23308949007
+        },
+        {
+          "label": "Just Join.IT",
+          "value": 23308950007
+        },
+        {
+          "label": "Careers page",
+          "value": 23308951007
+        },
+        {
+          "label": "Recommended by friend or colleague",
+          "value": 23308952007
+        },
+        {
+          "label": "Search engine (Google, Yahoo, etc.)",
+          "value": 23308953007
+        },
+        {
+          "label": "Other",
+          "value": 23308954007
+        }
+      ]
+    },
+    {
+      "id": "question_11731289007",
+      "label": "We are currently prioritizing candidates based in one of our hubs. Please select your current location from this list.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['San Francisco Bay Area', 'Wrocław, Poland', 'Remote, India', 'Remote, United Kingdom', 'Other - I’m willing to relocate to the San Francisco Bay Area', 'Other - I’m not willing to relocate at this time']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "San Francisco Bay Area",
+          "value": 23308955007
+        },
+        {
+          "label": "Wrocław, Poland",
+          "value": 23308957007
+        },
+        {
+          "label": "Remote, India",
+          "value": 23308960007
+        },
+        {
+          "label": "Remote, United Kingdom",
+          "value": 23308962007
+        },
+        {
+          "label": "Other - I’m willing to relocate to the San Francisco Bay Area",
+          "value": 23308963007
+        },
+        {
+          "label": "Other - I’m not willing to relocate at this time",
+          "value": 23308964007
+        }
+      ]
+    },
+    {
+      "id": "question_11731290007",
+      "label": "Do you have experience working with RL, RLHF, or RL Environments?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

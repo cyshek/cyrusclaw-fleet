@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model used across engineering orgs.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation framework adopted across sovereign cloud regions.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating product, engineering, and compliance stakeholders under tight timelines.
+5. Built an internal **AI agent for drill planning**, restructuring experimentation and planning workflows to cut planning cycle time by 39% and increase drill throughput capacity by 21%, directly expanding the team's ability to run higher-cadence validation programs.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-powered code generation workflows by conducting user demos and training sessions across 14 key Azure service teams, saving 37 engineering hours monthly and establishing a repeatable onboarding funnel for new feature rollouts.
+2. Shaped the **product roadmap** to include intent-based YAML generation by leading 11+ qualitative research interviews with Azure service teams, synthesizing friction points into prioritized, testable hypotheses that directly influenced the next sprint's backlog.
+3. Improved **data retrieval efficiency by 83%** by enforcing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, reducing user drop-off from lookup friction and increasing self-service task completion across the platform.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, resolving backlog conflicts across 140+ teams with competing roadmap demands.
+2. Built a **CRO-style discovery process** to surface operational friction, conducting interviews with 20+ service teams to identify 81 hours of manual effort per region launch, then structured a phased roadmap to automate the highest-impact critical paths first.
+3. Engineered a **Power BI funnel dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact support investments, and measure week-over-week efficiency improvements against defined business outcomes.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and maintaining a prioritized backlog tied to risk reduction rather than raw idea volume.
+2. Facilitated Agile sprint planning and retrospectives, resolving **40+ high-priority tickets** and stabilizing the developer intake process by synthesizing qualitative feedback from engineering and ops teams into actionable, sequenced backlog decisions.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and freeing engineering capacity to focus on higher-leverage product and reliability improvements.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased **job bookings by 26%** by redesigning the end-to-end intake and invoicing workflow for 200+ monthly proposals, eliminating scheduling friction and building a CRM process that improved conversion rate at each stage of the sales-assisted funnel.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted site conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing landing page copy, improving Google Business profile ranking, and aligning paid channel messaging with on-site intent.
+3. Identified and closed margin leaks by conducting a **financial profitability analysis** across 1,000+ project records, delivering pricing model recommendations to leadership that improved job-level contribution margins and informed future go-to-market pricing strategy.
+
+## Notes from the rewriter
+- 'CRO backlog' and 'prioritized backlog tied to business outcomes' woven into microsoft_2022 bullet#1 and amazon_robotics bullet#1, directly mirroring JD language about maintaining a 'prioritized CRO backlog tied to business outcomes, not idea volume.'
+- 'Qualitative research / user interviews / testable hypotheses' inserted into microsoft_2023 bullet#2 and pro_painters bullet#1, mirroring JD requirement to 'recruit and interview patients, synthesizing insights into testable hypotheses.'
+- 'Funnel / intake / booking / conversion / landing page / message alignment' surfaced in pro_painters bullets#1 and #2, directly echoing JD focus on 'paid and organic landing pages, intake flows, booking rates, and CTR optimization.'
+- 'Go-to-market strategy' and 'channel messaging alignment' in pro_painters bullet#2 mirrors JD ask to 'partner with channel managers to ensure message alignment across the entire funnel.'
+- 'AI agent / experimentation cadence / planning workflows' in microsoft_ft bullet#5 ties Cyrus's automation experience to JD language about 'steady cadence of high-quality experiments' and evolving Solace's experimentation culture.
+

@@ -1,0 +1,130 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/norm-ai/366d4079-4842-469d-a5e0-3cc891a136b4",
+  "org": "norm-ai",
+  "job_id": "366d4079-4842-469d-a5e0-3cc891a136b4",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-22T09:43:09Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 5,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "15993a58-7656-4b71-be1a-314f1e278c71__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "15993a58-7656-4b71-be1a-314f1e278c71__systemfield_name"
+    },
+    {
+      "id": "15993a58-7656-4b71-be1a-314f1e278c71__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "15993a58-7656-4b71-be1a-314f1e278c71__systemfield_email"
+    },
+    {
+      "id": "15993a58-7656-4b71-be1a-314f1e278c71__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "15993a58-7656-4b71-be1a-314f1e278c71__systemfield_resume"
+    },
+    {
+      "id": "15993a58-7656-4b71-be1a-314f1e278c71_0789510b-7ca2-45ea-8abe-0e36803d6e0e",
+      "label": "Are you legally authorized to work in the United States on a full-time basis? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "15993a58-7656-4b71-be1a-314f1e278c71_0789510b-7ca2-45ea-8abe-0e36803d6e0e"
+    },
+    {
+      "id": "15993a58-7656-4b71-be1a-314f1e278c71_09b6caf0-5f23-44db-a459-e6a96d473275",
+      "label": "Will you now or in the future require sponsorship for employment visa status? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "15993a58-7656-4b71-be1a-314f1e278c71_09b6caf0-5f23-44db-a459-e6a96d473275"
+    },
+    {
+      "id": "15993a58-7656-4b71-be1a-314f1e278c71_d3a97c8e-ab3a-4b71-8dfb-381127b96e35",
+      "label": "Are you located in New York City? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "15993a58-7656-4b71-be1a-314f1e278c71_d3a97c8e-ab3a-4b71-8dfb-381127b96e35",
+      "match_attempted": true
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

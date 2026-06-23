@@ -1,0 +1,181 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/decagon/6321ea2f-4e21-4c18-8859-b4ef5489b6fe",
+  "org": "decagon",
+  "job_id": "6321ea2f-4e21-4c18-8859-b4ef5489b6fe",
+  "job_title": "Product Manager, Research",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T01:40:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519__systemfield_name"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519__systemfield_email"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_10a2586d-c21c-498f-bc51-5a8bb583f32c",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_10a2586d-c21c-498f-bc51-5a8bb583f32c"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_d37a0770-6541-4b8e-9073-ce13a7346ad0",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_d37a0770-6541-4b8e-9073-ce13a7346ad0"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519__systemfield_resume"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_584c9ff2-1a90-4a69-a51d-144d3162afcb",
+      "label": "Where did you go for college?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_584c9ff2-1a90-4a69-a51d-144d3162afcb"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_58432626-79be-401a-98bf-7626f552272e",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_58432626-79be-401a-98bf-7626f552272e"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_37d7a0e1-7e57-4738-8898-de1c0a1e45f1",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_37d7a0e1-7e57-4738-8898-de1c0a1e45f1"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_81ecd2a0-0833-4072-86f8-6290b93e4542",
+      "label": "Are you excited to work in-office five days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_81ecd2a0-0833-4072-86f8-6290b93e4542"
+    },
+    {
+      "id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_ff0118e5-83d3-4a3e-95c5-5722597d0bd4",
+      "label": "How did you hear about Decagon?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa007a1c-a826-4b26-9e36-3b7a376e5519_ff0118e5-83d3-4a3e-95c5-5722597d0bd4"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

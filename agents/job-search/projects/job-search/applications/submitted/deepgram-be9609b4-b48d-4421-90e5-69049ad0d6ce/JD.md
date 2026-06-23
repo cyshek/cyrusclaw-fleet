@@ -116,7 +116,7 @@ This role also includes up to 50% travel to meet with customers, support sales e
 
 - Unlimited PTO
 
-- Generous paid parental leave
+- Parental leave 
 
 - Flexible schedule
 

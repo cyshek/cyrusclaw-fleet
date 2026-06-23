@@ -18,7 +18,7 @@
 set -u
 
 WORKSPACE="/home/azureuser/.openclaw/agents/trading-bench/workspace"
-CHANNEL_ID="1508503706545557656"
+CHANNEL_ID="channel:1508503706545557656"
 LOG_DIR="$WORKSPACE/logs"
 mkdir -p "$LOG_DIR"
 TS=$(date -u +%Y%m%dT%H%M%SZ)

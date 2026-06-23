@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Owned end-to-end vision and roadmap for Azure's **AI Assist-style copilot agent**, building an internal LLM-powered planning tool that cut drill planning cycle time by 39% and expanded platform capacity by 21%.
+2. Led 0→1 delivery of an internal **Resilience Automation Platform**, defining self-service scheduling capabilities and PRD artifacts that reduced operational toil by 30% and transitioned execution to a scalable model.
+3. Pioneered Azure's first proactive resilience testing capability, shipping a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation model.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** across distributed international teams.
+5. Scaled Azure's recovery validation program from a 2-person operation into a platformized system, standardizing agentic workflows to sustain 45+ annual drills and drive **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+6. Set product craft standards for the team — sharpening PRD quality, closing prioritization decisions faster, and raising execution bar across cross-functional engineering and design partners on enterprise SaaS infrastructure.
+7. Prototyped AI agent tooling using LLM-powered automation and prompt engineering, validating feasibility hands-on before committing roadmap resources, embodying an **AI-first, prototypes-over-decks** product development model.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **copilot adoption** for AI-driven code generation workflows, conducting user demos and training that built utilization across 14 key Azure teams and saved 37 engineering hours monthly across the platform.
+2. Shaped the product roadmap to include **intent-based YAML generation** by leading 11+ structured user interviews with Azure service teams, surfacing critical feature gaps and translating findings into prioritized backlog items.
+3. Improved AI assistant observability and retrieval quality by implementing metadata standards and migrating documentation to a **semantic search (RAG-backed)** tool, reducing lookup time by 83% across engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by aligning 140+ teams on a unified automation prioritization framework — driving cross-functional execution at enterprise SaaS scale.
+2. Built the agent-building roadmap for region launch automation, conducting discovery with 20+ service teams to surface **81 hours of manual toil per region** and defining the critical automation paths to eliminate it.
+3. Enabled leadership to prioritize **high-impact automation gaps** by engineering a Power BI observability dashboard tracking operational toil signals across 140+ teams, directly informing roadmap sequencing decisions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Delivered **zero operational downtime** across a 2,000+ unit pilot by owning the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and sequencing delivery to protect production continuity.
+2. Led Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to close **40+ high-priority tickets** and stabilize the developer intake process across distributed engineering teams.
+3. Aligned IT, Operations, and Engineering on automated **CI/CD pipeline implementation**, accelerating the software deployment cycle by 25% and establishing a scalable release model for ongoing agent platform updates.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end CRM workflow for 200+ monthly proposals, improving conversion at every stage of the customer journey through a go-to-market process overhaul.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first GTM strategy, optimizing website UX and Google profile discoverability to drive inbound adoption.
+3. Improved leadership pricing decisions by running **profitability analysis** across 1,000+ project records, identifying and sealing margin leaks and delivering a data-backed roadmap for sustainable unit economics.
+
+## Notes from the rewriter
+- 'copilot' and 'AI Assist' vocabulary from the JD woven into microsoft_ft bullet#1 and microsoft_2023 bullet#1 to directly mirror NiCE's product name and in-product AI assistant framing.
+- 'intent-based' (JD preferred experience term) placed in microsoft_2023 bullet#2 to signal familiarity with LLM-native vs. intent-based design trade-offs the JD explicitly calls out.
+- 'RAG-backed semantic search' in microsoft_2023 bullet#3 maps to JD's listed preferred experience with 'embeddings and RAG' and 'evaluations and observability'.
+- 'prototypes-over-decks' philosophy (direct JD language) surfaced in microsoft_ft bullet#7 to signal cultural alignment with NiCE's AI-first, ship-to-clarity build model.
+- 'traces' and 'LLM platform' domain vocabulary from the JD's agent experience scope reflected in skills_priority ordering to front-load the most role-critical technical areas.
+

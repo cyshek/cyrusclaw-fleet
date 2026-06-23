@@ -1,0 +1,676 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/algolia/jobs/6006217004",
+  "org": "algolia",
+  "job_id": "6006217004",
+  "job_title": "Solutions Architect",
+  "job_location": "Remote - United States",
+  "fetched_at": "2026-06-23T03:44:02Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/algolia/jobs/6006217004?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 30,
+    "filled": 16,
+    "filled_needs_review": 0,
+    "declined": 4,
+    "unresolved": 10,
+    "blockers": 8
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_17908989004",
+      "label": "Are you legally authorized to work in the US? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17908990004",
+      "label": "Will you now, or in the future, require sponsorship for employment visa status to work in the US (e.g. H-1B visa status) ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17908991004[]",
+      "label": "Please share which timezone you are currently located in. ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "answer_yes: no 'Yes' option among ['Eastern Time', 'Central Time', 'Mountain Time', 'Pacific Time']",
+      "status": "unresolved",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Eastern Time",
+          "value": 85081871004
+        },
+        {
+          "label": "Central Time",
+          "value": 85081872004
+        },
+        {
+          "label": "Mountain Time",
+          "value": 85081873004
+        },
+        {
+          "label": "Pacific Time",
+          "value": 85081874004
+        }
+      ]
+    },
+    {
+      "id": "question_17908992004",
+      "label": "Current Company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_17908993004",
+      "label": "Current Title",
+      "type": "input_text",
+      "required": true,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null
+    },
+    {
+      "id": "question_17908994004",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_17908995004",
+      "label": "Location ",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "question_17908996004",
+      "label": "What is your legal first name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "question_17908997004",
+      "label": "What is your legal last name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_17908998004",
+      "label": "What is your preferred first name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_17908999004",
+      "label": "How did you initially hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How did you initially hear about this job?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Algolia Careers Page",
+          "value": 85081875004
+        },
+        {
+          "label": "Algolia Employee",
+          "value": 85081876004
+        },
+        {
+          "label": "Conference, Event, or Career Fair",
+          "value": 85081877004
+        },
+        {
+          "label": "Glassdoor",
+          "value": 85081878004
+        },
+        {
+          "label": "Handshake",
+          "value": 85081879004
+        },
+        {
+          "label": "Indeed",
+          "value": 85081880004
+        },
+        {
+          "label": "LinkedIn Ad Posting",
+          "value": 85081881004
+        },
+        {
+          "label": "Welcome to the Jungle",
+          "value": 85081882004
+        },
+        {
+          "label": "Wellfound (formerly AngelList Talent)",
+          "value": 85081883004
+        },
+        {
+          "label": "Xing",
+          "value": 85081884004
+        },
+        {
+          "label": "ZipRecruiter",
+          "value": 85081885004
+        },
+        {
+          "label": "Other",
+          "value": 85081886004
+        }
+      ]
+    },
+    {
+      "id": "question_17909000004",
+      "label": "If you chose Algolia Employee, Conference / Event / Career Fair, or Other, please specify here:",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you chose Algolia Employee, Conference / Event / Career Fair, or Other, please specify here:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_17909001004",
+      "label": "Do you have at least 3+ years prior experience directly supporting a customer’s implementation? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have at least 3+ years prior experience directly supporting a customer’s implementation? '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17909002004",
+      "label": "Have you integrated third-party APIs or services into custom applications for clients or within your organization? \n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Have you integrated third-party APIs or services into custom applications for clients or within your organization? \\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17909003004",
+      "label": "Are you experienced in optimizing search performance, including indexing, querying, and relevance tuning, for large-scale applications? \n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you experienced in optimizing search performance, including indexing, querying, and relevance tuning, for large-scale applications? \\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17909004004",
+      "label": "Have you worked with e-commerce (Ex: SFCC, CommerceTools, Magento, Shopify) or search technologies (ex: Algolia, Elasticsearch, Solr) OR CMS (Contentful, Contentstack), as part of your previous projects?  ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17909005004",
+      "label": "If you have experience with ecommerce/ search technologies, please elaborate here. ",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you have experience with ecommerce/ search technologies, please elaborate here. '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_17909006004",
+      "label": "Are you fully proficient coding in Javascript and at least one backend language? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you fully proficient coding in Javascript and at least one backend language? '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17909007004",
+      "label": "Please include a short summary of your experience working directly with clients (in a SA capacity, if relevant). 3- 4 sentence summary / a few bullet points will work.   ",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please include a short summary of your experience working directly with clients (in a SA capacity, if relevant). 3- 4 sentence summary / a few bullet points will work.   '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_17909008004[]",
+      "label": "Guidelines for using AI in our interviewing process",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Guidelines for using AI in our interviewing process'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Acknowledged",
+          "value": 85081887004
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_17908991004[]",
+      "label": "Please share which timezone you are currently located in. ",
+      "required": true,
+      "reason": "answer_yes: no 'Yes' option among ['Eastern Time', 'Central Time', 'Mountain Time', 'Pacific Time']"
+    },
+    {
+      "id": "question_17908999004",
+      "label": "How did you initially hear about this job?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
+    },
+    {
+      "id": "question_17909000004",
+      "label": "If you chose Algolia Employee, Conference / Event / Career Fair, or Other, please specify here:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you chose Algolia Employee, Conference / Event / Career Fair, or Other, please specify here:'"
+    },
+    {
+      "id": "question_17909001004",
+      "label": "Do you have at least 3+ years prior experience directly supporting a customer’s implementation? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have at least 3+ years prior experience directly supporting a customer’s implementation? '"
+    },
+    {
+      "id": "question_17909002004",
+      "label": "Have you integrated third-party APIs or services into custom applications for clients or within your organization? \n",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Have you integrated third-party APIs or services into custom applications for clients or within your organization? \\n'"
+    },
+    {
+      "id": "question_17909003004",
+      "label": "Are you experienced in optimizing search performance, including indexing, querying, and relevance tuning, for large-scale applications? \n",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you experienced in optimizing search performance, including indexing, querying, and relevance tuning, for large-scale applications? \\n'"
+    },
+    {
+      "id": "question_17909005004",
+      "label": "If you have experience with ecommerce/ search technologies, please elaborate here. ",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you have experience with ecommerce/ search technologies, please elaborate here. '"
+    },
+    {
+      "id": "question_17909006004",
+      "label": "Are you fully proficient coding in Javascript and at least one backend language? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you fully proficient coding in Javascript and at least one backend language? '"
+    },
+    {
+      "id": "question_17909007004",
+      "label": "Please include a short summary of your experience working directly with clients (in a SA capacity, if relevant). 3- 4 sentence summary / a few bullet points will work.   ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Please include a short summary of your experience working directly with clients (in a SA capacity, if relevant). 3- 4 sentence summary / a few bullet points will work.   '"
+    },
+    {
+      "id": "question_17909008004[]",
+      "label": "Guidelines for using AI in our interviewing process",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Guidelines for using AI in our interviewing process'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_17908991004[]",
+      "label": "Please share which timezone you are currently located in. ",
+      "reason": "answer_yes: no 'Yes' option among ['Eastern Time', 'Central Time', 'Mountain Time', 'Pacific Time']"
+    },
+    {
+      "id": "question_17908999004",
+      "label": "How did you initially hear about this job?",
+      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
+    },
+    {
+      "id": "question_17909001004",
+      "label": "Do you have at least 3+ years prior experience directly supporting a customer’s implementation? ",
+      "reason": "no LABEL_RULES match for label='Do you have at least 3+ years prior experience directly supporting a customer’s implementation? '"
+    },
+    {
+      "id": "question_17909002004",
+      "label": "Have you integrated third-party APIs or services into custom applications for clients or within your organization? \n",
+      "reason": "no LABEL_RULES match for label='Have you integrated third-party APIs or services into custom applications for clients or within your organization? \\n'"
+    },
+    {
+      "id": "question_17909003004",
+      "label": "Are you experienced in optimizing search performance, including indexing, querying, and relevance tuning, for large-scale applications? \n",
+      "reason": "no LABEL_RULES match for label='Are you experienced in optimizing search performance, including indexing, querying, and relevance tuning, for large-scale applications? \\n'"
+    },
+    {
+      "id": "question_17909006004",
+      "label": "Are you fully proficient coding in Javascript and at least one backend language? ",
+      "reason": "no LABEL_RULES match for label='Are you fully proficient coding in Javascript and at least one backend language? '"
+    },
+    {
+      "id": "question_17909007004",
+      "label": "Please include a short summary of your experience working directly with clients (in a SA capacity, if relevant). 3- 4 sentence summary / a few bullet points will work.   ",
+      "reason": "no LABEL_RULES match for label='Please include a short summary of your experience working directly with clients (in a SA capacity, if relevant). 3- 4 sentence summary / a few bullet points will work.   '"
+    },
+    {
+      "id": "question_17909008004[]",
+      "label": "Guidelines for using AI in our interviewing process",
+      "reason": "no LABEL_RULES match for label='Guidelines for using AI in our interviewing process'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

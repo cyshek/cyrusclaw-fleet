@@ -1,0 +1,20 @@
+# Weekly role discovery — 14:00 UTC = 07:00 PDT
+0 14 * * 1,4 /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/weekly_run.sh
+# trading-bench: stocks tick (5 promoted strategies). Mon-Fri, 30min cadence
+# during NYSE hours (07:00-13:30 PT = 14:00-20:30 UTC). Holidays handled
+# inside runner/market_hours.py via skip_market_closed. Direct shell to
+# avoid LLM-wrapper failures.
+
+# trading-bench: hourly crypto tick (24/7).
+
+# trading-bench: daily trend-follow tick (08:10 PT).
+
+# Proof archive reconciler — every 2h, idempotent (resume+fields for every submit)
+15 */2 * * * /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/proof_archive_run.sh
+0 6 * * * /home/azureuser/.openclaw/agents/trading-bench/workspace/scripts/polymarket_daily_track.sh
+*/30 7-13 * * 1-5 /home/azureuser/.openclaw/agents/trading-bench/workspace/cron_tick.sh breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth breakout_xlk__mut_c382b1 leveraged_long_trend_paper rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo
+@reboot /home/azureuser/.openclaw/agents/making-money/workspace/build/exp2-loop/start.sh
+# Daily apply — drain open queue every day at 08:00 PDT (15:00 UTC), after Mon/Thu crawl settles
+0 7 * * * /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/daily_apply.sh >> /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/daily_apply.log 2>&1
+@reboot /home/azureuser/.openclaw/canvas/pitch-server-start.sh
+*/5 * * * * /home/azureuser/.openclaw/canvas/pitch-server-start.sh

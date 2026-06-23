@@ -250,6 +250,19 @@ _ASHBY_EXTRA_RULES = [
     ("located in the san francisco bay area", "location_ack"),
     ("located in the bay area", "location_ack"),
 
+    # --- "Are you currently located in <city>?" — asks about CURRENT residence, not willingness ---
+    # Cyrus is in Kirkland WA. NYC/LA/Chicago/Boston/Austin = No. SF/Bay Area/Seattle = location_ack (Yes).
+    # IMPORTANT: use current_location_city resolver (returns No for non-WA/non-SF cities).
+    ("are you located in new york", "current_location_city"),
+    ("located in new york city", "current_location_city"),
+    ("are you located in nyc", "current_location_city"),
+    ("located in nyc", "current_location_city"),
+    ("are you located in los angeles", "current_location_city"),
+    ("are you located in chicago", "current_location_city"),
+    ("are you located in boston", "current_location_city"),
+    ("are you located in austin", "current_location_city"),
+    ("are you currently located in", "current_location_city"),
+
     # --- City-specific commute / based-in / in-office asks ---
     # The `location_ack` resolver checks if it's a relocation-target city
     # (SF/NYC/Bay Area/Seattle) -> Yes; else -> No (Cyrus is in WA).
@@ -336,6 +349,12 @@ _ASHBY_EXTRA_RULES = [
     ("located within either eastern or pacific time", "answer_yes"),
     ("based within eastern or pacific time", "answer_yes"),
     ("eastern or pacific time in the united states", "answer_yes"),
+    # Timezone willingness — Cyrus is PST but open to east coast hours
+    ("work east coast hours", "answer_yes"),
+    ("open to working east coast hours", "answer_yes"),
+    ("able to work east coast hours", "answer_yes"),
+    ("work in eastern time", "answer_yes"),
+    ("eastern time zone hours", "answer_yes"),
     ("which timezone do you live in", "us_timezone"),
     ("which time zone do you live in", "us_timezone"),
     ("what timezone do you live in", "us_timezone"),
@@ -549,6 +568,10 @@ _ASHBY_EXTRA_RULES = [
     # "subject to any agreement (such as a non\u2011compete...)"
     ("subject to any agreement", "answer_no"),
     ("non\u2011compete", "answer_no"),  # non-breaking hyphen
+    # Domain-specific experience Cyrus doesn't have -> honest No
+    ("operational accounting experience", "answer_no"),
+    ("accounting experience", "answer_no"),
+    ("bookkeeping experience", "answer_no"),
     # ---- skill / tool proficiency -> honest INTERMEDIATE tier ----
     # Dash0 2757: "What is your skill level in kubernetes/observability?"
     ("skill level in", "proficiency_intermediate"),
@@ -700,7 +723,48 @@ _ASHBY_EXTRA_RULES = [
     ("where are you located", "city_state"),
     ("where will you work from", "city_state"),
     ("location you will be working from", "city_state"),
+
+    # --- Compensation / salary expectation ---
+    # Primer 3177 (2026-06-23): "What's the compensation you are seeking in order
+    # to make a career move?" — required String text input, falls through to
+    # needs_essay even though it's really a factual fill. Route to comp_seeking
+    # resolver which returns a standard range string.
+    ("compensation you are seeking", "comp_seeking"),
+    ("compensation are you seeking", "comp_seeking"),
+    ("desired compensation", "comp_seeking"),
+    ("expected compensation", "comp_seeking"),
+    ("salary expectations", "comp_seeking"),
+    ("salary expectation", "comp_seeking"),
+    ("expected salary", "comp_seeking"),
+    ("desired salary", "comp_seeking"),
+    ("salary range", "comp_seeking"),
+    ("what salary are you", "comp_seeking"),
+    ("what are your salary", "comp_seeking"),
+    ("what is your desired", "comp_seeking"),
+    ("target compensation", "comp_seeking"),
+    ("total compensation expectation", "comp_seeking"),
 ]
+
+
+def _r_comp_seeking(p, f):
+    # Compensation/salary expectation questions — return a market-rate range.
+    # For input_text fields, return a plain string. For ValueSelect, prefer
+    # $160k-$200k range options; fall back to second-to-last or free-text.
+    # Primer 3177 (2026-06-23): required free-text comp Q; was falling through
+    # to needs_essay and leaving the field empty -> server validation error.
+    values = f.get('values') or []
+    if values:
+        labels = [v.get('label') or '' for v in values]
+        # Prefer options spanning the $160k-$200k / $180k-$200k market range
+        for lbl in labels:
+            if ('160' in lbl and '200' in lbl) or ('180' in lbl and '200' in lbl):
+                return ('ok', lbl, f'comp_seeking: matched preferred range {lbl!r}')
+        # Fallback: second-to-last option (avoids the highest bracket)
+        if len(labels) >= 2:
+            return ('ok', labels[-2], f'comp_seeking: second-to-last option {labels[-2]!r}')
+        return ('ok', labels[0], f'comp_seeking: first option {labels[0]!r}')
+    # Free-text: return standard range string
+    return ('ok', '$160,000 - $200,000 base', 'comp_seeking: standard range for PM/TPM/SE roles')
 
 
 def _r_ever_used_product(p, f):
@@ -809,6 +873,22 @@ def _r_location_ack(p, f):
         if ll.startswith('yes') and not ll.startswith('no'):
             return ('ok', lbl, f"ashby_location_ack (US onsite never a knockout -> matched 'Yes...' {lbl!r})")
     return ('ok', 'Yes', 'ashby_location_ack (US onsite/relocation never a knockout -> Yes)')
+
+
+def _r_current_location_city(p, f):
+    # "Are you currently/located in <specific city>?" — asks about CURRENT residence,
+    # not willingness. Cyrus is in Kirkland WA. Always answer No for non-Seattle/non-WA cities.
+    # Match the 'No' option label if present; fall back to bare 'No'.
+    values = f.get('values') or []
+    for v in values:
+        lbl = (v.get('label') or '').strip()
+        if lbl.lower() == 'no':
+            return ('ok', lbl, "current_location_city: Cyrus is in Kirkland WA, not the named city -> No")
+    for v in values:
+        lbl = (v.get('label') or '').strip()
+        if lbl.lower().startswith('no'):
+            return ('ok', lbl, f"current_location_city: matched No option {lbl!r}")
+    return ('ok', 'No', 'current_location_city: Cyrus in Kirkland WA -> No')
 
 
 def _r_company_ai_rating(p, f):
@@ -990,6 +1070,8 @@ _ASHBY_EXTRA_RESOLVERS = {
     'visa_type_na': _r_visa_type_na,
     'coding_ability': _r_coding_ability,
     'location_ack': _r_location_ack,
+    'current_location_city': _r_current_location_city,
+    'comp_seeking': _r_comp_seeking,
     'company_ai_rating': _r_company_ai_rating,
     'recent_code_commit': _r_recent_code_commit,
     'customer_facing_percent': _r_customer_facing_percent,

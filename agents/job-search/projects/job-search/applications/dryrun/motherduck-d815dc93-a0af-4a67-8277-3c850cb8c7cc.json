@@ -1,0 +1,242 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/motherduck/d815dc93-a0af-4a67-8277-3c850cb8c7cc",
+  "org": "motherduck",
+  "job_id": "d815dc93-a0af-4a67-8277-3c850cb8c7cc",
+  "job_title": "Customer Engineer",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-23T06:59:21Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 11,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff__systemfield_resume"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff__systemfield_name"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_4f5db764-6736-414c-b83d-182915410b57",
+      "label": "Please specify any correct pronunciation of your name as needed",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Please specify any correct pronunciation of your name as needed'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_4f5db764-6736-414c-b83d-182915410b57"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff__systemfield_email"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_a4d34b7b-152f-48c5-8b4b-c20f233d54da",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_a4d34b7b-152f-48c5-8b4b-c20f233d54da"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_b4ee23e3-fe41-4564-a4d3-728e86a8431e",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_b4ee23e3-fe41-4564-a4d3-728e86a8431e"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_97db40c7-ec2d-4ebd-8a21-c6ec9e8e9360",
+      "label": "What are your preferred gender pronouns?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He/Him/His",
+          "value": "He/Him/His"
+        },
+        {
+          "label": "She/Her/Hers",
+          "value": "She/Her/Hers"
+        },
+        {
+          "label": "They/Them/Theirs",
+          "value": "They/Them/Theirs"
+        },
+        {
+          "label": "Ze/Hir/Hirs",
+          "value": "Ze/Hir/Hirs"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_97db40c7-ec2d-4ebd-8a21-c6ec9e8e9360"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_f07ff779-b8ec-42b8-95e4-5d01287c8b36",
+      "label": "Are you located in commuting distance to one of our hubs?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "answer_yes: no 'Yes' option among ['New York City', 'San Francisco', 'Seattle', 'No, but willing to relocate', 'No, NOT willing to relocate ']",
+      "status": "unresolved",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "New York City",
+          "value": "New York City"
+        },
+        {
+          "label": "San Francisco",
+          "value": "San Francisco"
+        },
+        {
+          "label": "Seattle",
+          "value": "Seattle"
+        },
+        {
+          "label": "No, but willing to relocate",
+          "value": "No, but willing to relocate"
+        },
+        {
+          "label": "No, NOT willing to relocate ",
+          "value": "No, NOT willing to relocate "
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_f07ff779-b8ec-42b8-95e4-5d01287c8b36"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_18617803-b1d6-4ec3-851b-3418fabf4c3c",
+      "label": "Why are you interested in applying to MotherDuck?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Motherduck because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Motherduck is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Motherduck while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Motherduck aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Motherduck')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_18617803-b1d6-4ec3-851b-3418fabf4c3c"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_6662a5b5-8bad-4984-a411-26285c67372f",
+      "label": "Are you currently eligible to work in the United States of America?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_6662a5b5-8bad-4984-a411-26285c67372f"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_e53167cb-6c4c-41f4-9b69-75cb9dede129",
+      "label": "Do you now or in the future require sponsorship to continue working in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_e53167cb-6c4c-41f4-9b69-75cb9dede129"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_4f5db764-6736-414c-b83d-182915410b57",
+      "label": "Please specify any correct pronunciation of your name as needed",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Please specify any correct pronunciation of your name as needed'"
+    },
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_f07ff779-b8ec-42b8-95e4-5d01287c8b36",
+      "label": "Are you located in commuting distance to one of our hubs?",
+      "required": true,
+      "reason": "answer_yes: no 'Yes' option among ['New York City', 'San Francisco', 'Seattle', 'No, but willing to relocate', 'No, NOT willing to relocate ']"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "1b21df28-5d0f-4e5b-bad2-80788cfa94ff_f07ff779-b8ec-42b8-95e4-5d01287c8b36",
+      "label": "Are you located in commuting distance to one of our hubs?",
+      "reason": "answer_yes: no 'Yes' option among ['New York City', 'San Francisco', 'Seattle', 'No, but willing to relocate', 'No, NOT willing to relocate ']"
+    }
+  ]
+}

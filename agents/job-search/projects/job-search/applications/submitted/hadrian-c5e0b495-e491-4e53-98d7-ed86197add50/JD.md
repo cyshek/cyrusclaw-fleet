@@ -70,6 +70,8 @@ This is the lowest to highest salary we reasonably and in good faith believe we 
 
 - Flexible vacation policy
 
+- Equity
+
 **ITAR Requirements**
 
 To conform to U.S. Government space technology export regulations, including the International Traffic in Arms Regulations (ITAR) you must be a U.S. citizen, lawful permanent resident of the U.S., protected individual as defined by 8 U.S.C. 1324b(a)(3), or eligible to obtain the required authorizations from the U.S. Department of State. Learn more about the ITAR [here](https://www.pmddtc.state.gov/?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987).

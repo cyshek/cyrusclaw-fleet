@@ -466,6 +466,7 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("discipline", "major"),
     ("gpa", "gpa"),
     ("graduation", "graduation_year"),
+    ("end date month", "graduation_month"),  # GH-Remix education end-month repeater (YipitData 2756)
     # 2026-06-04 (Samsara 2694): "What is your highest level of education?" is a
     # degree-LEVEL dropdown (not a free-text school/degree). Route to the degree
     # resolver so it picks the Bachelor's option.
@@ -488,6 +489,9 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("your time-zone", "timezone_pacific"),
 
     # --- preferences ---
+    ("minimum required yearly salary", "compensation"),
+    ("minimum required salary", "compensation"),
+    ("minimum yearly salary", "compensation"),
     ("compensation expectation", "compensation"),
     ("salary expectation", "compensation"),
     ("desired compensation", "compensation"),
@@ -574,6 +578,16 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("program you personally managed end-to-end", "customer_facing_essay"),
     ("please describe a complex", "customer_facing_essay"),
     ("how you use ai to get things done", "customer_facing_essay"),
+    ("what ai tools are you currently using", "customer_facing_essay"),
+    ("ai tools are you currently using", "customer_facing_essay"),
+    ("explain any employment gaps", "customer_facing_essay"),
+    ("employment gaps in your work history", "customer_facing_essay"),
+    ("rank the top 3 skill sets", "customer_facing_essay"),
+    ("top 3 skill sets you", "customer_facing_essay"),
+    ("describe your experience working with data", "customer_facing_essay"),
+    ("experience working with data pipelines", "customer_facing_essay"),
+    ("experience with data tools and technologies", "answer_yes"),
+    ("experience with data tools", "customer_facing_essay"),
     ("share a description explaining a solution", "customer_facing_essay"),
     ("solution you've implemented in action", "customer_facing_essay"),
     # Behavioral / "tell us about a time" program-management essays (Parloa 2750).
@@ -717,6 +731,8 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("hub locations", "willing_to_relocate"),
     ("earliest you would want to start", "earliest_start"),
     ("earliest start", "earliest_start"),
+    ("earliest joining date", "earliest_start"),
+    ("joining date", "earliest_start"),
     ("when can you start", "earliest_start"),
     ("can you start a new role", "earliest_start"),
     ("ideal start date", "earliest_start"),
@@ -863,6 +879,11 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("please review the linked document", "acknowledge_yes"),
     ("please review the document", "acknowledge_yes"),
     ("reviewed the linked", "acknowledge_yes"),
+    ("please only submit a pdf", "acknowledge_yes"),
+    ("only submit a pdf version", "acknowledge_yes"),
+    ("submitting a pdf", "acknowledge_yes"),
+    ("arrange reference calls", "acknowledge_yes"),
+    ("a final step in the hiring process is for you to arrange", "acknowledge_yes"),
     # Lyft 2026-05-22: "Please enter your relevant employment ... + Add Another link"
     # is a single-option acknowledgment ("Thank you") used to gate the form.
     ("add another employment", "acknowledge_yes"),
@@ -1016,6 +1037,8 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("five-day in-office", "answer_yes"),
     ("comfortable with this schedule", "answer_yes"),
     ("open to relocating", "willing_to_relocate"),
+    ("open to relocate", "willing_to_relocate"),
+    ("willing to relocate", "willing_to_relocate"),
     # Okta 2026-05-23: outside-business-activity disclosure — Cyrus has none, answer No.
     ("outside business activit", "answer_no"),
     # Databricks 'follow-up to negative-ITAR' question (2026-05-23). Multi-select
@@ -1658,6 +1681,7 @@ def r_major(p, f):            return _ok(p["education"]["major"], "education.maj
 def r_minor(p, f):            return _ok(p["education"].get("minor") or "", "education.minor")
 def r_gpa(p, f):              return _ok(p["education"]["gpa"], "education.gpa")
 def r_graduation_year(p, f):  return _ok(p["education"]["graduation_year"], "education.graduation_year")
+def r_graduation_month(p, f): return _ok(p["education"].get("graduation_month", "December"), "education.graduation_month")
 
 def r_not_ma_resident(p, f):
     """MA lie-detector statutory-notice select. Cyrus resides in Kirkland WA, NOT
@@ -2068,6 +2092,7 @@ RESOLVERS: dict[str, Any] = {
     "minor": r_minor,
     "gpa": r_gpa,
     "graduation_year": r_graduation_year,
+    "graduation_month": r_graduation_month,
     "compensation": r_compensation,
     "willing_to_relocate": r_willing_to_relocate,
     "willing_to_travel": r_willing_to_travel,

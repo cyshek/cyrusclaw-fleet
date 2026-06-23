@@ -1,0 +1,188 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/perplexity/f25e190e-0508-4707-b575-fcaed358dc13",
+  "org": "perplexity",
+  "job_id": "f25e190e-0508-4707-b575-fcaed358dc13",
+  "job_title": "Product Manager (Builder)",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T04:27:46Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 10,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 1,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_name"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_email"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_00fe0976-a813-426e-92fb-df070b433e5f",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015_00fe0976-a813-426e-92fb-df070b433e5f"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_resume"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015__systemfield_location"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_58e0316a-0a17-407f-b53b-ccdda089d28b",
+      "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015_58e0316a-0a17-407f-b53b-ccdda089d28b"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_c44870a9-fd51-4d0e-80e9-ec1898856786",
+      "label": "Are you able to come into the office four days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015_c44870a9-fd51-4d0e-80e9-ec1898856786"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_3db9db75-1366-4dda-bbb8-6ccbb88287d7",
+      "label": "What are the most interesting aspects of Perplexity that you are excited to work on?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015_3db9db75-1366-4dda-bbb8-6ccbb88287d7",
+      "section": "More about yourself"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_f6c35441-865f-4619-9877-5e256efc0fad",
+      "label": "How do you use AI in your day-to-day work? What are some of the underappreciated benefits and/or pain points of your favorite AI tools?",
+      "type": "textarea",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_ever_used_product (default Yes)",
+      "status": "filled",
+      "matched_rule": "ever_used_product",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015_f6c35441-865f-4619-9877-5e256efc0fad",
+      "section": "More about yourself"
+    },
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_7e00c353-5e53-4196-af48-ee212e4abe79",
+      "label": "Exercise Submission (Shared URL)",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Exercise Submission (Shared URL)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "ccbf2627-b04b-496e-bbce-6deb4409a015_7e00c353-5e53-4196-af48-ee212e4abe79",
+      "section": "Perplexity Exercise"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_7e00c353-5e53-4196-af48-ee212e4abe79",
+      "label": "Exercise Submission (Shared URL)",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Exercise Submission (Shared URL)'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "ccbf2627-b04b-496e-bbce-6deb4409a015_7e00c353-5e53-4196-af48-ee212e4abe79",
+      "label": "Exercise Submission (Shared URL)",
+      "reason": "no LABEL_RULES match for label='Exercise Submission (Shared URL)'"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing containerized workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned drill execution to a fully scalable, reproducible, self-service model.
+3. Pioneered Azure's first **proactive resilience-testing capability**, delivering a rack-level drill program in 4 months with a 94% recovery rate—surfacing critical hardware defects and establishing a new continuous-validation model across sandboxed execution environments.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, owning observability and auditable state capture across all execution phases.
+5. Built an **internal AI agent** and restructured agentic planning workflows using Python-based automation and structured logging, cutting planning cycle time by 39% and increasing drill capacity by 21% without additional headcount.
+6. Owned CI/CD pipelines and automated testing for environment configurations across drill versions, implementing drift-detection monitoring that ensured deterministic task rollouts and clean, auditable data for every resilience execution cycle.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows, conducting user demos and structured training sessions that drove utilization across 14 key Azure teams and saved **37 engineering hours monthly** through automated, reproducible developer tooling.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps and translating ambiguous specs into actionable engineering requirements within weeks.
+3. Improved data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, reducing lookup time by 83% and producing cleaner, auditable datasets for downstream ML workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation-prioritization framework, coordinating dependency mapping and rollout sequencing across 140+ engineering teams.
+2. Mobilized a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a phased roadmap to automate critical execution paths.
+3. Engineered a **Power BI observability dashboard** to track environment-level operational toil and automation gaps across 140+ teams, enabling leadership to prioritize high-leverage infrastructure investments with data-backed precision.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping container-level dependencies across 1,200+ stations, and validating deterministic rollout sequences before full deployment.
+2. Drove strategic alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, reducing environment configuration drift and accelerating the software deployment cycle by 25% across robotic execution environments.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process, ensuring reliable environment tooling for cross-functional teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end operations and managing the scoping and invoicing lifecycle for 200+ monthly proposals through a structured CRM process, reducing manual overhead and improving execution reliability.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to improve funnel instrumentation and lead-to-close visibility.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through data-driven recommendations that directly informed product and operational strategy.
+
+## Notes from the rewriter
+- 'sandboxed execution environments' and 'deterministic task rollouts' woven into microsoft_ft bullet#3 and amazon_robotics bullet#1 — mirrors JD's core environment design language.
+- 'structured logging' and 'auditable state capture' added to microsoft_ft bullet#4 — directly mirrors JD's observability/instrumentation requirements for RL training data quality.
+- 'CI/CD pipelines' and 'environment configuration drift' surfaced in microsoft_ft bullet#6 and amazon_robotics bullet#2 — matches JD's explicit ask for environment deployment reliability and version monitoring.
+- 'reproducible' and 'containerized workflows' threaded into microsoft_ft bullet#2 and amazon_robotics bullet#1 — echoes JD's containerization and reproducibility requirements for RL environments.
+- 'agentic planning workflows' and 'AI agent' in microsoft_ft bullet#5 — ties Cyrus's internal tooling work directly to JD's agentic AI evaluation and multi-step agent interaction framing.
+

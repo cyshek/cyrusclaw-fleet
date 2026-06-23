@@ -1,0 +1,24 @@
+=== GH Drain Pass 5 — 2026-06-23 ===
+
+Roles attempted: 6
+
+--- SUBMITTED (5/6) ---
+1. smartsheet-7977085     (role_id=3133) — EXIT 0 — confirmed=true — URL: https://job-boards.greenhouse.io/smartsheet/jobs/7977085/confirmation
+2. together-ai-4627491007 (role_id=3114) — EXIT 0 — confirmed=true — URL: https://job-boards.greenhouse.io/togetherai/jobs/4627491007/confirmation
+3. unframe-4870607101     (role_id=1143) — EXIT 0 — confirmed=true — URL: https://job-boards.greenhouse.io/unframe/jobs/4870607101/confirmation
+4. verkada-4140713007     (role_id=3295) — EXIT 0 — confirmed=true — URL: https://job-boards.greenhouse.io/verkada/jobs/4140713007/confirmation
+5. verkada-5069449007     (role_id=3294) — EXIT 0 — confirmed=true — URL: https://job-boards.greenhouse.io/verkada/jobs/5069449007/confirmation
+
+--- FAILED/CLOSED (1/6) ---
+6. 21shares-us-5823209004 (role_id=2314) — EXIT 0 — confirmed=false — CLOSED: job no longer open → error=true redirect
+
+--- DB updates ---
+All submitted roles: status='submitted', applied_by='auto', applied_on='2026-06-23', prep_status='submitted'
+21shares: status='closed', prep_status='closed'
+
+--- XLSX ---
+render_xlsx.py complete: Applied=904, Open=455, Manual=331, Interviews=25
+
+--- SUMMARY ---
+Submitted: 5
+Closed/failed: 1

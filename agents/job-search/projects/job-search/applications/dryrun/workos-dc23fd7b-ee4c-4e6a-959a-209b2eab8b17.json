@@ -1,0 +1,193 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/workos/dc23fd7b-ee4c-4e6a-959a-209b2eab8b17",
+  "org": "workos",
+  "job_id": "dc23fd7b-ee4c-4e6a-959a-209b2eab8b17",
+  "job_title": "Solutions Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T07:53:16Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_name"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_email"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_resume"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_6bdae251-6a0f-4c37-b020-a3f50f35825b",
+      "label": "",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=''",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_6bdae251-6a0f-4c37-b020-a3f50f35825b"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b__systemfield_location"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_bcab357a-a7ae-42f2-9267-bdca599d00ab",
+      "label": "Please describe how you've adopted AI tooling into your workflows. ",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_bcab357a-a7ae-42f2-9267-bdca599d00ab"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_57602228-77e3-4e26-9de1-7780119b4596",
+      "label": "Are you located in SF or NYC and willing to be in office 2-3 days/week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_57602228-77e3-4e26-9de1-7780119b4596"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_47715bc0-dff0-4d12-8c62-0bf7caf4c495",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_47715bc0-dff0-4d12-8c62-0bf7caf4c495",
+      "section": "Links"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_87a0baf3-fbe3-46db-a7bd-987bc74b8536",
+      "label": "Github",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_87a0baf3-fbe3-46db-a7bd-987bc74b8536",
+      "section": "Links"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_7d28ce68-ee5d-4b21-963a-bae3737f86f2",
+      "label": "Portfolio",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_7d28ce68-ee5d-4b21-963a-bae3737f86f2",
+      "section": "Links"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_b7c0094a-52f2-44f1-afcf-464e09456392",
+      "label": "Other",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Other'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e733a604-2173-4985-9209-b2c023af7b1b_b7c0094a-52f2-44f1-afcf-464e09456392",
+      "section": "Links"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_6bdae251-6a0f-4c37-b020-a3f50f35825b",
+      "label": "",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=''"
+    },
+    {
+      "id": "e733a604-2173-4985-9209-b2c023af7b1b_b7c0094a-52f2-44f1-afcf-464e09456392",
+      "label": "Other",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Other'"
+    }
+  ],
+  "blockers": []
+}

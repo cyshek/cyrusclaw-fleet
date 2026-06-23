@@ -1,0 +1,332 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/tenex/e53780d0-9e0f-46d3-9b48-c1ced327f536",
+  "org": "tenex",
+  "job_id": "e53780d0-9e0f-46d3-9b48-c1ced327f536",
+  "job_title": "Staff Forward Deployed Engineer",
+  "job_location": "Kansas City, MO SOC",
+  "fetched_at": "2026-06-22T09:50:46Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 17,
+    "filled": 15,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_name",
+      "label": "Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_name"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_email"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_bdc936bf-99cd-4546-9408-62dbe5afdba6",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_bdc936bf-99cd-4546-9408-62dbe5afdba6"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_9601b9b6-50b4-4868-8a59-9ade691872d2",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_9601b9b6-50b4-4868-8a59-9ade691872d2"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_fb90ea08-d472-49df-b085-ecdbc9deca34",
+      "label": "Will you now or in the future require sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_fb90ea08-d472-49df-b085-ecdbc9deca34"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_107d08de-803c-4713-9a53-a7c0bb9f8861",
+      "label": "If you have any questions regarding our screening process or data privacy, please review our Background Check Policy at this link. We are committed to transparency and encourage you to familiarize yourself with these guidelines before finalizing your application.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have reviewed the Background Check Policy",
+      "source": "ashby_single_option_ack (auto-checked the only option)",
+      "status": "filled",
+      "matched_rule": "background_check",
+      "options": [
+        {
+          "label": "I have reviewed the Background Check Policy",
+          "value": "I have reviewed the Background Check Policy"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_107d08de-803c-4713-9a53-a7c0bb9f8861"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_c6df7c1e-e7a4-45b5-a8dc-82d3f976a34c",
+      "label": "Linkedin Profile (www.linkedin.com/in/YOURINFO):",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_c6df7c1e-e7a4-45b5-a8dc-82d3f976a34c"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_location"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_9a754de5-0168-4b64-ab60-ef0532795009",
+      "label": "If you do not currently reside in the San Jose/San Francisco Bay Area, Kansas City Metro Area, or the Greater Tampa/Sarasota Metro Area, please select what city you would be interested in a Company assisted relocation package?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['San Jose, CA/San Franscisco Bay Area', 'Kansas City MO/Overland Park KS Metro Area', 'Greater Tampa/Sarasota, FL Metro Area', 'I am unable to relocate, I can only work remotely from the city and state where I currently reside as stated on this application.']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "San Jose, CA/San Franscisco Bay Area",
+          "value": "San Jose, CA/San Franscisco Bay Area"
+        },
+        {
+          "label": "Kansas City MO/Overland Park KS Metro Area",
+          "value": "Kansas City MO/Overland Park KS Metro Area"
+        },
+        {
+          "label": "Greater Tampa/Sarasota, FL Metro Area",
+          "value": "Greater Tampa/Sarasota, FL Metro Area"
+        },
+        {
+          "label": "I am unable to relocate, I can only work remotely from the city and state where I currently reside as stated on this application.",
+          "value": "I am unable to relocate, I can only work remotely from the city and state where I currently reside as stated on this application."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_9a754de5-0168-4b64-ab60-ef0532795009",
+      "match_attempted": true
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_909f2a2b-add3-4825-80ee-46df3bf6b202",
+      "label": "What is your current job title?",
+      "type": "input_text",
+      "required": true,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_909f2a2b-add3-4825-80ee-46df3bf6b202"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_903b2e4c-4ef6-416b-b935-9161b5b3c965",
+      "label": "Years of Experience: ",
+      "type": "input_text",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_903b2e4c-4ef6-416b-b935-9161b5b3c965"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_65d123be-4a75-46dc-a938-7180919ccb06",
+      "label": "Security Tool Experience: ",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Security Tool Experience:\\xa0'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_65d123be-4a75-46dc-a938-7180919ccb06"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_resume",
+      "label": "Upload your resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1__systemfield_resume"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_e01c843d-9da1-44ce-bfa5-57f0f1ec473f",
+      "label": "Upload your cover letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_e01c843d-9da1-44ce-bfa5-57f0f1ec473f"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_7767e275-6e01-4a75-beaa-4a46f7bbf295",
+      "label": "Desired Compensation Range:",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_7767e275-6e01-4a75-beaa-4a46f7bbf295"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_e52c1473-989b-4a5c-89af-77224fc77fe9",
+      "label": "How did you find out about this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Current Employee",
+          "value": "Current Employee"
+        },
+        {
+          "label": "Social Media",
+          "value": "Social Media"
+        },
+        {
+          "label": "Search Engine",
+          "value": "Search Engine"
+        },
+        {
+          "label": "Indeed",
+          "value": "Indeed"
+        },
+        {
+          "label": "Glassdoor",
+          "value": "Glassdoor"
+        },
+        {
+          "label": "Career Fair",
+          "value": "Career Fair"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_e52c1473-989b-4a5c-89af-77224fc77fe9"
+    },
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_999c158c-c838-4b0f-8681-6f4f8da06e2c",
+      "label": "If you were referred by a Current Employee, please list their name. If this is not applicable, please list N/A. ",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "common_form_answers.referred_by_employee (null -> blank)",
+      "status": "filled",
+      "matched_rule": "referred_by",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_999c158c-c838-4b0f-8681-6f4f8da06e2c"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_65d123be-4a75-46dc-a938-7180919ccb06",
+      "label": "Security Tool Experience: ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Security Tool Experience:\\xa0'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "e06fb7a0-860b-4c04-a3c8-9ec60e5907b1_65d123be-4a75-46dc-a938-7180919ccb06",
+      "label": "Security Tool Experience: ",
+      "reason": "no LABEL_RULES match for label='Security Tool Experience:\\xa0'"
+    }
+  ]
+}

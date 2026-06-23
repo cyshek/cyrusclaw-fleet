@@ -1,0 +1,548 @@
+[Tue Jun 23 02:12:33 UTC 2026] Starting residential Ashby drain
+residential path up: relay 127.0.0.1:18901 -> Webshare ; CDP=http://127.0.0.1:19223 ; egress=82.23.97.223
+verify the egress is residential (NOT 40.65.x Azure) before submitting.
+CDP: 
+
+[Tue Jun 23 02:12:39 UTC 2026] === airops-b52cef06-1909-4c31-865a-5882af69c177 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:40 UTC 2026] airops-b52cef06-1909-4c31-865a-5882af69c177: FAILED (rc=1)
+
+[Tue Jun 23 02:12:40 UTC 2026] === antithesis-41acb777-5f13-45e2-8dfa-19db06a186f7 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:40 UTC 2026] antithesis-41acb777-5f13-45e2-8dfa-19db06a186f7: FAILED (rc=1)
+
+[Tue Jun 23 02:12:40 UTC 2026] === baseten-2d78fdcf-53e1-45d3-a047-2aefb5ad3153 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:40 UTC 2026] baseten-2d78fdcf-53e1-45d3-a047-2aefb5ad3153: FAILED (rc=1)
+
+[Tue Jun 23 02:12:40 UTC 2026] === bobyard-bcfe67c9-5340-441f-8df9-58031be665f4 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:41 UTC 2026] bobyard-bcfe67c9-5340-441f-8df9-58031be665f4: FAILED (rc=1)
+
+[Tue Jun 23 02:12:41 UTC 2026] === cantina-labs-e980bd36-e724-4970-bd5c-27ac5d873aed ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:41 UTC 2026] cantina-labs-e980bd36-e724-4970-bd5c-27ac5d873aed: FAILED (rc=1)
+
+[Tue Jun 23 02:12:41 UTC 2026] === characterai-5aa34edd-33b0-4e46-b8ff-439b42704ccf ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:41 UTC 2026] characterai-5aa34edd-33b0-4e46-b8ff-439b42704ccf: FAILED (rc=1)
+
+[Tue Jun 23 02:12:41 UTC 2026] === elevenlabs-c35a1d78-eb1f-49b9-a575-fc85b4256ba1 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:42 UTC 2026] elevenlabs-c35a1d78-eb1f-49b9-a575-fc85b4256ba1: FAILED (rc=1)
+
+[Tue Jun 23 02:12:42 UTC 2026] === fluidstack-49b1ab6b-d27d-4002-9dbd-89938df3d5ce ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:42 UTC 2026] fluidstack-49b1ab6b-d27d-4002-9dbd-89938df3d5ce: FAILED (rc=1)
+
+[Tue Jun 23 02:12:42 UTC 2026] === fluidstack-8fd64f47-3ba3-483b-81df-9c441abe3432 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:42 UTC 2026] fluidstack-8fd64f47-3ba3-483b-81df-9c441abe3432: FAILED (rc=1)
+
+[Tue Jun 23 02:12:42 UTC 2026] === fluidstack-d6cb8be1-7470-42a3-864a-77002957b7db ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:43 UTC 2026] fluidstack-d6cb8be1-7470-42a3-864a-77002957b7db: FAILED (rc=1)
+
+[Tue Jun 23 02:12:43 UTC 2026] === h-company-c911df44-270c-42b3-9572-dc0ef5a34006 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:43 UTC 2026] h-company-c911df44-270c-42b3-9572-dc0ef5a34006: FAILED (rc=1)
+
+[Tue Jun 23 02:12:43 UTC 2026] === hadrian-c5e0b495-e491-4e53-98d7-ed86197add50 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:43 UTC 2026] hadrian-c5e0b495-e491-4e53-98d7-ed86197add50: FAILED (rc=1)
+
+[Tue Jun 23 02:12:43 UTC 2026] === handshake-bbf75e71-d855-4e52-b924-79cbe701928f ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:44 UTC 2026] handshake-bbf75e71-d855-4e52-b924-79cbe701928f: FAILED (rc=1)
+
+[Tue Jun 23 02:12:44 UTC 2026] === latent-9f1e2942-d911-47b1-a860-3a98e2e4e107 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 5 -> idx 7 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:44 UTC 2026] latent-9f1e2942-d911-47b1-a860-3a98e2e4e107: FAILED (rc=1)
+
+[Tue Jun 23 02:12:44 UTC 2026] === plaud-de70e9b7-0f95-4aae-b8fb-3339ecebb5e3 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:44 UTC 2026] plaud-de70e9b7-0f95-4aae-b8fb-3339ecebb5e3: FAILED (rc=1)
+
+[Tue Jun 23 02:12:44 UTC 2026] === profound-b076c997-0ba3-4d3c-9dc9-ad0b3ed49b05 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:45 UTC 2026] profound-b076c997-0ba3-4d3c-9dc9-ad0b3ed49b05: FAILED (rc=1)
+
+[Tue Jun 23 02:12:45 UTC 2026] === roboflow-444ee288-cb72-4751-b16d-67c27749e901 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 5 -> idx 7 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:45 UTC 2026] roboflow-444ee288-cb72-4751-b16d-67c27749e901: FAILED (rc=1)
+
+[Tue Jun 23 02:12:45 UTC 2026] === scaled-cognition-60490c44-de4d-49e9-b0d7-42ce4163382c ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 5 -> idx 7 (before captcha)
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 3742, in <module>
+    r = run_plan(plan, no_submit=no_submit, no_captcha=no_captcha)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py", line 2285, in run_plan
+    browser = pw.chromium.connect_over_cdp(CDP)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/sync_api/_generated.py", line 16686, in connect_over_cdp
+    self._sync(
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py", line 209, in connect_over_cdp
+    response = await self._channel.send_return_as_dict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.connect_over_cdp: Invalid URL
+Call log:
+  - <ws preparing> retrieving websocket url from
+
+[Tue Jun 23 02:12:45 UTC 2026] scaled-cognition-60490c44-de4d-49e9-b0d7-42ce4163382c: FAILED (rc=1)
+
+[Tue Jun 23 02:12:45 UTC 2026] RESIDENTIAL DRAIN COMPLETE: submitted=0 hard=0 failed=18
+  Open:         507
+  Applied:      845

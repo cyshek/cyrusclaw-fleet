@@ -1,0 +1,594 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/submittable/jobs/5981907004",
+  "org": "submittable",
+  "job_id": "5981907004",
+  "job_title": "Enterprise Solutions Engineer",
+  "job_location": "Remote - US",
+  "fetched_at": "2026-06-23T04:24:39Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/submittable/jobs/5981907004?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 26,
+    "filled": 14,
+    "filled_needs_review": 1,
+    "declined": 9,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_17686162004",
+      "label": "Are you currently authorized to work in the United States? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17686163004",
+      "label": "Do you now or in the future, require sponsorship to work in the United States? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_17686164004",
+      "label": "Location: please confirm the state in which you currently reside. ",
+      "type": "input_text",
+      "required": true,
+      "value": "WA",
+      "source": "address.state",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": null
+    },
+    {
+      "id": "question_17686165004",
+      "label": "Please provide your LinkedIn URL.",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_17686166004",
+      "label": "In a sentence or two, can you describe what makes you exceptional at what you do? ",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='In a sentence or two, can you describe what makes you exceptional at what you do? '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_17686167004",
+      "label": "In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_17686168004",
+      "label": "Have you reviewed the salary range listed on the job post? Is the posted range withing your expectations? \n\n(No specifics are required, and you won't be held to any specific numbers, but the more information you can provide, the better we can calibrate against the budget for this role)",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4004592004",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4026963004
+        },
+        {
+          "label": "Non-binary",
+          "value": 4026961004
+        },
+        {
+          "label": "Woman",
+          "value": 4026960004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4026959004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4026958004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4004590004",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4026955004
+        },
+        {
+          "label": "East Asian",
+          "value": 4026953004
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4026951004
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4026950004
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 4026949004
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4026948004
+        },
+        {
+          "label": "South Asian",
+          "value": 4026947004
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4026946004
+        },
+        {
+          "label": "White or European",
+          "value": 4026945004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4026944004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4026942004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4004588004",
+      "label": "How would you describe your sexual orientation? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4026939004
+        },
+        {
+          "label": "Bisexual and/or pansexual",
+          "value": 4026937004
+        },
+        {
+          "label": "Gay",
+          "value": 4026935004
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4026934004
+        },
+        {
+          "label": "Lesbian",
+          "value": 4026933004
+        },
+        {
+          "label": "Queer",
+          "value": 4026932004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4026931004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4026929004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4004587004",
+      "label": "Do you identify as transgender?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4026926004
+        },
+        {
+          "label": "No",
+          "value": 4026923004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4026922004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4026920004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4004586004",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4026917004
+        },
+        {
+          "label": "No",
+          "value": 4026916004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4026914004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4026912004
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4004584004",
+      "label": "Are you a veteran or active member of the United States Armed Forces?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 4026910004
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4026909004
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4026908004
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4026906004
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_17686166004",
+      "label": "In a sentence or two, can you describe what makes you exceptional at what you do? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='In a sentence or two, can you describe what makes you exceptional at what you do? '"
+    },
+    {
+      "id": "question_17686167004",
+      "label": "In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_17686166004",
+      "label": "In a sentence or two, can you describe what makes you exceptional at what you do? ",
+      "reason": "no LABEL_RULES match for label='In a sentence or two, can you describe what makes you exceptional at what you do? '"
+    },
+    {
+      "id": "question_17686167004",
+      "label": "In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?",
+      "reason": "no LABEL_RULES match for label='In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

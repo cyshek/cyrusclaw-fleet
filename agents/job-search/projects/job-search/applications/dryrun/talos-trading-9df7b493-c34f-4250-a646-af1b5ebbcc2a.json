@@ -1,0 +1,256 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/talos-trading/9df7b493-c34f-4250-a646-af1b5ebbcc2a",
+  "org": "talos-trading",
+  "job_id": "9df7b493-c34f-4250-a646-af1b5ebbcc2a",
+  "job_title": "Technical Solutions Engineer",
+  "job_location": "New York",
+  "fetched_at": "2026-06-23T07:47:27Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_name"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_email"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_deb43fb8-bc04-47fe-a206-478aeb1602fd",
+      "label": "Phone ",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_deb43fb8-bc04-47fe-a206-478aeb1602fd"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_resume"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c__systemfield_location"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_5799ecfb-306a-4208-9ddd-d896005a18e5",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_5799ecfb-306a-4208-9ddd-d896005a18e5"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_12e1de5f-49bb-4cd3-9d58-991934ff1bd2",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_12e1de5f-49bb-4cd3-9d58-991934ff1bd2"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_1ad55da2-addb-4e2c-b929-f916ba6f93b0",
+      "label": "Will you now or in the future require visa sponsorship for employment at Talos?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_1ad55da2-addb-4e2c-b929-f916ba6f93b0"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_c91ef29c-f101-4674-8378-66590dc9e0fd",
+      "label": "Are you legally authorized to work in the country in which the job you are applying for is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_c91ef29c-f101-4674-8378-66590dc9e0fd"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_a4ca73d4-f0de-4a62-add4-adc349619008",
+      "label": "AI Policy for Application",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "hardcoded ack of AI policy",
+      "status": "filled",
+      "matched_rule": "ai_policy_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_a4ca73d4-f0de-4a62-add4-adc349619008",
+      "section": "About You"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_7b356b30-8d92-406e-af6f-3b449cd4e84c",
+      "label": "Please confirm you have experience in the core competencies listed ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_required_ack_boolean (default Yes for consent-style)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_7b356b30-8d92-406e-af6f-3b449cd4e84c",
+      "section": "About You"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_1344959a-56af-4fe0-a73a-fe56e5c56778",
+      "label": "Talos operates on a hybrid working model, requiring three days in the office per week, with flexibility on which days you choose to come in. Please confirm you are located where the role is advertised.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_1344959a-56af-4fe0-a73a-fe56e5c56778",
+      "section": "About You"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_c2b27edc-aa94-4266-b8fc-9df822f563e4",
+      "label": "What excites you about the opportunity to join Talos?",
+      "type": "input_text",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Talos Trading because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Talos Trading is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Talos Trading while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Talos Trading aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Talos Trading')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_c2b27edc-aa94-4266-b8fc-9df822f563e4",
+      "section": "About You"
+    },
+    {
+      "id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_5861cbbf-ed2d-496e-9e8e-c558b67e5130",
+      "label": "Talos would like you to share a highlight from your experience that involved working in Capital Markets. Please walk us through one project that best demonstrates your relevant experience for this role.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "3f9147ee-8aea-4ce6-9066-cf7f9dd6ae9c_5861cbbf-ed2d-496e-9e8e-c558b67e5130",
+      "section": "About You"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

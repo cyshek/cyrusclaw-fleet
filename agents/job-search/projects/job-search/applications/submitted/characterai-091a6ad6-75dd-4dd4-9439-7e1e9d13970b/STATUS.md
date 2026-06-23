@@ -1,19 +1,17 @@
-ABORT-COVER-ANSWERS — 2026-06-22T07:26:23+00:00
+SUBMITTED
 
-role_id: 2357
-phase: cover-answers
-error:
-RuntimeError: cover_answer_generator failed (rc=1): Traceback (most recent call last):
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 564, in <module>
-    main()
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 559, in main
-    result = run(args.slug, args.max_retries)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 522, in run
-    prompt = build_prompt(jd_text, resume_text, personal_info, questions,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 357, in build_prompt
-    { "question": "<verbatim question text>", "answer": "<answer text>" },
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: Invalid format specifier ' "<verbatim question text>", "answer": "<answer text>" ' for object of type 'str'
+submitted_by: auto
+applied_on: 2026-06-22
+role_id: 3194
+submitted_at: 2026-06-22T22:47:09+00:00
+
+Runner tail:
+TTED: [('1-494a-aec9-42ca6c1002d2', 'no-container'), ('4-46b7-8b8a-c8f8cb146aa0', 'no-container')]
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
 

@@ -1,0 +1,150 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/e2b/a9ddb7bc-9cc7-43d2-8e46-9c8de4666a04",
+  "org": "e2b",
+  "job_id": "a9ddb7bc-9cc7-43d2-8e46-9c8de4666a04",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T08:40:37Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_name",
+      "label": "Full name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_name"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_email"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_resume"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_68d8b274-38cf-4015-b952-23d4f8ddf85c",
+      "label": "LinkedIn account",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_68d8b274-38cf-4015-b952-23d4f8ddf85c"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_1be09787-8a66-44b9-9fec-6e0619e3fd60",
+      "label": "GitHub account",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_1be09787-8a66-44b9-9fec-6e0619e3fd60"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_ff982fec-50fe-40b4-88d3-411a8376e0fd",
+      "label": "X (Twitter) account",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_ff982fec-50fe-40b4-88d3-411a8376e0fd"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_d69a4948-62d8-46ec-9693-11a0ef27943b",
+      "label": "Describe something impressive you've achieved or built",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_d69a4948-62d8-46ec-9693-11a0ef27943b"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_location"
+    },
+    {
+      "id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_3a10bf9b-0d98-4fcb-9fc1-990a3e363f7f",
+      "label": "Are you legally allowed to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "22ed8cd0-5027-4e56-8faf-da2c4cd53690_3a10bf9b-0d98-4fcb-9fc1-990a3e363f7f"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

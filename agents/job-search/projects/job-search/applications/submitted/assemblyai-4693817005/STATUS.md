@@ -1,6 +1,6 @@
-ABORT-JD-FETCH — 2026-06-22T03:22:40+00:00
+ABORT-JD-FETCH — 2026-06-23T04:55:03+00:00
 
-role_id: 2626
+role_id: 2443
 phase: jd-fetch
 error:
 HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/assemblyai/jobs/4693817005

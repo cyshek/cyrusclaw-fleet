@@ -1,9 +1,15 @@
-PREP-READY — 2026-06-21T09:13:39+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-22
 role_id: 1959
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-encord-9f97576a-5381-4839-a7cf-ebfa82089a63.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/encord-9f97576a-5381-4839-a7cf-ebfa82089a63/Cyrus_Shekari_Resume_ashby-encord_9f97576a_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/encord-9f97576a-5381-4839-a7cf-ebfa82089a63/cover_answers.md
+submitted_at: 2026-06-22T23:01:13+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+stemfield_name', '-941a-834e3ef3c536', '_systemfield_email', '-b719-cf3f2dc86809', '-877c-ff22cc21b1c3', '-98ab-fddc44790580']
+[runner] last-ms no-bounce text commit: 7 field(s), stable=True
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

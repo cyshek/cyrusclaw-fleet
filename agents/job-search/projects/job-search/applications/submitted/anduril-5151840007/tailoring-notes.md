@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. **Scaled Azure's logistics-equivalent recovery validation program** from a 2-person operation into a platformized system, standardizing SOPs and workflows to sustain 45+ annual resilience drills with **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 deployment** of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating dependencies across 6+ stakeholder teams.
+4. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous validation framework.
+5. Built an internal AI agent and restructured planning workflows, reducing planning cycle time by **39%** and increasing deployment capacity by 21% — directly enabling team scale without headcount growth.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven workflows across **14 cross-functional teams**, conducting user demos and training sessions that saved 37 engineering hours monthly and accelerated deployment of new tooling.
+2. Drove roadmap prioritization by facilitating **11+ stakeholder interviews** with Azure service teams to surface critical feature gaps, directly influencing the addition of intent-based YAML generation to the product backlog.
+3. Improved **field-operations data reliability** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search platform, cutting lookup time by 83% across program teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams — driving operational excellence at scale.
+2. Identified **81 hours of manual toil per region launch** through discovery with 20+ service teams and built a roadmap to automate critical deployment paths, directly reducing inefficiencies across the logistics execution pipeline.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact sustainment improvements with full transparency.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating execution across IT, Operations, and Engineering.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority deployment tickets** and stabilize the developer intake process across a fast-paced, multi-disciplinary program.
+3. Drove cross-functional alignment to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing field installation risk across the robotics fleet.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, standardizing the CRM process to improve deployment consistency and customer-facing throughput.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web and search channels to support scalable field operations growth.
+3. Identified and sealed **margin leaks** by conducting financial profitability analysis across 1,000+ project records, delivering data-driven pricing recommendations that improved leadership's operational budgeting accuracy.
+
+## Notes from the rewriter
+- Wove 'operational toil' and 'SOPs / operational excellence' (JD: 'Develop and refine SOPs') into microsoft_ft bullet 1 and microsoft_2022 bullet 2.
+- Used 'deployment capacity,' 'field installation risk,' and 'sustainment' (JD: 'post-deployment sustainment,' 'field operations') in microsoft_ft bullet 5 and amazon_robotics bullet 3.
+- Mirrored 'cross-functional stakeholder coordination,' 'dependencies,' and 'transparency' (JD: 'Maintain clear communication with internal teams and external stakeholders') in microsoft_ft bullet 3 and amazon_robotics bullet 1.
+- Echoed 'continuous improvement,' 'reduce inefficiencies,' and 'reliability' (JD: 'drive continuous improvement initiatives to reduce costs, eliminate inefficiencies') in microsoft_2022 bullet 2 and pro_painters bullet 3.
+- Dropped one lower-value bullet per capped role to meet page-fit constraint while preserving all quantified, JD-aligned substance.
+

@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Architected Azure's recovery validation **program infrastructure from scratch**, scaling a 2-person operation into a platformized system with standardized workflows sustaining 45+ annual drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 build of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and shifted execution to a scalable, team-owned model across multiple workstreams.
+3. Drove executive operating cadence across 14 cross-org recovery executions, synthesizing multi-team status into **decision-ready updates** for senior leadership and serving as bridge lead on a sovereign-cloud isolation test tied to a $1.5B+ enterprise contract.
+4. Coordinated shared MLE and engineering capacity across parallel workstreams, mapping cross-team dependencies and surfacing **scheduling conflicts early** to drive prioritization decisions with relevant leads before risks became blockers.
+5. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** at a 94% recovery rate by aligning Product, Engineering, and Finance stakeholders who held competing priorities across org boundaries.
+6. Built an internal **AI agent for drill planning**, restructuring automation workflows to cut planning cycle time by 39% and increase program capacity by 21%, directly expanding the portfolio of workstreams the team could execute simultaneously.
+7. Established milestone tracking, status reporting templates, and cross-functional dependency maps for a nascent, evolving program, giving leadership **clear signal** on progress and enabling faster prioritization across a growing AI-product portfolio.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **AI/ML product adoption** across 14 Azure engineering teams by leading user demos and structured training on AI-powered code generation workflows, saving 37 engineering hours monthly and building cross-functional credibility without a direct reporting mandate.
+2. Shaped the **product roadmap** by facilitating 11+ discovery interviews with Azure service teams, identifying critical feature gaps and securing stakeholder alignment to prioritize intent-based YAML generation as a net-new capability.
+3. Improved program-wide data integrity by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83% and enabling faster, more reliable cross-team information sharing.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and cut region launch timelines by 28% by driving cross-functional alignment on a unified automation prioritization framework across 140+ teams with competing priorities and no shared reporting structure.
+2. Built a program strategy to eliminate operational toil during region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and constructing a roadmap to automate the highest-impact execution paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership the visibility infrastructure needed to identify automation gaps and make data-driven prioritization decisions across a complex, multi-team program.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the legacy OS migration program strategy, mapping dependencies across 1,200+ stations, and coordinating execution across IT, Operations, and Engineering without a unified reporting line.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, managing **cross-team backlog prioritization** to resolve 40+ high-priority tickets and stabilize the developer intake process across parallel workstreams.
+3. Aligned IT, Operations, and Engineering leads to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% by building influence across functions with different priorities and driving a shared execution cadence.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, building CRM-based program infrastructure from scratch that standardized cross-functional execution across sales and operations.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, aligning stakeholders across web, sales, and ops functions who each held different priorities and success metrics.
+3. Improved leadership **pricing decisions** by conducting financial profitability analysis across 1,000+ project records, synthesizing messy multi-source data into clear, decision-ready insights that identified and sealed margin leaks.
+
+## Notes from the rewriter
+- 'program infrastructure from scratch' (JD: 'build the program infrastructure from scratch') woven into microsoft_ft bullet#1 and bullet#7, and pro_painters bullet#1.
+- 'decision-ready updates' and 'executive operating cadence' (JD: 'Drive the executive operating cadence, synthesising status into clear signal') woven into microsoft_ft bullet#3 and pro_painters bullet#3.
+- 'shared MLE and engineering capacity' and 'scheduling conflicts early' (JD: 'Coordinate shared resources (particularly MLE and PD capacity)... identifying scheduling conflicts') woven into microsoft_ft bullet#4.
+- 'cross-team dependency mapping' and 'workstreams' (JD: 'dependency mapping, across a program that is nascent and evolving') woven into microsoft_ft bullet#7 and amazon_robotics bullet#1.
+- 'influence without authority' and 'competing priorities' (JD: 'Cross-functional influence without authority... Finance, GTM, and engineering leads who all had different priorities') woven into microsoft_2022 bullet#1 and pro_painters bullet#2.
+- 'AI/ML product development fluency' (JD: 'Fluency with AI/ML product development') surfaced in microsoft_2023 bullet#1 and microsoft_ft bullet#6 via AI agent and LLM tooling context.
+

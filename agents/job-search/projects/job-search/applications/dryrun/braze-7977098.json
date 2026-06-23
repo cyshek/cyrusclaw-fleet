@@ -1,0 +1,568 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/braze/jobs/7977098",
+  "org": "braze",
+  "job_id": "7977098",
+  "job_title": "Solutions Engineer, Security & Privacy",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-23T03:56:19Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/braze/jobs/7977098?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 22,
+    "filled": 12,
+    "filled_needs_review": 1,
+    "declined": 7,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_67361100",
+      "label": "How did you initially hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='How did you initially hear about this job?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Advertising",
+          "value": 726504199
+        },
+        {
+          "label": "Black Tech Sales Network",
+          "value": 726504201
+        },
+        {
+          "label": "Blind",
+          "value": 726504203
+        },
+        {
+          "label": "Built In",
+          "value": 726504204
+        },
+        {
+          "label": "Braze Careers Page",
+          "value": 726504205
+        },
+        {
+          "label": "Braze Employee",
+          "value": 726504206
+        },
+        {
+          "label": "Conference, Event or Career Fair",
+          "value": 726504209
+        },
+        {
+          "label": "Glassdoor",
+          "value": 726504210
+        },
+        {
+          "label": "Great Place To Work",
+          "value": 726504212
+        },
+        {
+          "label": "Indeed",
+          "value": 726504214
+        },
+        {
+          "label": "LinkedIn",
+          "value": 726504215
+        },
+        {
+          "label": "MyGwork",
+          "value": 726504216
+        },
+        {
+          "label": "Otta/Welcome To The Jungle",
+          "value": 726504218
+        },
+        {
+          "label": "Social Media",
+          "value": 726504219
+        },
+        {
+          "label": "Tribaja",
+          "value": 726504220
+        },
+        {
+          "label": "Undelucram.ro",
+          "value": 726504221
+        },
+        {
+          "label": "Women In Sales Everywhere",
+          "value": 726504222
+        },
+        {
+          "label": "Other",
+          "value": 726504223
+        }
+      ]
+    },
+    {
+      "id": "question_67361101",
+      "label": "If you chose Braze Employee, Conference / Event / Career Fair, or Other, please specify here:",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you chose Braze Employee, Conference / Event / Career Fair, or Other, please specify here:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_67361102",
+      "label": "Are you legally authorized to work in the country where this job is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67361103",
+      "label": "Will you now or in the future require visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67361104",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67361105",
+      "label": "Will you be able to regularly commute and work in an office in job posting location?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_29814",
+      "label": "Voluntary Self-Identification of Race/Ethnicity (Check all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian/Alaska Native",
+          "value": 181790
+        },
+        {
+          "label": "Asian/Asian American/Asian British (Bangladeshi/Chinese/Indian/Malay/Pakistani/Peranakan)",
+          "value": 181791
+        },
+        {
+          "label": "Black/African American/Black British",
+          "value": 181792
+        },
+        {
+          "label": "Latina/Latino/Latinx",
+          "value": 181793
+        },
+        {
+          "label": "Native Hawaiian/Other Pacific Islander",
+          "value": 181794
+        },
+        {
+          "label": "White",
+          "value": 181795
+        },
+        {
+          "label": "Other",
+          "value": 181796
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181797
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_29815",
+      "label": "Voluntary Self-Identification of Gender and Gender Identity (Select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Agender",
+          "value": 181798
+        },
+        {
+          "label": "Bigender",
+          "value": 181799
+        },
+        {
+          "label": "Female",
+          "value": 181800
+        },
+        {
+          "label": "Genderfluid",
+          "value": 181801
+        },
+        {
+          "label": "Genderqueer",
+          "value": 181802
+        },
+        {
+          "label": "Male",
+          "value": 181803
+        },
+        {
+          "label": "Nonbinary",
+          "value": 181804
+        },
+        {
+          "label": "Transgender",
+          "value": 181805
+        },
+        {
+          "label": "Transgender-Female",
+          "value": 181806
+        },
+        {
+          "label": "Transgender-Male",
+          "value": 181807
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181808
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_29816",
+      "label": "Voluntary Self-Identification of Veteran Status (Select one)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "  I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERAN LISTED BELOW",
+          "value": 181809
+        },
+        {
+          "label": "I AM NOT A PROTECTED VETERAN",
+          "value": 181810
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 181811
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67361100",
+      "label": "How did you initially hear about this job?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
+    },
+    {
+      "id": "question_67361101",
+      "label": "If you chose Braze Employee, Conference / Event / Career Fair, or Other, please specify here:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you chose Braze Employee, Conference / Event / Career Fair, or Other, please specify here:'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67361100",
+      "label": "How did you initially hear about this job?",
+      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

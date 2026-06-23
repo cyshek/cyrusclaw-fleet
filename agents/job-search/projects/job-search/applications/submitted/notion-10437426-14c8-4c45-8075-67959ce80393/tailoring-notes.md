@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable delivery model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new standard for continuous validation at enterprise scale.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud **network isolation test** tied to a $1.5B+ enterprise contract requiring deep stakeholder alignment across engineering and business teams.
+5. Built and deployed an **internal AI agent** for drill planning, restructuring automation workflows to cut planning cycle time by 39% and increase drill capacity by 21% — directly mirroring agentic deployment patterns used in customer-facing implementations.
+6. Designed and operated feedback loops between field execution and Engineering, translating real-world implementation failures into actionable technical requirements that directly influenced Azure's resilience platform roadmap and internal tooling improvements.
+7. Developed foundational **discovery frameworks** and scoping artifacts that standardized how the team sizes, validates, and executes complex multi-customer engagements, reducing ramp time for new programs and enabling consistent delivery at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **production adoption** of AI-driven code generation workflows, running technical demos and hands-on training sessions that drove utilization across 14 Azure service teams and saved **37 engineering hours** monthly in customer-facing delivery contexts.
+2. Influenced the product roadmap to include intent-based YAML generation by conducting **11+ technical discovery interviews** with Azure service teams, surfacing critical feature gaps and translating customer implementation pain into prioritized engineering requirements.
+3. Improved data integration quality and retrieval speed by enforcing rigorous metadata standards and **migrating documentation** to an AI-powered semantic search tool, cutting lookup time by 83% and establishing a repeatable standard for knowledge management.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating discovery and buy-in across 140+ service teams through structured technical engagements.
+2. Conducted deep **technical discovery** with 20+ service teams to surface 81 hours of manual effort per region launch, then built a delivery roadmap to automate critical execution paths — mirroring the end-to-end scoping and solution design work central to enterprise FDE engagements.
+3. Engineered a **Power BI data pipeline** and dashboard to track operational toil across 140+ teams, giving leadership real-time visibility into automation gaps and enabling data-driven prioritization of high-impact implementation improvements.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning end-to-end migration strategy for a legacy OS transition, mapping dependencies across 1,200+ stations and coordinating phased deployment with cross-functional engineering and operations stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing 40+ high-priority tickets** to stabilize the developer intake process and accelerate delivery timelines across a distributed engineering team.
+3. Drove alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable integration model that reduced manual handoffs across teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM workflow that standardized requirements gathering and improved conversion through consistent customer engagement.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to align messaging with target customer needs and drive qualified inbound volume.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records to identify margin leaks, translating raw operational data into actionable recommendations that shaped pricing strategy and delivery scoping practices.
+
+## Notes from the rewriter
+- 'agentic deployment' woven into microsoft_ft bullet#5 — directly mirrors JD phrase 'production AI/agentic deployments' and positions the internal AI agent as FDE-relevant work
+- 'technical discovery' used in microsoft_2022 bullet#2 and microsoft_2023 bullet#2 — mirrors JD requirement 'deep technical discovery, requirements gathering' and 'discovery frameworks'
+- 'feedback loops with Engineering / roadmap influence' placed in microsoft_ft bullet#6 — directly echoes JD language 'feedback loops with Product, CX, and Engineering' and 'influence Notion's Product Roadmap'
+- 'discovery frameworks and scoping artifacts' in microsoft_ft bullet#7 — mirrors JD's 'foundational discovery frameworks, technical standards' and 'repeatable methodologies, scoping artifacts'
+- 'end-to-end scoping and solution design' in microsoft_2022 bullet#2 — mirrors JD phrase 'end to end implementation' and 'migration scoping, feasibility analysis'
+

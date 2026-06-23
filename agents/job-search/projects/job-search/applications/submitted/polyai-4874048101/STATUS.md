@@ -1,0 +1,6 @@
+ABORT-BULLET-REWRITER — 2026-06-23T02:50:38+00:00
+
+role_id: 3226
+phase: bullet-rewriter
+error:
+TimeoutExpired: Command '['/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/bin/python', '/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/bullet_rewriter.py', '--org', 'polyai', '--job-id', '4874048101', '--render', '--max-loops', '3']' timed out after 360 seconds

@@ -1,0 +1,496 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/doordashusa/jobs/7993015",
+  "org": "doordashusa",
+  "job_id": "7993015",
+  "job_title": "Product Manager, In-Store",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-06-23T08:00:36Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs/7993015?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 24,
+    "filled": 16,
+    "filled_needs_review": 1,
+    "declined": 6,
+    "unresolved": 1,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67497349",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67497350",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67497351",
+      "label": "Will you now require immigration sponsorship by our company to attain or maintain your employment eligibility (e.g., H-1B, E-3, TN, O-1, STEM OPT, or any immigration work authorization requiring a written submission from the company to a government agency)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67497352",
+      "label": "Will you in the future require immigration require immigration sponsorship by our company to attain or maintain your employment eligibility (e.g., H-1B, E-3, TN, O-1, STEM OPT, or any immigration work authorization requiring a written submission from the company to a government agency)? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67497353",
+      "label": "Have you worked at DoorDash?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have not worked at DoorDash",
+      "source": "worked_at_company_before (matched 'i have not worked' -> 'I have not worked at DoorDash')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "I am a previous employee",
+          "value": 727262180
+        },
+        {
+          "label": "I am a previous contractor",
+          "value": 727262181
+        },
+        {
+          "label": "I am a previous DoorDash Dasher",
+          "value": 727262182
+        },
+        {
+          "label": "I am a current contractor",
+          "value": 727262183
+        },
+        {
+          "label": "I am a current DoorDash Dasher",
+          "value": 727262184
+        },
+        {
+          "label": "I am a current DoorDash employee",
+          "value": 727262185
+        },
+        {
+          "label": "I have not worked at DoorDash",
+          "value": 727262186
+        }
+      ]
+    },
+    {
+      "id": "question_67497354",
+      "label": "Applicant Privacy Acknowledgement ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Applicant Privacy Acknowledgement '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67497355",
+      "label": "Would you like to receive communications via SMS and/or WhatsApp to the number provided [above or during the application process] about your application process? \n\nMessage & data rates may apply and message frequency may vary. If you select no, we will only communicate with you via email and/or telephone calls. If you select yes and change your mind, you can always reply STOP to opt out.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email | NOTE: 'cyshekari@gmail.com' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "email",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_864",
+      "label": "Gender",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 4653
+        },
+        {
+          "label": "Female",
+          "value": 4654
+        },
+        {
+          "label": "Non-binary",
+          "value": 4655
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4660
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1328",
+      "label": "Do you identify as transgender?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 7470
+        },
+        {
+          "label": "No",
+          "value": 7471
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7472
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1332",
+      "label": "Are you Hispanic or Latinx?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 7496
+        },
+        {
+          "label": "No",
+          "value": 7497
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7498
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1333",
+      "label": "Race (*Please select one option that best describes how you identify*)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaska Native",
+          "value": 7499
+        },
+        {
+          "label": "Asian",
+          "value": 7500
+        },
+        {
+          "label": "Black or African American",
+          "value": 7501
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 7503
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 7505
+        },
+        {
+          "label": "Two or more races",
+          "value": 7508
+        },
+        {
+          "label": "White",
+          "value": 7509
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7510
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1336",
+      "label": "Protected Veteran Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am one or more of the classifications of protected veterans",
+          "value": 7529
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": 7530
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7531
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1337",
+      "label": "Disability Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have (or have previously had) a disability",
+          "value": 7532
+        },
+        {
+          "label": "No, I don’t have a disability",
+          "value": 7533
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 7534
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67497354",
+      "label": "Applicant Privacy Acknowledgement ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Applicant Privacy Acknowledgement '"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67497354",
+      "label": "Applicant Privacy Acknowledgement ",
+      "reason": "no LABEL_RULES match for label='Applicant Privacy Acknowledgement '"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

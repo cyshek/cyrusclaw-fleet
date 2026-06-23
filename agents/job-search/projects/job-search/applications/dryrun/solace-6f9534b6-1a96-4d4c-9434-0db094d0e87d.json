@@ -1,0 +1,175 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/solace/6f9534b6-1a96-4d4c-9434-0db094d0e87d",
+  "org": "solace",
+  "job_id": "6f9534b6-1a96-4d4c-9434-0db094d0e87d",
+  "job_title": "Growth Product Manager",
+  "job_location": "United States",
+  "fetched_at": "2026-06-23T05:14:38Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9__systemfield_name"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9__systemfield_email"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9__systemfield_resume"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_b1cd369d-207a-4db3-8243-568806d33bb6",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_b1cd369d-207a-4db3-8243-568806d33bb6"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_b6bb0867-378f-4ab5-a7d7-c61494346d08",
+      "label": "Will you require Solace to sponsor you for a work permit, either now or in the future, to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_b6bb0867-378f-4ab5-a7d7-c61494346d08"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_fa6d926f-de4c-4f88-a148-534485d34739",
+      "label": "Why does Solace's mission resonate with you?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Solace because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Solace is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Solace while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Solace aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Solace')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_fa6d926f-de4c-4f88-a148-534485d34739"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_f17fd683-381c-421f-867b-59aa0141101f",
+      "label": "Do you have experience with Webflow or another A/B testing platform?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_f17fd683-381c-421f-867b-59aa0141101f"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_a25086fb-88ac-4b22-8eef-ef0c173eb947",
+      "label": "If yes, please explain your experience with Webflow or other A/B testing platforms.",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please explain your experience with Webflow or other A/B testing platforms.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_a25086fb-88ac-4b22-8eef-ef0c173eb947"
+    },
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_0dafdb9b-3804-4ede-bf60-4fd988f72951",
+      "label": "Record a video describing why you're the best person for this position. Keep the length under one minute and include a link in your answer below.",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Solace because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Solace is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Solace while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Solace aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Solace')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_0dafdb9b-3804-4ede-bf60-4fd988f72951"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "8c9ed646-c88b-454a-9bf0-659fce4066b9_a25086fb-88ac-4b22-8eef-ef0c173eb947",
+      "label": "If yes, please explain your experience with Webflow or other A/B testing platforms.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please explain your experience with Webflow or other A/B testing platforms.'"
+    }
+  ],
+  "blockers": []
+}

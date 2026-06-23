@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned the **research roadmap** for Azure's resilience validation platform, defining model requirements and evaluation systems that standardized workflows across 45+ annual drills and drove **$14M+ enterprise impact**.
+2. Led 0→1 development of an internal Resilience Automation Platform, scoping self-service scheduling and agent architecture requirements that **reduced operational toil by 30%** and scaled execution without headcount growth.
+3. Built an **AI agent** for drill planning by translating research team needs into clear model requirements, partnering with engineering to ship the tool and cut planning cycle time by 39% while increasing drill capacity by 21%.
+4. Directed 14 cross-org recovery executions under executive visibility, including a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, interfacing across infra, engineering, and GTM partners.
+5. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a **94% recovery rate** in 4 months by surfacing critical hardware defects and establishing a new continuous validation model.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **AI agent adoption** across 14 Azure service teams by leading user demos and training sessions for AI-driven code generation workflows, saving 37 engineering hours monthly and validating product-market fit.
+2. Shaped the **research roadmap** by conducting 11+ in-depth customer interviews with Azure service teams to surface critical feature gaps, directly influencing prioritization of intent-based YAML generation capabilities.
+3. Improved **evaluation pipeline** integrity by implementing metadata standards and migrating documentation to an AI-powered semantic search system, cutting information retrieval time by 83% across the research org.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering and operations teams.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths — directly mirroring research-to-requirements translation for complex systems.
+3. Built a **Power BI evaluation dashboard** to surface automation gaps and prioritize high-impact support across 140+ teams, enabling leadership to make data-driven roadmap decisions with full operational visibility.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the **migration strategy and model requirements** for a 2,000+ unit legacy OS transition, mapping dependencies across 1,200+ stations and achieving zero operational downtime through rigorous evaluation and planning.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to ship **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% in a fast-paced, high-velocity engineering environment.
+3. Facilitated Agile ceremonies and owned backlog prioritization, resolving **40+ high-priority tickets** to stabilize the developer intake process and maintain execution rigor during a complex platform migration.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end scoping and proposal lifecycle for 200+ monthly customer engagements, implementing a new CRM process that improved conversion and operational efficiency.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-driven go-to-market strategy, optimizing digital channels to better match customer needs with service offerings.
+3. Improved leadership pricing models by conducting **profitability analysis** across 1,000+ project records to identify margin leaks — applying the same customer-problem-to-requirements translation central to research PM work.
+
+## Notes from the rewriter
+- JD term 'research roadmap' woven into microsoft_ft bullet 1 and microsoft_2023 bullet 2 — directly mirrors the role's core ownership of Decagon's Research team roadmap.
+- JD term 'model requirements' used in microsoft_ft bullet 1 and amazon_robotics bullet 1 — reflects the JD's explicit ask to 'translate customer problems into clear model requirements.'
+- JD term 'evaluation systems / eval pipelines' woven into microsoft_ft bullet 1 and microsoft_2023 bullet 3 — maps to Decagon's focus on model evaluation and experimentation infrastructure.
+- JD term 'AI agent' used in microsoft_ft bullet 3 and microsoft_2023 bullet 1 — surfaces direct experience building and driving adoption of AI agents, Decagon's core product area.
+- JD phrase 'fast-paced environments' echoed in amazon_robotics bullet 2 with 'high-velocity engineering environment' to satisfy the shipping-velocity signal hiring managers scan for.
+

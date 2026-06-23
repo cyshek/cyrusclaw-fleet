@@ -27,7 +27,8 @@ DECLINES = ["Decline to self-identify","Decline To Self Identify","Decline to se
             "Prefer not to disclose","Do not wish to answer","Do not want to answer"]
 
 DEMO_SKIP_RE = (r"gender|\bsex\b|race|ethnic|hispanic|latin|veteran|military.{0,8}status|"
-               r"disabilit|self[- ]?identif|pronoun|sexual.{0,5}orient|lgbtq")
+               r"disabilit|self[- ]?identif|pronoun|sexual.{0,5}orient|lgbtq|"
+               r"identify.{0,10}as|sexual.{0,5}orientation")
 
 # Affirmative-consent synonyms. A required select whose options are ALL
 # affirmative (or whose sole non-placeholder option is affirmative) is a
@@ -348,7 +349,17 @@ def plan_location_typeahead_spec(plan):
     for d in staged:
         if isinstance(d, dict) and d.get("id") == "candidate-location":
             return None
-    return {"id": "candidate-location", "label": str(loc).strip()}
+    label = str(loc).strip()
+    # Some tenant typeaheads don't have granular suburb entries. Normalise
+    # known Kirkland/Bellevue/Redmond suburbs -> Seattle metro for those forms.
+    _LOC_NORMALIZE = {
+        "kirkland, wa": "Seattle, WA",
+        "kirkland, washington": "Seattle, WA",
+        "bellevue, wa": "Seattle, WA",
+        "redmond, wa": "Seattle, WA",
+    }
+    label = _LOC_NORMALIZE.get(label.lower(), label)
+    return {"id": "candidate-location", "label": label}
 
 
 _MONTHS = ("January", "February", "March", "April", "May", "June", "July",
@@ -1158,7 +1169,10 @@ def main():
             final_host = ''
         gh_hosts = ('greenhouse.io', 'job-boards.greenhouse.io', 'boards.greenhouse.io')
         empties = (result.get('preSubmitState', {}) or {}).get('emptyRequired')
-        no_empties = (empties == [] or empties is None)
+        # Filter phantom empty-string labels (e.g. Chime/YipitData GH Remix renders
+        # a blank-label required widget that clears on submit; treat as non-blocking).
+        real_empties = [e for e in (empties or []) if e and e.strip()]
+        no_empties = (real_empties == [] or empties is None)
         if final_host and not any(h in final_host for h in gh_hosts) and no_empties:
             # left the GH domain with nothing blocking on our side -> wrapper bounce
             result['status'] = 'hosted-flow-bounce'
@@ -1169,7 +1183,12 @@ def main():
     return 0
 
 # ---- JS blobs ----
-SEL_PICK = """async (specs)=>{const sleep=ms=>new Promise(r=>setTimeout(r,ms));const fire=(el,t,x,y)=>el.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window,button:0,clientX:x||0,clientY:y||0}));const out=[];for(const{id,label}of specs){const inp=document.getElementById(id);if(!inp){out.push({id,err:'noinput'});continue;}const ctrl=inp.closest('.select__control');if(!ctrl){out.push({id,err:'noctrl'});continue;}ctrl.scrollIntoView({block:'center'});await sleep(100);const r=ctrl.getBoundingClientRect();fire(ctrl,'mousedown',r.left+5,r.top+5);fire(ctrl,'mouseup',r.left+5,r.top+5);fire(ctrl,'click',r.left+5,r.top+5);await sleep(320);let opts=[];const menu=document.querySelector('.select__menu');if(menu)opts=[...menu.querySelectorAll('.select__option,[role=option]')];if(!opts.length)opts=[...document.querySelectorAll('.select__option,[role=option]')];const wl=String(label).toLowerCase();let t=opts.find(o=>o.textContent.trim()===label)||opts.find(o=>o.textContent.trim().toLowerCase()===wl)||opts.find(o=>o.textContent.trim().toLowerCase().startsWith(wl))||opts.find(o=>o.textContent.toLowerCase().includes(wl));if(!t){out.push({id,err:'noopt',avail:opts.map(o=>o.textContent.trim()).slice(0,10)});fire(document.body,'mousedown',0,0);continue;}const tr=t.getBoundingClientRect();fire(t,'mousedown',tr.left+5,tr.top+5);fire(t,'mouseup',tr.left+5,tr.top+5);fire(t,'click',tr.left+5,tr.top+5);await sleep(200);const sv=ctrl.querySelector('.select__single-value');out.push({id,want:label,got:sv?sv.textContent:null});}return out;}"""
+# 2026-06-23: scoped menu lookup — use ctrl.closest('.select__container') or
+# ctrl.parentElement chain to find the menu that belongs to THIS control,
+# not the first .select__menu in the document (which may be a phone-country
+# dropdown or another control's open menu). Fall back to document-wide only
+# if scoped lookup yields nothing.
+SEL_PICK = """async (specs)=>{const sleep=ms=>new Promise(r=>setTimeout(r,ms));const fire=(el,t,x,y)=>el.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window,button:0,clientX:x||0,clientY:y||0}));const scopedMenu=(ctrl)=>{const c=ctrl.closest('.select__container,.select-container,[class*="select__wrapper"],[class*="selectWrapper"]');if(c){const m=c.querySelector('.select__menu');if(m)return m;}let n=ctrl.parentElement;for(let i=0;i<4&&n;i++,n=n.parentElement){const m=n.querySelector('.select__menu');if(m&&m!==ctrl)return m;}return null;};const out=[];for(const{id,label}of specs){const inp=document.getElementById(id);if(!inp){out.push({id,err:'noinput'});continue;}const ctrl=inp.closest('.select__control');if(!ctrl){out.push({id,err:'noctrl'});continue;}ctrl.scrollIntoView({block:'center'});await sleep(100);const r=ctrl.getBoundingClientRect();fire(ctrl,'mousedown',r.left+5,r.top+5);fire(ctrl,'mouseup',r.left+5,r.top+5);fire(ctrl,'click',r.left+5,r.top+5);await sleep(320);let opts=[];const menu=scopedMenu(ctrl)||document.querySelector('.select__menu');if(menu)opts=[...menu.querySelectorAll('.select__option,[role=option]')];if(!opts.length)opts=[...document.querySelectorAll('.select__option,[role=option]')];const wl=String(label).toLowerCase();let t=opts.find(o=>o.textContent.trim()===label)||opts.find(o=>o.textContent.trim().toLowerCase()===wl)||opts.find(o=>o.textContent.trim().toLowerCase().startsWith(wl))||opts.find(o=>o.textContent.toLowerCase().includes(wl));if(!t){out.push({id,err:'noopt',avail:opts.map(o=>o.textContent.trim()).slice(0,10)});fire(document.body,'mousedown',0,0);continue;}const tr=t.getBoundingClientRect();fire(t,'mousedown',tr.left+5,tr.top+5);fire(t,'mouseup',tr.left+5,tr.top+5);fire(t,'click',tr.left+5,tr.top+5);await sleep(200);const sv=ctrl.querySelector('.select__single-value');out.push({id,want:label,got:sv?sv.textContent:null});}return out;}"""
 
 # GH-Remix WORK-HISTORY repeater fill (Zuora 2755 cohort, 2026-06-09). Ticks the
 # 'Current role' checkbox (trusted native click + React change event) so the
@@ -1206,7 +1225,7 @@ SEL_TYPEAHEAD = """async (specs)=>{const sleep=ms=>new Promise(r=>setTimeout(r,m
 
 PHONE_ITI = """async ({id,country,digits})=>{const sleep=ms=>new Promise(r=>setTimeout(r,ms));const setN=(el,v)=>{const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');d.set.call(el,v);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));};const inp=document.getElementById(id);if(!inp)return{err:'nophone'};const iti=inp.closest('.iti');if(iti){const flag=iti.querySelector('.iti__selected-flag');if(flag){flag.click();await sleep(250);const items=[...iti.querySelectorAll('.iti__country,li[class*=iti__country]')];let t=items.find(li=>(li.textContent||'').toLowerCase().includes((country||'united states').toLowerCase()))||items.find(li=>(li.getAttribute('data-country-code')||'').toLowerCase()==='us');if(t){t.click();await sleep(150);}}}const clean=String(digits||'').replace(/[^0-9]/g,'');setN(inp,clean);return{phone:inp.value};}"""
 
-DECLINE = """async ({declines})=>{const sleep=ms=>new Promise(r=>setTimeout(r,ms));const fire=(el,t,x,y)=>el.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window,button:0,clientX:x||0,clientY:y||0}));const re=/gender|\\bsex\\b|race|ethnic|hispanic|latin|veteran|military.{0,8}status|disabilit|self[- ]?identif|pronoun|sexual.{0,5}orient|lgbtq/i;const out=[];for(const ctrl of [...document.querySelectorAll('.select__control')]){if(ctrl.querySelector('.select__single-value'))continue;const inp=ctrl.querySelector('input[role=combobox]');if(!inp||!inp.id)continue;let lbl='',n=ctrl;for(let i=0;i<6&&n;i++){n=n.parentElement;if(!n)break;const le=n.querySelector?n.querySelector('label,legend'):null;if(le){lbl=le.textContent||'';break;}}if(!re.test(lbl))continue;ctrl.scrollIntoView({block:'center'});await sleep(120);const r=ctrl.getBoundingClientRect();fire(ctrl,'mousedown',r.left+5,r.top+5);fire(ctrl,'mouseup',r.left+5,r.top+5);fire(ctrl,'click',r.left+5,r.top+5);await sleep(320);let opts=[];const menu=document.querySelector('.select__menu');opts=menu?[...menu.querySelectorAll('.select__option,[role=option]')]:[];let t=null;for(const w of declines){const wl=w.toLowerCase();t=opts.find(o=>o.textContent.trim().toLowerCase()===wl)||opts.find(o=>o.textContent.toLowerCase().includes(wl));if(t)break;}if(!t)t=opts.find(o=>/do not want to answer|don'?t wish|decline|prefer not|not to identify|not to disclose/i.test(o.textContent));if(!t){out.push({id:inp.id,label:lbl.slice(0,40),err:'nodecline'});fire(document.body,'mousedown',0,0);continue;}const tr=t.getBoundingClientRect();fire(t,'mousedown',tr.left+5,tr.top+5);fire(t,'mouseup',tr.left+5,tr.top+5);fire(t,'click',tr.left+5,tr.top+5);await sleep(150);const sv=ctrl.querySelector('.select__single-value');out.push({id:inp.id,got:sv?sv.textContent:null});}return out;}"""
+DECLINE = """async ({declines})=>{const sleep=ms=>new Promise(r=>setTimeout(r,ms));const fire=(el,t,x,y)=>el.dispatchEvent(new MouseEvent(t,{bubbles:true,cancelable:true,view:window,button:0,clientX:x||0,clientY:y||0}));const re=/gender|\\bsex\\b|race|ethnic|hispanic|latin|veteran|military.{0,8}status|disabilit|self[- ]?identif|pronoun|sexual.{0,5}orient|lgbtq|identify.{0,10}as/i;const out=[];for(const ctrl of [...document.querySelectorAll('.select__control')]){if(ctrl.querySelector('.select__single-value'))continue;const inp=ctrl.querySelector('input[role=combobox]');if(!inp||!inp.id)continue;let lbl='',n=ctrl;for(let i=0;i<6&&n;i++){n=n.parentElement;if(!n)break;const le=n.querySelector?n.querySelector('label,legend'):null;if(le){lbl=le.textContent||'';break;}}if(!re.test(lbl))continue;ctrl.scrollIntoView({block:'center'});await sleep(120);const r=ctrl.getBoundingClientRect();fire(ctrl,'mousedown',r.left+5,r.top+5);fire(ctrl,'mouseup',r.left+5,r.top+5);fire(ctrl,'click',r.left+5,r.top+5);await sleep(320);let opts=[];const menu=document.querySelector('.select__menu');opts=menu?[...menu.querySelectorAll('.select__option,[role=option]')]:[];let t=null;for(const w of declines){const wl=w.toLowerCase();t=opts.find(o=>o.textContent.trim().toLowerCase()===wl)||opts.find(o=>o.textContent.toLowerCase().includes(wl));if(t)break;}if(!t)t=opts.find(o=>/do not want to answer|don'?t wish|decline|prefer not|not to identify|not to disclose/i.test(o.textContent));if(!t){out.push({id:inp.id,label:lbl.slice(0,40),err:'nodecline'});fire(document.body,'mousedown',0,0);continue;}const tr=t.getBoundingClientRect();fire(t,'mousedown',tr.left+5,tr.top+5);fire(t,'mouseup',tr.left+5,tr.top+5);fire(t,'click',tr.left+5,tr.top+5);await sleep(150);const sv=ctrl.querySelector('.select__single-value');out.push({id:inp.id,got:sv?sv.textContent:null});}return out;}"""
 
 # REMIX_SCAN (2026-06-03): recover REQUIRED remix React-Select dropdowns that the
 # dryrun couldn't label (no id/name/label on the boards-API field) so they never

@@ -207,24 +207,42 @@ def _index_by_t(bars: List[dict]) -> Dict[str, int]:
 # Strategy loader (cross-sectional flavor)
 # ---------------------------------------------------------------------------
 
-def load_xsec_strategy(name: str) -> Tuple[Callable, dict]:
+CANDIDATES_ROOT = WORKSPACE / "strategies_candidates"
+
+
+def load_xsec_strategy(name: str, *, candidate: bool = False) -> Tuple[Callable, dict]:
     """Load a cross-sectional strategy module.
 
     Convention: `strategies/<name>/strategy.py` must export `decide_xsec`
     (not `decide`). `params.json` should include a `basket` list
     (e.g. `"basket": ["XLK","XLF","XLE"]`) but the basket may be
     overridden at call-time via the `--basket` CLI flag.
+
+    When `candidate=True`, the strategy is loaded from
+    `strategies_candidates/<name>/strategy.py` instead, mirroring
+    `runner.candidate_smoke.load_candidate` / `runner.load_strategy`.
+    This lets in-evaluation xsec candidates run through the same harness
+    as live strategies without the manual `spec_from_file_location`
+    bypass the `_run_xsec_*_wf.py` driver scripts used to need.
+    WORKSPACE is added to `sys.path` so the candidate's
+    `from strategies._lib import ...` imports resolve exactly as they
+    would in the live runner.
     """
-    strat_dir = STRATEGIES_ROOT / name
+    root = CANDIDATES_ROOT if candidate else STRATEGIES_ROOT
+    pkg = "strategies_candidates" if candidate else "strategies"
+    label = "candidate dir" if candidate else "strategy dir"
+    strat_dir = root / name
     params_path = strat_dir / "params.json"
     if not strat_dir.is_dir():
-        raise FileNotFoundError(f"No strategy dir: {strat_dir}")
+        raise FileNotFoundError(f"No {label}: {strat_dir}")
     if not params_path.exists():
         raise FileNotFoundError(f"No params.json: {params_path}")
-    module = importlib.import_module(f"strategies.{name}.strategy")
+    if str(WORKSPACE) not in sys.path:
+        sys.path.insert(0, str(WORKSPACE))
+    module = importlib.import_module(f"{pkg}.{name}.strategy")
     if not hasattr(module, "decide_xsec"):
         raise AttributeError(
-            f"strategies.{name}.strategy must export decide_xsec(...) for "
+            f"{pkg}.{name}.strategy must export decide_xsec(...) for "
             f"the cross-sectional harness")
     params = json.loads(params_path.read_text())
     return module.decide_xsec, params
@@ -866,9 +884,10 @@ def fetch_basket_bars(symbols: List[str], timeframe: str, days: int,
 def backtest_xsec_by_name(strategy_name: str, basket: List[str],
                           days: int = 30,
                           end_dt: Optional[datetime] = None,
-                          cost_model: Optional[CostModel] = None
+                          cost_model: Optional[CostModel] = None,
+                          *, candidate: bool = False
                           ) -> XSecBacktestResult:
-    decide_fn, params = load_xsec_strategy(strategy_name)
+    decide_fn, params = load_xsec_strategy(strategy_name, candidate=candidate)
     timeframe = str(params.get("timeframe", "1Hour"))
     bars_by_symbol = fetch_basket_bars(basket, timeframe, days=days, end_dt=end_dt)
     return backtest_xsec(strategy_name, bars_by_symbol, params,
@@ -899,6 +918,8 @@ def main() -> None:
     ap.add_argument("--basket-file", help="file with one symbol per line (# for comments)")
     ap.add_argument("--days", type=int, default=30)
     ap.add_argument("--no-costs", action="store_true")
+    ap.add_argument("--candidate", action="store_true",
+                    help="load from strategies_candidates/ instead of strategies/")
     ap.add_argument("--json", help="write result JSON to this path")
     args = ap.parse_args()
 
@@ -906,7 +927,7 @@ def main() -> None:
     if not basket:
         # Try params.json["basket"].
         try:
-            _, params = load_xsec_strategy(args.strategy)
+            _, params = load_xsec_strategy(args.strategy, candidate=args.candidate)
             basket = list(params.get("basket") or [])
         except Exception:
             basket = []
@@ -914,7 +935,8 @@ def main() -> None:
         ap.error("No basket provided: pass --basket / --basket-file, or set params.basket")
 
     cm = CostModel(spread_bps=0.0, fee_bps=0.0) if args.no_costs else None
-    r = backtest_xsec_by_name(args.strategy, basket, days=args.days, cost_model=cm)
+    r = backtest_xsec_by_name(args.strategy, basket, days=args.days, cost_model=cm,
+                              candidate=args.candidate)
     print(f"[{args.strategy}] basket={r.symbols} ticks={r.n_ticks} "
           f"trades={r.n_trades} (buys={r.n_buys} closes={r.n_closes}) "
           f"skipped={r.n_skipped_risk} clamps={r.n_basket_clamps} "

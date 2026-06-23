@@ -2,43 +2,43 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2023` → **Technical Program Manager Intern**
 - `microsoft_2022` → **Technical Program Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
 
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Owned **end-to-end deployment** of Azure's resilience validation program, scaling from a 2-person operation to a platformized system sustaining 45+ annual drills and driving **$14M+ customer impact** across Databricks, Walmart, SAP, and NetApp.
-2. Led 0→1 build of an internal **Resilience Automation Platform**, defining self-service scheduling APIs and runbook workflows that cut operational toil by **30%** and enabled teams to own deployments independently.
-3. Delivered Azure's first rack-level proactive resilience drill in 4 months — surfacing critical hardware defects, achieving a **94% recovery rate**, and establishing a repeatable validation model for enterprise production environments.
-4. Served as technical bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ contract, directing 14 cross-org recovery executions under executive visibility with full ownership through validation and follow-up.
-5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and expanding drill capacity by 21% — feeding learnings directly into product roadmap decisions.
+1. Owned **end-to-end deployment** of Azure's resilience validation program, scaling from a 2-person operation to a platformized system sustaining 45+ annual drills across strategic enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 build of an internal **Resilience Automation Platform**, defining API-driven self-service scheduling requirements that cut operational toil by 30% and transitioned execution to a scalable, repeatable deployment model.
+3. Built and shipped an **internal AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — directly expanding customer deployment throughput.
+4. Served as technical bridge lead for a sovereign-cloud **network isolation deployment** tied to a $1.5B+ enterprise contract, coordinating cross-org execution under executive visibility across 14 recovery events.
+5. Delivered Azure's first rack-level proactive resilience drill in 4 months, achieving a **94% recovery rate**, surfacing critical hardware defects, and establishing a reusable runbook model for continuous production validation.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **production adoption of AI-driven code generation** tooling across 14 Azure service teams via hands-on demos and deployment support, eliminating 37 engineering hours of manual effort monthly.
-2. Shaped the product roadmap by running **11+ technical discovery sessions** with Azure engineering stakeholders to surface LLM workflow gaps, directly influencing the addition of intent-based YAML generation.
-3. Improved **observability and retrieval performance** by migrating documentation to an AI-powered semantic search system with rigorous metadata standards, cutting lookup time by 83% across internal developer workflows.
+1. Drove **customer adoption** of AI-powered code generation tooling by leading hands-on demos and onboarding sessions across 14 Azure service teams, saving 37 engineering hours monthly and closing critical workflow gaps.
+2. Conducted 11+ **technical discovery interviews** with Azure engineering stakeholders to surface feature gaps, directly shaping roadmap prioritization toward intent-based YAML generation capabilities.
+3. Improved **deployment reliability** of AI-powered documentation tooling by enforcing metadata standards and migrating to semantic search infrastructure, reducing lookup time by 83% across internal developer workflows.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, accelerating region launches by 28% and generating **$3M in accelerated revenue**.
-2. Ran technical discovery with 20+ service teams to map 81 hours of per-region manual toil, then built a deployment roadmap targeting the highest-impact automation paths to reduce operational overhead at scale.
-3. Built a **Power BI observability dashboard** tracking automation gaps and toil metrics across 140+ teams, enabling leadership to prioritize infrastructure investments with full operational visibility.
+1. Generated **$3M in accelerated revenue** and cut region launch time by 28% by aligning 140+ teams on a unified automation prioritization framework, removing bottlenecks across the end-to-end deployment pipeline.
+2. Led technical discovery with 20+ service teams to map 81 hours of manual toil per region launch, then built a **CI/CD automation roadmap** targeting the highest-impact operational paths for elimination.
+3. Engineered a **Power BI observability dashboard** tracking automation gaps across 140+ teams, giving leadership real-time visibility into deployment health and enabling data-driven infrastructure investment decisions.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero downtime** during a 2,000+ unit OS migration by owning the deployment strategy, mapping dependencies across 1,200+ stations, and coordinating rollout across IT, Operations, and Engineering.
-2. Implemented **automated CI/CD pipelines** in collaboration with cross-functional engineering teams, cutting the software deployment cycle by 25% and stabilizing the developer intake process.
-3. Facilitated Agile sprint planning and retrospectives, resolving **40+ high-priority tickets** and maintaining deployment momentum throughout a complex, multi-team infrastructure transition.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the legacy OS migration strategy, mapping all software and hardware dependencies across 1,200+ stations before production cutover.
+2. Implemented **automated CI/CD pipelines** in collaboration with IT, Operations, and Engineering, accelerating the software deployment cycle by 25% and reducing manual handoffs across the release workflow.
+3. Facilitated Agile ceremonies and triaged 40+ high-priority backlog tickets, stabilizing the **developer intake process** and maintaining deployment velocity throughout a complex multi-team infrastructure transition.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by owning end-to-end scoping and invoicing workflows for 200+ monthly proposals, deploying a new CRM process that improved pipeline reliability and customer retention.
-2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy with optimized web and search presence.
-3. Identified and sealed margin leaks by conducting **profitability analysis** across 1,000+ project records, delivering pricing model recommendations that improved unit economics for leadership.
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, rebuilding the CRM process to reduce turnaround time and improve conversion at each funnel stage.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a data-driven go-to-market strategy, optimizing website performance and Google profile visibility across target markets.
+3. Improved leadership **pricing decisions** by analyzing profitability across 1,000+ historical project records, identifying margin leaks and delivering a financial model that guided cost structure adjustments.
 
 ## Notes from the rewriter
-- 'end-to-end deployment' and 'runbook workflows' from JD woven into microsoft_ft bullets 1 and 2 — mirrors JD's 'deployment plans' and 'runbooks' language directly.
-- 'AI agent' and 'product roadmap decisions' in microsoft_ft bullet 5 — mirrors JD's 'agent deployment' and 'shape roadmap decisions' phrasing for the FDE feedback loop.
-- 'sovereign-cloud network isolation' in microsoft_ft bullet 4 — mirrors JD's 'private networking' and 'compliance constraints' context under useful experience.
-- 'technical discovery sessions' in microsoft_2023 bullet 2 and microsoft_2022 bullet 2 — directly mirrors JD's 'technical discovery & implementation' and 'architecture constraints' language.
-- 'observability' surfaced in microsoft_ft bullet 2, microsoft_2022 bullet 3, and amazon_robotics bullet 1 — mirrors JD's repeated emphasis on 'observability tools' and 'operational visibility'.
+- 'end-to-end deployment' and 'runbook model' (microsoft_ft bullets 1 & 5) mirror JD language around deployment plans and runbooks for production environments.
+- 'technical discovery interviews' (microsoft_2023 bullet 2) directly echoes JD phrase 'technical discovery' and the requirement to engage engineering stakeholders to surface architecture constraints.
+- 'CI/CD automation roadmap' and 'automated CI/CD pipelines' (microsoft_2022 bullet 2, amazon_robotics bullet 2) reflect JD's explicit call-out of CI/CD systems as a core platform surface FDEs must build on.
+- 'AI agent' for internal automation (microsoft_ft bullet 3) maps to JD's 'agent deployment' and 'agentic workloads' context, signaling direct familiarity with the Blaxel core product domain.
+- 'observability dashboard' (microsoft_2022 bullet 3) mirrors JD's explicit mention of 'observability tools' as a key platform area FDEs must navigate.
 

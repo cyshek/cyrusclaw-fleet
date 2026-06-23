@@ -156,6 +156,12 @@ def detect_ats(url: str) -> str:
         return "bamboohr"
     if "metacareers.com" in u:
         return "meta"
+    if "lifeattiktok.com" in u or "jobs.bytedance.com" in u:
+        return "tiktok"
+    if "uber.com/careers" in u:
+        return "uber"
+    if "eightfold.ai" in u or "explore.jobs.netflix" in u:
+        return "eightfold"
     if ICIMS_RX.search(u) or ".icims.com" in u:
         return "icims"
     if _gh_iframe_slug(u) and _gh_iframe_jid(u):
@@ -498,6 +504,7 @@ def resolve_role(role_id: int, conn: sqlite3.Connection) -> dict:
 def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) -> list[dict]:
     """Pick next N open Greenhouse OR Ashby roles not yet applied and not in queued/.
     ats_filter: 'greenhouse' | 'ashby' | None (both)."""
+    _dbg_counts: dict = {}
     queued = set(os.listdir(QUEUED_DIR)) if QUEUED_DIR.exists() else set()
     # submitted: only count dirs with a real confirmation STATUS.md; ABORT-*/PREP-READY
     # dirs are failed/pending prep runs and should not block re-attempts.
@@ -539,6 +546,12 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
         where_url.append("app_url LIKE '%.bamboohr.com%' OR jd_url LIKE '%.bamboohr.com%'")
     if ats_filter in (None, "meta"):
         where_url.append("app_url LIKE '%metacareers.com%' OR jd_url LIKE '%metacareers.com%'")
+    if ats_filter in (None, "tiktok"):
+        where_url.append("app_url LIKE '%lifeattiktok.com%' OR app_url LIKE '%jobs.bytedance.com%' OR jd_url LIKE '%lifeattiktok.com%' OR jd_url LIKE '%jobs.bytedance.com%'")
+    if ats_filter in (None, "uber"):
+        where_url.append("app_url LIKE '%uber.com/careers%' OR jd_url LIKE '%uber.com/careers%'")
+    if ats_filter in (None, "eightfold"):
+        where_url.append("app_url LIKE '%eightfold.ai%' OR jd_url LIKE '%eightfold.ai%' OR app_url LIKE '%explore.jobs.netflix%' OR jd_url LIKE '%explore.jobs.netflix%'")
     where_clause = " OR ".join(where_url) or "1=0"
     rows = conn.execute(f"""
         SELECT * FROM roles

@@ -1,0 +1,484 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/kodiak/jobs/4254544009",
+  "org": "kodiak",
+  "job_id": "4254544009",
+  "job_title": "Hardware Technical Program Manager",
+  "job_location": "Mountain View, CA",
+  "fetched_at": "2026-06-23T02:08:39Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/kodiak/jobs/4254544009?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 19,
+    "filled": 9,
+    "filled_needs_review": 1,
+    "declined": 9,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_6159251009",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_6159252009",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_6159253009",
+      "label": "Will you now or in the future require sponsorship for employment in the US? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4002004009",
+      "label": "How would you describe your gender identity?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Man",
+          "value": 4012024009
+        },
+        {
+          "label": "Non-binary",
+          "value": 4012025009
+        },
+        {
+          "label": "Woman",
+          "value": 4012026009
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4012027009
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4012028009
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002005009",
+      "label": "How would you describe your racial/ethnic background?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4012029009
+        },
+        {
+          "label": "East Asian",
+          "value": 4012030009
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4012031009
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4012032009
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 4012033009
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4012034009
+        },
+        {
+          "label": "South Asian",
+          "value": 4012035009
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4012036009
+        },
+        {
+          "label": "White or European",
+          "value": 4012037009
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4012038009
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4012039009
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002006009",
+      "label": "How would you describe your sexual orientation?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 4012040009
+        },
+        {
+          "label": "Bisexual and/or pansexual",
+          "value": 4012041009
+        },
+        {
+          "label": "Gay",
+          "value": 4012042009
+        },
+        {
+          "label": "Heterosexual",
+          "value": 4012043009
+        },
+        {
+          "label": "Lesbian",
+          "value": 4012044009
+        },
+        {
+          "label": "Queer",
+          "value": 4012045009
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4012046009
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4012047009
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002007009",
+      "label": "Do you identify as transgender?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4012048009
+        },
+        {
+          "label": "No",
+          "value": 4012049009
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4012050009
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4012051009
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002008009",
+      "label": "Do you have a disability or chronic condition (physical, visual, auditory, cognitive, mental, emotional, or other) that substantially limits one or more of your major life activities, including mobility, communication (seeing, hearing, speaking), and learning?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major | NOTE: 'Computer Science' not literally in options ['Yes', 'No', 'I prefer to self-describe', \"I don't wish to answer\"]",
+      "status": "filled_needs_review",
+      "matched_rule": "major",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4012052009
+        },
+        {
+          "label": "No",
+          "value": 4012053009
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4012054009
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4012055009
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4002009009",
+      "label": "Are you a veteran or active member of the United States Armed Forces?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Yes, I am a veteran or active member",
+          "value": 4012056009
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4012057009
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4012058009
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4012059009
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

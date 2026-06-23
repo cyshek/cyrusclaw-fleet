@@ -1,0 +1,168 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/ashby/2fc178fc-fa92-463a-b788-1c66e3f32a00",
+  "org": "ashby",
+  "job_id": "2fc178fc-fa92-463a-b788-1c66e3f32a00",
+  "job_title": "Enterprise Solutions Architect - Americas",
+  "job_location": "Remote - US",
+  "fetched_at": "2026-06-23T05:52:11Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_name"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_email"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_resume"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807_7045caab-b983-44e1-852e-d396edd61c20",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807_7045caab-b983-44e1-852e-d396edd61c20"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_location",
+      "label": "Which city and country do you intend to work from?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807__systemfield_location"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807_46766f7f-43be-4f09-a77c-ffa2a83da8a9",
+      "label": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807_46766f7f-43be-4f09-a77c-ffa2a83da8a9"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807_793b0874-a189-4d41-8d68-27ed2c955dce",
+      "label": "Do you have at least 5 years of experience in Enterprise SaaS across one or more of: Solutions Consulting, Professional Services, or Management Consulting?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807_793b0874-a189-4d41-8d68-27ed2c955dce"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807_34975311-dacb-4736-8353-26b210000ea7",
+      "label": "Do you have at least 2 years of experience owning pre-sales change management activities (including process alignment and Statement of Work scoping, creation, and negotiation with prospective customers)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807_34975311-dacb-4736-8353-26b210000ea7"
+    },
+    {
+      "id": "96d24672-975b-4fbc-9908-3057fe36e807_567ec50e-1e90-4f51-a08b-8bfb475ab5ea",
+      "label": "In 3-5 sentences, describe an example of a time you worked with a prospective customer to derisk their implementation and ultimately help convert them to become a customer. Please share the specific steps you took in your approach, the services-driven recommendations you made, and how your recommended approach directly led to post-implementation success for the customer.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "96d24672-975b-4fbc-9908-3057fe36e807_567ec50e-1e90-4f51-a08b-8bfb475ab5ea"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

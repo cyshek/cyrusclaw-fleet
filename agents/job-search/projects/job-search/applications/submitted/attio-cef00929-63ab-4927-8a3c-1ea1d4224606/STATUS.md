@@ -1,9 +1,16 @@
-PREP-READY — 2026-06-21T08:18:40+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-22
 role_id: 1955
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-attio-cef00929-63ab-4927-8a3c-1ea1d4224606.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/attio-cef00929-63ab-4927-8a3c-1ea1d4224606/Cyrus_Shekari_Resume_ashby-attio_cef00929_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/attio-cef00929-63ab-4927-8a3c-1ea1d4224606/cover_answers.md
+submitted_at: 2026-06-22T22:35:38+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+troke commit: ['__systemfield_name', '_systemfield_email', '-b1fe-4aaef90f0f98']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-b1fe-4aaef90f0f98']
+[runner] last-ms no-bounce text commit: 3 field(s), stable=True
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

@@ -22,6 +22,8 @@ As a Forward Deployed Engineer at Commure, you'll play a crucial role in collabo
 
 In this highly visible position, you'll provide essential technical support, tackle various challenges, and maintain vital documentation. Additionally, by keeping pace with evolving healthcare technology trends, you'll contribute innovative ideas and solutions. Your contributions will be instrumental in advancing our mission to revolutionize healthcare through technology.
 
+*This role requires 3 days/week in the Mountain View, CA office.*
+
 **What You’ll Do**
 
 - Be willing to travel up to 35% of the time to client site, build on site, and demo. 

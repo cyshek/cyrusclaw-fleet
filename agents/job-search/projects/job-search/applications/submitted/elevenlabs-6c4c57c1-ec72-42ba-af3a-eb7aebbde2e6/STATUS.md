@@ -1,9 +1,14 @@
-PREP-READY — 2026-05-31T11:33:33+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 939
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6/Cyrus_Shekari_Resume_ashby-elevenlabs_6c4c57c1_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6/cover_answers.md
+submitted_at: 2026-06-23T01:28:19+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+ld(s), stable=True
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"messages":{"__typename":"FormSubmitMessages","blockMessageForCandidateHtml":"<p>I'm sorry we are limiting applications to give everyone a chance. As you have applied for a position in this domain within the last 90 days, you cannot submit an application
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

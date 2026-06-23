@@ -1,0 +1,168 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/harperinsure/a5e08fb7-a266-4aaf-a9df-a58a4787e292",
+  "org": "harperinsure",
+  "job_id": "a5e08fb7-a266-4aaf-a9df-a58a4787e292",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T08:54:41Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 3,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf__systemfield_name",
+      "section": "Basic Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf__systemfield_email",
+      "section": "Basic Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf__systemfield_resume",
+      "section": "Basic Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_a8f67f8d-90ad-4819-be0a-c748ee7ea831",
+      "label": "Why Harper? What attracted you to this role?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Harperinsure because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Harperinsure is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Harperinsure while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Harperinsure aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Harperinsure')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_a8f67f8d-90ad-4819-be0a-c748ee7ea831",
+      "section": "Basic Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_520539d8-9809-44f8-b5cd-c562b073ce20",
+      "label": "Can you work full-time from our San Francisco office? (on-site, five days — not remote or hybrid.)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_520539d8-9809-44f8-b5cd-c562b073ce20",
+      "section": "Role-Specific Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_a2b7c578-f7cf-46b9-bbf8-0d94993e0abd",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_a2b7c578-f7cf-46b9-bbf8-0d94993e0abd",
+      "section": "Role-Specific Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_b94139ff-e049-43a3-b101-e27e751f25cb",
+      "label": "Harper is rebuilding commercial insurance as an AI-led company — most people here aren't drawn by insurance itself, but by the bet that this is one of the largest human-to-computational transitions left. What specifically about Harper's bet pulls you, and what would you want to own here? (\"I love AI startups\" tells us nothing — name something concrete about what we're building.) (2–3 sentences.)",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_b94139ff-e049-43a3-b101-e27e751f25cb",
+      "section": "Role-Specific Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_a342c830-1586-4173-a158-2782e6089ea9",
+      "label": "Describe one thing you built and shipped that real people used — customers, operators, or another team. What was the hardest part of getting it to production, and how did you use AI tools (Cursor, Claude Code, or similar) in building it? (2–3 sentences. Tell us what you did, not the team.)",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_a342c830-1586-4173-a158-2782e6089ea9",
+      "section": "Role-Specific Information"
+    },
+    {
+      "id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_b363ca01-abc4-4ef1-a801-0acec1c5f431",
+      "label": "Most of your week would be embedded inside a business team — sales, service, underwriting, ops — pairing on their problems in real time and shipping the fix, not pulling tickets from a backlog. What's your honest reaction, and tell us about the closest you've come: what business problem did you find yourself, and what number did your fix move?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "655a7461-abeb-484b-a859-7d9d72b5d2bf_b363ca01-abc4-4ef1-a801-0acec1c5f431",
+      "section": "Role-Specific Information"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

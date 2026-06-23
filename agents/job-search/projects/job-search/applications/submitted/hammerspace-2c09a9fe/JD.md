@@ -1,6 +1,6 @@
 # Hammerspace — Forward Deployed Engineer
 
-**Location:** Texas, United States
+**Location:** Remote (TX, US) [TX, United States (Remote)]; Remote (United States) [United States (Remote)]
 **Apply:** https://ats.rippling.com/hammerspace/jobs/2c09a9fe-fedd-472a-9198-f2f6001934bc
 **Rippling board:** hammerspace
 **Job ID:** 2c09a9fe-fedd-472a-9198-f2f6001934bc

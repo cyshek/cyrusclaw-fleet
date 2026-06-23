@@ -1,0 +1,69 @@
+# Product Manager
+
+**Company:** Nox Metals
+**Location:** Detroit
+**Apply:** https://jobs.ashbyhq.com/nox-metals/ba802b61-1c70-485d-9f44-ba07c1beea30
+**Ashby Org:** nox-metals
+**Ashby Job ID:** ba802b61-1c70-485d-9f44-ba07c1beea30
+
+---
+
+Product Manager | Nox Metals | Detroit, MI
+
+American factories deserve a supply chain that moves as fast as they do. The next generation of American manufacturing is being built right now. Nox Metals is the supply chain behind it.
+
+Nox Metals is a technology company in Detroit supplying aluminum plate, bar, and rounds to aerospace and defense manufacturers. We use software and automation to supply metal to American factories faster than the industry thought possible.
+
+We need a Product Manager who can take an idea and turn it into something running on the floor by the end of the week. NOX NEST, WAYNE, and Gondor are the products that run the company. Your job is to make the path from idea to production as short as possible. Nox Metals is an employer with real opportunity for long term career growth, this is a place to build a career, not just hold a job.
+
+You will:
+
+- Own product end to end across NOX NEST, WAYNE, and Gondor, idea, spec, build, deploy, rollout, iterate
+
+- Walk every new feature through the factory yourself, sit with operators, schedulers, and buyers, and watch them use what we shipped
+
+- Write tight specs that engineers can build from without ten clarification meetings
+
+- Prioritize ruthlessly, say no to good ideas to ship great ones faster
+
+- Code lightly when it helps, write a script, build a quick prototype, ship a small change yourself
+
+- Run weekly product reviews and own the operating cadence end to end
+
+You should be:
+
+- 3+ years of product management experience shipping real software to real users
+
+- Strong systems thinker who can decompose a fuzzy problem and write a spec an engineer can build from immediately
+
+- Comfortable in code, you do not need to be a senior engineer, but you can read a PR and ship a small change
+
+- Bias for shipping, you would rather get a v1 live today than design a perfect v3 next month
+
+- Comfortable on the floor, you sit at a saw, talk to a scheduler, walk a customer through the portal
+
+- Cracked with AI tools, modern software, and data, you live in the stack and you make it faster every week
+
+- Absolutely customer obsessed, every feature ends up on a customer's dock
+
+- User obsessed, you build features operators, schedulers, buyers, and customers actually want to use
+
+- High agency, low ego, fast, organized, and relentless under pressure
+
+- Committed to safety, you follow every protocol on the floor and never cut corners that put people at risk
+
+- Not afraid to work outside normal hours when America demands it
+
+- Never says "that's not my job"
+
+Nice to have:
+
+- Background managing product in manufacturing, logistics, supply chain, or industrial environments
+
+- Experience shipping software for shop floors or other physical operations
+
+- Light coding background, scripting, SQL, or shipping prototypes yourself
+
+- Comfortable using AI tools to work faster and smarter
+
+This role is full time, in person in Detroit.

@@ -1,0 +1,50 @@
+GH Drain Pass 4 — 2026-06-23
+18 staged PREP-READY GH roles
+
+=== RESULTS ===
+
+SUBMITTED (16):
+  1. addepar-8479674002       (role_id=3298) — confirmed: true — https://job-boards.greenhouse.io/addepar1/jobs/8479674002/confirmation
+  2. axon-5414654003           (role_id=3098) — confirmed: true — https://job-boards.greenhouse.io/axon/jobs/5414654003/confirmation
+  3. axon-6559527003           (role_id=3102) — confirmed: true — https://job-boards.greenhouse.io/axon/jobs/6559527003/confirmation
+  4. glean-4591195005          (role_id=2237) — confirmed: true — https://job-boards.greenhouse.io/gleanwork/jobs/4591195005/confirmation
+  5. instabase-8337459002      (role_id=3431) — confirmed: true — https://job-boards.greenhouse.io/instabase/jobs/8337459002/confirmation
+  6. instabase-8391125002      (role_id=3432) — confirmed: true — https://job-boards.greenhouse.io/instabase/jobs/8391125002/confirmation
+  7. path-robotics-8571384002  (role_id=3479) — confirmed: true — https://job-boards.greenhouse.io/pathrobotics/jobs/8571384002/confirmation
+  8. pure-storage-8004221      (role_id=3290) — confirmed: true — https://job-boards.greenhouse.io/purestorage/jobs/8004221/confirmation
+  9. scale-ai-4699806005       (role_id=3008) — confirmed: true — https://job-boards.greenhouse.io/scaleai/jobs/4699806005/confirmation
+ 10. scale-ai-4703275005       (role_id=3009) — confirmed: true — https://job-boards.greenhouse.io/scaleai/jobs/4703275005/confirmation
+ 11. scale-ai-4704555005       (role_id=3007) — confirmed: true — https://job-boards.greenhouse.io/scaleai/jobs/4704555005/confirmation
+ 12. scopely-5116884008        (role_id=3291) — confirmed: true — https://job-boards.greenhouse.io/scopely/jobs/5116884008/confirmation
+ 13. superset-5273586008       (role_id=3284) — confirmed: true — https://job-boards.greenhouse.io/superset/jobs/5273586008/confirmation
+ 14. verkada-4964448007        (role_id=3292) — confirmed: true — https://job-boards.greenhouse.io/verkada/jobs/4964448007/confirmation
+ 15. verkada-5167243007        (role_id=3293) — confirmed: true — https://job-boards.greenhouse.io/verkada/jobs/5167243007/confirmation
+ 16. zscaler-5162497007        (role_id=3189) — confirmed: true — https://job-boards.greenhouse.io/zscaler/jobs/5162497007/confirmation
+
+UNCERTAIN (2) — needs manual intervention:
+  1. axon-6591183003           (role_id=3103) — exit 0, confirmed=false
+     reason: question_21251465003 "Which Axon hub location are you within a commutable distance" dropdown
+             tried: ["Kirkland, WA", "United States", "Yes", "No", "I acknowledge", "I agree", "Agree"]
+             remix_recover got avail:[Afghanistan+93, Åland Islands+358, ...] (wrong dropdown matched — phone ITI)
+             emptyRequired=[''] blocked submit
+
+  2. yipitdata-7892101         (role_id=2756) — exit 0, confirmed=false
+     reason: work history end-date month field (end-month--0) unresolved by remix_recover
+             "End date month*" not in LABEL_RULES
+             emptyRequired=[''] blocked submit
+
+FAILED (0): none
+
+CLOSED (0): none
+SKIPPED (1): 21shares-us-5823209004 — pre-marked CLOSED
+
+=== SUMMARY ===
+Submitted:  16
+Uncertain:  2
+Failed:     0
+Closed:     0
+Total:      18 (of 18 attempted)
+
+=== POST-DRAIN ===
+_backfill_drain_status.py: backfilled 0, flipped 0, already-applied: 41
+render_xlsx.py: Open: 466, Applied: 892, Manual Apply: 331, Interviews: 25

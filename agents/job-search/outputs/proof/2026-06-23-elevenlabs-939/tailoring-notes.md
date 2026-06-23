@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing SOPs and workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, vendor-ready model across partner teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation model adopted across sovereign-cloud environments.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across internal, external, and compliance stakeholders with zero missed milestones.
+5. Built and maintained capacity plans mapping drill demand to engineer and partner supply, **flagging dependency gaps** before they became blockers and enabling leadership to hit aggressive validation targets across multiple simultaneous workstreams.
+6. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to **reduce planning cycle time by 39%** and increase drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation workflows across Azure, running user demos and enablement sessions that onboarded 14 key engineering teams and saved **37 engineering hours monthly** — directly reducing manual overhead at scale.
+2. Surfaced critical feature gaps by facilitating **11+ structured user interviews** with Azure service teams, influencing the product roadmap to prioritize intent-based YAML generation as a high-impact capability for developer productivity.
+3. Improved data integrity and recruiter-equivalent enablement by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting information lookup time by 83% across internal teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating stakeholder buy-in across 140+ teams with competing workstream demands.
+2. Built a capacity and demand model by conducting discovery with 20+ service teams, quantifying **81 hours of manual toil per region launch** and delivering a prioritized roadmap to automate critical paths — creating durable SOPs where little structure existed.
+3. Engineered a **Power BI dashboard** to track operational toil and fill-rate gaps across 140+ teams, enabling leadership to surface capacity blockers early and target automation investments against the highest-impact hiring and launch dependencies.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by owning the legacy OS migration strategy end-to-end, mapping dependencies across 1,200+ stations and coordinating vendor and internal teams against a high-urgency delivery timeline.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, managing a multi-workstream backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process — keeping pipelines moving under surge conditions.
+3. Drove stakeholder alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable, low-toil release process across the robotics platform.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, building a new CRM process that standardized vendor and contractor engagement workflows and removed manual coordination bottlenecks.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a data-driven go-to-market strategy — optimizing digital channels, tracking performance metrics, and iterating on outreach based on cost-per-hire equivalent signals.
+3. Improved leadership pricing decisions by conducting **profitability analysis** across 1,000+ project records, identifying margin leaks and delivering structured reporting that enabled faster, evidence-based resource and capacity planning.
+
+## Notes from the rewriter
+- 'SOPs' woven into microsoft_ft bullet#2 and microsoft_2022 bullet#2 — mirrors JD's explicit ask to 'design lightweight but durable SOPs for how we engage external recruiting partners.'
+- 'Capacity plans' and 'flagging gaps before they become blockers' appear verbatim in microsoft_ft bullet#5 — directly echoes JD language: 'build and maintain capacity plans that map hiring demand to recruiter and agency supply, flagging gaps before they become blockers.'
+- 'Pipelines moving' used in amazon_robotics bullet#2 — mirrors JD phrase 'keep pipelines moving' under surge hiring program management responsibilities.
+- 'Vendor and contractor engagement workflows' in pro_painters bullet#1 ties to JD's core ask: 'managing recruiting agencies, onboarding and coordinating recruiting contractors.'
+- 'Cost-per-hire equivalent signals' in pro_painters bullet#2 directly references JD KPI language: 'track and report on agency and contractor performance, cost-per-hire, and fill rates.'
+

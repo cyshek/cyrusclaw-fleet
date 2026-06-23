@@ -2,43 +2,44 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2023` → **Technical Program Manager Intern**
 - `microsoft_2022` → **Technical Program Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
 - `pro_painters` → **Program Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Embedded as **technical authority** with strategic Lighthouse accounts (Databricks, Walmart, SAP, NetApp), scaling Azure's recovery validation from a 2-person op into a platformized system sustaining **45+ annual resilience drills** and driving **$14M+** in enterprise business impact.
-2. Led 0→1 delivery of an internal **Resilience Automation Platform**, authoring product requirements and self-service scheduling APIs that bridged bespoke service infrastructure to a unified workflow, cutting operational toil **30%** and shifting execution to a scalable model.
-3. Pioneered Azure's first **proactive resilience testing** capability, designing and shipping a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects across the storage and networking stack and codifying a continuous validation model.
-4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+** enterprise contract spanning hybrid-cloud, high-speed networking, and distributed storage dependencies.
-5. Scaled team leverage by building an **internal AI agent** for drill planning with LLM-powered workflows and RAG, restructuring planning to reduce cycle time **39%** and increase drill capacity **21%** across partner-integrated AI/ML and HPC customer environments.
-6. Partnered with sustaining engineering to translate field-discovered bugs from partner deployments into **core product features**, closing the feedback loop so local fixes hardened the global Azure resilience platform for AI and HPC workloads.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Embedded as primary technical authority across **strategic enterprise accounts** (Databricks, Walmart, SAP, NetApp), resolving last-mile integration friction and driving $14M+ in business impact across 45+ annual resilience drills.
+2. Built a 0→1 internal **Resilience Automation Platform**, defining API-driven self-service scheduling requirements that cut operational toil by 30% and scaled execution across heterogeneous cloud infrastructure.
+3. Delivered Azure's first rack-level proactive validation program in 4 months, achieving a **94% recovery rate** and surfacing critical hardware defects that were fed back into core platform engineering as product improvements.
+4. Served as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ contract, translating complex distributed-systems failures into executive-ready action plans across 14 cross-org recovery executions.
+5. Deployed an internal AI agent to automate drill planning workflows, **reducing planning cycle time 39%** and increasing drill capacity 21% — directly expanding field coverage across high-stakes HPC workloads.
 
-### `microsoft_2023` (4 bullets emitted, master had 3)
-1. Championed adoption of **AI-driven code generation** workflows across Azure service teams, running on-site demos and embedded training that drove utilization across **14 key teams** and saved **37 engineering hours monthly** by bridging the last-mile gap between tool and user.
-2. Influenced the product roadmap to ship **intent-based YAML generation** by facilitating **11+ deep-dive user interviews** with Azure service teams, translating field friction points into prioritized engineering requirements for distributed deployment pipelines.
-3. Optimized data integrity and retrieval by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** tool with RAG retrieval, cutting engineer lookup time **83%** and accelerating onboarding into complex Azure subsystems.
-4. Authored **Python tooling and prompt scaffolds** that interfaced with internal codegen APIs, enabling service teams to self-serve LLM workflows against their bespoke YAML, ARM, and Bicep configurations.
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **AI-powered workflow adoption** across 14 Azure service teams through hands-on field enablement — demos, training, and custom integration guides — saving 37 engineering hours monthly on data pipeline tooling.
+2. Identified critical feature gaps via 11+ embedded user interviews with Azure infrastructure teams, translating field-discovered friction into an **intent-based YAML generation** roadmap item that shaped the product backlog.
+3. Accelerated data retrieval for distributed engineering teams by migrating documentation to a **semantic search platform**, enforcing metadata standards that cut lookup time by 83% across high-volume knowledge bases.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ service teams** and heterogeneous infrastructure dependencies.
-2. Mobilized a product strategy to eliminate operational toil during region launches, conducting discovery with **20+ service teams** to quantify **81 hours of manual effort per region** and authoring a roadmap to automate critical-path Linux, storage, and networking workflows.
-3. Engineered a **Power BI dashboard** ingesting telemetry across **140+ teams**, enabling leadership to pinpoint automation gaps, prioritize high-impact engineering investment, and track toil-reduction OKRs region-over-region.
+1. Generated **$3M in accelerated revenue** and cut region launch time 28% by unifying an automation prioritization framework across 140+ teams — bridging engineering, ops, and business stakeholders toward a single deployment roadmap.
+2. Conducted infrastructure discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, then built a phased automation roadmap targeting the highest-impact paths in the deployment stack.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership real-time visibility to target automation gaps and prioritize high-leverage infrastructure investments.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a **2,000+ unit** pilot by defining the legacy Linux OS migration strategy, mapping dependencies across **1,200+ stations**, and embedding with floor operators to resolve last-mile integration issues before fleet-wide rollout.
-2. Facilitated Agile ceremonies — sprint planning, standups, and retrospectives — prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for a globally distributed robotics fleet.
-3. Drove alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines** with containerized build agents, accelerating the software deployment cycle **25%** and shortening field-fix turnaround for production robotics workloads.
+1. Architected a zero-downtime **legacy OS migration strategy** for a 2,000+ unit robotics fleet, mapping dependencies across 1,200+ stations and sequencing rollout to eliminate disruption to live production workloads.
+2. Implemented **automated CI/CD pipelines** in collaboration with IT and Engineering, accelerating the embedded software deployment cycle by 25% and reducing manual handoffs across distributed hardware environments.
+3. Drove Agile ceremonies and backlog prioritization, resolving **40+ high-priority tickets** to stabilize the developer intake process and unblock firmware deployments across cross-functional robotics teams.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings **26%** by re-architecting the CRM and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals**, building trust with customers through clear technical translation of scope and pricing.
-2. Reduced Customer Acquisition Cost **13%** and lifted conversions **2.7%** by executing a digital-first go-to-market strategy, optimizing the website, Google Business profile, and paid search funnel against measured CAC and LTV targets.
-3. Improved leadership pricing models by conducting **financial profitability analysis** across **1,000+ project records** in SQL, surfacing margin leaks and shaping a data-driven repricing strategy adopted across the regional franchise.
+1. Increased job bookings **26%** by deploying a new CRM workflow that streamlined end-to-end scoping, proposal generation, and invoicing across 200+ monthly client engagements.
+2. Cut Customer Acquisition Cost **13%** and lifted conversion 2.7% by executing a data-driven go-to-market strategy, optimizing web presence and local search profiles to target high-value inbound leads.
+3. Identified and sealed margin leaks by conducting **profitability analysis** across 1,000+ project records, delivering pricing model recommendations that improved per-job contribution margin for leadership.
 
 ## Notes from the rewriter
-- Reframed MSFT FT bullets around customer embedding, last-mile integrations, and feedback loop to sustaining engineering — mirroring FDE responsibilities.
-- Surfaced Python, Linux, networking, storage (NFS/SMB/S3), AI/ML pipelines, and hybrid-cloud keywords throughout skills and bullets.
+- 'last-mile integration friction' (JD: 'Last Mile problem') woven into microsoft_ft bullet 1 — mirrors Hammerspace's core FDE framing.
+- 'sovereign-cloud network isolation' and 'distributed-systems failures' (JD: principal-level networking, hybrid-cloud, distributed environment) used in microsoft_ft bullet 4.
+- 'HPC workloads' (JD: 'AI and high-performance computing (HPC) workloads') placed in microsoft_ft bullet 5 to signal domain fluency.
+- 'heterogeneous cloud infrastructure' (JD: 'heterogeneous storage and cloud providers') in microsoft_ft bullet 2 echoes Hammerspace stack deployment language.
+- 'field-discovered friction into roadmap' (JD: 'Engineering Shield & Feedback Loop') framed in microsoft_2023 bullet 2 to mirror the FDE feedback-loop responsibility.
 

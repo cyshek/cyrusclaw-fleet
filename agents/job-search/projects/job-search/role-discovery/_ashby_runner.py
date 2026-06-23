@@ -1824,6 +1824,50 @@ def final_clobber_guard(page, plan, steps, settle_max_ms=6000, settle_quiet_ms=1
             except Exception:
                 break
             page.wait_for_timeout(250)
+    # 3a) Fill standalone "Country" combobox if present (Cantina-Labs-class).
+    # Some tenants render a separate Country typeahead (data-field-path ends in a UUID,
+    # label == "Country") that is NOT _systemfield_location. If it is empty, fill with
+    # "United States". The JS below finds it by label text and uses _LOCATION_COMBO_FILL_JS.
+    _COUNTRY_FIELD_JS = """async () => {
+      const LBL = /^country$/i;
+      const isText = i => i && i.tagName==='INPUT' &&
+        !['hidden','checkbox','radio','file','submit','button'].includes((i.type||'').toLowerCase());
+      // Find a container whose label says exactly 'Country' but whose data-field-path
+      // does NOT end with _systemfield_location (that's the city/state field).
+      const containers = [...document.querySelectorAll('[data-field-path]')];
+      const cont = containers.find(c => {
+        const fp = c.getAttribute('data-field-path')||'';
+        if (fp.endsWith('_systemfield_location')) return false;
+        const lbl = (c.querySelector('label')||{}).textContent||'';
+        return LBL.test(lbl.trim()) && [...c.querySelectorAll('input')].some(isText);
+      });
+      if (!cont) return {ok: false, reason: 'no-country-container'};
+      const inp = [...cont.querySelectorAll('input')].find(isText);
+      if (!inp) return {ok: false, reason: 'no-input'};
+      if ((inp.value||'').trim()) return {ok: true, already: inp.value.trim()};
+      const tail = cont.getAttribute('data-field-path');
+      return {ok: false, reason: 'needs-fill', tail};
+    }"""
+    try:
+        _ctry_probe = page.evaluate(f"({_COUNTRY_FIELD_JS})()")
+        if isinstance(_ctry_probe, dict) and _ctry_probe.get('reason') == 'needs-fill':
+            _ctry_tail = _ctry_probe.get('tail', '')
+            log(f"final-guard: standalone Country field found (tail={_ctry_tail!r}), filling 'United States'")
+            _ctry_result = page.evaluate(
+                f"(args) => ({_LOCATION_COMBO_FILL_JS})(args)",
+                {'tail': _ctry_tail, 'value': 'United States'})
+            log(f"Country fill result: {str(_ctry_result)[:120]}")
+            status['country_field_filled'] = _ctry_result
+            page.wait_for_timeout(400)
+        elif isinstance(_ctry_probe, dict) and _ctry_probe.get('already'):
+            log(f"final-guard: Country field already set to {_ctry_probe['already']!r}")
+            status['country_field_filled'] = {'ok': True, 'already': _ctry_probe['already']}
+        else:
+            status['country_field_filled'] = _ctry_probe
+    except Exception as _ce:
+        log(f"final-guard country-field probe fail: {_ce}")
+        status['country_field_filled'] = {'ok': False, 'reason': str(_ce)}
+
     # 3) Re-assert work-auth radio(s) via TRUSTED click. Identify work-auth-class
     #    radio entries in the plan by label keywords, then trusted-click the
     #    truthful option in its own container (registers in React).

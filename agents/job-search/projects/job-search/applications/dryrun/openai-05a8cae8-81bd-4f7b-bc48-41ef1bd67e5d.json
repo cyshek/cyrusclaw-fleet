@@ -5,12 +5,12 @@
   "job_id": "05a8cae8-81bd-4f7b-bc48-41ef1bd67e5d",
   "job_title": "Product Manager, Sensitive Deployments",
   "job_location": "San Francisco",
-  "fetched_at": "2026-05-25T17:26:35Z",
+  "fetched_at": "2026-06-22T23:21:56Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 12,
-    "filled": 12,
+    "total_fields": 13,
+    "filled": 13,
     "filled_needs_review": 0,
     "declined": 0,
     "needs_essay": 0,
@@ -19,8 +19,8 @@
   },
   "fields": [
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_name",
-      "label": "Full Name",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_name",
+      "label": "Legal Name",
       "type": "input_text",
       "required": true,
       "value": "Cyrus Shekari",
@@ -29,10 +29,23 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_name"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_name"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_email",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_09a328e0-8d57-4f88-86ab-688de1657b17",
+      "label": "Preferred Name (if applicable)",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_09a328e0-8d57-4f88-86ab-688de1657b17"
+    },
+    {
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +55,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_email"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_email"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_resume",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,10 +68,10 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_resume"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_resume"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_20f8883c-d278-427c-9465-dc614f612e1f",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_20f8883c-d278-427c-9465-dc614f612e1f",
       "label": "Phone Number",
       "type": "input_text",
       "required": true,
@@ -68,10 +81,10 @@
       "matched_rule": "phone",
       "options": null,
       "_ashby_type": "Phone",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_20f8883c-d278-427c-9465-dc614f612e1f"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_20f8883c-d278-427c-9465-dc614f612e1f"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_location",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_location",
       "label": "Where are you currently located?",
       "type": "input_text",
       "required": true,
@@ -81,23 +94,24 @@
       "matched_rule": "city_state",
       "options": null,
       "_ashby_type": "Location",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62__systemfield_location"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4__systemfield_location"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_3f4e05d4-dd62-48ef-96ca-d9f293ae18d4",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_3f4e05d4-dd62-48ef-96ca-d9f293ae18d4",
       "label": "When can you start a new role?",
-      "type": "input_text",
+      "type": "input_date",
       "required": true,
-      "value": "Within 2 weeks of offer",
-      "source": "preferences.earliest_start_date",
+      "value": "2026-07-06",
+      "source": "preferences.earliest_start_date (date picker -> today+14d)",
       "status": "filled",
       "matched_rule": "earliest_start",
       "options": null,
       "_ashby_type": "Date",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_3f4e05d4-dd62-48ef-96ca-d9f293ae18d4"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_3f4e05d4-dd62-48ef-96ca-d9f293ae18d4",
+      "_ashby_date_iso": "2026-07-06"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_bed95633-1b6e-4cd0-9eaf-c5a9f75ac35d",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_bed95633-1b6e-4cd0-9eaf-c5a9f75ac35d",
       "label": "Are you authorized to work in the country where the job is located?",
       "type": "multi_value_single_select",
       "required": true,
@@ -116,10 +130,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_bed95633-1b6e-4cd0-9eaf-c5a9f75ac35d"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_bed95633-1b6e-4cd0-9eaf-c5a9f75ac35d"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_bda78810-f000-4f1c-99c5-f783e161f2f7",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_bda78810-f000-4f1c-99c5-f783e161f2f7",
       "label": "Will you now or in the future require sponsorship for employment visa status in this country?",
       "type": "multi_value_single_select",
       "required": true,
@@ -138,10 +152,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_bda78810-f000-4f1c-99c5-f783e161f2f7"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_bda78810-f000-4f1c-99c5-f783e161f2f7"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_d33e2a8f-3742-4e5e-b91c-b7607d3cdf63",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_d33e2a8f-3742-4e5e-b91c-b7607d3cdf63",
       "label": "Are you able to work from our US office three days per week?",
       "type": "multi_value_single_select",
       "required": true,
@@ -160,10 +174,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_d33e2a8f-3742-4e5e-b91c-b7607d3cdf63"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_d33e2a8f-3742-4e5e-b91c-b7607d3cdf63"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_f189fed2-624b-41a1-a76f-0c67a2611d1a",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_f189fed2-624b-41a1-a76f-0c67a2611d1a",
       "label": "Additional Information",
       "type": "textarea",
       "required": false,
@@ -173,10 +187,10 @@
       "matched_rule": "additional_info",
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_f189fed2-624b-41a1-a76f-0c67a2611d1a"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_f189fed2-624b-41a1-a76f-0c67a2611d1a"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_a90e16d2-baaf-4c31-b3e5-70b53f261040",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_a90e16d2-baaf-4c31-b3e5-70b53f261040",
       "label": "Applicant Arbitration Agreement Acknowledgement",
       "type": "multi_value_multi_select",
       "required": true,
@@ -191,10 +205,10 @@
         }
       ],
       "_ashby_type": "MultiValueSelect",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_a90e16d2-baaf-4c31-b3e5-70b53f261040"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_a90e16d2-baaf-4c31-b3e5-70b53f261040"
     },
     {
-      "id": "154cf816-9261-472c-b7e2-cece32672d62_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea",
+      "id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea",
       "label": "I hereby certify that I have not knowingly withheld any information that might adversely affect my chances for employment and that the answers given by me are true and correct to the best of my knowledge. I further certify that I, the undersigned applicant, have personally completed this application. I understand that, to the extent permitted by applicable law, any omission or misstatement of material fact on this application or on any document used to secure employment shall be grounds for rejection of this application or for immediate discharge if I am employed, regardless of the time elapsed before discovery. ",
       "type": "multi_value_multi_select",
       "required": true,
@@ -209,7 +223,7 @@
         }
       ],
       "_ashby_type": "MultiValueSelect",
-      "_ashby_id": "154cf816-9261-472c-b7e2-cece32672d62_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea"
+      "_ashby_id": "cd5b41a2-6749-4234-99a3-65a3820a6ab4_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea"
     }
   ],
   "unresolved": [],

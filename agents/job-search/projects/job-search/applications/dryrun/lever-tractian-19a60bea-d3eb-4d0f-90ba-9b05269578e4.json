@@ -5,14 +5,14 @@
   "org": "tractian",
   "job_id": "19a60bea-d3eb-4d0f-90ba-9b05269578e4",
   "job_title": "Tractian - Sales Engineer",
-  "fetched_at": "2026-06-03T13:46:28Z",
+  "fetched_at": "2026-06-23T00:06:16Z",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 23,
-    "filled": 13,
+    "filled": 14,
     "filled_needs_review": 1,
     "declined": 3,
-    "unresolved": 6,
+    "unresolved": 5,
     "blockers": 0
   },
   "fields": [
@@ -106,9 +106,9 @@
       "type": "input_text",
       "lever_type": null,
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "portfolio_url is null",
-      "status": "unresolved",
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
       "matched_rule": "portfolio",
       "options": null
     },
@@ -589,12 +589,6 @@
     }
   ],
   "unresolved": [
-    {
-      "id": "urls[Portfolio]",
-      "label": "Portfolio URL",
-      "required": false,
-      "reason": "portfolio_url is null"
-    },
     {
       "id": "cards[6334bfba-5d03-4d83-b05f-013fa5c097b7][field3]",
       "label": "How did you find out about the role?",

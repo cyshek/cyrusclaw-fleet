@@ -1,0 +1,7 @@
+# Cover answers — Discord, Solutions Architect, SF Bay Area (discord-8579738002)
+
+## Why do you want to work at Discord?
+
+At Microsoft, a big part of my work has been taking high-touch, manually intensive operations and turning them into scalable, repeatable systems. I built a resilience automation platform that cut a 2-person, high-touch managed service down to a self-service model, and I drove the same transformation across enterprise partner engagements with companies like Databricks and Walmart. The Solutions Architect role at Discord is asking for exactly that mindset, owning complex technical integrations end-to-end while also building the playbooks and reference architectures that scale the model beyond any single account. That combination of deep technical partnership and operational leverage is where I do my best work.
+
+What draws me to Discord specifically is the position the platform occupies in gaming. Discord is not a peripheral tool for most players, it is the layer where gaming communities actually live, and that makes the Social SDK a genuinely high-stakes integration for any studio building multiplayer experiences. The opportunity to serve as a trusted technical advisor to AAA studios, helping them get that integration right and surface the full value of Discord's developer toolset, is a problem I find compelling. Gaming infrastructure is a space I want to grow in, and Discord is the right place to do it.

@@ -39,7 +39,93 @@ logger = logging.getLogger(__name__)
 # Minimum data gate
 # ─────────────────────────────────────────────────────────────────────────────
 
-MIN_ROUND_TRIPS_TOTAL = 30   # across ALL strategies before we bother training
+MIN_ROUND_TRIPS_TOTAL = 30   # across the LIVE-BOOK roster before we bother training
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Universe filter — gate + train on the LIVE tournament roster only
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# WHY: the calibrator predicts "is THIS live strategy's edge likely to hold?"
+# and scales its live Kelly sizing. If we count/train on non-book trips, the
+# model is fit on outcomes it will never size. tournament.db historically
+# accumulated test-harness + dead-crypto rows that have nothing to do with the
+# live equity book; without a filter the 30-trip gate opens early on garbage
+# and the eventual fit is poisoned by e.g. backstop_test's synthetic −$120
+# losses and closed crypto noise. (Found 2026-06-23; fix greenlit by main.)
+#
+# SOURCE OF TRUTH: the universe is whatever the caller (the runner) trades.
+# Callers SHOULD pass `universe=<set of live strategy names>` explicitly so this
+# stays correct as the roster evolves. When no universe is supplied we fall
+# back to LIVE_ROSTER below (kept in sync with the active cron_tick.sh line),
+# and we ALWAYS strip EXCLUDE_STRATEGIES (known non-book noise) as a belt-and-
+# suspenders guard even when an explicit universe is given.
+
+# Live equity book — mirrors the active crontab `cron_tick.sh ...` invocation.
+# Keep in sync if the roster changes (it's the default only; explicit
+# `universe=` from the runner overrides this).
+LIVE_ROSTER: frozenset[str] = frozenset({
+    "breakout_xlk",
+    "sma_crossover_qqq",
+    "breakout_xlk_regime",
+    "sma_crossover_qqq_regime",
+    "sma_crossover_qqq_rth",
+    "breakout_xlk__mut_c382b1",
+    "leveraged_long_trend_paper",
+    "rsi_oversold_spy",
+    "volume_breakout_qqq",
+    "macd_momentum_iwm",
+    "tqqq_cot_combo",
+    "allocator_blend",
+})
+
+# Known non-book strategy names that must NEVER enter the gate or training set,
+# regardless of universe: synthetic test harnesses + dead crypto legs. Stripped
+# unconditionally (even when an explicit universe is passed) so a stray test row
+# can't sneak in.
+EXCLUDE_STRATEGIES: frozenset[str] = frozenset({
+    "backstop_test",   # synthetic risk-backstop harness (deliberate -$120)
+    "any",             # test scaffolding
+    "bp2",             # test scaffolding
+    "sma_crossover_btc",   # dead crypto lane (closed)
+    "buy_and_hold_btc",    # dead crypto lane (closed)
+    "breakout_ltc",        # dead crypto lane (closed)
+    "momentum_sol",        # dead crypto lane (closed)
+    "rsi_mean_revert_eth", # dead crypto lane (closed)
+})
+
+
+def _resolve_universe(universe: Optional[set] = None) -> Optional[frozenset]:
+    """Resolve the effective allow-list of strategy names.
+
+    - explicit `universe` (from the caller/runner) wins;
+    - else fall back to LIVE_ROSTER.
+    Returns None only if an explicit EMPTY set was passed *and* no fallback is
+    wanted — callers pass non-empty sets in practice, so this normally returns a
+    concrete allow-list. EXCLUDE_STRATEGIES is applied separately and always.
+    """
+    if universe is not None:
+        # Respect an explicitly-provided roster (even a non-default one).
+        return frozenset(universe)
+    return LIVE_ROSTER
+
+
+def _filter_trades(all_trades: list[dict], universe: Optional[set] = None) -> list[dict]:
+    """Drop trades whose strategy is not in the live universe / is excluded.
+
+    The single choke point so count, training, and prediction all see the same
+    clean set. EXCLUDE_STRATEGIES is stripped unconditionally; the allow-list is
+    applied when one is resolvable.
+    """
+    allow = _resolve_universe(universe)
+    out = []
+    for row in all_trades:
+        strat = row.get("strategy", "")
+        if strat in EXCLUDE_STRATEGIES:
+            continue
+        if allow is not None and strat not in allow:
+            continue
+        out.append(row)
+    return out
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Feature names (in order – must be consistent across extract + train + predict)
@@ -264,12 +350,17 @@ def extract_features_for_strategy(
     ]
 
 
-def extract_training_rows(all_trades: list[dict]) -> tuple[list[list[float]], list[int]]:
-    """Build (X, y) training set from all round-trips across all strategies.
+def extract_training_rows(
+    all_trades: list[dict], universe: Optional[set] = None
+) -> tuple[list[list[float]], list[int]]:
+    """Build (X, y) training set from all round-trips across LIVE-BOOK strategies.
 
     y=1 if pnl > 0, y=0 otherwise.
     X is the feature vector at the time of each trip (using history up to that trip).
+    Non-book / excluded strategies are stripped via the universe filter so the
+    label set is never poisoned by synthetic-harness or dead-crypto outcomes.
     """
+    all_trades = _filter_trades(all_trades, universe)
     X: list[list[float]] = []
     y_labels: list[int] = []
 
@@ -341,8 +432,15 @@ def _calibration_multiplier(p_win: float) -> float:
 # Public API
 # ─────────────────────────────────────────────────────────────────────────────
 
-def train_calibrator(db_path: str = "tournament.db") -> dict:
+def train_calibrator(db_path: str = "tournament.db", universe: Optional[set] = None) -> dict:
     """Train the meta-model on existing round-trip data.
+
+    Args:
+        db_path: tournament.db path.
+        universe: optional explicit allow-list of live strategy names. When
+            omitted, falls back to LIVE_ROSTER. Non-book strategies
+            (EXCLUDE_STRATEGIES) are always stripped. The 30-trip gate and the
+            training set therefore reflect the LIVE BOOK only.
 
     Returns:
         {
@@ -368,8 +466,11 @@ def train_calibrator(db_path: str = "tournament.db") -> dict:
             return result
 
         all_trades = _fetch_all_trades(db_path)
+        # Restrict to the live book BEFORE counting / training so the gate and
+        # the model never see test-harness or dead-crypto trips.
+        all_trades = _filter_trades(all_trades, universe)
 
-        # Count total round-trips across ALL strategies
+        # Count total round-trips across the LIVE-BOOK strategies
         all_trips = _fifo_match_global(all_trades)
         n_total_trips = len(all_trips)
 
@@ -382,8 +483,9 @@ def train_calibrator(db_path: str = "tournament.db") -> dict:
             _update_cache(result, None)
             return result
 
-        # Build training set
-        X, y = extract_training_rows(all_trades)
+        # Build training set (all_trades already universe-filtered above; pass
+        # universe through so the idempotent re-filter uses the same roster)
+        X, y = extract_training_rows(all_trades, universe)
         n_samples = len(X)
 
         if n_samples < 10:
@@ -447,6 +549,7 @@ def get_calibrated_kelly_fraction(
     strategy_name: str,
     raw_kelly_fraction: float,
     db_path: str = "tournament.db",
+    universe: Optional[set] = None,
 ) -> float:
     """Return a calibrated Kelly fraction.
 
@@ -459,7 +562,7 @@ def get_calibrated_kelly_fraction(
 
         # Auto-train (or check cache) — lazy, first-call training.
         if _MODEL_CACHE["model"] is None and _MODEL_CACHE["status"] == "untrained":
-            train_calibrator(db_path)
+            train_calibrator(db_path, universe=universe)
 
         model = _MODEL_CACHE["model"]
         if model is None:
@@ -474,6 +577,7 @@ def get_calibrated_kelly_fraction(
         # Extract features for this strategy using current DB state
         try:
             all_trades = _fetch_all_trades(db_p)
+            all_trades = _filter_trades(all_trades, universe)
             all_trips = _fifo_match_global(all_trades)
             feat = extract_features_for_strategy(strategy_name, all_trips, kelly_raw=raw_kelly_fraction)
         except Exception as feat_err:  # noqa: BLE001
@@ -513,8 +617,8 @@ def get_calibrated_kelly_fraction(
         return float(raw_kelly_fraction)
 
 
-def calibration_report(db_path: str = "tournament.db") -> str:
-    """Human-readable calibration status report."""
+def calibration_report(db_path: str = "tournament.db", universe: Optional[set] = None) -> str:
+    """Human-readable calibration status report (LIVE-BOOK universe)."""
     db_p = Path(db_path)
 
     lines = ["=== Edge Calibrator Status ==="]
@@ -529,10 +633,12 @@ def calibration_report(db_path: str = "tournament.db") -> str:
 
     try:
         all_trades = _fetch_all_trades(db_p)
+        all_trades = _filter_trades(all_trades, universe)
         all_trips = _fifo_match_global(all_trades)
         n_total = len(all_trips)
         strategies_with_trips = sorted(set(t["strategy"] for t in all_trips))
-        lines.append(f"Total round-trips: {n_total} (need {MIN_ROUND_TRIPS_TOTAL} to train)")
+        lines.append(f"Universe: live-book only ({len(_resolve_universe(universe))} strategies; non-book excluded)")
+        lines.append(f"Total round-trips (live book): {n_total} (need {MIN_ROUND_TRIPS_TOTAL} to train)")
         lines.append(f"Strategies with ≥1 trip: {len(strategies_with_trips)}")
         if strategies_with_trips:
             for s in strategies_with_trips:
@@ -549,7 +655,7 @@ def calibration_report(db_path: str = "tournament.db") -> str:
     cache_status = _MODEL_CACHE["status"]
     if cache_status == "untrained":
         # Attempt a fresh train for the report
-        result = train_calibrator(db_path)
+        result = train_calibrator(db_path, universe=universe)
         cache_status = result["status"]
 
     lines.append(f"\nModel status: {cache_status}")

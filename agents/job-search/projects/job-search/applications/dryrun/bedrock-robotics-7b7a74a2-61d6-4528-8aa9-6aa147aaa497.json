@@ -1,0 +1,200 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/bedrock-robotics/7b7a74a2-61d6-4528-8aa9-6aa147aaa497",
+  "org": "bedrock-robotics",
+  "job_id": "7b7a74a2-61d6-4528-8aa9-6aa147aaa497",
+  "job_title": "Technical Program Manager - Data, Fleet Tech, Cloud Infra",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-06-23T01:20:48Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 9,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629__systemfield_name"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629__systemfield_email"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_ed5665ca-dc07-47cb-b6c8-0825a74a976c",
+      "label": "Please provide your phone number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_ed5665ca-dc07-47cb-b6c8-0825a74a976c"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629__systemfield_resume"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_f492a8b0-6c7d-4222-ab78-f2df502e1a95",
+      "label": "Pleae provide your LinkedIn profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_f492a8b0-6c7d-4222-ab78-f2df502e1a95"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_2f008ae6-bb3f-4360-b1b4-4fb77764b349",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_2f008ae6-bb3f-4360-b1b4-4fb77764b349"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_822a078c-f8c8-40e7-ab90-28e80866a54d",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_822a078c-f8c8-40e7-ab90-28e80866a54d"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_01c1bb4c-df3b-457e-a862-b78dfcfdce6e",
+      "label": "This role requires being in the office 3-4 days a week. Are you able to commute to this location?\"",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_01c1bb4c-df3b-457e-a862-b78dfcfdce6e"
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_16b17c95-b9ac-40c0-9326-5f8874b464df",
+      "label": "Do you have  7+ years of experience as a Technical Program Manager or in a comparable technical leadership role, with a demonstrated ability to deliver complex, multi-disciplinary systems from concept through deployment?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_16b17c95-b9ac-40c0-9326-5f8874b464df",
+      "match_attempted": true
+    },
+    {
+      "id": "c7324508-2ed9-46f6-b12d-cab7584e3629_d226302c-a726-4725-a199-389928d1e3de",
+      "label": "Do you have 2+ years of professional experience leading programs involving safety-critical systems, with an understanding of the rigor, validation, and cross-functional coordination required to operate reliably in the physical world? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "c7324508-2ed9-46f6-b12d-cab7584e3629_d226302c-a726-4725-a199-389928d1e3de"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

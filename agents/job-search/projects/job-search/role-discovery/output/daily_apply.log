@@ -5,3 +5,57 @@
 [2026-06-22 03:22:35] === Daily apply run start ===
 [2026-06-22 07:00:01] === Daily apply run start ===
 [2026-06-22 07:00:01] === Daily apply run start ===
+[2026-06-22 17:31:12] === Daily apply run start ===
+[2026-06-22 17:31:12] === Daily apply run start ===
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 2639, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 2533, in main
+    roles = pick_batch(args.batch, conn, ats_filter=args.ats)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 576, in pick_batch
+    _dbg_counts["gh_no_parse"] = _dbg_counts.get("gh_no_parse",0)+1; continue
+                                 ^^^^^^^^^^^
+NameError: name '_dbg_counts' is not defined
+[2026-06-22 17:31:12] Submitted: 0
+0 (exit 1)
+[2026-06-22 17:31:12] Submitted: 0
+0 (exit 1)
+Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+  Open:         572
+  Applied:      778
+Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+  Open:         572
+  Applied:      778
+[2026-06-22 17:31:13] === Daily apply run done ===
+[2026-06-22 17:31:13] === Daily apply run done ===
+[2026-06-22 17:31:55] === Daily apply run start ===
+[2026-06-22 17:31:55] === Daily apply run start ===
+[inline_submit] processing 385 role(s)
+
+[inline_submit] === [1/385] 21shares-us-5823209004 (21shares US — Product Manager) ===
+[inline_submit] 21shares-us-5823209004: ABORT(jd-fetch) in 0.6s
+  error: HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/21shares/jobs/5823209004
+
+[inline_submit] === [2/385] abnormal-security-7773951003 (Abnormal Security — Technical Program Manager - AI & Data Systems) ===
+[2026-06-22 17:36:29] Submitted: 0
+0 (exit 143)
+[2026-06-22 17:36:29] Submitted: 0
+0 (exit 143)
+Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+  Open:         572
+  Applied:      778
+Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+  Open:         572
+  Applied:      778
+[2026-06-22 17:36:29] === Daily apply run done ===
+[2026-06-22 17:36:29] === Daily apply run done ===
+[2026-06-22 17:38:31] === Daily apply run start ===
+[2026-06-22 17:38:31] === Daily apply run start ===
+daily_apply.sh: line 31: syntax error near unexpected token `('
+daily_apply.sh: line 31: `log "Prep done: ${PREP_OK} prepped (exit ${PREP_RC})"'
+[2026-06-23 07:00:01] === Daily apply run start ===
+[2026-06-23 07:00:01] === Daily apply run start ===
+[2026-06-23 07:00:01] Phase 1: prep batch-500...
+[2026-06-23 07:00:01] Phase 1: prep batch-500...

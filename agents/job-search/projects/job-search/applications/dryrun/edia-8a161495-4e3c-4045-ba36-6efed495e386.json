@@ -1,0 +1,144 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/edia/8a161495-4e3c-4045-ba36-6efed495e386",
+  "org": "edia",
+  "job_id": "8a161495-4e3c-4045-ba36-6efed495e386",
+  "job_title": "Product Manager",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T01:44:26Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264__systemfield_name"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264__systemfield_email"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264__systemfield_resume"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264_880425fd-40fe-45de-8c2b-151747e4fb73",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264_880425fd-40fe-45de-8c2b-151747e4fb73"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264_e3641516-0845-4b5c-87e8-d4e4863a438c",
+      "label": "Link and password to relevant work portfolio or recent project",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.website_required_fallback (required portfolio -> LinkedIn)",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264_e3641516-0845-4b5c-87e8-d4e4863a438c"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264_84569b87-e301-4f67-95a4-2f44be840097",
+      "label": "Explain your process for using Claude Code/ Codex to its full potential",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Explain your process for using Claude Code/ Codex to its full potential'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264_84569b87-e301-4f67-95a4-2f44be840097"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264_1ab427f0-8534-4c96-b352-5b4c95df4bae",
+      "label": "Where are you located?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264_1ab427f0-8534-4c96-b352-5b4c95df4bae"
+    },
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264_8ff0fd45-80bb-45cb-b65d-66f3bf2629fc",
+      "label": "Will you now or in the future require employment visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "49d92257-6e6f-497f-902a-3a65d4756264_8ff0fd45-80bb-45cb-b65d-66f3bf2629fc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "49d92257-6e6f-497f-902a-3a65d4756264_84569b87-e301-4f67-95a4-2f44be840097",
+      "label": "Explain your process for using Claude Code/ Codex to its full potential",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Explain your process for using Claude Code/ Codex to its full potential'"
+    }
+  ],
+  "blockers": []
+}

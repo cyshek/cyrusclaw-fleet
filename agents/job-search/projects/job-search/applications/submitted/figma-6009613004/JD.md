@@ -1,4 +1,4 @@
-# Technical Program Manager, Data Science
+# Technical Program Manager, Data
 
 **Company:** Figma
 **Location:** San Francisco, CA • New York, NY • United States

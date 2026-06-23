@@ -1,0 +1,145 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/boom/b6f53406-66b9-45aa-bcd9-9adbf5436a26",
+  "org": "boom",
+  "job_id": "b6f53406-66b9-45aa-bcd9-9adbf5436a26",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "Austin Texas",
+  "fetched_at": "2026-06-23T08:18:27Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb__systemfield_name",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb__systemfield_email",
+      "label": "Email Address",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb__systemfield_email",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb__systemfield_resume",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb_901e70d8-e2d2-4fa8-89b3-e26a57fd461f",
+      "label": "URL to LinkedIn Profile ",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb_901e70d8-e2d2-4fa8-89b3-e26a57fd461f",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb_a05495f1-e9c3-4a48-b4ad-3b3baeadef91",
+      "label": "Are you legally authorized to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb_a05495f1-e9c3-4a48-b4ad-3b3baeadef91",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb_28acd664-dee5-4bc2-829a-5a2ea43021b1",
+      "label": "Desired Salary?",
+      "type": "input_text",
+      "required": true,
+      "value": "$160,000 - $200,000 base",
+      "source": "comp_seeking: standard range for PM/TPM/SE roles",
+      "status": "filled",
+      "matched_rule": "comp_seeking",
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb_28acd664-dee5-4bc2-829a-5a2ea43021b1",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb_4638130a-dae3-42fb-92f6-d7ce4ae9cb46",
+      "label": "Are you able to work at our office based in Austin?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb_4638130a-dae3-42fb-92f6-d7ce4ae9cb46",
+      "section": "Standard Application Questions"
+    },
+    {
+      "id": "6d8fedae-5998-4264-99f4-fe7089629dbb_dd681251-21df-4015-8214-4af1075f02be",
+      "label": "What interests you about working for Boom?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "6d8fedae-5998-4264-99f4-fe7089629dbb_dd681251-21df-4015-8214-4af1075f02be",
+      "section": "Standard Application Questions"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

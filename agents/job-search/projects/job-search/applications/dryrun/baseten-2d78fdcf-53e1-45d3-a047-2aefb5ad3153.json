@@ -1,0 +1,212 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/baseten/2d78fdcf-53e1-45d3-a047-2aefb5ad3153",
+  "org": "baseten",
+  "job_id": "2d78fdcf-53e1-45d3-a047-2aefb5ad3153",
+  "job_title": "Product Manager, Developer Experience",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T07:15:21Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c__systemfield_name"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c__systemfield_email",
+      "label": "Email address ",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c__systemfield_email"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_71ec0830-78ee-46cf-82f0-9f9d4db732f8",
+      "label": "LinkedIn profile ",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_71ec0830-78ee-46cf-82f0-9f9d4db732f8"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_ca91be8d-3a22-486e-8b37-bf864418d9d7",
+      "label": "Current company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_ca91be8d-3a22-486e-8b37-bf864418d9d7"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c__systemfield_resume"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_1a114fa6-4e09-4ed7-bd13-311ac4b8e414",
+      "label": "Do you have any deadlines or timeline considerations we should be aware of? What is the earliest you would want to start working with us?",
+      "type": "textarea",
+      "required": true,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_1a114fa6-4e09-4ed7-bd13-311ac4b8e414"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_0806bd61-76d1-48b7-8985-24c6fa5f0d46",
+      "label": "Our offices are located in San Francisco, CA and New York City. Please indicate which location you are interested in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['San Francisco, CA', 'New York, NY', 'Remote']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "San Francisco, CA",
+          "value": "San Francisco, CA"
+        },
+        {
+          "label": "New York, NY",
+          "value": "New York, NY"
+        },
+        {
+          "label": "Remote",
+          "value": "Remote"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_0806bd61-76d1-48b7-8985-24c6fa5f0d46",
+      "match_attempted": true
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_bdc286d0-ecbc-4825-bd2a-7abba8d67f06",
+      "label": "Will you  require employment visa sponsorship to work in the country in which the job you're applying for is located (either now or in the future)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_bdc286d0-ecbc-4825-bd2a-7abba8d67f06"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_1ca24e28-8009-47c9-bdb0-a19ce682d2c6",
+      "label": "Why do you want to work at Baseten?",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Baseten because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Baseten is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Baseten while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Baseten aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Baseten')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_1ca24e28-8009-47c9-bdb0-a19ce682d2c6"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_443b6a26-19a0-4ec3-8516-a60676a3eb62",
+      "label": "Walk us through your proudest achievement and how it relates to the role you are applying for.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_443b6a26-19a0-4ec3-8516-a60676a3eb62"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_de65976d-ed3b-45d1-9a22-1f6a7d144471",
+      "label": "Additional information",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_de65976d-ed3b-45d1-9a22-1f6a7d144471"
+    },
+    {
+      "id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_f38eb9c7-eeaf-4509-84f6-278558a315aa",
+      "label": "Have you ever interviewed at Baseten before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_applied_to_company (proxy)",
+      "status": "filled",
+      "matched_rule": "previously_interviewed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "bf3bdadc-f9d6-4130-bd9d-09c7244a6d4c_f38eb9c7-eeaf-4509-84f6-278558a315aa"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

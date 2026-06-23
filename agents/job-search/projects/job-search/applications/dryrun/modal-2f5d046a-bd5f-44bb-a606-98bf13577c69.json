@@ -1,0 +1,164 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/modal/2f5d046a-bd5f-44bb-a606-98bf13577c69",
+  "org": "modal",
+  "job_id": "2f5d046a-bd5f-44bb-a606-98bf13577c69",
+  "job_title": "Solutions Architect",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T06:59:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3__systemfield_name"
+    },
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3__systemfield_email"
+    },
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3__systemfield_resume"
+    },
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_2384ca7b-2308-40e9-b995-b7a795f8ad2b",
+      "label": "Are you legally authorized to work in the US without visa sponsorship now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_2384ca7b-2308-40e9-b995-b7a795f8ad2b"
+    },
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_283a1cee-5090-4a17-8a3f-ccb9a7f48029",
+      "label": "This role is on-site in NYC or SF. Are you able to work on-site in one of these locations?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_283a1cee-5090-4a17-8a3f-ccb9a7f48029"
+    },
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_4a24cddf-4d7d-444d-8097-30b0e52743f0",
+      "label": "Do you have 4+ years in a pre-sales / solutions architect / sales engineering role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_4a24cddf-4d7d-444d-8097-30b0e52743f0"
+    },
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_b078f017-d185-4daf-9a8b-0dacb2bd7685",
+      "label": "Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_b078f017-d185-4daf-9a8b-0dacb2bd7685"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_b078f017-d185-4daf-9a8b-0dacb2bd7685",
+      "label": "Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_b078f017-d185-4daf-9a8b-0dacb2bd7685",
+      "label": "Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?",
+      "reason": "no LABEL_RULES match for label='Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?'"
+    }
+  ]
+}

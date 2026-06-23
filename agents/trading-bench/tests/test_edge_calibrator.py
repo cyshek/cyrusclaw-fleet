@@ -52,7 +52,7 @@ def _make_trades_db(rows: list[dict]) -> Path:
                 "(strategy, symbol, side, qty, price, notional_usd, status) "
                 "VALUES (?,?,?,?,?,?,?)",
                 (
-                    r.get("strategy", "strat_a"),
+                    r.get("strategy", "breakout_xlk"),
                     r.get("symbol", "BTC/USD"),
                     r["side"],
                     r["qty"],
@@ -68,7 +68,7 @@ def _make_trades_db(rows: list[dict]) -> Path:
 def _make_round_trips_rows(
     n: int,
     win_rate: float,
-    strategy: str = "strat_a",
+    strategy: str = "breakout_xlk",
     entry_price: float = 100.0,
     win_pct: float = 0.10,
     loss_pct: float = 0.05,
@@ -103,14 +103,21 @@ def _make_multi_strategy_db(
     n_strategies: int = 4,
     win_rate: float = 0.6,
 ) -> Path:
-    """Create DB with multiple strategies each having per_strategy_trips round-trips."""
+    """Create DB with multiple strategies each having per_strategy_trips round-trips.
+
+    Uses LIVE_ROSTER strategy names so the universe filter (live-book only)
+    keeps these rows — these fixtures exercise the trained-model path, not the
+    filter policy (that has its own dedicated tests).
+    """
+    from runner.edge_calibrator import LIVE_ROSTER
+    roster = sorted(LIVE_ROSTER)
     rows = []
     for i in range(n_strategies):
         rows.extend(
             _make_round_trips_rows(
                 per_strategy_trips,
                 win_rate=win_rate,
-                strategy=f"strat_{chr(ord('a') + i)}",
+                strategy=roster[i % len(roster)],
             )
         )
     return _make_trades_db(rows)
@@ -166,7 +173,7 @@ class TestPassThroughInsufficientData:
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         db_path = _make_trades_db([])
         raw = 0.35
-        result = get_calibrated_kelly_fraction("strat_a", raw, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path=str(db_path))
         assert result == raw, f"Expected pass-through {raw}, got {result}"
 
     def test_few_trips_passthrough(self):
@@ -175,7 +182,7 @@ class TestPassThroughInsufficientData:
         rows = _make_round_trips_rows(15, win_rate=0.6)
         db_path = _make_trades_db(rows)
         raw = 0.20
-        result = get_calibrated_kelly_fraction("strat_a", raw, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path=str(db_path))
         assert result == raw, f"Expected pass-through {raw}, got {result}"
 
     def test_train_calibrator_insufficient_data_status(self):
@@ -192,14 +199,14 @@ class TestPassThroughInsufficientData:
         """Non-existent DB → pass-through, no exception."""
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         raw = 0.15
-        result = get_calibrated_kelly_fraction("strat_a", raw, db_path="/tmp/nonexistent_edge_calib.db")
+        result = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path="/tmp/nonexistent_edge_calib.db")
         assert result == raw
 
     def test_zero_kelly_passthrough(self):
         """raw_kelly_fraction=0.0 → calibrated fraction is also 0.0 (pass-through)."""
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         db_path = _make_trades_db([])
-        result = get_calibrated_kelly_fraction("strat_a", 0.0, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", 0.0, db_path=str(db_path))
         assert result == 0.0
 
 
@@ -218,7 +225,7 @@ class TestFeatureExtraction:
         )
         rows = _make_round_trips_rows(5, win_rate=0.6)
         trips = _fifo_match_strategy([r for r in rows])
-        feat = extract_features_for_strategy("strat_a", trips, kelly_raw=0.2)
+        feat = extract_features_for_strategy("breakout_xlk", trips, kelly_raw=0.2)
         assert feat is not None
         assert len(feat) == len(FEATURE_NAMES)
 
@@ -231,7 +238,7 @@ class TestFeatureExtraction:
         )
         rows = _make_round_trips_rows(10, win_rate=0.6)
         trips = _fifo_match_strategy(rows)
-        feat = extract_features_for_strategy("strat_a", trips, kelly_raw=0.2)
+        feat = extract_features_for_strategy("breakout_xlk", trips, kelly_raw=0.2)
         assert feat is not None
         win_rate_idx = FEATURE_NAMES.index("win_rate")
         assert abs(feat[win_rate_idx] - 0.6) < 0.05  # allow small rounding
@@ -246,7 +253,7 @@ class TestFeatureExtraction:
         n = 7
         rows = _make_round_trips_rows(n, win_rate=0.5)
         trips = _fifo_match_strategy(rows)
-        feat = extract_features_for_strategy("strat_a", trips, kelly_raw=0.1)
+        feat = extract_features_for_strategy("breakout_xlk", trips, kelly_raw=0.1)
         assert feat is not None
         nrt_idx = FEATURE_NAMES.index("n_round_trips")
         assert feat[nrt_idx] == float(n)
@@ -261,7 +268,7 @@ class TestFeatureExtraction:
         rows = _make_round_trips_rows(5, win_rate=0.5)
         trips = _fifo_match_strategy(rows)
         kelly_in = 0.333
-        feat = extract_features_for_strategy("strat_a", trips, kelly_raw=kelly_in)
+        feat = extract_features_for_strategy("breakout_xlk", trips, kelly_raw=kelly_in)
         assert feat is not None
         kelly_idx = FEATURE_NAMES.index("kelly_raw")
         assert abs(feat[kelly_idx] - kelly_in) < 1e-9
@@ -313,7 +320,7 @@ class TestCalibratedFractionBounds:
         result = train_calibrator(db_path=str(db_path))
         # Even if pass-through (insufficient_data), the result should be in [0, 1]
         raw = 0.40
-        calibrated = get_calibrated_kelly_fraction("strat_a", raw, db_path=str(db_path))
+        calibrated = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path=str(db_path))
         assert 0.0 <= calibrated <= 1.0, f"Out of bounds: {calibrated}"
 
     def test_output_in_range_passthrough_mode(self):
@@ -321,14 +328,14 @@ class TestCalibratedFractionBounds:
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         db_path = _make_trades_db([])
         for raw in [0.0, 0.1, 0.5, 0.9, 1.0]:
-            result = get_calibrated_kelly_fraction("strat_a", raw, db_path=str(db_path))
+            result = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path=str(db_path))
             assert 0.0 <= result <= 1.0
 
     def test_raw_fraction_zero_gives_zero(self):
         """Zero Kelly → calibrated = 0 always (0 * anything = 0)."""
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         db_path = _make_multi_strategy_db(per_strategy_trips=10, n_strategies=4)
-        result = get_calibrated_kelly_fraction("strat_a", 0.0, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", 0.0, db_path=str(db_path))
         assert result == 0.0
 
 
@@ -412,7 +419,7 @@ class TestCalibrationOnlyShrinks:
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         db_path = _make_trades_db([])
         raw = 0.3
-        result = get_calibrated_kelly_fraction("strat_a", raw, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path=str(db_path))
         assert result <= raw + 1e-9, f"Calibrated {result} > raw {raw}"
 
     def test_calibrated_le_raw_with_model_many_strategies(self):
@@ -424,7 +431,7 @@ class TestCalibrationOnlyShrinks:
         db_path = _make_multi_strategy_db(per_strategy_trips=10, n_strategies=4)
         train_calibrator(db_path=str(db_path))
         raw = 0.40
-        result = get_calibrated_kelly_fraction("strat_a", raw, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", raw, db_path=str(db_path))
         assert result <= raw + 1e-9, f"Calibrated {result} > raw {raw}"
 
     def test_multiplier_never_above_one(self):
@@ -440,7 +447,7 @@ class TestCalibrationOnlyShrinks:
         from runner.edge_calibrator import get_calibrated_kelly_fraction
         db_path = _make_trades_db([])
         # raw > 1 is unusual but we must not output > 1
-        result = get_calibrated_kelly_fraction("strat_a", 1.5, db_path=str(db_path))
+        result = get_calibrated_kelly_fraction("breakout_xlk", 1.5, db_path=str(db_path))
         # In pass-through mode raw is returned as-is (contract: raw_kelly_fraction is user's),
         # so we test that when a model IS available, it clips.
         # For pass-through the contract says "return raw_kelly_fraction unchanged".
@@ -516,3 +523,117 @@ class TestGracefulDegradation:
         report = calibration_report(db_path=str(db_path))
         assert isinstance(report, str)
         assert "pass-through" in report.lower() or "insufficient" in report.lower()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Test 9: Universe filter — gate + train on the LIVE-BOOK roster only
+# (fix 2026-06-23: trip counter was polluted by test-harness + dead-crypto rows)
+# ─────────────────────────────────────────────────────────────────────────────
+
+class TestUniverseFilter:
+    """The calibrator must count/train ONLY on live-book strategies.
+
+    Non-book noise (backstop_test, dead crypto, test scaffolding) must never
+    reach the 30-trip gate or the training labels.
+    """
+
+    def setup_method(self):
+        import runner.edge_calibrator as ec
+        ec._MODEL_CACHE.update({
+            "model": None, "n_samples": 0,
+            "status": "untrained", "notes": "", "db_path": None,
+        })
+
+    @staticmethod
+    def _roundtrip_rows(strategy: str, n: int, win: bool, symbol: str = "AAA"):
+        """Generate n completed round-trips (buy then sell) for a strategy.
+
+        win=True → sell above buy (pnl>0); win=False → sell below buy (pnl<0).
+        """
+        rows = []
+        for _ in range(n):
+            rows.append({"strategy": strategy, "symbol": symbol, "side": "buy",
+                         "qty": 1.0, "price": 100.0})
+            sell_px = 110.0 if win else 90.0
+            rows.append({"strategy": strategy, "symbol": symbol, "side": "sell",
+                         "qty": 1.0, "price": sell_px})
+        return rows
+
+    def test_excluded_strategies_dropped_from_count(self):
+        from runner.edge_calibrator import _fetch_all_trades, _filter_trades, _fifo_match_global
+        # 2 live-book trips + a pile of excluded noise
+        rows = (self._roundtrip_rows("breakout_xlk", 2, win=True)
+                + self._roundtrip_rows("backstop_test", 5, win=False)
+                + self._roundtrip_rows("sma_crossover_btc", 4, win=True)
+                + self._roundtrip_rows("any", 3, win=False))
+        db_path = _make_trades_db(rows)
+        all_trades = _fetch_all_trades(str(db_path))
+        # Unfiltered sees everything
+        assert len(_fifo_match_global(all_trades)) == 2 + 5 + 4 + 3
+        # Filtered (default LIVE_ROSTER) sees only the live-book trips
+        filt = _filter_trades(all_trades)
+        trips = _fifo_match_global(filt)
+        assert len(trips) == 2
+        assert all(t["strategy"] == "breakout_xlk" for t in trips)
+
+    def test_not_in_roster_dropped(self):
+        from runner.edge_calibrator import _filter_trades
+        # A strategy that's neither excluded nor in the live roster is still dropped
+        rows = ([{"strategy": "some_random_unlisted_strat", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}]
+                + [{"strategy": "breakout_xlk", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}])
+        filt = _filter_trades(rows)
+        strats = {r["strategy"] for r in filt}
+        assert "some_random_unlisted_strat" not in strats
+        assert strats == {"breakout_xlk"}
+
+    def test_explicit_universe_overrides_default(self):
+        from runner.edge_calibrator import _filter_trades
+        rows = ([{"strategy": "custom_live", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}]
+                + [{"strategy": "breakout_xlk", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}])
+        # Explicit universe = {custom_live} → keep only that one (breakout_xlk now out-of-universe)
+        filt = _filter_trades(rows, universe={"custom_live"})
+        assert {r["strategy"] for r in filt} == {"custom_live"}
+
+    def test_excluded_stripped_even_with_explicit_universe(self):
+        from runner.edge_calibrator import _filter_trades
+        # backstop_test is excluded UNCONDITIONALLY, even if someone passes it in the universe
+        rows = (self._roundtrip_rows("backstop_test", 3, win=False)
+                + self._roundtrip_rows("custom_live", 2, win=True))
+        filt = _filter_trades(rows, universe={"backstop_test", "custom_live"})
+        assert {r["strategy"] for r in filt} == {"custom_live"}
+
+    def test_train_gate_counts_live_book_only(self):
+        from runner.edge_calibrator import train_calibrator, MIN_ROUND_TRIPS_TOTAL
+        # 5 live-book trips + 40 excluded crypto trips → still below gate (only 5 count)
+        rows = (self._roundtrip_rows("breakout_xlk", 5, win=True)
+                + self._roundtrip_rows("sma_crossover_btc", 40, win=True))
+        db_path = _make_trades_db(rows)
+        res = train_calibrator(db_path=str(db_path))
+        assert res["status"] == "insufficient_data"
+        assert "5 round-trips" in res["notes"]
+        assert MIN_ROUND_TRIPS_TOTAL == 30
+
+    def test_training_labels_exclude_harness_losses(self):
+        from runner.edge_calibrator import extract_training_rows, _fetch_all_trades
+        # backstop_test has many LOSING trips; live book has winning trips.
+        # The training label set must contain NONE of the harness losses.
+        rows = (self._roundtrip_rows("breakout_xlk", 6, win=True)
+                + self._roundtrip_rows("sma_crossover_qqq", 6, win=True)
+                + self._roundtrip_rows("backstop_test", 20, win=False))
+        db_path = _make_trades_db(rows)
+        all_trades = _fetch_all_trades(str(db_path))
+        X, y = extract_training_rows(all_trades)
+        # Without the filter, y would contain a wall of 0s from backstop_test.
+        # With the filter, every label comes from the (winning) live book → all 1s.
+        assert len(y) > 0
+        assert all(label == 1 for label in y), f"harness losses leaked into labels: {y}"
+
+    def test_report_says_live_book(self):
+        from runner.edge_calibrator import calibration_report
+        rows = (self._roundtrip_rows("breakout_xlk", 2, win=True)
+                + self._roundtrip_rows("backstop_test", 3, win=False))
+        db_path = _make_trades_db(rows)
+        rep = calibration_report(db_path=str(db_path))
+        assert "live-book" in rep.lower()
+        # backstop_test must not appear in the per-strategy breakdown
+        assert "backstop_test" not in rep

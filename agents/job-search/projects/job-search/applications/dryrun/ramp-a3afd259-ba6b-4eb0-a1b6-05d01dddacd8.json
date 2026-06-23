@@ -1,0 +1,208 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/ramp/a3afd259-ba6b-4eb0-a1b6-05d01dddacd8",
+  "org": "ramp",
+  "job_id": "a3afd259-ba6b-4eb0-a1b6-05d01dddacd8",
+  "job_title": "Product Manager | Agentic CX",
+  "job_location": "New York, NY (HQ)",
+  "fetched_at": "2026-06-23T04:46:19Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 11,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_name",
+      "label": "Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_name"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_email"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_c5f34f51-6ee0-4692-b926-c73fea14d4b9",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_c5f34f51-6ee0-4692-b926-c73fea14d4b9"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_location",
+      "label": "Where do you plan on working from (for payroll tax purposes)?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_location"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0__systemfield_resume"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f81f5429-fe41-4c54-b539-893b4404f0ad",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f81f5429-fe41-4c54-b539-893b4404f0ad"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_08bd5700-794e-4289-b73d-70b206dc6f1e",
+      "label": "Are you able to work from Ramp HQ in New York City (Flatiron) at least 2 days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes | Currently living in the NYC area",
+      "source": "preferences.willing_to_travel_pct (>=25%) | smart-matched to option 'Yes | Currently living in the NYC area'",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes | Currently living in the NYC area",
+          "value": "Yes | Currently living in the NYC area"
+        },
+        {
+          "label": "Yes | Willing to relocate to the NYC area",
+          "value": "Yes | Willing to relocate to the NYC area"
+        },
+        {
+          "label": "No | Prefer to work remotely",
+          "value": "No | Prefer to work remotely"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_08bd5700-794e-4289-b73d-70b206dc6f1e"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f3ac13ae-d8ec-4d2a-960b-66ff90538dd0",
+      "label": "Do you have 2–5 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have 2–5 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f3ac13ae-d8ec-4d2a-960b-66ff90538dd0"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_0bbd3d4b-a0b4-4c03-a43a-a6ac1d7fe7c8",
+      "label": "Please submit a portfolio snippet of 2–3 AI artifacts (e.g., Loom demo, written outline, mini video, flow diagram) that show a shipped AI-powered workflow or AI product you’ve built and its tangible impact.",
+      "type": "input_file",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.website_required_fallback (required portfolio -> LinkedIn)",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_0bbd3d4b-a0b4-4c03-a43a-a6ac1d7fe7c8"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_eaa1ba22-e00d-4e73-80b4-3a9769eb13a4",
+      "label": "The role requires deep hands-on experience building with AI. Describe a project where you leveraged core LLM concepts (e.g., prompting, fine-tuning, embeddings, retrieval) and translate them into a reliable, user-facing product. What was the greatest technical challenge you faced, and how did you resolve it?",
+      "type": "textarea",
+      "required": false,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_eaa1ba22-e00d-4e73-80b4-3a9769eb13a4"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_738a03a0-2e24-42b6-ba59-b685edadf94c",
+      "label": "Walk us through a time you \"vibe-coded a prototype before lunch and wrote the rollout plan after.\" Describe a messy operational problem you turned into an elegant automated system using AI, detailing the full journey from prototype to scaled production.",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Walk us through a time you \"vibe-coded a prototype before lunch and wrote the rollout plan after.\" Describe a messy operational problem you turned into an elegant automated system using AI, detailing the full journey from prototype to scaled production.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_738a03a0-2e24-42b6-ba59-b685edadf94c"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f3ac13ae-d8ec-4d2a-960b-66ff90538dd0",
+      "label": "Do you have 2–5 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have 2–5 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?'"
+    },
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_738a03a0-2e24-42b6-ba59-b685edadf94c",
+      "label": "Walk us through a time you \"vibe-coded a prototype before lunch and wrote the rollout plan after.\" Describe a messy operational problem you turned into an elegant automated system using AI, detailing the full journey from prototype to scaled production.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Walk us through a time you \"vibe-coded a prototype before lunch and wrote the rollout plan after.\" Describe a messy operational problem you turned into an elegant automated system using AI, detailing the full journey from prototype to scaled production.'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f3ac13ae-d8ec-4d2a-960b-66ff90538dd0",
+      "label": "Do you have 2–5 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?",
+      "reason": "no LABEL_RULES match for label='Do you have 2–5 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?'"
+    }
+  ]
+}

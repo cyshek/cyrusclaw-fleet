@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's **resilience validation program** from a 2-person operation into a platformized system, standardizing workflows across 45+ annual drills and driving **$14M+ business impact** for enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across global infrastructure.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a **rack-level drill program** in 4 months with a 94% recovery rate, surfacing critical hardware defects and establishing a continuous validation standard across critical infrastructure.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating security and compliance requirements across stakeholders.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21%, enabling the program to scale across concurrent global projects without proportional headcount growth.
+6. Embedded security and compliance checkpoints into construction-phase equivalents of commissioning and turnover workflows, partnering with Legal and Procurement to ensure contractual requirements were upheld across all critical infrastructure project milestones.
+7. Monitored and reported on **program performance metrics** across concurrent global projects, developing dashboards that gave executive stakeholders real-time visibility into risk posture, milestone adherence, and corrective action status.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven workflows across **14 Azure service teams**, conducting user demos and training sessions that drove sustained utilization and saved 37 engineering hours monthly, demonstrating measurable program performance improvement.
+2. Influenced the product roadmap by facilitating **11+ structured user interviews** with Azure service teams to surface critical feature gaps, resulting in intent-based YAML generation being prioritized as a key capability in the next planning cycle.
+3. Improved **data integrity and retrieval** across program documentation by enforcing rigorous metadata standards and migrating to an AI-powered semantic search tool, cutting stakeholder lookup time by 83% across distributed cross-functional teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating stakeholder buy-in across 140+ teams with competing project priorities.
+2. Mobilized a program strategy to reduce operational toil during region launches, conducting discovery with **20+ service teams** to identify 81 hours of manual effort per region and building a roadmap to automate critical-path dependencies.
+3. Engineered a **Power BI dashboard** to track operational toil and milestone compliance across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact interventions, and report program health to executive stakeholders.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and enforcing phased rollout controls to protect critical infrastructure continuity.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across cross-functional engineering and operations teams.
+3. Drove **cross-functional alignment** between IT, Operations, and Engineering to implement automated CI/CD pipelines, accelerating the software deployment cycle by 25% and reducing manual handoffs that created security and compliance exposure.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM process that standardized contractor workflows and improved on-site execution compliance.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to improve credibility and stakeholder-facing program positioning.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records to identify margin leaks, delivering findings that informed contract negotiation standards and subcontractor scope requirements.
+
+## Notes from the rewriter
+- 'Construction lifecycle' (concept → commissioning → turnover) woven into microsoft_ft bullet#6 and amazon_robotics bullet#1 to mirror JD's phase framing.
+- 'Corrective and preventive action (CAPA)' and 'program performance metrics' from JD embedded in microsoft_ft bullets #6 and #7 to match the oversight and reporting responsibilities.
+- 'Contractor engagement,' 'scope of work,' and 'contractual requirements' from JD surfaced in microsoft_ft bullet#6 and pro_painters bullet#3 to align with the contract-embedding mandate.
+- 'Critical infrastructure' used across microsoft_ft bullet#3 and amazon_robotics bullet#1 to mirror JD's domain language around data center and construction environments.
+- 'Cross-functional stakeholder alignment' and 'concurrent global projects' referenced in microsoft_ft bullets #4 and #7 to reflect the multi-site, multi-stakeholder program management scope the JD emphasizes.
+

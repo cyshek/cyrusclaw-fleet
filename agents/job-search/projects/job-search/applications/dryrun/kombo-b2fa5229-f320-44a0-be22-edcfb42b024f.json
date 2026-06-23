@@ -1,0 +1,161 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/kombo/b2fa5229-f320-44a0-be22-edcfb42b024f",
+  "org": "kombo",
+  "job_id": "b2fa5229-f320-44a0-be22-edcfb42b024f",
+  "job_title": "Founding US Solutions Engineer",
+  "job_location": "New York Office",
+  "fetched_at": "2026-06-23T06:43:20Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43__systemfield_name",
+      "section": "The important bits"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43__systemfield_email",
+      "section": "The important bits"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43__systemfield_resume",
+      "section": "The important bits"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43_dc3625bf-fa92-49a6-b66f-6db7dab460ac",
+      "label": "Linkedin  profile ",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43_dc3625bf-fa92-49a6-b66f-6db7dab460ac",
+      "section": "The important bits"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43_75395547-1a6c-4078-a89e-be8643b5f135",
+      "label": "Will you be able to come into our New York office?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43_75395547-1a6c-4078-a89e-be8643b5f135",
+      "section": "Our working setup"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43_8d07d560-12f1-4c93-bb4f-a78ca4b86f54",
+      "label": "Do you have the legal right to work in the US?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No - I require visa sponsorship ",
+          "value": "No - I require visa sponsorship "
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43_8d07d560-12f1-4c93-bb4f-a78ca4b86f54",
+      "section": "Our working setup"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43_afbb1323-c763-43ec-ac8e-b0b20216d61e",
+      "label": "What are your salary expectations?",
+      "type": "input_text",
+      "required": false,
+      "value": "$160,000 - $200,000 base",
+      "source": "comp_seeking: standard range for PM/TPM/SE roles",
+      "status": "filled",
+      "matched_rule": "comp_seeking",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43_afbb1323-c763-43ec-ac8e-b0b20216d61e",
+      "section": "Optional Questions"
+    },
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43_b9e155d4-2279-4fb1-8010-14790b8badd0",
+      "label": "Is there anything else we should know about you?",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Is there anything else we should know about you?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f47e9250-a062-4984-b145-4380dcbfbf43_b9e155d4-2279-4fb1-8010-14790b8badd0",
+      "section": "Optional Questions"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "f47e9250-a062-4984-b145-4380dcbfbf43_b9e155d4-2279-4fb1-8010-14790b8badd0",
+      "label": "Is there anything else we should know about you?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Is there anything else we should know about you?'"
+    }
+  ],
+  "blockers": []
+}

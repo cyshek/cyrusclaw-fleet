@@ -1,4 +1,4 @@
-PREP-READY — 2026-05-31T02:23:12+00:00
+PREP-READY — 2026-06-22T23:31:31+00:00
 
 role_id: 791
 plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-openai-60d1420a-8aa3-4d87-847e-e7b73d9d9a0c.json

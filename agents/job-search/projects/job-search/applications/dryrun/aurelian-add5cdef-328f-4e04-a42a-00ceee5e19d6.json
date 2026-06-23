@@ -1,0 +1,177 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/aurelian/add5cdef-328f-4e04-a42a-00ceee5e19d6",
+  "org": "aurelian",
+  "job_id": "add5cdef-328f-4e04-a42a-00ceee5e19d6",
+  "job_title": "Founding Product Manager",
+  "job_location": "Seattle",
+  "fetched_at": "2026-06-22T20:11:11Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076__systemfield_name"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076__systemfield_email"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076_c038627f-1ed1-40cb-b88f-cf251dddd3be",
+      "label": "Current Company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076_c038627f-1ed1-40cb-b88f-cf251dddd3be"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076__systemfield_resume"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076_ce1ac0e0-605d-43ec-8ded-8c404ccb0dd4",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076_ce1ac0e0-605d-43ec-8ded-8c404ccb0dd4"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076_77c0eac4-30bc-4215-aad4-14a29c28745c",
+      "label": "Are you based in Seattle?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076_77c0eac4-30bc-4215-aad4-14a29c28745c"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076_bbcd6328-0c0c-4a35-9fec-7971254cb9cd",
+      "label": "Are you open to working 5 days a week onsite in our Ballard office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076_bbcd6328-0c0c-4a35-9fec-7971254cb9cd"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076_8f063ed1-3cd5-456b-9c17-a81e743ca742",
+      "label": "If you are NOT based in Seattle, are you open to relocating here?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076_8f063ed1-3cd5-456b-9c17-a81e743ca742"
+    },
+    {
+      "id": "98c32835-3d80-4a83-946c-aeb17fb37076_971ea82f-1211-47fd-84c4-fc65f4f2de9e",
+      "label": "Are you authorized to work lawfully in the US without sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "98c32835-3d80-4a83-946c-aeb17fb37076_971ea82f-1211-47fd-84c4-fc65f4f2de9e"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

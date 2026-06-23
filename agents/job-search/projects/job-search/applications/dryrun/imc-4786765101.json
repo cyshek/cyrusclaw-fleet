@@ -1,0 +1,366 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/imc/jobs/4786765101",
+  "org": "imc",
+  "job_id": "4786765101",
+  "job_title": "Global L&D Program Manager",
+  "job_location": "Chicago, United States",
+  "fetched_at": "2026-06-23T01:54:17Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/imc/jobs/4786765101?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 16,
+    "filled": 14,
+    "filled_needs_review": 0,
+    "declined": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_8276586101",
+      "label": "How did you hear about us?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn Jobs",
+      "source": "how_heard fuzzy 'linkedin' -> 'LinkedIn Jobs'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "CppCon2025",
+          "value": 54601480101
+        },
+        {
+          "label": "Social Media",
+          "value": 54601481101
+        },
+        {
+          "label": "LinkedIn Jobs",
+          "value": 54601482101
+        },
+        {
+          "label": "Search Engine",
+          "value": 54601483101
+        },
+        {
+          "label": "Job board",
+          "value": 54601484101
+        },
+        {
+          "label": "Career website",
+          "value": 54601485101
+        },
+        {
+          "label": "Online challenge",
+          "value": 54601486101
+        },
+        {
+          "label": "Team Liquid",
+          "value": 54601487101
+        },
+        {
+          "label": "Employee referral",
+          "value": 54601488101
+        },
+        {
+          "label": "Career fair",
+          "value": 54601489101
+        },
+        {
+          "label": "Student society",
+          "value": 54601490101
+        },
+        {
+          "label": "Campus event",
+          "value": 54601491101
+        },
+        {
+          "label": "Meet-up",
+          "value": 54601492101
+        },
+        {
+          "label": "Outreach by recruiter",
+          "value": 54601493101
+        },
+        {
+          "label": "Referral",
+          "value": 54601494101
+        }
+      ]
+    },
+    {
+      "id": "question_8276587101",
+      "label": "Will you require immigration sponsorship to begin working for IMC?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 54601495101
+        },
+        {
+          "label": "No",
+          "value": 54601496101
+        },
+        {
+          "label": "Maybe/I don’t know",
+          "value": 54601497101
+        }
+      ]
+    },
+    {
+      "id": "question_8276588101",
+      "label": "Will you require immigration sponsorship in the future to continue working for IMC? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 54601498101
+        },
+        {
+          "label": "No",
+          "value": 54601499101
+        },
+        {
+          "label": "Maybe/I don’t know",
+          "value": 54601500101
+        }
+      ]
+    },
+    {
+      "id": "question_8276589101",
+      "label": "Privacy Statement",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I Agree",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "I Agree",
+          "value": 54601501101
+        }
+      ]
+    },
+    {
+      "id": "question_8276590101",
+      "label": "Confidentiality Acknowledgement",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I Agree",
+      "source": "acknowledge_yes (matched 'I Agree')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I Agree",
+          "value": 54601502101
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4005628101",
+      "label": "What is your gender/gender identity?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Female",
+          "value": 4034194101
+        },
+        {
+          "label": "Male",
+          "value": 4034195101
+        },
+        {
+          "label": "Non-Binary/Genderqueer",
+          "value": 4034197101
+        },
+        {
+          "label": "Other",
+          "value": 4034196101
+        },
+        {
+          "label": "Choose not to disclose",
+          "value": 4034198101
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4005629101",
+      "label": "What is your Race/Ethnicity?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaska Native",
+          "value": 4034199101
+        },
+        {
+          "label": "Asian",
+          "value": 4034200101
+        },
+        {
+          "label": "Black or African American",
+          "value": 4034201101
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 4034202101
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 4034203101
+        },
+        {
+          "label": "Two or More Races",
+          "value": 4034204101
+        },
+        {
+          "label": "White",
+          "value": 4034205101
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4034206101
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

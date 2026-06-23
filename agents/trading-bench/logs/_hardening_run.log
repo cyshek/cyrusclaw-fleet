@@ -1,0 +1,33 @@
+==============================================================================
+ALLOCATOR_BLEND HARDENING STUDY — wf_and_havenbreak
+==============================================================================
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.863 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.914 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.863 | ROT solo Sharpe 0.926 | SPX Sharpe 0.774
+>>> ANCHOR: reproducing promoted invvol_63d headline ...
+   ANCHOR invvol_63d: full Sharpe 1.012 CAGR 15.9% maxDD -23.9% | OOS Sharpe 1.142  (promoted: 1.014 / 15.9% / -23.9% / OOS 1.147)
+>>> STUDY 1a: static lookback sweep [21, 42, 63, 84, 126, 189, 252] ...
+   lb= 21  fullSharpe 0.977 CAGR  15.1% maxDD  -25.8% | OOS 1.107 | mix tqqq/rot 0.35/0.65
+   lb= 42  fullSharpe 1.007 CAGR  15.8% maxDD  -24.0% | OOS 1.128 | mix tqqq/rot 0.35/0.65
+   lb= 63  fullSharpe 1.012 CAGR  15.9% maxDD  -23.9% | OOS 1.142 | mix tqqq/rot 0.35/0.65
+   lb= 84  fullSharpe 1.028 CAGR  16.3% maxDD  -23.3% | OOS 1.144 | mix tqqq/rot 0.35/0.65
+   lb=126  fullSharpe 1.031 CAGR  16.4% maxDD  -23.5% | OOS 1.134 | mix tqqq/rot 0.35/0.65
+   lb=189  fullSharpe 0.990 CAGR  15.7% maxDD  -23.7% | OOS 1.067 | mix tqqq/rot 0.36/0.64
+   lb=252  fullSharpe 1.001 CAGR  16.0% maxDD  -25.2% | OOS 1.072 | mix tqqq/rot 0.35/0.65
+>>> STUDY 1b: walk-forward lookback selection (expanding IS, 252d OOS blocks) ...
+   WF-selected:   Sharpe 0.986 CAGR 15.7% maxDD -23.5% (span 2013-02-14->2026-06-22, 14 blocks)
+   static-63d:    Sharpe 0.984 CAGR 15.5% maxDD -23.9% (same span)
+   best-static:   lb=84 Sharpe 0.993 CAGR 15.8% maxDD -23.3% (hindsight, same span)
+   selection freq: {126: 12, 252: 2}
+>>> STUDY 2: GLD/TLT haven-break stress ...
+   --- haven-break comparison (full / OOS / 2022) ---
+   REAL blend (anchor)              full S 1.012 CAGR  15.9% DD  -23.9% | OOS S 1.142 DD  -21.9% | 2022 ret  -14.4% DD  -19.6%
+   CASH-substituted blend           full S 0.868 CAGR  12.1% DD  -23.1% | OOS S 0.925 DD  -21.3% | 2022 ret  -16.7% DD  -19.6%
+   EQTY-synth blend (pessimistic)   full S 0.968 CAGR  17.6% DD  -29.2% | OOS S 1.096 DD  -29.2% | 2022 ret  -18.7% DD  -21.4%
+   TQQQ vol-target ALONE            full S 0.863 CAGR  20.8% DD  -34.5% | OOS S 1.009 DD  -24.4% | 2022 ret  -17.8% DD  -17.8%
+   2022 actual: blend ret -14.4% maxDD -19.6% | TQQQ-sleeve 2022 ret -17.8% DD -17.8% | ROT-sleeve 2022 ret -17.8% DD -27.3%
+
+wrote reports/_allocator_hardening_result.json

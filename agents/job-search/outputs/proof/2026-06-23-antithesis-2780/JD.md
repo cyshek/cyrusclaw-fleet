@@ -1,0 +1,67 @@
+# Solutions Engineer
+
+**Company:** Antithesis
+**Location:** London, UK
+**Apply:** https://jobs.ashbyhq.com/antithesis/c15056b6-ed73-4a3a-bee6-d2c9f20447dd
+**Ashby Org:** antithesis
+**Ashby Job ID:** c15056b6-ed73-4a3a-bee6-d2c9f20447dd
+
+---
+
+**About Antithesis**
+
+We’re on a mission to redefine how modern distributed systems are tested and released. Our platform is trusted by engineering teams who demand rock-solid reliability, scalable performance, and deep technical visibility. Our platform doesn’t just assure system correctness and reliability, it exists because developers need something better. If you’ve ever experienced the pain of a production outage, had a bad week on-call, or had a release delayed by weeks because of one killer bug – you’ll understand exactly why we’re doing what we do. If you're passionate about developer-first products, system resilience, and correctness, we’d love to talk.
+
+**About the Role**
+
+We’re looking for an unconventional thinker, a boredom fighter and an agent of chaos. You will be deploying the arsenal of tools and technologies from the Antithesis platform to find bugs and break our customers’ software. You will be able to articulate and convince future customers about the new paradigm of software testing and reliability brought by Antithesis.
+
+**What You'll Do**
+
+- Execute in Proof-of-Concept (POC) engagements to help demonstrate Antithesis product value to new customers.
+
+- Participate in new customer onboarding activities.
+
+- Support the sales team with technical qualifications and consultations.
+
+- Lead customer workshops around Property-based-Testing (PBT) and other topics.
+
+- Find bugs and break open source software.
+
+- Thought leadership around testing complex systems.
+
+- Build, maintain and show product demos.
+
+- Guide customers and prospects on the Antithesis platform and testing methodologies.
+
+**Who You Are**
+
+- Highly technical, and more importantly technically curious.
+
+- Easily bored and needs new challenges.
+
+- Interested to learn and absorb new technologies.
+
+- Comfortable working in tight timelines and high pressure situations.
+
+- Great communicator - both written and verbal.
+
+- Good team player, able to work with small but highly skilled individuals.
+
+- Professional, but flexible - you can roll with the fast pace of a startup.
+
+**Good Skills and Experiences to have**
+
+- Building, running automated tests (Integration tests, end-to-end testing)
+
+- Containerization, Docker, Kubernetes.
+
+- Object-oriented programming
+
+- Linux-based operating systems
+
+- Scripting languages (bash/shell, Python, Javascript)
+
+- Querying data (via SQL, NoSQL or other query engines)
+
+This role will require some travel (client site, conferences, Antithesis HQ)

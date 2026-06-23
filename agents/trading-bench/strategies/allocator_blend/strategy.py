@@ -104,6 +104,12 @@ class Action:
 # tracker's decomposition at decide-time, not from this list.
 ALLOCATOR_UNIVERSE: List[str] = ["TQQQ", "SPY", "QQQ", "GLD", "TLT"]
 
+# Minimum tradeable dollar slice per leg. Alpaca's fractional-order minimum is
+# $1 notional; below this a leg is treated as effectively flat (so a near-zero
+# target weight closes rather than dust-trading). Also the absolute floor of the
+# dollar churn band so tiny intramonth drift never thrashes the book.
+_MIN_TRADE_USD: float = 1.0
+
 
 def _month_key(t_iso: str) -> str:
     """Extract 'YYYY-MM' from an ISO timestamp (empty if unparseable)."""
@@ -227,48 +233,62 @@ def decide_xsec(market_state: dict, position_state: dict, params: dict) -> dict:
             continue
 
         target_notional = tgt_w * max_notional
-        target_qty = math.floor(target_notional / price) if price > 0 else 0
-        threshold = max(1, math.floor(churn_frac * max(target_qty, 1)))
-        delta = target_qty - cur_qty
+        # FRACTIONAL sizing: Alpaca paper fills notional buys (and qty sells)
+        # fractionally, and at $100 TOTAL notional each leg's slice is far below
+        # one whole share of a high-priced ETF (SPY ~$744, QQQ ~$735). Flooring
+        # to whole shares zeroed every leg -> empty actions -> the allocator
+        # could never take a position. So size in *shares as a real number* and
+        # let the runner submit buys by notional / trims by fractional qty.
+        target_qty = (target_notional / price) if price > 0 else 0.0
+        # Churn band is DOLLAR-denominated so it scales sanely with fractional
+        # qty: rebalance a leg only if its dollar delta clears churn_frac of the
+        # leg's target notional (with a small absolute floor so a ~0 target that
+        # we still hold can be closed).
+        cur_notional = cur_qty * price
+        dollar_delta = target_notional - cur_notional
+        dollar_threshold = max(_MIN_TRADE_USD, churn_frac * max(target_notional, _MIN_TRADE_USD))
+        delta_qty = target_qty - cur_qty
 
         base_reason = (
-            f"tgt_w={tgt_w:.4f} tgt_notional=${target_notional:.0f} "
-            f"px=${price:.2f} tgt_qty={target_qty} cur_qty={cur_qty:g} "
-            f"thresh={threshold}")
+            f"tgt_w={tgt_w:.4f} tgt_notional=${target_notional:.2f} "
+            f"px=${price:.2f} tgt_qty={target_qty:.4f} cur_qty={cur_qty:g} "
+            f"$delta={dollar_delta:+.2f} $thresh={dollar_threshold:.2f}")
 
-        # Target flat (or rounds to flat): close if we hold, else hold.
-        if target_qty <= 0:
+        # Target flat (below the minimum tradeable slice): close if we hold,
+        # else emit nothing.
+        if target_notional < _MIN_TRADE_USD:
             if cur_qty > 0:
                 actions[sym] = Action(
                     "close", sym,
                     reason=f"target_w~0 -> close to flat | {base_reason}")
-            # else: not held and target flat -> nothing to emit.
+            # else: not held and target ~flat -> nothing to emit.
             continue
 
-        if delta > threshold:
-            buy_qty = delta
-            buy_notional = round(buy_qty * price, 2)
+        if dollar_delta > dollar_threshold:
+            buy_qty = max(delta_qty, 0.0)
+            buy_notional = round(dollar_delta, 2)
             actions[sym] = Action(
                 "buy", sym, notional_usd=buy_notional, qty=float(buy_qty),
-                reason=f"underweight +{buy_qty:g}sh (${buy_notional:.0f}) "
-                       f"| {base_reason}")
-        elif delta < -threshold:
-            sell_qty = -delta
-            # target_qty > 0 here (handled <=0 above) -> this is a strict TRIM,
-            # not a close. Explicit qty makes the runner trim EXACTLY this many.
-            trim_notional = round(sell_qty * price, 2)
+                reason=f"underweight +${buy_notional:.2f} "
+                       f"(+{buy_qty:.4f}sh) | {base_reason}")
+        elif dollar_delta < -dollar_threshold:
+            sell_qty = max(-delta_qty, 0.0)
+            # target_notional >= _MIN_TRADE_USD here -> this is a strict TRIM,
+            # not a close. Explicit fractional qty makes the runner trim EXACTLY
+            # this many shares (clamped to held qty by the runner).
+            trim_notional = round(-dollar_delta, 2)
             actions[sym] = Action(
                 "trim", sym, notional_usd=trim_notional, qty=float(sell_qty),
-                reason=f"overweight -{sell_qty:g}sh (${trim_notional:.0f}) "
-                       f"| {base_reason}")
+                reason=f"overweight -${trim_notional:.2f} "
+                       f"(-{sell_qty:.4f}sh) | {base_reason}")
         else:
             # Within churn band -> hold (don't thrash). Only emit a hold row for
             # legs we actually hold or want (keeps the decision log meaningful).
             if cur_qty > 0 or tgt_w > 0:
                 actions[sym] = Action(
                     "hold", sym,
-                    reason=f"within churn band |delta|={abs(delta):g} "
-                           f"<= {threshold} | {base_reason}")
+                    reason=f"within churn band |$delta|=${abs(dollar_delta):.2f} "
+                           f"<= ${dollar_threshold:.2f} | {base_reason}")
 
     # Advance cadence marker only after a successful re-target.
     if this_month:

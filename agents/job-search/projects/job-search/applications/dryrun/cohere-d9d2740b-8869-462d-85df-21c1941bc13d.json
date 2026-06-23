@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/cohere/d9d2740b-8869-462d-85df-21c1941bc13d",
+  "org": "cohere",
+  "job_id": "d9d2740b-8869-462d-85df-21c1941bc13d",
+  "job_title": "Product Manager,  Native Experience & Growth",
+  "job_location": "United States",
+  "fetched_at": "2026-06-22T21:20:07Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_name"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_6187fd70-0105-4785-8940-1c1f804dbc8a",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_6187fd70-0105-4785-8940-1c1f804dbc8a"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_email"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_location"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_090051c4-93ff-4f42-80bb-e0b9d8a26afa",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_090051c4-93ff-4f42-80bb-e0b9d8a26afa"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce__systemfield_resume"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_fe19ec8e-680c-4f8d-bc5b-0c0866587f75",
+      "label": "Are you authorized to work in the country you currently reside in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes ",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes') | smart-matched to option 'Yes ' | ashby_smart_match(yes_specific,picked='Yes ')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes ",
+          "value": "Yes "
+        },
+        {
+          "label": "No ",
+          "value": "No "
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_fe19ec8e-680c-4f8d-bc5b-0c0866587f75"
+    },
+    {
+      "id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_3cfcedf6-b995-4264-9e75-c13ff9bcc5f4",
+      "label": "Do you, now or in the future, require sponsorship to work in the country you currently reside in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "6bfd74b2-2166-4538-a098-b61b7f4430ce_3cfcedf6-b995-4264-9e75-c13ff9bcc5f4"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

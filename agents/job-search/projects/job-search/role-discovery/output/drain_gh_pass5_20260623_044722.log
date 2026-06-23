@@ -1,0 +1,29 @@
+# GH Drain Pass 5 — 2026-06-23 04:47:22 UTC
+# Subagent session: drain-gh-pass5
+
+## Summary
+submitted 7, failed 0, uncertain 0
+
+## Results
+
+| Slug | Role ID | Result | Notes |
+|------|---------|--------|-------|
+| axon-6591183003 | 3103 | SUBMITTED | Confirmed via /confirmation tab; script returned uncertain on run1 but tab showed confirmation |
+| launchdarkly-7615560003 | 3134 | SUBMITTED | confirmed:true, exit 0 |
+| sigma-computing-7771363003 | 3161 | SUBMITTED | confirmed:true, exit 0 |
+| verkada-4964448007 | 3292 | SUBMITTED (prev pass) | Already in DB as submitted |
+| verkada-5167243007 | 3293 | SUBMITTED (prev pass) | Already in DB as submitted |
+| yipitdata-7892101 | 2756 | SUBMITTED | Script uncertain but /confirmation tab confirmed; form had end-month/end-year fields, used --fresh --answers override; OTP flow triggered but resolved |
+| zscaler-5162497007 | 3189 | SUBMITTED (prev pass) | Already in DB as submitted |
+
+## Issues Encountered
+1. Axon: 'hub location' typeahead - Kirkland WA not in options. First run confirmed in browser via /confirmation tab.
+2. YipitData: 3 runs with stale competing processes (from prev session with JOBSEARCH_CDP=18900 wrong port). 
+   Education end-month required but not in LABEL_RULES. Fixed with --fresh --answers override.
+   OTP gate triggered on manual submit click but resolved automatically.
+3. SIGKILL pattern: some exec runs got SIGKILL (130s wall-clock limit via exec tool yieldMs). 
+   Resolved by using background & operator with output redirect.
+
+## Post-processing
+- _backfill_drain_status.py: 0 backfilled, 41 already-applied
+- render_xlsx.py: 462 Open, 896 Applied, 331 Manual Apply, 25 Interviews

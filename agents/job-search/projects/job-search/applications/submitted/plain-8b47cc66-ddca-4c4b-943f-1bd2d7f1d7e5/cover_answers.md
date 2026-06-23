@@ -6,8 +6,8 @@ Cyrus Shekari
 
 ## This role requries 3 days in-office per week, is this something you're happy with?
 
-Yes, that works for me. I do my best work alongside other people, especially in a small team where being in the room speeds up everything from deal strategy to product feedback. The early start for European overlap is also fine, I'm comfortable structuring my day around the team. I'm based in Kirkland, WA today and open to relocating to be in the SF office three days a week.
+Yes, absolutely. I'm open to relocating to San Francisco and happy to be in the office 3 days a week. In-person collaboration, especially on a small, fast-moving team, is something I genuinely prefer.
 
 ## How did you learn about this role at Plain?
 
-I came across the role through Plain's careers page on Ashby. The Solutions Engineer description stood out because it lines up closely with what I've been doing at Microsoft, owning the technical side of strategic deals, running POCs with technically sophisticated customers, and feeding patterns back to product and engineering. Seeing teams like Cursor, Ashby, and Sanity trust Plain made me want to dig in further and apply.
+I came across Plain while researching companies building developer-first tooling in the customer support space. The role stood out immediately given the technical depth it requires and the stage Plain is at, so I went looking for how to apply and found this posting directly.

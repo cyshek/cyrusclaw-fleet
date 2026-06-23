@@ -1,0 +1,231 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/openai/7eb1ac08-5168-4eff-a96c-90ce0bfd3fde",
+  "org": "openai",
+  "job_id": "7eb1ac08-5168-4eff-a96c-90ce0bfd3fde",
+  "job_title": "Technical Program Manager, Robotics Data Acquisition",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-23T08:35:53Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_name",
+      "label": "Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_name"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_09a328e0-8d57-4f88-86ab-688de1657b17",
+      "label": "Preferred Name (if applicable)",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_09a328e0-8d57-4f88-86ab-688de1657b17"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_email"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_resume"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_20f8883c-d278-427c-9465-dc614f612e1f",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_20f8883c-d278-427c-9465-dc614f612e1f"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_location",
+      "label": "Where are you currently located?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f__systemfield_location"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_3f4e05d4-dd62-48ef-96ca-d9f293ae18d4",
+      "label": "When can you start a new role?",
+      "type": "input_date",
+      "required": true,
+      "value": "2026-07-07",
+      "source": "preferences.earliest_start_date (date picker -> today+14d)",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "Date",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_3f4e05d4-dd62-48ef-96ca-d9f293ae18d4",
+      "_ashby_date_iso": "2026-07-07"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_bed95633-1b6e-4cd0-9eaf-c5a9f75ac35d",
+      "label": "Are you authorized to work in the country where the job is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_bed95633-1b6e-4cd0-9eaf-c5a9f75ac35d"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_bda78810-f000-4f1c-99c5-f783e161f2f7",
+      "label": "Will you now or in the future require sponsorship for employment visa status in this country?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_bda78810-f000-4f1c-99c5-f783e161f2f7"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_d33e2a8f-3742-4e5e-b91c-b7607d3cdf63",
+      "label": "Are you able to work from our US office three days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_d33e2a8f-3742-4e5e-b91c-b7607d3cdf63"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_f189fed2-624b-41a1-a76f-0c67a2611d1a",
+      "label": "Additional Information",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_f189fed2-624b-41a1-a76f-0c67a2611d1a"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_a90e16d2-baaf-4c31-b3e5-70b53f261040",
+      "label": "Applicant Arbitration Agreement Acknowledgement",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement.",
+      "source": "acknowledge_yes (single option 'I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement.",
+          "value": "I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_a90e16d2-baaf-4c31-b3e5-70b53f261040"
+    },
+    {
+      "id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea",
+      "label": "I hereby certify that I have not knowingly withheld any information that might adversely affect my chances for employment and that the answers given by me are true and correct to the best of my knowledge. I further certify that I, the undersigned applicant, have personally completed this application. I understand that, to the extent permitted by applicable law, any omission or misstatement of material fact on this application or on any document used to secure employment shall be grounds for rejection of this application or for immediate discharge if I am employed, regardless of the time elapsed before discovery. ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I confirm I have read the above.",
+      "source": "acknowledge_yes (single option 'I confirm I have read the above.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I confirm I have read the above.",
+          "value": "I confirm I have read the above."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "00a79cfd-2e50-45ff-b856-80d345dbdf5f_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

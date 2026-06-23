@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned product vision and execution for Azure's resilience validation platform, scaling from a 2-person operation to a **platformized, self-service system** sustaining 45+ annual drills and driving $14M+ impact across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 delivery** of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that cut operational toil by 30% and shifted execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, **shipping in 4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation standard.
+4. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, directing 14 cross-org recovery executions under executive visibility in a high-stakes, constrained environment.
+5. Built an internal **AI agent** for drill planning, restructuring workflows to cut planning cycle time by 39% and increase mission-critical drill capacity by 21% without adding headcount.
+6. Translated complex operational constraints and stakeholder workflows into clear product requirements and sequenced roadmaps, aligning engineering leads and senior leadership on priorities under tight delivery timelines.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation workflows, running user demos and training that activated 14 key Azure service teams and saved 37 engineering hours monthly.
+2. Shaped the product roadmap by conducting **11+ structured user interviews** with Azure engineering teams, surfacing critical feature gaps that led to prioritization of intent-based YAML generation.
+3. Accelerated operational usability by migrating documentation to an **AI-powered semantic search** system with rigorous metadata standards, cutting information lookup time by 83%.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and cut region launch timelines by 28% by driving cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Defined a product strategy to eliminate operational toil during region launches — conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a roadmap to automate critical paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target high-leverage automation gaps and sequence investments with confidence.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy and mapped dependencies across 1,200+ stations, achieving **zero operational downtime** during a 2,000+ unit pilot transition in a complex, non-standard infrastructure environment.
+2. Prioritized a high-stakes backlog and facilitated Agile ceremonies to resolve **40+ critical tickets**, stabilizing the developer intake process and unblocking delivery for a cross-functional engineering team.
+3. Aligned IT, Operations, and Engineering on automated **CI/CD pipeline** implementation, accelerating the software deployment cycle by 25% and reducing manual release risk.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end scoping and invoicing workflows for 200+ monthly proposals via a new CRM process, translating operational user needs into a scalable execution model.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy with targeted website and Google profile optimizations.
+3. Identified and sealed margin leaks by conducting **financial profitability analysis** across 1,000+ project records, delivering actionable pricing recommendations that improved leadership decision-making.
+
+## Notes from the rewriter
+- 'Mission-critical' woven into microsoft_ft bullet 1 and bullet 6 — mirrors JD's repeated 'mission-critical capabilities' framing.
+- 'Constrained environment' and 'non-standard infrastructure' used in amazon_robotics bullet 1 — directly mirrors JD's 'constrained or non-standard environments, including bespoke or air-gapped infrastructure.'
+- 'Operational usability' and 'operational toil' used in microsoft_2023 bullet 3 and microsoft_2022 bullet 2 — echoes JD's 'reliability, security, and operational usability' and focus on operator workflows.
+- 'AI agent' surfaced explicitly in microsoft_ft bullet 5 — addresses JD nice-to-have 'built or managed AI-driven or agentic products.'
+- 'Translate complex operational constraints into clear product requirements and sequenced roadmaps' in microsoft_ft bullet 6 — nearly verbatim from JD's 'Translate complex technical and operational needs into clear product requirements, priorities, and roadmaps.'
+

@@ -1,6 +1,9 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-21T00:29:50+00:00
+PREP-READY — 2026-06-23T03:34:00+00:00
 
 role_id: 2756
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_66473404", "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.", "reason": "unexpected resume field type: multi_value_single_select"}, {"id": "question_66631181", "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.", "reason": "no LABEL_RULES match for l
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-yipitdata-7892101.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/yipitdata-7892101/Cyrus_Shekari_Resume_yipitdata_7892101_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/yipitdata-7892101/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

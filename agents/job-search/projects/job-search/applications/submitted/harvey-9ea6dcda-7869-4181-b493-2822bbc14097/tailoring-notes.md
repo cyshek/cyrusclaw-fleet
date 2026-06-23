@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned **end-to-end release management** for Azure's resilience validation program, scaling from a 2-person operation to a platformized system sustaining 45+ annual drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 delivery of an internal **Resilience Automation Platform**, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and established scalable reliability guardrails across Azure.
+3. Pioneered Azure's first proactive reliability testing capability — delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and setting a repeatable model for continuous validation.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating change safety and rollback procedures.
+5. Built an internal AI agent to automate drill planning workflows, cutting **planning cycle time by 39%** and increasing drill capacity by 21%, directly improving incident response readiness and MTTR across the platform.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-powered code generation workflows, conducting user demos and training across 14 Azure service teams that saved **37 engineering hours monthly** and improved test automation coverage.
+2. Identified critical feature gaps by facilitating 11+ user interviews with Azure service teams, directly influencing the roadmap to prioritize **intent-based YAML generation** and improve CI/CD release quality.
+3. Improved observability and data integrity by migrating documentation to an AI-powered semantic search tool with rigorous metadata standards, **cutting lookup time by 83%** for engineering and operations teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch cycles by 28% by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering teams.
+2. Identified 81 hours of manual toil per region launch through discovery with 20+ service teams, then built a structured **reliability improvement roadmap** to automate critical paths and reduce change failure risk.
+3. Engineered a **Power BI observability dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and drive accountability for sustained process improvement.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit OS migration by defining the end-to-end transition strategy, mapping dependencies across 1,200+ stations, and enforcing rigorous change safety procedures.
+2. Facilitated Agile ceremonies — sprint planning, retrospectives, backlog grooming — resolving **40+ high-priority incidents** and stabilizing the developer intake process through structured triage and clear ownership.
+3. Partnered with IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing regression risk across the robotics software release process.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by building a scalable CRM process to manage end-to-end scoping and invoicing for 200+ monthly proposals, improving release-like operational consistency across the sales lifecycle.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a data-driven go-to-market strategy with structured performance monitoring across digital channels.
+3. Identified margin leaks by conducting profitability analysis across **1,000+ project records**, delivering structured findings to leadership and enabling data-backed pricing model improvements.
+
+## Notes from the rewriter
+- 'Change safety standards' and 'rollback procedures' from the JD woven into microsoft_ft bullet 4, directly mirroring Harvey's release management requirements.
+- 'Reliability guardrails,' 'MTTR,' and 'incident response readiness' from the JD embedded in microsoft_ft bullets 2 and 5, aligning Cyrus's Azure work to Harvey's reliability metrics mandate.
+- 'Regression risk' and 'CI/CD' from the JD surfaced in amazon_robotics bullet 3, connecting robotics deployment work to Harvey's change failure rate and release safety focus.
+- 'Structured improvement roadmap' and 'accountability for sustained improvement' from the JD woven into microsoft_2022 bullet 2, echoing Harvey's requirement to convert systemic gaps into plans with clear owners.
+- 'Observability dashboard' language used in microsoft_2022 bullet 3 to mirror Harvey's emphasis on system observability and reliability reporting.
+

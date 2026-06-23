@@ -1,0 +1,125 @@
+# Product Manager,  Native Experience & Growth
+
+**Company:** Cohere
+**Location:** United States
+**Apply:** https://jobs.ashbyhq.com/cohere/d9d2740b-8869-462d-85df-21c1941bc13d
+**Ashby Org:** cohere
+**Ashby Job ID:** d9d2740b-8869-462d-85df-21c1941bc13d
+
+---
+
+**Who are we?**
+
+Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.
+
+We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.
+
+We obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a team of researchers, engineers, designers, and more, who are all passionate about their craft.
+
+We are a global technology company co-headquartered in Toronto and San Francisco, with key offices in London, New York City, Montreal, Seoul, Germany and Paris. Join us!
+
+## **About Cohere and North**
+
+Cohere is revolutionizing enterprise AI with **North**, an agentic AI platform designed to securely deploy AI agents and automations within organizations’ infrastructure. North empowers employees to streamline workflows, automate repetitive tasks, and unlock actionable insights while ensuring data privacy and compliance. North combines cutting-edge generative and search models and customizable integrations to drive productivity and innovation at scale.
+
+## **Role Overview**
+
+We are seeking a Native Experience & Growth PM to own how users discover, adopt, and stay engaged with North across every surface — iOS, Android, macOS, and web. This is a high-leverage role sitting at the intersection of three domains:
+
+**Native Applications. **
+
+Own North’s iOS, Android, and macOS apps. You’ll define the mobile product roadmap, drive platform-specific capabilities (such as widgets, shortcuts, push notifications, offline modes), and ensure the native experience feels fast, polished, and purpose-built for knowledge workers on the go.
+
+**Front-End Platform. **
+
+Own the platform-wide shared component layer which would be the infrastructure that makes North customizable and enterprise-ready. This includes white-labeling and custom branding, configurable terms and conditions, notification systems, and the shared system components that will be leveraged across devices and features.
+
+**Onboarding, Retention & Growth. **
+
+Own the end-to-end user lifecycle from first login to power user. You’ll design and iterate on first-time user experiences (FTUX), contextual onboarding flows, proactive guidance, and re-engagement strategies.
+
+## **Responsibilities**
+
+- Define and execute the roadmap for North’s iOS, Android, and macOS apps, balancing platform-native capabilities with cross-platform consistency.
+
+- Own the shared component and configuration layer that enables enterprise customization
+
+- Design and iterate on FTUX and onboarding flows that minimize time-to-value and drive activation across new enterprise deployments.
+
+- Own analytics instrumentation to track funnel performance, feature adoption, and re-engagement; run structured experiments to improve key metrics.
+
+- Engage directly with enterprise customers to surface use cases across surfaces and validate product decisions with qualitative and quantitative evidence.
+
+- Collaborate with design and engineering to maintain a coherent, accessible component system and ensure pixel-perfect experiences that scale across customer deployments.
+
+## **Requirements**
+
+- 5+ years of product management experience, with meaningful time in at least one of: mobile/native applications, front-end platform, or growth and lifecycle PM.
+
+- Track record of shipping mobile or platform-layer products with real impact on adoption, retention, or engagement.
+
+- Strong working knowledge of mobile UI/UX principles, such as iOS HIG and Material Design, and comfort making tradeoffs between native and cross-platform approaches.
+
+- Analytical by default: you define metrics before you build, know how to instrument a product, and can run and interpret A/B tests.
+
+- Strong cross-functional collaborator who works well with distributed engineering and design teams and can translate technical tradeoffs for non-technical stakeholders.
+
+- Highly execution-oriented with a bias for getting things shipped and iterating from there.
+
+## **Nice-to-Haves**
+
+- Experience owning front-end platform work: design systems, white-labeling, shared component libraries, or configuration infrastructure for enterprise SaaS.
+
+- Experience with enterprise mobile compliance requirements: MDM/MAM, enterprise app distribution, data encryption at rest and in transit.
+
+- Exposure to agentic AI systems, LLMs, or conversational interfaces, ideally in a mobile or desktop context.
+
+## **Why Join Cohere?**
+
+- Impact: Shape the native surface of an enterprise AI platform used by some of the world’s largest organizations.
+
+- Innovation: Work alongside leading researchers and engineers solving complex ML challenges.
+
+- Growth: Enjoy competitive compensation, equity options, and opportunities for professional development.
+
+- Flexibility: Hybrid work model with offices in key global locations.
+
+## **Location**
+
+Remote or hybrid (San Francisco, New York, Toronto) - we prefer for this candidate to be open to working EST hours.
+
+## **Full-Time Employees at Cohere enjoy these Perks:**
+
+- A weekly lunch stipend of $75/£75 or equivalent in your local currency for lunch.
+
+- Full health and dental benefits, including a separate budget for mental health.
+
+- RRSP matching, 401K, Pension Scheme.
+
+- 100% Parental Leave top-up for up to 6 months, for either parent.
+
+- Annual enrichment benefits:
+
+Arts & culture, fitness/wellness, quality time, and a workspace improvement credit.
+
+Education & learning stipend for conferences, courses, and coaching.
+
+- 6 weeks of paid vacation (30 working days!)
+
+- Budget for traveling to other offices if you are remote, plus an annual company offsite.
+
+## **How and Where We Work:**
+
+- Cohere is remote-friendly. We have offices in Toronto, San Francisco, New York City, London, Paris, Montreal, and more coming soon.
+
+- For those in the office: a daily lunch program, plenty of snacks, and regular community and social events.
+
+- For those not near an office: a co-working benefit so you can work alongside others in your city.
+
+- Everyone receives a $500 home office stipend to set up your workspace properly.
+
+If any of the above doesn’t line up exactly with your experience, we still encourage you to apply. 
+
+We strive to create an inclusive work environment for all; we welcome applicants from all backgrounds and are committed to providing equal opportunities. Should you require any accommodations during the recruitment process, please submit an[ Accommodations Request Form](https://docs.google.com/forms/d/12a6IrLdF3kI2nonKSr4tiFuz18rLQbaeYV-JM9L4o9Q/edit), and we will work together to meet your needs.
+
+We may use AI-enabled tools to screen and assess applicants against the criteria for this position. This helps our recruiters identify potentially qualified candidates, but it doesn't limit the applications our recruiters may review or consider.

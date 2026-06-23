@@ -1,0 +1,32 @@
+Ashby Residential Drain — 2026-06-23
+====================================
+Session: subagent drain-ashby-residential (subagent:1e813fa1)
+
+SUBMITTED (auto-residential):
+  ✅ anyscale-0c2602bc      (id=3018)  Fixed: office=SF, +relocate=Yes, +ffc356d3 radio
+  ✅ bedrock-robotics-7b7a74a2 (id=3344)  Clean plan, FormSubmitSuccess
+  ✅ cantina-labs-e980bd36   (id=2260)  Country field fix commit 5772826 worked
+
+PREVIOUSLY SUBMITTED (carried over, not re-run):
+  ✅ cape-8b5eb0b3          (id=2345)  submitted 2026-06-23 auto-residential
+  ✅ cohere-f00dbf81        (id=3038)  submitted 2026-06-22 auto
+  ✅ decagon-6321ea2f       (id=3148)  submitted 2026-06-23 auto
+  ✅ edia-8a161495          (id=3355)  submitted 2026-06-23 auto
+  ✅ fluidstack-f93527ee    (id=3315)  submitted 2026-06-23 auto
+  ✅ harvey-9ea6dcda        (id=3146)  submitted 2026-06-23 auto-residential
+  ✅ thought-machine-c6d119df (id=1367) submitted 2026-06-21 auto
+
+BLOCKED:
+  🚫 agave-685cc476         (id=3275)  Seon bot-detection blocks React hydration via
+                                       residential proxy — form shows "Page not found"
+                                       even on residential IP. Needs real browser session.
+
+SUMMARY:
+  Submitted this session: 3 (anyscale, bedrock-robotics, cantina-labs)
+  Previously submitted:   7 (already done)
+  Blocked:                1 (agave — Seon)
+  Total accounted:        11/11
+
+Post-drain:
+  _backfill_drain_status.py: flipped 7 rows → applied
+  render_xlsx.py: Applied=869, Open=491, Manual=329, Interviews=25

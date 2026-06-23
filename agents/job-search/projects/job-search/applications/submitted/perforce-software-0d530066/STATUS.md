@@ -1,9 +1,6 @@
-PREP-READY — 2026-06-02T06:17:39+00:00
+ABORT-JD-FETCH — 2026-06-22T23:48:35+00:00
 
 role_id: 1294
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-perforce-software-0d530066.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/perforce-software-0d530066/Cyrus_Shekari_Resume_lever-perforce_0d530066_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/perforce-software-0d530066/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+phase: jd-fetch
+error:
+HTTPError: 404 Client Error: Not Found for url: https://api.lever.co/v0/postings/perforce/0d530066-ce26-41ed-8e3f-323ac481f1bc?mode=json

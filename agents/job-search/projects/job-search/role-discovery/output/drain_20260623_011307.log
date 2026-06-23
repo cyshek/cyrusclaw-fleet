@@ -1,0 +1,1754 @@
+[Tue Jun 23 01:13:07 UTC 2026] Starting drain run -- PREP-READY available, limit=200
+[01:13:07] === drain_prep_ready START | limit=200 ats=all no_submit=False ===
+[01:13:07] Found 263 PREP-READY slugs
+[01:13:07] 
+=== [1] aclu-8574963002 (role_id=2846) ===
+[01:13:07]   Plan file missing — re-prepping role 2846
+[01:13:07]   re-prepping role 2846 (timeout=360s)...
+[01:13:07]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2846 already applied on 2026-06-04 11:54:37 by gh-batch5
+
+[01:13:07]   Re-prep failed (rc=1) — skipping
+[01:13:07] 
+=== [2] aeva-c7d1ac3c (role_id=3480) ===
+[01:13:07]   ATS=lever not auto-submittable via these runners — skipping
+[01:13:07] 
+=== [2] aeva-f6ec7951 (role_id=3482) ===
+[01:13:07]   ATS=lever not auto-submittable via these runners — skipping
+[01:13:07] 
+=== [2] agave-685cc476-4e5d-4406-86d8-b9835fed6d9b (role_id=3275) ===
+[01:13:07]   ATS=ashby | plan=inline-plan-agave-685cc476-4e5d-4406-86d8-b9835fed6d9b.json
+[01:13:07]   WARN: could not stage resume for agave-685cc476-4e5d-4406-86d8-b9835fed6d9b
+[01:13:51]   runner result: ok=False (44s)
+[01:13:51]   FAILED tail: ecked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] submit not confirmed; classify=None error=submit-clicked-but-no-confirmation
+
+[01:13:51] 
+=== [3] aircall-4965256f (role_id=1990) ===
+[01:13:51]   ATS=lever not auto-submittable via these runners — skipping
+[01:13:51] 
+=== [3] airops-b52cef06-1909-4c31-865a-5882af69c177 (role_id=3340) ===
+[01:13:51]   ATS=ashby | plan=inline-plan-airops-b52cef06-1909-4c31-865a-5882af69c177.json
+[01:13:51]   WARN: could not stage resume for airops-b52cef06-1909-4c31-865a-5882af69c177
+[01:14:31]   runner result: ok=False (40s)
+[01:14:31]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:14:31] 
+=== [4] alpaca-6001722004 (role_id=2615) ===
+[01:14:31]   Plan file missing — re-prepping role 2615
+[01:14:31]   re-prepping role 2615 (timeout=360s)...
+[01:14:31]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2615 already applied on 2026-06-03 by agent
+
+[01:14:31]   Re-prep failed (rc=1) — skipping
+[01:14:31] 
+=== [5] alpaca-6002073004 (role_id=3278) ===
+[01:14:31]   ATS=greenhouse | plan=inline-plan-alpaca-6002073004.json
+[01:14:31]   WARN: could not stage resume for alpaca-6002073004
+[01:15:07]   runner result: ok=True (36s)
+[01:15:07]   marked submitted in DB + STATUS.md
+[01:15:07] 
+=== [6] alpaca-6002567004 (role_id=2616) ===
+[01:15:07]   Plan file missing — re-prepping role 2616
+[01:15:07]   re-prepping role 2616 (timeout=360s)...
+[01:15:07]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2616 already applied on 2026-06-03 by agent
+
+[01:15:07]   Re-prep failed (rc=1) — skipping
+[01:15:07] 
+=== [7] ambientai-eb953820-7748-4620-98a0-b97bcdc40001 (role_id=2563) ===
+[01:15:07]   Plan file missing — re-prepping role 2563
+[01:15:07]   re-prepping role 2563 (timeout=360s)...
+[01:15:08]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2563 already applied on 2026-06-09 by auto
+
+[01:15:08]   Re-prep failed (rc=1) — skipping
+[01:15:08] 
+=== [8] anara-f69dcabe-1f30-46ce-8407-ba03f55f2ced (role_id=2606) ===
+[01:15:08]   Plan file missing — re-prepping role 2606
+[01:15:08]   re-prepping role 2606 (timeout=360s)...
+[01:15:08]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2606 already applied on 2026-06-09 by auto
+
+[01:15:08]   Re-prep failed (rc=1) — skipping
+[01:15:08] 
+=== [9] anduril-5023386007 (role_id=1992) ===
+[01:15:08]   Plan file missing — re-prepping role 1992
+[01:15:08]   re-prepping role 1992 (timeout=360s)...
+[01:15:08]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1992 already applied on 2026-06-02 by agent
+
+[01:15:08]   Re-prep failed (rc=1) — skipping
+[01:15:08] 
+=== [10] anduril-5083367007 (role_id=3207) ===
+[01:15:08]   ATS=greenhouse | plan=inline-plan-anduril-5083367007.json
+[01:15:08]   WARN: could not stage resume for anduril-5083367007
+[01:15:49]   runner result: ok=True (41s)
+[01:15:49]   marked submitted in DB + STATUS.md
+[01:15:49] 
+=== [11] anduril-5109724007 (role_id=3206) ===
+[01:15:49]   ATS=greenhouse | plan=inline-plan-anduril-5109724007.json
+[01:15:49]   WARN: could not stage resume for anduril-5109724007
+[01:16:40]   runner result: ok=True (51s)
+[01:16:40]   marked submitted in DB + STATUS.md
+[01:16:40] 
+=== [12] anduril-5125591007 (role_id=2842) ===
+[01:16:40]   Plan file missing — re-prepping role 2842
+[01:16:40]   re-prepping role 2842 (timeout=360s)...
+[01:16:40]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2842 already applied on 2026-06-04 11:58:17 by gh-batch5
+
+[01:16:40]   Re-prep failed (rc=1) — skipping
+[01:16:40] 
+=== [13] anduril-5137720007 (role_id=1991) ===
+[01:16:40]   Plan file missing — re-prepping role 1991
+[01:16:40]   re-prepping role 1991 (timeout=360s)...
+[01:16:41]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1991 already applied on 2026-06-02 by agent
+
+[01:16:41]   Re-prep failed (rc=1) — skipping
+[01:16:41] 
+=== [14] anduril-5150729007 (role_id=1993) ===
+[01:16:41]   Plan file missing — re-prepping role 1993
+[01:16:41]   re-prepping role 1993 (timeout=360s)...
+[01:16:41]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1993 already applied on 2026-06-02 by agent
+
+[01:16:41]   Re-prep failed (rc=1) — skipping
+[01:16:41] 
+=== [15] anduril-5153463007 (role_id=2628) ===
+[01:16:41]   Plan file missing — re-prepping role 2628
+[01:16:41]   re-prepping role 2628 (timeout=360s)...
+[01:16:41]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2628 already applied on 2026-06-03 by agent
+
+[01:16:41]   Re-prep failed (rc=1) — skipping
+[01:16:41] 
+=== [16] anduril-5153542007 (role_id=2656) ===
+[01:16:41]   Plan file missing — re-prepping role 2656
+[01:16:41]   re-prepping role 2656 (timeout=360s)...
+[01:16:41]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2656 already applied on 2026-06-03 by agent
+
+[01:16:41]   Re-prep failed (rc=1) — skipping
+[01:16:41] 
+=== [17] anduril-5153820007 (role_id=2841) ===
+[01:16:41]   Plan file missing — re-prepping role 2841
+[01:16:41]   re-prepping role 2841 (timeout=360s)...
+[01:16:41]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2841 already applied on 2026-06-04 12:02:05 by gh-batch5
+
+[01:16:41]   Re-prep failed (rc=1) — skipping
+[01:16:41] 
+=== [18] anduril-industries-5144552007 (role_id=1575) ===
+[01:16:41]   Plan file missing — re-prepping role 1575
+[01:16:41]   re-prepping role 1575 (timeout=360s)...
+[01:16:41]   re-prep failed (rc=1): user/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1575 already applied on 2026-06-03 by inline_submit
+
+[01:16:41]   Re-prep failed (rc=1) — skipping
+[01:16:41] 
+=== [19] angellist-1e049808 (role_id=3416) ===
+[01:16:41]   ATS=lever not auto-submittable via these runners — skipping
+[01:16:41] 
+=== [19] angellist-94c31227 (role_id=3417) ===
+[01:16:41]   ATS=lever not auto-submittable via these runners — skipping
+[01:16:41] 
+=== [19] antithesis-41acb777-5f13-45e2-8dfa-19db06a186f7 (role_id=2780) ===
+[01:16:41]   ATS=ashby | plan=inline-plan-antithesis-41acb777-5f13-45e2-8dfa-19db06a186f7.json
+[01:16:41]   WARN: could not stage resume for antithesis-41acb777-5f13-45e2-8dfa-19db06a186f7
+[01:17:23]   runner result: ok=False (42s)
+[01:17:23]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:17:23] 
+=== [20] anyscale-0c2602bc-3fb7-41a0-9837-afb03f7c9503 (role_id=3018) ===
+[01:17:23]   ATS=ashby | plan=inline-plan-anyscale-0c2602bc-3fb7-41a0-9837-afb03f7c9503.json
+[01:17:23]   WARN: could not stage resume for anyscale-0c2602bc-3fb7-41a0-9837-afb03f7c9503
+[01:18:05]   runner result: ok=False (42s)
+[01:18:05]   FAILED tail: to office on Mondays, Tuesdays, and Thursdays. Which is your preferred location?", "Missing entry for required field: Would you require visa sponsorship to work in the country in which this position 
+
+[01:18:05] 
+=== [21] anyscale-1466478e-9797-4318-bdca-bb1ae5798d52 (role_id=2224) ===
+[01:18:05]   Plan file missing — re-prepping role 2224
+[01:18:05]   re-prepping role 2224 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2224 already applied on 2026-06-02 by crawl-resume-cron
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [22] arcade-da560da1-c915-4fde-b4f0-2c55eee39e9c (role_id=1438) ===
+[01:18:06]   Plan file missing — re-prepping role 1438
+[01:18:06]   re-prepping role 1438 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1438 already applied on 2026-06-02 07:32:11 by ashby-reattempt
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [23] arlo-bf719b42-c4e0-4724-9895-061b9684e6a5 (role_id=1624) ===
+[01:18:06]   Plan file missing — re-prepping role 1624
+[01:18:06]   re-prepping role 1624 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): enclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1624 already applied on 2026-05-30 by ashby-chain033-runner
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [24] artisan-558908d9-bbbb-4d98-9e8c-a03cc647fcba (role_id=1380) ===
+[01:18:06]   Plan file missing — re-prepping role 1380
+[01:18:06]   re-prepping role 1380 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1380 already applied on 2026-05-31 by auto
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [25] assort-health-1b53d652-d10d-4687-bd7a-07584256b851 (role_id=2763) ===
+[01:18:06]   Plan file missing — re-prepping role 2763
+[01:18:06]   re-prepping role 2763 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2763 already applied on 2026-06-04 by Cyrus
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [26] assort-health-79c72fb7-e53e-4827-a647-dba65fbcf19e (role_id=2762) ===
+[01:18:06]   Plan file missing — re-prepping role 2762
+[01:18:06]   re-prepping role 2762 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2762 already applied on 2026-06-04 by Cyrus
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [27] assort-health-8fd31df0-056b-4cd4-99f4-ad9b7bd91306 (role_id=1545) ===
+[01:18:06]   Plan file missing — re-prepping role 1545
+[01:18:06]   re-prepping role 1545 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1545 already applied on 2026-05-31 by auto
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [28] ast-4684880005 (role_id=2332) ===
+[01:18:06]   Plan file missing — re-prepping role 2332
+[01:18:06]   re-prepping role 2332 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): er/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2332 already applied on 2026-06-02 by fresh-li-runner
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [29] astranis-4651850006 (role_id=2617) ===
+[01:18:06]   Plan file missing — re-prepping role 2617
+[01:18:06]   re-prepping role 2617 (timeout=360s)...
+[01:18:06]   re-prep failed (rc=1): user/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2617 already applied on 2026-06-03 by inline_submit
+
+[01:18:06]   Re-prep failed (rc=1) — skipping
+[01:18:06] 
+=== [30] astronomer-3e3be48c-ccf0-4a39-9eb2-03a896787999 (role_id=943) ===
+[01:18:06]   Plan file missing — re-prepping role 943
+[01:18:06]   re-prepping role 943 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): penclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=943 already applied on 2026-05-30 by ashby-chain033-runner
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [31] attain-5817721004 (role_id=2621) ===
+[01:18:07]   Plan file missing — re-prepping role 2621
+[01:18:07]   re-prepping role 2621 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2621 already applied on 2026-06-03 by agent
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [32] auctor-9ea1351c-7aab-4bea-80de-c26750517e8b (role_id=2572) ===
+[01:18:07]   Plan file missing — re-prepping role 2572
+[01:18:07]   re-prepping role 2572 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2572 already applied on 2026-06-04 by agent
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [33] authorium-b64caa0f-16fa-43be-82b8-b994f936d224 (role_id=1957) ===
+[01:18:07]   Plan file missing — re-prepping role 1957
+[01:18:07]   re-prepping role 1957 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1957 already applied on 2026-06-02 by agent
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [34] avepoint-6760657 (role_id=2847) ===
+[01:18:07]   Plan file missing — re-prepping role 2847
+[01:18:07]   re-prepping role 2847 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2847 already applied on 2026-06-04 11:50:07 by gh-batch5
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [35] avepoint-6760659 (role_id=2742) ===
+[01:18:07]   Plan file missing — re-prepping role 2742
+[01:18:07]   re-prepping role 2742 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2742 already applied on 2026-06-04 by inline_submit+_gh_submit
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [36] avepoint-7588856 (role_id=2743) ===
+[01:18:07]   Plan file missing — re-prepping role 2743
+[01:18:07]   re-prepping role 2743 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2743 already applied on 2026-06-04 by inline_submit+_gh_submit
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [37] avepoint-7673317 (role_id=2741) ===
+[01:18:07]   Plan file missing — re-prepping role 2741
+[01:18:07]   re-prepping role 2741 (timeout=360s)...
+[01:18:07]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2741 already applied on 2026-06-04 by inline_submit+_gh_submit
+
+[01:18:07]   Re-prep failed (rc=1) — skipping
+[01:18:07] 
+=== [38] avoca-0fc22fe4-6b8c-4c93-9b3f-fa3738054601 (role_id=2558) ===
+[01:18:07]   ATS=ashby | plan=inline-plan-avoca-0fc22fe4-6b8c-4c93-9b3f-fa3738054601.json
+[01:18:07]   WARN: could not stage resume for avoca-0fc22fe4-6b8c-4c93-9b3f-fa3738054601
+[01:18:34]   runner result: ok=True (27s)
+[01:18:34]   marked submitted in DB + STATUS.md
+[01:18:34] 
+=== [39] avoca-260e5ea9-87c2-4261-9fea-301f46578173 (role_id=2559) ===
+[01:18:34]   Plan file missing — re-prepping role 2559
+[01:18:34]   re-prepping role 2559 (timeout=360s)...
+[01:18:34]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2559 already applied on 2026-06-09 by auto
+
+[01:18:34]   Re-prep failed (rc=1) — skipping
+[01:18:34] 
+=== [40] axon-7737749003 (role_id=1942) ===
+[01:18:34]   Plan file missing — re-prepping role 1942
+[01:18:34]   re-prepping role 1942 (timeout=360s)...
+[01:18:34]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1942 already applied on 2026-06-02 by agent
+
+[01:18:34]   Re-prep failed (rc=1) — skipping
+[01:18:34] 
+=== [41] baseten-2d78fdcf-53e1-45d3-a047-2aefb5ad3153 (role_id=3201) ===
+[01:18:34]   ATS=ashby | plan=inline-plan-baseten-2d78fdcf-53e1-45d3-a047-2aefb5ad3153.json
+[01:18:34]   WARN: could not stage resume for baseten-2d78fdcf-53e1-45d3-a047-2aefb5ad3153
+[01:19:24]   runner result: ok=False (50s)
+[01:19:24]   FAILED tail: it your app
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:19:24] 
+=== [42] baseten-84c1801c-1a65-49fb-aaaa-beeafd530e7e (role_id=945) ===
+[01:19:24]   Plan file missing — re-prepping role 945
+[01:19:24]   re-prepping role 945 (timeout=360s)...
+[01:19:24]   re-prep failed (rc=1): home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=945 already applied on 2026-05-30 by auto
+
+[01:19:24]   Re-prep failed (rc=1) — skipping
+[01:19:24] 
+=== [43] basis-fd05d141-035d-4c6c-b527-c183f234cab8 (role_id=1301) ===
+[01:19:24]   Plan file missing — re-prepping role 1301
+[01:19:24]   re-prepping role 1301 (timeout=360s)...
+[01:19:24]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1301 already applied on 2026-06-03 by agent
+
+[01:19:24]   Re-prep failed (rc=1) — skipping
+[01:19:24] 
+=== [44] bedrock-robotics-7b7a74a2-61d6-4528-8aa9-6aa147aaa497 (role_id=3344) ===
+[01:19:24]   ATS=ashby | plan=inline-plan-bedrock-robotics-7b7a74a2-61d6-4528-8aa9-6aa147aaa497.json
+[01:19:24]   WARN: could not stage resume for bedrock-robotics-7b7a74a2-61d6-4528-8aa9-6aa147aaa497
+[01:20:08]   runner result: ok=False (44s)
+[01:20:08]   FAILED tail: f experience as a Technical Program Manager or in a comparable technical leadership role, with a demonstrated ability to deliver complex, multi-disciplinary systems from concept through deployment?"]
+
+[01:20:08] 
+=== [45] beyondtrust-7899566 (role_id=2738) ===
+[01:20:08]   Plan file missing — re-prepping role 2738
+[01:20:08]   re-prepping role 2738 (timeout=360s)...
+[01:20:08]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2738 already applied on 2026-06-04 by inline_submit+_gh_submit
+
+[01:20:08]   Re-prep failed (rc=1) — skipping
+[01:20:08] 
+=== [46] bland-ai-804fbd27-027e-4de5-8a6f-77241a65e599 (role_id=589) ===
+[01:20:08]   Plan file missing — re-prepping role 589
+[01:20:08]   re-prepping role 589 (timeout=360s)...
+[01:20:08]   re-prep failed (rc=1): claw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=589 already applied on 2026-05-31T04:30:00-07:00 by chain_041
+
+[01:20:08]   Re-prep failed (rc=1) — skipping
+[01:20:08] 
+=== [47] bland-ai-824f7ebb-6d71-4484-bc7d-a2bcd4441a70 (role_id=2236) ===
+[01:20:08]   ATS=ashby | plan=inline-plan-bland-ai-824f7ebb-6d71-4484-bc7d-a2bcd4441a70.json
+[01:20:08]   WARN: could not stage resume for bland-ai-824f7ebb-6d71-4484-bc7d-a2bcd4441a70
+[01:20:35]   runner result: ok=True (27s)
+[01:20:35]   marked submitted in DB + STATUS.md
+[01:20:35] 
+=== [48] blaxel-yc-x25-4acea42a-589d-42b1-949e-d4ec4b8907a2 (role_id=1325) ===
+[01:20:35]   Plan file missing — re-prepping role 1325
+[01:20:35]   re-prepping role 1325 (timeout=360s)...
+[01:20:35]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1325 already applied on 2026-05-31 by auto
+
+[01:20:35]   Re-prep failed (rc=1) — skipping
+[01:20:35] 
+=== [49] blend-5738714004 (role_id=2819) ===
+[01:20:35]   Plan file missing — re-prepping role 2819
+[01:20:35]   re-prepping role 2819 (timeout=360s)...
+[01:20:35]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2819 already applied on 2026-06-04 by inline_submit+_gh_submit
+
+[01:20:35]   Re-prep failed (rc=1) — skipping
+[01:20:35] 
+=== [50] bobyard-bcfe67c9-5340-441f-8df9-58031be665f4 (role_id=2403) ===
+[01:20:35]   ATS=ashby | plan=inline-plan-bobyard-bcfe67c9-5340-441f-8df9-58031be665f4.json
+[01:20:35]   WARN: could not stage resume for bobyard-bcfe67c9-5340-441f-8df9-58031be665f4
+[01:21:13]   runner result: ok=False (38s)
+[01:21:13]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:21:13] 
+=== [51] bobyard-d621c5bb-fe6f-4210-8768-99cacda04c1b (role_id=2787) ===
+[01:21:13]   Plan file missing — re-prepping role 2787
+[01:21:13]   re-prepping role 2787 (timeout=360s)...
+[01:21:13]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2787 already applied on 2026-06-04 by Cyrus
+
+[01:21:13]   Re-prep failed (rc=1) — skipping
+[01:21:13] 
+=== [52] boom-da5637ab-a4fe-4534-9df9-391fc6788077 (role_id=2657) ===
+[01:21:13]   Plan file missing — re-prepping role 2657
+[01:21:13]   re-prepping role 2657 (timeout=360s)...
+[01:21:13]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2657 already applied on 2026-06-04 by agent
+
+[01:21:13]   Re-prep failed (rc=1) — skipping
+[01:21:13] 
+=== [53] box-7558067 (role_id=1302) ===
+[01:21:13]   Plan file missing — re-prepping role 1302
+[01:21:13]   re-prepping role 1302 (timeout=360s)...
+[01:21:13]   re-prep failed (rc=1): zureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1302 already applied on 2026-05-31 by chain_044
+
+[01:21:13]   Re-prep failed (rc=1) — skipping
+[01:21:13] 
+=== [54] braintrust-b2131234-080c-4c5b-85e1-56e3edafa4e3 (role_id=1385) ===
+[01:21:13]   Plan file missing — re-prepping role 1385
+[01:21:13]   re-prepping role 1385 (timeout=360s)...
+[01:21:14]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1385 already applied on 2026-06-02 by blocked-triage
+
+[01:21:14]   Re-prep failed (rc=1) — skipping
+[01:21:14] 
+=== [55] bretton-ai-7ce44efa-553c-4f30-99f7-ffce02725290 (role_id=1536) ===
+[01:21:14]   Plan file missing — re-prepping role 1536
+[01:21:14]   re-prepping role 1536 (timeout=360s)...
+[01:21:14]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1536 already applied on 2026-05-31 by auto
+
+[01:21:14]   Re-prep failed (rc=1) — skipping
+[01:21:14] 
+=== [56] bretton-ai-b21f7919-92f0-4de8-bd76-daeb16341a31 (role_id=1326) ===
+[01:21:14]   Plan file missing — re-prepping role 1326
+[01:21:14]   re-prepping role 1326 (timeout=360s)...
+[01:21:14]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1326 already applied on 2026-05-31 07:08:20 by chain_038
+
+[01:21:14]   Re-prep failed (rc=1) — skipping
+[01:21:14] 
+=== [57] canary-technologies-31c515e1 (role_id=2652) ===
+[01:21:14]   ATS=lever not auto-submittable via these runners — skipping
+[01:21:14] 
+=== [57] cantina-labs-e980bd36-e724-4970-bd5c-27ac5d873aed (role_id=2260) ===
+[01:21:14]   ATS=ashby | plan=inline-plan-cantina-labs-e980bd36-e724-4970-bd5c-27ac5d873aed.json
+[01:21:14]   WARN: could not stage resume for cantina-labs-e980bd36-e724-4970-bd5c-27ac5d873aed
+[01:22:10]   runner result: ok=False (56s)
+[01:22:10]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:22:10] 
+=== [58] cape-602bd208-8d7f-4194-b592-e414962aff0a (role_id=2800) ===
+[01:22:10]   Plan file missing — re-prepping role 2800
+[01:22:10]   re-prepping role 2800 (timeout=360s)...
+[01:22:10]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2800 already applied on 2026-06-04 by Cyrus
+
+[01:22:10]   Re-prep failed (rc=1) — skipping
+[01:22:10] 
+=== [59] cartesia-b62856f7-f307-410b-b429-bbe408f164fd (role_id=2245) ===
+[01:22:10]   Plan file missing — re-prepping role 2245
+[01:22:10]   re-prepping role 2245 (timeout=360s)...
+[01:22:10]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2245 already applied on 2026-06-04 by agent
+
+[01:22:10]   Re-prep failed (rc=1) — skipping
+[01:22:10] 
+=== [60] characterai-5aa34edd-33b0-4e46-b8ff-439b42704ccf (role_id=3192) ===
+[01:22:10]   ATS=ashby | plan=inline-plan-characterai-5aa34edd-33b0-4e46-b8ff-439b42704ccf.json
+[01:22:10]   WARN: could not stage resume for characterai-5aa34edd-33b0-4e46-b8ff-439b42704ccf
+[01:22:48]   runner result: ok=False (38s)
+[01:22:48]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:22:48] 
+=== [61] checkr-inc-7848516 (role_id=1958) ===
+[01:22:48]   Plan file missing — re-prepping role 1958
+[01:22:48]   re-prepping role 1958 (timeout=360s)...
+[01:22:49]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1958 already applied on 2026-06-02 by newrole-worker
+
+[01:22:49]   Re-prep failed (rc=1) — skipping
+[01:22:49] 
+=== [62] chime-8530421002 (role_id=3004) ===
+[01:22:49]   ATS=greenhouse | plan=inline-plan-chime-8530421002.json
+[01:22:49]   WARN: could not stage resume for chime-8530421002
+[01:23:29]   runner result: ok=False (41s)
+[01:23:29]   FAILED tail: nce\nSan Francisco, CA, USA\nApply\nAbout the role\n\nWe\u2019re hiring a Product Manager to lead AI-powered experiences across our core app. In this role, you\u2019ll s"
+ },
+ "status": "uncertain"
+}
+
+[01:23:29] 
+=== [63] clay-232ab8c1-36d7-4114-91c1-0f9c9e4064bc (role_id=1135) ===
+[01:23:29]   Plan file missing — re-prepping role 1135
+[01:23:29]   re-prepping role 1135 (timeout=360s)...
+[01:23:29]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1135 already applied on 2026-06-02 by blocked-triage
+
+[01:23:29]   Re-prep failed (rc=1) — skipping
+[01:23:29] 
+=== [64] clera-351ba91b-8da5-48de-9f0f-6fd6dbd392bd (role_id=2843) ===
+[01:23:29]   Plan file missing — re-prepping role 2843
+[01:23:29]   re-prepping role 2843 (timeout=360s)...
+[01:23:30]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2843 already applied on 2026-06-09 by auto
+
+[01:23:30]   Re-prep failed (rc=1) — skipping
+[01:23:30] 
+=== [65] clera-6464c937-9f80-4b69-8130-87bba4d63a39 (role_id=2907) ===
+[01:23:30]   ATS=ashby | plan=inline-plan-clera-6464c937-9f80-4b69-8130-87bba4d63a39.json
+[01:23:30]   WARN: could not stage resume for clera-6464c937-9f80-4b69-8130-87bba4d63a39
+[01:24:25]   runner result: ok=False (55s)
+[01:24:25]   FAILED tail: ecked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] submit not confirmed; classify=None error=submit-clicked-but-no-confirmation
+
+[01:24:25] 
+=== [66] clickhouse-5990921004 (role_id=2668) ===
+[01:24:25]   Plan file missing — re-prepping role 2668
+[01:24:25]   re-prepping role 2668 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): s/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2668 already applied on 2026-06-04 11:10:35 by inline_submit+_gh_submit
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [67] clipboard-80f1fd1c-7b09-4d6e-9a0b-e234fc9672b8 (role_id=2550) ===
+[01:24:25]   Plan file missing — re-prepping role 2550
+[01:24:25]   re-prepping role 2550 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2550 already applied on 2026-06-03 by agent
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [68] cohere-6d0f0753-ff22-46fd-90e9-08998914a8e7 (role_id=598) ===
+[01:24:25]   Plan file missing — re-prepping role 598
+[01:24:25]   re-prepping role 598 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=598 already applied on 2026-06-03 by agent
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [69] cohere-929b6c8e-a47c-4512-bb17-99fa9581f23e (role_id=597) ===
+[01:24:25]   Plan file missing — re-prepping role 597
+[01:24:25]   re-prepping role 597 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=597 already applied on 2026-05-31 03:08:23 by chain_035
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [70] cohere-b0bcef37-1d20-414f-aade-c54942d63df9 (role_id=919) ===
+[01:24:25]   Plan file missing — re-prepping role 919
+[01:24:25]   re-prepping role 919 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=919 already applied on 2026-05-31 03:09:46 by chain_035
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [71] compass-7942386 (role_id=2360) ===
+[01:24:25]   Plan file missing — re-prepping role 2360
+[01:24:25]   re-prepping role 2360 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): er/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2360 already applied on 2026-06-02 by fresh-li-runner
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [72] console-395c3f5b-759f-4bf1-b6ed-38db7f0c76ee (role_id=1552) ===
+[01:24:25]   Plan file missing — re-prepping role 1552
+[01:24:25]   re-prepping role 1552 (timeout=360s)...
+[01:24:25]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1552 already applied on 2026-05-31 by auto
+
+[01:24:25]   Re-prep failed (rc=1) — skipping
+[01:24:25] 
+=== [73] courier-health-4939593007 (role_id=2796) ===
+[01:24:25]   ATS=greenhouse | plan=inline-plan-courier-health-4939593007.json
+[01:24:25]   WARN: could not stage resume for courier-health-4939593007
+[01:25:04]   runner result: ok=False (39s)
+[01:25:04]   FAILED tail: ork, New York, United States\nApply\n\nCourier Health is on a mission to solve one of the biggest and most meaningful opportunities in healthcare: reinvent how people li"
+ },
+ "status": "uncertain"
+}
+
+[01:25:04] 
+=== [74] cresta-4122946008 (role_id=1950) ===
+[01:25:04]   Plan file missing — re-prepping role 1950
+[01:25:04]   re-prepping role 1950 (timeout=360s)...
+[01:25:05]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1950 already applied on 2026-06-02 by agent
+
+[01:25:05]   Re-prep failed (rc=1) — skipping
+[01:25:05] 
+=== [75] cursor-1910bd0e-806c-4e60-bfd6-157e369d6d02 (role_id=3111) ===
+[01:25:05]   ATS=ashby_tenant_embed not auto-submittable via these runners — skipping
+[01:25:05] 
+=== [75] cursor-21110d73-77cb-465b-9977-65afb3e82cec (role_id=932) ===
+[01:25:05]   Plan file missing — re-prepping role 932
+[01:25:05]   re-prepping role 932 (timeout=360s)...
+[01:25:05]   re-prep failed (rc=1): /azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=932 already applied on 2026-05-29 by openclaw
+
+[01:25:05]   Re-prep failed (rc=1) — skipping
+[01:25:05] 
+=== [76] cursor-34cecd0c-c392-4454-8ef5-261310541011 (role_id=931) ===
+[01:25:05]   Plan file missing — re-prepping role 931
+[01:25:05]   re-prepping role 931 (timeout=360s)...
+[01:25:05]   re-prep failed (rc=1): /azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=931 already applied on 2026-05-29 by openclaw
+
+[01:25:05]   Re-prep failed (rc=1) — skipping
+[01:25:05] 
+=== [77] cursor-66e67c2e-c828-4ddb-a2c0-7d3cb672f19d (role_id=933) ===
+[01:25:05]   ATS=ashby_tenant_embed not auto-submittable via these runners — skipping
+[01:25:05] 
+=== [77] cursor-69abc2ba-2823-40c3-9b86-94ab63859649 (role_id=934) ===
+[01:25:05]   Plan file missing — re-prepping role 934
+[01:25:05]   re-prepping role 934 (timeout=360s)...
+[01:25:05]   re-prep failed (rc=1): /azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=934 already applied on 2026-05-29 by openclaw
+
+[01:25:05]   Re-prep failed (rc=1) — skipping
+[01:25:05] 
+=== [78] dash0-e15212a7-42db-4107-a35b-9075c48b5de3 (role_id=2758) ===
+[01:25:05]   Plan file missing — re-prepping role 2758
+[01:25:05]   re-prepping role 2758 (timeout=360s)...
+[01:25:05]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2758 already applied on 2026-06-09 by auto
+
+[01:25:05]   Re-prep failed (rc=1) — skipping
+[01:25:05] 
+=== [79] datarails-4261419009 (role_id=2814) ===
+[01:25:05]   Plan file missing — re-prepping role 2814
+[01:25:05]   re-prepping role 2814 (timeout=360s)...
+[01:25:05]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2814 already applied on 2026-06-04 12:11:18 by gh-batch5
+
+[01:25:05]   Re-prep failed (rc=1) — skipping
+[01:25:05] 
+=== [80] decagon-6321ea2f-4e21-4c18-8859-b4ef5489b6fe (role_id=3148) ===
+[01:25:05]   ATS=ashby | plan=inline-plan-decagon-6321ea2f-4e21-4c18-8859-b4ef5489b6fe.json
+[01:25:05]   WARN: could not stage resume for decagon-6321ea2f-4e21-4c18-8859-b4ef5489b6fe
+[01:25:32]   runner result: ok=True (27s)
+[01:25:32]   marked submitted in DB + STATUS.md
+[01:25:32] 
+=== [81] deepgram-be9609b4-b48d-4421-90e5-69049ad0d6ce (role_id=971) ===
+[01:25:32]   ATS=ashby | plan=inline-plan-deepgram-be9609b4-b48d-4421-90e5-69049ad0d6ce.json
+[01:25:32]   WARN: could not stage resume for deepgram-be9609b4-b48d-4421-90e5-69049ad0d6ce
+[01:26:13]   runner result: ok=False (41s)
+[01:26:13]   FAILED tail: it your app
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:26:13] 
+=== [82] deepgram-c69aab8a-e1d5-44ac-9113-12671a364015 (role_id=969) ===
+[01:26:13]   Plan file missing — re-prepping role 969
+[01:26:13]   re-prepping role 969 (timeout=360s)...
+[01:26:13]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=969 already applied on 2026-05-31 02:59:48 by chain_035
+
+[01:26:13]   Re-prep failed (rc=1) — skipping
+[01:26:13] 
+=== [83] discord-8497292002 (role_id=3003) ===
+[01:26:13]   ATS=greenhouse | plan=inline-plan-discord-8497292002.json
+[01:26:13]   WARN: could not stage resume for discord-8497292002
+[01:27:10]   runner result: ok=True (57s)
+[01:27:10]   marked submitted in DB + STATUS.md
+[01:27:10] 
+=== [84] divergent-4836116008 (role_id=2751) ===
+[01:27:10]   Plan file missing — re-prepping role 2751
+[01:27:10]   re-prepping role 2751 (timeout=360s)...
+[01:27:11]   re-prep failed (rc=1): s/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2751 already applied on 2026-06-04 11:22:48 by inline_submit+_gh_submit
+
+[01:27:11]   Re-prep failed (rc=1) — skipping
+[01:27:11] 
+=== [85] dorsia-5003379007 (role_id=2807) ===
+[01:27:11]   Plan file missing — re-prepping role 2807
+[01:27:11]   re-prepping role 2807 (timeout=360s)...
+[01:27:11]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2807 already applied on 2026-06-04 12:13:50 by gh-batch5
+
+[01:27:11]   Re-prep failed (rc=1) — skipping
+[01:27:11] 
+=== [86] drw-7743571 (role_id=1952) ===
+[01:27:11]   Plan file missing — re-prepping role 1952
+[01:27:11]   re-prepping role 1952 (timeout=360s)...
+[01:27:11]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1952 already applied on 2026-06-02 by agent
+
+[01:27:11]   Re-prep failed (rc=1) — skipping
+[01:27:11] 
+=== [87] edia-8a161495-4e3c-4045-ba36-6efed495e386 (role_id=3355) ===
+[01:27:11]   ATS=ashby | plan=inline-plan-edia-8a161495-4e3c-4045-ba36-6efed495e386.json
+[01:27:11]   WARN: could not stage resume for edia-8a161495-4e3c-4045-ba36-6efed495e386
+[01:27:39]   runner result: ok=True (28s)
+[01:27:39]   marked submitted in DB + STATUS.md
+[01:27:39] 
+=== [88] elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6 (role_id=939) ===
+[01:27:39]   ATS=ashby | plan=inline-plan-elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6.json
+[01:27:39]   WARN: could not stage resume for elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6
+[01:28:19]   runner result: ok=True (41s)
+[01:28:20]   marked submitted in DB + STATUS.md
+[01:28:20] 
+=== [89] elevenlabs-c35a1d78-eb1f-49b9-a575-fc85b4256ba1 (role_id=3140) ===
+[01:28:20]   ATS=ashby | plan=inline-plan-elevenlabs-c35a1d78-eb1f-49b9-a575-fc85b4256ba1.json
+[01:28:20]   WARN: could not stage resume for elevenlabs-c35a1d78-eb1f-49b9-a575-fc85b4256ba1
+[01:28:59]   runner result: ok=False (39s)
+[01:28:59]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:28:59] 
+=== [90] eliseai-7d2f5728-1ddf-49d6-87e8-54fc81cba65c (role_id=2726) ===
+[01:28:59]   Plan file missing — re-prepping role 2726
+[01:28:59]   re-prepping role 2726 (timeout=360s)...
+[01:28:59]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2726 already applied on 2026-06-04 by Cyrus
+
+[01:28:59]   Re-prep failed (rc=1) — skipping
+[01:28:59] 
+=== [91] embrace-5743949004 (role_id=2624) ===
+[01:28:59]   Plan file missing — re-prepping role 2624
+[01:28:59]   re-prepping role 2624 (timeout=360s)...
+[01:28:59]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2624 already applied on 2026-06-03 by agent
+
+[01:28:59]   Re-prep failed (rc=1) — skipping
+[01:28:59] 
+=== [92] encord-b4eb9359-fb8a-4791-b399-402b01b13a13 (role_id=1960) ===
+[01:28:59]   Plan file missing — re-prepping role 1960
+[01:28:59]   re-prepping role 1960 (timeout=360s)...
+[01:28:59]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1960 already applied on 2026-06-02 by agent
+
+[01:28:59]   Re-prep failed (rc=1) — skipping
+[01:28:59] 
+=== [93] everlaw-4682936006 (role_id=2759) ===
+[01:28:59]   Plan file missing — re-prepping role 2759
+[01:28:59]   re-prepping role 2759 (timeout=360s)...
+[01:28:59]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2759 already applied on 2026-06-04 12:34:58 by gh-refix-worker
+
+[01:28:59]   Re-prep failed (rc=1) — skipping
+[01:28:59] 
+=== [94] exa-8932d319-b456-4ee0-9efd-16d82be8de80 (role_id=643) ===
+[01:28:59]   Plan file missing — re-prepping role 643
+[01:28:59]   re-prepping role 643 (timeout=360s)...
+[01:28:59]   re-prep failed (rc=1): penclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=643 already applied on 2026-05-30 by ashby-chain033-runner
+
+[01:28:59]   Re-prep failed (rc=1) — skipping
+[01:28:59] 
+=== [95] figma-5837760004 (role_id=3015) ===
+[01:28:59]   ATS=greenhouse | plan=inline-plan-figma-5837760004.json
+[01:28:59]   WARN: could not stage resume for figma-5837760004
+[01:29:32]   runner result: ok=True (32s)
+[01:29:32]   marked submitted in DB + STATUS.md
+[01:29:32] 
+=== [96] figma-5982942004 (role_id=3017) ===
+[01:29:32]   ATS=greenhouse | plan=inline-plan-figma-5982942004.json
+[01:29:32]   WARN: could not stage resume for figma-5982942004
+[01:30:04]   runner result: ok=True (32s)
+[01:30:04]   marked submitted in DB + STATUS.md
+[01:30:04] 
+=== [97] figma-6009613004 (role_id=3016) ===
+[01:30:04]   ATS=greenhouse | plan=inline-plan-figma-6009613004.json
+[01:30:04]   WARN: could not stage resume for figma-6009613004
+[01:30:36]   runner result: ok=True (31s)
+[01:30:36]   marked submitted in DB + STATUS.md
+[01:30:36] 
+=== [98] figma-6092802004 (role_id=3014) ===
+[01:30:36]   ATS=greenhouse | plan=inline-plan-figma-6092802004.json
+[01:30:36]   WARN: could not stage resume for figma-6092802004
+[01:31:08]   runner result: ok=True (32s)
+[01:31:08]   marked submitted in DB + STATUS.md
+[01:31:08] 
+=== [99] firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d (role_id=2567) ===
+[01:31:08]   ATS=ashby | plan=inline-plan-firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d.json
+[01:31:08]   WARN: could not stage resume for firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d
+[01:31:43]   runner result: ok=True (35s)
+[01:31:43]   marked submitted in DB + STATUS.md
+[01:31:43] 
+=== [100] flip-5070400008 (role_id=2659) ===
+[01:31:43]   Plan file missing — re-prepping role 2659
+[01:31:43]   re-prepping role 2659 (timeout=360s)...
+[01:31:43]   re-prep failed (rc=1): user/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2659 already applied on 2026-06-03 by inline_submit
+
+[01:31:43]   Re-prep failed (rc=1) — skipping
+[01:31:43] 
+=== [101] floqast-a11c182c (role_id=2746) ===
+[01:31:43]   ATS=lever not auto-submittable via these runners — skipping
+[01:31:43] 
+=== [101] fluidstack-49b1ab6b-d27d-4002-9dbd-89938df3d5ce (role_id=3317) ===
+[01:31:43]   ATS=ashby | plan=inline-plan-fluidstack-49b1ab6b-d27d-4002-9dbd-89938df3d5ce.json
+[01:31:43]   WARN: could not stage resume for fluidstack-49b1ab6b-d27d-4002-9dbd-89938df3d5ce
+[01:32:21]   runner result: ok=False (38s)
+[01:32:21]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:32:21] 
+=== [102] fluidstack-8fd64f47-3ba3-483b-81df-9c441abe3432 (role_id=3318) ===
+[01:32:21]   ATS=ashby | plan=inline-plan-fluidstack-8fd64f47-3ba3-483b-81df-9c441abe3432.json
+[01:32:21]   WARN: could not stage resume for fluidstack-8fd64f47-3ba3-483b-81df-9c441abe3432
+[01:33:00]   runner result: ok=False (39s)
+[01:33:00]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:33:00] 
+=== [103] fluidstack-d6cb8be1-7470-42a3-864a-77002957b7db (role_id=3319) ===
+[01:33:00]   ATS=ashby | plan=inline-plan-fluidstack-d6cb8be1-7470-42a3-864a-77002957b7db.json
+[01:33:00]   WARN: could not stage resume for fluidstack-d6cb8be1-7470-42a3-864a-77002957b7db
+[01:33:39]   runner result: ok=False (39s)
+[01:33:39]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:33:39] 
+=== [104] fluidstack-f93527ee-b4b2-47e4-9a25-51f783bbf3e3 (role_id=3315) ===
+[01:33:39]   ATS=ashby | plan=inline-plan-fluidstack-f93527ee-b4b2-47e4-9a25-51f783bbf3e3.json
+[01:33:39]   WARN: could not stage resume for fluidstack-f93527ee-b4b2-47e4-9a25-51f783bbf3e3
+[01:34:12]   runner result: ok=True (33s)
+[01:34:12]   marked submitted in DB + STATUS.md
+[01:34:12] 
+=== [105] fluidstack-ff3c2ada-ffa4-47e3-aa62-8cd30526a67c (role_id=3316) ===
+[01:34:12]   ATS=ashby | plan=inline-plan-fluidstack-ff3c2ada-ffa4-47e3-aa62-8cd30526a67c.json
+[01:34:12]   WARN: could not stage resume for fluidstack-ff3c2ada-ffa4-47e3-aa62-8cd30526a67c
+[01:34:45]   runner result: ok=True (33s)
+[01:34:45]   marked submitted in DB + STATUS.md
+[01:34:45] 
+=== [106] formal-a07c732d-285c-4774-b8c3-b30eba408698 (role_id=2663) ===
+[01:34:45]   Plan file missing — re-prepping role 2663
+[01:34:45]   re-prepping role 2663 (timeout=360s)...
+[01:34:45]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2663 already applied on 2026-06-03 by agent
+
+[01:34:45]   Re-prep failed (rc=1) — skipping
+[01:34:45] 
+=== [107] front-9b24503f-b0c5-4120-9297-c73c37dcbd08 (role_id=3182) ===
+[01:34:45]   ATS=ashby | plan=inline-plan-front-9b24503f-b0c5-4120-9297-c73c37dcbd08.json
+[01:34:45]   WARN: could not stage resume for front-9b24503f-b0c5-4120-9297-c73c37dcbd08
+[01:35:17]   runner result: ok=True (32s)
+[01:35:18]   marked submitted in DB + STATUS.md
+[01:35:18] 
+=== [108] furiosaai-7a8aa022-4248-415c-a5c2-1930416822c6 (role_id=1591) ===
+[01:35:18]   Plan file missing — re-prepping role 1591
+[01:35:18]   re-prepping role 1591 (timeout=360s)...
+[01:35:18]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1591 already applied on 2026-06-02 07:35:20 by ashby-reattempt
+
+[01:35:18]   Re-prep failed (rc=1) — skipping
+[01:35:18] 
+=== [109] gather-5129108007 (role_id=2620) ===
+[01:35:18]   Plan file missing — re-prepping role 2620
+[01:35:18]   re-prepping role 2620 (timeout=360s)...
+[01:35:18]   re-prep failed (rc=1): user/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2620 already applied on 2026-06-03 by inline_submit
+
+[01:35:18]   Re-prep failed (rc=1) — skipping
+[01:35:18] 
+=== [110] gecko-robotics-1ae83c3f-565a-48c9-85f7-55ab1c75593d (role_id=2565) ===
+[01:35:18]   ATS=ashby | plan=inline-plan-gecko-robotics-1ae83c3f-565a-48c9-85f7-55ab1c75593d.json
+[01:35:18]   WARN: could not stage resume for gecko-robotics-1ae83c3f-565a-48c9-85f7-55ab1c75593d
+[01:40:38]   runner result: ok=False (320s)
+[01:40:38]   FAILED tail: TIMEOUT(320s)
+[01:40:38] 
+=== [111] glean-4508312005 (role_id=656) ===
+[01:40:38]   Plan file missing — re-prepping role 656
+[01:40:38]   re-prepping role 656 (timeout=360s)...
+[01:40:38]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=656 already applied on 2026-06-03 by agent
+
+[01:40:38]   Re-prep failed (rc=1) — skipping
+[01:40:38] 
+=== [112] glossgenius-7741560003 (role_id=2765) ===
+[01:40:38]   Plan file missing — re-prepping role 2765
+[01:40:38]   re-prepping role 2765 (timeout=360s)...
+[01:40:38]   re-prep failed (rc=1): s/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2765 already applied on 2026-06-04 11:33:02 by inline_submit+_gh_submit
+
+[01:40:38]   Re-prep failed (rc=1) — skipping
+[01:40:38] 
+=== [113] granted-8c4b25c0-a2fd-4a69-bb8c-28ab07c64d1b (role_id=2816) ===
+[01:40:38]   Plan file missing — re-prepping role 2816
+[01:40:38]   re-prepping role 2816 (timeout=360s)...
+[01:40:38]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2816 already applied on 2026-06-04 by Cyrus
+
+[01:40:38]   Re-prep failed (rc=1) — skipping
+[01:40:38] 
+=== [114] granted-eb64360a-d70a-4403-96bf-4633c062e60f (role_id=3354) ===
+[01:40:38]   ATS=ashby | plan=inline-plan-granted-eb64360a-d70a-4403-96bf-4633c062e60f.json
+[01:40:38]   WARN: could not stage resume for granted-eb64360a-d70a-4403-96bf-4633c062e60f
+[01:41:05]   runner result: ok=True (27s)
+[01:41:05]   marked submitted in DB + STATUS.md
+[01:41:05] 
+=== [115] h-company-c911df44-270c-42b3-9572-dc0ef5a34006 (role_id=2900) ===
+[01:41:05]   ATS=ashby | plan=inline-plan-h-company-c911df44-270c-42b3-9572-dc0ef5a34006.json
+[01:41:05]   WARN: could not stage resume for h-company-c911df44-270c-42b3-9572-dc0ef5a34006
+[01:41:43]   runner result: ok=False (38s)
+[01:41:43]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:41:43] 
+=== [116] hadrian-c5e0b495-e491-4e53-98d7-ed86197add50 (role_id=2269) ===
+[01:41:43]   ATS=ashby | plan=inline-plan-hadrian-c5e0b495-e491-4e53-98d7-ed86197add50.json
+[01:41:43]   WARN: could not stage resume for hadrian-c5e0b495-e491-4e53-98d7-ed86197add50
+[01:42:21]   runner result: ok=False (38s)
+[01:42:21]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:42:21] 
+=== [117] handshake-bbf75e71-d855-4e52-b924-79cbe701928f (role_id=3452) ===
+[01:42:21]   ATS=ashby | plan=inline-plan-handshake-bbf75e71-d855-4e52-b924-79cbe701928f.json
+[01:42:21]   WARN: could not stage resume for handshake-bbf75e71-d855-4e52-b924-79cbe701928f
+[01:43:20]   runner result: ok=False (59s)
+[01:43:20]   FAILED tail: it your app
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:43:20] 
+=== [118] handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a (role_id=3450) ===
+[01:43:20]   ATS=ashby | plan=inline-plan-handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a.json
+[01:43:20]   WARN: could not stage resume for handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a
+[01:44:09]   runner result: ok=True (49s)
+[01:44:09]   marked submitted in DB + STATUS.md
+[01:44:09] 
+=== [119] happyrobot-ca2ec773-fa00-4b9e-a439-200599e4f0cf (role_id=1209) ===
+[01:44:09]   Plan file missing — re-prepping role 1209
+[01:44:09]   re-prepping role 1209 (timeout=360s)...
+[01:44:10]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1209 already applied on 2026-05-31 07:05:32 by chain_038
+
+[01:44:10]   Re-prep failed (rc=1) — skipping
+[01:44:10] 
+=== [120] harvey-9ea6dcda-7869-4181-b493-2822bbc14097 (role_id=3146) ===
+[01:44:10]   ATS=ashby | plan=inline-plan-harvey-9ea6dcda-7869-4181-b493-2822bbc14097.json
+[01:44:10]   WARN: could not stage resume for harvey-9ea6dcda-7869-4181-b493-2822bbc14097
+[01:44:54]   runner result: ok=False (44s)
+[01:44:54]   FAILED tail: hip?']
+[runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Will you now or will you in the future require employment visa sponsorship?"]
+
+[01:44:54] 
+=== [121] helion-dbf521f9-711d-42b7-9060-57c1c755fdaa (role_id=2712) ===
+[01:44:54]   Plan file missing — re-prepping role 2712
+[01:44:54]   re-prepping role 2712 (timeout=360s)...
+[01:44:54]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2712 already applied on 2026-06-04 by Cyrus
+
+[01:44:54]   Re-prep failed (rc=1) — skipping
+[01:44:54] 
+=== [122] illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08 (role_id=3430) ===
+[01:44:54]   ATS=ashby | plan=inline-plan-illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08.json
+[01:44:54]   WARN: could not stage resume for illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08
+[01:45:24]   runner result: ok=True (30s)
+[01:45:24]   marked submitted in DB + STATUS.md
+[01:45:24] 
+=== [123] imc-trading-4786765101 (role_id=3137) ===
+[01:45:24]   ATS=greenhouse | plan=inline-plan-imc-trading-4786765101.json
+[01:45:24]   WARN: could not stage resume for imc-trading-4786765101
+[01:46:01]   runner result: ok=True (37s)
+[01:46:01]   marked submitted in DB + STATUS.md
+[01:46:01] 
+=== [124] innodata-inc-4282301009 (role_id=2913) ===
+[01:46:01]   Plan file missing — re-prepping role 2913
+[01:46:01]   re-prepping role 2913 (timeout=360s)...
+[01:46:01]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2913 already applied on 2026-06-11 by auto
+
+[01:46:01]   Re-prep failed (rc=1) — skipping
+[01:46:01] 
+=== [125] intercom-7926025 (role_id=2239) ===
+[01:46:01]   Plan file missing — re-prepping role 2239
+[01:46:01]   re-prepping role 2239 (timeout=360s)...
+[01:46:01]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2239 already applied on 2026-06-02 by newrole-worker
+
+[01:46:01]   Re-prep failed (rc=1) — skipping
+[01:46:01] 
+=== [126] juicebox-054f0fcb-a20c-4b07-87c2-557cd2da788f (role_id=3259) ===
+[01:46:01]   ATS=ashby | plan=inline-plan-juicebox-054f0fcb-a20c-4b07-87c2-557cd2da788f.json
+[01:46:01]   WARN: could not stage resume for juicebox-054f0fcb-a20c-4b07-87c2-557cd2da788f
+[01:46:29]   runner result: ok=True (27s)
+[01:46:29]   marked submitted in DB + STATUS.md
+[01:46:29] 
+=== [127] kikoff-4147830009 (role_id=3415) ===
+[01:46:29]   ATS=greenhouse | plan=inline-plan-kikoff-4147830009.json
+[01:46:29]   WARN: could not stage resume for kikoff-4147830009
+[01:47:03]   runner result: ok=True (34s)
+[01:47:03]   marked submitted in DB + STATUS.md
+[01:47:03] 
+=== [128] klarity-4843b6cd-405e-412f-8261-d1a2d6acd850 (role_id=1434) ===
+[01:47:03]   Plan file missing — re-prepping role 1434
+[01:47:03]   re-prepping role 1434 (timeout=360s)...
+[01:47:03]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1434 already applied on 2026-06-10 by auto
+
+[01:47:03]   Re-prep failed (rc=1) — skipping
+[01:47:03] 
+=== [129] kodiak-robotics-4106961009 (role_id=3399) ===
+[01:47:03]   ATS=greenhouse | plan=inline-plan-kodiak-robotics-4106961009.json
+[01:47:03]   WARN: could not stage resume for kodiak-robotics-4106961009
+[01:47:40]   runner result: ok=True (37s)
+[01:47:40]   marked submitted in DB + STATUS.md
+[01:47:40] 
+=== [130] kodiak-robotics-4254544009 (role_id=3400) ===
+[01:47:40]   ATS=greenhouse | plan=inline-plan-kodiak-robotics-4254544009.json
+[01:47:40]   WARN: could not stage resume for kodiak-robotics-4254544009
+[01:48:08]   runner result: ok=True (28s)
+[01:48:08]   marked submitted in DB + STATUS.md
+[01:48:08] 
+=== [131] latent-9f1e2942-d911-47b1-a860-3a98e2e4e107 (role_id=3390) ===
+[01:48:08]   ATS=ashby | plan=inline-plan-latent-9f1e2942-d911-47b1-a860-3a98e2e4e107.json
+[01:48:08]   WARN: could not stage resume for latent-9f1e2942-d911-47b1-a860-3a98e2e4e107
+[01:48:46]   runner result: ok=False (38s)
+[01:48:46]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:48:46] 
+=== [132] level-6cde4fa0-c435-4065-ba02-8ada5293d884 (role_id=3383) ===
+[01:48:46]   ATS=ashby | plan=inline-plan-level-6cde4fa0-c435-4065-ba02-8ada5293d884.json
+[01:48:46]   WARN: could not stage resume for level-6cde4fa0-c435-4065-ba02-8ada5293d884
+[01:49:13]   runner result: ok=True (27s)
+[01:49:13]   marked submitted in DB + STATUS.md
+[01:49:13] 
+=== [133] lila-sciences-4251188009 (role_id=2669) ===
+[01:49:13]   Plan file missing — re-prepping role 2669
+[01:49:13]   re-prepping role 2669 (timeout=360s)...
+[01:49:13]   re-prep failed (rc=1): gents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2669 already applied on 2026-06-04 12:44:39 by gh-uncertain8-worker
+
+[01:49:13]   Re-prep failed (rc=1) — skipping
+[01:49:13] 
+=== [134] llamaindex-84bcd1df-a4da-421d-b325-45684d8b7e4d (role_id=708) ===
+[01:49:13]   Plan file missing — re-prepping role 708
+[01:49:13]   re-prepping role 708 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): penclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=708 already applied on 2026-05-30 by ashby-chain033-runner
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [135] lovable-ac61dda2-bff0-4f22-adca-a48b0b2f560c (role_id=941) ===
+[01:49:14]   Plan file missing — re-prepping role 941
+[01:49:14]   re-prepping role 941 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=941 already applied on 2026-06-03 by agent
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [136] mandolin-84421bfb-dc71-4838-a518-f5b209d69d9a (role_id=2289) ===
+[01:49:14]   Plan file missing — re-prepping role 2289
+[01:49:14]   re-prepping role 2289 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2289 already applied on 2026-06-03 by agent
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [137] mdcalc-0ac0c07a-7963-4b68-8819-8f7f85503309 (role_id=2817) ===
+[01:49:14]   Plan file missing — re-prepping role 2817
+[01:49:14]   re-prepping role 2817 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2817 already applied on 2026-06-04 by Cyrus
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [138] mediaalpha-8525774002 (role_id=2815) ===
+[01:49:14]   Plan file missing — re-prepping role 2815
+[01:49:14]   re-prepping role 2815 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2815 already applied on 2026-06-04 12:08:31 by gh-batch5
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [139] meticulous-e4f7bc5d-1aac-4ed7-a8c3-b4f96002d416 (role_id=1970) ===
+[01:49:14]   Plan file missing — re-prepping role 1970
+[01:49:14]   re-prepping role 1970 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1970 already applied on 2026-06-02 by submission-worker-2
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [140] modal-labs-9fadb51f-ce11-41b1-84d5-470e66cc8ee9 (role_id=935) ===
+[01:49:14]   Plan file missing — re-prepping role 935
+[01:49:14]   re-prepping role 935 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): penclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=935 already applied on 2026-05-30 by ashby-chain033-runner
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [141] modal-labs-cbbbee50-3d3b-4873-8ae8-ff4b885b8e54 (role_id=937) ===
+[01:49:14]   Plan file missing — re-prepping role 937
+[01:49:14]   re-prepping role 937 (timeout=360s)...
+[01:49:14]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=937 already applied on 2026-05-31 03:07:10 by chain_035
+
+[01:49:14]   Re-prep failed (rc=1) — skipping
+[01:49:14] 
+=== [142] modus-56672488-b38d-4e74-ba72-c9bc43de48d5 (role_id=3393) ===
+[01:49:14]   ATS=ashby | plan=inline-plan-modus-56672488-b38d-4e74-ba72-c9bc43de48d5.json
+[01:49:14]   WARN: could not stage resume for modus-56672488-b38d-4e74-ba72-c9bc43de48d5
+[01:49:41]   runner result: ok=True (26s)
+[01:49:41]   marked submitted in DB + STATUS.md
+[01:49:41] 
+=== [143] moment-752a96ec-5ad1-456e-a98d-6c64c6dfa256 (role_id=1213) ===
+[01:49:41]   ATS=ashby | plan=inline-plan-moment-752a96ec-5ad1-456e-a98d-6c64c6dfa256.json
+[01:49:41]   WARN: could not stage resume for moment-752a96ec-5ad1-456e-a98d-6c64c6dfa256
+[01:50:19]   runner result: ok=False (38s)
+[01:50:19]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:50:19] 
+=== [144] momentus-6004816004 (role_id=3378) ===
+[01:50:19]   ATS=greenhouse | plan=inline-plan-momentus-6004816004.json
+[01:50:19]   WARN: could not stage resume for momentus-6004816004
+[01:51:11]   runner result: ok=True (53s)
+[01:51:11]   marked submitted in DB + STATUS.md
+[01:51:11] 
+=== [145] neara-09aa69c3-7015-43dc-8fc0-edcab5f4345d (role_id=2976) ===
+[01:51:11]   ATS=ashby | plan=inline-plan-neara-09aa69c3-7015-43dc-8fc0-edcab5f4345d.json
+[01:51:11]   WARN: could not stage resume for neara-09aa69c3-7015-43dc-8fc0-edcab5f4345d
+[01:52:09]   runner result: ok=False (58s)
+[01:52:09]   FAILED tail: confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Working Rights - Do you have valid working rights in the country you have applied for a role in?\u00a0"]
+
+[01:52:09] 
+=== [146] neara-4e99a0fd-60f8-4641-9dd6-63ffe53f3184 (role_id=2975) ===
+[01:52:09]   ATS=ashby | plan=inline-plan-neara-4e99a0fd-60f8-4641-9dd6-63ffe53f3184.json
+[01:52:09]   WARN: could not stage resume for neara-4e99a0fd-60f8-4641-9dd6-63ffe53f3184
+[01:53:07]   runner result: ok=False (58s)
+[01:53:07]   FAILED tail: confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Working Rights - Do you have valid working rights in the country you have applied for a role in?\u00a0"]
+
+[01:53:07] 
+=== [147] neara-9e86988e-45d9-40a6-93af-7e7cb8392b22 (role_id=2775) ===
+[01:53:07]   ATS=ashby | plan=inline-plan-neara-9e86988e-45d9-40a6-93af-7e7cb8392b22.json
+[01:53:07]   WARN: could not stage resume for neara-9e86988e-45d9-40a6-93af-7e7cb8392b22
+[01:54:05]   runner result: ok=False (58s)
+[01:54:05]   FAILED tail: confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Working Rights - Do you have valid working rights in the country you have applied for a role in?\u00a0"]
+
+[01:54:05] 
+=== [148] neara-e62c195b-0cc6-4d40-a391-b79f31ac21ee (role_id=2977) ===
+[01:54:05]   ATS=ashby | plan=inline-plan-neara-e62c195b-0cc6-4d40-a391-b79f31ac21ee.json
+[01:54:05]   WARN: could not stage resume for neara-e62c195b-0cc6-4d40-a391-b79f31ac21ee
+[01:55:03]   runner result: ok=False (57s)
+[01:55:03]   FAILED tail: confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Working Rights - Do you have valid working rights in the country you have applied for a role in?\u00a0"]
+
+[01:55:03] 
+=== [149] neural-concept-b37daf93-77bf-4428-ad02-f39df3917035 (role_id=1365) ===
+[01:55:03]   Plan file missing — re-prepping role 1365
+[01:55:03]   re-prepping role 1365 (timeout=360s)...
+[01:55:03]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1365 already applied on 2026-06-02 by blocked-triage
+
+[01:55:03]   Re-prep failed (rc=1) — skipping
+[01:55:03] 
+=== [150] new-relic-5232172008 (role_id=2232) ===
+[01:55:03]   Plan file missing — re-prepping role 2232
+[01:55:03]   re-prepping role 2232 (timeout=360s)...
+[01:55:03]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2232 already applied on 2026-06-02 by crawl-resume-cron
+
+[01:55:03]   Re-prep failed (rc=1) — skipping
+[01:55:03] 
+=== [151] nice-4845031101 (role_id=2723) ===
+[01:55:03]   Plan file missing — re-prepping role 2723
+[01:55:03]   re-prepping role 2723 (timeout=360s)...
+[01:55:03]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2723 already applied on 2026-06-04 12:39:07 by gh-refix-worker
+
+[01:55:03]   Re-prep failed (rc=1) — skipping
+[01:55:03] 
+=== [152] notion-2dd301f6-42da-40a2-a064-0f6fcfbdca77 (role_id=1347) ===
+[01:55:03]   Plan file missing — re-prepping role 1347
+[01:55:03]   re-prepping role 1347 (timeout=360s)...
+[01:55:03]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1347 already applied on 2026-05-31 03:32:25 by chain_035
+
+[01:55:03]   Re-prep failed (rc=1) — skipping
+[01:55:03] 
+=== [153] oasis-security-5236510008 (role_id=2737) ===
+[01:55:03]   Plan file missing — re-prepping role 2737
+[01:55:03]   re-prepping role 2737 (timeout=360s)...
+[01:55:03]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2737 already applied on 2026-06-04 by inline_submit+_gh_submit
+
+[01:55:03]   Re-prep failed (rc=1) — skipping
+[01:55:03] 
+=== [154] openai-05a8cae8-81bd-4f7b-bc48-41ef1bd67e5d (role_id=795) ===
+[01:55:03]   ATS=ashby | plan=inline-plan-openai-05a8cae8-81bd-4f7b-bc48-41ef1bd67e5d.json
+[01:55:03]   WARN: could not stage resume for openai-05a8cae8-81bd-4f7b-bc48-41ef1bd67e5d
+[01:55:43]   runner result: ok=False (40s)
+[01:55:43]   FAILED tail: it your app
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:55:43] 
+=== [155] openai-60d1420a-8aa3-4d87-847e-e7b73d9d9a0c (role_id=791) ===
+[01:55:43]   ATS=ashby | plan=inline-plan-openai-60d1420a-8aa3-4d87-847e-e7b73d9d9a0c.json
+[01:55:43]   WARN: could not stage resume for openai-60d1420a-8aa3-4d87-847e-e7b73d9d9a0c
+[01:56:22]   runner result: ok=False (40s)
+[01:56:22]   FAILED tail: it your app
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:56:22] 
+=== [156] openai-65913e57-80e0-4a1a-bbc3-265ae8a1a41b (role_id=799) ===
+[01:56:22]   ATS=ashby | plan=inline-plan-openai-65913e57-80e0-4a1a-bbc3-265ae8a1a41b.json
+[01:56:22]   WARN: could not stage resume for openai-65913e57-80e0-4a1a-bbc3-265ae8a1a41b
+[01:57:02]   runner result: ok=False (40s)
+[01:57:02]   FAILED tail: it your app
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:57:02] 
+=== [157] openai-6c6c1ace-12d6-48f0-88f0-488ff8521571 (role_id=792) ===
+[01:57:02]   ATS=ashby | plan=inline-plan-openai-6c6c1ace-12d6-48f0-88f0-488ff8521571.json
+[01:57:02]   WARN: could not stage resume for openai-6c6c1ace-12d6-48f0-88f0-488ff8521571
+[01:57:43]   runner result: ok=True (41s)
+[01:57:43]   marked submitted in DB + STATUS.md
+[01:57:43] 
+=== [158] orkes-4228192008 (role_id=1971) ===
+[01:57:43]   Plan file missing — re-prepping role 1971
+[01:57:43]   re-prepping role 1971 (timeout=360s)...
+[01:57:43]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1971 already applied on 2026-06-02 by agent
+
+[01:57:43]   Re-prep failed (rc=1) — skipping
+[01:57:43] 
+=== [159] orkes-5228109008 (role_id=1488) ===
+[01:57:43]   Plan file missing — re-prepping role 1488
+[01:57:43]   re-prepping role 1488 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1488 already applied on 2026-06-02 by blocked-triage
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [160] otter-8008479002 (role_id=1975) ===
+[01:57:44]   Plan file missing — re-prepping role 1975
+[01:57:44]   re-prepping role 1975 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1975 already applied on 2026-06-02 by agent
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [161] otter-8231028002 (role_id=1976) ===
+[01:57:44]   Plan file missing — re-prepping role 1976
+[01:57:44]   re-prepping role 1976 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1976 already applied on 2026-06-02 by agent
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [162] otter-8436361002 (role_id=1978) ===
+[01:57:44]   Plan file missing — re-prepping role 1978
+[01:57:44]   re-prepping role 1978 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1978 already applied on 2026-06-02 by agent
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [163] otter-8481244002 (role_id=1979) ===
+[01:57:44]   Plan file missing — re-prepping role 1979
+[01:57:44]   re-prepping role 1979 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1979 already applied on 2026-06-02 by agent
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [164] otter-8540314002 (role_id=1977) ===
+[01:57:44]   Plan file missing — re-prepping role 1977
+[01:57:44]   re-prepping role 1977 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): ser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1977 already applied on 2026-06-02 by newrole-worker
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [165] otter-8550121002 (role_id=1974) ===
+[01:57:44]   Plan file missing — re-prepping role 1974
+[01:57:44]   re-prepping role 1974 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1974 already applied on 2026-06-02 by agent
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [166] outreach-810b13b3 (role_id=814) ===
+[01:57:44]   ATS=lever not auto-submittable via these runners — skipping
+[01:57:44] 
+=== [166] overflow-9df94920-f628-4f94-8916-ede021405b51 (role_id=2131) ===
+[01:57:44]   Plan file missing — re-prepping role 2131
+[01:57:44]   re-prepping role 2131 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2131 already applied on 2026-06-02 07:53:00 by ashby-reattempt
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [167] palantir-96a0ce26 (role_id=816) ===
+[01:57:44]   ATS=lever not auto-submittable via these runners — skipping
+[01:57:44] 
+=== [167] parloa-4877824101 (role_id=2750) ===
+[01:57:44]   Plan file missing — re-prepping role 2750
+[01:57:44]   re-prepping role 2750 (timeout=360s)...
+[01:57:44]   re-prep failed (rc=1): .openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2750 already applied on 2026-06-04 12:26:26 by gh-batch5
+
+[01:57:44]   Re-prep failed (rc=1) — skipping
+[01:57:44] 
+=== [168] persona-d1c19a46-645e-4bff-aa31-f81d8a27cc51 (role_id=2243) ===
+[01:57:44]   Plan file missing — re-prepping role 2243
+[01:57:44]   re-prepping role 2243 (timeout=360s)...
+[01:57:45]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2243 already applied on 2026-06-04 by agent
+
+[01:57:45]   Re-prep failed (rc=1) — skipping
+[01:57:45] 
+=== [169] piramidal-4212486009 (role_id=2627) ===
+[01:57:45]   ATS=greenhouse | plan=inline-plan-piramidal-4212486009.json
+[01:57:45]   WARN: could not stage resume for piramidal-4212486009
+[01:58:22]   runner result: ok=True (37s)
+[01:58:22]   marked submitted in DB + STATUS.md
+[01:58:22] 
+=== [170] plaid-64642463-8ee8-4453-b166-449711f61cd0 (role_id=2229) ===
+[01:58:22]   Plan file missing — re-prepping role 2229
+[01:58:22]   re-prepping role 2229 (timeout=360s)...
+[01:58:22]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2229 already applied on 2026-06-04 by agent
+
+[01:58:22]   Re-prep failed (rc=1) — skipping
+[01:58:22] 
+=== [171] plain-8b47cc66-ddca-4c4b-943f-1bd2d7f1d7e5 (role_id=1105) ===
+[01:58:22]   Plan file missing — re-prepping role 1105
+[01:58:22]   re-prepping role 1105 (timeout=360s)...
+[01:58:22]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1105 already applied on 2026-05-31T04:45:00-07:00 by chain_041
+
+[01:58:22]   Re-prep failed (rc=1) — skipping
+[01:58:22] 
+=== [172] plaud-34cc1e25-49c6-44e7-a281-ab4d53452df6 (role_id=2731) ===
+[01:58:22]   Plan file missing — re-prepping role 2731
+[01:58:22]   re-prepping role 2731 (timeout=360s)...
+[01:58:22]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2731 already applied on 2026-06-04 by Cyrus
+
+[01:58:22]   Re-prep failed (rc=1) — skipping
+[01:58:22] 
+=== [173] plaud-de70e9b7-0f95-4aae-b8fb-3339ecebb5e3 (role_id=2729) ===
+[01:58:22]   ATS=ashby | plan=inline-plan-plaud-de70e9b7-0f95-4aae-b8fb-3339ecebb5e3.json
+[01:58:22]   WARN: could not stage resume for plaud-de70e9b7-0f95-4aae-b8fb-3339ecebb5e3
+[01:59:00]   runner result: ok=False (38s)
+[01:59:00]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[01:59:00] 
+=== [174] podium-7825829 (role_id=2256) ===
+[01:59:00]   Plan file missing — re-prepping role 2256
+[01:59:00]   re-prepping role 2256 (timeout=360s)...
+[01:59:00]   re-prep failed (rc=1): user/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2256 already applied on 2026-06-03 by inline_submit
+
+[01:59:00]   Re-prep failed (rc=1) — skipping
+[01:59:00] 
+=== [175] podium-automation-58bdff6d-de99-4cec-aa55-00edcc84b5c3 (role_id=2818) ===
+[01:59:00]   Plan file missing — re-prepping role 2818
+[01:59:00]   re-prepping role 2818 (timeout=360s)...
+[01:59:00]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2818 already applied on 2026-06-04 by Cyrus
+
+[01:59:00]   Re-prep failed (rc=1) — skipping
+[01:59:00] 
+=== [176] pointclickcare-116ecefc (role_id=2744) ===
+[01:59:00]   ATS=lever not auto-submittable via these runners — skipping
+[01:59:00] 
+=== [176] pointone-834a8648-5581-4d69-80cb-41382928d220 (role_id=2576) ===
+[01:59:00]   ATS=ashby | plan=inline-plan-pointone-834a8648-5581-4d69-80cb-41382928d220.json
+[01:59:00]   WARN: could not stage resume for pointone-834a8648-5581-4d69-80cb-41382928d220
+[01:59:44]   runner result: ok=False (44s)
+[01:59:44]   FAILED tail: ']
+[runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Undergraduate Institution", "Missing entry for required field: Visa Sponsorship"]
+
+[01:59:44] 
+=== [177] popl-5dda8b68-dcba-41fe-aad8-522619e0cfc5 (role_id=2845) ===
+[01:59:44]   Plan file missing — re-prepping role 2845
+[01:59:44]   re-prepping role 2845 (timeout=360s)...
+[01:59:44]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2845 already applied on 2026-06-09 by auto
+
+[01:59:44]   Re-prep failed (rc=1) — skipping
+[01:59:44] 
+=== [178] profound-7748f47c-ee2a-4381-8b0b-8cee934f8326 (role_id=2844) ===
+[01:59:44]   Plan file missing — re-prepping role 2844
+[01:59:44]   re-prepping role 2844 (timeout=360s)...
+[01:59:44]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2844 already applied on 2026-06-09 by auto
+
+[01:59:44]   Re-prep failed (rc=1) — skipping
+[01:59:44] 
+=== [179] profound-b076c997-0ba3-4d3c-9dc9-ad0b3ed49b05 (role_id=1983) ===
+[01:59:44]   ATS=ashby | plan=inline-plan-profound-b076c997-0ba3-4d3c-9dc9-ad0b3ed49b05.json
+[01:59:44]   WARN: could not stage resume for profound-b076c997-0ba3-4d3c-9dc9-ad0b3ed49b05
+[02:00:43]   runner result: ok=False (58s)
+[02:00:43]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[02:00:43] 
+=== [180] profound-d43c8698-fef3-426d-972b-dbc88a3d386c (role_id=1982) ===
+[02:00:43]   Plan file missing — re-prepping role 1982
+[02:00:43]   re-prepping role 1982 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1982 already applied on 2026-06-02 by agent
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [181] profound-e43062d5-1657-4066-a3cc-2e3315693b28 (role_id=1984) ===
+[02:00:43]   Plan file missing — re-prepping role 1984
+[02:00:43]   re-prepping role 1984 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1984 already applied on 2026-06-02 by agent
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [182] profound-ee159de0-26cd-4cd9-93c7-2853fb5550eb (role_id=1985) ===
+[02:00:43]   Plan file missing — re-prepping role 1985
+[02:00:43]   re-prepping role 1985 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1985 already applied on 2026-06-02 by agent
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [183] prosper-1cae1442 (role_id=2655) ===
+[02:00:43]   ATS=lever not auto-submittable via these runners — skipping
+[02:00:43] 
+=== [183] pure-storage-7983980 (role_id=2965) ===
+[02:00:43]   Plan file missing — re-prepping role 2965
+[02:00:43]   re-prepping role 2965 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2965 already applied on 2026-06-16 by auto
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [184] raft-5973277004 (role_id=2783) ===
+[02:00:43]   Plan file missing — re-prepping role 2783
+[02:00:43]   re-prepping role 2783 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): gents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2783 already applied on 2026-06-04 13:00:04 by gh-uncertain8-worker
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [185] ready-586fd053-b5b9-463f-a9dd-2df68856adb0 (role_id=2605) ===
+[02:00:43]   Plan file missing — re-prepping role 2605
+[02:00:43]   re-prepping role 2605 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): ome/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2605 already applied on 2026-06-09 by auto
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [186] reducto-5cc2517c-42c6-47c1-b3cc-77c6c58bc7fa (role_id=2555) ===
+[02:00:43]   Plan file missing — re-prepping role 2555
+[02:00:43]   re-prepping role 2555 (timeout=360s)...
+[02:00:43]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2555 already applied on 2026-06-04 by agent
+
+[02:00:43]   Re-prep failed (rc=1) — skipping
+[02:00:43] 
+=== [187] redwood-materials-5998458004 (role_id=1981) ===
+[02:00:43]   Plan file missing — re-prepping role 1981
+[02:00:43]   re-prepping role 1981 (timeout=360s)...
+[02:00:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1981 already applied on 2026-06-02 by agent
+
+[02:00:44]   Re-prep failed (rc=1) — skipping
+[02:00:44] 
+=== [188] rescale-2f43e26a-a331-4648-8523-d83c258bd8a2 (role_id=2581) ===
+[02:00:44]   Plan file missing — re-prepping role 2581
+[02:00:44]   re-prepping role 2581 (timeout=360s)...
+[02:00:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2581 already applied on 2026-06-04 by agent
+
+[02:00:44]   Re-prep failed (rc=1) — skipping
+[02:00:44] 
+=== [189] rho-cf711885-a64b-464f-8016-095eb5124ecf (role_id=1450) ===
+[02:00:44]   Plan file missing — re-prepping role 1450
+[02:00:44]   re-prepping role 1450 (timeout=360s)...
+[02:00:44]   re-prep failed (rc=1): aw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1450 already applied on 2026-05-31 00:23:08 by agent-job-search
+
+[02:00:44]   Re-prep failed (rc=1) — skipping
+[02:00:44] 
+=== [190] robinhood-7947548 (role_id=1939) ===
+[02:00:44]   Plan file missing — re-prepping role 1939
+[02:00:44]   re-prepping role 1939 (timeout=360s)...
+[02:00:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=1939 already applied on 2026-06-02 by agent
+
+[02:00:44]   Re-prep failed (rc=1) — skipping
+[02:00:44] 
+=== [191] robinhood-7975474 (role_id=2613) ===
+[02:00:44]   Plan file missing — re-prepping role 2613
+[02:00:44]   re-prepping role 2613 (timeout=360s)...
+[02:00:44]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2613 already applied on 2026-06-03 by agent
+
+[02:00:44]   Re-prep failed (rc=1) — skipping
+[02:00:44] 
+=== [192] roboflow-444ee288-cb72-4751-b16d-67c27749e901 (role_id=2562) ===
+[02:00:44]   ATS=ashby | plan=inline-plan-roboflow-444ee288-cb72-4751-b16d-67c27749e901.json
+[02:00:44]   WARN: could not stage resume for roboflow-444ee288-cb72-4751-b16d-67c27749e901
+[02:01:21]   runner result: ok=False (38s)
+[02:01:21]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[02:01:21] 
+=== [193] salvo-health-3b327f35 (role_id=2813) ===
+[02:01:21]   ATS=lever not auto-submittable via these runners — skipping
+[02:01:21] 
+=== [193] samba-tv-418cf1b1 (role_id=2732) ===
+[02:01:21]   ATS=lever not auto-submittable via these runners — skipping
+[02:01:21] 
+=== [193] samba-tv-91af2cfb (role_id=2736) ===
+[02:01:21]   ATS=lever not auto-submittable via these runners — skipping
+[02:01:21] 
+=== [193] samba-tv-aab1648c (role_id=2734) ===
+[02:01:21]   ATS=lever not auto-submittable via these runners — skipping
+[02:01:21] 
+=== [193] scaled-cognition-60490c44-de4d-49e9-b0d7-42ce4163382c (role_id=2820) ===
+[02:01:21]   ATS=ashby | plan=inline-plan-scaled-cognition-60490c44-de4d-49e9-b0d7-42ce4163382c.json
+[02:01:21]   WARN: could not stage resume for scaled-cognition-60490c44-de4d-49e9-b0d7-42ce4163382c
+[02:01:59]   runner result: ok=False (38s)
+[02:01:59]   FAILED tail: stable=True
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[02:01:59] 
+=== [194] scaled-cognition-d8aa1291-3b54-4675-a876-42d12347eb23 (role_id=2821) ===
+[02:01:59]   Plan file missing — re-prepping role 2821
+[02:01:59]   re-prepping role 2821 (timeout=360s)...
+[02:01:59]   re-prep failed (rc=1): me/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2821 already applied on 2026-06-04 by Cyrus
+
+[02:01:59]   Re-prep failed (rc=1) — skipping
+[02:01:59] 
+=== [195] schrödinger-4318632003 (role_id=2798) ===
+[02:01:59]   Plan file missing — re-prepping role 2798
+[02:01:59]   re-prepping role 2798 (timeout=360s)...
+[02:01:59]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2798 already applied on 2026-06-04 12:54:27 by gh-refix-worker
+
+[02:01:59]   Re-prep failed (rc=1) — skipping
+[02:01:59] 
+=== [196] scopely-5208771008 (role_id=2671) ===
+[02:01:59]   Plan file missing — re-prepping role 2671
+[02:01:59]   re-prepping role 2671 (timeout=360s)...
+[02:02:00]   re-prep failed (rc=1): law/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=2671 already applied on 2026-06-04 12:36:54 by gh-refix-worker
+
+[02:02:00]   Re-prep failed (rc=1) — skipping
+[02:02:00] 
+=== [197] scopely-5220455008 (role_id=2028) ===
+[02:02:00]   ATS=greenhouse | plan=inline-plan-scopely-5220455008.json
+[02:02:00]   WARN: could not stage resume for scopely-5220455008
+[02:02:35]   runner result: ok=True (35s)
+[02:02:35]   marked submitted in DB + STATUS.md
+[02:02:35] 
+=== [198] scout-4888366008 (role_id=2619) ===
+[02:02:35]   ATS=greenhouse | plan=inline-plan-scout-4888366008.json
+[02:02:35]   WARN: could not stage resume for scout-4888366008
+[02:03:03]   runner result: ok=True (28s)
+[02:03:03]   marked submitted in DB + STATUS.md
+[02:03:03] 
+=== [199] sentry-9889cf59-cd32-4aff-bff7-645bb1be4e14 (role_id=848) ===
+[02:03:03]   Plan file missing — re-prepping role 848
+[02:03:03]   re-prepping role 848 (timeout=360s)...
+[02:03:04]   re-prep failed (rc=1): user/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=848 already applied on 2026-05-31 03:56:12 by agent
+
+[02:03:04]   Re-prep failed (rc=1) — skipping
+[02:03:04] 
+=== [200] sierra-0c66e8ed-1c18-4b64-ad27-a522a866b6e1 (role_id=859) ===
+[02:03:04]   Plan file missing — re-prepping role 859
+[02:03:04]   re-prepping role 859 (timeout=360s)...
+[02:03:04]   re-prep failed (rc=1): /.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/inline_submit.py", line 378, in resolve_role
+    raise ValueError(f"role id={role_id} already applied on {row['applied_on']} by {row['applied_by']}")
+ValueError: role id=859 already applied on 2026-05-31 02:56:42 by chain_035
+
+[02:03:04]   Re-prep failed (rc=1) — skipping
+[02:03:04] Reached limit 200, stopping
+[02:03:04] 
+=== RESULTS ===
+[02:03:04] Submitted (32): ['alpaca-6002073004', 'anduril-5083367007', 'anduril-5109724007', 'avoca-0fc22fe4-6b8c-4c93-9b3f-fa3738054601', 'bland-ai-824f7ebb-6d71-4484-bc7d-a2bcd4441a70', 'decagon-6321ea2f-4e21-4c18-8859-b4ef5489b6fe', 'discord-8497292002', 'edia-8a161495-4e3c-4045-ba36-6efed495e386', 'elevenlabs-6c4c57c1-ec72-42ba-af3a-eb7aebbde2e6', 'figma-5837760004', 'figma-5982942004', 'figma-6009613004', 'figma-6092802004', 'firecrawl-bda40f47-a69b-44d4-ac1a-3f86f20d802d', 'fluidstack-f93527ee-b4b2-47e4-9a25-51f783bbf3e3', 'fluidstack-ff3c2ada-ffa4-47e3-aa62-8cd30526a67c', 'front-9b24503f-b0c5-4120-9297-c73c37dcbd08', 'granted-eb64360a-d70a-4403-96bf-4633c062e60f', 'handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a', 'illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08']
+[02:03:04] Failed    (168): ['aclu-8574963002', 'agave-685cc476-4e5d-4406-86d8-b9835fed6d9b', 'airops-b52cef06-1909-4c31-865a-5882af69c177', 'alpaca-6001722004', 'alpaca-6002567004', 'ambientai-eb953820-7748-4620-98a0-b97bcdc40001', 'anara-f69dcabe-1f30-46ce-8407-ba03f55f2ced', 'anduril-5023386007', 'anduril-5125591007', 'anduril-5137720007']
+[02:03:04] Skipped   (17): 17
+[02:03:04] Re-rendering XLSX...
+[02:03:04]   Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+[02:03:04]     Open:         508
+[02:03:04]     Applied:      844
+[02:03:04] === drain_prep_ready DONE ===

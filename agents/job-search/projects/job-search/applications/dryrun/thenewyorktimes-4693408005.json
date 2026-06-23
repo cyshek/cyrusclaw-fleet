@@ -1,0 +1,852 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/thenewyorktimes/jobs/4693408005",
+  "org": "thenewyorktimes",
+  "job_id": "4693408005",
+  "job_title": "Technical Product Manager II, Site Reliability Engineering",
+  "job_location": "New York, NY",
+  "fetched_at": "2026-06-23T03:19:18Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/thenewyorktimes/jobs/4693408005?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 33,
+    "filled": 21,
+    "filled_needs_review": 1,
+    "declined": 6,
+    "unresolved": 5,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_8692900005",
+      "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 22243133005
+        },
+        {
+          "label": "No",
+          "value": 22243134005
+        },
+        {
+          "label": "I'm Not Sure",
+          "value": 22243135005
+        }
+      ]
+    },
+    {
+      "id": "question_8692901005",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_8692902005",
+      "label": "Portfolio, Video, or Website Link",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_8692903005",
+      "label": "Portfolio, Video, or Website Password",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_8692904005",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Social Media (LinkedIn, Instagram, Twitter)",
+      "source": "how_heard fuzzy 'linkedin' -> 'Social Media (LinkedIn, Instagram, Twitter)'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "NYT Careers Site",
+          "value": 22243136005
+        },
+        {
+          "label": "Currently Employed at The New York Times",
+          "value": 22243137005
+        },
+        {
+          "label": "Formerly Employed at The New York Times",
+          "value": 22243138005
+        },
+        {
+          "label": "I was referred by a New York Times employee",
+          "value": 22243139005
+        },
+        {
+          "label": "Job Board (Indeed, Glassdoor, etc)",
+          "value": 22243140005
+        },
+        {
+          "label": "Social Media (LinkedIn, Instagram, Twitter)",
+          "value": 22243141005
+        },
+        {
+          "label": "Event (campus, conference, meetup)",
+          "value": 22243142005
+        },
+        {
+          "label": "Recruiting Agency",
+          "value": 22243143005
+        },
+        {
+          "label": "Other",
+          "value": 22243144005
+        }
+      ]
+    },
+    {
+      "id": "question_8692905005",
+      "label": "If you chose 'referred by NYT employee', 'Social Media', 'Job Board', 'Event', 'Recruiting Agency' or 'Other', please specify here:",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "common_form_answers.referred_by_employee (null -> blank)",
+      "status": "filled",
+      "matched_rule": "referred_by",
+      "options": null
+    },
+    {
+      "id": "question_8692906005",
+      "label": "Have you ever been employed by The New York Times, or any of its affiliates or subsidiaries?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 22243145005
+        },
+        {
+          "label": "No",
+          "value": 22243146005
+        }
+      ]
+    },
+    {
+      "id": "question_8692907005",
+      "label": "If you've selected \"Yes\", please select the affiliate/subsidiary with which you were employed:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you\\'ve selected \"Yes\", please select the affiliate/subsidiary with which you were employed:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "The New York Times",
+          "value": 22243147005
+        },
+        {
+          "label": "The Athletic",
+          "value": 22243148005
+        },
+        {
+          "label": "Wirecutter",
+          "value": 22243149005
+        },
+        {
+          "label": "Boston Globe",
+          "value": 22243150005
+        },
+        {
+          "label": "About.com",
+          "value": 22243151005
+        },
+        {
+          "label": "Abuzz Technologies Inc.",
+          "value": 22243152005
+        },
+        {
+          "label": "Baseline, Inc.",
+          "value": 22243153005
+        },
+        {
+          "label": "CNI Holdings HQ",
+          "value": 22243154005
+        },
+        {
+          "label": "Comet Press Newspapers, Inc.",
+          "value": 22243155005
+        },
+        {
+          "label": "Fake Love LLC",
+          "value": 22243156005
+        },
+        {
+          "label": "Gadsden Times",
+          "value": 22243157005
+        },
+        {
+          "label": "Gainesville Sun Publishing Co",
+          "value": 22243158005
+        },
+        {
+          "label": "GD Information Systems",
+          "value": 22243159005
+        },
+        {
+          "label": "Golf Digest",
+          "value": 22243160005
+        },
+        {
+          "label": "Golf Digest Woman",
+          "value": 22243161005
+        },
+        {
+          "label": "Golf Shop Operations",
+          "value": 22243162005
+        },
+        {
+          "label": "Golf World",
+          "value": 22243163005
+        },
+        {
+          "label": "HelloSociety LLC",
+          "value": 22243164005
+        },
+        {
+          "label": "IHT Corporation",
+          "value": 22243165005
+        },
+        {
+          "label": "International Herald Tribune US, Inc",
+          "value": 22243166005
+        },
+        {
+          "label": "International Media Concepts",
+          "value": 22243167005
+        },
+        {
+          "label": "Jones Communications",
+          "value": 22243168005
+        },
+        {
+          "label": "KFSM-TV",
+          "value": 22243169005
+        },
+        {
+          "label": "Listen in Audio",
+          "value": 22243170005
+        },
+        {
+          "label": "Midtown Insurance Company",
+          "value": 22243171005
+        },
+        {
+          "label": "New England Media Group",
+          "value": 22243172005
+        },
+        {
+          "label": "North Bay Business Journal",
+          "value": 22243173005
+        },
+        {
+          "label": "Northern SC Paper Corporation",
+          "value": 22243174005
+        },
+        {
+          "label": "NYT Professional Exchange, Inc.",
+          "value": 22243175005
+        },
+        {
+          "label": "Ocala Star Banner Corp.",
+          "value": 22243176005
+        },
+        {
+          "label": "RMG Interactive",
+          "value": 22243177005
+        },
+        {
+          "label": "Serial Productions LLC",
+          "value": 22243178005
+        },
+        {
+          "label": "The News Leader",
+          "value": 22243179005
+        },
+        {
+          "label": "Times Daily, Inc.",
+          "value": 22243180005
+        },
+        {
+          "label": "WHNT",
+          "value": 22243181005
+        },
+        {
+          "label": "Wine Today",
+          "value": 22243182005
+        },
+        {
+          "label": "Worcester T&G Holdings",
+          "value": 22243183005
+        },
+        {
+          "label": "Worcester Telegram and Gazette",
+          "value": 22243184005
+        },
+        {
+          "label": "WREG",
+          "value": 22243185005
+        },
+        {
+          "label": "WTKR-TV, Inc.",
+          "value": 22243186005
+        },
+        {
+          "label": "Other",
+          "value": 22243187005
+        },
+        {
+          "label": "N/A",
+          "value": 22243188005
+        }
+      ]
+    },
+    {
+      "id": "question_8692908005",
+      "label": "Desired Annual Salary?",
+      "type": "input_text",
+      "required": false,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_8692909005",
+      "label": "Legal Address:",
+      "type": "input_text",
+      "required": true,
+      "value": "12420 NE 120th St #1437",
+      "source": "address.street",
+      "status": "filled",
+      "matched_rule": "street",
+      "options": null
+    },
+    {
+      "id": "question_8692910005",
+      "label": "Are you legally authorized to work in the Country specified for this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8692911005",
+      "label": "Will you now, or might you in the future, require sponsorship to legally work in the country specified for this position? For example, in the U.S. if you are an F1 OPT student, H1B, H1B1, TN, E3, or O1 visa holder.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8692912005",
+      "label": "If yes, please note your current visa status:",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please note your current visa status:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_8692913005",
+      "label": "Do you have any relatives, spouses, partners or in-laws currently employed at The New York Times?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "common_form_answers.currently_employed",
+      "status": "filled",
+      "matched_rule": "currently_employed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8692914005",
+      "label": "If yes, please provide name and relationship to current employee:",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please provide name and relationship to current employee:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_8692915005",
+      "label": "Have you previously interviewed with The New York Times within the past year?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_applied_to_company (proxy)",
+      "status": "filled",
+      "matched_rule": "previously_interviewed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8692916005",
+      "label": "Are you prohibited or limited in your performance of any job duties for a company by any restrictive covenants not to compete, confidentiality agreements or any other contractual obligations?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8692917005",
+      "label": "If yes, can you provide the company with a copy of the agreement?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, can you provide the company with a copy of the agreement?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_8692918005",
+      "label": "Are you local to NYC or the Tri-State area and able to commute in for a Hybrid work schedule?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state (NOTE: 'WA' not literally in options ['Yes, local to NYC', 'No, but willing to relocate to NYC', 'No, not able to relocate']) | NOTE: 'WA' not literally in options ['Yes, local to NYC', 'No, but willing to relocate to NYC', 'No, not able to relocate']",
+      "status": "filled_needs_review",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Yes, local to NYC",
+          "value": 22243189005
+        },
+        {
+          "label": "No, but willing to relocate to NYC",
+          "value": 22243190005
+        },
+        {
+          "label": "No, not able to relocate",
+          "value": 22243191005
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4014501005",
+      "label": "Please select the gender which most accurately describes how you identify yourself",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Female",
+          "value": 4086788005
+        },
+        {
+          "label": "Male",
+          "value": 4086789005
+        },
+        {
+          "label": "Non-Binary",
+          "value": 4086869005
+        },
+        {
+          "label": "Not Declared",
+          "value": 4086888005
+        },
+        {
+          "label": "Prefer to self-describe:",
+          "value": 4086870005
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4014502005",
+      "label": "Please select the ethnicity which most accurately describes how you identify yourself",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaska Native",
+          "value": 4086792005
+        },
+        {
+          "label": "Asian",
+          "value": 4086793005
+        },
+        {
+          "label": "Black or African American",
+          "value": 4086871005
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 4086872005
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 4086873005
+        },
+        {
+          "label": "Not Specified",
+          "value": 4086874005
+        },
+        {
+          "label": "Two or More Races",
+          "value": 4086875005
+        },
+        {
+          "label": "White",
+          "value": 4086876005
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_8692900005",
+      "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'"
+    },
+    {
+      "id": "question_8692907005",
+      "label": "If you've selected \"Yes\", please select the affiliate/subsidiary with which you were employed:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you\\'ve selected \"Yes\", please select the affiliate/subsidiary with which you were employed:'"
+    },
+    {
+      "id": "question_8692912005",
+      "label": "If yes, please note your current visa status:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please note your current visa status:'"
+    },
+    {
+      "id": "question_8692914005",
+      "label": "If yes, please provide name and relationship to current employee:",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please provide name and relationship to current employee:'"
+    },
+    {
+      "id": "question_8692917005",
+      "label": "If yes, can you provide the company with a copy of the agreement?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, can you provide the company with a copy of the agreement?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_8692900005",
+      "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?",
+      "reason": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

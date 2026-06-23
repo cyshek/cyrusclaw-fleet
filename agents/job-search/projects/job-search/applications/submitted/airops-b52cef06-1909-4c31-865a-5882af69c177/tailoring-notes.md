@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned **zero-to-one** development of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned a manual process to a scalable, repeatable model.
+2. Scaled Azure's recovery validation program from a 2-person operation into a platformized system, standardizing workflows to sustain **45+ annual drills** and drive $14M+ business impact across enterprise customers including Databricks, Walmart, and SAP.
+3. Pioneered Azure's first proactive resilience testing capability—delivered a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation product motion.
+4. Built an internal **AI agent** for drill planning and restructured end-to-end workflows, reducing planning cycle time by 39% and increasing drill capacity by 21%—demonstrating fluency with LLM-powered automation in a data-intensive product environment.
+5. Directed 14 cross-org recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, with direct accountability to uptime and revenue outcomes.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation workflows, conducting user demos and training that expanded utilization across 14 key Azure teams and saved 37 engineering hours monthly—validating demand before committing broader engineering resources.
+2. Shaped the product roadmap toward **intent-based YAML generation** by running 11+ structured customer discovery interviews with Azure service teams, surfacing critical feature gaps and translating pain points into prioritized backlog items.
+3. Accelerated data retrieval by implementing metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time by 83% and improving content discoverability across the platform.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams—owning GTM sequencing and stakeholder buy-in end to end.
+2. Ran discovery with 20+ service teams to quantify 81 hours of manual effort per region launch, then built a **zero-to-one roadmap** to automate critical paths and reduce operational toil—mirroring a validate-then-scale product motion.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps, prioritize high-ROI investments, and measure progress against business outcomes.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy for a **2,000+ unit pilot**, mapping dependencies across 1,200+ stations and achieving zero operational downtime—demonstrating bias toward action and ownership in a high-ambiguity environment.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize developer intake—keeping cross-functional engineering and ops teams aligned on shared timelines.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release toil.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Executed a **digital-first go-to-market strategy**—optimizing the website and Google profile—reducing Customer Acquisition Cost by 13% and boosting conversions by 2.7%, with direct accountability to revenue and margin outcomes.
+2. Increased job bookings by **26%** by redesigning the end-to-end CRM process, managing scoping and invoicing for 200+ monthly proposals and turning customer discovery insights into a repeatable, scalable sales motion.
+3. Conducted financial profitability analysis across **1,000+ project records** to identify margin leaks, delivering pricing model recommendations that improved unit economics—an early exercise in P&L ownership and quantitative validation.
+
+## Notes from the rewriter
+- 'zero-to-one' woven into microsoft_ft bullet 1 and microsoft_2022 bullet 2 — mirrors AirOps JD's 'zero-to-one product initiatives' language directly.
+- 'validate-then-scale' / 'validate demand before committing engineering resources' framing used in microsoft_2023 bullet 1 and microsoft_2022 bullet 2 — echoes JD's 'validate new markets through rapid prototyping and customer discovery before committing engineering resources at scale.'
+- 'digital-first go-to-market strategy' and 'direct accountability to revenue and margin outcomes' in pro_painters bullet 1 — mirrors JD's 'drive revenue outcomes by defining pricing, packaging, and GTM strategy' and bonus 'P&L or revenue accountability' qualifier.
+- 'Customer discovery' vocabulary used in microsoft_2023 bullet 2 and microsoft_2022 bullet 2 — directly mirrors JD's 'customer discovery' as a named responsibility.
+- 'AI-powered / LLM-powered automation in a data-intensive product environment' in microsoft_ft bullet 4 — maps to JD's '2+ years working with AI, automation, or data-intensive products' qualification.
+

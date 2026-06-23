@@ -1,0 +1,190 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/ramp/cf3516f6-4d6b-4872-831f-c8ef4a3078ee",
+  "org": "ramp",
+  "job_id": "cf3516f6-4d6b-4872-831f-c8ef4a3078ee",
+  "job_title": "Product Manager | Vendor Intelligence & Marketplace",
+  "job_location": "New York, NY (HQ)",
+  "fetched_at": "2026-06-23T04:55:16Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 8,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_name",
+      "label": "Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_name"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_email"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_3c642c6f-de94-4eec-9f20-4f245d059a6b",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_3c642c6f-de94-4eec-9f20-4f245d059a6b"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_location",
+      "label": "Where do you plan on working from (for payroll tax purposes)?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_location"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_ebae4f81-7fbf-4e9b-a3f7-11502d6a22f0",
+      "label": "Are you comfortable working in-person at the office (in New York or San Francisco) at least 3 days/week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes | Able to relocate to the NYC or SF area upon offer acceptance and comfortable being in the office at least 3 days/week",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes...' 'Yes | Able to relocate to the NYC or SF area upon offer acceptance and comfortable being in the office at least 3 days/week')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "No | Would prefer to work remotely",
+          "value": "No | Would prefer to work remotely"
+        },
+        {
+          "label": "Yes | Able to relocate to the NYC or SF area upon offer acceptance and comfortable being in the office at least 3 days/week",
+          "value": "Yes | Able to relocate to the NYC or SF area upon offer acceptance and comfortable being in the office at least 3 days/week"
+        },
+        {
+          "label": "Yes | Currently located in the broader NYC or SF area and comfortable being in the office at least 3 days/week",
+          "value": "Yes | Currently located in the broader NYC or SF area and comfortable being in the office at least 3 days/week"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_ebae4f81-7fbf-4e9b-a3f7-11502d6a22f0"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c__systemfield_resume"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_ec1ec1c3-1b1d-4125-afb1-83c92aa4622f",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_ec1ec1c3-1b1d-4125-afb1-83c92aa4622f"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_bf37a635-332e-4493-ba59-d2505d97ffc7",
+      "label": "Do you have a minimum of 4 years of product management experience?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_bf37a635-332e-4493-ba59-d2505d97ffc7",
+      "match_attempted": true
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_f725ef6c-7a56-45b1-918e-68a2875f61d7",
+      "label": "Please describe a product you helped build that you are most proud of.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_f725ef6c-7a56-45b1-918e-68a2875f61d7"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_cd793c40-87aa-4776-9b67-e147c1ce1895",
+      "label": "Can you share an example of how you’ve integrated an AI tool into your product development workflow (e.g., research, PRDs, data analysis, design brainstorming)?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_cd793c40-87aa-4776-9b67-e147c1ce1895"
+    },
+    {
+      "id": "c666da44-89fa-4225-bdcd-75f121462e6c_77df3174-8e79-4de4-92c5-5cc838d57537",
+      "label": "Why do you want to work at Ramp? ",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Ramp because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Ramp is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Ramp while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Ramp aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Ramp')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "c666da44-89fa-4225-bdcd-75f121462e6c_77df3174-8e79-4de4-92c5-5cc838d57537"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

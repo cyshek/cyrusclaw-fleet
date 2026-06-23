@@ -1,68 +1,100 @@
 # PEER_STATE.md
 
 _Auto-generated digest of peer agents' latest daily memory + current BACKLOG.md._
-_Generated: 2026-06-21 11:00 UTC_
+_Generated: 2026-06-22 11:00 UTC_
 
 ---
 
 ## job-search
 
-### Latest daily memory: `memory/2026-06-21.md`
+### Latest daily memory: `memory/2026-06-22.md`
 
-# 2026-06-21 Daily Log
+# 2026-06-22 — Workday coverage expansion (subagent: workday-expansion)
 
-## Nightly distill cron (12:25 AM PDT / 07:25 UTC)
-All work from this UTC calendar date already captured in `memory/2026-06-20.md` (Jun 20 PDT sessions crossing Jun 21 UTC). Summary of today's major activity:
+## Task
+Main spawned subagent to expand Workday adapter coverage (was only 40 companies wired in companies.yaml). Find + add as many real Workday-tenant companies as possible.
 
-### Shipped today (2026-06-20 PDT / 2026-06-21 UTC)
-- **20 new submissions** across the day (~5 Ashby residential, 10 GH/Ashby batch, 5 Workday + Netflix)
-  - Batch 1 (phantom/blocked audit): 10 new (Anduril 2952, Redwood 1980, OneSchema 2609, Skydio 2242, Scopely 2672, AppLovin 2771, Securitize 2809, Fireworks AI 2240, Roblox 2222, Netskope 2968)
-  - Evening batch: 9 new (Cresta FDE-PM, Fireworks AI FDE-PM, Netskope SE x2, AiPrise FDE, AirOps FDE, Arini FDE, Bobyard SE x2, Clera PM)
-  - Workday PREP-READY: 3 new (Adobe 2629, Nvidia 1935, Intel 2225)
-  - Netflix Eightfold: 3 new (2853, 2854, 2860 — via self-ID checkbox fix)
-  - Manual audit: Adobe 16 Workday (FDE PM), Picogrid 1321, Brellium 1331, Thought Machine 1367, Restate 1383 (Ashby residential)
-- **Applied total: 697** (up from 672 at start of day)
+## Method (what worked)
+- **CXS API status-code probing is the reliable discovery signal** (NOT careers-page scraping, NOT search engines — all bot-walled for curl):
+  - `POST https://<host>/wday/cxs/<tenant>/<site>/jobs` with `{"appliedFacets":{},"limit":1,"offset":0,"searchText":""}` + header `X-Calypso-PageBlocked: false`
+  - **200 + total>0** = CONFIRMED usable external board (host+tenant+site all correct)
+  - **422** = tenant exists on that data-center host, WRONG site segment
+  - **404** = wrong data center / tenant slug
+  - **401** = tenant exists, auth/config gated
+  - **406** = bot-block on the bare WD root (tenant exists; needs full site path)
+- Built `verify_candidates.py` / `verify_batch2.py` / `verify_batch3.py`: curated (name,host,tenant,site) best-guess triples, verified live. Hit rate ~28% batch1, lower on retries.
+- `wd_discover.py` (DC sweep) + `brute_sites.py` (site wordlist brute-force) + `probe_workday.py` (single-tenant probe) also written. **Blind site brute-force is LOW yield** — custom site segments (SAP, Sony, Splunk, etc.) aren't guessable from a wordlist (exhausted 91 variants, 0 hits).
 
-### Engine shipped
-- YOE threshold: 4→6 (commit dce5151); 267 rows recovered
-- Staff/lead moved to ROLE_TYPE_BLOCKLIST with target-role carve-out (commit 350b494)
-- New discovery adapters: Remotive + RemoteOK (commit fb93bec), Himalayas (commit f0da363)
-- SmartRecruiters + Workable + BambooHR adapters (commit 70a5710)
-- Company discovery: YC Algolia batch-fetch (5,634 co's; companies.yaml 1,011→1,336, commit 82e0b2f)
-- High-comp sweep: Nuro, Motional, Wiz, Cerebras, etc. added (commits 62d63b8, bb40e0c)
-- SWE/ML/data resume tracks added (commit 65ab3ea)
-- Response tracker (Gmail IMAP): 78 interview requests, 20 DB updates (commit 856c1e5)
-- Brave stage-3a2 wired (commit 6c9bb92)
-- Daily delta crawl (cron Tue-Sun 14:00 UTC, commit 214a2b4)
-- iCIMS runner built (commit b5c1116); inline_submit dispatch wired
-- Workday WE date re-verify belt-and-suspenders (commit 3659bd9)
-- Eightfold self-ID checkbox fix (`.check()` by input id; real Netflix blocker)
-- XLSX consolidated: Manual Ready + Blocked → single "Manual Apply" sheet (commit b1f2dd3)
-- JobRight cookie test: valid, all 12 rows already resolved
+## KEY FINDINGS / GOTCHAS (don't re-derive)
+- **DNS is wildcard**: `*.myworkdayjobs.com` resolves for ANY hostname → DNS pre-check is USELESS for filtering. Must use the CXS API status code.
+- **A 422 (tenant exists) does NOT mean the company hires externally via Workday.** Many big names have an *internal* Workday but run external hiring on another ATS:
+  - AMD = iCIMS, Qualcomm = Eightfold, SAP = SuccessFactors (jobs.sap.com), Boeing = Avature (boeing.avature.net). All return 422 on their WD tenant but are NOT usable WD boards. Skipped correctly.
+- **Only a 200 with the correct external `site` confirms a usable board** — which is exactly what the curated+verify approach yields. Good.
+- Careers SPAs (Verizon mycareer, Qualcomm, AMD, SAP) are JS-rendered; the `myworkdayjobs.com/<Site>` URL does NOT appear in static HTML or even rendered DOM until you click into a specific job. Per-company browser extraction too slow to scale.
+- CXS `total` counts ALL job types (not just our target roles); classifier filters later. Even "404 total" = real board.
 
-### Key belief updates / debunked
-- Eightfold blocker was NOT "RESUMEWALL/residential" — it was self-ID checkbox React uncommitted state. Now fixed.
-- Ashby moderate-strict FDE cohort DOES submit via residential (4/6 submitted clean); only Tavus+Moment are genuinely hard.
-- LinkedIn stranded rows: 31 probed, 0 genuine boards. Slug collision guard confirmed necessary.
+## RESULT: 40 → 72 Workday entries (+32 NEW, all verified 200+jobs)
+Added to companies.yaml (backup: companies.yaml.bak-20260622-040306):
+Autodesk, Micron, Analog Devices, KLA, Applied Materials, Marvell, Cadence, 3M,
+Wells Fargo, Citi, Morgan Stanley, BlackRock, Nasdaq, Target, Comcast,
+Warner Bros Discovery, Pfizer, Gilead, T-Mobile, Zendesk, CrowdStrike, Hitachi,
+Genesys, Stryker, Abbott, Illumina, Amgen, PNC, Fiserv, FIS, Broadridge, ServiceTitan.
+- Excluded `-DUP` (Salesforce/Workday/Adobe already WD-wired) and 13 exact-name dups already in yaml on other adapters (Splunk, Sony, Roku, Datadog, Dropbox, GitLab, MongoDB, Elastic, Okta, Cloudflare, Twilio, Block, EA).
 
-### Blockers carried forward
-- Cisco 2421: Workday "How Did You Hear About Us" non-standard dropdown unhandled → EXIT 5
-- Ashby HARD cohort (Tavus, Moment, Plaud, Antithesis, Bobyard Mechanical): need aged Google account + dedicated mobile IP (Cyrus-side)
-- Lever hCaptcha (Palantir cluster): need nopecha API key or 2captcha workers
-- ~11 Netflix Eightfold rows admin-marked 'applied' on 06-14 but may never have submitted — follow-up needed
-- OpenAI 180d hold: ~23 rows, re-eligible ~late Aug/Sep
-- gmail_imap.py literal-`\n` artifact confirmed fixed (was harmless syntax issue)
+## LARGE UNTAPPED POOL (73 tenants return 422 = exist, site unknown)
+Worth a future pass IF exact site can be extracted (browser click-into-job, or a real search API). High-value names confirmed to have a WD tenant but site not yet found:
+Verizon, Honeywell, NetApp, Synopsys, Caterpillar, John Deere, Fidelity, American Express,
+Best Buy, Paramount, Activision, Thomson Reuters, DocuSign, Cohesity, Rapid7, Teradata,
+Informatica, Dynatrace, F5, Fortinet, Akamai, Boston Scientific, Becton Dickinson, Moderna,
+Regeneron, Biogen, CBRE, ADP, S&P Global, Moody's, Verisk, Eaton, RTX/Collins, L3Harris,
+GE Aerospace, Emerson, Texas Instruments, Lam Research, Nutanix, Unity, Juniper, Sage,
+Pega, Guidewire, Coupa, Bentley, SolarWinds, Qlik, Alteryx, etc.
+NOTE: some of these 422s may be internal-only WD (not externally usable) — must verify 200 before adding.
+
+## Scripts left in role-discovery/ (reusable)
+probe_workday.py, wd_discover.py, verify_candidates.py, verify_batch2.py, verify_batch3.py, brute_sites.py, _smoke_wd.py
+
+## Workday expansion subagent — COMPLETE (2026-06-22 ~04:30 UTC)
+- Expanded 40 → 72 Workday companies (+32 verified live), commit b887556
+- New: Micron, CrowdStrike, Target, Comcast, T-Mobile, Warner Bros, Wells Fargo, Citi, Morgan Stanley, BlackRock, Nasdaq, PNC, Fiserv, FIS, Broadridge, CrowdStrike, Zendesk, Genesys, ServiceTitan, Hitachi, Pfizer, Gilead, Stryker, Abbott, Illumina, Amgen, KLA, Applied Materials, Marvell, Cadence, Autodesk, 3M
+- AMD/Qualcomm/Boeing/Northrop = not on external Workday (iCIMS/Eightfold/Avature)
+- 73 more 422-tenants (exist but site unknown): Verizon, Honeywell, NetApp, Synopsys, Fidelity, Amex, Fortinet, Akamai, Moderna — documented for future pass
+- Discovery tooling left in role-discovery/: probe_workday.py, wd_discover.py, verify_candidates.py
+
+### FINAL RESULT (both passes complete + audited)
+180 stranded LinkedIn open rows ->
+- **57 RESOLVED to real ATS** (now auto-submittable):
+  - 35 via brute resolver dynamic probe (ashby 17 / greenhouse 17 / lever 1) — commit 5f78846
+  - 22 via resolver-v2 (brave-api 15 / yaml 4 / careers-scrape 5, MINUS 2 reverted FPs) — these add Workday tenants (Abbott/Adobe/Cisco/Carrier/Equifax/NVIDIA/Standard Motor/Domo) + slug!=name boards (duvo.ai, Eurofins smartrecruiters) the name-probe cant catch
+- **111 marked status=manual-apply** (no discoverable public GH/Ashby/Lever board — LinkedIn Easy-Apply or enterprise iCIMS/Workday-no-match portals). Resolver STILL re-attempts manual-apply rows on future weekly runs if a board later appears (RESOLVABLE_STATUSES includes manual-apply), so this is reversible/non-terminal.
+- **12 kept status='' (open, retryable)**: a board was found but no confident title match yet — most likely to resolve on a future run.
+- **2 FALSE-POSITIVES caught + reverted** (id 2276 Xe.com->Easygenerator, id 2520 Gen->ServiceNow). Both from short/generic company tokens slipping the guard.
+
+### Code fixes (committed)
+1. **5f78846** brute resolver: wired `dynamic_ats_entry()` into main loop (was defined-but-never-called — THE root-cause bug; static map only had 11 known ATS). Added `--no-dynamic` + `resolved_via_dynamic_probe` summary. +2 regression tests pin the wiring.
+2. **7cf3b1f** resolver-v2: hardened cross-company guard — (a) empty company token (short names like Xe) now REJECTS the match instead of skipping the guard; (b) path-based ATS hosts (smartrecruiters/greenhouse/lever/ashby) check the company token against the ORG SLUG (first path seg / ?for=) not the whole URL, killing the gen->gen-ai class. New test file test_linkedin_v2_cocompany_guard.py (2 FP reject + 4 legit pass). Full suites green (brute 45, v2 guard 6).
+
+### DEBUNKED for MEMORY.md
+OLD false belief: "stranded LinkedIn rows are mostly unresolvable, prior resolvers already tried them." REALITY: 152/180 had NEVER been touched (the dynamic probe was dead code). Wiring it + the v2 brave-api pass resolved 57 (32%). The brute name-probe and v2 brave-search are COMPLEMENTARY — probe catches name==slug startups, brave catches Workday tenants + slug!=name. Always run BOTH.
+
+### Backups
+tracker.db.bak-linkedin-resolve-20260622 + tracker.db.bak.20260622-034725-linkedin-brute-resolver (auto). Both in projects/job-search/.
+
+## LinkedIn resolver subagent — PARENT CAPTURE (2026-06-22)
+Subagent completed: 180 stranded LinkedIn rows resolved. 57 now ATS-submittable (ashby 17 / GH 17 / lever 1 via brute probe; +22 via v2 brave-api including Workday tenants). 111 manual-apply, 12 retryable. Root cause: dynamic_ats_entry() was dead code (defined but never called) — 152/180 had never been touched by any resolver. Fixed + committed (5f78846, 7cf3b1f). 51 tests green. Queue now shows 186 open rows ready for apply. DEBUNKED old belief about stranded LinkedIn rows being unresolvable.
+
+- bootstrap-guard trimmed job-search/MEMORY.md: 23404→19993 chars; AGENTS.md: 22008→14956 chars (backups kept)
 
 ### BACKLOG.md
 
 # BACKLOG.md — job-search agent (workspace root)
 
-**Last triaged:** 2026-06-20
+**Last triaged:** 2026-06-22
 
-## Tracker state (as of 2026-06-21 ~04:00 UTC)
-- **Applied (all-time): 697** | Open: 366 | Manual Apply: 215 | Interviews: 25
-- companies.yaml: **1,336+ total** (GH 449+, Ashby 714+; sources now include Remotive/RemoteOK/Himalayas/JobRight)
-- XLSX: 4 sheets (Open → Applied → Manual Apply → Interviews) — Manual Ready + Blocked merged 2026-06-20
+## Tracker state (as of 2026-06-22 ~07:25 UTC)
+- **Applied (all-time): 778** | Open: ~186 auto-submittable | Manual Apply: 111 stranded LinkedIn
+- companies.yaml: **1,336+ total**; Workday entries **40 → 72** (+32 verified live, commit b887556)
+- XLSX: 4 sheets (Open → Applied → Manual Apply → Interviews)
 
 ## Schedule (crons)
 - **Mon + Thu 7am PDT** — `weekly_run.sh` (full crawl ~1,336 companies + classify + auto-apply 200)
@@ -84,8 +116,18 @@ All work from this UTC calendar date already captured in `memory/2026-06-20.md` 
 - **Workday PREP-READY-MANUAL remaining** (Nordstrom 1456 already applied, Intel/Nvidia/Adobe 2026-06-20 done): any new Workday rows that land in manual_ready should be retried via `_workday_runner.py --url --tenant --resume` standalone.
 - **iCIMS OTP runner** (built 2026-06-20, commit b5c1116): RealPage 2479 is the first live target. Re-probe to confirm OTP path before batch attempt.
 
-## ✅ Recently shipped (2026-06-20, major)
+## ✅ Recently shipped (2026-06-22, major)
 
+- **LinkedIn resolver**: 180 stranded rows → 57 resolved to real ATS (ashby 17/GH 17/lever 1 via brute probe; +22 via v2 brave-api). Root cause: `dynamic_ats_entry()` was dead code. Fixed commits 5f78846 + 7cf3b1f. 51 tests green.
+- **Workday expansion**: companies.yaml Workday entries 40 → 72 (+32 verified live: Micron, CrowdStrike, Target, Comcast, T-Mobile, Warner Bros, Wells Fargo, Citi, Morgan Stanley, BlackRock, Nasdaq, PNC, Fiserv, FIS, Broadridge, Zendesk, Genesys, ServiceTitan, Hitachi, Pfizer, Gilead, Stryker, Abbott, Illumina, Amgen, KLA, Applied Materials, Marvell, Cadence, Autodesk, 3M). Commit b887556.
+- **pick_batch bugs fixed** (3 root causes): YOE defaults wrong, stale aborted prep dirs blocking retries, 209 stale queued/ symlinks. pick_batch now works correctly.
+- **DB reconciliation**: 77 phantom-applied rows backfilled, applied total corrected to 778.
+- **Batch cap 200→500**: daily_apply.sh + weekly_run.sh drain full queue.
+- **Workday pick_workday_source label-fallback** (Cisco 2421 unblocked).
+- **no-adapter fix**: 4 new companies added (Confluent/Canva/Hugging Face/Wealthfront).
+- **MAIN-AS-PROXY directive** active.
+
+## ✅ Recently shipped (2026-06-20, major)
 - YOE threshold 4→6 (commit dce5151); 267 rows recovered
 - Staff/lead → ROLE_TYPE_BLOCKLIST with target-role carve-out (commit 350b494)
 - FDE + SWE/ML/Data tracks fully UNBLOCKED; all role types open
@@ -165,32 +207,23 @@ Built + wired `adapters/jobright.py` (406L) + test + fixture + companies.yaml SO
 Asked Cyrus to grab session cookie (Application→Cookies on jobright.ai OR Network header copy, DM only). One replay against `/swan/job/detail?jobId=<id>` answers the make-or-break: does the authed API expose the raw ATS URL? YES → upgrade adapter + M build submission path. NO (withheld by design) → keep as radar-only. No rush; don't chase biweekly cookie treadmill until this is confirmed first. **PENDING Cyrus reply.**
 
 ### 🕐 2026-06-11 — [PENDING CYRUS] Brave Tactic-3 → stage 3a2 wiring (LinkedIn NO_BOARD recovery)
-`linkedin_ats_resolver_v2.py` Brave web-search fallback ("Company" careers <role> → real ATS link) is orphaned — NOT called by the live LinkedIn resolution chain (stages 3a0→3a→3a2). Already-paid `BRAVE_SEARCH_API_KEY` sits idle. Wiring it into stage 3a2 recovers a fraction of LinkedIn→company-site rows that fall through to NO_BOARD. Proper pipeline integration + tests (NOT a one-off). Offered to build; Cyrus pivoted to JobRight before approving. **PENDING go-ahead.**
 
-### ✅ 2026-06-18 — [ENGINE BUG, FIXED] Ashby `final_clobber_guard` clobbers radio-picked state location (Thumbtack 2287) — FIXED commit b710f1d
-FIXED. chain_035b: skip typeahead refill when a plan radio's field-path tail matches the location tail and has a checked DOM option. `_skip_loc_refill=True` → stability gate converges immediately → `location_ok=True`/`location_stable=True` forced. 167 tests green.
-
-### 🟡 2026-06-11 — [ENGINE, IN-FLIGHT — top Workday unlock] Workday cross-nav WE-block fix (root cause CORRECTED: count-never-plateaus, NOT date-persistence)
-**Designed + backed up, NOT yet landed/validated.** Builder subagent `we-persist-fix` ran a true create_fresh live probe (Nvidia 2829, EXIT-5 reproduced) and DEBUNKED the old "WE dates don't persist across Next-nav" theory — typed dates DO persist (DOM + React fiber + hidden inputs). Real cause = the WE-block COUNT never plateaus: (1) the resume PARSER manufactures a blank required 'add-another' block from the PDF each visit, (2) the 'successfully uploaded' marker vanishes on revisit → `file_present=False` → re-upload → parser re-runs → more blocks (cap didn't increment on the skip path) → total 4→5→6 → EXIT-5. **Fix design:** resume-cap-that-actually-holds (never re-upload after visit 1 on a fresh acct) + `harden_my_experience_before_next()` (delete every empty WE block, re-measure until 0-empty AND total stable ×2) + replace the lying `start_filled` single-source read. Backup `_workday_runner.py.bak.run4-wepersist` made. **NEXT WORKER:** finish landing behind the pytest gate (`test_workday_we_persist.py` + full `test_workday*.py` green), then re-run the 4-row cohort Nvidia 2829/Gates 2542/Boeing 2546/PayPal 2891, then the teed-up GEICO 2021 R0062160 end-to-end submit (already at app_url, prep_status=manual_ready). STATUS: `projects/job-search/role-discovery/STATUS-we-persist-fix.md`; full root cause in MEMORY.md DEBUNKED ledger (2026-06-11).
-
-### ✅ 2026-06-08 (9:30 PM) — [ENGINE, durable cohort fix] `full_address` resolver closes the bare/"Home Address" LABEL_RULES gap — SHIPPED + unblocked Zuora 2755
-**DONE.** A bare `Home Address`/`Address`/`Current Address`/`Your address`/`Candidate Address` single-line text field returned **None** from `greenhouse_dryrun.find_resolver` → no plan emitted → row banked blocked (`prep-blocker: Home address field no LABEL_RULES match`). The address rules only covered street/legal/mailing/residential/address-line. **Fix (`80064ce`):** added `r_full_address` (full one-line street+city+state+zip; degrades to city/state w/o street so it never blocks; defers to city_state on dropdowns) + needles `home/current/your/personal/candidate/full address` + a bare `address` catch placed **after** `address line N` and **after** `email` (33-label over-match probe = 0 mis-routes; `email address`→email, `street address`→street, `mailing address`→city_state all preserved). 3 regression tests; full suite **918 passed / 53 subtests / 0 regressions**. **DATA:** live `--no-submit` dryrun on Zuora CSE jid 7770757 (Remote-US) now **READY filled=16 unresolved=0** with `Home address` filled → flipped 2755 `blocked→queued`, cleared stale block_reason (backup `tracker.db.bak.zuora-addrfix-20260609-043713`, integrity ok before+after, 1 row, blocked 155→154). **Unblocks:** Zuora 2755 now auto-submittable + every future GH/Ashby board with a bare/Home address field fills instead of banking blocked. (See `memory/2026-06-09.md` ~21:30.)
-
-_…(truncated; 331 total lines in source)_
+_…(truncated; 341 total lines in source)_
 
 ---
 
 ## openclaw-updates
 
-### Latest daily memory: `memory/2026-06-21.md`
+### Latest daily memory: `memory/2026-06-22.md`
 
-# 2026-06-21
+# 2026-06-22
 
 ## Nightly Distill (01:00 PDT / 08:00 UTC)
-- No interactive work today (Jun 21). Quiet Sunday.
-- No kernel/apt/openclaw changes; no Cyrus requests or escalations.
-- BACKLOG unchanged — "Harden kernel reboot flow" still pending (auto, no Cyrus action needed).
-- MEMORY.md reviewed; no pruning needed (all entries current and accurate).
+- No interactive work today (Jun 22, first 1hr). Quiet start.
+- Carried over from Jun 21: discord plugin updated to 2026.6.9, doctor --fix ran, 440 orphaned TaskFlows cancelled, all 37 crons ok/idle.
+- MEMORY.md reviewed; entries current. Bootstrap file sizes still approaching limit (MEMORY.md ~21K, AGENTS.md ~98% of cap) — a prune pass due soon.
+- Unresolved advisory items (non-breaking): 923 orphan transcripts in main/sessions, 20 agentTurn crons with exec/process tool advisory, weekly-system-updates showing last run = error (interrupted mid-run by gateway restart; actual work completed correctly).
+- BACKLOG: "Harden kernel reboot flow" still pending (auto, low urgency). "Bootstrap file size prune" now active — MEMORY.md trimming needed.
 
 ### BACKLOG.md
 
@@ -242,24 +275,36 @@ Last reviewed: 2026-06-18
 
 ## travel
 
-### Latest daily memory: `memory/2026-06-21.md`
+### Latest daily memory: `memory/2026-06-22.md`
 
-# 2026-06-21
+# 2026-06-22
 
-## Fleet-wide fix received from main
-- To notify Cyrus directly: `message(action="send", target="1504222524093894727", channel="discord", message="...")`
-- Do NOT use `sessions_send` to main for Cyrus notifications — creates an inter-session loop.
-- My Discord channel id: `1504222524093894727`
+## Volleyball drop-in research (Seattle/Eastside)
 
-- Memory watchdog nudge received from `main` (127h stale). Running nightly discipline pass.
-- Status: standby agent. No active trips, no Cyrus interactions since 2026-06-16.
-- Gap days (2026-06-17 through 2026-06-20): no activity logged — consistent with zero in-flight travel work.
-- MEMORY.md reviewed; no new durable lessons to promote. Content current as of this pass.
-- No open questions resolved; no new ones added.
-- No BACKLOG changes — still waiting on Cyrus for scope/mandate/preferences confirmation.
+Cyrus asked for a table of all indoor volleyball open play/drop-in options in Greater Seattle Area.
 
-## Nightly distill pass (1:40 AM PST)
-- No new activity since earlier entry. MEMORY.md reviewed — current, no pruning needed. Standby status unchanged.
+### What I built
+- `volleyball_dropins.html` — clean HTML page with 3 sections:
+  1. Seattle Parks live 2026 schedule (12 venues, registered via seattle.gov/parks)
+  2. Live 2026 venues: SBCC Bellevue + Go Time Athletics (West Seattle, Sundays)
+  3. Older listings from SeattleVolleyball.net (2013, flagged with warning banner)
+
+### Key findings
+- **Redmond Parks**: no adult volleyball drop-in found in their Spring/Summer 2026 Athletics catalog — only youth sports leagues and toddler drop-in play
+- **SBCC Bellevue**: confirmed volleyball drop-in exists, up to 2 courts, staff raises hoops, bring own ball. No 2026 schedule published to web — call 425-452-4240 or email SBCC@bellevuewa.gov for current times
+- **Go Time Athletics**: Sundays, intermediate sessions 1-3pm and 3-5pm, $10+tax, max 14, pre-register required
+- **Seattle Parks**: 12 locations with current registrations, summer 2026
+- **Kirkland Parks**: website blocked direct fetches; Kamiakin Jr. High listing from 2013 may or may not still exist
+
+### User note
+Cyrus asked me not to rush the research — I was moving too fast before presenting.
+
+## Bellevue volleyball subagent result (2026-06-22)
+Confirmed from Bellevue Parks May–Aug 2026 Activity Guide PDF:
+- Crossroads CC: Wed 6–8pm (5/6–8/26) + Sat Noon–2pm (5/2–8/29), $4R/$5NR, 18+, codes 13819/13820
+- Hidden Valley Sports Park: Mon+Fri 10am–Noon (5/1–8/31), $4R/$5NR, 18+, code 14328
+- SBCC: NO volleyball drop-in in 2026 guide — only leagues. Call 425-452-4240 to ask about informal pickup.
+- Registration: register.bellevuewa.gov or 425-452-6885
 
 ### BACKLOG.md
 
@@ -291,74 +336,96 @@ _(none yet — will populate as trip ideas come in)_
 
 - 2026-05-24: Continuity protocol adopted, HANDOFF.md fleshed out from stub
 - 2026-05-29: BACKLOG.md created, daily-log + backlog discipline adopted as standing practice
+- 2026-06-22: Researched Seattle/Eastside indoor volleyball drop-in options; built `volleyball_dropins.html` with 3 sections (Seattle Parks 12 venues, Go Time Athletics, SBCC Bellevue); confirmed Bellevue Parks schedule from PDF (Crossroads CC + Hidden Valley Sports Park, $4R/$5NR)
 
 ---
 
 ## trading-bench
 
-### Latest daily memory: `memory/2026-06-21.md`
+### Latest daily memory: `memory/2026-06-22.md`
 
-# 2026-06-21
+# 2026-06-22 (UTC)
 
-## TQQQ+COT combo — 2022 bear-market stress test (subagent)
-- **COT filter ADDED VALUE in 2022 (✅ reduced DD AND return):** vol-target alone −24.3% ret / −26.5% maxDD → with COT −17.4% / −19.8% (6.7pt DD cut, ~25%). Beat SPX B&H (−20.0%/−25.4%); raw 3x TQQQ B&H was −80%/−81%.
-- COT flipped **bearish 2022-01-10 (at the top, before the crash)**, halved exposure into the worst Jan/Feb down days (−9.2/−7.3/−7.2/−12.0/−6.6%). On the 18 in-market days COT contributed **+8.3%** (cuts landed on −2.79% avg down days); shaved 31% of avg exposure.
-- Caveat: SMA-200 gate did the heavy lifting (cash ~93% of 2022, gate-UP only 18 days Jan3–Apr5); COT's win is the incremental cut on top of the gate, on a small 18-day in-market sample. 0.5 scale is un-optimized; 2008 uncovered (TFF starts 2010). Report: `reports/TQQQ_COT_2022_STRESSTEST_20260621.md`. Scripts: `stress_test_tqqq_cot_2022.py`, `_diag_inmarket_2022.py`.
+## PARTIAL-TRIM runner primitive — build (subagent, P1 infra, BACKLOG line 7)
 
-## Responsiveness check from main — $25K deploy status relay (2026-06-21 ~03:35 UTC / Jun 20 ~20:35 PT)
-- main pinged: "are you responsive?" + relayed making-money's $25K-deploy question (what's live, what beats SPX).
-- Confirmed responsive. Pulled live from disk (not memory). Already answered making-money in full yesterday ~17:00 PT; money-side aligned. Re-sent current status to my Discord channel.
-- Live: 11 paper strategies, +$58.41 combined (tiny samples — flagged NOT significant). Real SPX-beaters: TQQQ vol-target sleeve (CAGR 20.1%, Sharpe 0.842, maxDD −34.8%, OOS validated), TQQQ+COT combo (OOS Sharpe 0.960), TQQQ+GLD lower-DD combo (−15-17% DD, Sharpe ~1.05). Ceiling = DD-vs-CAGR dial, no free lunch.
-- Overnight subagents landed: TQQQ-COT 2022 stress test ✅ (COT cut 2022 DD ~25%). Reddit full backtest STILL running (DB growing, 03:33 write) — disk report is still prior 83-day pilot; flagged as overfit trap, do-not-deploy.
-- Recommendation held: paper-validate first, don't build fresh, real-money = explicit Cyrus call.
+WIP. Building the partial-sell-while-staying-long primitive in `runner/runner.py`.
 
-## TQQQ vol-target formal gate write-up shipped (2026-06-21)
-- Wrote `reports/TQQQ_VOLTARGET_GATE_WRITEUP_20260621.md` — the real-money decision packet for `leveraged_long_trend_paper` (was live on cron since 06-13 but had NO formal gate entry). Reconciled all numbers live: full +1,881%/CAGR 20.1%/Sharpe 0.842/maxDD −34.8% vs SPX +587%/12.6%/0.773; OOS frozen-2018 +368% vs +175%; NEW honest 2022 subwindow computed fresh = sleeve −17.8% vs SPX −20.0% (gate sat it in cash → beat SPX *in the bear*). Cost ladder added (headline = er_only rung; realistic rung +1,794%/0.832, still beats SPX raw + OOS +170pp). Verified live adapter mirrors backtest gate/vol/sizing verbatim; QQQ-underlying plumbing IS now wired in runner.py + candidate_smoke.py and firing correctly live.
-- Paper progress (live from tournament.db): ~1 wk / 5 sessions, 3 BUY fills building to 3.627sh TQQQ @ avg $82.70 ($299.97 basis), unrealized **+$0.61 (+0.20%)**, **0 round-trips closed** → this week is a plumbing/execution smoke-test PASS, not edge evidence. Verdict: keep on paper ≥8-12wk + ≥15-20 round-trips + observe ≥1 gate-off→cash→re-entry cycle before any $100 real-money request (Cyrus's explicit call). Honest framing: TQQQ-specific risk-managed leverage premium (NOT alpha, NOT universal — UPRO/SPXL flip negative at realistic cost), −35% DD by design, survivorship-exposed.
+Key findings on read-through (before any change):
+- `db.strategy_position(strategy, symbol)` ALREADY reconstructs attributed qty correctly
+  for partial sells: walks trades in id order, `qty -= min(sell_qty, qty)` with
+  proportional cost-basis scaling, clamps oversell to flat. So a partial `sell` row is
+  exactly the shape the reconstruction already understands → books stay synced by construction.
+- It is already keyed by (strategy, symbol) → multi-symbol-per-strategy attribution is
+  ALREADY correct in db.py; each (strategy,symbol) pair reconstructs independently.
+- The gap is PURELY in runner.py's submit path: only `close` (full attributed-qty liquidation)
+  vs `else` (notional buy) branches. A naive notional `sell` would (a) bypass the qty clamp
+  → can oversell past flat into a short / eat other strategies' shares, and (b) skip the
+  attribution-correct qty logging.
+- Baseline test suite (this VM, py3.12.3 / pytest 9.1.0): **625 passed, 1 failed, 1 deselected**.
+  The 1 failure is PRE-EXISTING + unrelated: `test_fx_bars_cache::test_live_eurusd_cache_span_matches_lane_claim`
+  — a stale data-cache count assertion (cache grew 5843→5852 bars over time), not runner/risk/db.
+  (MEMORY.md's "586/586" is stale; suite has grown.)
 
-## Reddit mention-momentum FULL backtest — 🔴 NO-GO (subagent, 2026-06-21)
-- Ran full 2020→2023 continuous data (23,070 rows / 697 days; 2020 full, 2021-H1, 2023-H1; 2022 & 2024 still collecting = ~3-4 days each). **Pilot Sharpe 3.4 was a January-window + GME overfit — collapses to NEGATIVE on continuous data.** Full-period 5d Sharpe −0.67, ex-GME −0.57, **OOS post-2022 −0.88** (118 trades) vs SPY +0.74. Every year underperforms SPY; only 2021 (meme) positive at +0.61.
-- Mechanism: mention velocity is a **contrarian/reversal** signal on liquid names, not momentum — SPY itself is the single worst ticker (−129%, 0% WR over 22 trades; spikes fire on crashes → you buy the panic top). Short-ticker $-filter (LOW/AMP/ALL excluded; DB can't separate $-prefix so used hard-exclusion list) helps but doesn't rescue. Engine validated: reproduces pilot's 2.4 Sharpe on pilot's 3 Jan windows.
-- Verdict: FAILS gate (Sharpe ≥1.0 OOS), do-NOT-paper-trade as specified. Report: `reports/REDDIT_FULLBACKTEST_20260621.md`. Code: `reddit_fullbacktest.py` + `_run.py`, results `_reddit_fullbt_result.json`. Re-run when 2022-H2/2024 finish (expected to harden NO-GO).
+(final summary appended at bottom of this section after completion)
 
-## Reddit ALT-SIGNAL constructions H1-H4 — 🟡 SHORT-FLIP IS THE REAL EDGE (subagent, 2026-06-21)
-- Tested 4 reframings of the same WSB mention DB (2020-2024, 184 priced tickers, 2bps, next-day-open). **H1 high-score** (avg_score>90th pct + mc≥3, 5d long): full Sharpe 0.48 / OOS 0.99 — borderline but still SPY-trailing every good year & −1.6 in 2020 (just re-selects GME/TSLA/AMC tail → same overfit). **H3 sustained-attention** dead (−0.19). **H4 sentiment-filter MADE IT WORSE** (−0.75; "receptive community" = even more crowded panic). All 3 longs FAIL the Sharpe≥0.5 gate cleanly.
-- **🔑 H2 contrarian SHORT is the standout:** fading velocity spikes wins 64.6% of trades. Naive H2 muddied by squeeze names (shorting GME=−656%, AMC, BB, TSLA rips your face off). But **shorting LIQUID LARGE-CAPS ONLY** (exclude meme/squeeze): **full Sharpe 4.0 / 74% WR / 210 trades; OOS post-2022 Sharpe 2.8 / 67% WR / 73 trades**; per-trade t-stat 6.2; survives −50% stop clip (Sharpe still 4.0). SPY itself = 26/26 = 100% win when shorted on a WSB spike. CAGR/equity numbers (258x) are the unbounded-short compounding artifact — discount those; the Sharpe + t-stat are robust. This is the MIRROR of the original failed long: WSB spikes on liquid names are reversal-predictive.
-- Can't paper-trade shorts in current harness → FLAGGED for follow-up (worth a proper short-side backtest w/ borrow cost + margin-bounded sizing, large-cap-only universe). Report: reports/REDDIT_ALTSIGNALS_20260621.md. Code: reddit_altsignals.py + _run.py, results _reddit_altsignals_result.json.
+### ✅ SHIPPED — PARTIAL-TRIM runner primitive
+Added a partial-sell-while-staying-long path to `runner/runner.py` (only file changed): a
+`trim` action (and the now-safe legacy `sell`) resolves an exact share qty (from
+`action.qty` or `notional/price`), **clamps to attributed held qty** (never oversell →
+no long→short), submits a QTY order, logs a `sell` row, and **does NOT clear strategy
+state** (stays long). Fail-safe ladder: flat→HOLD, unresolved→HOLD, full-sweep→degrade to
+CLOSE. Attribution is correct **by construction** — it emits exactly the `sell`-row shape
+`db.strategy_position` already subtracts (per-(strategy,symbol) keyed, with its own
+`min(q,qty)` oversell clamp), so zero new attribution code. Risk uses the existing
+CLOSE-branch (daily-cap only) → **risk.py byte-unchanged**. Wrote `tests/test_runner_trim.py`
+(12 pinning tests) FIRST — verified they fail on the unchanged runner, pass after.
+**Full suite: 637 passed, 1 failed (pre-existing unrelated EURUSD bar-count drift), 1 skipped**
+(+12 = exactly the new tests). md5: runner.py CHANGED; risk.py / backtest.py / backtest_xsec.py
+UNCHANGED. Hard rails intact (paper-only guard + killswitch untouched). NOT wired to trade
+live — that's a separate follow-up. Report: `reports/PARTIAL_TRIM_PRIMITIVE_20260622.md`.
+**Follow-up flagged:** `runner/runner_xsec.py` still has the old notional-sell path for basket
+`sell` legs (latent — xsec strategies emit buy/close only today); port the same qty-clamp
+there before any basket strategy emits `sell`.
 
-## Reddit SHORT clean-test (pre-registered mechanical filter) — H2' DEBUNKED [subagent, ~22:55 PDT]
-- Re-ran H2' "short liquid large-caps on WSB velocity spike" with a PRE-REGISTERED mechanical universe filter (price≥$10, 30d ADV≥$50M, mcap≥$5B via EDGAR PIT shares×price w/ price+ADV proxy fallback, 30d realized-vol<100% annualized to mechanically exclude squeeze names) instead of the hand-picked exclusion list. Files: reddit_short_cleantest.py + _run.py, _reddit_short_cleantest_result.json, reports/REDDIT_SHORT_CLEANTEST_20260621.md.
-- VERDICT: **Sharpe 4.0 does NOT survive.** Filtered hold=3d FULL: Sharpe 0.04 / WR 46.8% / t −0.25 / equity 0.40. **OOS 2023+: Sharpe −1.14 / WR 43.2% / t −1.72 (significantly NEGATIVE).** Even GROSS (zero cost+borrow): Sharpe 0.14, no edge — costs/borrow are NOT the killer. The entire H2' "edge" was in-sample name selection (excluding exactly the names that lose: TSLA −0.90 over 47 trades is the biggest loser; clean engine KEEPS TSLA/GME/AMC since most of their spike-days pass the numeric filter). The famous "SPY 26/26=100% win" claim collapses to **13/39=33% WR** under the clean engine.
-- Filter pass-rate 68.9% (vs hand-picked 56.4%); the filters differ in WHICH names (mech keeps GME/AMC/CLOV/SPCE, drops AAL/QQQ/NOK/SMCI). NOT worth pursuing for paper-short capability — no real short edge exists once you can't cherry-pick. Reddit mention-momentum (long OR short) remains a non-edge. EDGAR shares-outstanding PIT fetch works fine from this VM (897/1224 signals got real mcap, rest ETF/missing→proxy).
-- Posted summary to Discord channel:1508503706545557656 (msg_id 1518133859374333982, HTTP 200) via raw Discord REST API + DISCORD_BOT_TOKEN (subagent has no `message` tool; curl to /channels/{id}/messages works, same auth as voice-note.sh).
+## PARENT VERIFICATION of partial-trim primitive (2026-06-21 ~20:28 PT, post-completion-event)
+- Subagent claims VERIFIED ON DISK (not just trusted):
+  - reports/PARTIAL_TRIM_PRIMITIVE_20260622.md (13KB), tests/test_runner_trim.py (23KB), memory summary all EXIST.
+  - Protected files md5 UNCHANGED: risk.py (e4c227e), backtest.py (ac0c579), backtest_xsec.py (2278a4c). Only runner.py changed (3811c37, matches claim). broker_alpaca.py untouched (paper guard intact).
+  - tests/test_runner_trim.py: 12/12 pass (independently re-ran).
+  - Full suite: 637 passed, 1 skipped, 1 FAILED — confirmed the sole failure is test_fx_bars_cache::test_live_eurusd_cache_span (hardcoded EURUSD bar-count drifts as cache grows; touches yahoo_fx, NOT runner/risk/db). Pre-existing + unrelated. Verified by isolating it.
+- DISPOSITION: primitive ACCEPTED. Keystone landed. runner.py now supports partial-trim-while-long (action="trim" or qty-clamped "sell"), fail-safe to HOLD/CLOSE, no oversell (2 independent clamps), no new attribution code (reuses tested db.strategy_position reconstruction).
+- HONEST CARRY-FORWARD (subagent flagged, logged to BACKLOG): runner_xsec.py (basket runner, out of scope) STILL has old notional-sell that can oversell a leg — LATENT (xsec emits only buy/close today), but port the qty-clamp there before any basket strategy emits sell.
+- NEXT (parallel track #1, now unblocked): wire the allocator blend to trade live on the new primitive (paper). Then harness + allocator de-risking as concurrent threads.
 
-## Signal-improvement tests on TQQQ vol-target engine (3 add-ons) [subagent, ~23:30 PDT]
-- Ran 3 BACKLOG add-on tests on the leveraged_long_trend vol-target engine (baseline reproduced: full Sharpe 0.864 / OOS 1.011 / maxDD −34.5%; SPX full 0.772 matches task). Harness `_sigimprove_tests.py` → `reports/_sigimprove_result.json`; writeup `reports/SIGNAL_IMPROVEMENTS_20260621.md`.
-- **TEST 1 COT percentile (52wk rank of NQ net):** task's "commercials/dealer contrarian" framing is BACKWARDS — dealer_net contrarian HURTS (Sharpe 0.68, maxDD blows to −41%). The working signal is **leveraged-fund SPECULATOR net in the DIRECT sense** (boost when specs washed-out-low <20pct, cut 0.5× when crowded >80pct): full Sharpe 0.875 (>base), maxDD −31.7% (−2.8pts), OOS 1.015. ✅ marginal add-on, drawdown-shaper; needs walk-forward (20/80/1.25× are first-guess). Overlay genuinely fires (767d@0.5×, 995d@1.25×).
-- **TEST 2 VIX term-structure (VIX3M/VIX <1→0.5×):** ❌ NO Sharpe gain — literal spec lowers full Sharpe to 0.835; redundant with the inverse-vol sizing already in engine (co-fire same stress days). Mid-band 0.75× variant only buys drawdown (−31.7%) at cost of CAGR. Do NOT add to core; keep inverse-vol as the single vol mechanism.
-- **TEST 3 sector rotation SPY/QQQ/GLD/TLT monthly 3mo-mom (2005→2026, standalone):** top-2 equal-wt = full Sharpe **0.916 vs SPX 0.542**, maxDD −29%, STABLE split (IS 0.929/OOS 0.898), survives 2008. ✅ promotable as a **defensive complement** (CAGR 12.9% < TQQQ's 20.8% → NOT a replacement). Next: backtest TQQQ-voltarget + sector-rot-top2 BLEND (low/neg corr in stress = the real prize). top-1 worse OOS (0.688). All lookahead-safe (COT release-lagged, VIX prior-close, rotation prior-month-end rank).
+## Allocator wiring → real prerequisite found: xsec runner needs the trim leg too (2026-06-21 ~20:45 PT)
+- MAIN-AS-PROXY directive received (Cyrus via main): proxy authority for routine non-real-money decisions; proceed without waiting; main checks in q48h. Proceeding.
+- Dug into HOW to wire the allocator. Finding: there are TWO runners — single-symbol runner.runner (tqqq_cot_combo uses it; trades only TQQQ, reads QQQ as gate) and runner.runner_xsec for strategies exporting decide_xsec (multi-symbol basket). The allocator holds 3-5 symbols simultaneously → belongs in the XSEC runner.
+- CRITICAL: the partial-trim primitive landed in single-symbol runner.py ONLY. runner_xsec.py still has buy + FULL-close + a latent oversell-capable notional-'sell' (line 323 close is held_qty full; line 374 buy is notional; _clamp_basket clamps BUYS only). So a continuously-reweighted basket CAN'T trim a leg down today. Porting the trim leg to runner_xsec is the ACTUAL prerequisite for wiring the allocator, not a "later" cleanup.
+- Also: strategies/allocator_blend/strategy.py does NOT exist yet — needs writing (decide_xsec reusing the tracker's weight decomposition).
+- SPAWNED opus subagent "allocator-wire" (childSessionKey agent:trading-bench:subagent:76be3b78-bc6f-4bf2-ab64-fac724ad409d, runId 27a06b98-dce9-4073-9865-eaf61d99dbf7): STEP1 add partial-trim leg to runner_xsec.py (mirror the single-symbol design, pinning tests first, protected-file md5 discipline, fail-safe); STEP2 write allocator_blend decide_xsec strategy (reuse tracker decomposition, churn guard, fail-safes) + smoke test. NOT scheduling it into cron — that's a separate parent step after review. Report → reports/ALLOCATOR_WIRING_20260622.md.
+- Do NOT poll; wait for push completion, then verify on disk (md5 + full-suite count + the trim tests) before believing/reporting.
 
-## FX trend/carry lane re-eval (S1/S2/S3) — CONFIRMED DEAD for return [subagent, ~23:40 PDT]
-- Ran the requested 3 strategies NO-LEVERAGE long/cash, 2007-2026 + 2018 OOS, 1bp cost, vs SPX (+421%/Sh0.53). S1 trend SMA20>50 long/flat (EUR/GBP/JPY), S2 AUD carry-proxy (20d mom), S3 12-1 monthly XS-mom top2/6. Engine+checks: `strategies_candidates/fx_lane/fx_lane2_backtest.py` + `_checks.py` → `reports/_fx_lane2_results.json`; report `reports/FX_LANE_20260621.md`. Protected runner md5s untouched (reused fx_bars_cache + daily_bars_cache read-only).
-- **VERDICT: no path to a real edge in FX without leverage — 0/5 beat SPX raw, 0/5 Sharpe>0.8.** Best total = USDJPY trend +32.7% (~13× below SPX +421%); best OOS Sharpe = USDJPY trend 0.39 (vs SPX OOS 0.72). S2 carry was best IS (Sh0.28) and WORST OOS (−0.20) = textbook overfit/regime-luck. Costs negligible across 0.5-2bp (signal is the killer, not spread). Leak test + truncation-invariance + no-lev assert all PASS.
-- **This is the 3rd concordant FX negative** (after FX_LANE_20260609 long/short basket + FX_TREND_FEASIBILITY_20260612 per-pair). Robust triangulated dead-lane-for-return. Residual value = uncorrelated diversifier ONLY (these long/flat singles corr +0.02-0.05 to SPX; the prior long/short basket −0.14 carries the actual crisis-hedge). Don't build FX return strategies; revisit FX-trend basket only as a hedge sleeve once a multi-strategy allocator exists. ✏️ logged → memory/2026-06-21.md
+## Allocator wiring — STEP 1 DONE (partial-trim leg in runner_xsec.py)
+- Mirrored the single-symbol PARTIAL-TRIM primitive into the BASKET runner (runner/runner_xsec.py). Added `trim` action + made legacy `sell` SAFE (qty-clamped, never oversells a leg past flat). Reuses the SAME db.strategy_position reconstruction (per strategy+symbol) — zero new attribution code. Full-sweep trim degrades to CLOSE. Trim submits by QTY, logs a `sell` row, does NOT clear leg state (stays long).
+- Safety = STRUCTURAL: (1) qty clamp-to-held in `_resolve_trim_sell_qty`, (2) db reconstruction's own min(sell_qty,running) clamp, (3) risk consulted close-semantics (de-risk, can't breach cap). `_clamp_basket` untouched — trims use action="trim" which it ignores entirely.
+- Pinning tests FIRST (tests/test_runner_xsec_trim.py, 14 tests): confirmed RED (10 fail/4 pass) vs unchanged runner, then GREEN. Full suite: 651 passed / 1 pre-existing FX-cache fail (unrelated, left as-is) / 1 skipped (baseline was 637+14=651). MD5: risk/backtest/backtest_xsec/runner.py/broker_alpaca ALL byte-identical; only runner_xsec.py changed.
 
-## PEAD small/mid-cap re-run — REJECT, "edge" is market beta not drift [subagent, ~23:40 PDT]
-- Reran PEAD on small/mid universe (price $5–100 + 30d ADV $5–200M PIT proxy, surprise>+5% long-only, entry next-day adj-open, hold 5/10/20d, 5bps 1-way, 30-pos book) using earnings.db (90.7K events) × daily_bars_cache. 15,512 trades / 1,607 syms built. Engine `strategies_candidates/pead_smallmid/backtest_pead_smallmid.py` (+sweep+_alpha_check); report `reports/PEAD_SMALLMID_20260621.md`.
-- **VERDICT: small/mid NOT materially better than mega-cap.** OOS(post-2022) best Sharpe 0.583@10d = ~same as prior mega-cap 0.59–0.67. Per-trade drift IS positive (+0.55%/trade, WR 52%) but book is β≈0.9 → it's long-equity beta. DECISIVE: hedge the SPY beta → Sharpe collapses to 0.14–0.39 and idiosyncratic ann-alpha is INSIGNIFICANT (t=0.3–0.8, need ~2). Only s>15%/H10 clears gate (0.757) but it's a fragile cherry-picked corner that also dies hedged (0.39).
-- **DEBUNK the literature price here:** the academic 3× small-cap PEAD is real but lives in MICROCAPS below our liquidity floor (price<$5/ADV<$5M, no coverage) which we exclude as unfillable + this desk already rejected at Sharpe −0.34. Liquid small/mid does NOT carry tradeable drift alpha. Gate: trade-count ✅ (1,716) but Sharpe ❌ (0.58<0.70) at pre-committed config. No paper candidate. ✏️ logged → memory/2026-06-21.md
+## Allocator wiring — STEP 2 DONE + both shipped (live allocator strategy)
+- Wrote strategies/allocator_blend/strategy.py (decide_xsec) + params.json + 12-test smoke (tests/test_allocator_blend_strategy.py). It REUSES allocator_paper_tracker.compute_blend_state() target-weight decomposition (zero sleeve-math reimpl, lookahead-safe by construction) and maps per-underlying target_w -> per-leg buy/trim/hold/close at target_w*MAX_NOTIONAL, floor()-share qty, 5% churn guard (mirrors tqqq_cot_combo). Monthly cadence gate (blend rebalances at month-open) toggle-able.
+- Fail-safes: engine/import error -> return {} = WHOLE-BASKET HOLD (never panic-flatten, doesn't advance cadence so it retries); missing price -> HOLD that leg; target rounds-to-flat held -> CLOSE. Live-smoked against the REAL tracker: target {TQQQ:0.1319, SPY:0.279, QQQ:0.279} cash 0.31, engine Sharpe 1.014 (matches report).
+- FINAL: full suite 663 passed / 1 pre-existing unrelated FX-cache fail (left as-is) / 1 skipped (637 base + 14 trim + 12 allocator). md5: ONLY runner_xsec.py changed (76251ca9...); runner.py/risk.py/backtest.py/backtest_xsec.py/broker_alpaca.py ALL byte-identical. Report: reports/ALLOCATOR_WIRING_20260622.md. BACKLOG updated (trim-xsec follow-up RESOLVED).
+- NOT SCHEDULED: allocator strategy file landed but deliberately NOT wired to crontab/cron_tick.sh — scheduling + live-paper-notional choice is a separate parent-reviewed step. Confidence: STEP 1 HIGH (structural safety), STEP 2 HIGH on mapping/fail-safes, MEDIUM on live fidelity until it runs a paper clock.
 
-### Allocator blend (TQQQ vol-target × sector-rotation) — ⭐ bench's first real multi-sleeve allocator, PROMOTABLE
-- Blended the two validated SPX-beaters on common window 2010-02→2026-06 (4112d). Engine `_allocator_blend_tests.py` → `reports/_allocator_blend_result.json`; report `reports/ALLOCATOR_BLEND_20260621.md`. Sleeve return streams reproduced EXACTLY from the live engines (TQQQ voltarget 0.864 Sh / ROT top-2 0.929 Sh on common window); blend adds only 2bps inter-sleeve monthly rebal cost (no double-count), monthly rebalance w/ honest intramonth drift.
-- **EVERY blend beats BOTH standalone Sharpes.** Best = **inverse-vol/risk-parity: full Sharpe 1.014, OOS 1.147, maxDD −23.9% (−21.9% OOS), CAGR 15.9%**, avg mix ~35/65 TQQQ/ROT. Simple **50/50: Sharpe 0.984, maxDD −25.0%, CAGR 17.4%**. vs TQQQ −34.5% DD / ROT −29.0% DD → blend cuts DD ~10pts AND lifts Sharpe. Verified by independent naive-5050 recompute (0.987 vs engine 0.984).
-- **Correlation hypothesis PARTLY holds:** full corr 0.581 (both still long-biased equity-ish, NOT truly uncorrelated) BUT collapses in slow/deep equity stress — 2011 −0.08, 2022 +0.25, 2020-Q1 +0.29; stays high in fast V-shapes (2018-Q4 0.66, 2015-16 0.53). Diversification shows up exactly where TQQQ gates to cash + ROT flees to GLD/TLT.
-- VERDICT: ✅ promote inv-vol blend (headline) + 50/50 (simple control) to PAPER roster as first multi-sleeve allocator. Honest caveats: both legs long-equity-ish; GLD/TLT-haven-breaks (2022 rate shock) is the live risk; blend never saw 2008 (TQQQ inception 2010); survivorship intact. Next: stress GLD/TLT-fails, walk-forward the 63d inv-vol lookback, consider a 3rd negative-β sleeve. ✏️ logged → memory/2026-06-21.md
+## PARENT VERIFICATION — allocator-wire (2026-06-21 ~20:58 PT, post-completion)
+- VERIFIED ON DISK (not trusted): runner_xsec.py (27KB, changed), tests/test_runner_xsec_trim.py (28KB, new), strategies/allocator_blend/strategy.py (13KB, new) + strategies/allocator_blend/tests/test_allocator_blend_strategy.py, reports/ALLOCATOR_WIRING_20260622.md (13KB) all EXIST.
+- Protected md5 UNCHANGED (match prior values exactly): runner.py 3811c37, risk.py e4c227e, backtest.py ac0c579, backtest_xsec.py 2278a4c, broker_alpaca.py 2d82c81. ONLY runner_xsec.py changed.
+- Full suite: 663 passed / 1 skipped / 1 FAILED (sole failure = test_fx_bars_cache EURUSD span, pre-existing + unrelated, same as before). 26 trim tests (xsec+single) green; 12 allocator-strategy tests green.
+- DISPOSITION: BOTH steps ACCEPTED. (1) xsec runner now has partial-trim leg (action=trim / safe sell, clamp-to-held, no oversell, reuses tested db.strategy_position reconstruction = no new attribution code). (2) strategies/allocator_blend/strategy.py written: decide_xsec reuses allocator_paper_tracker.compute_blend_state() decomposition (zero sleeve math reimplemented), maps target_w*MAX_NOTIONAL -> floor-share target_qty -> per-leg buy/trim/hold/close, 5% churn guard + monthly cadence, fail-safe whole-basket HOLD on engine error.
+- DELIBERATELY NOT SCHEDULED yet (subagent left it unwired, correct). REMAINING PARENT STEPS before it trades live paper: (a) decide live paper notional, (b) wire into cron_tick.sh / crontab as an xsec strategy, (c) first-tick supervised sanity check (watch the actual fills match target weights). Confidence: step1 HIGH (structural), step2 HIGH on mapping/fail-safes, MEDIUM on live fidelity until a real paper clock runs.
+- runner_xsec latent-oversell follow-up: now RESOLVED by this build.
 
-## Fleet-wide notify rule (from main, 2026-06-21)
-- To notify Cyrus directly: `message(action="send", channel="discord", target="channel:1508503706545557656", message="...")` → posts straight to my Discord channel.
-- Do NOT use `sessions_send` to main for Cyrus notifications — creates an inter-session loop.
-- Note: target needs `channel:` prefix (bare ID is ambiguous DM-vs-channel; errored earlier this session).
-- bootstrap-guard trimmed trading-bench/MEMORY.md: 24091→19695 chars (backup kept). Condensed: REDDIT closed-lane, SPRINT SHIPPED, Free-dataset scout map, Operational rules, North star/Coaching merged. All key verdicts preserved.
+
+_…(truncated; 84 total lines in source)_
 
 ### BACKLOG.md
 
@@ -366,6 +433,10 @@ _(none yet — will populate as trip ideas come in)_
 
 Single source of truth for what's next. Updated as items land or get re-prioritized.
 Format: priority [P0 blocking / P1 next / P2 soon / P3 someday] · status [TODO / WIP / DONE / DROPPED] · brief.
+
+- **✅ DONE 2026-06-21 · Paper-clock the ALLOCATOR BLEND out-of-band (Path A).** SHIPPED: `runner/allocator_paper_tracker.py` re-runs the validated blend engine daily (reuses `_allocator_blend_tests.build_sleeves`+`blend_portfolio` directly, zero sleeve reimplementation), logs idempotent daily snapshot to `allocator_paper.db` (`daily_snapshots` table), no live orders. Wired into `cron_tick.sh` (non-fatal, weekday crontab, idempotent per latest-trading-date). First snapshot 2026-06-18: w_tqqq=0.442 / w_rot=0.558 / rot_holds=[SPY,QQQ] / blend +1.89% vs SPX +1.08%, engine Sharpe 1.014 (matches report exactly). Report: `reports/ALLOCATOR_PAPER_TRACKER_LAUNCH_20260621.md`. Protected files md5-unchanged. Paper clock now accumulating forward. **The partial-trim runner primitive (next item) remains the path to FAITHFUL live paper.**
+- **✅ DONE 2026-06-22 · P1 · Build the PARTIAL-TRIM runner primitive (the infra that's been implicitly blocking allocators).** SHIPPED: added a partial-sell-while-staying-long path to `runner/runner.py` (ONLY file changed). A `trim` action (and the now-safe legacy `sell`) resolves an exact share qty (from `action.qty` or `notional/price`), CLAMPS to attributed held qty (never oversell → no long→short flip), submits a QTY order, logs a `sell` row, and does NOT clear strategy state (stays long). Fail-safe ladder: flat→HOLD, unresolved→HOLD, full-sweep→degrade to CLOSE. Attribution correct BY CONSTRUCTION — emits exactly the `sell`-row shape `db.strategy_position` already subtracts (per-(strategy,symbol) keyed, own `min(q,qty)` clamp); zero new attribution code. Risk reuses the existing CLOSE-branch (daily-cap only) → **risk.py byte-unchanged**. 12 pinning tests written FIRST (`tests/test_runner_trim.py`), verified red-on-unchanged then green. Full suite **637 passed / 1 pre-existing-unrelated fail (EURUSD bar-count drift) / 1 skipped**. md5: runner.py CHANGED; risk.py/backtest.py/backtest_xsec.py UNCHANGED. Hard rails intact (paper-only guard + killswitch untouched). NOT wired to trade live (separate follow-up). Report: `reports/PARTIAL_TRIM_PRIMITIVE_20260622.md`. **Follow-up flagged:** `runner/runner_xsec.py` still has the old notional-sell path for basket `sell` legs (latent — xsec emits buy/close only today); port the same qty-clamp there before any basket strategy emits `sell`. → **✅ RESOLVED 2026-06-22, see next item.** NOTE: the 'inject non-traded underlying closes' gap was ALREADY RESOLVED (tqqq_cot_combo trades live with a working QQQ gate, trade id 56).
+- **✅ DONE 2026-06-22 · P1 · Port the PARTIAL-TRIM primitive into the BASKET runner + write the live ALLOCATOR strategy.** SHIPPED two things (PAPER ONLY). **(1) `runner/runner_xsec.py` (ONLY engine file changed):** added the same partial-trim leg the single-symbol runner got — `action="trim"` + made legacy `sell` SAFE. Per leg: resolve sell qty (`action.qty` or notional/price), CLAMP to attributed held qty (never oversell → no long→short flip), submit QTY order, log a `sell` row so `db.strategy_position` subtracts exactly that qty, do NOT clear leg state (stays long); full-sweep degrades to CLOSE. Safety is STRUCTURAL: reuses the tested `db.strategy_position` reconstruction (zero new attribution code) + TWO independent clamp-to-held guards + md5-frozen `_clamp_basket` ignores `trim` entirely. Risk consulted close-semantics (de-risk, can't breach cap). 14 pinning tests FIRST (`tests/test_runner_xsec_trim.py`) incl the core BUY-two/TRIM-one/CLOSE-other multi-leg-attribution test — verified RED (10f/4p) then GREEN. **(2) `strategies/allocator_blend/strategy.py` (new) + `params.json` + 12-test smoke (`tests/test_allocator_blend_strategy.py`):** `decide_xsec()` REUSES `allocator_paper_tracker.compute_blend_state()` target-weight decomposition (zero sleeve-math reimpl, lookahead-safe by construction), maps target_w→per-leg buy/trim/hold/close with a 5% churn guard + fail-safes (engine error→whole-basket HOLD, missing price→hold leg, never panic-flatten). Live-smoked against the real tracker (target {TQQQ:0.13,SPY:0.28,QQQ:0.28} cash 0.31). Full suite **663 passed / 1 pre-existing-unrelated FX-cache fail / 1 skipped** (637 base +14 +12). md5: ONLY `runner_xsec.py` changed; runner.py/risk.py/backtest.py/backtest_xsec.py/broker_alpaca.py UNCHANGED. **Allocator strategy file written; SCHEDULING PENDING PARENT REVIEW** — deliberately NOT added to crontab/cron_tick.sh; pick the live paper notional + wire the schedule as a separate reviewed step. Report: `reports/ALLOCATOR_WIRING_20260622.md`.
 
 When closing an item: move to "## Recently shipped" with a date, prune that section monthly.
 
@@ -478,43 +549,21 @@ c382b1 order sat `pending_new` in DB despite filling — runner logged the initi
 - **DONE 2026-05-30 · Cross-sectional walk-forward + first xsec archetype (#1 momentum) backtested.** `runner/walk_forward_xsec.py` (~440 LOC), `tests/test_walk_forward_xsec.py` (11 tests), extended `runner/candidate_smoke.py` for xsec candidates (+`tests/test_candidate_smoke.py`, 7 tests). Candidate: `strategies_candidates/xsec_momentum_236b86/` (11 SPDR sectors, K=3, monthly 12-1 rebalance). **Verdict: REJECT** — 5/8 windows fail Bar A #1, Sharpe 0.30 full-period, regime filter strictly worse (sectors all share SPY beta, double-gating). Report: `reports/BACKTEST_XSEC_MOMENTUM_20260530T174735Z.md`. Suite 182 passing. Smoke OK.
 - **DONE 2026-05-31 · GATE.md Bar A bullet #5 fast-track amendment** (Cyrus explicit ack 01:42 UTC). Shipped V3 ((V1 OR V2) AND not-catastrophe) + clause-(d) bypass of #1/#3. Later hardened with clause (f) absolute-return floor ≥8%/yr-on-deployed (RATIFIED by Cyrus 2026-05-31 03:25). All open decision points (operationalization, threshold, clause-(d) ambiguity, denominator guard) RESOLVED. No open GATE.md items.
   - **UPDATE 2026-05-30 · sector-rotation backtest = third data point.** Faber GTAA N=200 sits at 22-24% in-position (misses by ≤3pp). N=150 cleanly clears at ~38% in-position. The floor is NOT fundamentally incompatible with xsec basket strategies — only with fixed-K rotators. Faber-style adaptive (0-to-11) basket sizes the strategy out of the floor problem naturally. **All 3 wave-3 archetypes REJECT, but for genuinely different reasons:** #1 momentum (floor + low Sharpe), #3 low-vol (Sharpe miss, NOT floor), #8 sector rotation (no Sharpe edge — not floor). The right reframe for main: **bench is rejecting these for lack of edge at $100/sectors/2021-2026, not for gate mis-calibration.** Two recurring xsec findings to bring: (a) $100 cap + 11-sector equity universe may be too constrained for any equity xsec anomaly to clear; consider raising notional OR adding cross-asset (bonds/REITs/commodities) before next xsec attempt; (b) SPY regime overlay is strictly degrading for sector-equity baskets — confirmed 3 times now (TSMOM, momentum, sector-rotation). Worth codifying as a no-go pattern.
-- **OPEN · P2 · `load_xsec_strategy` candidate-path cleanup.** Currently `strategies/`-only; xsec candidates have to bypass via `importlib.util.spec_from_file_location` (subagent did this in `_run_xsec_momentum_wf.py`). Trivial. Lift to support `strategies_candidates/` like `load_strategy` does.
-- **DONE 2026-05-30 · Tier 2 regime classifier infra shipped.** `runner/regime_classifier.py` (707 LOC) + frozen prompt + schema + 29 unit tests. Two new DB tables (`llm_decisions` Bar-C.3 audit, `regime_decisions` hot-path). Opt-in `regime_gate` integrated into `runner/runner.py`; crypto bypasses; LLM failure NEVER crashes a tick (safe-fallback to `regime_uptrend(SPY, 50)`). Model: gpt-4o-mini (~$0.005/mo, 3+ OOM under Bar C.2 cap). Manual CLI verified end-to-end against paper Alpaca: no-key fallback path, bogus-key 401 fallback path, idempotent re-run. Report: `reports/TIER2_REGIME_CLASSIFIER_IMPL_20260530T174332Z.md`. **Deferred (intentional):** cron wiring, first Tier 2 trading strategy that flips `regime_gate: true`, `runner/regime_backtest.py` for Bar C eval. None are blockers.
-- **DONE 2026-05-30 · Multi-symbol / cross-sectional harness extension.** New `runner/backtest_xsec.py` (660 LOC) + `tests/test_backtest_xsec.py` (15 tests, suite 120→135). Design (A): wrapper-of-singletons + synced bar clock. Shared-cap risk enforcement via `_clamp_basket(...)` (proportional scaling, closes first). Unblocks archetypes #1 cross-sec momentum, #3 low-vol, #8 sector rotation. `runner/backtest.py` + `runner/runner.py` unchanged (mtime-verified). Report: `reports/MULTI_SYMBOL_HARNESS_20260530T173605Z.md`. Subagent flagged `walk_forward_xsec` follow-up (~80 LOC) + `MAX_TRADES_PER_DAY=4` shared-cap bite for >4-leg rebalances.
-- **DONE 2026-05-30 · Fix `_iso_date()` intraday-truncation in bars cache.** Non-midnight `end_dt` now serializes full timestamp (`YYYY-MM-DDTHHMMSSZ`); midnight-UTC still emits short form to preserve daily-cache layout. 4 new unit tests in `tests/test_bars_cache.py` (suite 120/120).
 
-_…(truncated; 221 total lines in source)_
+_…(truncated; 225 total lines in source)_
 
 ---
 
 ## making-money
 
-### Latest daily memory: `memory/2026-06-21.md`
+### Latest daily memory: `memory/2026-06-22.md`
 
-# 2026-06-21
-
-## Opportunity Scan 2026 — Deep Research Completed
-- Ran full deep-research across 6 income paths
-- Output: `/research/opportunity-scan-2026.md` (24KB, comprehensive)
-
-### Key findings:
-- **AI Automation Agency** = highest signal, zero capital, Cyrus does sales, agent handles delivery
-- **Algo Trading (funding rate arb)** = best passive play with $5K–$25K capital; 8–20% APY near-risk-free
-- **TikTok Shop Dropshipping** = fastest e-commerce path; $33.2B GMV 2024, 91% US growth; $2.5K startup
-- **Amazon FBA** = still viable but slow ($3–10K capital, 3–6 months before profit) — deprioritized
-- **Faceless YouTube** = good compounding play, not fast money (3–6 months to monetization)
-- **Micro-SaaS** = best long-term leverage but 12–18 months to meaningful MRR; median is $500/mo so must aim for top 18%
-
-### Rankings for Cyrus:
-1. AI Automation Agency (first priority, zero capital)
-2. Algo trading with capital deployed ($10–25K)
-3. TikTok Shop ($2.5K seed)
-4. Micro-SaaS / affiliate (6–18 month play)
-
-## Nightly distill — 2026-06-21 02:20 PT
-- No new Cyrus interaction or work today beyond the opportunity scan already logged above.
-- MEMORY.md updated: AI Automation Agency direction promoted as active mission; SiteLens/EXP experiments remain on-hold/parked (not killed).
-- BACKLOG.md updated: moved AI Automation Agency to top of Active with correct next steps.
+## Nightly distill — 2026-06-22 02:20 PT
+- No new Cyrus interaction or agent work today.
+- Status unchanged: waiting on uncle Eddie's response to the agency pitch (sent 2026-06-21).
+- EXP-3 PagePeek still running (verdict ~2026-07-04); EXP-2 SiteLens fully paused.
+- Pitch deck live at http://40.65.93.84:8080/agency-pitch.html (self-healing watchdog).
+- MEMORY.md reviewed — no stale entries to prune; no new durables to promote.
 
 ### BACKLOG.md
 
