@@ -5,7 +5,7 @@
 **Apply:** https://micron.wd1.myworkdayjobs.com/External/job/Boise-ID---Main-Site/Construction-Program-Manager---Cost-Specialist--Global-Facilities-US_JR102729/apply
 **Workday tenant:** micron
 **Req ID:** JR102729
-**Posted on:** Posted 24 Days Ago
+**Posted on:** Posted 25 Days Ago
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---

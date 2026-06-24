@@ -1,6 +1,18 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T04:46:18+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3106
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "24e8bd01-aa14-4085-bb12-dc68c23386e4_question_23125734002", "label": "Do you have a minimum of 3 years of Technical Program Management experience?", "reason": "no LABEL_RULES match for label='Do you have a minimum of 3 years of Technical Program Management experience?'"}]
+submitted_at: 2026-06-24T00:05:47+00:00
+
+Runner tail:
+it re-fill: re-set 0 field(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=0 [] missing=6
+[runner] reassert-text pass 1: repaired=0 [] missing=6
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

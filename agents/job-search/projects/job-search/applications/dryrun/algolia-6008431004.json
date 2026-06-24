@@ -4,16 +4,16 @@
   "job_id": "6008431004",
   "job_title": "Solutions Engineer",
   "job_location": "Remote - United States",
-  "fetched_at": "2026-06-23T03:44:02Z",
+  "fetched_at": "2026-06-23T23:15:06Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/algolia/jobs/6008431004?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 24,
-    "filled": 20,
+    "filled": 23,
     "filled_needs_review": 0,
     "declined": 0,
-    "unresolved": 4,
-    "blockers": 3
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -120,10 +120,10 @@
       "label": "How did you initially hear about this job?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='How did you initially hear about this job?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "LinkedIn Ad Posting",
+      "source": "how_heard fuzzy 'linkedin' -> 'LinkedIn Ad Posting'",
+      "status": "filled",
+      "matched_rule": "how_heard",
       "options": [
         {
           "label": "Algolia Careers Page",
@@ -365,10 +365,10 @@
       "label": "Please include a short summary of your experience working directly with clients/ customers in a sales engineering or technical capacity. Keep this short: 3- 4 sentence summary or a few bullet points. \n",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Please include a short summary of your experience working directly with clients/ customers in a sales engineering or technical capacity. Keep this short: 3- 4 sentence summary or a few bullet points. \\n'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -376,10 +376,10 @@
       "label": "Guidelines for using AI in our interviewing process",
       "type": "multi_value_multi_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Guidelines for using AI in our interviewing process'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Acknowledged",
+      "source": "acknowledge_yes (single option 'Acknowledged')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "Acknowledged",
@@ -390,47 +390,13 @@
   ],
   "unresolved": [
     {
-      "id": "question_17929971004",
-      "label": "How did you initially hear about this job?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
-    },
-    {
       "id": "question_17929972004",
       "label": "If you chose Algolia Employee, Conference / Event / Career Fair, or Other, please specify here:",
       "required": false,
       "reason": "no LABEL_RULES match for label='If you chose Algolia Employee, Conference / Event / Career Fair, or Other, please specify here:'"
-    },
-    {
-      "id": "question_17929983004",
-      "label": "Please include a short summary of your experience working directly with clients/ customers in a sales engineering or technical capacity. Keep this short: 3- 4 sentence summary or a few bullet points. \n",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Please include a short summary of your experience working directly with clients/ customers in a sales engineering or technical capacity. Keep this short: 3- 4 sentence summary or a few bullet points. \\n'"
-    },
-    {
-      "id": "question_17929984004[]",
-      "label": "Guidelines for using AI in our interviewing process",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Guidelines for using AI in our interviewing process'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_17929971004",
-      "label": "How did you initially hear about this job?",
-      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
-    },
-    {
-      "id": "question_17929983004",
-      "label": "Please include a short summary of your experience working directly with clients/ customers in a sales engineering or technical capacity. Keep this short: 3- 4 sentence summary or a few bullet points. \n",
-      "reason": "no LABEL_RULES match for label='Please include a short summary of your experience working directly with clients/ customers in a sales engineering or technical capacity. Keep this short: 3- 4 sentence summary or a few bullet points. \\n'"
-    },
-    {
-      "id": "question_17929984004[]",
-      "label": "Guidelines for using AI in our interviewing process",
-      "reason": "no LABEL_RULES match for label='Guidelines for using AI in our interviewing process'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

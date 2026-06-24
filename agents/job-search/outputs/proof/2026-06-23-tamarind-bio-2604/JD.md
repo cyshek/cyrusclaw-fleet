@@ -1,0 +1,75 @@
+# Founding Forward Deployed Engineer 
+
+**Company:** Tamarind Bio
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/tamarindbio/be678c9b-984e-4a0a-aedc-a87187e18748
+**Ashby Org:** tamarindbio
+**Ashby Job ID:** be678c9b-984e-4a0a-aedc-a87187e18748
+
+---
+
+# **About Tamarind Bio**
+
+We enable any scientist to access AI-powered drug discovery. Thousands of scientists from large pharma companies, top biotechs, and academic institutions use Tamarind to design protein drugs, improve industrial enzymes, and create cutting edge molecules that weren’t feasible until now.
+
+New AI models are quickly eclipsing physics-based tools in computational drug discovery. Scientists often struggle to fine-tune, deploy, and scale these models, leaving breakthroughs on the table. Tamarind provides a simple interface to the vast array of tools being released daily.
+
+# **Forward Deployed Engineer**
+
+## 
+
+### **About the Role**
+
+We’re hiring a **Forward Deployed Engineer** — one of the highest-leverage roles on the team. You’ll sit at the intersection of engineering, product, and customers — working directly with scientists, ML teams, and pharma stakeholders to deploy Tamarind into real-world workflows. This role owns the full arc: from first technical conversation → pilot → production deployment. Every deployment becomes a product signal, a reference customer, and a revenue driver. The customer relationship moves at the speed you move.
+
+### **What You’ll Do**
+
+- Work directly with customers (scientists, ML teams, pharma orgs) to understand workflows and translate needs into deployable solutions
+
+- Stand up AI/ML workflows using Tamarind’s platform — often within days of initial engagement
+
+- Configure and deploy models (e.g. protein structure, docking, generative models) against real datasets
+
+- Own pilots end-to-end — from scoping to execution to expansion
+
+- Debug, adapt, and optimize workflows across compute, models, and data pipelines
+
+- Partner with product and engineering to turn customer feedback into roadmap inputs
+
+- Support technical discussions, demos, and deployments across the sales cycle
+
+### **Week in the Life**
+
+- Join customer calls to scope scientific workflows
+
+- Deploy and test models on real customer datasets
+
+- Work across infrastructure, APIs, and ML systems to ensure performance
+
+- Iterate quickly based on feedback from scientists
+
+- Translate field learnings into product improvements
+
+### **Ideal Qualifications**
+
+- Strong engineering fundamentals (Python preferred)
+
+- Experience working with AI/ML systems or data pipelines
+
+- Ability to operate in ambiguous, fast-moving environments
+
+- Strong communication skills — able to interface with both technical and non-technical stakeholders
+
+- Willingness to work onsite in San Francisco
+
+### **Technology**
+
+Tamarind operates at the intersection of DevOps, MLOps, and Computational Biology. You’ll work across:
+
+- ML models (protein design, structure prediction, docking)
+
+- GPU-based compute infrastructure
+
+- APIs, workflows, and orchestration layers
+
+- Scientific datasets and research pipelines

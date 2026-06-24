@@ -440,6 +440,11 @@ def _commit_wd_dropdown(page, automation_id, want_text, want_alts=None, cap=3):
                 let el=document.getElementById(cid);
                 if(!el) el=[...document.querySelectorAll('[data-automation-id]')].find(e=>(e.getAttribute('data-automation-id')||'')===cid);
                 if(!el) return false;
+                // BUTTON: textContent unreliable (shows default). Need selectedItem pill.
+                if(el.tagName==='BUTTON'){
+                    let bs=el; for(let i=0;i<8&&bs;i++){bs=bs.parentElement;if(bs&&bs.querySelector('[data-automation-id=selectedItem],[data-automation-id=DELETE_charm]'))return true;}
+                    return false;
+                }
                 const txt=((el.textContent||'')+' '+(el.value||'')+' '+(el.getAttribute('aria-label')||'')).trim().toLowerCase();
                 const real = txt && txt!=='select one' && !/^\\s*$/.test(txt);
                 // climb for a committed multiselect pill
@@ -746,7 +751,7 @@ def _create_fresh_account(page, tenant, base_url=None):
         except Exception:
             pass
         act_link = gmail_imap.wait_for_activation_link(
-            timeout_seconds=90, since_epoch=time.time() - 300, host_hint=host_hint)
+            timeout_seconds=90, since_epoch=time.time() - 1800, host_hint=host_hint)
         if act_link:
             log("create-fresh: activation LINK found -> navigating to activate account")
             page.goto(act_link, wait_until="domcontentloaded", timeout=45000)
@@ -897,7 +902,7 @@ def ensure_signed_in(page, tenant, base_url=None):
             except Exception:
                 pass
             act_link = gmail_imap.wait_for_activation_link(
-                timeout_seconds=90, since_epoch=time.time()-300, host_hint=host_hint)
+                timeout_seconds=90, since_epoch=time.time()-1800, host_hint=host_hint)
             if act_link:
                 log("activation LINK found -> navigating to activate account")
                 page.goto(act_link, wait_until="domcontentloaded", timeout=45000)
@@ -1051,14 +1056,60 @@ def _source_committed(page):
     try:
         return bool(page.evaluate("""()=>{
             // Find the source multiselect container.
-            let host = document.querySelector('input#source--source');
-            let box = host ? host.closest('[data-automation-id]') : null;
-            // climb to the widget wrapper (a few levels) to capture pills rendered as siblings
-            let scope = host;
-            for (let i=0; i<6 && scope; i++){
-                scope = scope.parentElement;
-                if (scope && scope.querySelector('[data-automation-id=selectedItem],[data-automation-id=DELETE_charm]')) {
-                    return true;
+            // Try input#source--source first (wd5 tenants), then any #source--source (wd1 tenants).
+            let host = document.querySelector('input#source--source') || document.getElementById('source--source');
+            // Also find via label if no direct ID match
+            if (!host) {
+                const labels = [...document.querySelectorAll('label')];
+                for (const l of labels) {
+                    const t = (l.textContent||'').toLowerCase();
+                    if (t.includes('hear about') || t.includes('how did you')) {
+                        const fid = l.getAttribute('for');
+                        if (fid) { host = document.getElementById(fid); break; }
+                    }
+                }
+            }
+            if (host) {
+                // If it's a native <select>, check its value
+                if (host.tagName === 'SELECT') {
+                    const v = host.value;
+                    return !!(v && v !== 'Select One' && v.trim() !== '');
+                }
+                // For INPUT typeahead (wd5): after commit React clears input.value
+                // and renders a pill. input.value alone = just-typed search text.
+                // Only trust INPUT value for plain inputs (no aria-haspopup/combobox role).
+                if (host.tagName === 'INPUT' && host.value && host.value.trim()) {
+                    const hp = host.getAttribute('aria-haspopup');
+                    const role = host.getAttribute('role');
+                    if (!hp && role !== 'combobox') {
+                        const v = host.value.trim().toLowerCase();
+                        if (v && v !== 'select one') return true;
+                    }
+                    // typeahead input: fall through to pill check below
+                }
+                // For BUTTON multiselects and typeahead INPUTs, check for pills
+                // anywhere in the containing form-field widget (up to 10 levels)
+                let scope = host;
+                for (let i=0; i<10 && scope; i++){
+                    scope = scope.parentElement;
+                    // Check for committed pill markers
+                    if (scope && scope.querySelector('[data-automation-id=selectedItem],[data-automation-id=DELETE_charm],[data-automation-id=tag],[data-automation-id=removeItem]')) {
+                        return true;
+                    }
+                    // Check for aria-selected option (single-select listbox committed state)
+                    if (scope && scope.querySelector('[aria-selected=true][role=option]')) {
+                        return true;
+                    }
+                    // Stop climbing at formField boundary
+                    if (scope && (scope.getAttribute('data-automation-id')||'').startsWith('formField')) break;
+                }
+            }
+            // Fallback: look for any selectedItem that's a child of a form widget
+            // containing 'source' in its ID (broader check)
+            const sourceWidgets = [...document.querySelectorAll('[id*=source],[data-automation-id*=source]')];
+            for (const w of sourceWidgets) {
+                if (w.closest('[data-automation-id=formFieldWidget],[data-automation-id=wd-popup]')) {
+                    if (w.querySelector('[data-automation-id=selectedItem],[data-automation-id=DELETE_charm]')) return true;
                 }
             }
             return false;
@@ -1096,16 +1147,177 @@ def pick_workday_source(page):
             }""")
             if hw_label:
                 log("source: fallback label-based field detected:", hw_label)
-                committed = _commit_wd_dropdown(page, hw_label,
-                    "LinkedIn",
-                    want_alts=["LinkedIn", "Indeed", "Job Board", "Other", "Internet"])
-                if committed:
-                    log("source COMMITTED via label-fallback")
+                # Probe what kind of element #hw_label is
+                elem_info = page.evaluate("""(fid)=>{
+                    const e = document.getElementById(fid);
+                    if (!e) return null;
+                    return {tag: e.tagName, type: e.type||null, val: e.value||null,
+                            opts: e.tagName==='SELECT' ? [...e.options].map(o=>o.text.trim()).slice(0,30) : []};
+                }""", hw_label)
+                log("source elem_info:", str(elem_info)[:200])
+
+                # PATH A: native <select> (wd1 standard select) — use select_option
+                if elem_info and elem_info.get('tag') == 'SELECT':
+                    opts_texts = elem_info.get('opts', [])
+                    wants = ['LinkedIn', 'Indeed', 'Job Board', 'Glassdoor', 'Other', 'Internet']
+                    chosen = None
+                    for w in wants:
+                        for ot in opts_texts:
+                            if w.lower() in ot.lower():
+                                chosen = ot; break
+                        if chosen: break
+                    if not chosen and opts_texts:
+                        # Last resort: first non-empty, non-'Select One' option
+                        for ot in opts_texts:
+                            if ot and ot.lower() not in ('select one', ''):
+                                chosen = ot; break
+                    if chosen:
+                        log(f"source: native select, choosing '{chosen}'")
+                        try:
+                            page.select_option(f"#{hw_label}", label=chosen)
+                            page.wait_for_timeout(600)
+                        except Exception as _se:
+                            log("source: select_option err", str(_se)[:80])
+                            try:
+                                # JS fallback for React-controlled selects
+                                page.evaluate("""(fid, val)=>{
+                                    const e = document.getElementById(fid);
+                                    if (!e) return;
+                                    const nativeSet = Object.getOwnPropertyDescriptor(window.HTMLSelectElement.prototype,'value').set;
+                                    nativeSet.call(e, val);
+                                    e.dispatchEvent(new Event('change',{bubbles:true}));
+                                    e.dispatchEvent(new Event('blur',{bubbles:true}));
+                                }""", hw_label, chosen)
+                                page.wait_for_timeout(600)
+                            except Exception: pass
+                        if _source_committed(page):
+                            log("source COMMITTED via native select")
+                            return True
+                        log("source: native select pick didn't commit via _source_committed")
+                    else:
+                        log("source: no suitable option found in select")
+
+                # PATH B: custom Workday multiselect / other element
+                # _commit_wd_dropdown can false-positive 'already committed' here
+                # (button textContent has inner text -> looks committed). Skip it.
+                # Go straight to click + promptOption pick.
+                committed = False
+                # Only call _commit_wd_dropdown for non-BUTTON non-SELECT elements
+                elem_tag = (elem_info or {}).get('tag', '')
+                if elem_info and elem_tag not in ('SELECT', 'BUTTON'):
+                    committed = _commit_wd_dropdown(page, hw_label,
+                        "LinkedIn",
+                        want_alts=["LinkedIn", "Indeed", "Job Board", "Other", "Internet"])
+                if committed and _source_committed(page):
+                    log("source COMMITTED via label-fallback (verified)")
                     return True
-                # If _commit_wd_dropdown fails, try generic promptOption pick
-                src_fb = page.locator(f"input#{hw_label}").first if hw_label != 'FOUND' else None
-                if src_fb and src_fb.count():
-                    src = src_fb  # fall through to main flow below
+                if committed:
+                    log("source: label-fallback _commit_wd_dropdown returned True but _source_committed==False; trying promptOption pick")
+                # Try opening the source widget by clicking its ID element (any tag type)
+                # On wd1 tenants, the source field is a BUTTON that opens a dropdown.
+                try:
+                    src_btn = page.locator(f"#{hw_label}").first
+                    if src_btn.count():
+                        try:
+                            src_btn.scroll_into_view_if_needed(timeout=2000)
+                            src_btn.click(timeout=4000)
+                        except Exception:
+                            try:
+                                page.evaluate(f"""()=>{{const e=document.getElementById('{hw_label}');if(e)e.click();}}""") 
+                            except Exception: pass
+                        page.wait_for_timeout(1000)
+                        # After clicking the button, find the popup/listbox that opened.
+                        # Scope option search to [role=listbox] or [data-automation-id=wd-popup]
+                        # that appeared AFTER the click (closest active listbox).
+                        committed_via_opt = False
+                        for popup_sel in (
+                            "[data-automation-id=wd-popup]",
+                            "[role=listbox]",
+                            "[data-automation-id=promptOptionList]",
+                        ):
+                            popup = page.locator(popup_sel).last  # last = most recently opened
+                            if popup.count():
+                                log(f"source: popup found via '{popup_sel}'")
+                                for want in ["LinkedIn", "Indeed", "Job Board", "Glassdoor", "Other", "Internet"]:
+                                    try:
+                                        # Find option within popup
+                                        opt = popup.locator(f"[role=option]:has-text('{want}'), [data-automation-id=promptOption]:has-text('{want}')").first
+                                        if not opt.count():
+                                            # Broader contains search
+                                            all_opts = popup.locator("[role=option], [data-automation-id=promptOption]").all()
+                                            for ao in all_opts:
+                                                t = (ao.text_content() or "").strip()
+                                                if want.lower() in t.lower():
+                                                    opt = ao; break
+                                            else:
+                                                continue
+                                        opt.scroll_into_view_if_needed(timeout=2000)
+                                        opt.click(timeout=3000)
+                                        page.wait_for_timeout(1000)
+                                        committed_via_opt = True
+                                        log(f"source: picked '{want}' from popup")
+                                        break
+                                    except Exception:
+                                        pass
+                                if committed_via_opt:
+                                    break
+                        if not committed_via_opt:
+                            # Fallback: any [role=option] that looks like a source option
+                            log("source: no popup found, trying global role=option pick")
+                            all_opts = page.locator("[role=option]").all()
+                            for want in ["LinkedIn", "Indeed", "Job Board", "Glassdoor", "Other"]:
+                                picked = False
+                                for opt in all_opts:
+                                    try:
+                                        t = (opt.text_content() or "").strip()
+                                        # Skip phone country code options
+                                        if '(+' in t or t.lower() == 'select one':
+                                            continue
+                                        if want.lower() in t.lower():
+                                            opt.scroll_into_view_if_needed(timeout=2000)
+                                            opt.click(timeout=3000)
+                                            page.wait_for_timeout(800)
+                                            picked = True
+                                            committed_via_opt = True
+                                            log(f"source: global pick '{t}'")
+                                            break
+                                    except Exception:
+                                        pass
+                                if picked: break
+                        try: page.keyboard.press("Escape")
+                        except Exception: pass
+                        page.wait_for_timeout(600)
+                        # Diagnostic: dump source widget area after pick
+                        try:
+                            src_diag = page.evaluate("""(fid)=>{
+                                const el = document.getElementById(fid);
+                                if (!el) return 'NO-ELEM';
+                                let scope = el;
+                                for (let i=0;i<10&&scope;i++) scope = scope.parentElement;
+                                if (!scope) return 'NO-SCOPE';
+                                const items = [...scope.querySelectorAll('[data-automation-id]')].slice(0,15).map(e=>({aid:e.getAttribute('data-automation-id'),txt:(e.textContent||'').trim().slice(0,30)}));
+                                return JSON.stringify(items);
+                            }""", hw_label)
+                            log("source post-pick DOM:", str(src_diag)[:400])
+                        except Exception: pass
+                        if _source_committed(page):
+                            log("source COMMITTED via popup/promptOption pick")
+                            return True
+                        # FIX (wd1-button-fix 2026-06-23): on wd1 BUTTON widgets, picking
+                        # commits via button-text update (no selectedItem pill) so
+                        # _source_committed returns False even though it worked. If we
+                        # successfully clicked an option from the popup AND the element
+                        # is a BUTTON, trust the pick and return True.
+                        if committed_via_opt and elem_info and (elem_info.get('tag') == 'BUTTON'):
+                            log("source COMMITTED via popup pick (BUTTON-type, trusting click)")
+                            return True
+                        log("source: popup pick attempt did not commit")
+                except Exception as _pe:
+                    log("source popup fallback err", str(_pe)[:80])
+                # If still not committed, fall through to main flow with src set
+                src_fb = page.locator(f"#{hw_label}").first
+                if src_fb.count():
+                    src = src_fb  # fall through to main flow below with non-input element
                 else:
                     return True  # unknown widget variant; don't block submission
             else:
@@ -1183,13 +1395,30 @@ def pick_workday_source(page):
                         o.click(timeout=4000); leaf = t; page.wait_for_timeout(900); break
                 except Exception: pass
         if leaf:
+            # FIX (ms-sublevel 2026-06-23): last-resort clicked a category (e.g. "Career Site")
+            # which may have opened a sub-level. Try LEAVES again in the now-visible sub-level.
+            for l in LEAVES:
+                sub_leaf = click_text([l])
+                if sub_leaf:
+                    leaf = sub_leaf
+                    log("source sub-level leaf:", leaf)
+                    break
+        if leaf:
             log("source picked:", leaf)
         # close the prompt so the pill commits, then verify
+        # Try both Escape and click-elsewhere to force React pill commit
         try: page.keyboard.press("Escape")
         except Exception: pass
         page.wait_for_timeout(600)
         if _source_committed(page):
             log("source COMMITTED (attempt %d)" % attempt); return True
+        # If Escape didn't commit, try clicking the page heading/label to blur
+        try:
+            page.locator("h1, h2, [data-automation-id=pageTitle]").first.click(timeout=2000)
+            page.wait_for_timeout(800)
+        except Exception: pass
+        if _source_committed(page):
+            log("source COMMITTED after blur (attempt %d)" % attempt); return True
         # typeahead fallback before next attempt
         try:
             src.click(timeout=3000); page.wait_for_timeout(400)
@@ -1208,19 +1437,15 @@ def fill_my_information(page, source):
     page.wait_for_timeout(1500)
     global _MYINFO_COMMIT_FAIL
     _MYINFO_COMMIT_FAIL = None
-    # How Did You Hear About Us (multiselect): robust committing picker (see pick_workday_source).
-    try:
-        if not pick_workday_source(page):
-            _MYINFO_COMMIT_FAIL = "source"
-    except Exception as e:
-        log("source fail", str(e)[:80])
+    # FIX (wd-source-last 2026-06-23 MS wd5): pick source LAST after all fills.
+    # Re-renders from countryPhoneCode/name/address wipe the multiselect on MS wd5.
     # Previously worked? -> No. Radios are visually-hidden; click the label[for=id] whose text == 'No'.
     try:
         rid_no = page.evaluate("""()=>{const rs=document.querySelectorAll('input[name=candidateIsPreviousWorker]');
             for(const r of rs){const l=document.querySelector('label[for=\\''+r.id+'\\']'); if(l && l.textContent.trim().toLowerCase()==='no') return r.id;}
             return rs.length?rs[rs.length-1].id:null;}""")
         if rid_no:
-            page.locator(f"label[for={rid_no}]").first.click()
+            page.evaluate(f"document.querySelector('label[for={rid_no}]')?.click()")
             page.wait_for_timeout(400)
     except Exception as e:
         log("prevworker fail", str(e)[:80])
@@ -1242,13 +1467,27 @@ def fill_my_information(page, source):
     # never COMMITTED on some tenants (Philips 1466) -> phone read invalid + My-Info bounced.
     # Route through the generic verify-or-retry committer; fail LOUD if it won't stick.
     try:
-        if not _commit_wd_dropdown(
-                page, "countryPhoneCode",
-                "United States of America (+1)",
-                want_alts=["United States of America", "United States", "(+1)", "+1"]):
-            _MYINFO_COMMIT_FAIL = (_MYINFO_COMMIT_FAIL + "+countryPhoneCode") if _MYINFO_COMMIT_FAIL else "countryPhoneCode"
-    except Exception as e:
-        log("country phone code fail", str(e)[:60])
+        cpc_committed = False
+        for cpc_sel in ("button#phoneNumber--countryPhoneCode",
+                        "[data-automation-id=countryPhoneCode]"):
+            if page.locator(cpc_sel).count():
+                picked = wd_pick_listbox(page, cpc_sel, "United States of America (+1)")
+                if not picked:
+                    for alt in ["United States of America", "United States (+1)"]:
+                        if wd_pick_listbox(page, cpc_sel, alt):
+                            picked = True; break
+                if picked:
+                    log("countryPhoneCode: committed via wd_pick_listbox")
+                    cpc_committed = True
+                break
+        if not cpc_committed:
+            if not _commit_wd_dropdown(
+                    page, "countryPhoneCode",
+                    "United States of America (+1)",
+                    want_alts=["United States of America", "United States", "(+1)"]):
+                _MYINFO_COMMIT_FAIL = (_MYINFO_COMMIT_FAIL + "+countryPhoneCode") if _MYINFO_COMMIT_FAIL else "countryPhoneCode"
+    except Exception as exc:
+        log("country phone code fail", str(exc)[:60])
     # Address
     fill_if(page, "input#address--addressLine1", ADDRESS_LINE1)
     fill_if(page, "input#address--city", CITY)
@@ -1275,6 +1514,13 @@ def fill_my_information(page, source):
                             o.click(); page.wait_for_timeout(400); break
                 except Exception: pass
     fill_if(page, "input#phoneNumber--phoneNumber", PHONE)
+    # How Did You Hear About Us -- pick LAST (wd-source-last 2026-06-23 MS wd5 fix)
+    try:
+        page.wait_for_timeout(500)
+        if not pick_workday_source(page):
+            _MYINFO_COMMIT_FAIL = "source"
+    except Exception as e:
+        log("source fail", str(e)[:80])
     shot(page, "myinfo", "filled")
 
 def run(args):
@@ -3078,7 +3324,10 @@ def handle_questions(page):
                       "legal age", "of legal age", "background check", "submit a background",
                       "willing to submit"]
             # Negative/exclusion questions Cyrus answers NO to.
-            NEGATIVE = ["current or former", "prior 18 months", "ey, pwc", "deloitte",
+            NEGATIVE = ["current or former", "internal employee", "current employee",
+                        "are you currently employed by", "are you an employee",
+                        "internal applicant", "currently employed at",
+                        "prior 18 months", "ey, pwc", "deloitte",
                         "non-compete", "noncompete", "conflict of interest", "related to anyone",
                         "previously employed by snap", "ever worked for snap",
                         # (workday-ack-widget 2026-06-10 GEICO 2358) factual-NO knockout Qs:

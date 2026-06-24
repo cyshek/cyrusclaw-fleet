@@ -2010,7 +2010,7 @@ def build_plan(spec: dict) -> dict:
                 needs_review_dropdowns.append({
                     "id": fid,
                     "label": str(val),
-                    "alternates": ["United States", "Yes", "No"],
+                    "alternates": ["United States", "Yes"],  # 2026-06-24: removed "No" — was accidentally committing negative answers for ack_in_office fields (Brex 3105 cohort)
                     "question": label,
                 })
                 continue

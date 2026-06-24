@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing integration workflows across enterprise source systems (Databricks, SAP, NetApp) to sustain 45+ annual drills and drive **$14M+ business impact**.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements, data flow specs, and **self-service scheduling capabilities** that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months with a 94% recovery rate**, surfacing critical hardware defects and establishing a reusable playbook for continuous validation at scale.
+4. Directed **14 cross-org integration executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across Engineering, Alliances, and Operations.
+5. Built and maintained canonical data mapping standards and connectivity documentation across partner integrations, enabling implementation and customer success teams to **onboard source systems faster** and more consistently across production environments.
+6. Defined ecosystem integration priorities by evaluating partner source systems — including SAP and NetApp — against product strategy and roadmap goals, aligning Engineering and Alliances on sequencing decisions that maximized **customer value delivery**.
+7. Scaled team leverage through AI-driven automation, building an internal AI agent that restructured planning workflows, reduced planning cycle time by **39%**, and increased integration drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed product adoption for **AI-driven code generation workflows**, conducting user demos and training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly by streamlining repetitive development tasks.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user research interviews** with Azure service teams, surfacing critical feature gaps and translating technical findings into prioritized integration requirements.
+3. Improved **data normalization and retrieval accuracy** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search platform, reducing lookup time by 83% and making structured data consistently accessible.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating data flow and dependency mapping across 140+ engineering and operations teams.
+2. Defined a product strategy to eliminate manual integration toil during region launches, conducting discovery with 20+ service teams to surface **81 hours of per-region manual effort** and building a roadmap to automate the highest-impact data migration paths.
+3. Engineered a **Power BI dashboard** to track operational toil and connectivity gaps across 140+ teams, enabling leadership to identify automation targets, sequence roadmap investments, and prioritize support for high-impact source system onboarding.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping data dependencies across 1,200+ stations, and producing source system playbooks that guided implementation teams through each phase.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority integration tickets** and stabilize the developer intake process across cross-functional Engineering and Operations teams.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable patterns for faster, more consistent production rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a new CRM data model that standardized customer records and reduced manual entry errors across the sales pipeline.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, supporting the GTM team with platform-specific value messaging that clarified customer problems each channel solved.
+3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks in data relationships between labor, materials, and billing — and translating findings into actionable roadmap guidance.
+
+## Notes from the rewriter
+- 'source system playbooks' (JD exact phrase) woven into amazon_robotics bullet#1 and microsoft_ft bullet#5 to mirror FloQast's emphasis on scalable onboarding documentation.
+- 'canonical data mapping / data normalization' (JD: 'canonical data models', 'normalized') surfaced in microsoft_ft bullet#5 and microsoft_2023 bullet#3 to directly reflect FloQast Data Platform language.
+- 'ecosystem integration priorities' (JD exact phrase) used in microsoft_ft bullet#6, framing SAP/NetApp partner evaluation against product strategy and Alliances alignment — mirrors the Ecosystem PM mandate.
+- 'GTM support / customer value messaging' (JD: 'support GTM teams with the story of FloQast-ecosystem value') echoed in pro_painters bullet#2 to show prior go-to-market storytelling experience.
+- 'connectivity documentation / onboard source systems faster' (JD: 'scale integration patterns so new source systems can be onboarded faster') embedded in microsoft_ft bullet#5 to match the scalability directive.
+

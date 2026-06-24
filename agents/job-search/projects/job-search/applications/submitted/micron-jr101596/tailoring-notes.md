@@ -11,36 +11,35 @@
 
 ### `microsoft_ft` (5 bullets emitted, master had 5)
 1. Scaled Azure's recovery validation **program roadmap** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
-2. Led 0→1 development of an internal Resilience Automation Platform, defining program metrics, charter, and self-service scheduling requirements that **reduced operational toil by 30%** and transitioned execution to a scalable, repeatable model.
-3. Directed **14 cross-org program executions** under executive visibility, managing stakeholder alignment and escalation paths across senior leadership — including serving as bridge lead for a sovereign-cloud isolation test tied to a $1.5B+ enterprise contract.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining program metrics, charter, and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable, repeatable model.
+3. Directed **14 cross-org program executions** under executive visibility, managing stakeholder alignment across senior leadership and serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
 4. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new benchmark for continuous validation.
-5. Applied PDCA closed-loop review to restructure planning workflows via an internal AI agent, **cutting planning cycle time 39%** and increasing drill capacity by 21% without adding headcount.
+5. Built an internal AI agent and restructured planning workflows using PDCA closed-loop review principles, **reducing planning cycle time by 39%** and increasing program drill capacity by 21% without adding headcount.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed **program adoption** for AI-driven code generation workflows, conducting user demos and training that drove utilization across 14 key teams and saved **37 engineering hours monthly** through structured rollout coordination.
-2. Defined program roadmap improvements by facilitating **11+ stakeholder interviews** with Azure service teams to surface critical feature gaps, directly influencing the backlog to prioritize intent-based YAML generation.
-3. Improved data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time by 83%** and reducing cross-team dependency friction.
+1. Drove **program adoption** for AI-powered code generation workflows by conducting user demos and training sessions that mobilized utilization across 14 key teams, saving **37 engineering hours monthly** and closing critical feature gaps.
+2. Influenced the product roadmap by facilitating 11+ structured interviews with Azure service teams to surface unmet needs, translating ambiguity into a prioritized backlog of intent-based YAML generation features aligned to the business plan.
+3. Improved **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, reducing lookup time by 83% and supporting cross-functional program efficiency.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. **Generated $3M in accelerated revenue** and launched regions 28% faster by driving cross-functional alignment on a unified automation prioritization framework across 140+ teams — translating ambiguity into a concrete, sponsor-approved program roadmap.
-2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built and managed a cost-savings roadmap to automate critical paths and reduce recurring operational spend.
-3. Engineered a **Power BI program dashboard** tracking operational toil across 140+ teams, enabling senior leadership to target automation gaps and prioritize high-impact investments with data-backed visibility.
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, generating $3M in accelerated revenue and launching Azure regions 28% faster by eliminating scheduling and dependency conflicts.
+2. Translated ambiguity into action by conducting discovery with 20+ service teams to quantify **81 hours of manual toil per region**, then defined a program roadmap to automate critical paths and report progress to senior leadership.
+3. Built a **Power BI dashboard** to track operational toil and cost variance across 140+ teams, enabling leadership to benchmark gaps, target high-impact automation investments, and align priorities to strategic cost objectives.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration program strategy, mapping dependencies across 1,200+ stations, and maintaining an accurate program charter throughout execution.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, managing the program backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process on schedule.
-3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable delivery model.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and mitigating risks before escalation was required.
+2. Facilitated Agile sprint planning and retrospectives, applying **PDCA-style backlog management** to resolve 40+ high-priority tickets and stabilize the developer intake process across cross-functional engineering and operations teams.
+3. Drove stakeholder alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable delivery model for future rollouts.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, building a structured CRM process that improved forecasting accuracy and reduced scheduling conflicts.
-2. Reduced Customer Acquisition Cost by **13%** and boosted conversions 2.7% by executing a digital-first go-to-market strategy — optimizing web presence and Google profile to improve lead quality and cost efficiency.
-3. Conducted financial profitability analysis across **1,000+ project records** to identify and close margin leaks, delivering actionable cost-savings recommendations that directly improved leadership's pricing models.
+1. Increased job bookings by **26%** by managing end-to-end program metrics across 200+ monthly proposals, optimizing the CRM process to reduce scheduling conflicts and improve forecast accuracy for materials and labor costs.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web and search presence to support cost-efficient lead generation aligned to budget targets.
+3. Conducted financial profitability analysis across **1,000+ project records** to identify margin leaks and deliver cost variance reporting to leadership, directly informing pricing model adjustments and budget planning decisions.
 
 ## Notes from the rewriter
-- PDCA closed-loop management (direct JD term) woven into microsoft_ft bullet 5 — mirroring the JD's 'PDCA closed loop management review' language exactly.
-- Cost-savings / cost savings roadmap (JD: 'identifying cost savings IPP goals') surfaced in microsoft_2022 bullet 2 — framing the automation roadmap explicitly as a cost-savings program deliverable.
-- Program charter and accurate metrics (JD: 'ensure accurate and up-to-date charter') referenced in amazon_robotics bullet 1 — using 'program charter' vocabulary to match the JD's program management rigor requirements.
-- Benchmarking and BKM/best-practice sharing (JD: 'understands benchmarking landscape, drive network BKM sharing') addressed in microsoft_ft bullet 4 — 'establishing a new benchmark for continuous validation' mirrors the JD's benchmarking language.
-- Stakeholder escalation paths and senior leadership reporting (JD: 'escalate to sponsors, report to site leadership') explicitly called out in microsoft_ft bullet 3 to match the JD's sponsor/stakeholder communication expectations.
-- Dropped one bullet each from microsoft_ft and pro_painters (within min/max caps) to resolve page overflow while preserving all substantive content.
+- PDCA closed-loop management (JD term) woven into microsoft_ft bullet 5 and amazon_robotics bullet 2 to directly mirror Micron's stated methodology.
+- Cost variance reporting and budget management (JD core responsibility) surfaced in microsoft_2022 bullet 3 (Power BI cost tracking) and pro_painters bullet 3 (profitability/variance analysis).
+- Program roadmap with sponsors (JD term) used verbatim in microsoft_ft bullet 1 and microsoft_2022 bullet 2 to reflect Micron's program charter language.
+- Benchmarking and BKM/network sharing (JD preferred) addressed in microsoft_ft bullet 4 framed as establishing a new benchmark model for continuous validation.
+- Translating ambiguity into action (JD minimum qualification language) explicitly used in microsoft_2023 bullet 2 to signal direct alignment with Micron's stated expectation for senior management communication.
 

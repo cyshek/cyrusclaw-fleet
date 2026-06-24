@@ -6,16 +6,27 @@ Keyed by (source, subject_hash, company_guess).
 import json
 import hashlib
 import os
+import re
 from pathlib import Path
 
 STORE_PATH = Path(__file__).parent / "seen_signals.json"
 
 
 def _signal_key(signal):
-    subject = signal.get("subject", "")
-    company = signal.get("company_guess") or ""
+    subject = signal.get("subject", "") or ""
     source = signal.get("source", "")
-    raw = f"{source}::{company}::{subject}"
+    # Canonicalize company so "Datadoghq"/"Datadog" dedup together.
+    try:
+        from classifier import canonical_company
+        company = canonical_company(signal.get("company_guess"), subject,
+                                    signal.get("sender", "")) or ""
+    except Exception:
+        company = signal.get("company_guess") or ""
+    # Normalize subject: strip Re:/Fwd: prefixes + collapse whitespace so reply
+    # chains and trivial variants don't re-notify.
+    norm = re.sub(r"^(?:re|fwd|fw)\s*:\s*", "", subject.strip(), flags=re.I)
+    norm = re.sub(r"\s+", " ", norm).lower()[:120]
+    raw = f"{source}::{company}::{norm}"
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 

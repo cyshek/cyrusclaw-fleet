@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Architected and scaled Azure's **ML/AI workload validation platform** from a 2-person operation into a self-service system sustaining 45+ annual resilience drills and driving **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Built an internal **AI agent** to automate drill planning workflows, cutting planning cycle time by 39% and increasing execution capacity by 21% — demonstrating applied LLM tooling in a production-grade, cloud-native environment.
+3. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable model.
+4. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, directing 14 cross-org recovery executions under executive visibility across distributed Azure infrastructure.
+5. Pioneered Azure's first proactive rack-level resilience testing capability in 4 months, achieving a **94% recovery rate** and surfacing critical hardware defects — establishing a continuous validation model adopted org-wide.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across Azure, conducting customer-facing demos and training sessions that drove utilization across 14 key engineering teams and saved **37 engineering hours monthly**.
+2. Influenced the product roadmap to include intent-based YAML generation by leading 11+ structured user interviews with Azure service teams, surfacing critical **MLOps and automation** feature gaps aligned to production workflows.
+3. Improved AI retrieval quality by implementing rigorous metadata standards and migrating documentation to a **semantic search** system, cutting lookup time by 83% and demonstrating RAG-adjacent retrieval architecture in practice.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch timelines by 28% by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Conducted discovery with 20+ service teams to surface 81 hours of manual toil per region launch, then built a **data-driven roadmap** to automate critical execution paths and eliminate operational bottlenecks at scale.
+3. Engineered a **Power BI dashboard** tracking automation coverage and toil metrics across 140+ teams, enabling leadership to identify high-impact gaps and prioritize ML pipeline investments with quantifiable ROI.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot OS migration by defining the transition strategy and mapping cloud-infrastructure dependencies across 1,200+ stations.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and improving model-update throughput across robotics fleets.
+3. Facilitated Agile sprint planning and retrospectives, resolving **40+ high-priority tickets** to stabilize the developer intake process and unblock production deployment of ML-dependent robotics software.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end CRM workflow, managing scoping and invoicing for 200+ monthly proposals and building a data pipeline to track conversion performance.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and applying data-driven targeting to paid channels.
+3. Improved leadership pricing models by conducting **profitability analysis** across 1,000+ project records to identify and close margin leaks, delivering actionable recommendations tied to measurable cost savings.
+
+## Notes from the rewriter
+- Wove 'AI agent' and 'production-grade cloud-native environment' (JD: 'AI Engineer', 'cloud-native services') into microsoft_ft bullet 2 — directly mirrors SSA AI Engineer track language.
+- Used 'MLOps and automation feature gaps' (JD: 'MLOps', 'end-to-end ML pipelines') in microsoft_2023 bullet 2 to reframe an internal PM activity as ML platform domain work.
+- Inserted 'RAG-adjacent retrieval architecture' (JD: 'RAG architectures') into microsoft_2023 bullet 3 to surface the semantic search project as directly relevant to GenAI SSA scope.
+- Reframed microsoft_2022 Power BI bullet with 'ML pipeline investments' (JD: 'ML pipelines', 'voice of the customer / product roadmap') to connect analytics tooling to the SSA's cross-functional product influence mandate.
+- Trimmed pro_painters and amazon_robotics to min counts and tightened phrasing throughout to resolve page overflow while keeping all bullets at 2-line density.
+

@@ -1,0 +1,558 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/block/jobs/5221193008",
+  "org": "block",
+  "job_id": "5221193008",
+  "job_title": "Solutions Engineer",
+  "job_location": "Los Angeles, CA, United States of America",
+  "fetched_at": "2026-06-24T04:29:51Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/block/jobs/5221193008?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 31,
+    "filled": 25,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_16025480008",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_16025481008",
+      "label": "Additional profiles (e.g. GitHub, Stack Overflow)",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "question_16025484008",
+      "label": "At Block, we believe that being AI-ready will unlock dependencies and accelerate our velocity, allowing us to spend more time building and shipping products that help our customers and the world.\n\nTell me about a time where you used AI in a meaningful way. How did you decide whether AI was appropriate, how did you use it, and how did you ensure the outcome was effective and responsible? This can be an example from your personal or work life.",
+      "type": "textarea",
+      "required": true,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null
+    },
+    {
+      "id": "question_16025485008",
+      "label": "Will you now or in the future require sponsorship for work authorization? (This information will not be used in assessing your qualifications for any position.)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 33181225008
+        },
+        {
+          "label": "No",
+          "value": 33181226008
+        }
+      ]
+    },
+    {
+      "id": "question_16025486008",
+      "label": "Are you authorized to work lawfully in the location posted for this position?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_16025487008",
+      "label": "Have you ever been employed full-time at Block or its subsidiaries?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 33181227008
+        },
+        {
+          "label": "No",
+          "value": 33181228008
+        }
+      ]
+    },
+    {
+      "id": "question_16025488008",
+      "label": "If you answered \"Yes\" to the question above, please enter your dates of employment. Note that your performance history may be reviewed as part of the application process.\n",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you answered \"Yes\" to the question above, please enter your dates of employment. Note that your performance history may be reviewed as part of the application process.\\n'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_16025489008",
+      "label": "Have you ever provided any contract work for Block, Inc. or any of its subsidiaries or affiliates (whether in the U.S. or internationally)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 33181229008
+        },
+        {
+          "label": "No",
+          "value": 33181230008
+        }
+      ]
+    },
+    {
+      "id": "question_16025490008",
+      "label": "If you answered \"Yes\" to the question above, please enter your dates of contract engagement or work through agency.",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you answered \"Yes\" to the question above, please enter your dates of contract engagement or work through agency.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_16025491008[]",
+      "label": "By clicking “accept,” you agree that any disputes related to your application, including those related to Block’s selection process, hiring decision, and your background check, shall be submitted to binding arbitration with the Judicial Arbitration and Mediation Services, Inc. (JAMS) on an individual basis only in San Francisco, before a single arbitrator according to the applicable JAMS Rules then in effect, with Block bearing all costs unique to arbitration. To the extent permitted by law, you and Block each waive the right to initiate or participate in any class, collective, or representative action against the other in any forum (including court and arbitration). If any provision of this agreement is deemed unenforceable, the remainder shall remain in effect, except that, notwithstanding the above, under no circumstances shall class or collective, or representative proceedings be permitted in arbitration.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Yes",
+      "source": "common_form_answers.willing_to_complete_background_check | NOTE: 'Yes' not literally in options ['Accept']",
+      "status": "filled_needs_review",
+      "matched_rule": "background_check",
+      "options": [
+        {
+          "label": "Accept",
+          "value": 33181231008
+        }
+      ]
+    },
+    {
+      "id": "question_16025492008",
+      "label": "I certify that all of the information I have provided is correct and complete and realize that falsification or misrepresentation, including omission, on this or any other personnel record, or in the hiring process, may be grounds for refusal of employment, or if hired, may lead to disciplinary action, up to and including termination. By signing this Electronic Signature Acknowledgment Online Form, I agree that my electronic signature is the legally binding equivalent to my handwritten signature. Whenever I execute an electronic signature, it has the same validity and meaning as my handwritten signature. I will not, at any time in the future, repudiate the meaning of my electronic signature or claim that my electronic signature is not legally binding. Please sign by typing your Full Legal First, Middle Initial, and Last Name.",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_16025493008",
+      "label": "What is your Legal First Name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "question_16025494008",
+      "label": "What is your Legal Last Name?",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_16025495008",
+      "label": "How we interview: Our hiring process prioritizes authenticity and fairness, and we ask all candidates to adhere to a few key expectations. Acceptable use of AI may differ depending on the role, so we encourage you to confirm with your recruiter what is or isn’t permitted during the process. Recording any part of the interview without consent is prohibited. However, if you need recording as an accommodation, please notify your recruiter before your scheduled interview. During virtual interviews, keep your video on to foster meaningful engagement; if you require accommodations, please inform our team in advance. Lastly, maintain confidentiality by refraining from sharing any proprietary or trade secret information from previous employers or other sources throughout the interview process.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I agree to these expectations",
+      "source": "acknowledge_yes (single option 'I agree to these expectations')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I agree to these expectations",
+          "value": 33181224008
+        }
+      ]
+    },
+    {
+      "id": "question_16025496008",
+      "label": "With your permission, we may use AI transcription software to transcribe and summarize your interview to help us capture accurate notes. Participation is entirely voluntary, and your decision will not affect the outcome of your application. You can withdraw consent at any time. Do you consent to us using AI to transcribe and summarize your interview?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_16057478008[]",
+      "label": "Which of the following best describes your residency status for this role?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I currently live in Los Angeles or Orange County.",
+      "source": "willing_to_relocate: first non-No city option",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "I currently live in Los Angeles or Orange County.",
+          "value": 33456758008
+        },
+        {
+          "label": "I am in the process of relocating to the LA/OC area.",
+          "value": 33456759008
+        },
+        {
+          "label": "I do not live in the area but am willing to relocate if hired.",
+          "value": 33456760008
+        },
+        {
+          "label": "I do not live in the area and am not looking to relocate.",
+          "value": 33456761008
+        }
+      ]
+    },
+    {
+      "id": "question_16699787008",
+      "label": "Do you have full-stack development experience, and are you comfortable completing both a technical take-home assignment and a live virtual coding session without the use of AI as part of our interview process?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4004524008",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 4027149008
+        },
+        {
+          "label": "Female",
+          "value": 4027150008
+        },
+        {
+          "label": "Non-Binary",
+          "value": 4027151008
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4027152008
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4037314008
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4006448008",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Black or of African descent",
+          "value": 4038678008
+        },
+        {
+          "label": "East Asian",
+          "value": 4038679008
+        },
+        {
+          "label": "Hispanic, Latinx or of Spanish Origin",
+          "value": 4038680008
+        },
+        {
+          "label": "Indigenous, American Indian or Alaska Native",
+          "value": 4038681008
+        },
+        {
+          "label": "Middle Eastern or North African Native",
+          "value": 4038682008
+        },
+        {
+          "label": "Hawaiian or Pacific Islander",
+          "value": 4038683008
+        },
+        {
+          "label": "South Asian",
+          "value": 4038684008
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4038685008
+        },
+        {
+          "label": "White or European",
+          "value": 4038686008
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4038687008
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4038688008
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4006452008",
+      "label": "Are you a veteran or active member of the United States Armed Forces?\t",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "I am a veteran or active member",
+          "value": 4038705008
+        },
+        {
+          "label": "No, I am not a veteran or active member",
+          "value": 4038706008
+        },
+        {
+          "label": "I prefer to self-describe",
+          "value": 4038707008
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4038708008
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_16025488008",
+      "label": "If you answered \"Yes\" to the question above, please enter your dates of employment. Note that your performance history may be reviewed as part of the application process.\n",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you answered \"Yes\" to the question above, please enter your dates of employment. Note that your performance history may be reviewed as part of the application process.\\n'"
+    },
+    {
+      "id": "question_16025490008",
+      "label": "If you answered \"Yes\" to the question above, please enter your dates of contract engagement or work through agency.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you answered \"Yes\" to the question above, please enter your dates of contract engagement or work through agency.'"
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

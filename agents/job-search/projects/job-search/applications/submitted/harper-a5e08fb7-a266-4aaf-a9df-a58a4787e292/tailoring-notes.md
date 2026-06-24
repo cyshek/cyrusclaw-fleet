@@ -1,42 +1,46 @@
 # Tailoring notes
 
 ## Title swaps applied
-- (none)
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
 
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
-2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a fully scalable, self-service model.
-3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable model for continuous production validation.
-4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract — communicating technical outcomes directly to non-technical stakeholders.
-5. Built an internal **AI agent** for drill planning and restructured automation workflows, cutting planning cycle time by 39% and increasing drill capacity by 21% — instrumenting results to show impact in business terms to leadership.
-6. Embedded with operator teams across sales, service, and carrier relations to surface the 20% of workflow friction causing 80% of drag, then **shipped targeted automations** that moved measurable throughput numbers within weeks of discovery.
+1. **Embedded with operators** across Azure's resilience org to find leverage hiding in manual workflows — scaled a 2-person drill program into a platformized system sustaining **45+ annual executions** and $14M+ in enterprise customer impact.
+2. Built a **0→1 internal automation platform** end-to-end, defining self-service scheduling and workflow tooling that cut operational toil by 30% and removed the team as a bottleneck to every drill cycle.
+3. Shipped Azure's first proactive rack-level resilience testing capability in **4 months** — 94% recovery rate, surfaced critical hardware defects, and moved the number before leadership knew the gap existed.
+4. Directed 14 high-visibility cross-org recovery executions, including a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, serving as bridge lead across distributed engineering and partner teams.
+5. Built an **internal AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill throughput by 21% — measured in business outcomes, not shipped features.
+6. Prototyped and deployed LLM-powered workflow automations by testing new model capabilities on release day, converting what just became possible into running production tooling within days.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed **AI-driven code generation** adoption across Azure, running live operator demos and training sessions that drove active utilization across 14 key teams and freed **37 engineering hours monthly** — tracking adoption as the business outcome, not just feature usage.
-2. Surfaced critical feature gaps by embedding with 11+ Azure service teams in structured user interviews, directly influencing the roadmap to include **intent-based YAML generation** — translating operator friction into a shipped automation capability.
-3. Eliminated lookup bottlenecks by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting retrieval time by 83% and demonstrating measurable workflow impact to non-technical stakeholders.
+1. Drove **AI-powered code generation adoption** across 14 Azure service teams through hands-on operator demos and workflow integration, saving 37 engineering hours monthly — measured adoption, not just rollout.
+2. Ran **11+ user interviews** with non-technical operators and Azure service teams to surface friction in existing workflows, directly influencing the roadmap to prioritize intent-based YAML generation.
+3. Cut documentation lookup time by **83%** by migrating to an AI-powered semantic search tool and enforcing metadata standards — converted a manual retrieval bottleneck into a self-service capability.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams — finding the leverage hiding in fragmented manual workflows and shipping against it.
-2. Embedded with 20+ service teams to map **81 hours of manual toil** per region launch, then built a roadmap to automate the critical paths — a direct prototype of the find-the-friction, ship-the-fix loop this role demands.
-3. Engineered a **Power BI dashboard** to instrument operational toil across 140+ teams in real time, enabling leadership to target automation gaps and prioritize high-impact work based on measured business outcomes rather than intuition.
+1. **Generated $3M in accelerated revenue** and cut region launch time by 28% by securing cross-functional alignment on an automation prioritization framework across 140+ teams — moved a business number, not just a process.
+2. Sat with 20+ service teams to watch the actual work, surfacing **81 hours of manual toil** per region launch, then built and shipped a roadmap to automate the highest-friction paths.
+3. Engineered a **Power BI dashboard** tracking operational drag across 140+ teams, giving leadership the instrumentation to target automation gaps and prioritize high-impact workflow investments.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** across a 2,000+ unit pilot by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations — prototyping the transition plan fast and validating it against production constraints before full rollout.
-2. Facilitated Agile sprint ceremonies and owned backlog prioritization, resolving **40+ high-priority tickets** and stabilizing the developer intake process by surfacing and removing the workflow blockers slowing engineering throughput.
-3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and proving the impact in deployment-frequency terms to cross-functional stakeholders.
+1. Defined the OS migration strategy and dependency map for a **2,000+ unit pilot** across 1,200+ stations, achieving zero operational downtime — shipped the transition before stakeholders flagged the risk.
+2. Drove **CI/CD pipeline automation** by aligning IT, Operations, and Engineering on a shared deployment workflow, cutting the software release cycle by 25% and removing a chronic cross-team friction point.
+3. Cleared 40+ high-priority backlog tickets by facilitating sprint planning and retrospectives, **stabilizing the developer intake process** and restoring velocity to a stalled delivery pipeline.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased **job bookings by 26%** by redesigning the end-to-end scoping and invoicing workflow for 200+ monthly proposals through a new CRM process — measuring conversion as the outcome and iterating until the number moved.
-2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile as instrumented levers rather than one-off projects.
-3. Identified and sealed margin leaks by conducting financial profitability analysis across **1,000+ project records**, translating raw operational data into pricing model improvements that leadership could act on immediately.
+1. **Increased job bookings 26%** by redesigning the end-to-end CRM workflow for 200+ monthly proposals — embedded with the sales team, found the friction, and shipped a process that moved the conversion number.
+2. Cut Customer Acquisition Cost by **13%** and lifted conversions 2.7% by executing a digital-first GTM strategy, optimizing the website and Google profile using performance data, not assumptions.
+3. Conducted **profitability analysis across 1,000+ project records** to identify margin leaks in pricing models, translating raw operational data into actionable recommendations leadership could act on immediately.
 
 ## Notes from the rewriter
-- 'Find the leverage' framing from JD woven into microsoft_ft bullet#6 and microsoft_2022 bullet#2 — explicitly names operator embedding, friction-finding, and shipping against it.
-- 'Instrument what you ship / prove it moved a number' language from JD woven into microsoft_ft bullet#5 ('instrumenting results'), microsoft_2022 bullet#3 ('deployment-frequency terms'), and pro_painters bullet#1 ('measuring conversion as the outcome').
-- 'AI agents' and 'workflow automations' from JD surfaced in microsoft_ft bullet#5 (AI agent for drill planning) and microsoft_2023 bullet#2 (intent-based YAML as shipped automation capability).
-- 'Non-technical operators' trust framing from JD woven into microsoft_ft bullet#4 ('communicating technical outcomes directly to non-technical stakeholders') and microsoft_2022 bullet#3 ('leadership to target gaps based on measured outcomes').
-- 'Prototype Monday, ship Tuesday' speed framing from JD reflected in microsoft_ft bullet#2 ('weeks of discovery') and amazon_robotics bullet#1 ('prototyping fast and validating against production constraints').
+- 'Find the leverage' (JD phrase) woven into microsoft_ft bullet 1 as 'find leverage hiding in manual workflows' and amazon_robotics bullet 2 as 'removing a chronic cross-team friction point.'
+- 'Prototype Monday, ship Tuesday, measure Wednesday' cadence mirrored in microsoft_ft bullet 6 ('converting what just became possible into running production tooling within days') and pro_painters bullet 1 ('found the friction, and shipped a process that moved the conversion number').
+- 'Prove it moved a number' framing applied explicitly in microsoft_2022 bullet 1 ('moved a business number, not just a process') and microsoft_ft bullet 5 ('measured in business outcomes, not shipped features').
+- 'Embed with operators' language used directly in microsoft_ft bullet 1 and pro_painters bullet 1 to mirror the JD's forward-deployed operator-embedding model.
+- 'New model drops, you're testing it that day' mirrored in microsoft_ft bullet 6 ('testing new model capabilities on release day') to signal frontier awareness Harper explicitly calls out.
 

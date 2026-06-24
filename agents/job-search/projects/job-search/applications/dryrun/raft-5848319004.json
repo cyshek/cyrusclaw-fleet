@@ -4,16 +4,16 @@
   "job_id": "5848319004",
   "job_title": "Program/Product Manager",
   "job_location": "Colorado Springs, CO",
-  "fetched_at": "2026-06-23T02:55:48Z",
+  "fetched_at": "2026-06-23T23:10:49Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/raft/jobs/5848319004?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 25,
-    "filled": 18,
+    "filled": 19,
     "filled_needs_review": 1,
     "declined": 4,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -245,10 +245,10 @@
       "label": "Do you currently hold a PMP (Project Management Professional) certification?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Do you currently hold a PMP (Project Management Professional) certification?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -454,21 +454,9 @@
       "label": "If yes, please provide the verification code and expiration date.",
       "required": false,
       "reason": "no LABEL_RULES match for label='If yes, please provide the verification code and expiration date.'"
-    },
-    {
-      "id": "question_15797886004",
-      "label": "Do you currently hold a PMP (Project Management Professional) certification?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Do you currently hold a PMP (Project Management Professional) certification?'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_15797886004",
-      "label": "Do you currently hold a PMP (Project Management Professional) certification?",
-      "reason": "no LABEL_RULES match for label='Do you currently hold a PMP (Project Management Professional) certification?'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

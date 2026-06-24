@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise integrations with Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Directed 14 cross-org recovery executions under executive visibility, serving as **integration lead** for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across engineering, sales, and customer teams.
+4. Built an internal **AI agent** to restructure planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — directly expanding the team's ability to serve a growing enterprise customer base.
+5. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical defects and establishing a new continuous-validation model across partner ecosystems.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours** monthly.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ stakeholder interviews** with Azure service teams, translating customer feedback into prioritized feature requirements and clear documentation.
+3. Improved data integrity and retrieval by migrating documentation to an AI-powered **semantic search tool**, cutting lookup time by 83% and enabling faster self-service access across engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams — translating district-scale complexity into a clear, executable roadmap.
+2. Conducted discovery with 20+ service teams to surface **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths, directly informing resource allocation decisions for engineering leadership.
+3. Built a **Power BI dashboard** to track operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and communicate progress to a broad business audience.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by owning the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and maintaining clear documentation for cross-functional stakeholders.
+2. Partnered with IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a more scalable integration model across hardware and software teams.
+3. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process — keeping the cross-functional team aligned on delivery commitments.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM process that improved pipeline visibility and customer communication.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to better align messaging with customer needs.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks to support data-driven roadmap decisions for the business.
+
+## Notes from the rewriter
+- 'district integrations' / 'integration lead' woven into microsoft_ft bullet 3 and skills, mirroring IXL's team name and domain directly.
+- 'customer feedback into prioritized feature requirements' in microsoft_2023 bullet 2 mirrors JD language: 'translate those insights into clear product ideas and enhancements that shape the future of our integrations roadmap.'
+- 'self-service' and 'scalable integration model' in microsoft_ft bullet 2 and amazon_robotics bullet 2 mirror JD emphasis on seamless, scalable district integrations.
+- 'communicate progress to a broad business audience' in microsoft_2022 bullet 3 mirrors JD requirement: 'effectively communicate priorities and status to a wider business audience.'
+- 'resource allocation' in microsoft_2022 bullet 2 mirrors JD language: 'evaluating development resource allocation' under partner engineering responsibilities.
+

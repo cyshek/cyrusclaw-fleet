@@ -1,0 +1,79 @@
+# Founding AI Solutions Engineer- USA
+
+**Company:** Inworld AI
+**Location:** Mountain View, California, USA
+**Apply:** https://jobs.ashbyhq.com/inworld-ai/9aef36c8-55e5-4e05-b3a7-00992ad69647
+**Ashby Org:** inworld-ai
+**Ashby Job ID:** 9aef36c8-55e5-4e05-b3a7-00992ad69647
+
+---
+
+**About Inworld**
+
+Inworld is a research lab of top researchers and engineers, building the world’s top-ranked realtime voice models.
+
+Today our models are the #1 ranked realtime voice models in the world. They are used to power the largest consumer-facing AI applications available, across categories like health, fitness, learning, therapy, companions, customer experience and media; representing 100s of millions of end users. Our work spans areas like research and development of state-of-the-art models, optimizing realtime inference, and creating best-in-class APIs and products that allow developers to engage their users.
+
+We’ve raised more than $125M from Lightspeed, Section 32, Kleiner Perkins, Microsoft’s M12 venture fund, Founders Fund, Meta and Stanford, among others. Our technology has powered experiences from companies such as NVIDIA, Microsoft Xbox, Niantic, Logitech Streamlabs, Wishroll, Little Umbrella and Bible Chat. We’ve also been recognized by CB Insights as one of the 100 most promising AI companies globally and have been named one of LinkedIn’s Top 10 Startups in the USA.
+
+**Your Impact**
+
+We're looking for a Founding AI Solutions Engineer who will sit at the intersection of sales, product, and engineering — and become the technical backbone of our revenue team. You'll work directly with the senior leadership and our GTM team to help enterprise and developer customers go from "this sounds interesting" to "this is in production."
+
+You'll run POCs, build prototypes, and translate complex technical questions into clear answers for both engineers and executives. You'll own the technical side of deals pre- and post-signature — ensuring customers are genuinely successful, not just signed. Your work will directly shape how Inworld scales across gaming, CCaaS, media, consumer AI and beyond, and your fingerprints will be on the SE function as we build it.
+
+**What You'll Do**
+
+- Partner with GTM Leads on deals — lead technical discovery, run POCs, and own the solution design from first call through close
+
+- Build working prototypes and reference integrations that demonstrate Inworld's TTS, STT, LLM Router, LLM inference, and Realtime API solutions in the customer's actual context — not just a demo environment
+
+- Serve as the primary technical advisor during onboarding, getting customers from signed contract to production-quality integration
+
+- Translate customer requirements into actionable feedback for Product and Engineering
+
+- Answer deep technical questions live — latency tradeoffs, on-prem vs. cloud deployment, streaming architecture, model selection — without needing backup
+
+- Build and maintain a library of integration examples, demo environments, and technical collateral that the whole GTM team can use
+
+- Identify expansion opportunities by understanding what customers are building and where Inworld can do more
+
+- Contribute to shaping our technical sales process as an early hire — you'll define what great looks like here
+
+- Work closely with GTM leadership to redefine modern GTM and sales process
+
+**What You'll Bring**
+
+- 5+ years of experience in a customer-facing technical role (Solutions Engineer, Sales Engineer, Solutions Architect, or Technical Account Manager)
+
+- Strong hands-on coding ability — you can write production-quality integration code, not just scripts. Python strongly preferred; JavaScript/TypeScript a plus
+
+- Deep familiarity with AI/ML APIs — you understand how to work with LLMs, speech models, and streaming APIs, and can explain tradeoffs to both engineers and executives
+
+- Demonstrated ability to run technical POCs end-to-end and drive them to a decision
+
+- Effective communicator who can bridge technical and business conversations with ease
+
+- High level of empathy and integrity in customer interactions
+
+- Thrives in ambiguity and sees constant change as opportunity, not obstacle
+
+- Bachelor's degree or higher in a technical domain
+
+**Bonus Qualifications**
+
+- Experience with voice AI, TTS, STT, or real-time audio and speech systems
+
+- Background in gaming, CCaaS, or media and entertainment — our top customer verticals
+
+- Familiarity with on-premise and edge deployment patterns (containerization, model serving, quantization)
+
+- Experience with WebSocket/WebRTC or real-time streaming infrastructure
+
+- Prior experience at a high-growth startup or as a founder/operator
+
+- Experience with modern GTM tooling (Clay, n8n, Zapier, etc.)
+
+Candidates must be based in the SF Bay Area or willing to relocate (you will be working on-site in our South Bay office a few days a week).
+
+The base salary range for this full-time position is $170,000 - $250,000+ bonus + equity + benefits.

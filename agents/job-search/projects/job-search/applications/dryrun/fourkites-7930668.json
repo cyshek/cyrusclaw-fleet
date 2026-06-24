@@ -4,16 +4,16 @@
   "job_id": "7930668",
   "job_title": "Forward Deployed Engineer",
   "job_location": "Chicago, IL",
-  "fetched_at": "2026-06-23T04:55:04Z",
+  "fetched_at": "2026-06-23T16:42:39Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/fourkites/jobs/7930668?questions=true",
   "ready_to_submit": false,
   "counts": {
     "total_fields": 20,
-    "filled": 13,
+    "filled": 15,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 3,
-    "blockers": 3
+    "unresolved": 1,
+    "blockers": 1
   },
   "fields": [
     {
@@ -120,10 +120,10 @@
       "label": "Are you open to relocate to Chicago ?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you open to relocate to Chicago ?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
       "options": [
         {
           "label": "Yes",
@@ -140,10 +140,10 @@
       "label": "Kindly share your earliest joining date?",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Kindly share your earliest joining date?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
       "options": null
     },
     {
@@ -352,18 +352,6 @@
   ],
   "unresolved": [
     {
-      "id": "question_66919972",
-      "label": "Are you open to relocate to Chicago ?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you open to relocate to Chicago ?'"
-    },
-    {
-      "id": "question_66919973",
-      "label": "Kindly share your earliest joining date?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Kindly share your earliest joining date?'"
-    },
-    {
       "id": "question_66919975[]",
       "label": "Kindly update your employement status?  (STEM OPT/F1/H1-B /Citizen /Greencard Holder/CPT)",
       "required": true,
@@ -371,16 +359,6 @@
     }
   ],
   "blockers": [
-    {
-      "id": "question_66919972",
-      "label": "Are you open to relocate to Chicago ?",
-      "reason": "no LABEL_RULES match for label='Are you open to relocate to Chicago ?'"
-    },
-    {
-      "id": "question_66919973",
-      "label": "Kindly share your earliest joining date?",
-      "reason": "no LABEL_RULES match for label='Kindly share your earliest joining date?'"
-    },
     {
       "id": "question_66919975[]",
       "label": "Kindly update your employement status?  (STEM OPT/F1/H1-B /Citizen /Greencard Holder/CPT)",

@@ -1,0 +1,42 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ impact across enterprise customers.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining self-service scheduling requirements that cut operational toil by 30% and transitioned drill execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous validation standard.
+4. Directed 14 cross-org recovery executions under executive visibility, including a **sovereign-cloud network isolation** test tied to a $1.5B+ enterprise contract, bridging technical and business stakeholder needs.
+5. Built an internal **AI agent** to automate drill planning workflows, restructuring scheduling cycles to cut planning time by 39% and increase annual drill capacity by 21% without adding headcount.
+6. Partnered with enterprise customers including Databricks, Walmart, SAP, and NetApp to **align resilience solutions** with their business-critical infrastructure needs, presenting findings and recommendations to technical and executive audiences.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly.
+2. Influenced the roadmap to include **intent-based YAML generation** by facilitating 11+ discovery interviews with Azure service teams, identifying critical feature gaps and translating findings into prioritized product requirements.
+3. Improved data integrity and retrieval by migrating documentation to an **AI-powered semantic search** platform and enforcing metadata standards, cutting average lookup time by 83% across engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ service teams.
+2. Defined a product strategy to reduce operational toil during region launches, conducting discovery with 20+ teams to surface **81 hours of manual effort** per region and building a roadmap to automate critical deployment paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact investments with data-driven precision.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping system dependencies across 1,200+ robotic stations.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across cross-functional engineering teams.
+3. Drove alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release risk across production systems.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a structured CRM process that improved sales conversion and customer follow-through.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile for local government and residential segments.
+3. Improved leadership pricing decisions by conducting **profitability analysis** across 1,000+ project records, identifying margin leaks and delivering a data-backed framework to realign service pricing with actual cost structures.
+
+## Notes from the rewriter
+- 'conceptual solution design' and 'technical consulting' from JD requirements woven into skills section and microsoft_ft bullet#4 framing (bridging technical and business stakeholder needs).
+- 'enterprise customers' and 'align solutions with business needs' from JD's 'Solve problems' responsibility reflected in microsoft_ft bullet#6, directly mirroring Esri's customer-advisory model.
+- 'AI/ML concepts' from recommended qualifications surfaced in microsoft_2023 bullet#3 (AI-powered semantic search) and microsoft_ft bullet#5 (AI agent for planning automation).
+- 'CI/CD' and 'deployment' from JD's IT context requirement reinforced in amazon_robotics bullet#3 and microsoft_2022 bullet#2, connecting Cyrus's systems background to ArcGIS deployment/administration needs.
+- 'go-to-market strategy' and 'sales strategies' from JD's 'Build relationships' responsibility echoed in pro_painters bullet#2, showing pre-sales and GTM fluency relevant to supporting Esri account teams.
+

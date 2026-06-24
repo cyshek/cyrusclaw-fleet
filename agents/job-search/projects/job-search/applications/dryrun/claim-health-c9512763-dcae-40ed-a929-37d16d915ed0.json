@@ -5,21 +5,21 @@
   "job_id": "c9512763-dcae-40ed-a929-37d16d915ed0",
   "job_title": "Forward Deployed Engineer",
   "job_location": "New York City",
-  "fetched_at": "2026-06-23T08:29:14Z",
+  "fetched_at": "2026-06-24T00:19:11Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 14,
-    "filled": 10,
+    "filled": 11,
     "filled_needs_review": 0,
     "declined": 0,
     "needs_essay": 1,
-    "unresolved": 3,
-    "blockers": 1
+    "unresolved": 2,
+    "blockers": 0
   },
   "fields": [
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_name",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,11 +29,11 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_name",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_name",
       "section": "Candidate Information"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_email",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -43,11 +43,11 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_email",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_email",
       "section": "Candidate Information"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_899f02eb-b9aa-4ea5-a450-90d87e37e2f7",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_899f02eb-b9aa-4ea5-a450-90d87e37e2f7",
       "label": "LinkedIn Profile",
       "type": "input_text",
       "required": true,
@@ -57,11 +57,11 @@
       "matched_rule": "linkedin",
       "options": null,
       "_ashby_type": "Url",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_899f02eb-b9aa-4ea5-a450-90d87e37e2f7",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_899f02eb-b9aa-4ea5-a450-90d87e37e2f7",
       "section": "Candidate Information"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_location",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_location",
       "label": "Current Location",
       "type": "input_text",
       "required": true,
@@ -71,18 +71,18 @@
       "matched_rule": "city_state",
       "options": null,
       "_ashby_type": "Location",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_location",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_location",
       "section": "Candidate Information"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_10641fb7-7614-432a-b6c0-c68786b65111",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_10641fb7-7614-432a-b6c0-c68786b65111",
       "label": "Are you able to work in-person in NYC?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you able to work in-person in NYC?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -94,11 +94,11 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_10641fb7-7614-432a-b6c0-c68786b65111",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_10641fb7-7614-432a-b6c0-c68786b65111",
       "section": "Work Authorization & Location"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_a46c3597-e5af-4c30-b992-d612069e7664",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_a46c3597-e5af-4c30-b992-d612069e7664",
       "label": "Will you now or in the future require visa sponsorship to work in the United States?",
       "type": "multi_value_single_select",
       "required": true,
@@ -117,11 +117,11 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_a46c3597-e5af-4c30-b992-d612069e7664",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_a46c3597-e5af-4c30-b992-d612069e7664",
       "section": "Work Authorization & Location"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_resume",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -131,11 +131,11 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166__systemfield_resume",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f__systemfield_resume",
       "section": "Experience Snapshot"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_713b9366-3f6d-4a87-8e03-d78f118d89cd",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_713b9366-3f6d-4a87-8e03-d78f118d89cd",
       "label": "Have you worked at an early-stage startup (Seed–Series A)?",
       "type": "multi_value_single_select",
       "required": false,
@@ -154,11 +154,11 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_713b9366-3f6d-4a87-8e03-d78f118d89cd",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_713b9366-3f6d-4a87-8e03-d78f118d89cd",
       "section": "Experience Snapshot"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_9cf21dc7-c445-4f8d-8660-daa083b37cb6",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_9cf21dc7-c445-4f8d-8660-daa083b37cb6",
       "label": "Describe a system or product you owned end-to-end. What problem did it solve, and what tradeoffs did you make?",
       "type": "textarea",
       "required": true,
@@ -168,11 +168,11 @@
       "matched_rule": null,
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_9cf21dc7-c445-4f8d-8660-daa083b37cb6",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_9cf21dc7-c445-4f8d-8660-daa083b37cb6",
       "section": "Ownership"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_6a62f117-793f-41bf-bc03-bd100a9697b9",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_6a62f117-793f-41bf-bc03-bd100a9697b9",
       "label": "What excites you about building foundational systems at an early-stage company like Claim Health?",
       "type": "textarea",
       "required": true,
@@ -182,11 +182,11 @@
       "matched_rule": "why_company_essay",
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_6a62f117-793f-41bf-bc03-bd100a9697b9",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_6a62f117-793f-41bf-bc03-bd100a9697b9",
       "section": "Motivation & Fit"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_ae84beb6-c839-453c-950d-6770c8c7881a",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_ae84beb6-c839-453c-950d-6770c8c7881a",
       "label": "Describe a messy or ambiguous problem you enjoyed working on. Why?",
       "type": "textarea",
       "required": false,
@@ -196,26 +196,26 @@
       "matched_rule": null,
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_ae84beb6-c839-453c-950d-6770c8c7881a",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_ae84beb6-c839-453c-950d-6770c8c7881a",
       "section": "Motivation & Fit"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_debeb4b3-3616-4b0a-aba7-da6d57920740",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_debeb4b3-3616-4b0a-aba7-da6d57920740",
       "label": "Earliest start date",
       "type": "input_date",
       "required": false,
-      "value": "2026-07-07",
+      "value": "2026-07-08",
       "source": "preferences.earliest_start_date (date picker -> today+14d)",
       "status": "filled",
       "matched_rule": "earliest_start",
       "options": null,
       "_ashby_type": "Date",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_debeb4b3-3616-4b0a-aba7-da6d57920740",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_debeb4b3-3616-4b0a-aba7-da6d57920740",
       "section": "Logistics",
-      "_ashby_date_iso": "2026-07-07"
+      "_ashby_date_iso": "2026-07-08"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_19b8ac46-0dea-4ece-916f-c5e2a0c09188",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_19b8ac46-0dea-4ece-916f-c5e2a0c09188",
       "label": "Compensation expectations",
       "type": "input_text",
       "required": false,
@@ -225,11 +225,11 @@
       "matched_rule": "compensation",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_19b8ac46-0dea-4ece-916f-c5e2a0c09188",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_19b8ac46-0dea-4ece-916f-c5e2a0c09188",
       "section": "Logistics"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
       "label": "Anything else we should know about you?",
       "type": "textarea",
       "required": false,
@@ -239,35 +239,23 @@
       "matched_rule": null,
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "316f9b29-536d-4e3b-9e46-7635cefe8166_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
+      "_ashby_id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
       "section": "Logistics"
     }
   ],
   "unresolved": [
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_10641fb7-7614-432a-b6c0-c68786b65111",
-      "label": "Are you able to work in-person in NYC?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you able to work in-person in NYC?'"
-    },
-    {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_ae84beb6-c839-453c-950d-6770c8c7881a",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_ae84beb6-c839-453c-950d-6770c8c7881a",
       "label": "Describe a messy or ambiguous problem you enjoyed working on. Why?",
       "required": false,
       "reason": "no LABEL_RULES match for label='Describe a messy or ambiguous problem you enjoyed working on. Why?'"
     },
     {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
+      "id": "f2825121-7c7a-46b9-9412-36b9d9c8c52f_4f7bea8f-2c2d-4ff6-8c79-24eb2d98f322",
       "label": "Anything else we should know about you?",
       "required": false,
       "reason": "no LABEL_RULES match for label='Anything else we should know about you?'"
     }
   ],
-  "blockers": [
-    {
-      "id": "316f9b29-536d-4e3b-9e46-7635cefe8166_10641fb7-7614-432a-b6c0-c68786b65111",
-      "label": "Are you able to work in-person in NYC?",
-      "reason": "no LABEL_RULES match for label='Are you able to work in-person in NYC?'"
-    }
-  ]
+  "blockers": []
 }

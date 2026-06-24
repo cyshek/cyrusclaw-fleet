@@ -1,0 +1,273 @@
+{
+  "ats": "lever",
+  "role_url": "https://jobs.lever.co/veeva/6bcc8228-5b43-43e5-b96b-d62679b8c64a",
+  "apply_url": "https://jobs.lever.co/veeva/6bcc8228-5b43-43e5-b96b-d62679b8c64a/apply",
+  "org": "veeva",
+  "job_id": "6bcc8228-5b43-43e5-b96b-d62679b8c64a",
+  "job_title": "Veeva Systems - Associate Product Manager - Vault CRM Suite",
+  "fetched_at": "2026-06-23T10:38:08Z",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 11,
+    "filled_needs_review": 1,
+    "declined": 3,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "name",
+      "label": "Full name",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "location",
+      "label": "Current location",
+      "type": "input_text",
+      "lever_type": null,
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null
+    },
+    {
+      "id": "org",
+      "label": "Current company",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "urls[LinkedIn]",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "urls[GitHub]",
+      "label": "GitHub URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "urls[Portfolio]",
+      "label": "Portfolio URL",
+      "type": "input_text",
+      "lever_type": null,
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "lever_type": null,
+      "required": true,
+      "value": "<<RESUME_PDF_PATH>>",
+      "source": "lever_resume_input",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "cards[f164d557-93a6-4a31-bb8f-3f226956f117][field0]",
+      "label": "How did you hear about Veeva?",
+      "type": "multi_value_single_select",
+      "lever_type": "dropdown",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": "37433616-bbe8-4853-9433-fdde7308de78"
+        },
+        {
+          "label": "Indeed",
+          "value": "131fc274-9308-4d56-8f32-d25c3d797e99"
+        },
+        {
+          "label": "Other Job Board",
+          "value": "66d9b438-cbfe-4350-b9c3-3c5e3eaea639"
+        },
+        {
+          "label": "Career Fair or Event",
+          "value": "19c04724-a7e4-40ca-8736-a18cc140153a"
+        },
+        {
+          "label": "Digital Advertisement",
+          "value": "05323077-93e9-4b8f-a581-30d9ab3b78d0"
+        },
+        {
+          "label": "Other Advertisement (Radio, Billboard, Print)",
+          "value": "2676edd5-03d8-4c80-8ec0-e25ac31986cc"
+        },
+        {
+          "label": "Veeva Employee",
+          "value": "f558b547-ec65-41bb-80c8-3e2f40285d7d"
+        },
+        {
+          "label": "Google Search",
+          "value": "9aeb6e6c-2931-47ef-82eb-ed2b50cde631"
+        },
+        {
+          "label": "Friend/Colleague",
+          "value": "cf90bb76-fb89-4155-be05-898519c44471"
+        },
+        {
+          "label": "Other",
+          "value": "0c4d84b0-f092-459e-a59e-42ee41e3bfe7"
+        }
+      ],
+      "card_text": "Additional Questions"
+    },
+    {
+      "id": "cards[422a2562-975c-4511-bd0a-bb9565434f4b][field0]",
+      "label": "Do you have the unrestricted right to work in the United States?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "Yes",
+      "source": "lever_default (required-select last-resort -> Yes)",
+      "status": "filled_needs_review",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "74d988c4-b606-4b25-b9c3-cc0526c6db0e"
+        },
+        {
+          "label": "No",
+          "value": "07090854-2e35-4f30-91a8-ab4b4c94a8d0"
+        }
+      ],
+      "card_text": "Additional Questions: US"
+    },
+    {
+      "id": "cards[422a2562-975c-4511-bd0a-bb9565434f4b][field1]",
+      "label": "Do you now, or in the future require sponsorship?",
+      "type": "multi_value_single_select",
+      "lever_type": "multiple-choice",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "6215c6af-b1d8-4117-8324-83f82dc82790"
+        },
+        {
+          "label": "No",
+          "value": "12d4f176-7040-4e1e-82ea-4942ab901bbd"
+        }
+      ],
+      "card_text": "Additional Questions: US"
+    },
+    {
+      "id": "eeo[gender]",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[race]",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    },
+    {
+      "id": "eeo[veteran]",
+      "label": "Veteran",
+      "type": "multi_value_single_select",
+      "lever_type": "eeo",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "eeo_default (lever EEO block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": null,
+      "compliance": "eeo"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "meta": {
+    "og_title": "Veeva Systems - Associate Product Manager - Vault CRM Suite",
+    "structured_location": true,
+    "has_eeo": true,
+    "has_resume_input": true
+  }
+}

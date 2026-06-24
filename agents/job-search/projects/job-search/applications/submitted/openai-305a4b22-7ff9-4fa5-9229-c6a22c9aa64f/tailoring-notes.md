@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned **end-to-end technical delivery** of Azure's recovery validation program, scaling from a 2-person operation to a platformized system sustaining 45+ annual resilience drills and driving **$14M+ in measurable customer impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 deployment of an internal **Resilience Automation Platform**, defining requirements and self-service scheduling workflows that cut operational toil by 30% and shifted execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a full production rollout in 4 months with a **94% recovery rate** and surfacing critical hardware defects that reshaped platform roadmap priorities.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as technical bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract requiring coordinated multi-team sequencing.
+5. Built an **internal AI agent** for drill planning and restructured end-to-end workflows, reducing planning cycle time by 39% and expanding drill capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **production adoption of AI-driven code generation** workflows across 14 Azure service teams through hands-on demos and onboarding sessions, translating model capabilities into tangible engineering value and saving 37 engineering hours monthly.
+2. Surfaced critical feature gaps through **11+ structured discovery sessions** with customer engineering teams, directly influencing the product roadmap to prioritize intent-based YAML generation as a first-class capability.
+3. Accelerated LLM-powered retrieval by migrating documentation to a **semantic search system** with rigorous metadata standards, cutting lookup time by 83% and improving model grounding accuracy for downstream workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, accelerating region launches by 28% and generating **$3M in pull-forward revenue** through faster production deployment.
+2. Led discovery with 20+ service teams to map 81 hours of manual effort per region launch, then scoped and delivered a **full-stack automation roadmap** targeting the highest-toil production paths across the deployment lifecycle.
+3. Built a **Power BI production dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and sequence high-impact investments with field-grounded data.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero production downtime** during a 2,000+ unit OS migration by owning the end-to-end deployment strategy, mapping dependencies across 1,200+ stations, and sequencing rollout to protect live operations.
+2. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, cutting the software deployment cycle by 25% and establishing a repeatable delivery model for future fleet rollouts.
+3. Facilitated Agile ceremonies and owned backlog sequencing, resolving **40+ high-priority tickets** to stabilize the developer intake process and keep cross-functional teams unblocked through a fast-moving pilot.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning end-to-end scoping, sequencing, and delivery of 200+ monthly proposals through a redesigned CRM workflow that removed manual blockers and standardized the customer handoff process.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profile to improve top-of-funnel adoption.
+3. Identified and closed margin leaks by analyzing **1,000+ project records**, delivering a profitability model that gave leadership the field feedback needed to reprice and protect delivery quality.
+
+## Notes from the rewriter
+- 'End-to-end technical delivery' and 'production rollout' (JD: 'own technical delivery from first prototype to stable production') woven into microsoft_ft bullet 1 and amazon_robotics bullet 1.
+- 'Eval-driven feedback' and 'field feedback that helps Research and Product' (JD verbatim) surfaced in microsoft_ft bullet 4 ('reshaped platform roadmap priorities') and microsoft_2023 bullet 1 ('translating model capabilities into tangible engineering value').
+- 'LLM-powered' and 'generative model / model behaviour affects product experience' (JD) reflected in microsoft_2023 bullet 3 ('LLM-powered retrieval', 'model grounding accuracy') and skills block ('LLM deployment, AI agents, RAG, generative model integration').
+- 'Discovery, technical scoping, system design, build, production rollout' sequence (JD) mirrored in microsoft_2022 bullet 2 ('full-stack automation roadmap targeting highest-toil production paths') and microsoft_ft bullet 2 ('0→1 deployment').
+- 'Codify working patterns into tools, playbooks, or building blocks' (JD) echoed in microsoft_ft bullet 5 (AI agent + workflow restructuring) and skills line ('playbook development').
+

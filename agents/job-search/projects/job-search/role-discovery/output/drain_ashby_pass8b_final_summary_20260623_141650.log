@@ -1,0 +1,62 @@
+=== Ashby Residential Drain Pass 8B — Final Summary ===
+Date: 2026-06-23
+Operator: drain-ashby-pass8b (subagent)
+CDP: http://127.0.0.1:19223 (residential proxy)
+Total slugs assigned: 26
+
+=== RESULTS ===
+
+SUBMITTED (22/26):
+  + omni-d42d1f2e-86ce-4d7d-84fc-84e03da25e60
+  + op-885091c2-2f56-4d46-aa01-efe49a065dee
+  + opengov-c94cccf1-408c-44da-8f12-7cca6667e583
+  + rillet-a182464e-76c1-4f0b-af78-76ba8a611281
+  + sentilink-a63dcae1-7f42-498b-8845-e2bf5820bbe6
+  + sentry-2cdc2ba7-8406-452a-b84f-d94d8e7a09bb
+  + skydio-f1554474-0c49-49f3-9847-33f52238fc4a
+  + solace-6f9534b6-1a96-4d4c-9434-0db094d0e87d
+  + solva-bd13a1e4-6ec2-4b16-a34d-259e6ea4c9e6
+  + spoton-e98aef00-2fad-40c1-b0f7-b09a2bc9f47d
+  + stytch-034cefe3-df7c-4297-9dd2-bb6c0eeb0824
+  + substack-cf626dcf-0c76-4ad5-a738-3fbc72e4da06
+  + synthesia-163816a3-11d0-4f20-b138-6629c73e3886
+  + tailor-b69e751a-d3ea-426f-8bd7-962116162534
+  + taktile-e89c4e62-fabf-47e1-95a7-91061b6c0705
+  + talos-trading-6bfa5c2e-dbd1-4b6a-93b5-3592c264ff40
+  + talos-trading-9df7b493-c34f-4250-a646-af1b5ebbcc2a
+  + twenty-3486ffc9-bd3e-4229-a649-b321694d9d57
+  + workos-dc23fd7b-ee4c-4e6a-959a-209b2eab8b17
+  + writer-a1d96909-a580-4fd6-b099-bfc8a8dfa6e3
+  + sesame-f54a7538-34d3-4572-90ad-e9867c36461c  [retry: plan fixed — radio "willing to work" had wrong value "Kirkland, WA"]
+  + writer-07259efd-497e-4fd3-9931-f651ec6128a9  [retry: transient email-fill failure on first pass]
+
+HARD-RECAPTCHA (0):
+  (none)
+
+OTHER-FAIL/BLOCKED (4):
+  x ramp-cf3516f6-4d6b-4872-831f-c8ef4a3078ee
+    Reason: INTEGRITY KNOCKOUT — "Do you have minimum 4 years of PM experience?" 
+    Cyrus has 2yr full-time / 3yr total. Answered truthfully "No". 
+    Server rejected as expected (legitimate knockout, not a bug).
+    
+  x snowflake-86570858-e425-4144-9aef-8838cefd18c3  [BLOCKED]
+    Reason: ashby-snowflake-yesno-clobber — "In office attendance" + "work auth" 
+    yesno buttons cleared before submit (yesno_buttons_active=5/7). 
+    3 attempts failed. New clobber variant affecting Snowflake survey-form radios.
+    block_reason set in tracker.db.
+    
+  x snowflake-9cf335c9-f99d-4ddb-b307-0dcd3a162a09  [BLOCKED]
+    Reason: same Snowflake yesno-clobber as above.
+    block_reason set in tracker.db.
+
+=== TRACKER STATE (after backfill + xlsx) ===
+  Open: 392 | Applied: 974 | Manual Apply: 336 | Interviews: 25
+
+=== NOTES ===
+- Sesame plan bug fixed: "Are you willing to work from required location?" radio 
+  had value "Kirkland, WA" (location leaked into radio field). Fixed to "Yes".
+- Writer email transient fail resolved on retry (no plan change needed).
+- Ramp: integrity question "4 years PM?" requires honest "No" from doctrine.
+  This is a real knockout, not an automation failure.
+- Snowflake yesno-clobber: new variant (survey-form radios) not in existing fix.
+  Needs deeper investigation (batch 8A should note if it saw same pattern).

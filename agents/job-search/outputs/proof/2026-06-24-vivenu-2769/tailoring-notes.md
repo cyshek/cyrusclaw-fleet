@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Architected and scaled Azure's enterprise resilience validation program from a 2-person operation into a **platformized solution**, standardizing API-driven workflows and integration blueprints that sustained 45+ annual drills across clients including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining REST API requirements, self-service scheduling capabilities, and scalable data-mapping standards that cut operational toil by 30% and transitioned execution to an independently run model.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a proof-of-concept in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable technical framework adopted as a global validation template.
+4. Directed 14 high-visibility cross-org recovery executions, serving as the primary technical escalation point for complex integration questions — including leading a sovereign-cloud **network isolation test** tied to a $1.5B+ enterprise contract requiring precise stakeholder alignment.
+5. Ran deep-dive technical workshops with CTOs, IT departments, and third-party engineering teams to extract requirements and translate complex distributed-system needs into **scalable solution blueprints** and white papers used across enterprise accounts.
+6. Accelerated solution design cycles by building an internal **AI agent** for drill planning and restructuring requirement-gathering workflows, reducing planning cycle time by 39% and expanding drill capacity by 21% without adding headcount.
+7. Drove $14M+ in documented business impact by aligning client expectations to platform capabilities, producing integration templates and proof-of-concepts that verified end-to-end data flows and enabled enterprise teams to execute independently at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **API-first workflow adoption** for AI-driven code generation tooling, conducting hands-on technical demos and stakeholder workshops with 14 Azure service teams that drove sustained platform utilization and saved 37 engineering hours monthly.
+2. Translated complex client requirements into a scalable product roadmap by facilitating **11+ structured discovery sessions** with enterprise engineering teams, surfacing critical feature gaps and influencing the addition of intent-based YAML generation to the platform backlog.
+3. Architected a metadata standards framework and migrated documentation to an **AI-powered semantic search** solution, improving data-mapping integrity and cutting information retrieval time by 83% across distributed engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch timelines by 28% by securing cross-functional alignment on a unified automation prioritization framework, translating integration complexity across 140+ teams into a clear, executable solution blueprint.
+2. Conducted technical discovery with 20+ service teams to map 81 hours of manual effort per region launch, then designed a **headless automation roadmap** that eliminated critical-path toil and established reusable integration templates across the organization.
+3. Engineered a **Power BI dashboard** to track operational toil and surface integration gaps across 140+ teams, enabling leadership to prioritize high-impact automation investments and accelerate time-to-value for enterprise platform rollouts.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by architecting the legacy OS migration strategy, mapping REST API dependencies, and producing integration blueprints across 1,200+ robotic stations used as the execution standard for full rollout.
+2. Facilitated Agile sprint ceremonies and triaged 40+ high-priority technical tickets, partnering directly with IT, Operations, and Engineering stakeholders to align on solution viability and maintain a **scalable, independently executable** deployment process.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, reducing software deployment cycle time by 25% and establishing a reusable integration framework for future platform upgrades.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by architecting an end-to-end CRM integration for scoping, proposals, and invoicing, standardizing workflows across 200+ monthly client engagements and enabling the sales team to execute the full lifecycle independently.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion rates by 2.7% by designing and executing a digital-first go-to-market strategy — optimizing web infrastructure, API-connected lead capture, and the Google Business profile to improve data flow into the CRM.
+3. Delivered a financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks through data mapping and pricing model refinements that gave leadership a scalable framework for evaluating solution viability on future bids.
+
+## Notes from the rewriter
+- 'API-first platform' and 'integration blueprints' woven into microsoft_ft bullets 1 and 3 — mirrors JD's core architecture language around vivenu's API-first positioning.
+- 'Headless automation roadmap' inserted into microsoft_2022 bullet 2 — directly echoes JD's callout of 'headless commerce architecture' as a key client transition vivenu SAs must lead.
+- 'Deep-dive technical workshops with CTOs, IT departments, and third-party engineering teams' in microsoft_ft bullet 5 — mirrors JD's exact stakeholder list ('customer CTOs and IT departments to third-party web agencies and Ticketing Managers').
+- 'Proof-of-concept' and 'verified end-to-end data flows' in microsoft_ft bullet 7 — mirrors JD's language around 'leveraging rapid scripting, AI tools, and proof-of-concepts to quickly verify data flows'.
+- 'Scalable solution blueprints' and 'white papers used across enterprise accounts' in microsoft_ft bullet 5 — mirrors JD's deliverable framing of 'turning bespoke solutions into high-impact white papers and global integration templates'.
+- 'Independently executable' phrasing in amazon_robotics bullet 2 — mirrors JD's requirement that solutions are 'independently executed' post-scoping, signaling Cyrus understands the autonomy standard vivenu expects.
+

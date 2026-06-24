@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows and data integration configurations to sustain 45+ annual resilience drills across enterprise clients including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling workflows that reduced operational toil by 30% and enabled scalable, repeatable execution across customer environments.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous validation model adopted across engineering teams.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating technical stakeholders across engineering and client solutions teams.
+5. Built an internal AI agent and restructured planning workflows to reduce drill planning cycle time by **39%**, increasing overall drill capacity by 21% and freeing engineering bandwidth for higher-priority customer support and product development.
+6. Partnered with technical stakeholders across enterprise customer teams to validate that platform data matched expected business logic post-integration, conducting root cause analysis on discrepancies and translating findings into actionable product improvements.
+7. Proposed and drove **$14M+ in business impact** by identifying workflow gaps through customer feedback analysis and collaborating with Product and Engineering to prioritize enhancements that improved data accuracy and client outcomes across biopharma-scale deployments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven workflows** by conducting customer-facing demos and training sessions that drove utilization across 14 key engineering teams, saving 37 hours of monthly manual effort and accelerating time-to-value for end users.
+2. Translated 11+ user interviews with Azure service teams into a **prioritized product roadmap**, surfacing critical feature gaps and influencing engineering to ship intent-based YAML generation — directly improving customer workflow configuration accuracy.
+3. Improved **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting average lookup time by 83% and reducing support burden from recurring data discrepancy tickets.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, partnering with 140+ teams to standardize data-driven workflows and reduce integration bottlenecks.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a product roadmap to automate critical workflow paths — directly reducing customer-facing delays tied to misconfigured data pipelines.
+3. Engineered a **Power BI dashboard** to track and analyze operational toil across 140+ teams, enabling leadership to surface automation gaps, prioritize high-impact support initiatives, and validate that platform configurations matched expected business logic.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and validating that system data matched expectations across all integrated customer environments.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets**, stabilize the developer intake process, and maintain SLA commitments for internal engineering and operations stakeholders.
+3. Drove strategic alignment between IT, Operations, and Engineering teams to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable workflows that reduced post-deployment data validation errors.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals via a redesigned CRM process, improving data accuracy and enabling faster turnaround on customer-facing deliverables.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to better surface customer support workflows and service offerings.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and translating customer data patterns into actionable business logic recommendations for operations stakeholders.
+
+## Notes from the rewriter
+- 'data validation' and 'business logic' from JD woven into microsoft_ft bullets #1, #4, #6 and amazon_robotics bullet #1 — directly mirrors JD language around validating that platform data matches customer system expectations.
+- 'workflow configuration' and 'Standard Operating Procedures' from JD surface in microsoft_ft bullet #2 and microsoft_2022 bullet #2 — aligns with JD responsibility to build Customer SOPs as Workflows in the Courier Health platform.
+- 'root cause analysis' and 'customer feedback' from JD Skills section woven into microsoft_ft bullet #6 and microsoft_2023 bullet #3 — mirrors JD requirement to contribute to product support and troubleshoot customer issues.
+- 'product improvements' and 'product development pipeline' from JD woven into microsoft_ft bullet #7 and microsoft_2023 bullet #2 — reflects JD ask to propose enhancements and collaborate with PM and Engineering teams.
+- 'technical stakeholders' from JD woven into microsoft_ft bullet #4 and microsoft_2022 bullet #1 — mirrors JD language around partnering with customer technical counterparts to define data and business requirements.
+

@@ -1,0 +1,1666 @@
+[2026-06-23 13:32:29] --- START otter-8543629002 (role_id=3238) ---
+[2026-06-23 13:32:40] EXIT_CODE=1 for otter-8543629002
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] step 0: browser.open
+[runner] step 1: browser.act.evaluate
+[runner] step 2: sleep
+[runner] step 3: browser.act.evaluate
+[runner] step 4: browser.act.evaluate
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: browser.act.evaluate
+[runner] step 8: browser.act.evaluate
+[runner] step 9: browser.act.evaluate
+[runner] step 10: browser.upload
+[runner] UNKNOWN STEP TOOL: browser.upload
+[runner] step 11: sleep
+[runner] step 12: browser.act.evaluate
+[runner] step 13: browser.act.evaluate
+[runner] step 14: browser.act.evaluate
+{
+  "slug": "otter-8543629002",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://job-boards.greenhouse.io/otter/jobs/8543629002"
+    },
+    {
+      "i": 1,
+      "tool": "browser.act.evaluate",
+      "r": "clicked"
+    },
+    {
+      "i": 2,
+      "tool": "sleep"
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "first_name": {
+          "ok": true,
+          "value_after": "Cyrus"
+        },
+        "last_name": {
+          "ok": true,
+          "value_after": "Shekari"
+        },
+        "email": {
+          "ok": true,
+          "value_after": "cyshekari@gmail.com"
+        },
+        "phone": {
+          "ok": true,
+          "value_after": "3468040227"
+        },
+        "question_36469592002": {
+          "ok": true,
+          "value_after": "https://linkedin.com/in/cyshekari"
+        },
+        "question_36726244002": {
+          "ok": true,
+          "value_after": "3 years, spanning product management internships at Microsof"
+        }
+      }
+    },
+    {
+      "i": 4,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "question_36469594002",
+          "want": "Yes",
+          "got": "Yes"
+        },
+        {
+          "id": "question_36469595002",
+          "want": "No",
+          "got": "No"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "country",
+          "want": "United States",
+          "got": "+1",
+          "picked": "United States +1"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "iti": true,
+        "value_after": "(346) 804-0227",
+        "country": "United States"
+      }
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "gender",
+          "label": "Gender",
+          "picked": "Decline To Self Identify",
+          "got": "Decline To Self Identify"
+        },
+        {
+          "id": "hispanic_ethnicity",
+          "label": "Are you Hispanic/Latino?",
+          "picked": "Decline To Self Identify",
+          "got": "Decline To Self Identify"
+        },
+        {
+          "id": "veteran_status",
+          "label": "Veteran Status",
+          "picked": "I don't wish to answer",
+          "got": "I don't wish to answer"
+        },
+        {
+          "id": "disability_status",
+          "label": "Disability Status",
+          "picked": "I do not want to answer",
+          "got": "I do not want to answer"
+        }
+      ]
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": []
+    },
+    {
+      "i": 9,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "found": false,
+        "note": "no education section in DOM (this is fine \u2014 many GH boards omit it)"
+      }
+    },
+    {
+      "i": 10,
+      "tool": "browser.upload",
+      "skipped": "unknown"
+    },
+    {
+      "i": 11,
+      "tool": "sleep"
+    },
+    {
+      "i": 12,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": false,
+        "clicked": true,
+        "still_has_input": true,
+        "committed": false,
+        "attach_label": "Attach"
+      }
+    },
+    {
+      "i": 13,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": false,
+        "filename_visible": false,
+        "input_still_in_dom": true,
+        "files_in_input": 0,
+        "expected": "Cyrus_Shekari_Resume_otter_8543629002_v2.pdf"
+      }
+    },
+    {
+      "i": 14,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": [
+          {
+            "id": "first_name",
+            "value": "Cyrus"
+          },
+          {
+            "id": "last_name",
+            "value": "Shekari"
+          },
+          {
+            "id": "email",
+            "value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "phone",
+            "value": "(346) 804-0227"
+          },
+          {
+            "id": "question_36469592002",
+            "value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "question_36726244002",
+            "value": "3 years, spanning product management internships at Microsof"
+          }
+        ],
+        "dropdowns": [
+          {
+            "id": "country",
+            "value": "+1"
+          },
+          {
+            "id": "question_36469594002",
+            "value": "Yes"
+          },
+          {
+            "id": "question_36469595002",
+            "value": "No"
+          },
+          {
+            "id": "gender",
+            "value": "Decline To Self Identify"
+          },
+          {
+            "id": "hispanic_ethnicity",
+            "value": "Decline To Self Identify"
+          },
+          {
+            "id": "veteran_status",
+            "value": "I don't wish to answer"
+          },
+          {
+            "id": "disability_status",
+            "value": "I do not want to answer"
+          }
+        ],
+        "resume_label": null
+      }
+    }
+  ],
+  "ok": false,
+  "error": null,
+  "submit_response": null
+}
+[2026-06-23 13:32:40] FAILED (exit=1): otter-8543629002
+[2026-06-23 13:32:40] --- END otter-8543629002 ---
+
+[2026-06-23 13:32:40] --- START polyai-4874048101 (role_id=3226) ---
+[2026-06-23 13:32:51] EXIT_CODE=1 for polyai-4874048101
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] step 0: browser.open
+[runner] step 1: browser.act.evaluate
+[runner] step 2: sleep
+[runner] step 3: browser.act.evaluate
+[runner] step 4: browser.act.evaluate
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: browser.act.evaluate
+[runner] step 8: browser.act.evaluate
+[runner] step 9: browser.act.evaluate
+[runner] step 10: browser.upload
+[runner] UNKNOWN STEP TOOL: browser.upload
+[runner] step 11: sleep
+[runner] step 12: browser.act.evaluate
+[runner] step 13: browser.act.evaluate
+[runner] step 14: browser.act.evaluate
+{
+  "slug": "polyai-4874048101",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://job-boards.greenhouse.io/polyai/jobs/4874048101"
+    },
+    {
+      "i": 1,
+      "tool": "browser.act.evaluate",
+      "r": "clicked"
+    },
+    {
+      "i": 2,
+      "tool": "sleep"
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "first_name": {
+          "ok": true,
+          "value_after": "Cyrus"
+        },
+        "last_name": {
+          "ok": true,
+          "value_after": "Shekari"
+        },
+        "email": {
+          "ok": true,
+          "value_after": "cyshekari@gmail.com"
+        },
+        "phone": {
+          "ok": true,
+          "value_after": "3468040227"
+        },
+        "question_8919454101": {
+          "ok": true,
+          "value_after": "https://linkedin.com/in/cyshekari"
+        },
+        "question_8919455101": {
+          "ok": true,
+          "value_after": "Open to discuss"
+        },
+        "question_8919456101": {
+          "ok": true,
+          "value_after": "2 weeks"
+        }
+      }
+    },
+    {
+      "i": 4,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "question_8919457101",
+          "want": "No",
+          "got": "No"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "country",
+          "want": "United States",
+          "got": "+1",
+          "picked": "United States +1"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "iti": true,
+        "value_after": "(346) 804-0227",
+        "country": "United States"
+      }
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": []
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": []
+    },
+    {
+      "i": 9,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "found": true,
+        "filled": [
+          {
+            "label": "School",
+            "value": "University of Houston"
+          },
+          {
+            "label": "Degree",
+            "value": "Bachelor's Degree"
+          },
+          {
+            "label": "Discipline",
+            "value": "Computer Science"
+          }
+        ],
+        "skipped": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 10,
+      "tool": "browser.upload",
+      "skipped": "unknown"
+    },
+    {
+      "i": 11,
+      "tool": "sleep"
+    },
+    {
+      "i": 12,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": false,
+        "clicked": true,
+        "still_has_input": true,
+        "committed": false,
+        "attach_label": "Attach"
+      }
+    },
+    {
+      "i": 13,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": false,
+        "filename_visible": false,
+        "input_still_in_dom": true,
+        "files_in_input": 0,
+        "expected": "Cyrus_Shekari_Resume_polyai_4874048101_v2.pdf"
+      }
+    },
+    {
+      "i": 14,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": [
+          {
+            "id": "first_name",
+            "value": "Cyrus"
+          },
+          {
+            "id": "last_name",
+            "value": "Shekari"
+          },
+          {
+            "id": "email",
+            "value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "phone",
+            "value": "(346) 804-0227"
+          },
+          {
+            "id": "start-year--0",
+            "value": ""
+          },
+          {
+            "id": "end-year--0",
+            "value": ""
+          },
+          {
+            "id": "question_8919454101",
+            "value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "question_8919455101",
+            "value": "Open to discuss"
+          },
+          {
+            "id": "question_8919456101",
+            "value": "2 weeks"
+          }
+        ],
+        "dropdowns": [
+          {
+            "id": "country",
+            "value": "+1"
+          },
+          {
+            "id": "school--0",
+            "value": "University of Houston"
+          },
+          {
+            "id": "degree--0",
+            "value": "Bachelor's Degree"
+          },
+          {
+            "id": "discipline--0",
+            "value": "Computer Science"
+          },
+          {
+            "id": "start-month--0",
+            "value": null
+          },
+          {
+            "id": "end-month--0",
+            "value": null
+          },
+          {
+            "id": "question_8919457101",
+            "value": "No"
+          }
+        ],
+        "resume_label": null
+      }
+    }
+  ],
+  "ok": false,
+  "error": null,
+  "submit_response": null
+}
+[2026-06-23 13:32:51] FAILED (exit=1): polyai-4874048101
+[2026-06-23 13:32:51] --- END polyai-4874048101 ---
+
+[2026-06-23 13:32:51] --- START probably-genetic-18b4a05f-1482-4db1-92b1-dd19b4b06ac6 (role_id=3273) ---
+[2026-06-23 13:33:32] EXIT_CODE=0 for probably-genetic-18b4a05f-1482-4db1-92b1-dd19b4b06ac6
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: sleep
+[runner] step 8: browser.act.evaluate
+[runner] step 9: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 6 field(s) ['2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_name', '2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_email', '2e628020-05a1-42b2-80e5-684c9c0f045b_f5d074c8-350a-41aa-85e2-f54a45f7d1d1', '2e628020-05a1-42b2-80e5-684c9c0f045b_748aa1e5-9ff5-4939-8f5d-97ac898698c9', '2e628020-05a1-42b2-80e5-684c9c0f045b_14b11806-f56e-4061-8b0e-0ffa88c6693f', '2e628020-05a1-42b2-80e5-684c9c0f045b_1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[runner] step 10: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2276
+[runner] captcha v3 solved in 0.3s, token len=2276
+[runner] step 11: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null},{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] multiselect real-click fail 86668e4296c6: ElementHandle.click: Element is not attached to the DOM
+Call log:
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  - retrying click action
+    - waiting for element to be visible, enabled and stable
+
+[runner] multiselect no label match 86668e4296c6 want='Yes' tgt='Yes' opts=['Are you legally authorized to work in the United States?', 'No', 'Yes']
+[runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[runner] reassert-select UNCOMMITTED: [('d-40e9-ab71-87dbd8b5f2d1', 'no-container')]
+[runner] reassert-text pass 1: repaired=0 [] missing=6
+[runner] reassert-text pass 1: repaired=0 [] missing=6
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "probably-genetic-18b4a05f-1482-4db1-92b1-dd19b4b06ac6",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/probablygenetic/18b4a05f-1482-4db1-92b1-dd19b4b06ac6/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b_f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+            "dom_id": "f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b_748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+            "dom_id": "748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+            "tag": "textarea",
+            "type": "textarea",
+            "current_value": "",
+            "want_len": 1250
+          },
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b_14b11806-f56e-4061-8b0e-0ffa88c6693f",
+            "dom_id": "14b11806-f56e-4061-8b0e-0ffa88c6693f",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b_1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9",
+            "dom_id": "1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 15
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "2e628020-05a1-42b2-80e5-684c9c0f045b_f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+            "dom_id": "f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "2e628020-05a1-42b2-80e5-684c9c0f045b_748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+            "dom_id": "748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+            "len": 1250,
+            "post_value": "At Microsoft, I owned end-to-end relationships with enterprise partners like Databricks and SAP, ran proactive account cadences across 45+ resilience drills, maintained a consolidated backlog of partner requests, and translated recurring feedback patterns into prioritized roadmap features with engineering. I also built an AI-powered planning agent that cut planning cycle time by 39% and reduced manual reporting effort across the portfolio. That combination of senior stakeholder ownership, customer-to-product translation, and building lightweight tools to scale the work is exactly what this role calls for.\n\nWhat draws me to Probably Genetic specifically is the mission and the technical bet behind it. Using machine learning and at-home testing to find undiagnosed rare disease patients, then connecting them to trials and treatments, is one of the more meaningful applications of data I have come across. I want to be close to a problem that actually matters, and I find the intersection of biopharma partnerships and a real patient-facing data platform genuinely compelling. A lean team moving fast in bioinformatics and AI, backed by Khosla and Threshold, is exactly the kind of environment where the work I do has a direct, visible impact."
+          },
+          {
+            "id": "2e628020-05a1-42b2-80e5-684c9c0f045b_14b11806-f56e-4061-8b0e-0ffa88c6693f",
+            "dom_id": "14b11806-f56e-4061-8b0e-0ffa88c6693f",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "2e628020-05a1-42b2-80e5-684c9c0f045b_1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9",
+            "dom_id": "1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9",
+            "len": 15,
+            "post_value": "Open to discuss"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 6,
+      "fields": [
+        "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_name",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_email",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_14b11806-f56e-4061-8b0e-0ffa88c6693f",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Native Hawaiian or Other Pacific Islander",
+            "post_value": "Kirkland, WA"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "267aa0cc-512a-43ca-b9b2-7651e4d84db6_3be3daa3-642c-4add-8f05-86668e4296c6",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "267aa0cc-512a-43ca-b9b2-7651e4d84db6_3be3daa3-642c-4add-8f05-86668e4296c6-labeled-radio-1",
+            "label_text": "Yes",
+            "cx": 379,
+            "cy": 396
+          },
+          {
+            "name": "267aa0cc-512a-43ca-b9b2-7651e4d84db6_8b68ac08-e817-44a2-8475-bc793e4626ad",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "267aa0cc-512a-43ca-b9b2-7651e4d84db6_8b68ac08-e817-44a2-8475-bc793e4626ad-labeled-radio-0",
+            "label_text": "No",
+            "cx": 377,
+            "cy": 396
+          },
+          {
+            "name": "2e628020-05a1-42b2-80e5-684c9c0f045b_998458b7-3a7a-45f7-a36d-2d376ea1a57e",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 374,
+            "cy": 397
+          },
+          {
+            "name": "2e628020-05a1-42b2-80e5-684c9c0f045b_753f987c-d09a-41e9-9c5e-0c3cbd251c4f",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 374,
+            "cy": 396
+          },
+          {
+            "name": "267aa0cc-512a-43ca-b9b2-7651e4d84db6_a36f6f35-918d-40e9-ab71-87dbd8b5f2d1",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "267aa0cc-512a-43ca-b9b2-7651e4d84db6_a36f6f35-918d-40e9-ab71-87dbd8b5f2d1-labeled-radio-1",
+            "label_text": "No",
+            "cx": 377,
+            "cy": 396
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "sleep"
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 7,
+        "text_filled": 6,
+        "radios_groups": 9,
+        "radios_checked": 3,
+        "checkboxes": 24,
+        "checkboxes_checked": 2,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 2,
+        "yesno_groups": 2
+      }
+    },
+    {
+      "i": 9,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-probablygenetic_18b4a05f_v2.pdf"
+    },
+    {
+      "i": 9,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 9,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_name",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_email",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_14b11806-f56e-4061-8b0e-0ffa88c6693f",
+        "2e628020-05a1-42b2-80e5-684c9c0f045b_1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9"
+      ],
+      "location_refill": {
+        "resolved": [
+          {
+            "fid": "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Kirkland, Washington, United States",
+            "post_value": "Kirkland, Washington, United States"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 10,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 250,
+      "token_len": 2276,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 11,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-select-fields",
+      "results": [
+        {
+          "name": "d-40e9-ab71-87dbd8b5f2d1",
+          "want": "No",
+          "target": "No",
+          "ok": false,
+          "shape": null,
+          "already": false,
+          "before": null,
+          "after": null,
+          "reason": "no-container",
+          "pw_click": {
+            "ok": false,
+            "reason": "no-container"
+          }
+        }
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": []
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "_systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_name",
+          "2e628020-05a1-42b2-80e5-684c9c0f045b__systemfield_email",
+          "2e628020-05a1-42b2-80e5-684c9c0f045b_f5d074c8-350a-41aa-85e2-f54a45f7d1d1",
+          "2e628020-05a1-42b2-80e5-684c9c0f045b_748aa1e5-9ff5-4939-8f5d-97ac898698c9",
+          "2e628020-05a1-42b2-80e5-684c9c0f045b_14b11806-f56e-4061-8b0e-0ffa88c6693f",
+          "2e628020-05a1-42b2-80e5-684c9c0f045b_1ca5f4d7-c6a0-41c6-923f-a07f6fa4b7b9"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Solutions Architect LocationSan FranciscoEmployment TypeFull timeLocation TypeHybridDepartmentProductCompensationL5$155K \u2013 $175K \u2022 Offers EquityL6$175K \u2013 $195K \u2022 Offers EquityOverviewApplicationSuccessYou did it! \ud83c\udf89 Your application is in, and it didn\u2019t get eaten by the internet. Success! A real live human (not an AI bot, intern, or French Bulldog named Douglass) will review your information carefully against the criteria our hiring team has laid out. If it\u2019s a match, we\u2019ll invite you to a 30-minute video chat with Michael our Head of People to dig deeper into your experience...and see if we both get that \"this feels right\" instinct. \ud83e\uddec While you wait, why not learn more about us?  Our website is here: www.probablygenetic.com. Down to follow us on socials? Please do! We\u2019re more fun than your average AI healthcare startup. Thanks again for applying. We\u2019re thrilled you\u2019re interested in joining our team!Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"421e1e46-0371-4786-bbd3-e59668682fc6\",\"name\":\"Probably Genetic\",\"publicWebsite\":\"https://www.probablygenetic.com/\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"probablygenetic\",\"activeFeat",
+  "classify": "submitted"
+}
+[2026-06-23 13:33:32] SUBMITTED: probably-genetic-18b4a05f-1482-4db1-92b1-dd19b4b06ac6
+[2026-06-23 13:33:32] DB updated for role_id=3273: submitted
+[2026-06-23 13:33:32] --- END probably-genetic-18b4a05f-1482-4db1-92b1-dd19b4b06ac6 ---
+
+[2026-06-23 13:33:32] --- START promise-ac4259d7-1276-440f-b918-851ef3e0faa5 (role_id=3258) ---
+[2026-06-23 13:34:12] EXIT_CODE=0 for promise-ac4259d7-1276-440f-b918-851ef3e0faa5
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: sleep
+[runner] step 8: browser.act.evaluate
+[runner] step 9: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 8 field(s) ['0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_name', '0f9197f5-d70f-4470-89f3-9295a34941aa_6b1e70b5-4410-4742-b7de-775a3a018609', '0f9197f5-d70f-4470-89f3-9295a34941aa_8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3', '0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_email', '0f9197f5-d70f-4470-89f3-9295a34941aa_935e9dd8-9dca-406a-8543-ba4847689eb7', '0f9197f5-d70f-4470-89f3-9295a34941aa_25b9744c-54b0-41b8-97b7-c681673fc198', '0f9197f5-d70f-4470-89f3-9295a34941aa_2a510efc-09f9-4a51-bfe2-703d00ce4934', '0f9197f5-d70f-4470-89f3-9295a34941aa_bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_location', 'label': 'Kirkland', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[runner] step 10: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2318
+[runner] captcha v3 solved in 0.2s, token len=2318
+[runner] step 11: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] yesno not active after click b5ffc755f2f0, retry 1
+[runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null},{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=0 [] missing=8
+[runner] reassert-text pass 1: repaired=0 [] missing=8
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "promise-ac4259d7-1276-440f-b918-851ef3e0faa5",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/promise/ac4259d7-1276-440f-b918-851ef3e0faa5/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa_6b1e70b5-4410-4742-b7de-775a3a018609",
+            "dom_id": "6b1e70b5-4410-4742-b7de-775a3a018609",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 5
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa_8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+            "dom_id": "8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 17
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa_935e9dd8-9dca-406a-8543-ba4847689eb7",
+            "dom_id": "935e9dd8-9dca-406a-8543-ba4847689eb7",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa_25b9744c-54b0-41b8-97b7-c681673fc198",
+            "dom_id": "25b9744c-54b0-41b8-97b7-c681673fc198",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa_2a510efc-09f9-4a51-bfe2-703d00ce4934",
+            "dom_id": "2a510efc-09f9-4a51-bfe2-703d00ce4934",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 8
+          },
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa_bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1",
+            "dom_id": "bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1",
+            "tag": "textarea",
+            "type": "textarea",
+            "current_value": "",
+            "want_len": 1404
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa_6b1e70b5-4410-4742-b7de-775a3a018609",
+            "dom_id": "6b1e70b5-4410-4742-b7de-775a3a018609",
+            "len": 5,
+            "post_value": "Cyrus"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa_8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+            "dom_id": "8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+            "len": 17,
+            "post_value": "Decline to answer"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa_935e9dd8-9dca-406a-8543-ba4847689eb7",
+            "dom_id": "935e9dd8-9dca-406a-8543-ba4847689eb7",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa_25b9744c-54b0-41b8-97b7-c681673fc198",
+            "dom_id": "25b9744c-54b0-41b8-97b7-c681673fc198",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa_2a510efc-09f9-4a51-bfe2-703d00ce4934",
+            "dom_id": "2a510efc-09f9-4a51-bfe2-703d00ce4934",
+            "len": 8,
+            "post_value": "LinkedIn"
+          },
+          {
+            "id": "0f9197f5-d70f-4470-89f3-9295a34941aa_bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1",
+            "dom_id": "bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1",
+            "len": 1404,
+            "post_value": "At Microsoft, I spent two years as the bridge between Azure engineering and enterprise partners during live deployments, untangling integration dependencies and keeping things on track when complexity threatened to derail critical programs. One of those programs was tied to a $1.5B+ sovereign-cloud contract, and the work came down to coordination, trust, and crafting on-the-ground solutions fast. That experience maps directly to what a Forward Deployed Engineer at Promise does every day: show up in a customer environment, make the technology actually work, and protect the relationship in the process. I also built an internal AI agent that cut planning cycle time by 39% by translating bottlenecks I observed firsthand into product improvements, which is exactly the feedback loop Promise describes for this role.\n\nWhat draws me to Promise specifically is the problem space. Government and utility systems that handle assistance programs are notoriously rigid, and the people who suffer when they fail are the ones who can least afford it. Promise is doing something technically hard and genuinely important: modernizing those systems in a way that reaches hundreds of thousands of households, cuts approval times from weeks to hours, and treats people with dignity. That combination of civic impact and serious engineering challenge is rare, and it is exactly the kind of work I want to be doing."
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 8,
+      "fields": [
+        "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_name",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_6b1e70b5-4410-4742-b7de-775a3a018609",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_email",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_935e9dd8-9dca-406a-8543-ba4847689eb7",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_25b9744c-54b0-41b8-97b7-c681673fc198",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_2a510efc-09f9-4a51-bfe2-703d00ce4934",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_location",
+            "label": "Kirkland",
+            "method": "free-text-tab",
+            "post_value": "Kirkland",
+            "required": true
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "0f9197f5-d70f-4470-89f3-9295a34941aa_2424217b-c007-4295-9650-390f68ca2d34",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 374,
+            "cy": 396
+          },
+          {
+            "name": "0f9197f5-d70f-4470-89f3-9295a34941aa_4086c4db-7d26-459a-a347-b5ffc755f2f0",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 452,
+            "cy": 397
+          },
+          {
+            "name": "0f9197f5-d70f-4470-89f3-9295a34941aa_8883e377-8b02-482b-8c6e-a12a93a7fd00",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 374,
+            "cy": 396
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "sleep"
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 10,
+        "text_filled": 8,
+        "radios_groups": 7,
+        "radios_checked": 0,
+        "checkboxes": 25,
+        "checkboxes_checked": 2,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 3,
+        "yesno_groups": 3
+      }
+    },
+    {
+      "i": 9,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-promise_ac4259d7_v2.pdf"
+    },
+    {
+      "i": 9,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 9,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_name",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_6b1e70b5-4410-4742-b7de-775a3a018609",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_email",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_935e9dd8-9dca-406a-8543-ba4847689eb7",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_25b9744c-54b0-41b8-97b7-c681673fc198",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_2a510efc-09f9-4a51-bfe2-703d00ce4934",
+        "0f9197f5-d70f-4470-89f3-9295a34941aa_bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1"
+      ],
+      "location_refill": {
+        "resolved": [
+          {
+            "fid": "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_location",
+            "label": "Kirkland",
+            "method": "fast-setNative+pick",
+            "picked": "Kirkland, Washington, United States",
+            "post_value": "Kirkland, Washington, United States"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 10,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 204,
+      "token_len": 2318,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 11,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": []
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland",
+        "_loc_tail": "_systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_name",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa_6b1e70b5-4410-4742-b7de-775a3a018609",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa_8cc7cc3e-55df-4b50-ac5f-9c4b8fc8a5c3",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa__systemfield_email",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa_935e9dd8-9dca-406a-8543-ba4847689eb7",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa_25b9744c-54b0-41b8-97b7-c681673fc198",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa_2a510efc-09f9-4a51-bfe2-703d00ce4934",
+          "0f9197f5-d70f-4470-89f3-9295a34941aa_bdb433c4-4a6f-4082-ac6c-5cb4ee8f25d1"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Forward Deployed Engineer LocationSan FranciscoEmployment TypeFull timeLocation TypeHybridDepartmentEngineeringCompensation$175K \u2013 $230K \u2022 Offers EquityOverviewApplicationSuccessThanks for sending us your application. We'll review it and get back to you on next steps soon.Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"a5356214-6af5-47de-aab1-640d2ff7eeae\",\"name\":\"Promise\",\"publicWebsite\":\"https://www.promise-pay.com/\",\"customJobsPageUrl\":\"https://jobs.ashbyhq.com/Promise\",\"hostedJobsPageSlug\":\"Promise\",\"activeFeatureFlags\":[\"NewSchedulingActivityRescheduleActions\",\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"InterviewLocationTypeReportingField\",\"ValidateFormFieldLogging\",\"SchedulingMeetingRoomPoolsForManualScheduling\",\"WorkdayHRISSetJobTitleBuiltInCustomField\",\"OrganizationSettingEnforceJobCreationThroughTemplateEnabled\",\"EnhancedMobileCandidateFloatingButtons\",\"ClickhouseCandidateExperienceSurveySubmission\",\"PermissionsAutomationOnJobConfidentialChange\",\"MobileJobPipelinePage\",\"CoreOrganizationIssueNotifyOnNewCauseOnly\",\"FeedbackNotRequestedInterviews\",\"SchedulingInterviewerPoolNotificationSettings\",\"RejectBase64Encod",
+  "classify": "submitted"
+}
+[2026-06-23 13:34:12] SUBMITTED: promise-ac4259d7-1276-440f-b918-851ef3e0faa5
+[2026-06-23 13:34:12] DB updated for role_id=3258: submitted
+[2026-06-23 13:34:12] --- END promise-ac4259d7-1276-440f-b918-851ef3e0faa5 ---
+
+[2026-06-23 13:34:12] --- START raft-5996858004 (role_id=3333) ---
+[2026-06-23 13:34:29] EXIT_CODE=1 for raft-5996858004
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] step 0: browser.open
+[runner] step 1: browser.act.evaluate
+[runner] step 2: sleep
+[runner] step 3: browser.act.evaluate
+[runner] step 4: browser.act.evaluate
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: browser.act.evaluate
+[runner] step 8: browser.act.evaluate
+[runner] step 9: browser.act.evaluate
+[runner] step 10: browser.act.evaluate
+[runner] step 11: browser.upload
+[runner] UNKNOWN STEP TOOL: browser.upload
+[runner] step 12: sleep
+[runner] step 13: browser.act.evaluate
+[runner] step 14: browser.act.evaluate
+[runner] step 15: browser.act.evaluate
+{
+  "slug": "raft-5996858004",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://job-boards.greenhouse.io/raft/jobs/5996858004"
+    },
+    {
+      "i": 1,
+      "tool": "browser.act.evaluate",
+      "r": "clicked"
+    },
+    {
+      "i": 2,
+      "tool": "sleep"
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "first_name": {
+          "ok": true,
+          "value_after": "Cyrus"
+        },
+        "last_name": {
+          "ok": true,
+          "value_after": "Shekari"
+        },
+        "email": {
+          "ok": true,
+          "value_after": "cyshekari@gmail.com"
+        },
+        "phone": {
+          "ok": true,
+          "value_after": "3468040227"
+        },
+        "question_17826178004": {
+          "ok": true,
+          "value_after": "Cyrus"
+        },
+        "question_17826179004": {
+          "ok": true,
+          "value_after": "https://linkedin.com/in/cyshekari"
+        },
+        "question_17826180004": {
+          "ok": true,
+          "value_after": "https://github.com/cyshek"
+        },
+        "question_17826184004": {
+          "ok": true,
+          "value_after": "Open to discuss"
+        },
+        "location": {
+          "ok": false,
+          "err": "no element"
+        }
+      }
+    },
+    {
+      "i": 4,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "question_17826177004",
+          "want": "No",
+          "got": "No"
+        },
+        {
+          "id": "question_17826181004",
+          "want": "No",
+          "got": "No"
+        },
+        {
+          "id": "question_17826185004",
+          "want": "No",
+          "got": "No"
+        }
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "country",
+          "want": "United States",
+          "got": "+1",
+          "picked": "United States +1"
+        },
+        {
+          "id": "candidate-location",
+          "want": "Kirkland, WA",
+          "got": "Kirkland, Washington, United States",
+          "picked": "Kirkland, Washington, United States"
+        }
+      ]
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "question_17826183004[]",
+          "legend": "What is your current or most recent security clearance status? *",
+          "ticked": [
+            {
+              "label": "Never held a clearance",
+              "checked": true
+            }
+          ],
+          "missing": [
+            "None",
+            "Do not wish to disclose"
+          ]
+        }
+      ]
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "iti": true,
+        "value_after": "(346) 804-0227",
+        "country": "United States"
+      }
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": [
+        {
+          "id": "gender",
+          "label": "Gender",
+          "picked": "Decline To Self Identify",
+          "got": "Decline To Self Identify"
+        },
+        {
+          "id": "hispanic_ethnicity",
+          "label": "Are you Hispanic/Latino?",
+          "picked": "Decline To Self Identify",
+          "got": "Decline To Self Identify"
+        },
+        {
+          "id": "veteran_status",
+          "label": "Veteran Status",
+          "picked": "I don't wish to answer",
+          "got": "I don't wish to answer"
+        },
+        {
+          "id": "disability_status",
+          "label": "Disability Status",
+          "picked": "I do not want to answer",
+          "got": "I do not want to answer"
+        }
+      ]
+    },
+    {
+      "i": 9,
+      "tool": "browser.act.evaluate",
+      "r": []
+    },
+    {
+      "i": 10,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "found": true,
+        "filled": [
+          {
+            "label": "School",
+            "value": "University of Houston"
+          },
+          {
+            "label": "Discipline",
+            "value": "Computer Science"
+          }
+        ],
+        "skipped": [],
+        "errors": [
+          {
+            "label": "Degree",
+            "err": "no matching option",
+            "want": "Bachelor's degree",
+            "available": [
+              "Associate\u2019s degree",
+              "Bachelor of Arts (BA)",
+              "Bachelor of Business Administration (BBA)",
+              "Bachelor of Education (BEd)",
+              "Bachelor of Engineering (BEng)",
+              "Bachelor of Fine Arts (BFA)",
+              "Bachelor of Science (BS)",
+              "Doctor of Business Administration (DBA)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "i": 11,
+      "tool": "browser.upload",
+      "skipped": "unknown"
+    },
+    {
+      "i": 12,
+      "tool": "sleep"
+    },
+    {
+      "i": 13,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": false,
+        "clicked": true,
+        "still_has_input": true,
+        "committed": false,
+        "attach_label": "Attach"
+      }
+    },
+    {
+      "i": 14,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": false,
+        "filename_visible": false,
+        "input_still_in_dom": true,
+        "files_in_input": 0,
+        "expected": "Cyrus_Shekari_Resume_raft_5996858004_v2.pdf"
+      }
+    },
+    {
+      "i": 15,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": [
+          {
+            "id": "first_name",
+            "value": "Cyrus"
+          },
+          {
+            "id": "last_name",
+            "value": "Shekari"
+          },
+          {
+            "id": "email",
+            "value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "phone",
+            "value": "(346) 804-0227"
+          },
+          {
+            "id": "question_17826178004",
+            "value": "Cyrus"
+          },
+          {
+            "id": "question_17826179004",
+            "value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "question_17826180004",
+            "value": "https://github.com/cyshek"
+          },
+          {
+            "id": "question_17826182004",
+            "value": ""
+          },
+          {
+            "id": "question_17826184004",
+            "value": "Open to discuss"
+          }
+        ],
+        "dropdowns": [
+          {
+            "id": "country",
+            "value": "+1"
+          },
+          {
+            "id": "candidate-location",
+            "value": "Kirkland, Washington, United States"
+          },
+          {
+            "id": "school--0",
+            "value": "University of Houston"
+          },
+          {
+            "id": "degree--0",
+            "value": null
+          },
+          {
+            "id": "discipline--0",
+            "value": "Computer Science"
+          },
+          {
+            "id": "question_17826177004",
+            "value": "No"
+          },
+          {
+            "id": "question_17826181004",
+            "value": "No"
+          },
+          {
+            "id": "question_17826185004",
+            "value": "No"
+          },
+          {
+            "id": "question_17826186004",
+            "value": null
+          },
+          {
+            "id": "gender",
+            "value": "Decline To Self Identify"
+          },
+          {
+            "id": "hispanic_ethnicity",
+            "value": "Decline To Self Identify"
+          },
+          {
+            "id": "veteran_status",
+            "value": "I don't wish to answer"
+          },
+          {
+            "id": "disability_status",
+            "value": "I do not want to answer"
+          }
+        ],
+        "resume_label": null
+      }
+    }
+  ],
+  "ok": false,
+  "error": null,
+  "submit_response": null
+}
+[2026-06-23 13:34:29] FAILED (exit=1): raft-5996858004
+[2026-06-23 13:34:29] --- END raft-5996858004 ---
+
+[2026-06-23 13:34:29] --- START ramp-cf3516f6-4d6b-4872-831f-c8ef4a3078ee (role_id=3110) ---

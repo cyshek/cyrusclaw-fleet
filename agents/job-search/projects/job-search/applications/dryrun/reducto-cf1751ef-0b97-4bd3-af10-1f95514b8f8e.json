@@ -1,0 +1,251 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/reducto/cf1751ef-0b97-4bd3-af10-1f95514b8f8e",
+  "org": "reducto",
+  "job_id": "cf1751ef-0b97-4bd3-af10-1f95514b8f8e",
+  "job_title": "Forward Deployed Engineer, Infrastructure Specialist",
+  "job_location": "San Francisco Office",
+  "fetched_at": "2026-06-24T00:50:34Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_name"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_email"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_0419501e-b72c-4fa7-bddc-5e814024ae2e",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_0419501e-b72c-4fa7-bddc-5e814024ae2e"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_location"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_d73f5bc9-9aac-4a8d-b12e-750cbd9a7b3d",
+      "label": "Pronouns",
+      "type": "input_text",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_d73f5bc9-9aac-4a8d-b12e-750cbd9a7b3d"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_70ad4de5-7372-4c28-a84a-e0cd7268d20f",
+      "label": "LinkedIn",
+      "type": "textarea",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_70ad4de5-7372-4c28-a84a-e0cd7268d20f"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae__systemfield_resume"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_b3607ce1-3f6c-4d45-a392-8b12dad4991e",
+      "label": "Do you have a college degree?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_b3607ce1-3f6c-4d45-a392-8b12dad4991e"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_b438e074-1f16-4db8-a73b-2d423c1adfc1",
+      "label": "What institution(s) did you graduate from?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_b438e074-1f16-4db8-a73b-2d423c1adfc1"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_56f880ad-828e-45d4-89d0-c7749e82e209",
+      "label": "What was your major/minor?",
+      "type": "input_text",
+      "required": false,
+      "value": "Computer Science",
+      "source": "education.major",
+      "status": "filled",
+      "matched_rule": "major",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_56f880ad-828e-45d4-89d0-c7749e82e209"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_e20cae21-38a1-4b95-b195-da19c7b64141",
+      "label": "Are you currently enrolled in Full time  Education?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_e20cae21-38a1-4b95-b195-da19c7b64141"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_66351a5d-4a07-4e68-8db5-c9d005f0c7c0",
+      "label": "Will you now or in the future require Reducto to commence or sponsor an immigration case in order to employ you (for example H1-B or other employment based immigration) in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_66351a5d-4a07-4e68-8db5-c9d005f0c7c0"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_40f21db3-c63f-4cfd-9263-021b7cacce48",
+      "label": "Have you worked at a startup?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_40f21db3-c63f-4cfd-9263-021b7cacce48"
+    },
+    {
+      "id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_45c2198c-7a8d-4048-a102-f8b2aa2f4907",
+      "label": "Are you open to working 5 days a week onsite in San Francisco?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "b2bb828b-c18b-4775-a0b4-9b73ed7c2bae_45c2198c-7a8d-4048-a102-f8b2aa2f4907"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

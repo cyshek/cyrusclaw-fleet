@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned end-to-end deployment of Azure's recovery validation program, scaling from a **2-person operation** to a platformized system sustaining 45+ annual enterprise drills across Fortune 500 partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 build** of an internal Resilience Automation Platform, defining self-service scheduling requirements that cut operational toil by 30% and enabled engineering teams to own production-grade workflow execution independently.
+3. Drove deep process discovery across complex enterprise workflows, decomposing ambiguous recovery scenarios into precise, automatable steps — delivering Azure's first rack-level drill program in 4 months at a **94% recovery rate**.
+4. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, directing 14 cross-org executions under C-suite visibility and aligning stakeholders from ops teams to executive leadership.
+5. Built an internal AI agent to automate drill planning workflows, reducing planning cycle time by **39%** and expanding drill capacity by 21% — a repeatable deployment pattern now codified across the resilience org.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **enterprise adoption** of AI-driven code generation workflows, conducting discovery sessions and live demos that drove utilization across 14 Azure service teams and eliminated 37 engineering hours of manual effort monthly.
+2. Facilitated 11+ structured discovery interviews with enterprise customers to surface critical workflow gaps, directly influencing the product roadmap to prioritize **intent-based YAML generation** as a core platform primitive.
+3. Accelerated production workflow retrieval by migrating documentation to an **AI-powered semantic search** system with rigorous metadata standards, cutting lookup time by 83% across internal engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across 140+ teams on a unified automation prioritization framework, **accelerating region launches by 28%** and generating $3M in pulled-forward revenue through faster production deployments.
+2. Conducted process discovery with 20+ enterprise service teams, mapping **81 hours of manual toil** per region launch and building a roadmap to automate critical paths — replacing load-bearing manual workflows at scale.
+3. Engineered a Power BI dashboard to surface automation gaps across 140+ teams, enabling leadership to **prioritize high-impact deployments** and track operational improvements across the global region launch program.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Owned the end-to-end deployment strategy for a **2,000+ unit OS migration**, mapping dependencies across 1,200+ stations and achieving zero operational downtime during a high-stakes production pilot rollout.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% across a business-critical robotics production environment.
+3. Prioritized and resolved 40+ high-severity tickets by facilitating Agile ceremonies and restructuring the backlog, stabilizing the developer intake process and unblocking **production-grade deployment** timelines.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Owned the full customer engagement lifecycle — scoping, discovery, and invoicing — for **200+ monthly proposals**, increasing job bookings by 26% by streamlining operations through a new CRM deployment.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to drive measurable pipeline growth.
+3. Identified and closed margin leaks by conducting profitability analysis across **1,000+ project records**, delivering pricing model improvements that directly improved leadership's ability to scale high-value accounts.
+
+## Notes from the rewriter
+- 'Process discovery' (JD: 'conduct deep process discovery') woven into microsoft_ft bullet 3 and microsoft_2022 bullet 2 — framing ambiguous workflow decomposition as a core skill.
+- 'Production-grade' (JD: 'production-grade processes', 'production runs') used in microsoft_ft bullet 2, amazon_robotics bullet 1 and bullet 3 to mirror Poetic's reliability-first language.
+- 'Load-bearing workflows' (JD: 'replacing load-bearing workflows in production') directly echoed in microsoft_2022 bullet 2 to signal Cyrus understands the stakes of enterprise automation at scale.
+- 'End-to-end deployment' and 'owned deployments end-to-end' (JD: 'own deployments end-to-end') surfaced in microsoft_ft bullet 1 and amazon_robotics bullet 1 to reflect FDE ownership mentality.
+- 'Repeatable deployment patterns' (JD: 'codify repeatable deployment patterns') explicitly used in microsoft_ft bullet 5 to show direct platform contribution instinct.
+

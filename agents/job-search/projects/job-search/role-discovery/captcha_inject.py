@@ -196,12 +196,24 @@ JS_DETECT_HCAPTCHA = r"""
 JS_HOOK_HCAPTCHA_RQDATA = r"""
 () => {
   try {
+    window.__capturedHcaptchaToken = null;
     const stash = (cfg) => {
       try {
         if (cfg && typeof cfg === 'object' && cfg.rqdata) {
           window.__hcaptchaRqData = cfg.rqdata;
         }
       } catch (e) {}
+    };
+    const captureToken = (result) => {
+      try {
+        let tok = null;
+        if (result && typeof result === 'object' && result.response) tok = result.response;
+        else if (typeof result === 'string' && result.length > 20) tok = result;
+        if (tok) {
+          window.__capturedHcaptchaToken = tok;
+          console.log('[hcaptcha-hook] captured token len=' + tok.length);
+        }
+      } catch(e) {}
     };
     let _h = window.hcaptcha;
     const wrap = (h) => {
@@ -213,7 +225,28 @@ JS_HOOK_HCAPTCHA_RQDATA = r"""
         }
         const _execute = h.execute;
         if (typeof _execute === 'function') {
-          h.execute = function (idOrCfg, cfg) { stash(cfg); stash(idOrCfg); return _execute.apply(this, arguments); };
+          h.execute = function (idOrCfg, cfg) {
+            stash(cfg); stash(idOrCfg);
+            let result;
+            try { result = _execute.apply(this, arguments); } catch(e) { throw e; }
+            // Capture token from sync or promise result
+            if (result && typeof result.then === 'function') {
+              result.then(captureToken).catch(()=>{});
+            } else {
+              captureToken(result);
+            }
+            return result;
+          };
+        }
+        // Also hook getResponse to capture any token the widget already has
+        const _gr = h.getResponse;
+        if (typeof _gr === 'function' && !h.__grHooked) {
+          h.getResponse = function(wid) {
+            const r = _gr.apply(this, arguments);
+            if (r && r.length > 20) captureToken(r);
+            return r;
+          };
+          h.__grHooked = true;
         }
         h.__rqWrapped = true;
       } catch (e) {}

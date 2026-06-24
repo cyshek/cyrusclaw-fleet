@@ -1,5 +1,5 @@
 STATUS: PREP-READY-MANUAL-CSP-CAPTCHA
-observed_at: 2026-06-21T09:31:09+00:00
+observed_at: 2026-06-24T05:03:36+00:00
 role_id: 2940
 slug: hackerrank-7482137
 gh_org: hackerrank

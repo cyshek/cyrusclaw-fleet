@@ -1,0 +1,55 @@
+[EIA WTI cal-spread carry] UTC stamp = 20260623T221309Z
+[panel] 9857 aligned NYMEX days 1985-01-02 -> 2024-04-05  (472 month-end rebalances)
+[panel] last-row term structure CL1..CL4 = 86.91 86.10 85.20 84.24 (slope=+0.0317)
+[panel] frac month-ends backwardated (slope>0): 0.540
+[primary long/flat] FULL Sh 0.1352  IS Sh 0.1607  OOS Sh 0.0085  OOS tot -0.0347  turn 0.1019
+[control STATIC-LONG] FULL 0.1388  IS 0.1451  OOS 0.1056  OOS tot 0.0208
+[control BUY-HOLD]    FULL 0.3006  OOS 0.635  OOS tot 1.7597
+[canary] honest(D+1) FULL Sh 0.1352  cheat(D0) 0.1531  differ=True
+[cost grid] [{'cost_bps': 0.0, 'full_sharpe': 0.1376, 'is_sharpe': 0.1631, 'oos_sharpe': 0.0112, 'oos_total': -0.033}, {'cost_bps': 1.0, 'full_sharpe': 0.1364, 'is_sharpe': 0.1619, 'oos_sharpe': 0.0098, 'oos_total': -0.0338}, {'cost_bps': 2.0, 'full_sharpe': 0.1352, 'is_sharpe': 0.1607, 'oos_sharpe': 0.0085, 'oos_total': -0.0347}, {'cost_bps': 5.0, 'full_sharpe': 0.1316, 'is_sharpe': 0.1572, 'oos_sharpe': 0.0044, 'oos_total': -0.0372}]  breakeven_bps=None
+[sweep stats] {'n': 27, 'oos_sharpe_min': -0.4746, 'oos_sharpe_max': 0.1645, 'oos_sharpe_median': 0.0085, 'is_sharpe_min': -0.2108, 'is_sharpe_max': 0.1614, 'is_sharpe_median': 0.0712, 'n_oos_above_0.4': 0, 'frac_oos_above_0.4': 0.0, 'n_is_positive': 18, 'frac_is_positive': 0.667}
+[stress] {"2008_GFC_oilcrash": {"window": ["2008-07-01", "2009-03-31"], "n_days": 189, "signal_total": 0.0027, "signal_sharpe": 1.1547, "static_total": -0.1459, "buyhold_total": -0.6453}, "2014_15_oilbust": {"window": ["2014-07-01", "2015-12-31"], "n_days": 378, "signal_total": -0.2317, "signal_sharpe": -1.9542, "static_total": -0.3693, "buyhold_total": -0.6485}, "2020_covid_negative": {"window": ["2020-02-01", "2020-06-30"], "n_days": 104, "signal_total": -0.0187, "signal_sharpe": -1.5566, "static_total": -0.2023, "buyhold_total": 0.0982}, "2021_22_backwardation": {"window": ["2021-01-01", "2022-06-30"], "n_days": 375, "signal_total": 0.2174, "signal_sharpe": 0.8802, "static_total": 0.2952, "buyhold_total": 1.1797}}
+[corr-to-bond] -0.0627  (bond leg OOS Sh 0.4338, full Sh 0.5779)
+
+========== VERDICT ==========
+{
+  "overall": "CLOSE",
+  "k1_oos_sharpe_gt_0.4": {
+    "pass": false,
+    "oos_sharpe": 0.0085,
+    "bar": 0.4
+  },
+  "k2_beats_static_long_oos": {
+    "pass": false,
+    "delta_sharpe": -0.0971,
+    "delta_total": -0.0555,
+    "signal_oos_sharpe": 0.0085,
+    "static_oos_sharpe": 0.1056,
+    "signal_oos_total": -0.0347,
+    "static_oos_total": 0.0208,
+    "vs_buyhold_delta_sharpe": -0.6265,
+    "vs_buyhold_delta_total": -1.7944,
+    "note": "MAKE-OR-BREAK: timing must beat dumb static-long (and buy-hold) OOS net"
+  },
+  "k3_is_sharpe_positive": {
+    "pass": true,
+    "primary_is_sharpe": 0.1607,
+    "frac_swept_is_positive": 0.667,
+    "is_sharpe_median_sweep": 0.0712,
+    "note": "HARD GATE \u2014 the ETF version FAILED this (IS -0.44 on every split)"
+  },
+  "k4_corr_to_bond_le_0.3": {
+    "pass": true,
+    "value": -0.0627,
+    "bar": 0.3
+  },
+  "k5_allocator_frontier_lift": {
+    "pass": false,
+    "na": true,
+    "note": "k1-k4 did not all pass -> allocator-frontier check NOT run; CLOSE."
+  }
+}
+=============================
+
+[written] /home/azureuser/.openclaw/agents/trading-bench/workspace/reports/_eia_wti_calspread_result.json
+[OVERALL] CLOSE  (k1=False k2=False k3=True k4=True k5=N/A)

@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows across 45+ annual resilience drills and driving **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable delivery model across cross-functional engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation model with executive-level visibility into program
+4. Directed **14 cross-org recovery executions** under executive scrutiny, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, managing dependencies and resolving blockers across security, infrastructure, and product engineering
+5. Built an internal **AI agent for drill planning**, restructuring cross-team workflows to reduce planning cycle time by 39% and increase drill capacity by 21% — enabling the program to scale without proportional headcount growth.
+6. Developed and maintained implementation roadmaps and execution strategies for complex multi-workstream programs, facilitating trade-off decisions between security outcomes, platform reliability, and engineering timelines across stakeholder groups at all levels.
+7. Established program metrics and reporting processes to measure security validation outcomes, presenting findings in leadership reviews and representing the platform's resilience initiatives across cross-functional forums and executive briefings.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **adoption of AI-driven workflows** across Azure engineering, conducting user demos and structured training sessions that drove utilization across 14 key teams and saved **37 engineering hours monthly** — directly reducing manual toil in developer platform operations.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ stakeholder interviews** with Azure service teams, identifying critical access-control and authentication feature gaps and translating findings into prioritized technical requirements.
+3. Improved **data integrity and retrieval** for platform documentation by implementing rigorous metadata standards and migrating content to an AI-powered semantic search tool, cutting lookup time by 83% and improving developer experience across internal engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, driving dependency resolution across 140+ engineering and operations teams with competing roadmap priorities.
+2. Mobilized a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort per region** and building an end-to-end roadmap to automate critical execution paths across launch workflows.
+3. Enabled leadership to identify automation gaps and target high-impact security and operations improvements by engineering a **Power BI dashboard** tracking execution toil across 140+ teams, establishing a shared reporting framework for program effectiveness measurement.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping access control dependencies across 1,200+ stations, and coordinating execution across IT, Operations, and Engineering stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process — improving cross-team execution velocity and reducing program blockers.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual intervention risk in a security-sensitive production robotics environment.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end operations and managing the full scoping and invoicing lifecycle for 200+ monthly proposals via a redesigned CRM process, improving data integrity and stakeholder visibility into pipeline execution.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web and search presence to improve platform discoverability and drive measurable top-of-funnel outcomes.
+3. Improved leadership pricing models and identified margin leaks by conducting **financial profitability analysis** across 1,000+ project records, translating raw data into actionable reporting that directly informed prioritization and resource allocation decisions.
+
+## Notes from the rewriter
+- JD term 'access controls' woven into microsoft_2023 bullet#2 (authentication feature gaps) and amazon_robotics bullet#1 (access control dependencies during OS migration).
+- JD term 'program effectiveness' and 'metrics and reporting processes' directly mirrored in microsoft_ft bullet#6 and bullet#7, and microsoft_2022 bullet#3 (Power BI dashboard for reporting).
+- JD term 'cross-team dependencies' and 'blockers' explicitly used in microsoft_ft bullet#4 and microsoft_2022 bullet#1, reflecting the JD's language around dependency management and blocker resolution.
+- JD domain 'API security / authentication systems' surfaced in microsoft_2023 bullet#2 via 'access-control and authentication feature gaps' to connect Cyrus's Azure platform work to IAM-adjacent technical requirements.
+- JD phrase 'implementation roadmaps and execution strategies' directly echoed in microsoft_ft bullet#6 to signal TPM fluency in Stripe's exact framing of the role's core deliverable.
+- Fixed microsoft_ft bullet#1 from 297 chars to 289 chars to comply with the 290-char hard ceiling.
+

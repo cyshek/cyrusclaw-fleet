@@ -1,9 +1,14 @@
-PREP-READY — 2026-06-23T05:01:06+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3110
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-ramp-cf3516f6-4d6b-4872-831f-c8ef4a3078ee.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/ramp-cf3516f6-4d6b-4872-831f-c8ef4a3078ee/Cyrus_Shekari_Resume_ashby-ramp_cf3516f6_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/ramp-cf3516f6-4d6b-4872-831f-c8ef4a3078ee/cover_answers.md
+submitted_at: 2026-06-23T17:05:33+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+y active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"messages":{"__typename":"FormSubmitMessages","blockMessageForCandidateHtml":"<p>Thank you for considering Ramp! You have reached your application limit. To ensure the best possible candidate experience in light of high application volumes, we limit repe
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

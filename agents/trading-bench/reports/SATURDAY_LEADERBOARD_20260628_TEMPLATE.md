@@ -1,8 +1,10 @@
 # 🏆 Saturday Leaderboard — Week ending 2026-06-28 *(TEMPLATE — fill in Saturday)*
 
-**Status:** TEMPLATE prepared 2026-06-22 (~2 PM PT); **partially pre-filled 2026-06-22 (~5 PM PT)** with live snapshots that won't change before Saturday (allocator Day-0 fills, tqqq_cot fills through 06-22, calibrator trip count, cron health). Fields tagged `⟢pre-filled 06-22` already carry live data but should be re-confirmed Saturday. Fill remaining bracketed `[…]` fields Saturday from live `tournament.db`, `allocator_paper.db`, and the Alpaca paper account.
+**Status:** TEMPLATE prepared 2026-06-22 (~2 PM PT); **partially pre-filled 2026-06-22 (~5 PM PT)** with live snapshots that won't change before Saturday (allocator Day-0 fills, tqqq_cot fills through 06-22, calibrator trip count, cron health); **snapshots REFRESHED to 06-23 truth (mgmt-check, ~9 AM PT).** Fields tagged `⟢pre-filled` carry live data but should be re-confirmed Saturday. Fill remaining bracketed `[…]` fields Saturday from live `tournament.db`, `allocator_paper.db`, and the Alpaca paper account.
 
-> **Pre-fill note (06-22 5 PM PT):** Section 6 (breadth green-light) is **RESOLVED — the breadth lane was RUN today and came back CLOSE-REDUNDANT**; that section is rewritten below from a pending decision into a closed result. Section 4 trip count refreshed 14→**19/30**. Last-7-day cron health: **775 runs, 0 errors.**
+> **🔄 06-23 REFRESH note (mgmt-check ~9 AM PT):** Three pre-filled snapshots had drifted since 06-22 and are now corrected to current truth: **(1) Calibrator trip count 19→13/30** — the 19 was a POLLUTED count (included non-book backstop_test/any/sma_crossover_btc); the universe-filter fix shipped 06-23 (`EDGE_CALIBRATOR_ACCELERATION_VERDICT`) makes the authoritative LIVE-BOOK count **13/30** (still pass-through). **(2) tqqq_cot_combo** now **6 fills** (added 06-23) / **7.372 sh** / **−$43.6** unrealized (TQQQ fell ~$84→$75). **(3) Cron health 775→789 runs/7d, still 0 errors.** Also: test harness is GREEN (676 passed/1 skipped) after fixing the brittle `test_live_eurusd_cache_span` time-bomb (FX cache grew 5843→5852 bars; assertion converted to a floor). Broker reconcile verified PERFECT (Alpaca 11.157282 sh TQQQ = cot_combo 7.372 + lev_long 3.627 + allocator 0.158, to the 6th decimal).
+
+> **Pre-fill note (06-22 5 PM PT):** Section 6 (breadth green-light) is **RESOLVED — the breadth lane was RUN today and came back CLOSE-REDUNDANT**; that section is rewritten below from a pending decision into a closed result. Section 4 trip count was refreshed 14→19/30 on 06-22 — **but SUPERSEDED 06-23: the authoritative live-book count is now 13/30** (the 19 was polluted by non-book strategies; see the 06-23 REFRESH note above). Cron health was 775 runs on 06-22 — **now 789 runs/7d, 0 errors.**
 **Data sources to pull Saturday:** `tournament.db` (per-strategy round-trips + P&L), `allocator_paper.db::daily_snapshots`, live Alpaca `account()` / `get_position()` for reconciliation, `runner/edge_calibrator.py` trip count, `reports/GO_LIVE_DECISION_PACKET.md` (gate checklist), `reports/LANE_BRIEF_breadth_regime.md` (breadth lane spec).
 
 ---
@@ -72,7 +74,7 @@
 
 ## 📊 Section 3 — `tqqq_cot_combo` Fills
 
-*Context: long-only TQQQ accumulator with a COT (leveraged-fund speculator-net percentile) exposure gate on top of the vol-target + SMA-200 sleeve. Day-0 (06-22): COT_scale flipped 0.5 → 1.0 (specs washed out → full target exposure). 5 fills, $500 notional, as of 06-22.*
+*Context: long-only TQQQ accumulator with a COT (leveraged-fund speculator-net percentile) exposure gate on top of the vol-target + SMA-200 sleeve. Day-0 (06-22): COT_scale flipped 0.5 → 1.0 (specs washed out → full target exposure). **6 fills, $600 notional, through 06-23** (was 5/$500 on 06-22).*
 
 | Date | Side | Qty | Notional | Price | COT_scale | rv% | gate | Reason |
 |------|------|----:|--------:|------:|:---------:|:---:|:----:|--------|
@@ -81,13 +83,14 @@
 | 06-17 | buy | 1.229 | $100 | 81.35 | 0.5 | 24.2% | ON | underweight +4sh |
 | 06-18 | buy | 1.216 | $100 | 82.24 | 0.5 | 22.6% | ON | underweight +3sh |
 | 06-22 | buy | 1.187 | $100 | 84.22 | **1.0** | 21.1% | ON | underweight +7sh; **COT flipped 0.5→1.0** (specs washed out → full target) |
-> ⟢pre-filled 06-22 (5 fills through Mon). *Append 06-23→06-26 Saturday.*
+| 06-23 | buy | 1.340 | $100 | 74.62 | 1.0 | — | ON | underweight +7sh; QQQ 738.10 > SMA200 629.45 (TQQQ gapped down ~$84→$75) |
+> ⟢pre-filled 06-22 (5 fills through Mon); **06-23 row added (mgmt-check)**. *Append 06-24→06-26 Saturday.*
 
-- **Fills this week:** **5** ⟢as of 06-22; cumulative notional deployed: **$500** (5×$100); total shares held: **~6.03** ⟢as of 06-22 — *update Saturday*
-- **COT_scale trajectory this week:** held 0.5 (06-15→06-18) → **flipped to 1.0 on 06-22** (leveraged-fund specs washed out below 20th pct → full target exposure)
-- **SMA-200 gate state:** **ON** all week (QQQ close ~739.82 vs SMA200 ~628.61 on 06-22)
-- **Unrealized P&L:** **−$6.67** ⟢as of 06-23 00:00 ranking snapshot (long-only accumulator, 0 round-trips by design) — *refresh Saturday*
-- **Notes:** the COT 0.5→1.0 flip is the headline event — the gate added exposure into a still-uptrending tape.
+- **Fills this week:** **6** ⟢through 06-23; cumulative notional deployed: **$600** (6×$100); total shares held: **7.372** ⟢through 06-23 (broker-reconciled) — *update Saturday*
+- **COT_scale trajectory this week:** held 0.5 (06-15→06-18) → **flipped to 1.0 on 06-22** (leveraged-fund specs washed out below 20th pct → full target exposure); held 1.0 on 06-23
+- **SMA-200 gate state:** **ON** all week (QQQ close 738.10 vs SMA200 629.45 on 06-23)
+- **Unrealized P&L:** **−$43.6** ⟢as of 06-23 (TQQQ ~$75.47 vs avg cost $81.38; long-only accumulator, 0 round-trips by design) — *refresh Saturday* (was −$6.67 on 06-22; the ~$9 TQQQ drop = a leveraged ~10% move on ~3.3% QQQ decline, NOT a bug — each order correctly $100 notional)
+- **Notes:** the COT 0.5→1.0 flip (06-22) is the headline event — the gate added exposure into a still-uptrending tape, just before a sharp TQQQ pullback on 06-23; the drawdown is expected leveraged-ETF behavior within an intact uptrend (SMA-200 still ON).
 
 ---
 
@@ -95,10 +98,10 @@
 
 *Context: the edge-calibration meta-model (`runner/edge_calibrator.py`) is in PASS-THROUGH mode until total round-trips across ALL strategies reach `MIN_ROUND_TRIPS_TOTAL = 30`. It auto-activates at 30 — no manual flip.*
 
-- **Total round-trips across all strategies:** **19 / 30** ⟢pre-filled 06-22 (authoritative count via `ec._fifo_match_global`; supersedes the stale 14/30 from 06-15) — *re-count Saturday*
-- **Mode:** **PASS-THROUGH** (<30) — confirmed `train_calibrator` returns `status=insufficient_data, n_samples=0, notes="19 round-trips total (need 30); calibrator in pass-through mode"` ⟢pre-filled 06-22
-- **Trips by strategy (06-22):** sma_crossover_btc 4, breakout_xlk 2, sma_crossover_qqq 2, breakout_xlk_regime 2, sma_crossover_qqq_regime 2, any 2, backstop_test 2, sma_crossover_qqq_rth 1, breakout_xlk__mut_c382b1 2
-- **Pace note:** +5 trips since 06-15 (14→19) over ~1 trading week. The big new sleeves (`leveraged_long_trend_paper`, `tqqq_cot_combo`, `allocator_blend`) are long-only accumulators that have NOT closed a single round-trip yet (all buys/trims) — so trip accrual is paced by the crossover/breakout strats only. At ~5 trips/wk, **30 lands ~2026-07-04 to 07-11**; the long-only legs will not accelerate it. [confirm Saturday count]
+- **Total round-trips across all strategies:** **13 / 30** ⟢REFRESHED 06-23 (authoritative LIVE-BOOK count via `calibration_report()` with the universe filter; **supersedes the 19/30 from 06-22, which was POLLUTED by non-book strategies** — backstop_test/any/sma_crossover_btc are now excluded per the 06-23 universe-filter fix) — *re-count Saturday*
+- **Mode:** **PASS-THROUGH** (<30) — confirmed `calibration_report` returns `Model status: insufficient_data`, `Training notes: 13 round-trips total (need 30); calibrator in pass-through mode`, `Training samples: 0` ⟢REFRESHED 06-23
+- **Trips by strategy (LIVE-BOOK, 06-23):** breakout_xlk 2, breakout_xlk__mut_c382b1 2, breakout_xlk_regime 2, sma_crossover_qqq 3, sma_crossover_qqq_regime 3, sma_crossover_qqq_rth 1 (= 13 total; the long-only sleeves leveraged_long_trend_paper / tqqq_cot_combo / allocator_blend have 0 closed trips by design)
+- **Pace note:** 13 live-book trips; accrual paced ONLY by the crossover/breakout strats (~5/wk) since the big sleeves are long-only accumulators (no closed round-trips). At ~5 trips/wk, **30 lands ~2026-07-04 to 07-11**. NOTE: this is a HONEST 13 (post-pollution-fix), not a regression from 19 — the 19 counted synthetic-harness + crypto noise that should never have trained the calibrator. [confirm Saturday count]
 - **If it activated this week:** [N/A this week — still pass-through; confirm Saturday]
 
 ---
@@ -145,15 +148,22 @@
 2. [ ]
 3. [ ]
 
+> **⟢Research-sprint status to fold in Saturday (week of 06-23 — the "what lane next" context):** This week the research side ran a **6-lane cull, all CLOSED** — no new tradeable edge, but the negatives are now airtight and the binding constraint is identified. Closed this week:
+> - **4 cross-sectional/event lanes died the SAME day on the IDENTICAL root cause** (survivorship-beta-in-disguise on our fixed modern-survivor universe): fundamentals-PIT quality/value, BAB (betting-against-beta), xsec-momentum (sector-neutral), PEAD (large-cap). Each killed by the **EW-of-same-universe control** → locked the **CROSS-SEC FACTOR GATE** methodology rule (L/S spread + EW control mandatory before any cross-sec pitch).
+> - **Carry family now FULLY exhausted on free data** (H1 cross-asset carry): **bond-curve-carry** = honest near-miss (full Sharpe 0.578, OOS 0.434, orthogonal, beats both controls — but misses the 0.5 magnitude bar standalone → shelf-with-trigger); **commodity-carry ETF proxy** = CLOSE (dirty-proxy mirage, failed EW control −77.5pp OOS, neg IS); **commodity-carry true WTI futures calendar-spread** (the clean reopen, run 06-23) = CLOSE but the *honest* near-miss — **k4 PASS: the backwardation premium is REAL and exists pre-2019** (+0.168 IS Sharpe, corr to bond ≈0, near-zero equity beta), it's just **too thin to beat static-long-WTI or lift the combined sleeve** (combined full 0.464 < bond-alone 0.560). Defensive overlay, not alpha. Report: `H1_CARRY_COMMODITY_FUTURES_20260623T221400Z.md`.
+> - **BINDING CONSTRAINT identified = the UNIVERSE, not the signal.** Every cross-sec/event factor on the survivor universe reproduces the survivorship mirage. Next genuinely-new lane must bring a **delisting-inclusive PIT-constituent universe** (data not free yet — EODHD $19.99/mo flagged as top rec, Cyrus's call) OR be a fundamentally different construct (path-dependent/allocator/regime). The live, non-contaminated track = the **allocator-blend + haven-sleeve** work.
+> - **Harness hardened:** the survivorship + OOS-mirage guards were extracted into a shared `lane_honesty` module (+15 regression tests reproducing each closed-lane signature) so a future lane author can't forget to run them.
+> - **Saturday "what next" decision:** with the carry sprint done and all free-universe cross-sec lanes exhausted, the next research lane is genuinely gated on either (a) Cyrus approving the PIT-universe data spend, or (b) a path-dependent/allocator construct. Worth surfacing to main/Cyrus as the actual fork.
+
 ---
 
 ## ⚙️ Section 8 — Crontab / Infra Health *(fill Saturday)*
 
 - Live strategies wired (12): `breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth breakout_xlk__mut_c382b1 leveraged_long_trend_paper rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo allocator_blend` — **confirmed in crontab** (`*/30 7-13 * * 1-5 .../cron_tick.sh ...`, all 12 args) ⟢pre-filled 06-22
-- Runs in last 7 days / errors: **775 runs, 0 errors** ⟢pre-filled 06-22 (all-time: 2558 ok / 16 error / 11 killswitch — the 16 errors are old, none this week) — *refresh Saturday*
-- `reconcile.py` running top of each tick? [confirm Saturday — was wired top of cron_tick.sh per 06-13 sprint]
+- Runs in last 7 days / errors: **789 runs, 0 errors** ⟢REFRESHED 06-23 (all-time: 2726 ok / 16 error / 11 killswitch — the 16 errors are old, none this week) — *refresh Saturday*
+- `reconcile.py` running top of each tick? **YES** ⟢verified 06-23 — broker reconcile is PERFECT (Alpaca TQQQ 11.157282 sh == DB net across cot_combo+lev_long+allocator to 6 decimals); confirm Saturday
 - Discord cron-post step healthy? [confirm Saturday — Day-0 had an ambiguous-recipient post error]
-- Killswitch `STOP_TRADING` absent (trading allowed)? **YES — absent** ⟢pre-filled 06-22 — *confirm Saturday*
+- Killswitch `STOP_TRADING` absent (trading allowed)? **YES — absent** ⟢verified 06-23 — *confirm Saturday*
 
 ---
 
@@ -166,7 +176,7 @@
 | **Variance on top tech-beta factor** | **~65%** ⚠️ |
 | Strategies with realized gains | [ ] |
 | Round-trips this week (all strats) | [ ] |
-| Total round-trips toward edge-calibrator (→30) | **19** / 30 ⟢pre-filled 06-22 |
+| Total round-trips toward edge-calibrator (→30) | **13** / 30 ⟢REFRESHED 06-23 (live-book; was 19 polluted) |
 | Combined total P&L | [ ] |
 | Combined P&L vs SPX (the mission metric) | [ ] |
 | Paper-clock day count | ~[N] |
@@ -176,4 +186,4 @@
 
 ---
 
-*Template by Tessera, 2026-06-22. Fill Saturday 2026-06-28 from live data. The eff-N caveat at the top is non-negotiable — the book is one tech bet wearing twelve nametags.*
+*Template by Tessera, 2026-06-22; snapshots refreshed to 06-23 truth (mgmt-check). Fill Saturday 2026-06-28 from live data. The eff-N caveat at the top is non-negotiable — the book is one tech bet wearing twelve nametags.*

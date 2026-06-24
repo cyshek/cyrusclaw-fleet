@@ -618,12 +618,46 @@ def run_eightfold(
         logger.info(f"[Eightfold] Resume upload SUCCESS: encId={enc_id} filename={uploaded_filename}")
 
         # Fill contact fields
-        logger.info("[Eightfold] Filling contact fields")
-        page.fill("#Contact_Information_email", email)
-        page.fill("#Contact_Information_firstname", firstname)
-        page.fill("#Contact_Information_lastname", lastname)
-        page.fill("#Contact_Information_phone", phone)
-        page.fill("#Contact_Information_city", city)
+        logger.info("[Eightfold] Filling contact fields (native value setter + events)")
+
+        def _native_fill(selector: str, value: str) -> bool:
+            """Fill a React-controlled input using native value setter + dispatch events."""
+            try:
+                page.click(selector, timeout=5000)
+                page.wait_for_timeout(100)
+                page.evaluate(
+                    """([sel, val]) => {
+                        const el = document.querySelector(sel);
+                        if (!el) return false;
+                        const nativeSetter = Object.getOwnPropertyDescriptor(
+                            window.HTMLInputElement.prototype, 'value'
+                        ).set;
+                        nativeSetter.call(el, val);
+                        el.dispatchEvent(new Event('input', {bubbles: true}));
+                        el.dispatchEvent(new Event('change', {bubbles: true}));
+                        el.dispatchEvent(new Event('blur', {bubbles: true}));
+                        return true;
+                    }""",
+                    [selector, value]
+                )
+                return True
+            except Exception as ex:
+                logger.warning(f"[Eightfold] _native_fill({selector}) error: {ex}")
+                try:
+                    page.fill(selector, value)
+                except Exception:
+                    pass
+                return False
+
+        _native_fill("#Contact_Information_email", email)
+        page.wait_for_timeout(200)
+        _native_fill("#Contact_Information_firstname", firstname)
+        page.wait_for_timeout(200)
+        _native_fill("#Contact_Information_lastname", lastname)
+        page.wait_for_timeout(200)
+        _native_fill("#Contact_Information_phone", phone)
+        page.wait_for_timeout(200)
+        _native_fill("#Contact_Information_city", city)
         page.wait_for_timeout(500)
 
         # Country/State combobox selection

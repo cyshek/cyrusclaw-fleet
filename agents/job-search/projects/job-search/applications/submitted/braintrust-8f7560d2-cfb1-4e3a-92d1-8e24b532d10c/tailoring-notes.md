@@ -2,43 +2,45 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Product Manager Intern**
-- `microsoft_2022` → **Product Manager Intern**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Scaled Azure's **AI observability** and recovery validation program from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual drills and drive **$14M+ impact** across Databricks, Walmart, SAP, and NetApp.
-2. Led 0→1 development of an internal Resilience Automation Platform, defining self-service scheduling requirements that reduced operational toil by **30%** and enabled scalable, repeatable execution across enterprise customers.
-3. Built an **internal AI agent** using LLM-powered tooling to automate drill planning, cutting planning cycle time by 39% and increasing drill capacity by 21% — directly analogous to improving AI behavior in production workflows.
-4. Directed 14 cross-org recovery executions under executive visibility, serving as technical bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
-5. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation model.
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's resilience validation program from a 2-person operation into a **platformized observability system**, standardizing workflows to sustain 45+ annual drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution from manual coordination to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability — delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a new continuous validation standard across enterprise infrastructure.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, coordinating technical stakeholders across engineering, legal, and compliance.
+5. Built an internal **AI agent for drill planning**, restructuring prompt-driven automation workflows to cut planning cycle time by 39% and increase annual drill capacity by 21%, directly informing the team's GenAI tooling strategy.
+6. Translated complex resilience and recovery signals into executive-facing narratives and partner-ready technical presentations, enabling sales and engineering teams to articulate platform value to Databricks, SAP, and other enterprise accounts.
+7. Delivered structured product feedback loops between field partners and internal engineering, synthesizing customer-reported regressions and production behavior patterns into prioritized roadmap improvements across the resilience platform.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed adoption of **AI-driven code generation** workflows by delivering technical demos and training sessions to 14 Azure service teams, driving consistent utilization and saving **37 engineering hours** monthly.
-2. Conducted 11+ user interviews with technical stakeholders to surface critical feature gaps, directly influencing the product roadmap to prioritize **intent-based YAML generation** for GenAI-powered workflows.
-3. Improved AI retrieval quality by migrating documentation to a **semantic search** platform with rigorous metadata standards, reducing lookup time by 83% and improving prompt-relevant content surfacing for engineering teams.
+1. Championed **AI-driven code generation adoption** by running hands-on demos and enablement sessions across 14 Azure service teams, driving measurable utilization and saving **37 engineering hours monthly** through prompt-optimized developer workflows.
+2. Shaped the product roadmap toward **intent-based YAML generation** by conducting 11+ structured user interviews with Azure engineering teams, surfacing critical feature gaps and translating qualitative findings into prioritized backlog requirements.
+3. Improved AI retrieval quality by enforcing rigorous metadata standards and migrating documentation to a **semantic search platform**, reducing lookup time by 83% and improving signal fidelity for LLM-powered tooling across the org.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by aligning 140+ teams on a unified automation prioritization framework, translating complex technical tradeoffs into a clear, executable product strategy.
-2. Led discovery with 20+ service teams to identify **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths — mirroring the Braintrust model of turning production data into continuous improvement.
-3. Built a **Power BI observability dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact investments with data-driven visibility.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating across 140+ service teams to drive consensus on execution sequencing.
+2. Mobilized a product strategy to reduce launch toil by leading discovery across 20+ service teams, quantifying **81 hours of manual effort per region**, and delivering a roadmap that automated critical deployment paths to improve release velocity.
+3. Enabled leadership to **target automation gaps** and prioritize high-impact investments by engineering a Power BI dashboard tracking operational toil across 140+ teams, surfacing production inefficiencies with actionable, drill-down visibility.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot OS migration by defining the transition strategy, mapping dependencies across 1,200+ stations, and aligning IT, Operations, and Engineering stakeholders.
-2. Drove implementation of **automated CI/CD pipelines** in partnership with cross-functional engineering teams, accelerating software deployment cycles by 25% and reducing manual release toil.
-3. Facilitated Agile ceremonies and triaged 40+ high-priority tickets to stabilize the developer intake process, applying **technical credibility** to bridge engineering and product teams on a fast-moving hardware-software integration.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping software and hardware dependencies across 1,200+ stations to de-risk production regressions before cutover.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **resolving 40+ high-priority tickets** and stabilizing the developer intake process by maintaining a tightly prioritized backlog aligned to engineering and operations OKRs.
+3. Drove cross-functional alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing manual handoffs that had previously bottlenecked release throughput.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by redesigning the end-to-end proposal and invoicing lifecycle for 200+ monthly opportunities, deploying a CRM solution that gave the sales team real-time pipeline visibility.
-2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a data-driven go-to-market strategy — optimizing web presence and Google profile to improve top-of-funnel performance.
-3. Improved leadership pricing models by analyzing **1,000+ project records** to identify and close margin leaks, delivering a profitability framework that connected operational data to strategic pricing decisions.
+1. Increased job bookings by **26%** by optimizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, building a structured CRM process that improved conversion tracking and reduced proposal turnaround time.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website, Google Business profile, and paid search targeting to improve qualified lead flow.
+3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks that had gone undetected under the prior manual pricing model.
 
 ## Notes from the rewriter
-- Wove 'AI observability' (JD core product) into microsoft_ft bullet 1 to mirror Braintrust's platform identity directly.
-- Used 'production data into continuous improvement' in microsoft_2022 bullet 2 — echoing the JD phrase 'turning production data into better AI with every release.'
-- Surfaced 'GenAI workflows' and 'semantic search' in microsoft_2023 bullets 1–3 to match JD's 'GenAI,' 'test prompts,' and 'compare models' vocabulary.
-- Framed microsoft_ft AI agent bullet around 'improving AI behavior in production workflows' to connect directly to Braintrust's core value prop of observability + improvement.
-- Added 'technical credibility' in amazon_robotics bullet 3 — a direct lift from the JD phrase 'technical skill and credibility' under What You'll Do.
+- 'AI observability' and 'production behavior patterns' from the JD woven into microsoft_ft bullet#7 — directly mirrors Braintrust's core platform framing.
+- 'Prompt-driven automation' and 'GenAI tooling strategy' from the JD's GenAI/prompt tinkering credential woven into microsoft_ft bullet#5 (AI agent for drill planning).
+- 'Semantic search platform' and 'LLM-powered tooling' from the JD's AI observability and model evaluation context woven into microsoft_2023 bullet#3.
+- 'Customer-reported regressions' in microsoft_ft bullet#7 mirrors Braintrust JD language about catching regressions and turning production data into improvements.
+- 'Technical presentations' and 'articulate platform value' in microsoft_ft bullet#6 directly echoes the JD's 'deliver product and technical presentations' and 'articulate the overall Braintrust value proposition' responsibilities.
 

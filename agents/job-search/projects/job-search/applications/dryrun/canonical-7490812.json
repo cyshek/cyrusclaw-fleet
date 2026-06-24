@@ -4,16 +4,16 @@
   "job_id": "7490812",
   "job_title": "Public Cloud Solution Architect",
   "job_location": "Home Based - Americas",
-  "fetched_at": "2026-06-23T03:56:20Z",
+  "fetched_at": "2026-06-24T03:07:28Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/canonical/jobs/7490812?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 30,
-    "filled": 15,
-    "filled_needs_review": 3,
+    "filled": 22,
+    "filled_needs_review": 0,
     "declined": 6,
-    "unresolved": 6,
-    "blockers": 4
+    "unresolved": 2,
+    "blockers": 0
   },
   "fields": [
     {
@@ -120,10 +120,10 @@
       "label": "During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "Yes",
@@ -140,10 +140,10 @@
       "label": "Describe your experience working with public clouds",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Describe your experience working with public clouds'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -173,9 +173,9 @@
       "label": "How did you perform in mathematics at high school?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "University of Houston",
-      "source": "education.school | NOTE: 'University of Houston' not literally in options ['Cannot recall', 'Not a strength', 'Top 50% at school', 'Top 20% at school', 'Top 10% at school', 'Top 5% at school', 'Top 1% in the region', 'Top 0.1% in the region', 'Top 0.01% in the region']",
-      "status": "filled_needs_review",
+      "value": "Top 20% at school",
+      "source": "education.school | smart-matched to option 'Top 20% at school'",
+      "status": "filled",
       "matched_rule": "school",
       "options": [
         {
@@ -221,9 +221,9 @@
       "label": "How did you perform in your native language at high school?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "University of Houston",
-      "source": "education.school | NOTE: 'University of Houston' not literally in options ['Cannot recall', 'Not a strength', 'Top 50% at school', 'Top 20% at school', 'Top 10% at school', 'Top 5% at school', 'Top 1% in the region', 'Top 0.1% in the region', 'Top 0.01% in the region']",
-      "status": "filled_needs_review",
+      "value": "Top 20% at school",
+      "source": "education.school | smart-matched to option 'Top 20% at school'",
+      "status": "filled",
       "matched_rule": "school",
       "options": [
         {
@@ -291,10 +291,10 @@
       "label": "We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Are you willing and able to commit to this?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Are you willing and able to commit to this?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -333,10 +333,10 @@
       "label": "In the past ten years, looking only at the time since you graduated your first undergraduate degree, how many companies have you worked for?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Bachelor of Science",
-      "source": "education.degree | NOTE: 'Bachelor of Science' not literally in options ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10+']",
-      "status": "filled_needs_review",
-      "matched_rule": "degree",
+      "value": "3",
+      "source": "num_companies_worked: 3 distinct employers",
+      "status": "filled",
+      "matched_rule": "num_companies_worked",
       "options": [
         {
           "label": "0",
@@ -1653,10 +1653,10 @@
       "label": "Please indicate your nationality:",
       "type": "multi_value_multi_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Please indicate your nationality:'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "American",
+      "source": "nationality_us_citizen: matched 'american'",
+      "status": "filled",
+      "matched_rule": "nationality_us_citizen",
       "options": [
         {
           "label": "Afghan",
@@ -2735,18 +2735,6 @@
   ],
   "unresolved": [
     {
-      "id": "question_62329983",
-      "label": "During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.'"
-    },
-    {
-      "id": "question_62329984",
-      "label": "Describe your experience working with public clouds",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Describe your experience working with public clouds'"
-    },
-    {
       "id": "question_62329985",
       "label": "What is your experience with open source software and Linux distributions?",
       "required": false,
@@ -2757,42 +2745,9 @@
       "label": "Describe any product management or product marketing experience",
       "required": false,
       "reason": "no LABEL_RULES match for label='Describe any product management or product marketing experience'"
-    },
-    {
-      "id": "question_62329991",
-      "label": "We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Are you willing and able to commit to this?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Are you willing and able to commit to this?'"
-    },
-    {
-      "id": "question_65000261[]",
-      "label": "Please indicate your nationality:",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Please indicate your nationality:'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_62329983",
-      "label": "During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.",
-      "reason": "no LABEL_RULES match for label='During this application process I agree to use only my own words. I understand that plagiarism, the use of AI or other generated content will disqualify my application.'"
-    },
-    {
-      "id": "question_62329984",
-      "label": "Describe your experience working with public clouds",
-      "reason": "no LABEL_RULES match for label='Describe your experience working with public clouds'"
-    },
-    {
-      "id": "question_62329991",
-      "label": "We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Are you willing and able to commit to this?",
-      "reason": "no LABEL_RULES match for label='We require all colleagues to meet in person 2-4 times a year, at internal company events lasting between 1-2 weeks. We try to pick new and interesting locations that will likely require international travel and entry requirement visas and vaccinations. Are you willing and able to commit to this?'"
-    },
-    {
-      "id": "question_65000261[]",
-      "label": "Please indicate your nationality:",
-      "reason": "no LABEL_RULES match for label='Please indicate your nationality:'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

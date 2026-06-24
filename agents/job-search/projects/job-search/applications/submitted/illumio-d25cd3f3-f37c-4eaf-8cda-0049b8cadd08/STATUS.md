@@ -1,9 +1,17 @@
-PREP-READY — 2026-06-23T02:49:20+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3430
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08/Cyrus_Shekari_Resume_ashby-illumio_d25cd3f3_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/illumio-d25cd3f3-f37c-4eaf-8cda-0049b8cadd08/cover_answers.md
+submitted_at: 2026-06-23T16:34:21+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+dio-recommit: 05-8ade-efaa8f35421f already active
+[runner] final-radio-recommit: 1 radio(s) re-clicked before submit
+[runner] last-instant: 05-8ade-efaa8f35421f already active, skipping
+[runner] last-instant: b7-bb43-3e697b3ebee9 already active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

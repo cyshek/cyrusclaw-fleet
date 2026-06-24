@@ -1,9 +1,16 @@
-PREP-READY — 2026-06-23T02:34:34+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3450
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a/Cyrus_Shekari_Resume_ashby-handshake_f82e1b50_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/handshake-f82e1b50-9184-4f26-a8f1-72251985cd2a/cover_answers.md
+submitted_at: 2026-06-23T16:45:27+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+skipping
+[runner] last-instant: 2a-adea-8ac56073529d already active, skipping
+[runner] last-instant: a2-8804-dfdbc4a00150 already active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null},{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

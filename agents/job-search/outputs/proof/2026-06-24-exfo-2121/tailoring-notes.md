@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure’s recovery validation program from a 2-person operation into a platformized system sustaining **45+ annual resilience drills** and driving **$14M+ business impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service capabilities that reduced operational toil by **30%** and shifted execution to a scalable model.
+3. Pioneered Azure’s first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a **94% recovery rate**, surfacing critical hardware defects and characterizing failure modes at scale.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Scaled team leverage through AI-driven automation, building an internal AI agent that cut planning cycle time by **39%** and increased drill capacity by **21%**.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed product adoption for AI-driven code generation workflows, running technical demos and training that drove utilization across **14 key teams** and saved **37 engineering hours** monthly.
+2. Influenced the roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams to identify critical feature gaps and use cases.
+3. Optimized data integrity and retrieval by setting metadata standards and migrating docs to an AI-powered semantic search tool, cutting lookup time by **83%**.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M** in accelerated revenue and launched regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework across **140+ teams**.
+2. Mobilized a product strategy to cut launch toil, running discovery with **20+ service teams** to identify 81 hours of manual effort per region and roadmapping critical automation paths.
+3. Enabled leadership to target automation gaps by engineering a **Power BI dashboard** tracking operational toil across **140+ teams**.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining a legacy OS migration strategy and mapping dependencies across **1,200+ stations**.
+2. Facilitated Agile ceremonies and prioritized the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake process.
+3. Drove alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the deployment cycle by **25%**.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** via a new CRM process.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by **2.7%** by executing a digital-first go-to-market strategy across the website and Google profile.
+3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+
+## Notes from the rewriter
+- Tightened all bullets to fit one page after page-2 overflow; kept each role at its min-to-mid count with ≤290-char, 2-line bullets.
+- Mirrored SE/pre-sales JD language: demos, technical reviews, field evaluations, customer enablement, characterization/validation, and competitive feedback.
+- Emphasized customer-facing, results-oriented, self-starter framing to match EXFO's Solutions Engineer aptitudes.
+

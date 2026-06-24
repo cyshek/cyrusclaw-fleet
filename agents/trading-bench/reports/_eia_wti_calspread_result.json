@@ -1,0 +1,605 @@
+{
+  "meta": {
+    "utc_stamp": "20260623T221617Z",
+    "hypothesis": "EIA WTI futures CALENDAR-SPREAD carry leg (true curve-shape, non-ETF)",
+    "reopen_trigger_source": "reports/H1_CARRY_COMMODITY_COMBINED_20260623T193840Z.md (\u00a7Revisit-triggers, lines 221-222)",
+    "instruments": [
+      "RCLC1",
+      "RCLC2",
+      "RCLC3",
+      "RCLC4 (EIA Cushing WTI future contracts, $/bbl)"
+    ],
+    "traded_return": "FRONT-contract (CL1) daily simple return, calendar-spread/roll-timing",
+    "signal": "slope = (CL1-CL4)/CL4 at month-end; long/flat on backwardation; 1-day lag",
+    "panel_span": [
+      "1985-01-02",
+      "2024-04-05"
+    ],
+    "n_aligned_days": 9857,
+    "n_month_end_rebals": 472,
+    "frac_month_ends_backwardated": 0.5403,
+    "oos_split": "2018-12-31",
+    "oos_truncation": "EIA stopped publishing NYMEX futures after 2024-04-05; OOS = 2019-01-01..2024-04-05; leg CANNOT be tested past Apr-2024 on free data",
+    "negative_print_handling": "2020-04-20 CL1=-37.63; front-ret masked to 0 across ['2020-04-17', '2020-04-20', '2020-04-21'] for signal AND all controls identically",
+    "sharpe_convention": "(mean/std)*sqrt(252), ddof=1, continuous-span (reuses _h1_carry_bondleg_tests.sharpe)",
+    "signal_lag_days": 1,
+    "vol_target_pct": 0.12,
+    "primary_config": {
+      "mapping": "long_flat",
+      "thr": 0.0,
+      "scale": 0.05,
+      "vol_target": 0.12,
+      "vol_lookback": 20,
+      "cost_bps": 2.0
+    }
+  },
+  "series_stats": {
+    "primary_signal": {
+      "config": {
+        "mapping": "long_flat",
+        "thr": 0.0,
+        "scale": 0.05,
+        "vol_target": 0.12,
+        "vol_lookback": 20,
+        "cost_bps": 2.0
+      },
+      "full": {
+        "sharpe": 0.1352,
+        "cagr": 0.0086,
+        "total_return": 0.3978,
+        "max_drawdown": -0.3785,
+        "ann_vol": 0.1023,
+        "n_days": 9835,
+        "start": "1985-02-01",
+        "end": "2024-04-05"
+      },
+      "is": {
+        "sharpe": 0.1607,
+        "cagr": 0.011,
+        "total_return": 0.4481,
+        "max_drawdown": -0.3508,
+        "ann_vol": 0.0984,
+        "n_days": 8512,
+        "start": "1985-02-01",
+        "end": "2018-12-31"
+      },
+      "oos": {
+        "sharpe": 0.0085,
+        "cagr": -0.0067,
+        "total_return": -0.0347,
+        "max_drawdown": -0.1974,
+        "ann_vol": 0.1244,
+        "n_days": 1323,
+        "start": "2019-01-02",
+        "end": "2024-04-05"
+      },
+      "avg_turnover_per_rebal": 0.1019,
+      "n_rebals": 471
+    },
+    "primary_postgfc_2009plus": {
+      "sharpe": -0.0828,
+      "cagr": -0.0114,
+      "total_return": -0.16,
+      "max_drawdown": -0.3785,
+      "ann_vol": 0.0895,
+      "n_days": 3842,
+      "start": "2009-01-02",
+      "end": "2024-04-05"
+    },
+    "control_static_long": {
+      "full": {
+        "sharpe": 0.1388,
+        "cagr": 0.0097,
+        "total_return": 0.4551,
+        "max_drawdown": -0.5677,
+        "ann_vol": 0.1411,
+        "n_days": 9835,
+        "start": "1985-02-01",
+        "end": "2024-04-05"
+      },
+      "is": {
+        "sharpe": 0.1451,
+        "cagr": 0.0105,
+        "total_return": 0.4254,
+        "max_drawdown": -0.4665,
+        "ann_vol": 0.1377,
+        "n_days": 8512,
+        "start": "1985-02-01",
+        "end": "2018-12-31"
+      },
+      "oos": {
+        "sharpe": 0.1056,
+        "cagr": 0.0039,
+        "total_return": 0.0208,
+        "max_drawdown": -0.4002,
+        "ann_vol": 0.1615,
+        "n_days": 1323,
+        "start": "2019-01-02",
+        "end": "2024-04-05"
+      },
+      "avg_turnover_per_rebal": 0.1142,
+      "n_rebals": 471
+    },
+    "control_buyhold": {
+      "full": {
+        "sharpe": 0.3006,
+        "cagr": 0.0404,
+        "total_return": 3.6857,
+        "max_drawdown": -0.8775,
+        "ann_vol": 0.4019,
+        "n_days": 9835,
+        "start": "1985-02-01",
+        "end": "2024-04-05"
+      },
+      "oos": {
+        "sharpe": 0.635,
+        "cagr": 0.2133,
+        "total_return": 1.7597,
+        "max_drawdown": -0.7316,
+        "ann_vol": 0.5074,
+        "n_days": 1323,
+        "start": "2019-01-02",
+        "end": "2024-04-05"
+      },
+      "avg_turnover_per_rebal": 0.0021,
+      "n_rebals": 471
+    }
+  },
+  "cost_analysis": {
+    "grid": [
+      {
+        "cost_bps": 0.0,
+        "full_sharpe": 0.1376,
+        "is_sharpe": 0.1631,
+        "oos_sharpe": 0.0112,
+        "oos_total": -0.033
+      },
+      {
+        "cost_bps": 1.0,
+        "full_sharpe": 0.1364,
+        "is_sharpe": 0.1619,
+        "oos_sharpe": 0.0098,
+        "oos_total": -0.0338
+      },
+      {
+        "cost_bps": 2.0,
+        "full_sharpe": 0.1352,
+        "is_sharpe": 0.1607,
+        "oos_sharpe": 0.0085,
+        "oos_total": -0.0347
+      },
+      {
+        "cost_bps": 5.0,
+        "full_sharpe": 0.1316,
+        "is_sharpe": 0.1572,
+        "oos_sharpe": 0.0044,
+        "oos_total": -0.0372
+      }
+    ],
+    "breakeven_bps_oos": null,
+    "note": "monthly rebal on the front-contract timing weight; turnover is the cost driver"
+  },
+  "lookahead_canary": {
+    "honest_d1_full_sharpe": 0.1352,
+    "cheat_d0_full_sharpe": 0.1531,
+    "paths_differ": true,
+    "interpretation": "honest(D+1) != cheat(D0) => no same-day leakage"
+  },
+  "controls": {
+    "static_long": {
+      "oos_sharpe": 0.1056,
+      "oos_total": 0.0208,
+      "delta_signal_minus_static_oos_sharpe": -0.0971,
+      "delta_signal_minus_static_oos_total": -0.0555
+    },
+    "buyhold": {
+      "oos_sharpe": 0.635,
+      "oos_total": 1.7597,
+      "delta_signal_minus_buyhold_oos_sharpe": -0.6265,
+      "delta_signal_minus_buyhold_oos_total": -1.7944
+    }
+  },
+  "robustness_sweep": {
+    "stats": {
+      "n": 27,
+      "oos_sharpe_min": -0.4746,
+      "oos_sharpe_max": 0.1645,
+      "oos_sharpe_median": 0.0085,
+      "is_sharpe_min": -0.2108,
+      "is_sharpe_max": 0.1614,
+      "is_sharpe_median": 0.0712,
+      "n_oos_above_0.4": 0,
+      "frac_oos_above_0.4": 0.0,
+      "n_is_positive": 18,
+      "frac_is_positive": 0.667
+    },
+    "grid": [
+      {
+        "mapping": "long_flat",
+        "thr": -0.005,
+        "vol_target": 0.1,
+        "full_sharpe": 0.1391,
+        "is_sharpe": 0.1473,
+        "oos_sharpe": 0.1017,
+        "oos_total": 0.0273,
+        "full_maxdd": -0.3359,
+        "turn": 0.0904
+      },
+      {
+        "mapping": "long_flat",
+        "thr": -0.005,
+        "vol_target": 0.12,
+        "full_sharpe": 0.1404,
+        "is_sharpe": 0.1489,
+        "oos_sharpe": 0.1017,
+        "oos_total": 0.0253,
+        "full_maxdd": -0.3888,
+        "turn": 0.1067
+      },
+      {
+        "mapping": "long_flat",
+        "thr": -0.005,
+        "vol_target": 0.15,
+        "full_sharpe": 0.1418,
+        "is_sharpe": 0.1506,
+        "oos_sharpe": 0.1017,
+        "oos_total": 0.0174,
+        "full_maxdd": -0.4551,
+        "turn": 0.127
+      },
+      {
+        "mapping": "long_flat",
+        "thr": 0.0,
+        "vol_target": 0.1,
+        "full_sharpe": 0.1339,
+        "is_sharpe": 0.1591,
+        "oos_sharpe": 0.0085,
+        "oos_total": -0.0234,
+        "full_maxdd": -0.3269,
+        "turn": 0.0864
+      },
+      {
+        "mapping": "long_flat",
+        "thr": 0.0,
+        "vol_target": 0.12,
+        "full_sharpe": 0.1352,
+        "is_sharpe": 0.1607,
+        "oos_sharpe": 0.0085,
+        "oos_total": -0.0347,
+        "full_maxdd": -0.3785,
+        "turn": 0.1019
+      },
+      {
+        "mapping": "long_flat",
+        "thr": 0.0,
+        "vol_target": 0.15,
+        "full_sharpe": 0.1356,
+        "is_sharpe": 0.1614,
+        "oos_sharpe": 0.0085,
+        "oos_total": -0.0554,
+        "full_maxdd": -0.4433,
+        "turn": 0.1213
+      },
+      {
+        "mapping": "long_flat",
+        "thr": 0.005,
+        "vol_target": 0.1,
+        "full_sharpe": 0.1302,
+        "is_sharpe": 0.1241,
+        "oos_sharpe": 0.1645,
+        "oos_total": 0.0594,
+        "full_maxdd": -0.2958,
+        "turn": 0.0827
+      },
+      {
+        "mapping": "long_flat",
+        "thr": 0.005,
+        "vol_target": 0.12,
+        "full_sharpe": 0.1315,
+        "is_sharpe": 0.1257,
+        "oos_sharpe": 0.1645,
+        "oos_total": 0.0658,
+        "full_maxdd": -0.3452,
+        "turn": 0.0974
+      },
+      {
+        "mapping": "long_flat",
+        "thr": 0.005,
+        "vol_target": 0.15,
+        "full_sharpe": 0.1314,
+        "is_sharpe": 0.1255,
+        "oos_sharpe": 0.1645,
+        "oos_total": 0.0717,
+        "full_maxdd": -0.4138,
+        "turn": 0.116
+      },
+      {
+        "mapping": "long_short",
+        "thr": -0.005,
+        "vol_target": 0.1,
+        "full_sharpe": 0.0702,
+        "is_sharpe": 0.0728,
+        "oos_sharpe": 0.0567,
+        "oos_total": -0.0074,
+        "full_maxdd": -0.4059,
+        "turn": 0.163
+      },
+      {
+        "mapping": "long_short",
+        "thr": -0.005,
+        "vol_target": 0.12,
+        "full_sharpe": 0.0689,
+        "is_sharpe": 0.0712,
+        "oos_sharpe": 0.0567,
+        "oos_total": -0.0201,
+        "full_maxdd": -0.4784,
+        "turn": 0.1931
+      },
+      {
+        "mapping": "long_short",
+        "thr": -0.005,
+        "vol_target": 0.15,
+        "full_sharpe": 0.0665,
+        "is_sharpe": 0.0685,
+        "oos_sharpe": 0.0567,
+        "oos_total": -0.0457,
+        "full_maxdd": -0.57,
+        "turn": 0.2332
+      },
+      {
+        "mapping": "long_short",
+        "thr": 0.0,
+        "vol_target": 0.1,
+        "full_sharpe": 0.0567,
+        "is_sharpe": 0.0842,
+        "oos_sharpe": -0.0938,
+        "oos_total": -0.1076,
+        "full_maxdd": -0.426,
+        "turn": 0.1639
+      },
+      {
+        "mapping": "long_short",
+        "thr": 0.0,
+        "vol_target": 0.12,
+        "full_sharpe": 0.0553,
+        "is_sharpe": 0.0826,
+        "oos_sharpe": -0.0938,
+        "oos_total": -0.1376,
+        "full_maxdd": -0.499,
+        "turn": 0.1942
+      },
+      {
+        "mapping": "long_short",
+        "thr": 0.0,
+        "vol_target": 0.15,
+        "full_sharpe": 0.0516,
+        "is_sharpe": 0.0784,
+        "oos_sharpe": -0.0938,
+        "oos_total": -0.1865,
+        "full_maxdd": -0.5941,
+        "turn": 0.2346
+      },
+      {
+        "mapping": "long_short",
+        "thr": 0.005,
+        "vol_target": 0.1,
+        "full_sharpe": 0.04,
+        "is_sharpe": 0.0253,
+        "oos_sharpe": 0.1213,
+        "oos_total": 0.039,
+        "full_maxdd": -0.3771,
+        "turn": 0.1676
+      },
+      {
+        "mapping": "long_short",
+        "thr": 0.005,
+        "vol_target": 0.12,
+        "full_sharpe": 0.0386,
+        "is_sharpe": 0.0236,
+        "oos_sharpe": 0.1213,
+        "oos_total": 0.0351,
+        "full_maxdd": -0.4593,
+        "turn": 0.1987
+      },
+      {
+        "mapping": "long_short",
+        "thr": 0.005,
+        "vol_target": 0.15,
+        "full_sharpe": 0.0341,
+        "is_sharpe": 0.0182,
+        "oos_sharpe": 0.1213,
+        "oos_total": 0.022,
+        "full_maxdd": -0.5781,
+        "turn": 0.2401
+      },
+      {
+        "mapping": "scaled",
+        "thr": -0.005,
+        "vol_target": 0.1,
+        "full_sharpe": -0.1931,
+        "is_sharpe": -0.162,
+        "oos_sharpe": -0.383,
+        "oos_total": -0.1617,
+        "full_maxdd": -0.5685,
+        "turn": 0.0964
+      },
+      {
+        "mapping": "scaled",
+        "thr": -0.005,
+        "vol_target": 0.12,
+        "full_sharpe": -0.1941,
+        "is_sharpe": -0.163,
+        "oos_sharpe": -0.383,
+        "oos_total": -0.194,
+        "full_maxdd": -0.6431,
+        "turn": 0.1153
+      },
+      {
+        "mapping": "scaled",
+        "thr": -0.005,
+        "vol_target": 0.15,
+        "full_sharpe": -0.198,
+        "is_sharpe": -0.1675,
+        "oos_sharpe": -0.383,
+        "oos_total": -0.242,
+        "full_maxdd": -0.7354,
+        "turn": 0.1423
+      },
+      {
+        "mapping": "scaled",
+        "thr": 0.0,
+        "vol_target": 0.1,
+        "full_sharpe": -0.2179,
+        "is_sharpe": -0.1841,
+        "oos_sharpe": -0.427,
+        "oos_total": -0.1732,
+        "full_maxdd": -0.5915,
+        "turn": 0.0968
+      },
+      {
+        "mapping": "scaled",
+        "thr": 0.0,
+        "vol_target": 0.12,
+        "full_sharpe": -0.2193,
+        "is_sharpe": -0.1857,
+        "oos_sharpe": -0.427,
+        "oos_total": -0.2071,
+        "full_maxdd": -0.6672,
+        "turn": 0.1163
+      },
+      {
+        "mapping": "scaled",
+        "thr": 0.0,
+        "vol_target": 0.15,
+        "full_sharpe": -0.2239,
+        "is_sharpe": -0.191,
+        "oos_sharpe": -0.427,
+        "oos_total": -0.2573,
+        "full_maxdd": -0.7595,
+        "turn": 0.1437
+      },
+      {
+        "mapping": "scaled",
+        "thr": 0.005,
+        "vol_target": 0.1,
+        "full_sharpe": -0.2402,
+        "is_sharpe": -0.2028,
+        "oos_sharpe": -0.4746,
+        "oos_total": -0.1881,
+        "full_maxdd": -0.6153,
+        "turn": 0.0978
+      },
+      {
+        "mapping": "scaled",
+        "thr": 0.005,
+        "vol_target": 0.12,
+        "full_sharpe": -0.242,
+        "is_sharpe": -0.2049,
+        "oos_sharpe": -0.4746,
+        "oos_total": -0.2242,
+        "full_maxdd": -0.6912,
+        "turn": 0.1176
+      },
+      {
+        "mapping": "scaled",
+        "thr": 0.005,
+        "vol_target": 0.15,
+        "full_sharpe": -0.2472,
+        "is_sharpe": -0.2108,
+        "oos_sharpe": -0.4746,
+        "oos_total": -0.2772,
+        "full_maxdd": -0.782,
+        "turn": 0.1453
+      }
+    ]
+  },
+  "stress_windows": {
+    "2008_GFC_oilcrash": {
+      "window": [
+        "2008-07-01",
+        "2009-03-31"
+      ],
+      "n_days": 189,
+      "signal_total": 0.0027,
+      "signal_sharpe": 1.1547,
+      "static_total": -0.1459,
+      "buyhold_total": -0.6453
+    },
+    "2014_15_oilbust": {
+      "window": [
+        "2014-07-01",
+        "2015-12-31"
+      ],
+      "n_days": 378,
+      "signal_total": -0.2317,
+      "signal_sharpe": -1.9542,
+      "static_total": -0.3693,
+      "buyhold_total": -0.6485
+    },
+    "2020_covid_negative": {
+      "window": [
+        "2020-02-01",
+        "2020-06-30"
+      ],
+      "n_days": 104,
+      "signal_total": -0.0187,
+      "signal_sharpe": -1.5566,
+      "static_total": -0.2023,
+      "buyhold_total": 0.0982
+    },
+    "2021_22_backwardation": {
+      "window": [
+        "2021-01-01",
+        "2022-06-30"
+      ],
+      "n_days": 375,
+      "signal_total": 0.2174,
+      "signal_sharpe": 0.8802,
+      "static_total": 0.2952,
+      "buyhold_total": 1.1797
+    }
+  },
+  "corr_to_bond_leg": {
+    "value": -0.0627,
+    "bar": 0.3,
+    "bond_leg_oos_sharpe": 0.4338,
+    "bond_leg_full_sharpe": 0.5779
+  },
+  "verdict": {
+    "overall": "CLOSE",
+    "k1_oos_sharpe_gt_0.4": {
+      "pass": false,
+      "oos_sharpe": 0.0085,
+      "bar": 0.4
+    },
+    "k2_beats_static_long_oos": {
+      "pass": false,
+      "delta_sharpe": -0.0971,
+      "delta_total": -0.0555,
+      "signal_oos_sharpe": 0.0085,
+      "static_oos_sharpe": 0.1056,
+      "signal_oos_total": -0.0347,
+      "static_oos_total": 0.0208,
+      "vs_buyhold_delta_sharpe": -0.6265,
+      "vs_buyhold_delta_total": -1.7944,
+      "note": "MAKE-OR-BREAK: timing must beat dumb static-long (and buy-hold) OOS net"
+    },
+    "k3_is_sharpe_positive": {
+      "pass": true,
+      "primary_is_sharpe": 0.1607,
+      "frac_swept_is_positive": 0.667,
+      "is_sharpe_median_sweep": 0.0712,
+      "note": "HARD GATE \u2014 the ETF version FAILED this (IS -0.44 on every split)"
+    },
+    "k4_corr_to_bond_le_0.3": {
+      "pass": true,
+      "value": -0.0627,
+      "bar": 0.3
+    },
+    "k5_allocator_frontier_lift": {
+      "pass": false,
+      "na": true,
+      "note": "k1-k4 did not all pass -> allocator-frontier check NOT run; CLOSE."
+    }
+  }
+}

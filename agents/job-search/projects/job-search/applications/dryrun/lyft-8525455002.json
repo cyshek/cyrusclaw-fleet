@@ -4,16 +4,16 @@
   "job_id": "8525455002",
   "job_title": "Program Manager, AV Technical Operations",
   "job_location": "Nashville, TN",
-  "fetched_at": "2026-06-23T08:15:30Z",
+  "fetched_at": "2026-06-24T02:46:11Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/lyft/jobs/8525455002?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 25,
-    "filled": 18,
+    "filled": 20,
     "filled_needs_review": 0,
     "declined": 5,
-    "unresolved": 2,
-    "blockers": 2
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -143,10 +143,10 @@
       "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "",
+      "source": "optional field — intentionally blank",
+      "status": "filled",
+      "matched_rule": "optional_blank",
       "options": null
     },
     {
@@ -308,10 +308,10 @@
       "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Nashville (to be established) or are you open to relocating?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "answer_yes: no 'Yes' option among ['I am willing to relocate before starting employment.', 'I am not willing to relocate before starting employment.', 'I already reside near a Lyft office and I am able to work at a Lyft On-site Office.']",
-      "status": "unresolved",
-      "matched_rule": "answer_yes",
+      "value": "I am willing to relocate before starting employment.",
+      "source": "preferences.willing_to_relocate (matched 'willing to relocate' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
       "options": [
         {
           "label": "I am willing to relocate before starting employment.",
@@ -495,32 +495,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_36315065002",
-      "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'"
-    },
-    {
-      "id": "question_36315072002",
-      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Nashville (to be established) or are you open to relocating?",
-      "required": true,
-      "reason": "answer_yes: no 'Yes' option among ['I am willing to relocate before starting employment.', 'I am not willing to relocate before starting employment.', 'I already reside near a Lyft office and I am able to work at a Lyft On-site Office.']"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_36315065002",
-      "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
-      "reason": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'"
-    },
-    {
-      "id": "question_36315072002",
-      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Nashville (to be established) or are you open to relocating?",
-      "reason": "answer_yes: no 'Yes' option among ['I am willing to relocate before starting employment.', 'I am not willing to relocate before starting employment.', 'I already reside near a Lyft office and I am able to work at a Lyft On-site Office.']"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing end-to-end workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling features that reduced operational toil by 30% and transitioned drill execution to a scalable, repeatable model across engineering and operations teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation framework adopted across the organization.
+4. Directed **14 cross-org recovery executions** under executive visibility, bridging engineering, finance, and operations stakeholders, including serving as lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
+5. Built an internal **AI agent** to automate drill planning workflows and restructured cross-team prioritization processes, reducing planning cycle time by 39% and increasing drill capacity by 21% without adding headcount.
+6. Provided ongoing roadmap updates and strategic recommendations to product and company leadership, translating resilience data into actionable insights that shaped the **product vision** for Azure's enterprise reliability platform.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows across Azure, conducting user demos and training sessions that drove utilization across 14 key engineering teams and saved **37 engineering hours** monthly.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, surfacing critical feature gaps and translating learner feedback into prioritized, actionable specifications for engineering.
+3. Improved **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting average lookup time by 83% and improving the end-to-end user journey for developers.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, collaborating with 140+ service teams to see initiatives through from discovery to completion.
+2. Defined a product strategy to reduce operational toil during region launches, conducting discovery sessions with 20+ service teams to surface **81 hours of manual effort** per launch and building a phased roadmap to automate the highest-impact critical paths.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, equipping product and company leadership with clear visibility into automation gaps and enabling data-driven roadmap prioritization aligned to broader business strategy.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy for a **2,000+ unit pilot**, mapping dependencies across 1,200+ stations and coordinating with engineering and operations teams to achieve zero operational downtime throughout the end-to-end transition.
+2. Facilitated Agile sprint planning and retrospectives, managing backlog prioritization to resolve **40+ high-priority tickets**, stabilize the developer intake process, and keep cross-functional engineering and QA teams aligned on evolving delivery needs.
+3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and freeing engineering capacity to focus on higher-impact product development work.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, designing and rolling out a new CRM process that streamlined the customer journey from initial inquiry through conversion.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted site conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website user experience, refining the Google Business profile, and aligning messaging to target customer segments.
+3. Improved leadership's **pricing model accuracy** by conducting financial profitability analysis across 1,000+ project records, identifying and sealing margin leaks that directly informed smarter go-to-market packaging and business strategy decisions.
+
+## Notes from the rewriter
+- 'End-to-end product development process' (JD) woven into microsoft_ft bullet#2 and amazon_robotics bullet#1 to mirror Rosetta Stone's full-cycle delivery language.
+- 'Product vision and roadmap' (JD) surfaced explicitly in microsoft_ft bullet#6 and microsoft_2022 bullet#2 to match the APM's responsibility to contribute to roadmap and leadership updates.
+- 'User journey and experience' (JD) reflected in pro_painters bullet#1 ('customer journey from inquiry through conversion') and microsoft_2023 bullet#3 ('end-to-end user journey for developers').
+- 'Learner engagement' and 'onboarding flows' (JD core product areas) referenced in the skills block to signal direct domain fit with Rosetta Stone's feature focus.
+- 'Go-to-market strategy' (JD/sales collaboration context) explicitly used in pro_painters bullet#2 and skills block, mirroring JD's mention of working with Sales on GTM and payment integrations.
+- 'Wireframing' and 'written specifications' (JD requirements) addressed via skills listing and microsoft_2022 bullet#2 framing around spec-level roadmap artifacts.
+

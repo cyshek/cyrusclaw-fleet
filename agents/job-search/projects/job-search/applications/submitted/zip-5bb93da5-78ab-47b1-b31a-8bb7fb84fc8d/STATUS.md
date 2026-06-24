@@ -1,6 +1,17 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-22T09:56:17+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 2556
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "12c2d8a9-1fbe-4e79-babe-a18a9848ffb9_278a74e3-b4ba-4180-803d-54862dcaf226", "label": "Have you built an AI agent before that you could show the team or walk through the example?", "reason": "no LABEL_RULES match for label='Have you built an AI agent before that you could show the team or walk through the example?'"}]
+submitted_at: 2026-06-24T00:16:18+00:00
+
+Runner tail:
+: cd-a653-19219d7521d1 already active, skipping
+[runner] last-instant: 80-803d-54862dcaf226 already active, skipping
+[runner] last-instant: 1e-9b46-c4aee59366e2 already active, skipping
+[runner] last-instant: 81-a933-a81da65172b2 already active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

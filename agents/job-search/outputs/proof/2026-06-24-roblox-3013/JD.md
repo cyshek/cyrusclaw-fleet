@@ -1,0 +1,67 @@
+# Developer Program Manager, Compliance
+
+**Company:** Roblox
+**Location:** San Mateo, CA, United States
+**Apply:** https://careers.roblox.com/jobs/7895212?gh_jid=7895212
+**Greenhouse ID:** 7895212
+
+---
+
+Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D immersive digital experiences– all created by our global community of developers and creators. 
+
+At Roblox, we’re building the tools and platform that empower our community to bring any experience that they can imagine to life. Our vision is to reimagine the way people come together, from anywhere in the world, and on any device.** **We’re on a mission to connect a billion people with optimism and civility, and looking for amazing talent to help us get there. 
+
+A career at Roblox means you’ll be working to shape the future of human interaction, solving unique technical challenges at scale, and helping to create safer, more civil shared experiences for everyone.
+
+As a **Developer Program Manager** within our Strategic Accounts Compliance team, you will be the primary shield and bridge for our most influential creators. You will ensure that strategic accounts and content remain compliant and thriving on our platform, balancing rigorous safety standards with support experience that minimizes disruption for our most critical partners.
+
+## **You Will**
+
+- **Manage High-Stakes Escalations:** Act as the primary point of contact for compliance-related outreach with top creators and strategic accounts, providing clear, actionable guidance to keep their content live and compliant.
+
+- **Serve as a Strategic Liaison:** Bridge the gap between external creators and internal cross-functional teams (Legal, Trust & Safety, Policy, and Operations) to facilitate smooth communication and resolve complex content issues.
+
+- **Minimize Platform Interruption:** Work proactively with internal enforcement teams to prevent unnecessary content takedowns, ensuring strategic assets remain available while corrective actions are addressed.
+
+- **Support Internal Stakeholders:** Respond to internal requests from teams needing to coordinate with strategic accounts for content updates, feedback, or high-level information gathering.
+
+- **Drive Process Improvement:** Don’t just "solve the ticket"—identify recurring friction points and partner with technical teams to improve our internal systems and compliance workflows.
+
+- **Novel Games Initiative support: **Serve as an operational liaison for developers who are expanding the platform’s technical and aesthetic boundaries, facilitating the growth and successful execution of the Novel Games Initiative through proactive platform guidance. 
+
+## **You Have**
+
+- **3–5+ Years of Experience:** Proven track record in community support, program management, or creator relations (Trust & Safety or Compliance experience is a major plus).
+
+- **Masterful Communication:** Ability to translate complex, sensitive policy decisions into clear, empathetic language for both external VIP partners and high-level internal executives.
+
+- **Technical Savvy:** High proficiency with Google Suite and experience with CRM/Ticketing tools (Salesforce, Zendesk). Ideally, you are "AI-savvy" and eager to leverage new tech to automate and scale manual processes.
+
+- **Crisis Management Skills:** A proven ability to function under significant pressure and navigate high-stakes "fire drills" without losing focus.
+
+- **Documentation Excellence:** Strong technical writing skills with the ability to document complex cases with precision for legal and audit purposes.
+
+- ***Gaming Industry Fluency:**** Maintains a comprehensive, first-hand understanding of the gaming landscape and an active interest in diverse gaming genres including RPGs, shooters, and strategy mechanics. You possess the proficiency to engage credibly with top developers in all areas of the game production lifecycle and any necessary support.* 
+
+## **You Are**
+
+- **A Diplomatic Problem-Solver:** You excel at finding the "middle ground" where policy meets partner success, exploring multiple paths to reach a solution that satisfies all parties.
+
+- **A Systems-Thinker:** You are naturally curious about how things work and are driven to improve the "entire process" rather than just handling individual tasks.
+
+- **Resilient and Ready:** You remain calm in the eye of the storm and are prepared to support our creators whenever high-priority issues arise.
+
+- **A Team Collaborator:** You understand that success in this role requires building deep trust with internal partners across Legal, Safety, and Engineering.
+
+ 
+
+For roles that are based at our headquarters in San Mateo, CA: The starting base pay for this position is as shown below. The actual base pay is dependent upon a variety of job-related factors such as professional background, training, work experience, location, business needs and market demand. Therefore, in some circumstances, the actual salary could fall outside of this expected range. This pay range is subject to change and may be modified in the future. All full-time employees are also eligible for equity compensation and for benefits as described on **[this page](https://careers.roblox.com/total-rewards)**.
+
+Annual Salary Range
+$141,990—$178,850 USD
+
+Roles that are based in an office are onsite Tuesday, Wednesday, and Thursday, with optional presence on Monday and Friday (unless otherwise noted).
+
+Roblox provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws. Roblox also provides reasonable accommodations to candidates with qualifying disabilities or religious beliefs during the recruiting process.
+
+For US based roles only, please note the Company may not be able to employ candidates for this role who have United States work authorization related to certain U.S. visa categories, or support future H-1B sponsorship at this time.

@@ -1,7 +1,18 @@
 """
-interviews_tracker.py -- Write new interview signals into tracker.db interviews table,
-then re-render the XLSX and post to #job-search.
+interviews_tracker.py -- [DISABLED 2026-06-23]
+
+FORMERLY: wrote new interview signals into tracker.db `interviews` table, then
+re-rendered the XLSX and posted to #job-search.
+
+DISABLED per job-search directive (2026-06-23): Cyrus now maintains the Interviews
+sheet in Cyrus_Job_Tracker.xlsx MANUALLY. render_xlsx.py preserves that sheet as-is
+on every re-render. interview-prep must NOT write the interviews table or trigger an
+XLSX re-render. nightly_scan.py no longer imports/calls process_signals(); it is
+notify-only. This module is retained for reference + the safe read helpers only.
+If re-enabling write-back is ever wanted, coordinate with job-search first.
 """
+
+_WRITE_DISABLED = True
 
 import sqlite3
 import subprocess
@@ -123,7 +134,11 @@ def render_and_upload(signals_inserted):
 
 
 def process_signals(signals_with_tracker):
-    """Main entry: insert new interviews, render XLSX if anything changed."""
+    """[DISABLED 2026-06-23] No-op. Sheet is Cyrus-owned; do not write DB / re-render."""
+    if _WRITE_DISABLED:
+        print("[interviews_tracker] DISABLED — skipping interviews-table write + XLSX render "
+              "(Cyrus owns the Interviews sheet). No-op.")
+        return 0
     inserted = 0
     for item in signals_with_tracker:
         sig = item["signal"]

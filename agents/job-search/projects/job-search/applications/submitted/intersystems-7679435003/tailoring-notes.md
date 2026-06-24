@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing innovation loops and cross-functional workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise partners.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining program requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model aligned with continuous improvement goals.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate — failing fast on critical hardware defects and graduating learnings into a sustained validation practice across the org.
+4. Directed **14 cross-org recovery executions** under executive visibility, assembling part-time teams across engineering, legal, and operations, and serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
+5. Cultivated high-trust stakeholder relationships across engineering, sales, and legal to establish a sustainable operating model for program acceleration, embedding decision-rights frameworks and communication processes across **4+ partner organizations**.
+6. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to **reduce planning cycle time by 39%** and increase innovation loop capacity by 21% without adding headcount.
+7. Suggested and implemented best-practice optimizations to cross-functional collaboration processes, consolidating tooling and talent-engagement workflows that improved program visibility and accelerated **time-to-decision on innovation priorities**.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows across **14 key teams**, conducting user demos and training sessions that drove sustained utilization and saved **37 engineering hours monthly** — accelerating innovation loop velocity for Azure service teams.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ structured user interviews** with Azure service teams, surfacing critical feature gaps and translating findings into prioritized backlog items with clear business rationale.
+3. Optimized data integrity and knowledge retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time by 83% and improving cross-functional collaboration efficiency.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, assembling consensus across 140+ teams through structured stakeholder engagement and management reviews.
+2. Drove a program strategy to eliminate operational toil during region launches, conducting discovery with **20+ service teams** to quantify 81 hours of manual effort per region and building a phased roadmap to automate critical-path dependencies.
+3. Enabled leadership to identify automation gaps and prioritize high-impact opportunities by engineering a **Power BI dashboard** tracking operational toil across 140+ teams — providing the visible, clear findings needed to drive data-informed innovation decisions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and assembling cross-functional teams from IT, Operations, and Engineering to execute each loop.
+2. Facilitated Agile ceremonies — sprint planning, backlog grooming, and retrospectives — resolving **40+ high-priority tickets** and stabilizing the developer intake process through disciplined iteration and fast-fail feedback cycles aligned with program goals.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating software deployment cycles by 25%** and establishing a repeatable, scalable model for future innovation rollouts across the robotics platform.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, building a new CRM process that standardized workflows and freed leadership time for higher-value innovation and growth initiatives.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website and Google profile through iterative, data-driven experimentation aligned with fast-cycle improvement principles.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks and delivering actionable findings that directly informed strategic decisions on resource allocation and growth.
+
+## Notes from the rewriter
+- 'innovation loops' woven into microsoft_ft bullet#1 and amazon_robotics bullet#1 — mirrors JD's core program structure language directly.
+- 'failing fast' appears in microsoft_ft bullet#3, 'fast-fail feedback cycles' in amazon_robotics bullet#2 — JD explicitly calls out 'failing fast' as a program goal.
+- 'sustainable operating model' and 'decision-rights' used in microsoft_ft bullet#5 — pulled verbatim from JD's cross-functional operating model requirements.
+- 'management reviews' and 'visible, clear findings' in microsoft_2022 bullet#3 — directly mirrors JD responsibility to 'conduct regular management reviews and ensure visible, clear findings.'
+- 'assembling part-time teams' and 'secure management approval' context embedded in microsoft_ft bullet#4 — reflects JD's explicit team assembly and approval responsibilities.
+

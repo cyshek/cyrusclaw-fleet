@@ -1,0 +1,181 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/permitflow/59bc7a80-a622-49b7-b47d-51d70a7c1075",
+  "org": "permitflow",
+  "job_id": "59bc7a80-a622-49b7-b47d-51d70a7c1075",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "New York City, NY",
+  "fetched_at": "2026-06-23T22:31:08Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_name"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_email"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_c056fccb-fe8a-4203-b6a2-c27aa2945ace",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_c056fccb-fe8a-4203-b6a2-c27aa2945ace"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_resume"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_36c56bf7-e26a-44de-aee7-f82043b1edeb",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_36c56bf7-e26a-44de-aee7-f82043b1edeb"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810__systemfield_location"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_1e3cc34f-ba37-40fe-b7bd-005a2fcce0fc",
+      "label": "This role requires 3 days/week (M/W/F) in our NYC office. Can you commit to that schedule?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_1e3cc34f-ba37-40fe-b7bd-005a2fcce0fc"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_1858ecb8-a700-4cbd-b9a4-4be7dd43a616",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_1858ecb8-a700-4cbd-b9a4-4be7dd43a616"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_cce8d43f-65de-4562-82d5-c90ebe465756",
+      "label": "If hired by PermitFlow, will you now or in the future require sponsorship for employment visa status (e.g. H-1B, TN, OPT, etc.)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_cce8d43f-65de-4562-82d5-c90ebe465756"
+    },
+    {
+      "id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_242f4d67-7c7c-42b7-8522-2fb91a94d63a",
+      "label": "What are your salary expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "$160,000 - $200,000 base",
+      "source": "comp_seeking: standard range for PM/TPM/SE roles",
+      "status": "filled",
+      "matched_rule": "comp_seeking",
+      "options": null,
+      "_ashby_type": "Number",
+      "_ashby_id": "86b992e6-892b-4dc7-97a9-ef1ea6b8e810_242f4d67-7c7c-42b7-8522-2fb91a94d63a"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

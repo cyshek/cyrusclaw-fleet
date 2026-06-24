@@ -4,16 +4,16 @@
   "job_id": "8008586",
   "job_title": "Technical Program Manager - Marketplace Integrations",
   "job_location": "United States - Remote",
-  "fetched_at": "2026-06-23T02:55:50Z",
+  "fetched_at": "2026-06-23T23:10:49Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/rithum/jobs/8008586?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 30,
-    "filled": 21,
+    "filled": 24,
     "filled_needs_review": 2,
     "declined": 4,
-    "unresolved": 3,
-    "blockers": 3
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -200,10 +200,10 @@
       "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "N/A",
+      "source": "visa_type_na: freetext US citizen",
+      "status": "filled",
+      "matched_rule": "visa_type_na",
       "options": null
     },
     {
@@ -273,10 +273,10 @@
       "label": "Did a current Rithum employee refer you to this role? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -293,10 +293,10 @@
       "label": "If yes, who referred you? If you answered no, you can enter N/A. ",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='If yes, who referred you? If you answered no, you can enter N/A. '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "N/A",
+      "source": "answer_na_text: no referral / not applicable",
+      "status": "filled",
+      "matched_rule": "answer_na_text",
       "options": null
     },
     {
@@ -508,43 +508,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_67633689",
-      "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'"
-    },
-    {
-      "id": "question_67633694",
-      "label": "Did a current Rithum employee refer you to this role? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '"
-    },
-    {
-      "id": "question_67633695",
-      "label": "If yes, who referred you? If you answered no, you can enter N/A. ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='If yes, who referred you? If you answered no, you can enter N/A. '"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_67633689",
-      "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.",
-      "reason": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'"
-    },
-    {
-      "id": "question_67633694",
-      "label": "Did a current Rithum employee refer you to this role? ",
-      "reason": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '"
-    },
-    {
-      "id": "question_67633695",
-      "label": "If yes, who referred you? If you answered no, you can enter N/A. ",
-      "reason": "no LABEL_RULES match for label='If yes, who referred you? If you answered no, you can enter N/A. '"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

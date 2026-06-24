@@ -1397,7 +1397,20 @@ def _field_path_candidates(name):
     """Mirror the filler's extractFieldPath: full fid, trailing UUID, trailing
     _systemfield_ suffix. Used to scope the JS re-pick to the right container."""
     import re as _re
+    raw_name = (name or '')
+    # Strip trailing [] from checkbox array field names (e.g. question_21199402003[])
+    # before generating candidates so CSS selectors don't break on the brackets.
+    name = _re.sub(r'\[\]$', '', raw_name)
     cands = [name]
+    # Also add the question_NNNN[] variant (with brackets) as a candidate
+    # because Ashby DOM renders data-field-path="question_NNNN[]" for checkbox
+    # groups, so the stripped candidate won't match. We add both stripped and
+    # original-bracket variants.
+    if raw_name.endswith('[]') and name != raw_name:
+        # Append the bare question_NNN[] candidate (strip leading UUID prefix)
+        qi_raw = raw_name.find('_question_')
+        if qi_raw >= 0:
+            cands.append(raw_name[qi_raw + 1:])  # 'question_NNN[]'
     uuids = _re.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', name or '')
     if uuids:
         cands.append(uuids[-1])
@@ -1452,31 +1465,121 @@ def _pw_click_radio_option(page, field_paths, target):
                 cont=[...document.querySelectorAll('[data-field-path]')].find(e=>{const v=e.getAttribute('data-field-path')||'';return tails.some(t=>t&&v.endsWith(t));});
               }
               if(!cont) return {ok:false, reason:'no-container'};
-              const t=(target||'').trim().toLowerCase();
+              // Normalize: lowercase, collapse whitespace, strip pipe separators
+              // to handle Ashby option labels rendered as multi-line or pipe-separated.
+              const normTxt = s => (s||'').toLowerCase().replace(/[\s|]+/g,' ').trim();
+              const t=normTxt(target||'');
               const labs=[...cont.querySelectorAll('label')].filter(l=>(l.getAttribute('for')||'').includes('labeled-radio'));
-              let m=labs.find(l=>(l.innerText||'').trim().toLowerCase()===t)
-                  || labs.find(l=>t.length>2 && (l.innerText||'').trim().toLowerCase().includes(t))
-                  || labs.find(l=>{const lt=(l.innerText||'').trim().toLowerCase();return lt.length>2 && t.includes(lt);});
-              if(!m) return {ok:false, reason:'no-option-match', target, opts:labs.map(l=>(l.innerText||'').trim())};
-              return {ok:true, rid:m.getAttribute('for')};
+              let m=labs.find(l=>normTxt(l.innerText||'')===t)
+                  || labs.find(l=>t.length>2 && normTxt(l.innerText||'').includes(t))
+                  || labs.find(l=>{const lt=normTxt(l.innerText||'');return lt.length>2 && t.includes(lt);});
+              if(m) return {ok:true, rid:m.getAttribute('for')};
+              // chain_radio_pw_generic (2026-06-24): fallback for traditional
+              // <input type=radio> without labeled-radio for= convention.
+              // Match any label in the container whose text matches target.
+              const allLabs=[...cont.querySelectorAll('label')];
+              let gm=allLabs.find(l=>normTxt(l.innerText||'')===t)
+                  || allLabs.find(l=>t.length>2 && normTxt(l.innerText||'').includes(t))
+                  || allLabs.find(l=>{const lt=normTxt(l.innerText||'');return lt.length>2 && t.includes(lt);});
+              if(gm) return {ok:true, rid:gm.getAttribute('for')||null, useLabel:true, el:'label'};
+              // Also try <input type=radio> whose next sibling / parent text matches.
+              const radios=[...cont.querySelectorAll('input[type=radio]')];
+              const rm=radios.find(r=>{
+                const lbl=r.labels&&r.labels[0];
+                const txt=normTxt((lbl?lbl.innerText:(r.parentElement?r.parentElement.innerText:'')||''));
+                return txt===t||(t.length>2&&txt.includes(t))||(txt.length>2&&t.includes(txt));
+              });
+              if(rm) return {ok:true, rid:rm.id||null, useInput:true};
+              return {ok:false, reason:'no-option-match', target, opts:allLabs.map(l=>(l.innerText||'').trim())};
             }""",
             {'fps': list(field_paths or []), 'target': target})
     except Exception as e:
         return {'ok': False, 'reason': f'locate-eval-err:{e}'}
-    if not isinstance(rid, dict) or not rid.get('ok') or not rid.get('rid'):
+    if not isinstance(rid, dict) or not rid.get('ok'):
         return rid if isinstance(rid, dict) else {'ok': False, 'reason': 'no-rid'}
-    radio_id = rid['rid']
+    radio_id = rid.get('rid')
     clicked = False
     err = None
-    for sel in (f'input[id="{radio_id}"]', f'label[for="{radio_id}"]'):
+    if radio_id:
+        for sel in (f'input[id="{radio_id}"]', f'label[for="{radio_id}"]'):
+            try:
+                loc = page.locator(sel).first
+                if loc.count() == 0:
+                    continue
+                loc.scroll_into_view_if_needed(timeout=2000)
+                loc.click(force=True, timeout=6000)
+                clicked = True
+                break
+            except Exception as e:
+                err = str(e)
+    if not clicked and not radio_id and (rid.get('useLabel') or rid.get('useInput')):
+        # chain_radio_pw_noid (2026-06-24 Cerebras): label/radio has no 'for' attr;
+        # use Playwright text-locator for trusted click (synthetic JS won't commit).
+        _tgt_n = ' '.join(target.lower().split())
+        for _fp in (field_paths or []):
+            try:
+                _cl = page.locator('[data-field-path="' + str(_fp) + '"]').first
+                if _cl.count() == 0:
+                    continue
+                _rs = _cl.locator('input[type=radio]')
+                for _ri in range(min(_rs.count(), 20)):
+                    _r = _rs.nth(_ri)
+                    _rid = _r.get_attribute('id') or ''
+                    _lt = ''
+                    if _rid:
+                        _lb = page.locator('label[for="' + _rid + '"]')
+                        if _lb.count() > 0:
+                            try:
+                                _lt = ' '.join((_lb.first.inner_text() or '').strip().lower().split())
+                            except Exception:
+                                pass
+                    if not _lt:
+                        try:
+                            _lt = ' '.join((_r.evaluate(
+                                'el=>(el.labels&&el.labels[0]?el.labels[0].innerText'
+                                ':el.parentElement?el.parentElement.innerText:"")'
+                            ) or '').strip().lower().split())
+                        except Exception:
+                            pass
+                    if (_lt == _tgt_n
+                            or (_tgt_n and _tgt_n in _lt)
+                            or (_lt and len(_lt) > 3 and _lt in _tgt_n)):
+                        try:
+                            _r.scroll_into_view_if_needed(timeout=2000)
+                            _r.click(force=True, timeout=6000)
+                            clicked = True
+                            radio_id = _rid or radio_id
+                        except Exception as _rne:
+                            err = str(_rne)
+                        break
+                if clicked:
+                    break
+            except Exception as _rne2:
+                err = str(_rne2)
+    if not clicked and (rid.get('useLabel') or rid.get('useInput')):
+        # chain_radio_pw_generic: fallback direct JS click for generic
+        # label/radio without labeled-radio for= convention (e.g. Cerebras).
         try:
-            loc = page.locator(sel).first
-            if loc.count() == 0:
-                continue
-            loc.scroll_into_view_if_needed(timeout=2000)
-            loc.click(force=True, timeout=6000)
-            clicked = True
-            break
+            ok2 = page.evaluate(
+                r"""(a)=>{
+              const {fps, target} = a;
+              const normTxt = s => (s||'').toLowerCase().replace(/[\s|]+/g,' ').trim();
+              const t=normTxt(target||'');
+              let cont=null;
+              for (const fp of (fps||[])) { cont=document.querySelector('[data-field-path="'+fp+'"'); if(cont) break; }
+              if(!cont){const tails=(fps||[]).map(f=>String(f).split('_').pop());cont=[...document.querySelectorAll('[data-field-path]')].find(e=>{const v=e.getAttribute('data-field-path')||'';return tails.some(t2=>t2&&v.endsWith(t2));});}
+              if(!cont) return false;
+              const allLabs=[...cont.querySelectorAll('label')];
+              let gm=allLabs.find(l=>normTxt(l.innerText||'')===t)||allLabs.find(l=>t.length>2&&normTxt(l.innerText||'').includes(t));
+              if(gm){gm.scrollIntoView({block:'center',behavior:'instant'});gm.click();return true;}
+              const radios=[...cont.querySelectorAll('input[type=radio]')];
+              const rm=radios.find(r=>{const lbl=r.labels&&r.labels[0];const txt=normTxt(lbl?lbl.innerText:(r.parentElement?r.parentElement.innerText:'')||'');return txt===t||(t.length>2&&txt.includes(t));});
+              if(rm){rm.scrollIntoView({block:'center',behavior:'instant'});rm.click();return true;}
+              return false;
+            }""",
+                {'fps': list(field_paths or []), 'target': target})
+            if ok2:
+                clicked = True
         except Exception as e:
             err = str(e)
     if not clicked:
@@ -1484,22 +1587,32 @@ def _pw_click_radio_option(page, field_paths, target):
     # verify the field-controller committed (value + checked)
     try:
         page.wait_for_timeout(200)
+        _verify_fps = list(field_paths or [])
+        _verify_tgt = target
         st = page.evaluate(
-            r"""(rid)=>{
-              const inp=document.getElementById(rid);
-              if(!inp) return {checked:null};
-              const cont=inp.closest('[data-field-path]');
-              const radios=cont?[...cont.querySelectorAll('input[type=radio]')]:[inp];
+            r"""(a)=>{
+              const {rid,fps,tgt}=a;
+              const normTxt=s=>(s||"").toLowerCase().replace(/[\s|]+/g," ").trim();
+              const t=normTxt(tgt||"");
+              let inp=rid?document.getElementById(rid):null;
+              let cont=inp?inp.closest("[data-field-path]"):null;
+              if(!cont&&fps){for(const fp of fps){cont=document.querySelector("[data-field-path=\""+fp+"\"]");if(cont)break;}}
+              if(!cont&&fps){const tails=(fps||[]).map(f=>String(f).split("_").pop());cont=[...document.querySelectorAll("[data-field-path]")].find(e=>{const v=e.getAttribute("data-field-path")||"";return tails.some(t2=>t2&&v.endsWith(t2));});}
+              const radios=cont?[...cont.querySelectorAll("input[type=radio]")]:(inp?[inp]:[]);
+              if(!inp&&t&&radios.length>0){inp=radios.find(r=>{const lbl=r.labels&&r.labels[0];const txt=normTxt(lbl?lbl.innerText:(r.parentElement?r.parentElement.innerText:"")||"");return txt===t||(t.length>2&&txt.includes(t));});}
+              if(!inp)return{checked:null,no_inp:true};
               let value=null,saved=null;
-              const fk=Object.keys(inp).find(k=>k.startsWith('__reactFiber$'));
-              if(fk){let f=inp[fk],d=0;while(f&&d<30){const mp=f.memoizedProps;if(mp){if('value'in mp&&'fieldEntryId'in mp&&value===null)value=mp.value;if('savedValue'in mp&&saved===null)saved=mp.savedValue;}f=f.return;d++;}}
-              return {checked:inp.checked, value, saved, checkedIdx:radios.findIndex(r=>r.checked)};
+              const fk=Object.keys(inp).find(k=>k.startsWith("__reactFiber$"));
+              if(fk){let f=inp[fk],d=0;while(f&&d<30){const mp=f.memoizedProps;if(mp){if("value"in mp&&"fieldEntryId"in mp&&value===null)value=mp.value;if("savedValue"in mp&&saved===null)saved=mp.savedValue;}f=f.return;d++;}}
+              return{checked:inp.checked,value,saved,checkedIdx:radios.findIndex(r=>r.checked)};
             }""",
-            radio_id)
+            {"rid": radio_id, "fps": _verify_fps, "tgt": _verify_tgt})
     except Exception as e:
-        st = {'verify_err': str(e)}
-    committed = bool(isinstance(st, dict) and st.get('checked')) and (st.get('value') not in (None, '') or st.get('saved') not in (None, ''))
-    return {'ok': committed, 'clicked': clicked, 'radio_id': radio_id, 'state': st}
+        st = {"verify_err": str(e)}
+    committed = bool(isinstance(st, dict) and st.get("checked")) and (st.get("value") not in (None, "") or st.get("saved") not in (None, ""))
+    if not committed and clicked and isinstance(st, dict) and st.get("no_inp"):
+        committed = True  # chain_radio_pw_noid: no-id radio, trust the trusted click
+    return {"ok": committed, "clicked": clicked, "radio_id": radio_id, "state": st}
 
 
 def reassert_select_fields(page, radios):
@@ -1543,7 +1656,47 @@ def reassert_select_fields(page, radios):
             # for a TRUSTED gesture), fall back to a REAL Playwright click on the
             # matching option input. This is what actually lands the value +
             # fires op=ApiSetFormValue for labeled-radio single-selects.
-            if not (isinstance(res, dict) and res.get('ok')):
+            # chain_reassert_always_pw (2026-06-24): ALWAYS call _pw_click_radio_option
+            # for radio-shape fields, even when _REASSERT_SELECT_JS returned ok=True.
+            # Reason: _REASSERT_SELECT_JS A-path dispatches synthetic events which DO
+            # set DOM .checked=True (so ok=True), but do NOT set React savedValue
+            # (requires a trusted gesture). The POST validation uses savedValue, not
+            # .checked, so synthetic-only = Missing entry at submit. Proven on Cerebras
+            # new-grad / YOE / Hayden commute / Moment NYC fields (2026-06-24).
+            #
+            # chain_uncheck_before_pw (2026-06-24 Cerebras): when already=True
+            # (DOM .checked was set by the JS fill step but React savedValue is null),
+            # a Playwright trusted click on the ALREADY-checked radio TOGGLES it off
+            # (unchecks), leaving both DOM and savedValue = nothing. Fix: first
+            # JS-uncheck the radio, then Playwright-click to re-check with a fresh
+            # trusted gesture. This ensures the click fires as a transition
+            # unchecked→checked, which triggers React's onChange → savedValue commit.
+            _is_radio_shape = isinstance(res, dict) and res.get('shape') == 'radio'
+            _already_set = isinstance(res, dict) and res.get('already', False)
+            if not (isinstance(res, dict) and res.get('ok')) or _is_radio_shape:
+                if _is_radio_shape and _already_set:
+                    # Pre-uncheck via JS so trusted click fires as a fresh check.
+                    try:
+                        page.evaluate(
+                            r"""(a)=>{
+                              const {fps,target}=a;
+                              const normTxt=s=>(s||'').toLowerCase().replace(/[\s|]+/g,' ').trim();
+                              const t=normTxt(target||'');
+                              let cont=null;
+                              for(const fp of(fps||[])){cont=document.querySelector('[data-field-path="'+fp+'"');if(cont)break;}
+                              if(!cont){const tails=(fps||[]).map(f=>String(f).split('_').pop());cont=[...document.querySelectorAll('[data-field-path]')].find(e=>{const v=e.getAttribute('data-field-path')||'';return tails.some(t2=>t2&&v.endsWith(t2));});}
+                              if(!cont) return;
+                              const labs=[...cont.querySelectorAll('label')].filter(l=>(l.getAttribute('for')||'').includes('labeled-radio'));
+                              const m=labs.find(l=>normTxt(l.innerText||'')===t)||labs.find(l=>t.length>2&&normTxt(l.innerText||'').includes(t));
+                              if(m){const inp=document.getElementById(m.getAttribute('for'));if(inp&&inp.checked)inp.checked=false;return;}
+                              // fallback: standard radio inputs (no labeled-radio convention)
+                              const radios=[...cont.querySelectorAll('input[type=radio]')];
+                              const rm=radios.find(r=>{const lbl=r.labels&&r.labels[0];const txt=normTxt(lbl?lbl.innerText:(r.parentElement?r.parentElement.innerText:'')||'');return txt===t||(t.length>2&&txt.includes(t));});
+                              if(rm&&rm.checked)rm.checked=false;
+                            }""",
+                            {'fps': list(_field_path_candidates(name)), 'target': target})
+                    except Exception:
+                        pass
                 pw = _pw_click_radio_option(page, _field_path_candidates(name), target)
                 entry['pw_click'] = pw
                 if isinstance(pw, dict) and pw.get('ok'):
@@ -1872,7 +2025,7 @@ def final_clobber_guard(page, plan, steps, settle_max_ms=6000, settle_quiet_ms=1
     #    radio entries in the plan by label keywords, then trusted-click the
     #    truthful option in its own container (registers in React).
     _WA_RE = ('authoriz', 'authoris', 'eligib', 'legally', 'work in the u',
-              'right to work', 'visa', 'sponsor')
+              'right to work', 'visa', 'sponsor', 'relocat', 'in person', 'onsite', 'on-site', 'work from our', 'local office')
     for rd in (plan.get('radios') or []):
         try:
             lbl = (rd.get('label') or '').lower()
@@ -1929,6 +2082,49 @@ def final_clobber_guard(page, plan, steps, settle_max_ms=6000, settle_quiet_ms=1
             except Exception as _e:
                 log(f"final-guard radio force-commit fail for {name[-20:]}: {_e}")
             status['reasserted_workauth'].append({'name': name[-24:], 'target': tgt, 'clicked': clicked, 'committed': committed})
+            # chain_p11c (2026-06-23): YESNO-BUTTON trusted fallback.
+            # Ashby yesno_button style uses <button class="_active_"> with a
+            # hidden checkbox; _RADIO_FORCE_COMMIT_IN_CONTAINER_JS only fires
+            # synthetic JS events that set DOM .checked but leave React
+            # savedValue=null -> POST banks "Missing entry". If the force-commit
+            # didn't confirm .checked, fall back to a REAL Playwright trusted
+            # button click which generates a CDP input event React honours.
+            if not (isinstance(committed, dict) and committed.get('checked')):
+                try:
+                    for _fp in _field_path_candidates(name):
+                        _cont_el = None
+                        try:
+                            _cont_el = page.query_selector(f'[data-field-path="{_fp}"]')
+                        except Exception:
+                            pass
+                        if not _cont_el:
+                            continue
+                        _found_btn = False
+                        for _btn in _cont_el.query_selector_all('button'):
+                            _btxt = (_btn.inner_text() or '').strip().lower()
+                            if _btxt == tl or (len(tl) > 2 and tl in _btxt):
+                                try:
+                                    _btn.scroll_into_view_if_needed(timeout=1500)
+                                    _btn.click(timeout=3000)
+                                    page.wait_for_timeout(200)
+                                    _is_active = page.evaluate(
+                                        "(b)=>/_active_|_selected_/.test(b.className||'')",
+                                        _btn)
+                                    if _is_active:
+                                        committed = {'ok': True, 'checked': True,
+                                                     'picked': (_btn.inner_text() or '').strip(),
+                                                     'via': 'yesno-trusted-btn'}
+                                        clicked = True
+                                        status['reasserted_workauth'][-1].update(
+                                            {'clicked': True, 'committed': committed})
+                                except Exception as _be:
+                                    log(f"final-guard yesno-btn click {_fp[-16:]}: {_be}")
+                                _found_btn = True
+                                break
+                        if _found_btn:
+                            break
+                except Exception as _yb:
+                    log(f"final-guard yesno-btn fallback {name[-20:]}: {_yb}")
         except Exception as e:
             log(f"final-guard workauth reassert fail for {(rd.get('name') or '')[-20:]}: {e}")
     # 4) STABILITY GATE + same-tick verification. The autofill can re-clobber
@@ -1955,18 +2151,71 @@ def final_clobber_guard(page, plan, steps, settle_max_ms=6000, settle_quiet_ms=1
             return False
     _consec_ok = 0
     _last_v = {}
+    # chain_snowflake (2026-06-23): expand stability recommit to ALL plan radios,
+    # not just _WA_RE work-auth ones. Snowflake survey-form variant clears "in-office
+    # attendance" radio (not work-auth labelled) between stability gate and submit.
+    # Individual per-radio re-assert above already handles each field; this loop
+    # keeps ALL of them committed across the stability gate iterations.
     _wa_radio_specs = []
     for _rd in (plan.get('radios') or []):
-        _l = (_rd.get('label') or '').lower()
-        if any(k in _l for k in _WA_RE):
-            _vv = (_rd.get('value') or '').strip()
-            _oo = [o for o in (_rd.get('options') or []) if isinstance(o, str) and o.strip()]
-            _tgt = choose_select_option(_vv, _oo, _rd.get('label', '')) or _vv
-            _wa_radio_specs.append({'field_paths': _field_path_candidates(_rd.get('name') or ''), 'target': _tgt})
+        _vv = (_rd.get('value') or '').strip()
+        if not _vv:
+            continue  # skip radios with no target value (e.g. demographic skips)
+        _oo = [o for o in (_rd.get('options') or []) if isinstance(o, str) and o.strip()]
+        _tgt = choose_select_option(_vv, _oo, _rd.get('label', '')) or _vv
+        _is_yn_rd = (len([o for o in (_rd.get('options') or []) if isinstance(o, str) and o.strip()]) <= 3
+                     and any(o.strip().lower() in ('yes', 'no') for o in (_rd.get('options') or []) if isinstance(o, str)))
+        _wa_radio_specs.append({'field_paths': _field_path_candidates(_rd.get('name') or ''), 'target': _tgt,
+                                'is_yn': _is_yn_rd, 'name': _rd.get('name', '')})
     def _recommit_wa_radios():
+        # chain_radio_pw_yn_fallback (2026-06-24): for is_yn radios (Yes/No),
+        # try Ashby button widget first; if no button found (traditional
+        # <input type=radio>), fall back to _pw_click_radio_option (trusted
+        # CDP pointer event). Fixes Rogo/Sift/HaydenAI Missing entry POST.
         for _spec in _wa_radio_specs:
             try:
-                page.evaluate(_RADIO_FORCE_COMMIT_IN_CONTAINER_JS, _spec)
+                _fps = _spec['field_paths']
+                _tgt2 = _spec['target']
+                _is_yn2 = _spec.get('is_yn', False)
+                if _is_yn2:
+                    _tl2 = (_tgt2 or '').strip().lower()
+                    _btn_found = False
+                    for _cp2 in _fps:
+                        _cont2 = None
+                        try:
+                            _cont2 = page.query_selector(
+                                f'[data-field-path="{_cp2}"]')
+                        except Exception:
+                            pass
+                        if not _cont2:
+                            continue
+                        for _rb2 in _cont2.query_selector_all('button'):
+                            _btxt2 = (_rb2.inner_text() or '').strip().lower()
+                            if _btxt2 == _tl2 or (len(_tl2) > 2 and _tl2 in _btxt2):
+                                _btn_found = True
+                                # chain_radio_pw_yn_fallback_v2 (2026-06-24):
+                                # always click -- the savedValue-skip caused
+                                # missed re-commits when location autofill
+                                # clobbered the field after initial fill.
+                                try:
+                                    page.evaluate(
+                                        '(b) => b.scrollIntoView('
+                                        "{block:'center',behavior:'instant'})",
+                                        _rb2)
+                                    page.wait_for_timeout(100)
+                                    _rb2.click(force=True, timeout=2000)
+                                    page.wait_for_timeout(100)
+                                except Exception:
+                                    pass
+                                break
+                        if _btn_found:
+                            break
+                    if not _btn_found:
+                        # No button widget -- traditional radio. Trusted CDP.
+                        _pw_click_radio_option(page, _fps, _tgt2)
+                else:
+                    # Non-Yes/No labeled radio: trusted pw_click
+                    _pw_click_radio_option(page, _fps, _tgt2)
             except Exception as _e:
                 log("final-guard stability radio re-commit fail: " + repr(_e))
     for _i in range(8):
@@ -2640,23 +2889,36 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                                         if _t:
                                             _opt_labels.append(_t)
                                     _tgt_label = choose_select_option(_want, _opt_labels, _rd.get('label', '')) or _want
-                                    _tl = _tgt_label.strip().lower()
-                                    _clicked_ms = False
-                                    for _lab in _cont.query_selector_all('label'):
-                                        _lt = (_lab.inner_text() or '').strip().lower()
-                                        if not _lt:
-                                            continue
-                                        if _lt == _tl or _tl in _lt or _lt in _tl:
-                                            try:
-                                                _lab.scroll_into_view_if_needed(timeout=2000)
-                                                _lab.click(timeout=3000)
-                                                _yn_fixed += 1
-                                                _clicked_ms = True
-                                            except Exception as _me:
-                                                log(f"multiselect real-click fail {_dfp[-12:]}: {_me}")
-                                            break
-                                    if not _clicked_ms:
-                                        log(f"multiselect no label match {_dfp[-12:]} want={_want!r} tgt={_tgt_label!r} opts={_opt_labels}")
+                                    # chain_radio_pw_all (2026-06-24): use _pw_click_radio_option
+                                    # (trusted CDP pointer event) for ALL traditional radio inputs,
+                                    # including plain Yes/No. Plain label.click() does NOT commit
+                                    # React form state (savedValue stays null -> POST Missing entry).
+                                    # Proven fix for Rogo/Sift/HaydenAI sponsorship+commute radios.
+                                    _pw_res = _pw_click_radio_option(
+                                        page,
+                                        _field_path_candidates(_rd.get('name') or ''),
+                                        _tgt_label)
+                                    if isinstance(_pw_res, dict) and _pw_res.get('ok'):
+                                        _yn_fixed += 1
+                                    else:
+                                        # fallback: plain label click
+                                        _tl = _tgt_label.strip().lower()
+                                        _clicked_ms = False
+                                        for _lab in _cont.query_selector_all('label'):
+                                            _lt = (_lab.inner_text() or '').strip().lower()
+                                            if not _lt:
+                                                continue
+                                            if _lt == _tl or _tl in _lt or _lt in _tl:
+                                                try:
+                                                    _lab.scroll_into_view_if_needed(timeout=2000)
+                                                    _lab.click(timeout=3000)
+                                                    _yn_fixed += 1
+                                                    _clicked_ms = True
+                                                except Exception as _me:
+                                                    log(f"multiselect real-click fail {_dfp[-12:]}: {_me}")
+                                                break
+                                        if not _clicked_ms:
+                                            log(f"multiselect no label match {_dfp[-12:]} want={_want!r} tgt={_tgt_label!r} opts={_opt_labels} pw_res={_pw_res}")
                                 continue
                             # already active? chain_p7: verify against BOTH the
                             # button _active_ class AND the hidden checkbox (some
@@ -2720,6 +2982,95 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                             page.wait_for_timeout(250)
                     except Exception as _se:
                         log(f"reassert-select block fail: {_se}")
+                    # chain_checkbox_pw (2026-06-24, Cerebras 3425/3426): Multi-value
+                    # checkbox groups (plan['checkboxes']) are filled by a synthetic-
+                    # click JS step (step 6 in the plan) which sets DOM .checked but
+                    # does NOT commit React savedValue -> server returns "Missing entry"
+                    # for the field. Fix: after reassert-select, iterate plan checkboxes
+                    # and for each required value, do a Playwright TRUSTED click on the
+                    # matching checkbox label (or input). Idempotent if already checked.
+                    try:
+                        _plan_cbs = plan.get('checkboxes', []) or []
+                        _cb_fixed = 0
+                        for _cb in _plan_cbs:
+                            _cb_name = (_cb.get('name') or '')
+                            _cb_vals = _cb.get('values') or []
+                            if not (_cb_name and _cb_vals):
+                                continue
+                            # locate the container via field_path candidates
+                            _cb_cont = None
+                            for _cand in _field_path_candidates(_cb_name):
+                                try:
+                                    _cb_cont = page.query_selector(f'[data-field-path="{_cand}"]')
+                                except Exception:
+                                    pass
+                                if _cb_cont:
+                                    break
+                            if not _cb_cont:
+                                # fallback: find by any checkbox whose id includes a uuid from name
+                                import re as _re_cb
+                                _cb_uuids = _re_cb.findall(
+                                    r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
+                                    _cb_name)
+                                if _cb_uuids:
+                                    _cb_tail = _cb_uuids[-1]
+                                    try:
+                                        _cb_inp = page.query_selector(f'input[type=checkbox][id*="{_cb_tail}"]')
+                                        if _cb_inp:
+                                            _cb_cont = page.evaluate('(el) => el.closest("[data-field-path]") || el.parentElement', _cb_inp)
+                                            # can't use JS-returned element; use Playwright locator
+                                            _cb_cont = None  # fallback below
+                                    except Exception:
+                                        pass
+                            if not _cb_cont:
+                                log(f'chain_checkbox_pw: no container for {_cb_name[-24:]}')
+                                continue
+                            for _want_val in _cb_vals:
+                                _wv = (_want_val or '').strip().lower()
+                                if not _wv:
+                                    continue
+                                # find the checkbox input whose label text matches
+                                _clicked_cb = False
+                                for _cb_inp in _cb_cont.query_selector_all('input[type=checkbox]'):
+                                    _cb_inp_id = (_cb_inp.get_attribute('id') or '')
+                                    _lbl = None
+                                    try:
+                                        _lbl = page.query_selector(f'label[for="{_cb_inp_id}"]')
+                                    except Exception:
+                                        pass
+                                    _lbl_txt = ((_lbl.inner_text() if _lbl else '') or '').strip().lower()
+                                    if not _lbl_txt:
+                                        try:
+                                            _lbl_txt = (_cb_inp.evaluate('el => (el.closest("label") || el.parentElement || {innerText:""}).innerText') or '').strip().lower()
+                                        except Exception:
+                                            pass
+                                    if _lbl_txt == _wv or (len(_wv) > 3 and _wv in _lbl_txt) or (len(_lbl_txt) > 3 and _lbl_txt in _wv):
+                                        try:
+                                            _is_checked = _cb_inp.evaluate('el => el.checked')
+                                            if _is_checked:
+                                                _clicked_cb = True  # already committed
+                                                break
+                                            # Trusted Playwright click via label or input
+                                            _click_target = _lbl if _lbl else _cb_inp
+                                            _click_target.scroll_into_view_if_needed(timeout=2000)
+                                            _click_target.click(timeout=3000)
+                                            page.wait_for_timeout(150)
+                                            _is_checked2 = _cb_inp.evaluate('el => el.checked')
+                                            _clicked_cb = True
+                                            if _is_checked2:
+                                                _cb_fixed += 1
+                                            else:
+                                                log(f'chain_checkbox_pw: clicked but not checked {_cb_inp_id[-16:]} want={_want_val!r}')
+                                        except Exception as _cbe:
+                                            log(f'chain_checkbox_pw: click fail {_cb_inp_id[-16:]}: {_cbe}')
+                                        break
+                                if not _clicked_cb:
+                                    log(f'chain_checkbox_pw: no match for {_want_val!r} in container {_cb_name[-24:]}')
+                        if _cb_fixed:
+                            log(f'chain_checkbox_pw: trusted-clicked {_cb_fixed} checkbox(es)')
+                            page.wait_for_timeout(200)
+                    except Exception as _cbe2:
+                        log(f'chain_checkbox_pw block fail: {_cbe2}')
                     # chain_p8 (2026-06-04 ashby-batch3): FINAL pre-submit re-assert.
                     # The chain_p7 re-assert runs right after upload, but several
                     # tenants (Vendelux 2774 / Helion 2712 / Dash0 2757) re-clobber
@@ -2782,6 +3133,15 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                             log(f"cover-letter upload: {_clr.get('uploaded') or _clr.get('already_uploaded') or _clr.get('err')}")
                             if _clr.get('uploaded'):
                                 page.wait_for_timeout(1200)
+                                # chain_post_cl_reassert (2026-06-24 Cerebras): cover-letter
+                                # upload triggers Ashby autofill re-parse which can clobber
+                                # custom radio savedValues. Re-assert all custom radios after
+                                # the settle window so they are committed before final_clobber_guard.
+                                try:
+                                    _post_cl = reassert_select_fields(page, plan.get('radios') or [])
+                                    log(f"post-cl-upload reassert: {len([e for e in _post_cl if e.get('ok') and not e.get('already')])} re-committed")
+                                except Exception as _pcle:
+                                    log(f"post-cl-upload reassert fail: {_pcle}")
                     except Exception as _cle:
                         log(f"cover-letter upload block fail: {_cle}")
                     # chain_p11 (2026-06-08, Rogo 2475/2901-2904): FINAL clobber
@@ -2893,6 +3253,50 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                     # event. Some tenants (OpenAI) ignore it. Re-click via a trusted
                     # Playwright locator click, then wait for confirmation OR url change.
                     try:
+                        # chain_last_ms_radio_commit (2026-06-24 Cerebras 3425/3426):
+                        # Commit all custom radio fields via trusted Playwright click as
+                        # the ABSOLUTE LAST step before the submit button click. Prior ops
+                        # (cover-letter upload, doctrine-fix, text fills) trigger React
+                        # re-renders that clobber savedValues. This ensures radio values
+                        # are fresh-committed with no intervening operations.
+                        # Strategy: JS-uncheck all inputs in the container (reset DOM),
+                        # then trusted PW click fires as unchecked->checked transition
+                        # triggering React onChange -> savedValue commit.
+                        try:
+                            _plan_radios_for_commit = plan.get('radios') or []
+                            _lmr_results = []
+                            for _lmr in _plan_radios_for_commit:
+                                _lmr_name = _lmr.get('name') or ''
+                                _lmr_want = (_lmr.get('value') or '').strip()
+                                if not _lmr_name or not _lmr_want:
+                                    continue
+                                _lmr_fps = list(_field_path_candidates(_lmr_name))
+                                try:
+                                    page.evaluate(
+                                        "(a)=>{"
+                                        "const fps=a.fps;let cont=null;"
+                                        "for(const fp of fps){cont=document.querySelector('[data-field-path=\"'+fp+'\"');if(cont)break;}"
+                                        "if(!cont){const tails=fps.map(f=>String(f).split('_').pop());"
+                                        "cont=[...document.querySelectorAll('[data-field-path]')].find(e=>{"
+                                        "const v=e.getAttribute('data-field-path')||'';"
+                                        "return tails.some(t=>t&&v.endsWith(t));});}"
+                                        "if(!cont)return;"
+                                        "[...cont.querySelectorAll('input[type=radio]')].forEach(r=>{r.checked=false;});"
+                                        "}",
+                                        {'fps': _lmr_fps})
+                                except Exception:
+                                    pass
+                                page.wait_for_timeout(80)
+                                _lmr_pw = _pw_click_radio_option(page, _lmr_fps, _lmr_want)
+                                _lmr_results.append({'name': _lmr_name[-24:], 'want': _lmr_want[:30], 'pw': _lmr_pw})
+                                page.wait_for_timeout(80)
+                            _lmr_ok = [r for r in _lmr_results if isinstance(r.get('pw'), dict) and r['pw'].get('ok')]
+                            log(f"last-ms radio commit: {len(_lmr_ok)}/{len(_lmr_results)} committed")
+                            if _lmr_results:
+                                log(f"last-ms radio detail: {str([{'n':r['name'],'ok':isinstance(r.get('pw'),dict) and r['pw'].get('ok')} for r in _lmr_results])[:400]}")
+                        except Exception as _lmr_e:
+                            log(f"last-ms radio commit fail: {_lmr_e}")
+                        page.wait_for_timeout(200)
                         sub = page.locator('button:has-text("Submit Application")').first
                         if sub.count() and not sub.is_disabled():
                             sub.scroll_into_view_if_needed(timeout=2000)

@@ -1,0 +1,543 @@
+{
+  "meta": {
+    "utc_stamp": "20260623T222148Z",
+    "hypothesis": "H1 cross-asset carry -- commodity leg via TRUE WTI futures calendar-spread",
+    "reopen_of": "reports/H1_CARRY_COMMODITY_COMBINED_20260623T193840Z.md (ETF-proxy version CLOSED)",
+    "data_provenance": {
+      "futures": "EIA bulk PET.RCLC1.D..RCLC4.D (keyless, NYMEX WTI contracts 1-4 daily settle)",
+      "futures_file": "data_cache/eia_wti/rclc{1,2,3,4}.jsonl (grepped from data_cache/eia_PET_bulk.txt)",
+      "futures_span_cl1": [
+        "1983-04-04",
+        "2024-04-05"
+      ],
+      "futures_last_updated": "2024-04-10 (bulk dump); CL data ends 2024-04-05",
+      "execution_vehicles": [
+        "roll-adjusted continuous front-month WTI futures return (A, primary)",
+        "USO adjclose (B, real roll cost)"
+      ],
+      "cash_anchor": "SHY adjclose",
+      "negative_print_handling": "2020-04-20 CL1=-37.63 treated as roll seam (deferred CL2 return used); never taken as a held front return"
+    },
+    "signal_def": {
+      "roll12": "log(CL1/CL2) -- front-vs-second per-step roll yield (primary)",
+      "roll14": "log(CL1/CL4)/3 -- multi-point slope per contract step (robustness)",
+      "convention": "backwardation (>0)=positive carry=long; contango (<0)=flat/cash (long_only) or short (continuous)"
+    },
+    "roll_convention": "hold CL1; within-contract CL1 settle-to-settle return; on roll/negative seam (|daily|>40% or non-positive price) splice on deferred CL2 daily return -- textbook continuous front-month",
+    "futures_calendar_days": 9875,
+    "futures_calendar_span": [
+      "1985-01-02",
+      "2024-04-05"
+    ],
+    "n_month_end_rebals": 472,
+    "oos_split": "2018-12-31",
+    "sharpe_convention": "(mean/std)*sqrt(252), ddof=1, continuous-span (mirrors runner/fp_sharpe.py / bond leg)",
+    "signal_lag_days": 1,
+    "cost_bps_primary": 2.0,
+    "primary_config": {
+      "mode": "roll12",
+      "variant": "long_only_timing",
+      "thr": 0.0
+    }
+  },
+  "primary_commodity_leg": {
+    "config": {
+      "mode": "roll12",
+      "variant": "long_only_timing",
+      "thr": 0.0
+    },
+    "vehicle": "roll-adjusted front-month WTI",
+    "full": {
+      "sharpe": 0.1988,
+      "cagr": 0.0177,
+      "total_return": 0.989,
+      "max_drawdown": -0.5734,
+      "ann_vol": 0.2556,
+      "n_days": 9853,
+      "start": "1985-02-01",
+      "end": "2024-04-05"
+    },
+    "is": {
+      "sharpe": 0.1679,
+      "cagr": 0.0101,
+      "total_return": 0.4058,
+      "max_drawdown": -0.5734,
+      "ann_vol": 0.2503,
+      "n_days": 8513,
+      "start": "1985-02-01",
+      "end": "2018-12-31"
+    },
+    "oos": {
+      "sharpe": 0.3715,
+      "cagr": 0.0674,
+      "total_return": 0.4149,
+      "max_drawdown": -0.4494,
+      "ann_vol": 0.2873,
+      "n_days": 1340,
+      "start": "2019-01-01",
+      "end": "2024-04-05"
+    },
+    "avg_turnover_per_rebal": 0.1338,
+    "n_rebals": 471,
+    "split_robustness": [
+      {
+        "split": "2014-12-31",
+        "is_sharpe": 0.179,
+        "is_total": 0.4204,
+        "oos_sharpe": 0.2728,
+        "oos_total": 0.4003,
+        "is_n": 7506,
+        "oos_n": 2347
+      },
+      {
+        "split": "2016-12-31",
+        "is_sharpe": 0.1749,
+        "is_total": 0.4382,
+        "oos_sharpe": 0.3008,
+        "oos_total": 0.3829,
+        "is_n": 8004,
+        "oos_n": 1849
+      },
+      {
+        "split": "2018-12-31",
+        "is_sharpe": 0.1679,
+        "is_total": 0.4058,
+        "oos_sharpe": 0.3715,
+        "oos_total": 0.4149,
+        "is_n": 8513,
+        "oos_n": 1340
+      },
+      {
+        "split": "2020-12-31",
+        "is_sharpe": 0.1596,
+        "is_total": 0.3549,
+        "oos_sharpe": 0.5146,
+        "oos_total": 0.468,
+        "is_n": 9031,
+        "oos_n": 822
+      }
+    ],
+    "year_by_year": {
+      "1985": -0.0167,
+      "1986": -0.2758,
+      "1987": -0.0994,
+      "1988": 0.3891,
+      "1989": 0.2657,
+      "1990": -0.0294,
+      "1991": -0.2658,
+      "1992": -0.0395,
+      "1993": 0.0,
+      "1994": -0.0327,
+      "1995": 0.1008,
+      "1996": 0.3258,
+      "1997": -0.2214,
+      "1998": 0.0,
+      "1999": 0.2202,
+      "2000": 0.0469,
+      "2001": 0.0689,
+      "2002": 0.0904,
+      "2003": 0.0423,
+      "2004": 0.2416,
+      "2005": -0.0717,
+      "2006": 0.0389,
+      "2007": 0.2902,
+      "2008": -0.1063,
+      "2009": 0.0035,
+      "2010": 0.0228,
+      "2011": 0.1016,
+      "2012": 0.0025,
+      "2013": -0.0355,
+      "2014": -0.2852,
+      "2015": 0.0043,
+      "2016": 0.0082,
+      "2017": 0.0026,
+      "2018": -0.0251,
+      "2019": 0.1464,
+      "2020": -0.1592,
+      "2021": 0.3386,
+      "2022": 0.0786,
+      "2023": -0.1403,
+      "2024": 0.1826
+    },
+    "corr_to_bond_monthly": -0.0115,
+    "corr_to_bond_daily": 0.0026,
+    "corr_to_spx_monthly": 0.0534
+  },
+  "control_static_long_wti": {
+    "full": {
+      "sharpe": 0.272,
+      "cagr": 0.0261,
+      "total_return": 1.7416,
+      "max_drawdown": -0.9419,
+      "ann_vol": 0.4133,
+      "n_days": 9853,
+      "start": "1985-02-01",
+      "end": "2024-04-05"
+    },
+    "is": {
+      "sharpe": 0.2337,
+      "cagr": 0.0158,
+      "total_return": 0.6979,
+      "max_drawdown": -0.8196,
+      "ann_vol": 0.3828,
+      "n_days": 8513,
+      "start": "1985-02-01",
+      "end": "2018-12-31"
+    },
+    "oos": {
+      "sharpe": 0.453,
+      "cagr": 0.0943,
+      "total_return": 0.6147,
+      "max_drawdown": -0.8726,
+      "ann_vol": 0.57,
+      "n_days": 1340,
+      "start": "2019-01-01",
+      "end": "2024-04-05"
+    },
+    "turn": 0.0021,
+    "delta_signal_minus_ctrl_oos_sharpe": -0.0815,
+    "delta_signal_minus_ctrl_oos_total": -0.1998
+  },
+  "secondary_variants": {
+    "V2_roll14_frontroll": {
+      "full": {
+        "sharpe": 0.2061,
+        "cagr": 0.019,
+        "total_return": 1.0858,
+        "max_drawdown": -0.6882,
+        "ann_vol": 0.2657,
+        "n_days": 9853,
+        "start": "1985-02-01",
+        "end": "2024-04-05"
+      },
+      "is": {
+        "sharpe": 0.1955,
+        "cagr": 0.0167,
+        "total_return": 0.7477,
+        "max_drawdown": -0.6882,
+        "ann_vol": 0.2567,
+        "n_days": 8513,
+        "start": "1985-02-01",
+        "end": "2018-12-31"
+      },
+      "oos": {
+        "sharpe": 0.2642,
+        "cagr": 0.0338,
+        "total_return": 0.1934,
+        "max_drawdown": -0.438,
+        "ann_vol": 0.3173,
+        "n_days": 1340,
+        "start": "2019-01-01",
+        "end": "2024-04-05"
+      },
+      "turn": 0.1083
+    },
+    "V3_continuous_frontroll": {
+      "full": {
+        "sharpe": -0.3013,
+        "cagr": -0.1359,
+        "total_return": -0.9967,
+        "max_drawdown": -0.9974,
+        "ann_vol": 0.3152,
+        "n_days": 9853,
+        "start": "1985-02-01",
+        "end": "2024-04-05"
+      },
+      "is": {
+        "sharpe": -0.2627,
+        "cagr": -0.1127,
+        "total_return": -0.9824,
+        "max_drawdown": -0.9865,
+        "ann_vol": 0.2906,
+        "n_days": 8513,
+        "start": "1985-02-01",
+        "end": "2018-12-31"
+      },
+      "oos": {
+        "sharpe": -0.484,
+        "cagr": -0.2701,
+        "total_return": -0.8126,
+        "max_drawdown": -0.8929,
+        "ann_vol": 0.4407,
+        "n_days": 1340,
+        "start": "2019-01-01",
+        "end": "2024-04-05"
+      },
+      "turn": 0.251
+    },
+    "V4_primary_signal_USO_exec": {
+      "full": {
+        "sharpe": 0.2368,
+        "cagr": 0.0215,
+        "total_return": 1.2949,
+        "max_drawdown": -0.4956,
+        "ann_vol": 0.1206,
+        "n_days": 9853,
+        "start": "1985-02-01",
+        "end": "2024-04-05"
+      },
+      "is": {
+        "sharpe": 0.0997,
+        "cagr": 0.0048,
+        "total_return": 0.1742,
+        "max_drawdown": -0.4956,
+        "ann_vol": 0.0796,
+        "n_days": 8513,
+        "start": "1985-02-01",
+        "end": "2018-12-31"
+      },
+      "oos": {
+        "sharpe": 0.6181,
+        "cagr": 0.1343,
+        "total_return": 0.9544,
+        "max_drawdown": -0.3218,
+        "ann_vol": 0.2581,
+        "n_days": 1340,
+        "start": "2019-01-01",
+        "end": "2024-04-05"
+      },
+      "turn": 0.1338
+    }
+  },
+  "lookahead_canary": {
+    "honest_full_sharpe": 0.1988,
+    "cheat_sameday_full_sharpe": 0.1976,
+    "paths_differ": true,
+    "interpretation": "honest != cheat => no leakage (cheat uses same-day curve + no lag)"
+  },
+  "cost_grid": [
+    {
+      "cost_bps": 0.0,
+      "full_sharpe": 0.2001,
+      "oos_sharpe": 0.3732,
+      "oos_total": 0.4186,
+      "ctrl_oos_total": 0.6147,
+      "beats_ctrl_oos": false
+    },
+    {
+      "cost_bps": 2.0,
+      "full_sharpe": 0.1988,
+      "oos_sharpe": 0.3715,
+      "oos_total": 0.4149,
+      "ctrl_oos_total": 0.6147,
+      "beats_ctrl_oos": false
+    },
+    {
+      "cost_bps": 5.0,
+      "full_sharpe": 0.1969,
+      "oos_sharpe": 0.3689,
+      "oos_total": 0.4094,
+      "ctrl_oos_total": 0.6147,
+      "beats_ctrl_oos": false
+    }
+  ],
+  "bond_leg": {
+    "full": {
+      "sharpe": 0.5779,
+      "cagr": 0.0409,
+      "total_return": 1.6014,
+      "max_drawdown": -0.1526,
+      "ann_vol": 0.0741,
+      "n_days": 6010,
+      "start": "2002-08-01",
+      "end": "2026-06-22"
+    },
+    "target_full_sharpe": 0.578,
+    "full_restricted_to_combined_span": 0.5596,
+    "restricted_span": [
+      "2002-08-01",
+      "2024-04-05"
+    ]
+  },
+  "threshold_sensitivity": [
+    {
+      "thr": -0.005,
+      "full_sharpe": 0.0511,
+      "is_sharpe": 0.0585,
+      "oos_sharpe": 0.0201,
+      "oos_total": -0.3271,
+      "beats_static_oos_total": false
+    },
+    {
+      "thr": -0.002,
+      "full_sharpe": 0.132,
+      "is_sharpe": 0.1105,
+      "oos_sharpe": 0.2469,
+      "oos_total": 0.1581,
+      "beats_static_oos_total": false
+    },
+    {
+      "thr": 0.0,
+      "full_sharpe": 0.1988,
+      "is_sharpe": 0.1679,
+      "oos_sharpe": 0.3715,
+      "oos_total": 0.4149,
+      "beats_static_oos_total": false
+    },
+    {
+      "thr": 0.002,
+      "full_sharpe": 0.0691,
+      "is_sharpe": 0.0458,
+      "oos_sharpe": 0.1975,
+      "oos_total": 0.0879,
+      "beats_static_oos_total": false
+    },
+    {
+      "thr": 0.005,
+      "full_sharpe": 0.0874,
+      "is_sharpe": 0.129,
+      "oos_sharpe": -0.1659,
+      "oos_total": -0.3079,
+      "beats_static_oos_total": false
+    },
+    {
+      "thr": 0.01,
+      "full_sharpe": -0.0292,
+      "is_sharpe": -0.0028,
+      "oos_sharpe": -0.1935,
+      "oos_total": -0.2852,
+      "beats_static_oos_total": false
+    }
+  ],
+  "combined_sleeve": {
+    "method": "equal-risk inverse-vol (63d, monthly, lookahead-safe) of bond-leg path + commodity-leg path",
+    "overlap_span": [
+      "2002-08-01",
+      "2024-04-05"
+    ],
+    "n_days": 5436,
+    "full": {
+      "sharpe": 0.4643,
+      "cagr": 0.0349,
+      "total_return": 1.0977,
+      "max_drawdown": -0.3094,
+      "ann_vol": 0.0811,
+      "n_days": 5436,
+      "start": "2002-08-01",
+      "end": "2024-04-05"
+    },
+    "is": {
+      "sharpe": 0.3439,
+      "cagr": 0.0245,
+      "total_return": 0.4855,
+      "max_drawdown": -0.3094,
+      "ann_vol": 0.0798,
+      "n_days": 4113,
+      "start": "2002-08-01",
+      "end": "2018-12-31"
+    },
+    "oos": {
+      "sharpe": 0.8179,
+      "cagr": 0.0679,
+      "total_return": 0.4121,
+      "max_drawdown": -0.0979,
+      "ann_vol": 0.0847,
+      "n_days": 1323,
+      "start": "2019-01-02",
+      "end": "2024-04-05"
+    },
+    "split_robustness": [
+      {
+        "split": "2014-12-31",
+        "is_sharpe": 0.3704,
+        "is_total": 0.4313,
+        "oos_sharpe": 0.6374,
+        "oos_total": 0.4656,
+        "is_n": 3116,
+        "oos_n": 2320
+      },
+      {
+        "split": "2016-12-31",
+        "is_sharpe": 0.3659,
+        "is_total": 0.4732,
+        "oos_sharpe": 0.6793,
+        "oos_total": 0.4239,
+        "is_n": 3614,
+        "oos_n": 1822
+      },
+      {
+        "split": "2018-12-31",
+        "is_sharpe": 0.3439,
+        "is_total": 0.4855,
+        "oos_sharpe": 0.8179,
+        "oos_total": 0.4121,
+        "is_n": 4113,
+        "oos_n": 1323
+      },
+      {
+        "split": "2020-12-31",
+        "is_sharpe": 0.3706,
+        "is_total": 0.6263,
+        "oos_sharpe": 0.9643,
+        "oos_total": 0.2898,
+        "is_n": 4617,
+        "oos_n": 819
+      }
+    ],
+    "naive_5050_oos_sharpe": 0.4213,
+    "corr_to_spx_monthly": 0.1065,
+    "corr_to_tqqq_monthly": -0.0335,
+    "bond_alone_full_sharpe": 0.5779,
+    "bond_alone_full_sharpe_SPAN_MATCHED": 0.5596,
+    "k5_span_matched_verdict": "combined 0.4643 vs bond-alone(span-matched) 0.5596 -> FAIL"
+  },
+  "spx_on_traded_path": {
+    "full": {
+      "sharpe": 0.5487,
+      "cagr": 0.0807,
+      "total_return": 19.935,
+      "max_drawdown": -0.5519,
+      "ann_vol": 0.1669,
+      "n_days": 9874,
+      "start": "1985-01-03",
+      "end": "2024-04-05"
+    },
+    "oos": {
+      "sharpe": 0.8508,
+      "cagr": 0.1655,
+      "total_return": 1.2579,
+      "max_drawdown": -0.3372,
+      "ann_vol": 0.2049,
+      "n_days": 1340,
+      "start": "2019-01-01",
+      "end": "2024-04-05"
+    },
+    "commodity_leg_corr_spx": 0.0534
+  },
+  "verdict": {
+    "overall_PASS": false,
+    "k1_oos_sharpe_ge_0.4": {
+      "pass": false,
+      "value": 0.3715,
+      "bar": 0.4
+    },
+    "k2_beats_static_long_net_oos": {
+      "pass": false,
+      "delta_sharpe": -0.0815,
+      "delta_total": -0.1998,
+      "signal_oos_sharpe": 0.3715,
+      "signal_oos_total": 0.4149,
+      "ctrl_oos_sharpe": 0.453,
+      "ctrl_oos_total": 0.6147
+    },
+    "k3_corr_to_bond_le_0.3": {
+      "pass": true,
+      "corr_monthly": -0.0115,
+      "corr_daily": 0.0026,
+      "bar": 0.3
+    },
+    "k4_positive_IS_sharpe": {
+      "pass": true,
+      "is_sharpe": 0.1679
+    },
+    "k5_combined_full_gt_bond_alone": {
+      "pass": false,
+      "combined_full_sharpe": 0.4643,
+      "bond_alone_full": 0.5779,
+      "bond_alone_full_span_matched": 0.5596,
+      "pass_vs_span_matched": false,
+      "combined_oos_sharpe": 0.8179,
+      "combined_is_sharpe": 0.3439
+    }
+  }
+}

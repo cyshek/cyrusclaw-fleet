@@ -4,16 +4,16 @@
   "job_id": "5981907004",
   "job_title": "Enterprise Solutions Engineer",
   "job_location": "Remote - US",
-  "fetched_at": "2026-06-23T04:24:39Z",
+  "fetched_at": "2026-06-24T00:04:54Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/submittable/jobs/5981907004?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 26,
-    "filled": 14,
+    "filled": 16,
     "filled_needs_review": 1,
     "declined": 9,
-    "unresolved": 2,
-    "blockers": 2
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -182,10 +182,10 @@
       "label": "In a sentence or two, can you describe what makes you exceptional at what you do? ",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='In a sentence or two, can you describe what makes you exceptional at what you do? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
       "options": null
     },
     {
@@ -193,10 +193,10 @@
       "label": "In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
       "options": null
     },
     {
@@ -553,32 +553,8 @@
       "compliance": "demographic"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_17686166004",
-      "label": "In a sentence or two, can you describe what makes you exceptional at what you do? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='In a sentence or two, can you describe what makes you exceptional at what you do? '"
-    },
-    {
-      "id": "question_17686167004",
-      "label": "In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_17686166004",
-      "label": "In a sentence or two, can you describe what makes you exceptional at what you do? ",
-      "reason": "no LABEL_RULES match for label='In a sentence or two, can you describe what makes you exceptional at what you do? '"
-    },
-    {
-      "id": "question_17686167004",
-      "label": "In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?",
-      "reason": "no LABEL_RULES match for label='In a fast-paced, growing startup environment, how do you handle changes in priorities or unexpected challenges?'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

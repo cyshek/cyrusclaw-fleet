@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's **enterprise intelligence** validation program from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 product development** of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, self-service model.
+3. Pioneered Azure's first **proactive resilience testing** capability — delivering a rack-level drill program in 4 months with a 94% recovery rate, surfacing critical hardware defects and establishing a new model for continuous validation.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract with strict compliance requirements.
+5. Built an internal **AI agent for drill planning**, restructuring ambiguous planning workflows into structured execution cycles that cut planning time by 39% and increased drill capacity by 21% without adding headcount.
+6. Translated complex enterprise customer signals into a **prioritized product roadmap**, balancing long-term platform opportunities against urgent partner pain points across Databricks, SAP, and NetApp integrations.
+7. Partnered with engineering and data teams to define **measurable quality standards** and interaction patterns for resilience workflows, turning ambiguous recovery concepts into concrete, enterprise-grade product experiences.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **AI-driven code generation** adoption across Azure, conducting user demos and training that drove utilization across 14 key teams and saved **37 engineering hours monthly** by embedding the tool into existing workflows.
+2. Shaped the product roadmap toward **intent-based YAML generation** by running 11+ structured user interviews with Azure service teams to surface critical feature gaps and translate enterprise pain points into actionable requirements.
+3. Improved **enterprise knowledge retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by 83% and increasing context-aware response accuracy.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams across engineering and operations.
+2. Defined a product strategy to eliminate operational toil during region launches, conducting discovery with 20+ service teams to quantify **81 hours of manual effort** per region and building a roadmap to automate critical execution paths.
+3. Engineered a **Power BI intelligence dashboard** to surface automation gaps and track operational toil across 140+ teams, enabling leadership to prioritize high-impact investments with data-backed visibility into workflow inefficiencies.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations, translating ambiguous scope into a structured execution plan.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across cross-functional engineering teams.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a scalable, self-service release workflow.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased **job bookings by 26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a new CRM process that reduced manual coordination and improved conversion at each pipeline stage.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-informed go-to-market strategy, optimizing the website and Google Business profile to surface high-intent enterprise customers.
+3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through structured data review and actionable workflow recommendations.
+
+## Notes from the rewriter
+- 'Enterprise intelligence' woven into microsoft_ft bullet#1 and bullet#6 to mirror Glean's product area name and JD framing around leader/department-level intelligence.
+- 'Proactive resilience testing' in microsoft_ft bullet#3 maps to JD's repeated emphasis on 'proactive, contextual insights rather than reactive search or chat experiences.'
+- 'AI agent for drill planning' in microsoft_ft bullet#5 directly mirrors JD language around 'AI agents that automate real work across teams' and Glean's agentic capabilities.
+- 'Semantic search' and 'context-aware response accuracy' in microsoft_2023 bullet#3 align with Glean's Enterprise Graph and Personal Knowledge Graph framing in the JD.
+- 'Intent-based' in microsoft_2023 bullet#2 and 'knowledge retrieval' echo JD vocabulary around 'context layer,' 'retrieval,' and translating ambiguous enterprise problems into product experiences.
+- 'Intelligence dashboard' in microsoft_2022 bullet#3 mirrors JD language around 'dashboards, recommendations, and proactive experiences for teams and leaders.'
+

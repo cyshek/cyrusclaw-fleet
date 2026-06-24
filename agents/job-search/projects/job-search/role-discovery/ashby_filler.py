@@ -974,7 +974,10 @@ def emit_steps(plan: dict, label: str = "ashby") -> list[dict]:
     steps: list[dict] = []
     steps.append({"tool": "browser.open", "args": {
         "label": label,
-        "url": plan["url"] + ("/application" if not plan["url"].endswith("/application") else ""),
+        # chain_embed_url_fix (2026-06-23): only append /application for
+        # jobs.ashbyhq.com hosted forms. For custom embed tenants (e.g.
+        # cursor.com/careers/...) the form IS the page; /application is a 404.
+        "url": plan["url"] if ("ashbyhq.com" not in plan["url"] and not plan["url"].endswith("/application")) else (plan["url"] + ("/application" if not plan["url"].endswith("/application") else "")),
     }})
     steps.append({"tool": "sleep", "args": {"ms": 1200}})
     # ---- FIX 1 (2026-05-25 burndown, Harvey 671): Ashby React forms validate

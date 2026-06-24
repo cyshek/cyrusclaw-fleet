@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Architected Azure's **enterprise resilience validation platform** from a 2-person operation into a scalable, self-service system sustaining 45+ annual drills and driving **$14M+ business impact** across Fortune 500 customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable model.
+3. Built and deployed an **internal AI agent** for drill planning, integrating LLM-powered automation into end-to-end orchestration workflows that reduced planning cycle time by 39% and expanded drill capacity by 21%.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract requiring multi-stakeholder technical discovery.
+5. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a **94% recovery rate** in 4 months by architecting a new continuous validation model that surfaced critical hardware defects at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **enterprise adoption of AI-driven code generation**, conducting technical demos and enablement sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly.
+2. Influenced the product roadmap to include **intent-based YAML generation** by leading 11+ discovery sessions with Azure engineering stakeholders to surface critical feature gaps and translate them into actionable requirements.
+3. Accelerated AI-powered search adoption by implementing rigorous metadata standards and migrating documentation to a **semantic search platform**, cutting lookup time by 83% across internal engineering workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ enterprise service teams.
+2. Ran technical discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, then architected a roadmap to automate critical execution paths and eliminate recurring operational bottlenecks.
+3. Built a **Power BI dashboard** to track automation gaps across 140+ teams, enabling leadership to prioritize high-impact investments and quantify enterprise-scale efficiency opportunities.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping technical dependencies across 1,200+ stations in a complex enterprise environment.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% across a large-scale robotics platform.
+3. Facilitated Agile sprint ceremonies and **backlog prioritization** across multi-stakeholder teams, resolving 40+ high-priority tickets and stabilizing the developer intake process during a critical migration phase.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end scoping and invoicing workflows for 200+ monthly proposals, deploying a new CRM process that accelerated deal cycles and improved conversion reliability.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google Business profile for organic lead generation.
+3. Improved leadership pricing strategy by conducting **financial profitability analysis** across 1,000+ project records, identifying and closing margin leaks that directly informed future enterprise quoting models.
+
+## Notes from the rewriter
+- 'AI agent' and 'end-to-end orchestration' from the JD woven into microsoft_ft bullet 3 — directly mirrors Writer's platform API + orchestration language.
+- 'Technical discovery' from the JD's 'multi-stakeholder discovery sessions' requirement surfaced in microsoft_ft bullet 4 and amazon_robotics bullet 1 to frame Cyrus as a seasoned discovery-led SA.
+- 'Enterprise adoption' and 'demos/enablement' from the JD's PoC/champion language woven into microsoft_2023 bullet 1 to mirror Writer's 'champion adoption' and 'educate prospects' responsibilities.
+- 'Go-to-market' and 'time-to-value' framing from the JD reflected in pro_painters bullet 2 and microsoft_ft bullet 1 outcomes to align with Writer's growth and customer-value narrative.
+- Tightening pass: dropped microsoft_ft to 5 bullets and pro_painters to 3 to recover page space while keeping all roles at or above their min counts.
+

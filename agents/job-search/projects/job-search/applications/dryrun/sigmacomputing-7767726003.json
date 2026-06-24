@@ -4,16 +4,16 @@
   "job_id": "7767726003",
   "job_title": "Solution Engineer  ",
   "job_location": "Remote - US",
-  "fetched_at": "2026-06-23T04:20:14Z",
+  "fetched_at": "2026-06-24T04:41:34Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/sigmacomputing/jobs/7767726003?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 23,
-    "filled": 16,
-    "filled_needs_review": 0,
+    "filled": 17,
+    "filled_needs_review": 2,
     "declined": 4,
-    "unresolved": 3,
-    "blockers": 3
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -131,10 +131,10 @@
       "label": "Are you open to working 4 days onsite in one of our central offices?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you open to working 4 days onsite in one of our central offices?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%) | NOTE: 'Yes' not literally in options ['NYC', 'SF', 'London', 'Remote only']",
+      "status": "filled_needs_review",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "NYC",
@@ -194,10 +194,10 @@
       "label": "Acknowledge, confirm, and agree to the following statements.\n\n",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Acknowledge, confirm, and agree to the following statements.\\n\\n'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['Yes, I acknowledge, agree, and confirm.', 'No, I do not acknowledge, agree, or confirm.']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "Yes, I acknowledge, agree, and confirm.",
@@ -234,10 +234,10 @@
       "label": "What is your current visa status?",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='What is your current visa status?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "N/A",
+      "source": "visa_type_na: freetext US citizen",
+      "status": "filled",
+      "matched_rule": "visa_type_na",
       "options": null
     },
     {
@@ -397,43 +397,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_31007097003",
-      "label": "Are you open to working 4 days onsite in one of our central offices?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you open to working 4 days onsite in one of our central offices?'"
-    },
-    {
-      "id": "question_31007100003",
-      "label": "Acknowledge, confirm, and agree to the following statements.\n\n",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Acknowledge, confirm, and agree to the following statements.\\n\\n'"
-    },
-    {
-      "id": "question_31007102003",
-      "label": "What is your current visa status?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='What is your current visa status?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_31007097003",
-      "label": "Are you open to working 4 days onsite in one of our central offices?",
-      "reason": "no LABEL_RULES match for label='Are you open to working 4 days onsite in one of our central offices?'"
-    },
-    {
-      "id": "question_31007100003",
-      "label": "Acknowledge, confirm, and agree to the following statements.\n\n",
-      "reason": "no LABEL_RULES match for label='Acknowledge, confirm, and agree to the following statements.\\n\\n'"
-    },
-    {
-      "id": "question_31007102003",
-      "label": "What is your current visa status?",
-      "reason": "no LABEL_RULES match for label='What is your current visa status?'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

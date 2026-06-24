@@ -4,16 +4,16 @@
   "job_id": "7977098",
   "job_title": "Solutions Engineer, Security & Privacy",
   "job_location": "New York City",
-  "fetched_at": "2026-06-23T03:56:19Z",
+  "fetched_at": "2026-06-23T23:44:20Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/braze/jobs/7977098?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 22,
-    "filled": 12,
+    "filled": 13,
     "filled_needs_review": 1,
     "declined": 7,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -87,10 +87,10 @@
       "label": "How did you initially hear about this job?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='How did you initially hear about this job?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
       "options": [
         {
           "label": "Advertising",
@@ -534,25 +534,13 @@
   ],
   "unresolved": [
     {
-      "id": "question_67361100",
-      "label": "How did you initially hear about this job?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
-    },
-    {
       "id": "question_67361101",
       "label": "If you chose Braze Employee, Conference / Event / Career Fair, or Other, please specify here:",
       "required": false,
       "reason": "no LABEL_RULES match for label='If you chose Braze Employee, Conference / Event / Career Fair, or Other, please specify here:'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_67361100",
-      "label": "How did you initially hear about this job?",
-      "reason": "no LABEL_RULES match for label='How did you initially hear about this job?'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

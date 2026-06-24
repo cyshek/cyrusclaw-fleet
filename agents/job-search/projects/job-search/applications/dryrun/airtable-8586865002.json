@@ -4,16 +4,16 @@
   "job_id": "8586865002",
   "job_title": "Program Manager, Professional Services - West",
   "job_location": "San Francisco, CA; Remote - US",
-  "fetched_at": "2026-06-23T07:05:37Z",
+  "fetched_at": "2026-06-23T23:04:01Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs/8586865002?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 24,
-    "filled": 18,
+    "filled": 19,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -131,10 +131,10 @@
       "label": "You are currently based:",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='You are currently based:'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "On the West Coast (CA, OR, WA)",
+      "source": "city_location_select: matched 'west coast'",
+      "status": "filled",
+      "matched_rule": "city_location_select",
       "options": [
         {
           "label": "In the Greater San Francisco Area",
@@ -402,25 +402,13 @@
   ],
   "unresolved": [
     {
-      "id": "question_36887853002",
-      "label": "You are currently based:",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='You are currently based:'"
-    },
-    {
       "id": "question_36887858002",
       "label": "Optional: Upload your AI example.",
       "required": false,
       "reason": "no LABEL_RULES match for label='Optional: Upload your AI example.'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_36887853002",
-      "label": "You are currently based:",
-      "reason": "no LABEL_RULES match for label='You are currently based:'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

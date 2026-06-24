@@ -1,9 +1,17 @@
-PREP-READY — 2026-06-23T07:33:04+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3170
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-sentry-2cdc2ba7-8406-452a-b84f-d94d8e7a09bb.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/sentry-2cdc2ba7-8406-452a-b84f-d94d8e7a09bb/Cyrus_Shekari_Resume_ashby-sentry_2cdc2ba7_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/sentry-2cdc2ba7-8406-452a-b84f-d94d8e7a09bb/cover_answers.md
+submitted_at: 2026-06-23T17:07:44+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+TTED: [('2-4e02-90af-341af5582992', 'no-container'), ('0-4383-abaa-44e2c2121ae1', 'no-container')]
+[runner] reassert-text pass 1: repaired=0 [] missing=6
+[runner] reassert-text pass 1: repaired=0 [] missing=6
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

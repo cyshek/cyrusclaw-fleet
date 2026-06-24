@@ -1,17 +1,27 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-23T07:51:07+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3123
-slug:    datadog-7144556
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-datadog-7144556.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/datadog-7144556/Cyrus_Shekari_Resume_datadog_7144556_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/datadog-7144556/cover_answers.md
-wrapper: https://careers.datadoghq.com/detail/7144556/?gh_jid=7144556
+submitted_at: 2026-06-23T17:36:33+00:00
 
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
+Runner tail:
+mpbell),New York City,Boston,Chicago,Atlanta,Denver,Salt Lake City"
+   }
+  ]
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "final": {
+  "url": "https://job-boards.greenhouse.io/embed/job_app/confirmation?for=datadog&token=7144556",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nWe've received your application. Our Recruiting team will review your information as soon as possible and follow up with next steps via email.\n\n\u00a0\n\nView more jobs at Datadog\nBa"
+ },
+ "status": "SUBMITTED"
+}
 
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug datadog-7144556
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).

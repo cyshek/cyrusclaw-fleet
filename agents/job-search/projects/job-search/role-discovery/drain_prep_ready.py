@@ -96,10 +96,12 @@ def stage_resume(plan_path: str, slug: str) -> None:
     uploads_dir = Path("/tmp/openclaw/uploads")
     uploads_dir.mkdir(parents=True, exist_ok=True)
     slug_dir = SUBMITTED_DIR / slug
+    all_exist = True
     for target in sorted(upload_paths):
         target_p = Path(target)
         if target_p.exists():
             continue
+        all_exist = False
         base = target_p.name
         src = slug_dir / base
         if src.exists():
@@ -112,7 +114,8 @@ def stage_resume(plan_path: str, slug: str) -> None:
             shutil.copy2(cands[-1], target_p)
             log(f"  staged resume {cands[-1].name} -> {base} (fallback)")
             return
-    log(f"  WARN: could not stage resume for {slug}")
+    if not all_exist:
+        log(f"  WARN: could not stage resume for {slug}")
 
 
 def reprep(role_id: int, env: dict, timeout_s: int = 360) -> int:
@@ -237,6 +240,53 @@ def render_xlsx() -> None:
             log(f"  {line}")
 
 
+# Companies with standing HOLD — never auto-submit regardless of PREP-READY status.
+# Update this list when Cyrus lifts a hold.
+_COMPANY_HOLDS: set[str] = {
+    "OpenAI",   # application limit hit 2026-06-18; hold until Cyrus re-enables
+    "Deepgram", # 60-day re-apply block; re-apply after ~2026-07-30
+}
+
+
+def is_on_hold(role_id: int | None) -> bool:
+    """Return True when the role's company is on a standing submission hold."""
+    if not role_id:
+        return False
+    conn = sqlite3.connect(DB)
+    try:
+        row = conn.execute(
+            "SELECT company FROM roles WHERE id=?",
+            (role_id,),
+        ).fetchone()
+    finally:
+        conn.close()
+    if not row:
+        return False
+    return row[0] in _COMPANY_HOLDS
+
+
+def is_already_applied(role_id: int | None) -> bool:
+    """Return true when tracker already has a durable applied marker.
+
+    Stale PREP-READY STATUS.md files can linger after a successful DB update.
+    Do not let those consume the drain limit or trigger duplicate submissions.
+    """
+    if not role_id:
+        return False
+    conn = sqlite3.connect(DB)
+    conn.row_factory = sqlite3.Row
+    try:
+        row = conn.execute(
+            "SELECT status, applied_by FROM roles WHERE id=?",
+            (role_id,),
+        ).fetchone()
+    finally:
+        conn.close()
+    if not row:
+        return False
+    return bool(row["applied_by"]) or row["status"] in ("applied", "submitted")
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -267,7 +317,7 @@ def main() -> None:
         except Exception:
             continue
         first_line = text.split("\n")[0].strip()
-        if not first_line.startswith("PREP-READY —"):
+        if not (first_line.startswith("PREP-READY —") or first_line.startswith("PREP-READY-")):
             continue
         slug = status_file.parent.name
         role_id = parse_role_id(text)
@@ -287,6 +337,16 @@ def main() -> None:
             break
 
         log(f"\n=== [{processed + 1}] {slug} (role_id={role_id}) ===")
+
+        if is_already_applied(role_id):
+            log("  Already applied in DB — stale PREP-READY, skipping without consuming limit")
+            skipped_list.append((slug, "already-applied-db"))
+            continue
+
+        if is_on_hold(role_id):
+            log("  Company on standing hold — skipping without consuming limit")
+            skipped_list.append((slug, "company-hold"))
+            continue
 
         if not plan_path:
             log("  No plan path in STATUS.md — skipping")
@@ -316,12 +376,14 @@ def main() -> None:
             processed += 1
             continue
 
-        if args.ats != "all" and ats != args.ats:
+        ats_family = "greenhouse" if ats in ("greenhouse", "greenhouse_iframe") else ("ashby" if ats == "ashby_tenant_embed" else ats)
+
+        if args.ats != "all" and ats_family != args.ats:
             log(f"  ATS={ats}, filter={args.ats} — skipping")
             skipped_list.append((slug, f"ats-filter-{ats}"))
             continue
 
-        if ats not in ("ashby", "greenhouse"):
+        if ats_family not in ("ashby", "greenhouse"):
             log(f"  ATS={ats} not auto-submittable via these runners — skipping")
             skipped_list.append((slug, f"manual-ats-{ats}"))
             continue
@@ -330,7 +392,7 @@ def main() -> None:
         stage_resume(str(plan_p), slug)
 
         t0 = time.time()
-        if ats == "ashby":
+        if ats_family == "ashby":
             ok, runner_tail = run_ashby(str(plan_p), env, no_submit=args.no_submit)
         else:
             ok, runner_tail = run_gh(str(plan_p), env, no_submit=args.no_submit)

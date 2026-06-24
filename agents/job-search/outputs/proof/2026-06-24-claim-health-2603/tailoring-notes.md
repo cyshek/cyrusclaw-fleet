@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing end-to-end workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 deployment** of an internal Resilience Automation Platform, defining self-service scheduling requirements and workflow orchestration primitives that reduced operational toil by 30% and enabled scalable execution across distributed engineering teams.
+3. Pioneered Azure's first **proactive resilience testing capability**, delivering a rack-level drill program in 4 months at a 94% recovery rate — surfacing critical hardware defects and establishing a durable abstraction for continuous production-grade validation.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across partner integrations and frontline operations teams.
+5. Embedded directly with customer-facing engineering and operations stakeholders to diagnose systemic bottlenecks in resilience workflows, translating ambiguous operational failures into **scalable product primitives** adopted across Azure's global infrastructure.
+6. Accelerated drill capacity by **21%** and cut planning cycle time by 39% by building an internal AI agent that automated scheduling logic and restructured cross-functional planning workflows to eliminate recurring manual toil.
+7. Defined observability standards and correctness criteria for production resilience systems, ensuring deployed automation remained **reliable under real operational constraints** and surfaced actionable signal to engineering and GTM partners.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-powered code generation workflows across Azure, leading customer-embedded demos and training sessions that activated 14 engineering teams and eliminated **37 hours of monthly manual effort** in critical development pipelines.
+2. Shaped roadmap direction by conducting **11+ structured user interviews** with Azure service teams, surfacing critical workflow gaps and securing stakeholder alignment to prioritize intent-based YAML generation as a net-new platform capability.
+3. Improved data retrieval and **system observability** by enforcing metadata standards and migrating documentation to an AI-powered semantic search tool, reducing average lookup time by 83% across high-frequency operational workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch time by 28% by driving cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering and operations teams across Azure's global deployment org.
+2. Embedded with **20+ operational stakeholders** across service teams to surface 81 hours of manual effort per region launch, then built a product roadmap to automate the highest-leverage workflows and remove systemic execution bottlenecks.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact deployments, and measure progress against revenue-critical launch milestones in real time.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the full legacy OS migration strategy — mapping dependencies across 1,200+ stations and sequencing deployments to eliminate risk at each production-grade transition point.
+2. Prioritized and resolved **40+ high-severity tickets** by facilitating Agile sprint planning and retrospectives, stabilizing the developer intake process and unblocking cross-functional execution across IT, Operations, and Engineering.
+3. Coordinated strategic alignment across three operational teams to implement **automated CI/CD pipelines**, compressing the software deployment cycle by 25% and establishing a repeatable deployment model for future fleet-wide rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a CRM system that replaced fragmented manual processes with a reliable, trackable operational pipeline.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion rate by 2.7% by executing a digital-first go-to-market strategy — optimizing the company website and Google profile to target high-intent customers in key service areas.
+3. Identified and closed margin leaks across **1,000+ project records** by conducting a structured financial profitability analysis, delivering pricing model recommendations that improved leadership's ability to forecast and protect contribution margins.
+
+## Notes from the rewriter
+- 'Workflow orchestration primitives' woven into microsoft_ft bullet#2 — mirrors JD's 'workflow orchestration systems' under Build Production Systems.
+- 'Scalable product primitives' used in microsoft_ft bullet#5 — directly echoes JD's 'translate ambiguous customer pain points into scalable product primitives' under Embed Directly with Customers.
+- 'Durable abstraction' used in microsoft_ft bullet#3 — mirrors JD's engineering philosophy: 'we prioritize durable abstractions over temporary fixes.'
+- 'Production-grade' used in microsoft_ft bullet#3 and amazon_robotics bullet#1 — echoes JD's emphasis on 'production-grade software' and 'production systems' throughout.
+- 'Operational bottlenecks' and 'embedded with operational stakeholders' used in microsoft_ft bullet#5 and microsoft_2022 bullet#2 — mirrors JD's 'observe operational workflows firsthand and identify systemic bottlenecks.'
+- 'Observability' surfaced in microsoft_ft bullet#7 and microsoft_2023 bullet#3 — matches JD's requirement that 'systems are observable, reliable, and correct under real constraints.'
+

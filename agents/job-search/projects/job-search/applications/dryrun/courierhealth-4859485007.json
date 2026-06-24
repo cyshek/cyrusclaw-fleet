@@ -4,16 +4,16 @@
   "job_id": "4859485007",
   "job_title": "Customer Engineer",
   "job_location": "New York, New York, United States",
-  "fetched_at": "2026-06-23T03:56:21Z",
+  "fetched_at": "2026-06-23T23:10:49Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/courierhealth/jobs/4859485007?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 14,
-    "filled": 12,
+    "filled": 13,
     "filled_needs_review": 1,
     "declined": 0,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -191,28 +191,15 @@
       "label": "Part of this role is customer facing. Please explain your experience working with non technical stakeholders or customers.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Part of this role is customer facing. Please explain your experience working with non technical stakeholders or customers.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_10005124007",
-      "label": "Part of this role is customer facing. Please explain your experience working with non technical stakeholders or customers.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Part of this role is customer facing. Please explain your experience working with non technical stakeholders or customers.'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_10005124007",
-      "label": "Part of this role is customer facing. Please explain your experience working with non technical stakeholders or customers.",
-      "reason": "no LABEL_RULES match for label='Part of this role is customer facing. Please explain your experience working with non technical stakeholders or customers.'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

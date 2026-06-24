@@ -452,32 +452,49 @@ def build():
     write_sheet(ws_ma, consolidated_rows, manual_apply_cols,
                 header_bg=HEADER_BG_MANUAL, zebra_fill=PatternFill("solid", fgColor=ZEBRA_BG))
 
-    # Interviews: companies where Cyrus received an interview invitation.
-    cur = conn.execute("""
-        SELECT i.id, i.company, i.role, i.jd_url, i.applied_on,
-               i.interview_type, i.interview_date, i.outcome, i.notes, i.added_on
-        FROM interviews i
-        ORDER BY i.company, i.role
-    """)
-    cols_iv = [d[0] for d in cur.description]
-    interview_rows = [dict(zip(cols_iv, row)) for row in cur.fetchall()]
-    # Normalise so write_sheet can pick up 'url'
-    for r in interview_rows:
-        r["url"] = r.get("jd_url") or ""
+    # Interviews: Cyrus maintains this sheet manually in the xlsx.
+    # Preserve it as-is by copying from the existing file if present.
+    # Do NOT rebuild from the DB interviews table — that table is stale/sparse.
+    _iv_sheet_name = None
+    _existing_iv_data = []  # list of row tuples
+    _existing_iv_count = 0
+    try:
+        _existing_wb = openpyxl.load_workbook(OUT)
+        for _sname in _existing_wb.sheetnames:
+            if _sname.lower().startswith("interviews"):
+                _iv_ws = _existing_wb[_sname]
+                _existing_iv_data = list(_iv_ws.iter_rows(values_only=True))
+                _existing_iv_count = sum(1 for r in _existing_iv_data[1:] if any(c is not None for c in r))
+                _iv_sheet_name = f"Interviews ({_existing_iv_count})"
+                break
+    except Exception:
+        pass
 
-    ws_iv = wb.create_sheet(f"Interviews ({len(interview_rows)})")
-    interview_cols = [
-        ("company",        "Company",         22),
-        ("role",           "Role",             50),
-        ("applied_on",     "Applied on",       14),
-        ("interview_type", "Interview type",   20),
-        ("interview_date", "Interview date",   16),
-        ("outcome",        "Outcome",          18),
-        ("notes",          "Notes",            50),
-        ("url",            "JD URL",           55),
-    ]
-    write_sheet(ws_iv, interview_rows, interview_cols,
-                header_bg=HEADER_BG_INTERVIEWS, zebra_fill=PatternFill("solid", fgColor=ZEBRA_BG))
+    if _existing_iv_data:
+        ws_iv = wb.create_sheet(_iv_sheet_name or "Interviews")
+        hdr_fill = PatternFill("solid", fgColor=HEADER_BG_INTERVIEWS)
+        hdr_font = Font(bold=True, color="FFFFFF")
+        zebra = PatternFill("solid", fgColor=ZEBRA_BG)
+        for ri, row in enumerate(_existing_iv_data, start=1):
+            for ci, val in enumerate(row, start=1):
+                cell = ws_iv.cell(row=ri, column=ci, value=val)
+                if ri == 1:
+                    cell.fill = hdr_fill
+                    cell.font = hdr_font
+                    cell.alignment = Alignment(wrap_text=True)
+                elif ri % 2 == 0:
+                    cell.fill = zebra
+        # Restore column widths from existing sheet
+        try:
+            for col in _iv_ws.column_dimensions:
+                ws_iv.column_dimensions[col].width = _iv_ws.column_dimensions[col].width
+        except Exception:
+            pass
+        interview_rows = [{}] * _existing_iv_count  # just for the print count
+    else:
+        # Fallback: empty placeholder sheet
+        interview_rows = []
+        ws_iv = wb.create_sheet("Interviews (0)")
 
     conn.close()
     wb.save(OUT)

@@ -82,6 +82,8 @@ ROOT = '/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-searc
 sys.path.insert(0, ROOT + '/role-discovery')
 from playwright.sync_api import sync_playwright  # noqa: E402
 
+CDP = os.environ.get('JOBSEARCH_CDP', 'http://127.0.0.1:18800')
+
 _PI = json.loads(Path(ROOT).joinpath("personal-info.json").read_text())
 EMAIL = _PI["contact"]["email"]
 REFERRALS = Path(ROOT) / ".referrals.json"

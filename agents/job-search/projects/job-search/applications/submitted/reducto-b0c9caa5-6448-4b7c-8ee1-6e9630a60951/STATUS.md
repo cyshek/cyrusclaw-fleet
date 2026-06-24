@@ -1,6 +1,18 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-22T09:50:44+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-24
 role_id: 2554
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "c74559b9-d2ac-40a3-99f2-907591482288_4a80a0c8-aead-4e5e-8561-1a4903db95ed", "label": "Are you currently enrolled in Full time\u00a0 Education?", "reason": "no LABEL_RULES match for label='Are you currently enrolled in Full time\\xa0 Education?'"}]
+submitted_at: 2026-06-24T01:24:58+00:00
+
+Runner tail:
+it re-fill: re-set 0 field(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=0 [] missing=7
+[runner] reassert-text pass 1: repaired=0 [] missing=7
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

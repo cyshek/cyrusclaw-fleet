@@ -1,9 +1,18 @@
-PREP-READY — 2026-06-23T07:41:50+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3365
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-stytch-034cefe3-df7c-4297-9dd2-bb6c0eeb0824.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/stytch-034cefe3-df7c-4297-9dd2-bb6c0eeb0824/Cyrus_Shekari_Resume_ashby-stytch_034cefe3_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/stytch-034cefe3-df7c-4297-9dd2-bb6c0eeb0824/cover_answers.md
+submitted_at: 2026-06-23T17:14:43+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+ re-committed
+[runner] reassert-select UNCOMMITTED: [('0-42fb-97a3-164578f10d89', 'no-container')]
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

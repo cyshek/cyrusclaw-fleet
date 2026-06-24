@@ -1,9 +1,17 @@
-PREP-READY — 2026-06-21T09:26:34+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 2565
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-gecko-robotics-1ae83c3f-565a-48c9-85f7-55ab1c75593d.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/gecko-robotics-1ae83c3f-565a-48c9-85f7-55ab1c75593d/Cyrus_Shekari_Resume_ashby-gecko-robotics_1ae83c3f_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/gecko-robotics-1ae83c3f-565a-48c9-85f7-55ab1c75593d/cover_answers.md
+submitted_at: 2026-06-23T16:29:29+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+TTED: [('5-42c2-93d3-25ca054ffbd6', 'no-container'), ('f-4d88-bbcb-2ff4663ff719', 'no-container')]
+[runner] reassert-text pass 1: repaired=0 [] missing=3
+[runner] reassert-text pass 1: repaired=0 [] missing=3
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

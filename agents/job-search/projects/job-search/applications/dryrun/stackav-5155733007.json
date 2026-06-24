@@ -4,16 +4,16 @@
   "job_id": "5155733007",
   "job_title": "Program Manager, Training",
   "job_location": "Pittsburgh, PA ",
-  "fetched_at": "2026-06-23T03:13:59Z",
+  "fetched_at": "2026-06-24T00:10:46Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/stackav/jobs/5155733007?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 18,
-    "filled": 12,
+    "filled": 13,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -129,10 +129,10 @@
       "label": "Are you presently authorized under U.S. immigration laws to work in the United States?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you presently authorized under U.S. immigration laws to work in the United States?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
       "options": [
         {
           "label": "Yes",
@@ -341,25 +341,13 @@
   ],
   "unresolved": [
     {
-      "id": "question_12218300007",
-      "label": "Are you presently authorized under U.S. immigration laws to work in the United States?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you presently authorized under U.S. immigration laws to work in the United States?'"
-    },
-    {
       "id": "question_12218303007",
       "label": "We understand that applicants don’t always have all the preferred requirements. Please highlight which requirement you have the least experience in, and share how your existing skills and strengths make you a strong contender for this position.",
       "required": false,
       "reason": "no LABEL_RULES match for label='We understand that applicants don’t always have all the preferred requirements. Please highlight which requirement you have the least experience in, and share how your existing skills and strengths make you a strong contender for this position.'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_12218300007",
-      "label": "Are you presently authorized under U.S. immigration laws to work in the United States?",
-      "reason": "no LABEL_RULES match for label='Are you presently authorized under U.S. immigration laws to work in the United States?'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

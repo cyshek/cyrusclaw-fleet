@@ -1,0 +1,53 @@
+=== BH-SPY panel bench (8 NAMED_WINDOWS) ===
+BH-SPY FP-cont=+0.5478 trades=8
+
+=== PANEL SWEEP timing {SPY} (FP-cont vs BH) ===
+  FP=+1.2577 dep=0.553 ann=+9.13 dd=-0.2 tr=293 beatBH=4/8 {'signal': 'movevix_z', 'sign': 'trend', 'window': 252, 'threshold': 0.5}
+  FP=+1.0730 dep=0.34 ann=+7.49 dd=-0.1 tr=262 beatBH=3/8 {'signal': 'goldcopper_z', 'sign': 'contrarian', 'window': 126, 'threshold': 1.0}
+  FP=+0.8784 dep=0.415 ann=+6.87 dd=-0.1 tr=349 beatBH=3/8 {'signal': 'goldcopper_z', 'sign': 'contrarian', 'window': 63, 'threshold': 0.5}
+  FP=+0.8248 dep=0.197 ann=+5.48 dd=-0.1 tr=228 beatBH=3/8 {'signal': 'goldcopper_z', 'sign': 'contrarian', 'window': 126, 'threshold': 1.5}
+  FP=+0.8162 dep=0.28 ann=+5.75 dd=-0.1 tr=307 beatBH=3/8 {'signal': 'goldcopper_z', 'sign': 'contrarian', 'window': 63, 'threshold': 1.0}
+  FP=+0.8131 dep=0.157 ann=+5.29 dd=-0.1 tr=209 beatBH=3/8 {'signal': 'goldcopper_z', 'sign': 'contrarian', 'window': 63, 'threshold': 1.5}
+  FP=+0.7549 dep=0.85 ann=+6.72 dd=-0.2 tr=144 beatBH=4/8 {'signal': 'move_z', 'sign': 'trend', 'window': 252, 'threshold': 1.5}
+  FP=+0.7474 dep=0.433 ann=+6.07 dd=-0.1 tr=244 beatBH=3/8 {'signal': 'goldcopper_z', 'sign': 'contrarian', 'window': 252, 'threshold': 1.0}
+  FP=+0.7224 dep=0.656 ann=+5.97 dd=-0.1 tr=260 beatBH=4/8 {'signal': 'move_z', 'sign': 'trend', 'window': 63, 'threshold': 0.5}
+  FP=+0.7042 dep=0.683 ann=+6.62 dd=-0.2 tr=261 beatBH=4/8 {'signal': 'movevix_z', 'sign': 'trend', 'window': 252, 'threshold': 1.0}
+  FP=+0.6587 dep=0.873 ann=+6.78 dd=-0.2 tr=220 beatBH=3/8 {'signal': 'movevix_z', 'sign': 'trend', 'window': 126, 'threshold': 1.5}
+  FP=+0.6563 dep=0.779 ann=+6.23 dd=-0.1 tr=229 beatBH=5/8 {'signal': 'move_z', 'sign': 'trend', 'window': 63, 'threshold': 1.0}
+
+=== DEEP OOS SWEEP timing SPY adjclose (full + test>=2019) ===
+  [sorted by TEST raw return]
+  test=  +247.3% (bh +228.0, d+19.3pp) beat=True exp=0.847 corrXS=-0.02 full=+698%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 63, 'threshold': 1.5}
+  test=  +229.7% (bh +228.0, d+1.7pp) beat=True exp=0.766 corrXS=-0.019 full=+530%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 63, 'threshold': 1.0}
+  test=  +214.6% (bh +228.0, d-13.4pp) beat=False exp=0.678 corrXS=-0.004 full=+765%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 63, 'threshold': 0.5}
+  test=  +210.3% (bh +228.0, d-17.8pp) beat=False exp=0.832 corrXS=-0.008 full=+638%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 252, 'threshold': 1.5}
+  test=  +203.7% (bh +228.0, d-24.4pp) beat=False exp=0.86 corrXS=0.008 full=+942%(bh+1136) {'signal': 'movevix_z', 'sign': 'trend', 'window': 126, 'threshold': 1.5}
+  test=  +199.5% (bh +228.0, d-28.5pp) beat=False exp=0.602 corrXS=0.041 full=+634%(bh+1136) {'signal': 'movevix_z', 'sign': 'trend', 'window': 252, 'threshold': 0.5}
+  test=  +191.0% (bh +228.0, d-37.0pp) beat=False exp=0.875 corrXS=0.089 full=+787%(bh+1136) {'signal': 'movevix_z', 'sign': 'trend', 'window': 63, 'threshold': 1.5}
+  test=  +179.2% (bh +228.0, d-48.8pp) beat=False exp=0.773 corrXS=0.009 full=+525%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 126, 'threshold': 1.0}
+  test=  +166.7% (bh +228.0, d-61.3pp) beat=False exp=0.81 corrXS=0.029 full=+718%(bh+1136) {'signal': 'movevix_z', 'sign': 'trend', 'window': 252, 'threshold': 1.5}
+  test=  +161.8% (bh +228.0, d-66.2pp) beat=False exp=0.757 corrXS=0.024 full=+528%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 252, 'threshold': 1.0}
+  test=  +160.9% (bh +228.0, d-67.2pp) beat=False exp=0.702 corrXS=0.047 full=+683%(bh+1136) {'signal': 'movevix_z', 'sign': 'trend', 'window': 252, 'threshold': 1.0}
+  test=  +157.0% (bh +228.0, d-71.0pp) beat=False exp=0.847 corrXS=0.017 full=+455%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 126, 'threshold': 1.5}
+  test=  +152.9% (bh +228.0, d-75.1pp) beat=False exp=0.654 corrXS=0.02 full=+436%(bh+1136) {'signal': 'move_z', 'sign': 'trend', 'window': 252, 'threshold': 0.5}
+  test=  +148.3% (bh +228.0, d-79.7pp) beat=False exp=0.744 corrXS=0.043 full=+541%(bh+1136) {'signal': 'movevix_z', 'sign': 'trend', 'window': 126, 'threshold': 1.0}
+
+  cells: 54 | TEST-beat-BH: 2 | FULL-beat-BH: 0 | BOTH: 0
+
+=== (a) RELABEL: corr(signal, SPY 60d ret) / corr(signal, SPY 20d rvol) ===
+  move_z         W63  n=1885 vsRET=-0.249 vsVOL=+0.225
+  move_z         W126 n=1885 vsRET=-0.313 vsVOL=+0.331
+  move_z         W252 n=1885 vsRET=-0.341 vsVOL=+0.381
+  movevix_z      W63  n=1885 vsRET=+0.278 vsVOL=-0.191
+  movevix_z      W126 n=1885 vsRET=+0.373 vsVOL=-0.280
+  movevix_z      W252 n=1885 vsRET=+0.329 vsVOL=-0.326
+  goldcopper_z   W63  n=1885 vsRET=-0.310 vsVOL=+0.268
+  goldcopper_z   W126 n=1885 vsRET=-0.385 vsVOL=+0.381
+  goldcopper_z   W252 n=1885 vsRET=-0.377 vsVOL=+0.462
+
+=== (c) ORTHOGONALITY: corr(state, SMA200-QQQ) / corr(state, voltarget-TQQQ) ===
+  deep_best                    n=4094 vsSMA200=0.13237131169722272 vsVOLtgt=0.171428124413018 (state_on=0.87 sma_on=0.85)
+  move_z_trend_W126_t1.0       n=4094 vsSMA200=0.224377398658999 vsVOLtgt=0.26372463085176806 (state_on=0.80 sma_on=0.85)
+  goldcopper_trend_W126_t1.0   n=4094 vsSMA200=0.20499334369219435 vsVOLtgt=0.251685225913953 (state_on=0.68 sma_on=0.85)
+
+wrote reports/_xa_movegold_results.json

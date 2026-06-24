@@ -1,0 +1,51 @@
+# Founding Product Manager
+
+**Company:** Clera
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/clera/b9f5d5d2-a7fd-4ab0-93e2-7f754d83de3d
+**Ashby Org:** clera
+**Ashby Job ID:** b9f5d5d2-a7fd-4ab0-93e2-7f754d83de3d
+
+---
+
+### About the Role
+
+A well-funded, Y Combinator-backed B2B SaaS startup in the AI-powered quote and order automation space is hiring its first Product Manager. This is a high-impact founding role where you will own the **what** and **why** behind an AI-first product, working directly with the CPO and engineering team to turn customer pain points into intuitive, high-adoption solutions. You will shape core workflows, define product direction, and drive measurable time savings for customers in industrial distribution and manufacturing sectors.
+
+### What You'll Do
+
+- Own the full product development cycle from discovery through rollout, with a focus on customer adoption and efficiency gains.
+
+- Engage directly with customers to understand their problems and synthesize feedback from customers, internal teams, and the market.
+
+- Define and validate product hypotheses with customers; build rapid prototypes to test ideas quickly.
+
+- Translate customer insights into clear requirements and intuitive, AI-first product experiences designed for non-technical users.
+
+- Prioritize, scope, and ship new features in close collaboration with engineering and design.
+
+- Create and maintain product documentation, release notes, and training content to help customers get maximum value from new features.
+
+- Make complex B2B workflows effortless through thoughtful, iterative product decisions.
+
+### What We're Looking For
+
+- **2–5 years** of experience in product management or product design, with a strong track record delivering AI-first, complex B2B SaaS products.
+
+- Demonstrated ability to speak directly with customers and turn messy, qualitative feedback into crisp product requirements.
+
+- Proficiency with modern AI tools (e.g., Lovable, Cursor, Claude) and prototyping tools such as Figma.
+
+- Comfortable working in a fast-paced, early-stage startup environment with a builder's mindset.
+
+- Familiarity with code (React, TypeScript, Python) to prototype independently or collaborate closely with engineers — a strong plus.
+
+- Domain knowledge of AI-enabled software for technical suppliers or distributors in construction, HVAC, electrical, or related industrial sectors — a plus.
+
+- **Fluent in both German and English** (required).
+
+- Based in Munich or willing to relocate for on-site work (required). *No visa sponsorship available.*
+
+### Location & Work Arrangement
+
+This role is fully **on-site in Munich, Bavaria, Germany**. Candidates must be based in Munich or willing to relocate. Visa sponsorship is not available.

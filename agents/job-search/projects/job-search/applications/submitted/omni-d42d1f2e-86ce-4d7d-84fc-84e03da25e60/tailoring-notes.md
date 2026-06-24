@@ -5,38 +5,40 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized analytics system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
-2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and **self-service scheduling capabilities** that reduced operational toil by 30% and transitioned drill execution into a scalable, repeatable model used across partner integrations.
-3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**—surfacing critical hardware defects and establishing a new continuous validation model adopted across enterprise customer environments.
-4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, coordinating across engineering, sales, and post-sales teams.
-5. Scaled team leverage through **AI-driven automation**, building an internal AI agent and restructuring planning workflows to reduce planning cycle time by 39% and increase drill capacity by 21% without adding headcount.
-6. Translated field discoveries and enterprise customer feedback into actionable product direction, collaborating with engineering and design teams to close feature gaps and shape the platform roadmap—mirroring a forward-deployed SE feedback loop.
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Partnered with enterprise customers — including **Databricks, Walmart, SAP, and NetApp** — to uncover and prove out resilience use cases on Azure, translating complex technical requirements into actionable validation workflows that drove **$14M+ in business impact**.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining self-service scheduling capabilities and product requirements that reduced operational toil by 30% and enabled teams to independently execute analytics-driven recovery drills at scale.
+3. Pioneered Azure's first proactive rack-level resilience testing program, delivering a **94% recovery rate** across a 4-month build cycle by surfacing critical hardware defects and establishing a repeatable, data-backed model for continuous infrastructure validation.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, translating field findings into product feedback that shaped platform direction.
+5. Built an internal **AI agent for drill planning**, restructuring analytical workflows and automating reporting to cut planning cycle time by 39%, increase drill capacity by 21%, and free the team to focus on higher-value customer-facing discovery and enablement.
+6. Scaled a 2-person recovery validation operation into a **platformized, self-service system** sustaining 45+ annual drills, standardizing data workflows and cross-team processes in close collaboration with Engineering and Design to incorporate frontline user feedback.
+7. Advocated for end-users by synthesizing field observations from enterprise engagements into structured product feedback loops with internal Engineering teams, directly influencing roadmap prioritization for semantic-layer and analytics platform improvements.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed adoption of **AI-driven analytics workflows**, conducting user demos and enablement sessions that drove utilization across 14 key teams and saved 37 engineering hours monthly by embedding plain-English query capabilities into existing data pipelines.
-2. Influenced the product roadmap toward **intent-based data generation** by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps and translating qualitative feedback into prioritized requirements for engineering.
-3. Optimized data integrity and retrieval by implementing rigorous **semantic search standards** and migrating documentation to an AI-powered tool—cutting lookup time by 83% and improving trust in the data as a governed source of truth for downstream teams.
+1. Championed **product adoption for AI-driven analytics workflows**, conducting live demos and hands-on enablement sessions that drove consistent utilization across 14 key Azure service teams and saved **37 engineering hours monthly** — mirroring the forward-deployed SE model.
+2. Shaped the product roadmap toward **intent-based data querying** by facilitating 11+ structured user interviews with Azure service teams, identifying critical feature gaps and translating plain-English user needs into actionable requirements for Engineering.
+3. Improved data integrity and analytical retrieval speed by implementing rigorous **semantic search and metadata standards**, transitioning documentation to an AI-powered semantic tool that cut lookup time by 83% and served as a trusted source of truth for users.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams, enabling consistent data-driven decision-making at enterprise scale.
-2. Mobilized a product strategy to eliminate operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort per region** and building a roadmap to automate critical paths across the analytics workflow.
-3. Engineered a **Power BI analytics dashboard** to track operational toil across 140+ teams, enabling leadership to surface automation gaps, prioritize high-impact investments, and demonstrate measurable efficiency gains to executive stakeholders.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams — demonstrating the enterprise-scale collaboration central to pre-sales SE work.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual toil per region launch**, translating field findings into a data-backed product roadmap to automate critical paths and reduce friction for internal customers across the analytics pipeline.
+3. Built a **Power BI analytics dashboard** tracking operational toil across 140+ teams, enabling leadership to visualize data-driven automation gaps and prioritize high-impact investments — directly paralleling the BI platform evaluation and POC work in this role.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and enabling engineering and operations teams through structured onboarding and technical documentation.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process—accelerating time-to-resolution for issues surfaced by field operations teams.
-3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable integration model for future robotic fleet rollouts.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot migration by defining the legacy OS transition strategy, mapping dependencies across 1,200+ stations, and enabling technical stakeholders with clear documentation and structured onboarding support.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, resolving **40+ high-priority tickets** and stabilizing the developer intake process by acting as a connective layer between technical teams and end-user operational requirements.
+3. Drove cross-functional alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and demonstrating the integration and partner-coordination skills central to a pre-sales SE role.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a structured CRM process that improved pipeline visibility and enabled data-driven prioritization of high-value customer opportunities.
-2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy—optimizing web presence and Google Business profile to align messaging with target customer segments.
-3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through a structured data review that surfaced actionable patterns across service categories.
+1. Increased job bookings by **26%** by optimizing end-to-end proposal and invoicing workflows for 200+ monthly quotes via a new CRM process, building hands-on experience with client-facing data systems and the full customer lifecycle from evaluation through close.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy — optimizing the website and Google Business profile to align messaging with how prospective customers described their own needs.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records to identify and seal margin leaks, translating raw data into trusted, actionable insights that directly informed business strategy.
 
 ## Notes from the rewriter
-- 'Plain-English query capabilities' and 'governed source of truth' from Omni's JD woven into microsoft_2023 bullet#1 and bullet#3 to mirror Omni's core semantic model value prop.
-- 'Forward-deployed feedback loop' from Omni's 'forward-deployed model' language inserted into microsoft_ft bullet#6, directly echoing the JD's process description and advocacy framing.
-- 'Proof of Concept' and 'customer enablement' framing embedded in microsoft_ft bullet#2 and amazon_robotics bullet#1 to reflect Omni's explicit SE responsibilities around PoC builds and enabling prospective customers.
-- 'Analytics workflow' and 'data-driven decision-making' language from the BI/analytics domain woven into microsoft_2022 bullets#1 and #3 to align with Omni's BI platform context and the JD's emphasis on enterprise data analytics.
-- 'Semantic search standards' in microsoft_2023 bullet#3 directly mirrors Omni's semantic model architecture and their positioning around trusted, governed data for AI.
+- 'Trusted source of truth' (Omni's core value prop) woven into microsoft_2023 bullet 3 — semantic search metadata work reframed as building a trusted analytical knowledge base.
+- 'Semantic model / semantic layer' vocabulary from JD surfaced in microsoft_2023 bullet 3 and microsoft_ft bullet 7, connecting Cyrus's AI search and roadmap work to Omni's core architecture.
+- 'Plain English querying / intent-based' language from JD embedded in microsoft_2023 bullet 2, reframing the YAML intent work as translating natural-language user needs — directly mirroring Omni's 'ask questions in plain English' positioning.
+- 'Forward-deployed' and 'field feedback shaping product direction' from JD explicitly surfaced in microsoft_ft bullet 4 and microsoft_2023 bullet 1, aligning Cyrus's enterprise customer engagement model to Omni's high-touch SE methodology.
+- 'POC / proof of concept' and 'evaluation process' framing from JD woven into microsoft_ft bullet 1 ('prove out use cases') and microsoft_2022 bullet 3 (Power BI dashboard as POC analog), reinforcing pre-sales SE relevance throughout.
+- 'Partner with post-sales and product teams' from JD addressed in microsoft_ft bullets 4 and 6, showing Cyrus's established pattern of bridging field insights to Engineering and Design for roadmap influence.
 

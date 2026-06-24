@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned the **product roadmap** for Azure's resilience validation platform, defining requirements and prioritization frameworks that sustained 45+ annual drills and drove **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, delivering self-service scheduling capabilities that reduced operational toil by 30% and scaled execution without headcount growth.
+3. Built an **AI agent** for drill planning that restructured end-to-end workflows, cutting planning cycle time by 39% and increasing inference-driven capacity by 21% — mirroring agentic computation gains central to Cerebras's speed advantage.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a 94% recovery rate in 4 months by defining **quality evaluation frameworks** and surfacing critical hardware defects.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **go-to-market adoption** for AI-driven code generation workflows, running developer demos and enablement sessions that drove utilization across 14 teams and saved **37 engineering hours monthly**.
+2. Shaped the product roadmap by conducting 11+ user research interviews with Azure service teams, surfacing critical **LLM-powered tooling** gaps and securing intent-based YAML generation as a prioritized feature.
+3. Improved model-backed **semantic search** quality by enforcing metadata standards and migrating documentation to an AI-powered retrieval system, reducing developer lookup time by 83%.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Defined a product strategy to eliminate launch toil, conducting discovery with 20+ service teams to surface 81 hours of manual effort per region and building a **roadmap** to automate critical execution paths.
+3. Enabled leadership to target high-impact automation gaps by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, directly informing quarterly prioritization decisions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the legacy OS migration strategy, mapping dependencies across 1,200+ stations and sequencing a risk-tiered rollout plan.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and improving release quality.
+3. Prioritized a 40+ ticket backlog through Agile sprint ceremonies, resolving high-severity developer blockers and stabilizing the **intake process** to sustain velocity across cross-functional teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM workflow, directly improving conversion and customer success.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to reach developer and decision-maker audiences.
+3. Improved leadership pricing models by analyzing **1,000+ project records** to identify margin leaks, delivering a profitability framework that informed strategic resource allocation decisions.
+
+## Notes from the rewriter
+- Wove 'AI agent' and 'agentic computation' directly into microsoft_ft bullet 3, mirroring Cerebras JD language on agentic inference and speed advantage.
+- Used 'quality evaluation frameworks' in microsoft_ft bullet 5 and 'model-backed semantic search' in microsoft_2023 bullet 3 to mirror JD sections on Product Quality and model catalog standards.
+- Inserted 'go-to-market adoption' and 'developer demos' in microsoft_2023 bullet 1 to echo JD's Go-to-Market Excellence section and developer-audience focus.
+- Framed amazon_robotics CI/CD bullet around cross-functional strategic alignment, mirroring JD's Cross-Functional Leadership section vocabulary.
+- Used 'decision-maker audiences' in pro_painters GTM bullet to echo JD phrase 'resonates with developers and decision-makers alike.'
+

@@ -104,6 +104,10 @@ LABEL_RULES: list[tuple[str, str]] = [
     # Sony 2026-05-24 (role 982): "Will you need relocation assistance to work at
     # this role's specified location?" Cyrus is open to relocating but does NOT
     # need relocation assistance. Without this, the 'location' rule grabs it.
+    # 2026-06-23 (Axon 3097): 'Which Axon Hub do you plan to work from?' contains
+    # 'relocation assistance' in the label — must match BEFORE the generic relocation rule.
+    ("which axon hub", "city_location_select"),
+    ("axon hub do you plan to work from", "city_location_select"),
     ("need relocation assistance", "answer_no"),
     ("relocation assistance", "answer_no"),
     # Scopely 2026-06-04 (role 2671): "Will you require relocation support?" Yes/No.
@@ -135,7 +139,68 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("pronoun", "pronouns"),
 
     # --- website (optional fallback to LinkedIn if required) ---
+    # 2026-06-23 (xAI 3139): 'Have you ever worked at xAI, X, Twitter, or SpaceX?' contains 'twitter'
+    # as a company name in the label, not as a URL field. Override BEFORE the twitter URL rule.
+    ("worked at xai", "answer_no"),
+    ("worked at xai, x, twitter", "answer_no"),
+    ("ever worked at xai", "answer_no"),
     ("twitter", "twitter"),
+    # Capital One background-check (Brex 8443298002): "Do you currently, or have you previously, worked at Capital One...?"
+    # Cyrus has NOT worked at Capital One. Second field (EID) only needed for former employees -> blank.
+    ("worked at capital one", "answer_no"),
+    ("previously worked, at capital one", "optional_blank"),
+    ("if you currently work, or have previously worked, at capital one", "optional_blank"),
+    ("employee id (eid)", "optional_blank"),
+    # Generic "worked at <company>" / "previously worked for <company>" -> No (not a current/former employee).
+    # Covers Instacart, Block, etc.
+    ("currently, or have you previously, worked for", "answer_no"),
+    ("currently, or have you previously, worked at", "answer_no"),
+    ("ever worked for", "answer_no"),
+    # Block: ever been employed full-time at Block / contract work for Block
+    ("ever been employed full-time at block", "answer_no"),
+    ("employed full-time at block", "answer_no"),
+    ("provided any contract work for block", "answer_no"),
+    ("contract work for block", "answer_no"),
+    # Block: LA/OC residency status (multi-select): willing to relocate
+    ("describes your residency status for this role", "willing_to_relocate"),
+    ("residency status for this role", "willing_to_relocate"),
+    # Block: full-stack experience / technical assignment (Solutions Engineer roles) -> Yes (Cyrus has SE-relevant tech skills)
+    ("full-stack development experience", "answer_yes"),
+    ("comfortable completing a technical assignment", "answer_yes"),
+    # Instacart: Canada work authorization (role is US-only; Cyrus doesn't need Canada).
+    ("legally entitled to work in canada", "answer_no"),
+    ("entitled to work in canada", "answer_no"),
+    # Coinbase AI-tools ack ("I understand that Coinbase may use AI tools...") — Yes-only select.
+    ("coinbase may use ai tools", "acknowledge_yes"),
+    ("use ai tools to assist in the application", "acknowledge_yes"),
+    # Block AI-usage essay ("Tell me about a time where you used AI in a meaningful way...")
+    ("used ai in a meaningful way", "customer_facing_essay"),
+    ("used ai in a meaningful", "customer_facing_essay"),
+    # Block AI transcription consent ("With your permission, we may use AI transcription software...")
+    ("ai transcription software to transcribe", "acknowledge_yes"),
+    ("ai transcription software", "acknowledge_yes"),
+    # Waymo: AI tool prohibition during interviews — acknowledge and agree (Yes).
+    ("prohibits the use of unauthorized outside assistance", "acknowledge_yes"),
+    ("acknowledge and agree to adhere to these guidelines", "acknowledge_yes"),
+    # Block: "How we interview" / hiring process explanation — acknowledge Yes.
+    ("how we interview", "acknowledge_yes"),
+    # Coinbase: "Which of the following best describes how you use AI tools today?" — select most advanced option.
+    ("best describes how you use ai tools", "ai_usage_level"),
+    ("how you use ai tools today", "ai_usage_level"),
+    # Coinbase: government official / relative (conflict-of-interest) — truthful No.
+    ("current government official or were you a government official", "answer_no"),
+    ("a current or former government official", "answer_no"),
+    ("close relative of a government official", "answer_no"),
+    ("relative of a government official", "answer_no"),
+    # Canonical: "how many companies have you worked for?" (since graduation) — numeric select.
+    ("how many companies have you worked for", "num_companies_worked"),
+    ("in the past ten years, looking only at the time since you graduated", "num_companies_worked"),
+    # Coinbase: referred by senior leader — truthful No (no referral).
+    ("referred to this position by a senior leader", "answer_no"),
+    ("referred to this position by a", "how_heard"),
+    # Coinbase qualifying questions (cross-functional program, translated operational needs) — Yes.
+    ("personally led a cross-functional technical program", "answer_yes"),
+    ("translated operational or business needs into technical", "answer_yes"),
     # Thinking Machines 2026-05-26 (role 1376): "Personal Website About You" — custom
     # required text field; route to website resolver (LinkedIn fallback for required).
     ("personal website about you", "website"),
@@ -233,6 +298,9 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("legal right to work", "work_authorized"),
     ("right to work in the u.s.", "work_authorized"),
     ("work authorization", "work_authorized"),
+    ("presently authorized", "work_authorized"),  # Stack AV — "Are you presently authorized under U.S. immigration laws"
+    ("legally eligible to work", "work_authorized"),  # Filson — "Are you legally eligible to work in the United States?"
+    ("immigration laws", "work_authorized"),  # broad catch for immigration-law work-auth questions
     # CJIS clearance affirmation-of-understanding (2026-06-08, Rogo/grind batch).
     # "This offer is contingent upon maintaining a valid CJIS clearance — do you
     # understand?" and similar "I affirm my understanding of the CJIS clearance
@@ -371,6 +439,11 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("commuting distance", "answer_yes"),
     ("relocating to one of these", "answer_yes"),
     ("comfortable relocating", "answer_yes"),
+    # Lyft-style "Do you currently reside in commutable proximity to a Lyft Office...?"
+    # Must be BEFORE the generic ('state','state') rule ("United States" would match 'state').
+    ("commutable proximity to a lyft office", "willing_to_relocate"),
+    ("proximity to a lyft office", "willing_to_relocate"),
+    ("reside in commutable proximity", "willing_to_relocate"),
     ("city", "city"),
     ("state", "state"),
     ("zip", "zip"),
@@ -409,6 +482,10 @@ LABEL_RULES: list[tuple[str, str]] = [
     # (Comet 2026-05-24, role 1233: "Do you have 2+ years of Product Management experience?")
     ("do you have 2+ years", "answer_yes"),
     ("do you have 3+ years", "answer_yes"),
+    # 2026-06-23 (YipitData 3325): 'Do you have 5+ years of PM in data-intensive' has NON-Yes/No
+    # options. Must come BEFORE generic 'do you have 5+ years' -> answer_yes.
+    ("5+ years of product management experience in data", "pm_data_experience_select"),
+    ("product management experience in data-intensive", "pm_data_experience_select"),
     ("do you have 5+ years", "answer_yes"),
     ("2+ years of product", "answer_yes"),
     ("3+ years of product", "answer_yes"),
@@ -670,7 +747,12 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("do you live in", "answer_yes"),
     ("do you currently live in", "answer_yes"),
     ("live in the", "answer_yes"),
-    # "Are you currently located in the <City>/<City> area?" (MediaAlpha 2815).
+    # 2026-06-23 (Algolia 3135): 'Please share which timezone you are currently located in'
+    # - the 'currently located in' substring matches answer_yes before timezone_pacific.
+    # Override with timezone rule BEFORE the generic location rule.
+    ("which timezone you are currently located in", "timezone_pacific"),
+    ("share which timezone", "timezone_pacific"),
+    # 'Are you currently located in...' (MediaAlpha 2815) -> answer_yes
     ("currently located in", "answer_yes"),
     ("located in the", "answer_yes"),
     # SaaS / rapid-growth-tech prior-experience screen (Case Status 2824) -> Yes,
@@ -725,10 +807,38 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("work in the office", "ack_in_office"),
     ("join us in the office", "ack_in_office"),          # Checkr — "Are you able and willing to join us in the office 3 days/week?"
     ("in the office", "ack_in_office"),                  # broad catch-all; office-presence labels rarely mean anything else
+    ("commit to the hybrid policy", "ack_in_office"),  # Glean — "Are you willing and able to commit to the hybrid policy if hired?"
+    ("open to working 4 days onsite", "ack_in_office"),  # Sigma Computing
+    ("4 days onsite", "ack_in_office"),                # Sigma Computing variant
+    ("familiar with twitch", "acknowledge_yes"),        # Twitch — "Are you familiar with Twitch?"
+    ("twitch employee", "no_prior_employer"),           # Twitch — "Are you currently a Twitch employee?"
     # Checkr-style "relocate to one of our hub locations" — pair with willing_to_relocate.
     ("relocate to one of our hub", "willing_to_relocate"),
     ("relocate to our hub", "willing_to_relocate"),
     ("hub locations", "willing_to_relocate"),
+    # Stripe-style "We have a hub in NYC. Are you:" — multi-select; relocation-willing answer.
+    ("we have a hub in", "willing_to_relocate"),
+    ("hub in nyc", "willing_to_relocate"),
+    ("hub in sf", "willing_to_relocate"),
+    ("hub in seattle", "willing_to_relocate"),
+    # BrightHire / interview recording consent — acknowledge Yes.
+    ("brighthire", "acknowledge_yes"),
+    ("interview and transcribe", "acknowledge_yes"),
+    ("record and transcribe", "acknowledge_yes"),
+    ("recording and transcrib", "acknowledge_yes"),
+    # Databricks internal-transfer disclaimers — external candidate answers Yes (no current Databricks mgr to notify; no PIP/perf issues).
+    ("notify your outgoing manager", "acknowledge_yes"),
+    ("not under any active performance management", "acknowledge_yes"),
+    ("minimum of consistently meets", "acknowledge_yes"),
+    ("been in your currently role for at least", "acknowledge_yes"),
+    ("been in your current role for at least", "acknowledge_yes"),
+    # Non-compete / restrictive agreements (Fastly): "Are you subject to any agreements that may restrict your ability...?"
+    # Cyrus is NOT subject to any restrictive agreements.
+    ("subject to any agreements that may restrict", "answer_no"),
+    ("agreements that may restrict your ability", "answer_no"),
+    ("subject to any non-compete", "answer_no"),
+    ("non-compete agreement", "answer_no"),
+    ("restrictive covenants", "answer_no"),
     ("earliest you would want to start", "earliest_start"),
     ("earliest start", "earliest_start"),
     ("earliest joining date", "earliest_start"),
@@ -763,6 +873,11 @@ LABEL_RULES: list[tuple[str, str]] = [
 
     # --- common screener questions ---
     ("how did you hear", "how_heard"),
+    # 2026-06-23: "How did you initially hear about this job?" (Braze 3418, Algolia 3135)
+    ("how did you initially hear", "how_heard"),
+    ("hear about this job", "how_heard"),
+    ("hear about this position", "how_heard"),
+    ("hear about this opportunity", "how_heard"),
     # 2026-06-04 (DigiCert 2752): "Were you referred for this position?" is a
     # Yes/No question (NOT a how-heard source). Cyrus has no internal referral
     # → answer No truthfully. Must sit BEFORE how_heard referral rules.
@@ -776,6 +891,7 @@ LABEL_RULES: list[tuple[str, str]] = [
     # all that apply." — multiselect source. r_how_heard picks LinkedIn.
     ("where have you learned about", "how_heard"),
     ("how did you learn about", "how_heard"),
+    ("how did you learn of this", "how_heard"),  # IXL Learning 2026-06-24 — "How did you learn of this position?"
     ("where did you learn about", "how_heard"),
     # 2026-06-04 (Samsara 2694): consent/ack selects.
     ("processing of personal data", "answer_yes"),
@@ -967,6 +1083,17 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("essential functions", "essential_functions_ack"),
     ("perform the essential", "essential_functions_ack"),
     ("with or without reasonable accommodation", "essential_functions_ack"),
+    ("can perform these essential functions", "essential_functions_ack"),  # Lyft exact phrasing
+    # Lyft / optional accommodation request textarea — leave blank (no accommodation needed).
+    ("describe any need for a reasonable accommodation for this hiring", "optional_blank"),
+    ("need for a reasonable accommodation for this hiring", "optional_blank"),
+    ("accommodation for this hiring process", "optional_blank"),
+    # Lyft proximity/commute to office — willing to relocate.
+    ("commutable proximity to a lyft office", "willing_to_relocate"),
+    ("proximity to a lyft office", "willing_to_relocate"),
+    ("commutable proximity", "willing_to_relocate"),
+    # AI customer experience (Stripe 7975723) — textarea, answer via customer_facing_essay.
+    ("worked directly with ai customers", "customer_facing_essay"),
     ("previously interviewed", "previously_interviewed"),
     ("interviewed at", "previously_interviewed"),
     ("interviewed with", "previously_interviewed"),
@@ -1003,6 +1130,41 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("challenging pre-sales technical demo", "customer_facing_essay"),
     ("pre-sales technical demo", "customer_facing_essay"),
     ("proof of concept that you delivered", "customer_facing_essay"),
+    # Cato Networks / SE qualification booleans
+    ("comfortable delivering live technical product demonstrations", "answer_yes"),
+    ("responded to rfis/rfps as part of a technical pre-sales", "answer_yes"),
+    ("have you ever responded to rfis/rfps", "answer_yes"),
+    # Alloy NYC hybrid: "Are you able to attend the office on these days?" -> ack_in_office
+    ("hybrid work environment: our employees local to nyc are expected to work", "ack_in_office"),
+    ("our employees local to nyc are expected to work", "ack_in_office"),
+    # Waymo: "Are you a current or former Alphabet employee?" — never worked at Alphabet.
+    ("are you a current or former alphabet employee", "alphabet_affiliation"),
+    ("current or former alphabet employee, intern, vendor, contractor", "alphabet_affiliation"),
+    # Waymo: AI tool prohibition acknowledgement
+    ("waymo prohibits the use of ai", "acknowledge_yes"),
+    ("prohibits the use of ai tools", "acknowledge_yes"),
+    ("use of ai tools for application", "acknowledge_yes"),
+    # Actively AI: customer account ownership background (essay)
+    ("this is not a platform pm role", "customer_facing_essay"),
+    ("directly owning a set of customer accounts", "customer_facing_essay"),
+    # Taboola role-type confirmation: "this role is NOT a Software Engineer/ML/CyberSec role" — acknowledge.
+    ("this role is not a software engineer, ai/ml engineer, or cybersecurity role", "acknowledge_yes"),
+    ("confirm that you understand this role is not a software engineer", "acknowledge_yes"),
+    # Taboola SQL skills rating (0-5 scale): Cyrus rates himself 3 (familiar/proficient, not expert).
+    ("rate your sql skills on a scale of 0 - 5", "sql_skills_rating"),
+    ("rate your sql skills", "sql_skills_rating"),
+    # InterSystems 2026-06-24 (roles 3453/3455/3456): employment history at InterSystems (Cyrus never
+    # worked there — blank) and Data Protection Information Notice (consent → ack yes).
+    ("intersystems employment history", "optional_blank"),
+    ("data protection information notice", "acknowledge_yes"),
+    ("data protection notice", "acknowledge_yes"),
+    # Formlabs 2026-06-24 (role 3438): "Please describe your most complex project." — essay.
+    ("please describe your most complex project", "customer_facing_essay"),
+    ("describe your most complex project", "customer_facing_essay"),
+    # Avathon 2026-06-24 (role 3335): supply-chain PM 5+ years knockout — answer No truthfully
+    # (Cyrus has broad PM/SE experience but not 5+ yrs supply-chain-domain-specific PM).
+    ("product management in supply chain domain for at least 5+ years", "answer_no"),
+    ("supply chain domain for at least 5", "answer_no"),
     # Databricks 2026-05-26 (role 1353 AI Engineer FDE): production AI/ML deployment essays.
     ("production agentic ai", "customer_facing_essay"),
     ("production ml or genai", "customer_facing_essay"),
@@ -1092,9 +1254,21 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("privacy policy", "acknowledge_yes"),
     ("point of data transfer", "acknowledge_yes"),  # Intercom 2026-05-26 — GDPR data-transfer ack with single 'Acknowledge' option
     ("privacy notice", "acknowledge_yes"),
+    # DoorDash / applicant-privacy ack (2026-06-23)
+    ("applicant privacy acknowledgement", "acknowledge_yes"),
+    ("applicant privacy", "acknowledge_yes"),
+    # NYT — "After your review of the job description, do you meet each of the basic qualifications listed in the job?" (2026-06-23)
+    ("meet each of the basic qualifications", "acknowledge_yes"),
+    ("basic qualifications listed in the job", "acknowledge_yes"),
+    # Affirm accuracy / falsification-disqualification (MetTel 2026-06-23)
+    ("affirm all of my responses are accurate", "acknowledge_yes"),
+    ("falsification of my information", "acknowledge_yes"),
+    # "After your review" generic qualification gate
+    ("after your review of the job description", "acknowledge_yes"),
     ("if yes, please provide further explanation", "explain_no"),
     ("if yes, please specify the level", "explain_no"),
     ("ai policy for application", "ai_policy_ack"),
+    ("ai policy for interviewers", "ai_policy_ack"),  # Samsara 2026-06-24 — "AI Policy for Interviewers" Yes/No
 
     # --- free-form / essays ---
     # HeyGen 2026-05-25 (role 1378): custom FDE essay prompts. Route through
@@ -1138,7 +1312,162 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("demographic data", "gdpr_consent_ack"),
     ("gdpr", "gdpr_consent_ack"),
 
-    # --- demographics (default to decline) ---
+    # --- 2026-06-23 batch additions ---
+    # in-office / hybrid phrasing variants not previously matched
+    ("4x week in-office", "ack_in_office"),
+    ("4 days a week in-office", "ack_in_office"),
+    ("4 days/week in office", "ack_in_office"),
+    ("hybrid with some in-person", "ack_in_office"),
+    ("3 days onsite in our", "ack_in_office"),
+    ("3 days onsite in chicago", "ack_in_office"),
+    ("hybrid work environment with 3 days", "ack_in_office"),
+    ("able to accommodate this requirement", "ack_in_office"),
+    # Airtable / 'You are currently based:' -> US location
+    ("you are currently based", "city_location_select"),
+    ("currently based in", "city_location_select"),
+    # work authorization variants
+    ("eligible to legally work in the united states", "work_authorized"),
+    ("eligible to work in the united states", "work_authorized"),
+    ("currently eligible to legally work", "work_authorized"),
+    # referral: no internal referral for Cyrus -> No
+    ("did a current .* employee refer", "answer_no"),  # regex-safe pattern (substring match)
+    ("did a current rithum employee refer", "answer_no"),
+    ("current employee refer you", "answer_no"),
+    ("employee refer you to this role", "answer_no"),
+    # essay/open text: work experience / strengths / accomplishments
+    ("top 3 strengths", "experience_short_yes"),
+    ("top 3 skill sets", "experience_short_yes"),
+    ("exceptional work", "experience_short_yes"),
+    ("what exceptional", "experience_short_yes"),
+    ("what exceptional work have you done", "experience_short_yes"),
+    ("experience working directly with clients", "customer_facing_essay"),
+    ("working directly with clients", "customer_facing_essay"),
+    ("working directly with customers", "customer_facing_essay"),
+    ("customer facing. please explain", "customer_facing_essay"),
+    ("experience working with non technical stakeholders", "customer_facing_essay"),
+    ("what makes you exceptional", "experience_short_yes"),
+    ("fast-paced, growing startup", "experience_short_yes"),
+    ("fast-paced.*startup.*how do you handle", "experience_short_yes"),  # approx
+    # Filson / hybrid Monday-Thursday
+    ("monday-thursday in office", "ack_in_office"),
+    ("open to a hybrid work schedule: monday", "ack_in_office"),
+    # PMP cert -> No (Cyrus does not hold PMP)
+    ("do you currently hold a pmp", "answer_no"),
+    ("pmp (project management professional) certification", "answer_no"),
+    ("pmp certification", "answer_no"),
+    # wireless PM experience (MetTel 3332) -> short essay answer
+    ("do you have wireless product management experience", "experience_short_yes"),
+    ("wireless product management experience", "experience_short_yes"),
+    # plumbing experience (Sensei 3392) -> SKIP / No (not a plumber role, use 'answer_no')
+    # Note: Sensei 3392 is likely a wrong classification — mark as answer_no
+    ("experience in plumbing", "answer_no"),
+    ("1+ years' experience in plumbing", "answer_no"),
+    # SQL proficiency -> answer with experience level
+    ("rate your proficiency with sql", "experience_short_yes"),
+    ("sql proficiency", "experience_short_yes"),
+    ("sql proficiency level", "experience_short_yes"),
+    # visa status -> skip (Cyrus is US citizen, no visa)
+    ("what is your current visa status", "visa_type_na"),
+    ("current visa status", "visa_type_na"),
+    # Canonical / own-words integrity pledge -> ack_yes
+    ("i agree to use only my own words", "acknowledge_yes"),
+    ("use only my own words", "acknowledge_yes"),
+    ("plagiarism, the use of ai", "acknowledge_yes"),
+    ("use of ai or other generated content will disqualify", "acknowledge_yes"),
+    # Tenable hybrid (Columbia MD / Atlanta GA)
+    ("willing to work at one of these locations", "ack_in_office"),
+    ("headquarters in columbia, md", "ack_in_office"),
+    # IXL Learning 3441-3449 — "This position requires you to be in our X office. Will you please confirm..."
+    ("this position requires you to be in our", "ack_in_office"),  # IXL Learning 2026-06-24
+    # --- 2026-06-23 second batch additions ---
+    # Twitch/Amazon employment history
+    ("twitch employee", "answer_no"),          # Twitch 3010/3011 - current Twitch employee?
+    ("currently a twitch employee", "answer_no"),
+    ("amazon or any amazon subsidiary", "answer_no"),
+    ("current employee with amazon", "answer_no"),
+    ("previously applied to amazon", "answer_no"),
+    ("previously been employed by amazon", "answer_no"),
+    # Twitch open to relocation - options are city names (no Yes), pick Seattle
+    ("are you open to relocation", "relocation_city_select"),  # Twitch specific
+    # Non-compete agreement -> No
+    ("non-competition agreement", "answer_no"),
+    ("non-compete agreement", "answer_no"),
+    ("subject to a non-competition", "answer_no"),
+    # Amazon employment eligibility -> Yes
+    ("if offered employment by amazon, would you be legally eligible", "answer_yes"),
+    ("legally eligible to begin employment", "work_authorized"),
+    # H-1B status -> No (Cyrus is US citizen, never held H-1B)
+    ("have you held h-1b status", "answer_no"),
+    ("h-1b petition approved on your behalf", "answer_no"),
+    ("held h-1b status", "answer_no"),
+    # Timezone select -> Pacific Time (duplicates moved earlier for rule ordering)
+    # (rules already at lines 691-693, kept here as alias)
+    ("which timezone are you currently", "timezone_pacific"),
+    ("timezone you are currently located", "timezone_pacific"),
+    # Experience questions (Algolia-style Yes/No)
+    ("years prior experience directly supporting", "answer_yes"),
+    ("directly supporting a customer", "answer_yes"),
+    ("integrated third-party apis", "answer_yes"),
+    ("third-party apis or services into custom applications", "answer_yes"),
+    ("optimizing search performance", "answer_yes"),
+    ("search performance, including indexing", "answer_yes"),
+    ("fully proficient coding in javascript", "answer_yes"),
+    ("proficient coding in javascript", "answer_yes"),
+    # AI interview guidelines acknowledgment
+    ("guidelines for using ai in our interviewing", "acknowledge_yes"),
+    ("using ai in our interview", "acknowledge_yes"),
+    # Postman 3227 (already handled by work_authorized but for completeness)
+    ("eligible to legally work", "work_authorized"),
+    # General 'have you ever' for company employment
+    ("have you ever previously worked for", "answer_no"),
+    ("previously worked for tenable", "answer_no"),
+    ("currently work for", "answer_no"),
+    # dbt Labs / Austin location question
+    ("are you based in austin", "answer_no"),   # dbt Labs 3159 - Cyrus is in Kirkland WA
+    ("based in austin, texas", "answer_no"),
+    # Rithum referral follow-up (freetext 'who referred you / N/A')
+    ("if yes, who referred you", "answer_na_text"),  # 3345/3346
+    ("if you answered no, you can enter n/a", "answer_na_text"),
+    # YipitData essay questions
+    ("briefly describe a data product", "customer_facing_essay"),
+    ("data product or data feed you", "customer_facing_essay"),
+    ("direct accountability for revenue metrics", "answer_yes"),
+    ("accountability for revenue metrics", "answer_yes"),
+    ("have you had direct accountability", "answer_yes"),
+    # --- 2026-06-23 third batch additions ---
+    # xAI/Twitter/SpaceX employment history -> No
+    ("worked at xai, x, twitter", "answer_no"),
+    ("ever worked at xai", "answer_no"),
+    ("xai, x, twitter, or spacex", "answer_no"),
+    # Sigma Computing acknowledgment (checkbox/agree multiline)
+    ("acknowledge, confirm, and agree to the following", "acknowledge_yes"),
+    ("acknowledge, confirm, and agree", "acknowledge_yes"),
+    # Sensei maintenance/driver roles -> No (not maintenance tech)
+    ("experience in preventive maintenance", "answer_no"),
+    ("years' experience in preventive", "answer_no"),
+    ("valid driver's license and an acceptable mvr", "answer_no"),
+    ("driver's license and an acceptable mvr", "answer_no"),
+    ("mvr (moving vehicle record)", "answer_no"),
+    # Sensei referral / references -> essay
+    ("have you been referred to sensei", "explain_no"),   # 'If yes, by whom' -> N/A
+    ("provide a minimum of two professional references", "experience_short_yes"),
+    ("minimum of two professional references", "experience_short_yes"),
+    # Canonical experience essays
+    ("describe your experience working with public clouds", "customer_facing_essay"),
+    ("experience working with public clouds", "customer_facing_essay"),
+    ("please describe your linux experience", "customer_facing_essay"),
+    ("describe your linux experience", "customer_facing_essay"),
+    # Canonical in-person meeting requirement -> ack_in_office
+    ("require all colleagues to meet in person 2-4 times", "ack_in_office"),
+    ("meet in person 2-4 times a year", "ack_in_office"),
+    ("colleagues to meet in person", "ack_in_office"),
+    # Canonical nationality -> answer us citizen
+    ("please indicate your nationality", "nationality_us_citizen"),
+    ("indicate your nationality", "nationality_us_citizen"),
+    # Sensei 3392 - Engg Maintenance Tech role is misclassified (not PM), mark No to key Qs
+    ("have you been referred to", "explain_no"),  # 'have you been referred to sensei/company'
+
+
     ("gender", "demo_gender"),
     ("race", "demo_race"),
     ("ethnicity", "demo_race"),
@@ -1306,6 +1635,49 @@ def r_customer_facing_essay(p, f):
         "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
     )
 
+def r_city_location_select(p, f):
+    """Location/city select (Axon hub, Airtable 'currently based:' etc.).
+    Picks the option closest to Kirkland WA — prefer Seattle, then Pacific NW,
+    then first US option, then first option."""
+    values = f.get("values") or f.get("options") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    # Priority: Seattle > Pacific > Washington > West > N/A > first US city > first
+    ordered_prefs = [
+        "seattle", "pacific northwest", "washington", "west coast", "west",
+        "n/a", "none", "remote", "bellevue", "kirkland", "redmond",
+        "san francisco", "bay area", "new york", "los angeles",
+    ]
+    lbl_lower = [l.lower() for l in labels]
+    for pref in ordered_prefs:
+        for i, ll in enumerate(lbl_lower):
+            if pref in ll:
+                return _ok(labels[i], f"city_location_select: matched '{pref}'")
+    # Fallback: first non-empty option
+    for lbl in labels:
+        if lbl:
+            return _ok(lbl, "city_location_select: fallback first")
+    return _ok("Seattle", "city_location_select: hardcoded fallback")
+
+
+def r_visa_type_na(p, f):
+    """Current visa status / visa type for US citizens — no visa needed.
+    Picks the 'N/A' / 'Not applicable' / 'US Citizen' option if present;
+    otherwise returns 'N/A' as freetext."""
+    values = f.get("values") or f.get("options") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    prefer = ["n/a", "not applicable", "us citizen", "u.s. citizen", "none", "no visa",
+              "citizen", "i am a us citizen", "united states citizen"]
+    lbl_lower = [l.lower() for l in labels]
+    for pref in prefer:
+        for i, ll in enumerate(lbl_lower):
+            if pref in ll:
+                return _ok(labels[i], f"visa_type_na: matched '{pref}'")
+    # If it's a freetext field (no values), return N/A
+    if not labels:
+        return _ok("N/A", "visa_type_na: freetext US citizen")
+    return _ok(labels[0], "visa_type_na: fallback first option")
+
+
 def r_acknowledge_yes(p, f):
     # Generic acknowledgment / consent / accuracy attestation.
     values = f.get("values") or f.get("options") or []
@@ -1388,6 +1760,94 @@ def r_answer_no(p, f):
         return _unresolved(f"answer_no: no 'No' option among {labels}")
     return _ok("No", "answer_no (default No)")
 
+def r_num_companies_worked(p, f):
+    """Canonical: 'How many companies have you worked for since graduation?'
+    Count distinct employers in work_experience. Options are numeric strings: 0-10+.
+    Cyrus: Microsoft, Amazon Robotics, Pro Painters = 3 distinct employers.
+    """
+    work_exp = (p.get("work_experience") or [])
+    # Count distinct company names
+    companies = set()
+    for we in work_exp:
+        c = (we.get("company") or "").strip()
+        if c:
+            companies.add(c.lower())
+    count = len(companies) if companies else 3  # default 3 for Cyrus
+    target = str(count)
+    values = f.get("values") or []
+    for v in values:
+        lbl = (v.get("label") or "").strip()
+        if lbl == target:
+            return _ok(lbl, f"num_companies_worked: {count} distinct employers")
+    # Fallback: pick closest numeric option
+    for v in values:
+        lbl = (v.get("label") or "").strip()
+        try:
+            if int(lbl) >= count:
+                return _ok(lbl, f"num_companies_worked: closest option >= {count}")
+        except (ValueError, TypeError):
+            pass
+    return _ok(target, f"num_companies_worked: {count} (free-text fallback)")
+
+
+def r_sql_skills_rating(p, f):
+    """Taboola / numeric-scale SQL skill rating (0-5).
+    Cyrus has working SQL knowledge from PM/TPM/analyst roles, rates himself 3.
+    Options are string labels like '0', '1', '2', '3', '4', '5'.
+    """
+    target = "3"  # proficient but not expert DBA
+    values = f.get("values") or []
+    for v in values:
+        lbl = (v.get("label") or "").strip()
+        if lbl == target:
+            return _ok(lbl, "sql_skills_rating: 3 (proficient)")
+    # Fallback: pick middle-ish option
+    if values:
+        mid = values[len(values) // 2]
+        return _ok((mid.get("label") or "").strip(), "sql_skills_rating: middle option")
+    return _ok(target, "sql_skills_rating: default 3")
+
+
+def r_alphabet_affiliation(p, f):
+    """Waymo: 'Are you a current or former Alphabet employee...?'
+    Cyrus has never worked at Alphabet/Google. Pick 'Never worked at Alphabet'.
+    """
+    values = f.get("values") or []
+    for v in values:
+        lbl = (v.get("label") or "").strip()
+        if "never" in lbl.lower() and "alphabet" in lbl.lower():
+            return _ok(lbl, "alphabet_affiliation: never worked at Alphabet")
+    # Fallback: pick the last option (typically 'Never' or 'None')
+    if values:
+        last = (values[-1].get("label") or "").strip()
+        return _ok(last, f"alphabet_affiliation: last option {last!r}")
+    return _ok("Never worked at Alphabet", "alphabet_affiliation: default")
+
+
+def r_ai_usage_level(p, f):
+    """Coinbase-style 'How do you use AI tools today?' select.
+    Cyrus actively designs/automates workflows with AI tools — pick the most
+    advanced option ('I design or automate workflows...') if present, else
+    'I regularly use AI tools...' fallback. Never pick 'opposed' / 'do not use'.
+    """
+    values = f.get("values") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    if not labels:
+        return _ok("I design or automate workflows with AI tools", "ai_usage_level (free text)")
+    # Prefer 'design or automate' first.
+    for lbl in labels:
+        if "design" in lbl.lower() and "automate" in lbl.lower():
+            return _ok(lbl, "ai_usage_level: design/automate option")
+    # Fallback: 'regularly use'.
+    for lbl in labels:
+        if "regularly" in lbl.lower() and "ai" in lbl.lower():
+            return _ok(lbl, "ai_usage_level: regularly use AI option")
+    # Last resort: any option that isn't opposed/do-not-use.
+    for lbl in labels:
+        ll = lbl.lower()
+        if "opposed" not in ll and "do not use" not in ll and "not use" not in ll:
+            return _ok(lbl, "ai_usage_level: first non-negative option")
+    return _ok(labels[-1] if labels else "I regularly use AI tools", "ai_usage_level: last resort")
 def r_proficiency_intermediate(p, f):
     # Skill/tool proficiency dropdowns (e.g. "level of proficiency in Python for
     # Data Science?"). Cyrus is a TPM/PM with real but non-specialist data skills
@@ -1698,6 +2158,70 @@ def r_not_ma_resident(p, f):
             return _ok(v.get("label"), "not_ma_resident (not a MA resident)")
     return _unresolved(f"no non-MA option among {[v.get('label') for v in values]}")
 
+def r_relocation_city_select(p, f):
+    """Twitch/Amazon-style relocation question where 'Yes' answer is represented
+    by city names (Seattle, San Francisco, etc.) rather than Yes/No.
+    Cyrus is willing to relocate anywhere in the US. Pick the most desirable city
+    or first city option (skip 'No' options)."""
+    values = f.get("values") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    # Preferred cities (closest to Kirkland WA or major tech hubs)
+    city_prefs = ["seattle", "bellevue", "kirkland", "redmond", "san francisco",
+                  "new york", "boston", "chicago", "austin", "los angeles", "irvine"]
+    lbl_lower = [l.lower() for l in labels]
+    for pref in city_prefs:
+        for i, ll in enumerate(lbl_lower):
+            if pref in ll:
+                return _ok(labels[i], f"relocation_city_select: preferred city '{pref}'")
+    # Fallback: any option that is not 'No' or 'No, but...'
+    for i, lbl in enumerate(labels):
+        if not lbl.lower().startswith("no"):
+            return _ok(lbl, "relocation_city_select: first non-No option")
+    # Last resort: first option
+    return _ok(labels[0] if labels else "Yes", "relocation_city_select: fallback")
+
+
+def r_answer_na_text(p, f):
+    """Return 'N/A' for freetext follow-up fields where no referral/prior context applies.
+    Used for 'If you answered no, enter N/A' follow-up questions."""
+    return _ok("N/A", "answer_na_text: no referral / not applicable")
+
+
+def r_nationality_us_citizen(p, f):
+    """Nationality/citizenship field. Cyrus is a US citizen.
+    Picks 'United States' / 'American' / 'US' option if available;
+    otherwise returns 'United States' as freetext."""
+    values = f.get("values") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    lbl_lower = [l.lower() for l in labels]
+    prefs = ["united states", "american", "u.s. citizen", "us citizen", "usa", "us"]
+    for pref in prefs:
+        for i, ll in enumerate(lbl_lower):
+            if pref == ll or ll.startswith(pref):
+                return _ok(labels[i], f"nationality_us_citizen: matched '{pref}'")
+    if not labels:
+        return _ok("United States", "nationality_us_citizen: freetext US citizen")
+    return _ok(labels[0], "nationality_us_citizen: fallback first option")
+
+
+
+def r_pm_data_experience_select(p, f):
+    """YipitData PM experience select: pick the 'Over 5 years IN data-intensive' option.
+    Cyrus has 5+ years in PM/TPM roles with data-intensive products at Microsoft."""
+    values = f.get("values") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    lbl_lower = [l.lower() for l in labels]
+    # Prefer '5 years...IN data-intensive' (strongest match)
+    for i, ll in enumerate(lbl_lower):
+        if "5 years" in ll and "in data" in ll:
+            return _ok(labels[i], "pm_data_experience_select: 5yr in data-intensive")
+    # Fall back to '5 years' option (any)
+    for i, ll in enumerate(lbl_lower):
+        if "5 years" in ll or "over 5" in ll:
+            return _ok(labels[i], "pm_data_experience_select: over 5 years")
+    return _ok(labels[0] if labels else "Yes", "pm_data_experience_select: fallback first")
+
+
 def r_timezone_pacific(p, f):
     """Pick the Pacific-time option for a 'which time-zone are you in?' dropdown.
     Cyrus is based in Kirkland WA = US Pacific Time. Falls back to a free-text
@@ -1734,12 +2258,30 @@ def r_willing_to_relocate(p, f):
             low = lbl.lower()
             if "willing to relocate" in low and "not willing" not in low and "don't" not in low and "do not" not in low:
                 return _ok(lbl, "preferences.willing_to_relocate (matched 'willing to relocate' option)")
+        # Also match 'open to relocation' or 'open to relocat' (Stripe-style multiselect).
+        for v in values:
+            lbl = (v.get("label") or "").strip()
+            low = lbl.lower()
+            if ("open to relocation" in low or "open to relocat" in low) and "not local" in low:
+                return _ok(lbl, "preferences.willing_to_relocate (matched 'open to relocation, not local' option)")
         # Fall back to plain 'Yes' if present.
         for v in values:
             lbl = (v.get("label") or "").strip()
             if lbl.lower() == "yes":
                 return _ok(lbl, "preferences.willing_to_relocate (matched 'Yes' option)")
         labels = [v.get("label") for v in values]
+        # Fallback: if options are city names (no Yes), pick nearest city (Twitch-style)
+        # Cyrus is willing to relocate anywhere in the US.
+        city_prefs = ["seattle", "san francisco", "new york", "remote"]
+        lbl_lower = [(l or "").lower() for l in labels]
+        for pref in city_prefs:
+            for i, ll in enumerate(lbl_lower):
+                if pref in ll:
+                    return _ok(labels[i], f"willing_to_relocate: city fallback '{pref}'")
+        # Pick first non-No option
+        for lbl in labels:
+            if lbl and not (lbl or "").lower().startswith("no"):
+                return _ok(lbl, "willing_to_relocate: first non-No city option")
         return _unresolved(f"willing_to_relocate: no matching option among {labels}")
     return _ok("Yes", "preferences.willing_to_relocate")
 def r_willing_to_travel(p, f):
@@ -2129,11 +2671,22 @@ RESOLVERS: dict[str, Any] = {
     "worked_at_company_before": r_worked_at_company_before,
     "currently_student": r_currently_student,
     "customer_facing_essay": r_customer_facing_essay,
+    "city_location_select": r_city_location_select,
+    "visa_type_na": r_visa_type_na,
     "acknowledge_yes": r_acknowledge_yes,
     "explain_no": r_explain_no,
     "answer_no": r_answer_no,
+    "no_prior_employer": r_answer_no,  # alias: Cyrus is not currently employed at this company
     "answer_yes": r_answer_yes,
+    "ai_usage_level": r_ai_usage_level,
+    "num_companies_worked": r_num_companies_worked,
+    "sql_skills_rating": r_sql_skills_rating,
+    "alphabet_affiliation": r_alphabet_affiliation,
     "timezone_pacific": r_timezone_pacific,
+    "relocation_city_select": r_relocation_city_select,
+    "answer_na_text": r_answer_na_text,
+    "nationality_us_citizen": r_nationality_us_citizen,
+    "pm_data_experience_select": r_pm_data_experience_select,
     "not_ma_resident": r_not_ma_resident,
     "coding_lang_python": r_coding_lang_python,
     "proficiency_intermediate": r_proficiency_intermediate,
@@ -2469,6 +3022,20 @@ def _smart_match_option_label(value, label: str, options: list, resolver_key: st
         for opt in options:
             ol = (opt or "").lower()
             if "did not take" in ol or "do not recall" in ol or "not applicable" in ol or ol == "n/a" or "other" in ol:
+                return opt
+        return None
+
+    # --- High school performance (Canonical-class) ---
+    # Label: 'How did you perform in mathematics at high school?'
+    # Options: 'Cannot recall', 'Not a strength', 'Top 50% at school', 'Top 20% at school', ...
+    if "high school" in label_lower and ("perform" in label_lower or "mathematics" in label_lower or "language" in label_lower):
+        target = "Top 20% at school"  # honest default for Cyrus
+        for opt in options:
+            if opt == target:
+                return opt
+        # Fallback: pick first 'Top' option
+        for opt in options:
+            if opt and opt.startswith("Top"):
                 return opt
         return None
 

@@ -52,7 +52,7 @@ The right person for this role is mission-driven, moves fast, and is passionate 
 
 - Enough procurement or finance domain knowledge to earn credibility quickly with an AP Director, CPO, or CFO. Formal credentials (CPP, CPSM, CPA, or equivalent) are a plus, not a requirement.
 
-The salary range for this role is $130,000- $150,000 OTE. The salary for this position is determined based on a variety of job-related factors that may include location, relevant experience, education, or particular skills and expertise.
+The salary range for this role is $130,000- $170,000 OTE. The salary for this position is determined based on a variety of job-related factors that may include location, relevant experience, education, or particular skills and expertise.
 
 ## **Perks & Benefits**
 

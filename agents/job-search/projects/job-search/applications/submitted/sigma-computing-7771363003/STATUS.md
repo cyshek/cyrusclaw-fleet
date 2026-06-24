@@ -1,9 +1,33 @@
-PREP-READY — 2026-06-23T04:20:13+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3161
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-sigma-computing-7771363003.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/sigma-computing-7771363003/Cyrus_Shekari_Resume_sigmacomputing_7771363003_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/sigma-computing-7771363003/cover_answers.md
+submitted_at: 2026-06-23T16:25:12+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+
+     },
+     {
+      "id": "title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "final": {
+  "url": "https://job-boards.greenhouse.io/sigmacomputing/jobs/7771363003/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\n\n\nSigma Computing Recruiting Team\n\n\u00a0\n116 New Montgomery St, #700\nSan Francisco, CA "
+ },
+ "status": "SUBMITTED"
+}
+

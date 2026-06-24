@@ -1,6 +1,31 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T03:34:01+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-24
 role_id: 3325
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_66404569", "label": "Do you have 5+ years of Product Management experience in data-intensive products (e.g., data feeds, data platforms, or B2B SaaS)?", "reason": "answer_yes: no 'Yes' option among ['Over 5 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', 'Over 5 years of Product Management experience IN data-intensive products or B2B SaaS.', 
+submitted_at: 2026-06-24T01:18:55+00:00
+
+Runner tail:
+     "id": "title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "3H0UZDiJ",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/yipitdata/jobs/7883756/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\u00a0\n\nView more jobs at YipitData\nBack to job post\n\nGive your application a boost!\n\nSig"
+ },
+ "status": "SUBMITTED"
+}
+

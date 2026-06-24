@@ -1,0 +1,681 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/instacart/jobs/7985466",
+  "org": "instacart",
+  "job_id": "7985466",
+  "job_title": "People Experience Program Manager - San Francisco",
+  "job_location": "San Francisco- Remote",
+  "fetched_at": "2026-06-24T03:16:01Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/instacart/jobs/7985466?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 23,
+    "filled": 18,
+    "filled_needs_review": 0,
+    "declined": 5,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67431421",
+      "label": "Are you currently, or have you previously, worked for Instacart?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67431422",
+      "label": "How did you hear about this job?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_67431423",
+      "label": "LinkedIn Profile:",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67431424",
+      "label": "Are you legally entitled to work in Canada?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67431425",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67431426",
+      "label": "Which state or province do you currently live in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "(US) Delaware",
+      "source": "address.state (NOTE: 'WA' not literally in options ['(US) Alabama', '(US) Alaska', '(US) Arizona', '(US) Arkansas', '(US) California', '(US) Colorado', '(US) Connecticut', '(US) Delaware', '(US) Florida', '(US) Georgia', '(US) Hawaii', '(US) Idaho', '(US) Illinois', '(US) Indiana', '(US) Iowa', '(US) Kansas', '(US) Kentucky', '(US) Louisiana', '(US) Maine', '(US) Maryland', '(US) Massachusetts', '(US) Michigan', '(US) Minnesota', '(US) Mississippi', '(US) Missouri', '(US) Montana', '(US) Nebraska', '(US) Nevada', '(US) New Hampshire', '(US) New Jersey', '(US) New Mexico', '(US) New York', '(US) North Carolina', '(US) North Dakota', '(US) Ohio', '(US) Oklahoma', '(US) Oregon', '(US) Pennsylvania', '(US) Rhode Island', '(US) South Carolina', '(US) South Dakota', '(US) Tennessee', '(US) Texas', '(US) Utah', '(US) Vermont', '(US) Virginia', '(US) Washington', '(US) Washington, D.C.', '(US) West Virginia', '(US) Wisconsin', '(US) Wyoming', '(CAN) Alberta', '(CAN) British Columbia', '(CAN) Manitoba', '(CAN) New Brunswick', '(CAN) Newfoundland and Labrador', '(CAN) Nova Scotia', '(CAN) Ontario', '(CAN) Prince Edward Island', '(CAN) Quebec', '(CAN) Saskatchewan']) | smart-matched to option '(US) Delaware'",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "(US) Alabama",
+          "value": 727023089
+        },
+        {
+          "label": "(US) Alaska",
+          "value": 727023090
+        },
+        {
+          "label": "(US) Arizona",
+          "value": 727023091
+        },
+        {
+          "label": "(US) Arkansas",
+          "value": 727023092
+        },
+        {
+          "label": "(US) California",
+          "value": 727023093
+        },
+        {
+          "label": "(US) Colorado",
+          "value": 727023094
+        },
+        {
+          "label": "(US) Connecticut",
+          "value": 727023095
+        },
+        {
+          "label": "(US) Delaware",
+          "value": 727023096
+        },
+        {
+          "label": "(US) Florida",
+          "value": 727023097
+        },
+        {
+          "label": "(US) Georgia",
+          "value": 727023098
+        },
+        {
+          "label": "(US) Hawaii",
+          "value": 727023099
+        },
+        {
+          "label": "(US) Idaho",
+          "value": 727023100
+        },
+        {
+          "label": "(US) Illinois",
+          "value": 727023101
+        },
+        {
+          "label": "(US) Indiana",
+          "value": 727023102
+        },
+        {
+          "label": "(US) Iowa",
+          "value": 727023103
+        },
+        {
+          "label": "(US) Kansas",
+          "value": 727023104
+        },
+        {
+          "label": "(US) Kentucky",
+          "value": 727023105
+        },
+        {
+          "label": "(US) Louisiana",
+          "value": 727023106
+        },
+        {
+          "label": "(US) Maine",
+          "value": 727023107
+        },
+        {
+          "label": "(US) Maryland",
+          "value": 727023108
+        },
+        {
+          "label": "(US) Massachusetts",
+          "value": 727023109
+        },
+        {
+          "label": "(US) Michigan",
+          "value": 727023110
+        },
+        {
+          "label": "(US) Minnesota",
+          "value": 727023111
+        },
+        {
+          "label": "(US) Mississippi",
+          "value": 727023112
+        },
+        {
+          "label": "(US) Missouri",
+          "value": 727023113
+        },
+        {
+          "label": "(US) Montana",
+          "value": 727023114
+        },
+        {
+          "label": "(US) Nebraska",
+          "value": 727023115
+        },
+        {
+          "label": "(US) Nevada",
+          "value": 727023116
+        },
+        {
+          "label": "(US) New Hampshire",
+          "value": 727023117
+        },
+        {
+          "label": "(US) New Jersey",
+          "value": 727023118
+        },
+        {
+          "label": "(US) New Mexico",
+          "value": 727023119
+        },
+        {
+          "label": "(US) New York",
+          "value": 727023120
+        },
+        {
+          "label": "(US) North Carolina",
+          "value": 727023121
+        },
+        {
+          "label": "(US) North Dakota",
+          "value": 727023122
+        },
+        {
+          "label": "(US) Ohio",
+          "value": 727023123
+        },
+        {
+          "label": "(US) Oklahoma",
+          "value": 727023124
+        },
+        {
+          "label": "(US) Oregon",
+          "value": 727023125
+        },
+        {
+          "label": "(US) Pennsylvania",
+          "value": 727023126
+        },
+        {
+          "label": "(US) Rhode Island",
+          "value": 727023127
+        },
+        {
+          "label": "(US) South Carolina",
+          "value": 727023128
+        },
+        {
+          "label": "(US) South Dakota",
+          "value": 727023129
+        },
+        {
+          "label": "(US) Tennessee",
+          "value": 727023130
+        },
+        {
+          "label": "(US) Texas",
+          "value": 727023131
+        },
+        {
+          "label": "(US) Utah",
+          "value": 727023132
+        },
+        {
+          "label": "(US) Vermont",
+          "value": 727023133
+        },
+        {
+          "label": "(US) Virginia",
+          "value": 727023134
+        },
+        {
+          "label": "(US) Washington",
+          "value": 727023135
+        },
+        {
+          "label": "(US) Washington, D.C.",
+          "value": 727023136
+        },
+        {
+          "label": "(US) West Virginia",
+          "value": 727023137
+        },
+        {
+          "label": "(US) Wisconsin",
+          "value": 727023138
+        },
+        {
+          "label": "(US) Wyoming",
+          "value": 727023139
+        },
+        {
+          "label": "(CAN) Alberta",
+          "value": 727023140
+        },
+        {
+          "label": "(CAN) British Columbia",
+          "value": 727023141
+        },
+        {
+          "label": "(CAN) Manitoba",
+          "value": 727023142
+        },
+        {
+          "label": "(CAN) New Brunswick",
+          "value": 727023143
+        },
+        {
+          "label": "(CAN) Newfoundland and Labrador",
+          "value": 727023144
+        },
+        {
+          "label": "(CAN) Nova Scotia",
+          "value": 727023145
+        },
+        {
+          "label": "(CAN) Ontario",
+          "value": 727023146
+        },
+        {
+          "label": "(CAN) Prince Edward Island",
+          "value": 727023147
+        },
+        {
+          "label": "(CAN) Quebec",
+          "value": 727023148
+        },
+        {
+          "label": "(CAN) Saskatchewan",
+          "value": 727023149
+        }
+      ]
+    },
+    {
+      "id": "question_67431427",
+      "label": "Will you now or in the future require immigration sponsorship to work for Instacart?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_908",
+      "label": "What is your gender or gender identity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Woman",
+          "value": 4928
+        },
+        {
+          "label": "Man",
+          "value": 4929
+        },
+        {
+          "label": "Non-Conforming/Non Binary",
+          "value": 4932
+        },
+        {
+          "label": "Not Listed",
+          "value": 4935
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 11790
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_909",
+      "label": "Do you identify as a member of the LGBT2QIA+ community?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4937
+        },
+        {
+          "label": "No",
+          "value": 4938
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 11791
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_910",
+      "label": "What is your race and/or ethnicity? Please check all that apply.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "White / Caucasian (A person having origins in any of the original peoples of Europe, the Middle East, or North Africa)",
+          "value": 4940
+        },
+        {
+          "label": "Hispanic or Latinx (A person of Cuban, Mexican, Puerto Rican, South or Central American or other Spanish culture or origin regardless of race)",
+          "value": 4941
+        },
+        {
+          "label": "Black or African-American (A person of African, Caribbean, West Indian descent)",
+          "value": 4942
+        },
+        {
+          "label": "Asian or Asian-American (A person having origins in any of the original peoples of Asia and the Indian subcontinent including all 48 Asian countries - ie. Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, Vietnam)",
+          "value": 4943
+        },
+        {
+          "label": "Native Hawaiian or other Pacific Islander (A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands)",
+          "value": 4944
+        },
+        {
+          "label": "Indigenous Peoples (A person having origins in any of the original peoples including Aboriginal People, American Indian, Alaska Native, First Nations, Native American, or Alaska Native, Indigenous peoples from non-US countries)",
+          "value": 4945
+        },
+        {
+          "label": "A race, ethnicity, or origin not shown",
+          "value": 4946
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 11792
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_911",
+      "label": "Military Veteran Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am not a Protected Veteran",
+          "value": 4950
+        },
+        {
+          "label": "I am a Protected Veteran",
+          "value": 11793
+        },
+        {
+          "label": "I am an Active Military Person",
+          "value": 4951
+        },
+        {
+          "label": "I identify as One or More of the Classifications of a Protected Veteran",
+          "value": 4952
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 11794
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1213",
+      "label": "Disability Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have a history/record of having a disability",
+          "value": 6760
+        },
+        {
+          "label": "No, I don't have a disability, or a history/record of having a disability",
+          "value": 6761
+        },
+        {
+          "label": "I am unsure of my disability status",
+          "value": 6762
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 11797
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

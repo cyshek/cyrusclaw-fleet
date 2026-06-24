@@ -1,0 +1,5 @@
+# Cover answers — Zip, AI Forward Deployed Engineer (zip-5bb93da5-78ab-47b1-b31a-8bb7fb84fc8d)
+
+## Full Name
+
+Cyrus Shekari

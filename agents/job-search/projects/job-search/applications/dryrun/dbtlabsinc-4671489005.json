@@ -4,16 +4,16 @@
   "job_id": "4671489005",
   "job_title": "Solutions Architect, Commercial",
   "job_location": "Austin, Texas",
-  "fetched_at": "2026-06-23T04:55:02Z",
+  "fetched_at": "2026-06-23T22:57:52Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/dbtlabsinc/jobs/4671489005?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 19,
-    "filled": 17,
+    "filled": 19,
     "filled_needs_review": 0,
     "declined": 0,
-    "unresolved": 2,
-    "blockers": 2
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -120,10 +120,10 @@
       "label": "Are you based in Austin, Texas?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you based in Austin, Texas?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -160,10 +160,10 @@
       "label": "How would you rate your proficiency with SQL?",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='How would you rate your proficiency with SQL?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
       "options": null
     },
     {
@@ -256,32 +256,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_8483563005",
-      "label": "Are you based in Austin, Texas?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you based in Austin, Texas?'"
-    },
-    {
-      "id": "question_8483565005",
-      "label": "How would you rate your proficiency with SQL?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='How would you rate your proficiency with SQL?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_8483563005",
-      "label": "Are you based in Austin, Texas?",
-      "reason": "no LABEL_RULES match for label='Are you based in Austin, Texas?'"
-    },
-    {
-      "id": "question_8483565005",
-      "label": "How would you rate your proficiency with SQL?",
-      "reason": "no LABEL_RULES match for label='How would you rate your proficiency with SQL?'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

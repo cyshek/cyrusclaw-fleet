@@ -1,0 +1,82 @@
+# Product Manager 
+
+**Company:** Rillet
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/rillet/a182464e-76c1-4f0b-af78-76ba8a611281
+**Ashby Org:** rillet
+**Ashby Job ID:** a182464e-76c1-4f0b-af78-76ba8a611281
+
+---
+
+## **What We Do**
+
+Rillet serves accounting and finance teams. Our customers are the financial brains of their companies. Our job is to help them run the numbers with impossible speed, accuracy, and insight.
+
+Rillet is an AI-native ERP that can drive a zero-day close. We are different because of our unified source-of-truth data model, hundreds of best-in-class native integrations (Stripe, Ramp, Salesforce, etc), automated & auditable workflows, multi-entity consolidation, and quickly expanding army of specialized AI agents (e.g., accrual, audit, P&L flux, board decks, etc). These earn us a consistently[ perfect customer satisfaction score](https://www.g2.com/products/rillet/reviews). High-growth AI customers like Mercor, and Function Health love our ship velocity, because their financial stack needs to scale as quickly as they do.
+
+This huge market is ours to take. We have raised $100M from leading investors (including Sequoia, a16z, Iconiq, Oak HC/FT, and First Round) to **help everyone run their numbers at the speed of AI.**
+
+## **Who We Are**
+
+Rillet’s pace is not for everyone. Intelligence is table stakes. To succeed here, you need extreme speed, agency, and flexibility.
+
+Successful Rilleteers do not wait for assignments. They internalize a mission, design a strategy, and bring back results that are better, faster, and more creative than a manager could have asked for.
+
+Work revolves around our customers. Successful Rilleteers are energized by delivering the most important things, even those that weren’t in the original plan.
+
+In this role, you do not need to be an accountant. But you do need to appreciate the value that our customers can create for their own company when we equip them with the perfect financial tools. Successful Rilleteers love powering the financial core of the world’s fastest-growing companies.
+
+## **Who We Need**
+
+We’re building an industry-defining accounting and finance platform and looking for a Product Manager to define and own core product experiences across our AI-embedded ERP. This role is ideal for someone who thrives in complex, regulated domains and enjoys turning messy, real-world problems into clear product direction. You’ll play a critical role in shaping a product that meets the nuanced needs of finance and operations teams. Your background in enterprise SaaS product development, particularly in workflow-driven, data-heavy systems like accounting, reporting, or financial operations, will help guide thoughtful tradeoffs between automation, control, and trust. You’ll work closely with customers and internal teams to translate complex workflows and compliance requirements into intuitive product features that solve real-world problems..
+
+We're looking for teammates who value in-person collaboration and are within commutable distance of our NYC or San Francisco offices (or willing to relocate). Team members are required to work in-office Tuesdays and Thursdays, plus one additional flexible in-office day. Certain roles may require additional in-office time based on function.
+
+## **What You'll Do**
+
+- Define, prioritize, and execute features that align with customer needs and business goals.
+
+- Partner closely with engineers and designers to deliver accurate, intuitive solutions.
+
+- Gather feedback from customers, internal stakeholders, and the market to inform product development. Deeply understand customer workflows, pain points, and constraints through interviews, data, and direct usage.
+
+- Create product documentation, release notes, and training materials.
+
+- Support QA and user acceptance testing for finance-related features.
+
+- Own the product roadmap for your domain (e.g., accounting, reporting, workflows, integrations
+
+- Identify where AI meaningfully improves outcomes vs. where determinism and control matter more
+
+- Measure adoption, retention, and real customer value—not just feature delivery
+Help shape positioning and messaging for new capabilities
+
+## **Who We're Looking For**
+
+- 4+ years of Product Management experience (enterprise SaaS strongly preferred)
+
+- Experience working on complex, data-heavy, or workflow-driven products
+
+- Strong product sense: you can decompose messy problems into clear solutions
+
+- Excellent written and verbal communication—especially in ambiguous environments
+
+- Proven ability to partner effectively with senior engineers and designers
+
+- You’re opinionated but open to being wrong
+
+- You’re energized by complexity and balancing short term wins with long-term product thinking
+
+- Strong Plus: Experience with ERP, accounting, finance, or operational systems
+
+- Strong Plus: Startup or early-stage company experience
+
+## **Life at Rillet:**
+
+- **Competitive Pay & Benefits: **Backed by world-class investors, we offer strong salaries plus equity so you share in our success. We've got you covered with top-tier health and dental insurance, premiums partially or fully covered for you, plus 90% coverage for dependents.
+
+- **Room to Grow:** We're building a team of ambitious, high-performing people who will grow with the company. As Rillet scales, so will your role, responsibilities, and compensation.
+
+- **Flexibility That Works: **Take the time you need with flexible PTO and 9 company-wide holidays. We value both the flexibility of remote and hybrid work and the creativity and energy that comes from in-person collaboration at our hubs in San Francisco, NYC, and Barcelona.
+
+- **Build Real Connections: **Great work happens when people connect. Join us for team offsites in incredible locations, our team has bonded everywhere from New York and San Francisco to Toronto, Italy, France, and beyond.

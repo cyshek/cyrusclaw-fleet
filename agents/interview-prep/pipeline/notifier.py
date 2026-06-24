@@ -1,71 +1,107 @@
 """
-notifier.py -- Send interview detection notifications to Cyrus via Discord
+notifier.py -- Send interview detection notifications to Cyrus via Discord.
+Collapses signals BY COMPANY so Cyrus hears about each company ONCE (not once per
+email). Within a company, the strongest/most-recent signal is shown.
 """
 
 import subprocess
 import json
 import os
 
-DISCORD_CHANNEL_ID = "1513393827904360558"  # #interview-agent channel
+DISCORD_CHANNEL_ID = "1513393827904360558"  # #interview-prep channel
+
+
+def _company_of(item):
+    sig = item["signal"]
+    try:
+        from classifier import canonical_company
+        return (canonical_company(sig.get("company_guess"),
+                                  sig.get("subject", ""),
+                                  sig.get("sender", "")) or "Unknown company")
+    except Exception:
+        return sig.get("company_guess") or "Unknown company"
+
+
+def _signal_strength(sig):
+    """Score a signal so the strongest one represents the company."""
+    try:
+        from classifier import classify
+        _i, score, _l, _r = classify(sig.get("subject", ""), sig.get("sender", ""),
+                                     sig.get("snippet", ""))
+        return score
+    except Exception:
+        return 0
 
 
 def notify_cyrus(signals_with_tracker):
     """
-    signals_with_tracker: list of dicts, each with:
-      - signal: the raw email/calendar signal
-      - tracker_row: the matched tracker row (or None)
+    signals_with_tracker: list of {signal, tracker_row}.
+    Groups by canonical company; emits one block per company.
     """
     if not signals_with_tracker:
         return
 
-    lines = [f"🔔 **Interview signals detected** — {len(signals_with_tracker)} new:\n"]
-
+    # Group by company.
+    groups = {}
     for item in signals_with_tracker:
-        sig = item["signal"]
-        tr = item.get("tracker_row")
+        co = _company_of(item)
+        groups.setdefault(co, []).append(item)
 
-        company = sig.get("company_guess") or "Unknown company"
-        role = sig.get("role_guess") or (tr.get("role") if tr else None) or "Unknown role"
-        source = sig.get("source", "email")
+    n_companies = len(groups)
+    n_emails = len(signals_with_tracker)
+    header = (f"🔔 **Interview activity** — {n_companies} "
+              f"{'company' if n_companies == 1 else 'companies'}"
+              f" ({n_emails} new email{'s' if n_emails != 1 else ''}):\n")
+    lines = [header]
+
+    # Sort companies by their strongest signal's recency (latest first).
+    def _group_sort_key(kv):
+        items = kv[1]
+        latest = max((it["signal"].get("date", "") for it in items), default="")
+        return latest
+    for company, items in sorted(groups.items(), key=_group_sort_key, reverse=True):
+        # Pick the strongest signal to headline the company.
+        best = max(items, key=lambda it: _signal_strength(it["signal"]))
+        sig = best["signal"]
+        tr = best.get("tracker_row")
+
+        role = sig.get("role_guess") or (tr.get("role") if tr else None) or "role TBD"
         subject = sig.get("subject", "")
-        date = sig.get("date", "")
+        date = sig.get("date", "")[:10]
+        n = len(items)
+        more = f"  (+{n-1} more email{'s' if n-1 != 1 else ''})" if n > 1 else ""
 
-        lines.append(f"**{company}** — {role}")
-        lines.append(f"  Source: {source} | `{subject[:80]}`")
-        if date:
-            lines.append(f"  Date: {date}")
+        lines.append(f"**{company}** — {role}{more}")
+        lines.append(f"  ↗️ `{subject[:80]}`" + (f" · {date}" if date else ""))
 
         if tr:
-            ambiguous = tr.get("_ambiguous", False)
-            prep_path = tr.get("prep_path") or ""
-            jd_url = tr.get("jd_url") or ""
             matched_role = tr.get("role", "")
-
-            if ambiguous:
-                all_matches = tr.get("_all_matches", [])
-                lines.append(f"  ⚠️ Ambiguous: {len(all_matches)} roles on file for {company}:")
-                for m in all_matches[:3]:
-                    lines.append(f"    - {m['role']} (applied {m['applied_on']})")
-                lines.append(f"  Using most recent: **{matched_role}**")
+            jd_url = tr.get("jd_url") or ""
+            prep_path = tr.get("prep_path") or ""
+            if tr.get("_ambiguous"):
+                n_roles = len(tr.get('_all_matches', []))
+                # Only trust the guessed role if the email actually hinted a role;
+                # otherwise say it's ambiguous rather than asserting a wrong one.
+                if sig.get("role_guess"):
+                    lines.append(f"  ⚠️ {n_roles} roles on file — best guess **{matched_role}** (confirm)")
+                else:
+                    lines.append(f"  ⚠️ {n_roles} roles on file for this company — tell me which when you build")
             else:
-                lines.append(f"  ✅ Tracker match: **{matched_role}**")
-
+                lines.append(f"  ✅ Tracker: **{matched_role}**")
             if prep_path:
-                lines.append(f"  Resume folder: `{prep_path}`")
-            if jd_url:
+                lines.append(f"  📁 `{prep_path}`")
+            if jd_url and not tr.get("_ambiguous"):
                 lines.append(f"  JD: {jd_url}")
         else:
-            lines.append(f"  ❌ No tracker match found — will use master resume")
+            lines.append("  ❌ no tracker match — master resume")
+        lines.append("")
 
-        lines.append("")  # blank line between signals
-
-    lines.append("Reply with **`build [company]`** to trigger a full bundle, or I'll build all automatically in 30 min if you don't respond.")
+    lines.append("Reply **`build [company]`** to trigger a bundle.")
 
     message = "\n".join(lines)
-    print(f"[notifier] Sending notification ({len(message)} chars)")
+    print(f"[notifier] Sending notification ({len(message)} chars, {n_companies} companies)")
     print(message)
 
-    # Use openclaw CLI to send to the channel
     result = subprocess.run(
         ["openclaw", "message", "send",
          "--channel", "discord",

@@ -4,16 +4,16 @@
   "job_id": "8582338002",
   "job_title": "Program Manager - Culture & People Development",
   "job_location": "San Francisco, CA",
-  "fetched_at": "2026-06-23T03:19:20Z",
+  "fetched_at": "2026-06-24T00:19:44Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/twitch/jobs/8582338002?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 32,
-    "filled": 20,
+    "filled": 26,
     "filled_needs_review": 1,
     "declined": 4,
-    "unresolved": 7,
-    "blockers": 6
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -131,10 +131,10 @@
       "label": "Are you familiar with Twitch? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you familiar with Twitch? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes, I'm a Twitch Partner",
+      "source": "acknowledge consent / accuracy (default Yes) | smart-matched to option \"Yes, I'm a Twitch Partner\"",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "Yes, I'm a Twitch Partner",
@@ -167,10 +167,10 @@
       "label": "Are you currently a Twitch employee?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you currently a Twitch employee?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "no_prior_employer",
       "options": [
         {
           "label": "Yes",
@@ -187,9 +187,9 @@
       "label": "Are you open to relocation? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "willing_to_relocate: no matching option among ['No', \"No, but I'm open to a remote position\", 'San Francisco, CA', 'Irvine, CA', 'Los Angeles, CA', 'Seattle, WA', 'New York, NY', 'Salt Lake City, UT', 'Chicago, IL', 'London, UK', 'Seoul, Korea', 'Tokyo, Japan', 'Taipei, Taiwan', 'Berlin, Germany', 'Hamburg, Germany', 'Singapore', 'Sydney, Australia']",
-      "status": "unresolved",
+      "value": "Seattle, WA",
+      "source": "willing_to_relocate: city fallback 'seattle'",
+      "status": "filled",
       "matched_rule": "willing_to_relocate",
       "options": [
         {
@@ -327,10 +327,10 @@
       "label": "Are you subject to a non-competition agreement or other agreement that would preclude or restrict your employment at Amazon? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you subject to a non-competition agreement or other agreement that would preclude or restrict your employment at Amazon? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -347,10 +347,10 @@
       "label": "If offered employment by Amazon, would you be legally eligible to begin employment immediately?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='If offered employment by Amazon, would you be legally eligible to begin employment immediately?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
       "options": [
         {
           "label": "Yes",
@@ -387,10 +387,10 @@
       "label": "Have you held H-1B status, or had an H-1B petition approved on your behalf, within the preceding 6 years for an employer other than a cap exempt institution? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you held H-1B status, or had an H-1B petition approved on your behalf, within the preceding 6 years for an employer other than a cap exempt institution? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -2212,80 +2212,13 @@
   ],
   "unresolved": [
     {
-      "id": "question_36848894002",
-      "label": "Are you familiar with Twitch? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you familiar with Twitch? '"
-    },
-    {
-      "id": "question_36848895002",
-      "label": "Are you currently a Twitch employee?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you currently a Twitch employee?'"
-    },
-    {
-      "id": "question_36848896002",
-      "label": "Are you open to relocation? ",
-      "required": true,
-      "reason": "willing_to_relocate: no matching option among ['No', \"No, but I'm open to a remote position\", 'San Francisco, CA', 'Irvine, CA', 'Los Angeles, CA', 'Seattle, WA', 'New York, NY', 'Salt Lake City, UT', 'Chicago, IL', 'London, UK', 'Seoul, Korea', 'Tokyo, Japan', 'Taipei, Taiwan', 'Berlin, Germany', 'Hamburg, Germany', 'Singapore', 'Sydney, Australia']"
-    },
-    {
-      "id": "question_36848900002",
-      "label": "Are you subject to a non-competition agreement or other agreement that would preclude or restrict your employment at Amazon? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you subject to a non-competition agreement or other agreement that would preclude or restrict your employment at Amazon? '"
-    },
-    {
-      "id": "question_36848901002",
-      "label": "If offered employment by Amazon, would you be legally eligible to begin employment immediately?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='If offered employment by Amazon, would you be legally eligible to begin employment immediately?'"
-    },
-    {
-      "id": "question_36848903002",
-      "label": "Have you held H-1B status, or had an H-1B petition approved on your behalf, within the preceding 6 years for an employer other than a cap exempt institution? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you held H-1B status, or had an H-1B petition approved on your behalf, within the preceding 6 years for an employer other than a cap exempt institution? '"
-    },
-    {
       "id": "question_36848907002",
       "label": "What is your expected total base pay compensation for your next role. Please do not disclose current or past compensation.",
       "required": false,
       "reason": "no LABEL_RULES match for label='What is your expected total base pay compensation for your next role. Please do not disclose current or past compensation.'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_36848894002",
-      "label": "Are you familiar with Twitch? ",
-      "reason": "no LABEL_RULES match for label='Are you familiar with Twitch? '"
-    },
-    {
-      "id": "question_36848895002",
-      "label": "Are you currently a Twitch employee?",
-      "reason": "no LABEL_RULES match for label='Are you currently a Twitch employee?'"
-    },
-    {
-      "id": "question_36848896002",
-      "label": "Are you open to relocation? ",
-      "reason": "willing_to_relocate: no matching option among ['No', \"No, but I'm open to a remote position\", 'San Francisco, CA', 'Irvine, CA', 'Los Angeles, CA', 'Seattle, WA', 'New York, NY', 'Salt Lake City, UT', 'Chicago, IL', 'London, UK', 'Seoul, Korea', 'Tokyo, Japan', 'Taipei, Taiwan', 'Berlin, Germany', 'Hamburg, Germany', 'Singapore', 'Sydney, Australia']"
-    },
-    {
-      "id": "question_36848900002",
-      "label": "Are you subject to a non-competition agreement or other agreement that would preclude or restrict your employment at Amazon? ",
-      "reason": "no LABEL_RULES match for label='Are you subject to a non-competition agreement or other agreement that would preclude or restrict your employment at Amazon? '"
-    },
-    {
-      "id": "question_36848901002",
-      "label": "If offered employment by Amazon, would you be legally eligible to begin employment immediately?",
-      "reason": "no LABEL_RULES match for label='If offered employment by Amazon, would you be legally eligible to begin employment immediately?'"
-    },
-    {
-      "id": "question_36848903002",
-      "label": "Have you held H-1B status, or had an H-1B petition approved on your behalf, within the preceding 6 years for an employer other than a cap exempt institution? ",
-      "reason": "no LABEL_RULES match for label='Have you held H-1B status, or had an H-1B petition approved on your behalf, within the preceding 6 years for an employer other than a cap exempt institution? '"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

@@ -5,21 +5,21 @@
   "job_id": "f3143f0e-6b8a-4a6a-bbb7-7b14818a9667",
   "job_title": "Product Manager",
   "job_location": "San Francisco",
-  "fetched_at": "2026-06-23T07:20:44Z",
+  "fetched_at": "2026-06-23T22:08:06Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 7,
-    "filled": 5,
+    "filled": 6,
     "filled_needs_review": 0,
     "declined": 0,
     "needs_essay": 1,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6__systemfield_name",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6__systemfield_name"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac__systemfield_name"
     },
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6__systemfield_email",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +42,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6__systemfield_email"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac__systemfield_email"
     },
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6__systemfield_resume",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,10 +55,10 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6__systemfield_resume"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac__systemfield_resume"
     },
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_a6a4d9ed-d56f-4932-9c6f-36dbed803f6f",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_a6a4d9ed-d56f-4932-9c6f-36dbed803f6f",
       "label": "What's a product you love and why? If you were its PM, what would you change and how would you measure the impact?",
       "type": "textarea",
       "required": true,
@@ -68,17 +68,17 @@
       "matched_rule": null,
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_a6a4d9ed-d56f-4932-9c6f-36dbed803f6f"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_a6a4d9ed-d56f-4932-9c6f-36dbed803f6f"
     },
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_147cdc07-8789-496f-8ef1-5c5e12c2d6ab",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_147cdc07-8789-496f-8ef1-5c5e12c2d6ab",
       "label": "Are you willing to work in-person out of our San Francisco office?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you willing to work in-person out of our San Francisco office?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -90,10 +90,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_147cdc07-8789-496f-8ef1-5c5e12c2d6ab"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_147cdc07-8789-496f-8ef1-5c5e12c2d6ab"
     },
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_9c72234f-ed6d-4f3b-977c-48462405bfd9",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_9c72234f-ed6d-4f3b-977c-48462405bfd9",
       "label": "Will you require visa sponsorship now or in the future?",
       "type": "multi_value_single_select",
       "required": true,
@@ -112,10 +112,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_9c72234f-ed6d-4f3b-977c-48462405bfd9"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_9c72234f-ed6d-4f3b-977c-48462405bfd9"
     },
     {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_4c1111a9-4af8-4ab9-845c-13411fa017d2",
+      "id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_4c1111a9-4af8-4ab9-845c-13411fa017d2",
       "label": "If yes, can you tell us about your current work authorization status and any sponsorship needs? Please specify, such as H1B transfer/new H1B/TN/etc. If no, please put N/A.",
       "type": "input_text",
       "required": true,
@@ -125,22 +125,9 @@
       "matched_rule": "needs_sponsorship",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_4c1111a9-4af8-4ab9-845c-13411fa017d2"
+      "_ashby_id": "afc9bb32-7652-46e8-9a4b-56e479ba58ac_4c1111a9-4af8-4ab9-845c-13411fa017d2"
     }
   ],
-  "unresolved": [
-    {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_147cdc07-8789-496f-8ef1-5c5e12c2d6ab",
-      "label": "Are you willing to work in-person out of our San Francisco office?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you willing to work in-person out of our San Francisco office?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "8bd6819a-7339-461b-8e73-2c1be2d207b6_147cdc07-8789-496f-8ef1-5c5e12c2d6ab",
-      "label": "Are you willing to work in-person out of our San Francisco office?",
-      "reason": "no LABEL_RULES match for label='Are you willing to work in-person out of our San Francisco office?'"
-    }
-  ]
+  "unresolved": [],
+  "blockers": []
 }

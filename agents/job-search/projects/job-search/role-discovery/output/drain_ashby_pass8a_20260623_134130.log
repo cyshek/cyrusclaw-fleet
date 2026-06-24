@@ -1,0 +1,683 @@
+[2026-06-23T13:41:30Z] === Ashby Residential Drain Pass 8A ===
+[2026-06-23T13:41:30Z] Processing 25 remaining slugs (artie already submitted)
+[2026-06-23T13:41:30Z] 
+[2026-06-23T13:41:30Z] [1/25] ashby-2fc178fc-fa92-463a-b788-1c66e3f32a00 (role_id=3246)
+[2026-06-23T13:41:30Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-ashby-2fc178fc-fa92-463a-b788-1c66e3f32a00.json
+[2026-06-23T13:42:01Z]   | [runner] captcha v3 solved in 0.2s, token len=2318
+[2026-06-23T13:42:01Z]   | [runner] step 11: browser.act.evaluate
+[2026-06-23T13:42:01Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:42:01Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[2026-06-23T13:42:01Z]   | [runner] yesno real-click fail ffa2a83da8a9: ElementHandle.click: Timeout 3000ms exceeded.
+[2026-06-23T13:42:01Z]   | Call log:
+[2026-06-23T13:42:01Z]   |   - attempting click action
+[2026-06-23T13:42:01Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:42:01Z]   |     - element is not stable
+[2026-06-23T13:42:01Z]   |   - retrying click action
+[2026-06-23T13:42:01Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:42:01Z]   | 
+[2026-06-23T13:42:01Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:42:01Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:42:01Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:42:01Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:42:01Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:42:01Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:42:01Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:42:01Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:42:01Z]   exit_code=0
+[2026-06-23T13:42:01Z]   => SUBMITTED ✓
+[2026-06-23T13:42:01Z] 
+[2026-06-23T13:42:04Z] [2/25] boom-b6f53406-66b9-45aa-bcd9-9adbf5436a26 (role_id=3286)
+[2026-06-23T13:42:04Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-boom-b6f53406-66b9-45aa-bcd9-9adbf5436a26.json
+[2026-06-23T13:42:37Z]   | [runner] reassert-text pass 2: repaired=1 ['5-4bc2-829a-5a2ea43021b1'] missing=0
+[2026-06-23T13:42:37Z]   | [runner] reassert-text pass 3: repaired=1 ['5-4bc2-829a-5a2ea43021b1'] missing=0
+[2026-06-23T13:42:37Z]   | [runner] UPLOAD-LAST chain_p7 re-assert: re-won 1 field(s) ['5-4bc2-829a-5a2ea43021b1']
+[2026-06-23T13:42:37Z]   | [runner] step 9: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:42:37Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:42:37Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2276
+[2026-06-23T13:42:37Z]   | [runner] captcha v3 solved in 0.3s, token len=2276
+[2026-06-23T13:42:37Z]   | [runner] step 10: browser.act.evaluate
+[2026-06-23T13:42:37Z]   | [runner] FINAL pre-submit re-fill: re-set 1 field(s)
+[2026-06-23T13:42:37Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:42:37Z]   | [runner] reassert-text pass 1: repaired=6 ['629dbb__systemfield_name', '29dbb__systemfield_email', '2-4fa8-89b3-e26a57fd461f', '5-4bc2-829a-5a2ea43021b1', '3-42fb-92f6-d7ce4ae9cb46', 'f-4015-8214-4af1075f02be'] missing=0
+[2026-06-23T13:42:37Z]   | [runner] reassert-text pass 2: repaired=6 ['629dbb__systemfield_name', '29dbb__systemfield_email', '2-4fa8-89b3-e26a57fd461f', '5-4bc2-829a-5a2ea43021b1', '3-42fb-92f6-d7ce4ae9cb46', 'f-4015-8214-4af1075f02be'] missing=0
+[2026-06-23T13:42:37Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 6 field(s) ['629dbb__systemfield_name', '29dbb__systemfield_email', '2-4fa8-89b3-e26a57fd461f', '5-4bc2-829a-5a2ea43021b1', '3-42fb-92f6-d7ce4ae9cb46', 'f-4015-8214-4af1075f02be']
+[2026-06-23T13:42:37Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:42:37Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=6
+[2026-06-23T13:42:37Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:42:37Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:42:37Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:42:37Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:42:37Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:42:37Z]   exit_code=0
+[2026-06-23T13:42:37Z]   => SUBMITTED ✓
+[2026-06-23T13:42:37Z] 
+[2026-06-23T13:42:40Z] [3/25] braintrust-8f7560d2-cfb1-4e3a-92d1-8e24b532d10c (role_id=3235)
+[2026-06-23T13:42:40Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-braintrust-8f7560d2-cfb1-4e3a-92d1-8e24b532d10c.json
+[2026-06-23T13:43:09Z]   | [runner] step 10: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:43:09Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:43:09Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2276
+[2026-06-23T13:43:09Z]   | [runner] captcha v3 solved in 0.3s, token len=2276
+[2026-06-23T13:43:09Z]   | [runner] step 11: browser.act.evaluate
+[2026-06-23T13:43:09Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:43:09Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:43:09Z]   | [runner] yesno real-click fail c4bf8671f1bb: ElementHandle.click: Element is not attached to the DOM
+[2026-06-23T13:43:09Z]   | Call log:
+[2026-06-23T13:43:09Z]   |   - attempting click action
+[2026-06-23T13:43:09Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:43:09Z]   | 
+[2026-06-23T13:43:09Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:43:09Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=5
+[2026-06-23T13:43:09Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=5
+[2026-06-23T13:43:09Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:43:09Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:43:09Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:43:09Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:43:09Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:43:09Z]   exit_code=0
+[2026-06-23T13:43:09Z]   => SUBMITTED ✓
+[2026-06-23T13:43:10Z] 
+[2026-06-23T13:43:13Z] [4/25] braintrust-e1bc9095-2460-4cf4-957f-ba076b6cb5ba (role_id=3236)
+[2026-06-23T13:43:13Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-braintrust-e1bc9095-2460-4cf4-957f-ba076b6cb5ba.json
+[2026-06-23T13:43:41Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:43:41Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:43:41Z]   | [runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': 'e6114ae7-a63a-4291-b86d-142e0be645fb_5a352dad-89c3-4a58-b974-c1df62373a8f', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[2026-06-23T13:43:41Z]   | [runner] step 10: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:43:41Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:43:41Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2318
+[2026-06-23T13:43:41Z]   | [runner] captcha v3 solved in 0.2s, token len=2318
+[2026-06-23T13:43:41Z]   | [runner] step 11: browser.act.evaluate
+[2026-06-23T13:43:41Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:43:41Z]   | [runner] yesno not active after click c4bf8671f1bb, retry 1
+[2026-06-23T13:43:41Z]   | [runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[2026-06-23T13:43:41Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:43:41Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:43:41Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=5
+[2026-06-23T13:43:41Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=5
+[2026-06-23T13:43:41Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:43:41Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:43:41Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:43:41Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:43:41Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:43:41Z]   exit_code=0
+[2026-06-23T13:43:41Z]   => SUBMITTED ✓
+[2026-06-23T13:43:41Z] 
+[2026-06-23T13:43:44Z] [5/25] cartesia-d45f51e9-e7eb-42c5-b986-d3b5d50454c5 (role_id=2516)
+[2026-06-23T13:43:44Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-cartesia-d45f51e9-e7eb-42c5-b986-d3b5d50454c5.json
+[2026-06-23T13:44:23Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:44:23Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:44:23Z]   | [runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '6a347270-3e51-4d49-abe5-5fbb7a568939__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[2026-06-23T13:44:23Z]   | [runner] step 10: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:44:23Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:44:23Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[2026-06-23T13:44:23Z]   | [runner] captcha v3 solved in 0.2s, token len=2297
+[2026-06-23T13:44:23Z]   | [runner] step 11: browser.act.evaluate
+[2026-06-23T13:44:23Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:44:23Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:44:23Z]   | [runner] reassert-text pass 1: repaired=6 ['568939__systemfield_name', '68939__systemfield_email', 'e-4119-858a-afd73e025d47', '4-4b6e-ad1c-31cab9c6b017', '0-43cd-af40-be3cbce47eb3', 'c-4c38-aff8-629ce647dc60'] missing=0
+[2026-06-23T13:44:23Z]   | [runner] reassert-text pass 2: repaired=6 ['568939__systemfield_name', '68939__systemfield_email', 'e-4119-858a-afd73e025d47', '4-4b6e-ad1c-31cab9c6b017', '0-43cd-af40-be3cbce47eb3', 'c-4c38-aff8-629ce647dc60'] missing=0
+[2026-06-23T13:44:23Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 6 field(s) ['568939__systemfield_name', '68939__systemfield_email', 'e-4119-858a-afd73e025d47', '4-4b6e-ad1c-31cab9c6b017', '0-43cd-af40-be3cbce47eb3', 'c-4c38-aff8-629ce647dc60']
+[2026-06-23T13:44:23Z]   | [runner] SUBMIT-RESP status=200 body={"errors":[{"message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.","extensions":{"ashbyErrorId":"8406fa1b-d039-4ca4-9417-28a2b3f767ac","ashbyErrorType":"RECAPTCHA_SCORE_BELOW_THRESHOLD","message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your app
+[2026-06-23T13:44:23Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=6
+[2026-06-23T13:44:23Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:44:23Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:44:23Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:44:23Z]   | [runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[2026-06-23T13:44:23Z]   | [runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+[2026-06-23T13:44:23Z]   exit_code=1
+[2026-06-23T13:44:23Z]   => HARD-RECAPTCHA ✗
+[2026-06-23T13:44:23Z] 
+[2026-06-23T13:44:26Z] [6/25] clera-a165ab9a-fb5f-4663-914b-9a7a5921966d (role_id=1626)
+[2026-06-23T13:44:26Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-clera-a165ab9a-fb5f-4663-914b-9a7a5921966d.json
+[2026-06-23T13:44:52Z]   | [runner] UPLOAD-LAST verify pass: repaired 2 field(s) ['da980ad6-bf58-4e52-a606-1d096a03c1bc__systemfield_name', 'da980ad6-bf58-4e52-a606-1d096a03c1bc__systemfield_email']
+[2026-06-23T13:44:52Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:44:52Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:44:52Z]   | [runner] step 8: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:44:52Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:44:52Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[2026-06-23T13:44:52Z]   | [runner] captcha v3 solved in 0.3s, token len=2297
+[2026-06-23T13:44:52Z]   | [runner] step 9: browser.act.evaluate
+[2026-06-23T13:44:52Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:44:52Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:44:52Z]   | [runner] reassert-text pass 1: repaired=2 ['03c1bc__systemfield_name', '3c1bc__systemfield_email'] missing=0
+[2026-06-23T13:44:52Z]   | [runner] reassert-text pass 2: repaired=2 ['03c1bc__systemfield_name', '3c1bc__systemfield_email'] missing=0
+[2026-06-23T13:44:52Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 2 field(s) ['03c1bc__systemfield_name', '3c1bc__systemfield_email']
+[2026-06-23T13:44:52Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:44:52Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=2
+[2026-06-23T13:44:52Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:44:52Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:44:52Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:44:52Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:44:52Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:44:52Z]   exit_code=0
+[2026-06-23T13:44:52Z]   => SUBMITTED ✓
+[2026-06-23T13:44:52Z] 
+[2026-06-23T13:44:55Z] [7/25] cohere-1fa01a03-9253-4f62-8f10-0fe368b38cb9 (role_id=3033)
+[2026-06-23T13:44:55Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-cohere-1fa01a03-9253-4f62-8f10-0fe368b38cb9.json
+[2026-06-23T13:45:24Z]   |     - waiting 20ms
+[2026-06-23T13:45:24Z]   |     2 × waiting for element to be visible, enabled and stable
+[2026-06-23T13:45:24Z]   |       - element is not enabled
+[2026-06-23T13:45:24Z]   |     - retrying click action
+[2026-06-23T13:45:24Z]   |       - waiting 100ms
+[2026-06-23T13:45:24Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:45:24Z]   |     - element is not enabled
+[2026-06-23T13:45:24Z]   |   - retrying click action
+[2026-06-23T13:45:24Z]   |     - waiting 500ms
+[2026-06-23T13:45:24Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:45:24Z]   | 
+[2026-06-23T13:45:24Z]   | [runner] multiselect no label match 0c0866587f75 want='Yes' tgt='Yes' opts=['Are you authorized to work in the country you currently reside in?', 'Yes', 'No']
+[2026-06-23T13:45:24Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:45:24Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:45:24Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:45:24Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:45:24Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:45:24Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:45:24Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:45:24Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:45:24Z]   exit_code=0
+[2026-06-23T13:45:24Z]   => SUBMITTED ✓
+[2026-06-23T13:45:24Z] 
+[2026-06-23T13:45:27Z] [8/25] dust-4258daef-22e3-42cf-9de1-54bf500f5801 (role_id=3104)
+[2026-06-23T13:45:27Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-dust-4258daef-22e3-42cf-9de1-54bf500f5801.json
+[2026-06-23T13:48:37Z]   | 
+[2026-06-23T13:48:37Z]   | [runner] last-ms trusted keystroke commit: ['__systemfield_name', '-93ca-863d93c6db8e', '-a4a2-4158753c0f31', '-b693-9fe134e0fc4a', '-ae54-834671545506']
+[2026-06-23T13:48:37Z]   | [runner] last-ms commit: still-empty after commit ['50-ae54-834671545506']; retrying
+[2026-06-23T13:48:37Z]   | [runner] trusted commit fail for 8d__systemfield_name: Locator.scroll_into_view_if_needed: Timeout 1481ms exceeded.
+[2026-06-23T13:48:37Z]   | Call log:
+[2026-06-23T13:48:37Z]   |   - attempting scroll into view action
+[2026-06-23T13:48:37Z]   |     - waiting for element to be stable
+[2026-06-23T13:48:37Z]   | 
+[2026-06-23T13:48:37Z]   | [runner] trusted commit fail for d4-93ca-863d93c6db8e: Locator.scroll_into_view_if_needed: Timeout 1497ms exceeded.
+[2026-06-23T13:48:37Z]   | Call log:
+[2026-06-23T13:48:37Z]   |   - attempting scroll into view action
+[2026-06-23T13:48:37Z]   |     - waiting for element to be stable
+[2026-06-23T13:48:37Z]   | 
+[2026-06-23T13:48:37Z]   | [runner] last-ms trusted keystroke commit: ['_systemfield_email', '-a4a2-4158753c0f31', '-b693-9fe134e0fc4a', '-ae54-834671545506']
+[2026-06-23T13:48:37Z]   | [runner] last-ms commit: still-empty after commit ['50-ae54-834671545506']; retrying
+[2026-06-23T13:48:37Z]   | [runner] last-ms no-bounce text commit: 7 field(s), stable=False
+[2026-06-23T13:48:37Z]   | [runner] trusted submit click dispatched
+[2026-06-23T13:48:37Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"3c27e270-7729-4ff3-80a5-77b9a77187bc","errorMessages":[],"formErrors":[],"sourceFormDefinitionId":"88fff06d-b8e1-4ad5-acdf-ceb77c1069cd","formControls":[{"__typename":"FormControl","identifier":"dc568a5f-c7ec-4cd2-9d03-3e7ac7ae4e20","title":"Submit"}],"s
+[2026-06-23T13:48:37Z]   | [runner] SERVER FIELD ERRORS: ['Missing entry for required field: Compensation Expectations']
+[2026-06-23T13:48:37Z]   | [runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Compensation Expectations"]
+[2026-06-23T13:48:37Z]   exit_code=1
+[2026-06-23T13:48:37Z]   => FAILED (exit 1) ✗
+[2026-06-23T13:48:37Z] 
+[2026-06-23T13:48:40Z] [9/25] duvoai-e2156092-50f1-4181-87fb-9e4bc299dde3 (role_id=1627)
+[2026-06-23T13:48:40Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-duvoai-e2156092-50f1-4181-87fb-9e4bc299dde3.json
+[2026-06-23T13:49:06Z]   |     2 × waiting for element to be visible, enabled and stable
+[2026-06-23T13:49:06Z]   |       - element is not enabled
+[2026-06-23T13:49:06Z]   |     - retrying click action
+[2026-06-23T13:49:06Z]   |       - waiting 100ms
+[2026-06-23T13:49:06Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:49:06Z]   |     - element is not enabled
+[2026-06-23T13:49:06Z]   |   - retrying click action
+[2026-06-23T13:49:06Z]   |     - waiting 500ms
+[2026-06-23T13:49:06Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:49:06Z]   | 
+[2026-06-23T13:49:06Z]   | [runner] multiselect no label match 878dc3a58919 want='LinkedIn' tgt='LinkedIn' opts=['How did you hear about us?', 'LinkedIn', 'Website', 'Twitter/X', 'News article', 'Former/current Team Member', 'Tech Community or Event', 'Word of mouth', 'Other']
+[2026-06-23T13:49:06Z]   | [runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:49:06Z]   | [runner] reassert-select UNCOMMITTED: [('1-44bb-af79-878dc3a58919', 'no-container')]
+[2026-06-23T13:49:06Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=7
+[2026-06-23T13:49:06Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=7
+[2026-06-23T13:49:06Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:49:06Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:49:06Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:49:06Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:49:06Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:49:06Z]   exit_code=0
+[2026-06-23T13:49:06Z]   => SUBMITTED ✓
+[2026-06-23T13:49:06Z] 
+[2026-06-23T13:49:09Z] [10/25] e2b-a9ddb7bc-9cc7-43d2-8e46-9c8de4666a04 (role_id=3233)
+[2026-06-23T13:49:09Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-e2b-a9ddb7bc-9cc7-43d2-8e46-9c8de4666a04.json
+[2026-06-23T13:49:37Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:49:37Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:49:37Z]   | [runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '22ed8cd0-5027-4e56-8faf-da2c4cd53690__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[2026-06-23T13:49:37Z]   | [runner] step 10: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:49:37Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:49:37Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2276
+[2026-06-23T13:49:37Z]   | [runner] captcha v3 solved in 0.3s, token len=2276
+[2026-06-23T13:49:37Z]   | [runner] step 11: browser.act.evaluate
+[2026-06-23T13:49:37Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:49:37Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:49:37Z]   | [runner] reassert-text pass 1: repaired=6 ['d53690__systemfield_name', '53690__systemfield_email', 'f-4015-b952-23d4f8ddf85c', '6-44b9-9fec-6e0619e3fd60', 'e-40b4-88d3-411a8376e0fd', '8-46ec-9693-11a0ef27943b'] missing=0
+[2026-06-23T13:49:37Z]   | [runner] reassert-text pass 2: repaired=6 ['d53690__systemfield_name', '53690__systemfield_email', 'f-4015-b952-23d4f8ddf85c', '6-44b9-9fec-6e0619e3fd60', 'e-40b4-88d3-411a8376e0fd', '8-46ec-9693-11a0ef27943b'] missing=0
+[2026-06-23T13:49:37Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 6 field(s) ['d53690__systemfield_name', '53690__systemfield_email', 'f-4015-b952-23d4f8ddf85c', '6-44b9-9fec-6e0619e3fd60', 'e-40b4-88d3-411a8376e0fd', '8-46ec-9693-11a0ef27943b']
+[2026-06-23T13:49:37Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:49:37Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=6
+[2026-06-23T13:49:37Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:49:37Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:49:37Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:49:37Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:49:37Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:49:37Z]   exit_code=0
+[2026-06-23T13:49:37Z]   => SUBMITTED ✓
+[2026-06-23T13:49:37Z] 
+[2026-06-23T13:49:40Z] [11/25] forge-ca54fd9a-55eb-45ae-ba48-f666747a24e8 (role_id=3391)
+[2026-06-23T13:49:40Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-forge-ca54fd9a-55eb-45ae-ba48-f666747a24e8.json
+[2026-06-23T13:50:07Z]   | [runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['6e5a5d4a-fc22-45a1-95f0-51f73584f12e__systemfield_name', '6e5a5d4a-fc22-45a1-95f0-51f73584f12e__systemfield_email', '6e5a5d4a-fc22-45a1-95f0-51f73584f12e_1061a0c0-1e18-4145-8e01-633914e44057', '6e5a5d4a-fc22-45a1-95f0-51f73584f12e_8c042b75-4dfc-49bd-9549-abebf7904876', '6e5a5d4a-fc22-45a1-95f0-51f73584f12e_ec3714b7-5349-4395-8ffa-8f5cd45e93e1']
+[2026-06-23T13:50:07Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:50:07Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:50:07Z]   | [runner] step 8: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:50:07Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:50:07Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2318
+[2026-06-23T13:50:07Z]   | [runner] captcha v3 solved in 0.4s, token len=2318
+[2026-06-23T13:50:07Z]   | [runner] step 9: browser.act.evaluate
+[2026-06-23T13:50:07Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:50:07Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:50:07Z]   | [runner] reassert-text pass 1: repaired=5 ['84f12e__systemfield_name', '4f12e__systemfield_email', '8-4145-8e01-633914e44057', 'c-49bd-9549-abebf7904876', '9-4395-8ffa-8f5cd45e93e1'] missing=0
+[2026-06-23T13:50:07Z]   | [runner] reassert-text pass 2: repaired=5 ['84f12e__systemfield_name', '4f12e__systemfield_email', '8-4145-8e01-633914e44057', 'c-49bd-9549-abebf7904876', '9-4395-8ffa-8f5cd45e93e1'] missing=0
+[2026-06-23T13:50:07Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['84f12e__systemfield_name', '4f12e__systemfield_email', '8-4145-8e01-633914e44057', 'c-49bd-9549-abebf7904876', '9-4395-8ffa-8f5cd45e93e1']
+[2026-06-23T13:50:07Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:50:07Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=5
+[2026-06-23T13:50:07Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:50:07Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:50:07Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:50:07Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:50:07Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:50:07Z]   exit_code=0
+[2026-06-23T13:50:07Z]   => SUBMITTED ✓
+[2026-06-23T13:50:07Z] 
+[2026-06-23T13:50:10Z] [12/25] handshake-c91b7ebf-2c69-4d91-809d-a30ea0b9dc18 (role_id=3451)
+[2026-06-23T13:50:10Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-handshake-c91b7ebf-2c69-4d91-809d-a30ea0b9dc18.json
+[2026-06-23T13:51:10Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"96cd1d10-1f52-49f7-a448-2ac05e795dbf","errorMessages":[],"formErrors":[],"sourceFormDefinitionId":"82e03e33-1667-4dcf-8077-c4d744ea81c3","formControls":[{"__typename":"FormControl","identifier":"1c790dcb-4e66-421b-8ade-8379ffdd798b","title":"Submit"}],"s
+[2026-06-23T13:51:10Z]   | [runner] yesno not active after click dfdbc4a00150, retry 1
+[2026-06-23T13:51:10Z]   | [runner] YESNO trusted-click fix: re-clicked 2 radio(s)
+[2026-06-23T13:51:10Z]   | [runner] reassert-select: 1 custom-select(s) checked, 1 re-committed
+[2026-06-23T13:51:10Z]   | [runner] reassert-text pass 1: repaired=5 ['07062c__systemfield_name', '7062c__systemfield_email', '0-4d84-81ae-d404cec151bc', '1-40d3-827f-01e4eaadaf29', '7-43d9-8cb8-c58ac278a822'] missing=0
+[2026-06-23T13:51:10Z]   | [runner] reassert-text pass 2: repaired=5 ['07062c__systemfield_name', '7062c__systemfield_email', '0-4d84-81ae-d404cec151bc', '1-40d3-827f-01e4eaadaf29', '7-43d9-8cb8-c58ac278a822'] missing=0
+[2026-06-23T13:51:10Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['07062c__systemfield_name', '7062c__systemfield_email', '0-4d84-81ae-d404cec151bc', '1-40d3-827f-01e4eaadaf29', '7-43d9-8cb8-c58ac278a822']
+[2026-06-23T13:51:10Z]   | [runner] cover-letter upload: True
+[2026-06-23T13:51:10Z]   | [runner] final-guard: location already set to 'Kirkland, Washington, United States', skipping re-fill with 'Kirkland, WA'
+[2026-06-23T13:51:10Z]   | [runner] reassert-text pass 1: repaired=5 ['07062c__systemfield_name', '7062c__systemfield_email', '0-4d84-81ae-d404cec151bc', '1-40d3-827f-01e4eaadaf29', '7-43d9-8cb8-c58ac278a822'] missing=0
+[2026-06-23T13:51:10Z]   | [runner] reassert-text pass 2: repaired=5 ['07062c__systemfield_name', '7062c__systemfield_email', '0-4d84-81ae-d404cec151bc', '1-40d3-827f-01e4eaadaf29', '7-43d9-8cb8-c58ac278a822'] missing=0
+[2026-06-23T13:51:10Z]   | [runner] final-guard text re-commit: re-won 5 field(s) ['07062c__systemfield_name', '7062c__systemfield_email', '0-4d84-81ae-d404cec151bc', '1-40d3-827f-01e4eaadaf29', '7-43d9-8cb8-c58ac278a822']
+[2026-06-23T13:51:10Z]   | [runner] final-clobber-guard: settled=True location_ok=True stable=True ('Kirkland, Washington, United S') workauth_checked=True reassert_wa=['Are you authorized to work lawfully in the United States for Handshake?', 'Will you now, or in the future, require sponsorship for employment visa status?']
+[2026-06-23T13:51:10Z]   | [runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-81ae-d404cec151bc', '-827f-01e4eaadaf29', '-8cb8-c58ac278a822']
+[2026-06-23T13:51:10Z]   | [runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-81ae-d404cec151bc', '-827f-01e4eaadaf29', '-8cb8-c58ac278a822']
+[2026-06-23T13:51:10Z]   | [runner] last-ms no-bounce text commit: 5 field(s), stable=True
+[2026-06-23T13:51:10Z]   | [runner] trusted submit click dispatched
+[2026-06-23T13:51:10Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"96cd1d10-1f52-49f7-a448-2ac05e795dbf","errorMessages":[],"formErrors":[],"sourceFormDefinitionId":"82e03e33-1667-4dcf-8077-c4d744ea81c3","formControls":[{"__typename":"FormControl","identifier":"1c790dcb-4e66-421b-8ade-8379ffdd798b","title":"Submit"}],"s
+[2026-06-23T13:51:10Z]   | [runner] SERVER FIELD ERRORS: ['Missing entry for required field: This role is onsite and in person. Are you willing to work from our local office Monday-Friday?', 'Missing entry for required field: Are you authorized to work lawfully in the United States for Handshake?']
+[2026-06-23T13:51:10Z]   | [runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: This role is onsite and in person. Are you willing to work from our local office Monday-Friday?", "Missing entry for required field: Are you authorized to work lawfully in the United States for Handshake?"]
+[2026-06-23T13:51:10Z]   exit_code=1
+[2026-06-23T13:51:10Z]   => FAILED (exit 1) ✗
+[2026-06-23T13:51:10Z] 
+[2026-06-23T13:51:13Z] [13/25] harper-a5e08fb7-a266-4aaf-a9df-a58a4787e292 (role_id=2506)
+[2026-06-23T13:51:13Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-harper-a5e08fb7-a266-4aaf-a9df-a58a4787e292.json
+[2026-06-23T13:52:06Z]   |   - attempting scroll into view action
+[2026-06-23T13:52:06Z]   |     - waiting for element to be stable
+[2026-06-23T13:52:06Z]   | 
+[2026-06-23T13:52:06Z]   | [runner] trusted commit fail for f__systemfield_email: Locator.scroll_into_view_if_needed: Timeout 1497ms exceeded.
+[2026-06-23T13:52:06Z]   | Call log:
+[2026-06-23T13:52:06Z]   |   - attempting scroll into view action
+[2026-06-23T13:52:06Z]   |     - waiting for element to be stable
+[2026-06-23T13:52:06Z]   | 
+[2026-06-23T13:52:06Z]   | [runner] last-ms trusted keystroke commit: ['-a158-2782e6089ea9']
+[2026-06-23T13:52:06Z]   | [runner] trusted commit fail for f__systemfield_email: Locator.scroll_into_view_if_needed: Timeout 1495ms exceeded.
+[2026-06-23T13:52:06Z]   | Call log:
+[2026-06-23T13:52:06Z]   |   - attempting scroll into view action
+[2026-06-23T13:52:06Z]   |     - waiting for element to be stable
+[2026-06-23T13:52:06Z]   | 
+[2026-06-23T13:52:06Z]   | [runner] last-ms trusted keystroke commit: ['__systemfield_name', '-a158-2782e6089ea9']
+[2026-06-23T13:52:06Z]   | [runner] last-ms no-bounce text commit: 6 field(s), stable=True
+[2026-06-23T13:52:06Z]   | [runner] trusted submit click dispatched
+[2026-06-23T13:52:06Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormRender","id":"06db420c-236b-4fc0-ac1e-20eea6dbd028","errorMessages":["Missing entry for required field: Email"],"sourceFormDefinitionId":"388683c8-537e-458a-9e8b-3b2f823b5eed","formControls":[{"__typename":"FormControl","identifier":"5f0ee062-4352-423c-afa3-f7816
+[2026-06-23T13:52:06Z]   | [runner] SERVER FIELD ERRORS: ['Missing entry for required field: Email']
+[2026-06-23T13:52:06Z]   | [runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Email"]
+[2026-06-23T13:52:06Z]   exit_code=1
+[2026-06-23T13:52:06Z]   => FAILED (exit 1) ✗
+[2026-06-23T13:52:06Z] 
+[2026-06-23T13:52:09Z] [14/25] hyperbound-2781ed68-e7cc-48d8-b10f-1e9dd3c850db (role_id=3268)
+[2026-06-23T13:52:09Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-hyperbound-2781ed68-e7cc-48d8-b10f-1e9dd3c850db.json
+[2026-06-23T13:53:06Z]   | [runner] captcha v3 solved in 0.3s, token len=2297
+[2026-06-23T13:53:06Z]   | [runner] step 10: browser.act.evaluate
+[2026-06-23T13:53:06Z]   | [runner] FINAL pre-submit re-fill: re-set 1 field(s)
+[2026-06-23T13:53:06Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:53:06Z]   | [runner] reassert-text pass 1: repaired=5 ['d65783__systemfield_name', '65783__systemfield_email', 'e-4ae7-b574-4f5a19fe2723', '5-430f-91a7-5c814220b669', '3-4bb5-bbe8-ccaec8865f1e'] missing=0
+[2026-06-23T13:53:06Z]   | [runner] reassert-text pass 2: repaired=5 ['d65783__systemfield_name', '65783__systemfield_email', 'e-4ae7-b574-4f5a19fe2723', '5-430f-91a7-5c814220b669', '3-4bb5-bbe8-ccaec8865f1e'] missing=0
+[2026-06-23T13:53:06Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['d65783__systemfield_name', '65783__systemfield_email', 'e-4ae7-b574-4f5a19fe2723', '5-430f-91a7-5c814220b669', '3-4bb5-bbe8-ccaec8865f1e']
+[2026-06-23T13:53:06Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormRender","id":"82734ae2-21ea-4c86-87a3-44a9b41ff5aa","errorMessages":["Missing entry for required field: Show us something you're proud of! Could be a side project, protfolio site, something you built for fun, school project, etc.","Missing entry for required fiel
+[2026-06-23T13:53:06Z]   | [runner] final-guard: location already set to 'Kirkland, Washington, United States', skipping re-fill with 'Kirkland, WA'
+[2026-06-23T13:53:06Z]   | [runner] reassert-text pass 1: repaired=5 ['d65783__systemfield_name', '65783__systemfield_email', 'e-4ae7-b574-4f5a19fe2723', '5-430f-91a7-5c814220b669', '3-4bb5-bbe8-ccaec8865f1e'] missing=0
+[2026-06-23T13:53:06Z]   | [runner] reassert-text pass 2: repaired=5 ['d65783__systemfield_name', '65783__systemfield_email', 'e-4ae7-b574-4f5a19fe2723', '5-430f-91a7-5c814220b669', '3-4bb5-bbe8-ccaec8865f1e'] missing=0
+[2026-06-23T13:53:06Z]   | [runner] final-guard text re-commit: re-won 5 field(s) ['d65783__systemfield_name', '65783__systemfield_email', 'e-4ae7-b574-4f5a19fe2723', '5-430f-91a7-5c814220b669', '3-4bb5-bbe8-ccaec8865f1e']
+[2026-06-23T13:53:06Z]   | [runner] final-clobber-guard: settled=True location_ok=True stable=True ('Kirkland, Washington, United S') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:53:06Z]   | [runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email']
+[2026-06-23T13:53:06Z]   | [runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email']
+[2026-06-23T13:53:06Z]   | [runner] last-ms no-bounce text commit: 5 field(s), stable=True
+[2026-06-23T13:53:06Z]   | [runner] trusted submit click dispatched
+[2026-06-23T13:53:06Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormRender","id":"82734ae2-21ea-4c86-87a3-44a9b41ff5aa","errorMessages":["Missing entry for required field: Show us something you're proud of! Could be a side project, protfolio site, something you built for fun, school project, etc.","Missing entry for required fiel
+[2026-06-23T13:53:06Z]   | [runner] SERVER FIELD ERRORS: ["Missing entry for required field: Show us something you're proud of! Could be a side project, protfolio site, something you built for fun, school project, etc.", 'Missing entry for required field: Inlude a short Loom video walking us through the project you shared (3 min max). Why are you proud of it? Why is it cool?\xa0']
+[2026-06-23T13:53:06Z]   | [runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: Show us something you're proud of! Could be a side project, protfolio site, something you built for fun, school project, etc.", "Missing entry for required field: Inlude a short Loom video walking us through the project you shared (3 min max). Why are you proud of
+[2026-06-23T13:53:06Z]   exit_code=1
+[2026-06-23T13:53:06Z]   => FAILED (exit 1) ✗
+[2026-06-23T13:53:06Z] 
+[2026-06-23T13:53:09Z] [15/25] interface-aebdf0e6-599f-4e0a-b2c4-e19fb7f1d226 (role_id=3396)
+[2026-06-23T13:53:09Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-interface-aebdf0e6-599f-4e0a-b2c4-e19fb7f1d226.json
+[2026-06-23T13:53:35Z]   | [runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['0a4b96e0-10cb-42b9-80a9-f6638e4d425c__systemfield_name', '0a4b96e0-10cb-42b9-80a9-f6638e4d425c__systemfield_email', '0a4b96e0-10cb-42b9-80a9-f6638e4d425c_9c6288ae-b964-4cd9-9374-3eb1920f433d', '0a4b96e0-10cb-42b9-80a9-f6638e4d425c_3b619676-f650-446d-966d-508ac10444b2', '0a4b96e0-10cb-42b9-80a9-f6638e4d425c_5ceaa7b2-bca0-4d89-b083-e6915c7b5b67']
+[2026-06-23T13:53:35Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:53:35Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:53:35Z]   | [runner] step 8: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:53:35Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:53:35Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[2026-06-23T13:53:35Z]   | [runner] captcha v3 solved in 0.2s, token len=2297
+[2026-06-23T13:53:35Z]   | [runner] step 9: browser.act.evaluate
+[2026-06-23T13:53:35Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:53:35Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:53:35Z]   | [runner] reassert-text pass 1: repaired=5 ['4d425c__systemfield_name', 'd425c__systemfield_email', '4-4cd9-9374-3eb1920f433d', '0-446d-966d-508ac10444b2', '0-4d89-b083-e6915c7b5b67'] missing=0
+[2026-06-23T13:53:35Z]   | [runner] reassert-text pass 2: repaired=5 ['4d425c__systemfield_name', 'd425c__systemfield_email', '4-4cd9-9374-3eb1920f433d', '0-446d-966d-508ac10444b2', '0-4d89-b083-e6915c7b5b67'] missing=0
+[2026-06-23T13:53:35Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['4d425c__systemfield_name', 'd425c__systemfield_email', '4-4cd9-9374-3eb1920f433d', '0-446d-966d-508ac10444b2', '0-4d89-b083-e6915c7b5b67']
+[2026-06-23T13:53:35Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:53:35Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=5
+[2026-06-23T13:53:35Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:53:35Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:53:35Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:53:35Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:53:35Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:53:35Z]   exit_code=0
+[2026-06-23T13:53:35Z]   => SUBMITTED ✓
+[2026-06-23T13:53:35Z] 
+[2026-06-23T13:53:38Z] [16/25] inworld-ai-9aef36c8-55e5-4e05-b3a7-00992ad69647 (role_id=2130)
+[2026-06-23T13:53:38Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-inworld-ai-9aef36c8-55e5-4e05-b3a7-00992ad69647.json
+[2026-06-23T13:54:04Z]   | [runner] UPLOAD-LAST verify pass: repaired 3 field(s) ['eb6f6b11-8fe3-4836-af99-2f5e03676996__systemfield_name', 'eb6f6b11-8fe3-4836-af99-2f5e03676996__systemfield_email', 'eb6f6b11-8fe3-4836-af99-2f5e03676996_1e73acbe-b6e7-4628-a04d-4177b2790b3f']
+[2026-06-23T13:54:04Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:54:04Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:54:04Z]   | [runner] step 9: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:54:04Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:54:04Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2318
+[2026-06-23T13:54:04Z]   | [runner] captcha v3 solved in 0.2s, token len=2318
+[2026-06-23T13:54:04Z]   | [runner] step 10: browser.act.evaluate
+[2026-06-23T13:54:04Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:54:04Z]   | [runner] yesno not active after click 15d6f48c979f, retry 1
+[2026-06-23T13:54:04Z]   | [runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[2026-06-23T13:54:04Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:54:04Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:54:04Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=3
+[2026-06-23T13:54:04Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=3
+[2026-06-23T13:54:04Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:54:04Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:54:04Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:54:04Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:54:04Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:54:04Z]   exit_code=0
+[2026-06-23T13:54:04Z]   => SUBMITTED ✓
+[2026-06-23T13:54:04Z] 
+[2026-06-23T13:54:07Z] [17/25] kombo-b2fa5229-f320-44a0-be22-edcfb42b024f (role_id=3384)
+[2026-06-23T13:54:07Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-kombo-b2fa5229-f320-44a0-be22-edcfb42b024f.json
+[2026-06-23T13:54:45Z]   | [runner] UPLOAD-LAST verify pass: repaired 4 field(s) ['b99fdc6a-2c86-4f57-824e-3d399e4bdd17__systemfield_name', 'b99fdc6a-2c86-4f57-824e-3d399e4bdd17__systemfield_email', 'b99fdc6a-2c86-4f57-824e-3d399e4bdd17_dc3625bf-fa92-49a6-b66f-6db7dab460ac', 'b99fdc6a-2c86-4f57-824e-3d399e4bdd17_afbb1323-c763-43ec-ac8e-b0b20216d61e']
+[2026-06-23T13:54:45Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:54:45Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:54:45Z]   | [runner] step 9: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:54:45Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:54:45Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[2026-06-23T13:54:45Z]   | [runner] captcha v3 solved in 0.2s, token len=2297
+[2026-06-23T13:54:45Z]   | [runner] step 10: browser.act.evaluate
+[2026-06-23T13:54:45Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:54:45Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:54:45Z]   | [runner] reassert-text pass 1: repaired=4 ['4bdd17__systemfield_name', 'bdd17__systemfield_email', '2-49a6-b66f-6db7dab460ac', '3-43ec-ac8e-b0b20216d61e'] missing=0
+[2026-06-23T13:54:45Z]   | [runner] reassert-text pass 2: repaired=4 ['4bdd17__systemfield_name', 'bdd17__systemfield_email', '2-49a6-b66f-6db7dab460ac', '3-43ec-ac8e-b0b20216d61e'] missing=0
+[2026-06-23T13:54:45Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 4 field(s) ['4bdd17__systemfield_name', 'bdd17__systemfield_email', '2-49a6-b66f-6db7dab460ac', '3-43ec-ac8e-b0b20216d61e']
+[2026-06-23T13:54:45Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:54:45Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:54:45Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:54:45Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:54:45Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:54:45Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:54:45Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:54:45Z]   exit_code=0
+[2026-06-23T13:54:45Z]   => SUBMITTED ✓
+[2026-06-23T13:54:45Z] 
+[2026-06-23T13:54:48Z] [18/25] langchain-b8dead31-212a-4b92-82a7-c42df16ae877 (role_id=3178)
+[2026-06-23T13:54:48Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-langchain-b8dead31-212a-4b92-82a7-c42df16ae877.json
+[2026-06-23T13:55:16Z]   | [runner] step 10: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:55:16Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:55:16Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2254
+[2026-06-23T13:55:16Z]   | [runner] captcha v3 solved in 0.3s, token len=2254
+[2026-06-23T13:55:16Z]   | [runner] step 11: browser.act.evaluate
+[2026-06-23T13:55:16Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:55:16Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:55:16Z]   | [runner] yesno real-click fail bfc6e1aedfde: ElementHandle.click: Element is not attached to the DOM
+[2026-06-23T13:55:16Z]   | Call log:
+[2026-06-23T13:55:16Z]   |   - attempting click action
+[2026-06-23T13:55:16Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:55:16Z]   | 
+[2026-06-23T13:55:16Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:55:16Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:55:16Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:55:16Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:55:16Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:55:16Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:55:16Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:55:16Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:55:16Z]   exit_code=0
+[2026-06-23T13:55:16Z]   => SUBMITTED ✓
+[2026-06-23T13:55:16Z] 
+[2026-06-23T13:55:19Z] [19/25] legora-f3c0712a-f8e2-4dc1-8e83-23da7891a1c2 (role_id=2441)
+[2026-06-23T13:55:19Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-legora-f3c0712a-f8e2-4dc1-8e83-23da7891a1c2.json
+[2026-06-23T13:55:49Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:55:49Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2254
+[2026-06-23T13:55:49Z]   | [runner] captcha v3 solved in 0.3s, token len=2254
+[2026-06-23T13:55:49Z]   | [runner] step 12: browser.act.evaluate
+[2026-06-23T13:55:49Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:55:49Z]   | [runner] yesno not active after click 1a7967769f51, retry 1
+[2026-06-23T13:55:49Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[2026-06-23T13:55:49Z]   | [runner] yesno real-click fail 1a7967769f51: ElementHandle.scroll_into_view_if_needed: Element is not attached to the DOM
+[2026-06-23T13:55:49Z]   | Call log:
+[2026-06-23T13:55:49Z]   |   - attempting scroll into view action
+[2026-06-23T13:55:49Z]   |     - waiting for element to be stable
+[2026-06-23T13:55:49Z]   | 
+[2026-06-23T13:55:49Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:55:49Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:55:49Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:55:49Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:55:49Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:55:49Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:55:49Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:55:49Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:55:49Z]   exit_code=0
+[2026-06-23T13:55:49Z]   => SUBMITTED ✓
+[2026-06-23T13:55:49Z] 
+[2026-06-23T13:55:52Z] [20/25] litellm-c91a9f7c-310b-4ac3-b494-80874bc75568 (role_id=3271)
+[2026-06-23T13:55:52Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-litellm-c91a9f7c-310b-4ac3-b494-80874bc75568.json
+[2026-06-23T13:56:18Z]   | [runner] UPLOAD-LAST verify pass: repaired 2 field(s) ['d6af4dc6-ecf7-453b-8b2d-2b2ffa36d86a__systemfield_name', 'd6af4dc6-ecf7-453b-8b2d-2b2ffa36d86a__systemfield_email']
+[2026-06-23T13:56:18Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:56:18Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:56:18Z]   | [runner] step 8: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:56:18Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:56:18Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[2026-06-23T13:56:18Z]   | [runner] captcha v3 solved in 0.2s, token len=2297
+[2026-06-23T13:56:18Z]   | [runner] step 9: browser.act.evaluate
+[2026-06-23T13:56:18Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:56:18Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:56:18Z]   | [runner] reassert-text pass 1: repaired=2 ['36d86a__systemfield_name', '6d86a__systemfield_email'] missing=0
+[2026-06-23T13:56:18Z]   | [runner] reassert-text pass 2: repaired=2 ['36d86a__systemfield_name', '6d86a__systemfield_email'] missing=0
+[2026-06-23T13:56:18Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 2 field(s) ['36d86a__systemfield_name', '6d86a__systemfield_email']
+[2026-06-23T13:56:18Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:56:18Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=2
+[2026-06-23T13:56:18Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:56:18Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:56:18Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:56:18Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:56:18Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:56:18Z]   exit_code=0
+[2026-06-23T13:56:18Z]   => SUBMITTED ✓
+[2026-06-23T13:56:18Z] 
+[2026-06-23T13:56:21Z] [21/25] mach9-e09c4604-583b-424f-9526-9f62f42439de (role_id=3270)
+[2026-06-23T13:56:21Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-mach9-e09c4604-583b-424f-9526-9f62f42439de.json
+[2026-06-23T13:56:48Z]   | [runner] UPLOAD-LAST verify pass: repaired 3 field(s) ['2285eaa3-743a-49a0-aef5-dd719bb5ba6a__systemfield_name', '2285eaa3-743a-49a0-aef5-dd719bb5ba6a__systemfield_email', '2285eaa3-743a-49a0-aef5-dd719bb5ba6a_0bbbc1d5-645b-4104-9ed2-56f25b1b6ecf']
+[2026-06-23T13:56:48Z]   | [runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[2026-06-23T13:56:48Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:56:48Z]   | [runner] step 8: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:56:48Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:56:48Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[2026-06-23T13:56:48Z]   | [runner] captcha v3 solved in 0.2s, token len=2297
+[2026-06-23T13:56:48Z]   | [runner] step 9: browser.act.evaluate
+[2026-06-23T13:56:48Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:56:48Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:56:48Z]   | [runner] reassert-text pass 1: repaired=3 ['b5ba6a__systemfield_name', '5ba6a__systemfield_email', 'b-4104-9ed2-56f25b1b6ecf'] missing=0
+[2026-06-23T13:56:48Z]   | [runner] reassert-text pass 2: repaired=3 ['b5ba6a__systemfield_name', '5ba6a__systemfield_email', 'b-4104-9ed2-56f25b1b6ecf'] missing=0
+[2026-06-23T13:56:48Z]   | [runner] PRE-SUBMIT chain_p8 re-assert: re-won 3 field(s) ['b5ba6a__systemfield_name', '5ba6a__systemfield_email', 'b-4104-9ed2-56f25b1b6ecf']
+[2026-06-23T13:56:48Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:56:48Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=3
+[2026-06-23T13:56:48Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:56:48Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:56:48Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:56:48Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:56:48Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:56:48Z]   exit_code=0
+[2026-06-23T13:56:48Z]   => SUBMITTED ✓
+[2026-06-23T13:56:48Z] 
+[2026-06-23T13:56:51Z] [22/25] mondaycom-068bbb1e-ea53-46a9-8faf-cb48765ba9c6 (role_id=3190)
+[2026-06-23T13:56:51Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-mondaycom-068bbb1e-ea53-46a9-8faf-cb48765ba9c6.json
+[2026-06-23T13:57:17Z]   |     2 × waiting for element to be visible, enabled and stable
+[2026-06-23T13:57:17Z]   |       - element is not enabled
+[2026-06-23T13:57:17Z]   |     - retrying click action
+[2026-06-23T13:57:17Z]   |       - waiting 100ms
+[2026-06-23T13:57:17Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:57:17Z]   |     - element is not enabled
+[2026-06-23T13:57:17Z]   |   - retrying click action
+[2026-06-23T13:57:17Z]   |     - waiting 500ms
+[2026-06-23T13:57:17Z]   |     - waiting for element to be visible, enabled and stable
+[2026-06-23T13:57:17Z]   | 
+[2026-06-23T13:57:17Z]   | [runner] multiselect no label match 5f44aab2b031 want='Authorized to work (No sponsorship required)' tgt='Authorized to work (No sponsorship required)' opts=['Do you have the legal right to work in the country where this role is based, or would you require visa sponsorship from our company?', 'Authorized to work (No sponsorship required)', 'Requires visa sponsorship']
+[2026-06-23T13:57:17Z]   | [runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:57:17Z]   | [runner] reassert-select UNCOMMITTED: [('5-40c4-9042-5f44aab2b031', 'no-container')]
+[2026-06-23T13:57:17Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=3
+[2026-06-23T13:57:17Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=3
+[2026-06-23T13:57:17Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:57:17Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:57:17Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:57:17Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:57:17Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:57:17Z]   exit_code=0
+[2026-06-23T13:57:17Z]   => SUBMITTED ✓
+[2026-06-23T13:57:17Z] 
+[2026-06-23T13:57:20Z] [23/25] norm-ai-366d4079-4842-469d-a5e0-3cc891a136b4 (role_id=1139)
+[2026-06-23T13:57:20Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-norm-ai-366d4079-4842-469d-a5e0-3cc891a136b4.json
+[2026-06-23T13:57:46Z]   | [runner] captcha v3 solved in 0.3s, token len=2276
+[2026-06-23T13:57:46Z]   | [runner] step 10: browser.act.evaluate
+[2026-06-23T13:57:46Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:57:46Z]   | [runner] yesno not active after click e6a96d473275, retry 1
+[2026-06-23T13:57:46Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[2026-06-23T13:57:46Z]   | [runner] yesno not active after click 381127b96e35, retry 1
+[2026-06-23T13:57:46Z]   | [runner] yesno real-click fail 381127b96e35: ElementHandle.scroll_into_view_if_needed: Element is not attached to the DOM
+[2026-06-23T13:57:46Z]   | Call log:
+[2026-06-23T13:57:46Z]   |   - attempting scroll into view action
+[2026-06-23T13:57:46Z]   |     - waiting for element to be stable
+[2026-06-23T13:57:46Z]   | 
+[2026-06-23T13:57:46Z]   | [runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[2026-06-23T13:57:46Z]   | [runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:57:46Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=2
+[2026-06-23T13:57:46Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=2
+[2026-06-23T13:57:46Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:57:46Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:57:46Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:57:46Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:57:46Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:57:46Z]   exit_code=0
+[2026-06-23T13:57:46Z]   => SUBMITTED ✓
+[2026-06-23T13:57:46Z] 
+[2026-06-23T13:57:49Z] [24/25] notion-10437426-14c8-4c45-8075-67959ce80393 (role_id=2145)
+[2026-06-23T13:57:49Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-notion-10437426-14c8-4c45-8075-67959ce80393.json
+[2026-06-23T13:58:17Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:58:17Z]   | [runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '1ee8c1ad-d30a-4a3b-9c36-a80ba7136c62__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[2026-06-23T13:58:17Z]   | [runner] step 11: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:58:17Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:58:17Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2361
+[2026-06-23T13:58:17Z]   | [runner] captcha v3 solved in 0.2s, token len=2361
+[2026-06-23T13:58:17Z]   | [runner] step 12: browser.act.evaluate
+[2026-06-23T13:58:17Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:58:17Z]   | [runner] multiselect no label match f72cc3e48956 want='Decline to answer' tgt='Decline to answer' opts=['What pronouns would you like our team to use when addressing you?', 'He/Him', 'She/Her', 'They/Them', 'Prefer not to say', 'Not represented here']
+[2026-06-23T13:58:17Z]   | [runner] yesno not active after click 675b7f37f2f3, retry 1
+[2026-06-23T13:58:17Z]   | [runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[2026-06-23T13:58:17Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[2026-06-23T13:58:17Z]   | [runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:58:17Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:58:17Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:58:17Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:58:17Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:58:17Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:58:17Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:58:17Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:58:17Z]   exit_code=0
+[2026-06-23T13:58:17Z]   => SUBMITTED ✓
+[2026-06-23T13:58:18Z] 
+[2026-06-23T13:58:21Z] [25/25] notion-a6a91521-87cd-41aa-b800-24dc8808d375 (role_id=3029)
+[2026-06-23T13:58:21Z]   plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-notion-a6a91521-87cd-41aa-b800-24dc8808d375.json
+[2026-06-23T13:58:49Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=0
+[2026-06-23T13:58:49Z]   | [runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': 'c4096ec5-030e-43cd-816d-43029e3f87a0__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[2026-06-23T13:58:49Z]   | [runner] step 11: ashby.maybe_solve_recaptcha_v3
+[2026-06-23T13:58:49Z]   | [runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[2026-06-23T13:58:49Z]   | [runner] recaptcha-v3 generated IN-BROWSER (residential), len=2276
+[2026-06-23T13:58:49Z]   | [runner] captcha v3 solved in 0.3s, token len=2276
+[2026-06-23T13:58:49Z]   | [runner] step 12: browser.act.evaluate
+[2026-06-23T13:58:49Z]   | [runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[2026-06-23T13:58:49Z]   | [runner] multiselect no label match f72cc3e48956 want='Decline to answer' tgt='Decline to answer' opts=['What pronouns would you like our team to use when addressing you?', 'He/Him', 'She/Her', 'They/Them', 'Prefer not to say', 'Not represented here']
+[2026-06-23T13:58:49Z]   | [runner] yesno not active after click 675b7f37f2f3, retry 1
+[2026-06-23T13:58:49Z]   | [runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[2026-06-23T13:58:49Z]   | [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[2026-06-23T13:58:49Z]   | [runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[2026-06-23T13:58:49Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:58:49Z]   | [runner] reassert-text pass 1: repaired=0 [] missing=4
+[2026-06-23T13:58:49Z]   | [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[2026-06-23T13:58:49Z]   | [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[2026-06-23T13:58:49Z]   | [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[2026-06-23T13:58:49Z]   | [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[2026-06-23T13:58:49Z]   | [runner] SUBMIT SUCCESS
+[2026-06-23T13:58:49Z]   exit_code=0
+[2026-06-23T13:58:49Z]   => SUBMITTED ✓
+[2026-06-23T13:58:49Z] 
+[2026-06-23T13:58:52Z] === SUMMARY ===
+[2026-06-23T13:58:52Z] Submitted:      20 (+ 1 artie pre-run = 21 total)
+[2026-06-23T13:58:52Z] Hard-recaptcha: 1
+[2026-06-23T13:58:52Z] Other-fail:     4
+[2026-06-23T13:58:52Z] Skipped:        0
+[2026-06-23T13:58:52Z] Submitted slugs:
+[2026-06-23T13:58:52Z]   ashby-2fc178fc-fa92-463a-b788-1c66e3f32a00
+[2026-06-23T13:58:52Z]   boom-b6f53406-66b9-45aa-bcd9-9adbf5436a26
+[2026-06-23T13:58:52Z]   braintrust-8f7560d2-cfb1-4e3a-92d1-8e24b532d10c
+[2026-06-23T13:58:52Z]   braintrust-e1bc9095-2460-4cf4-957f-ba076b6cb5ba
+[2026-06-23T13:58:52Z]   clera-a165ab9a-fb5f-4663-914b-9a7a5921966d
+[2026-06-23T13:58:52Z]   cohere-1fa01a03-9253-4f62-8f10-0fe368b38cb9
+[2026-06-23T13:58:52Z]   duvoai-e2156092-50f1-4181-87fb-9e4bc299dde3
+[2026-06-23T13:58:52Z]   e2b-a9ddb7bc-9cc7-43d2-8e46-9c8de4666a04
+[2026-06-23T13:58:52Z]   forge-ca54fd9a-55eb-45ae-ba48-f666747a24e8
+[2026-06-23T13:58:52Z]   interface-aebdf0e6-599f-4e0a-b2c4-e19fb7f1d226
+[2026-06-23T13:58:52Z]   inworld-ai-9aef36c8-55e5-4e05-b3a7-00992ad69647
+[2026-06-23T13:58:52Z]   kombo-b2fa5229-f320-44a0-be22-edcfb42b024f
+[2026-06-23T13:58:52Z]   langchain-b8dead31-212a-4b92-82a7-c42df16ae877
+[2026-06-23T13:58:52Z]   legora-f3c0712a-f8e2-4dc1-8e83-23da7891a1c2
+[2026-06-23T13:58:52Z]   litellm-c91a9f7c-310b-4ac3-b494-80874bc75568
+[2026-06-23T13:58:52Z]   mach9-e09c4604-583b-424f-9526-9f62f42439de
+[2026-06-23T13:58:52Z]   mondaycom-068bbb1e-ea53-46a9-8faf-cb48765ba9c6
+[2026-06-23T13:58:52Z]   norm-ai-366d4079-4842-469d-a5e0-3cc891a136b4
+[2026-06-23T13:58:52Z]   notion-10437426-14c8-4c45-8075-67959ce80393
+[2026-06-23T13:58:52Z]   notion-a6a91521-87cd-41aa-b800-24dc8808d375
+[2026-06-23T13:58:52Z] Hard-recaptcha slugs:
+[2026-06-23T13:58:52Z]   cartesia-d45f51e9-e7eb-42c5-b986-d3b5d50454c5
+[2026-06-23T13:58:52Z] Other-fail slugs:
+[2026-06-23T13:58:52Z]   dust-4258daef-22e3-42cf-9de1-54bf500f5801
+[2026-06-23T13:58:52Z]   handshake-c91b7ebf-2c69-4d91-809d-a30ea0b9dc18
+[2026-06-23T13:58:52Z]   harper-a5e08fb7-a266-4aaf-a9df-a58a4787e292
+[2026-06-23T13:58:52Z]   hyperbound-2781ed68-e7cc-48d8-b10f-1e9dd3c850db
+
+=== PRE-SCRIPT SUBMISSION (artie, ran before script) ===
+[2026-06-23T13:40:37Z] [0/26] artie-9ed7587a-0653-4e81-ab50-5136a2516639 (role_id=1131) => SUBMITTED ✓
+
+=== POST-PROCESSING ===
+[reconcile] backfill_drain_status: backfilled 3 STATUS.md (norm-ai-1139, notion-2145, notion-3029)
+[reconcile] flipped 3 rows -> applied (auto-residential)
+[render_xlsx] Written: Cyrus_Job_Tracker.xlsx
+  Open: 403 | Applied: 963 | Manual Apply: 335 | Interviews: 25
+
+=== FINAL SUMMARY (all 26 slugs) ===
+Submitted:      21  (artie + 20 from script)
+Hard-recaptcha: 1   (cartesia-d45f51e9)
+Other-fail:     4   (dust - missing comp field, handshake - missing yesno field, harper - email clobber, hyperbound - missing project/Loom required fields)
+Skipped:        0
+Total:          26
+
+=== FAIL DETAILS ===
+dust-4258daef      : FAILED-1 — "Missing entry for required field: Compensation Expectations"
+handshake-c91b7ebf : FAILED-1 — "Missing entry for required field: willing to work from office Mon-Fri, Are you authorized to work in US for Handshake?"
+harper-a5e08fb7    : FAILED-1 — "Missing entry for required field: Email" (trusted commit scroll timeout)
+hyperbound-2781ed68: FAILED-1 — "Missing entry for required field: project portfolio, Loom video required"

@@ -1,7 +1,7 @@
 STATUS: PREP-READY-MANUAL
-Generated: 2026-06-23T08:20:50+00:00
+Generated: 2026-06-23T20:50:42+00:00
 
-role_id: 2033
+role_id: 3509
 ats: workday (tenant: ms)
 company: Morgan Stanley
 role: AI Product Manager
@@ -25,5 +25,5 @@ Open the apply URL above, create/sign into the Workday account, paste
 answers from cover_answers.md, attach the tailored PDF, submit.
 
 Once submitted, set tracker.db: UPDATE roles SET applied_by='manual',
-applied_on='YYYY-MM-DD', prep_status='submitted' WHERE id=2033;
+applied_on='YYYY-MM-DD', prep_status='submitted' WHERE id=3509;
 then re-run render_xlsx.py.

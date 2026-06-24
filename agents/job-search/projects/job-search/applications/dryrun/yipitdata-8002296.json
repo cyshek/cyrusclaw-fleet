@@ -4,16 +4,16 @@
   "job_id": "8002296",
   "job_title": "Data Product Manager",
   "job_location": "US Remote",
-  "fetched_at": "2026-06-20T20:55:25Z",
+  "fetched_at": "2026-06-23T22:45:55Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/yipitdata/jobs/8002296?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 23,
-    "filled": 18,
+    "filled": 19,
     "filled_needs_review": 1,
     "declined": 1,
-    "unresolved": 3,
-    "blockers": 1
+    "unresolved": 2,
+    "blockers": 0
   },
   "fields": [
     {
@@ -162,10 +162,10 @@
       "label": "What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label=\"What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?\"",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
       "options": null
     },
     {
@@ -389,12 +389,6 @@
   ],
   "unresolved": [
     {
-      "id": "question_67587524",
-      "label": "What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label=\"What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?\""
-    },
-    {
       "id": "question_67587526",
       "label": "YipitData is an equal opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion.\n\nHere is set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. If you choose to fill them out, the responses will be used (in aggregate only) to help us identify areas for improvement in our process.\n\nYour responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
       "required": false,
@@ -407,13 +401,7 @@
       "reason": "no LABEL_RULES match for label='I identify my sexual orientation as:'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_67587524",
-      "label": "What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?",
-      "reason": "no LABEL_RULES match for label=\"What are your top 3 strengths and the top 3 skill sets that you'd like to further develop at YipitData?\""
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

@@ -5,21 +5,21 @@
   "job_id": "faeeff7f-b1f9-4db2-93ff-99da570f85b0",
   "job_title": "Forward Deployed Engineer",
   "job_location": "Mountain View, CA",
-  "fetched_at": "2026-06-23T08:40:36Z",
+  "fetched_at": "2026-06-24T00:24:31Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
-    "total_fields": 6,
-    "filled": 5,
+    "total_fields": 7,
+    "filled": 7,
     "filled_needs_review": 0,
     "declined": 0,
     "needs_essay": 0,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15__systemfield_name",
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "1915675d-ab10-4796-b5ce-2cce1deb1c15__systemfield_name"
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d__systemfield_name"
     },
     {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15__systemfield_email",
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +42,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "1915675d-ab10-4796-b5ce-2cce1deb1c15__systemfield_email"
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d__systemfield_email"
     },
     {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15__systemfield_resume",
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,10 +55,10 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "1915675d-ab10-4796-b5ce-2cce1deb1c15__systemfield_resume"
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d__systemfield_resume"
     },
     {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_776b46bf-bea6-4977-8731-ea103bca43f6",
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_776b46bf-bea6-4977-8731-ea103bca43f6",
       "label": "Will you now or in the future require sponsorship to work in the US?",
       "type": "multi_value_single_select",
       "required": true,
@@ -77,17 +77,30 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_776b46bf-bea6-4977-8731-ea103bca43f6"
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_776b46bf-bea6-4977-8731-ea103bca43f6"
     },
     {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_6bddad37-9dca-451a-aa37-8f1b799bb880",
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_937675b6-6724-4b2f-9524-47f7199531bf",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_937675b6-6724-4b2f-9524-47f7199531bf"
+    },
+    {
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_6bddad37-9dca-451a-aa37-8f1b799bb880",
       "label": "I am comfortable with the requirement to travel up to 20% of the time to client sites and to be in the Mountain View, CA office when not traveling.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='I am comfortable with the requirement to travel up to 20% of the time to client sites and to be in the Mountain View, CA office when not traveling.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -99,10 +112,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_6bddad37-9dca-451a-aa37-8f1b799bb880"
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_6bddad37-9dca-451a-aa37-8f1b799bb880"
     },
     {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_67f5c150-a5cc-4e9b-a5f7-b275310f5f91",
+      "id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_67f5c150-a5cc-4e9b-a5f7-b275310f5f91",
       "label": "How did you hear about Commure + Athelas?",
       "type": "multi_value_multi_select",
       "required": true,
@@ -145,22 +158,9 @@
         }
       ],
       "_ashby_type": "MultiValueSelect",
-      "_ashby_id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_67f5c150-a5cc-4e9b-a5f7-b275310f5f91"
+      "_ashby_id": "e1caf24b-aedd-45a3-a3fa-09f086dad62d_67f5c150-a5cc-4e9b-a5f7-b275310f5f91"
     }
   ],
-  "unresolved": [
-    {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_6bddad37-9dca-451a-aa37-8f1b799bb880",
-      "label": "I am comfortable with the requirement to travel up to 20% of the time to client sites and to be in the Mountain View, CA office when not traveling.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='I am comfortable with the requirement to travel up to 20% of the time to client sites and to be in the Mountain View, CA office when not traveling.'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "1915675d-ab10-4796-b5ce-2cce1deb1c15_6bddad37-9dca-451a-aa37-8f1b799bb880",
-      "label": "I am comfortable with the requirement to travel up to 20% of the time to client sites and to be in the Mountain View, CA office when not traveling.",
-      "reason": "no LABEL_RULES match for label='I am comfortable with the requirement to travel up to 20% of the time to client sites and to be in the Mountain View, CA office when not traveling.'"
-    }
-  ]
+  "unresolved": [],
+  "blockers": []
 }

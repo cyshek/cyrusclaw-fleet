@@ -1,0 +1,209 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/openai/cf31f5f6-4e67-4695-808c-9cdd2e1fa3b1",
+  "org": "openai",
+  "job_id": "cf31f5f6-4e67-4695-808c-9cdd2e1fa3b1",
+  "job_title": "Forward Deployed Engineer (FDE) - NYC",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-23T17:29:17Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_name"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_email"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_resume"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_239739bc-df52-4f25-8d29-2f630c1d9705",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_239739bc-df52-4f25-8d29-2f630c1d9705"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_064fb9db-9eb1-4279-b81a-6cc9e414326d",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_064fb9db-9eb1-4279-b81a-6cc9e414326d"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9__systemfield_location"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_95861b2c-30da-467a-a24a-242bd05086e0",
+      "label": "When can you start a new role?",
+      "type": "input_date",
+      "required": true,
+      "value": "2026-07-07",
+      "source": "preferences.earliest_start_date (date picker -> today+14d)",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null,
+      "_ashby_type": "Date",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_95861b2c-30da-467a-a24a-242bd05086e0",
+      "_ashby_date_iso": "2026-07-07"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_13b01b63-8bb1-48d0-a896-009664e6ffe7",
+      "label": "Will you now or in the future require sponsorship for employment visa status in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_13b01b63-8bb1-48d0-a896-009664e6ffe7"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_793b9268-10b5-47fb-b88e-1e63dfe38d56",
+      "label": "Are you able to work from our NYC office three days per week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_793b9268-10b5-47fb-b88e-1e63dfe38d56"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_13f20d7b-10ed-4b71-9581-ab04f7c037d0",
+      "label": "Additional Information",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "intentionally blank (optional)",
+      "status": "filled",
+      "matched_rule": "additional_info",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_13f20d7b-10ed-4b71-9581-ab04f7c037d0"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_a90e16d2-baaf-4c31-b3e5-70b53f261040",
+      "label": "Applicant Arbitration Agreement Acknowledgement",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement.",
+      "source": "acknowledge_yes (single option 'I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement.",
+          "value": "I acknowledge that I have opened, read, and understood the Arbitration Agreement. I understand that by submitting my application, I am agreeing to be bound by the terms of the Arbitration Agreement."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_a90e16d2-baaf-4c31-b3e5-70b53f261040"
+    },
+    {
+      "id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea",
+      "label": "I hereby certify that I have not knowingly withheld any information that might adversely affect my chances for employment and that the answers given by me are true and correct to the best of my knowledge. I further certify that I, the undersigned applicant, have personally completed this application. I understand that, to the extent permitted by applicable law, any omission or misstatement of material fact on this application or on any document used to secure employment shall be grounds for rejection of this application or for immediate discharge if I am employed, regardless of the time elapsed before discovery. ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I confirm I have read the above.",
+      "source": "acknowledge_yes (single option 'I confirm I have read the above.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I confirm I have read the above.",
+          "value": "I confirm I have read the above."
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "e9d6578d-4c86-40ef-9b6f-e32112a1aac9_7fe82de7-a1d7-4d8a-95a5-e5cc9adc84ea"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

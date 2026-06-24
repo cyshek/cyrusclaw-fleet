@@ -1,0 +1,985 @@
+{
+  "meta": {
+    "utc_stamp": "20260623T194807Z",
+    "hypothesis": "H1 cross-asset carry \u2014 commodity-roll-yield leg + COMBINED sleeve",
+    "source_spec": "reports/LITERATURE_HYPOTHESES_20260623T185057Z.md (\u00a72 H1 + \u00a75); bond-leg report \u00a79",
+    "commodity_instruments": [
+      "USO",
+      "USL",
+      "DBO",
+      "DBC",
+      "GSG",
+      "DJP",
+      "USCI",
+      "UNG",
+      "UNL",
+      "GLD",
+      "SHY"
+    ],
+    "deep_panel_span": [
+      "2007-12-06",
+      "2026-06-22"
+    ],
+    "full_panel_span": [
+      "2010-08-10",
+      "2026-06-22"
+    ],
+    "n_deep_days": 4663,
+    "n_full_days": 3990,
+    "oos_split": "2018-12-31",
+    "sharpe_convention": "(mean/std)*sqrt(252), ddof=1, continuous-span (mirrors runner/fp_sharpe.py via bondleg engine)",
+    "signal_lag_days": 1,
+    "adjclose_only": true,
+    "primary_set": "deep_crude_broad",
+    "primary_config": {
+      "complexes": [
+        "crude_USL_USO",
+        "broad_DBC_GSG"
+      ],
+      "lookback": 126,
+      "vol_target_each": 0.09,
+      "vol_lookback": 20,
+      "thresh": 0.0,
+      "cost_bps": 2.0,
+      "static_long": false
+    },
+    "complex_pairs": {
+      "crude_USL_USO": {
+        "opt": "USL",
+        "naive": "USO"
+      },
+      "crude_DBO_USO": {
+        "opt": "DBO",
+        "naive": "USO"
+      },
+      "broad_DBC_GSG": {
+        "opt": "DBC",
+        "naive": "GSG"
+      },
+      "broad_USCI_GSG": {
+        "opt": "USCI",
+        "naive": "GSG"
+      },
+      "broad_DBC_DJP": {
+        "opt": "DBC",
+        "naive": "DJP"
+      },
+      "natgas_UNL_UNG": {
+        "opt": "UNL",
+        "naive": "UNG"
+      }
+    },
+    "complex_sets": {
+      "deep_crude_broad": [
+        "crude_USL_USO",
+        "broad_DBC_GSG"
+      ],
+      "deep_crude_broad_dbo": [
+        "crude_DBO_USO",
+        "broad_DBC_GSG"
+      ],
+      "all3_USL_DBC_UNL": [
+        "crude_USL_USO",
+        "broad_DBC_GSG",
+        "natgas_UNL_UNG"
+      ],
+      "all3_DBO_DBC_UNL": [
+        "crude_DBO_USO",
+        "broad_DBC_GSG",
+        "natgas_UNL_UNG"
+      ],
+      "broad_only_DBC": [
+        "broad_DBC_GSG"
+      ],
+      "all3_USL_USCI_UNL": [
+        "crude_USL_USO",
+        "broad_USCI_GSG",
+        "natgas_UNL_UNG"
+      ]
+    },
+    "bond_leg_config": {
+      "long_sleeve": "TLT",
+      "scale": 1.5,
+      "vol_target": 0.09,
+      "vol_lookback": 20,
+      "cost_bps": 2.0,
+      "slope_series": "T10Y2Y"
+    }
+  },
+  "series_stats": {
+    "USO": {
+      "n": 5081,
+      "first": "2006-04-10",
+      "last": "2026-06-22"
+    },
+    "USL": {
+      "n": 4664,
+      "first": "2007-12-06",
+      "last": "2026-06-23"
+    },
+    "DBO": {
+      "n": 4896,
+      "first": "2007-01-05",
+      "last": "2026-06-23"
+    },
+    "DBC": {
+      "n": 5125,
+      "first": "2006-02-06",
+      "last": "2026-06-22"
+    },
+    "GSG": {
+      "n": 5011,
+      "first": "2006-07-21",
+      "last": "2026-06-23"
+    },
+    "DJP": {
+      "n": 4941,
+      "first": "2006-10-30",
+      "last": "2026-06-23"
+    },
+    "USCI": {
+      "n": 3991,
+      "first": "2010-08-10",
+      "last": "2026-06-23"
+    },
+    "UNG": {
+      "n": 4826,
+      "first": "2007-04-18",
+      "last": "2026-06-23"
+    },
+    "UNL": {
+      "n": 4142,
+      "first": "2010-01-04",
+      "last": "2026-06-23"
+    },
+    "GLD": {
+      "n": 5431,
+      "first": "2004-11-18",
+      "last": "2026-06-23"
+    },
+    "SHY": {
+      "n": 6012,
+      "first": "2002-07-30",
+      "last": "2026-06-22"
+    }
+  },
+  "commodity_primary": {
+    "config": {
+      "complexes": [
+        "crude_USL_USO",
+        "broad_DBC_GSG"
+      ],
+      "lookback": 126,
+      "vol_target_each": 0.09,
+      "vol_lookback": 20,
+      "thresh": 0.0,
+      "cost_bps": 2.0,
+      "static_long": false
+    },
+    "full": {
+      "sharpe": -0.0137,
+      "cagr": -0.0037,
+      "total_return": -0.0646,
+      "max_drawdown": -0.4139,
+      "ann_vol": 0.0736,
+      "n_days": 4521,
+      "start": "2008-07-01",
+      "end": "2026-06-22"
+    },
+    "is": {
+      "sharpe": -0.4402,
+      "cagr": -0.0371,
+      "total_return": -0.3272,
+      "max_drawdown": -0.4139,
+      "ann_vol": 0.0787,
+      "n_days": 2644,
+      "start": "2008-07-01",
+      "end": "2018-12-31"
+    },
+    "oos": {
+      "sharpe": 0.7079,
+      "cagr": 0.0452,
+      "total_return": 0.3903,
+      "max_drawdown": -0.1661,
+      "ann_vol": 0.0655,
+      "n_days": 1877,
+      "start": "2019-01-02",
+      "end": "2026-06-22"
+    },
+    "avg_turnover_per_rebal": 0.3361,
+    "n_rebals": 216
+  },
+  "controls": {
+    "ew": {
+      "full": {
+        "sharpe": 0.0312,
+        "cagr": -0.0279,
+        "total_return": -0.406,
+        "max_drawdown": -0.9094,
+        "ann_vol": 0.2698,
+        "n_days": 4646,
+        "start": "2008-01-02",
+        "end": "2026-06-22"
+      },
+      "oos": {
+        "sharpe": 0.5085,
+        "cagr": 0.1093,
+        "total_return": 1.1654,
+        "max_drawdown": -0.6178,
+        "ann_vol": 0.2848,
+        "n_days": 1877,
+        "start": "2019-01-02",
+        "end": "2026-06-22"
+      },
+      "avg_turnover_per_rebal": 0.0045,
+      "n_rebals": 222,
+      "etfs": [
+        "DBC",
+        "GSG",
+        "USL",
+        "USO"
+      ],
+      "delta_signal_minus_ew_oos_sharpe": 0.1994,
+      "delta_signal_minus_ew_oos_total": -0.7751
+    },
+    "static_optimized": {
+      "full": {
+        "sharpe": -0.0247,
+        "cagr": -0.0077,
+        "total_return": -0.1297,
+        "max_drawdown": -0.506,
+        "ann_vol": 0.1021,
+        "n_days": 4521,
+        "start": "2008-07-01",
+        "end": "2026-06-22"
+      },
+      "oos": {
+        "sharpe": 0.4228,
+        "cagr": 0.0409,
+        "total_return": 0.3478,
+        "max_drawdown": -0.2684,
+        "ann_vol": 0.1089,
+        "n_days": 1877,
+        "start": "2019-01-02",
+        "end": "2026-06-22"
+      },
+      "avg_turnover_per_rebal": 0.2693,
+      "delta_signal_minus_static_oos_sharpe": 0.2851,
+      "delta_signal_minus_static_oos_total": 0.0425
+    }
+  },
+  "cost_analysis": {
+    "grid": [
+      {
+        "cost_bps": 0.0,
+        "full_sharpe": -0.0027,
+        "oos_sharpe": 0.7194,
+        "full_total": -0.0509
+      },
+      {
+        "cost_bps": 1.0,
+        "full_sharpe": -0.0082,
+        "oos_sharpe": 0.7137,
+        "full_total": -0.0578
+      },
+      {
+        "cost_bps": 2.0,
+        "full_sharpe": -0.0137,
+        "oos_sharpe": 0.7079,
+        "full_total": -0.0646
+      },
+      {
+        "cost_bps": 5.0,
+        "full_sharpe": -0.0302,
+        "oos_sharpe": 0.6907,
+        "full_total": -0.0848
+      }
+    ],
+    "breakeven_note": "see grid",
+    "turnover_per_rebal": 0.3361
+  },
+  "lookahead_canary": {
+    "honest_full_sharpe": -0.0137,
+    "cheat_forward_full_sharpe": -0.2941,
+    "paths_differ": true,
+    "interpretation": "honest != cheat => no leakage (cheat peeks +1mo-forward spread)"
+  },
+  "robustness_sweep": {
+    "stats": {
+      "n": 36,
+      "oos_sharpe_min": 0.1329,
+      "oos_sharpe_max": 0.9122,
+      "oos_sharpe_median": 0.7026,
+      "n_oos_above_0.4": 25,
+      "n_oos_above_0.5": 24,
+      "n_oos_positive": 36,
+      "frac_oos_above_0.4": 0.694,
+      "frac_oos_above_0.5": 0.667
+    },
+    "grid": [
+      {
+        "set": "deep_crude_broad",
+        "lookback": 63,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": -0.1163,
+        "oos_sharpe": 0.2444,
+        "oos_total": 0.1017,
+        "full_maxdd": -0.3406,
+        "turn": 0.3378,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad",
+        "lookback": 63,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": -0.1474,
+        "oos_sharpe": 0.1977,
+        "oos_total": 0.0935,
+        "full_maxdd": -0.4149,
+        "turn": 0.4097,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad",
+        "lookback": 126,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": 0.0055,
+        "oos_sharpe": 0.7409,
+        "oos_total": 0.364,
+        "full_maxdd": -0.374,
+        "turn": 0.3048,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad",
+        "lookback": 126,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": -0.0255,
+        "oos_sharpe": 0.6832,
+        "oos_total": 0.4178,
+        "full_maxdd": -0.4498,
+        "turn": 0.3637,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad",
+        "lookback": 252,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": 0.2058,
+        "oos_sharpe": 0.7487,
+        "oos_total": 0.3965,
+        "full_maxdd": -0.3819,
+        "turn": 0.2527,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad",
+        "lookback": 252,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": 0.1879,
+        "oos_sharpe": 0.7089,
+        "oos_total": 0.4702,
+        "full_maxdd": -0.4464,
+        "turn": 0.2985,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad_dbo",
+        "lookback": 63,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": -0.0004,
+        "oos_sharpe": 0.3239,
+        "oos_total": 0.1472,
+        "full_maxdd": -0.317,
+        "turn": 0.3431,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad_dbo",
+        "lookback": 63,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": -0.0239,
+        "oos_sharpe": 0.2799,
+        "oos_total": 0.1497,
+        "full_maxdd": -0.3815,
+        "turn": 0.4158,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad_dbo",
+        "lookback": 126,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": 0.1193,
+        "oos_sharpe": 0.7736,
+        "oos_total": 0.3969,
+        "full_maxdd": -0.333,
+        "turn": 0.2942,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad_dbo",
+        "lookback": 126,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": 0.0846,
+        "oos_sharpe": 0.7181,
+        "oos_total": 0.4603,
+        "full_maxdd": -0.4075,
+        "turn": 0.3546,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad_dbo",
+        "lookback": 252,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": 0.2671,
+        "oos_sharpe": 0.7884,
+        "oos_total": 0.3811,
+        "full_maxdd": -0.3474,
+        "turn": 0.2429,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "deep_crude_broad_dbo",
+        "lookback": 252,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": 0.248,
+        "oos_sharpe": 0.748,
+        "oos_total": 0.4512,
+        "full_maxdd": -0.4082,
+        "turn": 0.2922,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_DBC_UNL",
+        "lookback": 63,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": -0.1193,
+        "oos_sharpe": 0.2924,
+        "oos_total": 0.1043,
+        "full_maxdd": -0.3105,
+        "turn": 0.3068,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_DBC_UNL",
+        "lookback": 63,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": -0.1559,
+        "oos_sharpe": 0.2289,
+        "oos_total": 0.0947,
+        "full_maxdd": -0.3833,
+        "turn": 0.3732,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_DBC_UNL",
+        "lookback": 126,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": 0.0045,
+        "oos_sharpe": 0.7085,
+        "oos_total": 0.2871,
+        "full_maxdd": -0.3247,
+        "turn": 0.2579,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_DBC_UNL",
+        "lookback": 126,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": -0.031,
+        "oos_sharpe": 0.6385,
+        "oos_total": 0.3192,
+        "full_maxdd": -0.3857,
+        "turn": 0.3092,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_DBC_UNL",
+        "lookback": 252,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": 0.0839,
+        "oos_sharpe": 0.6867,
+        "oos_total": 0.3084,
+        "full_maxdd": -0.3039,
+        "turn": 0.2041,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_DBC_UNL",
+        "lookback": 252,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": 0.0575,
+        "oos_sharpe": 0.6328,
+        "oos_total": 0.3523,
+        "full_maxdd": -0.3609,
+        "turn": 0.2418,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_DBO_DBC_UNL",
+        "lookback": 63,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": -0.0473,
+        "oos_sharpe": 0.3572,
+        "oos_total": 0.1346,
+        "full_maxdd": -0.2931,
+        "turn": 0.3069,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_DBO_DBC_UNL",
+        "lookback": 63,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": -0.0769,
+        "oos_sharpe": 0.2963,
+        "oos_total": 0.1322,
+        "full_maxdd": -0.3591,
+        "turn": 0.3729,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_DBO_DBC_UNL",
+        "lookback": 126,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": 0.1004,
+        "oos_sharpe": 0.7403,
+        "oos_total": 0.308,
+        "full_maxdd": -0.3049,
+        "turn": 0.2479,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_DBO_DBC_UNL",
+        "lookback": 126,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": 0.0614,
+        "oos_sharpe": 0.6724,
+        "oos_total": 0.346,
+        "full_maxdd": -0.3654,
+        "turn": 0.2991,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_DBO_DBC_UNL",
+        "lookback": 252,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": 0.1046,
+        "oos_sharpe": 0.7114,
+        "oos_total": 0.2985,
+        "full_maxdd": -0.2784,
+        "turn": 0.2002,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_DBO_DBC_UNL",
+        "lookback": 252,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": 0.0762,
+        "oos_sharpe": 0.6561,
+        "oos_total": 0.3402,
+        "full_maxdd": -0.3314,
+        "turn": 0.2408,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "broad_only_DBC",
+        "lookback": 63,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": -0.0446,
+        "oos_sharpe": 0.1584,
+        "oos_total": 0.0658,
+        "full_maxdd": -0.3262,
+        "turn": 0.4449,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "broad_only_DBC",
+        "lookback": 63,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": -0.0587,
+        "oos_sharpe": 0.1329,
+        "oos_total": 0.0584,
+        "full_maxdd": -0.3865,
+        "turn": 0.5353,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "broad_only_DBC",
+        "lookback": 126,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": 0.313,
+        "oos_sharpe": 0.8295,
+        "oos_total": 0.4421,
+        "full_maxdd": -0.2647,
+        "turn": 0.3544,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "broad_only_DBC",
+        "lookback": 126,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": 0.2806,
+        "oos_sharpe": 0.7814,
+        "oos_total": 0.5226,
+        "full_maxdd": -0.3054,
+        "turn": 0.4181,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "broad_only_DBC",
+        "lookback": 252,
+        "vol_target": 0.08,
+        "uses_2010plus": false,
+        "full_sharpe": 0.356,
+        "oos_sharpe": 0.8357,
+        "oos_total": 0.4954,
+        "full_maxdd": -0.3763,
+        "turn": 0.2962,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "broad_only_DBC",
+        "lookback": 252,
+        "vol_target": 0.1,
+        "uses_2010plus": false,
+        "full_sharpe": 0.348,
+        "oos_sharpe": 0.8307,
+        "oos_total": 0.6165,
+        "full_maxdd": -0.4439,
+        "turn": 0.3512,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_USCI_UNL",
+        "lookback": 63,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": 0.0114,
+        "oos_sharpe": 0.439,
+        "oos_total": 0.1625,
+        "full_maxdd": -0.2794,
+        "turn": 0.3102,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_USCI_UNL",
+        "lookback": 63,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": -0.0304,
+        "oos_sharpe": 0.3788,
+        "oos_total": 0.1679,
+        "full_maxdd": -0.3482,
+        "turn": 0.3671,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_USCI_UNL",
+        "lookback": 126,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": -0.0036,
+        "oos_sharpe": 0.7536,
+        "oos_total": 0.3017,
+        "full_maxdd": -0.3131,
+        "turn": 0.2688,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_USCI_UNL",
+        "lookback": 126,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": -0.0391,
+        "oos_sharpe": 0.7026,
+        "oos_total": 0.3451,
+        "full_maxdd": -0.3691,
+        "turn": 0.3105,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_USCI_UNL",
+        "lookback": 252,
+        "vol_target": 0.08,
+        "uses_2010plus": true,
+        "full_sharpe": 0.2048,
+        "oos_sharpe": 0.9122,
+        "oos_total": 0.4089,
+        "full_maxdd": -0.2676,
+        "turn": 0.1998,
+        "oos_start": "2019-01-02"
+      },
+      {
+        "set": "all3_USL_USCI_UNL",
+        "lookback": 252,
+        "vol_target": 0.1,
+        "uses_2010plus": true,
+        "full_sharpe": 0.1692,
+        "oos_sharpe": 0.8435,
+        "oos_total": 0.4695,
+        "full_maxdd": -0.31,
+        "turn": 0.2257,
+        "oos_start": "2019-01-02"
+      }
+    ]
+  },
+  "orthogonality": {
+    "corr_spy": 0.4499,
+    "corr_tqqq": 0.3186
+  },
+  "stress_windows": {
+    "2008_GFC": {
+      "window": [
+        "2008-01-01",
+        "2009-06-30"
+      ],
+      "n_days": 252,
+      "signal_total": -0.0907,
+      "signal_sharpe": -1.1047,
+      "ew_total": -0.3916,
+      "static_opt_total": -0.0907
+    },
+    "2020_covid": {
+      "window": [
+        "2020-02-01",
+        "2020-06-30"
+      ],
+      "n_days": 104,
+      "signal_total": -0.0887,
+      "signal_sharpe": -1.3437,
+      "ew_total": -0.3671,
+      "static_opt_total": -0.1045
+    },
+    "2022_rateshock": {
+      "window": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "n_days": 251,
+      "signal_total": -0.0064,
+      "signal_sharpe": -0.0986,
+      "ew_total": 0.2529,
+      "static_opt_total": 0.1023
+    }
+  },
+  "combined_sleeve": {
+    "corr_to_bond": -0.2802,
+    "bond_leg_full_sharpe": 0.5779,
+    "bond_leg_oos_sharpe": 0.4338,
+    "commodity_leg_full_sharpe": -0.0137,
+    "commodity_leg_oos_sharpe": 0.7079,
+    "full_sharpe": 0.2682,
+    "oos_sharpe": 0.9669,
+    "maxdd": -0.1757,
+    "oos_maxdd": -0.0612,
+    "full_cagr": 0.0112,
+    "ann_vol": 0.0453,
+    "corr_spy": 0.2514,
+    "corr_tqqq": 0.1645,
+    "span": [
+      "2008-07-02",
+      "2026-06-22"
+    ],
+    "n_days": 4520
+  },
+  "allocator_frontier": {
+    "common_window": [
+      "2010-02-12",
+      "2026-06-22"
+    ],
+    "n_days": 4113,
+    "corrs": {
+      "carry_to_tqqq": 0.0062,
+      "carry_to_rot": 0.2528,
+      "carry_to_spx": 0.0092,
+      "tqqq_to_rot": 0.581
+    },
+    "live_2sleeve_invvol": {
+      "sharpe": 1.0038,
+      "maxdd": -0.2797,
+      "cagr": 0.1604,
+      "vol": 0.1612,
+      "oos_sharpe": 1.1226,
+      "oos_maxdd": -0.2797
+    },
+    "with_carry_3sleeve_invvol": {
+      "sharpe": 1.0407,
+      "maxdd": -0.1284,
+      "cagr": 0.0663,
+      "vol": 0.0636,
+      "oos_sharpe": 1.2315,
+      "oos_maxdd": -0.1107
+    },
+    "spx_ref": {
+      "sharpe": 0.7744,
+      "maxdd": -0.3392,
+      "cagr": 0.1259,
+      "vol": 0.1724,
+      "oos_sharpe": 0.8459,
+      "oos_maxdd": -0.3392
+    },
+    "carry_solo_on_window": {
+      "sharpe": 0.3884,
+      "maxdd": -0.1757,
+      "cagr": 0.0164,
+      "vol": 0.0443,
+      "oos_sharpe": 0.9669,
+      "oos_maxdd": -0.0612
+    },
+    "delta_full_sharpe": 0.0369,
+    "delta_oos_sharpe": 0.1089,
+    "delta_maxdd": 0.1513
+  },
+  "is_oos_split_robustness": {
+    "commodity": {
+      "2014-12-31": {
+        "is_sharpe": -0.6346,
+        "is_total": -0.2939,
+        "oos_sharpe": 0.3862,
+        "oos_total": 0.3248
+      },
+      "2016-12-31": {
+        "is_sharpe": -0.5037,
+        "is_total": -0.3141,
+        "oos_sharpe": 0.5338,
+        "oos_total": 0.3638
+      },
+      "2018-12-31": {
+        "is_sharpe": -0.4402,
+        "is_total": -0.3272,
+        "oos_sharpe": 0.7079,
+        "oos_total": 0.3903
+      },
+      "2020-12-31": {
+        "is_sharpe": -0.2984,
+        "is_total": -0.291,
+        "oos_sharpe": 1.0031,
+        "oos_total": 0.3193
+      }
+    },
+    "combined": {
+      "2014-12-31": {
+        "is_sharpe": -0.1384,
+        "is_total": -0.0559,
+        "oos_sharpe": 0.5836,
+        "oos_total": 0.2932
+      },
+      "2016-12-31": {
+        "is_sharpe": -0.1627,
+        "is_total": -0.0829,
+        "oos_sharpe": 0.8587,
+        "oos_total": 0.3314
+      },
+      "2018-12-31": {
+        "is_sharpe": -0.0521,
+        "is_total": -0.0415,
+        "oos_sharpe": 0.9669,
+        "oos_total": 0.2738
+      },
+      "2020-12-31": {
+        "is_sharpe": 0.1004,
+        "is_total": 0.0482,
+        "oos_sharpe": 0.8818,
+        "oos_total": 0.1649
+      }
+    }
+  },
+  "commodity_year_returns": {
+    "2008": -0.1308,
+    "2009": 0.0494,
+    "2010": -0.0389,
+    "2011": 0.0254,
+    "2012": -0.034,
+    "2013": -0.0265,
+    "2014": -0.1647,
+    "2015": -0.1124,
+    "2016": 0.0944,
+    "2017": 0.0065,
+    "2018": -0.0254,
+    "2019": 0.1273,
+    "2020": -0.0652,
+    "2021": 0.0559,
+    "2022": -0.0064,
+    "2023": 0.0487,
+    "2024": 0.0538,
+    "2025": 0.0565,
+    "2026": 0.0769
+  },
+  "verdict": {
+    "overall": "CLOSE",
+    "k1_commodity_oos_sharpe_ge_0.4": {
+      "pass": true,
+      "value": 0.7079,
+      "bar": 0.4,
+      "note": "OOS Sharpe is inflated by vol-suppression (cash-parking); see IS-consistency guard"
+    },
+    "k2_beats_EW_control_oos": {
+      "pass": false,
+      "delta_sharpe": 0.1994,
+      "delta_total": -0.7751,
+      "signal_oos_sharpe": 0.7079,
+      "ew_oos_sharpe": 0.5085,
+      "signal_oos_total": 0.3903,
+      "ew_oos_total": 1.1654,
+      "note": "MAKE-OR-BREAK: net total return vs dumb EW hold of same ETFs (dirty-proxy test)"
+    },
+    "k3_beats_static_optimized_oos": {
+      "pass": true,
+      "delta_sharpe": 0.2851,
+      "delta_total": 0.0425,
+      "signal_oos_sharpe": 0.7079,
+      "static_oos_sharpe": 0.4228
+    },
+    "k4_corr_to_bond_le_0.3": {
+      "pass": true,
+      "value": -0.2802,
+      "bar": 0.3
+    },
+    "k5_combined_oos_sharpe_ge_0.5_and_low_book_corr": {
+      "pass": true,
+      "combined_oos_sharpe": 0.9669,
+      "bar": 0.5,
+      "combined_corr_spy": 0.2514,
+      "combined_corr_tqqq": 0.1645,
+      "note": "OOS-only; see is_consistency_guard \u2014 combined FULL Sharpe is the honest forward proxy"
+    },
+    "is_consistency_guard": {
+      "commodity_is_sharpe": -0.4402,
+      "commodity_full_sharpe": -0.0137,
+      "commodity_regime_artifact": true,
+      "combined_full_sharpe": 0.2682,
+      "combined_full_clears_0.5": false,
+      "bond_leg_alone_full_sharpe": 0.5779,
+      "combined_beats_bond_alone_full": false,
+      "verdict_note": "commodity leg edge is OOS-ONLY (negative IS Sharpe, ~0 full-period); adding it LOWERS the combined FULL Sharpe below the bond leg alone \u2014 the gaudy combined OOS number is a post-2018 regime artifact, not a trustworthy forward edge"
+    }
+  }
+}

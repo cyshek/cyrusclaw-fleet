@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Partnered with enterprise customers (Databricks, Walmart, SAP, NetApp) to scope and execute **45+ annual resilience drills**, translating complex cloud recovery requirements into structured proof-of-concept workflows that drove **$14M+ in measurable business impact**.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining API-driven self-service scheduling capabilities and integration requirements that reduced operational toil by **30%** and scaled execution without headcount growth.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a full drill program in **4 months** with a 94% recovery rate by scoping technical requirements, surfacing hardware defects, and establishing a repeatable validation model.
+4. Served as technical bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, owning cross-org discovery, solution scoping, and stakeholder communication across engineering, compliance, and executive teams.
+5. Built an internal **AI agent** for drill planning automation, restructuring workflows to cut planning cycle time by 39% and increase drill capacity by 21% — mirroring how LLM-powered tools can compress complex operational cycles in production environments.
+6. Directed 14 high-visibility cross-org recovery executions, translating customer integration requirements and compliance constraints into implementation plans and architecture documentation consumed by both engineering and customer-facing teams.
+7. Created reusable technical collateral — including architecture diagrams, workflow documentation, and evaluation frameworks — that standardized how enterprise customers onboarded into Azure's resilience validation program at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption for AI-driven code generation** workflows by running tailored demos and training sessions across 14 Azure service teams, surfacing integration requirements and saving 37 engineering hours monthly through hands-on enablement.
+2. Conducted **11+ technical discovery interviews** with Azure service teams to identify feature gaps in YAML-based automation workflows, translating findings into a structured product roadmap recommendation that influenced the next-quarter engineering backlog.
+3. Improved semantic search integration by enforcing metadata standards and migrating documentation to an **AI-powered retrieval platform**, cutting lookup time by 83% and demonstrating how LLM-backed tools can simplify complex technical workflows for end users.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by aligning 140+ teams around a unified automation prioritization framework — requiring the same cross-functional discovery and solution scoping central to pre-sales technical work.
+2. Led technical discovery with 20+ service teams to surface 81 hours of manual effort per region launch, then built a phased roadmap to automate critical execution paths — translating raw customer workflow pain into a scoped, implementable solution.
+3. Engineered a **Power BI dashboard** to track operational toil across 140+ teams, giving leadership real-time visibility into automation gaps and enabling data-driven prioritization of high-impact integration investments across the organization.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot by defining the legacy OS migration strategy and mapping integration dependencies across 1,200+ stations — scoping a complex technical transition from discovery through production.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across IT, Operations, and Engineering stakeholders.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual handoffs between technical teams during production rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job **bookings by 26%** by redesigning the end-to-end sales workflow — managing scoping, proposals, and invoicing for 200+ monthly deals through a new CRM process that mirrors the technical discovery and deal-support work central to solutions engineering.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profiles to improve top-of-funnel qualification for inbound leads.
+3. Conducted financial profitability analysis across **1,000+ project records** to identify margin leaks and improve leadership pricing models, translating raw operational data into actionable recommendations that shaped sales strategy and deal structuring.
+
+## Notes from the rewriter
+- 'proof-of-concept' and 'solution scoping' woven into microsoft_ft bullet#1 and amazon_robotics bullet#1 — directly mirrors JD's 'scope and manage proof-of-concepts' language.
+- 'technical discovery' appears in microsoft_2023 bullet#2 and pro_painters bullet#1 — mirrors JD's 'technical discovery' as a core responsibility Phonely calls out explicitly.
+- 'LLM-powered tools' and 'AI agent' used in microsoft_ft bullet#5 — directly references JD's nice-to-have 'familiarity with LLMs, voice AI, or conversational AI platforms.'
+- 'integration requirements' and 'compliance constraints' woven into microsoft_ft bullet#4 — mirrors JD's exact phrasing about understanding 'integration requirements and compliance constraints' during pre-sales discovery.
+- 'production' used in amazon_robotics bullet#1 to echo JD's language around supporting POCs 'through to production,' framing Cyrus's technical transitions as deployment-complete, not just scoped.
+

@@ -92,24 +92,16 @@ def is_rejection(body_snippet):
 
 
 def is_interview_signal(subject, sender, body_snippet=""):
-    # First: bail out early if this is a rejection email
-    if is_rejection(body_snippet):
-        return False
-
-    text = f"{subject} {body_snippet}".lower()
-    sender_lower = sender.lower()
-
-    for pat in INTERVIEW_SUBJECT_PATTERNS:
-        if re.search(pat, text, re.IGNORECASE):
-            return True
-
-    for domain in RECRUITER_DOMAIN_HINTS:
-        if domain in sender_lower:
-            scheduling_words = ["schedule", "time", "calendar", "available", "meet", "call", "interview"]
-            if any(w in text for w in scheduling_words):
-                return True
-
-    return False
+    """Delegate to the scored classifier (classifier.py). Kept as a thin wrapper so
+    existing callers keep working. The old keyword-soup logic is retired."""
+    try:
+        from classifier import classify
+        is_int, _score, _label, _reasons = classify(subject, sender, body_snippet)
+        return is_int
+    except Exception as e:
+        print(f"[gmail_scanner] classifier error ({e}) - falling back to keyword match")
+        # Conservative fallback: only the literal word 'interview' in subject.
+        return "interview" in (subject or "").lower()
 
 
 def extract_company_from_email(subject, sender, body_snippet=""):
@@ -214,6 +206,17 @@ def scan_gmail_inbox():
 def lookup_tracker_role(company, role_hint=None):
     if not company:
         return None
+
+    # Canonicalize the company name first so domain-derived guesses like
+    # "Datadoghq" / "Newrelic" / "Ziphq" / "Everpuredata" match the clean names
+    # stored in the roles table ("Datadog", "New Relic", "Zip", "Everpure").
+    try:
+        from classifier import canonical_company
+        canon = canonical_company(company, "", "")
+        if canon:
+            company = canon
+    except Exception:
+        pass
 
     try:
         db = sqlite3.connect(TRACKER_DB, check_same_thread=False)

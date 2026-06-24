@@ -1,9 +1,16 @@
-PREP-READY — 2026-06-23T07:37:55+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3251
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-snowflake-86570858-e425-4144-9aef-8838cefd18c3.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/snowflake-86570858-e425-4144-9aef-8838cefd18c3/Cyrus_Shekari_Resume_ashby-snowflake_86570858_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/snowflake-86570858-e425-4144-9aef-8838cefd18c3/cover_answers.md
+submitted_at: 2026-06-23T17:10:11+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+stant: 6c-a7d8-b7b1340558ae already active, skipping
+[runner] last-instant: 4a-b493-c608c65670df already active, skipping
+[runner] last-instant: 49-a733-f46f352b0cb5 already active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

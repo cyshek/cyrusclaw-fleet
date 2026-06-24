@@ -66,6 +66,33 @@ HOST_TO_GH_SLUG: dict[str, str] = {
     "careers.roblox.com":         "roblox",
     "pubmatic.com":               "pubmatic",
     "videoamp.com":               "videoamp",
+    # added 2026-06-24 — block.xyz/instacart.careers/coinbase.com gh_jid wrappers
+    # slug verified live via boards-api (block→207 jobs, instacart→156, coinbase→116)
+    "block.xyz":                  "block",
+    "instacart.careers":          "instacart",
+    "coinbase.com":               "coinbase",
+    "brex.com":                   "brex",
+    "fastly.com":                 "fastly",
+    # added 2026-06-24 pass10b — gh_jid wrapper-host cohort gap
+    "zoominfo.com":               "zoominfo",
+    "gigs.com":                   "gigs",
+    "salt.security":              "saltsecurity",
+    "catonetworks.com":           "catonetworks",
+    "taboola.com":                "taboola",
+    # added 2026-06-24 pass10b — batch of gh_jid wrapper-hosts discovered during drain pass
+    "avathon.com":                "avathon",
+    "careers.formlabs.com":       "formlabs",
+    "careers.withwaymo.com":      "waymo",
+    "nuro.ai":                    "nuro",
+    "ripple.com":                 "ripple",
+    "wing.com":                   "wing",
+    "alloy.com":                  "alloy",
+    "intersystems.com":           "intersystems",
+    "ixl.com":                    "ixllearning",
+    "picarro.com":                "picarroinc",
+    "praetorian.com":             "praetorian",
+    "rubrik.com":                 "rubrik",
+    "esri.com":                   "esri",
 }
 
 GH_JID_RX = re.compile(r"[?&]gh_jid=(\d+)")

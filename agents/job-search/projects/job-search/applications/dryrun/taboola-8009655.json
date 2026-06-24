@@ -1,0 +1,413 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/taboola/jobs/8009655",
+  "org": "taboola",
+  "job_id": "8009655",
+  "job_title": "Solutions Engineer",
+  "job_location": "New York City (NYC), New York, United States",
+  "fetched_at": "2026-06-24T05:14:13Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/taboola/jobs/8009655?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 20,
+    "filled": 14,
+    "filled_needs_review": 2,
+    "declined": 2,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67641847",
+      "label": "How did you first hear about this job?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_67717274",
+      "label": "Please confirm that you understand this role is NOT a Software Engineer, AI/ML Engineer, or Cybersecurity role. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge consent / accuracy (default Yes) | NOTE: 'Yes' not literally in options ['I understand that this is NOT a Software Engineer, AI/ML Engineer, or Cybersecurity role.', 'I am seeking a role as a Software Engineer, AI/ML Engineer, or in Cybersecurity.']",
+      "status": "filled_needs_review",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I understand that this is NOT a Software Engineer, AI/ML Engineer, or Cybersecurity role.",
+          "value": 729714192
+        },
+        {
+          "label": "I am seeking a role as a Software Engineer, AI/ML Engineer, or in Cybersecurity.",
+          "value": 729714193
+        }
+      ]
+    },
+    {
+      "id": "question_67641848",
+      "label": "Please rate your SQL skills on a scale of 0 - 5. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "3 - Intermediate",
+      "source": "sql_skills_rating: middle option",
+      "status": "filled",
+      "matched_rule": "sql_skills_rating",
+      "options": [
+        {
+          "label": "0 - Limited or no experience",
+          "value": 728911456
+        },
+        {
+          "label": "1 - Beginner",
+          "value": 728911457
+        },
+        {
+          "label": "2 - Basic",
+          "value": 728911458
+        },
+        {
+          "label": "3 - Intermediate",
+          "value": 728911459
+        },
+        {
+          "label": "4 - Advanced",
+          "value": 728911460
+        },
+        {
+          "label": "5 - Expert",
+          "value": 728911461
+        }
+      ]
+    },
+    {
+      "id": "question_67717275",
+      "label": "Do you have any experience in the Ad Tech / Mar Tech industry?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67717276",
+      "label": "Do you have experience optimizing advertising campaigns?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67717277",
+      "label": "In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_67717278",
+      "label": "This role is a hybrid position requiring three days per week in-person at our New York City office. Which of the following best describes your situation?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['I am currently based in the greater NYC area and open to a hybrid role', 'I am looking for a fully remote position', 'I am not currently based in the greater NYC area, but I am open to relocating for this role']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "I am currently based in the greater NYC area and open to a hybrid role",
+          "value": 729714194
+        },
+        {
+          "label": "I am looking for a fully remote position",
+          "value": 729714195
+        },
+        {
+          "label": "I am not currently based in the greater NYC area, but I am open to relocating for this role",
+          "value": 729714196
+        }
+      ]
+    },
+    {
+      "id": "question_67641851",
+      "label": "Are you authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67641852",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_1438",
+      "label": "Gender Identity (Optional, and given with my consent as described above)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": 182995
+        },
+        {
+          "label": "Female",
+          "value": 8163
+        },
+        {
+          "label": "Male",
+          "value": 8162
+        },
+        {
+          "label": "Non-Binary",
+          "value": 8164
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_1443",
+      "label": "Ethnic Identity (Optional, and given with my consent as described above)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": 182996
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 8198
+        },
+        {
+          "label": "White (Not Hispanic or Latino)",
+          "value": 8199
+        },
+        {
+          "label": "Black or African American (Not Hispanic or Latino)",
+          "value": 8200
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander (Not Hispanic or Latino",
+          "value": 8201
+        },
+        {
+          "label": "Asian (Not Hispanic or Latino)",
+          "value": 8202
+        },
+        {
+          "label": "Native American or Alaskan Native (Not Hispanic or Latino)",
+          "value": 8203
+        },
+        {
+          "label": "Two or more races (Not Hispanic or Latino)",
+          "value": 8204
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67717275",
+      "label": "Do you have any experience in the Ad Tech / Mar Tech industry?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'"
+    },
+    {
+      "id": "question_67717277",
+      "label": "In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67717275",
+      "label": "Do you have any experience in the Ad Tech / Mar Tech industry?",
+      "reason": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'"
+    },
+    {
+      "id": "question_67717277",
+      "label": "In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.",
+      "reason": "no LABEL_RULES match for label='In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

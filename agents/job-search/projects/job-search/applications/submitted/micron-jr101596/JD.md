@@ -5,7 +5,7 @@
 **Apply:** https://micron.wd1.myworkdayjobs.com/External/job/Manassas-VA----Fab-6/F6-SPMO-Cost-Program-Manager_JR101596/apply
 **Workday tenant:** micron
 **Req ID:** JR101596
-**Posted on:** Posted 7 Days Ago
+**Posted on:** Posted 8 Days Ago
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---

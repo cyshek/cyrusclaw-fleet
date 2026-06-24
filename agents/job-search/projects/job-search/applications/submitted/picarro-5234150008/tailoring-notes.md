@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ business impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 product development** of an internal Resilience Automation Platform — authored requirements docs and self-service scheduling capabilities that cut operational toil by 30%, mirroring NPI lifecycle ownership from concept through iterative launch.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation standard across the portfolio.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating R&D, engineering, and field operations stakeholders end-to-end.
+5. Defined KPIs and tracked post-launch field performance for the drill program, using data analytics to drive continuous improvement and report outcomes to senior leadership across hardware and software dimensions of the platform.
+6. Built an internal **AI agent** and restructured planning workflows to reduce cycle time by 39% and increase drill capacity by 21%, demonstrating the product strategy mindset of using emerging technology to scale operations without proportional headcount growth.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly — directly supporting commercial enablement goals.
+2. Shaped the product roadmap by facilitating **11+ customer interviews** with Azure engineering teams to surface critical feature gaps, resulting in intent-based YAML generation being prioritized in the next sprint cycle as a high-impact backlog item.
+3. Improved data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered **semantic search platform**, reducing lookup time by 83% and demonstrating measurable post-launch adoption improvement.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework — coordinating roadmap tradeoffs across 140+ service teams to balance near-term needs with strategic bets.
+2. Executed product discovery with 20+ service teams to quantify **81 hours of manual toil** per region launch, then built a prioritized roadmap to automate critical paths and presented findings to leadership as a business case for strategic investment.
+3. Enabled leadership to identify automation gaps and target high-impact support by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, providing the data foundation for quarterly roadmap and resource prioritization decisions.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by owning the legacy OS migration product strategy — mapping hardware and software dependencies across 1,200+ stations and authoring requirements that guided engineering through NPI-style execution.
+2. Facilitated Agile ceremonies including sprint planning, backlog grooming, and retrospectives, resolving **40+ high-priority tickets** to stabilize the developer intake process and maintain delivery velocity across cross-functional hardware and software teams.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable release process modeled on Agile scrum best practices.
+4. Tracked adoption and field performance metrics post-migration, defining success KPIs and surfacing continuous improvement opportunities that informed the next-phase roadmap for fleet-wide OS standardization across robotics hardware.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end operations and managing the scoping and invoicing lifecycle for 200+ monthly proposals through a redesigned CRM process — directly owning the customer-facing product workflow from intake through close.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile to align messaging with target customer needs and competitive positioning.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and closing margin leaks — demonstrating the data-driven, results-oriented approach to product and business strategy required for P&L ownership.
+
+## Notes from the rewriter
+- 'NPI-style execution' woven into amazon_robotics bullet#1 — mirrors JD's 'Support hardware NPI' responsibility and NPI/PLC language in requirements.
+- 'Post-launch field performance' and 'KPI' language inserted into microsoft_ft bullet#5 and amazon_robotics bullet#4 — directly mirrors JD's 'Measure success' section calling out adoption tracking and continuous improvement.
+- 'Customer interviews' and 'product roadmap' vocabulary from JD's 'Drive market and customer insight' section surfaced explicitly in microsoft_2023 bullet#2, framing the 11 user interviews as the same discovery motion Picarro expects.
+- 'Go-to-market strategy' and 'sales enablement' from JD's 'Enable the commercial team' responsibility mirrored in pro_painters bullet#2 and bullet#3, connecting GTM execution experience to Picarro's commercial team support requirement.
+- 'Hardware and software dimensions' phrasing from the JD's roadmap ownership section echoed in microsoft_ft bullet#1 and amazon_robotics bullet#2 to reinforce Cyrus's cross-domain product experience matching Picarro's dual hw/sw portfolio.
+

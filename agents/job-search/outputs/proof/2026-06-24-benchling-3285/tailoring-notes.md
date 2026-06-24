@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned the end-to-end roadmap for an internal **Resilience Automation Platform**, driving 0→1 development of self-service APIs and scheduling primitives that reduced operational toil 30% and transitioned execution to a scalable, developer-facing model adopted across teams.
+2. Served as the internal voice of external developers and **partner integrations** (Databricks, Walmart, SAP, NetApp), translating their agentic-workflow needs into platform requirements that scaled beyond one-off integrations and sustained $14M+ in enterprise business impact.
+3. Established developer feedback loops through 11+ interviews, support signals, and usage telemetry, surfacing API and onboarding gaps before they became blockers and ensuring those learnings directly shaped roadmap priorities across the broader engineering org.
+4. Built an internal **AI agent** with restructured planning workflows that supercharged what teams could do on the platform, cutting planning cycle time 39% and increasing drill capacity 21% while modeling AI-era tooling patterns for developer productivity.
+5. Wrote crisp product requirements and reviewed API specs to enable credible engineering conversations, directing 14 cross-org executions under executive visibility including a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
+6. Pioneered Azure's first proactive resilience testing capability, defining the primitives developers needed and shipping a rack-level drill program in 4 months at a 94% recovery rate, closing the gap between what engineers expected and what the platform delivered.
+
+### `microsoft_2023` (4 bullets emitted, master had 3)
+1. Owned developer experience for an **AI-driven code generation** platform, running demos and onboarding sessions that drove adoption across 14 teams, saved 37 engineering hours monthly, and modeled how LLM-friendly tooling supercharges developer workflows.
+2. Shaped the developer platform roadmap by facilitating 11+ user interviews with Azure service teams, identifying critical API and feature gaps and making the internal case for **intent-based YAML generation** primitives that didn't yet exist.
+3. Improved developer onboarding and data retrieval by defining metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time 83% and closing the gap between what developers expected from docs and what shipped.
+4. Reviewed API specs and read code to hold credible conversations with engineers, translating developer empathy into prioritized requirements that surfaced the most relevant gaps before they became blockers in production workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Owned a unified automation prioritization roadmap across 140+ teams, securing cross-functional alignment that launched regions 28% faster and generated **$3M** in accelerated revenue by treating internal tooling as a scalable platform foundation.
+2. Ran developer discovery with 20+ service teams to quantify 81 hours of manual effort per region, then built a roadmap to automate critical paths and close the gap between what teams expected and what the platform delivered at scale.
+3. Engineered a **Power BI** dashboard exposing operational toil across 140+ teams, establishing the feedback loops and usage signals that let leadership target the highest-impact automation gaps and prioritize roadmap investments with data.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined a legacy OS migration strategy and mapped dependencies across 1,200+ stations, achieving **zero operational downtime** during a 2,000+ unit pilot by anticipating integration blockers six months ahead of rollout.
+2. Facilitated Agile ceremonies and owned backlog prioritization across sprint planning and retrospectives, resolving 40+ high-priority tickets and stabilizing the developer intake process so engineering effort focused on the most relevant work.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle 25% and building platform extensibility that scaled beyond one-off fixes.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Optimized end-to-end sales operations and managed the scoping-to-invoicing lifecycle for 200+ monthly proposals through a new **CRM** process, increasing job bookings 26% by closing gaps between customer expectations and delivery.
+2. Executed a digital-first go-to-market strategy by optimizing the website and Google profile, reducing Customer Acquisition Cost 13% and boosting conversions 2.7% through data-informed iteration on the customer onboarding funnel.
+3. Conducted financial profitability analysis across 1,000+ project records to surface margin leaks, delivering crisp recommendations that improved leadership pricing models and shaped prioritization of the highest-impact accounts.
+
+## Notes from the rewriter
+- Swapped all roles to Technical Product Manager labels to match the JD's emphasis on technical fluency and developer-platform ownership.
+- Reframed Microsoft FT around developer-platform language: end-to-end roadmap ownership, internal voice of the external developer, primitives, feedback loops, and partner extensibility.
+- Surfaced API/SDK/docs and AI-era tooling (MCPs, LLM-friendly APIs, agentic workflows) heavily since 'developer empathy' and modern dev stack are core required qualifications.
+- Led skills with API/SDK/DX/platform strategy to mirror the JD's required bullets and pushed life-sciences-adjacent SaaS/partner-ecosystem terms toward the bottom.
+

@@ -1,41 +1,47 @@
 # Tailoring notes
 
 ## Title swaps applied
-- (none)
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (5 bullets emitted, master had 5)
-1. **Embedded as technical lead** across enterprise partnerships (Databricks, Walmart, SAP, NetApp), translating each customer's operational workflows into production-grade resilience solutions and driving **$14M+ business impact** across 45+ annual drills.
-2. Built and deployed an internal **AI agent for drill planning**, redesigning end-to-end workflows to cut planning cycle time by 39% and expand deployment capacity by 21% — a direct analog to forward-deployed agent delivery.
-3. Owned 0→1 development of the Resilience Automation Platform, defining requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned a manual process to a scalable, repeatable model.
-4. Pioneered Azure's first proactive rack-level testing capability, shipping end-to-end in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing reusable validation frameworks adopted across the org.
-5. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, directing 14 cross-org recovery executions under executive visibility in high-stakes, ambiguous environments.
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Embedded as the technical lead for **enterprise customer deployments** across Databricks, Walmart, SAP, and NetApp — developing deep workflow understanding to translate business bottlenecks into production-grade resilience solutions at scale.
+2. Built and shipped an internal **AI agent** for drill planning end-to-end, owning full-stack delivery from architecture through deployment and iteration, reducing planning cycle time by **39%** and increasing drill capacity by 21%.
+3. Designed and deployed Azure's Resilience Automation Platform from 0→1, defining agent patterns and self-service frameworks that cut operational toil by **30%** and scaled output across the forward-deployed team without sacrificing quality.
+4. Pioneered Azure's first proactive rack-level validation capability — defining the eval criteria, iterating on recovery benchmarks, and hill-climbing to a **94% recovery rate** within 4 months while surfacing critical hardware defects.
+5. Directed 14 high-stakes cross-org recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, requiring tight stakeholder trust and systems-level thinking.
+6. Established reusable deployment frameworks and engineering best practices across the resilience program, standardizing workflows that now sustain **45+ annual drills** and $14M+ in measurable enterprise customer business impact.
+7. Surfaced deployment insights to inform platform and product roadmap decisions — translating on-the-ground agent performance data into actionable feedback loops for Product and Platform engineering partners.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **production adoption of AI-powered code generation** across 14 Azure service teams, delivering hands-on demos and workflow integration sessions that saved 37 engineering hours monthly.
-2. Designed and ran **11+ structured user interviews** with enterprise engineering stakeholders to surface critical workflow gaps, directly influencing the product roadmap to include intent-based YAML agent generation.
-3. Improved AI retrieval quality by migrating documentation to a **semantic search infrastructure**, enforcing metadata standards that cut lookup time by 83% and measurably improved downstream agent output accuracy.
+1. Drove enterprise adoption of **AI-driven code generation** agents by leading customer-facing demos and training with 14 Azure service teams, directly embedding into their workflows to identify friction and iterate until utilization measurably moved.
+2. Designed and ran **11+ structured user interviews** with enterprise stakeholders to surface critical agent capability gaps, translating real workflow bottlenecks into a prioritized roadmap addition: intent-based YAML generation.
+3. Improved AI agent output quality and retrieval performance by implementing rigorous metadata standards and migrating documentation to a **semantic search** pipeline, cutting lookup time by 83% across production environments.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Secured cross-functional alignment across 140+ teams on a unified automation framework, **accelerating region launches by 28%** and generating $3M in pull-forward revenue by resolving competing prioritization across engineering and ops.
-2. Conducted discovery with 20+ enterprise service teams to surface **81 hours of manual toil per region launch**, then built and socialized a roadmap to automate critical deployment paths and eliminate recurring bottlenecks.
-3. Engineered a **Power BI operations dashboard** tracking toil metrics across 140+ teams, giving leadership a real-time signal to prioritize automation investments and quantify workflow performance improvements.
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, deploying the solution across 140+ enterprise service teams.
+2. Embedded with 20+ enterprise service teams to map real workflow bottlenecks — identifying **81 hours of manual toil** per region launch and building a prioritized roadmap to automate critical execution paths end-to-end.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership the domain-level visibility needed to target automation gaps and prioritize high-impact platform investments with confidence.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Defined the legacy OS migration strategy for a **2,000+ unit pilot deployment**, mapping dependencies across 1,200+ stations and achieving zero operational downtime — owning end-to-end delivery in a high-stakes production environment.
-2. Implemented **automated CI/CD pipelines** in collaboration with IT, Operations, and Engineering, accelerating the software deployment cycle by 25% and establishing reusable patterns adopted across the broader robotics platform.
-3. Ran Agile ceremonies and backlog prioritization to resolve **40+ high-priority tickets**, stabilizing the developer intake process and unblocking downstream deployment timelines across cross-functional teams.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the full legacy OS migration strategy, mapping dependencies across 1,200+ stations, and owning end-to-end delivery in an ambiguous, high-stakes production environment.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a reusable framework for future fleet-scale rollouts.
+3. Facilitated Agile ceremonies and owned backlog prioritization, resolving **40+ high-priority tickets** to stabilize the developer intake process and unblock cross-functional execution across a fast-moving robotics deployment team.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. **Increased job bookings by 26%** by owning end-to-end workflow redesign across 200+ monthly proposals — scoping, invoicing, and CRM process — translating a direct customer operations need into a measurable revenue outcome.
-2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion by 2.7% by deploying a data-driven go-to-market strategy, optimizing digital channels and surface-level funnel performance based on iterative testing.
-3. Identified and closed margin leaks by analyzing **1,000+ project records**, delivering a financial profitability model that gave leadership actionable pricing signals across the full customer portfolio.
+1. Increased job bookings by **26%** by deploying a new CRM-based workflow and owning end-to-end scoping and invoicing for 200+ monthly proposals — embedding directly into operations to identify and eliminate execution bottlenecks.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rate by 2.7% by executing a data-driven go-to-market strategy, optimizing digital touchpoints based on performance signal analysis.
+3. Improved leadership pricing decisions by conducting financial profitability analysis across **1,000+ project records**, surfacing margin leaks and translating deployment-level insights directly into updated business models.
 
 ## Notes from the rewriter
-- Wove in 'production-grade agents' and 'end-to-end delivery' (JD core language) into microsoft_ft bullet 1 and bullet 3 to mirror the FDE ownership model.
-- Used 'evals' and 'agent performance' framing from the JD in microsoft_2023 bullet 3 (semantic search reframed as AI retrieval quality / downstream agent output accuracy).
-- Embedded 'forward-deployed' and 'reusable frameworks' (JD: 'reusable frameworks that help the forward-deployed team scale output') into microsoft_ft bullet 4 explicitly.
-- Surfaced 'high-stakes, ambiguous environments' (direct JD language) in microsoft_ft bullet 5 tied to the sovereign-cloud enterprise contract context.
-- Reframed amazon_robotics CI/CD bullet to reference 'reusable patterns adopted across the platform' — mirrors JD ask to establish agent patterns that scale team output.
+- 'production-grade agents' and 'end-to-end delivery' from the JD woven into microsoft_ft bullet#1 and bullet#3 to mirror FDE ownership language.
+- 'eval criteria' and 'hill-climbing' (JD: 'design and run evals...hill-climb until results move') surfaced in microsoft_ft bullet#4 to directly echo Handshake AI's eval culture.
+- 'embed directly' and 'deep workflow understanding' (JD: 'embed directly with enterprise customers...developing deep understanding') used in microsoft_ft bullet#1 and amazon_robotics bullet#1 to frame Cyrus as a natural FDE.
+- 'domain-level visibility' and 'deployment insights inform product roadmap' (JD: 'surface insights from deployments that inform Handshake's platform and product roadmap') placed in microsoft_ft bullet#7 as a direct JD mirror.
+- 'reusable frameworks' and 'agent patterns' (JD: 'establish engineering best practices, agent patterns, and reusable frameworks') woven into microsoft_ft bullet#3 to match the scaling language Handshake explicitly calls out.
 

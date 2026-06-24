@@ -1,6 +1,9 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T07:20:46+00:00
+PREP-READY — 2026-06-24T04:36:04+00:00
 
 role_id: 3425
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "fef967d2-8451-4bc5-baae-9be51d1e6079_question_29345363003", "label": "Are you a new college graduate?", "reason": "no LABEL_RULES match for label='Are you a new college graduate?'"}, {"id": "fef967d2-8451-4bc5-baae-9be51d1e6079_question_29728914003", "label": "Cerebras products, software, source code, technology, and/or services are subject to the U.S. Export Administration Regulations (EAR).  Access to controlled source code and technology by our employees may require prior authorizati
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-cerebras-538ef11a-dfaa-47f1-8557-790199a769d1.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/cerebras-538ef11a-dfaa-47f1-8557-790199a769d1/Cyrus_Shekari_Resume_ashby-cerebras_538ef11a_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/cerebras-538ef11a-dfaa-47f1-8557-790199a769d1/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

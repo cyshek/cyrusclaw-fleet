@@ -68,6 +68,18 @@ from .walk_forward_xsec import (
 
 DEFAULT_CELL_CAP = 500
 
+# IS/OOS consistency-guard defaults (defined up here because SweepSpec uses
+# DEFAULT_IS_OOS_SPLIT as a field default). The canonical NAMED_WINDOWS span
+# 2022-H1 .. 2026-recent; cutting at 2024-01-01 puts 2022/2023 in-sample and
+# 2024+ out-of-sample. A cell that only earns its keep AFTER this date (flat or
+# negative before) is a single-regime artifact, not a forward edge.
+DEFAULT_IS_OOS_SPLIT = "2024-01-01"
+# A cell is flagged REGIME_ARTIFACT when OOS looks promotable but IS does not
+# corroborate (mirrors the bond-leg/commodity-leg post-mortem: full-period ~0
+# with a positive OOS-only tail is the exact signature).
+REGIME_ARTIFACT_OOS_MIN = 0.5      # OOS Sharpe that would otherwise look promotable
+IS_CORROBORATION_FLOOR = 0.0       # IS Sharpe must be at least break-even
+
 
 # ---------------------------------------------------------------------------
 # Sweep spec
@@ -110,6 +122,8 @@ class SweepSpec:
     cost_model: Optional[CostModel] = None
     cell_cap: int = DEFAULT_CELL_CAP
     allow_zero_trades: bool = False
+    is_oos_split: str = DEFAULT_IS_OOS_SPLIT   # IS/OOS-consistency guard cutoff
+    ew_control: bool = True                    # run the EW-of-universe baseline
 
     def __post_init__(self):
         if self.family not in ("xsec", "single"):
@@ -210,12 +224,21 @@ class CellResult:
     # Metrics
     fp_cont_sharpe: float = 0.0        # PRIMARY rank key (clause a). Canonical.
     n_fp_returns: int = 0
+    is_fp_sharpe: float = 0.0          # in-sample sub-Sharpe (IS/OOS guard)
+    oos_fp_sharpe: float = 0.0         # out-of-sample sub-Sharpe (IS/OOS guard)
+    n_is_returns: int = 0
+    n_oos_returns: int = 0
     median_window_sharpe: float = 0.0  # SECONDARY / generous. A mirage.
     worst_instrument_dd_pct: float = 0.0
     ann_return_on_deployed_pct: float = 0.0
     round_trip_count: int = 0
     median_return_pct: float = 0.0
     pct_positive: float = 0.0
+    # EW-of-same-universe control deltas (filled in run_sweep; nan = no control)
+    ew_full_sharpe: float = float("nan")
+    ew_oos_sharpe: float = float("nan")
+    beats_ew_full: Optional[bool] = None
+    beats_ew_oos: Optional[bool] = None
     # Verdict
     fitness_pass: bool = False
     bar_a1_pass: bool = False
@@ -224,6 +247,12 @@ class CellResult:
     reject_clauses: List[str] = field(default_factory=list)
     # Robustness (filled in by classify_robustness)
     robustness: str = ""               # "" | "PLATEAU" | "KNIFE_EDGE"
+    # Honesty flags (filled in run_sweep AFTER robustness): a passing PLATEAU
+    # cell can still be untrustworthy if it is an OOS-only regime artifact or
+    # loses to the no-signal EW control. trustworthy gates surfacing.
+    regime_artifact: bool = False
+    fails_ew_control: bool = False
+    trustworthy: bool = False
     error: Optional[str] = None        # set if the cell raised
 
     @property
@@ -276,6 +305,155 @@ def _assert_cost_active(cm: CostModel) -> None:
 
 
 # ---------------------------------------------------------------------------
+# IS/OOS consistency guard  +  EW-of-same-universe control
+# (the two disciplines that killed three research lanes on 2026-06-23: every
+#  one died OOS-positive-but-IS-negative, or losing to a no-signal EW hold of
+#  its own instruments. The plateau/knife-edge classifier alone could not see
+#  either — a gaudy OOS plateau IS the mirage. These guards make those kills
+#  automatic.)
+# ---------------------------------------------------------------------------
+
+# Default IS/OOS split: the canonical NAMED_WINDOWS span 2022-H1 .. 2026-recent.
+# Cutting at 2024-01-01 puts the 2022/2023 windows in-sample and 2024+ out.
+# A cell that only earns its keep AFTER this date (and is flat/negative before)
+# is a single-regime artifact, not a forward edge.
+DEFAULT_IS_OOS_SPLIT = "2024-01-01"
+
+# A cell is flagged REGIME_ARTIFACT when its OOS sub-Sharpe looks good but its
+# IS sub-Sharpe does NOT corroborate. "Looks good OOS" = oos >= this; "does not
+# corroborate" = is_sharpe below IS_CORROBORATION_FLOOR. These mirror the
+# bond-leg/commodity-leg post-mortem: full-period ~0 with a positive OOS-only
+# tail is the exact signature.
+REGIME_ARTIFACT_OOS_MIN = 0.5      # OOS Sharpe that would otherwise look promotable
+IS_CORROBORATION_FLOOR = 0.0       # IS Sharpe must be at least break-even
+
+
+def _window_end_naive(w) -> Optional[datetime]:
+    """Best-effort window end as a naive datetime for IS/OOS splitting.
+
+    walk-forward windows expose `.end_date` as an ISO date string (e.g.
+    '2024-07-01'). Returns None if it can't be parsed (the caller then treats
+    the window as IS by default — never silently OOS, which would flatter a
+    cell)."""
+    ed = getattr(w, "end_date", None)
+    if ed is None:
+        return None
+    if isinstance(ed, datetime):
+        return ed.replace(tzinfo=None)
+    try:
+        s = str(ed).replace("Z", "")
+        return datetime.fromisoformat(s).replace(tzinfo=None)
+    except (ValueError, TypeError):
+        return None
+
+
+def is_oos_split_sharpe(
+        windows, *, split_date: str, timeframe: str, is_crypto: bool
+) -> Tuple[float, float, int, int]:
+    """Split walk-forward windows at `split_date` and return
+    (is_fp_sharpe, oos_fp_sharpe, n_is_returns, n_oos_returns).
+
+    IS = windows ending strictly before split_date; OOS = the rest. Windows
+    whose end-date can't be parsed are counted IS (conservative — they cannot
+    inflate the OOS tail). Empty side -> 0.0 Sharpe / 0 returns. Reuses the ONE
+    canonical FP-cont Sharpe helper on each subset (no metric reimplementation).
+    """
+    try:
+        cut = datetime.fromisoformat(str(split_date)).replace(tzinfo=None)
+    except (ValueError, TypeError):
+        cut = datetime.fromisoformat(DEFAULT_IS_OOS_SPLIT)
+    is_w, oos_w = [], []
+    for w in windows:
+        end = _window_end_naive(w)
+        if end is not None and end >= cut:
+            oos_w.append(w)
+        else:
+            is_w.append(w)
+    is_fps, n_is = (fp_continuous_sharpe(
+        is_w, timeframe=timeframe, is_crypto=is_crypto) if is_w else (0.0, 0))
+    oos_fps, n_oos = (fp_continuous_sharpe(
+        oos_w, timeframe=timeframe, is_crypto=is_crypto) if oos_w else (0.0, 0))
+    return is_fps, oos_fps, n_is, n_oos
+
+
+def _is_regime_artifact(is_fps: float, oos_fps: float, full_fps: float) -> bool:
+    """True iff the cell's edge is an OOS-only single-regime artifact: OOS looks
+    promotable but IS does not corroborate (and the full-period Sharpe is not
+    itself strong). This is the commodity-leg mirage detector."""
+    if oos_fps < REGIME_ARTIFACT_OOS_MIN:
+        return False               # not even an OOS sparkle -> ordinary reject path
+    if is_fps >= IS_CORROBORATION_FLOOR and full_fps >= IS_CORROBORATION_FLOOR:
+        return False               # IS corroborates -> genuine, not an artifact
+    return True
+
+
+class _EWControlAction:
+    """Minimal Action for the no-signal equal-weight baseline (mirrors the
+    `_BHAction` shape every manual driver hand-rolled)."""
+    __slots__ = ("action", "symbol", "notional_usd", "qty", "reason")
+
+    def __init__(self, action: str, symbol: str, notional: float):
+        self.action = action
+        self.symbol = symbol
+        self.notional_usd = notional
+        self.qty = None
+        self.reason = "ew_control_baseline"
+
+
+def _decide_xsec_equal_weight(market_state, position_state, params):
+    """No-signal control: hold every basket name at equal weight, buy once then
+    hold. The cell under test must BEAT this, OOS net of cost, or its 'edge' is
+    survivorship/beta of the universe rather than the signal (the fundamentals-
+    PIT + BAB lesson)."""
+    syms = list(params.get("basket", []))
+    if not syms:
+        return {}
+    notional = float(params.get("notional_usd",
+                                params.get("max_notional_usd", 1000.0))) / len(syms)
+    out: Dict[str, object] = {}
+    for s in syms:
+        held = position_state.get(s)
+        qty = getattr(held, "qty", None) if held is not None else None
+        if not qty:
+            out[s] = _EWControlAction("buy", s, notional)
+        else:
+            out[s] = _EWControlAction("hold", s, 0.0)
+    return out
+
+
+def ew_control_sharpe(
+        spec: "SweepSpec", basket: List[str], cost_model: CostModel,
+) -> Tuple[float, float, int]:
+    """Full + OOS FP-cont Sharpe of a no-signal equal-weight hold of `basket`,
+    run through the SAME evaluator/windows/cost as the cells (apples-to-apples).
+    Returns (full_fps, oos_fps, n_returns). On any evaluator error returns
+    (nan, nan, 0) and the caller skips the EW gate for that universe (a broken
+    baseline must not silently pass or fail cells)."""
+    import math
+    if not basket:
+        return (float("nan"), float("nan"), 0)
+    params = dict(spec.base_params)
+    params["basket"] = list(basket)
+    windows = spec.windows or NAMED_WINDOWS
+    try:
+        agg = walk_forward_xsec(
+            f"{spec.strategy_label}__ewctrl", basket, params=params,
+            decide_xsec_fn=_decide_xsec_equal_weight, windows=windows,
+            warmup_days=spec.warmup_days, cost_model=cost_model,
+            allow_zero_trades=True)
+    except Exception:  # noqa: BLE001 — a broken baseline must not gate cells
+        return (float("nan"), float("nan"), 0)
+    is_crypto = basket_is_crypto(basket)
+    tf = str(params.get("timeframe", "1Day"))
+    full_fps, nret = fp_continuous_sharpe(agg.windows, timeframe=tf,
+                                          is_crypto=is_crypto)
+    _, oos_fps, _, _ = is_oos_split_sharpe(
+        agg.windows, split_date=spec.is_oos_split or DEFAULT_IS_OOS_SPLIT,
+        timeframe=tf, is_crypto=is_crypto)
+    return (full_fps, oos_fps, nret)
+
+
+# ---------------------------------------------------------------------------
 # Single-cell evaluation
 # ---------------------------------------------------------------------------
 
@@ -296,14 +474,21 @@ def _eval_cell_xsec(spec: SweepSpec, override: Dict, basket: List[str],
     deployed = float(params.get("notional_usd",
                                 params.get("max_notional_usd", 1000.0)))
     is_crypto = basket_is_crypto(basket)
+    tf = str(params.get("timeframe", "1Day"))
     fps, nret = fp_continuous_sharpe(
-        agg.windows, timeframe=str(params.get("timeframe", "1Day")),
-        is_crypto=is_crypto)
+        agg.windows, timeframe=tf, is_crypto=is_crypto)
+    is_fps, oos_fps, n_is, n_oos = is_oos_split_sharpe(
+        agg.windows, split_date=spec.is_oos_split or DEFAULT_IS_OOS_SPLIT,
+        timeframe=tf, is_crypto=is_crypto)
     fit_pass, _ = passes_fitness_gate_xsec(agg)
     dd_pass, _ = passes_bar_a_5b(agg)
     metrics = {
         "fp_cont_sharpe": fps,
         "n_fp_returns": nret,
+        "is_fp_sharpe": is_fps,
+        "oos_fp_sharpe": oos_fps,
+        "n_is_returns": n_is,
+        "n_oos_returns": n_oos,
         "median_window_sharpe": agg.median_sharpe,
         "worst_instrument_dd_pct": agg.worst_instrument_dd_pct,
         "ann_return_on_deployed_pct": deployed_ann_return_pct(agg, deployed),
@@ -327,9 +512,13 @@ def _eval_cell_single(spec: SweepSpec, override: Dict,
         spec.strategy_label, params=params, decide_fn=spec.decide_fn,
         windows=windows, cost_model=cost_model)
     deployed = float(params.get("notional_usd", 1000.0))
+    tf = str(params.get("timeframe", "1Day"))
+    is_crypto = ("/" in str(params.get("symbol", "")))
     fps, nret = fp_continuous_sharpe(
-        agg.windows, timeframe=str(params.get("timeframe", "1Day")),
-        is_crypto=("/" in str(params.get("symbol", ""))))
+        agg.windows, timeframe=tf, is_crypto=is_crypto)
+    is_fps, oos_fps, n_is, n_oos = is_oos_split_sharpe(
+        agg.windows, split_date=spec.is_oos_split or DEFAULT_IS_OOS_SPLIT,
+        timeframe=tf, is_crypto=is_crypto)
     fit_pass, _ = passes_fitness_gate(agg)
     # Single-symbol deployed-capital DD is the portfolio max_drawdown_pct (a
     # single-symbol strategy is not a diluted basket). Worst across windows.
@@ -339,6 +528,10 @@ def _eval_cell_single(spec: SweepSpec, override: Dict,
     metrics = {
         "fp_cont_sharpe": fps,
         "n_fp_returns": nret,
+        "is_fp_sharpe": is_fps,
+        "oos_fp_sharpe": oos_fps,
+        "n_is_returns": n_is,
+        "n_oos_returns": n_oos,
         "median_window_sharpe": agg.median_sharpe,
         "worst_instrument_dd_pct": worst_dd,
         "ann_return_on_deployed_pct": deployed_ann_return_pct(agg, deployed),
@@ -553,6 +746,10 @@ def run_sweep(spec: SweepSpec, *, verbose: bool = False) -> SweepReport:
         else:
             cr.fp_cont_sharpe = metrics["fp_cont_sharpe"]
             cr.n_fp_returns = metrics["n_fp_returns"]
+            cr.is_fp_sharpe = metrics.get("is_fp_sharpe", 0.0)
+            cr.oos_fp_sharpe = metrics.get("oos_fp_sharpe", 0.0)
+            cr.n_is_returns = metrics.get("n_is_returns", 0)
+            cr.n_oos_returns = metrics.get("n_oos_returns", 0)
             cr.median_window_sharpe = metrics["median_window_sharpe"]
             cr.worst_instrument_dd_pct = metrics["worst_instrument_dd_pct"]
             cr.ann_return_on_deployed_pct = metrics["ann_return_on_deployed_pct"]

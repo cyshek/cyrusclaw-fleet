@@ -1,6 +1,9 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T04:46:19+00:00
+PREP-READY — 2026-06-24T04:01:04+00:00
 
 role_id: 3107
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "32d5895e-3d6e-43c7-baf9-39fb70fc3bf0_f3ac13ae-d8ec-4d2a-960b-66ff90538dd0", "label": "Do you have 2\u20135 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?", "reason": "no LABEL_RULES match for label='Do you have 2\u20135 years in product management, product ops, BizOps, strategy, technical program management, revenue operations, or a similar area?'"}]
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-ramp-a3afd259-ba6b-4eb0-a1b6-05d01dddacd8.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/ramp-a3afd259-ba6b-4eb0-a1b6-05d01dddacd8/Cyrus_Shekari_Resume_ashby-ramp_a3afd259_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/ramp-a3afd259-ba6b-4eb0-a1b6-05d01dddacd8/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

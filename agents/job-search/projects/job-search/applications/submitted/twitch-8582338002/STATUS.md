@@ -1,6 +1,32 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T03:19:20+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-24
 role_id: 3011
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_36848894002", "label": "Are you familiar with Twitch? ", "reason": "no LABEL_RULES match for label='Are you familiar with Twitch? '"}, {"id": "question_36848895002", "label": "Are you currently a Twitch employee?", "reason": "no LABEL_RULES match for label='Are you currently a Twitch employee?'"}, {"id": "question_36848896002", "label": "Are you open to relocation? ", "reason": "willing_to_relocate: no matching option among ['No', \"No, but I'm open to a remote position\", 'San
+submitted_at: 2026-06-24T00:30:34+00:00
+
+Runner tail:
+  {
+      "id": "title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "S1ptO93u",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/twitch/jobs/8582338002/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\n\nView more jobs at Twitch\nBack to job post\n\nGive your application a boost!\n\nSign in"
+ },
+ "status": "SUBMITTED"
+}
+

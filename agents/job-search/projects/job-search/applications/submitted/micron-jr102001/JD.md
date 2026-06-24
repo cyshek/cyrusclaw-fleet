@@ -5,7 +5,7 @@
 **Apply:** https://micron.wd1.myworkdayjobs.com/External/job/Boise-ID---Main-Site/HBM-Product-Manager--New-College-Grad-_JR102001/apply
 **Workday tenant:** micron
 **Req ID:** JR102001
-**Posted on:** Posted 24 Days Ago
+**Posted on:** Posted 25 Days Ago
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---

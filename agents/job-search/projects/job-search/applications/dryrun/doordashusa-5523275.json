@@ -4,16 +4,16 @@
   "job_id": "5523275",
   "job_title": "Product Manager (Multiple Levels)",
   "job_location": "San Francisco, CA; Seattle, WA; New York, NY",
-  "fetched_at": "2026-06-23T08:00:38Z",
+  "fetched_at": "2026-06-23T22:58:23Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/doordashusa/jobs/5523275?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 25,
-    "filled": 17,
+    "filled": 18,
     "filled_needs_review": 1,
     "declined": 6,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -272,10 +272,10 @@
       "label": "Applicant Privacy Acknowledgement ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Applicant Privacy Acknowledgement '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "Yes",
@@ -498,21 +498,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_44112173",
-      "label": "Applicant Privacy Acknowledgement ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Applicant Privacy Acknowledgement '"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_44112173",
-      "label": "Applicant Privacy Acknowledgement ",
-      "reason": "no LABEL_RULES match for label='Applicant Privacy Acknowledgement '"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

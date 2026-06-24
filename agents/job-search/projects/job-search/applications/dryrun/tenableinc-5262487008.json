@@ -4,16 +4,16 @@
   "job_id": "5262487008",
   "job_title": "Channel Sales Engineer - Security, AI",
   "job_location": "US - Remote - Atlanta - Georgia , US - Headquarters - Maryland - Columbia",
-  "fetched_at": "2026-06-23T04:24:40Z",
+  "fetched_at": "2026-06-24T00:00:38Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/tenableinc/jobs/5262487008?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 31,
-    "filled": 24,
+    "filled": 26,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 3,
-    "blockers": 2
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -1205,10 +1205,10 @@
       "label": "Have you ever previously worked for Tenable?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you ever previously worked for Tenable?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -1316,10 +1316,10 @@
       "label": "This is a hybrid position that requires you to work from either our Headquarters in Columbia, MD or in Atlanta, GA. Are you willing to work at one of these locations in a hybrid role with some in-person time required?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='This is a hybrid position that requires you to work from either our Headquarters in Columbia, MD or in Atlanta, GA. Are you willing to work at one of these locations in a hybrid role with some in-person time required?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -1490,36 +1490,13 @@
   ],
   "unresolved": [
     {
-      "id": "question_16510698008",
-      "label": "Have you ever previously worked for Tenable?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you ever previously worked for Tenable?'"
-    },
-    {
       "id": "question_16510703008",
       "label": "If yes, please provide additional details or upload supporting documents when given the opportunity to add attachments.",
       "required": false,
       "reason": "no LABEL_RULES match for label='If yes, please provide additional details or upload supporting documents when given the opportunity to add attachments.'"
-    },
-    {
-      "id": "question_16510879008",
-      "label": "This is a hybrid position that requires you to work from either our Headquarters in Columbia, MD or in Atlanta, GA. Are you willing to work at one of these locations in a hybrid role with some in-person time required?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='This is a hybrid position that requires you to work from either our Headquarters in Columbia, MD or in Atlanta, GA. Are you willing to work at one of these locations in a hybrid role with some in-person time required?'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_16510698008",
-      "label": "Have you ever previously worked for Tenable?",
-      "reason": "no LABEL_RULES match for label='Have you ever previously worked for Tenable?'"
-    },
-    {
-      "id": "question_16510879008",
-      "label": "This is a hybrid position that requires you to work from either our Headquarters in Columbia, MD or in Atlanta, GA. Are you willing to work at one of these locations in a hybrid role with some in-person time required?",
-      "reason": "no LABEL_RULES match for label='This is a hybrid position that requires you to work from either our Headquarters in Columbia, MD or in Atlanta, GA. Are you willing to work at one of these locations in a hybrid role with some in-person time required?'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

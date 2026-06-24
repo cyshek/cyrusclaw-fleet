@@ -1,4 +1,4 @@
-PREP-READY — 2026-06-23T06:34:31+00:00
+SUBMITTED — 2026-06-23T14:08:49Z
 
 role_id: 3104
 plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-dust-4258daef-22e3-42cf-9de1-54bf500f5801.json

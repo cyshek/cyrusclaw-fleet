@@ -1,0 +1,109 @@
+# Builder - Founding Sales Engineer
+
+**Company:** Reevo
+**Location:** San Francisco
+**Apply:** https://jobs.ashbyhq.com/reevo/a9b14b19-1c96-4cc2-bdf5-ac7012bd6148
+**Ashby Org:** reevo
+**Ashby Job ID:** a9b14b19-1c96-4cc2-bdf5-ac7012bd6148
+
+---
+
+## **The Opportunity**
+
+We are looking for a Founding Solution Engineer to help define how we win technical deals and bring our platform to life for customers.
+
+This is a critical early hire. As our first SE, you will build the technical sales motion from the ground up, partnering closely with AEs, product, and engineering to design solutions, prototype workflows, and ensure customers understand the full power of Reevo’s platform.
+
+You won’t just support deals, you’ll shape how they are won. From leading deep discovery conversations to architecting creative solutions for complex use cases, you’ll help customers imagine what’s possible while ensuring solutions are technically sound and implementable.
+
+This role is ideal for someone who loves pre sales, building, and problem solving. Someone energized by ambiguous environments and excited about creating the blueprint for solution engineering at a fast-growing company.
+
+We care a lot about building a strong in-person culture, and we’re very much in build mode. We expect the team to be in our SF office five days a week — that’s important to how we operate and scale right now.
+
+## **What You’ll Do**
+
+**Lead Technical Discovery**
+
+- Partner with AEs to run deep technical discovery sessions with prospective customers.
+
+- Identify workflows, integrations, and architecture requirements needed to solve real business problems.
+
+**Architect Customer Solutions**
+
+- Design scalable technical architectures tailored to each customer’s use case.
+
+- Translate customer requirements into solution designs leveraging Reevo’s platform capabilities.
+
+**Prototype and Demo Solutions**
+
+- Build customized workflow prototypes, automations, and data models to demonstrate real-world use cases.
+
+- Use demos strategically to reduce deal risk and help customers visualize implementation.
+
+**Navigate Product Gaps**
+
+- Identify creative workarounds and architectural solutions for edge cases or product gaps.
+
+- Provide feedback to product and engineering teams to influence roadmap priorities.
+
+**Own the Technical Win**
+
+- Lead conversations around integrations, implementation feasibility, data architecture, security, and compliance.
+
+- Support RFP responses and technical validation during complex deal cycles.
+
+**Bridge Sales, Product, and Engineering**
+
+- Serve as the **voice of the customer** internally, translating customer needs into actionable product insights.
+
+- Partner cross-functionally to ensure solutions are realistic, scalable, and aligned with product direction.
+
+**Support Strategic Implementations**
+
+- Occasionally assist post-sale onboarding teams when advanced technical implementation support is required.
+
+**Build the SE Playbook**
+
+- Define best practices for discovery, demos, and solution architecture.
+
+- Help shape how technical sales is executed at Reevo as the company scales.
+
+## **Who You Are**
+
+**Technically Curious: **You enjoy understanding how systems work and love diving deep into technical challenges until you uncover the root cause.
+
+**Customer Obsessed: **You care deeply about solving customer problems and can translate complex technical concepts into clear, approachable explanations.
+
+**Strong Communicator: **You communicate with clarity and empathy, tailoring conversations to both technical and non-technical audiences.
+
+**Creative Problem Solver: **You enjoy designing solutions in ambiguous environments and finding creative ways to make systems work together.
+
+**Detail-Oriented Troubleshooter: **You can triage complex problems, prioritize effectively, and maintain accuracy while managing multiple workstreams.
+
+**Collaborative Team Player: **You enjoy working cross-functionally with sales, product, and engineering teams to bring solutions to life.
+
+**Builder Mentality: **You thrive in early-stage environments where processes aren’t defined yet and are excited to help build the foundation for a growing team.
+
+## **What We’re Looking For**
+
+- 4+ years of experience in Solutions Engineering, Sales Engineering, Technical Pre Sales, or similar customer-facing technical roles within B2B SaaS.
+
+- Experience partnering closely with sales teams to support complex deal cycles.
+
+- Strong experience delivering technical demos, solution architecture discussions, and discovery sessions.
+
+- Comfort working with APIs, integrations, automation tools (e.g. Zapier, n8n, make.com), and data modeling.
+
+- Ability to translate business requirements into technical solutions and system architecture.
+
+- Excellent written and verbal communication skills with the ability to explain technical concepts clearly.
+
+- Experience working with modern SaaS tools, APIs, and cloud-based platforms.
+
+- Experience supporting RFPs, security reviews, or technical validation processes is a plus.
+
+- A passion for building and operating in fast-paced startup environments.
+
+Here at Reevo, we know the best ideas come from people with different experiences and perspectives. We welcome candidates from all backgrounds and are proud to be an equal opportunity employer. We do not discriminate based on any protected characteristic, and we’re happy to provide accommodations throughout the application process.
+
+For this role, total on-target earnings (OTE) range from **$150,000–$230,000**, depending on experience and location. The range isn’t a fixed band, compensation can vary based on factors like experience, location, and other components of the package.

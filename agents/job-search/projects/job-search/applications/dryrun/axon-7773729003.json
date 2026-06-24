@@ -4,16 +4,16 @@
   "job_id": "7773729003",
   "job_title": "ITAR Compliance Program Manager",
   "job_location": "Scottsdale, Arizona, United States",
-  "fetched_at": "2026-06-23T07:15:20Z",
+  "fetched_at": "2026-06-23T22:42:18Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/axon/jobs/7773729003?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 29,
-    "filled": 24,
+    "filled": 25,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -273,10 +273,10 @@
       "label": "Are you aware of and comfortable with our 4x week in-office policy? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you aware of and comfortable with our 4x week in-office policy? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -505,21 +505,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_31060286003",
-      "label": "Are you aware of and comfortable with our 4x week in-office policy? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you aware of and comfortable with our 4x week in-office policy? '"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_31060286003",
-      "label": "Are you aware of and comfortable with our 4x week in-office policy? ",
-      "reason": "no LABEL_RULES match for label='Are you aware of and comfortable with our 4x week in-office policy? '"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

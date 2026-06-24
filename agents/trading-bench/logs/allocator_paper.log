@@ -638,3 +638,549 @@
   ]
 }
 === end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T093001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T100001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T103001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T110001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T113001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T120001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T123001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T130001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-22", "TQQQ": "2026-06-22", "QQQ": "2026-06-22", "SPY": "2026-06-22", "GLD": "2026-06-22", "TLT": "2026-06-22"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-22  Sharpe 0.864 CAGR 20.8% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-22  Sharpe 0.915 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-22  (4113 days)
+    [common-window] TQQQ solo Sharpe 0.864 | ROT solo Sharpe 0.927 | SPX Sharpe 0.775
+[allocator_paper] mark_date=2026-06-22 inserted=0 rows_logged=2
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1295, "SPY": 0.279, "QQQ": 0.279} (cash 31.2%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -0.2047% | SPX -0.3705%
+[allocator_paper] cum since paper-clock start: blend 1.6535% | SPX 0.7101%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.014
+[allocator_paper] backtest window ['2010-02-12', '2026-06-22'] (4113 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 2,
+  "cum_ret_pct": 1.6535,
+  "spx_cum_ret_pct": 0.7101,
+  "sharpe_since_start": 8.7398,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260623T133001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.907 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.917 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=1 rows_logged=3
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.4626% | SPX -1.6019%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.003
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper_tracker @ 20260624T002034Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.916 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=0 rows_logged=3
+[allocator_paper] staleness: current (last logged == latest closed SPX bar 2026-06-23)
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.5952% | SPX -1.4363%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.002
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper staleness @ 20260624T002034Z (rc=0) ===
+{
+  "last_logged": "2026-06-23",
+  "latest_closed_bar": "2026-06-23",
+  "trading_days_behind": 0,
+  "rows_logged": 3,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-23)"
+}
+=== end allocator_paper staleness ===
+=== allocator_paper_tracker @ 20260624T070001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.916 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=0 rows_logged=3
+[allocator_paper] staleness: current (last logged == latest closed SPX bar 2026-06-23)
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.5952% | SPX -1.4363%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.002
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper staleness @ 20260624T070001Z (rc=0) ===
+{
+  "last_logged": "2026-06-23",
+  "latest_closed_bar": "2026-06-23",
+  "trading_days_behind": 0,
+  "rows_logged": 3,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-23)"
+}
+=== end allocator_paper staleness ===
+=== allocator_paper_tracker @ 20260624T073001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.916 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=0 rows_logged=3
+[allocator_paper] staleness: current (last logged == latest closed SPX bar 2026-06-23)
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.5952% | SPX -1.4363%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.002
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper staleness @ 20260624T073001Z (rc=0) ===
+{
+  "last_logged": "2026-06-23",
+  "latest_closed_bar": "2026-06-23",
+  "trading_days_behind": 0,
+  "rows_logged": 3,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-23)"
+}
+=== end allocator_paper staleness ===
+=== allocator_paper_tracker @ 20260624T080001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.916 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=0 rows_logged=3
+[allocator_paper] staleness: current (last logged == latest closed SPX bar 2026-06-23)
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.5952% | SPX -1.4363%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.002
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper staleness @ 20260624T080001Z (rc=0) ===
+{
+  "last_logged": "2026-06-23",
+  "latest_closed_bar": "2026-06-23",
+  "trading_days_behind": 0,
+  "rows_logged": 3,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-23)"
+}
+=== end allocator_paper staleness ===
+=== allocator_paper_tracker @ 20260624T083001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.916 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=0 rows_logged=3
+[allocator_paper] staleness: current (last logged == latest closed SPX bar 2026-06-23)
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.5952% | SPX -1.4363%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.002
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper staleness @ 20260624T083001Z (rc=0) ===
+{
+  "last_logged": "2026-06-23",
+  "latest_closed_bar": "2026-06-23",
+  "trading_days_behind": 0,
+  "rows_logged": 3,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-23)"
+}
+=== end allocator_paper staleness ===
+=== allocator_paper_tracker @ 20260624T090001Z (rc=0) ===
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-23", "TQQQ": "2026-06-23", "QQQ": "2026-06-23", "SPY": "2026-06-23", "GLD": "2026-06-23", "TLT": "2026-06-23"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.916 | SPX Sharpe 0.769
+[allocator_paper] mark_date=2026-06-23 inserted=0 rows_logged=3
+[allocator_paper] staleness: current (last logged == latest closed SPX bar 2026-06-23)
+[allocator_paper] sleeve split: TQQQ-voltarget 44.2% / rotation 55.8%
+[allocator_paper] decomposed target weights: {"TQQQ": 0.1294, "SPY": 0.279, "QQQ": 0.279} (cash 31.3%)
+[allocator_paper] rotation holds: ['SPY', 'QQQ'] | voltarget internal TQQQ w=0.29
+[allocator_paper] mark_date daily return: blend -2.5952% | SPX -1.4363%
+[allocator_paper] cum since paper-clock start: blend -0.8499% | SPX -0.9032%
+[allocator_paper] engine full backtest Sharpe (drift check) = 1.002
+[allocator_paper] backtest window ['2010-02-12', '2026-06-23'] (4114 days)
+
+[allocator_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-18",
+  "n_days": 3,
+  "cum_ret_pct": -0.8499,
+  "spx_cum_ret_pct": -0.9032,
+  "sharpe_since_start": -1.9547,
+  "current_w_tqqq": 0.442,
+  "current_w_rot": 0.558,
+  "current_rot_holds": [
+    "SPY",
+    "QQQ"
+  ]
+}
+=== end allocator_paper ===
+=== allocator_paper staleness @ 20260624T090001Z (rc=0) ===
+{
+  "last_logged": "2026-06-23",
+  "latest_closed_bar": "2026-06-23",
+  "trading_days_behind": 0,
+  "rows_logged": 3,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-23)"
+}
+=== end allocator_paper staleness ===

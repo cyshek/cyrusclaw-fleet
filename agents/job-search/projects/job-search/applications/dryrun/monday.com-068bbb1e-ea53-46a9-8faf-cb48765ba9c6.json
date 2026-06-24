@@ -1,0 +1,103 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/monday.com/068bbb1e-ea53-46a9-8faf-cb48765ba9c6",
+  "org": "monday.com",
+  "job_id": "068bbb1e-ea53-46a9-8faf-cb48765ba9c6",
+  "job_title": "Forward Deployed Engineer, Strategic Deployments",
+  "job_location": "New York",
+  "fetched_at": "2026-06-23T09:13:46Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1__systemfield_name",
+      "section": "Basic Info"
+    },
+    {
+      "id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1__systemfield_email",
+      "section": "Basic Info"
+    },
+    {
+      "id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1__systemfield_resume",
+      "section": "Basic Info"
+    },
+    {
+      "id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1_c415b721-b676-451b-8205-034811345456",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1_c415b721-b676-451b-8205-034811345456",
+      "section": "Basic Info"
+    },
+    {
+      "id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1_92a45e2e-fa85-40c4-9042-5f44aab2b031",
+      "label": "Do you have the legal right to work in the country where this role is based, or would you require visa sponsorship from our company?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Authorized to work (No sponsorship required) ",
+      "source": "work_authorization.sponsorship_required_* | smart-matched to option 'Authorized to work (No sponsorship required) ' | ashby_smart_match(substring_unique,picked='Authorized to work (No sponsorship required) ')",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Authorized to work (No sponsorship required) ",
+          "value": "Authorized to work (No sponsorship required) "
+        },
+        {
+          "label": "Requires visa sponsorship",
+          "value": "Requires visa sponsorship"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "e62e1f2a-b3cd-4705-86cc-eb2d05ca30c1_92a45e2e-fa85-40c4-9042-5f44aab2b031",
+      "section": "Basic Info"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

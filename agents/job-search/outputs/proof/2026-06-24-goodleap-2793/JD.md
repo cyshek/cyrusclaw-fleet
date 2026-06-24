@@ -1,0 +1,68 @@
+# Product Manager, Payments
+
+**Company:** GoodLeap
+**Location:** San Francisco, CA
+**Apply:** https://jobs.lever.co/goodleap/2a2c27b6-2ec3-4db9-9141-b26d8a7ae326/apply
+**Lever ID:** 2a2c27b6-2ec3-4db9-9141-b26d8a7ae326
+
+---
+
+About GoodLeap:
+GoodLeap is a technology company delivering best-in-class financing and software products for sustainable solutions, from solar panels and batteries to energy-efficient HVAC, heat pumps, roofing, windows, and more. Over 1 million homeowners have benefited from our simple, fast, and frictionless technology that makes the adoption of these products more affordable, accessible, and easier to understand. Thousands of professionals deploying home efficiency and solar solutions rely on GoodLeap’s proprietary, AI-powered applications and developer tools to drive more transparent customer communication, deeper business intelligence, and streamlined payment and operations. Our platform has led to more than $30 billion in financing for sustainable solutions since 2018.
+ 
+GoodLeap is also proud to support our award-winning nonprofit, GivePower, which is building and deploying life-saving water and clean electricity systems, changing the lives of more than 1.6 million people across Africa, Asia, and South America.
+
+
+Goodleap’s Product Managers are responsible for delivering innovative, best-in-class financial technology & software solutions for businesses and consumers. This role is part of the Payments team at GoodLeap, focused on delivering new Payments products to customers. We are obsessed with solving customer needs and building elegantly crafted solutions leveraging the latest in AI and technology. We collaborate with Data, Engineering, Finance, Design, and Sales to build experiences that delight our customers and partners.
+
+
+## Essential Job Duties and Responsibilities
+
+- Product Strategy – Work closely with senior leaders to set an ambitious and clear product vision for growing and scaling our business and product offerings. Be uber data-focused, leveraging data and business insights to evaluate the performance of your product against business objectives, and pivot/adjust as appropriate, balancing risks, costs, and benefits effectively. Be in tune with the competitive and industry landscape to identify customer needs and trends.
+
+- Execution – Be responsible for all aspects of technology product development including discovery, requirements gathering, development, and implementation of features. Ensure rigor in execution and attention to detail by effectively managing the product backlog. Coordinate seamless Go-to-Market activities. Work closely with key stakeholders to ensure alignment and manage expectations. Work closely with partners across the board, including UX, Sales, Marketing, Business Development, Legal, Engineering, etc.
+
+- Leadership – Motivate the engineering squad to leverage individual strengths to overcome challenges. Model team norms and contribute to positive team dynamics, leading to continuous team performance improvement. Foster an environment of trust, effectively communicating within the squads and with an ecosystem of stakeholders.
+
+- Communication and Reporting – Regularly provide updates to senior leaders, stakeholders, partners, squad members, etc. Effectively tailor communications to the appropriate audience to ensure broad alignment, awareness, and advocacy of the product.
+
+## Required Skills, Knowledge, and Abilities
+
+- Ability to flex between strategy and execution seamlessly and energized by a dynamic and fast-moving work environment.
+
+- Strong product management skills, experience with client journeys, and demonstrated ability to synthesize data.
+
+- Technical background with a keen understanding of broader business needs and strategy; ties product metrics to business goals to technical capability.
+
+- Proven track record of identifying customer problems, translating insights into product requirements, launching features, and measuring impact through clearly defined success metrics.
+
+- Ability to break down ambiguous problems into smaller chunks, partner closely with Engineering to assess trade-offs, and prioritize solutions that maximize customer value while minimizing complexity and cost.
+
+- Strong attention to detail, with the ability to anticipate edge cases, define thorough acceptance criteria, and ensure high-quality releases that meet operational, compliance, and customer experience standards.
+
+- Highly adaptable and comfortable operating in ambiguity, with the ability to adjust priorities quickly based on business needs, customer feedback, and new data while maintaining momentum and alignment across stakeholders.
+
+- Deep user empathy and understanding of user needs, and ability to propose credible novel solutions that meet those needs.
+
+- Superior communication skills, able to communicate complex messages and trade-offs, and be able to tell a compelling story.
+
+- Experience working in a collaborative multi-disciplinary team within an interactive process and an Agile development methodology.
+
+- Self-starter with outstanding organizational skills
+
+- Effective in leading cross-functionally, cross-enterprise and work effectively with various levels of the organization as well as various personality types.
+
+- Partner effectively with internal partners and stakeholders to develop product ideas.
+
+- Manage risks effectively and ensures products meet compliance, and legal standards.
+
+- Good understanding and/or experience with financial services regulations is a plus.
+
+Additional Information Regarding Job Duties and Job Descriptions:
+
+Job duties include additional responsibilities as assigned by one's supervisor or other managers related to the position/department. This job description is meant to describe the general nature and level of work being performed; it is not intended to be construed as an exhaustive list of all responsibilities, duties and other skills required for the position. The Company reserves the right at any time with or without notice to alter or change job responsibilities, reassign or transfer job position or assign additional job responsibilities, subject to applicable law. The Company shall provide reasonable accommodations of known disabilities to enable a qualified applicant or employee to apply for employment, perform the essential functions of the job, or enjoy the benefits and privileges of employment as required by the law.
+
+If you are an extraordinary professional who thrives in a collaborative work culture and values a rewarding career, then we want to work with you!  Apply today!
+
+We are committed to protecting your privacy. To learn more about how we collect, use, and safeguard your personal information during the application process, please review our Employment Privacy Policy and Recruiting Policy on AI.
+

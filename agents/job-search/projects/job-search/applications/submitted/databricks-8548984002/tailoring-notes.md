@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized delivery system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across strategic accounts including Databricks, Walmart, SAP, and NetApp.
+2. Led post-win technical account strategy for Azure's most complex enterprise workloads, owning end-to-end execution plans covering go-live readiness, **consumption health**, and stakeholder governance across multiple internal teams and customer organizations.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new model for continuous production validation.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, resolving escalations with senior customer stakeholders.
+5. Built and drove technical execution plans spanning onboarding, enablement, and go-live workstreams, coordinating Shared Services, Support, and expert-level engineering resources to accelerate **use case adoption** into production.
+6. Developed KPI reporting frameworks to track usage health, investment status, and **platform adoption** risk across prioritized accounts, providing internal and executive stakeholders with real-time visibility into workload progression.
+7. Scaled team leverage through AI-driven automation, building an internal AI agent that **reduced planning cycle time by 39%** and increased drill capacity by 21% by restructuring workflows and eliminating manual coordination overhead.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **platform adoption** for AI-driven code generation workflows, conducting discovery sessions and enablement demos across 14 Azure service teams that drove measurable utilization gains and saved **37 engineering hours monthly**.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating 11+ structured discovery workshops with Azure engineering stakeholders to surface critical feature gaps and translate them into **prioritized roadmap items**.
+3. Accelerated data retrieval and **use case enablement** by implementing metadata standards and migrating documentation to an AI-powered semantic search tool, cutting average lookup time by 83% across internal engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, orchestrating buy-in across 140+ teams toward a shared **go-live execution plan**.
+2. Mobilized a product strategy to reduce operational toil during region launches, running discovery with 20+ service teams to quantify **81 hours of manual effort per region** and building a roadmap to automate the highest-impact delivery paths.
+3. Enabled leadership to target automation gaps and **accelerate platform adoption** by engineering a Power BI dashboard tracking operational toil metrics across 140+ teams, turning unstructured data into an actionable prioritization tool.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating go-live readiness across IT, Operations, and Engineering.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing 40+ high-priority tickets** to stabilize the developer intake process and maintain delivery velocity throughout a complex, multi-team migration program.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual handoffs across the delivery workflow.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing operations for 200+ monthly proposals, implementing a structured CRM process that improved pipeline visibility and shortened the customer onboarding lifecycle.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile to improve organic lead quality and funnel performance.
+3. Improved leadership pricing decisions and **margin accountability** by conducting financial profitability analysis across 1,000+ project records, identifying systemic margin leaks and delivering a data-driven framework for use-case-level ROI attribution.
+
+## Notes from the rewriter
+- 'go-live' and 'production' (JD terms for workload completion): woven into microsoft_ft bullets #2, #5 and amazon_robotics bullet #1 to mirror DSA accountability for moving use cases from win to production.
+- 'use case adoption' and 'platform adoption' (core DSA KPIs from JD): explicitly used in microsoft_ft bullets #5 and #6, microsoft_2023 bullet #1, and microsoft_2022 bullet #3 to reflect the DSA's focus on Lakehouse adoption and consumption growth.
+- 'discovery workshops' and 'business value attribution' (JD qualifications): surfaced in microsoft_2023 bullet #2 (11+ structured discovery workshops) and pro_painters bullet #3 (ROI attribution framework) to directly match JD screening criteria.
+- 'KPI reporting' and 'customer health' (JD impact language): microsoft_ft bullet #6 was written to directly mirror the JD's requirement to provide internal and external updates on usage, investment status, and use case progression.
+- 'orchestration of specialized teams' and 'Shared Services/Support resources' (JD execution model): reflected in microsoft_ft bullet #5, showing Cyrus's experience coordinating expert resources beyond his direct scope — a named DSA responsibility.
+

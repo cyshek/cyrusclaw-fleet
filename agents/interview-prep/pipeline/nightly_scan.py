@@ -15,7 +15,10 @@ from gmail_scanner import scan_gmail_inbox, lookup_tracker_role
 from calendar_scanner import scan_calendar
 from dedup_store import filter_new_signals
 from notifier import notify_cyrus
-from interviews_tracker import process_signals
+# interviews_tracker DISABLED 2026-06-23: job-search owns the Interviews sheet now.
+# Cyrus maintains it manually; render_xlsx.py preserves it. We must NOT write the
+# interviews table or trigger an XLSX re-render. Notify-only from here on.
+# from interviews_tracker import process_signals
 
 
 def run():
@@ -47,12 +50,12 @@ def run():
         })
         print(f"[nightly_scan] {company!r} / {role!r} -> tracker={'FOUND' if tr else 'NONE'}")
 
-    # 4. Notify Cyrus
+    # 4. Notify Cyrus (notify-only pipeline)
     notify_cyrus(signals_with_tracker)
 
-    # 5. Insert into interviews table + re-render XLSX
-    inserted = process_signals(signals_with_tracker)
-    print(f"[nightly_scan] Done. Notified={len(signals_with_tracker)}, Tracker inserts={inserted}.")
+    # 5. (DISABLED 2026-06-23) No longer write the interviews table or re-render XLSX.
+    #     job-search/Cyrus own that sheet manually now. Scan + dedup + notify only.
+    print(f"[nightly_scan] Done. Notified={len(signals_with_tracker)} (DB write + XLSX render disabled — sheet is Cyrus-owned).")
 
 
 if __name__ == "__main__":

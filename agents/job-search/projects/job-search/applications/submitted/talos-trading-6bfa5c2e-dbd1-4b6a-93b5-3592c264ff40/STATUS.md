@@ -1,9 +1,16 @@
-PREP-READY — 2026-06-23T05:37:08+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3435
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-talos-trading-6bfa5c2e-dbd1-4b6a-93b5-3592c264ff40.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/talos-trading-6bfa5c2e-dbd1-4b6a-93b5-3592c264ff40/Cyrus_Shekari_Resume_ashby-talos-trading_6bfa5c2e_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/talos-trading-6bfa5c2e-dbd1-4b6a-93b5-3592c264ff40/cover_answers.md
+submitted_at: 2026-06-23T17:17:12+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+stant: 62-add4-adc349619008 already active, skipping
+[runner] last-instant: 6e-af6f-3b449cd4e84c already active, skipping
+[runner] last-instant: e0-a73a-fe56e5c56778 already active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

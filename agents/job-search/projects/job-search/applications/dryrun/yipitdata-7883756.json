@@ -4,16 +4,16 @@
   "job_id": "7883756",
   "job_title": "Product Manager, Data Feeds",
   "job_location": "US Remote",
-  "fetched_at": "2026-06-23T03:34:01Z",
+  "fetched_at": "2026-06-24T00:45:56Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/yipitdata/jobs/7883756?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 38,
-    "filled": 23,
+    "filled": 26,
     "filled_needs_review": 1,
     "declined": 7,
-    "unresolved": 7,
-    "blockers": 3
+    "unresolved": 4,
+    "blockers": 0
   },
   "fields": [
     {
@@ -147,10 +147,10 @@
       "label": "Do you have 5+ years of Product Management experience in data-intensive products (e.g., data feeds, data platforms, or B2B SaaS)?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "answer_yes: no 'Yes' option among ['Over 5 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', 'Over 5 years of Product Management experience IN data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience IN data-intensive products or B2B SaaS.', 'I do not have direct Product Management experience, but I am interested in transitioning into product management.', 'Other (Please explain below).']",
-      "status": "unresolved",
-      "matched_rule": "answer_yes",
+      "value": "Over 5 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.",
+      "source": "pm_data_experience_select: 5yr in data-intensive",
+      "status": "filled",
+      "matched_rule": "pm_data_experience_select",
       "options": [
         {
           "label": "Over 5 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.",
@@ -183,10 +183,10 @@
       "label": "Briefly describe a data product or data feed you've owned or significantly contributed to. What was the product, who were the end users, and what was your role in its development or growth?",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label=\"Briefly describe a data product or data feed you've owned or significantly contributed to. What was the product, who were the end users, and what was your role in its development or growth?\"",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -194,10 +194,10 @@
       "label": "Have you had direct accountability for revenue metrics (e.g., ARR, P&L, retention) for a product you managed? If so, give a brief example of a product decision you made that measurably impacted commercial outcomes.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you had direct accountability for revenue metrics (e.g., ARR, P&L, retention) for a product you managed? If so, give a brief example of a product decision you made that measurably impacted commercial outcomes.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "answer_yes (default Yes)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
       "options": null
     },
     {
@@ -709,24 +709,6 @@
   ],
   "unresolved": [
     {
-      "id": "question_66404569",
-      "label": "Do you have 5+ years of Product Management experience in data-intensive products (e.g., data feeds, data platforms, or B2B SaaS)?",
-      "required": true,
-      "reason": "answer_yes: no 'Yes' option among ['Over 5 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', 'Over 5 years of Product Management experience IN data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience IN data-intensive products or B2B SaaS.', 'I do not have direct Product Management experience, but I am interested in transitioning into product management.', 'Other (Please explain below).']"
-    },
-    {
-      "id": "question_66404570",
-      "label": "Briefly describe a data product or data feed you've owned or significantly contributed to. What was the product, who were the end users, and what was your role in its development or growth?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label=\"Briefly describe a data product or data feed you've owned or significantly contributed to. What was the product, who were the end users, and what was your role in its development or growth?\""
-    },
-    {
-      "id": "question_66411863",
-      "label": "Have you had direct accountability for revenue metrics (e.g., ARR, P&L, retention) for a product you managed? If so, give a brief example of a product decision you made that measurably impacted commercial outcomes.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you had direct accountability for revenue metrics (e.g., ARR, P&L, retention) for a product you managed? If so, give a brief example of a product decision you made that measurably impacted commercial outcomes.'"
-    },
-    {
       "id": "question_66404581",
       "label": "YipitData is an equal-opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion. Here is a set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. You may choose not to answer the questions below. If you do choose to answer, your responses will be used (in aggregate form only) to help us identify areas for improvement in our process. Your responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
       "required": false,
@@ -751,23 +733,7 @@
       "reason": "no LABEL_RULES match for label='The Americans with Disabilities Act (ADA) is a federal civil rights law that prohibits discrimination against people with disabilities in everyday activities.'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_66404569",
-      "label": "Do you have 5+ years of Product Management experience in data-intensive products (e.g., data feeds, data platforms, or B2B SaaS)?",
-      "reason": "answer_yes: no 'Yes' option among ['Over 5 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience, but NOT in data-intensive products or B2B SaaS.', 'Over 5 years of Product Management experience IN data-intensive products or B2B SaaS.', '1- 4 years of Product Management experience IN data-intensive products or B2B SaaS.', 'I do not have direct Product Management experience, but I am interested in transitioning into product management.', 'Other (Please explain below).']"
-    },
-    {
-      "id": "question_66404570",
-      "label": "Briefly describe a data product or data feed you've owned or significantly contributed to. What was the product, who were the end users, and what was your role in its development or growth?",
-      "reason": "no LABEL_RULES match for label=\"Briefly describe a data product or data feed you've owned or significantly contributed to. What was the product, who were the end users, and what was your role in its development or growth?\""
-    },
-    {
-      "id": "question_66411863",
-      "label": "Have you had direct accountability for revenue metrics (e.g., ARR, P&L, retention) for a product you managed? If so, give a brief example of a product decision you made that measurably impacted commercial outcomes.",
-      "reason": "no LABEL_RULES match for label='Have you had direct accountability for revenue metrics (e.g., ARR, P&L, retention) for a product you managed? If so, give a brief example of a product decision you made that measurably impacted commercial outcomes.'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

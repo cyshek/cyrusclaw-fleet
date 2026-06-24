@@ -1,9 +1,14 @@
-PREP-READY — 2026-06-23T08:23:52+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3040
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-openai-8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/openai-8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3/Cyrus_Shekari_Resume_ashby-openai_8fb1615c_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/openai-8fb1615c-34bf-47c4-a1d1-b7b2f836bbd3/cover_answers.md
+submitted_at: 2026-06-23T18:49:21+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+y active, skipping
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"messages":{"__typename":"FormSubmitMessages","blockMessageForCandidateHtml":"<p>Please Note: we have set up limits for applications across roles.  Candidates may not apply more than 5 times in any 180 day span. Please submit again once 180 days have passe
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

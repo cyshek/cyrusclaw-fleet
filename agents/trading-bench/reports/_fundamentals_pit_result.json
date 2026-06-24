@@ -1,0 +1,540 @@
+{
+  "meta": {
+    "universe_n": 104,
+    "universe": [
+      "AAPL",
+      "MSFT",
+      "AMZN",
+      "NVDA",
+      "GOOGL",
+      "META",
+      "BRK-B",
+      "AVGO",
+      "TSLA",
+      "JPM",
+      "LLY",
+      "V",
+      "UNH",
+      "XOM",
+      "MA",
+      "JNJ",
+      "PG",
+      "HD",
+      "COST",
+      "ABBV",
+      "MRK",
+      "CVX",
+      "KO",
+      "ADBE",
+      "PEP",
+      "WMT",
+      "BAC",
+      "CRM",
+      "TMO",
+      "MCD",
+      "CSCO",
+      "ACN",
+      "ABT",
+      "LIN",
+      "NFLX",
+      "DHR",
+      "AMD",
+      "TXN",
+      "DIS",
+      "WFC",
+      "PM",
+      "INTC",
+      "INTU",
+      "VZ",
+      "CMCSA",
+      "QCOM",
+      "IBM",
+      "NKE",
+      "CAT",
+      "GE",
+      "NOW",
+      "UNP",
+      "HON",
+      "COP",
+      "AXP",
+      "SPGI",
+      "LOW",
+      "BKNG",
+      "MS",
+      "GS",
+      "NEE",
+      "RTX",
+      "BA",
+      "AMGN",
+      "PLD",
+      "T",
+      "BLK",
+      "SCHW",
+      "ELV",
+      "SBUX",
+      "DE",
+      "ISRG",
+      "GILD",
+      "MDT",
+      "ADP",
+      "LMT",
+      "BMY",
+      "CB",
+      "AMT",
+      "SYK",
+      "CI",
+      "MO",
+      "PGR",
+      "SO",
+      "TJX",
+      "DUK",
+      "ZTS",
+      "BSX",
+      "REGN",
+      "ITW",
+      "EQIX",
+      "SLB",
+      "CME",
+      "PYPL",
+      "AON",
+      "ICE",
+      "MU",
+      "APD",
+      "FCX",
+      "EOG",
+      "NSC",
+      "EMR",
+      "WM",
+      "GD"
+    ],
+    "survivorship_note": "current S&P100-ish large caps (survivorship-biased: TODAY's constituents). GOOG dropped (dup CIK w/ GOOGL). MMC dropped (no cik/px cache).",
+    "oos_split": "2018-12-31",
+    "cost_bps_oneway": 2.0,
+    "as_of_build": "2026-06-23T18:36:22.771800+00:00"
+  },
+  "primary": {
+    "config": "monthly, top-quintile (20%), long-only, combined composite, 2bps",
+    "avg_turnover_per_rebal": 0.0757,
+    "n_rebal": 193,
+    "avg_n_long": 19.9,
+    "breakeven_bps_oneway": 9401.3,
+    "full": {
+      "strat": {
+        "n": 4040,
+        "sharpe": 1.017,
+        "cagr_pct": 18.25,
+        "maxdd_pct": -36.3,
+        "total_return_pct": 1369.6,
+        "ann_vol_pct": 18.11
+      },
+      "spy": {
+        "n": 4040,
+        "sharpe": 0.895,
+        "cagr_pct": 14.81,
+        "maxdd_pct": -33.72,
+        "total_return_pct": 814.9,
+        "ann_vol_pct": 17.07
+      },
+      "beats_spy_raw": true
+    },
+    "is_pre2019": {
+      "strat": {
+        "n": 2162,
+        "sharpe": 1.232,
+        "cagr_pct": 19.96,
+        "maxdd_pct": -18.18,
+        "total_return_pct": 376.5,
+        "ann_vol_pct": 15.78
+      },
+      "spy": {
+        "n": 2162,
+        "sharpe": 0.884,
+        "cagr_pct": 12.63,
+        "maxdd_pct": -19.35,
+        "total_return_pct": 177.5,
+        "ann_vol_pct": 14.68
+      }
+    },
+    "oos_2019plus": {
+      "strat": {
+        "n": 1878,
+        "sharpe": 0.841,
+        "cagr_pct": 16.31,
+        "maxdd_pct": -36.3,
+        "total_return_pct": 208.4,
+        "ann_vol_pct": 20.47
+      },
+      "spy": {
+        "n": 1878,
+        "sharpe": 0.92,
+        "cagr_pct": 17.36,
+        "maxdd_pct": -33.72,
+        "total_return_pct": 229.7,
+        "ann_vol_pct": 19.47
+      },
+      "beats_spy_raw": false
+    }
+  },
+  "killer_battery": {
+    "2020-Q1 covid crash": {
+      "strat": {
+        "n": 41,
+        "sharpe": -1.498,
+        "cagr_pct": -76.15,
+        "maxdd_pct": -36.3,
+        "total_return_pct": -20.8,
+        "ann_vol_pct": 76.27
+      },
+      "spy": {
+        "n": 41,
+        "sharpe": -1.642,
+        "cagr_pct": -73.47,
+        "maxdd_pct": -33.72,
+        "total_return_pct": -19.4,
+        "ann_vol_pct": 67.08
+      }
+    },
+    "2022 bear (full yr)": {
+      "strat": {
+        "n": 251,
+        "sharpe": -0.65,
+        "cagr_pct": -17.42,
+        "maxdd_pct": -27.7,
+        "total_return_pct": -17.4,
+        "ann_vol_pct": 24.74
+      },
+      "spy": {
+        "n": 251,
+        "sharpe": -0.71,
+        "cagr_pct": -18.24,
+        "maxdd_pct": -24.5,
+        "total_return_pct": -18.2,
+        "ann_vol_pct": 24.24
+      }
+    },
+    "2022-H1 bear": {
+      "strat": {
+        "n": 124,
+        "sharpe": -1.831,
+        "cagr_pct": -38.9,
+        "maxdd_pct": -24.69,
+        "total_return_pct": -21.5,
+        "ann_vol_pct": 25.16
+      },
+      "spy": {
+        "n": 124,
+        "sharpe": -1.669,
+        "cagr_pct": -36.43,
+        "maxdd_pct": -23.01,
+        "total_return_pct": -20.0,
+        "ann_vol_pct": 25.22
+      }
+    },
+    "2025-Q1 tariff bear": {
+      "strat": {
+        "n": 61,
+        "sharpe": 0.12,
+        "cagr_pct": 0.11,
+        "maxdd_pct": -11.08,
+        "total_return_pct": 0.0,
+        "ann_vol_pct": 23.35
+      },
+      "spy": {
+        "n": 61,
+        "sharpe": -0.809,
+        "cagr_pct": -27.79,
+        "maxdd_pct": -18.76,
+        "total_return_pct": -7.6,
+        "ann_vol_pct": 33.52
+      }
+    },
+    "2011 debt-ceiling": {
+      "strat": {
+        "n": 64,
+        "sharpe": -1.177,
+        "cagr_pct": -36.35,
+        "maxdd_pct": -15.42,
+        "total_return_pct": -10.8,
+        "ann_vol_pct": 33.62
+      },
+      "spy": {
+        "n": 64,
+        "sharpe": -1.616,
+        "cagr_pct": -44.32,
+        "maxdd_pct": -17.07,
+        "total_return_pct": -13.8,
+        "ann_vol_pct": 32.87
+      }
+    },
+    "2018-Q4 selloff": {
+      "strat": {
+        "n": 63,
+        "sharpe": -1.961,
+        "cagr_pct": -39.74,
+        "maxdd_pct": -17.94,
+        "total_return_pct": -11.9,
+        "ann_vol_pct": 24.32
+      },
+      "spy": {
+        "n": 63,
+        "sharpe": -2.336,
+        "cagr_pct": -44.1,
+        "maxdd_pct": -19.2,
+        "total_return_pct": -13.5,
+        "ann_vol_pct": 23.69
+      }
+    },
+    "2023-H1 recovery": {
+      "strat": {
+        "n": 124,
+        "sharpe": 2.387,
+        "cagr_pct": 43.62,
+        "maxdd_pct": -8.43,
+        "total_return_pct": 19.5,
+        "ann_vol_pct": 15.69
+      },
+      "spy": {
+        "n": 124,
+        "sharpe": 2.25,
+        "cagr_pct": 37.07,
+        "maxdd_pct": -7.54,
+        "total_return_pct": 16.8,
+        "ann_vol_pct": 14.49
+      }
+    },
+    "2024-Q2 bull": {
+      "strat": {
+        "n": 63,
+        "sharpe": 0.687,
+        "cagr_pct": 6.05,
+        "maxdd_pct": -3.2,
+        "total_return_pct": 1.5,
+        "ann_vol_pct": 9.15
+      },
+      "spy": {
+        "n": 63,
+        "sharpe": 1.686,
+        "cagr_pct": 18.7,
+        "maxdd_pct": -5.34,
+        "total_return_pct": 4.4,
+        "ann_vol_pct": 10.5
+      }
+    }
+  },
+  "long_short_spread": {
+    "config": "monthly, top-minus-bottom quintile, combined composite, 2bps",
+    "full": {
+      "n": 4040,
+      "sharpe": -0.435,
+      "cagr_pct": -4.51,
+      "maxdd_pct": -52.82,
+      "total_return_pct": -52.3,
+      "ann_vol_pct": 9.56
+    },
+    "oos_2019plus": {
+      "n": 1878,
+      "sharpe": -0.405,
+      "cagr_pct": -4.87,
+      "maxdd_pct": -34.26,
+      "total_return_pct": -31.1,
+      "ann_vol_pct": 10.88
+    },
+    "avg_turnover_per_rebal": 0.0829
+  },
+  "robustness_sweep": [
+    {
+      "cadence": "M",
+      "bucket": 0.2,
+      "signal": "composite",
+      "full_sharpe": 1.017,
+      "full_ret_pct": 1369.6,
+      "full_maxdd_pct": -36.3,
+      "oos_sharpe": 0.841,
+      "oos_ret_pct": 208.4,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.0757
+    },
+    {
+      "cadence": "M",
+      "bucket": 0.2,
+      "signal": "value_z",
+      "full_sharpe": 1.068,
+      "full_ret_pct": 1774.5,
+      "full_maxdd_pct": -36.78,
+      "oos_sharpe": 0.971,
+      "oos_ret_pct": 288.2,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.061
+    },
+    {
+      "cadence": "M",
+      "bucket": 0.2,
+      "signal": "quality_z",
+      "full_sharpe": 1.034,
+      "full_ret_pct": 1216.0,
+      "full_maxdd_pct": -34.04,
+      "oos_sharpe": 0.824,
+      "oos_ret_pct": 185.2,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.0805
+    },
+    {
+      "cadence": "M",
+      "bucket": 0.333,
+      "signal": "composite",
+      "full_sharpe": 1.076,
+      "full_ret_pct": 1464.7,
+      "full_maxdd_pct": -34.66,
+      "oos_sharpe": 0.98,
+      "oos_ret_pct": 261.5,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.0624
+    },
+    {
+      "cadence": "M",
+      "bucket": 0.333,
+      "signal": "value_z",
+      "full_sharpe": 1.066,
+      "full_ret_pct": 1490.6,
+      "full_maxdd_pct": -36.17,
+      "oos_sharpe": 0.984,
+      "oos_ret_pct": 265.0,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.0501
+    },
+    {
+      "cadence": "M",
+      "bucket": 0.333,
+      "signal": "quality_z",
+      "full_sharpe": 1.068,
+      "full_ret_pct": 1265.7,
+      "full_maxdd_pct": -33.3,
+      "oos_sharpe": 0.948,
+      "oos_ret_pct": 228.6,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.0742
+    },
+    {
+      "cadence": "Q",
+      "bucket": 0.2,
+      "signal": "composite",
+      "full_sharpe": 1.055,
+      "full_ret_pct": 1586.8,
+      "full_maxdd_pct": -39.08,
+      "oos_sharpe": 0.898,
+      "oos_ret_pct": 241.7,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.1619
+    },
+    {
+      "cadence": "Q",
+      "bucket": 0.2,
+      "signal": "value_z",
+      "full_sharpe": 1.07,
+      "full_ret_pct": 1852.4,
+      "full_maxdd_pct": -38.18,
+      "oos_sharpe": 0.993,
+      "oos_ret_pct": 311.4,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.1247
+    },
+    {
+      "cadence": "Q",
+      "bucket": 0.2,
+      "signal": "quality_z",
+      "full_sharpe": 1.058,
+      "full_ret_pct": 1314.4,
+      "full_maxdd_pct": -34.2,
+      "oos_sharpe": 0.865,
+      "oos_ret_pct": 203.8,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.1865
+    },
+    {
+      "cadence": "Q",
+      "bucket": 0.333,
+      "signal": "composite",
+      "full_sharpe": 1.087,
+      "full_ret_pct": 1533.9,
+      "full_maxdd_pct": -35.89,
+      "oos_sharpe": 0.995,
+      "oos_ret_pct": 272.3,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.1349
+    },
+    {
+      "cadence": "Q",
+      "bucket": 0.333,
+      "signal": "value_z",
+      "full_sharpe": 1.061,
+      "full_ret_pct": 1515.3,
+      "full_maxdd_pct": -38.62,
+      "oos_sharpe": 0.998,
+      "oos_ret_pct": 279.8,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.1075
+    },
+    {
+      "cadence": "Q",
+      "bucket": 0.333,
+      "signal": "quality_z",
+      "full_sharpe": 1.038,
+      "full_ret_pct": 1169.3,
+      "full_maxdd_pct": -34.4,
+      "oos_sharpe": 0.884,
+      "oos_ret_pct": 201.7,
+      "spy_full_ret_pct": 814.9,
+      "beats_spy_full": true,
+      "avg_turnover": 0.1729
+    }
+  ],
+  "lookahead_canary": {
+    "violations": 0,
+    "sample": [],
+    "passed": true
+  },
+  "runtime_sec": 369.5,
+  "survivorship_control_ew104": {
+    "description": "Equal-weight ALL 104 universe names, NO factor tilt, monthly rebal, 2bps. The decisive test: if EW-104 ~ matches/exceeds the factor strat, the apparent edge is the survivorship-biased UNIVERSE, not the factor.",
+    "full": {
+      "sharpe": 1.112,
+      "total_return_pct": 1517.0,
+      "maxdd_pct": -34.56
+    },
+    "is_pre2019": {
+      "sharpe": 1.24,
+      "total_return_pct": 351.3,
+      "maxdd_pct": -17.81
+    },
+    "oos_2019plus": {
+      "sharpe": 1.005,
+      "total_return_pct": 258.3,
+      "maxdd_pct": -34.56
+    },
+    "spy_full": {
+      "sharpe": 0.895,
+      "total_return_pct": 814.9
+    },
+    "verdict": "EW-104 beats SPY by MORE than the factor strat (1517% vs 1370% full; 258% vs 208% OOS). Factor tilt SUBTRACTS value vs its own equal-weight universe. The 'edge' is 100% survivorship bias."
+  },
+  "VERDICT": {
+    "beats_bh_spy_raw_full": true,
+    "beats_bh_spy_raw_oos": false,
+    "beats_ew104_universe": false,
+    "long_short_spread_positive": false,
+    "lookahead_clean": true,
+    "disposition": "CLOSE",
+    "one_line": "CLOSE: full-period 'win' is entirely survivorship bias (today's S&P100 survivors equal-weight-tilt), not a fundamentals edge \u2014 factor adds nothing vs its own EW universe, loses OOS, and the L/S spread is decisively negative."
+  }
+}

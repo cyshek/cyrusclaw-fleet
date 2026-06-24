@@ -1,6 +1,33 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T02:55:50+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3346
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_67633689", "label": "If yes, please describe your current visa status. If you answered no, you can answer N/A.", "reason": "no LABEL_RULES match for label='If yes, please describe your current visa status. If you answered no, you can answer N/A.'"}, {"id": "question_67633694", "label": "Did a current Rithum employee refer you to this role? ", "reason": "no LABEL_RULES match for label='Did a current Rithum employee refer you to this role? '"}, {"id": "question_67633695", "label"
+submitted_at: 2026-06-24T00:04:26+00:00
+
+Runner tail:
+    },
+     {
+      "id": "title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "Vk1Fe1Ig",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/rithum/jobs/8008586/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying for a role at Rithum!\n\nYour application has been received, and we can't wait to dive into your background. If our team finds that your experience aligns with the role, we'll be "
+ },
+ "status": "SUBMITTED"
+}
+

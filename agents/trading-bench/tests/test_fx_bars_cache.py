@@ -151,16 +151,26 @@ def test_fx_adjclose_equals_close_on_live_cache():
 # Live disk-cache integration check (the lane's load-bearing claim)
 # --------------------------------------------------------------------------- #
 def test_live_eurusd_cache_span_matches_lane_claim():
-    """The FX lane report claims EURUSD=X is 5843 bars 2003-12-01..2026-06-09.
-    This is an integration check against the on-disk parsed cache (no network if
-    the cache exists). Skips only if the cache file is entirely absent."""
+    """The FX lane report claims EURUSD=X is a deep series starting 2003-12-01
+    (>=5843 bars as of the 2026-06-09 lane snapshot). This is an integration
+    check against the on-disk parsed cache (no network if the cache exists),
+    guarding against silent truncation/corruption of the load-bearing series.
+
+    Assertions are robust to legitimate forward growth: the start anchor is
+    immutable, but the cache may accrue newer bars over time, so bar count and
+    last-date are floors, not exact matches (a brittle exact ==5843 rotted the
+    moment the cache refreshed to 5852 — FX lane is CLOSED but the cache file
+    still refreshes). Skips only if the cache file is entirely absent."""
     parsed = WORKSPACE / "data_cache" / "yahoo_fx" / "EURUSD_X_parsed.json"
     if not parsed.exists():
         pytest.skip("EURUSD parsed cache not present")
     sp = fxc.span("EURUSD=X")
-    assert sp["n"] == 5843, f"expected 5843 EURUSD bars, got {sp['n']}"
+    # Floor, not exact: cache only ever grows forward; truncation is the bug we catch.
+    assert sp["n"] >= 5843, f"expected >=5843 EURUSD bars (lane snapshot), got {sp['n']} — possible truncation"
+    # Start anchor is immutable — the deep-history claim is load-bearing.
     assert sp["first"] == "2003-12-01"
-    assert sp["last"] == "2026-06-09"
+    # Last date only moves forward from the lane-snapshot date.
+    assert sp["last"] >= "2026-06-09", f"expected last >= 2026-06-09, got {sp['last']}"
 
 
 def test_dates_strictly_ascending_on_live_cache():

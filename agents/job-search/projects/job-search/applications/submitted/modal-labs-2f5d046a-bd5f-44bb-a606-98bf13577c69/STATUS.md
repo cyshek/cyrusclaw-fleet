@@ -1,6 +1,18 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T06:59:20+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3112
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "f962f57d-7414-4592-bd24-a9bbc0ff40c3_b078f017-d185-4daf-9a8b-0dacb2bd7685", "label": "Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?", "reason": "no LABEL_RULES match for label='Do you have hands-on technical experience with cloud infrastructure and at least one of: Python, containers, or ML/AI tooling?'"}]
+submitted_at: 2026-06-24T00:01:21+00:00
+
+Runner tail:
+it re-fill: re-set 0 field(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=0 [] missing=2
+[runner] reassert-text pass 1: repaired=0 [] missing=2
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

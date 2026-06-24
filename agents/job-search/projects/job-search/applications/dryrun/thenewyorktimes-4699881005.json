@@ -4,16 +4,16 @@
   "job_id": "4699881005",
   "job_title": "Technical Product Manager II, Data Platforms",
   "job_location": "New York, NY",
-  "fetched_at": "2026-06-23T03:19:16Z",
+  "fetched_at": "2026-06-23T23:16:57Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/thenewyorktimes/jobs/4699881005?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 33,
-    "filled": 21,
+    "filled": 23,
     "filled_needs_review": 1,
     "declined": 6,
-    "unresolved": 5,
-    "blockers": 1
+    "unresolved": 3,
+    "blockers": 0
   },
   "fields": [
     {
@@ -109,10 +109,10 @@
       "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "Yes",
@@ -487,10 +487,10 @@
       "label": "If yes, please note your current visa status:",
       "type": "input_text",
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='If yes, please note your current visa status:'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "N/A",
+      "source": "visa_type_na: freetext US citizen",
+      "status": "filled",
+      "matched_rule": "visa_type_na",
       "options": null
     },
     {
@@ -800,22 +800,10 @@
   ],
   "unresolved": [
     {
-      "id": "question_8753626005",
-      "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'"
-    },
-    {
       "id": "question_8753633005",
       "label": "If you've selected \"Yes\", please select the affiliate/subsidiary with which you were employed:",
       "required": false,
       "reason": "no LABEL_RULES match for label='If you\\'ve selected \"Yes\", please select the affiliate/subsidiary with which you were employed:'"
-    },
-    {
-      "id": "question_8753638005",
-      "label": "If yes, please note your current visa status:",
-      "required": false,
-      "reason": "no LABEL_RULES match for label='If yes, please note your current visa status:'"
     },
     {
       "id": "question_8753640005",
@@ -830,13 +818,7 @@
       "reason": "no LABEL_RULES match for label='If yes, can you provide the company with a copy of the agreement?'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_8753626005",
-      "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?",
-      "reason": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

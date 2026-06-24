@@ -1,0 +1,23 @@
+# Cover answers — Activelyai, AI Solutions Architect (GTM) (actively-ai-5051155008)
+
+## Why are you interested in Actively AI?
+
+At Microsoft I spent two years turning tactical execution problems into org-wide systems of leverage. I scaled Azure's recovery validation from a 2-person operation into a platformized system that sustains 45+ annual resilience drills and drove $14M+ in business impact, and I built an internal LLM-powered AI agent that cut planning cycle time by 39% and increased capacity by 21% without adding headcount. That work was fundamentally about the same thing this role is about: taking small capabilities and translating them into leverage senior leaders can actually feel across an entire organization.
+
+What draws me to Actively specifically is the structural bet. The insight that revenue orgs are bottlenecked on human capacity, and that most accounts have zero people thinking about them on any given day, maps to problems I've lived in a different domain. Per-Account Agents working 24/7 across the TAM is exactly the kind of leverage I've been trying to build internally, just pointed at GTM. Working alongside AEs as the technical and AI counterpart on high-stakes enterprise deals, helping CROs see the art of the possible rather than just a demo, is the work I want to be doing, and doing it inside a category that's still being defined is the part that genuinely excites me.
+
+## Please share any details on prior experiences as a solutions architect or sales engineer selling to $250k+ ACV accounts. If you have any experience with AI products, that would also be of interest.
+
+I haven't carried a formal solutions architect or sales engineer title, but I've done a lot of the work that role demands inside enterprise deals. At Microsoft I served as the technical and architectural advisor across 14 cross-org recovery executions under executive visibility, including being the bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract with VP-level stakeholders. That meant leading technical discovery, explaining architecture and constraints to both technical and non-technical audiences, and framing build-vs-buy tradeoffs for senior leaders. Those are the same muscles this role uses, just on the buy side internally rather than the sell side.
+
+My customer-facing technical work also touched named enterprise accounts. I drove recovery validation and resilience drills involving Databricks, Walmart, SAP, and NetApp, and as an intern I led customer-facing demos and training sessions that drove AI-driven code generation adoption across 14 teams. So I'm comfortable operating at executive altitude, running discovery, and translating tactical asks into exec-worthy narratives.
+
+On AI products, I've built rather than just sold. I built an internal LLM-powered AI agent and restructured planning workflows around it, and earlier I migrated documentation to an AI-powered semantic search (RAG) tool that cut lookup time by 83% and improved trust in AI-surfaced answers. I understand LLMs, orchestration, data pipelines, and the evaluation side well enough to speak to them credibly with technical buyers.
+
+## Do you have any prior experience at the intersection of AI x GTM (either through work or personal projects)? Please share if so.
+
+Yes, on both sides of that intersection, though from different roles. On the AI side, I built an internal LLM-powered AI agent at Microsoft and restructured planning workflows around it, cutting planning cycle time by 39% and increasing drill capacity by 21% without adding headcount. I also stood up an AI-powered semantic search (RAG) tool that cut documentation lookup time by 83% and improved trust in AI-surfaced answers. That work taught me how to design AI-driven workflows that people actually adopt and trust, which is the hard part of any AI x GTM motion.
+
+On the GTM side, my earliest role was the most direct. At Pro Painters I owned end-to-end GTM operations, ran a CRM-driven sales process across 200+ monthly proposals that increased job bookings by 26%, and executed a digital-first go-to-market strategy that reduced customer acquisition cost by 13% and boosted conversions by 2.7%. I also did the profitability and pricing analysis that fed leadership decisions, so I've sat in the seat where tactical GTM data has to become an executive decision.
+
+Putting those together is exactly what this role is about: using AI to give revenue leaders leverage they didn't have before. I haven't done it at the scale of Actively's customers, but the pattern of building AI-native workflows and connecting them to GTM outcomes is one I've already run end to end.

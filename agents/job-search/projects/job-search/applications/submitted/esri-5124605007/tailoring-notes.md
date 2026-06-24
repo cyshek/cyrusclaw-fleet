@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's **resilience validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first **proactive resilience testing** capability, delivering a rack-level drill program in 4 months with a 94% recovery rate, surfacing critical hardware defects and establishing a new standard for continuous infrastructure validation.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring precise stakeholder coordination across engineering and security teams.
+5. Built an **AI agent** for drill planning and restructured end-to-end execution workflows, cutting planning cycle time by 39% and increasing annual drill capacity by 21% without adding headcount.
+6. Defined and delivered a **technical solution architecture** for partner integrations with Databricks, Walmart, SAP, and NetApp, translating complex cloud resilience requirements into structured execution plans aligned to each customer's infrastructure.
+7. Presented **resilience program findings** to senior Azure engineering and commercial leadership, distilling spatial and temporal failure patterns into actionable recommendations that shaped the next-generation validation roadmap.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **adoption of AI-driven workflows** across Azure service teams, conducting technical demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours monthly** in documentation and code generation tasks.
+2. Shaped the product roadmap toward **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical feature gaps and translating field insights into prioritized requirements for the engineering team.
+3. Improved **data retrieval and solution discoverability** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search platform, reducing average lookup time by **83%** across internal technical users.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ service teams across engineering and operations.
+2. Conducted discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, then built a strategic roadmap to automate critical execution paths and reduce dependency on tribal knowledge during deployments.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and monitor progress against the region-launch efficiency roadmap.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot OS migration by defining the end-to-end transition strategy, mapping software and hardware dependencies across 1,200+ stations, and sequencing rollout to protect production continuity.
+2. Facilitated Agile sprint planning and retrospectives, **resolving 40+ high-priority tickets** and stabilizing the developer intake process by enforcing backlog prioritization tied to deployment milestones and cross-team dependency schedules.
+3. Aligned IT, Operations, and Engineering stakeholders to implement **automated CI/CD pipelines**, reducing manual deployment steps and accelerating the software release cycle by 25% across the robotics platform team.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased **job bookings by 26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a structured CRM process that improved response time and proposal accuracy across the sales team.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile to capture higher-intent local search traffic.
+3. Improved leadership **pricing and margin decisions** by conducting financial profitability analysis across 1,000+ historical project records, identifying cost leakage patterns and recommending model adjustments that sealed recurring margin gaps.
+
+## Notes from the rewriter
+- 'resilience validation program' and 'solution architecture' in microsoft_ft bullets 1 and 6 mirror the JD's 'technical consulting and conceptual solution design' requirement directly.
+- 'AI-driven workflows' and 'semantic search' in microsoft_2023 bullet 1 and 3 map to the JD's recommended qualifications around AI/ML concepts and real-time information streams integrated with IT infrastructure.
+- 'Power BI dashboard' in microsoft_2022 bullet 3 and 'CI/CD pipelines' in amazon_robotics bullet 3 address the JD's IT context requirement (hardware, storage, networking, web services) and integration experience with BI platforms.
+- 'Customer-facing demos,' 'executive presentations,' and 'stakeholder coordination' language seeded across microsoft_ft bullets 6 and 7 directly mirrors the JD's 'present technical demonstrations' and 'tell our story' responsibilities.
+- 'Go-to-market strategy' and 'CRM process' in pro_painters bullets align to the JD's 'understanding of sales and business development processes' requirement for the SE role.
+

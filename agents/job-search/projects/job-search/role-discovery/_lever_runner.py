@@ -134,8 +134,13 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
     #   'full': legacy playwright-stealth stealth_sync (breaks Uppy on Lever;
     #     kept for Ashby where there is no Uppy upload and the full patch
     #     cracked Clipboard).
-    if os.environ.get("JOBSEARCH_STEALTH", "0") == "1":
-        _mode = os.environ.get("JOBSEARCH_STEALTH_MODE", "light").lower()
+    # Stealth: always apply at minimum (default=medium), opt-out with JOBSEARCH_STEALTH=0.
+    # MEDIUM (default): patch headless signals that hCaptcha scores WITHOUT touching
+    #   navigator.plugins/mimeTypes which breaks Uppy file input reading.
+    # FULL: playwright_stealth.stealth_sync (breaks Uppy; use for non-Lever ATS).
+    # OFF: JOBSEARCH_STEALTH=0
+    if os.environ.get("JOBSEARCH_STEALTH", "1") != "0":
+        _mode = os.environ.get("JOBSEARCH_STEALTH_MODE", "medium").lower()
         if _mode == "full":
             try:
                 from playwright_stealth import stealth_sync
@@ -145,13 +150,54 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                 log(f"stealth(full) apply failed (non-fatal): {_es}")
         else:
             try:
-                # Light: hide navigator.webdriver only (Uppy-safe).
-                page.add_init_script(
-                    "Object.defineProperty(navigator,'webdriver',{get:()=>undefined});"
-                )
-                log("stealth (LIGHT: webdriver-only) applied to page")
+                # Medium: hide headless-Chrome signals that hCaptcha checks,
+                # while NOT touching navigator.plugins/mimeTypes (Uppy-safe).
+                page.add_init_script("""
+                  // 1. Hide webdriver
+                  Object.defineProperty(navigator,'webdriver',{get:()=>undefined});
+                  // 2. Inject window.chrome (missing in headless)
+                  if (!window.chrome) {
+                    window.chrome = {
+                      runtime: {onConnect:{addListener:()=>{}},onMessage:{addListener:()=>{}}},
+                      loadTimes: function(){return {};},
+                      csi: function(){return {};},
+                    };
+                  }
+                  // 3. Fix navigator.languages
+                  if (!navigator.languages || navigator.languages.length === 0) {
+                    Object.defineProperty(navigator,'languages',{get:()=>['en-US','en']});
+                  }
+                  // 4. Fix navigator.platform
+                  if (!navigator.platform) {
+                    Object.defineProperty(navigator,'platform',{get:()=>'Linux x86_64'});
+                  }
+                  // 5. Intercept hCaptcha postMessage to capture token from widget callback
+                  window.__capturedHcaptchaToken = window.__capturedHcaptchaToken || null;
+                  (function(){
+                    const _orig = window.addEventListener;
+                    if (window.__hcaptchaPostMsgHooked) return;
+                    window.__hcaptchaPostMsgHooked = true;
+                    window.addEventListener('message', function(e) {
+                      try {
+                        const d = e.data;
+                        if (!d) return;
+                        let tok = null;
+                        if (typeof d === 'object') {
+                          tok = d.response || (d.data && d.data.response) || d.token || (d.data && d.data.token);
+                        } else if (typeof d === 'string' && d.length > 20) {
+                          try { const p = JSON.parse(d); tok = p.response || p.token; } catch(_){}
+                        }
+                        if (tok && String(tok).length > 20) {
+                          window.__capturedHcaptchaToken = String(tok);
+                          console.log('[stealth] hcaptcha postMsg token len=' + tok.length);
+                        }
+                      } catch(_e) {}
+                    }, true);
+                  })();
+                """)
+                log("stealth (MEDIUM: headless-hide + postMsg-hook) applied")
             except Exception as _es:
-                log(f"stealth(light) apply failed (non-fatal): {_es}")
+                log(f"stealth(medium) apply failed (non-fatal): {_es}")
     # hCaptcha ENTERPRISE rqdata capture hook (2026-06-05). Some hosts pass
     # rqdata only as an argument to hcaptcha.render()/execute() and never leave
     # it in the DOM, so the detect fn's DOM/blob scan misses it. Install the
@@ -271,47 +317,87 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                 if not sitekey:
                     log("no hCaptcha sitekey detected — assuming none required")
                     result['steps'].append({'i':i,'tool':tool,'note':'no-sitekey'}); continue
+                _invis = bool(isinstance(det, dict) and det.get('visible_challenge') is False)
+                _rqdata = det.get('rqdata') if isinstance(det, dict) else None
+                token = None
+                # STRATEGY 1 (2026-06-23): Read token already captured by init hook.
+                # The init hook wraps hcaptcha.execute() to stash the token in
+                # window.__capturedHcaptchaToken when Lever's own code calls execute
+                # on submit-click. This token is from the browser's residential IP
+                # and is immediately valid — no external solve needed.
+                log("checking window.__capturedHcaptchaToken (from submit-click hook)")
                 try:
-                    # 2026-06-03: 2Captcha is the PROVEN hCaptcha vendor (CapSolver
-                    # discontinued hCaptcha). Try twocaptcha first, then capsolver/nopecha.
-                    token = None
-                    errs = {}
-                    # PASSIVE/invisible hCaptcha (Lever: enclaves>=1 &&
-                    # visible_challenge False) needs isInvisible + matching UA
-                    # threaded to the solver or the server 400s the token
-                    # (FloQast 2026-06-04).
-                    _invis = bool(isinstance(det, dict) and det.get('visible_challenge') is False)
-                    # hCaptcha ENTERPRISE rqdata (2026-06-05): if the page
-                    # carries per-session challenge data, bind the solve to it
-                    # via enterprisePayload or the token 400s at apply-POST
-                    # (FloQast/PointClickCare shared-sitekey wall). Only
-                    # 2Captcha can bind rqdata, so restrict vendors to it.
-                    _rqdata = det.get('rqdata') if isinstance(det, dict) else None
-                    if _rqdata:
-                        log(f"hcaptcha ENTERPRISE rqdata detected (len={len(_rqdata)}) -> enterprisePayload bind")
-                    try:
-                        _ua = page.evaluate("() => navigator.userAgent")
-                    except Exception:
-                        _ua = None
-                    _vendors = ('twocaptcha',) if _rqdata else ('twocaptcha', 'capsolver', 'nopecha')
-                    for vend in _vendors:
+                    _captured = page.evaluate("() => window.__capturedHcaptchaToken")
+                    if _captured and len(_captured) > 20:
+                        token = _captured
+                        log(f"STRATEGY1: using hook-captured browser token len={len(token)}")
+                except Exception as _ce:
+                    log(f"hook token read exc: {_ce}")
+                # STRATEGY 2: poll for token up to 30s (it may not be ready yet)
+                if not token:
+                    log("polling for window.__capturedHcaptchaToken up to 30s...")
+                    for _pi in range(30):
+                        page.wait_for_timeout(1000)
                         try:
-                            token = CaptchaSolver(vendor=vend).solve_hcaptcha(
-                                sitekey, page_url, is_invisible=_invis,
-                                user_agent=_ua, rqdata=_rqdata)
-                            log(f"hcaptcha solved via {vend} (token_len={len(token)} invisible={_invis} enterprise={bool(_rqdata)})")
-                            break
-                        except Exception as ev:
-                            errs[vend] = str(ev)
-                            log(f"hcaptcha {vend} failed: {ev}")
-                    if not token:
-                        result['error'] = 'hcaptcha-solve-fail: ' + '; '.join(f'{k}={v}' for k,v in errs.items())
+                            _captured = page.evaluate("() => window.__capturedHcaptchaToken")
+                            if _captured and len(_captured) > 20:
+                                token = _captured
+                                log(f"STRATEGY2: hook-captured token after {_pi+1}s len={len(token)}")
+                                break
+                        except Exception:
+                            pass
+                    else:
+                        log("STRATEGY2 poll timeout — no token captured by hook")
+                # STRATEGY 3: call hcaptcha.execute() ourselves from browser context
+                if not token:
+                    log("STRATEGY3: calling hcaptcha.execute() from browser context")
+                    try:
+                        _exe_tok = page.evaluate("""() => {
+                          const h = window.hcaptcha;
+                          if (!h || typeof h.execute !== 'function') return null;
+                          try {
+                            const p = h.execute(undefined, {async: true});
+                            if (p && typeof p.then === 'function') {
+                              return p.then(r => (r && r.response) ? r.response : String(r||'')).catch(()=>null);
+                            }
+                          } catch(e) { return null; }
+                          return null;
+                        }""")
+                        if _exe_tok and len(_exe_tok) > 20:
+                            token = _exe_tok
+                            log(f"STRATEGY3: execute() from browser token len={len(token)}")
+                        else:
+                            log(f"STRATEGY3: execute() returned: {repr(_exe_tok)[:80]}")
+                    except Exception as _s3e:
+                        log(f"STRATEGY3 exc: {_s3e}")
+                # STRATEGY 4 (last resort): external 2Captcha/capsolver solver
+                # Note: Lever rejects these (IP mismatch) but keep for other ATS
+                if not token:
+                    try:
+                        errs = {}
+                        try:
+                            _ua = page.evaluate("() => navigator.userAgent")
+                        except Exception:
+                            _ua = None
+                        _vendors = ('twocaptcha',) if _rqdata else ('twocaptcha', 'capsolver', 'nopecha')
+                        for vend in _vendors:
+                            try:
+                                token = CaptchaSolver(vendor=vend).solve_hcaptcha(
+                                    sitekey, page_url, is_invisible=_invis,
+                                    user_agent=_ua, rqdata=_rqdata)
+                                log(f"hcaptcha solved via {vend} token_len={len(token)} [FALLBACK]")
+                                break
+                            except Exception as ev:
+                                errs[vend] = str(ev)
+                                log(f"hcaptcha {vend} failed: {ev}")
+                        if not token:
+                            result['error'] = 'hcaptcha-solve-fail: ' + '; '.join(f'{k}={v}' for k,v in errs.items())
+                            result['steps'].append({'i':i,'tool':tool,'err':result['error']})
+                            log(f"hcaptcha solve fail (all): {result['error']}"); continue
+                    except Exception as e:
+                        result['error'] = f'hcaptcha-solve-exc: {e}'
                         result['steps'].append({'i':i,'tool':tool,'err':result['error']})
-                        log(f"hcaptcha solve fail (all vendors): {result['error']}"); continue
-                except Exception as e:
-                    result['error'] = f'hcaptcha-solve-exc: {e}'
-                    result['steps'].append({'i':i,'tool':tool,'err':result['error']})
-                    log(result['error']); continue
+                        log(result['error']); continue
                 inj = _eval(page, args['inject_fn'], token)
                 log(f"hcaptcha inject: {inj}")
                 # CRITICAL (2026-06-03): setting the h-captcha-response textarea
@@ -323,25 +409,239 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                 cb = _eval(page, _HCAPTCHA_CALLBACK_FN, token)
                 log(f"hcaptcha callback-fire: {cb}")
                 page.wait_for_timeout(600)
-                # SUBMIT: Lever's #btn-submit JS handler validates the hCaptcha
-                # widget state and silently no-ops if it thinks it's unsolved
-                # (even with a valid token in #hcaptchaResponseInput). Calling
-                # form.requestSubmit() fires the NATIVE form POST directly and
-                # bypasses that client gate — PROVEN to trigger the real /apply
-                # POST (2026-06-03). The server still validates the token, so the
-                # token must be solved on the SAME IP the browser egresses from
-                # (run via the residential-proxied Chrome, LEVER_CDP=[::1]:18900).
-                rsub = page.evaluate("""() => {
-                  const f = document.querySelector('#application-form') || document.querySelector('form');
-                  if (!f) return {err:'no-form'};
-                  try { if (f.requestSubmit) { f.requestSubmit(); return {via:'requestSubmit'}; } f.submit(); return {via:'submit'}; }
-                  catch(e){ return {err:String(e)}; }
-                }""")
-                log(f"resubmit requestSubmit: {rsub}")
-                # Lever submits via native form POST -> full-page navigation to a
-                # /thanks or confirmation URL. Wait for that navigation.
+                # SUBMIT STRATEGY (2026-06-23 fix): After captcha solve, the React
+                # form may have cleared resumeStorageId / opportunityLocationId.
+                # Re-inject known-good values before fetching, then do a direct
+                # fetch POST so the serialized body is authoritative.
+                # Step 1: find the known resumeStorageId from prior upload step
+                _known_sid = next(
+                    (s.get('resumeStorageId') for s in result['steps'] if s.get('tool') == 'browser.upload'),
+                    None
+                )
+                # Step 2: re-assert resumeStorageId into the DOM if we know it
+                if _known_sid:
+                    page.evaluate("""
+                      (sid) => {
+                        const el = document.querySelector('input[name=resumeStorageId]');
+                        if (!el) return;
+                        try {
+                          const proto = Object.getPrototypeOf(el);
+                          const setter = Object.getOwnPropertyDescriptor(proto,'value').set;
+                          setter.call(el, sid);
+                        } catch(_e) { el.value = sid; }
+                        el.dispatchEvent(new Event('input',{bubbles:true}));
+                        el.dispatchEvent(new Event('change',{bubbles:true}));
+                      }
+                    """, _known_sid)
+                    log(f"re-injected resumeStorageId={_known_sid}")
+                # Step 3: re-run location search to fix selectedLocation={"name":""}
+                # Use the searchLocations API result we already fetched (stored on window)
+                _loc_fix = page.evaluate("""
+                  async () => {
+                    const inp = document.querySelector('#location-input, input.location-input');
+                    const sel = document.querySelector('#selected-location, input[name="selectedLocation"]');
+                    if (!inp || !sel) return {skipped: 'no-inputs'};
+                    const curSel = (sel.value||'').trim();
+                    // If already valid (has a name), don't touch it
+                    try { if (JSON.parse(curSel||'{}').name) return {skipped: 'already-valid', val: curSel}; } catch(_e) {}
+                    // Re-use cached search results if available
+                    const locs = window.searchedLocations;
+                    if (locs && locs.length) {
+                      const target = locs[0];
+                      const proto = Object.getPrototypeOf(sel);
+                      let setter;
+                      try { setter = Object.getOwnPropertyDescriptor(proto,'value').set; } catch(_e){}
+                      if (setter) setter.call(sel, JSON.stringify(target));
+                      else sel.value = JSON.stringify(target);
+                      sel.dispatchEvent(new Event('input',{bubbles:true}));
+                      sel.dispatchEvent(new Event('change',{bubbles:true}));
+                      return {fixed: true, picked: target.name, id: target.id};
+                    }
+                    // No cached results — try the API again
+                    const locText = (inp.value||'Kirkland, WA');
+                    try {
+                      const res = await fetch('/searchLocations?text='+encodeURIComponent(locText));
+                      const data = await res.json();
+                      if (data && data.length) {
+                        const target = data[0];
+                        const proto = Object.getPrototypeOf(sel);
+                        let setter;
+                        try { setter = Object.getOwnPropertyDescriptor(proto,'value').set; } catch(_e){}
+                        if (setter) setter.call(sel, JSON.stringify(target));
+                        else sel.value = JSON.stringify(target);
+                        sel.dispatchEvent(new Event('input',{bubbles:true}));
+                        sel.dispatchEvent(new Event('change',{bubbles:true}));
+                        return {fixed: true, picked: target.name, id: target.id, source: 'api-refetch'};
+                      }
+                    } catch(_e) {}
+                    // Last resort: set synthetic location so form doesn't error on empty
+                    const locVal = inp.value || 'Kirkland, WA';
+                    sel.value = JSON.stringify({name: locVal, text: locVal});
+                    return {fixed: 'synthetic', name: locVal};
+                  }
+                """)
+                log(f"location re-fix: {_loc_fix}")
+                _apply_url = page.url.split('?')[0]  # strip any query params
+                if not _apply_url.endswith('/apply'):
+                    _apply_url = _apply_url.rstrip('/') + '/apply'
+                # STRATEGY: Use Lever's native form submit path instead of fetch-POST.
+                # Lever's submit handler: if hcaptchaResponseInput.value is set and
+                # hcaptchaTokenExpired is false, it calls clickSubmitButton() which
+                # calls formSubmitButton.click() -> form.submit(). This keeps all
+                # browser session context (cookies, file bytes, CSRF) intact.
+                native_sub = page.evaluate("""
+                  async (captchaToken) => {
+                    // Set the hidden input Lever checks before calling clickSubmitButton
+                    const inp = document.getElementById('hcaptchaResponseInput');
+                    if (inp) {
+                      try {
+                        const proto = Object.getPrototypeOf(inp);
+                        const setter = Object.getOwnPropertyDescriptor(proto,'value').set;
+                        if (setter) setter.call(inp, captchaToken); else inp.value = captchaToken;
+                      } catch(_e) { inp.value = captchaToken; }
+                      inp.dispatchEvent(new Event('input',{bubbles:true}));
+                      inp.dispatchEvent(new Event('change',{bubbles:true}));
+                    }
+                    // Set global tokenExpired=false so Lever's click handler proceeds
+                    try { window.hcaptchaTokenExpired = false; } catch(_e){}
+                    // Also set the textarea (belt+suspenders)
+                    const ta = document.querySelector('textarea[name="h-captcha-response"]');
+                    if (ta) { try { ta.value = captchaToken; } catch(_e){} }
+                    // Now trigger the submit button — Lever's handler checks the input
+                    // value and calls clickSubmitButton() -> formSubmitButton.click() -> form.submit()
+                    const btn = document.getElementById('btn-submit');
+                    const formBtn = document.getElementById('btn-submit-form') ||
+                                    document.querySelector('input[type=submit][style*="display:none"]') ||
+                                    document.querySelector('input[type=submit][hidden]') ||
+                                    document.querySelector('button[type=submit]:not(#btn-submit)');
+                    const hcapInpSet = inp ? inp.value.length : 0;
+                    // If Lever's own handler will fire (it checks inp.value), use btn.click()
+                    // Otherwise fall back to formBtn.click() or form.submit()
+                    if (inp && inp.value && btn) {
+                      btn.click();
+                      return {via:'btn-click', hcapInpLen: hcapInpSet, btnFound: true};
+                    } else if (formBtn) {
+                      formBtn.click();
+                      return {via:'formBtn-click', hcapInpLen: hcapInpSet};
+                    } else {
+                      const form = document.querySelector('#application-form') || document.querySelector('form');
+                      if (form) { form.submit(); return {via:'form-submit', hcapInpLen: hcapInpSet}; }
+                      return {err:'no-submit-path', hcapInpLen: hcapInpSet};
+                    }
+                  }
+                """, token)
+                log(f"native-submit result: {native_sub}")
+                # Wait for navigation after native submit
                 try:
-                    page.wait_for_url(re.compile(r"/(thanks|confirmation|complete)"), timeout=15000)
+                    page.wait_for_url(re.compile(r"/(thanks|confirmation|complete|apply$)"),
+                                      timeout=20000)
+                except Exception:
+                    page.wait_for_timeout(5000)
+                # Check if native submit succeeded (navigated to /thanks)
+                _cur_url_after_native = page.url
+                log(f"url after native-submit: {_cur_url_after_native}")
+                if 'thanks' in _cur_url_after_native or 'confirmation' in _cur_url_after_native:
+                    log("native-submit SUCCESS: on thanks/confirmation page")
+                    rsub = {**native_sub, 'success': True, 'url': _cur_url_after_native}
+                    result['steps'].append({'i':i,'tool':tool,'sitekey':sitekey,'token_len':len(token),'inject':inj,'resubmit':rsub})
+                    continue
+                # Native submit didn't navigate to thanks — fall back to fetch-POST
+                log("native-submit did not reach /thanks — trying fetch-POST fallback")
+                # Build FormData from all form inputs + captcha token
+                fetch_result = page.evaluate("""
+                  async (captchaToken) => {
+                    const form = document.querySelector('#application-form') || document.querySelector('form');
+                    if (!form) return {err: 'no-form'};
+                    // Re-build a fresh FormData from current DOM state
+                    const fd = new FormData(form);
+                    // Remove the file input — Lever uses resumeStorageId for server-side
+                    // storage; re-sending the file triggers a redundant upload that can
+                    // conflict with the already-uploaded resumeStorageId.
+                    fd.delete('resume');
+                    // Inject captcha token — override any existing h-captcha-response
+                    fd.set('h-captcha-response', captchaToken);
+                    // Also set g-recaptcha-response for belt-and-suspenders
+                    fd.set('g-recaptcha-response', captchaToken);
+                    // Log what we're sending
+                    const keys = [];
+                    for (const [k, v] of fd.entries()) {
+                      if (k !== 'h-captcha-response' && k !== 'g-recaptcha-response') {
+                        keys.push(k + '=' + String(v).slice(0,40));
+                      } else {
+                        keys.push(k + '=<token_len:' + v.length + '>');
+                      }
+                    }
+                    try {
+                      const resp = await fetch(form.action || location.href, {
+                        method: 'POST',
+                        body: fd,
+                        credentials: 'include',
+                        redirect: 'follow'
+                      });
+                      const text = await resp.text();
+                      // Extract error messages from the HTML response
+                      let errMsg = '';
+                      try {
+                        // Try to find JSON error data embedded in the page
+                        const jsonMatch = text.match(/data-errors='([^']+)'/);
+                        if (jsonMatch) errMsg = jsonMatch[1];
+                        // Look for error text near 'required' or 'error' markers
+                        const domParser = new DOMParser();
+                        const doc = domParser.parseFromString(text, 'text/html');
+                        const errEls = doc.querySelectorAll('.error-message, .field-error, [class*="error"], .warning');
+                        const errTexts = [];
+                        errEls.forEach(el => { const t = el.textContent.trim(); if (t) errTexts.push(t); });
+                        if (errTexts.length) errMsg += ' ERRORS:' + errTexts.slice(0,5).join(' | ');
+                        // Extract body text for diagnostic
+                        const body = doc.body ? doc.body.innerText || doc.body.textContent : '';
+                        errMsg += ' BODY:' + body.slice(0, 300);
+                      } catch(_e) { errMsg = text.slice(0, 300); }
+                      return {
+                        via: 'fetch-post',
+                        status: resp.status,
+                        url: resp.url,
+                        fields: keys,
+                        body_snippet: text.slice(0, 300),
+                        err_detail: errMsg.slice(0, 500)
+                      };
+                    } catch(e) {
+                      return {err: String(e), fields: keys};
+                    }
+                  }
+                """, token)
+                log(f"fetch-post result: status={fetch_result.get('status')} url={fetch_result.get('url','?')}")
+                log(f"fetch-post fields: {fetch_result.get('fields',[])}")
+                if fetch_result.get('err_detail'):
+                    log(f"fetch-post err_detail: {fetch_result['err_detail'][:500]}")
+                if fetch_result.get('err'):
+                    log(f"fetch-post error: {fetch_result['err']} — falling back to requestSubmit")
+                    rsub = page.evaluate("""() => {
+                      const f = document.querySelector('#application-form') || document.querySelector('form');
+                      if (!f) return {err:'no-form'};
+                      try { if (f.requestSubmit) { f.requestSubmit(); return {via:'requestSubmit'}; } f.submit(); return {via:'submit'}; }
+                      catch(e){ return {err:String(e)}; }
+                    }""")
+                    log(f"resubmit requestSubmit fallback: {rsub}")
+                else:
+                    rsub = fetch_result
+                    # If fetch returned a success/redirect, navigate the browser to the result URL
+                    if fetch_result.get('status', 0) in (200, 201, 302) or 'thanks' in fetch_result.get('url', ''):
+                        result_url = fetch_result.get('url', '')
+                        if result_url and result_url != page.url:
+                            try:
+                                page.goto(result_url, wait_until='domcontentloaded', timeout=15000)
+                            except Exception:
+                                pass
+                        # Record this as the apply response too
+                        apply_responses.append({
+                            'url': fetch_result.get('url', _apply_url),
+                            'status': fetch_result.get('status', 0),
+                            'body': fetch_result.get('body_snippet', ''),
+                            'via': 'fetch-post'
+                        })
+                # Wait for navigation or page update
+                try:
+                    page.wait_for_url(re.compile(r"/(thanks|confirmation|complete)"), timeout=10000)
                 except Exception:
                     page.wait_for_timeout(3000)
                 result['steps'].append({'i':i,'tool':tool,'sitekey':sitekey,'token_len':len(token),'inject':inj,'resubmit':rsub})

@@ -1,0 +1,1024 @@
+[2026-06-23T14:11:41Z] === Snowflake snowflake-86570858-e425-4144-9aef-8838cefd18c3 retry3 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 8 -> idx 10 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: browser.act.evaluate
+[runner] checkbox-ack 4fabd726c126: {'ok': True, 'checked': True, 'id': 'dfc064b1-56ed-45fa-9218-03a2103be911_2633dee9-9a40-40d2-a8d4-4fabd726c126-labeled-checkbox-0', 'label': 'I Acknowledge'}
+[runner] checkbox-ack 9cd79f053a35: {'ok': True, 'checked': True, 'id': 'dfc064b1-56ed-45fa-9218-03a2103be911_2ded3ef9-36d5-4e49-a11c-9cd79f053a35-labeled-checkbox-0', 'label': 'I have read and agree to the Snowflake C'}
+[runner] step 8: sleep
+[runner] step 9: browser.act.evaluate
+[runner] step 10: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name', '579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email', '579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164', '579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e', '579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[runner] step 11: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2276
+[runner] captcha v3 solved in 0.2s, token len=2276
+[runner] step 12: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] yesno not active after click bb9b84608c29, retry 1
+[runner] yesno not active after click b7b1340558ae, retry 1
+[runner] yesno not active after click f46f352b0cb5, retry 1
+[runner] YESNO trusted-click fix: re-clicked 5 radio(s)
+[runner] reassert-select: 2 custom-select(s) checked, 2 re-committed
+[runner] reassert-text pass 1: repaired=5 ['a130eb__systemfield_name', '130eb__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] reassert-text pass 2: repaired=5 ['a130eb__systemfield_name', '130eb__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['a130eb__systemfield_name', '130eb__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7']
+[runner] final-guard: location already set to 'Kirkland, Washington, United States', skipping re-fill with 'Kirkland, WA'
+[runner] reassert-text pass 1: repaired=5 ['a130eb__systemfield_name', '130eb__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] reassert-text pass 2: repaired=5 ['a130eb__systemfield_name', '130eb__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] final-guard text re-commit: re-won 5 field(s) ['a130eb__systemfield_name', '130eb__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7']
+[runner] final-clobber-guard: settled=True location_ok=True stable=True ('Kirkland, Washington, United S') workauth_checked=True reassert_wa=['Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?', 'For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-99cb-71dc879c5164', '-821d-1cd0cce9aa2e', '-9dfa-acd7e2823ba7']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-99cb-71dc879c5164', '-821d-1cd0cce9aa2e', '-9dfa-acd7e2823ba7']
+[runner] last-ms no-bounce text commit: 5 field(s), stable=True
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"6da6dc20-f80b-42fd-9184-939fce4abe89","errorMessages":[],"formErrors":[],"sourceFormDefinitionId":"7a28e3ab-6ff5-48c7-a0da-5ae92a397256","formControls":[{"__typename":"FormControl","identifier":"c8bf081b-d2a8-4245-8492-ed4ff4e671fb","title":"Submit"}],"s
+[runner] SERVER FIELD ERRORS: ['Missing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?', 'Missing entry for required field: For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?']
+[runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?", "M
+{
+  "slug": "snowflake-86570858-e425-4144-9aef-8838cefd18c3",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/snowflake/86570858-e425-4144-9aef-8838cefd18c3/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "dom_id": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "dom_id": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "dom_id": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 9
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "dom_id": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "dom_id": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "dom_id": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "len": 9,
+            "post_value": "Microsoft"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 5,
+      "fields": [
+        "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+            "post_value": "Kirkland, WA"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "579634c3-4b1b-4bdc-9a47-103825a130eb_c773adde-72b8-494f-8f4f-bb9b84608c29",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 481,
+            "cy": 396
+          },
+          {
+            "name": "579634c3-4b1b-4bdc-9a47-103825a130eb_4c8e248b-f134-416f-9fa5-38c9e679f7b1",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 403,
+            "cy": 397
+          },
+          {
+            "name": "579634c3-4b1b-4bdc-9a47-103825a130eb_962f2552-c3ca-4d6c-a7d8-b7b1340558ae",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 481,
+            "cy": 397
+          },
+          {
+            "name": "579634c3-4b1b-4bdc-9a47-103825a130eb_a3cc08ef-4552-444a-b493-c608c65670df",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 403,
+            "cy": 396
+          },
+          {
+            "name": "dfc064b1-56ed-45fa-9218-03a2103be911_0a2a2426-a42d-4c4f-a68f-5083d6b8a72a",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "dfc064b1-56ed-45fa-9218-03a2103be911_0a2a2426-a42d-4c4f-a68f-5083d6b8a72a-labeled-radio-0",
+            "label_text": "I am a U.S. person",
+            "cx": 456,
+            "cy": 396
+          },
+          {
+            "name": "dfc064b1-56ed-45fa-9218-03a2103be911_5c859149-0940-42e7-8962-ec82679d8074",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "dfc064b1-56ed-45fa-9218-03a2103be911_5c859149-0940-42e7-8962-ec82679d8074-labeled-radio-1",
+            "label_text": "No - I have never been employed by PwC",
+            "cx": 536,
+            "cy": 396
+          },
+          {
+            "name": "579634c3-4b1b-4bdc-9a47-103825a130eb_a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 481,
+            "cy": 396
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [],
+        "missing": [
+          {
+            "want_name": "579634c3-4b1b-4bdc-9a47-103825a130eb_2633dee9-9a40-40d2-a8d4-4fabd726c126"
+          },
+          {
+            "want_name": "579634c3-4b1b-4bdc-9a47-103825a130eb_2ded3ef9-36d5-4e49-a11c-9cd79f053a35"
+          }
+        ],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "checkbox-ack",
+      "want_name": "579634c3-4b1b-4bdc-9a47-103825a130eb_2633dee9-9a40-40d2-a8d4-4fabd726c126",
+      "res": {
+        "ok": true,
+        "checked": true,
+        "id": "dfc064b1-56ed-45fa-9218-03a2103be911_2633dee9-9a40-40d2-a8d4-4fabd726c126-labeled-checkbox-0",
+        "label": "I Acknowledge"
+      }
+    },
+    {
+      "i": 7,
+      "tool": "checkbox-ack",
+      "want_name": "579634c3-4b1b-4bdc-9a47-103825a130eb_2ded3ef9-36d5-4e49-a11c-9cd79f053a35",
+      "res": {
+        "ok": true,
+        "checked": true,
+        "id": "dfc064b1-56ed-45fa-9218-03a2103be911_2ded3ef9-36d5-4e49-a11c-9cd79f053a35-labeled-checkbox-0",
+        "label": "I have read and agree to the Snowflake C"
+      }
+    },
+    {
+      "i": 8,
+      "tool": "sleep"
+    },
+    {
+      "i": 9,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 6,
+        "text_filled": 5,
+        "radios_groups": 6,
+        "radios_checked": 2,
+        "checkboxes": 7,
+        "checkboxes_checked": 4,
+        "file_inputs": 3,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 5,
+        "yesno_groups": 5
+      }
+    },
+    {
+      "i": 10,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-snowflake_86570858_v2.pdf"
+    },
+    {
+      "i": 10,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 10,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+      ],
+      "location_refill": {
+        "resolved": [
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Kirkland, Washington, United States",
+            "post_value": "Kirkland, Washington, United States"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 11,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 223,
+      "token_len": 2276,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 12,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-select-fields",
+      "results": [
+        {
+          "name": "d-4c4f-a68f-5083d6b8a72a",
+          "want": "I am a U.S. person",
+          "target": "I am a U.S. person",
+          "ok": true,
+          "shape": "radio",
+          "already": false,
+          "before": "",
+          "after": "i am a u.s. person",
+          "reason": null
+        },
+        {
+          "name": "0-42e7-8962-ec82679d8074",
+          "want": "No - I have never been employed by PwC",
+          "target": "No - I have never been employed by PwC",
+          "ok": true,
+          "shape": "radio",
+          "already": false,
+          "before": "",
+          "after": "no - i have never been employed by pwc",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": "Kirkland, Washington, United States",
+        "location_ok": true,
+        "workauth_checked": true,
+        "refilled_location": {
+          "ok": true,
+          "skipped": true,
+          "reason": "already-filled"
+        },
+        "reasserted_workauth": [
+          {
+            "name": "8-494f-8f4f-bb9b84608c29",
+            "target": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?",
+            "clicked": true,
+            "committed": {
+              "ok": true,
+              "checked": true,
+              "picked": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?"
+            }
+          },
+          {
+            "name": "2-444a-b493-c608c65670df",
+            "target": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
+            "clicked": true,
+            "committed": {
+              "ok": true,
+              "checked": true,
+              "picked": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?"
+            }
+          }
+        ],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "_systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": true,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": {
+            "already": true
+          }
+        },
+        "inoffice_checkbox": "already-checked",
+        "final_text_recommit": [
+          "a130eb__systemfield_name",
+          "130eb__systemfield_email",
+          "6-4e38-99cb-71dc879c5164",
+          "9-495f-821d-1cd0cce9aa2e",
+          "e-4dfe-9dfa-acd7e2823ba7"
+        ]
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_name",
+            "now": "Cyrus Shekari"
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb__systemfield_email",
+            "now": "cyshekari@gmail.com"
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "now": "346-804-0227"
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "now": "https://linkedin.com/in/cyshek"
+          },
+          {
+            "fid": "579634c3-4b1b-4bdc-9a47-103825a130eb_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "now": "Microsoft"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": false,
+  "error": "form-validation: [\"Missing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?\", \"M",
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Sales Engineer, Observe LocationUS-CA-Menlo Park; Austin, TX; Dallas, TX; Minneapolis, MN; US-IL-Chicago-MSOEmployment TypeFull timeLocation TypeHybridDepartmentSalesCompensation$165,000 \u2013 $216,562OverviewApplicationAutofill from resumeUpload your resume here to autofill key application fields.Upload fileDrop your resume here!Parsing your resume. Autofilling key fields...Your form needs correctionsMissing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?Missing entry for required field: For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?Full NameEmailIf you are a Snowflake employee, please enter your Snowflake emailPhone NumberResumeCyrus_Shekari_Resume_ashby-snowflake_86570858_v2.pdfReplaceor drag and drop hereLocationPlease select your location of residence. If you are a Snowflake Employee, please select your current work locationLinkedIn Profile, if availableWill you require company sponsorship now or in the future to maintain or extend your current work authorization status?\u00a0This includes, but is not limited to, initial work permits (e.g., H-1B in the US,",
+  "classify": "form-validation"
+}
+[2026-06-23T14:12:43Z] Exit code: 1 for snowflake-86570858-e425-4144-9aef-8838cefd18c3
+[2026-06-23T14:12:43Z] FAILED: snowflake-86570858-e425-4144-9aef-8838cefd18c3 (exit=1)
+[2026-06-23T14:12:43Z]   Error: [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"6da6dc20-f80b-42f
+[2026-06-23T14:12:43Z] === Snowflake snowflake-9cf335c9-f99d-4ddb-b307-0dcd3a162a09 retry3 ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 8 -> idx 10 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: browser.act.evaluate
+[runner] checkbox-ack 4fabd726c126: {'ok': True, 'checked': True, 'id': '5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_2633dee9-9a40-40d2-a8d4-4fabd726c126-labeled-checkbox-0', 'label': 'I Acknowledge'}
+[runner] checkbox-ack 9cd79f053a35: {'ok': True, 'checked': True, 'id': '5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_2ded3ef9-36d5-4e49-a11c-9cd79f053a35-labeled-checkbox-0', 'label': 'I have read and agree to the Snowflake C'}
+[runner] step 8: sleep
+[runner] step 9: browser.act.evaluate
+[runner] step 10: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name', '2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email', '2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164', '2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e', '2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[runner] step 11: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2297
+[runner] captcha v3 solved in 0.3s, token len=2297
+[runner] step 12: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] yesno not active after click bb9b84608c29, retry 1
+[runner] yesno not active after click b7b1340558ae, retry 1
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"bc59c10c-d0ab-4a57-ad96-a6fb94a70d5e","errorMessages":[],"formErrors":[],"sourceFormDefinitionId":"7a28e3ab-6ff5-48c7-a0da-5ae92a397256","formControls":[{"__typename":"FormControl","identifier":"86e611de-7212-4f7d-900c-4b6b93d6e630","title":"Submit"}],"s
+[runner] yesno not active after click f46f352b0cb5, retry 1
+[runner] YESNO trusted-click fix: re-clicked 5 radio(s)
+[runner] reassert-select: 2 custom-select(s) checked, 2 re-committed
+[runner] reassert-text pass 1: repaired=5 ['3209f2__systemfield_name', '209f2__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] reassert-text pass 2: repaired=5 ['3209f2__systemfield_name', '209f2__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['3209f2__systemfield_name', '209f2__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7']
+[runner] final-guard: location already set to 'Kirkland, Washington, United States', skipping re-fill with 'Kirkland, WA'
+[runner] reassert-text pass 1: repaired=5 ['3209f2__systemfield_name', '209f2__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] reassert-text pass 2: repaired=5 ['3209f2__systemfield_name', '209f2__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7'] missing=0
+[runner] final-guard text re-commit: re-won 5 field(s) ['3209f2__systemfield_name', '209f2__systemfield_email', '6-4e38-99cb-71dc879c5164', '9-495f-821d-1cd0cce9aa2e', 'e-4dfe-9dfa-acd7e2823ba7']
+[runner] final-clobber-guard: settled=True location_ok=True stable=True ('Kirkland, Washington, United S') workauth_checked=True reassert_wa=['Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?', 'For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-99cb-71dc879c5164', '-821d-1cd0cce9aa2e', '-9dfa-acd7e2823ba7']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-99cb-71dc879c5164', '-821d-1cd0cce9aa2e', '-9dfa-acd7e2823ba7']
+[runner] last-ms no-bounce text commit: 5 field(s), stable=True
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"bc59c10c-d0ab-4a57-ad96-a6fb94a70d5e","errorMessages":[],"formErrors":[],"sourceFormDefinitionId":"7a28e3ab-6ff5-48c7-a0da-5ae92a397256","formControls":[{"__typename":"FormControl","identifier":"86e611de-7212-4f7d-900c-4b6b93d6e630","title":"Submit"}],"s
+[runner] SERVER FIELD ERRORS: ['Missing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?', 'Missing entry for required field: Have you worked at Snowflake in the past in a Full-time, Part-time, contractor or Intern capacity?']
+[runner] submit not confirmed; classify=form-validation error=form-validation: ["Missing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?", "M
+{
+  "slug": "snowflake-9cf335c9-f99d-4ddb-b307-0dcd3a162a09",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/snowflake/9cf335c9-f99d-4ddb-b307-0dcd3a162a09/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "dom_id": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "dom_id": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "dom_id": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 9
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "dom_id": "1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "dom_id": "586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "dom_id": "c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "len": 9,
+            "post_value": "Microsoft"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 5,
+      "fields": [
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+            "post_value": "Kirkland, WA"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_c773adde-72b8-494f-8f4f-bb9b84608c29",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 481,
+            "cy": 396
+          },
+          {
+            "name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_4c8e248b-f134-416f-9fa5-38c9e679f7b1",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 403,
+            "cy": 397
+          },
+          {
+            "name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_962f2552-c3ca-4d6c-a7d8-b7b1340558ae",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 481,
+            "cy": 397
+          },
+          {
+            "name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_a3cc08ef-4552-444a-b493-c608c65670df",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 403,
+            "cy": 396
+          },
+          {
+            "name": "5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_0a2a2426-a42d-4c4f-a68f-5083d6b8a72a",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_0a2a2426-a42d-4c4f-a68f-5083d6b8a72a-labeled-radio-0",
+            "label_text": "I am a U.S. person",
+            "cx": 456,
+            "cy": 396
+          },
+          {
+            "name": "5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_5c859149-0940-42e7-8962-ec82679d8074",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_5c859149-0940-42e7-8962-ec82679d8074-labeled-radio-1",
+            "label_text": "No - I have never been employed by PwC",
+            "cx": 536,
+            "cy": 396
+          },
+          {
+            "name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_a7d1a4bb-e59b-4149-a733-f46f352b0cb5",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 481,
+            "cy": 396
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [],
+        "missing": [
+          {
+            "want_name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_2633dee9-9a40-40d2-a8d4-4fabd726c126"
+          },
+          {
+            "want_name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_2ded3ef9-36d5-4e49-a11c-9cd79f053a35"
+          }
+        ],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "checkbox-ack",
+      "want_name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_2633dee9-9a40-40d2-a8d4-4fabd726c126",
+      "res": {
+        "ok": true,
+        "checked": true,
+        "id": "5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_2633dee9-9a40-40d2-a8d4-4fabd726c126-labeled-checkbox-0",
+        "label": "I Acknowledge"
+      }
+    },
+    {
+      "i": 7,
+      "tool": "checkbox-ack",
+      "want_name": "2058f8d7-0224-44c2-83c4-eac2c43209f2_2ded3ef9-36d5-4e49-a11c-9cd79f053a35",
+      "res": {
+        "ok": true,
+        "checked": true,
+        "id": "5ae4b2d5-417c-4fcb-8fa5-fbf66d0cf5ee_2ded3ef9-36d5-4e49-a11c-9cd79f053a35-labeled-checkbox-0",
+        "label": "I have read and agree to the Snowflake C"
+      }
+    },
+    {
+      "i": 8,
+      "tool": "sleep"
+    },
+    {
+      "i": 9,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 6,
+        "text_filled": 5,
+        "radios_groups": 6,
+        "radios_checked": 2,
+        "checkboxes": 7,
+        "checkboxes_checked": 4,
+        "file_inputs": 3,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 5,
+        "yesno_groups": 5
+      }
+    },
+    {
+      "i": 10,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-snowflake_9cf335c9_v2.pdf"
+    },
+    {
+      "i": 10,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 10,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+      ],
+      "location_refill": {
+        "resolved": [
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Kirkland, Washington, United States",
+            "post_value": "Kirkland, Washington, United States"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 11,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 269,
+      "token_len": 2297,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 12,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-select-fields",
+      "results": [
+        {
+          "name": "d-4c4f-a68f-5083d6b8a72a",
+          "want": "I am a U.S. person",
+          "target": "I am a U.S. person",
+          "ok": true,
+          "shape": "radio",
+          "already": false,
+          "before": "",
+          "after": "i am a u.s. person",
+          "reason": null
+        },
+        {
+          "name": "0-42e7-8962-ec82679d8074",
+          "want": "No - I have never been employed by PwC",
+          "target": "No - I have never been employed by PwC",
+          "ok": true,
+          "shape": "radio",
+          "already": false,
+          "before": "",
+          "after": "no - i have never been employed by pwc",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+        "2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": "Kirkland, Washington, United States",
+        "location_ok": true,
+        "workauth_checked": true,
+        "refilled_location": {
+          "ok": true,
+          "skipped": true,
+          "reason": "already-filled"
+        },
+        "reasserted_workauth": [
+          {
+            "name": "8-494f-8f4f-bb9b84608c29",
+            "target": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?",
+            "clicked": true,
+            "committed": {
+              "ok": true,
+              "checked": true,
+              "picked": "Will you require company sponsorship now or in the future to maintain or extend your current work authorization status?"
+            }
+          },
+          {
+            "name": "2-444a-b493-c608c65670df",
+            "target": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?",
+            "clicked": true,
+            "committed": {
+              "ok": true,
+              "checked": true,
+              "picked": "For Snowflake to anticipate possible immigration timelines and obligations, could you confirm you are currently authorized to work in the country to which you are applying?"
+            }
+          }
+        ],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "_systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": true,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": {
+            "already": true
+          }
+        },
+        "inoffice_checkbox": "already-checked",
+        "final_text_recommit": [
+          "3209f2__systemfield_name",
+          "209f2__systemfield_email",
+          "6-4e38-99cb-71dc879c5164",
+          "9-495f-821d-1cd0cce9aa2e",
+          "e-4dfe-9dfa-acd7e2823ba7"
+        ]
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_name",
+            "now": "Cyrus Shekari"
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2__systemfield_email",
+            "now": "cyshekari@gmail.com"
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2_1c1690a4-cce6-4e38-99cb-71dc879c5164",
+            "now": "346-804-0227"
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2_586e52ac-fc39-495f-821d-1cd0cce9aa2e",
+            "now": "https://linkedin.com/in/cyshek"
+          },
+          {
+            "fid": "2058f8d7-0224-44c2-83c4-eac2c43209f2_c779ac6e-f4fe-4dfe-9dfa-acd7e2823ba7",
+            "now": "Microsoft"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": false,
+  "error": "form-validation: [\"Missing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?\", \"M",
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Forward Deployed Engineer - Finance Analytics & AI Specialist LocationUS-CA-Menlo ParkEmployment TypeFull timeLocation TypeHybridDepartmentData Analytics and AICompensation$163K \u2013 $214.2KOverviewApplicationAutofill from resumeUpload your resume here to autofill key application fields.Upload fileDrop your resume here!Parsing your resume. Autofilling key fields...Your form needs correctionsMissing entry for required field: In office attendance is an essential function for this role and necessary to enable effective teamwork and collaboration. Do you currently reside within commuting distance or are you open to relocation to the local Snowflake office(s) designated in this post?Missing entry for required field: Have you worked at Snowflake in the past in a Full-time, Part-time, contractor or Intern capacity?Full NameEmailIf you are a Snowflake employee, please enter your Snowflake emailPhone NumberResumeCyrus_Shekari_Resume_ashby-snowflake_9cf335c9_v2.pdfReplaceor drag and drop hereLocationPlease select your location of residence. If you are a Snowflake Employee, please select your current work locationLinkedIn Profile, if availableWill you require company sponsorship now or in the future to maintain or extend your current work authorization status?\u00a0This includes, but is not limited to, initial work permits (e.g., H-1B in the US, Highly Skilled Migrant in the Netherlands, or Blue Card in Poland/Germany, etc.) an",
+  "classify": "form-validation"
+}
+[2026-06-23T14:13:25Z] Exit code: 1 for snowflake-9cf335c9-f99d-4ddb-b307-0dcd3a162a09
+[2026-06-23T14:13:25Z] FAILED: snowflake-9cf335c9-f99d-4ddb-b307-0dcd3a162a09 (exit=1)
+[2026-06-23T14:13:25Z]   Error: [runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"surveyFormResults":[{"__typename":"FormRender","id":"bc59c10c-d0ab-4a5
+[2026-06-23T14:13:25Z] === DONE: SUBMITTED=0 FAIL=2 ===

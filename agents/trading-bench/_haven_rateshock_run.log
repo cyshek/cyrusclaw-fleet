@@ -1,0 +1,53 @@
+>>> Building validated 2-sleeve legs (TQQQ vol-target + sector-rotation) ...
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-23  Sharpe 0.858 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-23  Sharpe 0.909 CAGR 12.8% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-23  (4114 days)
+    [common-window] TQQQ solo Sharpe 0.858 | ROT solo Sharpe 0.919 | SPX Sharpe 0.771
+>>> Loading adjclose returns for all candidate assets ...
+/home/azureuser/.openclaw/agents/trading-bench/workspace/_haven_rateshock_tests.py:451: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "generated_utc": __import__("datetime").datetime.utcnow().isoformat() + "Z",
+    GLD   n=5430  2004-11-19 -> 2026-06-23
+    TLT   n=6012  2002-07-31 -> 2026-06-23
+    DBC   n=5124  2006-02-07 -> 2026-06-22
+    UUP   n=4857  2007-03-02 -> 2026-06-22
+    SHY   n=6011  2002-07-31 -> 2026-06-22
+    IEF   n=6011  2002-07-31 -> 2026-06-22
+    TIP   n=5670  2003-12-08 -> 2026-06-23
+    DBMF  n=1789  2019-05-09 -> 2026-06-22
+    SPY   n=8405  1993-02-01 -> 2026-06-23
+    GLD/TLT/SPY deep window: 2004-11-19 -> 2026-06-23 (5430 days)
+    [plain_GLD_TLT       ] baseline (the partial-pass haven)
+        2022yr  -14.9%  2013taper  -10.2% || covid   +5.4%  GFC  +15.2%  2011  +18.6%  2018Q4   +5.9%  2025  +10.3%  (2004-11-19->2026-06-23)
+    [GLD_TLT_DBC         ] commodities patch (2006+ common)
+        2022yr   -7.3%  2013taper   -5.5% || covid   -3.8%  GFC   -2.4%  2011   +9.0%  2018Q4   -0.3%  2025   +4.2%  (2006-02-07->2026-06-22)
+    [GLD_TLT_DBC_UUP     ] commodities + dollar (2007+ common)
+        2022yr   +1.3%  2013taper   -2.9% || covid   -0.8%  GFC   +2.5%  2011   +8.7%  2018Q4   +0.5%  2025   -0.1%  (2007-03-02->2026-06-22)
+    [GLD_TLT_TIP         ] TIPS patch (2003+ common)
+        2022yr  -13.7%  2013taper   -8.9% || covid   +1.5%  GFC   +6.5%  2011  +10.4%  2018Q4   +2.1%  2025   +5.7%  (2004-11-19->2026-06-23)
+    [GLD_TLT_SHYfloor25  ] 25pct SHY floor, rest inv-vol GLD/TLT
+        2022yr  -12.2%  2013taper   -7.7% || covid   +4.5%  GFC  +12.5%  2011  +13.9%  2018Q4   +4.7%  2025   +8.2%  (2004-11-19->2026-06-22)
+    [GLD_TLT_SHYfloor40  ] 40pct SHY floor, rest inv-vol GLD/TLT
+        2022yr  -10.5%  2013taper   -6.2% || covid   +4.1%  GFC  +10.9%  2011  +11.2%  2018Q4   +4.0%  2025   +6.9%  (2004-11-19->2026-06-22)
+    [GLD_TLT_DBMF        ] managed-futures patch (2019+ ONLY - short window)
+        2022yr   -3.5%  2013taper   +nan% || covid   +2.8%  GFC   +nan%  2011   +nan%  2018Q4   +nan%  2025   +3.6%  (2019-05-09->2026-06-22)
+    eff-N[plain_GLD_TLT       ] 2-leg 1.495 -> 3-leg 2.265  corr_TQQQ -0.074  (2010-02-12->2026-06-23)
+    eff-N[GLD_TLT_DBC         ] 2-leg 1.495 -> 3-leg 2.224  corr_TQQQ 0.052  (2010-02-12->2026-06-22)
+    eff-N[GLD_TLT_DBC_UUP     ] 2-leg 1.495 -> 3-leg 2.323  corr_TQQQ -0.013  (2010-02-12->2026-06-22)
+    eff-N[GLD_TLT_TIP         ] 2-leg 1.495 -> 3-leg 2.282  corr_TQQQ -0.066  (2010-02-12->2026-06-23)
+    eff-N[GLD_TLT_SHYfloor25  ] 2-leg 1.495 -> 3-leg 2.266  corr_TQQQ -0.076  (2010-02-12->2026-06-22)
+    eff-N[GLD_TLT_SHYfloor40  ] 2-leg 1.495 -> 3-leg 2.267  corr_TQQQ -0.078  (2010-02-12->2026-06-22)
+    eff-N[GLD_TLT_DBMF        ] 2-leg 1.495 -> 3-leg 2.043  corr_TQQQ 0.204  (2019-05-09->2026-06-22)  *SHORT*
+
+    === 3-SLEEVE fixed-10pct haven vs SPX raw (full 2010-02-12->2026-06-23, SPX raw 588%) ===
+    plain-GLD/TLT 10pct baseline target: raw 864pct Sharpe 1.032 maxDD -21.7pct (from prototype)
+    plain_GLD_TLT        raw   864%  Sharpe 1.032  OOS 1.149  maxDD  -21.7%  2022maxDD  -19.5%  beats=True
+    GLD_TLT_DBC          raw   842%  Sharpe 1.019  OOS 1.151  maxDD  -21.4%  2022maxDD  -18.7%  beats=True
+    GLD_TLT_DBC_UUP      raw   833%  Sharpe 1.027  OOS 1.160  maxDD  -21.5%  2022maxDD  -17.7%  beats=True
+    GLD_TLT_TIP          raw   835%  Sharpe 1.026  OOS 1.142  maxDD  -21.4%  2022maxDD  -19.3%  beats=True
+    GLD_TLT_SHYfloor25   raw   846%  Sharpe 1.028  OOS 1.146  maxDD  -21.4%  2022maxDD  -19.2%  beats=True
+    GLD_TLT_SHYfloor40   raw   834%  Sharpe 1.025  OOS 1.145  maxDD  -21.2%  2022maxDD  -19.0%  beats=True
+    GLD_TLT_DBMF         raw   821%  Sharpe 1.016  OOS 1.147  maxDD  -21.7%  2022maxDD  -18.1%  beats=True  *SHORT/pad*
+
+>>> Wrote reports/_haven_rateshock_result.json

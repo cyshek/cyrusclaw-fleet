@@ -1,0 +1,347 @@
+{
+  "generated_utc": "2026-06-23T22:32:25.180455+00:00Z",
+  "study": "allocator_haven_frontier",
+  "common_window": {
+    "start": "2010-02-12",
+    "end": "2026-06-22",
+    "n_days": 4113
+  },
+  "alloc_native_window": {
+    "start": "2010-02-12",
+    "end": "2026-06-23",
+    "n_days": 4114
+  },
+  "dropped_trailing_alloc_days": [
+    "2026-06-23"
+  ],
+  "haven_spec": {
+    "assets": [
+      "GLD",
+      "TLT",
+      "DBC",
+      "UUP"
+    ],
+    "scheme": "invvol",
+    "vol_lookback": 63,
+    "cost_bps": 2.0,
+    "native_window": [
+      "2007-03-02",
+      "2026-06-22",
+      4857
+    ],
+    "aligned_to_allocator": true,
+    "missing_on_common": 0,
+    "nan_count": 0,
+    "meta": {
+      "scheme": "invvol",
+      "assets": [
+        "GLD",
+        "TLT",
+        "DBC",
+        "UUP"
+      ],
+      "vol_lookback": 63,
+      "floor_label": null,
+      "floor_w": 0.0,
+      "n_rebal": 231,
+      "avg_turnover_per_rebal": 0.07390756718357676,
+      "weight_log_tail": [
+        {
+          "date": "2026-04-01",
+          "w": {
+            "GLD": 0.0799,
+            "TLT": 0.3154,
+            "DBC": 0.1353,
+            "UUP": 0.4693
+          }
+        },
+        {
+          "date": "2026-05-01",
+          "w": {
+            "GLD": 0.079,
+            "TLT": 0.316,
+            "DBC": 0.121,
+            "UUP": 0.4839
+          }
+        },
+        {
+          "date": "2026-06-01",
+          "w": {
+            "GLD": 0.1073,
+            "TLT": 0.2895,
+            "DBC": 0.118,
+            "UUP": 0.4852
+          }
+        }
+      ]
+    }
+  },
+  "leg_full_vols_pct": {
+    "tqqq": 25.75,
+    "rot": 14.23,
+    "haven": 5.53
+  },
+  "haven_standalone_allocator_window": {
+    "full_sharpe": 0.781601583136988,
+    "cagr_pct": 4.258740220279256,
+    "maxdd_pct": -14.364360705834722,
+    "ann_vol_pct": 5.5321619259033366,
+    "raw_total_return_pct": 97.52471032377703,
+    "oos_sharpe": 1.225313100558205,
+    "oos_maxdd_pct": -7.5689918911454495
+  },
+  "spx_benchmark": {
+    "raw_total_return_pct": 594.8136206273881,
+    "full_sharpe": 0.7756120017751218,
+    "maxdd_pct": -33.92496000265333,
+    "oos_sharpe": 0.8454824069400061,
+    "maxdd_2022_pct": -25.425096619230303,
+    "ret_2022_pct": -19.442827203429168
+  },
+  "eff_n": {
+    "two_leg": 1.4952,
+    "three_leg": 2.3239
+  },
+  "frontier": {
+    "live_2sleeve_invvol": {
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-22",
+        "n_days": 4113
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.09328858518208509,
+      "full_sharpe": 1.013504907949637,
+      "oos_sharpe": 1.1446135887179614,
+      "is_sharpe": 0.8919363230896847,
+      "cagr_pct": 15.903418578605999,
+      "raw_total_return_pct": 1011.4449211428255,
+      "maxdd_pct": -23.897229973147617,
+      "ann_vol_pct": 15.803563365208495,
+      "oos_cagr_pct": 19.521410952641173,
+      "oos_maxdd_pct": -21.88183311371642,
+      "maxdd_2022_pct": -19.629010059646657,
+      "ret_2022_pct": -13.70412159125488,
+      "vol_2022_pct": 10.665911693015474,
+      "avg_weights": [
+        0.3485260383256128,
+        0.6514739616743873
+      ]
+    },
+    "3sleeve_pure_invvol": {
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-22",
+        "n_days": 4113
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.09706204279551704,
+      "full_sharpe": 1.2267534401301252,
+      "oos_sharpe": 1.4591650007313706,
+      "is_sharpe": 1.012018091692767,
+      "cagr_pct": 9.332282431646078,
+      "raw_total_return_pct": 328.820676066405,
+      "maxdd_pct": -12.401289399231718,
+      "ann_vol_pct": 7.504077922987736,
+      "oos_cagr_pct": 11.746347422762792,
+      "oos_maxdd_pct": -10.926028631221529,
+      "maxdd_2022_pct": -10.926028631221374,
+      "ret_2022_pct": -4.91162644619706,
+      "vol_2022_pct": 7.4385227792831685,
+      "avg_weights": [
+        0.14327168076829902,
+        0.2553710333636307,
+        0.60135728586807
+      ]
+    },
+    "fixed_haven_05": {
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-22",
+        "n_days": 4113
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.08993150602754477,
+      "full_sharpe": 1.0240973073781028,
+      "oos_sharpe": 1.1600995630699023,
+      "is_sharpe": 0.8976208181780787,
+      "cagr_pct": 15.350867084670107,
+      "raw_total_return_pct": 928.0706904387806,
+      "maxdd_pct": -22.60478028955183,
+      "ann_vol_pct": 15.060505972495541,
+      "oos_cagr_pct": 18.91308207180582,
+      "oos_maxdd_pct": -20.843047544894855,
+      "maxdd_2022_pct": -18.647209042445734,
+      "ret_2022_pct": -12.979500897222984,
+      "vol_2022_pct": 10.200042195686242,
+      "avg_weights": [
+        0.33109973640933205,
+        0.6189002635906679,
+        0.050000000000000024
+      ]
+    },
+    "fixed_haven_10": {
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-22",
+        "n_days": 4113
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.08652585750213806,
+      "full_sharpe": 1.035433373054036,
+      "oos_sharpe": 1.1768669306553439,
+      "is_sharpe": 0.903506010409944,
+      "cagr_pct": 14.794671528412584,
+      "raw_total_return_pct": 850.1024688157455,
+      "maxdd_pct": -21.47592505328616,
+      "ann_vol_pct": 14.32331183702634,
+      "oos_cagr_pct": 18.301376743274833,
+      "oos_maxdd_pct": -19.79280718922507,
+      "maxdd_2022_pct": -17.656007771233618,
+      "ret_2022_pct": -12.251971068162693,
+      "vol_2022_pct": 9.749725954502313,
+      "avg_weights": [
+        0.3136734344930516,
+        0.5863265655069487,
+        0.10000000000000005
+      ]
+    },
+    "fixed_haven_15": {
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-22",
+        "n_days": 4113
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.08301249361097335,
+      "full_sharpe": 1.0475533425060706,
+      "oos_sharpe": 1.1950394255566885,
+      "is_sharpe": 0.9095482704024901,
+      "cagr_pct": 14.234926844078366,
+      "raw_total_return_pct": 777.2661784553575,
+      "maxdd_pct": -20.339922585362192,
+      "ann_vol_pct": 13.59283534113139,
+      "oos_cagr_pct": 17.686397886607995,
+      "oos_maxdd_pct": -18.731002915699534,
+      "maxdd_2022_pct": -16.655335617550836,
+      "ret_2022_pct": -11.521542108612215,
+      "vol_2022_pct": 9.316942695975767,
+      "avg_weights": [
+        0.2962471325767706,
+        0.5537528674232296,
+        0.1499999999999995
+      ]
+    },
+    "fixed_haven_20": {
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-22",
+        "n_days": 4113
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.0793579915439317,
+      "full_sharpe": 1.0604847713165129,
+      "oos_sharpe": 1.214744786293428,
+      "is_sharpe": 0.9156752187378528,
+      "cagr_pct": 13.671720229395135,
+      "raw_total_return_pct": 709.2940670125728,
+      "maxdd_pct": -19.196835327745788,
+      "ann_vol_pct": 12.870123197651646,
+      "oos_cagr_pct": 17.06823047360153,
+      "oos_maxdd_pct": -17.657524627028,
+      "maxdd_2022_pct": -15.645121535660046,
+      "ret_2022_pct": -10.788224212764563,
+      "vol_2022_pct": 8.90396913836534,
+      "avg_weights": [
+        0.27882083066049007,
+        0.5211791693395101,
+        0.2000000000000001
+      ]
+    }
+  },
+  "gates": {
+    "g1_3sleeve_pure_beats_spx_raw": {
+      "pass": false,
+      "detail": "3sl pure raw 329% vs SPX raw 595%"
+    },
+    "g2_oos_sharpe_ge_2sleeve": {
+      "pass": true,
+      "detail": "3sl pure OOS Sharpe 1.459 vs 2sl OOS Sharpe 1.145"
+    },
+    "g3_maxdd_and_2022dd_shallower": {
+      "pass": true,
+      "full_maxdd_shallower": true,
+      "dd2022_shallower": true,
+      "detail": "3sl maxDD -12.4% vs 2sl -23.9% | 3sl 2022DD -10.9% vs 2sl -19.6%"
+    },
+    "g4_invvol_haven_weight_sensible": {
+      "pass": false,
+      "realized_haven_weight_pct": 60.14,
+      "cap_flag_threshold_pct": 25.0,
+      "detail": "pure inv-vol hands haven 60.1% (> ~25% cap-flag)"
+    }
+  },
+  "lookahead_canary_past_only_ok": true,
+  "cap_sweep_monotonic_oos_sharpe": true,
+  "verdict": "GO-WITH-CAP",
+  "recommended": {
+    "config": "fixed_haven_10",
+    "avg_haven_weight_pct": 10.0,
+    "full_sharpe": 1.035433373054036,
+    "oos_sharpe": 1.1768669306553439,
+    "cagr_pct": 14.794671528412584,
+    "raw_total_return_pct": 850.1024688157455,
+    "raw_giveup_vs_2sleeve_pp": 161.3,
+    "raw_excess_vs_spx_pp": 255.3,
+    "maxdd_pct": -21.47592505328616,
+    "maxdd_2022_pct": -17.656007771233618,
+    "ret_2022_pct": -12.251971068162693,
+    "rationale": "validated pre-registered shelf point; principled under the raw mandate (sweep is monotonic so 'max Sharpe' would just pick the highest grid weight -- 10% keeps the largest raw cushion while still improving DD/Sharpe). 15-20% available for more insurance."
+  },
+  "cap_sweep_eval": [
+    {
+      "name": "fixed_haven_05",
+      "beats_spx": true,
+      "oos_up": true,
+      "dd2022_better": true,
+      "ddfull_better": true,
+      "oos_sharpe": 1.1600995630699023,
+      "raw": 928.0706904387806,
+      "maxdd": -22.60478028955183,
+      "dd2022": -18.647209042445734
+    },
+    {
+      "name": "fixed_haven_10",
+      "beats_spx": true,
+      "oos_up": true,
+      "dd2022_better": true,
+      "ddfull_better": true,
+      "oos_sharpe": 1.1768669306553439,
+      "raw": 850.1024688157455,
+      "maxdd": -21.47592505328616,
+      "dd2022": -17.656007771233618
+    },
+    {
+      "name": "fixed_haven_15",
+      "beats_spx": true,
+      "oos_up": true,
+      "dd2022_better": true,
+      "ddfull_better": true,
+      "oos_sharpe": 1.1950394255566885,
+      "raw": 777.2661784553575,
+      "maxdd": -20.339922585362192,
+      "dd2022": -16.655335617550836
+    },
+    {
+      "name": "fixed_haven_20",
+      "beats_spx": true,
+      "oos_up": true,
+      "dd2022_better": true,
+      "ddfull_better": true,
+      "oos_sharpe": 1.214744786293428,
+      "raw": 709.2940670125728,
+      "maxdd": -19.196835327745788,
+      "dd2022": -15.645121535660046
+    }
+  ]
+}

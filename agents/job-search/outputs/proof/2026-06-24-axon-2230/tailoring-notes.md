@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized compliance-style system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise partners.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable, auditable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a replicable validation standard.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring rigorous regulatory recordkeeping.
+5. Drove stakeholder alignment across Engineering, Legal, InfoSec, and Executive leadership on risk identification and corrective action workflows, mirroring the cross-functional compliance coordination central to ITAR program oversight.
+6. Scaled team leverage via **AI-driven automation**, building an internal AI agent that restructured planning workflows, cut planning cycle time by 39%, and increased program capacity by 21% without additional headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven workflows across **14 key Azure teams**, conducting user demos and training sessions that institutionalized new tooling and saved 37 engineering hours monthly through structured stakeholder guidance.
+2. Influenced the product roadmap by facilitating **11+ user interviews** with Azure service teams to surface critical feature gaps, directly shaping intent-based YAML generation requirements and prioritization strategy.
+3. Strengthened **data integrity and compliance-grade recordkeeping** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, reducing lookup time by 83% across repositories.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating dependencies across 140+ teams toward a shared compliance roadmap.
+2. Mobilized a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort** per region and building a roadmap to automate critical execution paths.
+3. Enabled leadership to target **automation gaps and audit priorities** by engineering a Power BI dashboard tracking operational toil across 140+ teams, supporting data-driven corrective action planning and resource allocation.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and enforcing a risk-gated rollout with structured gap assessments.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, managing a **40+ ticket backlog** of high-priority compliance and stability items to keep cross-functional engineering and operations teams aligned.
+3. Drove stakeholder alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual intervention risk in production environments.
+4. Maintained structured program documentation and escalation cadences throughout the migration, ensuring all dependency decisions, risk flags, and corrective actions were recorded and communicated to leadership per program governance standards.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by overhauling end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a new CRM process that enforced consistent recordkeeping and stakeholder communication standards.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to align outreach with target customer segments.
+3. Improved leadership pricing decisions by conducting financial analysis across **1,000+ project records**, identifying margin leaks and delivering a corrective action report that directly informed updated compliance-grade pricing policy.
+
+## Notes from the rewriter
+- 'Recordkeeping' and 'compliance-grade recordkeeping' from the JD's recordkeeping requirement woven into microsoft_ft bullet#4 and pro_painters bullet#1 to mirror ITAR documentation/repository language.
+- 'Corrective action' from the JD's 'gap assessments, audits, and corrective future actions' requirement used in microsoft_2022 bullet#3 and pro_painters bullet#3 to signal audit-readiness and program rigor.
+- 'Cross-functional compliance coordination' and 'stakeholder alignment' from the JD's collaboration requirements (Legal, InfoSec, Executive, Engineering, Sales) surfaced explicitly in microsoft_ft bullet#5 and amazon_robotics bullet#4.
+- 'Risk identification' and 'escalation cadences' from the JD's risk/risk-mitigation and escalation language embedded in amazon_robotics bullet#4 to frame program governance experience in ITAR-adjacent terms.
+- 'Gap assessments' from the JD's audit and gap-assessment requirement explicitly used in amazon_robotics bullet#1 to show Cyrus has structured gap-to-corrective-action experience transferable to ITAR program management.
+

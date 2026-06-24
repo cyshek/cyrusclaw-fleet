@@ -1,9 +1,31 @@
-PREP-READY — 2026-06-23T03:56:18+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-23
 role_id: 3103
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-axon-6591183003.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/axon-6591183003/Cyrus_Shekari_Resume_axon_6591183003_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/axon-6591183003/cover_answers.md
+submitted_at: 2026-06-23T16:09:32+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "lobfZ9CX",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/axon/jobs/6591183003/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying!\n\nYour application was successfully submitted, and our team will be in contact when a decision has been made.\n\n\u00a0\n\nLearn more about us by visiting our careers page.\n\n\u00a0\n\n\u00a0\n\n\u00a0\n\nVie"
+ },
+ "status": "SUBMITTED"
+}
+

@@ -17,7 +17,7 @@ This role is for a technically strong PM who can move comfortably between infras
 
 ## **What you'll do**
 
-- Own the roadmap for how Sigma's AI platform scales — compute, observability, connectors, and the query infrastructure that powers it all.
+- Own the roadmap for how Sigma's AI platform scales — AI tooling, cost management, compute, observability, connectors, and the query infrastructure that powers it all. 
 
 - Partner closely with enterprise customers to understand performance pain points and translate them into platform improvements.
 

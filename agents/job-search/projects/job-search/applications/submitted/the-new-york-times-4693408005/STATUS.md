@@ -1,6 +1,31 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T03:19:18+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-24
 role_id: 3486
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_8692900005", "label": "After your review of the job description, do you meet each of the basic qualifications listed in the job?", "reason": "no LABEL_RULES match for label='After your review of the job description, do you meet each of the basic qualifications listed in the job?'"}]
+submitted_at: 2026-06-24T00:27:23+00:00
+
+Runner tail:
+title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "f4XNnlRK",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/thenewyorktimes/jobs/4693408005/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying at The New York Times.\n\nA recruiter will review your resume and reach out if you are selected to advance in the interview process.\u00a0\n\n\u00a0\n\nView more jobs at The New York Times\nBack"
+ },
+ "status": "SUBMITTED"
+}
+

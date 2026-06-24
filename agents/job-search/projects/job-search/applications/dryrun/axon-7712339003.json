@@ -4,16 +4,16 @@
   "job_id": "7712339003",
   "job_title": "Finance Transformation AI Lead",
   "job_location": "Scottsdale, Arizona, United States",
-  "fetched_at": "2026-06-23T03:44:04Z",
+  "fetched_at": "2026-06-23T22:42:18Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/axon/jobs/7712339003?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 39,
-    "filled": 34,
+    "filled": 35,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -538,10 +538,10 @@
       "label": "Which Axon Hub do you plan to work from? (please note: relocation assistance is not currently provided for this role)",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "answer_no: no 'No' option among ['Seattle', 'San Francisco (Presidio)', 'Scottsdale', 'Atlanta', 'Boston', 'NYC', 'Sterling', 'N/A']",
-      "status": "unresolved",
-      "matched_rule": "answer_no",
+      "value": "Seattle",
+      "source": "city_location_select: matched 'seattle'",
+      "status": "filled",
+      "matched_rule": "city_location_select",
       "options": [
         {
           "label": "Seattle",
@@ -734,21 +734,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_31076946003",
-      "label": "Which Axon Hub do you plan to work from? (please note: relocation assistance is not currently provided for this role)",
-      "required": true,
-      "reason": "answer_no: no 'No' option among ['Seattle', 'San Francisco (Presidio)', 'Scottsdale', 'Atlanta', 'Boston', 'NYC', 'Sterling', 'N/A']"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_31076946003",
-      "label": "Which Axon Hub do you plan to work from? (please note: relocation assistance is not currently provided for this role)",
-      "reason": "answer_no: no 'No' option among ['Seattle', 'San Francisco (Presidio)', 'Scottsdale', 'Atlanta', 'Boston', 'NYC', 'Sterling', 'N/A']"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

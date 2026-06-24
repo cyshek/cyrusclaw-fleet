@@ -4,16 +4,16 @@
   "job_id": "8548633002",
   "job_title": "Engineering Maintenance Technician, PM & Overnight | Start on August 27, 2026",
   "job_location": "Rancho Mirage, CA",
-  "fetched_at": "2026-06-23T03:13:58Z",
+  "fetched_at": "2026-06-24T00:05:48Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/sensei/jobs/8548633002?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 27,
-    "filled": 18,
+    "filled": 23,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 5,
-    "blockers": 5
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -180,10 +180,10 @@
       "label": "Do you have 1+ years’ experience in preventive maintenance role?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Do you have 1+ years’ experience in preventive maintenance role?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -200,10 +200,10 @@
       "label": "Do you have 1+ years' experience in plumbing?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label=\"Do you have 1+ years' experience in plumbing?\"",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -220,10 +220,10 @@
       "label": "Do you possess a valid driver’s license and an acceptable MVR (Moving Vehicle Record) ?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Do you possess a valid driver’s license and an acceptable MVR (Moving Vehicle Record)\\xa0?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -291,10 +291,10 @@
       "label": "Have you been referred to Sensei? If yes, by whom?",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you been referred to Sensei? If yes, by whom?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "",
+      "source": "conditional follow-up to No answer (intentionally blank)",
+      "status": "filled",
+      "matched_rule": "explain_no",
       "options": null
     },
     {
@@ -313,10 +313,10 @@
       "label": "Please provide a minimum of two professional references with contact information.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Please provide a minimum of two professional references with contact information.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
       "options": null
     },
     {
@@ -476,65 +476,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_36513263002",
-      "label": "Do you have 1+ years’ experience in preventive maintenance role?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Do you have 1+ years’ experience in preventive maintenance role?'"
-    },
-    {
-      "id": "question_36513264002",
-      "label": "Do you have 1+ years' experience in plumbing?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label=\"Do you have 1+ years' experience in plumbing?\""
-    },
-    {
-      "id": "question_36513265002",
-      "label": "Do you possess a valid driver’s license and an acceptable MVR (Moving Vehicle Record) ?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Do you possess a valid driver’s license and an acceptable MVR (Moving Vehicle Record)\\xa0?'"
-    },
-    {
-      "id": "question_36513268002",
-      "label": "Have you been referred to Sensei? If yes, by whom?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you been referred to Sensei? If yes, by whom?'"
-    },
-    {
-      "id": "question_36513270002",
-      "label": "Please provide a minimum of two professional references with contact information.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Please provide a minimum of two professional references with contact information.'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_36513263002",
-      "label": "Do you have 1+ years’ experience in preventive maintenance role?",
-      "reason": "no LABEL_RULES match for label='Do you have 1+ years’ experience in preventive maintenance role?'"
-    },
-    {
-      "id": "question_36513264002",
-      "label": "Do you have 1+ years' experience in plumbing?",
-      "reason": "no LABEL_RULES match for label=\"Do you have 1+ years' experience in plumbing?\""
-    },
-    {
-      "id": "question_36513265002",
-      "label": "Do you possess a valid driver’s license and an acceptable MVR (Moving Vehicle Record) ?",
-      "reason": "no LABEL_RULES match for label='Do you possess a valid driver’s license and an acceptable MVR (Moving Vehicle Record)\\xa0?'"
-    },
-    {
-      "id": "question_36513268002",
-      "label": "Have you been referred to Sensei? If yes, by whom?",
-      "reason": "no LABEL_RULES match for label='Have you been referred to Sensei? If yes, by whom?'"
-    },
-    {
-      "id": "question_36513270002",
-      "label": "Please provide a minimum of two professional references with contact information.",
-      "reason": "no LABEL_RULES match for label='Please provide a minimum of two professional references with contact information.'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

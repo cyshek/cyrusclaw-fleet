@@ -33,24 +33,18 @@ Everyone on our team has a part to play
 
 - Be an enabling force that drives effective and sustainable evolution of the various data products we can offer in Risk, Trust and Operations spaces
 
-- Play a key role in FanDuel’s agile delivery framework
-
-- Play a key role within the PM community here at FanDuel, sharing your industry best practice and fostering a culture of knowledge sharing and cross-skilling
-
  
 
 **THE STATS**
 What we're looking for in our next teammate
 
-- 3+ years of experience as a Product Manager or Product Owner delivering impactful data products
+- 1-2 years of experience as a Product Manager or Product Owner delivering impactful data products
 
 - Experience working with data warehouse and data pipeline technologies
 
 - Is used to working in a fast-paced environment helping to provide clarity to delivery teams when priorities change
 
 - Experience designing data strategies for both automated and self-service reporting and/or analytics
-
-- Demonstrated ability to lead the product development of highly visible product or key vertical within a company’s portfolio both strategically and tactically
 
 - Experience using SQL, Python and a variety of reporting and data visualization tools. Familiarity with streaming and Lake House architecture preferred
 
@@ -83,7 +77,7 @@ We offer amazing benefits above and beyond the basics. We have an array of healt
 
 FanDuel is an equal opportunities employer and we believe, as one of our principles states, “We are One Team!”. As such, we are committed to equal employment opportunity regardless of race, color, ethnicity, ancestry, religion, creed, sex, national origin, sexual orientation, age, citizenship status, marital status, disability, gender identity, gender expression, veteran status, or any other characteristic protected by state, local or federal law. We believe FanDuel is strongest and best able to compete if all employees feel valued, respected, and included.
 
-***The applicable salary range for this position is $116,000 - $145,000 USD, which is dependent on a variety of factors including relevant experience, location, business needs and market demand. This role may offer the following benefits: medical, vision, and dental insurance; life insurance; disability insurance; a 401(k) matching program; among other employee benefits. This role may also be eligible for short-term or long-term incentive compensation, including, but not limited to, cash bonuses and stock program participation. This role includes paid personal time off and 14 paid company holidays. FanDuel offers paid sick time in accordance with all applicable state and federal laws.***
+***The applicable salary range for this position is $98,000 - $122,000 USD, which is dependent on a variety of factors including relevant experience, location, business needs and market demand. This role may offer the following benefits: medical, vision, and dental insurance; life insurance; disability insurance; a 401(k) matching program; among other employee benefits. This role may also be eligible for short-term or long-term incentive compensation, including, but not limited to, cash bonuses and stock program participation. This role includes paid personal time off and 14 paid company holidays. FanDuel offers paid sick time in accordance with all applicable state and federal laws.***
 
 ***FanDuel is committed to providing reasonable accommodations for qualified individuals with disabilities. If you have a disability and need a workplace accommodation or adjustment during the application and hiring process, including support for the interview or onboarding process, please email [Benefits@fanduel.com](mailto:Benefits@fanduel.com).***
 

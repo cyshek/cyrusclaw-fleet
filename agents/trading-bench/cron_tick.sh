@@ -40,6 +40,26 @@ if [ "$RECON_RC" -ne 0 ]; then
     echo "[reconcile] WARNING: reconcile exited rc=$RECON_RC (non-fatal, continuing tick)" >&2
 fi
 
+# Position-level drift check (once/day, last AM slot): does the DB's net position
+# per symbol (REAL filled rows only; synthetic test/seed rows excluded) match what
+# Alpaca actually holds? Complements the order-status reconcile above. Asset-class
+# tolerance (equities float-epsilon, crypto fee-haircut). ~8 cheap GETs, so gate to
+# a single daily slot. Alerts main on REAL drift only; never blocks the tick.
+case "$TS" in
+  *T1330*)
+    DRIFT_OUT=$(python3 -m runner.position_drift 2>&1)
+    DRIFT_RC=$?
+    {
+        echo "=== position_drift @ $TS (rc=$DRIFT_RC) ==="
+        echo "$DRIFT_OUT"
+        echo "=== end position_drift ==="
+    } >> "$LOG_DIR/position_drift.log"
+    if [ "$DRIFT_RC" -eq 2 ]; then
+        echo "[position_drift] REAL DRIFT: DB net position disagrees with Alpaca on a live/real symbol -- see $LOG_DIR/position_drift.log" >&2
+    fi
+    ;;
+esac
+
 if [ "$#" -eq 0 ]; then
     echo "Usage: $0 <strategy_name> [strategy_name ...]" >&2
     exit 2
@@ -75,6 +95,22 @@ ALLOC_RC=$?
 } >> "$LOG_DIR/allocator_paper.log"
 if [ "$ALLOC_RC" -ne 0 ]; then
     echo "[allocator_paper] WARNING: tracker exited rc=$ALLOC_RC (non-fatal; see $LOG_DIR/allocator_paper.log)" >&2
+fi
+
+# Silent-clock guard: the dangerous failure is rc=0 yet NO new row for >=2 trading
+# days (stale SPX cache / engine returns an old mark_date), which leaves a hole in
+# the forward track record. --check-staleness exits 3 when the clock is >=2 trading
+# days behind the latest closed SPX session. Emit a LOUD stderr warning on staleness
+# so it surfaces to main; never blocks the tick.
+STALE_OUT=$(python3 runner/allocator_paper_tracker.py --check-staleness 2>&1)
+STALE_RC=$?
+{
+    echo "=== allocator_paper staleness @ $TS (rc=$STALE_RC) ==="
+    echo "$STALE_OUT"
+    echo "=== end allocator_paper staleness ==="
+} >> "$LOG_DIR/allocator_paper.log"
+if [ "$STALE_RC" -eq 3 ]; then
+    echo "[allocator_paper] STALE CLOCK: paper clock is >=2 trading days behind the latest closed SPX bar -- track record has a hole. See $LOG_DIR/allocator_paper.log" >&2
 fi
 
 # Build the message body. Trade receipts first, errors second.

@@ -1,6 +1,31 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T07:00:02+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-24
 role_id: 3329
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_12621950008", "label": "This is not a platform PM role. This role requires directly owning a set of customer accounts and going very deep with them from a deployment and product shaping perspective. What is your background in directly talking to customers and external stakeholders? ", "reason": "no LABEL_RULES match for label='This is not a platform PM role. This role requires directly owning a set of customer accounts and going very deep with them from a deployment and product
+submitted_at: 2026-06-24T04:42:20+00:00
+
+Runner tail:
+0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "GKszOB3i",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/embed/job_app/confirmation?for=activelyai&token=4881173008",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\n\nView more jobs at Actively AI\nBack to job post\n\nGive your application a boost!\n\nSi"
+ },
+ "status": "SUBMITTED"
+}
+

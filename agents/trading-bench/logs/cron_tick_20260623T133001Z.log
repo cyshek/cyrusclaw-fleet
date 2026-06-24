@@ -1,0 +1,61 @@
+=== reconcile @ 20260623T133001Z ===
+rc: 0
+Before: {'filled': 64}
+Nothing to do — no non-terminal rows.
+=== cron_tick.sh @ 20260623T133001Z ===
+strategies: breakout_xlk sma_crossover_qqq breakout_xlk_regime sma_crossover_qqq_regime sma_crossover_qqq_rth breakout_xlk__mut_c382b1 leveraged_long_trend_paper rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo allocator_blend
+tick rc: 0
+--- tick output ---
+[sma_crossover_qqq] SELL 0.134730902 QQQ @ $714.64 | reason: SMA10=733.47 < SMA30=734.13
+[sma_crossover_qqq_regime] SELL 0.134654697 QQQ @ $714.40 | reason: SMA10=733.47 < SMA30=734.13
+[rsi_oversold_spy] BUY 0.136309726 SPY @ $733.55 | reason: RSI=28.0 < oversold 28.0
+[tqqq_cot_combo] BUY 1.340025194 TQQQ @ $74.62 | reason: underweight +7sh ($524) | [QQQ] close=738.10 SMA200=629.45 gate=ON | rv=37.5% tgt=40% w=1.000 | COT_scale=1.0 | w_final=1.000 tgt_qty=13 cur_qty=6 thresh=1
+=== end ===
+--- post rc: 0 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+{
+  "action": "send",
+  "channel": "discord",
+  "dryRun": false,
+  "handledBy": "core",
+  "messageId": "1518971535329591296",
+  "payload": {
+    "channel": "discord",
+    "to": "channel:1508503706545557656",
+    "via": "direct",
+    "mediaUrl": null,
+    "result": {
+      "receipt": {
+        "primaryPlatformMessageId": "1518971535329591296",
+        "platformMessageIds": [
+          "1518971535329591296"
+        ],
+        "parts": [
+          {
+            "platformMessageId": "1518971535329591296",
+            "kind": "text",
+            "index": 0,
+            "raw": {
+              "channel": "discord",
+              "messageId": "1518971535329591296",
+              "channelId": "1508503706545557656"
+            }
+          }
+        ],
+        "sentAt": 1782221435248,
+        "raw": [
+          {
+            "channel": "discord",
+            "messageId": "1518971535329591296",
+            "channelId": "1508503706545557656"
+          }
+        ]
+      },
+      "messageId": "1518971535329591296",
+      "channel": "discord"
+    }
+  }
+}
+=== posted ===

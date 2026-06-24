@@ -1,0 +1,120 @@
+# Solutions Engineer
+
+**Company:** Legora
+**Location:** New York City
+**Apply:** https://jobs.ashbyhq.com/legora/f3c0712a-f8e2-4dc1-8e83-23da7891a1c2
+**Ashby Org:** legora
+**Ashby Job ID:** f3c0712a-f8e2-4dc1-8e83-23da7891a1c2
+
+---
+
+## About Us
+
+Legora is redefining how legal work gets done. Not built for lawyers, built with them. We work alongside the world’s best legal teams, who expect excellence, precision, and speed, and we hold ourselves to the same bar.
+
+Our AI-native workspace lets legal professionals move faster, think more clearly, and operate with sharper precision. By analysing thousands of documents in minutes and powering end-to-end workflows, we cut through complexity, teams can focus on what matters: judgment, strategy, and outcomes.
+
+1,000+ customers across 50+ countries trust us, including Cleary Gottlieb, Goodwin, Linklaters, White & Case, Dentons, and Barclays. We’ve scaled to** $100M+ in ARR**, with teams across Europe, North America and APAC, and continue to expand through acquisitions including Qura, Walter AI and Graceview.
+
+We partner with world-class performers: including Aaron Judge and the New York Yankees, Ludvig Åberg (and his caddie), and campaigns featuring Jude Law.
+
+Joining Legora means three things.
+
+- We **lean in: **ownership over titles, outcomes over intentions.
+
+- We **fight for excellence:** high standards, direct, ego-free feedback.
+
+- We** grow together:** as a team and with our customers.
+
+Mission before ego. Everyone contributes. No one coasts.
+
+If you’re driven by impact, pace, and raising the bar. This is the place.
+
+**The Role**
+
+As a **Solutions Engineer at Legora**, you’ll act as a technical and strategic partner to our sales team, engineering team and prospective clients. You’ll help customers understand how Legora’s solutions solve their most complex technical challenges, lead technical discovery, create custom demonstrations, and support the end-to-end sales process.
+
+This role is ideal for someone with strong technical expertise, excellent communication skills, and a passion for working with customers to drive value. Your work will directly influence Legora’s growth and customer satisfaction.
+
+**What You'll Do**
+
+- Lead technical discovery discussions to understand customer pain points, use cases, and requirements.
+
+- Collaborate with our Legal Engineers to create demos and proof-of-concepts that clearly illustrate how Legora’s solutions address customer challenges and create value.
+
+- Facilitate technical workshops and proof-of-value sessions.
+
+- Respond to technical questions, security concerns, RFI/RFP responses, and implementation feasibility discussions.
+
+- Act as a trusted advisor and technical liaison throughout the sales cycle from early engagement to contract negotiation.
+
+- Design and propose scalable technical solutions based on customer needs and Legora’s product capabilities.
+
+- Translate complex requirements into clear architecture diagrams, implementation roadmaps, and proposal documentation.
+
+- Collaborate with Product and Engineering to validate feasibility, share customer feedback, and influence roadmap priorities.
+
+- Partner with Go-to-Market teams to shape deal strategy and shape technical strategy early in the sales process.
+
+- Support onboarding of technical sales content (demos and demo scripts, battlecards, case studies) that improve sales efficiency.
+
+- Work closely with Technical Delivery and Customer Success to ensure smooth transition from pre-sale to implementation.
+
+**What You Bring**
+
+- Bachelor’s degree in Computer Science, Engineering, or a related technical discipline (or equivalent experience).
+
+- 5+ years of experience in technical pre-sales, solutions engineering, sales engineering, or a customer-facing technical role (preferably B2B). 
+
+- Experienced with having technical delivery discussions, responding technical questions coming from clients.
+
+- Experience delivering technical presentations and demos to both technical and business decision-makers.
+
+- Strong communication skills with the ability to explain complex technical topics clearly.
+
+**What’s In It For You**
+
+- **Global collaboration:** Partner with teams and clients domestic and internationally.
+
+- **Competitive package:** Comprehensive salary, benefits, and tools for success.
+
+- **Meaningful work: **Your efforts shape how thousands of lawyers use AI daily.
+
+- **In-person environment:** Union Square office designed for ambitious builders.
+
+- **Benefits & Perks: **We invest in our people with a comprehensive, thoughtfully designed benefits package:
+Medical, Dental & Vision
+
+- Multiple medical plan options through Aetna and Kaiser Permanente
+
+- HSA or Healthcare FSA (based on plan selection)
+
+- Dental plans via MetLife
+
+- Vision plans via Vision Care
+
+Family Support
+
+- Generous parental leave
+
+- Free access to Maven Clinic
+
+- Dependent Care FSA
+
+- Free One Medical membership for employees and dependents
+
+Additional Perks
+
+- Pre-tax commuter benefits
+
+- Life Insurance + STD/LTD
+
+- 401(K) with generous company match
+
+- Unlimited PTO
+
+- Robust voluntary benefits, including identity protection (via Aura), legal coverage via MetLife, pet savings programs, and more
+
+**Legora is an Equal Opportunity Employer**
+
+At Legora, we believe great teams are built on diversity of thought and experience. We’re proud to be an equal opportunity employer and committed to creating an inclusive, high-performance culture where everyone can do their best work. We welcome people of all backgrounds and don’t discriminate based on race, color, religion, national origin, gender, gender identity or expression, sexual orientation, age, disability, veteran status, or any other characteristic protected by law.

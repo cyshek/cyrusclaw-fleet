@@ -1,0 +1,43 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ business impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model adopted across engineering orgs.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation standard for enterprise cloud infrastructure.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating stakeholders across security, networking, and cloud infrastructure teams.
+5. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to **reduce planning cycle time by 39%** and increase drill capacity by 21%, demonstrating measurable ROI of intelligent workflow tooling to leadership.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and technical training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly through streamlined developer tooling.
+2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical feature gaps and translating customer feedback into actionable requirements for the engineering backlog.
+3. Optimized data integrity and retrieval by enforcing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** platform, cutting lookup time by 83% and improving solution discoverability for technical and non-technical stakeholders alike.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating strategy across 140+ service teams with competing roadmap priorities and deployment timelines.
+2. Mobilized a product strategy to reduce operational toil during region launches, conducting structured discovery with 20+ service teams to surface **81 hours of manual effort** per region, then built a phased roadmap to automate critical deployment paths end-to-end.
+3. Enabled leadership to target automation gaps and prioritize **high-impact support investments** by engineering a Power BI dashboard that tracked operational toil across 140+ teams, turning raw execution data into a visual decision-making tool for executive stakeholders.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping software and hardware dependencies across 1,200+ stations, and coordinating rollout sequencing with cross-functional engineering and ops teams.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets**, stabilize the developer intake process, and maintain delivery velocity throughout a complex multi-team infrastructure migration.
+3. Drove strategic alignment between IT, Operations, and Engineering teams to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release steps that had been bottlenecking fleet-wide firmware updates.
+4. Delivered technical solution design documentation and deployment best practices for the OS migration, enabling field engineering teams to execute consistent, repeatable rollouts across distributed robotics infrastructure with minimal escalation to central engineering.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end sales operations, managing scoping and invoicing for 200+ monthly proposals through a redesigned CRM workflow that reduced turnaround time and improved proposal accuracy for both technical and non-technical stakeholders.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and local search profiles to better align messaging with target customer segments in the regional market.
+3. Improved leadership pricing decisions by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks through data-driven recommendations that directly shaped future quoting strategy and resource allocation models.
+
+## Notes from the rewriter
+- Wove in 'solution design' and 'technical consulting' (JD requirements) into amazon_robotics bullet#4 and microsoft_2022 bullet#2 to mirror pre-sales SE framing.
+- Used 'deployment best practices' and 'system architecture' language from JD recommended qualifications in amazon_robotics bullet#4 and microsoft_ft bullet#3 to signal ArcGIS deployment advisory readiness.
+- Incorporated 'enterprise customers' and named accounts (Databricks, Walmart, SAP, NetApp) in microsoft_ft bullet#1 to mirror JD's emphasis on customer-facing relationship building and business value delivery.
+- Framed microsoft_2023 bullet#1 around 'user demos and technical training' to directly reflect JD responsibility of presenting to technical and non-technical customers and driving product adoption.
+- Used 'go-to-market strategy' and 'customer segments' in pro_painters bullet#2 to echo JD language around sales strategy support and understanding business development processes.
+- 'Intent-based' and 'semantic search' in microsoft_2023 bullets nod to JD's AI/ML recommended qualifications, signaling familiarity with intelligent data retrieval relevant to GIS pattern-finding use cases.
+

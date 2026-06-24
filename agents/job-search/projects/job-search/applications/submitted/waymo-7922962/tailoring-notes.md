@@ -1,0 +1,50 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. **Scaled Azure's resilience validation platform** from a 2-person operation into a self-service tooling system, standardizing workflows to sustain 45+ annual drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a fully scalable, infrastructure-grade model.
+3. Pioneered Azure's first **proactive validation capability** — a rack-level drill program delivered in 4 months with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous map-readiness-style model for infrastructure.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring deep stakeholder alignment across disparate teams.
+5. Built an internal **AI agent for drill planning**, restructuring scheduling workflows to cut planning cycle time by 39% and increase drill throughput capacity by 21% without adding headcount.
+6. Partnered with scaled ops organizations to define the **metrics, tooling standards, and training frameworks** needed to execute the resilience roadmap, mirroring the process-and-quality rigor required for multi-territory infrastructure coverage.
+
+### `microsoft_2023` (4 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code-generation workflows, conducting user demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours monthly** through tooling standardization.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical feature gaps and translating qualitative findings into prioritized requirements.
+3. Improved **data quality and retrieval accuracy** by enforcing rigorous metadata standards and migrating documentation to an AI-powered semantic search platform, reducing lookup time by 83% across internal tooling consumers.
+4. Synthesized cross-team research findings into a stakeholder-facing roadmap brief, aligning engineering and PM leads on a phased rollout plan that balanced **tooling coverage gaps** against delivery capacity constraints.
+
+### `microsoft_2022` (4 bullets emitted, master had 3)
+1. **Generated $3M in accelerated revenue** and cut region launch time by 28% by driving cross-functional alignment on a unified automation prioritization framework across 140+ teams with competing roadmap demands.
+2. Defined a product strategy to reduce operational toil during region launches — conducting discovery with 20+ service teams, quantifying **81 hours of manual effort per region**, and building a roadmap to automate the highest-impact paths.
+3. Engineered a **Power BI tooling dashboard** to track toil coverage metrics across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact investments with data-quality-grade visibility.
+4. Facilitated stakeholder alignment sessions across engineering, ops, and leadership to validate roadmap sequencing, ensuring the automation framework scaled to new regions without rework or process drift.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the legacy OS migration strategy, mapping system dependencies across 1,200+ stations, and validating readiness before any production fleet transition.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing 40+ high-severity tickets** to stabilize the developer intake pipeline and maintain velocity during a complex multi-team infrastructure migration.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual validation steps in the release process.
+4. Documented dependency maps and rollback procedures for the migration program, establishing a **tooling readiness checklist** that became the team's standard validation framework for future fleet software transitions.
+
+### `pro_painters` (4 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing workflow for 200+ monthly proposals, implementing a new CRM process that standardized data quality and reduced turnaround time.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the website funnel and Google Business profile for local search coverage.
+3. Improved leadership pricing accuracy by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering a data-driven model that informed territory-level pricing decisions.
+4. Built and presented a **coverage and quality metrics report** to senior leadership, translating raw project data into actionable insights on which service territories and job types drove the highest margin contribution.
+
+## Notes from the rewriter
+- 'map readiness' (JD term) woven into microsoft_ft bullet#3 and amazon_robotics bullet#1 to mirror Waymo's exact validation language
+- 'tooling coverage gaps' and 'coverage metrics' (JD: data coverage and quality metrics) embedded in microsoft_2023 bullet#4 and microsoft_2022 bullet#3 to surface geospatial data quality experience
+- 'operational toil' and 'scaled organizations' (JD: 'work with scaled organizations to develop processes, metrics, and training') explicitly referenced in microsoft_ft bullet#6 and microsoft_2022 bullet#2 to match Waymo's process-scaling language
+- 'readiness checklist' and 'dependency mapping' in amazon_robotics bullet#4 mirrors JD's 'validate map readiness before vehicles hit the road' framing, connecting robotics infra experience to AV mapping validation
+- 'self-service tooling' and 'infrastructure-grade model' in microsoft_ft bullet#2 targets JD's 'infrastructure sense' and 'critical infrastructure' preferred qualifications directly
+

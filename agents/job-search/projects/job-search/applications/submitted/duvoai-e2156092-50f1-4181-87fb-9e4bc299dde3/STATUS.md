@@ -1,19 +1,9 @@
-ABORT-COVER-ANSWERS — 2026-06-22T10:01:27+00:00
+PREP-READY — 2026-06-23T18:39:46+00:00
 
 role_id: 1627
-phase: cover-answers
-error:
-RuntimeError: cover_answer_generator failed (rc=1): Traceback (most recent call last):
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 564, in <module>
-    main()
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 559, in main
-    result = run(args.slug, args.max_retries)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 522, in run
-    prompt = build_prompt(jd_text, resume_text, personal_info, questions,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 357, in build_prompt
-    { "question": "<verbatim question text>", "answer": "<answer text>" },
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: Invalid format specifier ' "<verbatim question text>", "answer": "<answer text>" ' for object of type 'str'
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-duvoai-e2156092-50f1-4181-87fb-9e4bc299dde3.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/duvoai-e2156092-50f1-4181-87fb-9e4bc299dde3/Cyrus_Shekari_Resume_ashby-duvo_e2156092_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/duvoai-e2156092-50f1-4181-87fb-9e4bc299dde3/cover_answers.md
 
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

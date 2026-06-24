@@ -1,19 +1,9 @@
-ABORT-COVER-ANSWERS — 2026-06-22T09:50:37+00:00
+PREP-READY — 2026-06-23T17:23:13+00:00
 
-role_id: 2145
-phase: cover-answers
-error:
-RuntimeError: cover_answer_generator failed (rc=1): Traceback (most recent call last):
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 564, in <module>
-    main()
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 559, in main
-    result = run(args.slug, args.max_retries)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 522, in run
-    prompt = build_prompt(jd_text, resume_text, personal_info, questions,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 357, in build_prompt
-    { "question": "<verbatim question text>", "answer": "<answer text>" },
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: Invalid format specifier ' "<verbatim question text>", "answer": "<answer text>" ' for object of type 'str'
+role_id: 3028
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-notion-10437426-14c8-4c45-8075-67959ce80393.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/notion-10437426-14c8-4c45-8075-67959ce80393/Cyrus_Shekari_Resume_ashby-notion_10437426_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/notion-10437426-14c8-4c45-8075-67959ce80393/cover_answers.md
 
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

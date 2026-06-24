@@ -10,36 +10,36 @@
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
-2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, repeatable model.
-3. Pioneered Azure's first proactive resilience testing capability — delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a new continuous validation standard.
-4. Built an **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — directly applying LLM-powered automation to a high-stakes, data-dense infrastructure domain.
-5. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+1. Owned end-to-end **product vision and roadmap** for Azure's resilience validation platform, scaling from a 2-person operation to a self-service system sustaining 45+ annual drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 build of an internal **Resilience Automation Platform**, defining requirements and self-service scheduling capabilities that cut operational toil by 30% and unlocked a scalable, AI-native execution model for enterprise customers.
+3. Shipped Azure's first proactive rack-level resilience testing capability in 4 months — achieving a **94% recovery rate**, surfacing critical hardware defects, and establishing a continuous validation standard across sovereign-cloud deployments.
+4. Built and deployed an **internal AI agent** for drill planning, restructuring workflows using LLM-powered automation to cut planning cycle time by 39% and expand drill capacity by 21% without growing headcount.
+5. Directed 14 high-visibility cross-org recovery executions, including bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, translating complex technical outcomes for executive audiences.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed adoption of **AI-driven code generation** workflows, running user demos and training sessions that drove utilization across 14 key Azure teams and saved 37 engineering hours monthly.
-2. Shaped the product roadmap to include **intent-based YAML generation** by conducting 11+ discovery interviews with Azure service teams, surfacing critical feature gaps and translating technical needs into clear requirements.
-3. Improved data retrieval by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83% — an early application of RAG-style retrieval to an internal product.
+1. Drove **AI-powered code generation** adoption across 14 Azure service teams by leading user demos and training sessions, saving 37 engineering hours monthly and accelerating the product development lifecycle.
+2. Shaped the product roadmap by conducting **11+ customer discovery interviews** with Azure service teams, surfacing critical feature gaps that directly influenced prioritization of intent-based YAML generation capabilities.
+3. Improved data retrieval speed by **83%** by migrating documentation to an AI-powered semantic search tool with rigorous metadata standards, applying RAG-adjacent retrieval principles to a high-scale internal knowledge system.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams.
-2. Drove discovery with 20+ service teams to surface **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths — owning the problem end-to-end from customer insight to execution strategy.
-3. Enabled leadership to target automation gaps with a **Power BI dashboard** tracking operational toil across 140+ teams, translating complex workflow data into a clear, decision-ready narrative for senior stakeholders.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ engineering teams.
+2. Defined product strategy to eliminate launch toil, running discovery with 20+ service teams to identify **81 hours of manual effort per region** and building a roadmap to automate critical execution paths.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and make data-driven prioritization decisions at scale.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations — managing high-stakes execution with urgency and rigor.
-2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and improving developer velocity on a robotics-scale system.
-3. Prioritized a cross-functional backlog to resolve **40+ high-priority tickets**, facilitating sprint planning and retrospectives to stabilize the developer intake process and maintain delivery momentum.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and driving alignment across engineering and operations stakeholders.
+2. Prioritized a 40+ ticket backlog through Agile sprint planning and retrospectives, **stabilizing the developer intake process** and accelerating delivery velocity for a cross-functional robotics engineering team.
+3. Partnered with IT and Engineering to implement **automated CI/CD pipelines**, cutting software deployment cycle time by 25% and establishing a repeatable release model for high-stakes robotics infrastructure.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM process that reduced friction and improved conversion across the sales funnel.
-2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-driven, digital-first go-to-market strategy — optimizing the website and Google profile to improve top-of-funnel performance.
-3. Identified and sealed margin leaks by conducting **profitability analysis** across 1,000+ project records, delivering actionable pricing insights that directly improved leadership's financial decision-making.
+1. Increased job bookings by **26%** by redesigning end-to-end scoping and invoicing workflows for 200+ monthly proposals, deploying a new CRM process that improved conversion and reduced execution time.
+2. Cut Customer Acquisition Cost by **13%** and lifted conversions 2.7% by executing a data-driven go-to-market strategy — optimizing the website, Google profile, and digital funnel with rapid iteration on messaging and targeting.
+3. Identified and closed margin leaks by conducting **financial profitability analysis** across 1,000+ project records, delivering pricing model recommendations that improved unit economics for leadership.
 
 ## Notes from the rewriter
-- Wove in 'AI agent' and 'LLM-powered automation' directly into microsoft_ft bullet#4, mirroring Ramp JD's call for fluency with LLM systems and hands-on AI building.
-- Used 'RAG-style retrieval' in microsoft_2023 bullet#3 to map Cyrus's semantic search work to Ramp's explicit mention of embeddings and retrieval as core LLM concepts.
-- Framed microsoft_2022 bullet#2 around 'owning the problem end-to-end from customer insight to execution strategy' — echoing Ramp's 'owns problems end to end' and 'customer insights' language.
-- Used 'data-driven, digital-first go-to-market strategy' in pro_painters bullet#2 to mirror Ramp's 'data-driven decision making' and 'go-to-market' framing from the PM role context.
-- Replaced generic 'led cross-functional teams' phrasing across amazon_robotics with 'high-stakes execution with urgency and rigor' — directly reflecting Ramp's 'high agency and high urgency' culture language.
+- 'AI-native' and 'LLM-powered automation' woven into microsoft_ft bullets 2 and 4 — mirrors Ramp's 'AI-native products' and 'fluency with core LLM concepts' language.
+- 'Customer discovery' and 'product roadmap' vocabulary from the JD's 'marry customer insights' requirement inserted into microsoft_2023 bullets 1 and 2.
+- '0→1 product development' and 'self-service model' in microsoft_ft bullet 2 directly mirrors Ramp's 'own the vision, strategy, and roadmap' and high-agency builder framing.
+- 'Data-driven go-to-market strategy' and 'rapid iteration' in pro_painters bullet 2 maps to Ramp's 'data-driven decision making' and 'prototype rapidly' JD language.
+- 'Translating complex technical outcomes for executive audiences' in microsoft_ft bullet 5 mirrors JD requirement to 'translate between technical and non-technical audiences.'
 

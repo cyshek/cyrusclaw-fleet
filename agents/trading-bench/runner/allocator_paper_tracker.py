@@ -420,6 +420,97 @@ def current_target_weights(db_path: str = DEFAULT_DB) -> Dict:
 
 
 # --------------------------------------------------------------------------- #
+# Staleness self-check (silent-clock guard)
+# --------------------------------------------------------------------------- #
+#
+# The dangerous failure mode is NOT rc!=0 (that already alarms) -- it is the
+# tracker running rc=0 yet logging NO new row for several trading days (e.g. a
+# stale cached SPX bar, or the engine silently returning an old mark_date). That
+# would leave a hole in the forward track record discovered only when someone
+# reads the DB. This guard compares the latest logged DB date against the latest
+# CLOSED SPX trading bar (the same ^GSPC cache the engine marks against) and
+# reports how many trading days behind the clock is.
+#
+# "trading_days_behind" counts SPX sessions strictly AFTER the last logged row,
+# up to and including the latest closed bar. 0 = fully current. 1 is the normal
+# transient state intraday before that session's bar is captured (self-heals on
+# the next slot). >=2 means the clock genuinely fell behind -> alarm.
+
+GSPC_CACHE = str(WORKSPACE / "data_cache" / "yahoo" / "_GSPC_parsed.json")
+
+
+def _spx_trading_dates() -> List[str]:
+    """Authoritative trading-day calendar = the dates present in the cached ^GSPC
+    daily series (ascending). This is the SAME series the engine marks against, so
+    the staleness count can never diverge from what the tracker would log."""
+    try:
+        with open(GSPC_CACHE) as fh:
+            bars = json.load(fh)
+    except (OSError, ValueError):
+        return []
+    out = []
+    for b in bars:
+        d = b.get("date") if isinstance(b, dict) else None
+        if d:
+            out.append(d)
+    out.sort()
+    return out
+
+
+def clock_staleness(db_path: str = DEFAULT_DB) -> Dict:
+    """How far behind the latest CLOSED SPX session the paper clock is.
+
+    Returns dict:
+      last_logged          most recent date in daily_snapshots (or None)
+      latest_closed_bar    most recent ^GSPC session date (or None)
+      trading_days_behind  count of SPX sessions after last_logged thru latest bar
+      rows_logged          total rows in the DB
+      stale                True when trading_days_behind >= 2 (genuine lag)
+      note                 human summary
+    """
+    cal = _spx_trading_dates()
+    latest_bar = cal[-1] if cal else None
+
+    conn = _get_conn(db_path)
+    try:
+        row = conn.execute(
+            "SELECT date FROM daily_snapshots ORDER BY date DESC LIMIT 1"
+        ).fetchone()
+        total = conn.execute("SELECT COUNT(*) AS n FROM daily_snapshots").fetchone()["n"]
+    finally:
+        conn.close()
+
+    last_logged = row["date"] if row else None
+
+    if last_logged is None:
+        behind = None
+        note = "no rows logged yet -- clock not started"
+    elif latest_bar is None:
+        behind = None
+        note = "^GSPC cache unreadable -- cannot assess staleness"
+    else:
+        # sessions strictly after last_logged, up to & including latest closed bar
+        behind = sum(1 for d in cal if last_logged < d <= latest_bar)
+        if behind == 0:
+            note = "current (last logged == latest closed SPX bar %s)" % latest_bar
+        elif behind == 1:
+            note = ("1 trading day behind (latest closed bar %s not yet captured; "
+                    "normal intraday -- self-heals next slot)" % latest_bar)
+        else:
+            note = ("STALE: %d trading days behind (last logged %s, latest closed bar "
+                    "%s) -- paper clock has a hole" % (behind, last_logged, latest_bar))
+
+    return {
+        "last_logged": last_logged,
+        "latest_closed_bar": latest_bar,
+        "trading_days_behind": behind,
+        "rows_logged": total,
+        "stale": (behind is not None and behind >= 2),
+        "note": note,
+    }
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 def main() -> None:
@@ -427,6 +518,8 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Allocator-blend paper-clock tracker")
     p.add_argument("--db", default=DEFAULT_DB)
     p.add_argument("--stats", action="store_true", help="only print running stats")
+    p.add_argument("--check-staleness", action="store_true",
+                   help="print clock staleness JSON; exit 3 if >=2 trading days behind")
     args = p.parse_args()
 
     if args.stats:
@@ -434,9 +527,16 @@ def main() -> None:
         print(json.dumps(st, indent=2))
         return
 
+    if args.check_staleness:
+        st = clock_staleness(db_path=args.db)
+        print(json.dumps(st, indent=2))
+        sys.exit(3 if st.get("stale") else 0)
+
     state = snapshot_today(db_path=args.db)
     print("[allocator_paper] mark_date=%s inserted=%d rows_logged=%d" % (
         state["mark_date"], state["inserted"], state["rows_logged"]))
+    _stale = clock_staleness(db_path=args.db)
+    print("[allocator_paper] staleness: %s" % _stale["note"])
     print("[allocator_paper] sleeve split: TQQQ-voltarget %.1f%% / rotation %.1f%%" % (
         state["w_tqqq"] * 100, state["w_rot"] * 100))
     print("[allocator_paper] decomposed target weights: %s (cash %.1f%%)" % (

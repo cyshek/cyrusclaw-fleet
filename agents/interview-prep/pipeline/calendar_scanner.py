@@ -70,18 +70,16 @@ def parse_ical_date(date_str):
 
 
 def is_interview_event(summary, description="", organizer=""):
-    text = f"{summary} {description}".lower()
-    for kw in INTERVIEW_KEYWORDS:
-        if kw in text:
-            return True
-    # Calendly-style "Person A and Person B" meetings from recruiter domains
-    org_lower = organizer.lower()
-    for domain in RECRUITER_ORGANIZER_DOMAINS:
-        if domain in org_lower:
-            # Only flag if description has any job/company context
-            if any(w in text for w in ["chat", "call", "meet", "connect", "excited", "opportunity", "role"]):
-                return True
-    return False
+    """Delegate to the scored classifier. Calendar events map to (subject=summary,
+    sender=organizer, body=description)."""
+    try:
+        from classifier import classify
+        is_int, _score, _label, _reasons = classify(summary, organizer, description)
+        return is_int
+    except Exception as e:
+        print(f"[calendar_scanner] classifier error ({e}) - falling back")
+        text = f"{summary} {description}".lower()
+        return any(kw in text for kw in INTERVIEW_KEYWORDS)
 
 
 def extract_company_from_event(summary, description="", organizer=""):
