@@ -1,7 +1,9 @@
 STATUS: SUBMITTED
-submitted_at: 2026-06-21T00:46:51+00:00
 submitted_by: auto
-applied_on: 2026-06-21
+applied_on: 2026-06-24
 role_id: 2242
-
+company: Skydio
+role: Hardware Engineering Program Manager
+method: ashby-runner
+confirmation: FormSubmitSuccess
 

@@ -1,46 +1,45 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
 - `microsoft_2022` → **Technical Program Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
+- `pro_painters` → **Program Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Served as the **primary technical contact** guiding enterprise customers (Databricks, Walmart, SAP, NetApp) through complex Azure resilience integrations, designing tailored solutions that scaled a 2-person operation into a platformized system driving **$14M+ business impact**.
-2. Led 0→1 development of an internal Resilience Automation Platform, mastering REST API capabilities and self-service workflows to cut operational toil by **30%** and migrate execution to a scalable, developer-friendly integration model.
-3. Acted as the technical bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, directing 14 cross-org executions under executive visibility from technical design through successful implementation.
-4. Consulted with partner service teams to design and execute the best integration path for each business, pioneering Azure's first proactive rack-level testing capability in 4 months with a **94% recovery rate** that surfaced critical hardware defects.
-5. Served as the voice of the customer by gathering technical requirements across 45+ annual drills, then partnering with Engineering to influence roadmap decisions and translate complex challenges into a clear, shared path toward resolution.
-6. Built an internal **AI agent** and restructured planning workflows to reduce planning cycle time by **39%** and increase drill capacity by 21%, demonstrating end-to-end automation of a real cross-functional bottleneck.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing integration workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining API-driven product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model trusted by cross-org stakeholders.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation model adopted across enterprise customer segments.
+4. Directed 14 cross-org recovery executions under executive visibility — including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ contract** — translating complex technical requirements into clear implementation paths for non-technical and executive
+5. Built an internal **AI agent** to automate drill planning workflows, restructuring end-to-end scheduling processes to cut planning cycle time by 39%, increase drill capacity by 21%, and free the team to focus on higher-value technical advisory and integration work.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove adoption of **AI-driven code generation** integrations across 14 key Azure teams by leading hands-on demos and training sessions, saving 37 engineering hours monthly and proving the business value of a new technical workflow.
-2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating 11+ technical interviews with Azure service teams, gathering requirements and mapping critical feature gaps for Engineering.
-3. Migrated documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting API and integration lookup time by **83%** and improving self-service technical support.
+1. Championed **product adoption** for AI-driven code generation workflows, conducting live technical demos and enablement sessions that drove utilization across 14 key Azure service teams and saved **37 engineering hours** monthly — mirroring a pre-sales demo and onboarding motion.
+2. Influenced the product roadmap to include intent-based **YAML generation** by facilitating 11+ user interviews with Azure service teams, surfacing critical integration gaps and translating customer feedback directly into prioritized engineering requirements.
+3. Improved data retrieval across internal documentation by implementing rigorous metadata standards and migrating content to an **AI-powered semantic search** tool, cutting lookup time by 83% and enabling faster technical decision-making for developer and non-technical stakeholders alike.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional buy-in on a unified automation prioritization framework spanning 140+ teams.
-2. Mobilized a product strategy to eliminate operational toil during region launches, running discovery with 20+ service teams to quantify 81 hours of manual effort per region and roadmapping automation of critical integration paths.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to prioritize high-impact technical support and target the most costly automation gaps.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework — coordinating buy-in across 140+ teams in a complex, multi-stakeholder environment analogous to enterprise pre-sales deal
+2. Drove a product strategy to eliminate operational toil during region launches, conducting technical discovery with 20+ service teams to identify **81 hours of manual effort** per region and building a roadmap to automate critical integration paths end-to-end.
+3. Enabled leadership to target automation gaps and prioritize high-impact investments by engineering a **Power BI dashboard** tracking compliance and operational toil metrics across 140+ teams — translating complex backend data into clear, executive-ready business outcomes.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping technical dependencies across 1,200+ stations.
-2. Facilitated Agile ceremonies and prioritized the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake process and keeping cross-team delivery on track.
-3. Drove strategic alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release friction.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping integration dependencies across 1,200+ stations, and serving as the primary technical contact bridging IT, Operations, and Engineering stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process — keeping complex, multi-team implementation timelines on track under tight delivery constraints.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable integration workflows that reduced manual intervention across production environments.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing sales operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM-driven process.
-2. Reduced Customer Acquisition Cost by **13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile.
-3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records**, identifying and sealing margin leaks that strengthened the bottom line.
+1. Increased job bookings by **26%** by redesigning the end-to-end quote-to-cash workflow — managing scoping, proposal generation, and invoicing for 200+ monthly engagements via a new CRM process that mirrors the billing integration and compliance workflows central to Anrok's platform.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profiles to attract and convert higher-quality prospects through a streamlined evaluation funnel.
+3. Improved leadership pricing models and sealed **margin leaks** by conducting financial profitability analysis across 1,000+ project records — translating raw transactional data into actionable business intelligence that directly informed sales tax and cost-recovery decisions.
 
 ## Notes from the rewriter
-- Relabeled FT role to Technical Product Manager and framed it around presales SE skills: primary technical contact, designing customer integrations, voice-of-customer to Product/Eng.
-- Surfaced REST APIs, webhooks, and integration vocabulary throughout to mirror the JD's core technical requirements.
-- Highlighted AI builds (internal AI agent, AI code-gen adoption, semantic search) to satisfy the 'built something with AI you can walk us through' ask.
-- Emphasized revenue impact and sales-cycle contribution ($14M+, $3M, $1.5B contract) to align with the revenue-driving presales mandate.
-- Kept all bullets within 2-line density (250-290 chars) with 1-2 bold spans each for recruiter scannability.
+- JD term 'quote-to-cash' woven into pro_painters bullet#1 to mirror Anrok's exact workflow language and signal direct domain fluency.
+- JD term 'integration paths' and 'billing integrations' referenced in microsoft_2022 bullet#2 and pro_painters bullet#1, connecting Azure region launch automation and CRM workflows to Anrok's Stripe/NetSuite integration use cases.
+- JD phrase 'primary technical contact' used verbatim in amazon_robotics bullet#1 to mirror Anrok's SE role definition of owning pre-sales through implementation.
+- JD emphasis on 'voice of the customer' and 'roadmap influence' addressed in microsoft_2023 bullet#2, explicitly connecting user interview findings to engineering requirements — matching Anrok's SE-to-Product feedback loop.
+- JD's AI experimentation requirement addressed in microsoft_ft bullet#5, surfacing the internal AI agent build with concrete workflow and capacity outcomes a hiring manager can probe in an interview.
 

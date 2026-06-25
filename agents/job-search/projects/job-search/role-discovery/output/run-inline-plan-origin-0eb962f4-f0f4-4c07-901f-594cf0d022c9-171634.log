@@ -1,0 +1,415 @@
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] step 7: sleep
+[runner] step 8: browser.act.evaluate
+[runner] step 9: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name', '940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email', '940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00', '940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f', '940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] UPLOAD-LAST location re-fill: {'resolved': [{'fid': '940c2cce-328b-4641-8297-21f08b1d689d__systemfield_location', 'label': 'Kirkland, WA', 'method': 'fast-setNative+pick', 'picked': 'Kirkland, Washington, United States', 'post_value': 'Kirkland, Washington, United States'}], 'unresolved': []}
+[runner] step 10: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2233
+[runner] captcha v3 solved in 0.1s, token len=2233
+[runner] step 11: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] yesno not active after click 4172964b79f9, retry 1
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormRender","id":"c29016c5-88c1-4e99-a517-e0fbf48aac1a","errorMessages":["Missing entry for required field: Are you legally authorized to work in your current country of residence without employer sponsorship?"],"sourceFormDefinitionId":"66729466-88d6-461a-9aac-3253d
+[runner] yesno not active after click 103bb1bd5625, retry 1
+[runner] YESNO trusted-click fix: re-clicked 2 radio(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=5 ['1d689d__systemfield_name', 'd689d__systemfield_email', 'c-4511-b954-9d7cd20f4e00', '9-4825-8aa4-bb92db4c2d2f', '3-4b85-8725-4fdfc1df3897'] missing=0
+[runner] reassert-text pass 2: repaired=5 ['1d689d__systemfield_name', 'd689d__systemfield_email', 'c-4511-b954-9d7cd20f4e00', '9-4825-8aa4-bb92db4c2d2f', '3-4b85-8725-4fdfc1df3897'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 5 field(s) ['1d689d__systemfield_name', 'd689d__systemfield_email', 'c-4511-b954-9d7cd20f4e00', '9-4825-8aa4-bb92db4c2d2f', '3-4b85-8725-4fdfc1df3897']
+[runner] final-guard: location already set to 'Kirkland, Washington, United States', skipping re-fill with 'Kirkland, WA'
+[runner] reassert-text pass 1: repaired=5 ['1d689d__systemfield_name', 'd689d__systemfield_email', 'c-4511-b954-9d7cd20f4e00', '9-4825-8aa4-bb92db4c2d2f', '3-4b85-8725-4fdfc1df3897'] missing=0
+[runner] reassert-text pass 2: repaired=5 ['1d689d__systemfield_name', 'd689d__systemfield_email', 'c-4511-b954-9d7cd20f4e00', '9-4825-8aa4-bb92db4c2d2f', '3-4b85-8725-4fdfc1df3897'] missing=0
+[runner] final-guard text re-commit: re-won 5 field(s) ['1d689d__systemfield_name', 'd689d__systemfield_email', 'c-4511-b954-9d7cd20f4e00', '9-4825-8aa4-bb92db4c2d2f', '3-4b85-8725-4fdfc1df3897']
+[runner] final-clobber-guard: settled=True location_ok=True stable=True ('Kirkland, Washington, United S') workauth_checked=True reassert_wa=['No', 'Do you now, or will you in the future, require visa sponsorship for legal employment to work remotely in your country of residence?', 'Yes']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-b954-9d7cd20f4e00', '-8aa4-bb92db4c2d2f']
+[runner] last-ms trusted keystroke commit: ['__systemfield_name', '_systemfield_email', '-b954-9d7cd20f4e00', '-8aa4-bb92db4c2d2f']
+[runner] last-ms no-bounce text commit: 5 field(s), stable=True
+[runner] last-ms radio commit: 0/3 committed
+[runner] last-ms radio detail: [{'n': 'd-4c43-9ac5-4172964b79f9', 'ok': False}, {'n': '4-4047-9f70-103bb1bd5625', 'ok': False}, {'n': 'f-4fff-b984-8687ae064080', 'ok': False}]
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "origin-0eb962f4-f0f4-4c07-901f-594cf0d022c9",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/originhq/0eb962f4-f0f4-4c07-901f-594cf0d022c9/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+            "dom_id": "a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+            "dom_id": "e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+            "tag": "textarea",
+            "type": "textarea",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897",
+            "dom_id": "6eb60761-13c3-4b85-8725-4fdfc1df3897",
+            "tag": "textarea",
+            "type": "textarea",
+            "current_value": "",
+            "want_len": 1384
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+            "dom_id": "a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+            "dom_id": "e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897",
+            "dom_id": "6eb60761-13c3-4b85-8725-4fdfc1df3897",
+            "len": 1384,
+            "post_value": "My work at Microsoft has been fundamentally about embedding with customers, understanding their operational reality, and building custom solutions that make complex infrastructure actually work for them. I led deployments with Databricks, Walmart, SAP, and NetApp, translating unique constraints into custom validation workflows, and I built an internal AI agent that cut planning cycle time by 39% with field learnings feeding directly back into the platform roadmap. That loop of customer-facing engineering, bespoke integration work, and product feedback is exactly what the Forward Deployed Engineer role at Origin is describing, and it is where I do my best work.\n\nWhat draws me to Origin specifically is the problem space. AI adoption on endpoints is accelerating fast, and most organizations have no real visibility into what their agents are actually doing, whether the actions are traceable, or whether outcomes match intent. Origin's bet that observability has to come before broad AI deployment is the right framing, and building the platform that answers the hardest questions about how work gets done inside an organization is a genuinely hard, genuinely important problem. Backed by Sequoia and operating at the intersection of endpoint security and AI infrastructure, this feels like exactly the kind of early-stage, high-stakes environment where I want to be building."
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 5,
+      "fields": [
+        "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name",
+        "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email",
+        "940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+        "940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+        "940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "free-text-tab",
+            "post_value": "Kirkland, WA",
+            "required": true
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "940c2cce-328b-4641-8297-21f08b1d689d_1b5e0e54-f59d-4c43-9ac5-4172964b79f9",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 368,
+            "cy": 296
+          },
+          {
+            "name": "940c2cce-328b-4641-8297-21f08b1d689d_40f5c5e7-a8e4-4047-9f70-103bb1bd5625",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 368,
+            "cy": 297
+          },
+          {
+            "name": "940c2cce-328b-4641-8297-21f08b1d689d_221957f2-dc3f-4fff-b984-8687ae064080",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 296
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 7,
+      "tool": "sleep"
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 6,
+        "text_filled": 5,
+        "radios_groups": 0,
+        "radios_checked": 0,
+        "checkboxes": 3,
+        "checkboxes_checked": 1,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 3,
+        "yesno_groups": 3
+      }
+    },
+    {
+      "i": 9,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-originhq_0eb962f4_v2.pdf"
+    },
+    {
+      "i": 9,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 9,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name",
+        "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email",
+        "940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+        "940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+        "940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897"
+      ],
+      "location_refill": {
+        "resolved": [
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_location",
+            "label": "Kirkland, WA",
+            "method": "fast-setNative+pick",
+            "picked": "Kirkland, Washington, United States",
+            "post_value": "Kirkland, Washington, United States"
+          }
+        ],
+        "unresolved": []
+      }
+    },
+    {
+      "i": 10,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 124,
+      "token_len": 2233,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 11,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name",
+        "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email",
+        "940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+        "940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+        "940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": "Kirkland, Washington, United States",
+        "location_ok": true,
+        "workauth_checked": true,
+        "refilled_location": {
+          "ok": true,
+          "skipped": true,
+          "reason": "already-filled"
+        },
+        "reasserted_workauth": [
+          {
+            "name": "d-4c43-9ac5-4172964b79f9",
+            "target": "No",
+            "clicked": false,
+            "committed": {
+              "ok": false,
+              "reason": "no-option-match",
+              "target": "No",
+              "opts": [
+                "Are you legally authorized to work in your current country of residence without employer sponsorship?"
+              ]
+            }
+          },
+          {
+            "name": "4-4047-9f70-103bb1bd5625",
+            "target": "Do you now, or will you in the future, require visa sponsorship for legal employment to work remotely in your country of residence?",
+            "clicked": true,
+            "committed": {
+              "ok": true,
+              "checked": true,
+              "picked": "Do you now, or will you in the future, require visa sponsorship for legal employment to work remotely in your country of residence?"
+            }
+          },
+          {
+            "name": "f-4fff-b984-8687ae064080",
+            "target": "Yes",
+            "clicked": false,
+            "committed": {
+              "ok": false,
+              "reason": "no-option-match",
+              "target": "Yes",
+              "opts": [
+                "Are you legally authorized to travel to or between the United States and Canada without requiring additional visas or permits?"
+              ]
+            }
+          }
+        ],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "_systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": true,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": [
+          "1d689d__systemfield_name",
+          "d689d__systemfield_email",
+          "c-4511-b954-9d7cd20f4e00",
+          "9-4825-8aa4-bb92db4c2d2f",
+          "3-4b85-8725-4fdfc1df3897"
+        ]
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_name",
+            "now": "Cyrus Shekari"
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d__systemfield_email",
+            "now": "cyshekari@gmail.com"
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d_a915cbf8-e9fc-4511-b954-9d7cd20f4e00",
+            "now": "346-804-0227"
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d_e7cabdc4-2b39-4825-8aa4-bb92db4c2d2f",
+            "now": "https://linkedin.com/in/cyshek"
+          },
+          {
+            "fid": "940c2cce-328b-4641-8297-21f08b1d689d_6eb60761-13c3-4b85-8725-4fdfc1df3897",
+            "now": "My work at Microsoft has been "
+          }
+        ],
+        "missing": [],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Forward Deployed Engineer  LocationUnited States; CanadaEmployment TypeFull timeLocation TypeRemoteDepartmentEngineeringCompensationIC 6$200K \u2013 $250K \u2022 Offers EquityIC 7$230K \u2013 $285K \u2022 Offers EquityIC 8$270K \u2013 $320K \u2022 Offers EquityOverviewApplicationSuccessYour application was successfully submitted. We'll contact you if there are next steps.Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"b584cdd1-6a9e-40a9-b94a-eab8110a53b0\",\"name\":\"Origin\",\"publicWebsite\":\"https://www.originhq.com\",\"customJobsPageUrl\":\"https://www.originhq.com/jobs\",\"hostedJobsPageSlug\":\"originhq\",\"activeFeatureFlags\":[\"SchedulingMeetingRoomPoolsForManualScheduling\",\"NewSchedulingActivityRescheduleActions\",\"EnhancedMobileCandidateFloatingButtons\",\"ArchiveReasonJobPostingList\",\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"TrackUserLastActiveAt\",\"ValidateFormFieldLogging\",\"FeedbackNotRequestedInterviews\",\"MobileJobPipelinePage\",\"JobRequisitionToken\",\"CoreMultipleBrandsJobCompensationSettings\",\"UseRTEOverlaysManager\",\"CustomFieldHasUrlType\",\"ForceEnableJobAndCandidateCustomFieldsGatedFeature\",\"SchedulingInterviewerPoolNotificationSettings\",\"CandidateSocia",
+  "classify": "submitted"
+}

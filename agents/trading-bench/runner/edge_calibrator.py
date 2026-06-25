@@ -63,19 +63,32 @@ MIN_ROUND_TRIPS_TOTAL = 30   # across the LIVE-BOOK roster before we bother trai
 # Live equity book — mirrors the active crontab `cron_tick.sh ...` invocation.
 # Keep in sync if the roster changes (it's the default only; explicit
 # `universe=` from the runner overrides this).
+#
+# 2026-06-24: synced to the post-dedup 8-strategy live book (LIVE_BOOK_DEDUP
+# report). The previous 12-name roster double-counted retired-from-cron
+# strategies' historical trips (inflated the calibrator trip count 7->19 and,
+# at >=30 trips, would have trained the model on retired-strategy data).
+# Retired-from-cron (code+history RETAINED, re-add to LIVE_ROSTER in 1 line if
+# re-listed): breakout_xlk, breakout_xlk_regime, sma_crossover_qqq,
+# leveraged_long_trend_paper.
 LIVE_ROSTER: frozenset[str] = frozenset({
-    "breakout_xlk",
-    "sma_crossover_qqq",
-    "breakout_xlk_regime",
+    "breakout_xlk__mut_c382b1",
     "sma_crossover_qqq_regime",
     "sma_crossover_qqq_rth",
-    "breakout_xlk__mut_c382b1",
-    "leveraged_long_trend_paper",
     "rsi_oversold_spy",
     "volume_breakout_qqq",
     "macd_momentum_iwm",
     "tqqq_cot_combo",
     "allocator_blend",
+})
+
+# Retired-from-cron strategies (de-listed in the 2026-06-24 12->8 dedup). Kept
+# as a named set for visibility + 1-line re-add; NOT part of the live universe.
+RETIRED_FROM_CRON: frozenset[str] = frozenset({
+    "breakout_xlk",
+    "breakout_xlk_regime",
+    "sma_crossover_qqq",
+    "leveraged_long_trend_paper",
 })
 
 # Known non-book strategy names that must NEVER enter the gate or training set,

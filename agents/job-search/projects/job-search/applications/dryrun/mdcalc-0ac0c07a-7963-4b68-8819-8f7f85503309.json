@@ -3,14 +3,14 @@
   "role_url": "https://jobs.ashbyhq.com/mdcalc/0ac0c07a-7963-4b68-8819-8f7f85503309",
   "org": "mdcalc",
   "job_id": "0ac0c07a-7963-4b68-8819-8f7f85503309",
-  "job_title": "Product Manager (User Product)",
+  "job_title": "Product Analyst",
   "job_location": "New York, NY",
-  "fetched_at": "2026-06-04T09:26:30Z",
+  "fetched_at": "2026-06-24T22:05:45Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 6,
-    "filled": 5,
+    "total_fields": 7,
+    "filled": 6,
     "filled_needs_review": 0,
     "declined": 0,
     "needs_essay": 1,
@@ -19,7 +19,7 @@
   },
   "fields": [
     {
-      "id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_name",
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_name"
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3__systemfield_name"
     },
     {
-      "id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_email",
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +42,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_email"
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3__systemfield_email"
     },
     {
-      "id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_resume",
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,10 +55,10 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de__systemfield_resume"
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3__systemfield_resume"
     },
     {
-      "id": "8ba22787-7193-4190-93a2-7d460131d3de_29272a1b-54e6-432a-9177-470dc778a7bd",
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3_29272a1b-54e6-432a-9177-470dc778a7bd",
       "label": "LinkedIn Profile",
       "type": "input_text",
       "required": true,
@@ -68,10 +68,10 @@
       "matched_rule": "linkedin",
       "options": null,
       "_ashby_type": "Url",
-      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de_29272a1b-54e6-432a-9177-470dc778a7bd"
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3_29272a1b-54e6-432a-9177-470dc778a7bd"
     },
     {
-      "id": "8ba22787-7193-4190-93a2-7d460131d3de_adda7134-7187-4758-aa17-ba27db6dba1b",
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3_adda7134-7187-4758-aa17-ba27db6dba1b",
       "label": "Will you now or in the future require sponsorship to work in the United States?",
       "type": "multi_value_single_select",
       "required": true,
@@ -90,11 +90,33 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de_adda7134-7187-4758-aa17-ba27db6dba1b"
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3_adda7134-7187-4758-aa17-ba27db6dba1b"
     },
     {
-      "id": "8ba22787-7193-4190-93a2-7d460131d3de_9695380f-a601-4974-9a2a-0396d08d85f0",
-      "label": "Describe a project where you had significant ownership in building a product, feature, or system. Be specific about what you built, the key decisions you made, your level of ownership, and the outcome.",
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3_8a082a75-0637-4bc6-a55b-91f84002eec5",
+      "label": "This role follows a hybrid schedule based out of our New York City office, requiring 1–3 days per week on-site. Are you able to meet this requirement?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3_8a082a75-0637-4bc6-a55b-91f84002eec5"
+    },
+    {
+      "id": "e6d6d17e-9d2e-498a-9236-a84798811db3_9695380f-a601-4974-9a2a-0396d08d85f0",
+      "label": "Describe a project where you owned a product or feature from problem definition through launch and post-launch measurement. What were you trying to improve, what did you build, and what decisions did you personally make? ",
       "type": "textarea",
       "required": true,
       "value": "",
@@ -103,7 +125,7 @@
       "matched_rule": null,
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "8ba22787-7193-4190-93a2-7d460131d3de_9695380f-a601-4974-9a2a-0396d08d85f0"
+      "_ashby_id": "e6d6d17e-9d2e-498a-9236-a84798811db3_9695380f-a601-4974-9a2a-0396d08d85f0"
     }
   ],
   "unresolved": [],

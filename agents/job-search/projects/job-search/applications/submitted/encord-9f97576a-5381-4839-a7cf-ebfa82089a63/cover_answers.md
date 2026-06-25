@@ -6,7 +6,7 @@ Cyrus Shekari
 
 ## How do you pronounce your name?
 
-Cyrus is pronounced like "SIGH-rus" and Shekari is pronounced "sheh-KAH-ree".
+Cyrus is pronounced 'SY-rus' (like the planet Sirius but with a Y). Shekari is pronounced 'sheh-KAH-ree'.
 
 ## Are you open to relocation for this role?
 
@@ -18,10 +18,10 @@ Two weeks from offer acceptance.
 
 ## Do you have any deadlines or time constraints we should be aware of?
 
-No deadlines or constraints - I am available to move through the process at whatever pace works for your team.
+No deadlines or constraints - flexible on timing.
 
 ## Why do you want to work at Encord? (Great answers are often 200-400 words)
 
-At Microsoft, I spent the last two years owning the end-to-end deployment of Azure's recovery validation platform for strategic enterprise customers like Databricks, Walmart, SAP, and NetApp. That meant sitting in the exact tension the FDE role lives in - one day I was building data integrations and custom APIs to get a customer unblocked, the next I was presenting project plans to senior stakeholders on a $1.5B+ contract. I scaled that function from a 2-person operation to a platformized system sustaining 45+ annual resilience drills, and I did it by staying close to customers, feeding insights back into the roadmap, and building the operational frameworks that made repeatable deployment possible. The numbers - $14M+ business impact, 30% reduction in operational toil, 39% faster planning cycles - came directly from treating deployment as a product problem, not just an execution problem. That is exactly how I understand the FDE role at Encord.
+At Microsoft, I spent the last year-plus owning end-to-end deployment of complex technical platforms for enterprise customers - Databricks, Walmart, SAP, NetApp - where my job was equal parts technical problem-solving and keeping executive stakeholders aligned and informed. I built the Resilience Automation Platform from 0 to 1, defining requirements, running customer-facing sessions, and feeding field learnings back into the product roadmap. I also built internal AI tooling that cut deployment cycle time by 39% and ran proactive resilience testing programs with a 94% recovery rate. That blend of customer deployment ownership, technical depth, and roadmap influence is exactly what the Forward Deployed Engineer role at Encord is asking for, and it maps closely to what I have been doing in practice.
 
-What draws me specifically to Encord is the problem you are solving and the moment you are solving it in. Data quality and curation are increasingly the bottleneck in production AI - not model architecture. The fact that Encord is building the universal data layer across the full AI lifecycle, from annotation through evaluation, puts you at the most consequential part of that stack. I want to be working on infrastructure that 300+ AI teams depend on, with customers like Zipline and Woven by Toyota who are deploying AI in genuinely hard, high-stakes environments. Being an early member of the Forward Deployed team is also a real draw - I have seen firsthand at Microsoft how building a function from the ground up, rather than inheriting a mature one, is where the most interesting problems and the fastest growth happen. That combination of technical depth, customer proximity, and the chance to shape something early is exactly what I am looking for.
+The reason Encord specifically stands out is the problem space. AI teams burning time on the wrong data, or lacking good tooling to index, curate, and evaluate it across the full model lifecycle, is one of the more consequential bottlenecks in applied AI right now. Encord is building the infrastructure layer that sits underneath all of it, and the customer base - Toyota, Zipline, UiPath - signals that the platform is solving real production-grade problems, not demo-ware. I want to be in an environment where the technical stakes are high, the customers are sophisticated, and there is still real greenfield work to do on how the forward deployment function itself is built and scaled. Being an early member of that team, with the ability to shape both how customers succeed and how the function operates internally, is the kind of ownership that actually moves my career forward in a meaningful direction.

@@ -1,43 +1,42 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
-- `microsoft_2022` → **Technical Program Manager Intern**
-- `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
+- (none)
 
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Shipped features across the full product lifecycle for Azure's **Resilience Automation Platform**, partnering directly with enterprise customers (Databricks, Walmart, SAP, NetApp) to sustain 45+ annual drills and drive **$14M+ business impact**.
-2. Led 0→1 development of an internal agentic platform, defining PRDs and self-service scheduling APIs that reduced operational toil by **30%** and transitioned execution to a scalable, customer-facing self-service model.
-3. Built and deployed an **internal AI agent** with RAG over sensitive ops data and LLM-powered planning workflows, cutting drill planning cycle time by **39%** and increasing drill capacity by 21% across partner engineering teams.
-4. Pioneered Azure's first proactive resilience testing capability, shipping a rack-level drill program in **4 months** with a **94% recovery rate**, surfacing critical hardware defects and establishing continuous validation as a product motion.
-5. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** in a highly regulated, security-sensitive environment.
-6. Embedded with client engineering teams across finance, retail, and infra verticals to scope integrations, debug across unfamiliar codebases in **Python** and YAML, and ship fixes that unblocked production agent deployments.
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized agentic system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable, production-grade deployment model trusted across engineering orgs.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable evaluation framework for continuous enterprise-grade validation.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, driving alignment across security, compliance, and engineering stakeholders in a regulated environment.
+5. Built and deployed an internal **LLM-powered AI agent** for drill planning, integrating it with existing workflows and APIs to cut planning cycle time by 39% and increase drill throughput capacity by 21% — directly modeled on ReAct-style plan-and-execute agentic patterns.
+6. Contributed shared orchestration frameworks and agentic workflow patterns adopted across teams, raising engineering quality and enabling **consistent, auditable delivery** of resilience use cases across distributed partner organizations at enterprise scale.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed enterprise adoption of **AI-driven code generation** by running hands-on customer demos and training for 14 Azure service teams, saving **37 engineering hours monthly** and accelerating LLM workflow integration into production pipelines.
-2. Influenced the product roadmap toward **intent-based YAML generation** by facilitating 11+ discovery interviews with Azure service teams, surfacing critical feature gaps and translating customer pain into prioritized agentic capabilities.
-3. Re-architected documentation retrieval by enforcing metadata standards and migrating to an **AI-powered semantic search** (RAG) tool, cutting lookup time by **83%** and improving grounding quality for downstream LLM-assisted workflows.
+1. Championed adoption of **AI-driven code generation workflows**, conducting customer-facing demos and training that drove utilization across 14 Azure service teams and saved **37 engineering hours monthly** by embedding LLM-powered tooling directly into developer pipelines.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with enterprise engineering teams, translating ambiguous workflow pain points into concrete agentic feature specs with clear success criteria and evaluation methodologies.
+3. Improved RAG pipeline reliability by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time by 83% and establishing observable, auditable retrieval for enterprise knowledge workflows.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ service teams under shifting executive priorities.
-2. Mobilized a product strategy to eliminate launch toil, running discovery with 20+ service teams to quantify **81 hours of manual effort per region** and shipping a roadmap to automate critical-path workflows end-to-end.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps, prioritize high-impact investments, and make data-driven staffing decisions in a fast-paced launch environment.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering and operations teams across a complex distributed organization.
+2. Mobilized a product strategy to eliminate operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort** per region and building an end-to-end roadmap to automate critical deployment paths at enterprise scale.
+3. Enabled leadership to target automation gaps and prioritize high-impact investments by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, translating ambiguous execution data into actionable, observable metrics for executive decision-making.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot OS migration by defining the rollout strategy and mapping software dependencies across 1,200+ robotic stations in active fulfillment centers.
-2. Facilitated Agile ceremonies — sprint planning, standups, and retrospectives — prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for the robotics platform team.
-3. Drove alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%** and unblocking faster iteration on edge-deployed robotics software.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and owning end-to-end delivery from scoping through production deployment across cross-functional teams.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process, maintaining delivery velocity in a fast-paced, ambiguous engineering environment.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable, observable release patterns for robotics software at production scale.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by overhauling sales ops and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly customer proposals through a new CRM-driven process.
-2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first GTM strategy, optimizing the website, Google Business profile, and paid funnel end-to-end.
-3. Improved leadership pricing models by running **financial profitability analysis** across 1,000+ project records to identify margin leaks and recommend data-backed pricing adjustments that protected gross margin.
+1. Increased job bookings by **26%** by optimizing end-to-end operations and managing the full scoping and invoicing lifecycle for 200+ monthly proposals via a redesigned CRM workflow, owning the use case from discovery through delivery with measurable business impact.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to improve funnel performance across key customer acquisition channels.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks and translating ambiguous cost data into concrete, actionable recommendations for operational decision-making.
 
 ## Notes from the rewriter
-- Reframed MSFT FT bullets around shipping Python/agentic features, RAG over sensitive data, and direct customer engineering work to mirror Cohere FDE JD.
-- Added 6th MSFT FT bullet on embedding with client eng teams and debugging across codebases to hit the 'comfortable across the stack' signal and improve page fill.
+- 'LLM-powered AI agent' and 'ReAct-style plan-and-execute agentic patterns' woven into microsoft_ft bullet#5, directly mirroring JD language on agentic workflows and orchestration patterns.
+- 'Evaluation frameworks' and 'clear success criteria and evaluation methodologies' woven into microsoft_ft bullet#3 and microsoft_2023 bullet#2, mirroring JD emphasis on measuring agent accuracy and moving beyond trial and error.
+- 'Auditable' and 'observable' woven into microsoft_ft bullet#6 and microsoft_2022 bullet#3, mirroring JD requirements that agents be 'reliable, observable, safe, and auditable from day one' in enterprise environments.
+- 'Translating ambiguous business needs into concrete technical specs' framing applied across microsoft_2023 bullet#2 and amazon_robotics bullet#1, echoing the JD's core FDE responsibility of framing ambiguous problems into well-scoped agentic workflows.
+- 'Production-grade deployment' and 'end-to-end delivery' language applied across amazon_robotics and microsoft_2022 to reinforce JD emphasis on owning full use-case scope from prototype to production.
 

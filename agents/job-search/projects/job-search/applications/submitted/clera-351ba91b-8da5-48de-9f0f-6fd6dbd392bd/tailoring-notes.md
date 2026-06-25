@@ -1,44 +1,45 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
-- `microsoft_2022` → **Technical Product Manager Intern**
-- `amazon_robotics` → **Technical Product Manager Intern**
-- `pro_painters` → **Technical Product Manager Intern**
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned end-to-end **enterprise customer relationships** (Databricks, Walmart, SAP, NetApp) from onboarding through ongoing success, scaling Azure's recovery validation from a 2-person operation into a platformized system sustaining 45+ annual drills and **$14M+ business impact**.
-2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling that reduced operational toil by **30%** and transitioned execution from manual handholding to a scalable customer self-service model.
-3. Served as the voice of the customer by analyzing drill execution logs and partner feedback to surface recurring failure patterns, translating those insights into a rack-level testing capability delivered in **4 months** with a **94% recovery rate**.
-4. Built an internal **AI agent** and restructured planning workflows to coach drill design, reducing planning cycle time by **39%** and increasing drill capacity by **21%** — scaling team leverage without adding headcount.
-5. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** while coordinating engineering, partners, and leadership.
-6. Defined and documented the resilience validation **playbook from scratch**, standardizing onboarding workflows and APIs so new partner teams could self-serve, turning ad-hoc one-off engagements into a repeatable, scalable customer-facing function.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned **end-to-end deployment** of Azure's resilience validation program, scaling from a 2-person operation to a platformized system sustaining 45+ annual drills and driving **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Built and shipped an internal **AI agent** for drill planning, restructuring automation workflows to cut planning cycle time by 39% and increase drill capacity by 21% — directly mirroring how Clera's agents automate GTM workflows.
+3. Led 0→1 development of a self-service Resilience Automation Platform, defining product requirements and API-driven scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable model.
+4. Served as cross-functional bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating 14 recovery executions under executive visibility across engineering and partner orgs.
+5. Pioneered Azure's first proactive rack-level drill program in 4 months, surfacing critical hardware defects with a **94% recovery rate** and establishing a new continuous-validation playbook adopted across the org.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed product adoption for **AI-driven code generation** workflows, leading hands-on customer demos and onboarding sessions that drove utilization across **14 teams** and saved 37 engineering hours monthly through close adoption coaching.
-2. Served as voice of the customer by facilitating **11+ user interviews** with Azure service teams, analyzing feedback patterns to influence the roadmap toward intent-based YAML generation and surfacing critical feature gaps to engineering.
-3. Translated customer feedback into actionable improvements by implementing metadata standards and migrating docs to an **AI-powered semantic search** tool, cutting lookup time by **83%** and improving self-service retrieval for service teams.
+1. Drove **AI agent adoption** across 14 Azure service teams by leading hands-on product demos and onboarding sessions, translating technical capabilities into workflow wins that saved **37 engineering hours monthly**.
+2. Analyzed feedback and conversation patterns from 11+ user interviews to identify critical feature gaps, directly influencing the **product roadmap** to prioritize intent-based YAML generation for engineering teams.
+3. Improved data retrieval and onboarding efficiency by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83% across the customer base.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ teams** through structured stakeholder discovery.
-2. Mobilized a product strategy to mitigate operational toil during region launches, conducting discovery with **20+ service teams** to quantify 81 hours of manual effort per region and building a roadmap to automate the critical paths.
-3. Engineered a **Power BI dashboard** tracking operational toil across **140+ teams**, enabling leadership to target automation gaps, prioritize high-impact support, and translate customer pain points into concrete engineering work.
+1. Secured cross-functional alignment across 140+ teams on a unified automation prioritization framework, **accelerating region launches by 28%** and generating $3M in revenue — built by translating customer pain into a concrete product roadmap.
+2. Conducted discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, then built a phased automation roadmap that defined the customer engineering playbook for scaling operational support.
+3. Engineered a **Power BI dashboard** tracking automation gaps across 140+ teams, enabling leadership to prioritize high-impact investments and surface actionable product insights from operational feedback.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across **1,200+ stations** in close collaboration with engineering and operations.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize a developer intake process that scaled support across cross-functional teams.
-3. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by **25%** and reducing manual toil across the release workflow.
+1. Defined the **legacy OS migration strategy** for a 2,000+ unit pilot, mapping dependencies across 1,200+ stations and achieving zero operational downtime — demonstrating the deployment precision Clera needs at customer onboarding scale.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing manual intervention across the release workflow.
+3. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across a fast-moving embedded systems team.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** via a new CRM process, owning the full customer relationship from intake to close.
-2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first **go-to-market strategy**, optimizing the website and Google profile to better convert inbound B2B leads.
-3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to inform data-driven pricing and tier conversations.
+1. Owned the **end-to-end customer onboarding and sales workflow** for 200+ monthly proposals — managing CRM processes, scoping, and invoicing — increasing job bookings by 26% through systematic workflow automation.
+2. Executed a digital-first **go-to-market strategy** optimizing website and Google profile, reducing Customer Acquisition Cost by 13% and boosting conversions by 2.7% — direct GTM impact matching Clera's B2B sales motion.
+3. Conducted profitability analysis across **1,000+ project records** to identify margin leaks and deliver pricing model improvements to leadership, translating raw customer data into actionable product decisions.
 
 ## Notes from the rewriter
-- Reframed Azure resilience work as end-to-end customer ownership, onboarding, and playbook-building to mirror the founding customer engineer scope.
-- Surfaced AI agent coaching, conversation/log analysis, and voice-of-customer→product feedback loops to match the JD's core responsibilities.
-- Led skills with customer-facing technical + automation (APIs, Python, no-code) keywords; emphasized demos and GTM/B2B context from Pro Painters.
+- 'AI agent' vocabulary from JD woven into microsoft_ft bullet 2 (drill-planning agent) and microsoft_2023 bullet 1 (agent adoption/onboarding) — directly mirrors Clera's core product.
+- 'End-to-end customer onboarding' from JD surfaced in microsoft_ft bullet 1 (deployment ownership) and pro_painters bullet 1 (proposal/onboarding lifecycle).
+- 'Go-to-market workflow' and 'B2B sales motion' from JD explicitly referenced in pro_painters bullet 2 to connect Cyrus's GTM experience to Clera's customer base.
+- 'Conversation log analysis / feedback patterns' from JD mirrored in microsoft_2023 bullet 2 (user interview pattern analysis → roadmap) and microsoft_2022 bullet 2 (discovery → playbook).
+- 'Customer engineering playbook from scratch' from JD echoed in microsoft_2022 bullet 2 phrasing, positioning Cyrus as someone who has already built that artifact.
 

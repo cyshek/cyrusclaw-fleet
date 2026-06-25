@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed-to-Lead Demo — Automate.</title>
+<style>
+  :root{
+    --bg:#0a0e17; --panel:#121828; --panel2:#0f1421; --line:#1e2940;
+    --text:#e8edf7; --muted:#8a97b1; --accent:#5b8cff; --accent2:#7c5cff;
+    --green:#28c98a; --amber:#ffb454; --bubble-them:#1c2438; --bubble-us:#2563eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:radial-gradient(1200px 600px at 80% -10%,#16203a 0%,var(--bg) 55%);color:var(--text);min-height:100vh;padding:28px 16px;}
+  .wrap{max-width:1080px;margin:0 auto}
+  header{text-align:center;margin-bottom:8px}
+  .logo{font-weight:800;font-size:22px;letter-spacing:-0.5px}
+  .logo span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tag{color:var(--muted);font-size:14px;margin-top:4px}
+  h1{font-size:clamp(24px,4vw,38px);text-align:center;margin:18px 0 6px;letter-spacing:-1px;line-height:1.1}
+  .sub{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 26px;font-size:15px;line-height:1.5}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:840px){.grid{grid-template-columns:1fr}}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px -30px rgba(0,0,0,.8)}
+  .card-h{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  .card-b{padding:18px}
+  /* left: site form */
+  .biz{font-weight:700;font-size:17px}
+  .biz small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:2px}
+  label{display:block;font-size:12px;color:var(--muted);margin:14px 0 6px;font-weight:500}
+  input,textarea{width:100%;background:#0b1120;border:1px solid var(--line);border-radius:10px;padding:11px 12px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border .15s}
+  input:focus,textarea:focus{border-color:var(--accent)}
+  textarea{resize:vertical;min-height:64px}
+  .btn{margin-top:16px;width:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;border-radius:10px;padding:13px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:transform .08s,filter .15s}
+  .btn:hover{filter:brightness(1.08)}
+  .btn:active{transform:scale(.98)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .note-old{margin-top:12px;font-size:12px;color:var(--amber);text-align:center}
+  /* right: phone */
+  .phone{background:#05080f;border:1px solid var(--line);border-radius:22px;padding:12px;max-width:340px;margin:0 auto}
+  .phone-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);padding:2px 8px 10px}
+  .msgs{min-height:360px;display:flex;flex-direction:column;gap:10px;padding:4px}
+  .row{display:flex}
+  .row.us{justify-content:flex-end}
+  .bubble{max-width:80%;padding:9px 13px;border-radius:16px;font-size:13.5px;line-height:1.4;animation:pop .25s ease}
+  .them .bubble{background:var(--bubble-them);border-bottom-left-radius:4px}
+  .us .bubble{background:var(--bubble-us);border-bottom-right-radius:4px;color:#fff}
+  .meta{font-size:10px;color:var(--muted);margin:2px 6px;align-self:flex-end}
+  .us .meta{align-self:flex-start}
+  .typing{display:inline-flex;gap:4px;padding:12px 14px;background:var(--bubble-them);border-radius:16px;border-bottom-left-radius:4px}
+  .typing i{width:7px;height:7px;background:var(--muted);border-radius:50%;animation:blink 1.2s infinite}
+  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+  @keyframes pop{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
+  .stamp{text-align:center;font-size:11px;color:var(--muted);margin:6px 0}
+  .stamp b{color:var(--green)}
+  /* metrics */
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .metric{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .metric .n{font-size:26px;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .metric .l{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.3}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:26px;line-height:1.6}
+  .pill{display:inline-block;background:#10204a;color:var(--accent);border:1px solid #1d3a6e;border-radius:999px;padding:3px 10px;font-size:11px;margin:0 3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">⚡ <span>Automate.</span></div>
+    <div class="tag">AI lead response for local business</div>
+  </header>
+  <h1>Every lead answered in <span style="color:var(--green)">under 60 seconds.</span></h1>
+  <p class="sub">A customer fills out your contact form on the left. Watch what your business does automatically — instant reply, smart follow-up, booked appointment, and a 5-star review request. No staff. No missed leads. 24/7.</p>
+
+  <div class="grid">
+    <!-- LEFT: the prospect's website -->
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--accent)"></span> Your website &nbsp;·&nbsp; contact form</div>
+      <div class="card-b">
+        <div class="biz" id="bizName">Radiance Med Spa</div>
+        <div class="biz"><small id="bizSub">Skincare &amp; aesthetics · "We'll get back to you within 24–48 hours"</small></div>
+        <label>Name</label>
+        <input id="fName" value="Jessica Miller">
+        <label>Phone</label>
+        <input id="fPhone" value="(415) 555-0142">
+        <label>What are you interested in?</label>
+        <textarea id="fMsg">Hi! I'd love to book a Botox consultation. Do you have anything this week?</textarea>
+        <button class="btn" id="sendBtn" onclick="startDemo()">Submit inquiry →</button>
+        <div class="note-old">Without Automate.: this sits in an inbox until someone checks it. 48 hours later, she's already booked with a competitor.</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: the customer's phone -->
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--green)"></span> Jessica's phone &nbsp;·&nbsp; live</div>
+      <div class="card-b">
+        <div class="phone">
+          <div class="phone-top"><span id="clock">9:41</span><span>Messages</span><span>📶 🔋</span></div>
+          <div class="msgs" id="msgs">
+            <div class="stamp">Submit the form to start the demo →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="n" id="m1">—</div><div class="l">Response time<br>(industry avg: 47 hours)</div></div>
+    <div class="metric"><div class="n" id="m2">—</div><div class="l">Lead → booked<br>conversion lift</div></div>
+    <div class="metric"><div class="n" id="m3">—</div><div class="l">5-star reviews<br>requested automatically</div></div>
+  </div>
+
+  <div class="foot">
+    Built with <span class="pill">n8n</span><span class="pill">OpenAI</span><span class="pill">Twilio</span> — runs on autopilot, wired into the tools you already use.<br>
+    This is a live simulation. The real system connects directly to your website forms, phone, and Google Business profile.
+  </div>
+</div>
+
+<script>
+const msgs = document.getElementById('msgs');
+const sendBtn = document.getElementById('sendBtn');
+let running = false;
+
+// live clock on the phone
+function tick(){const d=new Date();let h=d.getHours()%12||12;let m=String(d.getMinutes()).padStart(2,'0');document.getElementById('clock').textContent=`${h}:${m}`;}
+setInterval(tick,1000);tick();
+
+const wait = ms => new Promise(r=>setTimeout(r,ms));
+
+function stamp(html){const e=document.createElement('div');e.className='stamp';e.innerHTML=html;msgs.appendChild(e);scroll();}
+function bubble(side,text,meta){
+  const row=document.createElement('div');row.className='row '+side;
+  const b=document.createElement('div');b.className='bubble';b.textContent=text;row.appendChild(b);
+  msgs.appendChild(row);
+  if(meta){const m=document.createElement('div');m.className='meta';m.textContent=meta;msgs.appendChild(m);}
+  scroll();
+}
+async function typing(side,ms){
+  const row=document.createElement('div');row.className='row '+side;
+  row.innerHTML='<div class="typing"><i></i><i></i><i></i></div>';
+  msgs.appendChild(row);scroll();await wait(ms);row.remove();
+}
+function scroll(){msgs.scrollTop=msgs.scrollHeight;}
+function animateMetric(id,target,suffix,dur){
+  const el=document.getElementById(id);let start=0;const t0=performance.now();
+  function f(t){let p=Math.min((t-t0)/dur,1);let v=Math.round(start+(target-start)*p);el.textContent=v+suffix;if(p<1)requestAnimationFrame(f);}
+  requestAnimationFrame(f);
+}
+
+async function startDemo(){
+  if(running)return;running=true;sendBtn.disabled=true;sendBtn.textContent='Inquiry sent ✓';
+  const name=document.getElementById('fName').value.split(' ')[0]||'there';
+  msgs.innerHTML='';
+  document.getElementById('m1').textContent='—';document.getElementById('m2').textContent='—';document.getElementById('m3').textContent='—';
+
+  stamp('📩 New lead captured from your website');
+  await wait(700);
+  stamp('🤖 <b>Automate. is responding…</b>');
+  await typing('us',1400);
+  bubble('us',`Hi ${name}! Thanks for reaching out to Radiance Med Spa 💆 This is Mia, your booking assistant. I can definitely get you in for a Botox consult this week — are mornings or afternoons better for you?`,'Sent automatically · 38 seconds after form submit');
+  await wait(900);
+  stamp('⏱️ Responded in <b>38 seconds</b> — while she\'s still on your site');
+
+  // customer replies
+  await wait(1500);await typing('them',1600);
+  bubble('them','Oh wow that was fast! Afternoons are better for me 😊');
+  await wait(1000);await typing('us',1400);
+  bubble('us','Perfect 🙌 I have Thursday at 2:00pm or Friday at 3:30pm open with our nurse injector. Which works?','Automated · understands her reply');
+  await wait(1500);await typing('them',1300);
+  bubble('them','Thursday at 2 is great!');
+  await wait(900);await typing('us',1300);
+  bubble('us','You\'re booked for Thursday 2:00pm ✅ I\'ve texted you the address + a confirmation. See you then, Jessica! Reply RESCHEDULE anytime if plans change.','Booked · added to your calendar + CRM');
+  await wait(1100);
+  stamp('✅ <b>Lead booked</b> — zero staff involved');
+
+  // review request, days later
+  await wait(1600);
+  stamp('— 3 days later, after her appointment —');
+  await wait(900);await typing('us',1400);
+  bubble('us',`Hi ${name}! Hope you\'re loving your results 💕 Would you mind leaving us a quick review? It really helps our small business: ⭐ g.page/radiance-review`,'Automated review request · perfect timing');
+  await wait(1400);await typing('them',1300);
+  bubble('them','Just left you 5 stars! ⭐⭐⭐⭐⭐ Mia was so helpful');
+  await wait(800);
+  stamp('🌟 <b>New 5-star review</b> → higher Google ranking → more inbound leads');
+
+  // metrics
+  await wait(700);
+  animateMetric('m1',38,'s',1200);
+  animateMetric('m2',391,'%',1600);
+  animateMetric('m3',100,'%',1400);
+  await wait(1800);
+  stamp('This happens for <b>every single lead</b>, 24/7, automatically.');
+
+  running=false;sendBtn.disabled=false;sendBtn.textContent='↻ Run it again';
+}
+</script>
+</body>
+</html>

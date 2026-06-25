@@ -50,24 +50,35 @@ def decide(market_state: dict, position_state: dict, params: dict) -> Action:
     # ---- If flat: check for entry ----
     if holding == 0:
         if r < oversold:
-            # Record entry bar index in position_state so we can count bars held
-            # (position_state is mutable; runner/backtest persists it across ticks)
-            position_state["_rsi_spy_entry_bar"] = n_bars
+            # Record entry bar index inside the PER-SYMBOL sub-dict
+            # position_state[symbol] (NOT top-level). The live runner only
+            # persists position_state[action.symbol] (runner.py save path),
+            # so a top-level key would be silently dropped every tick in
+            # live (L134 bug: time-stop never fired). Writing into the
+            # per-symbol sub-dict makes live match backtest exactly. We are
+            # flat here so the sub-dict may not exist yet -> setdefault
+            # creates it, and because action.symbol is now present in
+            # position_state the runner will save it on this entry tick.
+            position_state.setdefault(symbol, {})["_rsi_spy_entry_bar"] = n_bars
             return Action("buy", symbol, notional_usd=notional,
                           reason=f"RSI={r:.1f} < oversold {oversold}")
         return Action("hold", symbol, reason=f"RSI={r:.1f} (flat, waiting for oversold)")
 
     # ---- If holding: check exits ----
-    entry_bar = position_state.get("_rsi_spy_entry_bar", n_bars)
+    # Read the entry marker from the per-symbol sub-dict (where the runner
+    # persists it). `pos` is position_state[symbol] resolved above.
+    entry_bar = (pos or {}).get("_rsi_spy_entry_bar", n_bars)
     bars_held = n_bars - entry_bar
 
     if r > exit_rsi:
-        position_state.pop("_rsi_spy_entry_bar", None)
+        if pos is not None:
+            pos.pop("_rsi_spy_entry_bar", None)
         return Action("close", symbol,
                       reason=f"RSI={r:.1f} > exit threshold {exit_rsi}")
 
     if bars_held >= time_stop:
-        position_state.pop("_rsi_spy_entry_bar", None)
+        if pos is not None:
+            pos.pop("_rsi_spy_entry_bar", None)
         return Action("close", symbol,
                       reason=f"time-stop: held {bars_held} bars >= {time_stop}")
 

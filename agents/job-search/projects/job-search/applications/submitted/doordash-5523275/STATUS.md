@@ -1,9 +1,12 @@
-PREP-READY — 2026-06-23T23:01:08+00:00
+SUBMITTED — 2026-06-25T01:33:30+00:00
 
 role_id: 3078
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-doordash-5523275.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/doordash-5523275/Cyrus_Shekari_Resume_doordashusa_5523275_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/doordash-5523275/cover_answers.md
+slug: doordash-5523275
+ats: greenhouse
+submitted_by: auto (_gh_submit.py)
+confirmation_url: https://job-boards.greenhouse.io/doordashusa/jobs/5523275/confirmation
+confirmation: Thank you for applying.
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Your application has been received. If there is a fit, 
+screenshot: n/a
+resume_attached: yes

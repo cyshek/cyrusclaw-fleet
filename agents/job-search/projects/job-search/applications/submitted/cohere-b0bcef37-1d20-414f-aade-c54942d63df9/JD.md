@@ -1,7 +1,7 @@
 # Forward Deployed Engineer, Agentic Platform
 
 **Company:** Cohere
-**Location:** Toronto
+**Location:** United States
 **Apply:** https://jobs.ashbyhq.com/cohere/b0bcef37-1d20-414f-aade-c54942d63df9
 **Ashby Org:** cohere
 **Ashby Job ID:** b0bcef37-1d20-414f-aade-c54942d63df9
@@ -10,66 +10,102 @@
 
 **Who are we?**
 
-Our mission is to scale intelligence to serve humanity. We’re training and deploying frontier models for developers and enterprises who are building AI systems to power magical experiences like content generation, semantic search, RAG, and agents. We believe that our work is instrumental to the widespread adoption of AI.
+Cohere is the leading security-first enterprise AI company. We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.
 
-We obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. We like to work hard and move fast to do what’s best for our customers.
+We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.
 
-Cohere is a team of researchers, engineers, designers, and more, who are passionate about their craft. Each person is one of the best in the world at what they do. We believe that a diverse range of perspectives is a requirement for building great products.
+We obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a team of researchers, engineers, designers, and more, who are all passionate about their craft.
 
-Join us on our mission and shape the future!
+We are a global technology company co-headquartered in Toronto and San Francisco, with key offices in London, New York City, Montreal, Seoul, Germany and Paris. Join us!
 
-### About North:
+**About North:**
 
 [North](https://cohere.com/north) is Cohere's cutting-edge AI workspace platform, designed to revolutionize the way enterprises utilize AI. It offers a secure and customizable environment, allowing companies to deploy AI while maintaining control over sensitive data. North integrates seamlessly with existing workflows, providing a trusted platform that connects AI agents with workplace tools and applications.
 
-### Why This Role?
+**Why This Role?**
 
-This role offers a unique opportunity to shape how enterprises harness the power of AI in real-world applications. As a bridge between our core North product and our clients’ engineering teams, you’ll be at the forefront of solving complex problems and securely integrating AI into critical sectors such as finance, healthcare, and telecommunications. Our esteemed clients include industry leaders like RBC, Dell, and LG CNS.
+This role offers a unique opportunity to shape how enterprises harness the power of AI in real-world applications. As a bridge between our core North product and our clients’ engineering teams, you’ll be at the forefront of solving complex problems and securely integrating AI into critical sectors such as finance, healthcare, and telecommunications.
 
-We are seeking engineers with diverse skill sets, including backend, infrastructure, agent development, and deployments, who deeply care about customers and want to work at the cutting edge of Agentic AI.
+We’re looking for Software Engineers with Applied AI experience who can own the design, build, and deployment of agentic workflows powered by Large Language Models (LLMs), from early prototypes to production-grade AI agents, to deliver concrete business value in enterprise workflows. You’ll work closely with customers on real-world business problems, often building first-of-their-kind agent workflows that integrate LLMs with tools, APIs, and data sources. While our pace is startup-fast, the bar is enterprise-high: agents must be reliable, observable, safe, and auditable from day one.
 
 *Note: between 20 - 40% travel anticipated*
 
+Location: Eastern Time Zone (US/Canada)
+
 **In this role, you will:**
 
-- Build and ship features for North, our AI workspace platform
+- Work closely with our enterprise customers to translate high-value, ambiguous business problems into well-framed agentic workflows with clear success criteria and evaluation methodologies
 
-- Develop autonomous agents that talk to sensitive enterprise data
+- Lead the design, build, and delivery of LLM-powered agents that reason, plan, and act across tools, APIs, and sensitive enterprise data sources, with enterprise-grade reliability and performance
 
-- Experiment at a high velocity and with a high level of quality to engage our customers and ultimately deliver solutions that exceed their expectations
+- Build and ship features for North, our AI workspace platform, working across the full product lifecycle from conceptualisation through production
 
-- Work across the entire product lifecycle from conceptualization through production
+- Take ownership of scoping and shaping use cases end-to-end, flexing into whatever technical area the problem demands (including frontend) to drive the most effective solution
+
+- Contribute to shared frameworks and patterns that enable consistent, high-quality delivery across customers and teams
+
+- Drive clarity in ambiguous situations, build alignment, and raise engineering quality across the organization
+
+- Travel up to 20–40% to work on-site with customers and partners
 
 **You may be a good fit if:**
 
-- You have experience with and enjoy working directly with customers
+- You have hands-on experience building and deploying production-grade software in Python; you write clean, testable, observable, scalable code
 
-- You have shipped (lots of) Python in production
+- You've built and deployed highly performant RAG and agentic applications, including agents that plan and execute multi-step tasks using patterns like ReAct or Plan-and-Execute
 
-- You have built and deployed highly performant client-side or server-side RAG/agentic applications
+- You're deeply familiar with the LLM stack: frontier models, vector databases, and orchestration frameworks
 
-- You have strong coding abilities and are comfortable working across the stack. You’re able to read and understand, and even fix issues outside of the main code base
+- You have a proven ability to build robust evaluation frameworks, moving well beyond trial and error, to measure agent accuracy, safety, and latency
 
-- You excel in fast-paced environments and can execute while priorities and objectives are a moving target
+- You’re experienced working directly with customers and can lead technical discussions with enterprise stakeholders, translating ambiguous business needs into concrete technical specs
 
-If some of the above doesn’t line up perfectly with your experience, we still encourage you to apply! 
+- You have experience owning the full scope of a use case end-to-end
 
-We value and celebrate diversity and strive to create an inclusive work environment for all. We welcome applicants from all backgrounds and are committed to providing equal opportunities. Should you require any accommodations during the recruitment process, please submit an [Accommodations Request Form](https://docs.google.com/forms/d/12a6IrLdF3kI2nonKSr4tiFuz18rLQbaeYV-JM9L4o9Q/edit), and we will work together to meet your needs.
+- You thrive in fast-paced and ambiguous environments and can execute well even when priorities are shifting
 
-**Full-Time Employees at Cohere enjoy these Perks:**
+**It’s a bonus if you have:**
 
-🤝 An open and inclusive culture and work environment 
+- Experience setting architectural standards for AI and agentic systems across distributed teams
 
-🧑‍💻 Work closely with a team on the cutting edge of AI research 
+- Experience flexing into unfamiliar technical areas, such as frontend, when the problem calls for it
 
-🍽 Weekly lunch stipend, in-office lunches & snacks
+- Exposure to regulated or sensitive industry environments (finance, healthcare, telecoms)
 
-🦷 Full health and dental benefits, including a separate budget to take care of your mental health 
+- Experience with enterprise security, compliance, or auditability requirements for AI systems
 
-🐣 100% Parental Leave top-up for up to 6 months
+## **Full-Time Employees at Cohere enjoy these Perks:**
 
-🎨 Personal enrichment benefits towards arts and culture, fitness and well-being, quality time, and workspace improvement
+- A weekly lunch stipend of $75/£75 or equivalent in your local currency for lunch.
 
-🏙 Remote-flexible, offices in Toronto, New York, San Francisco, London and Paris, as well as a co-working stipend
+- Full health and dental benefits, including a separate budget for mental health.
 
-✈️ 6 weeks of vacation (30 working days!)
+- RRSP matching, 401K, Pension Scheme.
+
+- 100% Parental Leave top-up for up to 6 months, for either parent.
+
+- Annual enrichment benefits:
+
+Arts & culture, fitness/wellness, quality time, and a workspace improvement credit.
+
+Education & learning stipend for conferences, courses, and coaching.
+
+- 6 weeks of paid vacation (30 working days!)
+
+- Budget for traveling to other offices if you are remote, plus an annual company offsite.
+
+## **How and Where We Work:**
+
+- Cohere is remote-friendly. We have offices in Toronto, San Francisco, New York City, London, Paris, Montreal, and more coming soon.
+
+- For those in the office: a daily lunch program, plenty of snacks, and regular community and social events.
+
+- For those not near an office: a co-working benefit so you can work alongside others in your city.
+
+- Everyone receives a $500 home office stipend to set up your workspace properly.
+
+If any of the above doesn’t line up exactly with your experience, we still encourage you to apply. 
+
+We strive to create an inclusive work environment for all; we welcome applicants from all backgrounds and are committed to providing equal opportunities. Should you require any accommodations during the recruitment process, please submit an[ Accommodations Request Form](https://docs.google.com/forms/d/12a6IrLdF3kI2nonKSr4tiFuz18rLQbaeYV-JM9L4o9Q/edit), and we will work together to meet your needs.
+
+We may use AI-enabled tools to screen and assess applicants against the criteria for this position. This helps our recruiters identify potentially qualified candidates, but it doesn't limit the applications our recruiters may review or consider.

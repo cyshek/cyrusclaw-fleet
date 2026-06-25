@@ -1,31 +1,31 @@
-PREP-READY-RIPPLING-RUNNER — 2026-06-24T00:45:04+00:00
+# Hammerspace — Forward Deployed Engineer (row 1989)
 
-role_id: 1989
-ats:     rippling (board: hammerspace)
-company: Hammerspace
-role:    Forward Deployed Engineer
-slug:    hammerspace-2c09a9fe
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/hammerspace-2c09a9fe/Cyrus_Shekari_Resume_rippling-hammerspace_2c09a9fe_v2.pdf
-cover:   NOT GENERATED
-apply:   https://ats.rippling.com/hammerspace/jobs/2c09a9fe-fedd-472a-9198-f2f6001934bc
+**STATUS: SUBMITTED** ✅
+**Submitted:** 2026-05-30T18:40:51Z by rippling-filler runner (agent)
+**Apply URL:** https://ats.rippling.com/hammerspace/jobs/2c09a9fe-fedd-472a-9198-f2f6001934bc
 
-Calling agent / cron: do NOT execute via the generic browser tool.
-Rippling submits via a direct-API flow (S3 presigned upload + Cloudflare
-Turnstile solve + POST /apply). Invoke the runner CLI:
+## Confirmation evidence (DEFINITIVE)
+- HTTP status: **200 OK**
+- Response body: `{"ok":true}`
+- Cloudflare Turnstile solved (token len 837, solve_ms 2188)
+- Resume uploaded to S3: `prod-rippling-us1-ats.s3.amazonaws.com/common/ats_public/ce7f082bce4d49a2af0f7872155d8a4a-sensitive.pdf`
+- Full payload: `submit_artifacts.json` (hash c060bd21d5d12816)
 
-    .venv/bin/python role-discovery/rippling_filler.py \
-        --slug hammerspace --job-id 2c09a9fe-fedd-472a-9198-f2f6001934bc \
-        --resume /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/hammerspace-2c09a9fe/Cyrus_Shekari_Resume_rippling-hammerspace_2c09a9fe_v2.pdf \
-        --answers <answers.json> \
-        --out /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/hammerspace-2c09a9fe/submit_artifacts.json \
-        --dry-run   # remove for real submit
+## Form contents submitted
+- Name: Cyrus Shekari
+- Email: cyshekari@gmail.com
+- Phone: +1 346-804-0227
+- Location: Kirkland, WA
+- Current company: Microsoft
+- LinkedIn: https://linkedin.com/in/cyshekari
+- Resume: Cyrus_Shekari_Resume_rippling-hammerspace_2c09a9fe_v2.pdf
+- Cover letter: NOT GENERATED
+- EEOC: null
+- Custom questionnaire: null
 
-<answers.json> must contain the standard 9-field basicQuestions schema
-(first_name, last_name, email, current_company, location, linkedin_link,
-phone_number, plus optional cover-letter freeform). See
-rippling_filler.py header + applications/_rippling-smoke-2026-05-30.json
-for the verified shape.
-
-On success overwrite this STATUS.md with the SubmitArtifacts outcome
-and stamp tracker.db (applied_by='rippling-runner', applied_on=<date>,
-prep_status='submitted').
+## Notes
+- Submitted via rippling_filler.py (HTTP-only, no browser needed)
+- Turnstile captcha solved via capsolver
+- DB corrected 2026-06-23: applied_by='agent', applied_on='2026-05-30', prep_status='runner_ready'
+- agent_notes: "rippling-filler submit 2026-05-30: HTTP 200 {ok:true}; bookkeeping corrected 2026-06-24"
+- STATUS.md updated 2026-06-24 to reflect confirmed submission

@@ -6,4 +6,4 @@ Cyrus Shekari
 
 ## Are you comfortable with an onsite role in either Palo Alto or NYC?
 
-Yes. I'm open to relocating to either Palo Alto or New York City for this role, and I see being onsite as a real advantage for the kind of fast-moving, tightly-coupled product work Pylon is doing. The best feedback loops I've built with engineering came from being in the room, debating tradeoffs in real time, and I'd want that here. I can be ready to start within two weeks of an offer.
+Yes, I am comfortable relocating to either Palo Alto or New York City for this role.

@@ -1,0 +1,181 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/decagon/230ad153-85be-4f7b-a368-5bad59e513e2",
+  "org": "decagon",
+  "job_id": "230ad153-85be-4f7b-a368-5bad59e513e2",
+  "job_title": "Customer Engineer, Agent Builder",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-25T04:34:23Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329__systemfield_name"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329__systemfield_email"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_034e0f8a-9563-46f2-9da7-c5e0100f9bf3",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_034e0f8a-9563-46f2-9da7-c5e0100f9bf3"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_d9125cab-ba98-49ed-94a5-7d7aa6927e21",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_d9125cab-ba98-49ed-94a5-7d7aa6927e21"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329__systemfield_resume"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_54c4407c-c6a0-4ed1-86cb-d069923b7d3f",
+      "label": "What college/university did you attend?",
+      "type": "input_text",
+      "required": true,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_54c4407c-c6a0-4ed1-86cb-d069923b7d3f"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_f5fa0849-89a4-475b-b52c-505fb008fff0",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_f5fa0849-89a4-475b-b52c-505fb008fff0"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_bfb0d975-2eb0-4718-be0c-34e22a576ef4",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_bfb0d975-2eb0-4718-be0c-34e22a576ef4"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_8e851067-126a-4fad-ba4f-f57b04585c27",
+      "label": "Are you excited to work in-office five days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_8e851067-126a-4fad-ba4f-f57b04585c27"
+    },
+    {
+      "id": "7802a195-b8f8-4912-9a60-829b1dc5e329_4f1a62cf-ed3c-4d17-aa1d-f17c7f04e61e",
+      "label": "How did you hear about Decagon?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7802a195-b8f8-4912-9a60-829b1dc5e329_4f1a62cf-ed3c-4d17-aa1d-f17c7f04e61e"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

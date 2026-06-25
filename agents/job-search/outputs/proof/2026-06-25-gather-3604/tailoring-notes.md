@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Drove adoption of Azure's resilience platform across enterprise clients (Databricks, Walmart, SAP, NetApp), translating complex technical capabilities into ROI-based business cases that delivered **$14M+ measurable value** and scaled a 2-person operation into a platformized system.
+2. Partnered with technical and operational decision makers to articulate the value proposition of automation solutions, building consultative business cases and objection-handling guidelines that gained executive alignment and sustained **45+ annual resilience drills**.
+3. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service capabilities that reduced operational toil by **30%** and transitioned customers to a scalable, repeatable solution-delivery model.
+4. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, directing 14 cross-org executions under executive visibility while tracking technical sales-readiness metrics to ensure continued program growth.
+5. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level program in 4 months at a **94% recovery rate** by understanding customer challenges and tailoring solutions that surfaced critical hardware defects.
+6. Activated cross-functional product, engineering, and partner teams by building an internal **AI agent** and restructuring planning workflows, cutting planning cycle time by 39% and increasing drill capacity by 21% to support high-growth demand.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed pre-sales adoption of AI-driven code-generation workflows, conducting customer demos and enablement sessions that drove utilization across **14 key teams** and saved 37 engineering hours monthly across Azure service organizations.
+2. Influenced the product roadmap toward intent-based YAML generation by facilitating **11+ consultative user interviews** with Azure service teams, surfacing critical feature gaps and aligning engineering investment with real customer needs.
+3. Optimized data integrity and retrieval by implementing metadata standards and migrating documentation to an AI-powered **semantic search** tool, cutting lookup time by 83% and demonstrating measurable analytics-driven value to stakeholders.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams in a fast-paced scale-up environment.
+2. Mobilized a product strategy to mitigate operational toil during region launches, running discovery with **20+ service teams** to quantify 81 hours of manual effort per region and building a roadmap to automate critical revenue-impacting paths.
+3. Enabled leadership to target automation gaps and prioritize high-impact investment by engineering a **Power BI dashboard** that tracked operational toil and technical performance metrics across 140+ teams to inform go-to-market decisions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit warehouse robotics pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations in a high-stakes logistics automation environment.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process supporting warehouse automation deployments.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and demonstrating value to operational decision makers in supply chain robotics.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing sales operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new **CRM process** that tracked pipeline and accelerated deal velocity.
+2. Reduced Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a digital-first **go-to-market strategy**, optimizing the website and Google profile to expand market reach and drive measurable revenue growth.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying margin leaks and equipping the commercial team with ROI-based discussion points to win high-value deals.
+
+## Notes from the rewriter
+- Reframed Azure resilience platform work as consultative, ROI-based enterprise selling to enterprise clients to mirror the SE pre-sales JD.
+- Surfaced Amazon Robotics + warehouse/supply-chain automation experience prominently to match Gather AI's robotics/logistics domain.
+- Pulled Pro Painters CRM, GTM, and profitability bullets forward to evidence sales-ops, revenue growth, and ROI discussion fluency.
+- Led skills with pre-sales, consultative selling, CRM, and AI/analytics to hit the JD's core requirement keywords.
+

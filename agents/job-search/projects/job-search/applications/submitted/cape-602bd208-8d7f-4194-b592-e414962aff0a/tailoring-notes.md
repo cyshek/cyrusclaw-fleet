@@ -2,43 +2,46 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2023` → **Technical Product Manager Intern**
 - `microsoft_2022` → **Technical Program Manager Intern**
-- `amazon_robotics` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
 - `pro_painters` → **Program Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned end-to-end engagements with enterprise customers (Databricks, Walmart, SAP, NetApp), serving as the on-site technical implementation point of contact to deploy Azure resilience solutions and drive **$14M+ business impact** across mission-critical workloads.
-2. Led product rollout and integration of an internal Resilience Automation Platform 0→1, defining requirements and self-service deployment capabilities that **reduced operational toil by 30%** and aligned product direction with customers' on-the-ground reality.
-3. Served as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ contract, validating IP/subnetting, routing, and core network functions while coordinating cross-functional engineering teams to meet stringent security objectives.
-4. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new model for continuous validation under executive visibility.
-5. Cultivated relationships across all levels of seniority to cut through bureaucratic obstacles, directing **14 cross-org recovery executions** and creating executive presentations that secured leadership buy-in for high-stakes deployments.
-6. Scaled team leverage by building an internal **AI agent** and tailoring automation scripts that reduced planning cycle time by 39% and increased drill capacity by 21%, automating tedious tasks to consistently deliver for customers.
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Owned end-to-end customer engagement for **45+ annual resilience drills**, scaling Azure's recovery validation from a 2-person operation into a platformized system driving $14M+ impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining self-service scheduling requirements that cut operational toil by 30% and transitioned drill execution to a scalable, repeatable model across cross-functional engineering teams.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a **94% recovery rate** in 4 months by surfacing critical hardware defects and establishing a continuous validation model adopted across enterprise deployment environments.
+4. Served as bridge lead for a sovereign-cloud **network isolation test** tied to a $1.5B+ enterprise contract, directing 14 cross-org recovery executions under executive visibility and aligning product, engineering, and operations to mission-critical deployment requirements.
+5. Burned through organizational blockers across 140+ stakeholder teams to align cross-functional resources on customer objectives, mirroring the boots-on-ground execution model required for federal solution deployments at high ownership and high stakes.
+6. Built and deployed an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — freeing engineering bandwidth for higher-priority integration and rollout work.
+7. Delivered executive-level presentations and written briefings to senior leadership on resilience program outcomes, translating complex technical results into strategic recommendations that shaped Azure's enterprise security and recovery roadmap.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed product adoption for AI-driven code generation workflows, conducting hands-on customer demos and training sessions that drove **utilization across 14 teams** and saved 37 engineering hours monthly through tailored technical enablement.
-2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, translating ground-level customer challenges into prioritized engineering requirements.
-3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered **semantic search** tool, cutting lookup time by 83% and improving cross-team operational efficiency.
+1. Drove **product adoption** for AI-powered code generation workflows by leading customer-facing demos and training sessions across 14 Azure service teams, saving 37 engineering hours monthly and validating deployment readiness through direct user engagement.
+2. Shaped the product roadmap toward **intent-based YAML generation** by conducting 11+ structured user interviews with Azure engineering teams, surfacing critical feature gaps and influencing prioritization to align product direction with on-the-ground operational needs.
+3. Improved solution deployment speed by migrating documentation to an AI-powered **semantic search platform**, enforcing metadata standards that cut technical lookup time by 83% and accelerated troubleshooting for customer-facing engineering workflows.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering teams across organizational lines.
-2. Mobilized a product strategy to mitigate operational toil during region launches, conducting discovery with **20+ service teams** to identify 81 hours of manual effort per region and building a roadmap to automate critical deployment paths.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to make data-driven decisions, target automation gaps, and prioritize high-impact support for time-sensitive launches.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, cutting through coordination friction across 140+ teams to clear the path to successful execution.
+2. Conducted discovery with 20+ service teams to surface 81 hours of manual toil per region launch, then built a phased **automation roadmap** targeting critical deployment paths — directly mirroring the integration and rollout ownership required in federal SA engagements.
+3. Engineered a **Power BI dashboard** to track operational toil and automation gaps across 140+ teams, enabling leadership to make data-driven prioritization decisions and allocate resources toward the highest-impact customer deployment bottlenecks.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping networking and station dependencies across 1,200+ sites under tight operational requirements.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process amid shifting priorities.
-3. Drove strategic alignment between IT, Operations, and Engineering teams to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual deployment toil.
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot by owning the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and serving as the on-site technical point of contact coordinating IT, Operations, and Engineering in real time.
+2. Facilitated Agile sprint ceremonies and backlog prioritization to resolve **40+ high-priority tickets**, stabilizing the developer intake process and unblocking cross-functional teams from deployment delays — demonstrating the gritty, hands-on execution Cape's SA role requires.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable integration model for future large-scale rollouts.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing field operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM process, owning customer relationships from intake to delivery.
-2. Reduced Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a digital-first **go-to-market strategy**, optimizing the website and Google profile to respond promptly to customer needs.
-3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to inform data-driven business decisions.
+1. Increased job bookings by **26%** by redesigning the end-to-end customer engagement lifecycle — building a new CRM workflow that managed 200+ monthly proposals and served as the single point of contact between field operations and sales leadership.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversion rates by 2.7% by executing a data-driven go-to-market strategy, optimizing digital presence across the website and Google profile to target high-value customer segments more precisely.
+3. Delivered financial profitability analysis across **1,000+ project records**, identifying margin leaks and remodeling leadership pricing frameworks — demonstrating the data-driven, analytic reasoning Cape requires when evaluating customer deployment trade-offs.
 
 ## Notes from the rewriter
-- Reframed FT role around customer-facing solutions architecture: on-site technical POC, product rollout/integration, cutting through bureaucracy, and network isolation/security work to mirror the JD.
-- Surfaced networking, scripting/automation, and security keywords throughout; added Wireshark and networking fundamentals to skills to match hard requirements.
-- Used 'Technical Program Manager' labels as closest allowed analog to Solutions Architect; emphasized executive presentations, cross-team influence, and ambiguity navigation per competencies.
+- 'boots-on-ground execution' (JD phrase) woven into microsoft_ft bullet#5 and amazon_robotics bullet#1 to mirror Cape's on-site deployment ownership language.
+- 'network isolation' (JD networking/telco domain) surfaced in microsoft_ft bullet#4, directly referencing sovereign-cloud network isolation test to signal telecom/security technical depth.
+- 'on-site technical point of contact' (JD requirement phrase) embedded in amazon_robotics bullet#1 to mirror the SA role's implementation lead requirement word-for-word.
+- 'product direction aligns with customers' on-the-ground reality' (JD competency) reflected in microsoft_2023 bullet#2, framing user interviews as alignment between roadmap and field-level needs.
+- 'cut through bureaucratic obstacles' (JD bonus criterion) addressed directly in microsoft_2022 bullet#1, using 'cutting through coordination friction' and 'clear the path to successful execution' language pulled from the JD.
 

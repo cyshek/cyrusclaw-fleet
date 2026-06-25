@@ -1,16 +1,6 @@
-SUBMITTED
+ABORT-JD-FETCH — 2026-06-24T23:04:36+00:00
 
-submitted_by: auto
-applied_on: 2026-06-22
-role_id: 2812
-submitted_at: 2026-06-22T23:13:05+00:00
-
-Runner tail:
-ubmitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
-[runner] reassert-text pass 1: repaired=0 [] missing=4
-[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
-[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
-[runner] last-ms no-bounce text commit: 0 field(s), stable=True
-[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
-[runner] SUBMIT SUCCESS
-
+role_id: 2196
+phase: jd-fetch
+error:
+RuntimeError: Ashby job a85700a7-1c51-4231-adc4-0b819132c3b3 not found in board for namespace

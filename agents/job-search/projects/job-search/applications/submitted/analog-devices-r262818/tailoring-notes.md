@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **data-driven resilience validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, automated model.
+3. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, aligning data platform, infrastructure, and business stakeholders.
+4. Built an internal **AI agent for drill planning**, restructuring automation workflows to reduce planning cycle time by 39% and increase drill capacity by 21%, establishing new frameworks and standards for data-driven operational execution.
+5. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and creating a replicable model for continuous infrastructure validation.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation workflows**, conducting user demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours monthly**, directly influencing product roadmap prioritization.
+2. Influenced the product roadmap to include intent-based **YAML automation** by facilitating 11+ user interviews with Azure service teams, identifying critical feature gaps and translating findings into detailed user stories for engineering.
+3. Improved **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by 83% and enabling analysts to surface insights faster.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams, influencing senior stakeholders with data-driven business cases.
+2. Conducted discovery with 20+ service teams to identify 81 hours of manual effort per region launch, then built a **data product roadmap** to automate critical paths and eliminate operational toil across the enterprise pipeline.
+3. Engineered a **Power BI dashboard** to track operational toil and automation gaps across 140+ teams, enabling leadership to prioritize high-impact investments and measure progress against data infrastructure improvement OKRs.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping data dependencies across 1,200+ stations, and aligning IT, Operations, and Engineering on a unified execution plan.
+2. Drove cross-functional alignment to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing version-control standards that improved data lineage tracking across robotics infrastructure.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process using modern software development practices.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM process, surfacing pipeline analytics that informed sales strategy for business leaders.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-driven digital go-to-market strategy, using performance analytics to optimize the website and Google profile for revenue impact.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through structured data insights presented to senior stakeholders.
+
+## Notes from the rewriter
+- 'data pipelines' and 'automation' from the JD woven into microsoft_ft bullet 2 and amazon_robotics bullet 2, mirroring JD language around resilient data feeds and CI/CD workflows.
+- 'Power BI dashboard' from the JD qualifications surfaced explicitly in microsoft_2022 bullet 3, directly matching the BI technologies the JD lists as a plus.
+- 'data product roadmap' and 'data lineage' from the JD embedded in microsoft_2022 bullet 2 and amazon_robotics bullet 2, matching JD's emphasis on data product lifecycle ownership and understanding key strategic data sources.
+- 'user stories for feature enhancements' from the JD responsibilities mirrored in microsoft_2023 bullet 2, and 'senior stakeholders with data-driven insights' language echoed in microsoft_2022 bullet 1 and pro_painters bullet 1.
+- 'operational toil' and 'self-service' from the JD's automation/innovation framing woven into microsoft_ft bullet 2 and microsoft_2022 bullet 2 to align with the JD's directive to drive innovation via new frameworks and automation projects.
+

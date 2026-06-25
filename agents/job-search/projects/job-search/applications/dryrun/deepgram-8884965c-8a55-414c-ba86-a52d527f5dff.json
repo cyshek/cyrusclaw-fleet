@@ -1,0 +1,376 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/deepgram/8884965c-8a55-414c-ba86-a52d527f5dff",
+  "org": "deepgram",
+  "job_id": "8884965c-8a55-414c-ba86-a52d527f5dff",
+  "job_title": "Solutions Engineer, Enterprise",
+  "job_location": "New York City, NY",
+  "fetched_at": "2026-06-25T04:38:51Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 19,
+    "filled": 15,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 2,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_name",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_email",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_ac776ecd-9e0b-4a0a-8294-2ce20fa05152",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_ac776ecd-9e0b-4a0a-8294-2ce20fa05152",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_resume",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_01ffafe4-3388-4904-a4ab-441b5a0aea09",
+      "label": "Are you located within the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "address.country=United States",
+      "status": "filled",
+      "matched_rule": "us_based_confirm",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_01ffafe4-3388-4904-a4ab-441b5a0aea09",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_875b2755-b99d-4632-8a1e-e27558983196",
+      "label": "Are you located in the New York City area?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_875b2755-b99d-4632-8a1e-e27558983196",
+      "section": "Apply for this Job",
+      "match_attempted": true
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e__systemfield_location",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_52be5c8c-007b-440d-b625-833de1f84e31",
+      "label": "Will you now or in the future require visa sponsorship (H1B, etc) for employment in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_52be5c8c-007b-440d-b625-833de1f84e31",
+      "section": "Apply for this Job"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_f8821119-6d79-41a4-b59c-796898addda0",
+      "label": "What excites you about Deepgram?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Deepgram because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Deepgram is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Deepgram while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Deepgram aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Deepgram')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_f8821119-6d79-41a4-b59c-796898addda0",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_dd7966fe-841f-4a07-96a8-d7d79ca0c919",
+      "label": "How long has it been since the last time you wrote code for a non-personal (e.g. for your job, an open-source contribution, or a charity/nonprofit) project AND committed it to a repository?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Less than 1 month",
+      "source": "ashby_recent_code_commit (matched 'less than 1 month')",
+      "status": "filled",
+      "matched_rule": "recent_code_commit",
+      "options": [
+        {
+          "label": "Less than 1 month",
+          "value": "Less than 1 month"
+        },
+        {
+          "label": "1-3 months",
+          "value": "1-3 months"
+        },
+        {
+          "label": "6-12 months",
+          "value": "6-12 months"
+        },
+        {
+          "label": "1-2 years",
+          "value": "1-2 years"
+        },
+        {
+          "label": "More than 2 years",
+          "value": "More than 2 years"
+        },
+        {
+          "label": "Never",
+          "value": "Never"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_dd7966fe-841f-4a07-96a8-d7d79ca0c919",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_9d6730c8-a9a0-467e-aeb1-514c3ee7abbf",
+      "label": "What percentage of your time in your current/last role was spent directly engaging with customers or prospects on technical matters?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "50 -> 75%",
+      "source": "ashby_customer_facing_percent (matched '50 -> 75')",
+      "status": "filled",
+      "matched_rule": "customer_facing_percent",
+      "options": [
+        {
+          "label": "0 -> 25%",
+          "value": "0 -> 25%"
+        },
+        {
+          "label": "25 -> 50%",
+          "value": "25 -> 50%"
+        },
+        {
+          "label": "50 -> 75%",
+          "value": "50 -> 75%"
+        },
+        {
+          "label": "75 -> 100%",
+          "value": "75 -> 100%"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_9d6730c8-a9a0-467e-aeb1-514c3ee7abbf",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_161e19eb-051d-4bb1-bfd8-431b89b90899",
+      "label": "Have you built customer-facing demos or proof-of-concepts in previous roles?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_161e19eb-051d-4bb1-bfd8-431b89b90899",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_6d8076e1-6b39-4fd9-b0b7-617a42ac5a7a",
+      "label": "If yes to question above, briefly describe one example.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_6d8076e1-6b39-4fd9-b0b7-617a42ac5a7a",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_03f99b6e-91db-4d37-9edf-ca128f0787a6",
+      "label": "Which sales methodologies (e.g., MEDDIC, Triangle, Solution Selling) have you worked with in technical pre-sales contexts?",
+      "type": "textarea",
+      "required": true,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_03f99b6e-91db-4d37-9edf-ca128f0787a6",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_75631fcd-dd0c-4b3a-8345-6feb4d90a40a",
+      "label": "What tools or technologies have you used to demonstrate technical solutions to customers?",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_75631fcd-dd0c-4b3a-8345-6feb4d90a40a",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_8147978e-67b5-4475-880e-fe3b5f3fa62a",
+      "label": "If yes to above, which programming languages, and what was the most complex application or solution that you built?",
+      "type": "textarea",
+      "required": true,
+      "value": "Python",
+      "source": "coding_lang_python (default Python)",
+      "status": "filled",
+      "matched_rule": "coding_lang_python",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_8147978e-67b5-4475-880e-fe3b5f3fa62a",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_687ddd42-7669-4ac1-8c75-572bab400aa4",
+      "label": "What is the most impressive thing you’ve personally built or automated with AI? Describe exactly what you did, how it worked, and the measurable outcome",
+      "type": "textarea",
+      "required": true,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_687ddd42-7669-4ac1-8c75-572bab400aa4",
+      "section": "Why Deepgram?"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_42bea5a9-0d5b-419d-a234-6e079d9c93df",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_42bea5a9-0d5b-419d-a234-6e079d9c93df",
+      "section": "Additional Information (optional)"
+    },
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_f20b125c-56b7-42a3-b6fe-75c3e094fab1",
+      "label": "Other",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Other'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_f20b125c-56b7-42a3-b6fe-75c3e094fab1",
+      "section": "Additional Information (optional)"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "f50dbc43-b67e-4238-8bc3-78b486cee12e_f20b125c-56b7-42a3-b6fe-75c3e094fab1",
+      "label": "Other",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Other'"
+    }
+  ],
+  "blockers": []
+}

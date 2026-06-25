@@ -6,4 +6,4 @@ Cyrus Shekari
 
 ## Are you authorized to work in the U.S. for Tessera Labs?
 
-Yes. I'm a U.S. citizen and authorized to work in the U.S. without any need for sponsorship now or in the future.
+Yes, I am authorized to work in the U.S. and do not require sponsorship.

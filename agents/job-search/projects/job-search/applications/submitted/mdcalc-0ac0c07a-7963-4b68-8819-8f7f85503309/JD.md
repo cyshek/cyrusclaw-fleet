@@ -1,4 +1,4 @@
-# Product Manager (User Product)
+# Product Analyst
 
 **Company:** MDCalc
 **Location:** New York, NY
@@ -12,13 +12,13 @@
 
 Since 2005, MDCalc has been an essential part of the clinician’s workflow to help achieve better patient outcomes. Actively used by more than 65% of physicians worldwide, MDCalc is the most broadly used medical reference – at the point-of-care – for clinical decision tools and content, and one of only four references used by >50% of US HCPs. These evidence-based tools and content are used by millions of medical professionals globally and support 50+ specialties and cover 200+ patient conditions.
 
-To continue accelerating this growth, we are expanding our User Product team with a Product Manager who will drive meaningful improvements to how clinicians find, use, and return to MDCalc. This is an exceptional opportunity for a builder who is energized by user behavior, structured experimentation, and creating real clinical utility at scale.
+To continue accelerating this growth, we are expanding our User Product team with a Product Analyst who will drive meaningful improvements to how clinicians find, use, and return to MDCalc. This is an exceptional opportunity for a builder who is energized by user behavior, structured experimentation, and creating real clinical utility at scale.
 
 # **The Role**
 
 This is a project-focused product role embedded in our user product team. You will own discrete initiatives end to end, from discovery through launch and iteration, with a clear focus on improving how clinicians find, use, and return to MDCalc.
 
-You will work closely with Engineering, Design, and Data to translate user insights and business goals into shipped products. This role is ideal for a PM who is energized by understanding user behavior, running structured experiments, and building features that create real clinical utility.
+You will work closely with Engineering, Design, and Data to translate user insights and business goals into shipped products. This role is ideal for a Product Analyst who is energized by understanding user behavior, running structured experiments, and building features that create real clinical utility.
 
 The responsibilities of this individual include the following, but are not limited to:
 
@@ -44,7 +44,7 @@ The responsibilities of this individual include the following, but are not limit
 
 # **Your Background**
 
-- 3+ years of product management experience, with at least one role focused on consumer or professional end-user products
+- 3+ years of product analyst experience, with at least one role focused on consumer or professional end-user products
 
 - Startup experience strongly preferred, particularly in 0→1 environments where you helped build products, processes, or systems from the ground up
 

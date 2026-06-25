@@ -62,7 +62,7 @@ You’ll move quickly, ship directly into production, and iterate closely with t
 
 **Target Compensation Range**
 
-$180,000 – $225,000 + equity
+$180,000 – $250,000 + equity
 
 ## **Why Join Arlo:**
 
@@ -79,3 +79,5 @@ $180,000 – $225,000 + equity
 Exact compensation inclusive of salary and any bonuses is determined based on a number of factors including experience and skill level, location, and qualifications which are assessed during the interview process.
 
 Arlo is an equal opportunity employer. We do not discriminate based on age, race, color, creed or religion, national origin, sexual orientation, gender identity or expression, military status, sex, disability, predisposing genetic characteristics, marital status, familial status, status as a victim of domestic violence, or arrest or conviction record, as defined under New York State law.
+
+🔒 **Your safety matters to us.** If you're selected to move forward in our hiring process, you'll hear directly from a member of our Recruiting team via an @joinarlo.com email address. We will never ask for personal or financial information outside of our formal onboarding process. When in doubt, please reach out to us to verify at: [recruiting@joinarlo.com](http://joinarlo.com).

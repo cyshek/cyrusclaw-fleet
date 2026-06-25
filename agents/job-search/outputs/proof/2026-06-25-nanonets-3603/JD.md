@@ -1,0 +1,63 @@
+# Sales Engineer
+
+**Company:** NanoNets
+**Location:** Palo Alto, CA
+**Apply:** https://job-boards.greenhouse.io/nanonets/jobs/5210057008
+**Greenhouse ID:** 5210057008
+
+---
+
+**Nanonets is transforming the way businesses work. Our AI platform takes the manual, messy, time consuming work — that bog down industries like finance, healthcare, supply chain, and more — and turns them into seamless, automated processes. What once took hours of human effort now takes seconds with Nanonets. Our client footprint spans across 34% of Fortune 500 enabling businesses across various industries to unlock the potential of AI in automating their business processes.**
+
+** **
+More than 10,000 businesses trust Nanonets because we don’t just promise efficiency — we deliver it with unmatched accuracy, seamless integrations.
+In 2024, we raised a $29M Series B led by Accel with continued backing from Elevation Capital and YCombinator, fueling our mission to reshape entire industries through intelligent automation. With revenues tripling year over year and a rapidly scaling global team, we’re not just imagining the future of work — we’re building it.
+
+*Read about the release here:*
+[Article 1](https://www.forbes.com/sites/davidprosser/2024/03/12/why-enterprises-are-learning-to-love-nanonets-automation/?sh=6d79ec8f3ca1)
+[Article 2](https://techcrunch.com/2024/03/12/nanonets-funding-accel-india/amp/)
+
+ 
+
+**About the role**
+
+We are looking for a Sales Engineer to work closely with our sales team and assist them in selling this technical product to other companies. A big part of the role will be to understand Nanonets’ product really well, understand customer requirements/goals and build machine learning models on the Nanonets platform to demo capabilities to customers on their own data. This would be instrumental in helping close sales faster.
+
+If you are interested in AI/ML space, good with communication, enjoy tasks with quick wins and love solving a diverse set of problems, this role would be a good fit for you.
+
+**Roles and Responsibilities **
+
+- Partner closely with customers as their technical partner to deploy Nanonets to production , helping them rapidly move from ideation to scale.
+
+- Provide proactive guidance to maximize business impact and accelerate application development.
+
+- Translate customer requirements into clear documentation (PRDs, workflows, success criteria) for internal teams.
+
+- Partner closely with Product, Engineering, and Solutions teams to scope work, prioritize requests, and deliver against timelines.
+
+- Maintain and prioritize backlogs across multiple customer accounts.
+
+- Plan and communicate project timelines using structured documentation (project plans, trackers, presentations).
+
+- Ensure end‑to‑end testing and validation of workflows before customer release.
+
+**Requirements and Skills**
+
+- 1-3 years of experience as a software engineer, ML engineer or equivalent, ideally in a startup environment; experience as a founder or founding engineer is highly valued.
+
+- Have passion for startups and a belief in their potential to become future large enterprises.
+
+- Are proficient in Python, JavaScript, and a strong grasp of AI/LLM best practices.
+
+- Built and/or delivered prototypes on top of our API platform.
+
+- Can proactively identify opportunities for maximizing our customers’ business value through leveraging the Nanonets API.
+
+- Own problems end-to-end and are willing to pick up whatever knowledge you're missing to get the job done.
+
+- Have a humble attitude, an eagerness to help your colleagues, and a desire to do whatever it takes to make the team succeed.
+
+- Are an effective, high throughput operator who can drive multiple concurrent projects and prioritize ruthlessly.
+
+**Additional Information**
+Hybrid role, (twice a week in our Palo Alto office), based in the Bay Area, CA. Your base salary will be determined based on your location, experience, and the pay of employees in similar positions. The base salary range is $100,000 - $140,0000 per year. This role is also eligible for equity and other benefits.

@@ -1,0 +1,222 @@
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 5 -> idx 7 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: sleep
+[runner] step 6: browser.act.evaluate
+[runner] step 7: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 2 field(s) ['9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name', '9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] step 8: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2212
+[runner] captcha v3 solved in 0.1s, token len=2212
+[runner] step 9: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=2 ['65fae6__systemfield_name', '5fae6__systemfield_email'] missing=0
+[runner] reassert-text pass 2: repaired=2 ['65fae6__systemfield_name', '5fae6__systemfield_email'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 2 field(s) ['65fae6__systemfield_name', '5fae6__systemfield_email']
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] reassert-text pass 1: repaired=0 [] missing=2
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/0 committed
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "minerva-5c0c0f22-6908-4780-9c04-3d135b8aedb9",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/minerva/5c0c0f22-6908-4780-9c04-3d135b8aedb9/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 2,
+      "fields": [
+        "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name",
+        "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "sleep"
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 3,
+        "text_filled": 2,
+        "radios_groups": 0,
+        "radios_checked": 0,
+        "checkboxes": 0,
+        "checkboxes_checked": 0,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 0,
+        "yesno_groups": 0
+      }
+    },
+    {
+      "i": 7,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-minerva_5c0c0f22_v2.pdf"
+    },
+    {
+      "i": 7,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 7,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name",
+        "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 8,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 137,
+      "token_len": 2212,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 9,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name",
+        "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_name",
+          "9c52832d-e49b-4644-aa84-995e7565fae6__systemfield_email"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Forward Deployed Engineer, Data Systems LocationNew York CityEmployment TypeFull timeLocation TypeOn-siteDepartmentEngineeringOverviewApplicationSuccessYour application was successfully submitted. We'll contact you if there are next steps.Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"00767797-5971-456a-bd9c-faf9613f7a6f\",\"name\":\"Minerva\",\"publicWebsite\":\"https://minerva.io/\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"minerva\",\"activeFeatureFlags\":[\"InterviewLocationTypeReportingField\",\"DesignSystemDragListV2\",\"RejectDeepPaginationOnIncrementalSync\",\"RepairEmailSubjectMojibake\",\"BookingLinkRescheduleLimits\",\"ConnectedFieldLazySelectableValues\",\"AiAutofillPopoverFeedbackForm\",\"ClickhouseDataComplianceBackfillCounts\",\"ZoomStripHostOptionsInClientServerCommunication\",\"WorkflowSerializeSideEffects\",\"WorkflowFullMergeDropInstanceChanges\",\"CandidateReviewReporting\",\"SchedulingInterviewEventMasterTemplateReordering\",\"JobBoardCookieConsentControls\",\"UseBillingDbForCredits\",\"UseGlobalQueryScopesOnGlobalApplicationQuestions\",\"AmplitudeAIAssistant\",\"ResumableDailyDemoDataGeneration\",\"AmplitudeSDK\",\"ArchiveReasonJobPostingList\",\"AshbyFormS",
+  "classify": "submitted"
+}

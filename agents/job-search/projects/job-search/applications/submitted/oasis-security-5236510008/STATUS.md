@@ -1,9 +1,12 @@
-PREP-READY — 2026-06-04T07:28:00+00:00
+STATUS: SUBMITTED — 2026-06-24
 
 role_id: 2737
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-oasis-security-5236510008.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/oasis-security-5236510008/Cyrus_Shekari_Resume_oasissecurity_5236510008_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/oasis-security-5236510008/cover_answers.md
+role: Oasis Security — Channel Sales Engineer
+slug: oasis-security-5236510008
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+confirmation_url: https://job-boards.greenhouse.io/oasissecurity/jobs/5236510008/confirmation
+confirmation_text: Thank you for applying. Your application has been received. If there is a fit, someone will be getting back to you.
+otp_code: qOcp5MJR
+confirmed: true
+submitted_by: auto (gh-submit subagent 2026-06-24)
+resume_attached: yes

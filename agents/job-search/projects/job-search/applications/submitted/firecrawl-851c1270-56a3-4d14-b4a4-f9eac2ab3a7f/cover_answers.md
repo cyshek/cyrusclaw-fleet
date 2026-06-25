@@ -4,18 +4,20 @@
 
 Cyrus Shekari
 
-## What’s your go-to stack of tools for getting things done?
+## What's your go-to stack of tools for getting things done?
 
-Python is my default for anything that needs to move data or automate a workflow. At Microsoft I built an internal AI agent and restructured planning in Python that cut planning cycle time 39% and pushed drill capacity up 21%, and I lean on it constantly for scripting against APIs and debugging integrations. I'm comfortable in Java and Go too, but Python is where I prototype fastest when I need to prove something works.
+Python is my default for anything involving data, automation, or API work. I reach for it first when I need to prototype quickly, process structured or unstructured data, or build a lightweight tool that proves out a concept. For API exploration and debugging I use Postman or write quick scripts directly, depending on how much I need to share or document the flow.
 
-Beyond code, I live in API docs and a terminal when I'm figuring out how a system actually behaves, and I use Power BI when I need to make messy signal legible to other people, like the dashboard I built tracking toil across 140+ teams. For the AI side I've worked with LLM-powered tools, RAG and semantic search, and Copilot Studio. The common thread is that I reach for whatever lets me build a working proof on the spot instead of talking around the problem.
+On the productivity and workflow side, I lean on Azure tooling heavily given my background at Microsoft, but I'm comfortable moving across environments. I've built internal AI agents using LLM-powered tooling and Copilot Studio, and I've worked with semantic search and RAG pipelines to improve how teams retrieve and use documentation. For tracking, prioritization, and cross-functional coordination I typically use a combination of Notion, Jira, and plain structured docs, whatever the team already has momentum with.
+
+In a customer-facing or SE context specifically, I'd add browser devtools and live API consoles to that list. Some of the most useful moments in a technical evaluation happen when you can pull up a real response, walk through the structure on screen, and show exactly how the output maps to what the customer is trying to build. That kind of live debugging is where trust gets built fast.
 
 ## Years of Experience
 
-2
+3
 
 ## What interests you about working at Firecrawl? What should we know about you?
 
-Most of my job at Microsoft has been sitting with technical buyers (enterprise teams like Databricks, Walmart, SAP, and NetApp) and figuring out where our system actually fits their hardest problems. I ran live technical evaluations and discovery with Azure service teams, translated their pain points into roadmap items, and shipped a rack-level drill program in 4 months at a 94% recovery rate. I've also driven adoption directly, running customer-style demos across 14 teams and debugging integrations on the spot, which is exactly the loop this role describes: understand the use case, prove value live, and feed what I learn back into the product.
+My work at Microsoft has been deeply technical and customer-facing at the same time. I've partnered with enterprise buyers like Databricks, Walmart, and SAP to architect complex API-driven workflows, translate technical recovery processes into clear business value, and synthesize field feedback into product roadmap decisions. I also built an internal AI agent that automated drill planning workflows, which gave me firsthand experience with how LLM-powered tooling breaks down when inputs are messy and unstructured, and how much work goes into getting web or operational data into a shape that models can actually use. That gap between raw web data and LLM-ready output is exactly what Firecrawl closes, and I understand it from the inside.
 
-Firecrawl appeals to me because turning messy web data into clean, LLM-ready output is becoming foundational infrastructure, and you've proven the demand with 8 figures in ARR and 120k+ GitHub stars in a year. I want to be the technical voice in the room when an engineer asks the hard question, and answer it with a working prototype instead of a slide. What you should know about me: I move fast, I'd rather build the proof than describe it, and I'm comfortable when the answer is 'figure it out.' The pace you describe is the part that excites me most, not the part that scares me off.
+What draws me specifically to Firecrawl is that you're building infrastructure that sits at the foundation of how AI applications actually get their data. That's not a feature, it's a critical dependency, and the 120k GitHub stars and 8-figure ARR in a year tell me the developer community already sees it that way. I want to be in the room where technical buyers have their "aha moment" with a product that genuinely solves a hard problem, not one that's been dressed up to look like it does. The pace you describe, small team, high urgency, figuring things out without a playbook, is an environment I've operated in and prefer. I'm ready to own the technical narrative in deals and contribute directly to how Firecrawl gets adopted across engineering teams.

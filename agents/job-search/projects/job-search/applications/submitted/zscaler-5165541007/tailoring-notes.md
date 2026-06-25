@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned end-to-end delivery of Azure's **critical resilience program**, scaling from a 2-person operation to a platformized system sustaining 45+ annual recovery drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 build of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and shifted execution to a scalable, cross-functional delivery model.
+3. Directed **14 high-visibility cross-org recovery executions** under VP and C-suite scrutiny, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
+4. Pioneered Azure's first proactive resilience testing capability — delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a new continuous-validation model.
+5. Amplified program capacity through AI-driven automation by building an internal AI agent that **cut planning cycle time 39%** and increased drill throughput by 21%, directly accelerating cross-functional execution quality.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **AI-powered code-generation adoption** across 14 Azure service teams through targeted demos and training, saving 37 engineering hours monthly and establishing a repeatable change-management playbook for new tooling rollouts.
+2. Surfaced critical product gaps by conducting **11+ structured user interviews** with Azure engineering stakeholders, directly influencing roadmap prioritization to include intent-based YAML generation as a top-tier feature.
+3. Improved data retrieval reliability by migrating documentation to an **AI-powered semantic search** system with rigorous metadata standards, cutting lookup time by 83% and reducing cross-team escalations over stale reference data.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation-prioritization framework across 140+ teams — resolving competing priorities through structured stakeholder management.
+2. Mitigated critical operational risk by leading discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, then building and socializing a phased roadmap to automate the highest-impact paths.
+3. Enabled executive decision-making by engineering a **Power BI escalation dashboard** that tracked automation gaps across 140+ teams, giving leadership a real-time view to target remediation and prioritize high-risk accounts.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit OS migration by defining the end-to-end transition strategy, mapping dependencies across 1,200+ stations, and managing risk mitigation with cross-functional IT and Engineering teams.
+2. Facilitated Agile sprint planning and retrospectives, **resolving 40+ high-priority tickets** and stabilizing the developer intake process — applying post-mortem analysis each sprint to drive continuous process improvement.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, compressing the software deployment cycle by 25% and reducing escalation frequency from build failures.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. **Increased job bookings 26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM workflow, eliminating process gaps that caused customer escalations and lost revenue.
+2. Reduced Customer Acquisition Cost **by 13%** and lifted conversion 2.7% by executing a digital-first go-to-market strategy — optimizing web presence and Google profile to improve lead quality and shorten the sales cycle.
+3. Identified and closed margin leaks by performing profitability analysis across **1,000+ project records**, delivering actionable pricing recommendations that directly improved leadership's financial decision-making model.
+
+## Notes from the rewriter
+- JD term 'critical issue resolution / escalation' woven into microsoft_ft bullet 1 (critical resilience program ownership) and microsoft_ft bullet 3 (high-visibility cross-org executions under VP/C-suite scrutiny), directly mirroring CAP Manager ownership language.
+- JD term 'executive-level status communication up to VP and C-suite' surfaced in microsoft_ft bullet 3 ('under VP and C-suite scrutiny') and microsoft_2022 bullet 3 ('enabling executive decision-making'), matching the JD's explicit communication requirement.
+- JD term 'post-mortem analysis' (listed under Role Expectations) directly embedded in amazon_robotics bullet 2 ('applying post-mortem analysis each sprint'), showing process improvement orientation the JD calls out.
+- JD preferred qualification 'AI-driven analytics to proactively identify high-risk escalations' addressed in microsoft_ft bullet 5 (AI agent reducing cycle time) and microsoft_2023 bullet 3 (AI-powered semantic search reducing escalations), tying AI fluency to customer-risk outcomes.
+- JD term 'cross-functional alignment across product, services, and sales' mirrored in microsoft_2022 bullet 1 ('cross-functional alignment … 140+ teams') and amazon_robotics bullet 3 ('cross-functional alignment between IT, Operations, and Engineering'), reflecting the core CAP execution model.
+

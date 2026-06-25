@@ -1,0 +1,145 @@
+{
+  "live": [
+    "breakout_xlk__mut_c382b1",
+    "sma_crossover_qqq_regime",
+    "sma_crossover_qqq_rth",
+    "rsi_oversold_spy",
+    "volume_breakout_qqq",
+    "macd_momentum_iwm",
+    "tqqq_cot_combo",
+    "allocator_blend"
+  ],
+  "corr_gate": {
+    "max_abs_diff": 0.04610685798904657,
+    "mean_abs_diff": 0.004272737069099882,
+    "bulk_max_abs_diff": 0.015211786938300546,
+    "combo_alloc_diff": 0.04610685798904657,
+    "pass": true
+  },
+  "annualized_vols": {
+    "breakout_xlk__mut_c382b1": 0.010103738470109208,
+    "sma_crossover_qqq_regime": 0.009160845667782252,
+    "sma_crossover_qqq_rth": 0.009318561323695178,
+    "rsi_oversold_spy": 0.012244606878250344,
+    "volume_breakout_qqq": 0.006791018972030157,
+    "macd_momentum_iwm": 0.008742702436404954,
+    "tqqq_cot_combo": 0.20519123880482426,
+    "allocator_blend": 0.15805343992377782
+  },
+  "risk_weights_volaware": {
+    "breakout_xlk__mut_c382b1": 0.11675785074500672,
+    "sma_crossover_qqq_regime": 0.12065199932613808,
+    "sma_crossover_qqq_rth": 0.11907843635974957,
+    "rsi_oversold_spy": 0.20744904375665785,
+    "volume_breakout_qqq": 0.20365497371647792,
+    "macd_momentum_iwm": 0.21912898768305808,
+    "tqqq_cot_combo": 0.005662526155749167,
+    "allocator_blend": 0.0076161822571627225
+  },
+  "risk_contributions": {
+    "breakout_xlk__mut_c382b1": 0.12500000000000458,
+    "sma_crossover_qqq_regime": 0.124999999999992,
+    "sma_crossover_qqq_rth": 0.12499999999999445,
+    "rsi_oversold_spy": 0.12499999999999989,
+    "volume_breakout_qqq": 0.12500000000000036,
+    "macd_momentum_iwm": 0.12499999999999989,
+    "tqqq_cot_combo": 0.12500000000001718,
+    "allocator_blend": 0.12499999999999167
+  },
+  "rc_spread": {
+    "min": 0.12499999999999167,
+    "max": 0.12500000000001718,
+    "target": 0.125
+  },
+  "capital_volaware_pure": {
+    "breakout_xlk__mut_c382b1": 93.41,
+    "sma_crossover_qqq_regime": 96.52,
+    "sma_crossover_qqq_rth": 95.26,
+    "rsi_oversold_spy": 165.96,
+    "volume_breakout_qqq": 162.92,
+    "macd_momentum_iwm": 175.3,
+    "tqqq_cot_combo": 4.53,
+    "allocator_blend": 6.09
+  },
+  "capital_volaware_tradeable": {
+    "breakout_xlk__mut_c382b1": 69.81,
+    "sma_crossover_qqq_regime": 72.14,
+    "sma_crossover_qqq_rth": 71.2,
+    "rsi_oversold_spy": 124.04,
+    "volume_breakout_qqq": 121.77,
+    "macd_momentum_iwm": 131.03,
+    "tqqq_cot_combo": 160.0,
+    "allocator_blend": 50.0
+  },
+  "baseline_v2_tradeable": {
+    "breakout_xlk__mut_c382b1": 74.36,
+    "sma_crossover_qqq_regime": 69.59,
+    "sma_crossover_qqq_rth": 69.88,
+    "rsi_oversold_spy": 159.65,
+    "volume_breakout_qqq": 86.94,
+    "macd_momentum_iwm": 120.96,
+    "tqqq_cot_combo": 160.0,
+    "allocator_blend": 58.62
+  },
+  "deltas": {
+    "breakout_xlk__mut_c382b1": {
+      "base": 74.36,
+      "volaware": 69.81,
+      "delta": -4.55,
+      "delta_pct": -6.1
+    },
+    "sma_crossover_qqq_regime": {
+      "base": 69.59,
+      "volaware": 72.14,
+      "delta": 2.55,
+      "delta_pct": 3.7
+    },
+    "sma_crossover_qqq_rth": {
+      "base": 69.88,
+      "volaware": 71.2,
+      "delta": 1.32,
+      "delta_pct": 1.9
+    },
+    "rsi_oversold_spy": {
+      "base": 159.65,
+      "volaware": 124.04,
+      "delta": -35.61,
+      "delta_pct": -22.3
+    },
+    "volume_breakout_qqq": {
+      "base": 86.94,
+      "volaware": 121.77,
+      "delta": 34.83,
+      "delta_pct": 40.1
+    },
+    "macd_momentum_iwm": {
+      "base": 120.96,
+      "volaware": 131.03,
+      "delta": 10.07,
+      "delta_pct": 8.3
+    },
+    "tqqq_cot_combo": {
+      "base": 160.0,
+      "volaware": 160.0,
+      "delta": 0.0,
+      "delta_pct": 0.0
+    },
+    "allocator_blend": {
+      "base": 58.62,
+      "volaware": 50.0,
+      "delta": -8.62,
+      "delta_pct": -14.7
+    }
+  },
+  "reshuffled_usd": 48.775000000000006,
+  "reshuffled_pct_of_budget": 6.096875000000001,
+  "max_single_abs_pct": 40.06211180124223,
+  "diversifier_ranking_preserved": false,
+  "decision": {
+    "under_10pct": true,
+    "no_big_single": false,
+    "div_preserved": false,
+    "verdict": "MATERIAL-change"
+  },
+  "budget_usd": 800.0
+}

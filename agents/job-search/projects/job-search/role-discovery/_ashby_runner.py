@@ -3288,6 +3288,52 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                                     pass
                                 page.wait_for_timeout(80)
                                 _lmr_pw = _pw_click_radio_option(page, _lmr_fps, _lmr_want)
+                                # chain_last_ms_yesno_fallback (2026-06-24 Blaxel 1325):
+                                # yesno_button fields don't have labeled-radio inputs,
+                                # so _pw_click_radio_option returns ok:False. Fall back
+                                # to trusted PW .click() on the matching <button> inside
+                                # div[class*=_yesno_]. This is the LAST operation before
+                                # submit so no subsequent re-render can clobber the state.
+                                if not (isinstance(_lmr_pw, dict) and _lmr_pw.get('ok')):
+                                    _lmr_yn_ok = False
+                                    try:
+                                        for _lfp in _lmr_fps:
+                                            _lc = page.locator(f'[data-field-path="{_lfp}"]').first
+                                            if _lc.count() == 0:
+                                                continue
+                                            _yc = _lc.locator('div[class*="_yesno_"]').first
+                                            if _yc.count() == 0:
+                                                break  # not a yesno widget, skip
+                                            _yn_btns = _yc.locator('button').all()
+                                            for _ynb in _yn_btns:
+                                                try:
+                                                    _ynb_txt = (_ynb.inner_text() or '').strip().lower()
+                                                except Exception:
+                                                    _ynb_txt = ''
+                                                if _ynb_txt == _lmr_want.lower() or _lmr_want.lower() in _ynb_txt:
+                                                    _ynb.scroll_into_view_if_needed(timeout=2000)
+                                                    _ynb.click(force=True, timeout=4000)
+                                                    page.wait_for_timeout(150)
+                                                    # verify active
+                                                    try:
+                                                        _yn_active = page.evaluate(
+                                                            "(el)=>{const b=[...el.querySelectorAll('button')].find(x=>/_active_|_selected_/.test(x.className));const cb=el.querySelector('input[type=checkbox]');return {active:b?b.textContent.trim():null,cb:(cb?cb.checked:null)};}",
+                                                            _lc.element_handle())
+                                                    except Exception:
+                                                        _yn_active = {}
+                                                    _lmr_yn_ok = True
+                                                    log(f"last-ms yesno fallback: {_lfp[-24:]} want={_lmr_want!r} active={_yn_active}")
+                                                    if not (isinstance(_yn_active, dict) and _yn_active.get('active') and _yn_active['active'].strip().lower() == _lmr_want.lower()):
+                                                        # try once more
+                                                        _ynb.click(force=True, timeout=4000)
+                                                        page.wait_for_timeout(150)
+                                                    break
+                                            if _lmr_yn_ok:
+                                                break
+                                    except Exception as _lmr_yn_e:
+                                        log(f"last-ms yesno fallback fail: {_lmr_yn_e}")
+                                    if _lmr_yn_ok:
+                                        _lmr_pw = {'ok': True, 'via': 'yesno_button_fallback'}
                                 _lmr_results.append({'name': _lmr_name[-24:], 'want': _lmr_want[:30], 'pw': _lmr_pw})
                                 page.wait_for_timeout(80)
                             _lmr_ok = [r for r in _lmr_results if isinstance(r.get('pw'), dict) and r['pw'].get('ok')]

@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing behavioral workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation model adopted across the org.
+4. Built an **internal AI agent** to automate drill planning workflows, applying LLM-powered tooling to reduce planning cycle time by 39% and increase drill capacity by 21%—directly scaling researcher and engineer throughput.
+5. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating across product, safeguards, and engineering stakeholders.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours** monthly—translating alignment research into measurable process improvements.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, synthesizing contradictory feedback into prioritized feature gaps and actionable behavioral defaults for the AI toolchain.
+3. Improved **model output quality and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by 83% and establishing a repeatable eval-and-iterate feedback loop.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating input across 140+ teams to surface high-impact opportunities and ship improvements faster.
+2. Defined a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort** per region and building a roadmap to automate critical execution paths end-to-end.
+3. Enabled leadership to triage and prioritize behavior gaps by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, translating ambiguous user pain signals into a clear, data-backed improvement taxonomy.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping behavioral dependencies across 1,200+ stations, and coordinating cross-functional execution under tight delivery constraints.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, triaging and prioritizing **40+ high-priority tickets** to stabilize the developer intake process and accelerate the team's ability to ship alignment-critical software improvements.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, reducing manual deployment toil and accelerating the software release cycle by 25% to increase overall team throughput.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, redesigning the CRM process to reduce friction and surface user interaction patterns that informed prioritization of future improvements.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy—optimizing the website and Google profile based on user behavior signals and iterative feedback loops.
+3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records**, identifying and sealing margin leaks through first-principles decomposition of cost drivers and data-backed roadmap recommendations.
+
+## Notes from the rewriter
+- 'behavioral defaults' woven into microsoft_ft bullet#1 and microsoft_2023 bullet#2 — mirrors JD's 'Define behavioral defaults and steerability constraints' responsibility directly.
+- 'alignment research translation' surfaced in microsoft_ft bullet#4 and microsoft_2023 bullet#3 — mirrors JD's 'Amplify alignment research breakthroughs, translating them into product, process, and model improvements.'
+- 'triage and prioritize' + 'taxonomy' language used in microsoft_2022 bullet#3 and amazon_robotics bullet#2 — mirrors JD's 'Identify, triage, and prioritize behavior issues' and 'Develop and maintain taxonomies of model behaviors.'
+- 'eval-and-iterate feedback loop' in microsoft_2023 bullet#3 maps to JD's 'Contribute to evals that measure alignment progress.'
+- 'scale researcher and engineer throughput' in microsoft_ft bullet#4 mirrors JD's 'Identify and scale initiatives and tools that help researchers ship alignment improvements faster.'
+

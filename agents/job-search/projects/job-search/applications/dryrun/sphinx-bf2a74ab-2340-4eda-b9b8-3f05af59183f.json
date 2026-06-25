@@ -1,0 +1,131 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sphinx/bf2a74ab-2340-4eda-b9b8-3f05af59183f",
+  "org": "sphinx",
+  "job_id": "bf2a74ab-2340-4eda-b9b8-3f05af59183f",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-24T17:08:10Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name"
+    },
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email"
+    },
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_resume"
+    },
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_5bbc7f2f-9708-4f95-9788-2895f1c72075",
+      "label": "Are you based in the Bay Area or willing to re-locate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_5bbc7f2f-9708-4f95-9788-2895f1c72075"
+    },
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+      "label": "GitHub Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c"
+    },
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a"
+    },
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_c2cf23d9-1c49-492b-9e39-b052cdfd9b13",
+      "label": "Attach a screenshot of a coding agent session you're particularly proud of (optional)",
+      "type": "input_file",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"Attach a screenshot of a coding agent session you're particularly proud of (optional)\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_c2cf23d9-1c49-492b-9e39-b052cdfd9b13"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_c2cf23d9-1c49-492b-9e39-b052cdfd9b13",
+      "label": "Attach a screenshot of a coding agent session you're particularly proud of (optional)",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"Attach a screenshot of a coding agent session you're particularly proud of (optional)\""
+    }
+  ],
+  "blockers": []
+}

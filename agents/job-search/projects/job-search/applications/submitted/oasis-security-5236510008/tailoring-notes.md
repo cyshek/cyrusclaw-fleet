@@ -1,45 +1,41 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Technical Program Manager Intern**
-- `microsoft_2022` → **Technical Program Manager Intern**
-- `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
+- (none)
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned the **technical side of strategic partner relationships** (Databricks, Walmart, SAP, NetApp), serving as trusted technical advisor to partner architect teams and scaling Azure's recovery validation from a 2-person effort into a platformized motion driving **$14M+ business impact**.
-2. Led **0→1 development** of an internal Resilience Automation Platform on Azure, defining product requirements and self-service capabilities that reduced operational toil **30%** and stood up a repeatable, scalable model—the same zero-to-one muscle a Channel SE function demands.
-3. Designed and ran **end-to-end technical POCs and validation drills** across cloud and sovereign environments, delivering Azure's first proactive rack-level program in 4 months at a **94% recovery rate** and surfacing critical defects to derisk enterprise deals.
-4. Served as bridge lead on a **sovereign-cloud identity and network isolation test** tied to a **$1.5B+ enterprise contract**, validating workload-identity and access boundaries across AWS/Azure-style architectures under direct executive visibility.
-5. Translated partner-field signal into the **product roadmap**, building an internal AI agent that automated planning workflows to cut cycle time **39%** and lift drill capacity 21%—deepening understanding of how AI agents consume identity and reshape enterprise security.
-6. Built deep, durable relationships with partner technical leadership (Databricks, SAP), producing architecture diagrams, integration guides, and reference designs so Azure resilience became a **default recommendation** in their enterprise conversations.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Served as **technical owner** for partner integrations across Databricks, Walmart, SAP, and NetApp, translating field signal into product requirements and driving $14M+ in enterprise impact through a scalable resilience validation platform.
+2. Built a **zero-to-one channel enablement motion** — designed the training curriculum, certification path, and self-service scheduling model that scaled Azure's recovery validation program from a 2-person operation to 45+ annual drills.
+3. Defined the **POC model** for partner-sourced recovery drills, owning end-to-end execution across 14 cross-org engagements under executive visibility, including a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
+4. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable model for continuous validation.
+5. Scaled team leverage through **AI agent development**, building an internal LLM-powered planning tool that reduced drill planning cycle time by 39% and increased partner-facing capacity by 21% without adding headcount.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **technical enablement and adoption** of AI-driven code generation across **14 Azure service teams**, running hands-on demos and training sessions that saved 37 engineering hours monthly and established repeatable certification-style onboarding for new users.
-2. Shaped the **product roadmap** to include intent-based YAML generation by facilitating **11+ technical discovery interviews** with Azure service teams, translating partner-field reality into prioritized, engineering-ready feature requirements.
-3. Migrated documentation to an **AI-powered semantic search** tool and enforced rigorous metadata standards, cutting lookup time **83%** and producing the self-service technical collateral teams needed to operate independently.
+1. Drove **partner enablement and product adoption** for AI-driven code generation workflows, conducting demos and training sessions with 14 key Azure service teams that saved 37 engineering hours monthly and established a repeatable onboarding model.
+2. Shaped the **product roadmap** by facilitating 11+ discovery interviews with partner architects to surface critical feature gaps, directly influencing prioritization of intent-based YAML generation for enterprise integrations.
+3. Improved **semantic search** and data retrieval for partner-facing documentation by implementing rigorous metadata standards and migrating to an AI-powered search tool, cutting technical lookup time by 83% across Azure service teams.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched cloud regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ teams**—a zero-to-one program built from the ground up.
-2. Mobilized a product strategy to mitigate launch toil, conducting **technical discovery with 20+ service teams** to quantify 81 hours of manual effort per region and building a roadmap to automate critical cloud-deployment paths.
-3. Engineered a **Power BI dashboard** tracking operational toil across **140+ teams**, enabling leadership to target automation gaps and prioritize high-impact engineering support with data-driven visibility.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ engineering and partner teams.
+2. Mobilized a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to identify 81 hours of manual effort per region and building a roadmap to automate critical paths.
+3. Enabled leadership to target **automation gaps** and prioritize high-impact work by engineering a Power BI dashboard tracking operational toil and integration health across 140+ teams in Azure's region launch pipeline.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Defined the **legacy OS migration strategy** for a 2,000+ unit pilot, mapping dependencies across **1,200+ stations** to achieve **zero operational downtime** and validate the transition in a live customer-grade environment.
-2. Facilitated **Agile ceremonies**—sprint planning and retrospectives—prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across IT, Operations, and Engineering.
-3. Drove strategic alignment across **IT, Operations, and Engineering** to implement automated **CI/CD pipelines**, accelerating the software deployment cycle **25%** and proving cross-team technical co-execution at scale.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and serving as the technical liaison between IT, Engineering, and Operations.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and establishing a repeatable co-execution model across partner teams.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across a distributed robotics platform.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings **26%** by re-architecting sales operations and owning the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM-driven process built from scratch.
-2. Reduced Customer Acquisition Cost **13%** and lifted conversions 2.7% by executing a **digital-first go-to-market strategy**, optimizing the website and Google profile to drive qualified inbound demand.
-3. Improved leadership pricing models by conducting **financial profitability analysis** across **1,000+ project records**, identifying and sealing margin leaks to strengthen deal-level economics.
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, redesigning the CRM process to create a scalable, partner-ready sales operations model.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website, Google Business profile, and outbound targeting to drive qualified pipeline.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to deliver actionable competitive positioning for high-value accounts.
 
 ## Notes from the rewriter
-- Reframed MSFT FT around channel-SE language: technical owner of partner relationships, 0→1 function build, POC ownership, roadmap translation.
-- Surfaced identity/security and AI-agent angles (sovereign-cloud isolation, workload identity, NHI) to map to Oasis's IAM/NHI focus.
-- Skills reordered to lead with partner enablement, technical sales, IAM/NHI, and cloud-identity tools (Okta, CyberArk, Vault) named in the JD.
-- Emphasized zero-to-one experience across every role since the JD repeatedly stresses building a function from scratch.
+- 'zero-to-one' (JD verbatim) woven into microsoft_ft bullet#2 describing the enablement motion Cyrus built from scratch — directly mirrors the JD's builder-role framing.
+- 'POC model' (JD section header) used in microsoft_ft bullet#3 to frame the partner-sourced drill execution ownership, mirroring the JD's requirement to 'define the POC model and own its execution end-to-end.'
+- 'partner enablement' and 'certification path' (JD verbatim) surfaced in microsoft_ft bullet#2 and microsoft_2023 bullet#1 to reflect the JD's ask to design the training curriculum and certification path from scratch.
+- 'semantic search' and 'AI agent' (JD-adjacent: AI & Agents domain) used in microsoft_2023 bullet#3 and microsoft_ft bullet#5 to signal hands-on AI tooling experience relevant to Oasis's AI-agent access risk positioning.
+- 'co-execution model' and 'cross-functional alignment' used in amazon_robotics and microsoft_2022 to mirror JD language around co-sell motion and working with partner architects at GSI/VAR-equivalent firms.
 

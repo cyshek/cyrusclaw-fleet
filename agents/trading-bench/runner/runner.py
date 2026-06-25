@@ -30,6 +30,7 @@ from pathlib import Path
 
 from . import db, risk
 from . import safety_backstop
+from . import bear_flatten_gate
 from .broker_alpaca import AlpacaClient, AlpacaError
 from .kelly import kelly_notional as _kelly_notional
 from .edge_calibrator import get_calibrated_kelly_fraction as _get_calibrated_kelly
@@ -207,7 +208,7 @@ def run(strategy_name: str) -> int:
         regime = None
         if not is_crypto:
             try:
-                spy_bars = client.stock_bars("SPY", timeframe="1Day", limit=100)
+                spy_bars = client.stock_bars("SPY", timeframe="1Day", limit=260)
                 spy_closes = [float(b["c"]) for b in (spy_bars or [])]
                 if spy_closes:
                     regime = {"spy_closes": spy_closes,
@@ -244,6 +245,51 @@ def run(strategy_name: str) -> int:
                         "underlying": underlying_block,
                         "strategy_state": persistent_state}
 
+        # -------- L165 bear-flatten regime gate (opt-in; SPY-200d + hysteresis) --
+        # When params["bear_flatten_gate"] is true (tqqq_cot_combo primary,
+        # allocator_blend secondary), consult the deterministic SPY-SMA-200
+        # overlay BEFORE the strategy runs. If latched bear (SPY < SMA200, held
+        # until SPY >= SMA201), force a close-to-flat / stay-flat and skip
+        # decide() — same shape as the safety backstop. The hysteresis latch
+        # lives in strategy_state[_bear_flatten] (cross-flat persistent state,
+        # saved immediately below regardless of position). Fail-open: any error
+        # or short SPY history defers to the strategy. Crypto has no SPY ->
+        # skipped. Never blocks for missing data.
+        bear_gate_fired = False
+        if not is_crypto and bool(params.get("bear_flatten_gate", False)):
+            try:
+                _spy_cl = bear_flatten_gate.spy_closes_from_regime(regime)
+                _prev_bf = (market_state["strategy_state"].get(bear_flatten_gate.STATE_KEY)
+                            if isinstance(market_state.get("strategy_state"), dict) else None)
+                _gres = bear_flatten_gate.evaluate(_spy_cl, _prev_bf)
+                # Persist the latch back into cross-flat strategy_state.
+                if isinstance(market_state.get("strategy_state"), dict):
+                    market_state["strategy_state"][bear_flatten_gate.STATE_KEY] = _gres.new_state
+                if _gres.flatten:
+                    bear_gate_fired = True
+                    held = position_state.get(symbol) or {}
+                    try:
+                        _held_qty = float(held.get("qty", 0) or 0)
+                    except (TypeError, ValueError):
+                        _held_qty = 0.0
+                    if _held_qty > 0:
+                        action = _SyntheticAction(
+                            action="close", symbol=symbol,
+                            reason=f"L165 {_gres.note} -> flatten to cash")
+                    else:
+                        action = _SyntheticAction(
+                            action="hold", symbol=symbol,
+                            reason=f"L165 {_gres.note} -> stay flat")
+                    db.log_decision(strategy_name,
+                                    "bear_flatten_close" if _held_qty > 0 else "bear_flatten_hold",
+                                    symbol=symbol, reason=_gres.note,
+                                    detail="L165 SPY bear gate")
+            except Exception as _bf_err:  # noqa: BLE001  fail-open to strategy
+                db.log_decision(strategy_name, "hold", symbol=symbol,
+                                reason=f"bear_flatten_gate error (deferred): {_bf_err}",
+                                detail="non-fatal")
+                bear_gate_fired = False
+
         # Safety backstop: BEFORE we ask the strategy what to do, check
         # whether the existing position has tripped a hard rail (e.g.
         # unrealized loss past safety_max_loss_pct in params.json). If so,
@@ -261,7 +307,11 @@ def run(strategy_name: str) -> int:
                 bars_in_pos = safety_backstop.bars_since_entry(bars, entry_ts)
         bs_action = safety_backstop.check(backstop_pos, price, params,
                                           bars_since_entry=bars_in_pos)
-        if bs_action.fire:
+        if bear_gate_fired:
+            # L165 gate already synthesized the action above; the safety
+            # backstop and decide() are both skipped this tick.
+            pass
+        elif bs_action.fire:
             action = _SyntheticAction(
                 action="close",
                 symbol=symbol,
@@ -459,6 +509,14 @@ def run(strategy_name: str) -> int:
                 return 0
             # Sell strategy-attributed qty only (don't blow away other strategies' BTC).
             held_qty = position_state[action.symbol]["qty"]
+            if held_qty <= _QTY_EPS:
+                # Dust position — clear bookkeeping and skip the broker call.
+                db.clear_strategy_state(strategy_name, action.symbol)
+                db.log_decision(strategy_name, "hold", symbol=action.symbol,
+                                reason=f"close: dust qty {held_qty:.2e} <= eps; clearing")
+                db.log_run(strategy_name, "ok",
+                           int((time.monotonic() - t0) * 1000), detail="dust-close")
+                return 0
             order = client.submit_market_order(action.symbol, "sell", qty=held_qty)
             effective_side = "sell"
             # For attribution: record notional as cost-at-fill if we can.
@@ -472,6 +530,16 @@ def run(strategy_name: str) -> int:
             # STAY LONG. Submit by qty (never a notional sell) so the logged
             # `sell` row carries the precise qty the attribution layer will
             # subtract. Do NOT clear strategy state — the position persists.
+            # Final dust guard: never submit a sub-threshold sell qty (Alpaca
+            # rejects qty <= 1e-9 with HTTP 422). A residual ~1e-9 attributed
+            # qty can slip past the earlier checks; treat it as a no-op hold
+            # and let the dust-correction job zero it out.
+            if trim_qty is None or trim_qty <= _QTY_EPS:
+                db.log_decision(strategy_name, "hold", symbol=action.symbol,
+                                reason=f"trim dust qty {float(trim_qty or 0.0):.2e} <= eps; skip submit")
+                db.log_run(strategy_name, "ok",
+                           int((time.monotonic() - t0) * 1000), detail="dust-trim")
+                return 0
             order = client.submit_market_order(action.symbol, "sell",
                                                qty=trim_qty)
             effective_side = "sell"

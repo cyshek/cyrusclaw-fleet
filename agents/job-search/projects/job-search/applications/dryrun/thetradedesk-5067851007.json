@@ -1,0 +1,448 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/thetradedesk/jobs/5067851007",
+  "org": "thetradedesk",
+  "job_id": "5067851007",
+  "job_title": "Product Manager II",
+  "job_location": "New York",
+  "fetched_at": "2026-06-25T02:50:52Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/thetradedesk/jobs/5067851007?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 22,
+    "filled": 16,
+    "filled_needs_review": 1,
+    "declined": 5,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_11464324007",
+      "label": "Preferred Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_11464325007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_11464326007",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_11464327007",
+      "label": "Are you open to relocation?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11464328007",
+      "label": "Are you eligible to work in the country you are applying?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11464329007",
+      "label": "Will you now or in the future require a visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11464330007",
+      "label": "Are you at least 18 years old?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_11464331007",
+      "label": "Have you been employed with The Trade Desk?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "N/A",
+      "source": "worked_at_company_before (matched 'n/a' -> 'N/A')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "N/A",
+          "value": 21257130007
+        },
+        {
+          "label": "Former Employee",
+          "value": 21257131007
+        },
+        {
+          "label": "Current Contractor",
+          "value": 21257132007
+        },
+        {
+          "label": "Former Contractor",
+          "value": 21257133007
+        },
+        {
+          "label": "Former Intern",
+          "value": 21257134007
+        }
+      ]
+    },
+    {
+      "id": "question_11464332007",
+      "label": "(Required if you answered 'yes' to \"have you been employed with The Trade Desk?\") What was your TTD work email?",
+      "type": "input_text",
+      "required": false,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "question_11464333007",
+      "label": "(Required if you answered 'yes' to \"have you been employed with The Trade Desk?\") Who was your manager?",
+      "type": "input_text",
+      "required": false,
+      "value": "No",
+      "source": "common_form_answers (Cyrus 2026-05-07: always No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": null
+    },
+    {
+      "id": "question_11464334007",
+      "label": "How did you hear about The Trade Desk?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Third Party Job Board",
+      "source": "how_heard fuzzy 'job board' -> 'Third Party Job Board'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Events",
+          "value": 21257135007
+        },
+        {
+          "label": "General Awareness",
+          "value": 21257136007
+        },
+        {
+          "label": "Company Website",
+          "value": 21257137007
+        },
+        {
+          "label": "Social Media",
+          "value": 21257138007
+        },
+        {
+          "label": "Third Party Job Board",
+          "value": 21257139007
+        },
+        {
+          "label": "Press",
+          "value": 21257140007
+        },
+        {
+          "label": "Other",
+          "value": 21257141007
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4008515007",
+      "label": "Indicate Gender:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 4051021007
+        },
+        {
+          "label": "Female",
+          "value": 4051022007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4084800007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4008516007",
+      "label": "Indicate Ethnic group:",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Hispanic or Latino",
+          "value": 4051024007
+        },
+        {
+          "label": "Not Hispanic or Latino",
+          "value": 4051025007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4084801007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4008517007",
+      "label": "Indicate your Race:",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "White (Not Hispanic or Latino)",
+          "value": 4051027007
+        },
+        {
+          "label": "Black or African American (Not Hispanic or Latino)",
+          "value": 4051028007
+        },
+        {
+          "label": "Asian (Not Hispanic or Latino)",
+          "value": 4051029007
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+          "value": 4051030007
+        },
+        {
+          "label": "American Indian or Alaskan Native (Not Hispanic or Latino)",
+          "value": 4051031007
+        },
+        {
+          "label": "Two or more Races (Not Hispanic or Latino)",
+          "value": 4051032007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4084802007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4008544007",
+      "label": "If you believe you belong to any of the categories of protected Veterans, please indicate by checking the appropriate box below.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I identify as one or more of the classifications of protected Veterans listed below.",
+          "value": 4051184007
+        },
+        {
+          "label": "I am not a protected Veteran.",
+          "value": 4051185007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4084803007
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4008615007",
+      "label": "Please review Form CC-305 at the link above before checking one of the boxes below.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have had one in the past.",
+          "value": 4051608007
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past.",
+          "value": 4051609007
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 4084804007
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

@@ -1,0 +1,41 @@
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:apps='http://schemas.google.com/apps/2006'>
+  <title>Cyrus Job-Noise Filters</title>
+  <id>tag:mail.google.com,2008:filters:interview-prep-jobnoise</id>
+  <updated>2026-06-24T05:17:00Z</updated>
+  <author>
+    <name>interview-prep</name>
+    <email>cyshekari@gmail.com</email>
+  </author>
+
+  <!-- Filter 1: Application receipts ("thanks for applying", "we received your application", etc.)
+       Guarded so anything that ALSO smells like a real interview stays in the inbox. -->
+  <entry>
+    <category term='filter'></category>
+    <title>Job-Noise/Receipts</title>
+    <id>tag:mail.google.com,2008:filter:jobnoise-receipts</id>
+    <updated>2026-06-24T05:17:00Z</updated>
+    <content></content>
+    <apps:property name='subject' value='("thanks for applying" OR "thank you for applying" OR "thank you for your application" OR "we received your application" OR "we have received your application" OR "we&#39;ve received your application" OR "received your application" OR "we received your app" OR "we recieved your application" OR "recieved your application" OR "application received" OR "application recieved" OR "thank you for your interest" OR "thanks for your interest" OR "application has been received" OR "application is being reviewed" OR "application is complete" OR "successfully applied" OR "successfully submitted your application")'/>
+    <apps:property name='hasTheWord' value='-subject:(interview OR "phone screen" OR "video call" OR "next step" OR "next steps" OR schedule OR scheduling OR availability OR "available times" OR "interview confirmation" OR "interview confirmed" OR invite OR invitation OR "looking forward")'/>
+    <apps:property name='label' value='Job-Noise/Receipts'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='sizeOperator' value='s_sl'/>
+    <apps:property name='sizeUnit' value='s_smb'/>
+  </entry>
+
+  <!-- Filter 2: Security / verification / one-time codes -->
+  <entry>
+    <category term='filter'></category>
+    <title>Job-Noise/Codes</title>
+    <id>tag:mail.google.com,2008:filter:jobnoise-codes</id>
+    <updated>2026-06-24T05:17:00Z</updated>
+    <content></content>
+    <apps:property name='subject' value='("security code" OR "verification code" OR "one-time" OR "one time passcode" OR "your code is" OR "your verification" OR "2-step" OR "two-step" OR "confirm your email" OR "verify your email" OR "verify your account" OR "sign-in code" OR "login code" OR "access code")'/>
+    <apps:property name='hasTheWord' value='-subject:(interview OR "phone screen" OR schedule OR availability OR invitation)'/>
+    <apps:property name='label' value='Job-Noise/Codes'/>
+    <apps:property name='shouldArchive' value='true'/>
+    <apps:property name='sizeOperator' value='s_sl'/>
+    <apps:property name='sizeUnit' value='s_smb'/>
+  </entry>
+
+</feed>

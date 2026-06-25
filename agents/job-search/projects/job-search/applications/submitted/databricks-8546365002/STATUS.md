@@ -1,17 +1,9 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-21T09:01:20+00:00
+# SUBMITTED — Databricks (role_id 2614)
 
-role_id: 2614
-slug:    databricks-8546365002
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-databricks-8546365002.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/databricks-8546365002/Cyrus_Shekari_Resume_databricks_8546365002_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/databricks-8546365002/cover_answers.md
-wrapper: https://databricks.com/company/careers/open-positions/job?gh_jid=8546365002
-
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
-
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug databricks-8546365002
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).
+- **role:** AI Engineer - FDE (Forward Deployed Engineer) - U.S. Federal Sector
+- **status:** SUBMITTED
+- **submitted_by:** auto
+- **submitted_on:** 2026-06-24
+- **app_url:** https://job-boards.greenhouse.io/embed/job_app?for=databricks&token=8546365002
+- **confirmation:** https://job-boards.greenhouse.io/embed/job_app/confirmation?for=databricks&token=8546365002
+- **confirmation_text:** Thank you for applying to Databricks! Your application has been received.

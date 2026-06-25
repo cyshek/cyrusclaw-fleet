@@ -529,5 +529,65 @@ class TestRegressionBuyCloseUnchanged(_TrimTestBase):
         self.assertEqual(self._trades(), [])
 
 
+
+class TestDustQtyGuard(_TrimTestBase):
+    """Pins the dust-qty guard on the trim-submit path (runner.py).
+
+    Alpaca rejects a market sell with qty <= 1e-9 (HTTP 422 "qty must be
+    > 1e-9"). A residual ~1e-9 attributed qty (seen live on
+    breakout_xlk__mut_c382b1 before the dust-correction job fires) must
+    never reach the broker. The invariant pinned here: a sub-threshold
+    sell qty results in a no-op HOLD (no broker call, attribution + state
+    unchanged), never an order submission.
+    """
+
+    def test_legit_tiny_trim_above_eps_still_submits(self):
+        # held large, explicit qty = 2e-9 (> 1e-9) -> must STILL submit;
+        # the dust guard must not over-fire on a legit above-threshold qty.
+        self._seed_buy("tiny", "SYM", qty=5.0, price=100.0)
+        self._patch_strategy(
+            lambda *a, **k: _action("trim", "SYM", 0.0, "tiny trim", qty=2e-9),
+            params={"symbol": "SYM", "timeframe": "1Hour", "bar_limit": 10,
+                    "notional_usd": 50.0},
+        )
+        rc = runner.run("tiny")
+        self.assertEqual(rc, 0)
+        self.assertEqual(len(self.fake_client.submitted_orders), 1,
+                         "a trim qty ABOVE 1e-9 must still reach the broker")
+        self.assertAlmostEqual(
+            float(self.fake_client.submitted_orders[0]["qty"]), 2e-9, places=18)
+
+    def test_dust_sell_qty_never_reaches_broker(self):
+        # A sub-threshold (== eps) sell qty must NOT be submitted. The fake
+        # client raises if dust ever reaches it (mimicking the Alpaca 422),
+        # so a clean rc=0 with zero submitted orders proves the guard held.
+        self._seed_buy("dust", "SYM", qty=5.0, price=100.0)
+        self._seed_state("dust", "SYM", "running_max", 42.0)
+
+        orig_submit = self.fake_client.submit_market_order
+
+        def _strict_submit(symbol, side, *, qty=None, notional_usd=None):
+            dust = qty is not None and float(qty) <= 1e-9
+            if dust: raise AssertionError(
+                f"422-equivalent: dust qty {float(qty):.2e} reached broker")
+            return orig_submit(symbol, side, qty=qty, notional_usd=notional_usd)
+
+        self.fake_client.submit_market_order = _strict_submit
+
+        self._patch_strategy(
+            lambda *a, **k: _action("trim", "SYM", 0.0, "dust trim", qty=1e-9),
+            params={"symbol": "SYM", "timeframe": "1Hour", "bar_limit": 10,
+                    "notional_usd": 50.0},
+        )
+        rc = runner.run("dust")
+        self.assertEqual(rc, 0)
+        self.assertEqual(self.fake_client.submitted_orders, [],
+                         "dust sell qty must never reach the broker")
+        self.assertAlmostEqual(self._attributed_qty("dust", "SYM"), 5.0,
+                               places=6)
+        self.assertEqual(db.get_strategy_state("dust", "SYM").get("running_max"),
+                         42.0, "dust no-op must not flatten/clear state")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. **Scaled** Azure's recovery validation program from a 2-person operation into a platformized system, standardizing SOPs and workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned drill execution to a fully scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation workflow adopted org-wide.
+4. Served as the **go-to subject-matter expert** across 14 cross-org recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring precise dependency mapping.
+5. Built an internal **AI agent** to automate drill planning workflows, restructuring end-to-end planning cycles to cut cycle time by 39% and increase drill throughput capacity by 21% without adding headcount.
+6. Authored and maintained technical documentation and SOPs for resilience operations, creating the primary reference used by partner engineering and product teams to onboard new workflows and tool features at scale.
+7. Rolled out new mapping tools and validation features in coordination with Engineering and Product partners, running structured pilots, gathering stakeholder feedback, and iterating workflows to hit **production-readiness targets** on schedule.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-powered code generation workflows, conducting user demos and training sessions that built utilization across 14 key teams and saved 37 engineering hours monthly by standardizing a new tool-enabled process.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ stakeholder interviews** with Azure service teams, surfacing critical workflow gaps and translating findings into prioritized feature requirements for engineering.
+3. Improved **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting average lookup time by 83% and enabling faster, more accurate cross-team knowledge access.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating dependency resolution across 140+ teams with competing operational priorities.
+2. Identified **81 hours of manual toil** per region launch through structured discovery with 20+ service teams, then built and owned a process-improvement roadmap end-to-end to automate critical paths and eliminate recurring inefficiencies at scale.
+3. Engineered a **Power BI dashboard** to track operational toil across 140+ teams, giving leadership data-driven visibility to target automation gaps, justify investments, and prioritize high-impact workflow improvements across the org.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and maintaining clear technical documentation to align IT, Operations, and Engineering.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing the backlog** to resolve 40+ high-priority tickets, stabilize the developer intake process, and keep the migration program on schedule across cross-functional teams.
+3. Drove stakeholder alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable, scalable workflow for future fleet rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end operations and managing the full scoping and invoicing lifecycle for 200+ monthly proposals, redesigning the CRM workflow to eliminate bottlenecks and improve process efficiency at scale.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a data-informed digital-first go-to-market strategy, optimizing the website and Google Business profile based on performance analytics.
+3. Improved leadership pricing decisions by conducting a **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through a systematic, data-driven review of cost and revenue patterns across job types.
+
+## Notes from the rewriter
+- JD term 'SOPs' woven into microsoft_ft bullet#6 — framing documentation work as 'primary reference SOPs' directly mirrors Waymo's requirement to 'create and maintain clear technical documentation as primary map build SOPs'.
+- JD term 'go-to point of contact for stakeholders' woven into microsoft_ft bullet#4 — explicitly calls Cyrus the 'go-to subject-matter expert' across cross-org executions, mirroring Waymo's 'serve as a go-to point of contact' language.
+- JD phrase 'test and roll out new tools, features, and workflows in coordination with Engineering and Product partners' directly echoed in microsoft_ft bullet#7 — substance describes piloting, gathering feedback, and iterating to production-readiness.
+- JD term 'process-focused mindset and improving inefficient processes' reflected in microsoft_2022 bullet#2 — 'owned a process-improvement roadmap end-to-end' and '81 hours of manual toil' framing mirrors Waymo's process improvement preference.
+- JD term 'data-driven perspective' and SQL/analytics preference addressed by surfacing SQL in skills_priority top slot and Power BI dashboard bullet in microsoft_2022, plus financial profitability analysis in pro_painters to show systematic data use.
+

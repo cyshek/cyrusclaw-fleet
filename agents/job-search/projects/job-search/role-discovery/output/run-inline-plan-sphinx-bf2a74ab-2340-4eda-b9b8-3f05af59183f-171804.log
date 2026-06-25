@@ -1,0 +1,280 @@
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: sleep
+[runner] step 7: browser.act.evaluate
+[runner] step 8: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 4 field(s) ['afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name', 'afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email', 'afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c', 'afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] step 9: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2212
+[runner] captcha v3 solved in 0.1s, token len=2212
+[runner] step 10: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=4 ['11bd0e__systemfield_name', '1bd0e__systemfield_email', '0-444a-8d83-454909bd231c', '3-4a4d-ba33-2be1df0aca3a'] missing=0
+[runner] reassert-text pass 2: repaired=4 ['11bd0e__systemfield_name', '1bd0e__systemfield_email', '0-444a-8d83-454909bd231c', '3-4a4d-ba33-2be1df0aca3a'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 4 field(s) ['11bd0e__systemfield_name', '1bd0e__systemfield_email', '0-444a-8d83-454909bd231c', '3-4a4d-ba33-2be1df0aca3a']
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] reassert-text pass 1: repaired=0 [] missing=4
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/1 committed
+[runner] last-ms radio detail: [{'n': '8-4f95-9788-2895f1c72075', 'ok': False}]
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "sphinx-bf2a74ab-2340-4eda-b9b8-3f05af59183f",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/sphinx/bf2a74ab-2340-4eda-b9b8-3f05af59183f/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+            "dom_id": "06ea3232-e0a0-444a-8d83-454909bd231c",
+            "tag": "input",
+            "type": "url",
+            "current_value": "",
+            "want_len": 25
+          },
+          {
+            "fid": "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a",
+            "dom_id": "7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a",
+            "tag": "input",
+            "type": "url",
+            "current_value": "",
+            "want_len": 33
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+            "dom_id": "06ea3232-e0a0-444a-8d83-454909bd231c",
+            "len": 25,
+            "post_value": "https://github.com/cyshek"
+          },
+          {
+            "id": "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a",
+            "dom_id": "7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 4,
+      "fields": [
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "afcde989-f32e-4609-b4f5-fb33b911bd0e_5bbc7f2f-9708-4f95-9788-2895f1c72075",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 297
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "sleep"
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 3,
+        "text_filled": 2,
+        "radios_groups": 0,
+        "radios_checked": 0,
+        "checkboxes": 1,
+        "checkboxes_checked": 1,
+        "file_inputs": 3,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 1,
+        "yesno_groups": 1
+      }
+    },
+    {
+      "i": 8,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-sphinx_bf2a74ab_v2.pdf"
+    },
+    {
+      "i": 8,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 8,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 9,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 127,
+      "token_len": 2212,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 10,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+        "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_name",
+          "afcde989-f32e-4609-b4f5-fb33b911bd0e__systemfield_email",
+          "afcde989-f32e-4609-b4f5-fb33b911bd0e_06ea3232-e0a0-444a-8d83-454909bd231c",
+          "afcde989-f32e-4609-b4f5-fb33b911bd0e_7ae53f7b-9f93-4a4d-ba33-2be1df0aca3a"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Forward Deployed Engineer LocationSan FranciscoEmployment TypeFull timeLocation TypeOn-siteDepartmentEngineeringCompensation$120K \u2013 $200K \u2022 Offers EquityOverviewApplicationSuccessYour application was successfully submitted. We'll contact you if there are next steps.Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"77b27fb1-ec28-4f58-a337-ef8e05f9f962\",\"name\":\"Sphinx\",\"publicWebsite\":\"https://sphinxlabs.ai\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"Sphinx\",\"activeFeatureFlags\":[\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"EnhancedMobileCandidateFloatingButtons\",\"NewSchedulingActivityRescheduleActions\",\"InterviewLocationTypeReportingField\",\"UseRTEOverlaysManager\",\"CoreOrganizationIssueNotifyOnNewCauseOnly\",\"CandidateSocialLinksWriteToTable\",\"OverdueFollowupOptimizations\",\"RejectDeepPaginationOnIncrementalSync\",\"MigrateGoogleRecaptchaAutomatedLegal\",\"CoreMultipleBrandsEnableUnbrandedSurveys\",\"ClickhouseCandidateExperienceSurveySubmission\",\"WorkdayHRISSetJobTitleBuiltInCustomField\",\"WebhooksUseEncryptedSigningSecret\",\"CoreMultipleBrandsJobCompensationSettings\",\"EducationHistoryRelatedFieldsets\",\"PublishAICriteriaEvents\",",
+  "classify": "submitted"
+}

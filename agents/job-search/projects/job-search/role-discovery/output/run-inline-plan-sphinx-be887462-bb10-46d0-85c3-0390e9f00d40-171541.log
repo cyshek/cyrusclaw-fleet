@@ -1,0 +1,262 @@
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: sleep
+[runner] step 7: browser.act.evaluate
+[runner] step 8: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 3 field(s) ['244263b7-b26a-443c-9720-0815368cd13c__systemfield_name', '244263b7-b26a-443c-9720-0815368cd13c__systemfield_email', '244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] step 9: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2233
+[runner] captcha v3 solved in 0.1s, token len=2233
+[runner] step 10: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=3 ['8cd13c__systemfield_name', 'cd13c__systemfield_email', 'b-47f1-b278-90a971e6fbc9'] missing=0
+[runner] reassert-text pass 2: repaired=3 ['8cd13c__systemfield_name', 'cd13c__systemfield_email', 'b-47f1-b278-90a971e6fbc9'] missing=0
+[runner] PRE-SUBMIT chain_p8 re-assert: re-won 3 field(s) ['8cd13c__systemfield_name', 'cd13c__systemfield_email', 'b-47f1-b278-90a971e6fbc9']
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] reassert-text pass 1: repaired=0 [] missing=3
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/1 committed
+[runner] last-ms radio detail: [{'n': '2-4313-bd81-20cf7d2a0a0b', 'ok': False}]
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "sphinx-be887462-bb10-46d0-85c3-0390e9f00d40",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/sphinx/be887462-bb10-46d0-85c3-0390e9f00d40/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9",
+            "dom_id": "fcab8d81-d6eb-47f1-b278-90a971e6fbc9",
+            "tag": "input",
+            "type": "url",
+            "current_value": "",
+            "want_len": 33
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9",
+            "dom_id": "fcab8d81-d6eb-47f1-b278-90a971e6fbc9",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 3,
+      "fields": [
+        "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+        "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+        "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "244263b7-b26a-443c-9720-0815368cd13c_94abe77a-a622-4313-bd81-20cf7d2a0a0b",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 297
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "sleep"
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 3,
+        "text_filled": 2,
+        "radios_groups": 0,
+        "radios_checked": 0,
+        "checkboxes": 1,
+        "checkboxes_checked": 1,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 1,
+        "yesno_groups": 1
+      }
+    },
+    {
+      "i": 8,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-sphinx_be887462_v2.pdf"
+    },
+    {
+      "i": 8,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 8,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+        "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+        "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 9,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 124,
+      "token_len": 2233,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 10,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": [
+        "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+        "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+        "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9"
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+          "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+          "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Compliance Solutions Architect LocationSan FranciscoEmployment TypeFull timeLocation TypeOn-siteDepartmentProductOverviewApplicationSuccessYour application was successfully submitted. We'll contact you if there are next steps.Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"77b27fb1-ec28-4f58-a337-ef8e05f9f962\",\"name\":\"Sphinx\",\"publicWebsite\":\"https://sphinxlabs.ai\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"Sphinx\",\"activeFeatureFlags\":[\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"EnhancedMobileCandidateFloatingButtons\",\"NewSchedulingActivityRescheduleActions\",\"InterviewLocationTypeReportingField\",\"UseRTEOverlaysManager\",\"CoreOrganizationIssueNotifyOnNewCauseOnly\",\"CandidateSocialLinksWriteToTable\",\"OverdueFollowupOptimizations\",\"RejectDeepPaginationOnIncrementalSync\",\"MigrateGoogleRecaptchaAutomatedLegal\",\"CoreMultipleBrandsEnableUnbrandedSurveys\",\"ClickhouseCandidateExperienceSurveySubmission\",\"WorkdayHRISSetJobTitleBuiltInCustomField\",\"WebhooksUseEncryptedSigningSecret\",\"CoreMultipleBrandsJobCompensationSettings\",\"EducationHistoryRelatedFieldsets\",\"PublishAICriteriaEvents\",\"NewReportBuilderAllowVersionSwitching\",",
+  "classify": "submitted"
+}

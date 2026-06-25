@@ -1,0 +1,239 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/tennr/f027960f-b8ed-49cd-8313-11f05523e90d",
+  "org": "tennr",
+  "job_id": "f027960f-b8ed-49cd-8313-11f05523e90d",
+  "job_title": "Associate Sales Engineer",
+  "job_location": "New York City Office",
+  "fetched_at": "2026-06-25T05:25:18Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_resume",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_name",
+      "label": "Full Legal Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_name",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_e218580a-ebad-40f6-bc63-96d432922050",
+      "label": "Preferred Name or Nickname",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_e218580a-ebad-40f6-bc63-96d432922050",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_email",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_d3351f51-58ab-4d7b-b91d-780d150dd0e8",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_d3351f51-58ab-4d7b-b91d-780d150dd0e8",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630__systemfield_location",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_bdf5342c-4330-4848-a3c2-bb4aa7405fe4",
+      "label": "This is an in-person position. If  you are not currently living in the NYC metropolitan area, are you willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_bdf5342c-4330-4848-a3c2-bb4aa7405fe4",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_322a083b-ead8-44a4-b7c5-247e977bce85",
+      "label": "Will you now or in the future require Tennr to sponsor or extend a work visa or employment authorization? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_322a083b-ead8-44a4-b7c5-247e977bce85",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_2e685814-93b5-4f7f-9b9c-970acdbac5b0",
+      "label": "Linkedin Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_2e685814-93b5-4f7f-9b9c-970acdbac5b0",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_3ea6687e-d3f7-445a-be0c-4a0d07ec5071",
+      "label": "How did you first hear about this opportunity? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Company Website/Careers Page",
+          "value": "Company Website/Careers Page"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Job Board (Indeed, ZipRecruiter, BuiltIn, etc.)",
+          "value": "Job Board (Indeed, ZipRecruiter, BuiltIn, etc.)"
+        },
+        {
+          "label": "Employee Referral",
+          "value": "Employee Referral"
+        },
+        {
+          "label": "Recruiter Outreach (email, or LinkedIn)",
+          "value": "Recruiter Outreach (email, or LinkedIn)"
+        },
+        {
+          "label": "Event / Conference / Networking",
+          "value": "Event / Conference / Networking"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_3ea6687e-d3f7-445a-be0c-4a0d07ec5071",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_f1c8238e-b1e7-41b3-a093-00ee3ca76c25",
+      "label": "If you were referred by a current employee, who referred you? ",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "common_form_answers.referred_by_employee (null -> blank)",
+      "status": "filled",
+      "matched_rule": "referred_by",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_f1c8238e-b1e7-41b3-a093-00ee3ca76c25",
+      "section": "Application"
+    },
+    {
+      "id": "553fdc40-2b99-4a47-82ad-3ded249f7630_d3d78412-6d7c-4df8-b847-d05307ab189b",
+      "label": "What are your salary expectations for this role?",
+      "type": "input_text",
+      "required": true,
+      "value": "$160,000 - $200,000 base",
+      "source": "comp_seeking: standard range for PM/TPM/SE roles",
+      "status": "filled",
+      "matched_rule": "comp_seeking",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "553fdc40-2b99-4a47-82ad-3ded249f7630_d3d78412-6d7c-4df8-b847-d05307ab189b",
+      "section": "Application"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

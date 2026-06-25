@@ -6,4 +6,4 @@ Cyrus Shekari
 
 ## Where are you physically based?
 
-Kirkland, WA (Seattle area)
+Kirkland, WA (Greater Seattle area).

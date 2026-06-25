@@ -1,0 +1,98 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sphinx/be887462-bb10-46d0-85c3-0390e9f00d40",
+  "org": "sphinx",
+  "job_id": "be887462-bb10-46d0-85c3-0390e9f00d40",
+  "job_title": "Compliance Solutions Architect",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-24T16:54:42Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 5,
+    "filled": 5,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_name"
+    },
+    {
+      "id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_email"
+    },
+    {
+      "id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "244263b7-b26a-443c-9720-0815368cd13c__systemfield_resume"
+    },
+    {
+      "id": "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "244263b7-b26a-443c-9720-0815368cd13c_fcab8d81-d6eb-47f1-b278-90a971e6fbc9"
+    },
+    {
+      "id": "244263b7-b26a-443c-9720-0815368cd13c_94abe77a-a622-4313-bd81-20cf7d2a0a0b",
+      "label": "Are you based in the Bay Area or willing to re-locate?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "244263b7-b26a-443c-9720-0815368cd13c_94abe77a-a622-4313-bd81-20cf7d2a0a0b"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -102,18 +102,37 @@ def decide(market_state: dict, position_state: dict, params: dict) -> Action:
 
     macd_val, signal_val, histogram = _macd(cs, fast, slow, signal)
 
+    # Cross-detection bookkeeping (prev MACD/signal) lives in the CROSS-FLAT
+    # persistent state (market_state["strategy_state"]), NOT position_state.
+    # Rationale (L134 fix): the entry signal is a MACD/signal crossover that
+    # must be detected while the strategy is FLAT, but the live runner only
+    # persists position_state[symbol] when a position exists -> top-level
+    # position_state keys were dropped every tick in live, so prev always
+    # equalled the just-written current value and the cross was NEVER
+    # detected (strategy could not enter live). strategy_state is loaded and
+    # saved by the runner every tick regardless of position (same mechanism
+    # allocator_blend uses, confirmed working live), so prev survives across
+    # flat ticks. Backtest threads the same market_state["strategy_state"]
+    # dict across bars, so behavior is identical in both paths.
+    state = market_state.get("strategy_state")
+    if not isinstance(state, dict):
+        state = {}
+    market_state["strategy_state"] = state
+
     if macd_val is None:
-        return Action("hold", symbol, reason=f"not enough bars for MACD ({len(cs)})")
+        return Action("hold", symbol,
+                      reason=f"not enough bars for MACD ({len(cs)})")
 
     pos = position_state.get(symbol)
     holding = float(pos.get("qty", 0)) if pos else 0.0
 
-    prev_macd = position_state.get("_macd_prev_macd")
-    prev_signal = position_state.get("_macd_prev_signal")
+    prev_macd = state.get("_macd_prev_macd")
+    prev_signal = state.get("_macd_prev_signal")
 
-    # Update stored prev values BEFORE return so next tick sees them
-    position_state["_macd_prev_macd"] = macd_val
-    position_state["_macd_prev_signal"] = signal_val
+    # Update stored prev values BEFORE return so next tick sees them.
+    # Written into the cross-flat persistent state so they survive while flat.
+    state["_macd_prev_macd"] = macd_val
+    state["_macd_prev_signal"] = signal_val
 
     if holding == 0:
         # Entry: MACD crosses ABOVE signal AND MACD > 0 (uptrend confirmed)

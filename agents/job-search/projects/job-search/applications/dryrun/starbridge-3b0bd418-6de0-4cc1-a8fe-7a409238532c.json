@@ -5,21 +5,21 @@
   "job_id": "3b0bd418-6de0-4cc1-a8fe-7a409238532c",
   "job_title": "Customer Solutions Architect",
   "job_location": "New York City",
-  "fetched_at": "2026-06-09T00:06:14Z",
+  "fetched_at": "2026-06-24T23:21:06Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 12,
-    "filled": 9,
+    "filled": 11,
     "filled_needs_review": 0,
     "declined": 0,
-    "needs_essay": 2,
+    "needs_essay": 0,
     "unresolved": 1,
     "blockers": 0
   },
   "fields": [
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_name",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_name"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_name"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_email",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +42,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_email"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_email"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_de52308a-514a-44f4-ba67-9826a4116252",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_de52308a-514a-44f4-ba67-9826a4116252",
       "label": "Phone Number",
       "type": "input_text",
       "required": true,
@@ -55,10 +55,10 @@
       "matched_rule": "phone",
       "options": null,
       "_ashby_type": "Phone",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_de52308a-514a-44f4-ba67-9826a4116252"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_de52308a-514a-44f4-ba67-9826a4116252"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_location",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_location",
       "label": "Location",
       "type": "input_text",
       "required": true,
@@ -68,10 +68,10 @@
       "matched_rule": "city_state",
       "options": null,
       "_ashby_type": "Location",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_location"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_location"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_resume",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_resume",
       "label": "Resume/CV",
       "type": "input_file",
       "required": true,
@@ -81,10 +81,10 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634__systemfield_resume"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f__systemfield_resume"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_ade7349d-5fcd-4b78-a0da-8087052ef9ea",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_ade7349d-5fcd-4b78-a0da-8087052ef9ea",
       "label": "LinkedIn",
       "type": "input_text",
       "required": true,
@@ -94,23 +94,23 @@
       "matched_rule": "linkedin",
       "options": null,
       "_ashby_type": "Url",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_ade7349d-5fcd-4b78-a0da-8087052ef9ea"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_ade7349d-5fcd-4b78-a0da-8087052ef9ea"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_1f4878bb-ed24-4f7e-949e-1ed7727bc378",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_1f4878bb-ed24-4f7e-949e-1ed7727bc378",
       "label": "What exceptional work have you done?",
       "type": "textarea",
       "required": true,
-      "value": "",
-      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
-      "status": "needs_essay",
-      "matched_rule": null,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_1f4878bb-ed24-4f7e-949e-1ed7727bc378"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_1f4878bb-ed24-4f7e-949e-1ed7727bc378"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_b562a379-ebb2-4f9d-887c-03305a6d3ea1",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_b562a379-ebb2-4f9d-887c-03305a6d3ea1",
       "label": "Are you based in NYC / willing to relocate to NYC?",
       "type": "multi_value_single_select",
       "required": true,
@@ -129,10 +129,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_b562a379-ebb2-4f9d-887c-03305a6d3ea1"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_b562a379-ebb2-4f9d-887c-03305a6d3ea1"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_6855d85b-eecb-4567-be8d-64c673998a7a",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_6855d85b-eecb-4567-be8d-64c673998a7a",
       "label": "Are you able to work onsite five days a week at our Chelsea Piers office?",
       "type": "multi_value_single_select",
       "required": true,
@@ -151,10 +151,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_6855d85b-eecb-4567-be8d-64c673998a7a"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_6855d85b-eecb-4567-be8d-64c673998a7a"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_218c6974-3f3f-4844-8c3f-1cb87f3021b8",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_218c6974-3f3f-4844-8c3f-1cb87f3021b8",
       "label": "Do you require any form of authorization to work legally in the United States?",
       "type": "multi_value_single_select",
       "required": true,
@@ -173,10 +173,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_218c6974-3f3f-4844-8c3f-1cb87f3021b8"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_218c6974-3f3f-4844-8c3f-1cb87f3021b8"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_bddc8b00-8978-4308-ace9-5ac3ac98dbd5",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_bddc8b00-8978-4308-ace9-5ac3ac98dbd5",
       "label": "If yes, authorization is required, please provide more detail below.",
       "type": "input_text",
       "required": false,
@@ -186,25 +186,25 @@
       "matched_rule": null,
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_bddc8b00-8978-4308-ace9-5ac3ac98dbd5"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_bddc8b00-8978-4308-ace9-5ac3ac98dbd5"
     },
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_da61105c-e586-4470-bc3e-b005aec13ed6",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_da61105c-e586-4470-bc3e-b005aec13ed6",
       "label": "What's your average ACV and portfolio size (number of accounts) over the last 2-3 years?",
       "type": "input_text",
       "required": true,
-      "value": "",
-      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
-      "status": "needs_essay",
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.website_required_fallback (required portfolio -> LinkedIn)",
+      "status": "filled",
       "matched_rule": "portfolio",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_da61105c-e586-4470-bc3e-b005aec13ed6"
+      "_ashby_id": "57db6182-cefd-4d6e-ac90-d5b52726057f_da61105c-e586-4470-bc3e-b005aec13ed6"
     }
   ],
   "unresolved": [
     {
-      "id": "d4f424ea-49f2-4bc5-b86d-b1f634300634_bddc8b00-8978-4308-ace9-5ac3ac98dbd5",
+      "id": "57db6182-cefd-4d6e-ac90-d5b52726057f_bddc8b00-8978-4308-ace9-5ac3ac98dbd5",
       "label": "If yes, authorization is required, please provide more detail below.",
       "required": false,
       "reason": "no LABEL_RULES match for label='If yes, authorization is required, please provide more detail below.'"

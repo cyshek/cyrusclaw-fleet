@@ -6,8 +6,6 @@ Cyrus Shekari
 
 ## Please write a short note on a project you're proud of:
 
-At Microsoft, I led the 0-to-1 development of an internal Resilience Automation Platform for Azure. The starting point was a 2-person manual operation running resilience drills through spreadsheets and one-off coordination. I defined the product requirements, scoped the self-service scheduling capabilities, and pushed it through to a developer-friendly platform that now sustains 45+ annual drills and has driven $14M+ in business impact across enterprise customers like Databricks, Walmart, SAP, and NetApp.
+At Microsoft, I built an internal AI agent to automate drill planning workflows for Azure's resilience program. Before it existed, planning a single recovery drill meant a lot of manual coordination across teams, pulling people into prep work that had nothing to do with the actual test. I scoped the problem, prototyped the agent using LLM-powered tooling, and iterated until it was handling the repetitive planning cycles end-to-end. The result was a 39% reduction in planning cycle time and a 21% increase in drill capacity, without adding headcount or pulling engineers off core product work.
 
-What made it challenging was the ambiguity. There was no playbook for this, no roadmap handed down. I had to do customer discovery with the engineering and field teams, figure out what to build first, cut scope aggressively, and ship something real - not a deck. The operational toil dropped 30% once teams could self-serve instead of waiting on manual coordination.
-
-I'm proud of it because it went from nothing to something developers actually use every day, and the impact was measurable. That's the standard I hold myself to.
+What I'm most proud of isn't the metric, though. It's that I built the thing myself first. I didn't hand a spec to engineering and wait. I got it in front of users, found the gaps, fixed them, and only then thought about how to scale it. That loop, from idea to prototype to real usage, is the part of the work I find most satisfying. It's also the approach I'd bring to every project at Cursor.

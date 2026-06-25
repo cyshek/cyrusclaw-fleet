@@ -1,9 +1,8 @@
-PREP-READY — 2026-06-04T11:14:57+00:00
+SUBMITTED — 2026-06-24T18:00:00+00:00
 
-role_id: 2680
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-verkada-5148270007.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/verkada-5148270007/Cyrus_Shekari_Resume_verkada_5148270007_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/verkada-5148270007/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+role: Verkada — Enterprise Solutions Engineer, West Coast
+submitted_by: auto
+confirmation_url: https://job-boards.greenhouse.io/verkada/jobs/5148270007/confirmation
+confirmation_text: Thank you for applying.
+resume_attached: true
+runner: _gh_submit.py

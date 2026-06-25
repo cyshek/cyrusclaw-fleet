@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_gh_submit.py", line 1356, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_gh_submit.py", line 802, in main
+    answers = json.load(open(sys.argv[sys.argv.index('--answers')+1]))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '{"question_8479763006":{"type":"select","value":"I currently do not live near an office but am willing to relocate if offered the position."},"question_8459434006":{"type":"select","value":"Agree"}}'

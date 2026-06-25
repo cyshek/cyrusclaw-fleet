@@ -1,0 +1,668 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/nuro/jobs/7684553",
+  "org": "nuro",
+  "job_id": "7684553",
+  "job_title": "Autonomous Vehicle Operator, Santa Clara (PM Shift, 12-Month Duration)",
+  "job_location": "California - Santa Clara",
+  "fetched_at": "2026-06-25T06:06:40Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/nuro/jobs/7684553?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 31,
+    "filled": 17,
+    "filled_needs_review": 1,
+    "declined": 4,
+    "unresolved": 9,
+    "blockers": 9
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_64152599",
+      "label": "If applying in California, do you have a current California driver's license?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "common_form_answers.valid_drivers_license",
+      "status": "filled",
+      "matched_rule": "drivers_license",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152600",
+      "label": "To meet this role’s minimum requirements, you must have held a valid U.S. driver’s license for at least three (3) consecutive years immediately prior to your start date. Have you held a valid U.S. driver’s license continuously (without suspension or revocation) for the last 3 years as of your anticipated start date?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "earliest_start: no recognized option among ['Yes', 'No']",
+      "status": "unresolved",
+      "matched_rule": "earliest_start",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152601",
+      "label": "If you answered \"Yes\" to the above question, what month and year were you first issued a U.S. driver’s license? (MM/YYYY) Note: Enter the date you were first licensed, which may be earlier than the issue date on your current driver’s license.",
+      "type": "input_text",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you answered \"Yes\" to the above question, what month and year were you first issued a U.S. driver’s license? (MM/YYYY) Note: Enter the date you were first licensed, which may be earlier than the issue date on your current driver’s license.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_64152602",
+      "label": "Why are you excited to work at Nuro as an Autonomous Vehicle Operator?",
+      "type": "textarea",
+      "required": false,
+      "value": "I'm excited about the opportunity to work at Nuro because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Nuro is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Nuro while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Nuro aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Nuro')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_64152603",
+      "label": "This role starts at $27/hour, plus full benefits (medical, dental, vision, daily meal reimbursement, PTO + company holidays). Does this align with your pay expectations?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation | NOTE: 'Open to discuss' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "compensation",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152604",
+      "label": "This is a temporary full-time position with expected end date 12 months after hire. Do you understand and can you confirm that you expect to be able to work at Nuro for that period?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='This is a temporary full-time position with expected end date 12 months after hire. Do you understand and can you confirm that you expect to be able to work at Nuro for that period?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152605",
+      "label": "This position requires daily on-site presence in Santa Clara, CA 95054. Are you able to meet this requirement?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152606[]",
+      "label": "Which of the following shift(s) are you available for?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Which of the following shift(s) are you available for?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Afternoon/Evening: 2:00pm-10:30pm PT (Fri - Tues)",
+          "value": 653729069
+        }
+      ]
+    },
+    {
+      "id": "question_64152607",
+      "label": "This position requires sitting for long periods of time, both overseeing autonomous operations and/or manually driving a vehicle for up to 8 hours per day. Are you able to meet these job requirements?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='This position requires sitting for long periods of time, both overseeing autonomous operations and/or manually driving a vehicle for up to 8 hours per day. Are you able to meet these job requirements?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152608",
+      "label": "Do you currently own a personal smartphone with a data plan, or are you willing to obtain one for required work-related communication and applications (e.g., Slack, Workday timecard), understanding that the company provides a monthly stipend to offset your costs?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you currently own a personal smartphone with a data plan, or are you willing to obtain one for required work-related communication and applications (e.g., Slack, Workday timecard), understanding that the company provides a monthly stipend to offset your costs?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152609",
+      "label": "I acknowledge I have read and understand the following information:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='I acknowledge I have read and understand the following information:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152610",
+      "label": "Would you be willing to take a drug and background test?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Would you be willing to take a drug and background test?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152611",
+      "label": "Are you a previous Nuro employee or contractor?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Are you a previous Nuro employee or contractor?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152612",
+      "label": "Are you authorized to work in the country in which you are applying?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_64152613",
+      "label": "Will you now or in the future require sponsorship for employment in the country in which you are applying?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_64152600",
+      "label": "To meet this role’s minimum requirements, you must have held a valid U.S. driver’s license for at least three (3) consecutive years immediately prior to your start date. Have you held a valid U.S. driver’s license continuously (without suspension or revocation) for the last 3 years as of your anticipated start date?",
+      "required": true,
+      "reason": "earliest_start: no recognized option among ['Yes', 'No']"
+    },
+    {
+      "id": "question_64152601",
+      "label": "If you answered \"Yes\" to the above question, what month and year were you first issued a U.S. driver’s license? (MM/YYYY) Note: Enter the date you were first licensed, which may be earlier than the issue date on your current driver’s license.",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='If you answered \"Yes\" to the above question, what month and year were you first issued a U.S. driver’s license? (MM/YYYY) Note: Enter the date you were first licensed, which may be earlier than the issue date on your current driver’s license.'"
+    },
+    {
+      "id": "question_64152604",
+      "label": "This is a temporary full-time position with expected end date 12 months after hire. Do you understand and can you confirm that you expect to be able to work at Nuro for that period?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='This is a temporary full-time position with expected end date 12 months after hire. Do you understand and can you confirm that you expect to be able to work at Nuro for that period?'"
+    },
+    {
+      "id": "question_64152606[]",
+      "label": "Which of the following shift(s) are you available for?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Which of the following shift(s) are you available for?'"
+    },
+    {
+      "id": "question_64152607",
+      "label": "This position requires sitting for long periods of time, both overseeing autonomous operations and/or manually driving a vehicle for up to 8 hours per day. Are you able to meet these job requirements?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='This position requires sitting for long periods of time, both overseeing autonomous operations and/or manually driving a vehicle for up to 8 hours per day. Are you able to meet these job requirements?'"
+    },
+    {
+      "id": "question_64152608",
+      "label": "Do you currently own a personal smartphone with a data plan, or are you willing to obtain one for required work-related communication and applications (e.g., Slack, Workday timecard), understanding that the company provides a monthly stipend to offset your costs?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you currently own a personal smartphone with a data plan, or are you willing to obtain one for required work-related communication and applications (e.g., Slack, Workday timecard), understanding that the company provides a monthly stipend to offset your costs?'"
+    },
+    {
+      "id": "question_64152609",
+      "label": "I acknowledge I have read and understand the following information:",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='I acknowledge I have read and understand the following information:'"
+    },
+    {
+      "id": "question_64152610",
+      "label": "Would you be willing to take a drug and background test?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Would you be willing to take a drug and background test?'"
+    },
+    {
+      "id": "question_64152611",
+      "label": "Are you a previous Nuro employee or contractor?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you a previous Nuro employee or contractor?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_64152600",
+      "label": "To meet this role’s minimum requirements, you must have held a valid U.S. driver’s license for at least three (3) consecutive years immediately prior to your start date. Have you held a valid U.S. driver’s license continuously (without suspension or revocation) for the last 3 years as of your anticipated start date?",
+      "reason": "earliest_start: no recognized option among ['Yes', 'No']"
+    },
+    {
+      "id": "question_64152601",
+      "label": "If you answered \"Yes\" to the above question, what month and year were you first issued a U.S. driver’s license? (MM/YYYY) Note: Enter the date you were first licensed, which may be earlier than the issue date on your current driver’s license.",
+      "reason": "no LABEL_RULES match for label='If you answered \"Yes\" to the above question, what month and year were you first issued a U.S. driver’s license? (MM/YYYY) Note: Enter the date you were first licensed, which may be earlier than the issue date on your current driver’s license.'"
+    },
+    {
+      "id": "question_64152604",
+      "label": "This is a temporary full-time position with expected end date 12 months after hire. Do you understand and can you confirm that you expect to be able to work at Nuro for that period?",
+      "reason": "no LABEL_RULES match for label='This is a temporary full-time position with expected end date 12 months after hire. Do you understand and can you confirm that you expect to be able to work at Nuro for that period?'"
+    },
+    {
+      "id": "question_64152606[]",
+      "label": "Which of the following shift(s) are you available for?",
+      "reason": "no LABEL_RULES match for label='Which of the following shift(s) are you available for?'"
+    },
+    {
+      "id": "question_64152607",
+      "label": "This position requires sitting for long periods of time, both overseeing autonomous operations and/or manually driving a vehicle for up to 8 hours per day. Are you able to meet these job requirements?",
+      "reason": "no LABEL_RULES match for label='This position requires sitting for long periods of time, both overseeing autonomous operations and/or manually driving a vehicle for up to 8 hours per day. Are you able to meet these job requirements?'"
+    },
+    {
+      "id": "question_64152608",
+      "label": "Do you currently own a personal smartphone with a data plan, or are you willing to obtain one for required work-related communication and applications (e.g., Slack, Workday timecard), understanding that the company provides a monthly stipend to offset your costs?",
+      "reason": "no LABEL_RULES match for label='Do you currently own a personal smartphone with a data plan, or are you willing to obtain one for required work-related communication and applications (e.g., Slack, Workday timecard), understanding that the company provides a monthly stipend to offset your costs?'"
+    },
+    {
+      "id": "question_64152609",
+      "label": "I acknowledge I have read and understand the following information:",
+      "reason": "no LABEL_RULES match for label='I acknowledge I have read and understand the following information:'"
+    },
+    {
+      "id": "question_64152610",
+      "label": "Would you be willing to take a drug and background test?",
+      "reason": "no LABEL_RULES match for label='Would you be willing to take a drug and background test?'"
+    },
+    {
+      "id": "question_64152611",
+      "label": "Are you a previous Nuro employee or contractor?",
+      "reason": "no LABEL_RULES match for label='Are you a previous Nuro employee or contractor?'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

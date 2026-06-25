@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ business impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation standard.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud isolation test** tied to a $1.5B+ enterprise contract requiring precise partner and stakeholder coordination.
+5. Built an internal AI agent and restructured planning workflows to reduce **planning cycle time by 39%** and increase drill capacity by 21%, scaling team leverage without adding headcount.
+6. Organized and communicated product roadmap milestones and release timelines to cross-functional stakeholders, aligning engineering priorities with customer requirements across a portfolio of **enterprise platform capabilities**.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting customer demos and training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, surfacing critical feature gaps and translating customer requirements into prioritized development stories.
+3. Improved data integrity and retrieval by migrating documentation to an **AI-powered semantic search** platform with rigorous metadata standards, cutting lookup time by 83% and enabling faster, more accurate customer workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams across Azure's global infrastructure organization.
+2. Conducted discovery with 20+ service teams to map **81 hours of manual toil** per region launch, then built a product roadmap to automate critical paths and reduce operational burden for go-to-market release cycles.
+3. Engineered a **Power BI dashboard** to track operational toil across 140+ teams, enabling leadership to pinpoint automation gaps and prioritize high-impact investments aligned to release and launch readiness goals.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and communicating release timelines to cross-functional stakeholders.
+2. Facilitated Agile sprint planning and retrospectives, managing the product backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across IT, Operations, and Engineering teams.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and improving launch readiness for production robotics systems.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM workflow that improved customer requirements capture and sales team efficiency.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to better reach and engage prospective customers.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering data-driven recommendations that informed future product and service strategy.
+
+## Notes from the rewriter
+- Wove 'product roadmap and release timelines' (JD requirement) directly into microsoft_ft bullet#6, mirroring Esri's language around communicating roadmap to customers and staff.
+- Used 'customer requirements' and 'go-to-market' (core JD vocabulary) in amazon_robotics bullet#1 and pro_painters bullet#1 and bullet#2 to mirror Esri's GTM and requirements-collection responsibilities.
+- Embedded 'launch readiness' (JD: 'Ensure internal launch readiness for product updates') in amazon_robotics bullet#3 and microsoft_2022 bullet#3 to signal direct alignment with Esri's release coordination duties.
+- Framed microsoft_2023 bullet#2 around translating 'customer requirements into prioritized development stories,' echoing Esri's directive to organize and share customer requirements with the development team.
+- Skills section leads with GIS & Location-Based Analytics and Aviation & Geospatial Domain Alignment to surface Esri's recommended qualifications prominently for recruiters scanning the skills block.
+

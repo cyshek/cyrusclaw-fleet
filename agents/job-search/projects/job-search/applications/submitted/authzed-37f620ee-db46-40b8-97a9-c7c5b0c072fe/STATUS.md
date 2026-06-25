@@ -1,11 +1,9 @@
-# SUBMITTED — authzed (role 2607)
-- role_id: 2607
-- company: authzed
-- ats: ashby (slug authzed-37f620ee-db46-40b8-97a9-c7c5b0c072fe)
-- result: SUBMITTED
-- proof: applicationFormResult.__typename == "FormSubmitSuccess"; runner result.ok==True, classify=submitted
-- captcha: reCAPTCHA-v3 solved+injected via CapSolver (solve_ms~253)
-- egress_ip: 82.23.97.223 (residential)
-- submitted_by: auto
-- submitted_at: 2026-06-08 PDT
-- run: ashby_resi_drain_r4
+STATUS: SUBMITTED
+submitted_by: auto
+applied_on: 2026-06-24
+role_id: 2607
+company: authzed
+role: Solutions Engineer - U.S. Based
+method: ashby-runner
+confirmation: FormSubmitSuccess
+

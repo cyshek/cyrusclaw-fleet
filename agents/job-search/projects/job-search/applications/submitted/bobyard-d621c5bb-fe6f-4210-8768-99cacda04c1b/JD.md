@@ -53,3 +53,9 @@ Great products win markets. As we scale our core and launch new 0 → 1 bets, we
 - Build a massive company
 
 This is a full-time & in-person role in SF. We are ahead of the nearest competitor by several years in terms of model sophistication and serve a massive untapped market. If you are confident in your ability to maintain that lead and delight our customers, we would love to work with you.
+
+Comp Philosophy 
+
+We structure compensation to be simple: **cash for stability, variable for performance, equity for ownership**.
+
+Everything ties directly to **what you ship and the impact you drive**.

@@ -4,22 +4,22 @@
   "org": "cohere",
   "job_id": "b0bcef37-1d20-414f-aade-c54942d63df9",
   "job_title": "Forward Deployed Engineer, Agentic Platform",
-  "job_location": "Toronto",
-  "fetched_at": "2026-05-31T03:08:24Z",
+  "job_location": "United States",
+  "fetched_at": "2026-06-24T18:18:14Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 7,
     "filled": 6,
-    "filled_needs_review": 0,
+    "filled_needs_review": 1,
     "declined": 0,
     "needs_essay": 0,
-    "unresolved": 1,
+    "unresolved": 0,
     "blockers": 0
   },
   "fields": [
     {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_name",
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,17 +29,69 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_name"
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_name"
     },
     {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_bc38d0ce-8f6b-4043-8a15-158f3cc649c3",
-      "label": "This role is open only to candidates based in North America. Are you currently located in this region?",
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_email"
+    },
+    {
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_resume"
+    },
+    {
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4_60b0d38e-ddb0-4025-92be-d2d80acfb232",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4_60b0d38e-ddb0-4025-92be-d2d80acfb232"
+    },
+    {
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4__systemfield_location"
+    },
+    {
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4_bc38d0ce-8f6b-4043-8a15-158f3cc649c3",
+      "label": "This role is fully remote with team collaboration primarily during EST/EDT business hours. We require candidates to be available during these hours for effective teamwork. Are you comfortable working a schedule aligned with these business hours?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Yes",
-      "source": "address.country=United States",
-      "status": "filled",
-      "matched_rule": "us_based_confirm",
+      "value": "Open to remote, hybrid, or onsite",
+      "source": "preferences.remote_preference | NOTE: 'Open to remote, hybrid, or onsite' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "remote_pref",
       "options": [
         {
           "label": "Yes",
@@ -51,81 +103,23 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_bc38d0ce-8f6b-4043-8a15-158f3cc649c3"
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4_bc38d0ce-8f6b-4043-8a15-158f3cc649c3",
+      "match_attempted": true
     },
     {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_email",
-      "label": "Email",
-      "type": "input_text",
-      "required": true,
-      "value": "cyshekari@gmail.com",
-      "source": "contact.email",
-      "status": "filled",
-      "matched_rule": "email",
-      "options": null,
-      "_ashby_type": "Email",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_email"
-    },
-    {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_resume",
-      "label": "Resume",
-      "type": "input_file",
-      "required": true,
-      "value": "resume/Cyrus_Shekari_Resume.pdf",
-      "source": "files.resume_path",
-      "status": "filled",
-      "matched_rule": "resume",
-      "options": null,
-      "_ashby_type": "File",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_resume"
-    },
-    {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_location",
-      "label": "Location",
-      "type": "input_text",
-      "required": true,
-      "value": "Kirkland, WA",
-      "source": "address.city+state",
-      "status": "filled",
-      "matched_rule": "city_state",
-      "options": null,
-      "_ashby_type": "Location",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24__systemfield_location"
-    },
-    {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_60b0d38e-ddb0-4025-92be-d2d80acfb232",
-      "label": "LinkedIn",
-      "type": "input_text",
-      "required": false,
-      "value": "https://linkedin.com/in/cyshekari",
-      "source": "contact.linkedin",
-      "status": "filled",
-      "matched_rule": "linkedin",
-      "options": null,
-      "_ashby_type": "String",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_60b0d38e-ddb0-4025-92be-d2d80acfb232"
-    },
-    {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_cfb819c6-a9b5-4ee4-af23-26352a3bca5a",
-      "label": "Tell us about your experience in client facing roles. ",
+      "id": "a6e30667-1f12-4572-bee5-e33d00063ef4_cfb819c6-a9b5-4ee4-af23-26352a3bca5a",
+      "label": "Tell us about your experience in client-facing roles and/or your experience with AI or agentic systems ",
       "type": "textarea",
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Tell us about your experience in client facing roles.\\xa0'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Expert",
+      "source": "ai_familiarity_high (free text)",
+      "status": "filled",
+      "matched_rule": "ai_familiarity_high",
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_cfb819c6-a9b5-4ee4-af23-26352a3bca5a"
+      "_ashby_id": "a6e30667-1f12-4572-bee5-e33d00063ef4_cfb819c6-a9b5-4ee4-af23-26352a3bca5a"
     }
   ],
-  "unresolved": [
-    {
-      "id": "464cd6a3-68a8-45bc-ab55-7c4d7b422f24_cfb819c6-a9b5-4ee4-af23-26352a3bca5a",
-      "label": "Tell us about your experience in client facing roles. ",
-      "required": false,
-      "reason": "no LABEL_RULES match for label='Tell us about your experience in client facing roles.\\xa0'"
-    }
-  ],
+  "unresolved": [],
   "blockers": []
 }

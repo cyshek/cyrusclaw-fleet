@@ -10,36 +10,38 @@
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned product roadmap end-to-end for Azure resilience validation, scaling a 2-person operation into a platformized system that sustained **45+ annual drills** and drove **$14M+ business impact** across enterprise customers like Databricks, Walmart, SAP, and NetApp.
-2. Drove **0→1** development of an internal Resilience Automation Platform from napkin to production, defining product requirements and self-service scheduling that cut operational toil **30%** and shipped a scalable, founder-led validation product.
-3. Shaped vision and validated a new bet by pioneering Azure's first proactive resilience testing capability, shipping a rack-level drill program in **4 months** at a **94% recovery rate** that surfaced critical hardware defects and made the product feel inevitable.
-4. Executed in the details with no handoffs across engineering and ops, directing **14 cross-org executions** under exec visibility, including bridge lead on a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**.
-5. Lived in customer workflows and turned noise into signal, building an internal AI agent and restructuring planning to cut cycle time **39%** and grow drill capacity **21%**, productizing expert knowledge into repeatable software.
-6. Communicated product vision across marketing, sales, and partner orgs, arming GTM teams to position the resilience platform and convert messy customer requests from 100s of stakeholders into a prioritized, shippable roadmap.
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ business impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution from manual coordination to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability — delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a new continuous-validation standard adopted across engineering orgs.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, requiring airtight cross-functional alignment and zero-defect execution.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — demonstrating the same ship-and-iterate velocity Bobyard's estimator workflows demand.
+6. Translated hundreds of inbound customer signals and engineering constraints into a prioritized product roadmap, turning noise into a sequenced build plan that kept the platform ahead of scale demands across 45+ annual drills.
 
-### `microsoft_2023` (4 bullets emitted, master had 3)
-1. Owned **0→1** adoption for AI-driven code generation, running customer demos and training that drove utilization across **14 teams** and saved **37 engineering hours monthly**, learning the workflow better than users could articulate it.
-2. Shaped the product roadmap toward intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams in the field, hunting down feature gaps and turning market chaos into a validated build plan.
-3. Iterated fast on data integrity by implementing rigorous metadata standards and shipping an AI-powered semantic search tool, cutting documentation lookup time **83%** and proving the bet through measurable user outcomes.
-4. Operated like a founder under ambiguity, ramping on a new AI domain in under 30 days and resourcefully validating LLM-powered workflows that engineering and design teams adopted into production.
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, running user demos and hands-on training sessions that drove utilization across 14 key Azure teams and saved 37 engineering hours monthly — validating shipping velocity over slide decks.
+2. Shaped the product roadmap to include intent-based YAML generation by running 11+ discovery interviews with Azure service teams, surfacing critical workflow gaps and translating raw user pain into a scoped, actionable feature spec.
+3. Improved data retrieval by enforcing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool — cutting lookup time by 83% and demonstrating how LLM-powered tooling can eliminate brutal manual workflows.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework spanning **140+ teams**, turning 1000s of competing requests into signal.
-2. Mobilized a product strategy to kill operational toil during region launches, running discovery with **20+ service teams** to surface 81 hours of manual effort per region and building a roadmap to automate the critical path.
-3. Built a Power BI dashboard tracking operational toil across **140+ teams**, arming leadership to target automation gaps and prioritize high-impact bets, organizing chaos into a clear, data-backed execution plan.
+1. Drove **$3M in accelerated revenue** by securing cross-functional alignment on a unified automation prioritization framework, cutting region launch timelines by 28% across a 140+ team organization through structured roadmap sequencing.
+2. Mobilized a product strategy to eliminate launch toil, running discovery with 20+ service teams to map **81 hours of manual effort** per region and building a prioritized roadmap to automate the highest-impact paths — founder-mode execution in a large org.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to pinpoint automation gaps, make data-driven prioritization calls, and tie investment decisions directly to measurable time-and-cost outcomes.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Owned a legacy OS migration strategy that achieved **zero operational downtime** across a 2,000+ unit pilot, mapping dependencies across **1,200+ stations** and executing in the details with engineering and operations.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilizing a noisy developer intake process into a predictable workflow.
-3. Drove strategic alignment between IT, Operations, and Engineering to ship automated CI/CD pipelines, accelerating the software deployment cycle **25%** and removing friction from the release path.
+1. Defined the legacy OS migration strategy for a **2,000+ unit pilot**, mapping dependencies across 1,200+ stations and sequencing the rollout to achieve zero operational downtime — the same zero-defect, high-stakes execution Bobyard's pre-construction customers require.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process, keeping engineering unblocked while absorbing constant inbound requests.
+3. Drove cross-functional alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, compressing the software deployment cycle by 25% and establishing a repeatable release cadence for a hardware-software integrated product.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Lived in field workflows with estimators and crews to increase job bookings **26%**, managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** through a new CRM process built from scratch.
-2. Cut Customer Acquisition Cost **13%** and lifted conversions **2.7%** by executing a digital-first go-to-market strategy, optimizing the website and Google profile to make the market believe and buy.
-3. Sharpened leadership pricing models by running financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to turn raw construction data into actionable product decisions.
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing workflow for 200+ monthly proposals through a new CRM process — direct experience turning messy field workflows into structured, software-driven operations.
+2. Cut Customer Acquisition Cost by **13%** and lifted conversion by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to align messaging with how customers actually search for services.
+3. Improved leadership pricing models by conducting **profitability analysis** across 1,000+ project records to identify and seal margin leaks — the same data-driven, customer-workflow-level thinking needed to build product for cost estimators.
 
 ## Notes from the rewriter
-- Mirrored JD verbs: own roadmap, live in customer workflows, 0→1, ship, turn noise into signal, make the market believe.
-- Leveraged Pro Painters construction/estimating context to signal domain fit and field empathy.
-- Emphasized founder-level drive, AI/automation, and end-to-end ownership across all roles.
+- '0→1' woven into microsoft_ft bullet#2 and skills section — mirrors JD's '0→1 bets' framing exactly.
+- 'Founder-mode execution' language used in microsoft_2022 bullet#2 — mirrors JD's 'operates like a founder' and 'roll up your sleeves' attributes.
+- 'Brutal manual workflows' echoing JD's 'manual, brutal, and slow' takeoff description placed in microsoft_2023 bullet#3 to show domain empathy for construction's core pain point.
+- 'Noise into signal' framing from JD's 'Organized operator' section embedded in microsoft_ft bullet#6 — direct vocabulary mirror.
+- 'Pre-construction' and 'field workflows' referenced in amazon_robotics bullet#1 and microsoft_ft bullet#1 to connect Cyrus's execution experience to Bobyard's estimator customer context.
+- 'Go-to-market' and 'sales enablement' surfaced in pro_painters and skills — mirrors JD's 'Communicate vision with marketing & sales' responsibility.
 

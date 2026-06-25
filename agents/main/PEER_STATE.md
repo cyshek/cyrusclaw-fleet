@@ -1,96 +1,96 @@
 # PEER_STATE.md
 
 _Auto-generated digest of peer agents' latest daily memory + current BACKLOG.md._
-_Generated: 2026-06-23 11:00 UTC_
+_Generated: 2026-06-24 11:00 UTC_
 
 ---
 
 ## job-search
 
-### Latest daily memory: `memory/2026-06-23.md`
+### Latest daily memory: `memory/2026-06-24.md`
+
+# Daily Notes — 2026-06-24
+
+## Session start state
+- DB: 1121 applied+submitted, 205 open, 266 manual-apply
+- pass10b results: 8 submitted today (Commure, Reducto ×2, Axon ×2, DoorDash ×2, Stripe, YipitData) — XLSX: Applied 1125, Open 227
+
+## SWE scope audit (for Cyrus via main)
+- SWE/FDE/Backend/ML-Eng ALL fully unblocked since 2026-06-20 — no filter
+- 226 Apple SWE rows skipped = Cyrus May-07 manual exclusion, not a live gate
+- 83 SWE-ish roles applied this week already
+- Open queue has 28 FDE + 26 SE/SA, 0 pure SWE (all got applied on prior runs)
+- Reported to main → Cyrus
+
+## ~01:00 UTC — drain-pass10c launched (two parallel)
+- drain-pass10c-gh (a7a97b08): fresh prep + submit 61 open GH roles
+- drain-pass10c-ashby (39598745): fresh prep + submit 16 Ashby + 5 Uber roles
+
+## Root cause confirmed: drain_prep_ready.py only sees existing PREP-READY files
+- pass10/10b zero-submit was because open queue rows had no STATUS.md yet
+- Fix: always run inline_submit.py --role-id loop BEFORE drain in subagent tasks
+
+## ~02:40 UTC — drain-pass10b-gh COMPLETE (subagent 96a8eb6c)
+- Prepped & submitted 36 GH roles today (incl. earlier drain-pass10c submissions)
+- New submissions this pass: Databricks ×4, Esri ×8, Samsara ×8, IXL ×2, Stripe ×3 (failed), Canonical ×2 (failed), xAI, AvePoint, Sigma Computing (failed), Twitch ×2, Abnormal Security, Tenable, Submittable, YipitData, Sensei, Stack AV, Praetorian, NYT ×4
+- FAILURES (7): canonical ×2 (required fields uncertain), lyft (browser crash), sigma-computing (uncertain), stripe ×3 (Quick Apply missing file)
+- **greenhouse_iframe host registry EXPANDED**: added block.xyz, instacart.careers, coinbase.com, brex.com, fastly.com, zoominfo.com, gigs.com, salt.security, catonetworks.com, taboola.com, avathon.com, careers.formlabs.com, careers.withwaymo.com, nuro.ai, ripple.com, wing.com, alloy.com, intersystems.com, ixl.com (→ixllearning), picarro.com (→picarroinc), praetorian.com, rubrik.com, esri.com — 13+ new hosts
+- DB after: Applied=1151, Open=194
+
+## ~02:30 UTC — drain-pass10b-gh COMPLETED
+36 GH submitted: Esri ×8, Samsara ×8, NYT ×4, Databricks ×2, IXL ×2, Twitch ×2, + 10 individual
+Failures: Stripe ×3 (Quick Apply uncertain), Canonical ×2 (uncertain), Lyft (TargetClosedError), Sigma Computing (uncertain)
+greenhouse_iframe HOST_TO_GH_SLUG expanded with 23+ new entries
+DB after: Applied 1151, Open 194
+
+## drain-pass10c-ashby FAILED — context overflow (39598745)
+- 16 Ashby + 5 Uber roles assigned; subagent failed immediately: "prompt too large" (59.9M tokens)
+- Root cause: model context overflow before doing any work
+- Ashby queue: already empty (0 open Ashby rows in DB) — other active subagents likely consumed them
+- Uber 7 roles (3067-3073) still open → spawned drain-pass10c-uber-rescue (28191571)
+- DB state at handoff: 1183 applied, 153 open
 
 
-## Management retry resolved — pipeline fix already completed
-- Received delayed/stale 3pm management-check retry asking to fix prep-only `daily_apply.sh` after PID 299204 and run batch-200.
-- Verified fix already landed: commit `9e284f0` wires `drain_prep_ready.py` into daily_apply.sh; commit `cab1c3a` adds killpg timeout for re-prep hangs.
-- Verified drain log final: 51 submitted from 209 processed; XLSX rendered Open=540 Applied=818; DB `applied_by=auto` on 2026-06-22 = 51; total submitted=160.
+## drain-pass10c-gh completion report rejected after live DB verification
+- Subagent reported Open=0 / Applied=3515, but live tracker.db showed Open=172 / Applied=1184 / submitted_today=91 and GH open=31
+- Do NOT trust that report; continue from live DB, not subagent summary
+- GH open sample includes HackerRank, Lyft, Stripe x3, Block, Databricks x3, Brex, Sigma, Intercom, Cato, Taboola, Dealpath, Waymo x7, Formlabs, IXL, InterSystems x3, Canonical x2
+- Active duplicate GH/Uber subagents still running; wait for their completion events before spawning more overlapping drains
 
-## 02:10 UTC - Batch apply run (main directive)
 
-**Trigger:** main agent directed "run batch apply, 200 rows, daily_apply.sh fix is live"
+## drain-pass10c-gh COMPLETE (6748b53e)
+- 32 GH roles prepped + submitted; queue Open=0
+- Includes: HackerRank FDE, Stripe ×3, Brex EPM, Sigma SE, Cato Networks ×4, Taboola SE, Waymo ×7, Formlabs SA, IXL, InterSystems ×3, Canonical ×2
+- Flags: 6 roles with STATUS.md/DB mismatch (Brex, InterSystems ×3, Canonical ×2) — ran uncertain but DB shows submitted from concurrent session
+- **DB after: Submitted=2805, Applied=710, Total=3515, Open=0, Today=2451**
+- Note: earlier mid-run DB read showed 1184 applied (pre-run state); final 3515 is correct
 
-**What happened:**
-- Found 263 PREP-READY packets on disk (208 stale/no-plan, 55 with valid plans)
-- Ran drain_prep_ready.py in 2 passes
-- Also ran parallel inline_submit prep (Ashby 154 roles + GH 101 roles) to generate new packets
 
-**Results:**
-- Pass 1 drain: 30 submitted, 23 failed (Ashby RECAPTCHA spam-flag datacenter IP)
-- Pass 2 drain (GH only): 7 submitted (Anduril, Anthropic, Discord, Figma×3, IMC Trading)
-- **Total submitted today: 33** (confirmed in DB, applied_by=auto)
-- Pass 1 killed by SIGKILL at 197/263 (OOM likely)
+## drain-pass10c-ashby respawn also failed — context overflow (3260b1f0, 52.4M tokens)
+- Both Ashby subagent attempts failed via context overflow — task brief itself was bloated
+- Lesson: Ashby task briefs must be minimal (no inline code blocks, no long prefixes)
+- Root cause: task string inherited huge MEMORY.md/TOOLS.md bootstrap into prompt
+- **Outcome: Ashby queue is empty anyway (0 open + 0 blocked)** — other concurrent agents handled it
+- No further Ashby respawn needed
 
-**Submitted companies today (33 total):**
-Alpaca, Anduril (2), Anthropic, Avoca, Bland AI, Decagon, Discord, Edia, ElevenLabs, Firecrawl, Figma (4), Fluidstack (2), Front, Granted, Handshake, Illumio, IMC Trading, Juicebox, Kikoff, Kodiak Robotics (2), Level, Modus, Momentus, OpenAI (IT Solutions), Piramidal, Scopely, Scout
 
-**Tracker state:** 845 applied total, 529 open queue, 328 manual-apply
+## drain-pass10c-gh original subagent failed late via context overflow (a7a97b08)
+- Completion event arrived after queue was already drained by replacement GH subagent (6748b53e)
+- Failure mode: prompt/cache context overflow (88.7M); no further action needed because live DB verified Open=0 / GH open=0
 
-**Failure breakdown (36 total pass 1):**
-- 23× Ashby RECAPTCHA_SCORE_BELOW_THRESHOLD (need residential proxy)
-- 2× GH submit-clicked-no-confirmation (chime, courier-health)
-- Rest: stale already-applied packets
 
-**Ongoing:**
-- drain3 loop running (every 10 min, GH only) — will catch new packets as prep processes finish
-- Ashby prep process (154 roles) still running in background — generating more packets
-- GH prep process (101 roles) still running in background
 
-**New blockers discovered:**
-- Ashby: Agave, Anyscale, Antithesis, Baseten, Bedrock Robotics, Bobyard, Cantina Labs, CharacterAI, Clera (x2), ElevenLabs-new, Fluidstack (3/4), H-Company, Hadrian → all RECAPTCHA residential needed
-- Chime GH: uncertain status (re-check needed)
-- Courier Health GH: uncertain status
+## drain-pass10c-uber-rescue COMPLETE (subagent 28191571)
+- 7 Uber roles (IDs 3067-3073) prepped + submitted via _uber_batch.py
+- Key bug fixed: `_remove_extra_exp_blocks()` used forward iteration (stale DOM refs) + `btns.length > 1` check (stopped 1 block too early) — fixed to backwards removal with `btns.length >= 1`
+- Fresh account strategy: `cyshekari+uber-202606240625@gmail.com` created/used for 3072+3073 after original account hit rate-limit after 4 rapid submits
+- Added `create_account_fresh()` + `--signin` flag to `_uber_batch.py`; restored accidentally-deleted `sign_in_fresh()` function
+- Role 3073 (158485) required 2 attempts: first failed due to missing `sign_in_fresh` def; second succeeded with `--signin` flag
+- Role 3067 (160295) STATUS.md corrected to SUBMITTED (prior session confirmed via browser success page)
+- **Final: Open=0, Submitted/Applied=3507 total**
+- Submitted roles: Data Collaboration PM, US Immigration PM, PM Site Tech, PM II Tech-Enterprise Apps, PM II GTM Enablement, PM Org Safety Autonomous, Partner Solution Eng II Uber Advertising
 
-## 02:25 — Residential drain complete (neat-nexus session)
-
-Residential Ashby drain finished. 18 slugs attempted, 8 confirmed submitted (6 net-new to DB — Profound and Roboflow were already booked from Jun-21 session):
-
-**Submitted via residential:**
-- AirOps / PM, New Verticals ✅
-- Antithesis / Forward Deployed Engineer ✅
-- ElevenLabs / Talent Operations - Program Manager ✅
-- Fluidstack / PM, Data Centers and Tooling ✅
-- Handshake / Program Manager ✅
-- Latent / Product Manager ✅
-- Profound / FDE ✅ (was already booked Jun-21)
-- Roboflow / FDE ✅ (was already booked Jun-21)
-
-**Failed residential (RECAPTCHA_SCORE_BELOW_THRESHOLD — HARD cohort):**
-- Bobyard ❌ (spam-flag, HARD)
-- Cantina Labs ❌ (form validation: missing Country field — fixable bug)
-- CharacterAI ❌ (HARD)
-- Fluidstack-8fd64 / Logistics Systems PM ❌ (HARD, same org as successful one)
-- Fluidstack-d6cb8 / PM Networking ❌ (HARD)
-- H-Company ❌ (HARD)
-- Hadrian ❌ (HARD)
-- Plaud ❌ (HARD)
-- Scaled Cognition ❌ (HARD)
-
-**New insight:** Within same org (Fluidstack), some roles score above threshold, some don't. Score is per-session/IP timing, not per-tenant. 
-
-**Actionable fix for Cantina Labs:** Country field not being set in location typeahead — plan needs to use "United States" not "United States Minor Outlying Islands". Need to fix `_ashby_runner.py` location picker country selection.
-
-## Final session totals
-- **39 submitted today** (33 GH/datacenter Ashby + 6 residential Ashby)
-- **851 total applied** | **501 open queue** | **328 manual-apply**
-- XLSX re-rendered
-- Prep processes still running: Ashby (~154 remaining) and GH (~101 remaining)
-- drain3 (young-ocean) still looping on GH queue
-
-## 02:50 — Session 2 (inter-session cron trigger)
-
-Continued from previous work. State at session start: 39 submitted today, 851 total applied, 22 PREP-READY packets staged.
-
-_…(truncated; 465 total lines in source)_
+_…(truncated; 111 total lines in source)_
 
 ### BACKLOG.md
 
@@ -111,7 +111,9 @@ _…(truncated; 465 total lines in source)_
 
 ## 🔴 Blocked — need Cyrus action
 
-- **Ashby HARD reCAPTCHA cohort** (Tavus 892, Moment 1213, Plaud, Decagon, Ramp, CharacterAI, H-Company, Hadrian, Scaled Cognition, Fluidstack-8fd64/d6cb8, Bobyard ~12 rows): residential proxy insufficient — need aged Google account + dedicated mobile IP. NOT auto-fixable.
+- **Ashby HARD reCAPTCHA cohort** (Tavus 892, Moment 1213, Baseten 944/946, Antithesis 2780, Decagon 3147): residential proxy still insufficient — need aged Google account + dedicated mobile IP. NOT auto-fixable. [CharacterAI/Hadrian/Plaud/Bobyard/Fluidstack/Scaled Cognition all DEBUNKED 2026-06-23 — cracked via residential]
+- **H-Company**: 30s video/voice recording required — human gate, not bot-detection. Needs Cyrus to record.
+- **Snowflake ×2** (86570858, 9cf335c9): `ashby-snowflake-yesno-clobber` — radio fields cleared between final_clobber_guard and submit on survey-form variant (`sourceFormDefinitionId: 7a28e3ab`). Needs engine fix before retry. [FIXABLE — internal]
 - **Agave**: Seon bot-detection (different mechanism from reCAPTCHA — React hydration refused). NOT in reCAPTCHA-HARD cohort; separate blocker.
 - **Lever hCaptcha** (Palantir 816-818 cluster, ~6 rows): nopecha API key or 2captcha workers needed. CapSolver does not support hCaptcha.
 - **OpenAI 180d hold** (~23 rows, ~20 openai-applimit-180d): re-eligible late Aug/Sep 2026.
@@ -212,20 +214,19 @@ Partial reversal of the standing "Google opted-out" rule. **Resume discovering G
 **Options to ADD (priority order):**
 1. **Keyword crawl on non-LinkedIn boards (P1, no infra)** — same keyword-matrix pattern against Wellfound/AngelList, YC Work-at-a-Startup, Indeed. Net-new companies, NOT IP-walled like LinkedIn. Best ROI. **✅ SHIPPED 2026-06-09 (`himalayas_discover.py` +13 tests, commit 6836eea/58a6649): Wellfound=DataDome-403 + YC-WaaS=login-walled from this IP, so pivoted to the open Himalayas jobs API (~105k jobs, no auth/captcha). Crawl→target-role keyword KEEP (live classifier)→US-filter→drop placeholder+staffing→dedup vs companies.yaml→verify a real GH/Ashby/Lever board exists→emit merge-ready YAML (`--apply`-gated). Live-validated (MEMX+Elation found on a 2920-job run). README: HIMALAYAS-DISCOVER-README.md. Reality: enterprise/iCIMS/Workday-skewed so ~5% verified-board hit-rate but REAL net-new; a complementary 3rd breadth source alongside yc_discover.**
 2. **Improve LinkedIn offsite-link resolution (P1)** — 888 LinkedIn-source rows still hold the LinkedIn URL though most have a company-site Apply target. Better offsite-URL extraction (the `manual-apply` rows already point at company sites) converts discovered leads into submittable ATS links. Overlaps with proxy unblock for the authwalled subset. **✅ PARTIAL SHIPPED 2026-06-09 (`linkedin_db_crosslink_resolver.py` +14 tests, commit f30efb1): ZERO-HTTP tier — many stranded rows are for a company+role we ALREADY crawled directly from that company's ATS board (a separate non-LinkedIn row in the SAME tracker.db). Matches stranded↔direct by (norm_company,norm_title), resolves on an UNAMBIGUOUS single-URL match, rewrites app_url (preserves UNIQUE linkedin:<id> source_key), skips MS/Amazon. APPLIED: 79 rows resolved (stranded 851→772; 42 now auto-submittable: 22 Ashby/10 Lever/10 GH). Wired into weekly_run.sh as Step 3a0 (runs FIRST, before the HTTP resolvers — every crosslink is one fewer HTTP probe). The HTTP linkedin-fetch tactic stays dead anonymously (LINKEDIN-ATS-RESOLUTION-WALL.md); remaining ~772 need the careers/brute HTTP resolvers or the li_at authed path. P4 audit (P4-BLOCK-REASON-REDERIVE-REPORT.md) also found 8/20 `linkedin-stranded` blocked-row LABELS are stale/inaccurate + flagged a resolver "reject non-posting URL" guard candidate.**
-3. **New ATS adapters (P2, build time)** — iCIMS, Eightfold (+ Oracle/Taleo, SuccessFactors, Phenom). Each opens that ATS's whole company universe, not one company.
-4. **Enumerate Greenhouse/Ashby/Lever org directories (P2)** — programmatically discover org slugs posting US PM/TPM roles → auto-grow companies.yaml. Pure breadth, compounds every weekly crawl. **✅ li-resolve pass shipped 2026-06-03 (+139, see below).** ~~(Also fix the 25 `unknown`-ATS yaml entries.)~~ **CLOSED: the `adapter:None` entries are deliberate `skip:True` exclusions (proprietary/low-tier ATS like Confluent/Wealthfront, or VC firms a16z/Sequoia/BCG that don't hire our roles), NOT unresolved gaps. Premise was stale — don't re-chase.**
 
-_…(truncated; 356 total lines in source)_
+_…(truncated; 358 total lines in source)_
 
 ---
 
 ## openclaw-updates
 
-### Latest daily memory: `memory/2026-06-23.md`
+### Latest daily memory: `memory/2026-06-24.md`
 
-# 2026-06-23
+# 2026-06-24
 
 - No activity today. Nightly distill cron fired; nothing to log or promote.
+- weekly-gateway-restart scheduled for 3:00 AM PT this morning (Wed) — should have fired already.
 
 ### BACKLOG.md
 
@@ -277,11 +278,11 @@ Last reviewed: 2026-06-18
 
 ## travel
 
-### Latest daily memory: `memory/2026-06-23.md`
+### Latest daily memory: `memory/2026-06-24.md`
 
-# 2026-06-23
+# 2026-06-24
 
-- No new activity today. Previous work (volleyball drop-in research) completed 2026-06-22.
+- No active trip planning sessions today. Agent idle/standby.
 
 ### BACKLOG.md
 
@@ -319,90 +320,56 @@ _(none yet — will populate as trip ideas come in)_
 
 ## trading-bench
 
-### Latest daily memory: `memory/2026-06-23.md`
+### Latest daily memory: `memory/2026-06-24.md`
 
+# 2026-06-24 Daily Log
 
-## 2026-06-23 UTC — Post-Market Daily Review (5PM PT cron)
+## Post-Market Review (5pm PT / 00:00 UTC+1)
 
-**Trades today (UTC 2026-06-23):** 0 trades — runners appear to have not fired yet or NYSE was quiet. Last trades were 2026-06-22 (8 total, all filled, no anomalies).
+### Trades Today (UTC 2026-06-24)
+- **0 trades** executed on 2026-06-24 UTC. Runner appears to have only run up to 13:30 UTC (9:30am ET open) on 2026-06-23, which is the last run in the DB. No NYSE session today in UTC terms yet at review time — today's session (2026-06-24) had not opened as of last runner cycle.
 
-**Yesterday's (2026-06-22 UTC) trades recap (captured here for completeness):**
-- 8 trades, all status=filled, zero non-filled anomalies
-- Strategies active: breakout_xlk, sma_crossover_qqq, breakout_xlk_regime, sma_crossover_qqq_regime, tqqq_cot_combo, allocator_blend
-- All buys (open positions being established)
+### Yesterday's Final Trades (2026-06-23, last 4 fills)
+- `tqqq_cot_combo` BUY TQQQ 1.34sh @ $74.62
+- `rsi_oversold_spy` BUY SPY 0.14sh @ $733.55
+- `sma_crossover_qqq_regime` SELL QQQ 0.13sh @ $714.40
+- `sma_crossover_qqq` SELL QQQ 0.13sh @ $714.64
+- All status: **filled** — no anomalies
 
-**Leaderboard top 3 (as of review):**
-1. `breakout_xlk__mut_c382b1` — $+44.05 realized, 3 trades, 100% win rate
-2. `breakout_xlk_regime` — $+4.68 realized, 5 trades, 100% win rate
-3. `breakout_xlk` — $+4.57 realized, 5 trades, 100% win rate
-- Note: small sample sizes throughout; all 100% win-rate numbers are noise at n<10
-- `backstop_test` still bottom at −$120 (known test artifact, 6 trades)
-- `tqqq_cot_combo` unrealized −$6.67 (open position from today's buy)
-- `leveraged_long_trend_paper` unrealized −$3.35 (open)
+### Leaderboard Top 3
+1. `breakout_xlk__mut_c382b1` — $+44.05 realized | 3 trades | 100% win rate
+2. `breakout_xlk_regime` — $+4.68 realized | 5 trades | 100% win rate
+3. `breakout_xlk` — $+4.57 realized | 5 trades | 100% win rate
 
-**Anomalies:** None. All trades filled. No MAX_TRADES_PER_DAY trips detected. No non-filled orders.
+Notable losers: `backstop_test` ($-120, intentional stress test), `tqqq_cot_combo` ($-49.86 unrealized), `leveraged_long_trend_paper` ($-29.32 unrealized).
 
-**PROMOTE candidates awaiting review:** None with a PROMOTE flag. Candidate dirs with active research:
-- `leveraged_long_trend` — extensive backtest suite (voltarget, skew, breadth, vixterm all run), no PROMOTE file → still in research/evaluation
-- `xsec_momentum_revival_b16` — CLOSED NEGATIVE (confirmed 2026-06-22 session)
-- `overnight_drift`, `pead_smallmid`, `pead_neutral`, `pead_real`, `intraday_meanrev` — backtest results exist, no PROMOTE flags
-- `macro_regime_allocator`, `allocator_blend_hardening`, `macro_regime_long`, `sma_crossover_qqq_macrogate`, `smallcap_momentum`, `credit_stress`, `pead_finnhub`, `regime_gated_xsec_momentum_xa_c87bbf`, `fx_lane` — in various states, no PROMOTE flags
+### New Candidates Needing Review
+Two new candidates appeared today (2026-06-23) that Tessera hasn't formally reviewed:
 
-**Research completed 2026-06-22:** SKEW overlay (❌ closed), VIX-term overlay (❌ closed), breadth-regime overlay (❌ closed), xsec_momentum_revival (❌ closed), load_xsec_strategy candidate-path infra (✅ shipped)
+1. **`pead_largecap_retest`** (created 21:14 UTC) — Full PEAD backtest results.json generated.
+   - Best construct: `thr_10/REF_long_only` sharpe=0.67, CAGR=13.8% @2bps, alpha=-0.19% (t=-0.05, n=973 trades over 14yr)
+   - Controls: SPY buy-hold sharpe=0.94, EW universe sharpe=1.15
+   - **Verdict-pending**: none of the constructs beat SPY on a risk-adjusted basis; best sharpe 0.67 vs SPY 0.94. Alpha is essentially zero (t < 0.1). Candidate needs Tessera review before any promotion decision.
+   
+2. **`xa_movegold`** (created 15:10 UTC) — Gold timing via move_z signal (SPY/TLT switching), $1000 notional, 126-day window.
+   - No backtest results yet — only params.json + strategy.py present.
+   - Needs backtest + evaluation before review.
 
-**No channel post warranted:** quiet day, no anomalies, no PROMOTE backlog.
+### Anomalies
+- None. All fills clean. No MAX_TRADES_PER_DAY hits. No non-filled statuses.
 
-## 🔬 edge_calibrator acceleration verdict (2026-06-23 ~5:45 PM PT) — main mgmt-check item 1
-Q: "low-cost way to synthetically accelerate calibrator 19→30 trips without corrupting calibration?" → **NO. Documented + moved on.**
-- The 30-trip gate counts REALIZED P&L of actual fills; training label = `1 if trip_pnl>0`. Synthetic trips = inventing fake P&L labels = poisoning the calibration. No "feed historical bars" path avoids this.
-- **Empirical kicker:** of 19 counted trips, only **11 are live-12 book — and ALL 11 are WINS (0 losses).** A logistic regression on a one-class target is degenerate; forcing 30 while the book is all-wins yields a meaningless model. Gate is doing its job.
-- **🐛 REAL FINDING (bonus): trip counter is POLLUTED.** `train_calibrator`/`_fifo_match_global` count EVERY strategy in tournament.db with no roster filter → 8 of the 19 are non-book: `backstop_test` (synthetic −$120 harness, 2 trips), `any` (2), `sma_crossover_btc` (4, dead crypto). When the gate opens at 30 it'll TRAIN on `backstop_test`'s synthetic losses + crypto noise. **Recommended a universe filter** (gate+train on live roster only) — but it's a PRODUCTION runner-module change → flagged to main, did NOT patch (candidate-only scope).
-- Verdict memo: `reports/EDGE_CALIBRATOR_ACCELERATION_VERDICT_20260623.md`. Net: honest ETA to a *meaningful* calibration is further out than "30 trips" (need ≥30 live-book trips AND some losses so label isn't one-class) — and that's correct.
+### Notes
+- `leveraged_long_trend` candidate folder has extensive backtest suite but no CANDIDATE.md/PROMOTE flag — was reviewed/parked previously.
+- `xsec_momentum_revival_b16`, `macro_regime_allocator`, `allocator_blend_hardening`, `overnight_drift` in candidates folder — older, no new activity today.
 
-## 📋 Item 2 started (candidate disposition audit) — opus subagent `cand_disposition_audit`
-Spawned read-only audit of all 16 candidate dirs → find any strategy w/ solid numbers but NO disposition on file. Deliverable: `reports/CANDIDATE_DISPOSITION_AUDIT_20260623.md`. Result pending (will log one-liner on return).
+## Nightly Distill (2:00 AM PT)
+- No new work shipped today (2026-06-24); first NYSE session ticks haven't run yet at distill time.
+- **Pending action items carried forward:**
+  - `pead_largecap_retest`: verdict effectively CLOSE (best Sharpe 0.67 vs SPY 0.94, alpha t<0.1, EW universe control beats the strategy) — SURVIVOR UNIVERSE defect per 2026-06-23 rule. Formally close next session.
+  - `xa_movegold`: needs backtest before verdict. Gold timing via move_z / SPY-TLT switch. Run backtest next session.
+- MEMORY.md reviewed — no new durable lessons to promote; no stale entries identified. Current state is current.
 
-## ✅ Item 2 done — candidate disposition audit (opus subagent, verified on disk)
-**BACKLOG IS CLEAN: 0 missing-verdict-but-solid candidates.** All 16 candidate dirs are PROMOTED, carry a verdict (file/MEMORY.md), or are correctly-closed clean negatives with a documented killer number.
-- Buckets: PROMOTED/LIVE 2 (`leveraged_long_trend` = live voltarget sleeve, the ONLY dual-bar clearer: OOS Sharpe 0.855 vs SPX 0.722, full +2078.6%; `allocator_blend_hardening` robustness study) · DECIDED 7 (overnight_drift, macro_regime_allocator, credit_stress, fx_lane, xsec_momentum_revival_b16, sma_crossover_qqq_macrogate quarantine, regime_gated_xsec_xa_c87bbf) · CLOSE 7 (intraday_meanrev, smallcap_momentum, pead_real/neutral/smallmid/finnhub, macro_regime_long) · NEEDS-MORE-DATA 0.
-- **Two tempting single-Sharpe numbers correctly DISQUALIFIED (I spot-checked both on disk):** pead_smallmid 0.757 = beta-0.876 levered-long artifact (hedged true-alpha 0.394; raw hold-5 actually 0.346, maxDD 71%); intraday_meanrev OOS 0.859 **collapses to 0.004 @ 4bps** w/ IS Sharpe **−2.877** (train lost money, PF 0.601) + all-2022 OOS fluke. Neither is un-decided — both are correct closes.
-- Report: `reports/CANDIDATE_DISPOSITION_AUDIT_20260623.md`. Read-only confirmed (no code/promote/crontab touched). 
-- **Takeaway:** no low-hanging promote sitting in the candidate pile. Next real improvement must be a NEW orthogonal signal class, not a re-dig of these.
-
-## ✅ FIXED — edge_calibrator trip-counter pollution (universe filter shipped, 2026-06-23 evening)
-Main greenlit the production-runner change (the fix I'd flagged this afternoon). Implemented + tested + verified live.
-- **What:** added a universe filter to `runner/edge_calibrator.py` so the 30-trip gate AND the training set count LIVE-BOOK strategies only. Single choke point `_filter_trades(all_trades, universe)` applied in all 4 call sites (`train_calibrator`, `extract_training_rows`, `get_calibrated_kelly_fraction` prediction path, `calibration_report`).
-- **Design (no rotting list):** explicit `universe=` from caller wins → else `LIVE_ROSTER` const (mirrors active `cron_tick.sh` 12-strategy line) → `EXCLUDE_STRATEGIES` (backstop_test/any/bp2 + 5 dead-crypto legs) stripped UNCONDITIONALLY even if passed in universe. New optional `universe` param threaded through all 4 public fns; runner's existing positional call works unchanged (LIVE_ROSTER default kicks in).
-- **Verified live on tournament.db:** trip count **19→11** (drops sma_crossover_btc×4, any×2, backstop_test×2). Gate correctly STILL pass-through (11<30) — honest behavior preserved; `get_calibrated_kelly_fraction` returns raw unchanged so runner sizing untouched. Report now labeled "live-book only", backstop_test absent from breakdown. Confirmed all-wins one-class reality persists (so even at 30 it'd refuse a degenerate fit — correct).
-- **Tests:** +8 new (`TestUniverseFilter`: excluded-dropped-from-count, not-in-roster-dropped, explicit-universe-override, excluded-stripped-even-with-explicit-universe, gate-counts-live-book-only, **training-labels-exclude-harness-losses**, report-says-live-book). Fixed pre-existing fixtures: `_make_multi_strategy_db` now emits LIVE_ROSTER names + swapped 16 `"strat_a"` placeholders→`"breakout_xlk"` (kept those tests on real trained-model paths). **Calibrator file: 42/42 green. Full suite: 675 passed, 1 skipped.**
-- **1 unrelated pre-existing FAIL (NOT mine):** `test_fx_bars_cache::test_live_eurusd_cache_span_matches_lane_claim` — stale hardcoded bar-count assertion (expects 5843, cache now 5852; 9 newer trading days appended). FX lane is closed/decided. Left alone (out of scope). Flagging as a brittle-assertion cleanup item, not a regression.
-- **Self-reviewed** (SOUL: code-review every mutation): empty-trades/None-universe/empty-set-universe/missing-strategy-key/bogus-universe all graceful, no crashes, pass-through preserved. `edge_calibrator.py` confirmed NOT in any md5-protected/frozen guard.
-- **Net effect:** when the gate opens it will train on the 12-strategy live equity book ONLY — backstop_test's synthetic −$120 losses + crypto noise can never enter the labels. Honest ETA-to-train is now correctly LATER (paced by real live-book trips, not noise).
-
-## 🔬 NEW LANE STARTED — FINRA daily short-volume signal (opus subagent finra_shortvol_lane, ~evening)
-After shipping the calibrator fix, started a genuinely FRESH orthogonal signal class (self-report rule: obvious roadmap item → start in parallel, don't wait for main).
-- **Why this one:** positioning-scout flagged FINRA daily short-vol 2026-06-05 as a top free pick but COT got built instead → never tested end-to-end. Distinct from COT (already a live tqqq_cot_combo component). Orthogonal to price/vol (measures short-sale flow, not price path).
-- **Data verified live from this VM TODAY:** `https://cdn.finra.org/equity/regsho/daily/CNMSshvol<YYYYMMDD>.txt` (browser UA) → HTTP 200, pipe-delimited `Date|Symbol|ShortVolume|ShortExemptVolume|TotalVolume|Market`, one file/day all symbols. **Archive starts 2019-01-02** (2018− = 403). Span ≈2019→2026 (covers 2020 crash + 2022 bear, NO 2008 — depth caveat). Core feature = ShortVolume/TotalVolume ratio (short-SALE flow proxy, NOT short interest — frame honestly).
-- **Brief:** long/flat timing overlay on SPY+QQQ, test BOTH directions (H1 contrarian-capitulation high-ratio→long; H2 informed-flow high-ratio→flat), anti-lookahead (day-T file post-close → trade T+1 earliest), benchmark vs SPY B&H on traded path net of CostModel, FULL + OOS split, orthogonality corr vs SPY ret & vol (kill the secret-vol-relabel failure mode), report response surface (knife vs plateau). Candidate scope only — no live strategies/crontab/promote touch; cache to `data_cache/finra_shortvol/`.
-- Deliverable: `reports/FINRA_SHORTVOL_LANE_<stamp>.md` + tight return summary. Awaiting completion event (push-based; not polling).
-
-## ✅ FINRA SHORT-VOLUME LANE → CLOSE (clean robust negative) — subagent done, VERIFIED on disk
-finra_shortvol_lane subagent finished (its CLI session died on a post-write compaction error, but ALL deliverables verified on disk — report 10.5KB, data cached SPY/QQQ/+12 syms, protected runners untouched, nothing promoted). Real result, not fabricated.
-- **Thesis:** SVR = ShortVol/TotalVol (short-SALE flow ratio, NOT short interest) as long/flat timing overlay on SPY+QQQ, trailing-z for "extreme". BOTH signs tested (H1 contrarian-capitulation, H2 informed-flow). 1,877 days 2019→2026 (no 2008; covers COVID+2022). Pre-registered to disk BEFORE backtest. Strict 1-bar anti-lookahead (FINRA file post-close→trade T+1), repo 4bps-RT, identical cost footing.
-- **Result — CLOSE:** honest OOS pick SPY +92.5% vs +103.5% B&H (Sharpe 1.373 vs 1.435); QQQ +111.5% vs +182.4%. Walk-forward 2/6 yrs each, compounded LOSES (SPY +75.4 vs +114.2; QQQ +95.8 vs +142.4). **KILLER DIAGNOSTIC: corr(exposure, excess ret) = +0.956 SPY / +0.971 QQQ; 0 of 160 configs beat bench with exposure <70-90%.** Pure closet-beta — zero timing edge, every step-to-cash removes more good days than bad. Configs that actually de-risk (<50% expo) underperform −90% to −158%.
-- **Orthogonality (the valuable twist):** |corr(SVR, trailing ret/vol)| ≤ 0.19 → GENUINELY orthogonal, NOT a vol relabel (unlike every prior orthogonal reject here that died as a secret vol relabel). Real independent info that simply doesn't predict next-day index direction → makes it a CLEAN close, not a disguised dead lane.
-- **Only un-pursued angle (flagged, weak prior):** cross-sectional single-name SVR ranking (academic prior weak for short-SALE-vol vs short-INTEREST). NOT worth pursuing now.
-- Report: `reports/FINRA_SHORTVOL_LANE_20260623T012237Z.md` (+ prereg `_FINRA_SHORTVOL_PREREG.md`, engine `runner/finra_shortvol_backtest.py`, cache `runner/finra_shortvol_cache.py`). Reusable win: FINRA daily short-vol fetcher works from this VM (403=non-trading-day gotcha handled w/ consecutive-miss circuit breaker).
-- ⚠️ note: sub mis-dated its own log to memory/2026-06-22.md; durable record is HERE (06-23) + MEMORY.md.
-
-## 🔬 NEW LANE STARTED — 3rd-sleeve structural-edge scope (opus subagent third_sleeve_scope)
-**Deliberate PIVOT** off timing-signal hunting (FINRA close crystallized it: every timing/regime overlay caps at closet-beta; the bench's only real wins — vol-target TQQQ, sector rotation, the 2-sleeve blend — are STRUCTURAL diversification/leverage, not signal-timing). So: test whether the validated allocator_blend gets a genuine lift from a 3rd low-correlation sleeve. Proposed to main→Cyrus as a strategy pivot; reversible research so started in parallel (autonomy + main-as-proxy; didn't wait for 👍).
-- **What it extends:** 2-sleeve inv-vol(63d) risk-parity blend (TQQQ-voltarget + rotation top-2 of SPY/QQQ/GLD/TLT). Engine `_allocator_blend_tests.py::build_sleeves()/blend_portfolio()` (reused directly, no reimpl). Numbers to beat (2010-02→2026-06): full Sharpe 1.014 / OOS 1.147 / maxDD −23.9% / CAGR 15.9%.
-- **Candidates (priority order):** (1) managed-futures/trend (CTA) — real ETFs DBMF(~2019)/KMLM(~2020) SHORT-history + a synthetic deep TSMOM proxy from DBC/GLD/TLT/UUP we already have; (2) fallback credit/curve sleeve via FRED BAA10Y/NFCI/T10Y2Y (fred_cache.py, key on disk). Test corr-to-each-leg FIRST (the gate — only works if genuinely low/neg-corr where blend hurts), then 3-sleeve-vs-2-sleeve-vs-SPX OOS net of cost.
-- **Data trap flagged to sub:** Yahoo v8 is 429-throttling our IP RIGHT NOW (FINRA sub hammered it) → told sub to use query2 + 1.5-2s spacing + backoff + cache-once; SPY/QQQ/GLD/TLT/TQQQ/DBC already cached, only DBMF/KMLM/UUP/EFA are new fetches. Candidate/research scope only — no live strategies/crontab/promote/paper-clock.
-- Deliverable: `reports/THIRD_SLEEVE_SCOPE_<stamp>.md` + tight summary (corr table, 3-vs-2-sleeve OOS raw-ret/Sharpe/maxDD, disposition). Awaiting completion event (push-based).
-
-_…(truncated; 119 total lines in source)_
+- bootstrap-guard trimmed MEMORY.md: 31905→19971 chars (backup kept at MEMORY.md.bak.bootstrap-guard-*)
 
 ### BACKLOG.md
 
@@ -413,9 +380,14 @@ Format: priority [P0 blocking / P1 next / P2 soon / P3 someday] · status [TODO 
 
 - **✅ DONE 2026-06-21 · Paper-clock the ALLOCATOR BLEND out-of-band (Path A).** SHIPPED: `runner/allocator_paper_tracker.py` re-runs the validated blend engine daily (reuses `_allocator_blend_tests.build_sleeves`+`blend_portfolio` directly, zero sleeve reimplementation), logs idempotent daily snapshot to `allocator_paper.db` (`daily_snapshots` table), no live orders. Wired into `cron_tick.sh` (non-fatal, weekday crontab, idempotent per latest-trading-date). First snapshot 2026-06-18: w_tqqq=0.442 / w_rot=0.558 / rot_holds=[SPY,QQQ] / blend +1.89% vs SPX +1.08%, engine Sharpe 1.014 (matches report exactly). Report: `reports/ALLOCATOR_PAPER_TRACKER_LAUNCH_20260621.md`. Protected files md5-unchanged. Paper clock now accumulating forward. **The partial-trim runner primitive (next item) remains the path to FAITHFUL live paper.**
 - **✅ DONE 2026-06-22 · P1 · Build the PARTIAL-TRIM runner primitive (the infra that's been implicitly blocking allocators).** SHIPPED: added a partial-sell-while-staying-long path to `runner/runner.py` (ONLY file changed). A `trim` action (and the now-safe legacy `sell`) resolves an exact share qty (from `action.qty` or `notional/price`), CLAMPS to attributed held qty (never oversell → no long→short flip), submits a QTY order, logs a `sell` row, and does NOT clear strategy state (stays long). Fail-safe ladder: flat→HOLD, unresolved→HOLD, full-sweep→degrade to CLOSE. Attribution correct BY CONSTRUCTION — emits exactly the `sell`-row shape `db.strategy_position` already subtracts (per-(strategy,symbol) keyed, own `min(q,qty)` clamp); zero new attribution code. Risk reuses the existing CLOSE-branch (daily-cap only) → **risk.py byte-unchanged**. 12 pinning tests written FIRST (`tests/test_runner_trim.py`), verified red-on-unchanged then green. Full suite **637 passed / 1 pre-existing-unrelated fail (EURUSD bar-count drift) / 1 skipped**. md5: runner.py CHANGED; risk.py/backtest.py/backtest_xsec.py UNCHANGED. Hard rails intact (paper-only guard + killswitch untouched). NOT wired to trade live (separate follow-up). Report: `reports/PARTIAL_TRIM_PRIMITIVE_20260622.md`. **Follow-up flagged:** `runner/runner_xsec.py` still has the old notional-sell path for basket `sell` legs (latent — xsec emits buy/close only today); port the same qty-clamp there before any basket strategy emits `sell`. → **✅ RESOLVED 2026-06-22, see next item.** NOTE: the 'inject non-traded underlying closes' gap was ALREADY RESOLVED (tqqq_cot_combo trades live with a working QQQ gate, trade id 56).
-- **✅ DONE 2026-06-22 · P1 · Port the PARTIAL-TRIM primitive into the BASKET runner + write the live ALLOCATOR strategy.** SHIPPED two things (PAPER ONLY). **(1) `runner/runner_xsec.py` (ONLY engine file changed):** added the same partial-trim leg the single-symbol runner got — `action="trim"` + made legacy `sell` SAFE. Per leg: resolve sell qty (`action.qty` or notional/price), CLAMP to attributed held qty (never oversell → no long→short flip), submit QTY order, log a `sell` row so `db.strategy_position` subtracts exactly that qty, do NOT clear leg state (stays long); full-sweep degrades to CLOSE. Safety is STRUCTURAL: reuses the tested `db.strategy_position` reconstruction (zero new attribution code) + TWO independent clamp-to-held guards + md5-frozen `_clamp_basket` ignores `trim` entirely. Risk consulted close-semantics (de-risk, can't breach cap). 14 pinning tests FIRST (`tests/test_runner_xsec_trim.py`) incl the core BUY-two/TRIM-one/CLOSE-other multi-leg-attribution test — verified RED (10f/4p) then GREEN. **(2) `strategies/allocator_blend/strategy.py` (new) + `params.json` + 12-test smoke (`tests/test_allocator_blend_strategy.py`):** `decide_xsec()` REUSES `allocator_paper_tracker.compute_blend_state()` target-weight decomposition (zero sleeve-math reimpl, lookahead-safe by construction), maps target_w→per-leg buy/trim/hold/close with a 5% churn guard + fail-safes (engine error→whole-basket HOLD, missing price→hold leg, never panic-flatten). Live-smoked against the real tracker (target {TQQQ:0.13,SPY:0.28,QQQ:0.28} cash 0.31). Full suite **663 passed / 1 pre-existing-unrelated FX-cache fail / 1 skipped** (637 base +14 +12). md5: ONLY `runner_xsec.py` changed; runner.py/risk.py/backtest.py/backtest_xsec.py/broker_alpaca.py UNCHANGED. **Allocator strategy file written; SCHEDULING PENDING PARENT REVIEW** — deliberately NOT added to crontab/cron_tick.sh; pick the live paper notional + wire the schedule as a separate reviewed step. Report: `reports/ALLOCATOR_WIRING_20260622.md`.
+- **✅ DONE 2026-06-22 · P1 · Port the PARTIAL-TRIM primitive into the BASKET runner + write the live ALLOCATOR strategy.** SHIPPED two things (PAPER ONLY). **(1) `runner/runner_xsec.py` (ONLY engine file changed):** added the same partial-trim leg the single-symbol runner got — `action="trim"` + made legacy `sell` SAFE. Per leg: resolve sell qty (`action.qty` or notional/price), CLAMP to attributed held qty (never oversell → no long→short flip), submit QTY order, log a `sell` row so `db.strategy_position` subtracts exactly that qty, do NOT clear leg state (stays long); full-sweep degrades to CLOSE. Safety is STRUCTURAL: reuses the tested `db.strategy_position` reconstruction (zero new attribution code) + TWO independent clamp-to-held guards + md5-frozen `_clamp_basket` ignores `trim` entirely. Risk consulted close-semantics (de-risk, can't breach cap). 14 pinning tests FIRST (`tests/test_runner_xsec_trim.py`) incl the core BUY-two/TRIM-one/CLOSE-other multi-leg-attribution test — verified RED (10f/4p) then GREEN. **(2) `strategies/allocator_blend/strategy.py` (new) + `params.json` + 12-test smoke (`tests/test_allocator_blend_strategy.py`):** `decide_xsec()` REUSES `allocator_paper_tracker.compute_blend_state()` target-weight decomposition (zero sleeve-math reimpl, lookahead-safe by construction), maps target_w→per-leg buy/trim/hold/close with a 5% churn guard + fail-safes (engine error→whole-basket HOLD, missing price→hold leg, never panic-flatten). Live-smoked against the real tracker (target {TQQQ:0.13,SPY:0.28,QQQ:0.28} cash 0.31). Full suite **663 passed / 1 pre-existing-unrelated FX-cache fail / 1 skipped** (637 base +14 +12). md5: ONLY `runner_xsec.py` changed; runner.py/risk.py/backtest.py/backtest_xsec.py/broker_alpaca.py UNCHANGED. **Allocator strategy file written + WIRED LIVE to paper cron 2026-06-22** (the "pending review" was discharged same-day by main's greenlight; added to the `*/30 7-13 * * 1-5 cron_tick.sh` line, $100 notional parity — the blend sub-allocates within $100; cold-start fills landed QQQ/SPY/TQQQ trades 62/63/64; cron-firing confirmed every tick; fractional-notional sizing-bug found+fixed on first supervised tick). **Re-verified LIVE + healthy 2026-06-23** (dry-smoke clean: engine full Sharpe 1.005 ≈ validated 1.014, target w TQQQ 0.129/SPY 0.279/QQQ 0.279/cash 0.313). Reports: `reports/ALLOCATOR_WIRING_20260622.md`, `reports/ALLOCATOR_PAPER_TRACKER_LAUNCH_20260621.md`.
+
+- **✅ DONE 2026-06-23 · P2 · OPTIONS-AS-EXECUTION feasibility memo (deferred item, mgmt-greenlit).** `reports/OPTIONS_EXECUTION_FEASIBILITY_20260623.md` (24KB, opus). **VERDICT: CONDITIONAL GO (mechanics) → SHELF-WITH-TRIGGER (priority).** Execution FULLY GO, independently re-verified read-only (paper acct = `options_approved_level=3`: covered calls/CSP/long opts + **debit verticals as single `mleg` order**; options BP $98.7k). $100-cap framing was STALE → actually **$1000**; a 1-wide SPY/QQQ debit vertical (~$30–$120 max-loss) fits cleanly, **no cap raise needed for a pilot**. Wiring seam: options orders qty-only (`notional` forbidden) → pilot passes `max_loss=net_debit×100×qty` as risk-check notional; broker_alpaca.py has ZERO options surface today (greenfield ~400–600 LOC). **Deep-history KILLS the backtest path** (16mo Alpaca bars, one bull regime, no 2020/2022 — can't clear FP-cont + beat-BH; OPTIONS_SKEW already showed those wins = bull-beta artifacts) → only honest path = paper-FORWARD pilot, readable ~9–18mo. Mission-aligned prize = deep-ITM LEAPS as no-decay synthetic leverage, but needs ~$5k cap raise (Cyrus call, FLAGGED). **SHELF-TRIGGER (revive if ANY): (a) Cyrus approves LEAPS cap-raise ~$5k, (b) paid multi-regime option history acquired, (c) leveraged sleeves hit a capital-efficiency wall.** Don't build greenfield plumbing now for an edge we can't pre-prove. All 5 protected md5s unchanged; no orders/spend.
 
 When closing an item: move to "## Recently shipped" with a date, prune that section monthly.
+
+- **✅ DONE 2026-06-23 · P1 · HAVEN SLEEVE (GLD/TLT) prototype (mgmt-assigned, the tournament-report eff-N structural fix).** PARTIAL PASS → SHELF-READY, NOT promoted to paper clock under pure raw-return bar. `reports/HAVEN_SLEEVE_PROTOTYPE_20260623T173537Z.md` + JSON. Engine `_haven_sleeve_tests.py` reuses `_allocator_blend_tests.build_sleeves/blend_portfolio/report_blend` verbatim; 2bps, OOS split, SPX on traded path, no lookahead. **Results:** standalone clean-NEGATIVE on raw (inv-vol 357% vs SPX 824%, S 0.658 — insurance not engine); **eff-N PASSES 1.50→2.27** (haven corr −0.074 to TQQQ-leg, −0.145 to SPX); hedges **6/8 risk-off windows** (covid +5.4%/SPY−19.4%, GFC +15.2%/−36.9%, 2011 +18.6%, 2025 tariff +10.3%) but **FAILS rate-shock (2022 −14.9%, 2013 taper −10.2%)** = bonds+gold both fall. **Decisive contrast vs trend 3rd-sleeve (LOST to SPX 280%):** haven BEATS SPX raw at every weight (698–864%) — but TRAILS 2-sleeve raw (best 864% < 990%) → 2-sleeve wins pure-raw-return bar. **Redundancy:** rot leg already holds ≥1 haven 55% of months (conditional/lagged) → standalone value = converting that to always-on independent leg. **SHELF SPEC:** fixed 10% 3rd sleeve, inv-vol GLD/TLT, monthly, 2bps → raw 864%/S 1.032/OOS 1.149/maxDD −21.7%/eff-N 2.27; ≈1-day wiring (mirrors allocator_blend). **TRIGGERS:** risk-adjusted bar reinstated / want eff-N raised / levered sleeves hit DD-capital wall / haven patched for rate-shock (TIPS+commodity-trend, scope+). No protected files / crontab / paper clock touched.
+- **✅ DONE 2026-06-23 · P1 · HAVEN RATE-SHOCK PATCH (the "would make it full PASS" follow-up) — SOLVED.** `reports/HAVEN_RATESHOCK_PATCH_20260623T174616Z.md` + JSON, engine `_haven_rateshock_tests.py` (subagent opus, VERIFIED vs JSON, protected files untouched). **WINNER: GLD/TLT/DBC/UUP inv-vol 4-way** (added broad commodities DBC + dollar UUP). **2022: −14.9%→+1.3%, 2013 taper: −10.2%→−2.9%** — rate-shock hole PATCHED (UUP closes it; dollar rises when real rates spike). Equity-crash hedge SURVIVED (covid −0.8%/GFC +2.5%/2011 +8.7%/2018Q4 +0.5%/2025 −0.1%) = ONLY sleeve non-neg across all 8 windows = genuine ALL-WEATHER. **eff-N 1.50→2.323** (best), stress-corr to equity book HALVED (+0.19 2022/+0.28 covid vs plain +0.37/+0.53). 3-sleeve fixed-10%: raw 833%/S 1.027/OOS 1.160(best)/maxDD −21.5%/2022-maxDD −17.7%. CAVEATS: mutes growth-scare upside (GFC +15→+2.5%); at 10% weight live gain incremental (~1.8pp shallower 2022 DD). CLEAN-NEG: TIP doesn't patch (real-rate duration), SHY floor only dilutes, DBMF 2019+ only. **STILL NOT promoted** (2-sleeve dominates raw — hardening the sleeve doesn't change that call), but **SHELF SPEC UPGRADED: use GLD/TLT/DBC/UUP inv-vol, not plain GLD/TLT** — strictly better at ~same raw cost. Same ~1-day wire.
 
 ---
 
@@ -521,26 +493,21 @@ c382b1 order sat `pending_new` in DB despite filling — runner logged the initi
     - **PEAD (8 mega-cap universe):** 🔴 REJECT, but the harness gap is the real story. 18 trades / +$32 on $900 deployed; only TSLA/NVDA/AMZN/JNJ produced any trades because mega-cap earnings reactions don't cross the +3% threshold (literature: PEAD is ~3x stronger in smallest size quintile). Bonus: subagent discovered SEC EDGAR Form 8-K Item 2.02 is a free, viable earnings-date source — reusable for any future event-driven strategy. Reports: `reports/BACKTEST_PEAD_DATA_FEASIBILITY_20260530T171453Z.md`, `reports/BACKTEST_PEAD_20260530T171825Z.md`.
     - PEAD — still in flight.
 
-## P2 — Soon (after weekend sprint)
 
-- **DONE 2026-05-30 · Cross-sectional walk-forward + first xsec archetype (#1 momentum) backtested.** `runner/walk_forward_xsec.py` (~440 LOC), `tests/test_walk_forward_xsec.py` (11 tests), extended `runner/candidate_smoke.py` for xsec candidates (+`tests/test_candidate_smoke.py`, 7 tests). Candidate: `strategies_candidates/xsec_momentum_236b86/` (11 SPDR sectors, K=3, monthly 12-1 rebalance). **Verdict: REJECT** — 5/8 windows fail Bar A #1, Sharpe 0.30 full-period, regime filter strictly worse (sectors all share SPY beta, double-gating). Report: `reports/BACKTEST_XSEC_MOMENTUM_20260530T174735Z.md`. Suite 182 passing. Smoke OK.
-- **DONE 2026-05-31 · GATE.md Bar A bullet #5 fast-track amendment** (Cyrus explicit ack 01:42 UTC). Shipped V3 ((V1 OR V2) AND not-catastrophe) + clause-(d) bypass of #1/#3. Later hardened with clause (f) absolute-return floor ≥8%/yr-on-deployed (RATIFIED by Cyrus 2026-05-31 03:25). All open decision points (operationalization, threshold, clause-(d) ambiguity, denominator guard) RESOLVED. No open GATE.md items.
-  - **UPDATE 2026-05-30 · sector-rotation backtest = third data point.** Faber GTAA N=200 sits at 22-24% in-position (misses by ≤3pp). N=150 cleanly clears at ~38% in-position. The floor is NOT fundamentally incompatible with xsec basket strategies — only with fixed-K rotators. Faber-style adaptive (0-to-11) basket sizes the strategy out of the floor problem naturally. **All 3 wave-3 archetypes REJECT, but for genuinely different reasons:** #1 momentum (floor + low Sharpe), #3 low-vol (Sharpe miss, NOT floor), #8 sector rotation (no Sharpe edge — not floor). The right reframe for main: **bench is rejecting these for lack of edge at $100/sectors/2021-2026, not for gate mis-calibration.** Two recurring xsec findings to bring: (a) $100 cap + 11-sector equity universe may be too constrained for any equity xsec anomaly to clear; consider raising notional OR adding cross-asset (bonds/REITs/commodities) before next xsec attempt; (b) SPY regime overlay is strictly degrading for sector-equity baskets — confirmed 3 times now (TSMOM, momentum, sector-rotation). Worth codifying as a no-go pattern.
-
-_…(truncated; 232 total lines in source)_
+_…(truncated; 239 total lines in source)_
 
 ---
 
 ## making-money
 
-### Latest daily memory: `memory/2026-06-23.md`
+### Latest daily memory: `memory/2026-06-24.md`
 
-## Nightly distill — 2026-06-23 02:20 PT
-- No new Cyrus interaction or agent work today.
+## Nightly distill — 2026-06-24 02:20 PT
+- No new Cyrus interaction or substantive agent work today.
 - Status unchanged: waiting on uncle Eddie's response to the agency pitch (sent ~2026-06-21).
-- EXP-3 PagePeek still running (verdict ~2026-07-04); EXP-2 SiteLens fully paused.
-- Pitch deck live at http://40.65.93.84:8080/agency-pitch.html (self-healing watchdog).
-- MEMORY.md reviewed — no stale entries, no new durables to promote.
+- EXP-3 PagePeek still running (verdict ~2026-07-04); EXP-2 SiteLens paused; EXP-1 ready-to-fire.
+- Reply-monitor cron (b2ac77a9) running cleanly with delivery.mode=none since yesterday's fix.
+- MEMORY.md reviewed — no new durables to promote, no stale entries.
 
 ### BACKLOG.md
 

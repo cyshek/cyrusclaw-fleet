@@ -7524,3 +7524,860 @@ Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search
 0 submitted=0) ===
 [2026-06-24 07:00:02] === Daily apply run done (prep=0
 0 submitted=0) ===
+[2026-06-25 07:00:01] === Daily apply run start ===
+[2026-06-25 07:00:01] === Daily apply run start ===
+[2026-06-25 07:00:01] Phase 1: prep batch-500...
+[2026-06-25 07:00:01] Phase 1: prep batch-500...
+[inline_submit] no eligible open Greenhouse/Ashby roles found
+[2026-06-25 07:00:01] Prep done: 0
+0 prepped (exit 1)
+[2026-06-25 07:00:01] Prep done: 0
+0 prepped (exit 1)
+[2026-06-25 07:00:01] Phase 2: drain PREP-READY -> submit (limit 200)...
+[2026-06-25 07:00:01] Phase 2: drain PREP-READY -> submit (limit 200)...
+[07:00:01] === drain_prep_ready START | limit=200 ats=all no_submit=False ===
+[07:00:01] Found 264 PREP-READY slugs
+[07:00:01] 
+=== [1] abnormal-security-7728984003 (role_id=958) ===
+[07:00:01]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:01] 
+=== [1] aclu-8574963002 (role_id=2846) ===
+[07:00:01]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:01] 
+=== [1] actively-ai-5051155008 (role_id=2766) ===
+[07:00:01]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:01] 
+=== [1] aircall-4965256f (role_id=1990) ===
+[07:00:01]   ATS=lever not auto-submittable via these runners — skipping
+[07:00:01] 
+=== [1] alpaca-6001722004 (role_id=2615) ===
+[07:00:01]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:01] 
+=== [1] alpaca-6002567004 (role_id=2616) ===
+[07:00:01]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:01] 
+=== [1] ambientai-eb953820-7748-4620-98a0-b97bcdc40001 (role_id=2563) ===
+[07:00:01]   Plan file missing — re-prepping role 2563
+[07:00:01]   re-prepping role 2563 (timeout=360s)...
+[07:00:03]   re-prep failed (rc=3): it] === [1/1] ambientai-eb953820-7748-4620-98a0-b97bcdc40001 (Ambient.ai — Enterprise Sales Engineer) ===
+[inline_submit] ambientai-eb953820-7748-4620-98a0-b97bcdc40001: ABORT(jd-fetch) in 1.2s
+  error: RuntimeError: Ashby job eb953820-7748-4620-98a0-b97bcdc40001 not found in board for ambient.ai
+
+[07:00:03]   Re-prep failed (rc=3) — skipping
+[07:00:03] 
+=== [2] anara-f69dcabe-1f30-46ce-8407-ba03f55f2ced (role_id=2606) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5023386007 (role_id=1992) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5125591007 (role_id=2842) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5137720007 (role_id=1991) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5150729007 (role_id=1993) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5153463007 (role_id=2628) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5153542007 (role_id=2656) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5153820007 (role_id=2841) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-5171942007 (role_id=3583) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anduril-industries-5144552007 (role_id=1575) ===
+[07:00:03]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:00:03] 
+=== [2] anrok-40367604-03ac-459e-9ac7-880fa8497f4e (role_id=1555) ===
+[07:00:03]   ATS=ashby | plan=inline-plan-anrok-40367604-03ac-459e-9ac7-880fa8497f4e.json
+[07:00:42]   runner result: ok=False (40s)
+[07:00:42]   FAILED tail: k': False}]
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[07:00:42] 
+=== [3] antithesis-40832045-9804-41a9-a211-24bb5dddea68 (role_id=3615) ===
+[07:00:42]   ATS=ashby | plan=inline-plan-antithesis-40832045-9804-41a9-a211-24bb5dddea68.json
+[07:01:23]   runner result: ok=False (41s)
+[07:01:23]   FAILED tail: k': False}]
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[07:01:23] 
+=== [4] anyscale-1466478e-9797-4318-bdca-bb1ae5798d52 (role_id=2224) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] arcade-da560da1-c915-4fde-b4f0-2c55eee39e9c (role_id=1438) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] assort-health-1b53d652-d10d-4687-bd7a-07584256b851 (role_id=2763) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] assort-health-79c72fb7-e53e-4827-a647-dba65fbcf19e (role_id=2762) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] assort-health-8fd31df0-056b-4cd4-99f4-ad9b7bd91306 (role_id=1545) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] ast-4684880005 (role_id=2332) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] astranis-4651850006 (role_id=2617) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] astronomer-3e3be48c-ccf0-4a39-9eb2-03a896787999 (role_id=943) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] attain-5817721004 (role_id=2621) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] attio-26c31052-b667-46ae-b459-049018e55e96 (role_id=3591) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] attio-4649d1da-9672-4e04-bb7a-a71fb816615c (role_id=3592) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] auctor-9ea1351c-7aab-4bea-80de-c26750517e8b (role_id=2572) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] authorium-b64caa0f-16fa-43be-82b8-b994f936d224 (role_id=1957) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] avoca-260e5ea9-87c2-4261-9fea-301f46578173 (role_id=2559) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] axon-7737749003 (role_id=1942) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] baseten-2d78fdcf-53e1-45d3-a047-2aefb5ad3153 (role_id=3201) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] baseten-84c1801c-1a65-49fb-aaaa-beeafd530e7e (role_id=945) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] basis-fd05d141-035d-4c6c-b527-c183f234cab8 (role_id=1301) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] bland-ai-804fbd27-027e-4de5-8a6f-77241a65e599 (role_id=589) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] boom-da5637ab-a4fe-4534-9df9-391fc6788077 (role_id=2657) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] box-7558067 (role_id=1302) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] braintrust-b2131234-080c-4c5b-85e1-56e3edafa4e3 (role_id=1385) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] bretton-ai-7ce44efa-553c-4f30-99f7-ffce02725290 (role_id=1536) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] brex-8443298002 (role_id=3105) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] canary-technologies-31c515e1 (role_id=2652) ===
+[07:01:23]   ATS=lever not auto-submittable via these runners — skipping
+[07:01:23] 
+=== [4] canonical-6969562 (role_id=3507) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] canonical-7490812 (role_id=3506) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cartesia-b62856f7-f307-410b-b429-bbe408f164fd (role_id=2245) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cato-networks-4864978101 (role_id=3610) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cato-networks-4864980101 (role_id=3309) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cato-networks-4867001101 (role_id=3308) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cato-networks-4903797101 (role_id=3609) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] checkr-inc-7848516 (role_id=1958) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] clickhouse-6017272004 (role_id=3608) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] clipboard-80f1fd1c-7b09-4d6e-9a0b-e234fc9672b8 (role_id=2550) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cohere-6d0f0753-ff22-46fd-90e9-08998914a8e7 (role_id=598) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cohere-929b6c8e-a47c-4512-bb17-99fa9581f23e (role_id=597) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] compass-7942386 (role_id=2360) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] coreweave-4622845006 (role_id=603) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] coreweave-4644836006 (role_id=601) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] coreweave-4671723006 (role_id=602) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cresta-4122946008 (role_id=1950) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cursor-21110d73-77cb-465b-9977-65afb3e82cec (role_id=932) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cursor-34cecd0c-c392-4454-8ef5-261310541011 (role_id=931) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] cursor-69abc2ba-2823-40c3-9b86-94ab63859649 (role_id=934) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] dash0-e15212a7-42db-4107-a35b-9075c48b5de3 (role_id=2758) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] databricks-6328361002 (role_id=609) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] databricks-8419271002 (role_id=1353) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] databricks-8487768002 (role_id=3551) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] databricks-8548986002 (role_id=3549) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] databricks-8589834002 (role_id=3552) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] databricks-8595123002 (role_id=3550) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7452669 (role_id=615) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7554877 (role_id=623) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7683226 (role_id=614) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7704689 (role_id=2233) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7742823 (role_id=1364) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7776413 (role_id=620) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7800765 (role_id=621) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7857714 (role_id=3560) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7950121 (role_id=1945) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] datadog-7961297 (role_id=1944) ===
+[07:01:23]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:01:23] 
+=== [4] decagon-230ad153-85be-4f7b-a368-5bad59e513e2 (role_id=3566) ===
+[07:01:23]   ATS=ashby | plan=inline-plan-decagon-230ad153-85be-4f7b-a368-5bad59e513e2.json
+[07:02:02]   runner result: ok=False (39s)
+[07:02:02]   FAILED tail: k': False}]
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[07:02:02] 
+=== [5] decagon-9109be1c-b6e3-430f-a964-887253ef891a (role_id=3567) ===
+[07:02:02]   ATS=ashby | plan=inline-plan-decagon-9109be1c-b6e3-430f-a964-887253ef891a.json
+[07:02:40]   runner result: ok=False (38s)
+[07:02:40]   FAILED tail: k': False}]
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+
+[07:02:40] 
+=== [6] deepgram-8884965c-8a55-414c-ba86-a52d527f5dff (role_id=3587) ===
+[07:02:40]   Company on standing hold — skipping without consuming limit
+[07:02:40] 
+=== [6] deepgram-a58e4a11-7f98-4686-98e8-2612b52d7bbd (role_id=3588) ===
+[07:02:40]   Company on standing hold — skipping without consuming limit
+[07:02:40] 
+=== [6] deepgram-c69aab8a-e1d5-44ac-9113-12671a364015 (role_id=969) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] drw-7743571 (role_id=1952) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] elastic-7939709 (role_id=1366) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] eliseai-7d2f5728-1ddf-49d6-87e8-54fc81cba65c (role_id=2726) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] embrace-5743949004 (role_id=2624) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] encord-b4eb9359-fb8a-4791-b399-402b01b13a13 (role_id=1960) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] esri-5091886007 (role_id=3627) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] esri-5151688007 (role_id=3628) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] exa-8932d319-b456-4ee0-9efd-16d82be8de80 (role_id=643) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] firecrawl-851c1270-56a3-4d14-b4a4-f9eac2ab3a7f (role_id=2566) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] flip-5070400008 (role_id=2659) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] floqast-9082e2d3 (role_id=3612) ===
+[07:02:40]   ATS=lever not auto-submittable via these runners — skipping
+[07:02:40] 
+=== [6] floqast-a11c182c (role_id=2746) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] forge-ca54fd9a-55eb-45ae-ba48-f666747a24e8 (role_id=3391) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] formal-a07c732d-285c-4774-b8c3-b30eba408698 (role_id=2663) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] furiosaai-7a8aa022-4248-415c-a5c2-1930416822c6 (role_id=1591) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] gather-4610220007 (role_id=3604) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] gather-5129108007 (role_id=2620) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] gitlab-8497078002 (role_id=3559) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] glean-4508312005 (role_id=656) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] granted-8c4b25c0-a2fd-4a69-bb8c-28ab07c64d1b (role_id=2816) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] h-company-c911df44-270c-42b3-9572-dc0ef5a34006 (role_id=2900) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] handshake-c91b7ebf-2c69-4d91-809d-a30ea0b9dc18 (role_id=3451) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] happyrobot-ca2ec773-fa00-4b9e-a439-200599e4f0cf (role_id=1209) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5001069007 (role_id=2711) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5054774007 (role_id=2706) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5101308007 (role_id=2708) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5114856007 (role_id=2710) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5142299007 (role_id=2850) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5145383007 (role_id=2707) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] harness-5145394007 (role_id=2709) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] innodata-inc-4282301009 (role_id=2913) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] intercom-7926025 (role_id=2239) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] intersystems-7679435003 (role_id=3453) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] intersystems-7735588003 (role_id=3456) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] intersystems-7735610003 (role_id=3455) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] klarity-4843b6cd-405e-412f-8261-d1a2d6acd850 (role_id=1434) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] lila-sciences-4251188009 (role_id=2669) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] llamaindex-84bcd1df-a4da-421d-b325-45684d8b7e4d (role_id=708) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] lovable-ac61dda2-bff0-4f22-adca-a48b0b2f560c (role_id=941) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] mandolin-84421bfb-dc71-4838-a518-f5b209d69d9a (role_id=2289) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] mattermost-5156188008 (role_id=1969) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] modal-labs-9fadb51f-ce11-41b1-84d5-470e66cc8ee9 (role_id=935) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] modal-labs-cbbbee50-3d3b-4873-8ae8-ff4b885b8e54 (role_id=937) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] moment-752a96ec-5ad1-456e-a98d-6c64c6dfa256 (role_id=1213) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] mongodb-7743718 (role_id=953) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] mongodb-7793281 (role_id=752) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] mongodb-7908293 (role_id=2234) ===
+[07:02:40]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:02:40] 
+=== [6] namespace-baf4e483-2481-4848-b238-556133dfcd3b (role_id=3617) ===
+[07:02:40]   ATS=ashby | plan=inline-plan-namespace-baf4e483-2481-4848-b238-556133dfcd3b.json
+[07:03:06]   runner result: ok=True (26s)
+[07:03:06]   marked submitted in DB + STATUS.md
+[07:03:06] 
+=== [7] nanonets-5162218008 (role_id=3603) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] neara-09aa69c3-7015-43dc-8fc0-edcab5f4345d (role_id=2976) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] neara-4e99a0fd-60f8-4641-9dd6-63ffe53f3184 (role_id=2975) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] neara-9e86988e-45d9-40a6-93af-7e7cb8392b22 (role_id=2775) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] neara-e62c195b-0cc6-4d40-a391-b79f31ac21ee (role_id=2977) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] netskope-7786997 (role_id=2686) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] neural-concept-b37daf93-77bf-4428-ad02-f39df3917035 (role_id=1365) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] new-relic-5232172008 (role_id=2232) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] nice-4845031101 (role_id=2723) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] notion-2dd301f6-42da-40a2-a064-0f6fcfbdca77 (role_id=1347) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] okta-7727835 (role_id=3562) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] omni-d42d1f2e-86ce-4d7d-84fc-84e03da25e60 (role_id=3381) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] openai-550d0123-238c-4ad8-aaee-ea4a5a484639 (role_id=3048) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] openai-65913e57-80e0-4a1a-bbc3-265ae8a1a41b (role_id=799) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] openai-7eb1ac08-5168-4eff-a96c-90ce0bfd3fde (role_id=3047) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] openai-826a1977-8ac8-41d7-b331-f73dbf787cfb (role_id=3050) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] openai-dc17edac-2993-4318-812a-14864c6f4658 (role_id=3045) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] openai-fc38c6bf-5330-435c-99b6-1bcf1f5829a8 (role_id=3044) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] orca-security-5823501004 (role_id=813) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] orca-security-5970924004 (role_id=812) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] orkes-4228192008 (role_id=1971) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] orkes-5228109008 (role_id=1488) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] otter-8008479002 (role_id=1975) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] otter-8231028002 (role_id=1976) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] otter-8436361002 (role_id=1978) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] otter-8481244002 (role_id=1979) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] otter-8540314002 (role_id=1977) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] otter-8550121002 (role_id=1974) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] outreach-810b13b3 (role_id=814) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] overflow-9df94920-f628-4f94-8916-ede021405b51 (role_id=2131) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] palantir-96a0ce26 (role_id=816) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] perplexity-f25e190e-0508-4707-b575-fcaed358dc13 (role_id=3094) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] persona-d1c19a46-645e-4bff-aa31-f81d8a27cc51 (role_id=2243) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] pinterest-7901910 (role_id=1352) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] plaid-64642463-8ee8-4453-b166-449711f61cd0 (role_id=2229) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] plaud-34cc1e25-49c6-44e7-a281-ab4d53452df6 (role_id=2731) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] podium-7825829 (role_id=2256) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] podium-automation-58bdff6d-de99-4cec-aa55-00edcc84b5c3 (role_id=2818) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] pointclickcare-116ecefc (role_id=2744) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] popl-5dda8b68-dcba-41fe-aad8-522619e0cfc5 (role_id=2845) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] profound-7748f47c-ee2a-4381-8b0b-8cee934f8326 (role_id=2844) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] profound-d43c8698-fef3-426d-972b-dbc88a3d386c (role_id=1982) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] profound-e43062d5-1657-4066-a3cc-2e3315693b28 (role_id=1984) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] profound-ee159de0-26cd-4cd9-93c7-2853fb5550eb (role_id=1985) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] promise-a66cd82a-b724-4cc1-ae30-f9071cb50552 (role_id=3602) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] prosper-1cae1442 (role_id=2655) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] prosper-marketplace-1cae1442 (role_id=2295) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] raft-5973277004 (role_id=2783) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] ramp-a3afd259-ba6b-4eb0-a1b6-05d01dddacd8 (role_id=3107) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] realpage-inc (role_id=2479) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] reducto-5cc2517c-42c6-47c1-b3cc-77c6c58bc7fa (role_id=2555) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] redwood-materials-5998458004 (role_id=1981) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] rescale-2f43e26a-a331-4648-8523-d83c258bd8a2 (role_id=2581) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] rho-cf711885-a64b-464f-8016-095eb5124ecf (role_id=1450) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] robinhood-7947548 (role_id=1939) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] robinhood-7975474 (role_id=2613) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] salesloft-6674655 (role_id=835) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] salvo-health-3b327f35 (role_id=2813) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] samba-tv-418cf1b1 (role_id=2732) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] samba-tv-91af2cfb (role_id=2736) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] samba-tv-aab1648c (role_id=2734) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] samsara-7187219 (role_id=2703) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7311741 (role_id=2696) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7311761 (role_id=2695) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7311768 (role_id=2699) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7581969 (role_id=2694) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7848351 (role_id=2697) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7848363 (role_id=2698) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] samsara-7848428 (role_id=2701) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] schrödinger-4318632003 (role_id=2798) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] scopely-5208771008 (role_id=2671) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sentry-9889cf59-cd32-4aff-bff7-645bb1be4e14 (role_id=848) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-0c66e8ed-1c18-4b64-ad27-a522a866b6e1 (role_id=859) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-10d2e2f1-6657-40c9-b6fb-6999c76df6cf (role_id=855) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-1e052261-0c89-4ccb-abfa-3820a1596a6e (role_id=858) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-22ba107d-de01-4aa3-98fc-838cccad760c (role_id=857) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-422cb7bb-ab03-447b-808c-6d72f59bbd2f (role_id=854) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-53a8fd83-3e58-41a4-b014-2da447db820b (role_id=860) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sierra-5aaa2eeb-92bc-4b0a-901e-8e091eff819e (role_id=856) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] sigma-computing-7767726003 (role_id=3164) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] skydio-55b393cf-124c-46f8-bd83-8c62e3ce628b (role_id=863) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] skydio-b194dcda-7ff0-4d44-9785-16895a44727f (role_id=864) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] skydio-d73ae64d-5877-4ab6-ad42-0224702f3fba (role_id=862) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] skydio-dd8e8c16-3eee-44c0-b7b7-de16b8a7b88e (role_id=3589) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] smartsheet-7974885 (role_id=2235) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] snowflake-1291aaad-97fb-46f1-aaf7-62ed2332a00d (role_id=1389) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] snowflake-9bbafaf2-240d-4cfb-8e95-b289f0350be5 (role_id=3601) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] snowflake-a6a3e9d2-b045-466a-8074-1613c07891fe (role_id=1973) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] solace-9b91a426-69f1-4fc3-8cb0-90cc2a38305f (role_id=1986) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] solace-d9789edb-25f4-4d80-b244-ff962bd545d2 (role_id=3242) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] spice-ai-147430d4 (role_id=2826) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] spruceid-130c2bb1-35f4-4c19-b252-f64614b4bcb0 (role_id=2599) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] starbridge-fe9f5e0e-1563-4bec-9079-1364d12edf06 (role_id=2806) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] stripe-7206336 (role_id=950) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] stripe-7230452 (role_id=3019) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] stripe-7377101 (role_id=3025) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] stripe-7812209 (role_id=878) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] stripe-7812346 (role_id=879) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] stripe-7975723 (role_id=3021) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] substack-de90dcf8-fecc-4b3f-bda4-b23411ee905a (role_id=3579) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tabs-47b3be40-2bd5-4825-b58e-9f58af6cbda5 (role_id=2851) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tarro-b836443e-3b00-422f-86d5-fc6348d11a91 (role_id=1988) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tavily-1999e01d-f9e3-4f43-a097-812c0800fb0f (role_id=890) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tennr-69299476-8f80-46e9-a1e9-4c5879a1644f (role_id=3593) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tennr-a439c5b8-1686-4b90-b2bc-cffd761e002d (role_id=3594) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tennr-a751f64b-4207-40aa-a225-f5c43ecfecee (role_id=3595) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tennr-f027960f-b8ed-49cd-8313-11f05523e90d (role_id=3596) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] think-cell-software-4872202101 (role_id=1295) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] thumbtack-20b7b151-75bf-4265-995d-30c081e86b7d (role_id=2287) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] titan-3ef24822-1cd7-48f6-98b1-8ab2508fa311 (role_id=2665) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] together-ai-5131941007 (role_id=3113) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tractian-19a60bea (role_id=2653) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] tractian-a1211269 (role_id=2654) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] twilio-7963689 (role_id=1947) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] twilio-7963691 (role_id=1946) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] veeva-systems-43b4eb9f (role_id=3622) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] verkada-4086501007 (role_id=2848) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] vivenu-06099ee7 (role_id=2770) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] waymo-7902413 (role_id=3371) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] waymo-7917617 (role_id=3372) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] waymo-7922962 (role_id=3369) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] waymo-7926309 (role_id=3370) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] waymo-7939648 (role_id=3373) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] waymo-7944323 (role_id=3620) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] waymo-8027001 (role_id=3619) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] wizards-of-the-coast-4249862009 (role_id=2050) ===
+[07:03:06]   Already applied in DB — stale PREP-READY, skipping without consuming limit
+[07:03:06] 
+=== [7] zoox-0a22d356 (role_id=3605) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] zoox-1f94a0cd (role_id=2715) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] zoox-50531a96 (role_id=2717) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== [7] zoox-519a337e (role_id=2722) ===
+[07:03:06]   ATS=lever not auto-submittable via these runners — skipping
+[07:03:06] 
+=== RESULTS ===
+[07:03:06] Submitted (1): ['namespace-baf4e483-2481-4848-b238-556133dfcd3b']
+[07:03:06] Failed    (5): ['ambientai-eb953820-7748-4620-98a0-b97bcdc40001', 'anrok-40367604-03ac-459e-9ac7-880fa8497f4e', 'antithesis-40832045-9804-41a9-a211-24bb5dddea68', 'decagon-230ad153-85be-4f7b-a368-5bad59e513e2', 'decagon-9109be1c-b6e3-430f-a964-887253ef891a']
+[07:03:06] Skipped   (258): 258
+[07:03:06] Re-rendering XLSX...
+[07:03:07]   Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+[07:03:07]     Open:         0
+[07:03:07]     Applied:      3552
+[07:03:07] === drain_prep_ready DONE ===
+[2026-06-25 07:03:07] Drain done: 1 submitted (exit 0)
+[2026-06-25 07:03:07] Drain done: 1 submitted (exit 0)
+[2026-06-25 07:03:07] Phase 3: render xlsx...
+[2026-06-25 07:03:07] Phase 3: render xlsx...
+Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+  Open:         0
+  Applied:      3552
+Wrote: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/Cyrus_Job_Tracker.xlsx
+  Open:         0
+  Applied:      3552
+[2026-06-25 07:03:08] === Daily apply run done (prep=0
+0 submitted=1) ===
+[2026-06-25 07:03:08] === Daily apply run done (prep=0
+0 submitted=1) ===

@@ -12,7 +12,7 @@
 
 We are a fusion power company based in Everett, WA, with the mission to build the world's first fusion power plant, enabling a future with unlimited clean electricity. Our vision is a world with clean, reliable, and affordable energy for everyone.
 
-Since Helion's founding in 2013, we have raised over $1 billion from long-time investors such as Sam Altman, Mithril, and Capricorn Investment Group as well as new investors SoftBank and Lightspeed to propel us forward. Our last prototype, Trenta, completed 10,000 high-power pulses and reached plasma temperatures of 100 million degrees Celsius (9 keV). We are now operating Polaris, our next prototype on the path to the world's first fusion power plant.
+Since Helion's founding in 2013, we have raised $1.5 billion from long-time investors such as Sam Altman, Mithril, and Capricorn Investment Group as well as new investors including Thrive Capital, LightSpeed Venture Capital, SoftBank, and others to propel us forward. Our current prototype, Polaris, has reached record-breaking plasma temperatures of 150 million degrees Celsius (13 keV). Helion is continuing to iterate and on the path to the world's first fusion power plant, Orion.
 
 This is a pivotal time to join Helion. You will tackle real-world challenges with a team that prizes urgency, rigor, ownership, and a commitment to delivering hard truths – values essential to achieving what no one has before. Together, we will change the future of energy, because the world can't wait.
 

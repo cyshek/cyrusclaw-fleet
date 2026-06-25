@@ -1,9 +1,8 @@
-PREP-READY — 2026-06-04T12:07:31+00:00
+SUBMITTED — 2026-06-24T18:00:00+00:00
 
-role_id: 2815
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-mediaalpha-8525774002.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/mediaalpha-8525774002/Cyrus_Shekari_Resume_mediaalpha_8525774002_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/mediaalpha-8525774002/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+role: MediaAlpha — Technical Program Manager
+submitted_by: auto
+confirmation_url: https://job-boards.greenhouse.io/mediaalpha/jobs/8525774002/confirmation
+confirmation_text: Thank you for applying.
+resume_attached: true
+runner: _gh_submit.py

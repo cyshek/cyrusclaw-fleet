@@ -1,11 +1,13 @@
 {
   "symbol": "TQQQ",
   "underlying": "QQQ",
-  "target_ann_vol": 0.40,
+  "target_ann_vol": 0.4,
   "vol_window": 20,
   "w_max": 1.0,
   "cot_scale_bearish": 0.5,
-  "notional": 1000.0,
+  "notional": 160.0,
   "sma_gate_window": 200,
-  "description": "TQQQ vol-target + COT AM-momentum overlay. Scale to 50% on COT bearish."
+  "description": "TQQQ vol-target + COT AM-momentum overlay. Scale to 50% on COT bearish.",
+  "bear_flatten_gate": true,
+  "_bear_flatten_gate_note": "L165: runner-level SPY-200d-SMA bear-flatten overlay with 201d re-entry hysteresis. Composes on TOP of the internal QQQ-SMA-200 cash gate (belt-and-suspenders). PAPER. See reports/REGIME_DETECTION_L165_*.md."
 }

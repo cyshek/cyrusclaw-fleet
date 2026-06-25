@@ -1,24 +1,27 @@
 {
   "_archetype": "Multi-sleeve ALLOCATOR BLEND (inverse-vol 63d risk-parity of a TQQQ vol-target sleeve + a sector-rotation top-2 sleeve). The bench's first multi-sleeve allocator wired to live PAPER trading.",
-  "_validated": "reports/ALLOCATOR_BLEND_20260621.md — full Sharpe 1.014 / OOS 1.147 / maxDD -23.9%, beats BOTH sleeves standalone. Promoted config: invvol_63d.",
-  "_thesis": "Trade the validated blend's CURRENT per-underlying target weights faithfully on a paper clock, using the new partial-trim primitive in runner_xsec.py so legs can be reduced-while-long instead of only bought/closed. Weights are REUSED verbatim from runner.allocator_paper_tracker.compute_blend_state() (the validated decomposition) — zero sleeve-math reimplementation, lookahead-safe by construction.",
+  "_validated": "reports/ALLOCATOR_BLEND_20260621.md \u2014 full Sharpe 1.014 / OOS 1.147 / maxDD -23.9%, beats BOTH sleeves standalone. Promoted config: invvol_63d.",
+  "_thesis": "Trade the validated blend's CURRENT per-underlying target weights faithfully on a paper clock, using the new partial-trim primitive in runner_xsec.py so legs can be reduced-while-long instead of only bought/closed. Weights are REUSED verbatim from runner.allocator_paper_tracker.compute_blend_state() (the validated decomposition) \u2014 zero sleeve-math reimplementation, lookahead-safe by construction.",
   "_paper_only": "PAPER ONLY. No real money. Scheduled in crontab + cron_tick.sh as of 2026-06-22 (reviewed/greenlit by main). Seed fills 2026-06-22 16:09 UTC; first cron-driven tick expected next trading day 07-13 UTC window.",
-
-  "basket": ["TQQQ", "SPY", "QQQ", "GLD", "TLT"],
+  "basket": [
+    "TQQQ",
+    "SPY",
+    "QQQ",
+    "GLD",
+    "TLT"
+  ],
   "timeframe": "1Day",
   "bar_limit": 300,
-  "max_notional_usd": 100,
-  "notional_usd": 100,
-
+  "max_notional_usd": 58.62,
+  "notional_usd": 58.62,
   "churn_frac": 0.05,
   "_churn_frac_note": "Rebalance a leg only if |target_qty - cur_qty| > max(1, floor(churn_frac*target_qty)). Mirrors tqqq_cot_combo's 5% churn guard so intramonth weight drift doesn't thrash the book.",
-
   "monthly_cadence": true,
   "_monthly_cadence_note": "The validated blend rebalances at month-open; by default we only re-target on a month change (intramonth ticks HOLD). Set false to re-target every tick (still churn-guarded) for faster paper convergence.",
-
   "regime_gate": false,
   "_regime_gate_note": "This allocator has its own internal risk management via the vol-target sleeve + inv-vol weighting; it does NOT consume the runner's Tier-2 regime gate. Left false.",
-
   "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
-  "safety_max_loss_pct": -50.0
+  "safety_max_loss_pct": -50.0,
+  "bear_flatten_gate": true,
+  "_bear_flatten_gate_note": "L165 SECONDARY: runner-level SPY-200d-SMA bear-flatten overlay (201d re-entry hysteresis). On a SPY bear-latch the xsec runner closes every held leg and skips decide_xsec until SPY reclaims SMA201. Stacks with the internal vol-target/inv-vol risk mgmt. PAPER. See reports/REGIME_DETECTION_L165_*.md."
 }

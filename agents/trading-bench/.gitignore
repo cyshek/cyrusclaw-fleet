@@ -3,6 +3,11 @@
 .env.*
 !.env.example
 
+# Secrets rotation: secure drop dir + .env backups (L163). NEVER track these.
+.secrets_drop/
+.secrets_drop/**
+memory/env_backup_*.env
+
 # SQLite + caches
 tournament.db
 tournament.db-journal
@@ -30,3 +35,4 @@ TOURNAMENT_ROUND_*.md
 
 # Tests' temp report dir
 tests/_tmp_reports/
+.scratch_archive/

@@ -6,4 +6,4 @@ Cyrus Shekari
 
 ## Where are you physically based?
 
-I'm based in Kirkland, Washington, just outside Seattle. I'm open to relocating for the right role and to traveling as needed.
+Kirkland, WA (greater Seattle area).

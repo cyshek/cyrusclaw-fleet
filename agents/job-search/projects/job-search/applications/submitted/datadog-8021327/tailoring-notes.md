@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **resilience validation program** from a 2-person operation into a platformized system, standardizing distributed-systems workflows to sustain 45+ annual drills and drive **$14M+ impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation workflow.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** with strict SLA and compliance requirements.
+5. Built an internal **AI agent** for drill planning and restructured troubleshooting workflows end-to-end, reducing planning cycle time by 39% and expanding drill capacity by 21% without adding headcount.
+6. Defined and tracked adoption and retention metrics for platform features post-launch, iterating rapidly on self-service onboarding flows based on customer conversations and usage data to drive measurable engineer productivity gains.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across Azure service teams, conducting user demos and training that drove utilization across 14 key teams and saved **37 engineering hours** monthly on repetitive development tasks.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, uncovering critical feature gaps and validating assumptions before committing engineering resources.
+3. Improved observability of documentation retrieval by implementing metadata standards and migrating to an **AI-powered semantic search** tool, cutting engineer lookup time by 83% and reducing cognitive load during troubleshooting workflows.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ service teams across engineering and operations.
+2. Drove discovery with 20+ service teams to surface 81 hours of manual toil per region launch, then defined a product roadmap to automate critical paths and reduce friction for engineers new to the **distributed-systems deployment** workflow.
+3. Engineered a **Power BI dashboard** tracking operational toil and automation coverage across 140+ teams, enabling leadership to identify high-impact gaps, prioritize investment, and measure progress against roadmap OKRs each quarter.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating rollout sequencing across distributed robotics infrastructure.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, triaging and prioritizing 40+ high-severity tickets to stabilize the **developer intake workflow** and unblock engineering velocity across cross-functional teams.
+3. Partnered with IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual validation steps that previously created performance bottlenecks.
+4. Defined clear problem statements and acceptance criteria for each sprint, enabling engineering and design to ship incremental improvements while maintaining system reliability across a complex, high-throughput production environment.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a new CRM process that improved conversion tracking and reduced operational toil for the sales team.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile to improve funnel performance across key acquisition channels.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and closing margin leaks that were compressing per-job returns across high-volume service categories.
+
+## Notes from the rewriter
+- 'distributed systems' woven into microsoft_2022 bullet#2 and amazon_robotics bullet#1 — mirrors JD's core domain of Distributed Tracing and complex backend services.
+- 'intelligent troubleshooting workflows' and 'cognitive load' referenced in microsoft_ft bullet#5 — directly mirrors JD language about AI-driven troubleshooting, root-cause analysis, and reducing cognitive load for engineers.
+- 'self-service onboarding' and 'out of the box experience' surfaced in microsoft_ft bullet#6 — maps to JD's explicit callout of agentic onboarding and OOTB experience as key deliverables.
+- 'adoption and retention metrics' with rapid iteration framing in microsoft_ft bullet#6 — mirrors JD requirement to track adoption, retention, and iterate based on data and customer conversations.
+- 'go-to-market strategy' in pro_painters bullet#2 — mirrors JD's GTM responsibility across marketing, sales, and customer success for shipped features.
+- 'problem statements' language in amazon_robotics bullet#4 — mirrors JD's explicit requirement to articulate clearly defined problem statements for engineering and design partners.
+

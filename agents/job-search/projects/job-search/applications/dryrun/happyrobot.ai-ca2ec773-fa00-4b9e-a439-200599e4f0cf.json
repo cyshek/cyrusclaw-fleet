@@ -5,21 +5,21 @@
   "job_id": "ca2ec773-fa00-4b9e-a439-200599e4f0cf",
   "job_title": "Forward Deployed Engineer",
   "job_location": "New York",
-  "fetched_at": "2026-05-31T07:04:43Z",
+  "fetched_at": "2026-06-24T18:31:05Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
-  "ready_to_submit": true,
+  "ready_to_submit": false,
   "counts": {
-    "total_fields": 3,
-    "filled": 3,
+    "total_fields": 11,
+    "filled": 9,
     "filled_needs_review": 0,
     "declined": 0,
-    "needs_essay": 0,
-    "unresolved": 0,
-    "blockers": 0
+    "needs_essay": 1,
+    "unresolved": 1,
+    "blockers": 1
   },
   "fields": [
     {
-      "id": "5d938c5f-e1f3-4d28-a94f-e3c9d823f2f7__systemfield_name",
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,25 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "5d938c5f-e1f3-4d28-a94f-e3c9d823f2f7__systemfield_name"
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3__systemfield_name",
+      "section": "Apply for this job"
     },
     {
-      "id": "5d938c5f-e1f3-4d28-a94f-e3c9d823f2f7__systemfield_email",
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_643b8c70-b316-4ba5-8e64-13d66ffb8790",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_643b8c70-b316-4ba5-8e64-13d66ffb8790",
+      "section": "Apply for this job"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +57,39 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "5d938c5f-e1f3-4d28-a94f-e3c9d823f2f7__systemfield_email"
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3__systemfield_email",
+      "section": "Apply for this job"
     },
     {
-      "id": "5d938c5f-e1f3-4d28-a94f-e3c9d823f2f7__systemfield_resume",
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_66850564-46c7-482c-9f83-2915ddd8d986",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_66850564-46c7-482c-9f83-2915ddd8d986",
+      "section": "Apply for this job"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_d7b4d9bb-e921-4a71-9963-02e8f8a26ced",
+      "label": "LinkedIn",
+      "type": "textarea",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_d7b4d9bb-e921-4a71-9963-02e8f8a26ced",
+      "section": "Apply for this job"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,9 +99,133 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "5d938c5f-e1f3-4d28-a94f-e3c9d823f2f7__systemfield_resume"
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3__systemfield_resume",
+      "section": "Apply for this job"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_83b15078-71ac-4049-ba75-cf71aa1dae9e",
+      "label": "Are you legally authorized to work in the country in which the job you're applying for is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_83b15078-71ac-4049-ba75-cf71aa1dae9e",
+      "section": "Additional information"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_9c08301d-92db-4144-b871-3f754f2c9878",
+      "label": "Will you now or in the future require visa sponsorship to work in the country in which the job you're applying for is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_9c08301d-92db-4144-b871-3f754f2c9878",
+      "section": "Additional information"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_e9aa7cff-b453-45ef-86f5-6da9b242134e",
+      "label": "Are you able to work in one of our offices?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, but I don't live near an office and need to relocate.",
+      "source": "no LABEL_RULES match for label='Are you able to work in one of our offices?'",
+      "status": "filled",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes, and I already live in the location listed on the job.",
+          "value": "Yes, and I already live in the location listed on the job."
+        },
+        {
+          "label": "Yes, but I don't live near an office and need to relocate.",
+          "value": "Yes, but I don't live near an office and need to relocate."
+        },
+        {
+          "label": "No, I need to work remotely.",
+          "value": "No, I need to work remotely."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_e9aa7cff-b453-45ef-86f5-6da9b242134e",
+      "section": "Additional information"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_98377a08-9706-4039-be39-ab93cd7b0095",
+      "label": "Are you open to travel?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_travel",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_98377a08-9706-4039-be39-ab93cd7b0095",
+      "section": "Additional information"
+    },
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_6ed4a4ba-4838-4972-bdf7-3b4a4c7ab788",
+      "label": "What makes you the right hire for this position?",
+      "type": "textarea",
+      "required": true,
+      "value": "I have been building and deploying complex AI and software systems in enterprise environments throughout my career at Microsoft, and I understand the fundamental challenge HappyRobot is solving: getting AI voice agents into real production workflows requires someone who can close the gap between what the model can do and what the customer's system actually needs. My experience managing technical integrations across sovereign cloud environments, running cross-functional deployments with enterprise customers, and debugging live system failures under pressure maps directly to the FDE role. Beyond the technical match, I think HappyRobot is solving one of the genuinely interesting deployment problems in AI right now - the phone call and voice layer is still mostly unautomated, and that's an asymmetric opportunity. I want to be on the team making that real.",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "filled",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "da1b02a4-d516-44fb-be7e-5eef909057d3_6ed4a4ba-4838-4972-bdf7-3b4a4c7ab788",
+      "section": "Additional information"
     }
   ],
-  "unresolved": [],
-  "blockers": []
+  "unresolved": [
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_e9aa7cff-b453-45ef-86f5-6da9b242134e",
+      "label": "Are you able to work in one of our offices?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Are you able to work in one of our offices?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "da1b02a4-d516-44fb-be7e-5eef909057d3_e9aa7cff-b453-45ef-86f5-6da9b242134e",
+      "label": "Are you able to work in one of our offices?",
+      "reason": "no LABEL_RULES match for label='Are you able to work in one of our offices?'"
+    }
+  ]
 }

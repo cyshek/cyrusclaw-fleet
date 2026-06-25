@@ -1,17 +1,12 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-21T01:29:48+00:00
+SUBMITTED — 2026-06-25T01:21:10+00:00
 
 role_id: 2222
-slug:    roblox-7895212
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-roblox-7895212.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/roblox-7895212/Cyrus_Shekari_Resume_roblox_7895212_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/roblox-7895212/cover_answers.md
-wrapper: https://careers.roblox.com/jobs/7895212?gh_jid=7895212
+slug: roblox-7895212
+ats: greenhouse_iframe
+submitted_by: auto (_gh_submit.py)
+confirmation_url: https://job-boards.greenhouse.io/embed/job_app/confirmation?for=roblox&token=7895212
+confirmation: Thank you for applying to Roblox!
 
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
-
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug roblox-7895212
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).
+Your application has been received. If your q
+screenshot: n/a
+resume_attached: yes

@@ -6,19 +6,15 @@ Cyrus Shekari
 
 ## Who is your current employer?
 
-Microsoft, where I work as a Technical Program Manager.
+Microsoft
 
 ## What is the approximate total funding of projects for which you've been the program manager? What is the title of 1-2 of the projects?
 
-At Microsoft I led a multi-year validation program that drove over $14M in business impact across enterprise partners including Databricks, Walmart, SAP, and NetApp. The two projects I'd point to are the Enterprise Resilience Drill Program, which grew from a 2-person operation into a platformized system sustaining 45+ annual resilience drills, and the Resilience Automation Platform, a 0-to-1 build where I defined technical requirements and self-service scheduling that cut operational toil by 30%.
-
-Within that portfolio I also directed individual high-stakes executions tied to large contracts, including a sovereign-cloud network isolation test connected to a $1.5B+ enterprise contract. Across all of this I owned schedule, budget health, and progress reporting to senior stakeholders. My budget management experience clears the $1M threshold, and the work spanned multiple stakeholder groups and technical domains rather than a single narrow scope.
+The projects I've managed haven't been structured as externally funded research grants, so I want to be straightforward about that rather than overstate. At Microsoft, the programs I've led have carried significant business impact - the Azure Recovery Validation Program I own drove $14M+ in documented business impact across enterprise partners, and a sovereign-cloud network isolation drill I led was tied to a $1.5B+ enterprise contract. In terms of direct budget ownership, I've managed multi-year operational program budgets within Azure. The two programs I'd highlight are the Azure Recovery Validation Program and the Resilience Automation Platform buildout. My background is in technology program management rather than research grant administration, but I've operated at scale with high financial stakes, cross-org accountability, and direct executive reporting throughout.
 
 ## What technology did you advance from TRL 3 to TRL 6?
 
-I took a proactive resilience-testing capability from concept to production, moving it from TRL 3 to TRL 6 on an accelerated 4-month timeline. It started as an unproven idea and became a rack-level drill program running in production with a 94% recovery rate.
-
-Along the way the program surfaced critical hardware defects that would have otherwise gone undetected, and it established a new model for continuous validation that the org adopted going forward. The hard part was less the underlying concept and more proving it out at hardware level, removing tooling and process blockers, and getting it reliable enough to run continuously rather than as a one-off experiment.
+I want to be honest here - my background doesn't map directly to the formal TRL framework used in research and defense contexts. That said, the closest analog in my work is the proactive rack-level resilience testing capability I built at Microsoft. When I inherited the problem, the concept existed only as an informal idea with no tooling, no process, and no validation data - roughly equivalent to a proof-of-concept stage. Within 4 months, I delivered a fully operational drill program with a 94% recovery rate, surfacing real hardware defects and establishing it as a continuous-validation standard adopted across engineering teams - moving from concept to repeatable, demonstrated system performance in a production environment. I recognize that isn't a textbook TRL 3-to-6 progression in the nuclear or materials science sense, and I want to name that gap directly rather than obscure it.
 
 ## By typing my legal name below, I certify that I have read and understood the statement and questions above and that the answers that I have provided are true and correct to the best of my knowledge and belief.
 

@@ -37,9 +37,29 @@ import sys
 import time
 import traceback
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 from . import db, risk
+from . import bear_flatten_gate
+
+
+class _XsecAction:
+    """Lightweight synthetic action for the L165 bear-flatten override.
+
+    The xsec runner reads actions via getattr(a, "action"/"symbol"/"reason"),
+    so a plain attribute holder is sufficient; it never needs the full
+    strategy Action dataclass. notional_usd/qty default to a close (ignored
+    on the close pass, which sells the whole held qty)."""
+
+    __slots__ = ("action", "symbol", "notional_usd", "qty", "reason")
+
+    def __init__(self, action: str, symbol: str, *, reason: str = "",
+                 notional_usd: float = 0.0, qty: Optional[float] = None):
+        self.action = action
+        self.symbol = symbol
+        self.reason = reason
+        self.notional_usd = notional_usd
+        self.qty = qty
 from .backtest_xsec import _clamp_basket, _PosBook, load_xsec_strategy
 from .broker_alpaca import AlpacaClient, AlpacaError
 from .market_hours import is_us_equity_market_open
@@ -85,9 +105,13 @@ def _fetch_leg_price(client: AlpacaClient, symbol: str) -> Optional[float]:
 
 
 def _fetch_regime(client: AlpacaClient) -> Optional[dict]:
-    """Best-effort SPY 1Day(100) injection for regime-aware strategies."""
+    """Best-effort SPY 1Day injection for regime-aware strategies.
+
+    limit raised 100->260 so the L165 bear-flatten gate can compute SPY
+    SMA-200/201 (needs >=201 closes). Strategies reading spy_closes for a
+    shorter lookback slice the tail and are unaffected."""
     try:
-        spy_bars = client.stock_bars("SPY", timeframe="1Day", limit=100)
+        spy_bars = client.stock_bars("SPY", timeframe="1Day", limit=260)
         spy_closes = [float(b["c"]) for b in (spy_bars or [])]
         if spy_closes:
             return {"spy_closes": spy_closes, "spy_last": spy_closes[-1]}
@@ -309,7 +333,50 @@ def run(strategy_name: str) -> int:
         }
         position_state = _build_position_state_view(books, live_price_by_sym)
 
-        actions = decide_xsec_fn(market_state, position_state, params) or {}
+        # -------- L165 bear-flatten regime gate (opt-in; SPY-200d + hysteresis) --
+        # When params["bear_flatten_gate"] is true (allocator_blend secondary),
+        # consult the deterministic SPY-SMA-200 overlay BEFORE decide_xsec. If
+        # latched bear (SPY < SMA200, held until SPY >= SMA201), OVERRIDE the
+        # basket to close every currently-held leg and skip decide_xsec
+        # entirely this tick. The hysteresis latch lives in
+        # strategy_state[_bear_flatten] (cross-flat persistent state, persisted
+        # right below). Fail-open: any error / short SPY history defers to the
+        # strategy's own logic.
+        bear_gate_fired = False
+        if bool(params.get("bear_flatten_gate", False)):
+            try:
+                _spy_cl = bear_flatten_gate.spy_closes_from_regime(regime)
+                _ss = market_state.get("strategy_state")
+                _prev_bf = (_ss.get(bear_flatten_gate.STATE_KEY)
+                            if isinstance(_ss, dict) else None)
+                _gres = bear_flatten_gate.evaluate(_spy_cl, _prev_bf)
+                if isinstance(_ss, dict):
+                    _ss[bear_flatten_gate.STATE_KEY] = _gres.new_state
+                if _gres.flatten:
+                    bear_gate_fired = True
+                    _bf_actions: Dict[str, Any] = {}
+                    for _sym in basket:
+                        _bk = books.get(_sym) or {}
+                        try:
+                            _hq = float(_bk.get("qty", 0.0) or 0.0)
+                        except (TypeError, ValueError):
+                            _hq = 0.0
+                        if _hq > 0:
+                            _bf_actions[_sym] = _XsecAction(
+                                action="close", symbol=_sym,
+                                reason=f"L165 {_gres.note} -> flatten leg to cash")
+                    actions = _bf_actions
+                    db.log_decision(strategy_name, "bear_flatten_close",
+                                    reason=_gres.note,
+                                    detail=f"L165 SPY bear gate; closing {len(_bf_actions)} held leg(s)")
+            except Exception as _bf_err:  # noqa: BLE001  fail-open
+                db.log_decision(strategy_name, "hold",
+                                reason=f"bear_flatten_gate error (deferred): {_bf_err}",
+                                detail="non-fatal")
+                bear_gate_fired = False
+
+        if not bear_gate_fired:
+            actions = decide_xsec_fn(market_state, position_state, params) or {}
         if not isinstance(actions, dict):
             raise TypeError(
                 f"decide_xsec must return dict[symbol -> Action], got "

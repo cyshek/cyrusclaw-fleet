@@ -22,6 +22,9 @@ from pathlib import Path
 from typing import Dict, List
 
 from . import db
+from . import correlation
+from . import risk_metrics
+from .edge_calibrator import LIVE_ROSTER, EXCLUDE_STRATEGIES
 
 
 SCHEMA = """
@@ -45,7 +48,15 @@ def _ensure_schema():
         c.executescript(SCHEMA)
 
 
-def compute() -> List[dict]:
+def compute(include_all: bool = False) -> List[dict]:
+    """Per-strategy realized/unrealized P&L + risk metrics.
+
+    By default the leaderboard is restricted to the LIVE book (edge_calibrator.LIVE_ROSTER)
+    and ALWAYS strips EXCLUDE_STRATEGIES (synthetic harnesses + dead crypto legs) -- the same
+    canonical guard used by position_drift / edge_calibrator, so the board reflects the real
+    8-strategy book instead of tournament.db's synthetic-row pollution. Pass include_all=True
+    to show every strategy in the DB (forensics only).
+    """
     _ensure_schema()
     with db.connect() as c:
         trades = c.execute(
@@ -55,10 +66,13 @@ def compute() -> List[dict]:
             "ORDER BY id ASC"
         ).fetchall()
 
-    # group per (strategy, symbol)
+    # group per (strategy, symbol), filtering non-book rows unless include_all.
     by_key: Dict[tuple, list] = defaultdict(list)
     for t in trades:
-        by_key[(t["strategy"], t["symbol"])].append(dict(t))
+        strat = t["strategy"]
+        if not include_all and (strat in EXCLUDE_STRATEGIES or strat not in LIVE_ROSTER):
+            continue
+        by_key[(strat, t["symbol"])].append(dict(t))
 
     # latest fill price per symbol for unrealized mark
     latest_price: Dict[str, float] = {}
@@ -124,7 +138,26 @@ def compute() -> List[dict]:
             "turnover_usd": round(s["turnover_usd"], 2),
         })
     rows.sort(key=lambda r: r["total_usd"], reverse=True)
+    _attach_risk_metrics(rows)
     return rows
+
+
+def _attach_risk_metrics(rows: List[dict]) -> None:
+    """Add Sortino/Calmar (and supporting day counts) to each row, from the realized
+    daily-P&L series. Additive + best-effort: any failure leaves the row's raw P&L intact
+    and simply omits the risk fields (set to None). Never raises.
+    """
+    for r in rows:
+        try:
+            series = correlation.daily_pnl_series(r["strategy"])
+            m = risk_metrics.compute_for_series(series)
+        except Exception:
+            m = {"n_closed_days": None, "n_down_days": None,
+                 "sortino": None, "calmar": None, "max_drawdown_usd": None}
+        r["sortino"] = (round(m["sortino"], 3) if m["sortino"] is not None else None)
+        r["calmar"] = (round(m["calmar"], 3) if m["calmar"] is not None else None)
+        r["max_drawdown_usd"] = m["max_drawdown_usd"]
+        r["n_closed_days"] = m["n_closed_days"]
 
 
 def snapshot(rows: List[dict]) -> None:
@@ -147,12 +180,23 @@ def format_chat(rows: List[dict]) -> str:
     lines = ["📊 **Tournament leaderboard** (so far)"]
     for i, r in enumerate(rows, 1):
         wr = f"{r['win_rate']*100:.0f}%" if r["win_rate"] is not None else "n/a"
+        sortino = r.get("sortino")
+        calmar = r.get("calmar")
+        srt = f"{sortino:+.2f}" if sortino is not None else "n/a"
+        clm = f"{calmar:+.2f}" if calmar is not None else "n/a"
+        ndays = r.get("n_closed_days")
+        nd = ndays if ndays is not None else "?"
         lines.append(
             f"{i}. `{r['strategy']}` — total ${r['total_usd']:+.2f} "
             f"(realized ${r['realized_usd']:+.2f}, unrealized ${r['unrealized_usd']:+.2f}) "
-            f"| trades={r['n_trades']}, win%={wr}, turnover=${r['turnover_usd']:.0f}"
+            f"| trades={r['n_trades']}, win%={wr}, turnover=${r['turnover_usd']:.0f} "
+            f"| Sortino={srt}, Calmar={clm} (closed-days={nd})"
         )
-    lines.append("_Sample sizes are tiny; rankings are noise until n_trades >> 20._")
+    lines.append(
+        "_Sample sizes are tiny; rankings are noise until n_trades >> 20. "
+        "Sortino/Calmar show n/a until a strategy has ≥2 closed-P&L days with a losing day "
+        "(no downside → ratio undefined, not infinite)._"
+    )
     return "\n".join(lines)
 
 
@@ -163,15 +207,25 @@ def main() -> None:
                         help="Append per-strategy daily-P&L correlation matrix")
     parser.add_argument("--no-snapshot", action="store_true",
                         help="Skip writing rankings snapshot row")
+    parser.add_argument("--risk-sort", action="store_true",
+                        help="Sort leaderboard by Sortino (desc) instead of total P&L; "
+                             "undefined-Sortino strategies sink to the bottom")
+    parser.add_argument("--all", action="store_true",
+                        help="Include ALL strategies in tournament.db (synthetic test rows "
+                             "+ retired/dead lanes); default shows only the live book")
     args = parser.parse_args()
 
-    rows = compute()
+    rows = compute(include_all=args.all)
+    if args.risk_sort:
+        rows.sort(
+            key=lambda r: (r.get("sortino") is not None, r.get("sortino") or 0.0),
+            reverse=True,
+        )
     if not args.no_snapshot:
         snapshot(rows)
     print(format_chat(rows))
 
     if args.correlation:
-        from . import correlation
         strategies = [r["strategy"] for r in rows]
         print()
         print(correlation.format_correlation_section(strategies))

@@ -1,7 +1,7 @@
 # Solutions Architect, Air Force
 
 **Company:** Cape
-**Location:** Washington, DC
+**Location:** Arlington, VA
 **Apply:** https://jobs.ashbyhq.com/cape/602bd208-8d7f-4194-b592-e414962aff0a
 **Ashby Org:** cape
 **Ashby Job ID:** 602bd208-8d7f-4194-b592-e414962aff0a
@@ -104,7 +104,7 @@ Solutions Architects at Cape* *lead engagements with our federal customers. They
 
 - Bias Towards Action
 
-We offer competitive compensation that is **geo-adjusted** based on **your location**, along with meaningful equity so you share in the value you help create. Salary range for this role in Washington, DC is $165,000-$190,000 depending on experience and interview performance.
+We offer competitive compensation that is **geo-adjusted** based on **your location**, along with meaningful equity so you share in the value you help create. Salary range for this role in Arlington, VA is $170,000-$190,000 depending on experience and interview performance.
 
 Our benefits include:
 
@@ -135,3 +135,5 @@ Our benefits include:
 Click the link below to apply.
 
 We reserve the right to make use of any unsolicited resumes received from outside recruiting agencies and / or individual recruiters without being responsible for payment of any fees asserted from the use of unsolicited resumes.
+
+We are an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, or national origin, and without regard to disability or status as a protected veteran, or any other status protected by law.
