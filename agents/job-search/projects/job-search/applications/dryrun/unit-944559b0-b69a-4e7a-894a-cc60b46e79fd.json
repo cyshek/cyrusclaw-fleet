@@ -1,0 +1,155 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/unit/944559b0-b69a-4e7a-894a-cc60b46e79fd",
+  "org": "unit",
+  "job_id": "944559b0-b69a-4e7a-894a-cc60b46e79fd",
+  "job_title": "Solutions Engineer ",
+  "job_location": "New York Office",
+  "fetched_at": "2026-06-25T19:44:36Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_name"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_email"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_resume"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d__systemfield_location"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d_aa6483e1-9331-4c34-b4c5-ca2f987770ee",
+      "label": "(Optional) LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d_aa6483e1-9331-4c34-b4c5-ca2f987770ee"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d_8faf116d-b8db-4143-8180-b9b96e363fb2",
+      "label": "This is a hybrid role in our NYC Office. Will you be able to work onsite 4 times a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d_8faf116d-b8db-4143-8180-b9b96e363fb2"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d_cb0e02f1-ef67-4f24-96c1-359983f31860",
+      "label": "Are you currently authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d_cb0e02f1-ef67-4f24-96c1-359983f31860"
+    },
+    {
+      "id": "0c286b07-0215-421c-8d77-35a9c1d5704d_50e71071-88ff-4b19-b69f-353d88569550",
+      "label": "Will you now or in the future require any kind of visa transfer or sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "0c286b07-0215-421c-8d77-35a9c1d5704d_50e71071-88ff-4b19-b69f-353d88569550"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

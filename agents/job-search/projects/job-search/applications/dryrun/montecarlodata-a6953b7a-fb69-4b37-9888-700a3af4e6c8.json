@@ -1,0 +1,111 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/montecarlodata/a6953b7a-fb69-4b37-9888-700a3af4e6c8",
+  "org": "montecarlodata",
+  "job_id": "a6953b7a-fb69-4b37-9888-700a3af4e6c8",
+  "job_title": "Applied Forward Deployed Engineer",
+  "job_location": "Remote, Americas",
+  "fetched_at": "2026-06-25T22:47:37Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "77deb33b-be1f-4760-8c96-131248035dfd__systemfield_name",
+      "label": "Legal Full  Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "77deb33b-be1f-4760-8c96-131248035dfd__systemfield_name"
+    },
+    {
+      "id": "77deb33b-be1f-4760-8c96-131248035dfd__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "77deb33b-be1f-4760-8c96-131248035dfd__systemfield_email"
+    },
+    {
+      "id": "77deb33b-be1f-4760-8c96-131248035dfd_74df96af-ded4-4230-8a1f-ba7b07550102",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "77deb33b-be1f-4760-8c96-131248035dfd_74df96af-ded4-4230-8a1f-ba7b07550102"
+    },
+    {
+      "id": "77deb33b-be1f-4760-8c96-131248035dfd__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "77deb33b-be1f-4760-8c96-131248035dfd__systemfield_resume"
+    },
+    {
+      "id": "77deb33b-be1f-4760-8c96-131248035dfd_2452f1e2-08e9-4544-8188-e7b24d965128",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "77deb33b-be1f-4760-8c96-131248035dfd_2452f1e2-08e9-4544-8188-e7b24d965128"
+    },
+    {
+      "id": "77deb33b-be1f-4760-8c96-131248035dfd_eb75067e-feba-4a85-9853-5b2561650cfe",
+      "label": "Do you have authorization to work for any employer in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "77deb33b-be1f-4760-8c96-131248035dfd_eb75067e-feba-4a85-9853-5b2561650cfe"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

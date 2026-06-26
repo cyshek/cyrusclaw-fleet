@@ -1,0 +1,137 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/socket/de959cdb-2441-4ce9-a31a-4cc4e50fb8fe",
+  "org": "socket",
+  "job_id": "de959cdb-2441-4ce9-a31a-4cc4e50fb8fe",
+  "job_title": "Sales Engineer, SMB",
+  "job_location": "United States",
+  "fetched_at": "2026-06-25T19:23:55Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63__systemfield_name"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_7fa703a5-3616-4746-8cd7-32ff7b1a3a67",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_7fa703a5-3616-4746-8cd7-32ff7b1a3a67"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63__systemfield_email"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_5833c649-dd0d-4802-9bf5-cdeb13505c92",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_5833c649-dd0d-4802-9bf5-cdeb13505c92"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63__systemfield_resume"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_8b25bf46-a162-4c28-aad2-956144bdd1ef",
+      "label": "Please include a link to your LinkedIn profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_8b25bf46-a162-4c28-aad2-956144bdd1ef"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_e8a8240b-55b7-4a87-a441-dd53cb967d8f",
+      "label": "Will you require employment sponsorship now or in the future to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_e8a8240b-55b7-4a87-a441-dd53cb967d8f"
+    },
+    {
+      "id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_43934780-5c02-417a-9897-0d02d14ac292",
+      "label": "How did you hear about Socket?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "ce7c38f5-1e58-4f47-9193-001f5511bc63_43934780-5c02-417a-9897-0d02d14ac292"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

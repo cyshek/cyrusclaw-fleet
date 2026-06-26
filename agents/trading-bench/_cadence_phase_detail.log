@@ -1,0 +1,18 @@
+[sleeves] loaded cached _regime_sleeves.pkl (2010-02-12 -> 2026-06-25, n=4116)
+monthly baseline net 984.7% OOS 268.1%
+>>> every_2mo per-phase:
+   phase 0  net 1065.8% (Sh 1.019 DD -23.2%) OOS 276.8% (Sh 1.126) | beats_full=True beats_oos=True
+   phase 1  net 1035.4% (Sh 1.017 DD -23.1%) OOS 271.0% (Sh 1.125) | beats_full=True beats_oos=True
+   -> 2/2 phases beat monthly FULL, 2/2 beat monthly OOS
+>>> every_3mo per-phase:
+   phase 0  net 1062.9% (Sh 1.012 DD -23.4%) OOS 276.9% (Sh 1.117) | beats_full=True beats_oos=True
+   phase 1  net 1082.2% (Sh 1.025 DD -23.1%) OOS 274.3% (Sh 1.119) | beats_full=True beats_oos=True
+   phase 2  net 1068.0% (Sh 1.018 DD -24.9%) OOS 283.4% (Sh 1.151) | beats_full=True beats_oos=True
+   -> 3/3 phases beat monthly FULL, 3/3 beat monthly OOS
+>>> every_4mo per-phase:
+   phase 0  net 1173.2% (Sh 1.036 DD -22.0%) OOS 298.2% (Sh 1.142) | beats_full=True beats_oos=True
+   phase 1  net 979.4% (Sh 0.987 DD -24.7%) OOS 266.9% (Sh 1.105) | beats_full=False beats_oos=False
+   phase 2  net 1014.8% (Sh 0.997 DD -26.4%) OOS 258.5% (Sh 1.095) | beats_full=True beats_oos=False
+   phase 3  net 1154.5% (Sh 1.046 DD -22.3%) OOS 268.1% (Sh 1.111) | beats_full=True beats_oos=False
+   -> 3/4 phases beat monthly FULL, 1/4 beat monthly OOS
+wrote reports/_cadence_phase_detail.json

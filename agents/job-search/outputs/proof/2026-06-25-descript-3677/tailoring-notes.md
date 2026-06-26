@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation platform** from a 2-person operation into a self-service, API-driven system standardizing workflows across 45+ annual resilience drills and delivering **$14M+ business impact** for enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining API requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution from manual coordination to scalable, developer-accessible infrastructure.
+3. Pioneered Azure's first proactive resilience testing capability — delivering a **rack-level drill program** in 4 months with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation model adopted across the platform.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, aligning engineering, legal, and partner teams across jurisdictions.
+5. Built an internal **AI agent for drill planning**, restructuring automation workflows to cut planning cycle time by 39% and increase drill capacity by 21% — applying agentic AI to turn a manual, expert-gated process into scalable developer tooling.
+6. Shaped go-to-market and pricing strategy for enterprise resilience offerings by partnering with Sales and Marketing to define positioning for partner integrations, directly influencing contract structures with Databricks, Walmart, and NetApp.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **developer platform adoption** for AI-powered code generation workflows, running customer discovery sessions and demos that brought 14 Azure service teams onto the platform and saved **37 engineering hours monthly** in automated content workflows.
+2. Surfaced critical API feature gaps by conducting **11+ customer discovery interviews** with Azure service teams, directly influencing the roadmap to prioritize intent-based YAML generation — a 0→1 capability that unlocked new programmatic content workflows.
+3. Improved platform data integrity and developer experience by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, reducing content lookup time by 83% across internal engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by aligning 140+ teams on a unified automation prioritization framework — defining the go-to-market playbook for a scaled, developer-facing infrastructure rollout.
+2. Built a bottom-up product strategy to eliminate operational toil during region launches, conducting **discovery across 20+ service teams** to surface 81 hours of manual effort per region and shipping a roadmap to automate critical developer-facing workflows at scale.
+3. Enabled leadership to target **automation gaps** and prioritize high-impact platform investments by engineering a Power BI dashboard tracking operational toil across 140+ teams, turning raw workflow data into a strategic prioritization tool.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by owning the legacy OS migration strategy end-to-end — mapping API dependencies across 1,200+ stations and sequencing rollout to protect developer and operations workflows throughout.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing the developer intake backlog** to resolve 40+ high-priority tickets and stabilize the platform's self-service pipeline for engineering teams across the robotics org.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable delivery model for future platform-layer integrations.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, redesigning the CRM workflow to turn a manual, error-prone process into a scalable, data-driven customer acquisition pipeline.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rate by 2.7% by executing a digital-first go-to-market strategy — optimizing the website funnel and Google Business profile to better match customer intent at each stage of discovery.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks that had gone undetected — directly informing the pricing strategy for new service tiers.
+
+## Notes from the rewriter
+- 'API' and 'developer platform' vocabulary from the JD woven into microsoft_ft bullets 1–2 and amazon_robotics bullet 1 — framing Azure's internal platform as API-driven infrastructure mirrors Descript's core ask.
+- '0→1' language from the JD's 'You build things from scratch' section placed prominently in microsoft_ft bullet 2 and microsoft_2023 bullet 2 to signal direct experience with the ambiguous, greenfield product-building Descript describes.
+- 'Customer discovery' — a JD-explicit requirement under 'You start with the customer' — surfaced in microsoft_2023 bullet 2 (11+ interviews) and microsoft_2022 bullet 2 (20+ service teams) to show structured discovery methodology, not just output.
+- 'Go-to-market strategy and pricing' from the JD's 'Define and grow this business line' bullet appears in microsoft_ft bullet 6 and microsoft_2022 bullet 1, grounding platform work in business outcomes Sales and Marketing care about.
+- 'Agentic AI' and 'workflow automation at scale' — core to Descript's Agentic AI team collaboration ask — appear in microsoft_ft bullet 5 (AI agent for drill planning) and amazon_robotics bullet 3 (CI/CD pipelines), showing both AI tooling and scalable automation experience.
+

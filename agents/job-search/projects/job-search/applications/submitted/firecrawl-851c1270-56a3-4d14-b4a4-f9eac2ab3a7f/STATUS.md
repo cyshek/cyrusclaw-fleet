@@ -1,9 +1,11 @@
-PREP-READY — 2026-06-24T21:12:27+00:00
+SUBMITTED — 2026-06-25
 
 role_id: 2566
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-firecrawl-851c1270-56a3-4d14-b4a4-f9eac2ab3a7f.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/firecrawl-851c1270-56a3-4d14-b4a4-f9eac2ab3a7f/Cyrus_Shekari_Resume_ashby-firecrawl_851c1270_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/firecrawl-851c1270-56a3-4d14-b4a4-f9eac2ab3a7f/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+company: Firecrawl
+role: Sales Engineer
+submitted_by: auto (_ashby_runner.py via residential proxy)
+applied_on: 2026-06-25
+confirmation: FormSubmitSuccess — "Your application was successfully submitted. We'll contact you if there are next steps."
+confirmation_url: https://jobs.ashbyhq.com/firecrawl/851c1270-56a3-4d14-b4a4-f9eac2ab3a7f/application
+resume_attached: Cyrus_Shekari_Resume_ashby-firecrawl_851c1270_v2.pdf
+proxy: residential (egress 82.23.97.223 / Webshare)

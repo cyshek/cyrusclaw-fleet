@@ -50,6 +50,7 @@ from runner.sweep import (
     expand_grid,
     run_sweep,
     _assert_cost_active,
+    _verdict,
 )
 
 
@@ -414,3 +415,56 @@ def test_validation_reproduces_known_momentum_reject():
     # Markdown renders without error and reports zero plateaus.
     md = report.to_markdown()
     assert "ROBUST PLATEAUS: none" in md
+
+
+# ---------------------------------------------------------------------------
+# Clause-(a) fold into the front-door verdict (BACKLOG P2 misread-trap fix).
+# Before the fix, `front` = fitness AND #1 AND #5b only, so a cell that cleared
+# those secondary clauses but had FP-cont Sharpe < 1.0 rendered a bold PASS(a)
+# even though clause (a) is THE load-bearing primary gate. These pin that a
+# sub-1.0 cell is now a REJECT(a), and that the positive path is unaffected.
+# ---------------------------------------------------------------------------
+
+def _metrics(fp, *, fitness=True, a1=True, dd5b=True):
+    return {
+        "fp_cont_sharpe": fp,
+        "fitness_pass": fitness,
+        "bar_a1_pass": a1,
+        "dd5b_pass": dd5b,
+    }
+
+
+def test_verdict_subthreshold_fp_cont_is_reject_even_if_secondary_clauses_pass():
+    # The exact misread-trap: all secondary clauses pass, but FP-cont 0.85 < 1.0.
+    front, clauses = _verdict(_metrics(0.85))
+    assert front is False                 # was True before the fix (bug)
+    assert clauses == ["a"]               # clause (a) is the ONLY failure
+    # And it must render as REJECT(a), never PASS(a).
+    c = CellResult(cell_id=0, params={}, universe_name="u", universe=[])
+    c.fp_cont_sharpe = 0.85
+    c.front_door_pass, c.reject_clauses = front, clauses
+    verdict = ("PASS" if c.front_door_pass else "REJECT")
+    if c.reject_clauses:
+        verdict += "(" + ",".join(c.reject_clauses) + ")"
+    assert verdict == "REJECT(a)"
+
+
+def test_verdict_exactly_one_point_zero_passes_clause_a():
+    # Boundary: FP-cont == 1.0 satisfies the >= 1.0 gate.
+    front, clauses = _verdict(_metrics(1.0))
+    assert front is True
+    assert clauses == []
+
+
+def test_verdict_full_pass_when_fp_cont_above_one_and_all_clauses_pass():
+    front, clauses = _verdict(_metrics(1.20))
+    assert front is True
+    assert clauses == []
+
+
+def test_verdict_subthreshold_fp_cont_stacks_with_other_clause_failures():
+    # FP-cont below 1.0 AND a secondary clause also failing -> both recorded,
+    # clause (a) listed first (primary), still a REJECT.
+    front, clauses = _verdict(_metrics(0.50, fitness=False))
+    assert front is False
+    assert clauses == ["a", "fitness"]

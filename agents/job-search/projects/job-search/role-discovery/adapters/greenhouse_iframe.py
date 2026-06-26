@@ -93,6 +93,7 @@ HOST_TO_GH_SLUG: dict[str, str] = {
     "praetorian.com":             "praetorian",
     "rubrik.com":                 "rubrik",
     "esri.com":                   "esri",
+    "cribl.io":                   "cribl",
 }
 
 GH_JID_RX = re.compile(r"[?&]gh_jid=(\d+)")

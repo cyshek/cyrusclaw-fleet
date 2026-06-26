@@ -124,6 +124,42 @@ TARGET_VOL = 0.10                 # per-sleeve ann vol BEFORE ERC weighting
 # EACH sleeve to TARGET_VOL first, THEN ERC-weights -> a true unit-risk book that
 # reproduces the validated baseline Sharpe ~0.96 / 80/20 ~1.04 on current live data.
 
+# Every symbol whose daily-bars cache gates the blend's markable frontier (book
+# single-symbol legs + the TQQQ special + core4 + the SPY benchmark). The daily
+# bars cache (runner.daily_bars_cache.get_daily) serves a parsed cache AS-IS once
+# written and never auto-refetches, so without an explicit refresh the freshest
+# print never lands and the common-day frontier (mark = common[-1]) freezes at
+# whichever symbol is stalest. This is exactly the allocator tracker's _refresh_bars
+# discipline (it force-refreshes ^GSPC/TQQQ/QQQ/SPY/GLD/TLT for the same reason);
+# the tsmom tracker originally shipped WITHOUT it, which is why its paper clock
+# stuck at inception while the allocator clock advanced daily.
+_REFRESH_SYMBOLS: List[str] = [
+    "XLK", "QQQ", "SPY", "IWM", "TQQQ",   # book single-symbol legs + VT/COT underlier
+    "DBC", "GLD", "TLT", "UUP",           # core4 TSMOM sleeve
+]
+
+
+def _refresh_bars(symbols: List[str]) -> Dict[str, str]:
+    """Force a re-fetch of each symbol's daily bars so the latest close is present
+    before we compute today's snapshot. Mirrors allocator_paper_tracker._refresh_bars.
+    Resilient: a per-symbol fetch failure is logged and we fall back to whatever is
+    already cached (never crash the daily tracker over a transient Yahoo hiccup).
+    """
+    from runner import daily_bars_cache as dbc
+    status: Dict[str, str] = {}
+    for sym in symbols:
+        try:
+            bars = dbc.get_daily(sym, refresh=True)
+            status[sym] = bars[-1]["date"] if bars else "empty"
+        except Exception as exc:  # noqa: BLE001 - intentionally broad; never fatal
+            try:
+                bars = dbc.get_daily(sym)  # fall back to whatever is cached
+                status[sym] = "%s(cached, refresh failed: %s)" % (
+                    bars[-1]["date"] if bars else "empty", type(exc).__name__)
+            except Exception:
+                status[sym] = "unavailable: %s" % type(exc).__name__
+    return status
+
 
 # --------------------------------------------------------------------------- #
 # DB schema (mirrors allocator_paper_tracker's daily_snapshots shape)
@@ -225,6 +261,11 @@ def build_ingredients() -> Tuple[Dict[str, float], Dict[str, float],
     import _tsmom_engine as E          # noqa: WPS433
 
     rwn = _load_risk_weights()
+    # Refresh the daily-bars cache to the latest close BEFORE rebuilding the live
+    # series, so the book/core4/SPY frontier marks to today's print instead of
+    # freezing at whatever symbol's cache is stalest (the inception-freeze bug).
+    refresh_status = _refresh_bars(_REFRESH_SYMBOLS)
+    print("[tsmom_blend] bar refresh: %s" % json.dumps(refresh_status), flush=True)
     series, _meta, spy_ret = X.build_all_series()
 
     # 8-series common window.
@@ -365,29 +406,58 @@ def paper_clock_stats(db_path: str = DEFAULT_DB) -> dict:
     }
 
 
-def check_staleness(db_path: str = DEFAULT_DB, max_age_days: int = 4) -> int:
-    """Return 3 if the paper clock looks STALLED, else 0. Mirrors the allocator
-    tracker's silent-clock guard but on a WALL-CLOCK basis.
+def check_staleness(db_path: str = DEFAULT_DB, max_trading_days: int = 3,
+                    max_age_days: int = 4) -> int:
+    """Return 3 if the paper clock looks STALLED, else 0.
 
-    Why wall-clock, not 'behind latest SPY bar': the blend's markable frontier =
-    the latest common day across book(8 backtests) + core4(monthly) + SPY, which
-    lags the raw SPY cache by a few trading days STRUCTURALLY (the strategy
-    backtests/cache cut off before the freshest SPY print). Comparing the last
-    logged date to the latest raw SPY bar therefore false-positives every run.
-    The real failure we want to catch is 'the cron stopped writing' -- detected
-    by the age of the most recent row's created_at timestamp.
+    Catches BOTH failure modes:
+      (a) FROZEN FRONTIER (the inception-freeze bug): the cron runs every day but
+          the newest snapshot DATE stops advancing because a book ingredient's
+          bars cache went stale, so mark = common[-1] sticks. A created_at-only
+          guard is BLIND to this (created_at refreshes every run while the clock
+          is actually frozen) -- which is exactly how it slipped for a week.
+      (b) CRON STOPPED: no new run at all -> the newest row's created_at ages out.
 
-    STALE (rc 3) iff the newest row was written > max_age_days ago (default 4,
-    covering a normal Fri->Mon weekend gap plus a day of slack).
+    (a) is detected by counting TRADING DAYS (not calendar days, so weekends do
+    not inflate the gap) between the newest snapshot DATE and the latest SPY daily
+    bar. With the bars-cache refresh now wired into build_ingredients the residual
+    book lag is <=1 trading day, so a tolerance of `max_trading_days` (default 3,
+    covering a weekend + a post-close-before-print day of slack) flags a genuine
+    freeze without false-positiving on the structural ~1-day lag. (b) is the
+    original created_at age check, kept as a secondary backstop.
     """
     conn = _get_conn(db_path)
     try:
         last = conn.execute(
-            "SELECT created_at FROM daily_snapshots ORDER BY date DESC LIMIT 1"
+            "SELECT date, created_at FROM daily_snapshots ORDER BY date DESC LIMIT 1"
         ).fetchone()
     finally:
         conn.close()
-    if last is None or not last["created_at"]:
+    if last is None:
+        return 0  # no rows yet = clock not started, not stale
+
+    # (a) FROZEN-FRONTIER guard: snapshot date vs latest SPY bar, in TRADING days.
+    snap_date = last["date"]
+    if snap_date:
+        try:
+            from runner import daily_bars_cache as dbc
+            spy_dates = [b["date"] for b in dbc.get_daily("SPY")]
+            if spy_dates:
+                latest_spy = spy_dates[-1]
+                # trading-day gap = number of SPY bars strictly after the snapshot date.
+                gap_td = sum(1 for d in spy_dates if d > snap_date)
+                if gap_td > max_trading_days:
+                    print(
+                        "[tsmom_blend] STALE-FRONTIER: newest snapshot %s is %d "
+                        "trading day(s) behind latest SPY bar %s (tol=%d)"
+                        % (snap_date, gap_td, latest_spy, max_trading_days),
+                        flush=True)
+                    return 3
+        except Exception:
+            pass  # SPY fetch is best-effort; fall through to the created_at backstop
+
+    # (b) CRON-STOPPED backstop: newest row's created_at age in wall-clock days.
+    if not last["created_at"]:
         return 0
     try:
         written = datetime.fromisoformat(last["created_at"])

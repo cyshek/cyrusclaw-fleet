@@ -1,0 +1,36 @@
+>>> common 2010-02-12 -> 2026-06-25  n=4116  month_opens=197
+>>> building PIT NFCI feed (first-release, release_date <= rebal) ...
+    NFCI PIT covers 181 / 197 month-opens (first=2011-06-01 last=2026-06-01)
+>>> building PIT BAA10Y feed ...
+    BAA10Y PIT covers 197 / 197 month-opens
+>>> STATIC invvol_63d baseline ...
+    STATIC: totret 984.7% CAGR 15.7% Sharpe 1.003 (fp 1.003) maxDD -23.9% | avg w_tqqq 0.349
+    SPX floor: totret 582.2% CAGR 12.5% Sharpe 0.769 maxDD -33.9%
+>>> regime grid (tilt x threshold) ...
+   nfci_zero_tilt0.00     full totret 984.7% CAGR 15.7% Sharpe 1.003 maxDD -23.9% | OOS totret 268.1% Sh 1.123 | beat_static full=False oos=False
+   nfci_zero_tilt0.15     full totret 1197.1% CAGR 17.0% Sharpe 0.989 maxDD -26.4% | OOS totret 309.7% Sh 1.125 | beat_static full=True oos=True
+   nfci_zero_tilt0.25     full totret 1347.8% CAGR 17.8% Sharpe 0.970 maxDD -28.0% | OOS totret 337.9% Sh 1.113 | beat_static full=True oos=True
+   nfci_zero_tilt0.35     full totret 1499.1% CAGR 18.5% Sharpe 0.948 maxDD -29.3% | OOS totret 362.7% Sh 1.092 | beat_static full=True oos=True
+   nfci_exmed_tilt0.00    full totret 984.7% CAGR 15.7% Sharpe 1.003 maxDD -23.9% | OOS totret 268.1% Sh 1.123 | beat_static full=False oos=False
+   nfci_exmed_tilt0.15    full totret 942.6% CAGR 15.4% Sharpe 0.974 maxDD -24.0% | OOS totret 216.1% Sh 1.039 | beat_static full=False oos=False
+   nfci_exmed_tilt0.25    full totret 909.2% CAGR 15.2% Sharpe 0.938 maxDD -24.2% | OOS totret 184.6% Sh 0.960 | beat_static full=False oos=False
+   nfci_exmed_tilt0.35    full totret 888.4% CAGR 15.1% Sharpe 0.897 maxDD -25.1% | OOS totret 159.2% Sh 0.874 | beat_static full=False oos=False
+>>> robustness composite nfci_baa (z-blend, > 0 = risk-off) ...
+   nfci_baa_tilt0.00      full totret 984.7% CAGR 15.7% Sharpe 1.003 maxDD -23.9% | OOS totret 268.1% Sh 1.123 | beat_static full=False oos=False
+   nfci_baa_tilt0.15      full totret 1028.6% CAGR 16.0% Sharpe 0.955 maxDD -25.9% | OOS totret 252.8% Sh 1.024 | beat_static full=True oos=False
+   nfci_baa_tilt0.25      full totret 1049.0% CAGR 16.1% Sharpe 0.915 maxDD -28.5% | OOS totret 241.6% Sh 0.955 | beat_static full=True oos=False
+   nfci_baa_tilt0.35      full totret 1079.6% CAGR 16.3% Sharpe 0.877 maxDD -31.0% | OOS totret 232.7% Sh 0.892 | beat_static full=True oos=False
+>>> no-lookahead canary (rebal_date, nfci_value_used, nfci_obs_date, nfci_release_date) ...
+   2012-02-01  nfci=-0.430  obs=2012-01-27  released=2012-02-01  release<=rebal:True
+   2014-02-03  nfci=-0.940  obs=2014-01-24  released=2014-01-29  release<=rebal:True
+   2016-02-01  nfci=-0.560  obs=2016-01-22  released=2016-01-27  release<=rebal:True
+   2018-02-01  nfci=-0.940  obs=2018-01-26  released=2018-01-31  release<=rebal:True
+   2020-02-03  nfci=-0.820  obs=2020-01-24  released=2020-01-29  release<=rebal:True
+   2022-02-01  nfci=-0.587  obs=2022-01-21  released=2022-01-26  release<=rebal:True
+   2024-02-01  nfci=-0.564  obs=2024-01-26  released=2024-01-31  release<=rebal:True
+   2026-02-02  nfci=-0.600  obs=2026-01-23  released=2026-01-28  release<=rebal:True
+   CANARY: all used NFCI releases <= rebal date? True (release-date coverage 181/181)
+
+>>> VERDICT SCAN: static full totret 984.7% | best variant nfci_zero_tilt0.35 totret 1499.1% (Sharpe 0.948 maxDD -29.3%)
+    nonzero variants beating static on RAW totret: full 6/9 | OOS 3/9
+wrote reports/_regime_allocator_result.json

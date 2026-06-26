@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "common_window": [
+      "2010-02-12",
+      "2026-06-25"
+    ],
+    "n_days": 4116,
+    "n_month_opens": 197,
+    "n_quarter_opens": 66,
+    "n_week_opens": 855,
+    "n_biweek_opens": 428,
+    "vol_lookback_days": 63,
+    "blend_cost_bps": 2.0,
+    "churn_frac": 0.05,
+    "method": "inv-vol 63d blend of (TQQQ vol-target + sector-rotation top-2); vary ONLY the rebalance cadence; 2bps one-way inter-sleeve cost; drift intramonth; _stats_from_equity (pop) ruler + fp_cont_sharpe (sample) cross-check",
+    "sleeve_solo_stats": {
+      "tqqq": {
+        "sharpe": 0.8567946116274487,
+        "cagr_pct": 20.582475767745724,
+        "max_drawdown_pct": -34.523523629447,
+        "total_return_pct": 2026.3848786143228
+      },
+      "rot": {
+        "sharpe": 0.9165903169766411,
+        "cagr_pct": 12.785624822870512,
+        "max_drawdown_pct": -28.98261394320111,
+        "total_return_pct": 613.6379123833312
+      },
+      "spx": {
+        "sharpe": 0.7685869874631682,
+        "cagr_pct": 12.475110052479277,
+        "max_drawdown_pct": -33.92496000265329,
+        "total_return_pct": 582.2155863624233
+      }
+    }
+  },
+  "harness_faithfulness": {
+    "ab_blend_portfolio": {
+      "total_return_pct": 984.7046555079174,
+      "sharpe": 1.002923462625958,
+      "fp_cont_sharpe": 1.0028015933184256,
+      "maxdd_pct": -23.897235738415155,
+      "cagr_pct": 15.718240714352593
+    },
+    "blend_with_cadence_monthly": {
+      "total_return_pct": 984.7046555079174,
+      "sharpe": 1.002923462625958,
+      "maxdd_pct": -23.897235738415155
+    },
+    "reproduces_totret": true,
+    "reproduces_sharpe": true,
+    "avg_w_tqqq": 0.34852602716791947,
+    "target_validated_sharpe_approx": 1.003,
+    "target_validated_maxdd_approx": -23.9,
+    "target_validated_totret_approx": 985.0
+  },
+  "spx_floor": {
+    "total_return_pct": 582.2155863624233,
+    "cagr_pct": 12.475110052479277,
+    "sharpe": 0.7685869874631682,
+    "maxdd_pct": -33.92496000265329
+  },
+  "cadences": {
+    "monthly_baseline": {
+      "label": "monthly_baseline",
+      "n_rebal": 196,
+      "turnover_total": 18.28453917578075,
+      "avg_turnover_per_rebal": 0.09328846518255485,
+      "annual_turnover": 1.1194615821906582,
+      "full": {
+        "total_return_pct": 984.7046555079174,
+        "total_return_pct_gross": 988.6786653427492,
+        "cost_drag_pct": 3.9740098348318043,
+        "cagr_pct": 15.718240714352593,
+        "sharpe": 1.002923462625958,
+        "fp_cont_sharpe": 1.0028015933184256,
+        "maxdd_pct": -23.897235738415155,
+        "vol_pct": 15.812157042829893
+      },
+      "is_2010_2018": {
+        "total_return_pct": 194.18077052463155,
+        "cagr_pct": 12.937207851730538,
+        "sharpe": 0.8919362990434243,
+        "maxdd_pct": -23.897235738415155
+      },
+      "oos_2019_today": {
+        "total_return_pct": 268.09817919264555,
+        "cagr_pct": 19.097758949235512,
+        "sharpe": 1.1225739691503112,
+        "maxdd_pct": -21.88182424172831
+      }
+    },
+    "weekly": {
+      "label": "weekly",
+      "n_rebal": 853,
+      "turnover_total": 23.675490130099675,
+      "avg_turnover_per_rebal": 0.02775555701066785,
+      "annual_turnover": 1.4495198038836536,
+      "full": {
+        "total_return_pct": 971.2682353670662,
+        "total_return_pct_gross": 976.3528809490381,
+        "cost_drag_pct": 5.084645581971927,
+        "cagr_pct": 15.629944378945982,
+        "sharpe": 1.005491908641382,
+        "fp_cont_sharpe": 1.005369727231531,
+        "maxdd_pct": -22.533769773164703,
+        "vol_pct": 15.674032768599009
+      },
+      "is_2010_2018": {
+        "total_return_pct": 197.84037999405828,
+        "cagr_pct": 13.09474966546249,
+        "sharpe": 0.9093337941060463,
+        "maxdd_pct": -22.533769773164703
+      },
+      "oos_2019_today": {
+        "total_return_pct": 259.06326797248266,
+        "cagr_pct": 18.701481630195403,
+        "sharpe": 1.1093740668321548,
+        "maxdd_pct": -21.24037646697091
+      }
+    },
+    "biweekly": {
+      "label": "biweekly",
+      "n_rebal": 427,
+      "turnover_total": 19.655098669050666,
+      "avg_turnover_per_rebal": 0.0460306760399313,
+      "annual_turnover": 1.2033733879010613,
+      "full": {
+        "total_return_pct": 979.3366246510071,
+        "total_return_pct_gross": 983.587917937016,
+        "cost_drag_pct": 4.251293286008831,
+        "cagr_pct": 15.683088968345228,
+        "sharpe": 1.007951782978911,
+        "fp_cont_sharpe": 1.007829302659731,
+        "maxdd_pct": -22.703577497530624,
+        "vol_pct": 15.682788149660157
+      },
+      "is_2010_2018": {
+        "total_return_pct": 200.5267812167145,
+        "cagr_pct": 13.20930659315065,
+        "sharpe": 0.9147692281167927,
+        "maxdd_pct": -22.703577497530624
+      },
+      "oos_2019_today": {
+        "total_return_pct": 258.53376609456313,
+        "cagr_pct": 18.677990502399954,
+        "sharpe": 1.1088092976467356,
+        "maxdd_pct": -21.46002491887139
+      }
+    },
+    "quarterly": {
+      "label": "quarterly",
+      "n_rebal": 65,
+      "turnover_total": 12.37694623069833,
+      "avg_turnover_per_rebal": 0.19041455739535892,
+      "annual_turnover": 0.7577722182060203,
+      "full": {
+        "total_return_pct": 1068.036727220452,
+        "total_return_pct_gross": 1070.931757857917,
+        "cost_drag_pct": 2.8950306374651973,
+        "cagr_pct": 16.24395068145601,
+        "sharpe": 1.0179074904043404,
+        "fp_cont_sharpe": 1.0177838003266737,
+        "maxdd_pct": -24.90590649224933,
+        "vol_pct": 16.0656201119101
+      },
+      "is_2010_2018": {
+        "total_return_pct": 204.1921845542953,
+        "cagr_pct": 13.3641545519259,
+        "sharpe": 0.8962638593688949,
+        "maxdd_pct": -24.90590649224933
+      },
+      "oos_2019_today": {
+        "total_return_pct": 283.3556848048761,
+        "cagr_pct": 19.74823536604866,
+        "sharpe": 1.1505960182686958,
+        "maxdd_pct": -18.70937517572513
+      }
+    },
+    "daily_churn5pct": {
+      "label": "daily_churn5pct",
+      "n_rebal": 146,
+      "turnover_total": 20.099132292014453,
+      "avg_turnover_per_rebal": 0.13766528967133188,
+      "annual_turnover": 1.2305591199192523,
+      "full": {
+        "total_return_pct": 980.3348068634557,
+        "total_return_pct_gross": 984.686405386841,
+        "cost_drag_pct": 4.351598523385292,
+        "cagr_pct": 15.689637818298419,
+        "sharpe": 1.0048350456192605,
+        "fp_cont_sharpe": 1.0047129440275062,
+        "maxdd_pct": -22.474891712115785,
+        "vol_pct": 15.747360766078536
+      },
+      "is_2010_2018": {
+        "total_return_pct": 201.14532441771883,
+        "cagr_pct": 13.235554567554786,
+        "sharpe": 0.912777323889206,
+        "maxdd_pct": -22.474891712115785
+      },
+      "oos_2019_today": {
+        "total_return_pct": 258.10700298656644,
+        "cagr_pct": 18.659035464146466,
+        "sharpe": 1.1044902128044627,
+        "maxdd_pct": -21.319132783205152
+      }
+    }
+  },
+  "drift_threshold": {
+    "l1": {
+      "tau_0.02": {
+        "label": "drift_l1_0.02",
+        "n_rebal": 674,
+        "turnover_total": 26.623523360562523,
+        "avg_turnover_per_rebal": 0.03950077649935092,
+        "annual_turnover": 1.6300116343201545,
+        "full": {
+          "total_return_pct": 967.90577162348,
+          "total_return_pct_gross": 973.6072971150381,
+          "cost_drag_pct": 5.701525491558186,
+          "cagr_pct": 15.607685613943566,
+          "sharpe": 1.0057309686621994,
+          "fp_cont_sharpe": 1.0056087582031956,
+          "maxdd_pct": -22.332634468144118,
+          "vol_pct": 15.646970400846657
+        },
+        "is_2010_2018": {
+          "total_return_pct": 199.0040141874879,
+          "cagr_pct": 13.144482914341914,
+          "sharpe": 0.9132562402683535,
+          "maxdd_pct": -22.332634468144118
+        },
+        "oos_2019_today": {
+          "total_return_pct": 256.54549791363297,
+          "cagr_pct": 18.589512787438522,
+          "sharpe": 1.1057835875055324,
+          "maxdd_pct": -21.205370525851876
+        }
+      },
+      "tau_0.05": {
+        "label": "drift_l1_0.05",
+        "n_rebal": 292,
+        "turnover_total": 22.8835734650242,
+        "avg_turnover_per_rebal": 0.07836840227748014,
+        "annual_turnover": 1.4010351101035226,
+        "full": {
+          "total_return_pct": 976.6556059148801,
+          "total_return_pct_gross": 981.5945312548052,
+          "cost_drag_pct": 4.938925339925163,
+          "cagr_pct": 15.665471220785566,
+          "sharpe": 1.0077395450171094,
+          "fp_cont_sharpe": 1.0076170904878259,
+          "maxdd_pct": -22.460648759957337,
+          "vol_pct": 15.66882962226514
+        },
+        "is_2010_2018": {
+          "total_return_pct": 199.18294158701383,
+          "cagr_pct": 13.152114960048223,
+          "sharpe": 0.912297212247094,
+          "maxdd_pct": -22.460648759957337
+        },
+        "oos_2019_today": {
+          "total_return_pct": 259.2392629146976,
+          "cagr_pct": 18.70928292996661,
+          "sharpe": 1.110923714950389,
+          "maxdd_pct": -21.05870051720776
+        }
+      },
+      "tau_0.10": {
+        "label": "drift_l1_0.10",
+        "n_rebal": 146,
+        "turnover_total": 20.099132292014453,
+        "avg_turnover_per_rebal": 0.13766528967133188,
+        "annual_turnover": 1.2305591199192523,
+        "full": {
+          "total_return_pct": 980.3348068634557,
+          "total_return_pct_gross": 984.686405386841,
+          "cost_drag_pct": 4.351598523385292,
+          "cagr_pct": 15.689637818298419,
+          "sharpe": 1.0048350456192605,
+          "fp_cont_sharpe": 1.0047129440275062,
+          "maxdd_pct": -22.474891712115785,
+          "vol_pct": 15.747360766078536
+        },
+        "is_2010_2018": {
+          "total_return_pct": 201.14532441771883,
+          "cagr_pct": 13.235554567554786,
+          "sharpe": 0.912777323889206,
+          "maxdd_pct": -22.474891712115785
+        },
+        "oos_2019_today": {
+          "total_return_pct": 258.10700298656644,
+          "cagr_pct": 18.659035464146466,
+          "sharpe": 1.1044902128044627,
+          "maxdd_pct": -21.319132783205152
+        }
+      },
+      "tau_0.15": {
+        "label": "drift_l1_0.15",
+        "n_rebal": 91,
+        "turnover_total": 17.973731215499374,
+        "avg_turnover_per_rebal": 0.19751352984065246,
+        "annual_turnover": 1.1004325233979209,
+        "full": {
+          "total_return_pct": 1035.6916568092856,
+          "total_return_pct_gross": 1039.78164160257,
+          "cost_drag_pct": 4.0899847932844295,
+          "cagr_pct": 16.04421160385654,
+          "sharpe": 1.0223573212273325,
+          "fp_cont_sharpe": 1.022233090432631,
+          "maxdd_pct": -22.49034130246279,
+          "vol_pct": 15.782348590806228
+        },
+        "is_2010_2018": {
+          "total_return_pct": 210.25429079729722,
+          "cagr_pct": 13.616656978623665,
+          "sharpe": 0.9350599532960047,
+          "maxdd_pct": -22.49034130246279
+        },
+        "oos_2019_today": {
+          "total_return_pct": 265.4039256798955,
+          "cagr_pct": 18.980476651095746,
+          "sharpe": 1.116988759396853,
+          "maxdd_pct": -21.167633870996173
+        }
+      },
+      "tau_0.20": {
+        "label": "drift_l1_0.20",
+        "n_rebal": 58,
+        "turnover_total": 15.006955736007445,
+        "avg_turnover_per_rebal": 0.2587406161380594,
+        "annual_turnover": 0.9187932083269865,
+        "full": {
+          "total_return_pct": 1010.6202527350569,
+          "total_return_pct_gross": 1013.9587804289489,
+          "cost_drag_pct": 3.338527693892047,
+          "cagr_pct": 15.88568067977707,
+          "sharpe": 1.006365653160232,
+          "fp_cont_sharpe": 1.0062433655781329,
+          "maxdd_pct": -21.598317433167402,
+          "vol_pct": 15.918892743195718
+        },
+        "is_2010_2018": {
+          "total_return_pct": 209.48367093074864,
+          "cagr_pct": 13.584802796910989,
+          "sharpe": 0.9267124370293132,
+          "maxdd_pct": -21.598317433167402
+        },
+        "oos_2019_today": {
+          "total_return_pct": 258.2483329043539,
+          "cagr_pct": 18.665314915106947,
+          "sharpe": 1.0929495472500923,
+          "maxdd_pct": -21.176593537043566
+        }
+      },
+      "tau_0.25": {
+        "label": "drift_l1_0.25",
+        "n_rebal": 48,
+        "turnover_total": 15.075915160019038,
+        "avg_turnover_per_rebal": 0.31408156583373,
+        "annual_turnover": 0.9230152138787167,
+        "full": {
+          "total_return_pct": 1070.1546849362278,
+          "total_return_pct_gross": 1073.6883755387535,
+          "cost_drag_pct": 3.5336906025256667,
+          "cagr_pct": 16.256847794086404,
+          "sharpe": 1.0223359206053628,
+          "fp_cont_sharpe": 1.0222116924111373,
+          "maxdd_pct": -22.800892938122587,
+          "vol_pct": 15.995105129531137
+        },
+        "is_2010_2018": {
+          "total_return_pct": 213.905482604443,
+          "cagr_pct": 13.76663420768005,
+          "sharpe": 0.9297819295344161,
+          "maxdd_pct": -22.800892938122587
+        },
+        "oos_2019_today": {
+          "total_return_pct": 272.0273166949556,
+          "cagr_pct": 19.267470942850863,
+          "sharpe": 1.1226276729079878,
+          "maxdd_pct": -21.052652844326293
+        }
+      }
+    },
+    "maxleg": {
+      "tau_0.02": {
+        "label": "drift_maxleg_0.02",
+        "n_rebal": 372,
+        "turnover_total": 23.98885157565582,
+        "avg_turnover_per_rebal": 0.06448616014961242,
+        "annual_turnover": 1.46870519850954,
+        "full": {
+          "total_return_pct": 972.2193914091454,
+          "total_return_pct_gross": 977.3760968812755,
+          "cost_drag_pct": 5.15670547213017,
+          "cagr_pct": 15.636228920961482,
+          "sharpe": 1.0064805723052948,
+          "fp_cont_sharpe": 1.0063582707589065,
+          "maxdd_pct": -22.141017680098873,
+          "vol_pct": 15.662250349469431
+        },
+        "is_2010_2018": {
+          "total_return_pct": 199.52646549832198,
+          "cagr_pct": 13.166756431298365,
+          "sharpe": 0.9138667343511526,
+          "maxdd_pct": -22.141017680098873
+        },
+        "oos_2019_today": {
+          "total_return_pct": 257.3487555866536,
+          "cagr_pct": 18.62530897365342,
+          "sharpe": 1.1066539468609347,
+          "maxdd_pct": -21.136020232147068
+        }
+      },
+      "tau_0.05": {
+        "label": "drift_maxleg_0.05",
+        "n_rebal": 146,
+        "turnover_total": 20.099132292014453,
+        "avg_turnover_per_rebal": 0.13766528967133188,
+        "annual_turnover": 1.2305591199192523,
+        "full": {
+          "total_return_pct": 980.3348068634557,
+          "total_return_pct_gross": 984.686405386841,
+          "cost_drag_pct": 4.351598523385292,
+          "cagr_pct": 15.689637818298419,
+          "sharpe": 1.0048350456192605,
+          "fp_cont_sharpe": 1.0047129440275062,
+          "maxdd_pct": -22.474891712115785,
+          "vol_pct": 15.747360766078536
+        },
+        "is_2010_2018": {
+          "total_return_pct": 201.14532441771883,
+          "cagr_pct": 13.235554567554786,
+          "sharpe": 0.912777323889206,
+          "maxdd_pct": -22.474891712115785
+        },
+        "oos_2019_today": {
+          "total_return_pct": 258.10700298656644,
+          "cagr_pct": 18.659035464146466,
+          "sharpe": 1.1044902128044627,
+          "maxdd_pct": -21.319132783205152
+        }
+      },
+      "tau_0.10": {
+        "label": "drift_maxleg_0.10",
+        "n_rebal": 58,
+        "turnover_total": 15.006955736007445,
+        "avg_turnover_per_rebal": 0.2587406161380594,
+        "annual_turnover": 0.9187932083269865,
+        "full": {
+          "total_return_pct": 1010.6202527350569,
+          "total_return_pct_gross": 1013.9587804289489,
+          "cost_drag_pct": 3.338527693892047,
+          "cagr_pct": 15.88568067977707,
+          "sharpe": 1.006365653160232,
+          "fp_cont_sharpe": 1.0062433655781329,
+          "maxdd_pct": -21.598317433167402,
+          "vol_pct": 15.918892743195718
+        },
+        "is_2010_2018": {
+          "total_return_pct": 209.48367093074864,
+          "cagr_pct": 13.584802796910989,
+          "sharpe": 0.9267124370293132,
+          "maxdd_pct": -21.598317433167402
+        },
+        "oos_2019_today": {
+          "total_return_pct": 258.2483329043539,
+          "cagr_pct": 18.665314915106947,
+          "sharpe": 1.0929495472500923,
+          "maxdd_pct": -21.176593537043566
+        }
+      },
+      "tau_0.15": {
+        "label": "drift_maxleg_0.15",
+        "n_rebal": 37,
+        "turnover_total": 13.524649182127465,
+        "avg_turnover_per_rebal": 0.36553105897641797,
+        "annual_turnover": 0.8280397458445388,
+        "full": {
+          "total_return_pct": 1021.2419705720922,
+          "total_return_pct_gross": 1024.279086846545,
+          "cost_drag_pct": 3.0371162744527282,
+          "cagr_pct": 15.95324971395855,
+          "sharpe": 1.004200648287623,
+          "fp_cont_sharpe": 1.0040786237840689,
+          "maxdd_pct": -22.606396107508107,
+          "vol_pct": 16.028776405683473
+        },
+        "is_2010_2018": {
+          "total_return_pct": 208.5876139443515,
+          "cagr_pct": 13.54767496275091,
+          "sharpe": 0.9109205736923695,
+          "maxdd_pct": -22.606396107508107
+        },
+        "oos_2019_today": {
+          "total_return_pct": 262.58548066784925,
+          "cagr_pct": 18.856984129749787,
+          "sharpe": 1.1055982420510924,
+          "maxdd_pct": -22.070232516446254
+        }
+      },
+      "tau_0.20": {
+        "label": "drift_maxleg_0.20",
+        "n_rebal": 24,
+        "turnover_total": 11.630106970840615,
+        "avg_turnover_per_rebal": 0.48458779045169226,
+        "annual_turnover": 0.7120473655616704,
+        "full": {
+          "total_return_pct": 1065.0234794327441,
+          "total_return_pct_gross": 1067.7366482466432,
+          "cost_drag_pct": 2.713168813899074,
+          "cagr_pct": 16.225563894219007,
+          "sharpe": 0.9927459049512056,
+          "fp_cont_sharpe": 0.992625272360084,
+          "maxdd_pct": -23.97669421750551,
+          "vol_pct": 16.533509724576902
+        },
+        "is_2010_2018": {
+          "total_return_pct": 204.7035840817223,
+          "cagr_pct": 13.38562728662598,
+          "sharpe": 0.8744828194136687,
+          "maxdd_pct": -23.97669421750551
+        },
+        "oos_2019_today": {
+          "total_return_pct": 281.5800494615301,
+          "cagr_pct": 19.67369915819863,
+          "sharpe": 1.1218824188832417,
+          "maxdd_pct": -22.64839988345515
+        }
+      },
+      "tau_0.25": {
+        "label": "drift_maxleg_0.25",
+        "n_rebal": 16,
+        "turnover_total": 8.803395276001469,
+        "avg_turnover_per_rebal": 0.5502122047500918,
+        "annual_turnover": 0.5389833842449879,
+        "full": {
+          "total_return_pct": 1172.2120990990475,
+          "total_return_pct_gross": 1174.454155531696,
+          "cost_drag_pct": 2.2420564326484964,
+          "cagr_pct": 16.853715863866704,
+          "sharpe": 1.0290169948956776,
+          "fp_cont_sharpe": 1.028891954856952,
+          "maxdd_pct": -24.107321229922718,
+          "vol_pct": 16.463418189253183
+        },
+        "is_2010_2018": {
+          "total_return_pct": 243.7178910480949,
+          "cagr_pct": 14.936426622091181,
+          "sharpe": 0.9815445897937192,
+          "maxdd_pct": -24.107321229922718
+        },
+        "oos_2019_today": {
+          "total_return_pct": 269.23960165463825,
+          "cagr_pct": 19.147221645687253,
+          "sharpe": 1.0816455129384785,
+          "maxdd_pct": -20.312356008662192
+        }
+      }
+    }
+  },
+  "weekly_alt_anchor_wed": {
+    "label": "weekly_wed",
+    "n_rebal": 854,
+    "turnover_total": 23.768541153645888,
+    "avg_turnover_per_rebal": 0.027832015402395653,
+    "annual_turnover": 1.4552168053252585,
+    "full": {
+      "total_return_pct": 974.5792083237205,
+      "total_return_pct_gross": 979.6996553796529,
+      "cost_drag_pct": 5.120447055932345,
+      "cagr_pct": 15.65179829074852,
+      "sharpe": 1.0070576467882744,
+      "fp_cont_sharpe": 1.0069352751192173,
+      "maxdd_pct": -22.8073215977458,
+      "vol_pct": 15.667475936678619
+    },
+    "is_2010_2018": {
+      "total_return_pct": 196.54476923382666,
+      "cagr_pct": 13.039172549790257,
+      "sharpe": 0.9060939851588193,
+      "maxdd_pct": -22.8073215977458
+    },
+    "oos_2019_today": {
+      "total_return_pct": 261.74843725606814,
+      "cagr_pct": 18.820148295511064,
+      "sharpe": 1.1160159200002637,
+      "maxdd_pct": -21.689550855026717
+    }
+  },
+  "verdict_scan": {
+    "monthly_baseline_net_totret_pct": 984.7046555079174,
+    "monthly_baseline_oos_totret_pct": 268.09817919264555,
+    "monthly_baseline_full_sharpe": 1.002923462625958,
+    "monthly_baseline_maxdd_pct": -23.897235738415155,
+    "n_variants": 16,
+    "n_beat_baseline_net_full": 8,
+    "n_beat_baseline_net_oos": 4,
+    "variants_beating_full": [
+      "drift_l1_tau_0.15",
+      "drift_l1_tau_0.20",
+      "drift_l1_tau_0.25",
+      "drift_maxleg_tau_0.10",
+      "drift_maxleg_tau_0.15",
+      "drift_maxleg_tau_0.20",
+      "drift_maxleg_tau_0.25",
+      "quarterly"
+    ],
+    "variants_beating_oos": [
+      "drift_l1_tau_0.25",
+      "drift_maxleg_tau_0.20",
+      "drift_maxleg_tau_0.25",
+      "quarterly"
+    ],
+    "best_variant": "drift_maxleg_tau_0.25",
+    "best_variant_net_totret_pct": 1172.2120990990475,
+    "best_variant_full_sharpe": 1.0290169948956776,
+    "best_variant_maxdd_pct": -24.107321229922718,
+    "best_variant_oos_totret_pct": 269.23960165463825
+  }
+}

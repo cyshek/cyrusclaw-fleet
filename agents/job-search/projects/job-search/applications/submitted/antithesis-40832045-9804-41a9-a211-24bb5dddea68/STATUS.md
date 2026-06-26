@@ -1,9 +1,14 @@
-PREP-READY — 2026-06-25T03:30:56+00:00
+STATUS: SUBMITTED
+submitted_at: 2026-06-25T23:20:00+00:00
 
 role_id: 3615
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-antithesis-40832045-9804-41a9-a211-24bb5dddea68.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/antithesis-40832045-9804-41a9-a211-24bb5dddea68/Cyrus_Shekari_Resume_ashby-antithesis_40832045_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/antithesis-40832045-9804-41a9-a211-24bb5dddea68/cover_answers.md
+ats: ashby
+company: Antithesis
+role: Solutions Engineer
+apply_url: https://jobs.ashbyhq.com/antithesis/40832045-9804-41a9-a211-24bb5dddea68/application
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+submitted_by: auto (_ashby_runner.py, residential)
+resume: Cyrus_Shekari_Resume_ashby-antithesis_40832045_v2.pdf
+confirmation: FormSubmitSuccess + "Your application was successfully submitted."
+proxy: Webshare residential 19223
+note: ashby-hard-recaptcha-residential-resistant label was WRONG; residential works for Antithesis

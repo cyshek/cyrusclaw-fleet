@@ -66,6 +66,9 @@ _ASHBY_EXTRA_RULES = [
     ("legally authorized to work without", "work_authorized"),
     ("work without requiring sponsorship", "work_authorized"),
     ("work without needing sponsorship", "work_authorized"),
+    # Monte Carlo: "Do you have authorization to work for any employer in the US?"
+    ("authorization to work for any employer", "work_authorized"),
+    ("authorized to work for any employer", "work_authorized"),
     # --- "Do you have N+ years of <X> experience?" rendered as a YES/NO radio
     # (Knowtex 2593, 2026-06-10). The generic years_experience resolver returns
     # the NUMERIC count (e.g. "2"), which is a valid answer for a free-text

@@ -395,6 +395,9 @@ DEFAULT_UNPLANNED_DROPDOWN_PATTERNS = [
     # Common legally-authorized-to-work knockout (honest: US citizen -> Yes).
     {"pattern": "legally authorized to work", "answer": "Yes"},
     {"pattern": "authorized to work in the united states", "answer": "Yes"},
+    # Cribl-style work-auth phrasing (2026-06-25): "authorized to reside and work in the country"
+    {"pattern": "authorized to reside and work", "answer": "Yes"},
+    {"pattern": "reside and work in the country", "answer": "Yes"},
     # gh-resume-submit (2026-06-02, Unity 7905031): Unity ships these as
     # required knockout dropdowns boards-api leaves unspecced/needs_review.
     # Honest answers for Cyrus (US citizen, work-authorized, no restricted-

@@ -1347,6 +1347,22 @@ def pick_workday_source(page):
 
     def opts():
         # promptOption is the canonical Workday node; fall back to role=option.
+        # FIX (sf-source-scope 2026-06-25): scope to the ACTIVE popup/listbox so stale
+        # promptOption nodes from previously-opened menus (e.g. countryPhoneCode) are
+        # excluded. Walk visible popup containers in order of specificity.
+        for popup_sel in (
+            "[data-automation-id=wd-popup]",
+            "[data-automation-id=promptOptionList]",
+            "[role=listbox]",
+        ):
+            popup = page.locator(popup_sel).last
+            if popup.count():
+                scoped = popup.locator("[data-automation-id=promptOption]").all()
+                if not scoped:
+                    scoped = popup.locator("[role=option]").all()
+                if scoped:
+                    return scoped
+        # Fallback to global (unscoped) search if no popup found
         els = page.locator("[data-automation-id=promptOption]").all()
         if not els:
             els = page.locator("[role=option]").all()
@@ -1364,7 +1380,7 @@ def pick_workday_source(page):
             except Exception: pass
         return None
 
-    CATEGORIES = ["Job Board", "Social Media", "Online", "Job Boards", "Internet"]
+    CATEGORIES = ["Job Board", "External Career Site Sources", "Social Media", "Online", "Job Boards", "Internet"]
     LEAVES = ["LinkedIn", "Indeed", "Glassdoor", "Company Website", "Other"]
 
     for attempt in range(3):
@@ -1420,10 +1436,18 @@ def pick_workday_source(page):
         if _source_committed(page):
             log("source COMMITTED after blur (attempt %d)" % attempt); return True
         # typeahead fallback before next attempt
+        # FIX (sf-source-typeahead-guard 2026-06-25): only accept a typeahead pick that
+        # EXACTLY contains one of our wanted keywords. Prevents Salesforce-class tenants
+        # where typing 'LinkedIn' triggers a hierarchical dropdown whose first option
+        # (e.g. 'Current or Former Employee') gets falsely matched by click_text.
         try:
             src.click(timeout=3000); page.wait_for_timeout(400)
             page.keyboard.type("LinkedIn"); page.wait_for_timeout(1200)
-            tp = click_text(["LinkedIn"]) or click_text(["Indeed"])
+            tp = None
+            for keyword in ["LinkedIn", "Indeed", "Job Board", "Company Website", "External Career Site", "Other"]:
+                candidate = click_text([keyword])
+                if candidate and keyword.lower() in candidate.lower():
+                    tp = candidate; break  # Only accept if keyword is actually IN the option text
             if tp: log("source typeahead picked:", tp)
             page.keyboard.press("Escape"); page.wait_for_timeout(600)
             if _source_committed(page):
@@ -1553,12 +1577,21 @@ def run(args):
     _FRESH_VERIFY_PW = PW if _ACCOUNT_MODE in ("create_fresh", "signin_fresh") else None
     log(f"creds: email={EMAIL} pw_len={len(PW)} account_mode={_ACCOUNT_MODE}")
     with sync_playwright() as p:
-        ctx = p.chromium.launch_persistent_context(
-            user_data_dir=str(ROOT / ".workday-browser-data" / tenant),
-            headless=True, viewport={"width":1400,"height":900},
-            user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
-            accept_downloads=True,
-        )
+        _cdp_ep = getattr(args, "cdp_endpoint", "") or ""
+        if _cdp_ep:
+            _browser_cdp = p.chromium.connect_over_cdp(_cdp_ep)
+            ctx = _browser_cdp.new_context(
+                viewport={"width":1400,"height":900},
+                user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                accept_downloads=True,
+            )
+        else:
+            ctx = p.chromium.launch_persistent_context(
+                user_data_dir=str(ROOT / ".workday-browser-data" / tenant),
+                headless=True, viewport={"width":1400,"height":900},
+                user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+                accept_downloads=True,
+            )
         page = ctx.new_page()
         page.set_default_timeout(20000)
         log("goto", args.url)
@@ -1622,7 +1655,7 @@ def run(args):
             log("RESULT: BLOCKED at sign-in/account-create"); ctx.close(); return 2
         shot(page, tenant, "02-step1")
         # Walk steps
-        MAX_STEPS = 10
+        MAX_STEPS = 14
         # FIX (workday-workexp-fix 2026-06-02) loop-cap: if the SAME step name keeps
         # repeating without advancing (My Experience runaway), abort THIS row cleanly
         # with a precise note instead of burning all MAX_STEPS spinning.
@@ -1835,6 +1868,14 @@ def current_step_name(page, body):
     for h in heads:
         for kw in ["My Experience","Application Question","Voluntary Disclosure","Self Identif","Review","My Information"]:
             if kw.lower() in h.lower():
+                # (workday-pfizer-multipage-questions 2026-06-25): For multi-page question
+                # steps ("Application Questions 1 of 2", "Application Questions 2 of 2")
+                # include the page indicator in the step name so the revisit counter treats
+                # each page as distinct and doesn't loop-cap mid-pagination.
+                import re as _re
+                _pg = _re.search(r'(\d+\s+of\s+\d+)', h)
+                if _pg:
+                    return f"{kw} ({_pg.group(1)})"
                 return kw
     if page.locator("[data-automation-id=file-upload-input-ref]").count() or page.locator("input[type=file]").count():
         return "My Experience"
@@ -2634,7 +2675,9 @@ def populate_work_history(page):
     block(s) by their real id, and only click Add for ADDITIONAL entries."""
     # Discover the dynamic index Workday assigned to the (pre-rendered) blocks.
     we_idx = page.evaluate("()=>{const e=[...document.querySelectorAll('input')].find(x=>/workExperience-\\d+--jobTitle/.test(x.id||'')); if(!e)return null; const m=(e.id||'').match(/workExperience-(\\d+)--/); return m?m[1]:null;}")
-    ed_idx = page.evaluate("()=>{const e=[...document.querySelectorAll('input')].find(x=>/education-\\d+--schoolName/.test(x.id||'')); if(!e)return null; const m=(e.id||'').match(/education-(\\d+)--/); return m?m[1]:null;}")
+    ed_idx = page.evaluate("""()=>{const e=[...document.querySelectorAll('input')].find(x=>/education-\\d+--school(Name)?$/.test(x.id||'')); if(!e)return null; const m=(e.id||'').match(/education-(\\d+)--/); return m?m[1]:null;}""")  # covers both --schoolName and --school
+    # Also detect the field suffix used by this tenant ('schoolName' vs 'school')
+    _ed_school_suffix = page.evaluate("""()=>{const e=[...document.querySelectorAll('input')].find(x=>/education-\\d+--school/.test(x.id||'')); return e?(e.id.replace(/.*education-\\d+--/,'')):null;}""")
     log(f"  populate: detected we_idx={we_idx} ed_idx={ed_idx}")
 
     # FRESH-ACCOUNT FILL GUARANTEE (workday-fresh-account-fix 2026-06-08). Standing rule:
@@ -2815,7 +2858,7 @@ def populate_work_history(page):
     we_done = page.evaluate("()=>{const e=[...document.querySelectorAll('input')].find(x=>/workExperience-\\d+--jobTitle/.test(x.id||'')); return !!(e&&(e.value||'').trim());}")
     # ed_done requires BOTH schoolName AND fieldOfStudy filled (schoolName alone left
     # fieldOfStudy empty -> blocked advance, workday-proof 2026-06-02).
-    ed_done = page.evaluate("()=>{const s=[...document.querySelectorAll('input')].find(x=>/education-\\d+--schoolName/.test(x.id||'')); const f=[...document.querySelectorAll('input')].find(x=>/education-\\d+--fieldOfStudy/.test(x.id||'')); return !!(s&&(s.value||'').trim()) && !!(f&&(f.value||'').trim());}")
+    ed_done = page.evaluate("()=>{const s=[...document.querySelectorAll('input')].find(x=>/education-\\d+--school(Name)?$/.test(x.id||'')); const f=[...document.querySelectorAll('input')].find(x=>/education-\\d+--field(OfStudy|major)?$/.test(x.id||'')); return !!(s&&(s.value||'').trim()) && !!(f&&(f.value||'').trim());}")
 
     # DATE-REPAIR PASS (workday-proof 2026-06-02): existing draft blocks may have names
     # filled but dates empty (pre-date-fix). Independently of we_done, fill missing
@@ -2980,11 +3023,38 @@ def populate_work_history(page):
         else:
             page.evaluate("()=>{const b=[...document.querySelectorAll('button,[role=button]')].find(x=>/add another|add education/i.test((x.textContent||'').trim())); if(b)b.click();}")
             page.wait_for_timeout(1500)
-            idx = page.evaluate("()=>{const empty=[...document.querySelectorAll('input')].filter(x=>/education-\\d+--schoolName/.test(x.id||'')&&!(x.value||'').trim()); return empty.length?empty[empty.length-1].id.match(/education-(\\d+)--/)[1]:null;}")
+            idx = page.evaluate("()=>{const empty=[...document.querySelectorAll('input')].filter(x=>/education-\\d+--school(Name)?$/.test(x.id||'')&&!(x.value||'').trim()); return empty.length?empty[empty.length-1].id.match(/education-(\\d+)--/)[1]:null;}")
             if not idx: break
-        sn = _find_id_suffix(page, f"education-{idx}--schoolName")
-        fo = _find_id_suffix(page, f"education-{idx}--fieldOfStudy")
-        if sn: _set_native(page, sn, ed["school"])
+        sn = _find_id_suffix(page, f"education-{idx}--schoolName") or _find_id_suffix(page, f"education-{idx}--school")
+        fo = _find_id_suffix(page, f"education-{idx}--fieldOfStudy") or _find_id_suffix(page, f"education-{idx}--major")
+        # schoolName is a typeahead widget — _set_native sets value but doesn't trigger the
+        # search autocomplete. Some tenants (e.g. Analog Devices wd1) require picking from the
+        # dropdown or the field stays uncommittable. Use keyboard type + option pick.
+        if sn:
+            _scroll_into_view_js(page, sn)
+            sn_loc = page.locator(f"#{sn}").first
+            try:
+                sn_loc.click(timeout=4000, force=True); page.wait_for_timeout(400)
+                sn_loc.fill("", force=True); page.wait_for_timeout(200)
+                page.keyboard.type(ed["school"][:20], delay=40); page.wait_for_timeout(1200)
+                # try to pick matching option from dropdown
+                _sn_picked = False
+                for _sno in page.locator("[role=option]").all():
+                    _snt = (_sno.text_content() or "").strip()
+                    if ed["school"].lower()[:10] in _snt.lower():
+                        try: _sno.click(timeout=3000); _sn_picked = True; break
+                        except Exception: pass
+                if not _sn_picked:
+                    # fallback: press Enter to accept first suggestion or keep typed value
+                    page.keyboard.press("Enter"); page.wait_for_timeout(600)
+                    _sn_picked = bool(page.evaluate("(id)=>{const e=document.getElementById(id); return !!(e&&(e.value||'').trim());}", sn))
+                # if typeahead pick failed, fall back to _set_native
+                if not _sn_picked:
+                    _set_native(page, sn, ed["school"])
+                log(f"  schoolName filled picked={_sn_picked}")
+            except Exception as _sne:
+                log(f"  schoolName err: {str(_sne)[:70]}")
+                _set_native(page, sn, ed["school"])
         # fieldOfStudy is a searchable multiselect PROMPT (Snap). The id-suffix element
         # is often non-interactable; locate the visible input/container by data-automation-id
         # containing 'fieldOfStudy', scroll into view, type, then pick the matching option.
@@ -2993,6 +3063,11 @@ def populate_work_history(page):
                 # ensure the prompt is in view & focus the real input
                 page.evaluate("(id)=>{const e=document.getElementById(id); if(e){e.scrollIntoView({block:'center'});}}", fo)
                 page.wait_for_timeout(300)
+                # Try clicking the container widget first to open multiselect-prompt dropdowns
+                _fo_container = page.locator("[data-automation-id*='fieldOfStudy']").first
+                if _fo_container.count():
+                    try: _fo_container.click(timeout=3000, force=True); page.wait_for_timeout(400)
+                    except Exception: pass
                 inp = page.locator(f"#{fo}")
                 inp.first.click(timeout=6000, force=True); page.wait_for_timeout(500)
                 page.keyboard.type(ed["field"], delay=50); page.wait_for_timeout(1600)
@@ -3004,6 +3079,19 @@ def populate_work_history(page):
                         except Exception: pass
                 if not picked:
                     page.keyboard.press("Enter"); page.wait_for_timeout(700)
+                # broader match: first word of field (e.g. Computer from Computer Science)
+                if not picked:
+                    _first_word = ed["field"].split()[0].lower()
+                    for o in page.locator("[role=option]").all():
+                        t=(o.text_content() or "").strip()
+                        if _first_word in t.lower():
+                            try: o.click(timeout=3000); picked=True; break
+                            except Exception: pass
+                # Last resort: _set_native (plain text input fallback)
+                if not picked:
+                    _set_native(page, fo, ed["field"])
+                    picked = bool(page.evaluate("(id)=>{const e=document.getElementById(id); return !!(e&&(e.value||'').trim());}", fo))
+                log(f"  fieldOfStudy fill picked={picked}")
             except Exception as _e:
                 log("  fieldOfStudy prompt err", str(_e)[:70])
             if page.evaluate("(id)=>{const e=document.getElementById(id); return !(e&&(e.value||'').trim());}", fo):
@@ -3358,7 +3446,27 @@ def handle_questions(page):
                         "citizen or national of syria",
                         "cuba, iran", "iran, north korea", "north korea, syria",
                         "sanctioned country", "embargoed country",
-                        "cuba, north korea", "iran or syria", "cuba or iran"]
+                        "cuba, north korea", "iran or syria", "cuba or iran",
+                        # Criminal record / pardon questions -> No (Cyrus has no criminal record)
+                        "convicted of", "criminal offence", "criminal offense",
+                        "for which a pardon", "been convicted", "criminal record",
+                        "felony conviction", "misdemeanor conviction",
+                        # Accommodation / disability questions -> No (no accommodations needed)
+                        "require any accommodation", "require accommodation",
+                        "need an accommodation", "need any accommodation",
+                        "disability accommodation", "request an accommodation",
+                        # ADI-class: relatives at company, outside commitments, prior agreements
+                        "relatives", "employment of relatives", "relative who works",
+                        "family member who works", "friends or relatives",
+                        # Outside employment commitments / non-compete
+                        "commitments to another organization", "other employment commitments",
+                        "obligations to another", "obligations with another",
+                        # Prior employment agreements that restrict new employment
+                        "bound by any agreement", "subject to any agreement",
+                        "restrictive covenant", "garden leave", "notice period agreement",
+                        # Permanent residency of another country (Cyrus is US citizen only)
+                        "permanent resident of another country", "resident of another country besides",
+                        "citizen or permanent resident of",]
             # Acknowledgement / 'do you understand' / 'do you acknowledge' affirmations: the
             # candidate must affirm to proceed -> pick the affirmative option (Yes / I
             # acknowledge / I have read). (workday-ack-widget 2026-06-10 GEICO 2358: the
@@ -3433,6 +3541,49 @@ def handle_questions(page):
     # and they don't show in the listbox-only DIAG (workday-freetext-questions 2026-06-10
     # GEICO 2358: these were the REAL EXIT-5 blockers, not the ack widget). Reusable.
     fill_freetext_questions(page)
+    # Date-spinbutton availability fields (Pfizer-class tenants, 2026-06-25):
+    # Some tenants render 'Earliest availability to start' as 3 separate spinbutton inputs
+    # (month/day/year) inside a dateSection widget. fill_freetext_questions only catches
+    # aria-required inputs, but the individual spinbuttons may not carry aria-required
+    # (the parent field carries it). Detect by label text and fill via _set_native.
+    try:
+        import datetime as _dt2
+        _today2 = _dt2.date.today()
+        _avail_labels = ["earliest availability", "availability to start",
+                         "earliest start date", "when can you start", "available to start"]
+        _date_widgets = page.evaluate(r"""(avail_labels)=>{
+            const out=[];
+            for(const el of document.querySelectorAll('[data-automation-id*=dateSection],[data-automation-id*=DateWidget],[data-automation-id*=dateWidget]')){
+              let lab=''; const lel=el.closest('[data-automation-id*=formField]');
+              if(lel){const l=lel.querySelector('label,legend'); if(l) lab=(l.textContent||'').trim().toLowerCase();}
+              if(!lab){let p=el; for(let i=0;i<6&&p;i++){const t=(p.innerText||'').trim(); if(t&&t.length<100){lab=t.toLowerCase().split('\\n')[0];break;}p=p.parentElement;}}
+              if(!avail_labels.some(function(a){return lab.indexOf(a)>=0;})) continue;
+              const spinners={};
+              for(const s of el.querySelectorAll('input[role=spinbutton],input[type=number]')){
+                const sid=s.id||''; const sl=(s.getAttribute('aria-label')||'').toLowerCase();
+                if(/month/i.test(sl)||/month/i.test(sid)) spinners.month=sid;
+                else if(/day/i.test(sl)||/day/i.test(sid)) spinners.day=sid;
+                else if(/year/i.test(sl)||/year/i.test(sid)) spinners.year=sid;
+              }
+              if(Object.keys(spinners).length>0) out.push({label:lab, spinners});
+            }
+            return out;
+        }""", _avail_labels)
+        for _dw in (_date_widgets or []):
+            _sp = _dw.get("spinners", {})
+            log(f"  avail-date widget: {_dw.get('label','?')[:50]} spinners={list(_sp.keys())}")
+            for _part, _eid in _sp.items():
+                _val = {"month": str(_today2.month), "day": str(_today2.day),
+                        "year": str(_today2.year)}.get(_part, "")
+                if _eid and _val:
+                    try:
+                        page.locator(f"#{_eid}").first.fill(_val, force=True)
+                        page.wait_for_timeout(200)
+                        log(f"    avail-date {_part}={_val} id={_eid[-20:]}")
+                    except Exception as _de:
+                        log(f"    avail-date {_part} err: {str(_de)[:60]}")
+    except Exception as _ae:
+        log(f"  avail-date fill err: {str(_ae)[:80]}")
     # Checkbox-group questions (e.g. Adobe 'Have you ever worked at Adobe in the
     # following capacity:* [Employee/Intern/.../I have not worked for Adobe in the past.]').
     # FIX (workday-p13 2026-06-02 Adobe R165611): these are required checkbox groups,
@@ -4033,6 +4184,43 @@ def handle_voluntary(page):
                 log("    ethnic: could not identify decline input ID")
     except Exception as _ete:
         log(f"  voluntary ethnicity-multi err: {str(_ete)[:80]}")
+    # (workday-blackrock-hispanic-fix 2026-06-25): BlackRock voluntary has a required
+    # "Are you Hispanic or Latino?" radio separate from the ethnicity listbox.
+    # Covers any wd1 tenant that uses personalInfoUS--hispanic or similar pattern.
+    try:
+        _hisp_done = False
+        for _hisp_bid in ["personalInfoUS--hispanic", "personalInfoUS--hispanicOrLatino",
+                          "personalInfoUS--ethnicityHispanic"]:
+            for _hisp_sel in [f"button#{_hisp_bid}", f"button[data-automation-id='{_hisp_bid}']"]:
+                _hloc = page.locator(_hisp_sel).first
+                if _hloc.count():
+                    _hcur = (_hloc.text_content() or "").strip()
+                    if not _hcur or _hcur.lower() == "select one":
+                        for _hopt in ["No", "I am not Hispanic or Latino", "Not Hispanic",
+                                      "Decline to State", "Decline", "Prefer not to"]:
+                            if wd_pick_listbox(page, _hisp_sel, _hopt):
+                                log(f"  hispanic/latino: picked '{_hopt}'")
+                                _hisp_done = True; break
+                    if _hisp_done: break
+            if _hisp_done: break
+        # Also handle as a Yes/No radio group (input[id$=hispanic] or similar)
+        if not _hisp_done:
+            for _hisp_inp_sel in ["input[id$='--hispanic']", "input[id*='hispanic']",
+                                   "input[id*='Hispanic']"]:
+                _hisp_inps = page.locator(_hisp_inp_sel).all()
+                if _hisp_inps:
+                    # pick 'No' / 'decline' option — find label containing 'no' or 'not hispanic'
+                    for _hinp in _hisp_inps:
+                        _hlbl_for = _hinp.get_attribute("id")
+                        _hlbl = page.locator(f"label[for='{_hlbl_for}']").first
+                        _hlbl_txt = (_hlbl.text_content() or "").strip().lower() if _hlbl.count() else ""
+                        if any(x in _hlbl_txt for x in ["no", "not hispanic", "decline", "prefer not"]):
+                            try: _hinp.check(force=True); log(f"  hispanic radio: checked '{_hlbl_txt}'"); _hisp_done = True; break
+                            except Exception: pass
+                    if _hisp_done: break
+    except Exception as _he:
+        log(f"  hispanic/latino handler err: {str(_he)[:80]}")
+
     # Terms & conditions checkbox
     try:
         cb = page.locator("input#termsAndConditions--acceptTermsAndAgreements").first
@@ -4148,6 +4336,8 @@ if __name__ == "__main__":
                     help="Force CREATE-FRESH account even for a clean tenant (never reuse saved profile).")
     ap.add_argument("--legacy-account", dest="legacy_account", action="store_true",
                     help="Force legacy sign-in into the historical saved account (opt out of fresh-account default).")
+    ap.add_argument("--cdp-endpoint", dest="cdp_endpoint", default="",
+                    help="Reuse an existing Chrome via CDP (e.g. http://127.0.0.1:18800) instead of launching a new browser.")
     args = ap.parse_args()
     rc = run(args)
     # Debug-shot lifecycle (Cyrus 2026-06-02): on a clean outcome, prune the step-N

@@ -17,11 +17,13 @@
   "churn_frac": 0.05,
   "_churn_frac_note": "Rebalance a leg only if |target_qty - cur_qty| > max(1, floor(churn_frac*target_qty)). Mirrors tqqq_cot_combo's 5% churn guard so intramonth weight drift doesn't thrash the book.",
   "monthly_cadence": true,
-  "_monthly_cadence_note": "The validated blend rebalances at month-open; by default we only re-target on a month change (intramonth ticks HOLD). Set false to re-target every tick (still churn-guarded) for faster paper convergence.",
+  "_monthly_cadence_note": "ON/OFF switch for the cadence gate. true = only re-target on a PERIOD change (period granularity set by rebalance_period below; intramonth/intraquarter ticks HOLD). false = re-target every tick (still churn-guarded) for faster paper convergence. Kept true.",
   "regime_gate": false,
   "_regime_gate_note": "This allocator has its own internal risk management via the vol-target sleeve + inv-vol weighting; it does NOT consume the runner's Tier-2 regime gate. Left false.",
   "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
   "safety_max_loss_pct": -50.0,
   "bear_flatten_gate": true,
-  "_bear_flatten_gate_note": "L165 SECONDARY: runner-level SPY-200d-SMA bear-flatten overlay (201d re-entry hysteresis). On a SPY bear-latch the xsec runner closes every held leg and skips decide_xsec until SPY reclaims SMA201. Stacks with the internal vol-target/inv-vol risk mgmt. PAPER. See reports/REGIME_DETECTION_L165_*.md."
+  "_bear_flatten_gate_note": "L165 SECONDARY: runner-level SPY-200d-SMA bear-flatten overlay (201d re-entry hysteresis). On a SPY bear-latch the xsec runner closes every held leg and skips decide_xsec until SPY reclaims SMA201. Stacks with the internal vol-target/inv-vol risk mgmt. PAPER. See reports/REGIME_DETECTION_L165_*.md.",
+  "rebalance_period": "quarterly",
+  "_rebalance_period_note": "VERIFIED +EV vs monthly (reports/ALLOCATOR_CADENCE_SWEEP_20260625.md): quarterly re-target = net 1068% vs monthly 985% (+83pts raw), full Sharpe 1.018 vs 1.003, OOS 283% vs 268%, maxDD -24.9% vs -23.9%, ~1/3 the rebalances (65 vs 196), at EQUAL avg exposure (w_tqqq 0.351 vs 0.349 -> NOT leverage-up; beats its own fixed-weight control). Mechanism = negative rebalancing premium on a trending sample. Calendar plateau (2-/3-monthly both beat, phase-independent), NOT a knife-edge. monthly_cadence stays True (the gate is now period-granular via rebalance_period)."
 }

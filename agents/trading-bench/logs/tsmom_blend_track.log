@@ -13,3 +13,39 @@ tsmom_blend paper clock  [2026-06-18 -> 2026-06-18]  n=1
 snapshot rc: 0
 staleness (rc=0): tsmom_blend paper clock fresh (newest row written within 4 days).
 === end tsmom_blend @ 20260625T050729Z ===
+=== tsmom_blend_paper_tracker @ 20260625T191433Z ===
+[tsmom_blend] bar refresh: {"XLK": "2026-06-25", "QQQ": "2026-06-25", "SPY": "2026-06-25", "IWM": "2026-06-25", "TQQQ": "2026-06-25", "DBC": "2026-06-25", "GLD": "2026-06-25", "TLT": "2026-06-25", "UUP": "2026-06-25"}
+[volume_breakout_qqq] WARN lookback-sanity: lookback param 'exit_lookback'=8 at timeframe '1Hour' covers only 0.94 trading day(s) (8.5 bars/day); if this count was authored for DAILY bars it is being misapplied at this finer timeframe (it no longer spans a full session).
+[volume_breakout_qqq] WARN lookback-sanity: lookback param 'exit_lookback'=8 at timeframe '1Hour' covers only 0.94 trading day(s) (8.5 bars/day); if this count was authored for DAILY bars it is being misapplied at this finer timeframe (it no longer spans a full session).
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-25  Sharpe 0.856 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-25  Sharpe 0.906 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-25  (4116 days)
+    [common-window] TQQQ solo Sharpe 0.856 | ROT solo Sharpe 0.916 | SPX Sharpe 0.768
+[already-logged] 2026-06-25  blend +0.305%  (book +0.194% x0.80 + core4 +0.752% x0.20)  SPX -0.064%
+tsmom_blend paper clock  [2026-06-18 -> 2026-06-25]  n=2
+  blend cum +1.02%  vs SPX cum +0.97%  (Δ +0.05 pts)
+  blend Sharpe-since-start 27.884  vs SPX 9.921
+  engine full-period Sharpe (drift monitor): blend 1.023 / book 0.953
+snapshot rc: 0
+staleness (rc=0): tsmom_blend paper clock fresh (newest row written within 4 days).
+=== end tsmom_blend @ 20260625T191433Z ===
+=== tsmom_blend_paper_tracker @ 20260625T213001Z ===
+[tsmom_blend] bar refresh: {"XLK": "2026-06-25", "QQQ": "2026-06-25", "SPY": "2026-06-25", "IWM": "2026-06-25", "TQQQ": "2026-06-25", "DBC": "2026-06-25", "GLD": "2026-06-25", "TLT": "2026-06-25", "UUP": "2026-06-25"}
+[volume_breakout_qqq] WARN lookback-sanity: lookback param 'exit_lookback'=8 at timeframe '1Hour' covers only 0.94 trading day(s) (8.5 bars/day); if this count was authored for DAILY bars it is being misapplied at this finer timeframe (it no longer spans a full session).
+[volume_breakout_qqq] WARN lookback-sanity: lookback param 'exit_lookback'=8 at timeframe '1Hour' covers only 0.94 trading day(s) (8.5 bars/day); if this count was authored for DAILY bars it is being misapplied at this finer timeframe (it no longer spans a full session).
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-25  Sharpe 0.857 CAGR 20.6% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-25  Sharpe 0.907 CAGR 12.8% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-25  (4116 days)
+    [common-window] TQQQ solo Sharpe 0.857 | ROT solo Sharpe 0.917 | SPX Sharpe 0.769
+[already-logged] 2026-06-25  blend +0.305%  (book +0.194% x0.80 + core4 +0.752% x0.20)  SPX -0.064%
+tsmom_blend paper clock  [2026-06-18 -> 2026-06-25]  n=2
+  blend cum +1.02%  vs SPX cum +0.97%  (Δ +0.05 pts)
+  blend Sharpe-since-start 27.884  vs SPX 9.921
+  engine full-period Sharpe (drift monitor): blend 1.023 / book 0.953
+snapshot rc: 0
+staleness (rc=0): tsmom_blend paper clock fresh (newest row written within 4 days).
+=== end tsmom_blend @ 20260625T213001Z ===

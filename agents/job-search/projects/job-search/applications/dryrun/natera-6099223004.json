@@ -1,0 +1,673 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/natera/jobs/6099223004",
+  "org": "natera",
+  "job_id": "6099223004",
+  "job_title": "Forward Deployed AI Solutions Engineer",
+  "job_location": "US Remote",
+  "fetched_at": "2026-06-25T21:32:02Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/natera/jobs/6099223004?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 27,
+    "filled": 22,
+    "filled_needs_review": 1,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_19071372004",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_19071373004",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_19071374004",
+      "label": "Are you 18 or older?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_19071375004",
+      "label": "Have you previously worked at Natera?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_19071376004",
+      "label": "Do you have any family members or relatives currently employed by Natera?\n\nIf yes, please provide the following information: Name of the family member, Relationship to you, and Department or role (if known)",
+      "type": "textarea",
+      "required": true,
+      "value": "Yes",
+      "source": "common_form_answers.currently_employed",
+      "status": "filled",
+      "matched_rule": "currently_employed",
+      "options": null
+    },
+    {
+      "id": "question_19071377004",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_19071378004",
+      "label": "Do you now or will you in the future require sponsorship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_19071379004",
+      "label": "Have you signed a non-compete with your current employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer | NOTE: 'Microsoft' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "current_employer",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_19071380004",
+      "label": "Please  provide your current permanent residence street address?\n\n\n \n\n\n ",
+      "type": "input_text",
+      "required": true,
+      "value": "12420 NE 120th St #1437",
+      "source": "address.street",
+      "status": "filled",
+      "matched_rule": "street",
+      "options": null
+    },
+    {
+      "id": "question_19071381004",
+      "label": "What city do you currently live in?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_19071382004",
+      "label": "What state do you currently live in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "WA",
+      "source": "address.state (exact option)",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "AL",
+          "value": 86557461004
+        },
+        {
+          "label": "AK",
+          "value": 86557462004
+        },
+        {
+          "label": "AZ",
+          "value": 86557463004
+        },
+        {
+          "label": "AR",
+          "value": 86557464004
+        },
+        {
+          "label": "CA",
+          "value": 86557465004
+        },
+        {
+          "label": "CO",
+          "value": 86557466004
+        },
+        {
+          "label": "CT",
+          "value": 86557467004
+        },
+        {
+          "label": "DE",
+          "value": 86557468004
+        },
+        {
+          "label": "DC",
+          "value": 86557469004
+        },
+        {
+          "label": "FL",
+          "value": 86557470004
+        },
+        {
+          "label": "GA",
+          "value": 86557471004
+        },
+        {
+          "label": "GU",
+          "value": 86557472004
+        },
+        {
+          "label": "HI",
+          "value": 86557473004
+        },
+        {
+          "label": "ID",
+          "value": 86557474004
+        },
+        {
+          "label": "IL",
+          "value": 86557475004
+        },
+        {
+          "label": "IN",
+          "value": 86557476004
+        },
+        {
+          "label": "IA",
+          "value": 86557477004
+        },
+        {
+          "label": "KS",
+          "value": 86557478004
+        },
+        {
+          "label": "KY",
+          "value": 86557479004
+        },
+        {
+          "label": "LA",
+          "value": 86557480004
+        },
+        {
+          "label": "ME",
+          "value": 86557481004
+        },
+        {
+          "label": "MD",
+          "value": 86557482004
+        },
+        {
+          "label": "MA",
+          "value": 86557483004
+        },
+        {
+          "label": "MI",
+          "value": 86557484004
+        },
+        {
+          "label": "MN",
+          "value": 86557485004
+        },
+        {
+          "label": "MS",
+          "value": 86557486004
+        },
+        {
+          "label": "MO",
+          "value": 86557487004
+        },
+        {
+          "label": "MT",
+          "value": 86557488004
+        },
+        {
+          "label": "NE",
+          "value": 86557489004
+        },
+        {
+          "label": "NV",
+          "value": 86557490004
+        },
+        {
+          "label": "NH",
+          "value": 86557491004
+        },
+        {
+          "label": "NJ",
+          "value": 86557492004
+        },
+        {
+          "label": "NM",
+          "value": 86557493004
+        },
+        {
+          "label": "NY",
+          "value": 86557494004
+        },
+        {
+          "label": "NC",
+          "value": 86557495004
+        },
+        {
+          "label": "ND",
+          "value": 86557496004
+        },
+        {
+          "label": "OH",
+          "value": 86557497004
+        },
+        {
+          "label": "OK",
+          "value": 86557498004
+        },
+        {
+          "label": "OR",
+          "value": 86557499004
+        },
+        {
+          "label": "PA",
+          "value": 86557500004
+        },
+        {
+          "label": "PR",
+          "value": 86557501004
+        },
+        {
+          "label": "RI",
+          "value": 86557502004
+        },
+        {
+          "label": "SC",
+          "value": 86557503004
+        },
+        {
+          "label": "SD",
+          "value": 86557504004
+        },
+        {
+          "label": "TN",
+          "value": 86557505004
+        },
+        {
+          "label": "TX",
+          "value": 86557506004
+        },
+        {
+          "label": "UT",
+          "value": 86557507004
+        },
+        {
+          "label": "VT",
+          "value": 86557508004
+        },
+        {
+          "label": "VA",
+          "value": 86557509004
+        },
+        {
+          "label": "VI",
+          "value": 86557510004
+        },
+        {
+          "label": "WA",
+          "value": 86557511004
+        },
+        {
+          "label": "WV",
+          "value": 86557512004
+        },
+        {
+          "label": "WI",
+          "value": 86557513004
+        },
+        {
+          "label": "WY",
+          "value": 86557514004
+        },
+        {
+          "label": "BC",
+          "value": 86557515004
+        }
+      ]
+    },
+    {
+      "id": "question_19071383004",
+      "label": "Postal Code",
+      "type": "input_text",
+      "required": true,
+      "value": "98034",
+      "source": "address.zip",
+      "status": "filled",
+      "matched_rule": "zip",
+      "options": null
+    },
+    {
+      "id": "question_19071384004",
+      "label": "What are your salary expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_19071385004",
+      "label": "Who is your most recent/current employer?",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

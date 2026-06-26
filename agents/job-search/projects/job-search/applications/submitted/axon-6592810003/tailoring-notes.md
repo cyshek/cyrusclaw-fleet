@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Architected and scaled Azure's **recovery validation platform** from a 2-person operation to a self-service system sustaining 45+ annual resilience drills, delivering **$14M+ business impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned drill execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a **94% recovery rate** in 4 months by scoping technical requirements, surfacing critical hardware defects, and establishing a continuous validation framework.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across technical and non-technical stakeholders.
+5. Built an internal **AI agent for drill planning**, restructuring workflows to cut planning cycle time by 39% and increase drill capacity by 21%, mirroring API-driven automation patterns used in enterprise software deployments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows by conducting user demos and targeted training sessions that drove utilization across 14 Azure service teams, saving **37 engineering hours** monthly on repetitive implementation tasks.
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps and translating business requirements into actionable technical specifications.
+3. Improved **data retrieval and documentation integrity** by migrating team assets to an AI-powered semantic search tool with rigorous metadata standards, reducing lookup time by 83% and accelerating developer onboarding.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Delivered **$3M in accelerated revenue** and reduced region launch timelines by 28% by aligning 140+ teams on a unified automation prioritization framework, scoping integration dependencies and recommending system improvements across the deployment lifecycle.
+2. Conducted technical discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a roadmap to automate critical paths — directly analogous to scoping and architecting integrations for enterprise software deployments.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact integrations, and drive data-informed deployment planning.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping system-level dependencies across 1,200+ stations, and managing technical project execution from inception to completion.
+2. Drove alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable processes for ongoing system integration and maintenance.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across cross-functional project teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by architecting a new CRM-based workflow managing end-to-end scoping, technical requirements capture, and invoicing for 200+ monthly proposals — demonstrating client-facing process design and systems integration skills.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web and search presence to align outreach with measurable business outcomes.
+3. Improved leadership pricing models by conducting **financial analysis across 1,000+ project records**, identifying margin leaks and delivering data-driven recommendations to non-technical stakeholders.
+
+## Notes from the rewriter
+- Wove in 'systems integration' and 'deployment lifecycle' (JD core terms) across microsoft_ft bullet#1 and microsoft_2022 bullet#2 to mirror Axon's integration architecture focus.
+- Used 'architecture review,' 'scoping technical requirements,' and 'system-level dependencies' (direct JD language) in microsoft_2022 bullet#2 and amazon_robotics bullet#1 to reflect Architecture Review Board and technical scoping responsibilities.
+- Embedded 'CI/CD pipelines,' 'API-driven automation,' and 'software deployment cycle' (JD vocabulary) in amazon_robotics bullet#2 and microsoft_ft bullet#5 to surface hands-on integration and DevOps experience Axon explicitly requires.
+- Framed microsoft_2023 bullet#2 around 'translating business requirements into technical specifications' — direct language from the JD's requirements-capture and feasibility-review duties.
+- Reframed pro_painters bullet#1 around 'client-facing process design and systems integration' to connect commercial experience to Axon's public safety client-facing SA context.
+

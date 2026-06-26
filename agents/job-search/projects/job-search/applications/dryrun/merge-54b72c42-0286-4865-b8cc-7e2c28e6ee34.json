@@ -1,0 +1,150 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/merge/54b72c42-0286-4865-b8cc-7e2c28e6ee34",
+  "org": "merge",
+  "job_id": "54b72c42-0286-4865-b8cc-7e2c28e6ee34",
+  "job_title": "Technical Program Manager",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-25T22:47:41Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122__systemfield_name"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122__systemfield_email"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122__systemfield_resume"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122_phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122_phone"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122_cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122_cover_letter"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122_question_12717783004",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122_question_12717783004"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122_question_12717784004",
+      "label": "We are a fully in-office culture (5 days a week) and recognize this workplace environment isn't for everyone. Would you be open to being in office every day?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122_question_12717784004"
+    },
+    {
+      "id": "06b1383f-cb49-412d-8d31-fecf17c88122_question_12717785004",
+      "label": "If you are not currently based in NYC or SF, are you willing to relocate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "44979531004"
+        },
+        {
+          "label": "No",
+          "value": "44979532004"
+        },
+        {
+          "label": "I am based in NYC or SF",
+          "value": "44979533004"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "06b1383f-cb49-412d-8d31-fecf17c88122_question_12717785004"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -1,0 +1,18 @@
+[sleeves] loaded cached _regime_sleeves.pkl (2010-02-12 -> 2026-06-25, n=4116)
+>>> realized effective w_tqqq per cadence (the confound check) ...
+   monthly_baseline     avg_eff_w_tqqq 0.349 [0.177..0.814] | net 984.7% Sh 1.003 maxDD -23.9%
+   weekly               avg_eff_w_tqqq 0.347 [0.176..0.889] | net 971.3% Sh 1.005 maxDD -22.5%
+   quarterly            avg_eff_w_tqqq 0.351 [0.189..0.829] | net 1068.0% Sh 1.018 maxDD -24.9%
+   drift_maxleg_0.10    avg_eff_w_tqqq 0.353 [0.210..0.999] | net 1010.6% Sh 1.006 maxDD -21.6%
+   drift_maxleg_0.20    avg_eff_w_tqqq 0.384 [0.211..0.999] | net 1065.0% Sh 0.993 maxDD -24.0%
+   drift_maxleg_0.25    avg_eff_w_tqqq 0.382 [0.182..0.885] | net 1172.2% Sh 1.029 maxDD -24.1%
+   drift_l1_0.15        avg_eff_w_tqqq 0.347 [0.192..0.999] | net 1035.7% Sh 1.022 maxDD -22.5%
+   drift_l1_0.25        avg_eff_w_tqqq 0.357 [0.173..0.999] | net 1070.2% Sh 1.022 maxDD -22.8%
+
+>>> CONTROL: fixed-weight MONTHLY blend at the SAME avg w_tqqq each winner runs
+    (if the winner's (return,maxDD) ~ the fixed blend at its avg w_tqqq, it's the dial, not an edge)
+   quarterly            w=0.351 | FIXED-monthly: 1031.3% Sh 0.994 DD -26.2%  vs  CADENCE: 1068.0% Sh 1.018 DD -24.9%
+   drift_maxleg_0.20    w=0.384 | FIXED-monthly: 1076.0% Sh 0.991 DD -25.9%  vs  CADENCE: 1065.0% Sh 0.993 DD -24.0%
+   drift_maxleg_0.25    w=0.382 | FIXED-monthly: 1073.1% Sh 0.992 DD -25.9%  vs  CADENCE: 1172.2% Sh 1.029 DD -24.1%
+   drift_l1_0.25        w=0.357 | FIXED-monthly: 1038.6% Sh 0.994 DD -26.1%  vs  CADENCE: 1070.2% Sh 1.022 DD -22.8%
+wrote reports/_cadence_confound_diag.json

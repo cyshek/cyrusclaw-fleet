@@ -819,6 +819,31 @@ def main():
             page = ctx.new_page()
     page.goto(url, wait_until='domcontentloaded', timeout=45000)
     time.sleep(1.5)
+
+    # Network monitor for debugging OTP submit
+    _net_posts = []
+    def _on_request(req):
+        if req.method in ('POST','PUT') and 'greenhouse' in req.url and 'snowplow' not in req.url:
+            try:
+                pd = req.post_data or ''
+            except Exception:
+                pd = ''
+            _net_posts.append({'url': req.url, 'body': pd})
+            print(f'[net-req] POST {req.url[:100]}', flush=True)
+            if pd and len(pd) < 5000:
+                print(f'[net-req-body-FULL] {pd}', flush=True)
+            elif pd:
+                print(f'[net-req-body] {pd[:400]}', flush=True)
+    def _on_response(resp):
+        if 'greenhouse' in resp.url and 'snowplow' not in resp.url and resp.status >= 300:
+            print(f'[net-resp] {resp.status} {resp.url[:100]}', flush=True)
+            try:
+                b = resp.body()
+                if b: print(f'[net-resp-body] {b[:200]}', flush=True)
+            except Exception:
+                pass
+    page.on('request', _on_request)
+    page.on('response', _on_response)
     # click Apply
     page.evaluate("""() => { const b=[...document.querySelectorAll('button,a')].find(x=>/^apply/i.test((x.textContent||'').trim())); if(b)b.click(); }""")
     time.sleep(1.2)
@@ -1003,6 +1028,31 @@ def main():
     except Exception as e:
         result['steps']['remix_recover'] = {'err': f'{e}'}
 
+    # GH-REMIX EDUCATION DATE fill (Natera-class, 2026-06-25).
+    # Education start\/end dates required by GH backend: start-month--0,
+    # start-year--0, end-year--0. Without them: 422 educations invalid-attributes.
+    try:
+        try:
+            _personal
+        except NameError:
+            from greenhouse_dryrun import PERSONAL_INFO_PATH as _PIP
+            _personal = json.loads(_PIP.read_text())
+        _pedu = (_personal or {}).get("education") or {}
+        _edu_sm = _pedu.get("attendance_start_month") or _pedu.get("start_month") or 8
+        _edu_sy = str(_pedu.get("attendance_start_year") or _pedu.get("start_year") or "2021").strip()
+        _edu_em = _pedu.get("attendance_end_month") or _pedu.get("end_month") or 12
+        _edu_ey = str(_pedu.get("attendance_end_year") or _pedu.get("end_year") or "2024").strip()
+        _MNAMES_EDU = ("January","February","March","April","May","June","July","August","September","October","November","December")
+        _edu_sm_name = _MNAMES_EDU[int(_edu_sm)-1] if str(_edu_sm).isdigit() and 1<=int(_edu_sm)<=12 else str(_edu_sm)
+        _edu_em_name = _MNAMES_EDU[int(_edu_em)-1] if str(_edu_em).isdigit() and 1<=int(_edu_em)<=12 else str(_edu_em)
+        _edu_month_specs = [{"id": _efid, "label": _elabel} for _efid,_elabel in [("start-month--0",_edu_sm_name),("end-month--0",_edu_em_name)] if page.evaluate(f"()=>!!document.getElementById({_efid!r})")]
+        _edu_month_res = page.evaluate(SEL_PICK, _edu_month_specs) if _edu_month_specs else []
+        _edu_year_res = page.evaluate("""({sy,ey})=>{const s=(el,v)=>{const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,"value");d.set.call(el,v);el.dispatchEvent(new Event("input",{bubbles:1}));el.dispatchEvent(new Event("change",{bubbles:1}));el.dispatchEvent(new Event("blur",{bubbles:1}));};const r={};const a=document.getElementById("start-year--0");if(a&&sy){s(a,sy);r["start-year--0"]=a.value;}const b=document.getElementById("end-year--0");if(b&&ey){s(b,ey);r["end-year--0"]=b.value;}return r;}""", {"sy":_edu_sy,"ey":_edu_ey})
+        result["steps"]["edu_date_fill"]={"months":_edu_month_res,"years":_edu_year_res,"sm":_edu_sm_name,"sy":_edu_sy,"em":_edu_em_name,"ey":_edu_ey}
+        print(f"[edu] filled: start={_edu_sm_name}/{_edu_sy} end={_edu_em_name}/{_edu_ey}",flush=True)
+    except Exception as _edu_err:
+        result["steps"]["edu_date_fill"]={"err":str(_edu_err)}
+        print(f"[edu] error: {_edu_err}",flush=True)
     # GH-REMIX WORK-HISTORY repeater fill (Zuora 2755 cohort, 2026-06-09). Some
     # GH Remix tenants render a required EMPLOYMENT-HISTORY block (a 'Current
     # role' checkbox + start/end date-month/year React-Selects). These are
@@ -1114,8 +1164,32 @@ def main():
             result['status'] = 'blocked-otp-fetch-fail'; result['err'] = str(e)
             print(json.dumps(result, indent=1)); return 1
         result['otp_code'] = code
-        page.evaluate("""(code)=>{const setN=(el,v)=>{const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');d.set.call(el,v);el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));};for(let i=0;i<8;i++){const el=document.getElementById('security-input-'+i);if(el){el.focus();setN(el,code[i]);el.dispatchEvent(new KeyboardEvent('keydown',{key:code[i],bubbles:true}));el.dispatchEvent(new KeyboardEvent('keyup',{key:code[i],bubbles:true}));}}}""", code)
-        time.sleep(1.2)
+        # Use real Playwright fill() per character — most reliable for React OTP inputs.
+        # Greenhouse OTP is 8 single-char inputs. fill() sets the value + fires
+        # the full React synthetic event chain including onChange.
+        for _oi, _ch in enumerate(code):
+            _otp_inp = page.query_selector(f'#security-input-{_oi}')
+            if _otp_inp:
+                try:
+                    _otp_inp.scroll_into_view_if_needed()
+                    _otp_inp.click()
+                    time.sleep(0.08)
+                    _otp_inp.fill(_ch)
+                    time.sleep(0.12)
+                except Exception as _otp_ex:
+                    print(f'[otp] input {_oi} err: {_otp_ex}', flush=True)
+        # Also try dispatching a final change event on the last input to trigger validation
+        try:
+            page.evaluate("()=>{const el=document.getElementById('security-input-7');if(el){el.dispatchEvent(new Event('change',{bubbles:true}));}}")
+        except Exception:
+            pass
+        time.sleep(1.5)
+        # Debug: log current page state and all buttons
+        try:
+            _otp_dbg = page.evaluate('()=>{const btns=[...document.querySelectorAll("button")].map(b=>b.textContent.trim().slice(0,30)+"|d:"+b.disabled+"|a:"+b.getAttribute("aria-disabled"));const url=location.href;const hasOTP=!!document.getElementById("security-input-0");const vals=[0,1,2,3,4,5,6,7].map(i=>{const el=document.getElementById("security-input-"+i);return el?el.value:"-";}).join("");return JSON.stringify({url,hasOTP,btns,vals});}')
+            print("[otp-debug]", _otp_dbg, flush=True)
+        except Exception as _de:
+            print("[otp-debug] err:", _de, flush=True)
         # Click the post-OTP submit/verify/confirm button. Retry a couple times:
         # the button can stay disabled for a beat while the OTP digits validate.
         # BUGFIX 2026-06-02 (Smartsheet 2235 + New Relic 2232): the old selector
@@ -1124,6 +1198,18 @@ def main():
         # which is truthy) -> button wrongly skipped -> OTP entered but never
         # submitted (otpStill stayed true). Compare against 'true' explicitly,
         # and prefer a real Playwright click which fires full React validation.
+        # Before clicking, try to solve reCAPTCHA v3 if CapSolver is available
+        try:
+            from captcha_presubmit import solve_and_inject_recaptcha_v3
+            _cap_result = solve_and_inject_recaptcha_v3(
+                page,
+                fallback_sitekey='6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0',
+                action='job_apply',
+                page_url=url
+            )
+            print(f'[otp] captcha solve result: {_cap_result}', flush=True)
+        except Exception as _cap_err:
+            print(f'[otp] captcha solve failed: {_cap_err}', flush=True)
         for _otp_try in range(4):
             clicked = None
             try:
@@ -1131,10 +1217,16 @@ def main():
                      page.query_selector('button:has-text("Verify")') or \
                      page.query_selector('button:has-text("Confirm")') or \
                      page.query_selector('button[type=submit]')
+                _b_txt = (_b.text_content() or '').strip() if _b else None
+                _b_dis = _b.is_disabled() if _b else None
+                _b_aria = (_b.get_attribute('aria-disabled') or 'false') if _b else None
+                print(f'[otp-btn] try={_otp_try} found={_b is not None} txt={_b_txt!r} disabled={_b_dis} aria={_b_aria!r}', flush=True)
                 if _b and not _b.is_disabled() and (_b.get_attribute('aria-disabled') or 'false') != 'true':
                     _b.scroll_into_view_if_needed(); time.sleep(0.3); _b.click()
                     clicked = (_b.text_content() or '').strip()
-            except Exception:
+                    print(f'[otp-btn] clicked: {clicked!r}', flush=True)
+            except Exception as _be:
+                print(f'[otp-btn] exception: {_be}', flush=True)
                 clicked = None
             if not clicked:
                 clicked = page.evaluate("""()=>{const s=[...document.querySelectorAll('button')].find(b=>/submit|verify|confirm/i.test(b.textContent.trim())&&!b.disabled&&b.getAttribute('aria-disabled')!=='true');if(s){s.scrollIntoView({block:'center'});s.click();return s.textContent.trim();}return null;}""")
@@ -1143,12 +1235,19 @@ def main():
                 break
             time.sleep(1.5)
 
+    # Screenshot after OTP button loop
+    try:
+        page.screenshot(path='/home/azureuser/.openclaw/agents/job-search/workspace/natera_post_otp_loop.png')
+        print('[otp] Screenshot saved after button loop', flush=True)
+    except Exception as _se:
+        print(f'[otp] Screenshot failed: {_se}', flush=True)
+
     # Poll for confirmation/redirect: Greenhouse OTP-validate -> /confirmation
     # redirect can take 6-18s; a fixed 4s sleep raced it and read 'uncertain'.
     final = None
     for _ in range(12):
         time.sleep(2)
-        final = json.loads(page.evaluate("""()=>{const url=location.href;const body=document.body.innerText;const conf=/thank you|received your application|application.{0,20}submitted|application submitted|submitted your application|we.{0,3}ll be in touch|will begin reviewing|appreciate your interest/i.test(body)||/confirmation/.test(url);const otpStill=!!document.getElementById('security-input-0');const otpErr=/incorrect|invalid|wrong code|didn.{0,3}t match|expired/i.test(body);return JSON.stringify({url,confirmed:conf,otpStill,otpErr,head:body.slice(0,200)});}"""))
+        final = json.loads(page.evaluate("""()=>{const url=location.href;const body=document.body.innerText;const conf=/thank you|received your application|application.{0,20}submitted|application submitted|submitted your application|we.{0,3}ll be in touch|will begin reviewing|appreciate your interest/i.test(body)||/confirmation/.test(url);const otpStill=!!document.getElementById('security-input-0');const otpErr=/incorrect|invalid|wrong code|didn.{0,3}t match|expired|error processing/i.test(body);return JSON.stringify({url,confirmed:conf,otpStill,otpErr,head:body.slice(0,200)});}"""))
         if final['confirmed'] or final.get('otpErr'):
             break
         if not final['otpStill'] and not has_otp:

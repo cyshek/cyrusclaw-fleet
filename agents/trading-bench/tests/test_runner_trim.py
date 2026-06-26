@@ -588,6 +588,57 @@ class TestDustQtyGuard(_TrimTestBase):
         self.assertEqual(db.get_strategy_state("dust", "SYM").get("running_max"),
                          42.0, "dust no-op must not flatten/clear state")
 
+    def test_dust_close_qty_never_reaches_broker(self):
+        # The CLOSE-path twin of the trim test above. A strategy that emits
+        # Action("close") on a dust residual (qty <= 1e-9) must be no-op'd by
+        # the runner's close-path guard (runner.py ~L511), NOT submitted.
+        # This is the path breakout_xlk__mut_c382b1 actually exercises live:
+        # its decide() returns close whenever holding > 0 (and 1e-9 > 0 is
+        # True), so a sub-dust attributed residual would emit a close that,
+        # without the guard, would hit Alpaca and 422.
+        self._seed_buy("dustclose", "SYM", qty=5.0, price=100.0)
+        self._seed_state("dustclose", "SYM", "running_max", 77.0)
+        # Force attributed qty to a dust residual by selling almost all of it
+        # via a seeded sell row (leaves ~1e-9 attributed).
+        with db.connect(_TEST_DB) as c:
+            c.execute(
+                "INSERT INTO trades(strategy, symbol, side, qty, "
+                "notional_usd, price, alpaca_order_id, status, reason, "
+                "raw, ts_utc) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+                ("dustclose", "SYM", "sell", 5.0 - 5e-10, 500.0, 100.0,
+                 "ord-seed-2", "filled", "seed-trim-to-dust", None,
+                 "2026-01-01T00:00:01Z"),
+            )
+        # Attributed qty is now a dust residual <= 1e-9.
+        self.assertLessEqual(self._attributed_qty("dustclose", "SYM"), 1e-9)
+
+        orig_submit = self.fake_client.submit_market_order
+
+        def _strict_submit(symbol, side, *, qty=None, notional_usd=None):
+            dust = qty is not None and float(qty) <= 1e-9
+            if dust:
+                raise AssertionError(
+                    f"422-equivalent: dust close qty {float(qty):.2e} reached "
+                    f"broker")
+            return orig_submit(symbol, side, qty=qty, notional_usd=notional_usd)
+
+        self.fake_client.submit_market_order = _strict_submit
+
+        # Strategy emits a CLOSE (as c382b1 does on any holding>0).
+        self._patch_strategy(
+            lambda *a, **k: _action("close", "SYM", 0.0, "donchian-low exit"),
+            params={"symbol": "SYM", "timeframe": "1Hour", "bar_limit": 10,
+                    "notional_usd": 50.0},
+        )
+        rc = runner.run("dustclose")
+        self.assertEqual(rc, 0)
+        self.assertEqual(self.fake_client.submitted_orders, [],
+                         "dust close qty must never reach the broker (422)")
+        # The close-path dust guard logs a dust-close run outcome.
+        self.assertTrue(
+            any(r.get("detail") == "dust-close" for r in self._runs()),
+            "expected a dust-close no-op run outcome")
+
 
 if __name__ == "__main__":
     unittest.main()

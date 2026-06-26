@@ -119,8 +119,18 @@ def _bt_check_trade(side: str, notional_usd: float,
 # market-class-dependent. Equities trade ~252 sessions/yr; crypto trades 24/7
 # (~365). Using 365 for equities inflated daily Sharpe by sqrt(365/252)=1.204x
 # (~20%). Use `bars_per_year(timeframe, is_crypto)` instead of indexing this
-# dict directly for the 1Day case. Intraday bars are clock-time based, so 365
-# is correct there for both classes (an hour is an hour regardless of market).
+# dict directly.
+#
+# CORRECTION 2026-06-25: the OLD claim below this dict ("intraday is clock-time
+# based, so 365 is correct for both classes") was WRONG for EQUITIES. A US
+# equity intraday bar only exists during the trading session the data feed
+# delivers (~8.5h: pre-market 08:00 ET + RTH to 16:00 ET, empirically 12:00-
+# 20:30 UTC from Alpaca IEX), on ~252 sessions/yr -- NOT 24h x 365d. Indexing
+# this dict for an equity intraday timeframe overstated bars/year by ~5.35x and
+# therefore Sharpe by sqrt(5.35)=2.31x at EVERY intraday TF (incl. the live
+# default 1Hour). This dict is now the CRYPTO/legacy table; equity intraday is
+# computed from the session model in bars_per_year(). See
+# reports/INTRADAY_READINESS_AUDIT_20260625T155500Z.md.
 BARS_PER_YEAR = {
     "1Min": 60 * 24 * 365,
     "5Min": 12 * 24 * 365,
@@ -137,17 +147,165 @@ BARS_PER_YEAR = {
 # Trading sessions per year for daily equity bars (NYSE ~252).
 EQUITY_TRADING_DAYS_PER_YEAR = 252
 
+# Effective minutes of equity bars the data feed delivers PER SESSION. Alpaca
+# IEX returns ~08:00-16:00 ET (pre-market + RTH) = ~8.5h = 510 min. Used to
+# annualize equity INTRADAY Sharpe from the bars the engine actually sees
+# (honest-measurement choice: match the realized bar stream, not a theoretical
+# pure-RTH 390 min). Crypto intraday uses the full 1440 min/day (24/7).
+EQUITY_INTRADAY_MINUTES_PER_DAY = 510
+CRYPTO_MINUTES_PER_DAY = 1440
+
+# tf -> minutes (mirror of runner.bars_cache.TF_MINUTES; duplicated here to keep
+# this module import-light / avoid a bars_cache import cycle).
+_TF_MINUTES = {
+    "1Min": 1, "5Min": 5, "15Min": 15, "30Min": 30,
+    "1Hour": 60, "2Hour": 120, "4Hour": 240,
+    "6Hour": 360, "12Hour": 720, "1Day": 1440,
+}
+
 
 def bars_per_year(timeframe: str, is_crypto: bool) -> float:
     """Annualization bar-count for a timeframe, market-class aware.
 
-    The only class-dependent case is `1Day`: equities ~252 sessions/yr,
-    crypto 24/7 ~365. Intraday timeframes are wall-clock based and identical
-    for both classes. Unknown timeframes fall back to the legacy 24*365.
+    Daily (`1Day`): equities ~252 sessions/yr, crypto 24/7 ~365.
+
+    Intraday: now ALSO class-aware (fixed 2026-06-25). Equities only trade the
+    ~8.5h session the feed delivers on ~252 days/yr, so equity intraday
+    bars/year = (EQUITY_INTRADAY_MINUTES_PER_DAY / tf_minutes) * 252. Crypto
+    trades 24/7, so crypto intraday = (1440 / tf_minutes) * 365 (== the legacy
+    BARS_PER_YEAR table). Using the crypto count for equities overstated Sharpe
+    by ~2.31x at every intraday timeframe -- see the note above BARS_PER_YEAR.
+
+    Unknown timeframes fall back to the legacy crypto 24*365 (preserves old
+    behavior for anything not in the tf map).
     """
     if timeframe == "1Day":
         return 365.0 if is_crypto else float(EQUITY_TRADING_DAYS_PER_YEAR)
-    return float(BARS_PER_YEAR.get(timeframe, 24 * 365))
+    tf_min = _TF_MINUTES.get(timeframe)
+    if tf_min is None or tf_min >= 1440:
+        # not a recognized sub-daily tf -> legacy fallback (unchanged)
+        return float(BARS_PER_YEAR.get(timeframe, 24 * 365))
+    if is_crypto:
+        return (CRYPTO_MINUTES_PER_DAY / tf_min) * 365.0
+    return (EQUITY_INTRADAY_MINUTES_PER_DAY / tf_min) * float(
+        EQUITY_TRADING_DAYS_PER_YEAR)
+
+
+# ---------------------------------------------------------------------------
+# Lookback / warmup time-convention helper + guard (audit §2, 2026-06-25)
+# ---------------------------------------------------------------------------
+#
+# Strategy lookbacks (`slow`, `sma`, `rsi_period`, `lookback`, ...) are authored
+# as BAR COUNTS assuming the live cadence (1Day / 1Hour). The same integer means
+# a wildly different wall-clock window at a finer timeframe: `slow:30` is ~30
+# trading days at 1Day, but only 30 MINUTES at 1Min. There is NO auto-rescaling
+# of live params -- that would silently change the meaning of a validated book.
+# Instead we give callers (a) a unit-conversion helper and (b) a non-fatal lint
+# that WARNS when a daily-authored count is being run at a finer timeframe such
+# that the window no longer even spans one trading day.
+
+# Tokens (case-insensitive substrings) that mark a param as "lookback-ish".
+# Mirrors the audit §2 list. Threshold-ish params (e.g. `exit_rsi`, `buy_below`)
+# can be caught by the `rsi`/`period` tokens; that is an accepted conservative
+# false-positive for a non-fatal lint -- callers pass an explicit `lookback_keys`
+# override when they want to scope it tighter.
+_LOOKBACK_TOKENS = (
+    "slow", "fast", "window", "period", "lookback", "span",
+    "sma", "rsi", "bars", "exit_lookback", "time_stop_bars",
+)
+
+
+def timeframe_to_daily_bars(timeframe: str, is_crypto: bool = False) -> float:
+    """How many bars of `timeframe` equal ONE trading day.
+
+    This is the unit bridge between a bar-count lookback and its daily intent:
+        daily_equiv_days = bar_count / timeframe_to_daily_bars(tf)
+
+    Conventions (reuse the same session model as bars_per_year):
+        - `1Day`            -> 1.0  (one bar IS one day, both classes)
+        - equity intraday   -> EQUITY_INTRADAY_MINUTES_PER_DAY / tf_minutes
+                               (510/60 = 8.5 bars/day at 1Hour; 510 at 1Min)
+        - crypto intraday   -> CRYPTO_MINUTES_PER_DAY / tf_minutes
+                               (1440/60 = 24 at 1Hour; 1440 at 1Min)
+
+    Unknown timeframe -> ValueError (explicit; never silently guess), so a
+    typo in a params.json surfaces instead of producing a bogus scale factor.
+    """
+    if timeframe == "1Day":
+        return 1.0
+    tf_min = _TF_MINUTES.get(timeframe)
+    if tf_min is None:
+        raise ValueError(f"timeframe_to_daily_bars: unknown timeframe {timeframe!r}")
+    per_day = CRYPTO_MINUTES_PER_DAY if is_crypto else EQUITY_INTRADAY_MINUTES_PER_DAY
+    return float(per_day) / float(tf_min)
+
+
+def assert_lookback_sane(params: dict,
+                         timeframe: str,
+                         is_crypto: bool = False,
+                         *,
+                         lookback_keys=None) -> list:
+    """Lint a params dict for daily-authored lookbacks run at a finer timeframe.
+
+    Returns a list of human-readable WARNING strings (possibly empty). It does
+    NOT raise and does NOT mutate `params`; it is a guard/lint, not a gate. The
+    live cadence is 1Hour/1Day where these counts are intentional, so:
+        - `timeframe == "1Day"` always returns []  (one bar == one day).
+        - normal daily-authored counts at 1Hour (e.g. slow=30 -> 8.5 bars/day
+          -> ~3.5 trading days) return [] -- they still span >=1 trading day.
+
+    A warning is emitted for a lookback-ish param when its bar count is LESS
+    than one trading day's worth of bars at this timeframe
+    (`value < timeframe_to_daily_bars(timeframe, is_crypto)`), i.e. the window
+    covers under a single session -- a strong signal the count was authored in
+    daily units and is being misapplied at an intraday timeframe.
+
+    Args:
+        params: strategy params dict (read-only).
+        timeframe: bar timeframe the strategy will run at.
+        is_crypto: 24/7 market -> use 1440 min/day for the bars-per-day base.
+        lookback_keys: optional iterable of EXACT param keys to inspect; when
+            given, the substring-token scan is bypassed and only those keys are
+            considered (still only numeric, non-bool values).
+
+    Unknown timeframe propagates ValueError from timeframe_to_daily_bars (an
+    unknown tf is a real config error, not something to lint past).
+    """
+    warnings: list = []
+    if not params:
+        return warnings
+    if timeframe == "1Day":
+        # one bar == one day; bar-count lookbacks are in their authored unit.
+        return warnings
+
+    bars_per_day = timeframe_to_daily_bars(timeframe, is_crypto)
+
+    if lookback_keys is not None:
+        key_set = set(lookback_keys)
+
+        def _selected(key: str) -> bool:
+            return key in key_set
+    else:
+        def _selected(key: str) -> bool:
+            kl = key.lower()
+            return any(tok in kl for tok in _LOOKBACK_TOKENS)
+
+    for key, value in params.items():
+        if isinstance(value, bool):
+            continue
+        if not isinstance(value, (int, float)):
+            continue
+        if not _selected(key):
+            continue
+        if value < bars_per_day:
+            days_equiv = value / bars_per_day if bars_per_day else 0.0
+            warnings.append(
+                f"lookback param {key!r}={value} at timeframe {timeframe!r} "
+                f"covers only {days_equiv:.2f} trading day(s) "
+                f"({bars_per_day:.1f} bars/day); if this count was authored for "
+                f"DAILY bars it is being misapplied at this finer timeframe "
+                f"(it no longer spans a full session).")
+    return warnings
 
 
 # ---------------------------------------------------------------------------
@@ -245,7 +403,26 @@ def load_strategy_module_and_params(name: str):
         raise FileNotFoundError(f"No params.json: {params_path}")
     module = importlib.import_module(f"strategies.{name}.strategy")
     params = json.loads(params_path.read_text())
+    _warn_lookback_if_intraday(name, params)
     return module, params
+
+
+def _warn_lookback_if_intraday(name: str, params: dict) -> None:
+    """Emit non-fatal lookback-sanity WARNINGs at load time, intraday only.
+
+    Silent for the all-daily live book: only runs when timeframe != "1Day",
+    so a daily strategy load produces ZERO new output. Never raises (a bad
+    timeframe here must not block a load); guard failures are swallowed.
+    """
+    try:
+        timeframe = str((params or {}).get("timeframe", "1Day"))
+        if timeframe == "1Day":
+            return
+        is_crypto = bool((params or {}).get("is_crypto", False))
+        for w in assert_lookback_sane(params, timeframe, is_crypto):
+            print(f"[{name}] WARN lookback-sanity: {w}", file=sys.stderr)
+    except Exception:  # pragma: no cover - lint must never break a load
+        pass
 
 
 # ---------------------------------------------------------------------------

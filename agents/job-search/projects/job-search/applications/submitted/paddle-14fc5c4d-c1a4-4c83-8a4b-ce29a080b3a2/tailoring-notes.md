@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing integration workflows to sustain 45+ annual resilience drills across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining API-driven self-service scheduling requirements that reduced operational toil by 30% and enabled scalable, repeatable execution across partner teams.
+3. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract with strict compliance requirements.
+4. Built an internal **AI agent** to automate drill planning workflows, cutting planning cycle time by 39% and increasing drill capacity by 21% — a direct model for the AI-powered tooling Paddle uses to support software sellers.
+5. Pioneered Azure's first rack-level proactive resilience testing capability, delivering a **94% recovery rate** in 4 months by surfacing critical hardware defects and establishing a new continuous validation standard.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows by conducting user demos and technical training sessions that drove utilization across 14 key teams and saved 37 engineering hours monthly.
+2. Influenced the product roadmap by facilitating **11+ user interviews** with Azure service teams to surface critical API feature gaps, leading to prioritization of intent-based YAML generation in the next release cycle.
+3. Improved documentation retrieval by implementing metadata standards and migrating to an **AI-powered semantic search** tool, cutting engineer lookup time by 83% and contributing directly to internal knowledge-base quality.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built and socialized a roadmap to automate critical execution paths and eliminate toil at scale.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to pinpoint automation gaps and prioritize high-impact investments with data-backed confidence.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping software and hardware dependencies across 1,200+ stations.
+2. Drove alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release overhead for embedded robotics systems.
+3. Facilitated Agile sprint planning and retrospectives, resolving **40+ high-priority tickets** to stabilize the developer intake process and maintain velocity during a critical platform migration.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through an optimized CRM process that improved customer experience and close rates.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, including website optimization and Google Business profile improvements.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records to identify margin leaks and recommend data-driven adjustments to the sales and quoting process.
+
+## Notes from the rewriter
+- JD term 'API integration' woven into microsoft_ft bullet 2 (API-driven self-service scheduling) and microsoft_2023 bullet 2 (API feature gaps) — mirrors Paddle's core SE requirement of integrating APIs.
+- JD term 'technical and non-technical audiences' addressed via microsoft_ft bullet 1 (enterprise partner framing) and pro_painters bullet 1 (customer experience/close rates) — shows ability to bridge both worlds.
+- JD term 'documentation' directly referenced in microsoft_2023 bullet 3 (internal knowledge-base, semantic search) — aligns with Paddle's ask to contribute to public and internal documentation.
+- JD phrase 'software sellers' echoed verbatim in microsoft_ft bullet 4 to create explicit vocabulary mirror with Paddle's customer base and product context.
+- JD term 'integration plans / sample code / implementation' supported by microsoft_ft bullet 2 (integration workflows, API-driven requirements) and amazon_robotics bullet 1 (dependency mapping, migration strategy) to surface hands-on technical implementation experience.
+

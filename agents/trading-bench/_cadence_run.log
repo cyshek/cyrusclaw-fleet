@@ -1,0 +1,26 @@
+[sleeves] loaded cached _regime_sleeves.pkl (2010-02-12 -> 2026-06-25, n=4116)
+>>> common 2010-02-12 -> 2026-06-25  n=4116 | mo=197 q=66 wk=855 biwk=428
+>>> [sanity] reproducing validated MONTHLY ...
+    ab.blend_portfolio : totret 984.70% Sharpe 1.0029 maxDD -23.90%
+    blend_with_cadence : totret 984.70% Sharpe 1.0029 maxDD -23.90%  [match tot=True sh=True]
+    avg target w_tqqq = 0.3485  (report says ~0.349)
+>>> cadence grid ...
+   monthly_baseline   net 984.7% (gross 988.7%, drag 4.0%) CAGR 15.7% Sh 1.003 (fp 1.003) maxDD -23.9% | OOS 268.1% Sh 1.123 | turn/yr 1.12 n_rebal 196
+   weekly             net 971.3% (gross 976.4%, drag 5.1%) CAGR 15.6% Sh 1.005 (fp 1.005) maxDD -22.5% | OOS 259.1% Sh 1.109 | turn/yr 1.45 n_rebal 853
+   biweekly           net 979.3% (gross 983.6%, drag 4.3%) CAGR 15.7% Sh 1.008 (fp 1.008) maxDD -22.7% | OOS 258.5% Sh 1.109 | turn/yr 1.20 n_rebal 427
+   quarterly          net 1068.0% (gross 1070.9%, drag 2.9%) CAGR 16.2% Sh 1.018 (fp 1.018) maxDD -24.9% | OOS 283.4% Sh 1.151 | turn/yr 0.76 n_rebal 65
+   daily_churn5pct    net 980.3% (gross 984.7%, drag 4.4%) CAGR 15.7% Sh 1.005 (fp 1.005) maxDD -22.5% | OOS 258.1% Sh 1.104 | turn/yr 1.23 n_rebal 146
+>>> drift-threshold tau grid ...
+   tau 0.02 | L1   net 967.9% Sh 1.006 maxDD -22.3% turn/yr 1.63 nreb 674 || MAX net 972.2% Sh 1.006 maxDD -22.1% turn/yr 1.47 nreb 372
+   tau 0.05 | L1   net 976.7% Sh 1.008 maxDD -22.5% turn/yr 1.40 nreb 292 || MAX net 980.3% Sh 1.005 maxDD -22.5% turn/yr 1.23 nreb 146
+   tau 0.10 | L1   net 980.3% Sh 1.005 maxDD -22.5% turn/yr 1.23 nreb 146 || MAX net 1010.6% Sh 1.006 maxDD -21.6% turn/yr 0.92 nreb 58
+   tau 0.15 | L1   net 1035.7% Sh 1.022 maxDD -22.5% turn/yr 1.10 nreb 91 || MAX net 1021.2% Sh 1.004 maxDD -22.6% turn/yr 0.83 nreb 37
+   tau 0.20 | L1   net 1010.6% Sh 1.006 maxDD -21.6% turn/yr 0.92 nreb 58 || MAX net 1065.0% Sh 0.993 maxDD -24.0% turn/yr 0.71 nreb 24
+   tau 0.25 | L1   net 1070.2% Sh 1.022 maxDD -22.8% turn/yr 0.92 nreb 48 || MAX net 1172.2% Sh 1.029 maxDD -24.1% turn/yr 0.54 nreb 16
+>>> weekly alt-anchor (Wed) spot-check ...
+   weekly(Wed) net 974.6% Sh 1.007 maxDD -22.8% turn/yr 1.46 n_rebal 854
+
+>>> VERDICT SCAN: monthly baseline NET 984.7% (Sh 1.003 maxDD -23.9%, OOS 268.1%)
+    variants beating baseline NET: full 8/16 | OOS 4/16
+    best by NET totret: drift_maxleg_tau_0.25 -> 1172.2% (Sh 1.029 maxDD -24.1% OOS 269.2%)
+wrote reports/_cadence_sweep_result.json

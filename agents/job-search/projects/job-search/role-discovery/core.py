@@ -53,6 +53,39 @@ def http_post_json(url: str, body: dict, headers: dict = None, timeout: int = 30
 
 # ---------- experience parsing ----------
 
+# Strip company-history boilerplate sentences before YOE parsing so that
+# e.g. "KLA has 40 years of semiconductor industry experience" doesn't falsely
+# raise the YOE floor. A sentence is boilerplate when it matches a company-
+# history signal but contains no candidate-requirement signal word.
+_BOILERPLATE_COMPANY_RE = re.compile(
+    r"(?:founded|established|has\s+been|have\s+been"
+    r"|serving\s+(?:customers|clients|industries)\s+for"
+    r"|proud\s+(?:\w+\s+)?history"
+    r"|\bcompany\s+with\s+\d+\s+years\b"
+    r"|\bhas\s+\d+\s+years?\s+of\b"
+    r"|\d+\s+years?\s+of\s+(?:industry|company|corporate|market|semiconductor|software|hardware|technology)\s+(?:\w+\s+){0,3}(?:experience|expertise|history|heritage|innovation|leadership)\b)",
+    re.I,
+)
+_REQUIREMENT_SIGNAL_RE = re.compile(
+    r"\b(?:required?|must\s+have|candidate|applicant"
+    r"|you\s+(?:have|bring|possess|will\s+have)"
+    r"|ideally|preferred|we(?:'re|\s+are)\s+looking"
+    r"|qualifications?|minimum|at\s+least|experience\s+(?:required|needed))\b",
+    re.I,
+)
+
+
+def _strip_boilerplate(text: str) -> str:
+    """Remove company-history sentences (no candidate-requirement signal) so
+    large numbers like '40 years of industry experience' don't inflate YOE."""
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    kept = []
+    for s in sentences:
+        if _BOILERPLATE_COMPANY_RE.search(s) and not _REQUIREMENT_SIGNAL_RE.search(s):
+            continue
+        kept.append(s)
+    return ' '.join(kept)
+
 EXP_PATTERNS = [
     (re.compile(r"\b(\d+)\+?\s*(?:to|-|–)\s*(\d+)\s*\+?\s*(?:years?|yrs?)\b", re.I), "range"),
     (re.compile(r"\bminimum\s+(?:of\s+)?(\d+)\+?\s*(?:years?|yrs?)\b", re.I), "min"),
@@ -84,7 +117,7 @@ def parse_experience(description_text: str) -> str:
     if not description_text:
         return "exp:unstated"
 
-    text = description_text  # scan the ENTIRE JD (was capped at 8000 -> false 'unstated')
+    text = _strip_boilerplate(description_text)  # remove company-history sentences first
 
     # Pass 1: find all RANGE spans first; record their lower bound and char span.
     range_spans = []  # (start, end, lo, hi)
@@ -112,6 +145,9 @@ def parse_experience(description_text: str) -> str:
             if s <= num_start < e:
                 return True
         return False
+
+    def _in_boilerplate_sentence(match_start: int) -> bool:
+        return False  # superseded by _strip_boilerplate pre-processing
 
     for pat, kind in EXP_PATTERNS[1:]:  # skip the range pattern (handled above)
         for m in pat.finditer(text):

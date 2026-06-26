@@ -546,19 +546,24 @@ def _eval_cell_single(spec: SweepSpec, override: Dict,
 
 
 def _verdict(metrics: dict) -> Tuple[bool, List[str]]:
-    """Front-door PASS iff fitness + Bar A #1 + #5(b)-DD all pass. Also records
-    clause (a) FP-cont Sharpe < 1.0 as a reject reason (the load-bearing bar)."""
+    """Front-door PASS iff clause (a) FP-cont Sharpe >= 1.0 AND fitness + Bar A
+    #1 + #5(b)-DD all pass. Clause (a) is THE load-bearing primary bar, so it is
+    now folded into the verdict itself (previously it was only recorded as a
+    reject reason while `front` ignored it — that let a sub-1.0 cell render as a
+    bold PASS purely on the secondary clauses; the classic misread-trap). Each
+    failed clause is also appended to `clauses` for the reject-reason column."""
     clauses: List[str] = []
-    if metrics["fp_cont_sharpe"] < 1.0:
-        clauses.append("a")        # FP-cont Sharpe below 1.0
+    clause_a_pass = metrics["fp_cont_sharpe"] >= 1.0
+    if not clause_a_pass:
+        clauses.append("a")        # FP-cont Sharpe below 1.0 (PRIMARY gate)
     if not metrics["fitness_pass"]:
         clauses.append("fitness")
     if not metrics["bar_a1_pass"]:
         clauses.append("#1")
     if not metrics["dd5b_pass"]:
         clauses.append("#5b")
-    front = (metrics["fitness_pass"] and metrics["bar_a1_pass"]
-             and metrics["dd5b_pass"])
+    front = (clause_a_pass and metrics["fitness_pass"]
+             and metrics["bar_a1_pass"] and metrics["dd5b_pass"])
     return front, clauses
 
 

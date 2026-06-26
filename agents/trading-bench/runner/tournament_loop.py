@@ -49,6 +49,10 @@ GATE_PASSING_PARENTS: List[str] = [
     "rsi_oversold_spy",      # RSI mean-reversion on SPY (Sharpe 1.80, 62% pos)
     "volume_breakout_qqq",   # Volume-confirmed breakout on QQQ (Sharpe 2.80, 62% pos)
     "macd_momentum_iwm",     # MACD momentum on IWM (Sharpe 1.33, 75% pos)
+    # Added 2026-06-25: low-corr GLD trend archetype (corr +0.019 vs pool,
+    # orthogonal to equity book; profiles clean 8/8 windows). Diversifies the
+    # mutation gene pool away from the equity-momentum cluster.
+    "trend_follow_gld",      # Trend-follow on GLD (gold; distinct asset class)
 ]
 
 

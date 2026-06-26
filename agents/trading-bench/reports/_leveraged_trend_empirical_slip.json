@@ -1,0 +1,29 @@
+{
+  "measured_utc": "2026-06-25",
+  "source": "live Alpaca paper fills, tournament.db, symbol=TQQQ, uuid-order-id only",
+  "n_fills": 16,
+  "instrument": "TQQQ",
+  "notional_usd_per_fill": "~100 (paper book)",
+  "window": "2026-06-15 .. 2026-06-25 (calm regime, market-open liquidity)",
+  "reference": "Alpaca v2 NBBO quote (feed=iex) at-or-before filled_at; mid=(bid+ask)/2",
+  "slip_bps_signed": {
+    "mean": 0.34, "median": 0.42, "min": -2.93, "max": 2.66, "stdev": 1.23,
+    "note": "buy:(fill-mid)/mid ; sell:(mid-fill)/mid ; positive = adverse / paid up"
+  },
+  "half_spread_bps": {
+    "mean": 1.82, "median": 1.80, "min": 0.61, "max": 4.00,
+    "note": "(ask-bid)/2/mid at fill instant = structural half-spread floor crossed"
+  },
+  "implied_per_trade_friction_bps": {
+    "one_way_slip": 0.34,
+    "one_way_halfspread_floor": 1.82,
+    "round_trip_slip": 0.67,
+    "round_trip_halfspread_floor": 3.63
+  },
+  "caveats": [
+    "TQQQ only - UPRO/SPXL never traded live; their real spreads are WIDER (less AUM/volume).",
+    "calm June-2026 regime + market-open liquidity; stress-window spreads blow out 10-30bps+.",
+    "tiny $100 notional, fractional shares - no size/impact; a real book pushing size pays more.",
+    "16 fills is a small sample; treat as order-of-magnitude calibration, not a precise constant."
+  ]
+}

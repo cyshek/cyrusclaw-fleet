@@ -116,6 +116,37 @@ def _month_key(t_iso: str) -> str:
     return t_iso[:7] if t_iso and len(t_iso) >= 7 else ""
 
 
+def _quarter_key(t_iso: str) -> str:
+    """Extract 'YYYY-Qn' from an ISO timestamp (empty if unparseable).
+
+    Quarter boundaries: Q1=Jan-Mar, Q2=Apr-Jun, Q3=Jul-Sep, Q4=Oct-Dec, i.e.
+    a re-target fires only on the first tick of a new calendar quarter. Verified
+    +EV vs monthly (negative rebalancing premium; report
+    ALLOCATOR_CADENCE_SWEEP_20260625.md): same avg exposure, fewer snap-backs.
+    """
+    mk = _month_key(t_iso)
+    if not mk or len(mk) < 7:
+        return ""
+    try:
+        mo = int(mk[5:7])
+    except (TypeError, ValueError):
+        return ""
+    if not (1 <= mo <= 12):
+        return ""
+    q = (mo - 1) // 3 + 1
+    return f"{mk[:4]}-Q{q}"
+
+
+def _period_key(t_iso: str, period: str) -> str:
+    """Cadence bucket key for the rebalance gate. 'quarterly' -> 'YYYY-Qn',
+    anything else (default 'monthly') -> 'YYYY-MM'. Unknown values fall back to
+    monthly so a typo can never silently disable the cadence gate.
+    """
+    if str(period).strip().lower() == "quarterly":
+        return _quarter_key(t_iso)
+    return _month_key(t_iso)
+
+
 def _leg_price(symbols_view: dict, sym: str) -> Optional[float]:
     """Last visible price for a leg from the runner's symbols view.
 
@@ -190,13 +221,18 @@ def decide_xsec(market_state: dict, position_state: dict, params: dict) -> dict:
     max_notional = float(params.get("max_notional_usd", 100.0))
     churn_frac = float(params.get("churn_frac", 0.05))
     monthly_cadence = bool(params.get("monthly_cadence", True))
+    # Cadence granularity: 'monthly' (default, validated) or 'quarterly'
+    # (verified +EV refinement). Quarterly re-targets only on a new calendar
+    # quarter -> ~1/3 the rebalances, captures the negative rebalancing premium.
+    rebalance_period = str(params.get("rebalance_period", "monthly"))
 
-    # ---- Monthly cadence gate (the validated blend rebalances at month-open).
+    # ---- Cadence gate (the validated blend rebalances at period-open). -------
     clock_t = str(market_state.get("clock_t", ""))
-    this_month = _month_key(clock_t)
-    last_month = state.get("last_rebalance_month", "")
-    if monthly_cadence and this_month and this_month == last_month:
-        # Already rebalanced this month -> hold everything (no churn).
+    this_period = _period_key(clock_t, rebalance_period)
+    last_period = state.get("last_rebalance_period", "") or state.get(
+        "last_rebalance_month", "")
+    if monthly_cadence and this_period and this_period == last_period:
+        # Already rebalanced this period -> hold everything (no churn).
         return {}
 
     # ---- Resolve target weights (REUSED tracker decomposition). -------------
@@ -290,7 +326,13 @@ def decide_xsec(market_state: dict, position_state: dict, params: dict) -> dict:
                     reason=f"within churn band |$delta|=${abs(dollar_delta):.2f} "
                            f"<= ${dollar_threshold:.2f} | {base_reason}")
 
-    # Advance cadence marker only after a successful re-target.
-    if this_month:
-        state["last_rebalance_month"] = this_month
+    # Advance cadence marker only after a successful re-target. Write BOTH the
+    # generic period marker and the legacy month marker (so a revert to the old
+    # code, which reads last_rebalance_month, still sees a sane value; and so
+    # switching periods can't double-fire within an overlapping bucket).
+    if this_period:
+        state["last_rebalance_period"] = this_period
+    legacy_month = _month_key(clock_t)
+    if legacy_month:
+        state["last_rebalance_month"] = legacy_month
     return actions

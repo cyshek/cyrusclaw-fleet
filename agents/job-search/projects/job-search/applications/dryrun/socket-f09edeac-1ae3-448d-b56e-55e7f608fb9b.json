@@ -1,0 +1,227 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/socket/f09edeac-1ae3-448d-b56e-55e7f608fb9b",
+  "org": "socket",
+  "job_id": "f09edeac-1ae3-448d-b56e-55e7f608fb9b",
+  "job_title": "Sales Engineer, Enterprise",
+  "job_location": "United States",
+  "fetched_at": "2026-06-25T19:30:38Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 11,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 2
+  },
+  "fields": [
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23__systemfield_name"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_cc49b2d6-d85d-4cf5-8836-c0959a8fa44b",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_cc49b2d6-d85d-4cf5-8836-c0959a8fa44b"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23__systemfield_email"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_79e1a894-f852-4eaa-940b-0a5f7ec74613",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_79e1a894-f852-4eaa-940b-0a5f7ec74613"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23__systemfield_resume"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_7ddf8331-afc4-4338-85cd-ae4bcc5287ed",
+      "label": "Please include a link to your LinkedIn profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_7ddf8331-afc4-4338-85cd-ae4bcc5287ed"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_12db1db5-12a6-473c-99e5-e4beb7965e13",
+      "label": "Will you require employment sponsorship now or in the future to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_12db1db5-12a6-473c-99e5-e4beb7965e13"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_b04fe65e-7d75-4c3d-93e7-131385a57e4d",
+      "label": "How did you hear about Socket?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_b04fe65e-7d75-4c3d-93e7-131385a57e4d"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_1ca922d9-15b2-4f69-94a4-0a4e7dd6218b",
+      "label": "Do you have hands on experience working with package managers?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have hands on experience working with package managers?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_1ca922d9-15b2-4f69-94a4-0a4e7dd6218b"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_d3044c30-99fd-4e41-a55b-e8deb542e8e9",
+      "label": "Do you have hands on experience working with RESTful APIs?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Do you have hands on experience working with RESTful APIs?'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_d3044c30-99fd-4e41-a55b-e8deb542e8e9"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_9f288408-a65c-42f3-a645-6295974caf4f",
+      "label": "Do you have experience writing automation scripts?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_9f288408-a65c-42f3-a645-6295974caf4f"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_1ca922d9-15b2-4f69-94a4-0a4e7dd6218b",
+      "label": "Do you have hands on experience working with package managers?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have hands on experience working with package managers?'"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_d3044c30-99fd-4e41-a55b-e8deb542e8e9",
+      "label": "Do you have hands on experience working with RESTful APIs?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Do you have hands on experience working with RESTful APIs?'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_1ca922d9-15b2-4f69-94a4-0a4e7dd6218b",
+      "label": "Do you have hands on experience working with package managers?",
+      "reason": "no LABEL_RULES match for label='Do you have hands on experience working with package managers?'"
+    },
+    {
+      "id": "7efd1ada-4b05-4592-9f60-5bd8372fbe23_d3044c30-99fd-4e41-a55b-e8deb542e8e9",
+      "label": "Do you have hands on experience working with RESTful APIs?",
+      "reason": "no LABEL_RULES match for label='Do you have hands on experience working with RESTful APIs?'"
+    }
+  ]
+}

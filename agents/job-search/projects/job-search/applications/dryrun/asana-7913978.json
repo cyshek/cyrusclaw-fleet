@@ -4,7 +4,7 @@
   "job_id": "7913978",
   "job_title": "Solutions Engineer",
   "job_location": "San Francisco",
-  "fetched_at": "2026-05-25T17:09:37Z",
+  "fetched_at": "2026-06-26T01:34:09Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/asana/jobs/7913978?questions=true",
   "ready_to_submit": true,
   "counts": {
@@ -243,8 +243,8 @@
       "label": "Asana is seeking the below information for the exclusive and limited purpose of complying with U.S. export control laws given that the position for which you are applying may require access to technology subject to those laws. We will not use the information that you provide for any other purpose. Are you a citizen or legal permanent resident of Cuba, Iran, North Korea, Syria or Ukraine (Crimea region)?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Yes",
-      "source": "work_authorization.status=us_citizen (matched ITAR option 'Yes')",
+      "value": "No",
+      "source": "work_authorization.status=us_citizen (INVERTED export Q 'asana is seeking the below information f...' -> No)",
       "status": "filled",
       "matched_rule": "itar_us_person_ack",
       "options": [
@@ -264,9 +264,9 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "No, I have never.",
-      "source": "worked_at_company_before (matched No-prefix 'No, I have never.')",
+      "source": "answer_no (matched 'No...' option: 'No, I have never.')",
       "status": "filled",
-      "matched_rule": "worked_at_company_before",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes, I do work/have worked for a U.S. government entity.",
@@ -476,5 +476,17 @@
     }
   ],
   "unresolved": [],
-  "blockers": []
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
 }

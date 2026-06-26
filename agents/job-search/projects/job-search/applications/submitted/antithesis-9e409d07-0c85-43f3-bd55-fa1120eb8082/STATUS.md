@@ -1,13 +1,14 @@
-ABORT-BULLET-REWRITER — 2026-06-09T07:28:39+00:00
+STATUS: SUBMITTED
+submitted_at: 2026-06-25T22:30:00+00:00
 
 role_id: 2781
-phase: bullet-rewriter
-error:
-RuntimeError: bullet_rewriter failed (rc=-15): gents/job-search/workspace/projects/job-search/applications/queued/ashby-antithesis-9e409d07/rewrites.json
-[bullet_rewriter] wrote /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/queued/ashby-antithesis-9e409d07/tailoring-notes.md
-[bullet_rewriter] page-fill loop 1: Resume under-fills the single page (≈96% visual fill) — EXPAND existing bullets to fuller 2-line versions with substantive JD-aligned detail. If still under-filled, ADD a bullet within each role's cap. Fill the page but stay strictly 1 page — never spill to page 2.
-[bullet_rewriter] page-fit sub-attempt 1 failed: ['role microsoft_ft bullet#1: 309 chars exceeds 290-char 2-line ceiling — shorten to ≤290 (it currently wraps to a 3rd line)']
-[bullet_rewriter] page-fill loop 2: Resume overflows onto page 2 (fill≈53% on the spilled page) — TIGHTEN: shorten phrasing across bullets, and DROP the weakest bullets within each role's [min, max] cap, until everything fits on ONE page. Keep every bullet ≤2 visual lines.
-[bullet_rewriter] page-fill loop 3: Resume under-fills the single page (≈84% visual fill) — EXPAND existing bullets to fuller 2-line versions with substantive JD-aligned detail. If still under-filled, ADD a bullet within each role's cap. Fill the page but stay strictly 1 page — never spill to page 2.
-[bullet_rewriter] page-fit sub-attempt 1 failed: ['role microsoft_ft bullet#1: 304 chars exceeds 290-char 2-line ceiling — shorten to ≤290 (it currently wraps to a 3rd line)']
+ats: ashby
+company: Antithesis
+role: Solutions Engineer
+apply_url: https://jobs.ashbyhq.com/antithesis/9e409d07-0c85-43f3-bd55-fa1120eb8082/application
 
+submitted_by: auto (_ashby_runner.py, residential)
+resume: Cyrus_Shekari_Resume_ashby-antithesis_9e409d07_v2.pdf
+confirmation: FormSubmitSuccess + "Your application was successfully submitted."
+proxy: Webshare residential 19223
+previous_block: ashby-hard-recaptcha (NOT residential-resistant - confirmed crackable)

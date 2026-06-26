@@ -1,0 +1,35 @@
+[sleeves] loaded cached _regime_sleeves.pkl (2010-02-12 -> 2026-06-25, n=4116)
+>>> 1. IS/OOS monthly vs quarterly
+   monthly    full 984.7% (Sh 1.003 DD -23.9%) | IS 194.2% (Sh 0.892) | OOS 268.1% (Sh 1.123)
+   quarterly  full 1068.0% (Sh 1.018 DD -24.9%) | IS 204.2% (Sh 0.896) | OOS 283.4% (Sh 1.151)
+>>> 2. anchor + cadence-period robustness (does quarterly survive phase shifts?)
+   quarter_anchor m=1  full 1068.0% (Sh 1.018 DD -24.9%) | OOS 283.4% (Sh 1.151) | n_rebal 65
+   quarter_anchor m=2  full 1076.2% (Sh 1.018 DD -23.8%) | OOS 261.7% (Sh 1.090) | n_rebal 66
+   quarter_anchor m=3  full 1092.2% (Sh 1.029 DD -22.3%) | OOS 269.1% (Sh 1.111) | n_rebal 66
+   --- every-Nth-month family (cadence-period response) ---
+   every_1mo  avg full 984.7% (Sh 1.003 DD -23.9%) OOS 268.1% (Sh 1.123) | phase-spread 0.0pts
+   every_2mo  avg full 1050.6% (Sh 1.018 DD -23.2%) OOS 273.9% (Sh 1.126) | phase-spread 30.4pts
+   every_3mo  avg full 1071.1% (Sh 1.018 DD -23.8%) OOS 278.2% (Sh 1.129) | phase-spread 19.3pts
+   every_4mo  avg full 1080.5% (Sh 1.017 DD -23.8%) OOS 272.9% (Sh 1.113) | phase-spread 193.8pts
+   every_6mo  avg full 1017.2% (Sh 0.992 DD -23.9%) OOS 252.9% (Sh 1.068) | phase-spread 133.7pts
+>>> 3. per-year net return: quarterly - monthly (where does the edge live?)
+   year | monthly | quarterly | q-m
+   2010 |    20.5% |     20.0% |   -0.5%
+   2011 |    11.6% |     12.8% |   +1.2%
+   2012 |    12.3% |     15.6% |   +3.4%
+   2013 |    30.8% |     31.3% |   +0.5%
+   2014 |    15.1% |     15.6% |   +0.5%
+   2015 |    -8.6% |     -8.6% |   -0.0%
+   2016 |    -2.8% |     -6.0% |   -3.3%
+   2017 |    34.9% |     35.2% |   +0.2%
+   2018 |     2.3% |      4.5% |   +2.3%
+   2019 |    20.0% |     19.2% |   -0.8%
+   2020 |    33.3% |     33.6% |   +0.3%
+   2021 |    22.7% |     21.6% |   -1.1%
+   2022 |   -14.4% |    -10.6% |   +3.8%
+   2023 |    32.1% |     31.6% |   -0.5%
+   2024 |    22.9% |     22.5% |   -0.4%
+   2025 |    24.7% |     26.3% |   +1.6%
+   2026 |     9.8% |     10.2% |   +0.4%
+   quarterly beat monthly in 10 / 17 years
+wrote reports/_cadence_robustness.json

@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. **Owned end-to-end deployment** of Azure's recovery validation program across enterprise customers — Databricks, Walmart, SAP, NetApp — scaling from a 2-person operation to a platformized system sustaining **45+ annual resilience drills** and $14M+ business impact.
+2. Led 0→1 build of an internal Resilience Automation Platform, defining self-service scheduling requirements and API-based workflows that cut operational toil by **30%** and transitioned execution to a scalable, consumption-driven model.
+3. Pioneered Azure's first proactive resilience testing capability — delivered a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation playbook adopted org-wide.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, owning technical outcomes post-handoff from deal close.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — feeding adoption signals back to engineering to continuously improve the platform.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. **Drove adoption** of AI-powered code generation tooling across 14 Azure service teams by leading hands-on demos and technical onboarding sessions, converting users from deployment to active consumption and saving **37 engineering hours monthly**.
+2. Conducted 11+ user interviews with Azure service teams to surface critical pipeline gaps, directly influencing the product roadmap to prioritize **intent-based YAML generation** — translating field signals into shipped features.
+3. Improved data observability and retrieval by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** platform, reducing lookup time by 83% across internal data assets.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. **Accelerated region launches by 28%** and generated $3M in revenue by aligning 140+ teams on a unified automation prioritization framework — owning cross-functional execution from discovery through go-live.
+2. Identified 81 hours of manual toil per region launch through discovery with 20+ service teams, then built and drove adoption of a **roadmap to automate critical deployment paths**, directly reducing time-to-consumption for new cloud regions.
+3. Engineered a **Power BI observability dashboard** tracking operational toil across 140+ teams, giving leadership real-time visibility into deployment bottlenecks and enabling data-driven prioritization of high-impact automation gaps.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit OS migration by owning the full deployment strategy — mapping dependencies across 1,200+ stations and unblocking edge cases that stood between signed scope and a fully live environment.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and eliminating manual handoffs that slowed adoption.
+3. Facilitated Agile ceremonies and triaged 40+ high-priority tickets to stabilize the **developer intake process**, ensuring consumption of new tooling kept pace with deployment across a distributed robotics fleet.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end customer onboarding and scoping lifecycle — deploying a new CRM workflow that managed 200+ monthly proposals and drove measurable consumption of the sales pipeline.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a data-driven go-to-market strategy, optimizing digital channels to move prospects from first touch to signed contract faster.
+3. Identified margin leaks across **1,000+ project records** through financial profitability analysis, delivering pricing model recommendations that improved leadership's ability to operationalize cost controls at scale.
+
+## Notes from the rewriter
+- 'Deployment to consumption' framing from JD woven into microsoft_ft bullet 2 ('consumption-driven model') and pro_painters bullet 1 ('drove measurable consumption').
+- 'Databricks, Walmart, SAP, NetApp' named explicitly in microsoft_ft bullet 1, mirroring JD's Snowflake/Databricks stack depth signal and enterprise customer context.
+- 'Playbook' language from JD ('you built it') reflected in microsoft_ft bullet 3 ('establishing a new continuous-validation playbook adopted org-wide').
+- 'Feed deployment and adoption signals back to Product and Engineering' from JD mirrored in microsoft_ft bullet 5 ('feeding adoption signals back to engineering') and microsoft_2023 bullet 2 ('translating field signals into shipped features').
+- 'Data observability' and 'pipeline monitoring' from JD surfaced in microsoft_2023 bullet 3 ('data observability and retrieval') and skills section, directly matching Monte Carlo's core product domain.
+

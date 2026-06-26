@@ -1,0 +1,9 @@
+# Cover answers — Cribl, Sales Engineer, San Francisco (Enterprise) (cribl-5745375004)
+
+## Please describe your experience working with Logs, Metrics, IT Operations and Security
+
+Most of my hands-on experience here comes from my time at Microsoft on Azure's telemetry and resilience program. I scaled that program from a 2-person operation into a platformized system that supported 45+ annual resilience drills for enterprise customers like Databricks, Walmart, SAP, and NetApp. A big part of that work was instrumenting and validating log and metrics pipelines to confirm recovery state during drills - if the telemetry wasn't reliable, we couldn't trust the results. I also built internal tooling to automate drill planning workflows, which cut planning cycle time by 39% and leaned heavily on log data to track execution state across distributed systems.
+
+On the IT operations and security side, I served as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract. That engagement required deep coordination with IT and security teams to map blast radius, validate recovery procedures, and ensure compliance constraints were met throughout the test. I also pioneered Azure's first proactive rack-level resilience testing capability, which surfaced critical hardware defects and delivered a 94% recovery rate in 4 months - that work was essentially continuous validation for IT infrastructure at scale.
+
+During my internship, I also conducted discovery interviews with 11+ enterprise Azure service teams to surface feature gaps in log and data pipeline workflows, which directly shaped the product roadmap toward intent-based YAML generation. Across all of this, logs and metrics weren't just outputs - they were the core signal I used to measure program health, communicate status to executives, and drive decisions.

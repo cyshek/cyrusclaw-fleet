@@ -211,34 +211,85 @@ def test_paper_clock_stats_after_rows(db_path, monkeypatch):
 
 
 # --------------------------------------------------------------------------- #
-# staleness (wall-clock)
+# staleness (two-mode: frozen-frontier vs cron-stopped)
 # --------------------------------------------------------------------------- #
-def test_staleness_empty_is_fresh(db_path):
-    assert T.check_staleness(db_path) == 0
+def _patch_spy_dates(monkeypatch, dates):
+    """Make the staleness guard see a deterministic SPY daily-bar date list
+    (it calls runner.daily_bars_cache.get_daily('SPY') directly)."""
+    from runner import daily_bars_cache as dbc
+
+    def _fake_get_daily(symbol, *a, **k):
+        if symbol == "SPY":
+            return [{"date": d} for d in dates]
+        return []
+    monkeypatch.setattr(dbc, "get_daily", _fake_get_daily)
 
 
-def test_staleness_recent_row_is_fresh(db_path, monkeypatch):
-    monkeypatch.setattr(
-        T, "build_ingredients",
-        _fake_ingredients({"2026-06-18": 0.01}, {"2026-06-18": 0.0},
-                          {"2026-06-18": 0.02}))
-    T.snapshot_today(db_path)
-    assert T.check_staleness(db_path) == 0       # just written
-
-
-def test_staleness_old_row_flags(db_path):
+def _seed_snapshot(db_path, date, created_at):
     conn = T._get_conn(db_path)
-    old = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
     conn.execute(
         "INSERT INTO daily_snapshots (date, x_book, core4_holds, book_daily_ret, "
         "core4_daily_ret, daily_ret, cum_ret_since_start, spx_daily_ret, "
         "cum_spx_since_start, engine_full_sharpe, engine_book_sharpe, created_at) "
         "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-        ("2026-06-08", 0.8, "[]", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, old))
+        (date, 0.8, "[]", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, created_at))
     conn.commit()
     conn.close()
-    assert T.check_staleness(db_path) == 3       # >4 days old -> STALE
-    assert T.check_staleness(db_path, max_age_days=30) == 0   # tolerant -> fresh
+
+
+SPY_CAL = ["2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25"]  # latest = 06-25
+
+
+def test_staleness_empty_is_fresh(db_path):
+    assert T.check_staleness(db_path) == 0
+
+
+def test_staleness_fresh_frontier_is_fresh(db_path, monkeypatch):
+    # snapshot date == latest SPY bar -> 0 trading days behind -> fresh.
+    _patch_spy_dates(monkeypatch, SPY_CAL)
+    now = datetime.now(timezone.utc).isoformat()
+    _seed_snapshot(db_path, "2026-06-25", now)
+    assert T.check_staleness(db_path) == 0
+
+
+def test_staleness_structural_one_day_lag_is_fresh(db_path, monkeypatch):
+    # snapshot one trading day behind latest SPY (the normal post-close-before-
+    # print lag) is WITHIN tolerance (default 3) -> fresh, no false positive.
+    _patch_spy_dates(monkeypatch, SPY_CAL)
+    now = datetime.now(timezone.utc).isoformat()
+    _seed_snapshot(db_path, "2026-06-24", now)        # 1 trading day behind 06-25
+    assert T.check_staleness(db_path) == 0
+
+
+def test_staleness_frozen_frontier_flags(db_path, monkeypatch):
+    # THE INCEPTION-FREEZE BUG: cron is running (created_at = NOW) but the snapshot
+    # DATE is stuck far behind the latest SPY bar. The created_at-only guard was
+    # BLIND to this; the frontier guard must catch it (rc 3).
+    _patch_spy_dates(monkeypatch, SPY_CAL)
+    now = datetime.now(timezone.utc).isoformat()
+    _seed_snapshot(db_path, "2026-06-18", now)        # >3 trading days behind 06-25
+    assert T.check_staleness(db_path) == 3
+
+
+def test_staleness_frozen_frontier_respects_tolerance(db_path, monkeypatch):
+    # the same stale snapshot is NOT flagged when the trading-day tolerance is
+    # widened past the gap -> the threshold is honored, not hard-coded.
+    _patch_spy_dates(monkeypatch, SPY_CAL)
+    now = datetime.now(timezone.utc).isoformat()
+    _seed_snapshot(db_path, "2026-06-22", now)        # 3 trading days behind 06-25
+    assert T.check_staleness(db_path, max_trading_days=2) == 3
+    assert T.check_staleness(db_path, max_trading_days=3) == 0
+
+
+def test_staleness_cron_stopped_backstop_flags(db_path, monkeypatch):
+    # SECONDARY guard: even with the snapshot DATE current (frontier ok), an old
+    # created_at (cron stopped writing entirely) still flags via the wall-clock
+    # backstop. Isolate it from the frontier guard by making the date = latest SPY.
+    _patch_spy_dates(monkeypatch, SPY_CAL)
+    old = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
+    _seed_snapshot(db_path, "2026-06-25", old)        # frontier-fresh, created_at old
+    assert T.check_staleness(db_path) == 3                       # >4 days old -> STALE
+    assert T.check_staleness(db_path, max_age_days=30) == 0      # tolerant -> fresh
 
 
 # --------------------------------------------------------------------------- #

@@ -278,6 +278,8 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("sponsorship", "needs_sponsorship"),
     ("visa sponsorship", "needs_sponsorship"),
     ("currently eligible to work", "work_authorized"),
+    ("authorized to reside and work", "work_authorized"),  # Cribl-style phrasing (2026-06-25)
+    ("authorised to reside and work", "work_authorized"),  # British spelling
     ("authorized to work", "work_authorized"),
     ("authorised to work", "work_authorized"),  # British spelling — Intercom 2026-05-26
     ("legally authorized", "work_authorized"),
@@ -1442,6 +1444,11 @@ LABEL_RULES: list[tuple[str, str]] = [
     # Sigma Computing acknowledgment (checkbox/agree multiline)
     ("acknowledge, confirm, and agree to the following", "acknowledge_yes"),
     ("acknowledge, confirm, and agree", "acknowledge_yes"),
+    # Pluribus Digital / government-contracting experience attestations (Cyrus = Yes)
+    ("directly facilitated agile ceremonies", "answer_yes"),
+    ("sprint reviews, retrospectives", "answer_yes"),
+    ("supported or managed large-scale modernization", "answer_yes"),
+    ("enterprise or government systems", "answer_yes"),
     # Sensei maintenance/driver roles -> No (not maintenance tech)
     ("experience in preventive maintenance", "answer_no"),
     ("years' experience in preventive", "answer_no"),
@@ -1457,6 +1464,21 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("experience working with public clouds", "customer_facing_essay"),
     ("please describe your linux experience", "customer_facing_essay"),
     ("describe your linux experience", "customer_facing_essay"),
+    # Cribl / channel-sales partner essays (2026-06-25)
+    ("value-added resellers (var) have you worked with", "customer_facing_essay"),
+    ("var) have you worked with", "customer_facing_essay"),
+    ("describe your experience working with var", "customer_facing_essay"),
+    ("experience working with var's and channel partners", "customer_facing_essay"),
+    ("var's and channel partners", "customer_facing_essay"),
+    ("experience working with logs, metrics, it operations", "customer_facing_essay"),
+    ("logs, metrics, it operations and security", "customer_facing_essay"),
+    ("logs, metrics, it operations", "customer_facing_essay"),
+    ("logs, metrics, observability", "customer_facing_essay"),
+    ("logs, metrics", "customer_facing_essay"),
+    # Cribl sandbox interest -> answer yes
+    ("checked out our sandbox", "answer_yes"),
+    ("check out our sandbox", "answer_yes"),
+    ("sandbox.cribl.io", "answer_yes"),
     # Canonical in-person meeting requirement -> ack_in_office
     ("require all colleagues to meet in person 2-4 times", "ack_in_office"),
     ("meet in person 2-4 times a year", "ack_in_office"),

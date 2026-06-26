@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across CX and engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous-validation model adopted org-wide.
+4. Directed **14 cross-org recovery executions** under executive visibility, managing dependencies across Product, Engineering, and Risk partners, including serving as bridge lead for a sovereign-cloud isolation test tied to a $1.5B+ enterprise contract.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill throughput by 21% — directly improving team capacity and execution speed across the program.
+6. Designed and operationalized program rituals — including prioritization reviews and stakeholder alignment syncs — that improved **cross-functional accountability** and helped CX and Engineering teams execute with greater coordination and confidence.
+7. Used operational data and trend analysis in SQL and Power BI to **surface execution gaps**, inform initiative prioritization, and support decision-making for senior leadership across 5+ concurrent resilience programs.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-powered code generation workflows, conducting user demos and training sessions that embedded the tooling across 14 key Azure teams and saved **37 engineering hours** monthly through simplified, scalable workflows.
+2. Shaped the product roadmap toward intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams — translating ambiguous needs into clear feature requirements and actionable ownership for engineering partners.
+3. Improved **data retrieval and operational clarity** by implementing metadata standards and migrating documentation to an AI-powered semantic search platform, cutting lookup time by 83% and reducing friction for internal support teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating execution across 140+ teams with competing priorities and dependencies.
+2. Structured an ambiguous operational problem into a **scalable execution plan** — conducting discovery with 20+ service teams to quantify 81 hours of manual toil per region launch and building a roadmap to automate the highest-impact critical paths.
+3. Engineered a **Power BI dashboard** to surface operational toil trends across 140+ teams, enabling leadership to target automation investments, improve prioritization, and drive accountability across a complex cross-functional program.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and maintaining clear ownership across IT, Operations, and Engineering stakeholders.
+2. Facilitated Agile ceremonies — sprint planning, backlog grooming, and retrospectives — resolving **40+ high-priority tickets** and creating structured execution rhythms that stabilized the developer intake process and improved team throughput.
+3. Drove **cross-functional alignment** across IT, Operations, and Engineering to implement automated CI/CD pipelines, accelerating the software deployment cycle by 25% and reducing friction in a fast-scaling operational environment.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing workflow for 200+ monthly proposals, introducing a CRM-based process that improved operational consistency, ownership clarity, and customer experience at scale.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website and Google profile to simplify the customer journey and improve funnel performance.
+3. Improved leadership pricing decisions by conducting **profitability analysis** across 1,000+ project records, identifying margin leaks and surfacing data-driven insights that informed a more scalable, accountable operational model.
+
+## Notes from the rewriter
+- 'Platformized system' and 'scalable, repeatable model' (microsoft_ft bullets 1–2) mirror JD language around operationalizing ambiguous initiatives and building scalable execution systems.
+- 'Cross-functional accountability' and 'program rituals' (microsoft_ft bullet 6) directly reflect JD requirement to 'contribute to program management systems and rituals that improve prioritization, communication, and accountability.'
+- 'Manage dependencies' and 'coordination' language woven into microsoft_ft bullet 4 and amazon_robotics bullet 1 mirrors JD phrase 'coordinate work, manage dependencies, and maintain alignment' across Product, Engineering, Risk partners.
+- 'Simplify the customer journey' and 'scalable operational model' (pro_painters bullets 2–3) echo JD's focus on simplification and designing intuitive, scalable workflows for customers and internal teams.
+- 'Ambiguous operational problem into a scalable execution plan' (microsoft_2022 bullet 2) directly mirrors JD language: 'structure and operationalize ambiguous initiatives by identifying next steps, clarifying ownership, and creating scalable plans.'
+

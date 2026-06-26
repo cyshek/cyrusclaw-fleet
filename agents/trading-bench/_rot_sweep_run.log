@@ -1,0 +1,36 @@
+>>> Baseline sanity: 63d / monthly (== validated 3-mo/monthly) ...
+    full S 0.9069 (fp 0.9069) | IS 0.9293 | OOS 0.8752 | maxDD -28.98% | raw 1210.1% | SPX 0.5391 | nreb 122
+    REPORT (2026-06-18 window): full 0.916 / IS 0.929 / OOS 0.898 / maxDD -29.0 / SPX 0.542
+
+>>> LOOKBACK x CADENCE grid ...
+    lb= 21d  monthly    full S 0.9867  IS 0.8524  OOS 1.2045  maxDD -39.16%  raw  1497.4%  off/def 0.57/0.42  nreb 188
+    lb= 21d  bimonthly  full S 0.8708  IS 0.7305  OOS 1.0981  maxDD -30.81%  raw  1055.7%  off/def 0.56/0.43  nreb 105
+    lb= 21d  quarterly  full S 0.8056  IS 0.8226  OOS 0.7815  maxDD -35.94%  raw   894.9%  off/def 0.55/0.44  nreb 70
+    lb= 42d  monthly    full S 0.8263  IS 0.8406  OOS 0.8089  maxDD -30.61%  raw   908.9%  off/def 0.58/0.41  nreb 140
+    lb= 42d  bimonthly  full S 0.8159  IS 0.8545  OOS 0.7606  maxDD -34.31%  raw   892.2%  off/def 0.57/0.42  nreb 95
+    lb= 42d  quarterly  full S 0.7336  IS 0.7696  OOS 0.6968  maxDD -33.61%  raw   763.1%  off/def 0.58/0.41  nreb 62
+    lb= 63d  monthly    full S 0.9069  IS 0.9293  OOS 0.8752  maxDD -28.98%  raw  1210.1%  off/def 0.58/0.40  nreb 122
+    lb= 63d  bimonthly  full S 0.8184  IS 0.7289  OOS 0.9683  maxDD -32.02%  raw   939.6%  off/def 0.58/0.41  nreb 81
+    lb= 63d  quarterly  full S 0.7238  IS 0.8697  OOS 0.5267  maxDD -30.86%  raw   777.2%  off/def 0.58/0.40  nreb 62
+    lb=126d  monthly    full S 0.9055  IS 0.9662  OOS 0.8137  maxDD -27.66%  raw  1220.6%  off/def 0.60/0.38  nreb 81
+    lb=126d  bimonthly  full S 0.7578  IS 0.7500  OOS 0.7736  maxDD -29.96%  raw   781.5%  off/def 0.60/0.37  nreb 57
+    lb=126d  quarterly  full S 0.7456  IS 0.7199  OOS 0.7960  maxDD -30.86%  raw   803.3%  off/def 0.59/0.38  nreb 38
+    lb=189d  monthly    full S 0.9737  IS 0.8358  OOS 1.1976  maxDD -23.66%  raw  1528.0%  off/def 0.61/0.35  nreb 63
+    lb=189d  bimonthly  full S 0.9000  IS 0.7865  OOS 1.0864  maxDD -28.33%  raw  1310.5%  off/def 0.61/0.35  nreb 47
+    lb=189d  quarterly  full S 0.8075  IS 0.5708  OOS 1.2016  maxDD -23.66%  raw   990.5%  off/def 0.61/0.34  nreb 35
+    lb=252d  monthly    full S 0.8286  IS 0.6342  OOS 1.1491  maxDD -29.42%  raw   954.1%  off/def 0.58/0.37  nreb 57
+    lb=252d  bimonthly  full S 0.7440  IS 0.5190  OOS 1.1208  maxDD -24.79%  raw   742.1%  off/def 0.57/0.38  nreb 47
+    lb=252d  quarterly  full S 0.6399  IS 0.5840  OOS 0.7328  maxDD -30.86%  raw   586.6%  off/def 0.59/0.35  nreb 35
+
+>>> DUAL-LOOKBACK blends (rank-avg) ...
+    dual=63+126   monthly    full S 0.9890  IS 1.1152  OOS 0.8022  maxDD -26.82%  raw  1623.0%  off/def 0.65/0.34
+    dual=63+126   bimonthly  full S 0.8206  IS 0.7688  OOS 0.9079  maxDD -32.07%  raw  1007.7%  off/def 0.65/0.33
+    dual=63+126   quarterly  full S 0.8340  IS 0.9263  OOS 0.7215  maxDD -31.41%  raw  1120.7%  off/def 0.62/0.36
+    dual=21+252   monthly    full S 0.9282  IS 0.8588  OOS 1.0445  maxDD -33.05%  raw  1263.0%  off/def 0.64/0.35
+    dual=21+252   bimonthly  full S 0.9230  IS 0.7753  OOS 1.1618  maxDD -27.37%  raw  1301.3%  off/def 0.61/0.38
+    dual=21+252   quarterly  full S 0.7674  IS 0.7960  OOS 0.7392  maxDD -33.34%  raw   961.2%  off/def 0.66/0.33
+    dual=63+252   monthly    full S 0.9941  IS 0.8816  OOS 1.1777  maxDD -24.44%  raw  1575.8%  off/def 0.64/0.35
+    dual=63+252   bimonthly  full S 0.9009  IS 0.7289  OOS 1.1791  maxDD -28.36%  raw  1240.4%  off/def 0.63/0.36
+    dual=63+252   quarterly  full S 0.8343  IS 0.8308  OOS 0.8595  maxDD -30.86%  raw  1166.7%  off/def 0.64/0.34
+
+wrote reports/_rot_lookback_cadence_result.json

@@ -1,0 +1,274 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/axon/jobs/7651705003",
+  "org": "axon",
+  "job_id": "7651705003",
+  "job_title": "Manager, Solutions Architect",
+  "job_location": "Boston, Massachusetts, United States",
+  "fetched_at": "2026-06-26T01:04:53Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/axon/jobs/7651705003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 18,
+    "filled": 17,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_29914684003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_29914685003",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_29941654003",
+      "label": "What city do you currently reside in?\n",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_29941655003[]",
+      "label": "Which Axon based hub city will you be located at?\n",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['Scottsdale, AZ', 'Seattle, WA', 'Denver, CO', 'Boston, MA', 'Atlanta, GA']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "Scottsdale, AZ",
+          "value": 157716167003
+        },
+        {
+          "label": "Seattle, WA",
+          "value": 157716168003
+        },
+        {
+          "label": "Denver, CO",
+          "value": 157716169003
+        },
+        {
+          "label": "Boston, MA",
+          "value": 157716170003
+        },
+        {
+          "label": "Atlanta, GA",
+          "value": 157716171003
+        }
+      ]
+    },
+    {
+      "id": "question_29941656003",
+      "label": "Are you legally authorized to work in the United States for any US employer now and in the future?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29941657003",
+      "label": "Will you now or in the future require sponsorship for employment in the United States?\n",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

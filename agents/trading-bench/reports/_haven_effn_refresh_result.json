@@ -1,0 +1,611 @@
+{
+  "meta": {
+    "purpose": "Refresh haven eff-N/Sharpe give-up vs the NEW QUARTERLY 2-sleeve book.",
+    "haven_spec": "GLD/TLT/DBC/UUP inverse-vol parity, 63d past-only vol, 2bps, intra-period drift.",
+    "vol_lookback_days": 63,
+    "cost_bps": 2.0,
+    "oos_split": "2018-12-31",
+    "effn_formula": "participation ratio = (trace)^2 / sum_ij C_ij^2 (= N^2/sum C_ij^2)",
+    "core_common_window": [
+      "2010-02-12",
+      "2026-06-25",
+      4116
+    ],
+    "haven_asset_coverage": {
+      "GLD": 5432,
+      "TLT": 6014,
+      "DBC": 5127,
+      "UUP": 4860
+    },
+    "haven_cover_missing_on_common": 0,
+    "aligned_window": [
+      "2010-02-16",
+      "2026-06-25",
+      4115
+    ],
+    "dropped_core_dates": [
+      "2010-02-12"
+    ]
+  },
+  "sanity_control": {
+    "monthly_2sleeve_validated_engine": {
+      "label": "monthly 2sl (ab.blend_portfolio)",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-25",
+        "n_days": 4116
+      },
+      "n_rebal": 196,
+      "avg_haven_wt": null,
+      "full": {
+        "total_return_pct": 985.0398069560224,
+        "cagr_pct": 15.720429983427909,
+        "sharpe": 1.003040078321043,
+        "fp_cont_sharpe": 1.0029181948430659,
+        "maxdd_pct": -23.89722089957531,
+        "vol_pct": 15.812215132597057
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1228129974893992,
+        "cagr_pct": 19.102672513847786,
+        "maxdd_pct": -21.881823379518995,
+        "total_return_pct": 268.2114298761091
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8919368956014503,
+        "maxdd_pct": -23.89722089957531
+      },
+      "dd_2022_pct": -19.629036182574676,
+      "ret_2022_pct": -14.41931023819042
+    },
+    "monthly_2sleeve_cadence_trigger": {
+      "label": "monthly 2sl (cadence trigger)",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-25",
+        "n_days": 4116
+      },
+      "n_rebal": 196,
+      "avg_haven_wt": null,
+      "full": {
+        "total_return_pct": 985.0398069560224,
+        "cagr_pct": 15.720429983427909,
+        "sharpe": 1.003040078321043,
+        "fp_cont_sharpe": 1.0029181948430659,
+        "maxdd_pct": -23.89722089957531,
+        "vol_pct": 15.812215132597057
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1228129974893992,
+        "cagr_pct": 19.102672513847786,
+        "maxdd_pct": -21.881823379518995,
+        "total_return_pct": 268.2114298761091
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8919368956014503,
+        "maxdd_pct": -23.89722089957531
+      },
+      "dd_2022_pct": -19.629036182574676,
+      "ret_2022_pct": -14.41931023819042
+    },
+    "monthly_two_paths_match": true,
+    "quarterly_2sleeve": {
+      "label": "quarterly 2sl (THE NEW BASELINE)",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-25",
+        "n_days": 4116
+      },
+      "n_rebal": 65,
+      "avg_haven_wt": null,
+      "full": {
+        "total_return_pct": 1068.346123024448,
+        "cagr_pct": 16.245836087924538,
+        "sharpe": 1.0180057166739762,
+        "fp_cont_sharpe": 1.0178820146604348,
+        "maxdd_pct": -24.905855004083477,
+        "vol_pct": 16.065672437800213
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1507989654683144,
+        "cagr_pct": 19.7524572235243,
+        "maxdd_pct": -18.709366885407206,
+        "total_return_pct": 283.4564735461712
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8962649015155467,
+        "maxdd_pct": -24.905855004083477
+      },
+      "dd_2022_pct": -16.083260758245622,
+      "ret_2022_pct": -10.595404849373956
+    },
+    "quarterly_avg_w_tqqq": 0.3469563734440498,
+    "target_quarterly_totret_approx": 1068.0,
+    "target_quarterly_sharpe_approx": 1.018,
+    "target_quarterly_maxdd_approx": -24.9,
+    "quarterly_reproduces_target": true
+  },
+  "spx_aligned": {
+    "total_return_pct": 571.9966998079519,
+    "sharpe": 0.7636027540112306,
+    "fp_cont_sharpe": 0.763509942980319,
+    "maxdd_pct": -33.92496000265331,
+    "dd_2022_pct": -25.425096619230338
+  },
+  "haven_standalone_aligned": {
+    "monthly_cadence": {
+      "total_return_pct": 95.9285467200602,
+      "cagr_pct": 4.205880529563855,
+      "sharpe": 0.7723876352712654,
+      "fp_cont_sharpe": 0.7722937564942257,
+      "maxdd_pct": -14.31551930566506,
+      "ann_vol_pct": 5.532512482809819,
+      "oos_sharpe": 1.217975224796717,
+      "avg_w_GLD_TLT_DBC_UUP": [
+        0.1948,
+        0.2096,
+        0.1813,
+        0.4143
+      ],
+      "n_rebal": 196
+    },
+    "quarterly_cadence": {
+      "total_return_pct": 102.26358650866717,
+      "cagr_pct": 4.409198201841447,
+      "sharpe": 0.7925563022154863,
+      "fp_cont_sharpe": 0.7924599720659703,
+      "maxdd_pct": -15.818128728648272,
+      "ann_vol_pct": 5.645707097026779,
+      "oos_sharpe": 1.2633260587263826,
+      "avg_w_GLD_TLT_DBC_UUP": [
+        0.1968,
+        0.2083,
+        0.1821,
+        0.4127
+      ],
+      "n_rebal": 65
+    }
+  },
+  "leg_full_vols_aligned": {
+    "tqqq": 0.2575858458133563,
+    "rot": 0.14234889855717273,
+    "haven_monthly": 0.05532512482809819
+  },
+  "eff_n": {
+    "formula": "(trace)^2 / sum_ij C_ij^2  (participation ratio of daily-return corr matrix)",
+    "two_leg": 1.4942280472348077,
+    "three_leg_haven_monthly": 2.3225447614487353,
+    "three_leg_haven_quarterly": 2.3106991423391774,
+    "corr_2leg": [
+      [
+        1.0,
+        0.5818
+      ],
+      [
+        0.5818,
+        1.0
+      ]
+    ],
+    "corr_3leg_haven_monthly": [
+      [
+        1.0,
+        0.5818,
+        -0.0131
+      ],
+      [
+        0.5818,
+        1.0,
+        0.3144
+      ],
+      [
+        -0.0131,
+        0.3144,
+        1.0
+      ]
+    ],
+    "corr_haven_to_tqqqleg": -0.0131,
+    "corr_haven_to_rotleg": 0.3144,
+    "prior_two_leg": 1.495,
+    "prior_three_leg": 2.324
+  },
+  "frontier_quarterly": {
+    "haven_monthly_sleeve": {
+      "haven_00": {
+        "label": "haven-sleeve MONTHLY haven 0% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.0,
+        "full": {
+          "total_return_pct": 1062.593992495221,
+          "cagr_pct": 16.214950521450856,
+          "sharpe": 1.0166195913735716,
+          "fp_cont_sharpe": 1.0164960277643207,
+          "maxdd_pct": -24.69339378483776,
+          "vol_pct": 16.060494306309224
+        },
+        "oos_2019_today": {
+          "sharpe": 1.1493751271013497,
+          "cagr_pct": 19.73187022263787,
+          "maxdd_pct": -18.703251368291905,
+          "total_return_pct": 282.96521518718856
+        },
+        "is_2010_2018": {
+          "sharpe": 0.8947440808024456,
+          "maxdd_pct": -24.69339378483776
+        },
+        "dd_2022_pct": -16.234596632948307,
+        "ret_2022_pct": -10.756637551357063
+      },
+      "haven_05": {
+        "label": "haven-sleeve MONTHLY haven 5% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.05,
+        "full": {
+          "total_return_pct": 973.7222609359505,
+          "cagr_pct": 15.65023445802547,
+          "sharpe": 1.0262508062167905,
+          "fp_cont_sharpe": 1.0261260719949725,
+          "maxdd_pct": -23.52399797386108,
+          "vol_pct": 15.320903880434846
+        },
+        "oos_2019_today": {
+          "sharpe": 1.163230117998547,
+          "cagr_pct": 19.104045483487297,
+          "maxdd_pct": -18.059318881576502,
+          "total_return_pct": 268.24308026813236
+        },
+        "is_2010_2018": {
+          "sharpe": 0.900146132759023,
+          "maxdd_pct": -23.52399797386108
+        },
+        "dd_2022_pct": -15.378039173304881,
+        "ret_2022_pct": -10.12617148564342
+      },
+      "haven_10": {
+        "label": "haven-sleeve MONTHLY haven 10% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.1,
+        "full": {
+          "total_return_pct": 890.679776464038,
+          "cagr_pct": 15.081403806684811,
+          "sharpe": 1.0365692923578194,
+          "fp_cont_sharpe": 1.0364433039900058,
+          "maxdd_pct": -22.347677356554343,
+          "vol_pct": 14.585619804125862
+        },
+        "oos_2019_today": {
+          "sharpe": 1.1783187369748631,
+          "cagr_pct": 18.474123611197268,
+          "maxdd_pct": -17.41009109214303,
+          "total_return_pct": 253.966825863947
+        },
+        "is_2010_2018": {
+          "sharpe": 0.9056934227924099,
+          "maxdd_pct": -22.347677356554343
+        },
+        "dd_2022_pct": -14.516352793799413,
+        "ret_2022_pct": -9.495780060570214
+      },
+      "haven_15": {
+        "label": "haven-sleeve MONTHLY haven 15% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.15,
+        "full": {
+          "total_return_pct": 813.168631069609,
+          "cagr_pct": 14.508528493891127,
+          "sharpe": 1.0476149756671744,
+          "fp_cont_sharpe": 1.0474876447672008,
+          "maxdd_pct": -21.164436990237956,
+          "vol_pct": 13.855426546258503
+        },
+        "oos_2019_today": {
+          "sharpe": 1.1947643695882582,
+          "cagr_pct": 17.842148760407838,
+          "maxdd_pct": -16.755502412371147,
+          "total_return_pct": 240.1281421607631
+        },
+        "is_2010_2018": {
+          "sharpe": 0.9113427422891693,
+          "maxdd_pct": -21.164436990237956
+        },
+        "dd_2022_pct": -13.649521579945178,
+        "ret_2022_pct": -8.865491725957241
+      },
+      "haven_20": {
+        "label": "haven-sleeve MONTHLY haven 20% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.2,
+        "full": {
+          "total_return_pct": 740.899022464526,
+          "cagr_pct": 13.931678142145554,
+          "sharpe": 1.059417525003199,
+          "fp_cont_sharpe": 1.0592887595788414,
+          "maxdd_pct": -19.974282137806686,
+          "vol_pct": 13.131295021382256
+        },
+        "oos_2019_today": {
+          "sharpe": 1.2126971780938234,
+          "cagr_pct": 17.20816585122391,
+          "maxdd_pct": -16.095486166992224,
+          "total_return_pct": 226.71867439713716
+        },
+        "is_2010_2018": {
+          "sharpe": 0.917024133242643,
+          "maxdd_pct": -19.974282137806686
+        },
+        "dd_2022_pct": -12.77752957287973,
+        "ret_2022_pct": -8.235335031237057
+      }
+    },
+    "haven_quarterly_sleeve": {
+      "haven_00": {
+        "label": "haven-sleeve QUARTERLY haven 0% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.0,
+        "full": {
+          "total_return_pct": 1062.593992495221,
+          "cagr_pct": 16.214950521450856,
+          "sharpe": 1.0166195913735716,
+          "fp_cont_sharpe": 1.0164960277643207,
+          "maxdd_pct": -24.69339378483776,
+          "vol_pct": 16.060494306309224
+        },
+        "oos_2019_today": {
+          "sharpe": 1.1493751271013497,
+          "cagr_pct": 19.73187022263787,
+          "maxdd_pct": -18.703251368291905,
+          "total_return_pct": 282.96521518718856
+        },
+        "is_2010_2018": {
+          "sharpe": 0.8947440808024456,
+          "maxdd_pct": -24.69339378483776
+        },
+        "dd_2022_pct": -16.234596632948307,
+        "ret_2022_pct": -10.756637551357063
+      },
+      "haven_05": {
+        "label": "haven-sleeve QUARTERLY haven 5% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.05,
+        "full": {
+          "total_return_pct": 975.4213564329816,
+          "cagr_pct": 15.661436217403768,
+          "sharpe": 1.0266266598993026,
+          "fp_cont_sharpe": 1.0265018799948729,
+          "maxdd_pct": -23.538621044574104,
+          "vol_pct": 15.325413476448368
+        },
+        "oos_2019_today": {
+          "sharpe": 1.164089200396929,
+          "cagr_pct": 19.124005348511375,
+          "maxdd_pct": -18.056039510614564,
+          "total_return_pct": 268.70347132363503
+        },
+        "is_2010_2018": {
+          "sharpe": 0.9000913555395952,
+          "maxdd_pct": -23.538621044574104
+        },
+        "dd_2022_pct": -15.363551696224597,
+        "ret_2022_pct": -10.108674698147146
+      },
+      "haven_10": {
+        "label": "haven-sleeve QUARTERLY haven 10% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.1,
+        "full": {
+          "total_return_pct": 893.8181158614545,
+          "cagr_pct": 15.103701662319558,
+          "sharpe": 1.0373362204187893,
+          "fp_cont_sharpe": 1.0372101388357755,
+          "maxdd_pct": -22.37709746510127,
+          "vol_pct": 14.594829202244561
+        },
+        "oos_2019_today": {
+          "sharpe": 1.1801064988756211,
+          "cagr_pct": 18.51384347407732,
+          "maxdd_pct": -17.403490019680522,
+          "total_return_pct": 254.8526410038138
+        },
+        "is_2010_2018": {
+          "sharpe": 0.9055515820577072,
+          "maxdd_pct": -22.37709746510127
+        },
+        "dd_2022_pct": -14.48704603124018,
+        "ret_2022_pct": -9.460489551327644
+      },
+      "haven_15": {
+        "label": "haven-sleeve QUARTERLY haven 15% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.15,
+        "full": {
+          "total_return_pct": 817.5118699310947,
+          "cagr_pct": 14.541815073526454,
+          "sharpe": 1.0487871488079328,
+          "fp_cont_sharpe": 1.0486596754378117,
+          "maxdd_pct": -21.208827736254776,
+          "vol_pct": 13.86954993892827
+        },
+        "oos_2019_today": {
+          "sharpe": 1.197558143462324,
+          "cagr_pct": 17.901427362595967,
+          "maxdd_pct": -16.745536591937437,
+          "total_return_pct": 241.40596728496476
+        },
+        "is_2010_2018": {
+          "sharpe": 0.9110735136956504,
+          "maxdd_pct": -21.208827736254776
+        },
+        "dd_2022_pct": -13.605061034495602,
+        "ret_2022_pct": -8.812110567863074
+      },
+      "haven_20": {
+        "label": "haven-sleeve QUARTERLY haven 20% (top-level quarterly)",
+        "window": {
+          "start": "2010-02-16",
+          "end": "2026-06-25",
+          "n_days": 4115
+        },
+        "n_rebal": 65,
+        "avg_haven_wt": 0.2,
+        "full": {
+          "total_return_pct": 746.2368544518212,
+          "cagr_pct": 13.975846494662015,
+          "sharpe": 1.0610073547918681,
+          "fp_cont_sharpe": 1.0608783961338668,
+          "maxdd_pct": -20.033816734072563,
+          "vol_pct": 13.15057391346862
+        },
+        "oos_2019_today": {
+          "sharpe": 1.216583066362363,
+          "cagr_pct": 17.286803125974593,
+          "maxdd_pct": -16.082111821112388,
+          "total_return_pct": 228.3566654531058
+        },
+        "is_2010_2018": {
+          "sharpe": 0.916577348985417,
+          "maxdd_pct": -20.033816734072563
+        },
+        "dd_2022_pct": -12.717578048487466,
+        "ret_2022_pct": -8.1635663240065
+      }
+    }
+  },
+  "monotonicity": {
+    "sweep_raw_pct": [
+      1062.593992495221,
+      973.7222609359505,
+      890.679776464038,
+      813.168631069609,
+      740.899022464526
+    ],
+    "sweep_full_sharpe": [
+      1.0166195913735716,
+      1.0262508062167905,
+      1.0365692923578194,
+      1.0476149756671744,
+      1.059417525003199
+    ],
+    "raw_monotonic_decreasing_in_haven": true,
+    "sharpe_monotonic_increasing_in_haven": true,
+    "interior_sharpe_optimum": false,
+    "per_5pp_raw_giveup_avg_pp": 80.42374250767378,
+    "per_5pp_sharpe_gain_avg": 0.01069948340740684
+  },
+  "giveup_vs_quarterly_baseline": {
+    "aligned_quarterly_baseline_raw_pct": 1062.593992495221,
+    "full_core_quarterly_baseline_raw_pct": 1068.346123024448,
+    "haven10_raw_pct": 890.679776464038,
+    "haven10_giveup_vs_aligned_baseline_pp": 171.91421603118306,
+    "haven10_giveup_vs_fullcore_baseline_pp": 177.66634656040992,
+    "haven10_cushion_over_spx_pp": 318.6830766560861,
+    "spx_raw_pct": 571.9966998079519,
+    "prior_giveup_vs_monthly_pp": 161.0
+  },
+  "haven_cadence_pick": {
+    "at_haven_10pct": {
+      "haven_monthly": {
+        "raw": 890.679776464038,
+        "sharpe": 1.0365692923578194,
+        "oos_sharpe": 1.1783187369748631,
+        "maxdd": -22.347677356554343,
+        "dd_2022": -14.516352793799413
+      },
+      "haven_quarterly": {
+        "raw": 893.8181158614545,
+        "sharpe": 1.0373362204187893,
+        "oos_sharpe": 1.1801064988756211,
+        "maxdd": -22.37709746510127,
+        "dd_2022": -14.48704603124018
+      }
+    },
+    "haven_standalone_monthly_vs_quarterly": {
+      "monthly_cadence": {
+        "total_return_pct": 95.9285467200602,
+        "cagr_pct": 4.205880529563855,
+        "sharpe": 0.7723876352712654,
+        "fp_cont_sharpe": 0.7722937564942257,
+        "maxdd_pct": -14.31551930566506,
+        "ann_vol_pct": 5.532512482809819,
+        "oos_sharpe": 1.217975224796717,
+        "avg_w_GLD_TLT_DBC_UUP": [
+          0.1948,
+          0.2096,
+          0.1813,
+          0.4143
+        ],
+        "n_rebal": 196
+      },
+      "quarterly_cadence": {
+        "total_return_pct": 102.26358650866717,
+        "cagr_pct": 4.409198201841447,
+        "sharpe": 0.7925563022154863,
+        "fp_cont_sharpe": 0.7924599720659703,
+        "maxdd_pct": -15.818128728648272,
+        "ann_vol_pct": 5.645707097026779,
+        "oos_sharpe": 1.2633260587263826,
+        "avg_w_GLD_TLT_DBC_UUP": [
+          0.1968,
+          0.2083,
+          0.1821,
+          0.4127
+        ],
+        "n_rebal": 65
+      }
+    },
+    "better_haven_cadence_by_raw": "quarterly"
+  },
+  "canary": {
+    "past_only_trailing_vol": true,
+    "lookahead_free": true,
+    "forward_pnl_d_to_d1": true,
+    "oos_split": "2018-12-31",
+    "benchmark_same_traded_path": true,
+    "note": "inv-vol target at index i uses sleeves[k][i-63:i] (strictly < i); haven asset weights at index i use arr[k][i-63:i] (strictly < i); buckets earn return ending on i AFTER any rebalance at i -> no day feeds its own rebalance; monthly 2sl two-paths match to machine precision (harness-faithfulness proof of no introduced leak).",
+    "harness_faithful_monthly_match": true,
+    "harness_faithful_quarterly_repro": true
+  }
+}

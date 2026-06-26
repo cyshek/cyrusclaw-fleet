@@ -923,7 +923,7 @@ def run_dryrun_lever(role_url: str, lv_org: str, lv_jid: str) -> Path:
 # ---------------------------------------------------------------------------
 
 def run_bullet_rewriter(slug: str, workdir: Path, gh_org: str, gh_jid: str,
-                        timeout_s: int = 360) -> Path:
+                        timeout_s: int = 900) -> Path:
     """Run bullet_rewriter --render. Uses a queued→submitted symlink shim
     because bullet_rewriter hardcodes APPS_DIR=applications/queued. Returns
     path to the rendered PDF."""

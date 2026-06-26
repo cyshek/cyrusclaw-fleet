@@ -99,6 +99,7 @@ from . import safety_backstop  # noqa: E402
 from .backtest import (  # noqa: E402
     BARS_PER_YEAR,
     bars_per_year,
+    assert_lookback_sane,
     CostModel,
     MAX_NOTIONAL,
     MAX_POSITION,
@@ -245,6 +246,17 @@ def load_xsec_strategy(name: str, *, candidate: bool = False) -> Tuple[Callable,
             f"{pkg}.{name}.strategy must export decide_xsec(...) for "
             f"the cross-sectional harness")
     params = json.loads(params_path.read_text())
+    # Non-fatal lookback-sanity lint, intraday only (silent for the all-daily
+    # / all-1Hour live book at timeframe 1Day). Never raises -> never blocks a
+    # load. See runner/backtest.assert_lookback_sane (audit §2).
+    try:
+        _tf = str(params.get("timeframe", "1Day"))
+        if _tf != "1Day":
+            _is_crypto = bool(params.get("is_crypto", False))
+            for _w in assert_lookback_sane(params, _tf, _is_crypto):
+                print(f"[{name}] WARN lookback-sanity: {_w}", file=sys.stderr)
+    except Exception:  # pragma: no cover - lint must never break a load
+        pass
     return module.decide_xsec, params
 
 
