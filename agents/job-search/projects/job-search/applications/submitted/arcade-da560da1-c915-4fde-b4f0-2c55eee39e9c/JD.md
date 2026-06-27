@@ -1,4 +1,4 @@
-# Product Manager, AI
+# Product Manager
 
 **Company:** Arcade
 **Location:** Presidio, CA
@@ -18,9 +18,9 @@ Arcade is headquartered in San Francisco’s Presidio and led by serial entrepre
 
 **Role Summary**
 
-Arcade’s Product Manager, AI role is our first full-time Product hire specifically focused on AI. This role is intended for an individual with extraordinary talent and ambition who wants to build the future of design and commerce AI and who demonstrates founder-mode ownership. You will report directly to our Co-Founder & CEO, Mariam Naficy, and work alongside our engineers, designers, and AI researchers to launch category-defining experiences.
+Arcade’s Product Manager role is intended for an individual with extraordinary talent and ambition who wants to build the future of design and commerce AI and who demonstrates founder-mode ownership. You will report directly to our Co-Founder & CEO, Mariam Naficy, and work alongside our engineers, designers, and AI researchers to launch category-defining experiences.
 
-The Product Manager, AI will own critical products from day one, prototyping novel workflows, co-crafting system prompts, defining product strategy, and managing cross-functional execution at a high-velocity early-stage startup.
+The Product Manager will own critical products from day one, prototyping novel workflows, co-crafting system prompts, defining product strategy, and managing cross-functional execution at a high-velocity early-stage startup.
 
 **What You’ll Do**
 
@@ -34,7 +34,7 @@ The Product Manager, AI will own critical products from day one, prototyping nov
 
 - Run prompt tuning, tool usage evaluations, and comparative model benchmarks
 
-- Prototype, test, and refine generative AI interfaces that make product creation feel magical, personal, and effortless
+- Prototype, test, and refine innovative product experiences that make creation feel intuitive, personalized, and effortless.
 
 - Work closely with engineers in model fine-turning, including data strategy, experiment design and evals
 
@@ -46,7 +46,7 @@ The Product Manager, AI will own critical products from day one, prototyping nov
 
 We’re looking for an individual who has accomplished remarkable things, wants ownership, and possesses an unrivaled work ethic. We're looking for:
 
-- Extraordinary talent proven in AI, engineering, design, startups, research, or creative fields
+- Extraordinary talent proven in engineering, design, startups, research, or creative fields
 
 - Clear thinker and communicator who brings structure to ambiguity and speak the language of engineers, researchers, and designers alike
 
@@ -58,7 +58,7 @@ We’re looking for an individual who has accomplished remarkable things, wants 
 
 - You think beyond execution, and prioritize the most urgent, product-defining problems
 
-- Growth mindset – working in AI means constantly learning and re-evaluating your views
+- Growth mindset – embraces continuous learning, adapts quickly to new information, and regularly challenges assumptions to improve outcomes.
 
 - A strong product sense and attention to user experience: you care deeply about making products that feel magical, manufacturable, and intuitive
 
@@ -72,11 +72,11 @@ We’re looking for an individual who has accomplished remarkable things, wants 
 
 - Technically fluent builder comfortable reading source code, working in notebooks, and debugging eval pipelines
 
-- A demonstrated passion and curiosity for AI: you keep up with trends, emerging innovations, and new applications, and think critically about how to leverage them
+- Demonstrated passion and curiosity for emerging technologies: stays current on industry trends, new innovations, and evolving applications, while thinking critically about how to apply them effectively.
 
 - Experience building or shipping products: personal projects, internships, startups, or open-source contributions all count
 
-- Familiarity with modern AI infrastructure — LLMs (and their limitations), prompt engineering, multimodal/image models, vector databases, and agent frameworks.
+- Strong familiarity with modern technology platforms and tooling, including emerging software ecosystems, data systems, automation frameworks, and the practical considerations involved in deploying and scaling new technologies.
 
 - Bonus: early-stage startup experience (Seed–Series B), prior founding experience, or significant shipped side projects
 

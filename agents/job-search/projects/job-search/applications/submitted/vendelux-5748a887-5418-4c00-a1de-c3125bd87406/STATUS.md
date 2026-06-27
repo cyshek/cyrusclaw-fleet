@@ -1,9 +1,7 @@
-SUBMITTED — 2026-06-25T01:51:24+00:00
+SUBMITTED — 2026-06-27
 
-role_id: 2320
-slug: vendelux-5748a887-5418-4c00-a1de-c3125bd87406
-ats: ashby
-submitted_by: auto (residential)
-confirmation: submitted
-screenshot: n/a
-resume_attached: yes
+role_id: 2774
+company: Vendelux
+submitted_by: auto
+applied_on: 2026-06-27
+confirmation_text: FormSubmitSuccess

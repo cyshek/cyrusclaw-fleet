@@ -111,12 +111,12 @@ Worth a quick demo to see what your potential clients would experience?
 ## 7. Idaho Divorce Center — Family law (Boise, ID)
 **To:** joe@joefricklaw.com
 **Phone:** (208) 268-8253  ·  **Site:** https://idahodivorcecenter.com/
-**Subject:** 1 reviews for Idaho Divorce Center?
+**Subject:** Idaho Divorce Center's reviews
 
 ```
 Hi Joe,
 
-You've clearly handled serious cases — but Idaho Divorce Center only shows 1 Google reviews. For a firm like yours that's leaving a lot on the table, because people pick a firm almost entirely on reviews and how fast someone responds.
+You've clearly handled serious cases — but Idaho Divorce Center only shows 1 Google review. For a firm like yours that's leaving a lot on the table, because people pick a firm almost entirely on reviews and how fast someone responds.
 
 I set up two things for firms like yours: every new inquiry gets a response within 60 seconds (day or night — that's when people reach out), and every client whose case resolves gets an automatic, tactful review request. Firms usually go from a couple dozen reviews to triple digits.
 
@@ -131,7 +131,7 @@ Open to a 2-minute demo of how it'd work for Idaho Divorce Center?
 **Subject:** 20 reviews for Bernard Schaefer?
 
 ```
-Hi Attorney,
+Hi there,
 
 You've clearly handled serious cases — but Bernard Schaefer only shows 20 Google reviews. For a firm like yours that's leaving a lot on the table, because people pick a firm almost entirely on reviews and how fast someone responds.
 
@@ -199,7 +199,7 @@ Can I show you a quick demo of what it'd look like for Butler Heating & Air Cond
 **Subject:** 6 reviews for G.R.I.P.S., Inc.?
 
 ```
-Hi Sdykstra,
+Hi there,
 
 G.R.I.P.S., Inc. does great work but only has 6 Google reviews — and in HVAC, reviews are basically the whole ballgame for getting found.
 
@@ -233,7 +233,7 @@ Happy to show you a 2-minute demo of exactly what your customers would see. Wort
 **Subject:** quick one about Holland leads
 
 ```
-Hi Officecrew,
+Hi there,
 
 Saw Lake Michigan Construction's site says they'll get back to you soon. Not a knock — almost every roofing shop does the same. The problem is the homeowner who fills that form usually messages 3 contractors and books whoever answers first (~78% go with the first responder).
 

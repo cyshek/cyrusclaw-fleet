@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned execution to a scalable, repeatable model across engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation standard.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** with strict uptime and compliance requirements.
+5. Built an internal AI agent and restructured planning workflows to reduce cycle time by **39%** and increase drill capacity by 21%, scaling team throughput without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows, conducting user demos and hands-on training that drove utilization across **14 key teams** and saved 37 engineering hours monthly across Azure service organizations.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, surfacing critical feature gaps and translating field feedback into prioritized requirements.
+3. Improved data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time by 83%** for engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams with competing operational priorities.
+2. Mobilized a product strategy to reduce launch toil by conducting discovery with 20+ service teams, identifying **81 hours of manual effort** per region and building a roadmap to automate the highest-impact paths.
+3. Engineered a **Power BI dashboard** to track operational toil across 140+ teams, enabling leadership to target automation gaps and allocate support resources to the highest-priority corrective action opportunities.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping system dependencies across 1,200+ stations, and coordinating corrective action plans with cross-functional engineering teams.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process under continuous delivery pressure.
+3. Aligned IT, Operations, and Engineering teams to implement automated CI/CD pipelines, **accelerating software deployment cycles by 25%** and improving system uptime across robotics production environments.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, building a CRM process that improved customer satisfaction and ensured consistent, clear communication on every account.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rate by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile for high-intent local search.
+3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering corrective action recommendations that tightened cost controls.
+
+## Notes from the rewriter
+- 'corrective action plans' from the JD's Key Responsibilities section woven into amazon_robotics bullet 1 and pro_painters bullet 3.
+- 'customer satisfaction' and 'clear, consistent communication' from the JD's Interpersonal/Business Expertise sections mirrored in pro_painters bullet 1 and microsoft_ft bullet 1.
+- 'uptime' — a core JD metric — referenced explicitly in amazon_robotics bullet 3 and microsoft_ft bullet 1 to mirror the JD's focus on system reliability and operational quality.
+- 'diagnostic techniques' and 'troubleshooting' from the JD's Job Description section surfaced in skills_priority to ensure recruiter keyword match for the Etch Customer Engineer role.
+- 'escalation' from the JD's Key Responsibilities mirrored in microsoft_ft bullet 3 context and skills section to align with the CE II escalation conference call responsibility.
+

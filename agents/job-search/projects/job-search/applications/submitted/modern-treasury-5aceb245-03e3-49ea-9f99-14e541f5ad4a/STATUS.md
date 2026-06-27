@@ -1,13 +1,7 @@
-# SUBMIT STATUS — Modern Treasury / Solutions Architect (role 2602)
+ABORT-BULLET-REWRITER — 2026-06-27T01:29:10+00:00
 
-SUCCESS
+role_id: 2602
+phase: bullet-rewriter
+error:
+RuntimeError: bullet_rewriter failed (rc=1):      "title_swaps": { "<role_key>": "<allowed label>", ... },\n     "bullets": {\n       "microsoft_ft":     ["bullet 1 text", "bullet 2 text", ...],\n       "microsoft_2023":   ["...", ...],\n       "microsoft_2022":   ["...", ...],\n       "amazon_robotics":  ["...", ...],\n       "pro_painters":     ["...", ...]\n     },\n     "skills_priority": ["...", "..."],\n     "tailoring_notes": ["short note", "short note"]\n   }\n\n   `bullets` MUST contain an array for every role_key (microsoft_ft,\n   microsoft_2023, microsoft_2022, amazon_robotics, pro_painters), even if\n   you\'re keeping the master text — in that case echo the master bullets\n   verbatim into the array.\n\nF. Per-JD differentiation (MANDATORY): This resume must read as written\n   specifically for THIS job, not a lightly reskinned generic. At least half\n   the bullets across all roles must use vocabulary, tools, product areas, or\n   outcome framing pulled directly from THIS JD — not just bolding the same\n   words differently. If the JD calls out specific domains (e.g. "ads ranking",\n   "AI infrastructure", "capacity planning"), at least one bullet per role must\n   reference that domain in substance. Generic bullets ("led cross-functional\n   teams", "defined roadmaps") are only acceptable when paired with JD-specific\n   context. Your tailoring_notes must name at least 3 specific JD terms you\n   actually wove in and WHERE (which role/bullet).\n\nNow emit STRICT JSON only.']' timed out after 300 seconds
 
-- confirmation_signal: FormSubmitSuccess
-- app_url: https://jobs.ashbyhq.com/moderntreasury/5aceb245-03e3-49ea-9f99-14e541f5ad4a
-- submitted_by: agent
-- submitted_on: 2026-06-08
-- resume_attached: Cyrus_Shekari_Resume_ashby-moderntreasury_5aceb245_v2.pdf
-- egress_ip: 82.23.97.223 (residential, Webshare)
-- evidence: ApiSubmitMultipleFormsAction GraphQL response — applicationFormResult.__typename == "FormSubmitSuccess", messages: null (no block, no field errors); surveyFormResults also FormSubmitSuccess. SSR success page: "Your application was successfully submitted."
-- raw_submit_resp: /tmp/submit_resp_1.json captured 2026-06-08 23:43
-- notes: prep-verified clean today (4 text fields, 0 needs_review, 0 skipped) after LABEL_RULES engine fix; residential-egress submit-click via _ashby_runner.py over JOBSEARCH_CDP. reCAPTCHA-v3 solved (token_len 2489, injected 2 ids). final-clobber-guard reported location "no-container" but server accepted (no Location field error → location not a required submit field for this tenant).

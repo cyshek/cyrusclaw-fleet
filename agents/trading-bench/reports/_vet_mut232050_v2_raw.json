@@ -1,0 +1,266 @@
+{
+  "fix_sanity": {
+    "parent_total_trades": 96,
+    "candidate_total_trades": 116,
+    "extra_fills_scaleouts": 20,
+    "did_fix_take_effect": true,
+    "note": "Candidate now diverges from parent (116 vs 96 @2bps). v1 was a phantom tie at 96=96."
+  },
+  "cost_matrix": {
+    "2.0bps": {
+      "parent": {
+        "median_return_pct": 0.3957,
+        "median_sharpe": 1.3616,
+        "mean_return_pct": 0.4667,
+        "pct_positive": 0.625,
+        "pct_beat_bh_spy": 0.875,
+        "worst_return_pct": -0.9846,
+        "worst_window_label": "2022-H1 bear",
+        "best_return_pct": 3.2909,
+        "total_trades": 96,
+        "n_windows_with_data": 8
+      },
+      "candidate": {
+        "median_return_pct": 0.3882,
+        "median_sharpe": 1.4563,
+        "mean_return_pct": 0.3419,
+        "pct_positive": 0.625,
+        "pct_beat_bh_spy": 0.75,
+        "worst_return_pct": -0.5816,
+        "worst_window_label": "2022-H1 bear",
+        "best_return_pct": 1.8659,
+        "total_trades": 116,
+        "n_windows_with_data": 8
+      },
+      "candidate_beats_parent_median_sharpe": true,
+      "candidate_beats_parent_median_return": false,
+      "candidate_beats_BOTH": false,
+      "delta_median_sharpe": 0.0947,
+      "delta_median_return_pct": -0.0075
+    },
+    "5.0bps": {
+      "parent": {
+        "median_return_pct": 0.355,
+        "median_sharpe": 1.2227,
+        "mean_return_pct": 0.4305,
+        "pct_positive": 0.625,
+        "pct_beat_bh_spy": 0.75,
+        "worst_return_pct": -1.026,
+        "worst_window_label": "2022-H1 bear",
+        "best_return_pct": 3.28,
+        "total_trades": 96,
+        "n_windows_with_data": 8
+      },
+      "candidate": {
+        "median_return_pct": 0.3505,
+        "median_sharpe": 1.3143,
+        "mean_return_pct": 0.3137,
+        "pct_positive": 0.625,
+        "pct_beat_bh_spy": 0.75,
+        "worst_return_pct": -0.6232,
+        "worst_window_label": "2022-H1 bear",
+        "best_return_pct": 1.8871,
+        "total_trades": 116,
+        "n_windows_with_data": 8
+      },
+      "candidate_beats_parent_median_sharpe": true,
+      "candidate_beats_parent_median_return": false,
+      "candidate_beats_BOTH": false,
+      "delta_median_sharpe": 0.0916,
+      "delta_median_return_pct": -0.0045
+    },
+    "10.0bps": {
+      "parent": {
+        "median_return_pct": 0.2871,
+        "median_sharpe": 0.9911,
+        "mean_return_pct": 0.3701,
+        "pct_positive": 0.625,
+        "pct_beat_bh_spy": 0.75,
+        "worst_return_pct": -1.0949,
+        "worst_window_label": "2022-H1 bear",
+        "best_return_pct": 3.2618,
+        "total_trades": 96,
+        "n_windows_with_data": 8
+      },
+      "candidate": {
+        "median_return_pct": 0.2891,
+        "median_sharpe": 1.0836,
+        "mean_return_pct": 0.2591,
+        "pct_positive": 0.625,
+        "pct_beat_bh_spy": 0.75,
+        "worst_return_pct": -0.6925,
+        "worst_window_label": "2022-H1 bear",
+        "best_return_pct": 1.8703,
+        "total_trades": 116,
+        "n_windows_with_data": 8
+      },
+      "candidate_beats_parent_median_sharpe": true,
+      "candidate_beats_parent_median_return": true,
+      "candidate_beats_BOTH": true,
+      "delta_median_sharpe": 0.0925,
+      "delta_median_return_pct": 0.002
+    }
+  },
+  "edge_decay_2to10bps": {
+    "candidate_median_return_2to10_drop": 0.099,
+    "parent_median_return_2to10_drop": 0.1085,
+    "candidate_median_sharpe_2to10_drop": 0.3727,
+    "parent_median_sharpe_2to10_drop": 0.3705,
+    "candidate_edge_over_parent_return_at_2bps": -0.0075,
+    "candidate_edge_over_parent_return_at_10bps": 0.002,
+    "candidate_edge_over_parent_sharpe_at_2bps": 0.0947,
+    "candidate_edge_over_parent_sharpe_at_10bps": 0.0925
+  },
+  "regime_breakdown": {
+    "rows": [
+      {
+        "label": "2022-H1 bear",
+        "regime": "bear",
+        "parent_return_pct": -0.9846,
+        "candidate_return_pct": -0.5816,
+        "delta_return_pct": 0.403,
+        "parent_sharpe": -2.383,
+        "candidate_sharpe": -1.7,
+        "delta_sharpe": 0.683,
+        "parent_n_trades": 14,
+        "candidate_n_trades": 17,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": true
+      },
+      {
+        "label": "2022-Q3 chop",
+        "regime": "chop",
+        "parent_return_pct": 0.3549,
+        "candidate_return_pct": 0.3861,
+        "delta_return_pct": 0.0312,
+        "parent_sharpe": 0.9197,
+        "candidate_sharpe": 1.1965,
+        "delta_sharpe": 0.2768,
+        "parent_n_trades": 14,
+        "candidate_n_trades": 17,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": true
+      },
+      {
+        "label": "2023-H1 recovery",
+        "regime": "bull",
+        "parent_return_pct": 0.6921,
+        "candidate_return_pct": 0.8051,
+        "delta_return_pct": 0.113,
+        "parent_sharpe": 1.8034,
+        "candidate_sharpe": 2.4916,
+        "delta_sharpe": 0.6882,
+        "parent_n_trades": 15,
+        "candidate_n_trades": 20,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": true
+      },
+      {
+        "label": "2023-Q3 chop",
+        "regime": "chop",
+        "parent_return_pct": -0.1519,
+        "candidate_return_pct": -0.0948,
+        "delta_return_pct": 0.0571,
+        "parent_sharpe": -0.735,
+        "candidate_sharpe": -0.4968,
+        "delta_sharpe": 0.2382,
+        "parent_n_trades": 13,
+        "candidate_n_trades": 15,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": true
+      },
+      {
+        "label": "2024-Q2 bull",
+        "regime": "bull",
+        "parent_return_pct": 0.7324,
+        "candidate_return_pct": 0.3902,
+        "delta_return_pct": -0.3421,
+        "parent_sharpe": 2.6987,
+        "candidate_sharpe": 1.716,
+        "delta_sharpe": -0.9826,
+        "parent_n_trades": 11,
+        "candidate_n_trades": 13,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": false
+      },
+      {
+        "label": "2025-Q1 tariff bear",
+        "regime": "bear",
+        "parent_return_pct": -0.6363,
+        "candidate_return_pct": -0.5644,
+        "delta_return_pct": 0.072,
+        "parent_sharpe": -1.3058,
+        "candidate_sharpe": -1.2107,
+        "delta_sharpe": 0.095,
+        "parent_n_trades": 13,
+        "candidate_n_trades": 15,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": true
+      },
+      {
+        "label": "2025-Q3 bull",
+        "regime": "bull",
+        "parent_return_pct": 0.4365,
+        "candidate_return_pct": 0.5284,
+        "delta_return_pct": 0.0919,
+        "parent_sharpe": 1.8061,
+        "candidate_sharpe": 2.2538,
+        "delta_sharpe": 0.4477,
+        "parent_n_trades": 13,
+        "candidate_n_trades": 15,
+        "parent_beats_bh": false,
+        "candidate_beats_bh": false
+      },
+      {
+        "label": "2026-recent bull",
+        "regime": "bull",
+        "parent_return_pct": 3.2909,
+        "candidate_return_pct": 1.8659,
+        "delta_return_pct": -1.425,
+        "parent_sharpe": 8.0292,
+        "candidate_sharpe": 7.5663,
+        "delta_sharpe": -0.4629,
+        "parent_n_trades": 3,
+        "candidate_n_trades": 4,
+        "parent_beats_bh": true,
+        "candidate_beats_bh": true
+      }
+    ],
+    "regime_means": {
+      "bear": {
+        "mean_delta_return_pct": 0.2375,
+        "mean_delta_sharpe": 0.389,
+        "n_windows": 2
+      },
+      "chop": {
+        "mean_delta_return_pct": 0.0441,
+        "mean_delta_sharpe": 0.2575,
+        "n_windows": 2
+      },
+      "bull": {
+        "mean_delta_return_pct": -0.3906,
+        "mean_delta_sharpe": -0.0774,
+        "n_windows": 4
+      }
+    }
+  },
+  "turnover": {
+    "2.0bps": {
+      "parent_total_trades": 96,
+      "candidate_total_trades": 116,
+      "extra_fills": 20
+    },
+    "5.0bps": {
+      "parent_total_trades": 96,
+      "candidate_total_trades": 116,
+      "extra_fills": 20
+    },
+    "10.0bps": {
+      "parent_total_trades": 96,
+      "candidate_total_trades": 116,
+      "extra_fills": 20
+    }
+  },
+  "data_caveats": "Pre-2022 hourly bars are NOT fetchable on the free tier (2020 covid window returns zero bars and is skipped by walk_forward min_bars). 8 NAMED_WINDOWS span 2022-H1 bear, 2022-Q3 chop, 2023-H1 recovery, 2023-Q3 chop, 2024-Q2 bull, 2025-Q1 tariff bear, 2025-Q3 bull, 2026-recent bull. All 8 returned data (n_windows_with_data=8). '3+ distinct OOS regimes' satisfied by bear/chop/bull/recovery 2022-2025. No 2020 split fabricated.",
+  "comparison_to_v1": "v1 was a phantom tie (candidate backtested IDENTICAL to parent, 96=96 trades, because partial sells were rejected at the risk gate). v2 is the real result: scale-out fires, candidate=116 trades."
+}

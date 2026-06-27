@@ -15,67 +15,55 @@ Our culture of flexibility, trust, and continual learning means you will be reco
 
 The Role
 
-As a Solutions Engineer, you will play a critical role in the technical aspects of the sales process, ensuring our solutions address customer needs while demonstrating clear value. You will leverage your expertise to conduct discovery sessions, product demonstrations, and proof-of-concept engagements, collaborating with cross-functional teams to deliver impactful outcomes. This role requires technical knowledge, excellent communication skills, and a customer-focused approach to overcome challenges and drive successful business outcomes.
+As a Solutions Engineer, you will play a critical role in the technical aspects of the sales process, ensuring our solutions address customer needs while demonstrating clear value. You will leverage your expertise to conduct discovery sessions, product demonstrations, and proof-of-concept engagements, collaborating with cross-functional teams to deliver impactful outcomes. This role requires technical knowledge, excellent communication skills, and a customer-focused approach to overcome challenges and drive successful business outcomes. 
 
 What You’ll Do
 
-- Stay current with Solutions Engineering methodologies, industry best practices, and the latest developments in the security landscape.
+- Stay current with Solutions Engineering methodologies, industry best practices, and the latest developments in the security landscape. 
 
-- Apply this expertise to deliver impactful solutions that address client needs effectively and differentiate our offerings.
+- Apply this expertise to deliver impactful solutions that address client needs effectively and differentiate our offerings. 
 
-- Collaborate closely with Account Executives and internal teams to ensure alignment between technical and sales objectives.
+- Collaborate closely with Account Executives and internal teams to ensure alignment between technical and sales objectives. 
 
-- Act as a bridge between customer requirements and technical capabilities, fostering clear and effective communication.
+- Act as a bridge between customer requirements and technical capabilities, fostering clear and effective communication. 
 
-- Play a pivotal role in pre-sales activities, including delivering product demonstrations, technical presentations, and guiding proof-of-concept evaluations.
+- Play a pivotal role in pre-sales activities, including delivering product demonstrations, technical presentations, and guiding proof-of-concept evaluations. 
 
-- Provide clear, concise, and compelling explanations of product capabilities to customers and stakeholders.
+- Provide clear, concise, and compelling explanations of product capabilities to customers and stakeholders. 
 
-- Identify opportunities to enhance processes and methodologies within the scope of pre-sales activities.
+- Identify opportunities to enhance processes and methodologies within the scope of pre-sales activities. 
 
-- Proactively suggest and implement improvements to streamline workflows and improve outcomes.
+- Proactively suggest and implement improvements to streamline workflows and improve outcomes. 
 
-- Assist in responses to Requests for Proposals/Information (RFP/RFI).
+- Assist in responses to Requests for Proposals/Information (RFP/RFI). 
 
-- Represent the organization at industry events, trade shows, and customer seminars.
+- Represent the organization at industry events, trade shows, and customer seminars. 
 
-- Provide technical support and guidance to channel partners.
+- Provide technical support and guidance to channel partners. 
 
-- Continuously enhance your knowledge of products, industry trends, and customer use cases.
+- Continuously enhance your knowledge of products, industry trends, and customer use cases. 
 
 What You’ll Bring
 
-- Stay current with Solutions Engineering methodologies, industry best practices, and the latest developments in the identity security landscape - **a background in PAM is preferred.**
+- 2+ years of experience in pre-sales engineering or technical support roles in privileged access management (PAM), identity security, or similar enterprise applications. 
 
-- Apply this expertise to deliver impactful solutions that address client needs effectively and differentiate our offerings.
+- 3+ years of experience working with global software vendors. 
 
-- Collaborate closely with Account Executives and internal teams to ensure alignment between technical and sales objectives.
+- Expertise in presenting technical solutions and differentiating products against competitors. 
 
-- Act as a bridge between customer requirements and technical capabilities, fostering clear and effective communication.
+- Proficiency with Microsoft Windows, Mac, Linux/Unix, Active Directory, SQL, VMware, and Hyper-V. 
 
-- Play a pivotal role in pre-sales activities, including delivering product demonstrations, technical presentations, and guiding proof-of-concept evaluations.
+- Excellent verbal and written communication skills, including experience presenting at trade shows or conferences. 
 
-- Provide clear, concise, and compelling explanations of product capabilities to customers and stakeholders.
-
-- Identify opportunities to enhance processes and methodologies within the scope of pre-sales activities.
-
-- Proactively suggest and implement improvements to streamline workflows and improve outcomes.
-
-- Assist in responses to Requests for Proposals/Information (RFP/RFI).
-
-- Represent the organization at industry events, trade shows, and customer seminars.
-
-- Provide technical support and guidance to channel partners.
-
-- Continuously enhance your knowledge of products, industry trends, and customer use cases.
+- Ability and willingness to travel up to 50%. 
 
 Nice To Have
 
-- Certifications: CISSP, CISA, CCSP, CEH, or equivalent.
+- Certifications: CISSP, CISA, CCSP, CEH, or equivalent. 
 
-- Familiarity with DevOps methodologies and environments.
+- Familiarity with DevOps methodologies and environments. 
 
-- Experience with BeyondTrust solutions or similar technologies.
+- Experience with BeyondTrust solutions or similar technologies. 
 
 Better Together
 

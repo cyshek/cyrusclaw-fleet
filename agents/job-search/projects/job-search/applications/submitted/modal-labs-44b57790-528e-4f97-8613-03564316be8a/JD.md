@@ -8,15 +8,19 @@
 
 ---
 
-## **About Us:**
+## About Us:
 
-**Modal provides the infrastructure foundation for AI teams.** With instant GPU access, sub-second container startups, and native storage, Modal makes it simple to train models, run batch jobs, and serve low-latency inference. We have thousands of customers who rely on us for production AI workloads, including Lovable, Scale AI, Substack, and Suno.
+**AI needs a new infrastructure layer. We're building it at Modal.**
 
-We're a fast-growing team based out of NYC, SF, and Stockholm. We've hit 9-figure ARR and recently [raised a Series B](https://modal.com/blog/announcing-our-series-b) at a $1.1B valuation. Our investors include [Lux Capital](https://www.luxcapital.com/), [Redpoint Ventures](https://www.redpoint.com/), [Amplify Partners](https://www.amplifypartners.com/), and [Elad Gil](https://eladgil.com/).
+Every era of computing brought new workloads that previous infrastructure couldn't support: mainframes, databases, and the cloud. Each time, the company that rebuilt the layer underneath defined the decade. AI is no different, except it touches everything instead of one slice, and the window to build the layer underneath it is open right now.
 
-Working at Modal means joining one of the fastest-growing AI infrastructure organizations at an early stage, with many opportunities to grow within the company. Our team includes creators of popular open-source projects (e.g. [Seaborn](https://github.com/mwaskom/seaborn), [Luigi](https://github.com/spotify/luigi)), academic researchers, international olympiad medalists, and experienced engineering and product leaders with decades of experience.
+Our customers include category-defining companies like [Lovable](https://modal.com/blog/lovable-case-study), [Ramp](https://modal.com/blog/how-ramp-built-a-full-context-background-coding-agent-on-modal), Cognition, DoorDash, and Suno. They rely on Modal for instant GPU access, sub-second container starts, and native storage, so it's simple to serve low-latency inference, fine-tune models, and access production-ready sandboxes at scale.
 
-## **The Role:**
+We recently raised a $355M [Series C](https://modal.com/blog/modal-series-c) at a $4.65B valuation, led by General Catalyst and Redpoint Ventures. We've crossed $300M+ ARR and grown fivefold since September.
+
+Our team includes creators of popular open-source projects (e.g.,[Seaborn](https://github.com/mwaskom/seaborn),[Luig**i**](https://github.com/spotify/luigi)), academic researchers, international olympiad medalists, and experienced engineering and product leaders with decades of experience.
+
+## The Role:
 
 We're looking for engineers with deep AI/ML and low-level systems experience who want to build the best technical support experience in the world. This isn't a traditional support role — it's an engineering role where you happen to be closest to our customers.
 
@@ -34,7 +38,7 @@ This role is for people who solve problems, not people who answer tickets. The p
 
 - **Contribute to open source and technical content.** Write examples, build demos, and publish content that helps the broader community succeed on Modal.
 
-## **Requirements:**
+## Requirements:
 
 - **Accomplished in key areas.** You bring depth in either low-level infrastructure or ML/AI, and you're not lost in the other.
 

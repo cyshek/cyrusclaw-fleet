@@ -511,11 +511,19 @@ def _read_text_safe(p: Path) -> str:
 
 def _build_llm_prompt(seed_strategy: Optional[str],
                       mutation_directive: str,
-                      candidate_name: str) -> str:
+                      candidate_name: str,
+                      *,
+                      second_parent: Optional[str] = None) -> str:
     """Construct the task message sent to the candidate-generation subagent.
 
     Constraints baked into the prompt are also enforced by code_review;
     the prompt is a *guidance* layer, code_review is the *enforcement* layer.
+
+    `second_parent` (optional) enables GENUINE cross-parent combos: when set to
+    another strategy's name, that parent's `strategy.py` source is injected as a
+    clearly-labeled SECOND PARENT reference block so the LLM can borrow its real
+    signal mechanism instead of reconstructing it from a prose description. When
+    None (default) the prompt is byte-identical to the single-parent form.
     """
     parent_code = ""
     parent_params = ""
@@ -549,6 +557,29 @@ def _build_llm_prompt(seed_strategy: Optional[str],
 
     gold_breakout = _read_text_safe(_GOLD_TEMPLATE_BREAKOUT)
     indicators = _read_text_safe(_INDICATORS_PATH)
+
+    # Optional SECOND PARENT block for genuine cross-parent combos. Empty string
+    # when no second_parent is given -> the assembled prompt is byte-identical to
+    # the single-parent form (preserves the protected-md5 enforcement path).
+    second_parent_section = ""
+    if second_parent:
+        sp2 = WORKSPACE / "strategies" / second_parent / "strategy.py"
+        if sp2.exists():
+            second_code = _read_text_safe(sp2)
+        else:
+            second_code = (
+                f"# (could not find strategies/{second_parent}/strategy.py "
+                "— borrow the mechanism described in the directive instead)"
+            )
+        second_parent_section = (
+            "\n\n## SECOND PARENT (`" + second_parent + "`) — borrow its entry-signal "
+            "mechanism\n\nThis is the OTHER parent in the combo. Do NOT copy it "
+            "wholesale; take its ENTRY-SIGNAL idea and fuse it with the primary "
+            "parent above per the mutation directive (prefer OR-combining entries "
+            "so the combo does not starve itself; exits must always stay "
+            "reachable). The traded symbol/timeframe stays the PRIMARY parent's."
+            "\n\nstrategy.py:\n```python\n" + second_code + "\n```"
+        )
 
     return f"""You are writing ONE new trading strategy module for the trading-bench
 tournament. Output exactly two artifacts in your final message:
@@ -604,7 +635,7 @@ strategy.py:
 params.json:
 ```json
 {parent_params if parent_params else '{"symbol":"QQQ","timeframe":"1Hour","bar_limit":120,"notional_usd":1000.0}'}
-```
+```{second_parent_section}
 
 ## Gold-standard template (regime-filtered breakout, currently passing fitness gate)
 

@@ -87,7 +87,13 @@ def _bt_check_trade(side: str, notional_usd: float,
     pass `risk.resolve_trades_per_day(params)` so multi-leg rebalance days
     aren't silently truncated. See `runner/risk.py` for the resolution rules.
     """
-    if side == "close":
+    # A `sell` is de-risking exactly like a `close` (it strictly reduces an
+    # existing long — partial trim or full exit). Mirror runner/runner.py,
+    # which consults risk with CLOSE-semantics for trims: daily-trade-cap
+    # only, NEVER blocked on notional. This is what lets a partial-exit
+    # `Action('sell', qty=..., notional_usd=0.0)` through the gate; the buy
+    # path below keeps the non-positive-notional and position-cap checks.
+    if side in ("close", "sell"):
         if n_today >= max_trades_per_day:
             return risk_mod.RiskCheck(
                 False, f"already {n_today} trades today; cap {max_trades_per_day}"
@@ -689,13 +695,41 @@ def backtest(strategy_name: str,
                             trade_high_seen = bar_high
                 elif a_act in ("close", "sell"):
                     if qty > 0:
+                        # ----- Resolve the requested sell qty (mirror runner.py) -----
+                        # A `sell` may be a PARTIAL trim (scale-out / de-risk) that
+                        # keeps the position long. Resolution order, identical to
+                        # runner/runner.py: explicit action.qty (float > 0) wins;
+                        # else derive from notional_usd / price; else (and for an
+                        # explicit `close`) sell the WHOLE position.
+                        req_qty = None
+                        if a_act == "sell":
+                            a_qty_raw = getattr(action, "qty", None)
+                            if a_qty_raw is not None:
+                                try:
+                                    a_qty_f = float(a_qty_raw)
+                                    if a_qty_f > 0:
+                                        req_qty = a_qty_f
+                                except (TypeError, ValueError):
+                                    req_qty = None
+                            if req_qty is None and a_notional > 0 and close > 0:
+                                req_qty = a_notional / close
+                        # `close`, or a `sell` with no usable qty/notional, exits full.
+                        sell_qty = qty if req_qty is None else min(req_qty, qty)
+                        # A trim that sweeps (or overshoots) the whole position is a
+                        # full close — go cleanly flat rather than leave dust.
+                        is_partial = sell_qty < qty - 1e-9
+
                         sell_px = cost_model.sell_fill_price(close)
-                        proceeds = qty * sell_px
+                        proceeds = sell_qty * sell_px
                         fee = cost_model.fee_on(proceeds)
                         proceeds_after_fee = proceeds - fee
-                        pnl_usd = proceeds_after_fee - cost_basis_usd
-                        pnl_pct = (pnl_usd / cost_basis_usd) if cost_basis_usd > 0 else 0.0
-                        spread_cost = (qty * close) * (cost_model.spread_bps / 1e4)
+                        # Cost basis attributed to the shares being sold (pro-rata
+                        # of avg entry). Pop only this slice; the remainder keeps
+                        # the same avg_entry_price.
+                        slice_cost_basis = cost_basis_usd * (sell_qty / qty) if qty > 0 else cost_basis_usd
+                        pnl_usd = proceeds_after_fee - slice_cost_basis
+                        pnl_pct = (pnl_usd / slice_cost_basis) if slice_cost_basis > 0 else 0.0
+                        spread_cost = (sell_qty * close) * (cost_model.spread_bps / 1e4)
                         total_costs_usd += fee + spread_cost
                         # Compute per-trade excursion vs avg_entry_price.
                         # max_drawdown_pct is signed (negative); max_runup_pct
@@ -713,22 +747,36 @@ def backtest(strategy_name: str,
                             "exit_time": bar.get("t"),
                             "exit_price": sell_px,
                             "entry_price": avg_entry_price,
-                            "qty": qty,
+                            "qty": sell_qty,
                             "pnl_usd": pnl_usd,
                             "pnl_pct": pnl_pct,
                             "max_drawdown_pct": max_dd_from_entry,
                             "max_runup_pct": max_ru_from_entry,
                             "holding_bars": holding_bars,
+                            "partial": is_partial,
                         })
                         cash += proceeds_after_fee
-                        qty = 0.0
-                        cost_basis_usd = 0.0
-                        avg_entry_price = 0.0
-                        entry_bar_idx = None
-                        trade_low_seen = None
-                        trade_high_seen = None
-                        n_closes += 1
-                        trades_by_day[day] = n_today + 1
+                        if is_partial:
+                            # PARTIAL TRIM: reduce qty + cost basis pro-rata, STAY
+                            # LONG. avg_entry_price is unchanged (basis/qty ratio
+                            # preserved). Excursion + entry_bar_idx carry forward so
+                            # the remainder's eventual exit measures from the
+                            # original entry. This is the behavior runner.py would
+                            # actually execute (submit_market_order sell qty).
+                            qty = qty - sell_qty
+                            cost_basis_usd = cost_basis_usd - slice_cost_basis
+                            n_closes += 1
+                            trades_by_day[day] = n_today + 1
+                        else:
+                            # FULL EXIT: go flat and clear all per-trade state.
+                            qty = 0.0
+                            cost_basis_usd = 0.0
+                            avg_entry_price = 0.0
+                            entry_bar_idx = None
+                            trade_low_seen = None
+                            trade_high_seen = None
+                            n_closes += 1
+                            trades_by_day[day] = n_today + 1
                     else:
                         # close with no position — strategy bug, log but don't trade.
                         n_skipped += 1

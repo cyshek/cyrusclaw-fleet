@@ -1,44 +1,49 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
 - `microsoft_2022` → **Technical Program Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Served as the **technical bridge** between Azure engineering and enterprise customers (Databricks, Walmart, SAP, NetApp), scaling recovery validation from a 2-person effort into a platformized system sustaining 45+ annual resilience drills and driving **$14M+ business impact**.
-2. Translated complex customer resilience needs into solutions by leading 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling that cut operational toil **30%** and scaled execution beyond manual delivery.
-3. Built and demoed an internal **AI agent** for drill planning, restructuring workflows with LLM-powered automation to reduce planning cycle time **39%** and lift drill capacity 21%, surfacing field feedback that directly influenced platform roadmap priorities.
-4. Presented technical recovery solutions to both engineering leaders and executive stakeholders, directing 14 cross-org executions including a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract under direct executive visibility.
-5. Pioneered Azure's first proactive resilience testing capability, confidently handling integration and performance objections to deliver a rack-level drill program in 4 months with a **94% recovery rate** that exposed critical hardware defects.
-6. Partnered cross-functionally with product and engineering as the **technical voice of the customer**, prototyping proof-of-concepts and standardizing best practices that became reusable enablement assets for the broader resilience validation organization.
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Served as the **technical bridge** between engineering and enterprise partners (Databricks, Walmart, SAP, NetApp), translating complex AI-driven resilience solutions into tangible business value and driving **$14M+ impact** across 45+ annual validation programs.
+2. Built and deployed an internal **AI agent** for drill planning and workflow automation, reducing planning cycle time by 39% and increasing drill capacity by 21% — demonstrating end-to-end prototyping and delivery of production AI tooling.
+3. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service capabilities that cut operational toil by **30%** and enabled scalable, repeatable execution across cross-functional engineering teams.
+4. Pioneered Azure's first proactive resilience testing capability, scoping and delivering a rack-level drill program in **4 months** with a 94% recovery rate — a proof-of-concept that surfaced critical hardware defects and established a new continuous validation model.
+5. Directed 14 high-visibility cross-org recovery executions, including serving as bridge lead for a **sovereign-cloud network isolation** test tied to a $1.5B+ enterprise contract, handling complex integration and compliance objections in real time.
+6. Acted as the **voice of the customer** for enterprise partners, synthesizing field feedback from Walmart, SAP, and Databricks integrations and translating findings into product roadmap influence across Azure engineering and leadership teams.
+7. Scaled a 2-person validation operation into a platformized system by standardizing workflows, building demo environments, and contributing best practices that enabled the team to sustain mission-critical programs without linear headcount growth.
 
-### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove adoption of **AI-driven code generation** workflows by running customized user demos and training sessions tailored to each team's needs, accelerating utilization across 14 key teams and saving **37 engineering hours** monthly.
-2. Acted as the technical voice of the customer by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps that influenced the product roadmap to include **intent-based YAML generation**.
-3. Showcased how cutting-edge tooling could transform engineering operations by migrating documentation to an **AI-powered semantic search** tool and enforcing metadata standards, cutting information lookup time by **83%**.
+### `microsoft_2023` (4 bullets emitted, master had 3)
+1. Drove **AI agent adoption** across 14 Azure service teams by conducting tailored demos and hands-on training sessions, translating complex LLM-powered code generation capabilities into clear, business-relevant value for both technical and non-technical stakeholders.
+2. Influenced the **product roadmap** by facilitating 11+ structured user interviews with Azure engineering teams, surfacing critical feature gaps and securing buy-in to prioritize intent-based YAML generation — directly shaping post-intern development cycles.
+3. Implemented **semantic search** and rigorous metadata standards to modernize documentation retrieval, cutting lookup time by 83% and providing a proof-of-concept that demonstrated AI-driven search value to internal compliance and engineering audiences.
+4. Synthesized user research findings into a consultative feedback loop between field teams and product leadership, modeling the customer-first mindset required to act as a technical voice of the customer in a fast-moving AI product environment.
 
-### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by building consensus across 140+ teams on a unified automation prioritization framework, translating technical constraints into a clear business case.
-2. Scoped a product strategy to eliminate operational toil during region launches by conducting discovery with 20+ service teams, quantifying **81 hours** of manual effort per region and roadmapping the automation of critical paths.
-3. Enabled leadership to target high-impact automation gaps by engineering a **Power BI dashboard** that tracked operational toil across 140+ teams, turning fragmented signals into a prioritized, data-driven investment plan.
+### `microsoft_2022` (4 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams, demonstrating the ability to translate technical solutions into measurable business outcomes for executive stakeholders.
+2. Conducted discovery interviews with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a roadmap to automate critical paths — mirroring the consultative, problem-solving approach central to pre-sales solution scoping.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to pinpoint automation gaps and prioritize high-impact investments — a prototype that directly influenced product and engineering prioritization decisions.
+4. Launched regions **28% faster** by driving alignment on a shared automation framework, proving the ability to handle objections, build stakeholder trust, and accelerate execution across large, cross-functional organizations.
 
-### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** across a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping technical dependencies across 1,200+ fulfillment stations to de-risk a mission-critical rollout.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for a cross-functional engineering team.
-3. Drove alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release effort across the robotics platform.
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Defined the migration strategy and dependency map for a **2,000+ unit pilot transition**, achieving zero operational downtime — demonstrating the technical depth and real-time debugging capability required to deliver proof-of-concepts in complex integration environments.
+2. Partnered with IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and acting as the technical bridge translating engineering solutions into operational outcomes for non-technical stakeholders.
+3. Facilitated Agile ceremonies and **prioritized 40+ high-priority tickets** to stabilize the developer intake process, showcasing the cross-functional execution and consultative collaboration required in a solutions engineering role.
+4. Scoped and mapped dependencies across 1,200+ stations to de-risk a large-scale OS migration, building the kind of structured technical due diligence that underpins compelling, customized solution proposals for enterprise customers.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing sales operations and owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a newly implemented CRM process that streamlined customer handoffs.
-2. Reduced Customer Acquisition Cost by **13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile to capture higher-intent inbound leads.
-3. Improved leadership pricing models by running a **profitability analysis** across 1,000+ project records, identifying and sealing margin leaks that strengthened bid accuracy and protected per-job revenue.
+1. Increased job bookings by **26%** by redesigning the end-to-end CRM workflow for 200+ monthly proposals, demonstrating a customer-first mindset and the ability to translate operational pain points into scalable, process-driven solutions.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy — an early proof point of aligning technical problem-solving with business development and revenue acceleration goals.
+3. Conducted financial profitability analysis across **1,000+ project records** to identify and seal margin leaks, modeling the data-driven, consultative approach used to surface business value and influence strategic decision-making for leadership.
 
 ## Notes from the rewriter
-- Reframed Microsoft FT around the 'technical bridge between engineering and customers' framing the SE JD leads with, emphasizing demos, POCs, objection handling, and voice-of-customer feedback into roadmap.
-- Surfaced AI agent + LLM/semantic-search work to match Bretton's AI-agent product and 'translate complex AI concepts into business value' must-have.
-- Prioritized solution architecture, prototyping, and pre-sales skills up top; kept fintech-relevant rigor (compliance-grade contracts, financial profitability analysis) to hit bonus points.
+- 'Technical bridge' (JD: 'technical bridge between Account Executives and prospective customers') woven into microsoft_ft bullet 1 and amazon_robotics bullet 2 to directly mirror Bretton AI's SE positioning.
+- 'AI agent' and 'proof-of-concept / prototype' (JD: 'Develop proof-of-concepts and prototypes that showcase how our AI agents can solve problems') surfaced in microsoft_ft bullet 2 and amazon_robotics bullet 1 to show hands-on build credibility.
+- 'Voice of the customer' and 'product roadmap influence' (JD: 'You will be the voice of the customer, providing critical feedback that influences our product roadmap') explicitly used in microsoft_ft bullet 6 and microsoft_2023 bullet 2 to mirror Bretton AI's SE-to-product feedback loop.
+- 'Compliance' and 'fintech/financial services' context (JD: AML, compliance operations, CTOs and Chief Compliance Officers) addressed via sovereign-cloud/compliance objections in microsoft_ft bullet 5 and framing demo audiences as technical + non-technical stakeholders throughout.
+- 'Translate complex AI concepts into tangible business value' (JD must-have) directly echoed in microsoft_2023 bullet 1 and microsoft_ft bullet 1, using JD's exact framing to ensure recruiter pattern-match.
 

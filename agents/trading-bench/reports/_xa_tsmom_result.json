@@ -1,0 +1,141 @@
+{
+  "universe": [
+    "SPY",
+    "TLT",
+    "GLD",
+    "DBC",
+    "UUP"
+  ],
+  "oos_split": "2018-01-01",
+  "cost_per_side_bps": 2.0,
+  "data_span": {
+    "first_common_month": "2007-03",
+    "last_common_month": "2026-06",
+    "n_common_months": 232,
+    "first_decision_month": "2008-04",
+    "first_earn_month": "2008-05",
+    "last_earn_month": "2026-06",
+    "n_rebalances": 218
+  },
+  "metrics_12_1": {
+    "strategy": {
+      "FULL": {
+        "n_months": 218,
+        "total_return": 2.227428362586518,
+        "cagr": 0.06662179990423778,
+        "sharpe": 0.7494430275591726,
+        "maxdd": -0.24900271655174444
+      },
+      "IS": {
+        "n_months": 116,
+        "total_return": 0.5174476070252336,
+        "cagr": 0.04408510596276449,
+        "sharpe": 0.4802518256489095,
+        "maxdd": -0.24900271655174444
+      },
+      "OOS": {
+        "n_months": 102,
+        "total_return": 1.126879602066452,
+        "cagr": 0.09284353884822716,
+        "sharpe": 1.1410464434948278,
+        "maxdd": -0.10562858870590419
+      }
+    },
+    "benchmark": {
+      "FULL": {
+        "n_months": 218,
+        "total_return": 6.411101825100652,
+        "cagr": 0.11656357445036059,
+        "sharpe": 0.7826269216296868,
+        "maxdd": -0.46322424276483454
+      },
+      "IS": {
+        "n_months": 116,
+        "total_return": 1.3672435805174072,
+        "cagr": 0.09323817291793124,
+        "sharpe": 0.670583633553298,
+        "maxdd": -0.46322424276483454
+      },
+      "OOS": {
+        "n_months": 102,
+        "total_return": 2.130688318724178,
+        "cagr": 0.1436959114369798,
+        "sharpe": 0.898107566205941,
+        "maxdd": -0.23927175560477543
+      }
+    },
+    "first_earn_month": "2008-05",
+    "last_earn_month": "2026-06"
+  },
+  "regime": {
+    "n_rebalances": 218,
+    "pct_all_cash": 0.0,
+    "pct_fully_invested": 0.05045871559633028,
+    "avg_assets_held": 3.1422018348623855,
+    "avg_turnover": 0.3165137614678899,
+    "ret_2022_strategy": -0.010613815616260291,
+    "ret_2022_spy": -0.18175360053974354,
+    "n_months_2022": 12
+  },
+  "robustness": {
+    "6-1": {
+      "OOS_sharpe": 1.1548389171447926,
+      "OOS_total_return": 1.1726525833405725,
+      "FULL_sharpe": 0.7572761624256938,
+      "FULL_total_return": 2.4640636685584982,
+      "IS_sharpe": 0.49879953494147,
+      "IS_total_return": 0.5943937356207729
+    },
+    "9-1": {
+      "OOS_sharpe": 1.507593225143317,
+      "OOS_total_return": 1.540600349358078,
+      "FULL_sharpe": 0.8870754343016707,
+      "FULL_total_return": 2.8264949928746583,
+      "IS_sharpe": 0.4830689094230178,
+      "IS_total_return": 0.506138103870402
+    },
+    "12-1": {
+      "OOS_sharpe": 1.1410464434948278,
+      "OOS_total_return": 1.126879602066452,
+      "FULL_sharpe": 0.7494430275591726,
+      "FULL_total_return": 2.227428362586518,
+      "IS_sharpe": 0.4802518256489095,
+      "IS_total_return": 0.5174476070252336
+    },
+    "12-0": {
+      "OOS_sharpe": 1.1160804182158321,
+      "OOS_total_return": 0.996527400513926,
+      "FULL_sharpe": 0.7945716792560331,
+      "FULL_total_return": 2.2092876161226487,
+      "IS_sharpe": 0.5717392785795035,
+      "IS_total_return": 0.6074347966857601
+    }
+  },
+  "worked_example": {
+    "decision_month_i": "2008-04",
+    "decision_date": "2008-04-30",
+    "lookback_L": 12,
+    "skip_K": 1,
+    "recent_endpoint_month": "2008-03",
+    "far_endpoint_month": "2007-03",
+    "recent_endpoint_date": "2008-03-31",
+    "far_endpoint_date": "2007-03-30",
+    "signals": {
+      "SPY": -0.052555920370995546,
+      "TLT": 0.13795887003072038,
+      "GLD": 0.37526630057796084,
+      "DBC": 0.44430203037817884,
+      "UUP": -0.08887055396202703
+    },
+    "weights": {
+      "SPY": 0.0,
+      "TLT": 0.3333333333333333,
+      "GLD": 0.3333333333333333,
+      "DBC": 0.3333333333333333,
+      "UUP": 0.0
+    },
+    "earns_month": "2008-05",
+    "earns_date": "2008-05-30",
+    "note": "Signal uses prices at decision_date (index i) and earlier ONLY; weights earn the NEXT month's return -> D+1 lag, no lookahead."
+  }
+}

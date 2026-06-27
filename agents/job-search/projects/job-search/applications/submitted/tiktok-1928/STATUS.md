@@ -1,15 +1,8 @@
-submitted — 2026-06-02 UTC
+# Tiktok 1928 — TikTok Local Services - Governance Ops Quality & Training Program Manager
 
-confirmation_url: https://lifeattiktok.com/referral/tiktok/resume/applied
-confirmation_text: We have received your resume. (redirect to /referral/tiktok/resume/applied confirmed)
-submitted_by: tiktok_runner (referral apply via cyshekari@gmail.com TikTok account, TIKTOK_NO_UPLOAD=1 - existing resume on file used)
-resume_attached: existing resume on TikTok account profile
-role_id: 1928
-job_id: 7626137271916054789
-
-Notes:
-- Applied via Cyrus referral link (referral-token cookie set + persisted post-auth)
-- Resume on file used (TIKTOK_NO_UPLOAD=1) 
-- Work-auth Q1 (authorized in US): Yes — Q2 (require sponsorship): No (truthful, US citizen)
-- classify=submitted (runner EXIT 0; SPA redirected to /referral/tiktok/resume/applied)
-- Role: TikTok Local Services - Governance Ops Quality & Training Program Manager
+**Status:** SUBMITTED
+**Date:** 2026-06-27
+**Submitted by:** auto (_tiktok_runner.py)
+**Job ID:** 7626137271916054789
+**Confirmation:** Redirect to /referral/tiktok/resume/applied + "We have received your resume."
+**Notes:** already-applied (on file)

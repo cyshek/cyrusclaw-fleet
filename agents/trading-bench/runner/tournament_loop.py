@@ -53,6 +53,19 @@ GATE_PASSING_PARENTS: List[str] = [
     # orthogonal to equity book; profiles clean 8/8 windows). Diversifies the
     # mutation gene pool away from the equity-momentum cluster.
     "trend_follow_gld",      # Trend-follow on GLD (gold; distinct asset class)
+    # Added 2026-06-26 (main-directed cross-asset DNA sprint): the SINGLE-NAME
+    # carrier of the validated cross-asset TSMOM archetype. The slow 5-asset
+    # 12-1 absolute-momentum book (reports/XA_TSMOM_12_1_GATE_20260626T164538Z.md,
+    # OOS Sharpe 1.14 vs SPY 0.90 at half the drawdown) CANNOT be a parent (a
+    # 12-mo lookback needs ~294 bars; the 60-90d NAMED_WINDOWS give ~62 -> zero
+    # trades; and it is decide_xsec = single-name profiler can't run it). So the
+    # cross-asset DNA is injected via this fast US-DOLLAR trend leg, chosen
+    # empirically as the MOST equity-orthogonal carrier (monthly trend-return
+    # corr to SPY -0.415, to GLD -0.344 -> orthogonal to BOTH the equity pool and
+    # the gold parent). De-correlator parent (gate-failing by design; children
+    # independently gated). Validated 5-asset book stays at strategies/xa_tsmom_12_1
+    # as evidence + a standalone-tracker candidate.
+    "trend_follow_uup",      # Trend-follow on UUP (US dollar; cross-asset de-correlator)
 ]
 
 

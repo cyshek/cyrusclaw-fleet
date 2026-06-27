@@ -1,0 +1,15 @@
+{
+  "_archetype": "Fast cross-asset TREND on UUP (US-dollar bullish ETF): SMA50 crossover \u2014 long when close > SMA(50), flat when close < SMA(50). The single-name DE-CORRELATOR carrier that injects genuine cross-asset (US-DOLLAR) trend DNA into the single-name mutation gene pool.",
+  "_why_uup": "Chosen empirically 2026-06-26 as the MOST equity-orthogonal non-equity leg. Monthly trend-return corr to SPY = -0.415 and to GLD = -0.344 (vs DBC +0.085/+0.159, TLT -0.136/+0.138, USO +0.125/-0.043). A dollar-trend signal is NEGATIVELY correlated to the equity-heavy pool AND distinct from the existing gold parent (trend_follow_gld) \u2014 maximally diversifying DNA. (corr proxy: monthly SMA-trend returns vs B&H SPY/GLD.)",
+  "_validated_thesis": "Distils the honestly-validated cross-asset 12-1 absolute-TSMOM archetype (5-asset {SPY,TLT,GLD,DBC,UUP} book, reports/XA_TSMOM_12_1_GATE_20260626T164538Z.md: OOS Sharpe 1.14 vs SPY 0.90 at half the drawdown, robust plateau, 2022 -1% vs SPY -18%) into a FAST single-name trend the profiler CAN run. The slow 12-month book itself cannot be a parent (needs ~294 bars; the 60-90d NAMED_WINDOWS give ~62 -> zero trades) and is a decide_xsec basket (profiler is single-name only); it lives at strategies/xa_tsmom_12_1 as the evidence artifact + a standalone-tracker candidate.",
+  "_thesis": "Deliberate DE-CORRELATOR mutation parent (like trend_follow_gld). Gate-FAILING on the equity-calibrated panel is acceptable BY DESIGN \u2014 value = structural genetic diversity (dollar-trend the equity-momentum pool lacks); every CHILD bred from it is independently held to the absolute fitness gate (passes_mutation_gate), so a weak parent cannot leak a weak child into the book. NOT standalone-deployable.",
+  "_paper_only": "PAPER ONLY. No real money. MUTATION-PARENT archetype (gene-pool seed), NOT scheduled / live-traded.",
+  "symbol": "UUP",
+  "timeframe": "1Day",
+  "bar_limit": 60,
+  "_bar_limit_note": "SMA50 needs 50 bars; 60 gives a small cushion. (SMA100 was tested and FAILS to profile \u2014 the 60-90d gate windows supply only ~62 daily bars, so 50 is the longest trend that fits, mirroring trend_follow_gld's bar_limit 60.)",
+  "period": 50,
+  "notional_usd": 100.0,
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

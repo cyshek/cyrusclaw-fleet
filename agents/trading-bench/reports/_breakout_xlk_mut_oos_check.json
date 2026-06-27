@@ -1,0 +1,92 @@
+{
+  "generated_utc": "20260627T074056Z",
+  "split": "2024-01-01",
+  "cost": "2bps one-way (CostModel.alpaca_stocks)",
+  "engine": "runner/backtest.py::backtest (production, SPY-regime aware, WF no-lookahead)",
+  "bars_per_year_1Hour": 2142.0,
+  "results": {
+    "breakout_xlk__mut_c382b1": {
+      "full": {
+        "sharpe": 0.2405,
+        "total_return_pct": 0.0235,
+        "max_drawdown_pct": -0.0498,
+        "n_trades": 362,
+        "n_buys": 181,
+        "n_closes": 181,
+        "n_bars": 10538,
+        "win_rate": 0.41,
+        "total_costs_usd": 5.3889,
+        "final_equity": 1023.46
+      },
+      "is": {
+        "sharpe": 0.8815,
+        "total_return_pct": 0.0297,
+        "max_drawdown_pct": -0.0126,
+        "n_trades": 212,
+        "n_buys": 106,
+        "n_closes": 106,
+        "n_bars": 6101,
+        "win_rate": 0.42,
+        "total_costs_usd": 3.1591,
+        "final_equity": 1029.73
+      },
+      "oos": {
+        "sharpe": -0.089,
+        "total_return_pct": -0.0063,
+        "max_drawdown_pct": -0.0513,
+        "n_trades": 150,
+        "n_buys": 75,
+        "n_closes": 75,
+        "n_bars": 4437,
+        "win_rate": 0.4,
+        "total_costs_usd": 2.2298,
+        "final_equity": 993.73
+      }
+    },
+    "breakout_xlk": {
+      "full": {
+        "sharpe": 0.2818,
+        "total_return_pct": 0.0372,
+        "max_drawdown_pct": -0.0676,
+        "n_trades": 334,
+        "n_buys": 167,
+        "n_closes": 167,
+        "n_bars": 10538,
+        "win_rate": 0.44,
+        "total_costs_usd": 6.6881,
+        "final_equity": 1037.22
+      },
+      "is": {
+        "sharpe": 1.0072,
+        "total_return_pct": 0.0489,
+        "max_drawdown_pct": -0.019,
+        "n_trades": 192,
+        "n_buys": 96,
+        "n_closes": 96,
+        "n_bars": 6101,
+        "win_rate": 0.46,
+        "total_costs_usd": 3.8502,
+        "final_equity": 1048.89
+      },
+      "oos": {
+        "sharpe": -0.122,
+        "total_return_pct": -0.0117,
+        "max_drawdown_pct": -0.0709,
+        "n_trades": 142,
+        "n_buys": 71,
+        "n_closes": 71,
+        "n_bars": 4437,
+        "win_rate": 0.42,
+        "total_costs_usd": 2.8379,
+        "final_equity": 988.33
+      }
+    }
+  },
+  "panel": {
+    "first": "2020-07-27",
+    "last": "2026-06-26",
+    "n_bars": 10538,
+    "n_is_bars": 6101,
+    "n_oos_bars": 4437
+  }
+}

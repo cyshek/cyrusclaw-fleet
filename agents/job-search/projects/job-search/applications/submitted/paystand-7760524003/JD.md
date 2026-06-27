@@ -61,5 +61,6 @@ We celebrate the belief that diversity in backgrounds and thoughts fuels better 
 
 Your journey is important to us, and we look forward to the possibility of welcoming you to our team at Paystand. Feel free to reach out; we can't wait to hear from you.
 
-All roles are on-site only. Only English resumes will be considered. 
-#LI-Onsite
+Most of our roles are onsite. Positions that are eligible for remote or hybrid work arrangements will be clearly indicated in the job posting.
+
+For roles based in Mexico, only resumes submitted in English will be considered.#LI-Onsite

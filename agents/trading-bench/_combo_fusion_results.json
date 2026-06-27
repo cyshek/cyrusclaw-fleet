@@ -1,0 +1,290 @@
+{
+  "breakout_xlk": {
+    "primary": "breakout_xlk",
+    "coverage": [
+      "2020-07-27",
+      "2026-06-24",
+      10523
+    ],
+    "variants": {
+      "solo": {
+        "label": "solo",
+        "full_ret_pct": 0.03721580212186086,
+        "full_sharpe": 0.282005161887483,
+        "fp_sharpe": 0.27138225565650015,
+        "fp_n": 10515,
+        "n_trades": 334,
+        "maxdd": -0.06763090963772549,
+        "is_ret_pct": 0.04888977757360317,
+        "oos_ret_pct": -0.011673975451741512,
+        "oos_n_trades": 142,
+        "median_window_ret_pct": 0.009229533804240873,
+        "window_rets": [
+          0.019,
+          0.009,
+          0.028,
+          -0.003,
+          -0.016
+        ]
+      },
+      "and_base_d1": {
+        "label": "and_base_d1",
+        "full_ret_pct": 0.004633360793797351,
+        "full_sharpe": 0.048382462736563686,
+        "fp_sharpe": 0.06989091829590911,
+        "fp_n": 10515,
+        "n_trades": 270,
+        "maxdd": -0.06041216942922416,
+        "is_ret_pct": 0.020477174826651776,
+        "oos_ret_pct": -0.01584381403285431,
+        "oos_n_trades": 106,
+        "median_window_ret_pct": 0.00016345958410613547,
+        "window_rets": [
+          0.0,
+          0.011,
+          0.008,
+          -0.004,
+          -0.008
+        ]
+      },
+      "or_base_d1": {
+        "label": "or_base_d1",
+        "full_ret_pct": 0.03625477431249646,
+        "full_sharpe": 0.26614208951280793,
+        "fp_sharpe": 0.2752356487049615,
+        "fp_n": 10515,
+        "n_trades": 422,
+        "maxdd": -0.06803768116732685,
+        "is_ret_pct": 0.04454319474938734,
+        "oos_ret_pct": -0.008288420436891443,
+        "oos_n_trades": 180,
+        "median_window_ret_pct": 0.0033226454795553763,
+        "window_rets": [
+          0.02,
+          0.003,
+          0.029,
+          0.003,
+          -0.016
+        ]
+      },
+      "and_canary_lag1": {
+        "label": "and_canary_lag1",
+        "full_ret_pct": -0.0026241117084915685,
+        "full_sharpe": -0.005648141269845479,
+        "fp_sharpe": 0.016190503045882515,
+        "fp_n": 10515,
+        "n_trades": 262,
+        "maxdd": -0.0612944125000362,
+        "is_ret_pct": 0.01994158544554534,
+        "oos_ret_pct": -0.02256569715403691,
+        "oos_n_trades": 104,
+        "median_window_ret_pct": 0.0018798978170740384,
+        "window_rets": [
+          0.002,
+          0.005,
+          0.011,
+          -0.007,
+          -0.01
+        ]
+      },
+      "or_canary_lag1": {
+        "label": "or_canary_lag1",
+        "full_ret_pct": 0.03711800034943735,
+        "full_sharpe": 0.27387547801650186,
+        "fp_sharpe": 0.29236124247991274,
+        "fp_n": 10515,
+        "n_trades": 422,
+        "maxdd": -0.06741177277401554,
+        "is_ret_pct": 0.04359971396126912,
+        "oos_ret_pct": -0.006481713611832447,
+        "oos_n_trades": 178,
+        "median_window_ret_pct": 0.004397312689244473,
+        "window_rets": [
+          0.019,
+          0.004,
+          0.028,
+          0.004,
+          -0.014
+        ]
+      }
+    },
+    "spy_full_buyhold_pct": 129.39918872781928,
+    "spy_oos_buyhold_pct": 56.229783892545406,
+    "gate": {
+      "and": {
+        "PASS": false,
+        "cond_median_beat_+0.10pp": false,
+        "cond_sharpe_not_collapse": false,
+        "cond_oos_positive": false,
+        "cond_oos_beats_spy": false,
+        "cond_canary_robust": true,
+        "solo_median": 0.0092,
+        "combo_median": 0.0002,
+        "solo_fp_sharpe": 0.2714,
+        "combo_fp_sharpe": 0.0699,
+        "canary_fp_sharpe": 0.0162,
+        "combo_oos_ret": -0.0158,
+        "spy_oos": 56.2298
+      },
+      "or": {
+        "PASS": false,
+        "cond_median_beat_+0.10pp": false,
+        "cond_sharpe_not_collapse": true,
+        "cond_oos_positive": false,
+        "cond_oos_beats_spy": false,
+        "cond_canary_robust": true,
+        "solo_median": 0.0092,
+        "combo_median": 0.0033,
+        "solo_fp_sharpe": 0.2714,
+        "combo_fp_sharpe": 0.2752,
+        "canary_fp_sharpe": 0.2924,
+        "combo_oos_ret": -0.0083,
+        "spy_oos": 56.2298
+      }
+    }
+  },
+  "volume_breakout_qqq": {
+    "primary": "volume_breakout_qqq",
+    "coverage": [
+      "2020-07-27",
+      "2026-06-24",
+      12703
+    ],
+    "variants": {
+      "solo": {
+        "label": "solo",
+        "full_ret_pct": 0.015588325565893343,
+        "full_sharpe": 0.4846230053387438,
+        "fp_sharpe": 0.4060918967904535,
+        "fp_n": 12695,
+        "n_trades": 158,
+        "maxdd": -0.014443038299908905,
+        "is_ret_pct": 0.00622319103733048,
+        "oos_ret_pct": 0.009365134528562863,
+        "oos_n_trades": 60,
+        "median_window_ret_pct": 0.005677698289447903,
+        "window_rets": [
+          0.006,
+          -0.013,
+          0.01,
+          0.007,
+          0.003
+        ]
+      },
+      "and_base_d1": {
+        "label": "and_base_d1",
+        "full_ret_pct": 0.009551350761117988,
+        "full_sharpe": 0.38193523390649803,
+        "fp_sharpe": 0.33694869096305774,
+        "fp_n": 12695,
+        "n_trades": 98,
+        "maxdd": -0.012361372770347897,
+        "is_ret_pct": 0.00043849429890110514,
+        "oos_ret_pct": 0.009112856462216882,
+        "oos_n_trades": 34,
+        "median_window_ret_pct": 0.003662972717891421,
+        "window_rets": [
+          0.004,
+          -0.01,
+          0.005,
+          0.007,
+          0.002
+        ]
+      },
+      "or_base_d1": {
+        "label": "or_base_d1",
+        "full_ret_pct": 0.034585745314769385,
+        "full_sharpe": 0.6102192917009122,
+        "fp_sharpe": 0.5899450328790964,
+        "fp_n": 12695,
+        "n_trades": 620,
+        "maxdd": -0.019189746870234434,
+        "is_ret_pct": 0.013561347345368858,
+        "oos_ret_pct": 0.021024397969405074,
+        "oos_n_trades": 274,
+        "median_window_ret_pct": 0.013054659885520436,
+        "window_rets": [
+          0.013,
+          -0.014,
+          0.013,
+          0.015,
+          0.007
+        ]
+      },
+      "and_canary_lag1": {
+        "label": "and_canary_lag1",
+        "full_ret_pct": 0.009761700385769132,
+        "full_sharpe": 0.4087456893984135,
+        "fp_sharpe": 0.36305775331054063,
+        "fp_n": 12695,
+        "n_trades": 90,
+        "maxdd": -0.009769644077927674,
+        "is_ret_pct": 0.002159509434439315,
+        "oos_ret_pct": 0.007602190951329817,
+        "oos_n_trades": 30,
+        "median_window_ret_pct": 0.002672690147836988,
+        "window_rets": [
+          0.003,
+          -0.008,
+          0.006,
+          0.006,
+          0.002
+        ]
+      },
+      "or_canary_lag1": {
+        "label": "or_canary_lag1",
+        "full_ret_pct": 0.0338228283914541,
+        "full_sharpe": 0.6120601222806317,
+        "fp_sharpe": 0.5935501255494431,
+        "fp_n": 12695,
+        "n_trades": 620,
+        "maxdd": -0.022266748518323217,
+        "is_ret_pct": 0.011460488749505202,
+        "oos_ret_pct": 0.0223623396419531,
+        "oos_n_trades": 272,
+        "median_window_ret_pct": 0.011173251565464965,
+        "window_rets": [
+          0.011,
+          -0.015,
+          0.014,
+          0.015,
+          0.008
+        ]
+      }
+    },
+    "spy_full_buyhold_pct": 129.39918872781928,
+    "spy_oos_buyhold_pct": 56.229783892545406,
+    "gate": {
+      "and": {
+        "PASS": false,
+        "cond_median_beat_+0.10pp": false,
+        "cond_sharpe_not_collapse": true,
+        "cond_oos_positive": true,
+        "cond_oos_beats_spy": false,
+        "cond_canary_robust": true,
+        "solo_median": 0.0057,
+        "combo_median": 0.0037,
+        "solo_fp_sharpe": 0.4061,
+        "combo_fp_sharpe": 0.3369,
+        "canary_fp_sharpe": 0.3631,
+        "combo_oos_ret": 0.0091,
+        "spy_oos": 56.2298
+      },
+      "or": {
+        "PASS": false,
+        "cond_median_beat_+0.10pp": false,
+        "cond_sharpe_not_collapse": true,
+        "cond_oos_positive": true,
+        "cond_oos_beats_spy": false,
+        "cond_canary_robust": true,
+        "solo_median": 0.0057,
+        "combo_median": 0.0131,
+        "solo_fp_sharpe": 0.4061,
+        "combo_fp_sharpe": 0.5899,
+        "canary_fp_sharpe": 0.5936,
+        "combo_oos_ret": 0.021,
+        "spy_oos": 56.2298
+      }
+    }
+  }
+}

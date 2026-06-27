@@ -10,9 +10,11 @@
 
 Our mission is to automate coding. The first step in our journey is to build the best tool for professional programmers, using a combination of inventive research, design, and engineering. Our organization is very flat, and our team is small and talent dense. We particularly like people who are truth-seeking, passionate, and creative. We enjoy spirited debate, crazy ideas, and shipping code.
 
+## **About the role**
+
 Forward Deployed Engineers embed directly with customer engineering teams to ship production-grade Cursor workflows that measurably improve how they build software.
 
-You’ll figure out what’s actually slowing a team down, design a practical solution, and own it end-to-end — from first discovery call through launch, iteration, and post-production support. This is not a demo role. You are responsible for systems that work in the real world.
+You’ll figure out what’s actually slowing a team down, design a practical solution, and own it end-to-end, from first discovery call through launch, iteration, and post-production support. This is not a demo role. You are responsible for systems that work in the real world.
 
 ## What you’ll do
 
@@ -30,14 +32,14 @@ You’ll figure out what’s actually slowing a team down, design a practical so
 
 ## You may be a fit if
 
-- You thrive in ambiguity and can turn fuzzy problems into clear scopes and shipped systems.
+- You have 5+ years of experience with software development and coding in Python, Javascript/Typescript
 
-- You’ve built and owned AI-native workflows in production — not just prototypes — and have debugged real-world model failures
+- Experience includes 2+ years in a customer-facing role, leading discovery conversations and being accountable for customer outcomes
 
-- You’re comfortable leading discovery conversations and being accountable for customer outcomes
+- You thrive in ambiguity and can turn fuzzy problems into clear scopes and shipped systems
 
-- You build end-to-end. If it needs frontend, backend, infra, or prompt iteration, you’ll own it
+- You’ve built and owned AI-native workflows in production, not just prototypes, and have debugged real-world model failures
+
+- You build end-to-end - if it needs frontend, backend, infra, or prompt iteration, you’ll own it
 
 - You’ve handled production reliability before (metrics, alerts, safe rollouts, incident response)
-
-- You’re strong in Python and TypeScript/JavaScript and can ramp quickly on new stacks

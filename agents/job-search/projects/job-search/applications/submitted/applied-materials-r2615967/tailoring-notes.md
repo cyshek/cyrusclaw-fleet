@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across field engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation model adopted across the organization.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, managing escalation procedures and stakeholder reporting end-to-end.
+5. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to **reduce planning cycle time by 39%** and increase drill capacity by 21%, directly improving district-level cost efficiency and execution throughput.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and hands-on training sessions that drove utilization across 14 key engineering teams and saved **37 engineering hours** monthly across the district.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ structured user interviews** with Azure service teams, surfacing critical feature gaps and delivering findings that directly shaped the next planning cycle.
+3. Optimized data integrity and field retrieval by enforcing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting engineer lookup time by 83% and reducing escalation delays tied to stale technical references.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating account planning and execution buy-in across 140+ teams.
+2. Mobilized a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to identify **81 hours of manual effort** per region and building a roadmap to automate critical installation and start-up paths.
+3. Enabled leadership to target automation gaps and prioritize high-impact field support by engineering a **Power BI dashboard** that tracked operational toil across 140+ teams, giving management a real-time view of district-level cost efficiency and schedule risk.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping installation dependencies across 1,200+ stations, mirroring the system-installation planning discipline central to customer engineer operations.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process, building the corrective-action discipline needed in a field engineering environment.
+3. Drove strategic alignment between IT, Operations, and Engineering teams to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable execution model across cross-functional district teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, optimizing CRM workflows to improve field engineer hour tracking accuracy and customer relationship management across the district.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, demonstrating the account planning and customer-facing communication skills essential to supporting district sales engineers.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records to identify and close margin leaks, directly strengthening cost-efficiency outcomes and supporting district-level financial forecast accuracy.
+
+## Notes from the rewriter
+- Wove in 'escalation procedure' (JD term) directly into microsoft_ft bullet#4, framing Cyrus's sovereign-cloud bridge lead role as end-to-end escalation and stakeholder reporting management.
+- Used 'account planning' (JD term verbatim) in microsoft_2022 bullet#1 and pro_painters bullet#2 to mirror the JD requirement that the CE Manager partners with District Sales Engineers on account planning.
+- Embedded 'cost efficiency' and 'financial forecast' (JD terms) into microsoft_ft bullet#5 and pro_painters bullet#3, directly echoing the JD's mandate that the manager is 'responsible for financial forecast' and 'measured by financial result.'
+- Incorporated 'system installation planning,' 'start-up,' and 'district-level' framing (JD language) into amazon_robotics bullet#1 and microsoft_2022 bullet#2 to reflect the JD's installation planning and execution responsibilities.
+- Used 'field engineer hour tracking accuracy' and 'corrective action' (JD terms) in pro_painters bullet#1 and amazon_robotics bullet#2 to directly surface the JD requirement around RMA/hours tracking and corrective action with engineers.
+

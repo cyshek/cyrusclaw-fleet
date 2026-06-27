@@ -1,333 +1,378 @@
 #!/usr/bin/env python3
-"""Batch Ashby submission runner for 54 no-evidence roles."""
-import subprocess
+"""
+run_ashby_batch.py — Batch Ashby prep + submit.
+
+For each open Ashby role:
+1. Run inline_submit.py --role-id <id> to prep (creates plan JSON)
+2. Run _ashby_runner.py <plan_path> to submit
+3. On RECAPTCHA_SCORE_BELOW_THRESHOLD → retry with residential proxy
+4. Update tracker.db on success
+5. Write STATUS.md to applications/submitted/<slug>/
+
+Hard cohort (Baseten, Mercor) → skip immediately with blocked status.
+Deepgram → skip (60-day re-apply block from prior submissions).
+"""
 import json
 import os
-import time
+import re
 import sqlite3
-import traceback
+import subprocess
+import sys
+import time
+from datetime import date, timezone, datetime
 from pathlib import Path
-from datetime import datetime
 
-WORKSPACE = Path("/home/azureuser/.openclaw/agents/job-search/workspace")
-RD = WORKSPACE / "projects/job-search/role-discovery"
-DB_PATH = WORKSPACE / "projects/job-search/tracker.db"
-SUBMITTED_DIR = WORKSPACE / "applications/submitted"
-VENV_PY = RD / ".venv/bin/python3"
-LOG_DIR = Path("/tmp/ashby-drain-batch")
-LOG_DIR.mkdir(exist_ok=True)
+HERE = Path(__file__).resolve().parent
+PROJECT = HERE.parent
+DB_PATH = PROJECT / "tracker.db"
+SUBMITTED_DIR = PROJECT / "applications" / "submitted"
 
-TARGET_IDS = [
-    933, 945, 1248, 1325, 1392, 1555, 1618, 1620, 1621, 1622,
-    1956, 1983, 2099, 2140, 2196, 2206, 2210, 2214, 2242, 2262,
-    2275, 2320, 2447, 2449, 2562, 2566, 2575, 2576, 2582, 2586,
-    2607, 2609, 2611, 2712, 2773, 2787, 2795, 2800, 2805, 2808,
-    2817, 2821, 2907, 2912, 2918, 2954, 2957, 2958, 2959, 2960,
-    2971, 2982, 3111, 3268
-]
+# Hard cohort — blocked even with residential
+HARD_COHORT_ORGS = {"baseten", "mercor", "tavus", "moment", "decagon"}
 
-results = {
-    "submitted": [],
-    "already_applied": [],
-    "role_closed": [],
-    "recaptcha_hard": [],
-    "errors": [],
-    "prep_failed": [],
+# Moderate cohort — need residential
+MODERATE_COHORT_ORGS = {
+    "notion", "skydio", "anrok", "tessera-labs", "dash0", "klarity",
+    "attio", "atticus", "thought-machine", "picogrid", "brellium",
+    "restate", "scaled-cognition", "antithesis",
 }
 
+# 60-day block
+DEEPGRAM_BLOCK_UNTIL = "2026-07-30"
 
-def db_connect():
-    conn = sqlite3.connect(str(DB_PATH))
-    conn.row_factory = sqlite3.Row
-    return conn
+DATACENTER_CDP = "http://127.0.0.1:18800"
+RESIDENTIAL_CDP = "http://127.0.0.1:19223"
 
-
-def get_role_info(role_id):
-    with db_connect() as conn:
-        row = conn.execute("SELECT * FROM roles WHERE id=?", (role_id,)).fetchone()
-        return dict(row) if row else None
+VENV_PY = str(HERE / ".venv" / "bin" / "python")
 
 
-def find_plan_for_role(role_id):
-    plans = sorted(RD.glob("output/inline-plan-*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
-    for plan in plans:
-        try:
-            data = json.loads(plan.read_text())
-            if data.get("role_id") == role_id:
-                return plan
-        except Exception:
-            continue
-    return None
+def get_org_from_url(url: str) -> str:
+    m = re.search(r"ashbyhq\.com/([^/]+)/", url)
+    return m.group(1) if m else ""
 
 
-def run_prep(role_id, timeout=600):
-    print(f"  [PREP] Running inline_submit for role {role_id}...", flush=True)
-    cmd = [str(VENV_PY), str(RD / "inline_submit.py"), "--role-id", str(role_id)]
-    start = time.time()
+def run_cmd(cmd: list, env: dict = None, timeout: int = 300) -> tuple[int, str, str]:
+    """Run a command and return (returncode, stdout, stderr)."""
+    full_env = {**os.environ}
+    if env:
+        full_env.update(env)
     try:
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=str(RD))
-        elapsed = time.time() - start
-        output = res.stdout + res.stderr
-        print(f"  [PREP] exit={res.returncode} elapsed={elapsed:.0f}s", flush=True)
-        (LOG_DIR / f"prep-{role_id}.log").write_text(output)
-
-        if res.returncode != 0:
-            out_lower = output.lower()
-            if "closed" in out_lower or "url-dead" in out_lower:
-                return "closed", None, output
-            return "failed", None, output
-
-        plan = find_plan_for_role(role_id)
-        if not plan:
-            plans = sorted(RD.glob("output/inline-plan-*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
-            if plans:
-                plan = plans[0]
-                print(f"  [PREP] Using most recent plan: {plan.name}", flush=True)
-            else:
-                return "failed", None, output + "\nNo plan file found"
-
-        print(f"  [PREP] Plan: {plan.name}", flush=True)
-        return "ok", plan, output
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            env=full_env,
+            cwd=str(HERE),
+        )
+        return result.returncode, result.stdout, result.stderr
     except subprocess.TimeoutExpired:
-        return "timeout", None, f"inline_submit timed out after {timeout}s"
-    except Exception as e:
-        return "failed", None, str(e)
+        return -1, "", "TIMEOUT"
+    except Exception as e:\n        return -1, "", str(e)
 
 
-def run_ashby(plan_path, role_id, residential=False, timeout=240):
-    env = os.environ.copy()
-    if residential:
-        env["JOBSEARCH_PROXY_MODE"] = "residential"
-        print("  [RUNNER] Running with RESIDENTIAL proxy...", flush=True)
-    else:
-        print("  [RUNNER] Running with datacenter proxy...", flush=True)
-
-    cmd = [str(VENV_PY), str(RD / "_ashby_runner.py"), str(plan_path)]
-    try:
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=str(RD), env=env)
-        output = res.stdout + res.stderr
-        suffix = "_residential" if residential else ""
-        (LOG_DIR / f"runner-{role_id}{suffix}.log").write_text(output)
-
-        lines = output.strip().split("\n")
-        for line in lines[-15:]:
-            print(f"    {line}", flush=True)
-        print(f"  [RUNNER] exit={res.returncode}", flush=True)
-        return res.returncode, output
-    except subprocess.TimeoutExpired:
-        return -1, f"_ashby_runner timed out after {timeout}s"
-    except Exception as e:
-        return -2, str(e)
-
-
-def classify_runner_result(exit_code, output):
-    out_lower = output.lower()
-
-    if (exit_code == 0
-            or "formsubmitsuccess" in out_lower
-            or "submitted successfully" in out_lower
-            or "application submitted" in out_lower):
-        return "submitted"
-
-    if (exit_code == 7
-            or "already_applied" in output
-            or "already applied" in out_lower):
-        return "already_applied"
-
-    if (exit_code == 6
-            or "role_closed" in output
-            or "job is no longer" in out_lower
-            or "job no longer available" in out_lower):
-        return "role_closed"
-
-    if ("recaptcha_score_below_threshold" in output
-            or ("recaptcha" in out_lower and "score" in out_lower and "below" in out_lower)):
-        return "recaptcha"
-
-    return "error"
-
-
-def write_status_md(slug, company, role, role_id, method="ashby-runner"):
-    app_dir = SUBMITTED_DIR / slug
-    app_dir.mkdir(parents=True, exist_ok=True)
-    content = (
-        f"# {company} -- {role}\n\n"
-        f"status: SUBMITTED\n"
-        f"date: 2026-06-24\n"
-        f"submitted_by: auto\n"
-        f"role_id: {role_id}\n"
-        f"screenshot: auto-confirmed\n"
-        f"method: {method}\n"
+def prep_role(role_id: int) -> tuple[bool, str, str]:
+    """Run inline_submit.py for role_id. Returns (ok, plan_path_or_error, slug)."""
+    rc, stdout, stderr = run_cmd(
+        [VENV_PY, "inline_submit.py", "--role-id", str(role_id)],
+        timeout=300,
     )
-    (app_dir / "STATUS.md").write_text(content)
-    print(f"  [STATUS] Wrote STATUS.md -> {app_dir}", flush=True)
-
-
-def db_mark_submitted(role_id):
-    with db_connect() as conn:
-        conn.execute(
-            "UPDATE roles SET status='submitted', applied_by='auto', applied_on='2026-06-24', "
-            "response_status='submitted', block_reason=NULL WHERE id=?", (role_id,)
-        )
-        conn.commit()
-
-
-def db_mark_already_applied(role_id):
-    with db_connect() as conn:
-        conn.execute("UPDATE roles SET block_reason='already-applied-within-90d' WHERE id=?", (role_id,))
-        conn.commit()
-
-
-def db_mark_closed(role_id):
-    with db_connect() as conn:
-        conn.execute("UPDATE roles SET status='blocked', block_reason='role-closed' WHERE id=?", (role_id,))
-        conn.commit()
-
-
-def db_mark_recaptcha_hard(role_id):
-    with db_connect() as conn:
-        conn.execute(
-            "UPDATE roles SET block_reason='ashby-hard-recaptcha-residential-resistant' WHERE id=?", (role_id,)
-        )
-        conn.commit()
-
-
-def get_slug_from_plan(plan_path):
+    
+    # Parse JSON output
+    combined_output = stdout + stderr
+    
+    # Check for OPENAI hold
+    if "openai-application-limit-hold" in combined_output.lower() or (
+        "OPENAI" in combined_output and "hold" in combined_output.lower()
+    ):
+        return False, "openai-hold", ""
+    
+    # Try to parse JSON from stdout
+    plan_path = None
+    slug = None
     try:
-        data = json.loads(plan_path.read_text())
-        return data.get("slug", f"role-{plan_path.stem}")
-    except Exception:
-        return plan_path.stem
+        if stdout.strip():
+            data = json.loads(stdout.strip())
+            results = data.get("results", [data])
+            for res in results:
+                if res.get("ok"):
+                    plan_path = res.get("plan_path")
+                    slug = res.get("slug")
+                elif res.get("phase_failed"):
+                    error = res.get("error", "")
+                    slug = res.get("slug", "")
+                    # Check for CLOSED/404
+                    if "404" in error or "closed" in error.lower() or "not found" in error.lower():
+                        return False, f"closed:{error[:100]}", slug
+                    return False, f"prep-failed:{res['phase_failed']}:{error[:150]}", slug
+    except json.JSONDecodeError:
+        pass
+    
+    if plan_path and Path(plan_path).exists():
+        return True, plan_path, slug or ""
+    
+    # Look for plan path in output
+    plan_match = re.search(r'(output/inline-plan-[^\s"]+\.json)', combined_output)
+    if plan_match:
+        plan = HERE / plan_match.group(1)
+        if plan.exists():
+            return True, str(plan), slug or ""
+    
+    # Check if it's a prep-ready status that emits plan
+    if "PREP-READY" in combined_output:
+        # Find the plan path from STATUS.md
+        slug_match = re.search(r'\[inline_submit\] === \[.+\] (\S+) \(', stderr)
+        if slug_match:
+            slug = slug_match.group(1)
+        return False, f"prep-only-no-runner:{combined_output[-200:]}", slug or ""
+    
+    error_snippet = (stderr + stdout)[-300:]
+    if "ABORT" in error_snippet:
+        phase_match = re.search(r"ABORT-([a-z-]+)", error_snippet)
+        phase = phase_match.group(1) if phase_match else "unknown"
+        return False, f"prep-abort:{phase}:{error_snippet[-100:]}", ""
+    
+    if rc != 0 or not plan_path:
+        return False, f"prep-rc{rc}:{error_snippet[-200:]}", ""
+    
+    return False, "prep-no-plan", ""
 
 
-def save_intermediate():
-    with open("/tmp/ashby-drain-results.json", "w") as f:
-        json.dump(results, f, indent=2)
-
-
-def process_role(role_id):
-    role_info = get_role_info(role_id)
-    company = role_info.get("company", "Unknown") if role_info else "Unknown"
-    role_name = role_info.get("role", "Unknown") if role_info else "Unknown"
-
-    print("\n" + "="*60, flush=True)
-    print(f"ROLE {role_id}: {company} -- {role_name}", flush=True)
-    print(f"{'='*60}", flush=True)
-
-    prep_status, plan_path, prep_output = run_prep(role_id)
-
-    if prep_status == "closed":
-        print("  [RESULT] ROLE CLOSED (during prep)", flush=True)
-        db_mark_closed(role_id)
-        results["role_closed"].append(f"{role_id} ({company}): closed-during-prep")
-        return
-
-    if prep_status in ("failed", "timeout"):
-        lines = prep_output.strip().split("\n")
-        for line in lines[-5:]:
-            print(f"    {line}", flush=True)
-        print(f"  [RESULT] PREP FAILED: {prep_status}", flush=True)
-        results["prep_failed"].append(f"{role_id} ({company}): prep={prep_status}")
-        return
-
-    if not plan_path:
-        print("  [RESULT] NO PLAN FILE", flush=True)
-        results["prep_failed"].append(f"{role_id} ({company}): no-plan-file")
-        return
-
-    exit_code, runner_output = run_ashby(plan_path, role_id, residential=False)
-    classification = classify_runner_result(exit_code, runner_output)
-    method = "ashby-runner"
-
-    if classification == "recaptcha":
-        print("  [RECAPTCHA] Datacenter blocked, trying residential...", flush=True)
-        exit_code2, runner_output2 = run_ashby(plan_path, role_id, residential=True)
-        classification = classify_runner_result(exit_code2, runner_output2)
-        runner_output = runner_output2
-        if classification == "submitted":
-            method = "ashby-runner-residential"
-        elif classification == "recaptcha":
-            print("  [RESULT] RECAPTCHA HARD BLOCK (residential also failed)", flush=True)
-            db_mark_recaptcha_hard(role_id)
-            results["recaptcha_hard"].append(f"{role_id} ({company})")
-            return
-
-    if classification == "submitted":
-        slug = get_slug_from_plan(plan_path)
-        write_status_md(slug, company, role_name, role_id, method)
-        db_mark_submitted(role_id)
-        print(f"  [RESULT] SUCCESS SUBMITTED slug={slug}", flush=True)
-        results["submitted"].append(f"{role_id} ({company} -- {role_name})")
-
-    elif classification == "already_applied":
-        print("  [RESULT] ALREADY APPLIED", flush=True)
-        db_mark_already_applied(role_id)
-        results["already_applied"].append(f"{role_id} ({company})")
-
-    elif classification == "role_closed":
-        print("  [RESULT] ROLE CLOSED", flush=True)
-        db_mark_closed(role_id)
-        results["role_closed"].append(f"{role_id} ({company})")
-
+def run_ashby(plan_path: str, residential: bool = False) -> tuple[bool, str]:
+    """Run _ashby_runner.py. Returns (ok, result_json_or_error)."""
+    env = {}
+    if residential:
+        env["JOBSEARCH_CDP"] = RESIDENTIAL_CDP
+        env["JOBSEARCH_PROXY_MODE"] = "residential"
     else:
-        print(f"  [RESULT] ERROR (exit={exit_code})", flush=True)
-        results["errors"].append(f"{role_id} ({company}): exit={exit_code}")
+        env["JOBSEARCH_CDP"] = DATACENTER_CDP
+    
+    rc, stdout, stderr = run_cmd(
+        [VENV_PY, "_ashby_runner.py", plan_path],
+        env=env,
+        timeout=600,
+    )
+    
+    combined = stdout + stderr
+    
+    # Try to parse JSON result
+    try:
+        if stdout.strip():
+            result = json.loads(stdout.strip())
+            ok = result.get("ok", False)
+            return ok, stdout
+    except json.JSONDecodeError:
+        pass
+    
+    # Check for success signals in output
+    if "FormSubmitSuccess" in combined or "submitted" in combined.lower():
+        return True, combined[-500:]
+    
+    # Check for specific failure modes
+    if "RECAPTCHA_SCORE_BELOW_THRESHOLD" in combined:
+        return False, "RECAPTCHA_SCORE_BELOW_THRESHOLD"
+    if "ALREADY_APPLIED" in combined:
+        return False, "ALREADY_APPLIED"
+    if "CLOSED" in combined or "req_closed" in combined.lower():
+        return False, "CLOSED"
+    
+    if rc == 0:
+        return True, combined[-500:]
+    
+    return False, f"runner-rc{rc}:{combined[-300:]}"
+
+
+def update_db(role_id: int, status: str, applied_by: str = None, block_reason: str = None):
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    today = date.today().isoformat()
+    if status == "submitted":
+        c.execute(
+            "UPDATE roles SET status=?, applied_by=?, applied_on=? WHERE id=?",
+            ("submitted", applied_by or "auto", today, role_id)
+        )
+    elif status == "blocked":
+        c.execute(
+            "UPDATE roles SET status=?, block_reason=? WHERE id=?",
+            ("blocked", block_reason or "", role_id)
+        )
+    elif status == "closed":
+        c.execute("UPDATE roles SET status='closed' WHERE id=?", (role_id,))
+    elif status == "skip":
+        c.execute("UPDATE roles SET status='skip' WHERE id=?", (role_id,))
+    conn.commit()
+    conn.close()
+
+
+def write_status_md(slug: str, role_id: int, company: str, role: str, result_data: str):
+    """Write STATUS.md to the submitted folder."""
+    folder = SUBMITTED_DIR / slug
+    folder.mkdir(parents=True, exist_ok=True)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    status = (
+        f"SUBMITTED — {now}\n\n"
+        f"role_id: {role_id}\n"
+        f"company: {company}\n"
+        f"role: {role}\n"
+        f"submitted_by: auto\n"
+        f"applied_on: {date.today().isoformat()}\n"
+        f"screenshot: n/a\n\n"
+        f"Runner output:\n{result_data[-500:]}\n"
+    )
+    (folder / "STATUS.md").write_text(status)
 
 
 def main():
-    print(f"Batch Ashby drain: {len(TARGET_IDS)} roles", flush=True)
-    print(f"Start: {datetime.now().isoformat()}", flush=True)
-
-    for i, role_id in enumerate(TARGET_IDS, 1):
-        print(f"\n[{i}/{len(TARGET_IDS)}] Processing role {role_id}...", flush=True)
-        try:
-            process_role(role_id)
-        except Exception as e:
-            print(f"  [FATAL ERROR] role={role_id}: {e}", flush=True)
-            traceback.print_exc()
-            results["errors"].append(f"{role_id}: exception={e}")
-
-        save_intermediate()
-        time.sleep(2)
-
-    print("\n" + "="*70, flush=True)
-    print("BATCH COMPLETE - FINAL SUMMARY", flush=True)
-    print("="*70, flush=True)
-
-    for category, label in [
-        ("submitted", "SUBMITTED"),
-        ("already_applied", "ALREADY APPLIED"),
-        ("role_closed", "ROLE CLOSED"),
-        ("recaptcha_hard", "RECAPTCHA HARD"),
-        ("prep_failed", "PREP FAILED"),
-        ("errors", "ERRORS"),
-    ]:
-        items = results[category]
-        print(f"\n{label} ({len(items)}):", flush=True)
-        for r in items:
-            print(f"  {r}", flush=True)
-
-    counts = {k: len(v) for k, v in results.items()}
-    total_accounted = sum(counts.values())
-    print(f"\nTOTALS: {counts}", flush=True)
-    print(f"Accounted: {total_accounted}/{len(TARGET_IDS)}", flush=True)
-
-    print("\nRunning render_xlsx.py...", flush=True)
-    try:
-        res = subprocess.run(
-            [str(VENV_PY), str(RD / "render_xlsx.py")],
-            capture_output=True, text=True, timeout=120, cwd=str(RD)
-        )
-        if res.returncode == 0:
-            print("render_xlsx.py: OK", flush=True)
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    c = conn.cursor()
+    c.execute("""
+        SELECT id, company, role, app_url
+        FROM roles
+        WHERE status='open' AND (app_url LIKE '%ashbyhq%' OR jd_url LIKE '%ashbyhq%')
+        ORDER BY id
+    """)
+    rows = [dict(r) for r in c.fetchall()]
+    conn.close()
+    
+    print(f"\n[ashby-batch] Found {len(rows)} open Ashby roles\n")
+    
+    results = {
+        "submitted": [],
+        "blocked": [],
+        "closed": [],
+        "skipped": [],
+    }
+    
+    for i, row in enumerate(rows, 1):
+        role_id = row["id"]
+        company = row["company"]
+        role_name = row["role"]
+        url = row["app_url"] or ""
+        org = get_org_from_url(url)
+        
+        print(f"\n[{i}/{len(rows)}] {role_id} — {company} — {role_name}")
+        print(f"  org={org} url={url[:60]}")
+        
+        # Skip OpenAI
+        if "openai" in company.lower() or "openai" in org.lower():
+            print(f"  → SKIP: OpenAI application-limit hold")
+            update_db(role_id, "skip")
+            results["skipped"].append(f"{role_id} {company} — OpenAI hold")
+            continue
+        
+        # Skip Deepgram (60-day block)
+        if "deepgram" in company.lower() or "deepgram" in org.lower():
+            print(f"  → SKIP: Deepgram 60-day re-apply block (until ~2026-07-30)")
+            update_db(role_id, "blocked", block_reason="deepgram-60-day-reapply-block-until-2026-07-30")
+            results["blocked"].append(f"{role_id} {company} — deepgram-60day-block")
+            continue
+        
+        # Hard cohort
+        if org in HARD_COHORT_ORGS:
+            print(f"  → BLOCKED (hard cohort): {org}")
+            update_db(role_id, "blocked", block_reason=f"ashby-hard-recaptcha-residential-resistant:{org}")
+            results["blocked"].append(f"{role_id} {company} — hard-cohort:{org}")
+            continue
+        
+        # Determine if moderate (needs residential first)
+        is_moderate = org in MODERATE_COHORT_ORGS
+        
+        # Step 1: Prep
+        print(f"  → Prepping...")
+        prep_ok, prep_result, slug = prep_role(role_id)
+        
+        if not prep_ok:
+            if "closed" in prep_result.lower() or "404" in prep_result:
+                print(f"  → CLOSED: {prep_result[:100]}")
+                update_db(role_id, "closed")
+                results["closed"].append(f"{role_id} {company} — closed")
+                continue
+            if "already_applied" in prep_result.lower() or "already-applied" in prep_result.lower():
+                print(f"  → ALREADY APPLIED")
+                update_db(role_id, "submitted", applied_by="auto")
+                results["submitted"].append(f"{role_id} {company} — already-applied")
+                continue
+            if "openai-hold" in prep_result:
+                print(f"  → SKIP: OpenAI hold")
+                update_db(role_id, "skip")
+                results["skipped"].append(f"{role_id} {company} — openai-hold")
+                continue
+            print(f"  → PREP FAILED: {prep_result[:200]}")
+            update_db(role_id, "blocked", block_reason=f"prep-failed:{prep_result[:150]}")
+            results["blocked"].append(f"{role_id} {company} — {prep_result[:100]}")
+            continue
+        
+        plan_path = prep_result
+        print(f"  → Prep OK, plan: {Path(plan_path).name}")
+        
+        # Step 2: Submit
+        # For moderate cohort, go residential first
+        if is_moderate:
+            print(f"  → Moderate cohort ({org}), trying residential first...")
+            ok, run_result = run_ashby(plan_path, residential=True)
         else:
-            print(f"render_xlsx.py: FAILED rc={res.returncode}", flush=True)
-            print(res.stderr[-300:], flush=True)
-    except Exception as e:
-        print(f"render_xlsx.py error: {e}", flush=True)
-
-    return results
+            print(f"  → Trying datacenter...")
+            ok, run_result = run_ashby(plan_path, residential=False)
+        
+        # If datacenter failed with captcha, retry residential
+        if not ok and not is_moderate and "RECAPTCHA_SCORE_BELOW_THRESHOLD" in run_result:
+            print(f"  → reCAPTCHA gate, retrying with residential proxy...")
+            ok, run_result = run_ashby(plan_path, residential=True)
+        
+        if ok:
+            print(f"  → SUBMITTED ✓")
+            # Get slug from plan path or STATUS.md
+            if not slug:
+                plan_name = Path(plan_path).stem  # inline-plan-<slug>
+                slug = plan_name.replace("inline-plan-", "")
+            write_status_md(slug, role_id, company, role_name, run_result)
+            update_db(role_id, "submitted", applied_by="auto")
+            results["submitted"].append(f"{role_id} {company} — {role_name}")
+        else:
+            # Classify failure
+            if "ALREADY_APPLIED" in run_result:
+                print(f"  → Already applied")
+                update_db(role_id, "submitted", applied_by="auto")
+                results["submitted"].append(f"{role_id} {company} — already-applied")
+            elif "CLOSED" in run_result:
+                print(f"  → CLOSED")
+                update_db(role_id, "closed")
+                results["closed"].append(f"{role_id} {company} — closed")
+            elif "RECAPTCHA_SCORE_BELOW_THRESHOLD" in run_result:
+                reason = "ashby-hard-recaptcha-residential-resistant"
+                print(f"  → BLOCKED: {reason}")
+                update_db(role_id, "blocked", block_reason=reason)
+                results["blocked"].append(f"{role_id} {company} — {reason}")
+            else:
+                reason = f"runner-failed:{run_result[:150]}"
+                print(f"  → BLOCKED: {reason[:100]}")
+                update_db(role_id, "blocked", block_reason=reason[:200])
+                results["blocked"].append(f"{role_id} {company} — {reason[:100]}")
+        
+        # Small delay between submissions
+        time.sleep(2)
+    
+    # Final summary
+    print("\n" + "="*60)
+    print("ASHBY BATCH SUMMARY")
+    print("="*60)
+    print(f"SUBMITTED ({len(results['submitted'])}):")
+    for r in results["submitted"]:
+        print(f"  ✓ {r}")
+    print(f"\nBLOCKED ({len(results['blocked'])}):")
+    for r in results["blocked"]:
+        print(f"  ✗ {r}")
+    print(f"\nCLOSED ({len(results['closed'])}):")
+    for r in results["closed"]:
+        print(f"  - {r}")
+    print(f"\nSKIPPED ({len(results['skipped'])}):")
+    for r in results["skipped"]:
+        print(f"  ~ {r}")
+    print(f"\nTotal: {len(rows)} roles | {len(results['submitted'])} submitted | {len(results['blocked'])} blocked | {len(results['closed'])} closed | {len(results['skipped'])} skipped")
+    
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

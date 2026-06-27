@@ -1,4 +1,4 @@
-# Solutions Engineer, CorporateOS
+# Principal Solutions Engineer, CorporateOS
 
 **Company:** Anduril Industries
 **Location:** Seattle, Washington, United States
@@ -58,7 +58,7 @@ We are seeking a highly skilled Solutions Engineer to join our team. You will be
  
 
 US Salary Range
-$129,000—$171,000 USD
+$220,000—$292,000 USD
 
 The salary range for this role is an estimate based on a wide range of compensation factors, inclusive of base salary only. Actual salary offer may vary based on (but not limited to) work experience, education and/or training, critical skills, and/or business considerations. Highly competitive equity grants are included in the majority of full time offers; and are considered part of Anduril's total compensation package. Additionally, Anduril offers top-tier benefits for full-time employees, including: 
 

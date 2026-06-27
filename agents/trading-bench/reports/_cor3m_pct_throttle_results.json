@@ -1,0 +1,479 @@
+{
+  "spy_base": {
+    "name": "SPY_buyhold",
+    "full": {
+      "sharpe": 0.546,
+      "cagr": 0.1103,
+      "total_ret": 7.4319,
+      "maxdd": -0.5519
+    },
+    "IS": {
+      "sharpe": 0.435,
+      "cagr": 0.0865,
+      "total_ret": 1.6928,
+      "maxdd": -0.5519
+    },
+    "OOS": {
+      "sharpe": 0.703,
+      "cagr": 0.1449,
+      "total_ret": 2.1312,
+      "maxdd": -0.3372
+    }
+  },
+  "configs": [
+    {
+      "window": "3yr_756d",
+      "quintile_fwd21": {
+        "0": {
+          "n": 1477,
+          "mean_fwd21_ann": 0.0886
+        },
+        "1": {
+          "n": 768,
+          "mean_fwd21_ann": 0.0413
+        },
+        "2": {
+          "n": 619,
+          "mean_fwd21_ann": 0.076
+        },
+        "3": {
+          "n": 712,
+          "mean_fwd21_ann": 0.1787
+        },
+        "4": {
+          "n": 781,
+          "mean_fwd21_ann": 0.3747
+        }
+      },
+      "throttles": [
+        {
+          "name": "binary_3yr_756d_lowON_thr0.5",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 17.3257,
+          "approx_roundtrips_per_yr": 8.6629,
+          "full": {
+            "sharpe": 0.374,
+            "cagr": 0.0334,
+            "total_ret": 0.7708,
+            "maxdd": -0.2242
+          },
+          "IS": {
+            "sharpe": 0.337,
+            "cagr": 0.0269,
+            "total_ret": 0.2675,
+            "maxdd": -0.2242
+          },
+          "OOS": {
+            "sharpe": 0.41,
+            "cagr": 0.0405,
+            "total_ret": 0.3971,
+            "maxdd": -0.2164
+          },
+          "corr_to_spy_daily": 0.492
+        },
+        {
+          "name": "binary_3yr_756d_highON_thr0.5",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 17.3833,
+          "approx_roundtrips_per_yr": 8.6916,
+          "full": {
+            "sharpe": 0.663,
+            "cagr": 0.1083,
+            "total_ret": 4.9668,
+            "maxdd": -0.3278
+          },
+          "IS": {
+            "sharpe": 0.81,
+            "cagr": 0.123,
+            "total_ret": 1.8201,
+            "maxdd": -0.2206
+          },
+          "OOS": {
+            "sharpe": 0.533,
+            "cagr": 0.0929,
+            "total_ret": 1.1158,
+            "maxdd": -0.3278
+          },
+          "corr_to_spy_daily": 0.87
+        },
+        {
+          "name": "binary_3yr_756d_lowON_thr0.8",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 11.2243,
+          "approx_roundtrips_per_yr": 5.6122,
+          "full": {
+            "sharpe": 0.587,
+            "cagr": 0.0746,
+            "total_ret": 2.4926,
+            "maxdd": -0.226
+          },
+          "IS": {
+            "sharpe": 0.654,
+            "cagr": 0.0748,
+            "total_ret": 0.9065,
+            "maxdd": -0.165
+          },
+          "OOS": {
+            "sharpe": 0.535,
+            "cagr": 0.0744,
+            "total_ret": 0.832,
+            "maxdd": -0.226
+          },
+          "corr_to_spy_daily": 0.687
+        },
+        {
+          "name": "binary_3yr_756d_highON_thr0.8",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 17.6135,
+          "approx_roundtrips_per_yr": 8.8068,
+          "full": {
+            "sharpe": 0.732,
+            "cagr": 0.1306,
+            "total_ret": 7.4414,
+            "maxdd": -0.3372
+          },
+          "IS": {
+            "sharpe": 0.83,
+            "cagr": 0.1355,
+            "total_ret": 2.1146,
+            "maxdd": -0.2206
+          },
+          "OOS": {
+            "sharpe": 0.65,
+            "cagr": 0.1255,
+            "total_ret": 1.7103,
+            "maxdd": -0.3372
+          },
+          "corr_to_spy_daily": 0.941
+        },
+        {
+          "name": "binary_3yr_756d_lowON_thr0.9",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 6.0439,
+          "approx_roundtrips_per_yr": 3.0219,
+          "full": {
+            "sharpe": 0.727,
+            "cagr": 0.1098,
+            "total_ret": 5.1112,
+            "maxdd": -0.245
+          },
+          "IS": {
+            "sharpe": 0.727,
+            "cagr": 0.0965,
+            "total_ret": 1.2796,
+            "maxdd": -0.2311
+          },
+          "OOS": {
+            "sharpe": 0.736,
+            "cagr": 0.1241,
+            "total_ret": 1.6809,
+            "maxdd": -0.245
+          },
+          "corr_to_spy_daily": 0.804
+        },
+        {
+          "name": "binary_3yr_756d_highON_thr0.9",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 13.0087,
+          "approx_roundtrips_per_yr": 6.5043,
+          "full": {
+            "sharpe": 0.715,
+            "cagr": 0.131,
+            "total_ret": 7.486,
+            "maxdd": -0.3372
+          },
+          "IS": {
+            "sharpe": 0.815,
+            "cagr": 0.1369,
+            "total_ret": 2.1487,
+            "maxdd": -0.2206
+          },
+          "OOS": {
+            "sharpe": 0.63,
+            "cagr": 0.1248,
+            "total_ret": 1.6951,
+            "maxdd": -0.3372
+          },
+          "corr_to_spy_daily": 0.966
+        },
+        {
+          "name": "banded3_3yr_756d_lowON",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 15.714,
+          "approx_roundtrips_per_yr": 7.857,
+          "full": {
+            "sharpe": 0.425,
+            "cagr": 0.0362,
+            "total_ret": 0.8542,
+            "maxdd": -0.2172
+          },
+          "IS": {
+            "sharpe": 0.347,
+            "cagr": 0.026,
+            "total_ret": 0.2578,
+            "maxdd": -0.2172
+          },
+          "OOS": {
+            "sharpe": 0.497,
+            "cagr": 0.0471,
+            "total_ret": 0.4741,
+            "maxdd": -0.1467
+          },
+          "corr_to_spy_daily": 0.563
+        },
+        {
+          "name": "banded3_3yr_756d_highON",
+          "n_days": 4378,
+          "turns_per_yr_oneway": 15.7716,
+          "approx_roundtrips_per_yr": 7.8858,
+          "full": {
+            "sharpe": 0.681,
+            "cagr": 0.1061,
+            "total_ret": 4.7626,
+            "maxdd": -0.3198
+          },
+          "IS": {
+            "sharpe": 0.854,
+            "cagr": 0.1249,
+            "total_ret": 1.8634,
+            "maxdd": -0.2206
+          },
+          "OOS": {
+            "sharpe": 0.524,
+            "cagr": 0.0865,
+            "total_ret": 1.0125,
+            "maxdd": -0.3198
+          },
+          "corr_to_spy_daily": 0.885
+        }
+      ]
+    },
+    {
+      "window": "2yr_504d",
+      "quintile_fwd21": {
+        "0": {
+          "n": 1374,
+          "mean_fwd21_ann": 0.0758
+        },
+        "1": {
+          "n": 793,
+          "mean_fwd21_ann": 0.0372
+        },
+        "2": {
+          "n": 752,
+          "mean_fwd21_ann": 0.0377
+        },
+        "3": {
+          "n": 726,
+          "mean_fwd21_ann": 0.134
+        },
+        "4": {
+          "n": 964,
+          "mean_fwd21_ann": 0.2656
+        }
+      },
+      "throttles": [
+        {
+          "name": "binary_2yr_504d_lowON_thr0.5",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 20.4104,
+          "approx_roundtrips_per_yr": 10.2052,
+          "full": {
+            "sharpe": 0.143,
+            "cagr": 0.0126,
+            "total_ret": 0.2581,
+            "maxdd": -0.2874
+          },
+          "IS": {
+            "sharpe": -0.008,
+            "cagr": -0.0007,
+            "total_ret": -0.0065,
+            "maxdd": -0.2874
+          },
+          "OOS": {
+            "sharpe": 0.301,
+            "cagr": 0.0284,
+            "total_ret": 0.2663,
+            "maxdd": -0.2255
+          },
+          "corr_to_spy_daily": 0.445
+        },
+        {
+          "name": "binary_2yr_504d_highON_thr0.5",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 20.4648,
+          "approx_roundtrips_per_yr": 10.2324,
+          "full": {
+            "sharpe": 0.496,
+            "cagr": 0.0914,
+            "total_ret": 3.986,
+            "maxdd": -0.4468
+          },
+          "IS": {
+            "sharpe": 0.423,
+            "cagr": 0.0802,
+            "total_ret": 1.1531,
+            "maxdd": -0.4468
+          },
+          "OOS": {
+            "sharpe": 0.59,
+            "cagr": 0.1047,
+            "total_ret": 1.3158,
+            "maxdd": -0.3047
+          },
+          "corr_to_spy_daily": 0.895
+        },
+        {
+          "name": "binary_2yr_504d_lowON_thr0.8",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 11.8108,
+          "approx_roundtrips_per_yr": 5.9054,
+          "full": {
+            "sharpe": 0.49,
+            "cagr": 0.0624,
+            "total_ret": 2.0407,
+            "maxdd": -0.2505
+          },
+          "IS": {
+            "sharpe": 0.486,
+            "cagr": 0.0613,
+            "total_ret": 0.8065,
+            "maxdd": -0.2099
+          },
+          "OOS": {
+            "sharpe": 0.494,
+            "cagr": 0.0637,
+            "total_ret": 0.6832,
+            "maxdd": -0.2505
+          },
+          "corr_to_spy_daily": 0.627
+        },
+        {
+          "name": "binary_2yr_504d_highON_thr0.8",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 17.1991,
+          "approx_roundtrips_per_yr": 8.5996,
+          "full": {
+            "sharpe": 0.461,
+            "cagr": 0.0908,
+            "total_ret": 3.9381,
+            "maxdd": -0.5148
+          },
+          "IS": {
+            "sharpe": 0.341,
+            "cagr": 0.068,
+            "total_ret": 0.923,
+            "maxdd": -0.5148
+          },
+          "OOS": {
+            "sharpe": 0.611,
+            "cagr": 0.1183,
+            "total_ret": 1.568,
+            "maxdd": -0.3347
+          },
+          "corr_to_spy_daily": 0.958
+        },
+        {
+          "name": "binary_2yr_504d_lowON_thr0.9",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 10.7222,
+          "approx_roundtrips_per_yr": 5.3611,
+          "full": {
+            "sharpe": 0.519,
+            "cagr": 0.0783,
+            "total_ret": 2.9952,
+            "maxdd": -0.3841
+          },
+          "IS": {
+            "sharpe": 0.322,
+            "cagr": 0.0491,
+            "total_ret": 0.61,
+            "maxdd": -0.3841
+          },
+          "OOS": {
+            "sharpe": 0.763,
+            "cagr": 0.1138,
+            "total_ret": 1.4815,
+            "maxdd": -0.1846
+          },
+          "corr_to_spy_daily": 0.738
+        },
+        {
+          "name": "binary_2yr_504d_highON_thr0.9",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 15.022,
+          "approx_roundtrips_per_yr": 7.511,
+          "full": {
+            "sharpe": 0.514,
+            "cagr": 0.1038,
+            "total_ret": 5.1413,
+            "maxdd": -0.5148
+          },
+          "IS": {
+            "sharpe": 0.366,
+            "cagr": 0.0745,
+            "total_ret": 1.0421,
+            "maxdd": -0.5148
+          },
+          "OOS": {
+            "sharpe": 0.697,
+            "cagr": 0.1395,
+            "total_ret": 2.0074,
+            "maxdd": -0.3372
+          },
+          "corr_to_spy_daily": 0.976
+        },
+        {
+          "name": "banded3_2yr_504d_lowON",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 18.0156,
+          "approx_roundtrips_per_yr": 9.0078,
+          "full": {
+            "sharpe": 0.37,
+            "cagr": 0.0298,
+            "total_ret": 0.7146,
+            "maxdd": -0.2257
+          },
+          "IS": {
+            "sharpe": 0.298,
+            "cagr": 0.0227,
+            "total_ret": 0.2504,
+            "maxdd": -0.2257
+          },
+          "OOS": {
+            "sharpe": 0.448,
+            "cagr": 0.0381,
+            "total_ret": 0.3712,
+            "maxdd": -0.1943
+          },
+          "corr_to_spy_daily": 0.501
+        },
+        {
+          "name": "banded3_2yr_504d_highON",
+          "n_days": 4630,
+          "turns_per_yr_oneway": 18.07,
+          "approx_roundtrips_per_yr": 9.035,
+          "full": {
+            "sharpe": 0.418,
+            "cagr": 0.0742,
+            "total_ret": 2.7235,
+            "maxdd": -0.4796
+          },
+          "IS": {
+            "sharpe": 0.313,
+            "cagr": 0.0567,
+            "total_ret": 0.73,
+            "maxdd": -0.4796
+          },
+          "OOS": {
+            "sharpe": 0.55,
+            "cagr": 0.0952,
+            "total_ret": 1.1523,
+            "maxdd": -0.3163
+          },
+          "corr_to_spy_daily": 0.916
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,15 @@
 # Cover answers — Sierra, Security Technical Program Manager (sierra-53a8fd83-3e58-41a4-b014-2da447db820b)
 
+## Full Name
+
+Cyrus Shekari
+
 ## What's your favorite  junk food?
 
-Hot Cheetos, no contest. They're the default snack whenever I'm deep in a planning doc or grinding through a late-night program review. Bonus points if there's a lime wedge nearby.
+Hot Cheetos. No contest.
 
 ## Anything else? (Optional)
 
-Just that the scope of this role lines up really cleanly with what I've been doing at Azure: running cross-functional resilience and recovery programs that touch infra, identity boundaries, secure execution defaults, and incident readiness. I'd love the chance to bring that to Sierra at a stage where the security primitives are still being shaped, and I'm happy to come down to SF for onsite conversations whenever it's useful.
+I'm genuinely excited about this role. The work I've done at Microsoft, scaling security and resilience programs across Azure, building internal tooling to reduce toil, and translating loosely defined infrastructure risk into structured execution, maps directly to what Sierra is looking for. I've operated in fast-moving, ambiguous environments where the program didn't exist yet and had to be built from scratch, and that's exactly the kind of challenge I want more of.
+
+Sierra's focus on AI-native customer experiences and the trust that requires at the platform and security level is what draws me here specifically. I'm looking forward to the conversation.

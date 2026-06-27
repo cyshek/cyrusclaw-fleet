@@ -1,0 +1,58 @@
+=== reconcile @ 20260626T153001Z ===
+rc: 0
+Before: {'filled': 84}
+Nothing to do — no non-terminal rows.
+=== cron_tick.sh @ 20260626T153001Z ===
+strategies: breakout_xlk__mut_c382b1 sma_crossover_qqq_regime sma_crossover_qqq_rth rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo allocator_blend
+tick rc: 0
+--- tick output ---
+[macd_momentum_iwm] BUY 0.403885583 IWM @ $299.47 | reason: MACD=0.6286 crossed above signal=0.6214 and MACD>0 (momentum bullish)
+=== end ===
+--- post rc: 0 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+{
+  "action": "send",
+  "channel": "discord",
+  "dryRun": false,
+  "handledBy": "core",
+  "messageId": "1520088883751026699",
+  "payload": {
+    "channel": "discord",
+    "to": "channel:1508503706545557656",
+    "via": "direct",
+    "mediaUrl": null,
+    "result": {
+      "receipt": {
+        "primaryPlatformMessageId": "1520088883751026699",
+        "platformMessageIds": [
+          "1520088883751026699"
+        ],
+        "parts": [
+          {
+            "platformMessageId": "1520088883751026699",
+            "kind": "text",
+            "index": 0,
+            "raw": {
+              "channel": "discord",
+              "messageId": "1520088883751026699",
+              "channelId": "1508503706545557656"
+            }
+          }
+        ],
+        "sentAt": 1782487831951,
+        "raw": [
+          {
+            "channel": "discord",
+            "messageId": "1520088883751026699",
+            "channelId": "1508503706545557656"
+          }
+        ]
+      },
+      "messageId": "1520088883751026699",
+      "channel": "discord"
+    }
+  }
+}
+=== posted ===

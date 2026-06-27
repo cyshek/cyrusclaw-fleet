@@ -1,0 +1,133 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/stepful/870681c0-c300-44fe-824e-76ba588194ed",
+  "org": "stepful",
+  "job_id": "870681c0-c300-44fe-824e-76ba588194ed",
+  "job_title": "Student Success Program Manager",
+  "job_location": "Remote, United States",
+  "fetched_at": "2026-06-26T15:25:39Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8__systemfield_name"
+    },
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_827caa0d-5c61-4367-b58d-ad58c211f17e",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_827caa0d-5c61-4367-b58d-ad58c211f17e"
+    },
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8__systemfield_email"
+    },
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_3e873b80-bee6-4b5f-9317-58e039f27cbb",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_3e873b80-bee6-4b5f-9317-58e039f27cbb"
+    },
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8__systemfield_resume"
+    },
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_5bc3be0d-8b1a-410c-9baa-bf550b35dc8e",
+      "label": "This role requires you to work standard Eastern Time business hours (Monday–Friday, 9am–5pm ET), regardless of your location. Are you able to meet this requirement?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_5bc3be0d-8b1a-410c-9baa-bf550b35dc8e"
+    },
+    {
+      "id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_f27a3a2e-e454-4282-a035-73a537db3a8a",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "a24feebe-f730-4746-bd28-8ad2e54f06b8_f27a3a2e-e454-4282-a035-73a537db3a8a"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

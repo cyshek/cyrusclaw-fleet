@@ -1,9 +1,15 @@
 # Cover answers — Sierra, Product Manager, Agent Studio (sierra-5aaa2eeb-92bc-4b0a-901e-8e091eff819e)
 
+## Full Name
+
+Cyrus Shekari
+
 ## What's your favorite  junk food?
 
-Hot Cheetos, no contest. They've fueled more late-night roadmap docs and product specs than I'd like to admit.
+Takis. The blue heat ones specifically - once I start I basically can't stop.
 
 ## Anything else? (Optional)
 
-Just that Agent Studio is exactly the kind of product I want to build next. At Microsoft I've spent the last two years shaping a 0→1 internal platform for resilience validation, including a build→test→release loop, simulation tooling, and an LLM-powered planning copilot that cut cycle time 39%. The shape of those problems (abstractions for builders, evaluation frameworks for non-deterministic systems, copilots woven into the workflow) maps directly to what Sierra is building, and I'd love to bring that experience to your team.
+I'm genuinely excited about this role. The Agent Development Life Cycle Sierra has defined - Analyze, Build, Test, Release - maps almost exactly to how I've been thinking about agent systems at Microsoft. I built out that loop practically when I led a rack-level drill program from zero, owned the build-test-release iteration, and then layered an AI planning agent on top to cut cycle time by 39%. The abstraction problems Agent Studio is solving, how to give builders the right primitives without burying them in complexity, are the exact product problems I want to be working on.
+
+I'm also relocating and fully open to being in San Francisco, so the in-person culture at Sierra is a feature, not a friction point for me.

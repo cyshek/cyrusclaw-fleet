@@ -4,16 +4,16 @@
   "job_id": "7687021",
   "job_title": "Solutions Engineer",
   "job_location": "Remote United States | PST/MST ",
-  "fetched_at": "2026-06-04T12:26:27Z",
+  "fetched_at": "2026-06-27T00:51:31Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/beyondtrust/jobs/7687021?questions=true",
   "ready_to_submit": false,
   "counts": {
     "total_fields": 23,
     "filled": 13,
-    "filled_needs_review": 2,
+    "filled_needs_review": 1,
     "declined": 3,
-    "unresolved": 5,
-    "blockers": 4
+    "unresolved": 6,
+    "blockers": 5
   },
   "fields": [
     {
@@ -251,10 +251,10 @@
       "label": "Please confirm the basis of your right to work in the country of employment:",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "United States",
-      "source": "address.country | NOTE: 'United States' not literally in options ['I have the right to work in the country of employment on a permanent basis', 'I have or will obtain a work permit not requiring sponsorship/immigration support from BeyondTrust', 'I will require sponsorship or other immigration support to obtain the right to work in the country of employment']",
-      "status": "filled_needs_review",
-      "matched_rule": "country",
+      "value": "__UNRESOLVED__",
+      "source": "work_authorized: no matching option among ['I have the right to work in the country of employment on a permanent basis', 'I have or will obtain a work permit not requiring sponsorship/immigration support from BeyondTrust', 'I will require sponsorship or other immigration support to obtain the right to work in the country of employment']",
+      "status": "unresolved",
+      "matched_rule": "work_authorized",
       "options": [
         {
           "label": "I have the right to work in the country of employment on a permanent basis",
@@ -501,6 +501,12 @@
       "reason": "no LABEL_RULES match for label='What is your desired OTE range (base + variable)?'"
     },
     {
+      "id": "question_64794894",
+      "label": "Please confirm the basis of your right to work in the country of employment:",
+      "required": true,
+      "reason": "work_authorized: no matching option among ['I have the right to work in the country of employment on a permanent basis', 'I have or will obtain a work permit not requiring sponsorship/immigration support from BeyondTrust', 'I will require sponsorship or other immigration support to obtain the right to work in the country of employment']"
+    },
+    {
       "id": "question_64794895",
       "label": "Please review and acknowledge BeyondTrust's",
       "required": true,
@@ -522,6 +528,11 @@
       "id": "question_64794893",
       "label": "What is your desired OTE range (base + variable)?",
       "reason": "no LABEL_RULES match for label='What is your desired OTE range (base + variable)?'"
+    },
+    {
+      "id": "question_64794894",
+      "label": "Please confirm the basis of your right to work in the country of employment:",
+      "reason": "work_authorized: no matching option among ['I have the right to work in the country of employment on a permanent basis', 'I have or will obtain a work permit not requiring sponsorship/immigration support from BeyondTrust', 'I will require sponsorship or other immigration support to obtain the right to work in the country of employment']"
     },
     {
       "id": "question_64794895",

@@ -12,7 +12,7 @@
 
 Avoca is transforming how home service companies engage with their customers. Our AI-powered conversational agents handle every high-value inbound call, from booking jobs, qualifying leads, and driving higher revenue, all at a speed and consistency unmatched by human call centers.
 
-We're a Series B startup backed by Kleiner Perkins, Meritech Capital, General Catalyst, and other top-tier investors, with $125M raised and a $1B valuation. We grew 10x in 2025 and have scaled to 100+ employees in under two years across our NYC headquarters and Santa Barbara office.
+We're a Series B startup backed by Kleiner Perkins, Meritech Capital, General Catalyst, and other top-tier investors, with $125M raised and a $1B valuation. We grew 10x in 2025 and have scaled to 130+ employees in under two years across our NYC headquarters and Santa Barbara office.
 
 In a $1T+ market where 85% of missed calls go to competitors, we're building the category-defining platform for AI-driven customer engagement, serving the largest brands in home services. With high-energy, in-office teams in both locations, every hire here has an immediate and visible impact.
 
@@ -89,3 +89,5 @@ The best fit here is someone who obsesses over product longevity, not just indiv
 # **Why Avoca**
 
 At Avoca, you’ll be part of a team that’s building a category-defining company at the center of a massive market opportunity. We’re a fast-moving, collaborative team with a culture designed for builders who thrive on speed, iteration, and impact.
+
+*Avoca provides equal employment opportunities to applicants and employees without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, protected veteran status, or disability.*

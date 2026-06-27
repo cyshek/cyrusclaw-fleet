@@ -8,13 +8,15 @@
 
 ---
 
-# **Our mission is to make exceptional healthcare accessible anytime, anywhere, for anyone.**
+**Building Healthcare That Remembers** 
 
-At Assort Health, we believe healthcare should feel effortless and connected — quick answers, clear communication, and seamless access to care. That’s why we’re building a new foundation for how patients and providers connect, driven by AI, built to embrace the complexities of healthcare, and tailored to each provider’s unique needs.
+Every time you call a doctor's office, the system forgets you the moment you hang up. You wait on hold, explain everything from scratch, get bounced between lines, and hope someone follows up. Everyone has felt this. No one should have to. 
 
-Assort is the most comprehensive patient experience platform powered by specialty-specific agentic AI. Assort’s omnichannel AI agents seamlessly integrate with EHR/PMS and complicated provider preferences to eliminate lengthy hold times and inefficiencies that stand in the way of patients getting the care they need.
+At Assort Health, we're building one continuous conversation for every patient. An AI agent that knows who you are, remembers how you like to be reached, and carries that context from your first symptom to your full recovery. What began as the first voice AI agent to schedule a specialty appointment has become the largest proprietary specialty dataset in healthcare: 190 million patient interactions, 62,000 care protocols, 1.6 million decision pathways. 
 
-Since launching in 2023, Assort has managed **over 150M+ patient interactions**, slashing average hold times from **11 minutes to 1 minute**. Our platform now handles calls for **thousands of providers** with **98%+ resolution rates** and **99% scheduling accuracy**. Patient satisfaction averages **4.5/5 over 52K reviews**, and we’ve achieved **20× revenue growth in 2025**. We’re scaling rapidly and expanding adoption across the entire healthcare industry.
+We went from 15 people in 2025 and will cross 250 by the end of 2026. Revenue is up 20x in 15 months and we've raised $222 million, including a recent [$120 million Series C](https://www.assorthealth.com/blog/assort-health-raises-120-million-series-c-to-scale-largest-deployment-of-ai-agents-for-the-patient-journey) at a $1.2 billion valuation. We've also been named to the Forbes Cloud 100 and the 2026 Enterprise Tech 30 as the only healthcare AI company on the list!
+
+Healthcare spends $1.1 trillion a year on administration instead of care. If you want to help change that, apply below.
 
 # **About the Role**
 

@@ -8,15 +8,19 @@
 
 ---
 
-## **About Us:**
+## About Us:
 
-**Modal provides the infrastructure foundation for AI teams.** With instant GPU access, sub-second container startups, and native storage, Modal makes it simple to train models, run batch jobs, and serve low-latency inference. We have thousands of customers who rely on us for production AI workloads, including Lovable, Scale AI, Substack, and Suno.
+**AI needs a new infrastructure layer. We're building it at Modal.**
 
-We're a fast-growing team based out of NYC, SF, and Stockholm. We've hit 9-figure ARR and recently [raised a Series B](https://modal.com/blog/announcing-our-series-b) at a $1.1B valuation. Our investors include [Lux Capital](https://www.luxcapital.com/), [Redpoint Ventures](https://www.redpoint.com/), [Amplify Partners](https://www.amplifypartners.com/), and [Elad Gil](https://eladgil.com/).
+Every era of computing brought new workloads that previous infrastructure couldn't support: mainframes, databases, and the cloud. Each time, the company that rebuilt the layer underneath defined the decade. AI is no different, except it touches everything instead of one slice, and the window to build the layer underneath it is open right now.
 
-Working at Modal means joining one of the fastest-growing AI infrastructure organizations at an early stage, with many opportunities to grow within the company. Our team includes creators of popular open-source projects (e.g. [Seaborn](https://github.com/mwaskom/seaborn), [Luigi](https://github.com/spotify/luigi)), academic researchers, international olympiad medalists, and experienced engineering and product leaders with decades of experience.
+Our customers include category-defining companies like [Lovable](https://modal.com/blog/lovable-case-study), [Ramp](https://modal.com/blog/how-ramp-built-a-full-context-background-coding-agent-on-modal), Cognition, DoorDash, and Suno. They rely on Modal for instant GPU access, sub-second container starts, and native storage, so it's simple to serve low-latency inference, fine-tune models, and access production-ready sandboxes at scale.
 
-## **The Role:**
+We recently raised a $355M [Series C](https://modal.com/blog/modal-series-c) at a $4.65B valuation, led by General Catalyst and Redpoint Ventures. We've crossed $300M+ ARR and grown fivefold since September.
+
+Our team includes creators of popular open-source projects (e.g.,[Seaborn](https://github.com/mwaskom/seaborn),[Luig**i**](https://github.com/spotify/luigi)), academic researchers, international olympiad medalists, and experienced engineering and product leaders with decades of experience.
+
+## The Role:
 
 We're looking for Forward Deployed Engineers on our engineering team who want to work at the intersection of deep infrastructure work and direct customer impact. As an FDE, you'll partner with leading AI companies and foundation labs on cloud architecture, networking, storage, containerization, sandboxing, and more — helping them design and ship production infrastructure on Modal's platform.
 
@@ -34,7 +38,7 @@ The FDE team today includes world-class software engineers, computational scient
 
 - Conduct technical demos, experiments, and proof-of-concepts that make Modal's infrastructure advantages tangible
 
-## **Requirements:**
+## Requirements:
 
 - 3+ years of professional software engineering experience
 

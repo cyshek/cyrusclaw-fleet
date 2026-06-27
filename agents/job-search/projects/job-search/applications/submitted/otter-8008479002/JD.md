@@ -1,4 +1,4 @@
-# Product Manager - Data Products - Seattle, WA
+# Product Manager - Data Products
 
 **Company:** Otter
 **Location:** Seattle, WA

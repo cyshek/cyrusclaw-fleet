@@ -1,9 +1,7 @@
-SUBMITTED — 2026-06-25T01:49:42+00:00
+SUBMITTED — 2026-06-27
 
-role_id: 1248
-slug: tessera-labs-ea05dfd6-92d7-4ccc-aa53-2f31a85928c5
-ats: ashby
-submitted_by: auto (residential)
-confirmation: submitted
-screenshot: n/a
-resume_attached: yes
+role_id: 2802
+company: Tessera Labs
+submitted_by: auto
+applied_on: 2026-06-27
+confirmation: FormSubmitSuccess

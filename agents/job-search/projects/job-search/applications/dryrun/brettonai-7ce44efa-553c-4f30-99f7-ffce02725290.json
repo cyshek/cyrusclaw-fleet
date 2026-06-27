@@ -5,21 +5,21 @@
   "job_id": "7ce44efa-553c-4f30-99f7-ffce02725290",
   "job_title": "Solutions Engineer",
   "job_location": "Remote- United States",
-  "fetched_at": "2026-06-09T08:05:27Z",
+  "fetched_at": "2026-06-27T08:59:19Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 10,
-    "filled": 9,
+    "filled": 10,
     "filled_needs_review": 0,
     "declined": 0,
     "needs_essay": 0,
-    "unresolved": 1,
+    "unresolved": 0,
     "blockers": 0
   },
   "fields": [
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0__systemfield_name",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,11 +29,11 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0__systemfield_name",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129__systemfield_name",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0__systemfield_email",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -43,11 +43,11 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0__systemfield_email",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129__systemfield_email",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_c1f22dd5-7553-429b-bd86-daf40b8d4ee8",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_c1f22dd5-7553-429b-bd86-daf40b8d4ee8",
       "label": "LinkedIn URL",
       "type": "input_text",
       "required": true,
@@ -57,11 +57,11 @@
       "matched_rule": "linkedin",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_c1f22dd5-7553-429b-bd86-daf40b8d4ee8",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_c1f22dd5-7553-429b-bd86-daf40b8d4ee8",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0__systemfield_resume",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -71,11 +71,11 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0__systemfield_resume",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129__systemfield_resume",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_8d057b16-9895-4d47-936d-e30f6042e771",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_8d057b16-9895-4d47-936d-e30f6042e771",
       "label": "Are you willing to work in the office 5 days a week in downtown San Francisco, CA? ",
       "type": "multi_value_single_select",
       "required": true,
@@ -94,17 +94,17 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_8d057b16-9895-4d47-936d-e30f6042e771",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_8d057b16-9895-4d47-936d-e30f6042e771",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_d06adc24-e5c0-4488-a3c7-3ff06f141277",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_d06adc24-e5c0-4488-a3c7-3ff06f141277",
       "label": "If you  don't currently live in the Bay Area, are you open to relocation? ",
       "type": "multi_value_single_select",
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "willing_to_relocate: no matching option among [\"Yes, I'm open to relocation\", \"No, I'm not open to relocation at this time\", 'Maybe, I might be open to relocation for the right role']",
-      "status": "unresolved",
+      "value": "Yes, I'm open to relocation",
+      "source": "willing_to_relocate: first non-No city option",
+      "status": "filled",
       "matched_rule": "willing_to_relocate",
       "options": [
         {
@@ -121,11 +121,11 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_d06adc24-e5c0-4488-a3c7-3ff06f141277",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_d06adc24-e5c0-4488-a3c7-3ff06f141277",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_dbd1bcd6-4f9f-451d-adda-34088ac87adb",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_dbd1bcd6-4f9f-451d-adda-34088ac87adb",
       "label": "Are you legally authorized to work in the United States?",
       "type": "multi_value_single_select",
       "required": true,
@@ -144,11 +144,11 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_dbd1bcd6-4f9f-451d-adda-34088ac87adb",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_dbd1bcd6-4f9f-451d-adda-34088ac87adb",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_cd3538a2-b83c-456a-9112-a5dbea353423",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_cd3538a2-b83c-456a-9112-a5dbea353423",
       "label": "Will you now or in the future require Greenlight to sponsor an immigration case in order to employ you?",
       "type": "multi_value_single_select",
       "required": true,
@@ -167,11 +167,11 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_cd3538a2-b83c-456a-9112-a5dbea353423",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_cd3538a2-b83c-456a-9112-a5dbea353423",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_4f0b6780-c2ee-4b1a-bfcb-9f825618f3f2",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_4f0b6780-c2ee-4b1a-bfcb-9f825618f3f2",
       "label": "GitHub or Portfolio Link",
       "type": "input_text",
       "required": false,
@@ -181,11 +181,11 @@
       "matched_rule": "github",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_4f0b6780-c2ee-4b1a-bfcb-9f825618f3f2",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_4f0b6780-c2ee-4b1a-bfcb-9f825618f3f2",
       "section": "Application Form"
     },
     {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_fdddbd42-ebc9-4e48-8070-9529078b9881",
+      "id": "0525b4e9-125b-4411-b241-4df40193b129_fdddbd42-ebc9-4e48-8070-9529078b9881",
       "label": "What excites you about working at a startup? ",
       "type": "textarea",
       "required": false,
@@ -195,17 +195,10 @@
       "matched_rule": "why_company_essay",
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "401f2020-2489-4e70-9fa7-03c19437b2d0_fdddbd42-ebc9-4e48-8070-9529078b9881",
+      "_ashby_id": "0525b4e9-125b-4411-b241-4df40193b129_fdddbd42-ebc9-4e48-8070-9529078b9881",
       "section": "Application Form"
     }
   ],
-  "unresolved": [
-    {
-      "id": "401f2020-2489-4e70-9fa7-03c19437b2d0_d06adc24-e5c0-4488-a3c7-3ff06f141277",
-      "label": "If you  don't currently live in the Bay Area, are you open to relocation? ",
-      "required": false,
-      "reason": "willing_to_relocate: no matching option among [\"Yes, I'm open to relocation\", \"No, I'm not open to relocation at this time\", 'Maybe, I might be open to relocation for the right role']"
-    }
-  ],
+  "unresolved": [],
   "blockers": []
 }

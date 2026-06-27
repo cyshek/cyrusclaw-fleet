@@ -5,7 +5,7 @@
 **Apply:** https://geico.wd1.myworkdayjobs.com/External/job/Bethesda-MD/Product-Manager_R0062160/apply
 **Workday tenant:** geico
 **Req ID:** R0062160
-**Posted on:** Posted Today
+**Posted on:** Posted 16 Days Ago
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---

@@ -4,12 +4,12 @@
   "job_id": "4122946008",
   "job_title": "Customer Engineer",
   "job_location": "United States (Remote)",
-  "fetched_at": "2026-06-02T02:19:52Z",
+  "fetched_at": "2026-06-27T00:51:32Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/cresta/jobs/4122946008?questions=true",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 14,
-    "filled": 10,
+    "total_fields": 17,
+    "filled": 13,
     "filled_needs_review": 0,
     "declined": 4,
     "unresolved": 0,
@@ -53,7 +53,7 @@
       "id": "phone",
       "label": "Phone",
       "type": "input_text",
-      "required": false,
+      "required": true,
       "value": "346-804-0227",
       "source": "contact.phone",
       "status": "filled",
@@ -245,6 +245,42 @@
         }
       ],
       "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
     }
   ],
   "unresolved": [],

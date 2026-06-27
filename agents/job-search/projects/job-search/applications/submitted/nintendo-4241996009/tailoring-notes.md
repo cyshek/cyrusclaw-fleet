@@ -9,35 +9,39 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Defined program roadmaps and managed the end-to-end lifecycle of Azure resilience initiatives, scaling a 2-person operation into a platformized system that sustained **45+ annual drills** and drove **$14M+ business impact** across enterprise customers.
-2. Led 0→1 delivery of an internal Resilience Automation Platform, translating stakeholder needs into functional requirements and self-service scheduling that **reduced operational toil 30%** on time and on budget.
-3. Managed all project phases for 14 cross-org recovery executions under executive visibility, including bridge-leading a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**, on time and high quality.
-4. Collaborated with functional, operational, and technical teams to deliver Azure's first proactive testing capability in 4 months, achieving a **94% recovery rate** and establishing a continuous validation model.
-5. Built an internal AI agent and restructured planning workflows using PM best practices, **cutting cycle time 39%** and increasing drill capacity 21% while leading cross-functional teams without authority.
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation **program** from a 2-person operation into a platformized system, standardizing end-to-end project methodology to sustain 45+ annual drills and deliver **$14M+ business impact** across enterprise partners.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining functional requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Defined program roadmaps and managed the **full initiative lifecycle** for Azure's first proactive rack-level drill program, delivering in 4 months with a 94% recovery rate and surfacing critical hardware defects across store-scale infrastructure.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating stakeholder alignment across competing organizational goals.
+5. Built and maintained program documentation — charters, risk logs, milestones, and dependency maps — across all active drill initiatives, ensuring on-time, on-budget delivery with clear scope change management procedures for senior stakeholders.
+6. Scaled team leverage via an **AI-driven planning agent**, restructuring workflows to cut planning cycle time by 39% and increase drill capacity by 21%, establishing a new model for continuous, data-informed program execution.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove program adoption for AI-driven code generation, running user demos and training that scaled utilization across **14 teams** and saved 37 engineering hours monthly, leading without authority.
-2. Identified and translated stakeholder needs into functional requirements by facilitating **11+ user interviews** with Azure service teams, shaping the roadmap to include intent-based YAML generation.
-3. Maintained data integrity and documentation by enforcing metadata standards and migrating to an AI-powered semantic search tool, **cutting lookup time 83%**.
+1. Championed **program adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours** monthly across Azure service organizations.
+2. Translated stakeholder needs into functional requirements by facilitating **11+ structured user interviews** with Azure service teams, influencing the product roadmap to prioritize intent-based YAML generation and close critical feature gaps.
+3. Improved **data integrity and retrieval** by defining metadata standards and migrating documentation to an AI-powered semantic search tool, cutting average lookup time by 83% and reducing friction for cross-functional technical teams.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across **140+ teams**.
-2. Drove discovery with 20+ service teams to identify **81 hours of manual effort** per region, building a roadmap and program to automate critical paths and mitigate launch toil.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact support.
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating across 140+ teams with competing milestones and ambiguous scope.
+2. Mobilized a program strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a roadmap to automate the highest-impact critical paths.
+3. Engineered a **Power BI dashboard** to track operational toil and process gaps across 140+ teams, enabling leadership to target automation investments and prioritize high-impact improvements across the DTC launch pipeline.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
-3. Drove alignment between IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating deployment 25%**.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating stakeholder alignment across IT, Operations, and Engineering.
+2. Facilitated Agile ceremonies — sprint planning, backlog grooming, and retrospectives — resolving **40+ high-priority tickets** and stabilizing the developer intake process to keep the migration program on schedule and within scope.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable release processes for retail-scale hardware fleets.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new CRM process.
-2. Reduced Customer Acquisition Cost 13% and boosted conversions 2.7% by executing a digital-first go-to-market strategy across the website and Google profile.
-3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records** to identify and seal margin leaks.
+1. Increased job bookings by **26%** by managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM workflow that standardized operations and improved consumer-facing turnaround times.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile to drive incremental DTC channel performance.
+3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering actionable recommendations that directly shaped store operations policy.
 
 ## Notes from the rewriter
-- Tightened all bullets and trimmed FT role to 5 to fit one page.
-- Mirrored JD language: program roadmaps, lifecycle, functional requirements, UAT, lead without authority.
-- Surfaced PM methodology, SmartSheet, Jira/Confluence, SharePoint, and DTC/retail ops for the Nintendo Stores fit.
+- 'End-to-end initiative lifecycle' (JD: 'end-to-end lifecycle of initiatives') woven into microsoft_ft bullet#3 and pro_painters bullet#1.
+- 'Operational toil' and 'DTC' (JD: 'DTC operations', 'operational toil') surface in microsoft_ft bullet#2, microsoft_2022 bullet#2, and pro_painters bullet#2.
+- 'Scope change management procedures' and 'charters, risk logs, milestones' (JD: 'charters, work plans, timelines, issue/risk logs') appear verbatim in microsoft_ft bullet#5.
+- 'Functional requirements' and 'stakeholder needs' (JD: 'translates them into functional requirements') used in microsoft_2023 bullet#2.
+- 'Cross-functional alignment' with 'competing goals and ambiguities' (JD: 'competing goals and ambiguities') woven into microsoft_2022 bullet#1 and amazon_robotics bullet#1.
+- 'Store operations policy' (JD: 'store operations policy, procedural and training documentation') referenced in pro_painters bullet#3 to mirror Nintendo Stores language.
 

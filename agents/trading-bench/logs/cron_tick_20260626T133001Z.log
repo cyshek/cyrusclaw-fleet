@@ -1,0 +1,19 @@
+=== reconcile @ 20260626T133001Z ===
+rc: 0
+Before: {'filled': 79}
+Nothing to do — no non-terminal rows.
+=== cron_tick.sh @ 20260626T133001Z ===
+strategies: breakout_xlk__mut_c382b1 sma_crossover_qqq_regime sma_crossover_qqq_rth rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo allocator_blend
+tick rc: 0
+--- tick output ---
+[allocator_paper] bar refresh: {"^GSPC": "2026-06-26", "TQQQ": "2026-06-26", "QQQ": "2026-06-26", "SPY": "2026-06-26", "GLD": "2026-06-26", "TLT": "2026-06-26"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-26  Sharpe 0.854 CAGR 20.5% maxDD -34.5%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-26  Sharpe 0.903 CAGR 12.7% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-26  (4117 days)
+    [common-window] TQQQ solo Sharpe 0.854 | ROT solo Sharpe 0.912 | SPX Sharpe 0.766
+[allocator_blend] TRIM 0.01475089000079332 QQQ @ $705.89 | reason: overweight -$10.41 (-0.0148sh) | tgt_w=0.2790 tgt_notional=$16.35 px=$705.89 tgt_qty=0.0232 cur_qty=0.0379202 $delta=-10.41 $thresh=1.00
+[allocator_blend] TRIM 0.0150196400193311 SPY @ $728.36 | reason: overweight -$10.94 (-0.0150sh) | tgt_w=0.2790 tgt_notional=$16.35 px=$728.36 tgt_qty=0.0225 cur_qty=0.0374742 $delta=-10.94 $thresh=1.00
+[allocator_blend] TRIM 0.05903521649149708 TQQQ @ $71.74 | reason: overweight -$4.24 (-0.0590sh) | tgt_w=0.1214 tgt_notional=$7.12 px=$71.74 tgt_qty=0.0992 cur_qty=0.158233 $delta=-4.24 $thresh=1.00
+=== end ===

@@ -2,9 +2,9 @@
   "role_url": "https://job-boards.greenhouse.io/andurilindustries/jobs/5144552007",
   "org": "andurilindustries",
   "job_id": "5144552007",
-  "job_title": "Solutions Engineer, CorporateOS",
+  "job_title": "Principal Solutions Engineer, CorporateOS",
   "job_location": "Seattle, Washington, United States",
-  "fetched_at": "2026-06-03T16:10:27Z",
+  "fetched_at": "2026-06-27T00:46:47Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs/5144552007?questions=true",
   "ready_to_submit": true,
   "counts": {
@@ -131,8 +131,8 @@
       "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "A United States citizen or national",
-      "source": "work_authorization.status=us_citizen (matched ITAR option 'A United States citizen or national')",
+      "value": "None of the above",
+      "source": "work_authorization.status=us_citizen (inverted export Q -> 'None of the above')",
       "status": "filled",
       "matched_rule": "itar_us_person_ack",
       "options": [

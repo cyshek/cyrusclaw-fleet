@@ -1,0 +1,35 @@
+{
+  "_archetype": "Cross-asset 12-1 ABSOLUTE (time-series) momentum across {SPY,TLT,GLD,DBC,UUP}. Genuine cross-asset DNA for the mutation gene pool: equity/bonds/gold/commodities/USD. Hold EW of each asset with 12-1 momentum > 0 (skip the most recent month), else cash. Monthly rebalance. Antonacci-style absolute TSMOM.",
+  "_validated": "reports/XA_TSMOM_12_1_GATE_20260626T164538Z.md \u2014 D+1 lag (audited), 2bps/side on turnover incl cash leg, IS/OOS @ 2018-01, SPY bench, full-period continuous Sharpe. FULL +222.7%/Sh0.75/maxDD-24.9%; OOS +112.7%/Sh1.14/maxDD-10.6% (vs SPY OOS +213%/0.90/-23.9%). Robust plateau (6-1/9-1/12-1/12-0 all OOS Sharpe > SPY 0.90). 2022 rate-shock -1.06% vs SPY -18.18%.",
+  "_thesis": "Risk-orthogonal cross-asset diversifier / mutation parent. LOSES to SPY on raw return in every segment \u2014 it is a Sharpe/drawdown/regime-rotation play, NOT a return machine. Orthogonal-by-construction to the equity-long / leveraged-long pool. Bred from here (vol-target, inverse-vol, modest leverage overlay on the low-DD curve) is where absolute-return upside can come from. NOT standalone-deployable expecting it to out-compound SPY.",
+  "_paper_only": "PAPER ONLY. No real money. NOT scheduled in crontab/cron_tick.sh \u2014 this is a MUTATION-PARENT archetype (gene-pool seed), not a live-traded book. Wiring to a paper clock is a separate later decision if an offspring graduates.",
+  "_fractional_floor_note": "KNOWN: at $100 max_notional the 5-way EW legs (~$20-33 each) FLOOR to 0 whole shares vs $30-90 share prices, so decide_xsec emits no orders at $100. This does NOT affect its role as a mutation PARENT (the gene pool mutates the SOURCE/logic; the parent never trades live). The VALIDATED backtest is weight-based / notional-agnostic. IF this is ever scheduled on a paper clock, first either (a) raise max_notional so legs clear 1 share, or (b) add fractional-qty sizing. Verified 2026-06-26: logic correct at notional>=~$3000 (buys TLT/GLD/DBC ~1/3 each, SPY/UUP flat) reproducing the audited 2008-04 worked example exactly.",
+  "_lookback_choice": "Shipped canonical lookback = 12-1 (literature anchor + robust-plateau member). Deliberately NOT the 9-1 single-cell OOS argmax (Sharpe 1.51) \u2014 avoid in-neighborhood overfit; let mutation explore 9-1/6-1 as offspring instead of baking the peak into the parent.",
+  "basket": [
+    "SPY",
+    "TLT",
+    "GLD",
+    "DBC",
+    "UUP"
+  ],
+  "universe": [
+    "SPY",
+    "TLT",
+    "GLD",
+    "DBC",
+    "UUP"
+  ],
+  "timeframe": "1Day",
+  "bar_limit": 420,
+  "_bar_limit_note": "Need >= L+K+1 = 14 month-end closes per leg to compute 12-1. 420 daily bars \u2248 20 months of trading days, comfortable headroom for the monthly reduction even across holidays.",
+  "lookback_months": 12,
+  "skip_months": 1,
+  "max_notional_usd": 100.0,
+  "notional_usd": 100.0,
+  "churn_frac": 0.05,
+  "_churn_frac_note": "Rebalance a leg only if |target_qty - cur_qty| > max(1, floor(churn_frac*target_qty)). Mirrors allocator_blend / tqqq_cot_combo 5% guard so intramonth drift doesn't thrash.",
+  "monthly_cadence": true,
+  "_monthly_cadence_note": "true = only re-target on a calendar-month change (intramonth ticks HOLD), matching the validated monthly rebalance + preserving the audited D+1 lag. false = re-target every tick (still churn-guarded).",
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

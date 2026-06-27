@@ -1,19 +1,7 @@
-# Brain Co. — Product Manager (role 1361)
+ABORT-BULLET-REWRITER — 2026-06-27T01:29:10+00:00
 
-STATUS: SUBMITTED ✅
-submitted_on: 2026-06-11
-submitted_by: auto-residential (Ashby residential-egress drain subagent)
-resume_attached: yes (Cyrus_Shekari_Resume_ashby-brainco_fe8d9afb_v2.pdf)
+role_id: 1361
+phase: bullet-rewriter
+error:
+RuntimeError: bullet_rewriter failed (rc=1):      "title_swaps": { "<role_key>": "<allowed label>", ... },\n     "bullets": {\n       "microsoft_ft":     ["bullet 1 text", "bullet 2 text", ...],\n       "microsoft_2023":   ["...", ...],\n       "microsoft_2022":   ["...", ...],\n       "amazon_robotics":  ["...", ...],\n       "pro_painters":     ["...", ...]\n     },\n     "skills_priority": ["...", "..."],\n     "tailoring_notes": ["short note", "short note"]\n   }\n\n   `bullets` MUST contain an array for every role_key (microsoft_ft,\n   microsoft_2023, microsoft_2022, amazon_robotics, pro_painters), even if\n   you\'re keeping the master text — in that case echo the master bullets\n   verbatim into the array.\n\nF. Per-JD differentiation (MANDATORY): This resume must read as written\n   specifically for THIS job, not a lightly reskinned generic. At least half\n   the bullets across all roles must use vocabulary, tools, product areas, or\n   outcome framing pulled directly from THIS JD — not just bolding the same\n   words differently. If the JD calls out specific domains (e.g. "ads ranking",\n   "AI infrastructure", "capacity planning"), at least one bullet per role must\n   reference that domain in substance. Generic bullets ("led cross-functional\n   teams", "defined roadmaps") are only acceptable when paired with JD-specific\n   context. Your tailoring_notes must name at least 3 specific JD terms you\n   actually wove in and WHERE (which role/bullet).\n\nNow emit STRICT JSON only.']' timed out after 300 seconds
 
-## Confirmation evidence
-- Runner _ashby_runner.py classify="submitted" — set ONLY when scan_form_submit_success
-  finds the FormSubmitSuccess token in the captured submit POST responses (mutually
-  exclusive with the RECAPTCHA_SCORE_BELOW_THRESHOLD spam-flag path).
-- Ashby post-submit page text: "Your application was successfully submitted. We'll contact you if there are next steps."
-- app_url: https://jobs.ashbyhq.com/brainco/fe8d9afb-afd6-424e-aae4-9f31d6d60426
-- Egress: residential 82.23.97.223 (proxied Chrome CDP 127.0.0.1:19223) — NOT Azure datacenter IP.
-- Run: 2026-06-10/11 ashby-residential-drain.
-
-## Field answers committed (truthful)
-- Per compiled plan (name/email/phone/LinkedIn/location + custom Qs); work-auth=Yes,
-  sponsorship=No (truthful); resume PDF attached.

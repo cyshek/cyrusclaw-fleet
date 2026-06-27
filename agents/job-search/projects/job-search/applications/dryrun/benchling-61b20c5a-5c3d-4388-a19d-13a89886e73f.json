@@ -5,21 +5,21 @@
   "job_id": "61b20c5a-5c3d-4388-a19d-13a89886e73f",
   "job_title": "Product Manager, Developer Platform",
   "job_location": "San Francisco, CA",
-  "fetched_at": "2026-06-08T23:45:16Z",
+  "fetched_at": "2026-06-27T07:05:45Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 13,
+    "total_fields": 12,
     "filled": 11,
     "filled_needs_review": 0,
     "declined": 1,
-    "needs_essay": 1,
+    "needs_essay": 0,
     "unresolved": 0,
     "blockers": 0
   },
   "fields": [
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9__systemfield_name",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9__systemfield_name"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_name"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9__systemfield_email",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +42,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9__systemfield_email"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_email"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9__systemfield_resume",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,37 +55,67 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9__systemfield_resume"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_resume"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_phone",
-      "label": "Phone",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_7541a80b-bc9b-4cac-aec1-49ab9d5a2ca7",
+      "label": "Phone Number",
       "type": "input_text",
-      "required": false,
+      "required": true,
       "value": "346-804-0227",
       "source": "contact.phone",
       "status": "filled",
       "matched_rule": "phone",
       "options": null,
-      "_ashby_type": "String",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_phone"
+      "_ashby_type": "Phone",
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_7541a80b-bc9b-4cac-aec1-49ab9d5a2ca7"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_cover_letter",
-      "label": "Cover Letter",
-      "type": "input_file",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
       "required": false,
-      "value": "",
-      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
       "status": "filled",
-      "matched_rule": "cover_letter",
+      "matched_rule": "city_state",
       "options": null,
-      "_ashby_type": "File",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_cover_letter"
+      "_ashby_type": "Location",
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5__systemfield_location"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004771",
-      "label": "LinkedIn Profile",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_65ea2d69-593d-4839-bde3-56afd26aeba2",
+      "label": "Pronouns",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "She/Her/Hers",
+          "value": "She/Her/Hers"
+        },
+        {
+          "label": "He/Him/His",
+          "value": "He/Him/His"
+        },
+        {
+          "label": "They/Them/Theirs",
+          "value": "They/Them/Theirs"
+        },
+        {
+          "label": "Prefer not to answer",
+          "value": "Prefer not to answer"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_65ea2d69-593d-4839-bde3-56afd26aeba2"
+    },
+    {
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_9d81e560-d8ab-44b5-b628-a6a2acdcfe39",
+      "label": "Linkedin Profile",
       "type": "input_text",
       "required": false,
       "value": "https://linkedin.com/in/cyshekari",
@@ -94,23 +124,28 @@
       "matched_rule": "linkedin",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004771"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_9d81e560-d8ab-44b5-b628-a6a2acdcfe39"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004772",
-      "label": "Website",
-      "type": "input_text",
-      "required": false,
-      "value": "",
-      "source": "contact.website_default=null (optional -> blank)",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_0c787ce7-523d-4fd6-b17a-7e3f6b5d91d5",
+      "label": "I acknowledge by submitting an application for this role that I accept and agree to Benchling's global applicant privacy policy, which may be accessed on the link below:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I acknowledge",
+      "source": "acknowledge_yes (matched 'I acknowledge')",
       "status": "filled",
-      "matched_rule": "website",
-      "options": null,
-      "_ashby_type": "String",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004772"
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I acknowledge",
+          "value": "I acknowledge"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_0c787ce7-523d-4fd6-b17a-7e3f6b5d91d5"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004773",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_73834d29-f2c2-4fee-a651-b987ca034810",
       "label": "U.S. Work Authorization Status",
       "type": "multi_value_single_select",
       "required": true,
@@ -121,25 +156,25 @@
       "options": [
         {
           "label": "Can work for any employer",
-          "value": "122844522"
+          "value": "Can work for any employer"
         },
         {
           "label": "Can work for current employer",
-          "value": "122844523"
+          "value": "Can work for current employer"
         },
         {
           "label": "Seeking work authorization",
-          "value": "122844524"
+          "value": "Seeking work authorization"
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004773"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_73834d29-f2c2-4fee-a651-b987ca034810"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004774",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_3a81f615-2636-4559-9729-24c1539701cb",
       "label": "Will you now, or sometime in the future, require visa sponsorship?",
       "type": "multi_value_single_select",
-      "required": true,
+      "required": false,
       "value": "No",
       "source": "work_authorization.sponsorship_required_*",
       "status": "filled",
@@ -155,60 +190,12 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004774"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_3a81f615-2636-4559-9729-24c1539701cb"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004776[]",
-      "label": "Pronouns",
-      "type": "multi_value_multi_select",
-      "required": false,
-      "value": "Decline to answer",
-      "source": "identity.pronouns",
-      "status": "declined",
-      "matched_rule": "pronouns",
-      "options": [
-        {
-          "label": "She/Her/Hers",
-          "value": "122844526"
-        },
-        {
-          "label": "He/Him/His",
-          "value": "122844527"
-        },
-        {
-          "label": "They/Them/Theirs",
-          "value": "122844528"
-        },
-        {
-          "label": "Prefer not to answer",
-          "value": "122844529"
-        }
-      ],
-      "_ashby_type": "MultiValueSelect",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_38004776[]"
-    },
-    {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_47137513",
-      "label": "I acknowledge by submitting an application for this role that I accept and agree to Benchling's global applicant privacy policy, which may be accessed on the link below:",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_7817551b-c1d9-4144-a6f8-279772d3ad59",
+      "label": "Are you able to work from our office Monday, Tuesday, and Thursday, in alignment with our hybrid work model? *",
       "type": "multi_value_single_select",
-      "required": true,
-      "value": "I acknowledge",
-      "source": "acknowledge_yes (matched 'I acknowledge')",
-      "status": "filled",
-      "matched_rule": "acknowledge_yes",
-      "options": [
-        {
-          "label": "I acknowledge",
-          "value": "231062359"
-        }
-      ],
-      "_ashby_type": "ValueSelect",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_47137513"
-    },
-    {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_58774653[]",
-      "label": "Are you able to work from our office Monday, Tuesday, and Thursday, in alignment with our hybrid work model?",
-      "type": "multi_value_multi_select",
       "required": true,
       "value": "Yes",
       "source": "preferences.willing_to_travel_pct (>=25%)",
@@ -217,32 +204,28 @@
       "options": [
         {
           "label": "Yes",
-          "value": "572153700"
+          "value": "Yes"
         },
         {
           "label": "No",
-          "value": "572153708"
-        },
-        {
-          "label": "I'd like to discuss this further ",
-          "value": "572153712"
+          "value": "No"
         }
       ],
-      "_ashby_type": "MultiValueSelect",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_question_58774653[]"
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_7817551b-c1d9-4144-a6f8-279772d3ad59"
     },
     {
-      "id": "3fed641c-fdf0-461d-b639-92ab90747dc9_dfd06bd0-6f02-4f80-abf1-ec5cdfa24454",
-      "label": "What AI tools  are you currently using today and how are you using them?",
+      "id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_7d0151ef-3c94-47d9-9772-45662927c748",
+      "label": "What AI tools are you currently using today and how are you using them?",
       "type": "textarea",
       "required": true,
-      "value": "",
-      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
-      "status": "needs_essay",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null,
       "_ashby_type": "LongText",
-      "_ashby_id": "3fed641c-fdf0-461d-b639-92ab90747dc9_dfd06bd0-6f02-4f80-abf1-ec5cdfa24454"
+      "_ashby_id": "d255f221-e77a-4e37-9f1a-51e5ad76e8c5_7d0151ef-3c94-47d9-9772-45662927c748"
     }
   ],
   "unresolved": [],

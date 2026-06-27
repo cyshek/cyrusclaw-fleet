@@ -1,9 +1,11 @@
 # Cover answers — Cursor, Product Manager, Cloud Agents (cursor-21110d73-77cb-465b-9977-65afb3e82cec)
 
+## Full Name
+
+Cyrus Shekari
+
 ## Please write a short note on a project you're proud of:
 
-At Microsoft, I built an AI agent for drill planning on top of LLM workflows and Copilot Studio that restructured how our team scoped and executed resilience drills. The planning loop had been the bottleneck for years, so I rewrote it end-to-end: how a planner describes intent, how much context the agent receives, how ambiguity gets resolved, and how the output gets reviewed. Cycle time dropped 39% and drill capacity went up 21%, all under executive review on infra work where mistakes are expensive.
+At Microsoft, I led the 0-to-1 build of an internal Resilience Automation Platform for Azure. The problem was straightforward but messy in practice: we had a 2-person team manually orchestrating 45+ resilience drills a year across enterprise customers like Databricks, Walmart, and SAP, with no self-service model and no real measurement layer. I defined the product requirements, drove the shift to self-service scheduling, and built out success instrumentation tracking task completion rate, time-to-value, and cost-per-task efficiency. The result was a 30% reduction in operational toil and $14M+ in business impact.
 
-The part I'm proudest of is that it actually got trusted. Engineers on high-stakes recovery executions started relying on agent-authored plans instead of treating them as a curiosity, which is the hardest threshold to cross with AI tooling. To get there I spent a lot of time on the legibility layer, what artifacts the agent produced, how reviewers could verify work without reconstructing the session, and where humans needed to stay in the loop. That trust then unlocked the broader platform play: 45+ annual drills, $14M+ in business impact, and a continuous validation model that customers like Databricks and SAP now depend on.
-
-It's the closest analog I have to what Cloud Agents is building, agents running autonomously on infra work, returning artifacts a human can review in minutes, and earning enough trust that people hand off real tasks and move on.
+What I'm most proud of is that it wasn't just a process improvement - it was a real platform shift. Engineering teams across the org started trusting it for distributed execution without needing us in the loop for every drill. I also built an internal AI agent for drill planning that cut planning cycle time by 39% and increased drill capacity by 21%. Getting a skeptical, distributed team to rely on an autonomous system for high-stakes resilience work required getting the orchestration model right, the artifact and review layer legible, and the failure modes handled gracefully. That end-to-end ownership is what made it stick.

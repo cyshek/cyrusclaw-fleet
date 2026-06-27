@@ -1,9 +1,10 @@
-PREP-READY — 2026-06-02T06:17:41+00:00
+SUBMITTED — 2026-06-27T01:16Z
 
 role_id: 1488
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-orkes-5228109008.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/orkes-5228109008/Cyrus_Shekari_Resume_orkes_5228109008_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/orkes-5228109008/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+company: Orkes
+role: Technical Program Manager
+submitted_by: auto (_gh_submit.py with existing plan)
+confirmation_url: https://job-boards.greenhouse.io/orkes/jobs/5228109008/confirmation
+resume_attached: Cyrus_Shekari_Resume_orkes_5228109008_v2.pdf (1 page)
+otp_used: qmd7BqfV
+notes: Prior block (2026-05-29) was react-select country picker. _gh_submit.py resolved it via updated country-dropdown fallback. reCAPTCHA 428 on first POST -> OTP gate triggered -> auto-solved via gmail_imap.

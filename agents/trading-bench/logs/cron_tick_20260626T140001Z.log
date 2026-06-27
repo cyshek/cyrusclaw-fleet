@@ -1,0 +1,13 @@
+=== reconcile @ 20260626T140001Z ===
+rc: 0
+Before: {'filled': 79, 'pending_new': 3}
+{'id': 80, 'strategy': 'allocator_blend', 'symbol': 'QQQ', 'old_status': 'pending_new', 'new_status': 'filled', 'old_price': 705.89, 'new_price': 706.226, 'old_qty': 0.01475089, 'new_qty': 0.01475089}
+{'id': 81, 'strategy': 'allocator_blend', 'symbol': 'SPY', 'old_status': 'pending_new', 'new_status': 'filled', 'old_price': 728.36, 'new_price': 728.504, 'old_qty': 0.01501964, 'new_qty': 0.01501964}
+{'id': 82, 'strategy': 'allocator_blend', 'symbol': 'TQQQ', 'old_status': 'pending_new', 'new_status': 'filled', 'old_price': 71.74, 'new_price': 71.764, 'old_qty': 0.059035216, 'new_qty': 0.059035216}
+After:  {'filled': 82}
+=== cron_tick.sh @ 20260626T140001Z ===
+strategies: breakout_xlk__mut_c382b1 sma_crossover_qqq_regime sma_crossover_qqq_rth rsi_oversold_spy volume_breakout_qqq macd_momentum_iwm tqqq_cot_combo allocator_blend
+tick rc: 0
+--- tick output ---
+
+=== end ===

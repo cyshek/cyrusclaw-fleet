@@ -1,0 +1,183 @@
+{
+  "test": "multi_horizon_trend_ensemble",
+  "sleeve": "TQQQ vol-target (target 25% / 20d rvol / w_max 1.0 / 2bps / T-bill cash)",
+  "horizons": [
+    50,
+    100,
+    200
+  ],
+  "oos_split": "2018-12-31",
+  "design": "EW-across-horizons, no per-horizon weight tuning",
+  "gates": {
+    "baseline": {
+      "full": {
+        "sharpe": 0.8538,
+        "cagr": 0.2049,
+        "maxdd": -0.3452,
+        "total_ret": 20.0207,
+        "n_days": 4117
+      },
+      "is": {
+        "sharpe": 0.7453,
+        "cagr": 0.1741,
+        "maxdd": -0.3316,
+        "total_ret": 3.1528,
+        "n_days": 2236
+      },
+      "oos": {
+        "sharpe": 0.9873,
+        "cagr": 0.2427,
+        "maxdd": -0.2441,
+        "total_ret": 4.062,
+        "n_days": 1881
+      },
+      "n_rebalances": 3251,
+      "window": [
+        "2010-02-11",
+        "2026-06-26"
+      ]
+    },
+    "ens_majority": {
+      "full": {
+        "sharpe": 0.7257,
+        "cagr": 0.1599,
+        "maxdd": -0.3751,
+        "total_ret": 10.2792,
+        "n_days": 4117
+      },
+      "is": {
+        "sharpe": 0.6701,
+        "cagr": 0.1446,
+        "maxdd": -0.3431,
+        "total_ret": 2.3159,
+        "n_days": 2236
+      },
+      "oos": {
+        "sharpe": 0.7922,
+        "cagr": 0.1782,
+        "maxdd": -0.3615,
+        "total_ret": 2.4017,
+        "n_days": 1881
+      },
+      "n_rebalances": 3045,
+      "window": [
+        "2010-02-11",
+        "2026-06-26"
+      ]
+    },
+    "ens_fraction": {
+      "full": {
+        "sharpe": 0.7966,
+        "cagr": 0.1743,
+        "maxdd": -0.3488,
+        "total_ret": 12.813,
+        "n_days": 4117
+      },
+      "is": {
+        "sharpe": 0.6945,
+        "cagr": 0.1469,
+        "maxdd": -0.3488,
+        "total_ret": 2.3734,
+        "n_days": 2236
+      },
+      "oos": {
+        "sharpe": 0.9192,
+        "cagr": 0.2079,
+        "maxdd": -0.307,
+        "total_ret": 3.0948,
+        "n_days": 1881
+      },
+      "n_rebalances": 3397,
+      "window": [
+        "2010-02-11",
+        "2026-06-26"
+      ]
+    }
+  },
+  "canary": {
+    "baseline": {
+      "full": {
+        "sharpe": 0.7947,
+        "cagr": 0.1896,
+        "maxdd": -0.454,
+        "total_ret": 16.0462,
+        "n_days": 4117
+      },
+      "is": {
+        "sharpe": 0.6405,
+        "cagr": 0.1449,
+        "maxdd": -0.454,
+        "total_ret": 2.3236,
+        "n_days": 2236
+      },
+      "oos": {
+        "sharpe": 0.9874,
+        "cagr": 0.2449,
+        "maxdd": -0.2823,
+        "total_ret": 4.1289,
+        "n_days": 1881
+      },
+      "n_rebalances": 3250,
+      "window": [
+        "2010-02-11",
+        "2026-06-26"
+      ]
+    },
+    "ens_majority": {
+      "full": {
+        "sharpe": 0.6816,
+        "cagr": 0.149,
+        "maxdd": -0.4536,
+        "total_ret": 8.6701,
+        "n_days": 4117
+      },
+      "is": {
+        "sharpe": 0.5248,
+        "cagr": 0.1059,
+        "maxdd": -0.4536,
+        "total_ret": 1.4423,
+        "n_days": 2236
+      },
+      "oos": {
+        "sharpe": 0.8738,
+        "cagr": 0.2024,
+        "maxdd": -0.2775,
+        "total_ret": 2.9594,
+        "n_days": 1881
+      },
+      "n_rebalances": 3044,
+      "window": [
+        "2010-02-11",
+        "2026-06-26"
+      ]
+    },
+    "ens_fraction": {
+      "full": {
+        "sharpe": 0.7716,
+        "cagr": 0.1693,
+        "maxdd": -0.4097,
+        "total_ret": 11.8735,
+        "n_days": 4117
+      },
+      "is": {
+        "sharpe": 0.6112,
+        "cagr": 0.1262,
+        "maxdd": -0.4097,
+        "total_ret": 1.8703,
+        "n_days": 2236
+      },
+      "oos": {
+        "sharpe": 0.9669,
+        "cagr": 0.2227,
+        "maxdd": -0.2646,
+        "total_ret": 3.4851,
+        "n_days": 1881
+      },
+      "n_rebalances": 3396,
+      "window": [
+        "2010-02-11",
+        "2026-06-26"
+      ]
+    }
+  }
+}

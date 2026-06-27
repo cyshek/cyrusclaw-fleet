@@ -10,11 +10,11 @@
 
 ## **About us**
 
-- At Sierra, we’re creating a platform to help businesses build better, more human customer experiences with AI. We are primarily an in-person company based in San Francisco, with growing offices in Atlanta, New York, London, Paris, Madrid, Munich, Singapore, Japan, and Sydney.
+At Sierra, we’re creating a platform to help businesses build better, more human customer experiences with AI. We are primarily an in-person company based in San Francisco, with growing offices in Atlanta, New York, London, Paris, Madrid, Munich, Singapore, Tokyo, and Sydney.
 
-- We are guided by a set of values that are at the core of our actions and define our culture: Trust, Customer Obsession, Craftsmanship, Intensity, and Family. These values are the foundation of our work, and we are committed to upholding them in everything we do.
+We are guided by a set of values that are at the core of our actions and define our culture: Trust, Customer Obsession, Craftsmanship, Intensity, and Family. These values are the foundation of our work, and we are committed to upholding them in everything we do.
 
-- Our co-founders are [Bret Taylor](https://www.linkedin.com/in/brettaylor/) and [Clay Bavor](https://www.linkedin.com/in/claybavor/). Bret currently serves as Board Chair of OpenAI. Previously, he was co-CEO of Salesforce (which had acquired the company he founded, Quip) and CTO of Facebook. Bret was also one of Google's earliest product managers and co-creator of Google Maps. Before founding Sierra, Clay spent 18 years at Google, where he most recently led Google Labs. Earlier, he started and led Google’s AR/VR effort, Project Starline, and Google Lens. Before that, Clay led the product and design teams for Google Workspace. 
+Our co-founders are [Bret Taylor](https://www.linkedin.com/in/brettaylor/) and [Clay Bavor](https://www.linkedin.com/in/claybavor/). Bret currently serves as Board Chair of OpenAI. Previously, he was co-CEO of Salesforce (which had acquired the company he founded, Quip) and CTO of Facebook. Bret was also one of Google's earliest product managers and co-creator of Google Maps. Before founding Sierra, Clay spent 18 years at Google, where he most recently led Google Labs. Earlier, he started and led Google’s AR/VR effort, Project Starline, and Google Lens. Before that, Clay led the product and design teams for Google Workspace. 
 
 ## **About the role**
 

@@ -299,6 +299,7 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("proof of citizenship or verification", "work_authorized"),
     ("legal right to work", "work_authorized"),
     ("right to work in the u.s.", "work_authorized"),
+    ("right to work in the country", "work_authorized"),  # CoreWeave phrasing: "Do you have the right to work in the country you are applying to?"
     ("work authorization", "work_authorized"),
     ("presently authorized", "work_authorized"),  # Stack AV — "Are you presently authorized under U.S. immigration laws"
     ("legally eligible to work", "work_authorized"),  # Filson — "Are you legally eligible to work in the United States?"

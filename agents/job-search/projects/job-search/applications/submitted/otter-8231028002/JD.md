@@ -1,4 +1,4 @@
-# Product Manager Growth - San Francisco, CA
+# Product Manager Growth
 
 **Company:** Otter
 **Location:** San Francisco, CA

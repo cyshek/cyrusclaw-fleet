@@ -4,40 +4,43 @@
 - `microsoft_ft` → **Product Manager**
 - `microsoft_2023` → **Product Manager Intern**
 - `microsoft_2022` → **Product Manager Intern**
-- `amazon_robotics` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
 - `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned **0→1 roadmap and strategy** for Azure’s internal Resilience Automation Platform, defining product requirements, admin surfaces, and self-service primitives that cut operational toil **30%** and scaled execution enterprise-wide.
-2. Shipped an **AI agent** for drill planning with governed permissions and audit trails, restructuring workflows to reduce planning cycle time by **39%** and expand drill capacity **21%** across security-minded partner teams.
-3. Scaled Azure’s recovery validation from a 2-person op into a **platformized B2B system**, sustaining 45+ annual drills and driving **$14M+ impact** across enterprise customers (Databricks, Walmart, SAP, NetApp).
-4. Led **cross-functional execution** with engineering, GTM, and partner orgs on 14 high-visibility recoveries, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
-5. Pioneered Azure’s first **proactive resilience testing** capability, delivering a rack-level drill program in 4 months at a **94% recovery rate**, surfacing critical defects and setting a new standard for continuous enterprise validation.
-6. Partnered deeply with admin and builder personas across Databricks, Walmart, SAP, and NetApp to translate enterprise visibility and control gaps into a **prioritized roadmap** informing key strategic deal outcomes.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **AI governance and admin platform** from a 2-person operation into a self-service system, standardizing agent lifecycle workflows to sustain 45+ annual resilience drills and drive **$14M+ enterprise impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining policy controls and self-service scheduling primitives that reduced operational toil by **30%** and enabled governed, scalable deployment across enterprise customers.
+3. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract requiring strict trust-boundary and access-control enforcement.
+4. Built an internal **AI agent** to automate drill planning workflows, restructuring the end-to-end planning cycle to cut cycle time by 39% and increase governed drill capacity by 21% without adding headcount.
+5. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a **94% recovery rate** in 4 months by surfacing critical hardware defects and establishing a new model for continuous enterprise-grade validation.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **enterprise adoption of an AI-powered code generation** product through hands-on demos and enablement across 14 Azure service teams, saving **37 engineering hours monthly** and validating governed agent workflows.
-2. Shaped the product roadmap for **intent-based YAML generation** by leading 11+ discovery interviews with Azure admins and builders, translating ambiguous integration needs into prioritized LLM-powered features.
-3. Migrated documentation to an **AI-powered semantic search** (RAG) experience with rigorous metadata standards, cutting lookup time by **83%** and improving trust in agent retrieval surfaces.
+1. Drove **AI tool adoption** across 14 Azure service teams by leading user demos and training on AI-driven code generation workflows, saving 37 engineering hours monthly and establishing usage patterns that informed governance guardrails.
+2. Shaped the **product roadmap** to include intent-based YAML generation by conducting 11+ structured discovery interviews with Azure builder personas, surfacing critical feature gaps and translating insights into prioritized requirements.
+3. Improved admin visibility and data integrity by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83% and enabling auditable, policy-aligned content retrieval.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Unlocked **$3M in accelerated revenue** and 28% faster region launches by securing cross-functional alignment on a unified automation and prioritization framework spanning **140+ engineering teams**.
-2. Defined a product strategy to eliminate launch toil by running discovery with 20+ service teams, uncovering **81 hours** of manual effort per region and building a roadmap to automate the critical path.
-3. Built a **Power BI admin dashboard** giving leadership visibility into operational toil across 140+ teams, enabling targeted prioritization of high-impact automation investments.
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by driving cross-functional alignment on a unified automation prioritization framework across 140+ enterprise teams.
+2. Defined a product strategy to eliminate operational toil during region launches, conducting discovery with 20+ service teams to identify 81 hours of manual effort per region and **building a roadmap** to automate critical deployment paths.
+3. Built a **Power BI governance dashboard** to surface automation gaps and track operational toil across 140+ teams, enabling leadership to prioritize high-impact enterprise admin improvements with full visibility.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero downtime** across a 2,000+ unit pilot migration by defining the OS upgrade strategy and mapping integration dependencies across 1,200+ stations.
-2. Facilitated **Agile ceremonies** and backlog prioritization across IT, Ops, and Engineering, resolving 40+ high-priority tickets and stabilizing the developer intake process.
-3. Drove adoption of **automated CI/CD pipelines** through cross-functional alignment, accelerating software deployment cycles by **25%** across robotics fleet services.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and enforcing a governed, phased rollout model.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% while maintaining audit trails for enterprise-grade change management.
+3. Prioritized and resolved 40+ high-priority backlog tickets through Agile sprint planning, stabilizing the **developer intake process** and reducing deployment risk for a large-scale infrastructure migration.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Grew job bookings **26%** by redesigning the end-to-end scoping and invoicing lifecycle in a new CRM, managing **200+ monthly proposals** with improved admin visibility and controls.
-2. Cut **Customer Acquisition Cost 13%** and lifted conversion 2.7% by executing a digital-first GTM strategy, optimizing the website and Google Business profile for high-intent buyers.
-3. Sharpened leadership pricing models via **financial profitability analysis** on 1,000+ project records, identifying and sealing recurring margin leaks.
+1. Increased job bookings by **26%** by redesigning the end-to-end admin workflow for 200+ monthly proposals, implementing a CRM system that standardized scoping, permissions, and invoicing lifecycle management.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a data-driven go-to-market strategy, optimizing digital channels to align customer touchpoints with enterprise buyer journeys.
+3. Identified and sealed margin leaks by conducting **financial profitability analysis** across 1,000+ project records, delivering actionable pricing model improvements that directly informed leadership's roadmap decisions.
 
 ## Notes from the rewriter
-- Led with AI governance, admin surfaces, permissions/audit, and agent lifecycle vocabulary from the JD.
-- Reframed Azure FT scope as 0→1 admin platform + AI agent ownership with enterprise B2B customer impact.
+- 'AI governance and admin platform' woven into microsoft_ft bullet 1 — mirrors JD's core product area 'AI Governance and Admin Experience'
+- 'Trust-boundary and access-control enforcement' used in microsoft_ft bullet 3 — directly reflects JD's 'agent identity, lifecycle, and trust boundaries' language
+- 'Governed, scalable deployment' and 'policy controls' used in microsoft_ft bullet 2 — mirrors JD's 'policy, permissions, model/tool controls' framing
+- 'Builder personas' used in microsoft_2023 bullet 2 — mirrors JD's 'admin and builder personas' customer-centric language
+- 'Governance dashboard' and 'full visibility' used in microsoft_2022 bullet 3 — mirrors JD's 'auditing/visibility' and 'enterprise visibility' requirements
+- 'Governed, phased rollout model' in amazon_robotics bullet 1 — mirrors JD's 'pilot to enterprise-wide deployment' scaling language
 

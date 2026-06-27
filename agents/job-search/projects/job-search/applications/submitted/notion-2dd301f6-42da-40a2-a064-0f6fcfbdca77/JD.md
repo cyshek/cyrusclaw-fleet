@@ -10,9 +10,9 @@
 
 # Who We Are
 
-Notion is the collaborative AI workspace where teams and agents [think together](https://www.youtube.com/watch?v=vkpYpWfEK5s). We're building one place where your knowledge, projects, meetings, and AI tools live side by side, so work feels faster, clearer, and less fragmented. Millions of individuals, small teams, and large companies run their work on Notion.
+Notion is the collaborative AI workspace where teams and agents [think together](https://www.youtube.com/watch?v=vkpYpWfEK5s). We're building one place where your knowledge, projects, meetings, and AI tools live side by side, so work is faster, clearer, and less fragmented. Millions of individuals, small teams, and large companies run their work on Notion.
 
-Notinos (our employees) are customer zero in bringing this future of work to life. We care about craft, humanity, and building things that last — not just shipping the next feature, but setting a standard for how modern teams (with humans and agents working together) think and execute.
+Notinos (our employees) are customer zero in bringing this future of work to life. We care about craft, building things that last, and the belief that great work is still fundamentally human. Our goal isn’t to ship the next feature. Each and every team of Notinos is working to set the standard for how humans work together in the AI era. From building a business’s system of record to making and managing AI agents to automating away the busy work, we care deeply about giving our customers more time for their life’s work.
 
 # About the Role
 
@@ -52,10 +52,10 @@ By clicking “Submit Application”, I understand and agree that Notion and its
 
 # A Note on AI
 
-You don’t need deep AI expertise for every role, but we do expect every Notino to be intellectually curious, drawn to tinkering and discovery, and excited to use AI as a real collaborator in their work. For some roles, AI fluency is a core requirement — when that’s the case, we’ll make it explicit in the qualifications. People who thrive here don’t treat AI as a novelty. They use it to think better, move faster, and build more creatively.
+You don’t need deep AI expertise for every role, but we do expect every Notino to be intellectually curious, drawn to tinkering and discovery, and excited to use AI as a real collaborator in their work. For some roles, AI fluency is a core requirement — when that’s the case, we'll say so explicitly in the qualifications. People who thrive here don’t treat AI as a novelty. They use it to think better, and make their work easier for others to build on.
 
 # Equal Opportunity & Accommodations
 
-We hire talented and passionate people from a variety of backgrounds because we want our teams to reflect the wide diversity of our customers. If you’re excited about a role but your experience doesn’t align perfectly with every bullet point listed, we still encourage you to apply.
+We hire talented people from a wide range of backgrounds. If you’re excited about this role but don’t meet every bullet, we still encourage you to apply. Notion is an equal opportunity employer and does not discriminate on the basis of any legally protected characteristic. Consistent with applicable law, we will consider for employment qualified applicants with arrest and conviction records. Notion provides reasonable accommodations during the application process; if you need one, please let your recruiter know.
 
 Notion is proud to be an equal opportunity employer. We do not discriminate in hiring or any employment decision based on race, color, religion, national origin, age, sex (including pregnancy, childbirth, or related medical conditions), marital status, ancestry, physical or mental disability, genetic information, veteran status, gender identity or expression, sexual orientation, or other applicable legally protected characteristic. Notion considers qualified applicants with criminal histories, consistent with applicable federal, state and local law. Notion is also committed to providing reasonable accommodations for qualified individuals with disabilities and disabled veterans in our job application procedures. If you need assistance or an accommodation due to a disability, please let your recruiter know.

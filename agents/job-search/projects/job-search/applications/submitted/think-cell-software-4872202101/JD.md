@@ -59,7 +59,7 @@ Working closely with the sales team, this role is pivotal to shaping our custome
 
 **Why is think-cell the right place for you?**     
 
-At think-cell, we’re not just building innovative software – we’re empowering over 1.3 million business users across 35,000 companies, including the world’s top consulting firms, DAX 40 leaders, and the biggest US blue-chip enterprises. With offices in Berlin, Munich, Denver, Boston, London, Tokyo, and Dubai, we are a diverse, passionate team of over 210 people, united by a shared commitment to excellence and innovation.     
+At think-cell, we’re not just building innovative software – we’re empowering over 1.3 million business users across 35,000 companies, including the world’s top consulting firms, DAX 40 leaders, and the biggest US blue-chip enterprises. With offices in Berlin, Munich, Denver, Boston, London, Tokyo, and Dubai, we are a diverse, passionate team of over 220 people, united by a shared commitment to excellence and innovation.     
 
 Our proprietary technology sets the standard in business document creation, and we're in a dynamic, growing market with enormous potential. As we continue to lead the way in our industry, we’re looking for talented individuals who can help us shape the future of business productivity.    
 

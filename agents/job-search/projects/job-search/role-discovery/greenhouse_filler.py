@@ -398,6 +398,8 @@ DEFAULT_UNPLANNED_DROPDOWN_PATTERNS = [
     # Cribl-style work-auth phrasing (2026-06-25): "authorized to reside and work in the country"
     {"pattern": "authorized to reside and work", "answer": "Yes"},
     {"pattern": "reside and work in the country", "answer": "Yes"},
+    # CoreWeave phrasing (2026-06-26): "Do you have the right to work in the country you are applying to?"
+    {"pattern": "right to work in the country", "answer": "Yes"},
     # gh-resume-submit (2026-06-02, Unity 7905031): Unity ships these as
     # required knockout dropdowns boards-api leaves unspecced/needs_review.
     # Honest answers for Cyrus (US citizen, work-authorized, no restricted-

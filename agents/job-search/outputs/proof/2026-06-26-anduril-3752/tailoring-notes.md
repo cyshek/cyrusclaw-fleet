@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned end-to-end execution of Azure's **resilience validation program**, scaling from a 2-person operation to a platformized system sustaining 45+ annual drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, distributed model.
+3. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract with strict C2 and data-integrity requirements.
+4. Pioneered Azure's first proactive rack-level drill program, delivering in **4 months** with a 94% recovery rate — surfacing critical hardware defects and establishing a continuous validation model across distributed infrastructure.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing execution capacity by 21% without adding headcount.
+6. Embedded directly with engineering and customer teams to translate complex mission requirements into sprint plans and execution milestones, ensuring contractual and technical objectives were met on operationally-relevant timelines.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows across 14 Azure service teams, conducting user demos and training that saved 37 engineering hours monthly and accelerated iterative development cycles.
+2. Shaped the product roadmap by facilitating **11+ structured user interviews** with Azure engineering teams, surfacing critical C2-workflow gaps and securing stakeholder alignment to prioritize intent-based YAML generation.
+3. Improved data integrity across distributed documentation by migrating to an **AI-powered semantic search** platform and enforcing metadata standards, cutting lookup time by 83% for cross-functional engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, accelerating region launches by 28% and generating $3M in revenue — demonstrating ability to orchestrate large, multi-disciplinary stakeholder sets.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built and communicated a phased roadmap to automate critical execution paths and reduce operational risk.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and maintain schedule visibility across a complex program portfolio.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy for a **2,000+ unit pilot**, mapping dependencies across 1,200+ stations and achieving zero operational downtime — mirroring the fielding-on-schedule discipline required for deployed C2 systems.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing integration risk across a hardware-software system.
+3. Facilitated Agile sprint planning and retrospectives, resolving **40+ high-priority tickets** and stabilizing the developer intake process to maintain execution velocity under resource-constrained, fast-paced program conditions.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Managed end-to-end execution of **200+ monthly proposals**, owning the full scoping and invoicing lifecycle via a new CRM process that increased job bookings by 26% through disciplined schedule and customer-facing communications.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a data-driven go-to-market strategy — demonstrating ability to grow customer accounts and articulate value propositions to diverse stakeholders.
+3. Conducted financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks that improved leadership pricing models and informed resource-allocation decisions under constrained budgets.
+
+## Notes from the rewriter
+- 'C2 capabilities' woven into microsoft_ft bullet 3 and amazon_robotics bullet 1 — directly mirrors JD's 'C2 capabilities' and 'Command and Control' language.
+- 'Distributed' and 'fielding-on-schedule / operationally-relevant timelines' inserted into microsoft_ft bullet 6 and amazon_robotics bullet 1 — reflects JD's 'resilient, software-defined, distributed mesh networking' and 'operationally-relevant fielding timelines.'
+- 'Contractual and technical objectives' in microsoft_ft bullet 6 mirrors JD's explicit requirement to 'meet all contractual requirements' while satisfying technical objectives.
+- 'Hardware-software system' in amazon_robotics bullet 2 and 'hardware/software integration' in skills mirror JD's 'deployment and integration of sophisticated hardware and software systems.'
+- 'Sprint plans and execution milestones' in microsoft_ft bullet 6 directly echoes JD's 'build sprint plans, execution plans, milestones' under the Plan responsibility.
+

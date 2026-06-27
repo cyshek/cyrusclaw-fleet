@@ -1,0 +1,228 @@
+{
+  "momentum_book": {
+    "label": "MOM_BOOK_12_1_QQQ_SPY_vt15",
+    "n": 4629,
+    "span": [
+      "2008-02-01",
+      "2026-06-26"
+    ],
+    "fp_sharpe": 0.7926,
+    "fp_cagr": 12.353,
+    "fp_total_ret": 7.4962,
+    "fp_maxdd": -0.3315,
+    "is_sharpe": 0.9496,
+    "oos_sharpe": 0.6494,
+    "oos_total_ret": 1.3499,
+    "oos_cagr": 10.626
+  },
+  "value_legs": {
+    "equity_divyield_SPY": {
+      "label": "equity_divyield_SPY",
+      "n": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "fp_sharpe": -0.208,
+      "fp_cagr": -2.374,
+      "fp_total_ret": -0.3569,
+      "fp_maxdd": -0.4534,
+      "is_sharpe": 0.06,
+      "oos_sharpe": -0.4209,
+      "oos_total_ret": -0.3677,
+      "oos_cagr": -5.274,
+      "_dates_first_last": [
+        "2008-02-01",
+        "2026-06-26"
+      ]
+    },
+    "equity_ERPproxy_SPY": {
+      "label": "equity_ERPproxy_SPY",
+      "n": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "fp_sharpe": 0.0228,
+      "fp_cagr": -0.401,
+      "fp_total_ret": -0.0712,
+      "fp_maxdd": -0.4845,
+      "is_sharpe": 0.45,
+      "oos_sharpe": -0.3467,
+      "oos_total_ret": -0.3706,
+      "oos_cagr": -5.325,
+      "_dates_first_last": [
+        "2008-02-01",
+        "2026-06-26"
+      ]
+    },
+    "bond_realyield_IEF": {
+      "label": "bond_realyield_IEF",
+      "n": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "fp_sharpe": 0.1832,
+      "fp_cagr": 1.066,
+      "fp_total_ret": 0.215,
+      "fp_maxdd": -0.3103,
+      "is_sharpe": 0.0216,
+      "oos_sharpe": 0.3516,
+      "oos_total_ret": 0.2252,
+      "oos_cagr": 2.429,
+      "_dates_first_last": [
+        "2008-02-01",
+        "2026-06-26"
+      ]
+    },
+    "commodity_DBC_5yr": {
+      "label": "commodity_DBC_5yr",
+      "n": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "fp_sharpe": -0.1954,
+      "fp_cagr": -2.195,
+      "fp_total_ret": -0.3348,
+      "fp_maxdd": -0.5398,
+      "is_sharpe": -0.4516,
+      "oos_sharpe": 0.0485,
+      "oos_total_ret": -0.0017,
+      "oos_cagr": -0.02,
+      "_dates_first_last": [
+        "2008-02-01",
+        "2026-06-26"
+      ]
+    },
+    "commodity_GLD_5yr": {
+      "label": "commodity_GLD_5yr",
+      "n": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "fp_sharpe": -0.4224,
+      "fp_cagr": -5.513,
+      "fp_total_ret": -0.6472,
+      "fp_maxdd": -0.7068,
+      "is_sharpe": -0.2382,
+      "oos_sharpe": -0.599,
+      "oos_total_ret": -0.5231,
+      "oos_cagr": -8.381,
+      "_dates_first_last": [
+        "2008-02-01",
+        "2026-06-26"
+      ]
+    }
+  },
+  "discrimination": {
+    "equity_divyield_SPY": {
+      "label": "equity_divyield_SPY",
+      "n_overlap": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "corr_value_to_mom": -0.5806,
+      "corr_value_to_negmom": 0.5806,
+      "corr_negmom_to_mom_sanity": -1.0,
+      "distinctness_margin_vs_shortmom": 0.4194,
+      "rolling_corr_min": -0.978,
+      "rolling_corr_max": 0.5163,
+      "rolling_corr_mean": -0.585,
+      "n_rolling_windows": 4126
+    },
+    "equity_ERPproxy_SPY": {
+      "label": "equity_ERPproxy_SPY",
+      "n_overlap": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "corr_value_to_mom": 0.1561,
+      "corr_value_to_negmom": -0.1561,
+      "corr_negmom_to_mom_sanity": -1.0,
+      "distinctness_margin_vs_shortmom": 1.1561,
+      "rolling_corr_min": -0.9702,
+      "rolling_corr_max": 0.9718,
+      "rolling_corr_mean": 0.0311,
+      "n_rolling_windows": 4126
+    },
+    "bond_realyield_IEF": {
+      "label": "bond_realyield_IEF",
+      "n_overlap": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "corr_value_to_mom": 0.212,
+      "corr_value_to_negmom": -0.212,
+      "corr_negmom_to_mom_sanity": -1.0,
+      "distinctness_margin_vs_shortmom": 1.212,
+      "rolling_corr_min": -0.3621,
+      "rolling_corr_max": 0.5742,
+      "rolling_corr_mean": 0.116,
+      "n_rolling_windows": 4126
+    },
+    "commodity_DBC_5yr": {
+      "label": "commodity_DBC_5yr",
+      "n_overlap": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "corr_value_to_mom": -0.0959,
+      "corr_value_to_negmom": 0.0959,
+      "corr_negmom_to_mom_sanity": -1.0,
+      "distinctness_margin_vs_shortmom": 0.9041,
+      "rolling_corr_min": -0.5048,
+      "rolling_corr_max": 0.3315,
+      "rolling_corr_mean": -0.1206,
+      "n_rolling_windows": 4126
+    },
+    "commodity_GLD_5yr": {
+      "label": "commodity_GLD_5yr",
+      "n_overlap": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "corr_value_to_mom": -0.054,
+      "corr_value_to_negmom": 0.054,
+      "corr_negmom_to_mom_sanity": -1.0,
+      "distinctness_margin_vs_shortmom": 0.946,
+      "rolling_corr_min": -0.2814,
+      "rolling_corr_max": 0.2157,
+      "rolling_corr_mean": -0.048,
+      "n_rolling_windows": 4126
+    },
+    "_NEGATIVE_MOM_REFERENCE": {
+      "label": "NEGATIVE_MOM_MIRROR(reference)",
+      "n_overlap": 4629,
+      "span": [
+        "2008-02-01",
+        "2026-06-26"
+      ],
+      "corr_value_to_mom": -1.0,
+      "corr_value_to_negmom": 1.0,
+      "corr_negmom_to_mom_sanity": -1.0,
+      "distinctness_margin_vs_shortmom": 0.0,
+      "rolling_corr_min": -1.0,
+      "rolling_corr_max": -1.0,
+      "rolling_corr_mean": -1.0,
+      "n_rolling_windows": 4126
+    }
+  },
+  "canary": {},
+  "meta": {
+    "one_way_bps": 2.0,
+    "vol_target": 0.15,
+    "oos_start": "2018-01-01",
+    "sample_start": "2008-01-01",
+    "bpy": 252.0,
+    "generated_utc": "2026-06-27T07:49:26.284791Z"
+  },
+  "_raw_returns": {}
+}

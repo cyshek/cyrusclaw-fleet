@@ -68,7 +68,16 @@ from runner.walk_forward import walk_forward, passes_fitness_gate
 #     windows / 20 trades. Eval 2026-06-25 (opus subagent). Median Sharpe
 #     approx -1.21 on the equity panel — that weakness is filtered at the
 #     CHILD gate, not by excluding the parent.
-DECORRELATOR_EXEMPT_PARENTS = {"trend_follow_gld"}
+#   trend_follow_uup: US-DOLLAR-trend archetype (UUP SMA50), the single-name
+#     carrier of the validated cross-asset 12-1 TSMOM thesis
+#     (reports/XA_TSMOM_12_1_GATE_20260626T164538Z.md). Chosen empirically
+#     2026-06-26 as the MOST equity-orthogonal non-equity leg: monthly
+#     trend-return corr to SPY -0.415 and to GLD -0.344 (orthogonal to BOTH
+#     the equity pool and the existing gold parent). Profiles available
+#     (n_trades>0) but FAILS the equity fitness gate by design (dollar-trend
+#     has no edge on an equity-calibrated panel) — exactly the de-correlator
+#     case; its value is structural cross-asset DNA, gated at the CHILD.
+DECORRELATOR_EXEMPT_PARENTS = {"trend_follow_gld", "trend_follow_uup"}
 
 
 def test_pool_is_nonempty_and_unique():

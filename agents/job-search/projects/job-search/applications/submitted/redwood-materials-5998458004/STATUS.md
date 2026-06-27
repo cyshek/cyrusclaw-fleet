@@ -1,4 +1,4 @@
-PREP-READY — 2026-06-02T02:53:36+00:00
+PREP-READY — 2026-06-27T01:18:40+00:00
 
 role_id: 1981
 plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-redwood-materials-5998458004.json

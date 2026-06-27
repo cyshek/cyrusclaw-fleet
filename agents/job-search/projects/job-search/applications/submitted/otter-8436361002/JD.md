@@ -1,4 +1,4 @@
-# Solutions Engineer - Los Angeles, CA
+# Solutions Engineer
 
 **Company:** Otter
 **Location:** Los Angeles, CA

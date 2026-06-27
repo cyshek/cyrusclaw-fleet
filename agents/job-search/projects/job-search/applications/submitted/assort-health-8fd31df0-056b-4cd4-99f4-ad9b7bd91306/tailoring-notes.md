@@ -2,43 +2,45 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Program Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2023` → **Technical Program Manager Intern**
 - `microsoft_2022` → **Technical Program Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
+- `pro_painters` → **Program Manager Intern**
 
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Acted as a **technical advisor** bridging engineering and enterprise customers (Databricks, Walmart, SAP, NetApp), scaling Azure's recovery validation from a 2-person operation into a platformized system sustaining 45+ annual resilience drills and driving **$14M+ business impact**.
-2. Led 0→1 development of an internal Resilience Automation Platform, translating customer business goals into scalable architectures and defining self-service scheduling that **reduced operational toil by 30%** and shifted execution to a repeatable, scalable model.
-3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new model for continuous production-grade validation.
-4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, driving consensus across multidisciplinary engineering and partner teams.
-5. Scaled team leverage with **AI-driven automation**, building an internal AI agent and restructuring planning workflows to cut planning cycle time by 39% and increase drill capacity by 21%, then created tooling and content to empower internal and external partners.
-6. Provided high-value feedback to Product and Engineering teams from live customer drills, informing platform evolution and feature prioritization while managing **multiple priorities** in a fast-paced, high-growth environment.
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized AI-driven system**, standardizing workflows to sustain 45+ annual resilience drills and deliver **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that **reduced operational toil by 30%** and transitioned drill execution to a scalable, repeatable model fit for high-growth environments.
+3. Pioneered Azure's first proactive resilience testing capability by delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation architecture across enterprise cloud infrastructure.
+4. Directed 14 cross-org recovery executions under executive visibility — including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** — acting as the trusted technical advisor bridging engineering, product, and customer stakeholders.
+5. Built an internal **AI agent for drill planning**, restructuring automation workflows to cut planning cycle time by 39% and increase drill capacity by 21%, directly informing platform feature prioritization and roadmap decisions across engineering and research teams.
+6. Provided high-value feedback loops to Product and Engineering by synthesizing post-drill findings from 45+ executions into actionable platform insights, accelerating feature adoption and shaping the **intelligent automation roadmap** for Azure's resilience offerings.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed product adoption for **AI-driven code generation** workflows, leading demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours monthly**, conveying complex technical value to non-technical stakeholders.
-2. Influenced the product roadmap to include intent-based YAML generation by facilitating 11+ user interviews with Azure service teams, mapping real business needs to technical solutions and identifying critical feature gaps.
-3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered **semantic search** tool, cutting lookup time by **83%** and empowering teams with faster self-service access.
+1. Drove **AI-powered platform adoption** across 14 Azure service teams by leading live technical demos and hands-on training sessions, translating complex AI code-generation workflows into clear value for non-technical stakeholders and saving **37 engineering hours monthly**.
+2. Shaped product roadmap by facilitating 11+ structured discovery interviews with Azure service teams, surfacing critical feature gaps and championing **intent-based YAML generation** as a high-priority capability to accelerate intelligent automation for internal customers.
+3. Improved platform data integrity and retrieval by enforcing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, reducing lookup time by 83% and enabling faster, more accurate decision pathways for engineering teams.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams, driving consensus across multidisciplinary stakeholders.
-2. Mobilized a product strategy to mitigate operational toil during region launches, running discovery with 20+ service teams to quantify **81 hours of manual effort** per region and building a roadmap to automate critical paths.
-3. Enabled leadership to target automation gaps and prioritize high-impact support by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, turning raw signals into actionable prioritization.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams, directly mapping operational business needs to scalable technical solutions.
+2. Mobilized a product strategy to reduce launch toil by conducting discovery with 20+ service teams, quantifying **81 hours of manual effort per region**, and building a roadmap to automate critical deployment paths — translating business goals into a scalable AI-ready architecture.
+3. Enabled leadership to target high-impact automation gaps by engineering a **Power BI dashboard** tracking operational toil across 140+ teams, delivering the data visibility needed to prioritize platform investments and drive consensus across multidisciplinary stakeholders.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations in a complex, high-stakes operations environment.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across teams.
-3. Drove strategic alignment between IT, Operations, and Engineering teams to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and improving production reliability.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and serving as the technical advisor bridging IT, Operations, and Engineering toward a unified deployment solution.
+2. Facilitated Agile sprint ceremonies and owned backlog prioritization to resolve **40+ high-priority tickets**, stabilizing the developer intake process and ensuring seamless adoption of new production-grade system capabilities across a fast-paced, high-growth robotics environment.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a scalable, repeatable integration model for continuous system delivery at enterprise scale.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by optimizing sales operations and managing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new **CRM** process.
-2. Reduced Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a digital-first **go-to-market** strategy, optimizing the website and Google profile to drive qualified demand.
-3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks to strengthen unit economics.
+1. Increased job bookings by **26%** by redesigning end-to-end CRM workflows to manage scoping and invoicing for 200+ monthly proposals, mapping customer business needs to a scalable operational solution and serving as the primary technical point of contact for the sales lifecycle.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website and Google profile to improve patient-equivalent engagement and align outreach with measurable business outcomes.
+3. Improved leadership pricing models and sealed margin leaks by conducting financial profitability analysis across **1,000+ project records**, delivering data-driven recommendations that empowered stakeholders to prioritize high-value engagements and drive revenue scalability.
 
 ## Notes from the rewriter
-- Reframed MSFT FT around solutions-engineering language: technical advisor, mapping business goals to scalable AI architectures, customer-facing demos, and product feedback loops.
-- Surfaced AI agent, semantic search, and production-grade systems experience to hit JD's engineering fundamentals and voice/AI-adjacent nice-to-haves.
-- Expanded all bullets to ~2 lines with methodology and customer/team context to push page fill toward ≥97%.
+- 'AI agent' and 'intelligent automation' from the JD woven into microsoft_ft bullets #5 and #6 — directly mirroring Assort's core platform language.
+- 'Trusted technical advisor' and 'bridging engineering, product, and customer stakeholders' from the JD's About the Role section woven into microsoft_ft bullet #4 and amazon_robotics bullet #1.
+- 'Translate business goals into scalable AI architectures' and 'map business needs to technical solutions' mirrored in microsoft_2022 bullet #2 and pro_painters bullet #1.
+- 'Feature prioritization' and 'platform evolution' from the JD's What You'll Do section surfaced in microsoft_ft bullet #6 and microsoft_2023 bullet #2.
+- 'Non-technical stakeholders' communication requirement from the JD addressed directly in microsoft_2023 bullet #1 with demo and training framing.
 

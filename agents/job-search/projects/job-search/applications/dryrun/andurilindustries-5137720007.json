@@ -4,13 +4,13 @@
   "job_id": "5137720007",
   "job_title": "Mission Operations Product Manager, Group 5 Mission Autonomy",
   "job_location": "Costa Mesa, California, United States",
-  "fetched_at": "2026-06-02T02:54:21Z",
+  "fetched_at": "2026-06-26T23:58:21Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs/5137720007?questions=true",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 24,
-    "filled": 17,
-    "filled_needs_review": 2,
+    "filled": 19,
+    "filled_needs_review": 0,
     "declined": 4,
     "unresolved": 1,
     "blockers": 0
@@ -131,10 +131,10 @@
       "label": "CLEARANCE ELIGIBILITY - This position requires eligibility to obtain and maintain a U.S. security clearance.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "None",
-      "source": "work_authorization.security_clearance | NOTE: 'None' not literally in options ['Yes, I hold an active U.S. security clearance', 'Yes, I am eligible for a U.S. security clearance', 'No']",
-      "status": "filled_needs_review",
-      "matched_rule": "security_clearance",
+      "value": "Yes, I am eligible for a U.S. security clearance",
+      "source": "clearance_eligibility (eligible, US citizen)",
+      "status": "filled",
+      "matched_rule": "clearance_eligibility",
       "options": [
         {
           "label": "Yes, I hold an active U.S. security clearance",
@@ -155,10 +155,10 @@
       "label": "If you have held a U.S. security clearance in the past, what clearance level have you held? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "None",
-      "source": "work_authorization.security_clearance | NOTE: 'None' not literally in options ['N/A - have never held U.S. security clearance', 'Confidential', 'Secret', 'Top Secret']",
-      "status": "filled_needs_review",
-      "matched_rule": "security_clearance",
+      "value": "N/A - have never held U.S. security clearance",
+      "source": "clearance_level_held (matched 'never held' -> 'N/A - have never held U.S. security clearance')",
+      "status": "filled",
+      "matched_rule": "clearance_level_held",
       "options": [
         {
           "label": "N/A - have never held U.S. security clearance",
@@ -183,8 +183,8 @@
       "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "A United States citizen or national",
-      "source": "work_authorization.status=us_citizen (matched ITAR option 'A United States citizen or national')",
+      "value": "None of the above",
+      "source": "work_authorization.status=us_citizen (inverted export Q -> 'None of the above')",
       "status": "filled",
       "matched_rule": "itar_us_person_ack",
       "options": [

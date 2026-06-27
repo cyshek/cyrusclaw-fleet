@@ -306,13 +306,439 @@ def enter_otp(page, code):
     return False
 
 
+# ---- phase_wizard helpers ----
+
+REACT_FIBER_JS = r"""
+(sel) => {
+  const el = document.querySelector(sel);
+  if (!el) return null;
+  // Walk up fibers to find memoizedProps with currencyValidation or similar
+  let fiber = el._reactFiber || el.__reactFiber || null;
+  if (!fiber) {
+    for (const k of Object.keys(el)) {
+      if (k.startsWith('__reactFiber') || k.startsWith('__reactInternalInstance')) {
+        fiber = el[k]; break;
+      }
+    }
+  }
+  let f = fiber, depth = 0;
+  while (f && depth < 25) {
+    const p = f.memoizedProps;
+    if (p && (typeof p.onDesiredSalaryValue === 'function' || typeof p.currencyValidation !== 'undefined')) {
+      return {
+        hasDesiredSalary: typeof p.onDesiredSalaryValue === 'function',
+        hasCurrencyChange: typeof p.onCurrencyChange === 'function',
+        keys: Object.keys(p).slice(0, 40)
+      };
+    }
+    f = f.return; depth++;
+  }
+  return {found: false};
+}
+"""
+
+DESIRED_SALARY_JS = r"""
+(salary) => {
+  const el = document.querySelector('#question_0');
+  if (!el) return 'no-q0-anchor';
+  let fiber = null;
+  for (const k of Object.keys(el)) {
+    if (k.startsWith('__reactFiber') || k.startsWith('__reactInternalInstance')) {
+      fiber = el[k]; break;
+    }
+  }
+  let f = fiber, depth = 0;
+  while (f && depth < 30) {
+    const p = f.memoizedProps;
+    if (p && typeof p.onDesiredSalaryValue === 'function') {
+      try { p.onDesiredSalaryValue(String(salary)); } catch(e) { return 'err-dsv:'+e; }
+      try { p.onDesiredSalaryType({detail:{value:'Annually'}}); } catch(e) {}
+      const usd = {detail:{codeValue:'USD',label:'United States Dollar ( USD )',shortName:'SYS:5:420',value:'USD'}};
+      try { p.onCurrencyChange(usd); } catch(e) {}
+      try { p.onCurrencyValueChange(usd); } catch(e) {}
+      return 'ok';
+    }
+    f = f.return; depth++;
+  }
+  return 'no-desired-salary-handler';
+}
+"""
+
+
+def _sdf_select(page, field_id, option_text, timeout=5000):
+    """Click an sdf-select-simple and pick an option by text."""
+    try:
+        page.click(f'#{field_id}', timeout=timeout)
+        page.wait_for_timeout(800)
+        loc = page.locator(f'[role=option]:has-text("{option_text}")').first
+        if loc.count() > 0:
+            loc.click(timeout=timeout)
+            log(f"sdf_select #{field_id} -> {option_text}")
+            return True
+        # fallback: any visible option containing the text
+        loc2 = page.locator(f'[role=listbox] [role=option], [role=option]').filter(has_text=option_text).first
+        if loc2.count() > 0:
+            loc2.click(timeout=timeout)
+            log(f"sdf_select #{field_id} -> {option_text} (fallback)")
+            return True
+    except Exception as e:
+        log(f"sdf_select #{field_id} err: {e}")
+    return False
+
+
+def _wait_for_step(page, heading_re, timeout_s=15):
+    """Poll until a heading matching heading_re appears or timeout."""
+    deadline = time.time() + timeout_s
+    while time.time() < deadline:
+        try:
+            txt = page.evaluate("()=>document.body.innerText").lower()
+            if re.search(heading_re, txt, re.I):
+                return True
+        except Exception:
+            pass
+        time.sleep(0.8)
+    return False
+
+
 def phase_wizard(page, resume, no_submit=False):
-    """Drive the post-OTP wizard. Returns exit code.
-    Built adaptively; for now dumps state so the structure can be mapped.
+    """Drive the post-OTP ADP WFN wizard: Personal Info -> Resume -> Questions ->
+    Voluntary Self-ID -> Review -> Self-Attest & Submit.
+    Returns exit code: 0=submitted, 3=no-confirmation, 4=step-failed, 5=unexpected.
+    Based on proven recipe in STATUS-adp-otp.md (2026-06-10).
     """
+    addr = PERSONAL["address"]
+    phone_raw = PERSONAL["contact"].get("phone", "346-804-0227")
+    phone_e164 = "+1 " + phone_raw.replace("-", " ")  # '+1 346 804 0227'
+
     dump(page, "wizard-entry")
-    log("phase_wizard: not yet implemented (mapping)")
-    return 5
+
+    # ----------------------------------------------------------------
+    # Step 1: Personal Information
+    # ----------------------------------------------------------------
+    if not _wait_for_step(page, r"personal information|complete your application"):
+        log("wizard: personal-info step not found")
+        dump(page, "wizard-pi-miss")
+        return 4
+
+    log("wizard: filling Personal Information")
+
+    # 1a. Country FIRST (MDF combobox)
+    try:
+        page.click("#PersonalAddress_country", timeout=5000)
+        page.wait_for_timeout(600)
+        page.type("#PersonalAddress_country", "United States", delay=60)
+        page.wait_for_timeout(1200)
+        loc = page.locator("[role=option]:has-text('United States')").first
+        if loc.count() > 0:
+            loc.click(timeout=6000, force=True)  # force=True bypasses animation stability check
+        page.wait_for_timeout(800)
+        log("personal_info: country set")
+    except Exception as e:
+        log("personal_info: country err", e)
+
+    page.wait_for_timeout(600)
+
+    # 1b. Address (Google Places autocomplete — must mouse-click first pac-item)
+    try:
+        full_addr = addr["street"]  # '12420 NE 120th St #1437'
+        addr_sel = "#PersonalAddress_address_line1, input.pac-target-input"
+        page.click(addr_sel, timeout=8000, force=True)  # force=True bypasses animation stability
+        page.wait_for_timeout(400)
+        page.fill(addr_sel, full_addr, timeout=4000)
+        page.wait_for_timeout(2800)
+        # Click first pac suggestion (required for place_changed event)
+        first_item = page.locator(".pac-container .pac-item").first
+        if first_item.count() > 0:
+            # Use JS mousedown+click to fire place_changed (pac-item may not be visible in headless)
+            clicked = page.evaluate("""
+                () => {
+                    const items = document.querySelectorAll('.pac-container .pac-item');
+                    if (!items.length) return 'no-items';
+                    const item = items[0];
+                    // Simulate mouse events required for Google Places
+                    ['mousedown', 'mouseenter', 'mousemove', 'mouseup', 'click'].forEach(evt => {
+                        item.dispatchEvent(new MouseEvent(evt, {bubbles: true, cancelable: true, view: window}));
+                    });
+                    return 'fired-on:' + item.textContent.slice(0, 60);
+                }
+            """)
+            log("personal_info: pac-item JS click:", clicked)
+            page.wait_for_timeout(1500)
+            # Try Playwright click as fallback
+            if 'no-items' not in (clicked or ''):
+                try:
+                    first_item.click(timeout=2000, force=True)
+                except Exception:
+                    pass
+            page.wait_for_timeout(1200)
+            log("personal_info: address place picked")
+        else:
+            # No autocomplete — fill fields manually
+            log("personal_info: no pac items, filling manually")
+            for fill_sel, fill_val in [
+                ("#PersonalAddress_city", addr["city"]),
+                ("#PersonalAddress_postalCode", addr["zip"]),
+            ]:
+                try:
+                    page.click(fill_sel, timeout=3000, force=True)
+                    page.fill(fill_sel, fill_val, timeout=3000)
+                    log(f"personal_info: filled {fill_sel}")
+                except Exception as fe:
+                    log("personal_info: fill err", fe)
+            log("personal_info: address manual fill")
+    except Exception as e:
+        log("personal_info: address err", e)
+
+    page.wait_for_timeout(400)
+
+    # 1c. Phone (fill BOTH phone inputs)
+    for phone_sel in [
+        "#personalInfomationMobileNumberError",
+        "#personalInfomationMobileNumberErrorMessage",
+        "input[aria-label*='phone' i]",
+        "input[type='tel']",
+    ]:
+        try:
+            locs = page.locator(phone_sel).all()
+            for loc in locs:
+                if loc.is_visible():
+                    loc.fill(phone_e164, timeout=3000)
+                    loc.press("Tab")
+        except Exception:
+            pass
+
+    log("personal_info: phone filled")
+    page.wait_for_timeout(600)
+
+    # 1d. Click Next
+    if not click_text(page, "Next", "Continue", "next"):
+        log("personal_info: Next button not found")
+        dump(page, "wizard-pi-next-fail")
+        return 4
+    page.wait_for_timeout(3000)
+    dump(page, "wizard-after-pi")
+
+    # ----------------------------------------------------------------
+    # Step 2: Resume Upload
+    # ----------------------------------------------------------------
+    if not _wait_for_step(page, r"resume|upload", timeout_s=12):
+        log("wizard: resume step not detected; proceeding anyway")
+
+    log("wizard: uploading resume")
+    try:
+        file_inputs = page.locator("input[type=file]").all()
+        uploaded = False
+        for fi in file_inputs:
+            if fi.is_visible() or True:  # set_input_files works even if not visible
+                fi.set_input_files(resume, timeout=10000)
+                page.wait_for_timeout(2500)
+                log("wizard: resume set_input_files done")
+                uploaded = True
+                break
+        if not uploaded:
+            log("wizard: no file input found for resume")
+            return 4
+        # Wait for Bravo/confirmation text
+        deadline = time.time() + 10
+        while time.time() < deadline:
+            try:
+                body = page.evaluate("()=>document.body.innerText").lower()
+                if "bravo" in body or "resume" in body:
+                    break
+            except Exception:
+                pass
+            time.sleep(0.8)
+    except Exception as e:
+        log("wizard: resume upload err", e)
+        return 4
+
+    dump(page, "wizard-after-resume")
+
+    if not click_text(page, "Next", "Continue"):
+        log("wizard: resume Next not found")
+        dump(page, "wizard-resume-next-fail")
+        return 4
+    page.wait_for_timeout(3000)
+    dump(page, "wizard-after-resume-next")
+
+    # ----------------------------------------------------------------
+    # Step 3: Questions
+    # ----------------------------------------------------------------
+    if not _wait_for_step(page, r"question|questionnaire|referral", timeout_s=12):
+        log("wizard: questions step not detected; proceeding")
+
+    log("wizard: filling Questions")
+
+    # Q0: referral text (required text)
+    try:
+        q0 = page.locator("#question_0").first
+        if q0.count() > 0 and q0.is_visible():
+            q0.fill("Not Applicable", timeout=3000)
+            q0.press("Tab")
+            log("wizard: Q0 filled")
+    except Exception as e:
+        log("wizard: Q0 err", e)
+
+    # Q1: how-heard (sdf-select-simple -> LinkedIn)
+    _sdf_select(page, "question_1", "LinkedIn")
+    page.wait_for_timeout(400)
+
+    # Q2: total-comp (plain text input)
+    try:
+        q2 = page.locator("#question_2").first
+        if q2.count() > 0:
+            q2.fill("150000", timeout=3000)
+            q2.press("Tab")
+        # Q2 currency
+        try:
+            page.click("#question_currency_type_2", timeout=3000)
+            page.wait_for_timeout(600)
+            cur_opt = page.locator(".MDFSelectBox__option, [role=option]").filter(has_text="United States Dollar").first
+            if cur_opt.count() > 0:
+                cur_opt.click(timeout=3000)
+        except Exception:
+            pass
+    except Exception as e:
+        log("wizard: Q2 err", e)
+
+    # Q3: VISA sponsorship (sdf-select-simple -> No)
+    _sdf_select(page, "question_3", "No")
+    page.wait_for_timeout(400)
+
+    # Desired salary block (required — must use React fiber approach)
+    try:
+        res = page.evaluate(DESIRED_SALARY_JS, "150000")
+        log("wizard: desired_salary react handler:", res)
+    except Exception as e:
+        log("wizard: desired_salary err", e)
+        # Fallback: fill visible salary text input
+        try:
+            sal_inp = page.locator("#desiredSalaryId").first
+            if sal_inp.count() > 0:
+                sal_inp.fill("150000", timeout=3000)
+                sal_inp.press("Tab")
+        except Exception:
+            pass
+
+    page.wait_for_timeout(600)
+    dump(page, "wizard-questions-prefill")
+
+    if not click_text(page, "Next", "Continue"):
+        log("wizard: questions Next not found")
+        dump(page, "wizard-questions-next-fail")
+        return 4
+    page.wait_for_timeout(3000)
+    dump(page, "wizard-after-questions")
+
+    # ----------------------------------------------------------------
+    # Step 4: Voluntary Self-ID (decline all)
+    # ----------------------------------------------------------------
+    if not _wait_for_step(page, r"voluntary|self.?id|diversity|demographic", timeout_s=12):
+        log("wizard: self-id step not detected; proceeding")
+    else:
+        log("wizard: declining Voluntary Self-ID")
+        # Decline options: 'I decline to identify', 'Decline to self-identify', etc.
+        for decline_text in ["decline", "prefer not", "choose not", "do not wish"]:
+            try:
+                opts = page.locator(f"[role=option]:has-text('{decline_text}')").all()
+                opts += page.locator(f"label:has-text('{decline_text}')").all()
+                opts += page.locator(f"button:has-text('{decline_text}')").all()
+                for opt in opts:
+                    if opt.is_visible():
+                        opt.click(timeout=3000)
+                        page.wait_for_timeout(300)
+            except Exception:
+                pass
+        page.wait_for_timeout(600)
+        dump(page, "wizard-selfid")
+
+        if not click_text(page, "Next", "Continue"):
+            log("wizard: self-id Next not found; trying to proceed")
+
+        page.wait_for_timeout(3000)
+        dump(page, "wizard-after-selfid")
+
+    # ----------------------------------------------------------------
+    # Step 5: Review
+    # ----------------------------------------------------------------
+    if _wait_for_step(page, r"review|summary", timeout_s=10):
+        log("wizard: on Review step")
+        dump(page, "wizard-review")
+        if not click_text(page, "Next", "Continue", "Submit"):
+            log("wizard: review Next/Submit not found")
+        page.wait_for_timeout(3000)
+
+    # ----------------------------------------------------------------
+    # Step 6: Self-Attest & Submit
+    # ----------------------------------------------------------------
+    if _wait_for_step(page, r"attest|signature|certify|agree", timeout_s=10):
+        log("wizard: on Self-Attest step")
+        dump(page, "wizard-attest")
+        # Fill signature if present
+        try:
+            fname = PERSONAL["identity"]["first_name"]
+            lname = PERSONAL["identity"]["last_name"]
+            full_name = f"{fname} {lname}"
+            for sig_sel in ["#signature", "input[aria-label*='signature' i]",
+                            "input[aria-label*='name' i]", "#attestation"]:
+                try:
+                    sig = page.locator(sig_sel).first
+                    if sig.count() > 0 and sig.is_visible():
+                        sig.fill(full_name, timeout=3000)
+                        sig.press("Tab")
+                        log("wizard: signature filled")
+                        break
+                except Exception:
+                    pass
+        except Exception:
+            pass
+        # Check checkbox if present
+        for chk_sel in ["#attestationCheckbox", "input[type=checkbox]"]:
+            try:
+                chk = page.locator(chk_sel).first
+                if chk.count() > 0 and chk.is_visible() and not chk.is_checked():
+                    chk.check(timeout=3000)
+                    log("wizard: attest checkbox checked")
+                    break
+            except Exception:
+                pass
+
+    if no_submit:
+        log("wizard: --no-submit flag set; stopping before final Submit")
+        dump(page, "wizard-no-submit")
+        return 0
+
+    dump(page, "wizard-before-submit")
+
+    # Final Submit
+    if not click_text(page, "Submit", "Submit Application", "Apply", "Finish"):
+        log("wizard: Submit button not found")
+        dump(page, "wizard-submit-fail")
+        return 4
+
+    log("wizard: clicked Submit; waiting for confirmation")
+    page.wait_for_timeout(5000)
+    dump(page, "wizard-after-submit")
+
+    # Detect confirmation
+    for _ in range(6):
+        try:
+            body = page.evaluate("()=>document.body.innerText").lower()
+            if re.search(
+                r"thank you|application (submitted|received|complete)|successfully (submitted|applied)"
+                r"|your application has been|we.{0,4}ve received your application|submission complete",
+                body
+            ):
+                log("wizard: CONFIRMATION detected")
+                return 0
+        except Exception:
+            pass
+        time.sleep(2)
+
+    log("wizard: no confirmation after submit")
+    dump(page, "wizard-no-confirm")
+    return 3
+
 
 
 def main():

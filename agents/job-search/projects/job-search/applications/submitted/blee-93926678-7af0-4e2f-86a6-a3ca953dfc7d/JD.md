@@ -1,4 +1,4 @@
-# Pre-Sales Solutions Engineer
+# Sales Engineer
 
 **Company:** Blee
 **Location:** United States
@@ -18,7 +18,7 @@ With offices in San Francisco and New York, we value in-person work but offer re
 
 **The Role**
 
-We’re hiring a Founding Solutions Engineer to be the technical and domain backbone of our enterprise sales motion.
+We’re hiring a Founding Sales Engineer to be the technical and domain backbone of our enterprise sales motion.
 
 You’ll be the trusted advisor in the room - pairing closely with our Account Executives and leadership across complex, multi-stakeholder sales cycles that span legal, compliance, and marketing functions. You’ll lead technical discovery, build tailored demos, support evaluations, and deliver presentations that make prospects say “you speak my language.”
 
@@ -86,13 +86,13 @@ At Blee, you’ll join a high-performance team using AI to make content complian
 
 **How We Work:**
 
-We have offices in New York and San Francisco and value in-person collaboration, but we're open to remote for the right person. Wherever you're based, expect quarterly off-sites and the chance to spend time in our other offices when it matters.
+We have offices in New York and San Francisco and value in-person collaboration, but we're open to remote for the right person. Wherever you're based, expect bi-annual off-sites and the chance to spend time in our other offices when it matters.
 
 **What You’ll Get:**
 
 - Competitive salary and equity package
 
-- Quarterly get-togethers
+- Bi-annual get-togethers
 
 - Fully paid medical, dental, and vision insurance
 
@@ -100,14 +100,24 @@ We have offices in New York and San Francisco and value in-person collaboration,
 
 - Company-paid life insurance (US Only)
 
-- Company-sponsored 401k (US Only)
+- Company-sponsored 401k + matching (US Only)
 
-- Unlimited PTO (with mandatory 15 days off)
+- Flexible time off (with mandatory 15 days off)
 
 - Financial support for work-adjacent learning opportunities
-
-- Leaders who say “yes” more often than no to whatever helps make you more successful
 
 *Blee is an equal opportunity employer and does not discriminate on the basis of race, gender, sexual orientation, gender identity/expression, national origin, disability, age, genetic information, veteran status, marital status, pregnancy or related condition, or any other basis protected by law.*
 
 *Applicants must be authorized to work for any employer in the U.S. We are unable to sponsor or take over sponsorship of an employment Visa at this time*
+
+***Beware of Imposter Recruiters and Job Scams***
+
+- *All official communication from our talent team will come from an **@***[***blee.com***](http://montecarlodata.com)* email address.*
+
+- *We will never ask candidates to provide sensitive personal information (such as bank details, social security numbers, or payment) at any stage of the recruitment process.*
+
+- *We will never request payment for equipment, training, or application processing.*
+
+- *Our open positions are always listed on our official careers page: *[*https://jobs.ashbyhq.com/Blee*](https://jobs.ashbyhq.com/Blee)
+
+*If you are contacted by someone claiming to represent Blee but you’re unsure of their legitimacy, please reach out to us directly at *[***hiring@blee.com***](mailto:recruiting@montecarlodata.com)* before sharing any personal information.*

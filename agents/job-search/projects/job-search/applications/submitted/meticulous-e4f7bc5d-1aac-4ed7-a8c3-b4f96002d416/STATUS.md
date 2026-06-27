@@ -1,10 +1,8 @@
-STATUS: SUBMITTED
+SUBMITTED — 2026-06-27
 
-submitted_by: auto
-applied_on: 2026-06-24
-role_id: 1622
+role_id: 1970
 company: Meticulous
-role: Forward Deployed Engineer
-method: ashby-runner
-confirmation: Your application was successfully submitted.
-
+role: Forward Deployed Engineer, San Francisco
+submitted_by: auto
+applied_on: 2026-06-27
+confirmation_text: Your application was successfully submitted.

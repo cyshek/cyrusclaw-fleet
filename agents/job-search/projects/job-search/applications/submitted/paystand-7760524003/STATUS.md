@@ -1,12 +1,10 @@
-# SUBMITTED — Paystand / Pre-Sales Engineer (role 2799)
+SUBMITTED — 2026-06-27T01:05Z
 
-- **Outcome:** SUBMITTED ✅
-- **Submitted by:** auto-overnight-r4
-- **Submitted on:** 2026-06-09
-- **ATS:** greenhouse_iframe (job-boards.greenhouse.io/embed)
-- **Confirmation URL (route):** https://job-boards.greenhouse.io/embed/job_app/confirmation?for=paystand&token=7760524003
-- **Confirmation text:** "You're in! 🚀 Thanks for Applying to Paystand! Your information is in..."
-- **confirmed:** true | submitDisabled: false | emptyRequired: []
-- **Resume attached:** yes (Cyrus_Shekari_Resume_paystand_7760524003_v2.pdf)
-- **Cover letter:** yes (uploaded)
-- **Note:** prior 'gh-blank-label-required-uncertain' reprobe tag CLEARED — dryrun filled=13 unresolved=0; education typeahead + needs_review auto-committed. email-OTP gate auto-handled.
+role_id: 2799
+company: Paystand
+role: Pre-Sales Engineer
+submitted_by: auto (greenhouse_iframe_runner.py)
+confirmation_url: https://job-boards.greenhouse.io/embed/job_app/confirmation?for=paystand&token=7760524003
+resume_attached: Cyrus_Shekari_Resume_paystand_7760524003_v2.pdf (1 page, base resume)
+otp_used: OAGVRu3P
+notes: validity_token obtained from wrapper paystand.com page. salary-range question manually set to Yes. Email-OTP 8-char gate auto-solved.

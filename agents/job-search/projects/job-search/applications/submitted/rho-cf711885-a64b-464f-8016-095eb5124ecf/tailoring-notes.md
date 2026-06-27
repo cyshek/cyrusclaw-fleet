@@ -9,36 +9,38 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned Azure's recovery validation **job-to-be-done end-to-end**, scaling a 2-person operation into a platformized system sustaining 45+ annual resilience drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
-2. Led 0→1 product development of an internal Resilience Automation Platform, framing the problem through customer discovery and defining self-service requirements that **cut operational toil 30%** and shifted execution to a scalable model.
-3. Shipped Azure's first proactive resilience testing capability in 4 months, building conviction through a sharp hypothesis and clear success metrics to deliver a rack-level drill program with a **94% recovery rate** surfacing critical hardware defects.
-4. Partnered deeply across Engineering, Ops, and leadership to direct 14 cross-org recovery executions under executive visibility, including bridge lead on a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**.
-5. Brought **AI to the frontier** of how the team works, building an internal AI agent and restructuring planning workflows to cut planning cycle time **39%** and lift drill capacity 21% — a step-change in team velocity.
-6. Made deliberate calls on what to ship now vs. defer by running discovery with enterprise customers, sharpening roadmap bets and bringing partners along on the **why** behind every prioritization tradeoff.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned a **customer job-to-be-done end-to-end** — scaling Azure's recovery validation from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 discovery and delivery** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and unlocked a scalable, repeatable execution model.
+3. Built conviction through discovery to pioneer Azure's first proactive rack-level resilience testing capability — shipped in **4 months** with a 94% recovery rate, surfacing critical hardware defects and establishing a new model for continuous validation.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, partnering across Engineering, Operations, and GTM leadership.
+5. Applied **AI-driven automation** to restructure planning workflows — built an internal AI agent that cut planning cycle time by 39% and increased drill capacity by 21%, demonstrating frontier fluency to unlock step-change improvements.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove adoption of an **AI-powered code generation** product through hands-on user demos and enablement, landing utilization across 14 Azure teams and saving **37 engineering hours monthly**.
-2. Shaped the product roadmap toward intent-based YAML generation by running **11+ discovery interviews** with Azure service teams to frame the problem and validate the hypothesis before a line of spec was written.
-3. Migrated documentation to an **AI-powered semantic search** tool and enforced metadata standards, cutting information lookup time by **83%** and unlocking faster engineering self-service.
+1. Championed **product adoption** for AI-driven code generation workflows, running user demos and training that drove utilization across 14 teams and saved **37 engineering hours** monthly — accelerating velocity on the surfaces I touched.
+2. Built discovery rigor into roadmap decisions by facilitating 11+ user interviews with Azure service teams to surface critical feature gaps, directly influencing prioritization of **intent-based YAML generation** as a next-bet capability.
+3. Sharpened data retrieval by enforcing metadata standards and migrating documentation to an AI-powered semantic search tool, cutting **lookup time by 83%** and improving the end-to-end experience for internal platform customers.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched Azure regions **28% faster** by driving cross-functional alignment on a unified automation prioritization framework spanning 140+ teams.
-2. Framed and shipped a product strategy to kill region-launch toil, running discovery with 20+ service teams to quantify **81 hours** of manual effort per region and roadmapping automation of the critical path.
-3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership the signal to target automation gaps and prioritize the highest-leverage investments.
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, generating $3M in accelerated revenue and launching regions 28% faster by deciding what mattered most and bringing stakeholders along on the why.
+2. Ran structured discovery with 20+ service teams to map **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths — framing the problem and defining success before a single line was written.
+3. Engineered a **Power BI dashboard** to surface automation gaps across 140+ teams, enabling leadership to make deliberate, data-backed calls on where to invest next.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Owned legacy OS migration end-to-end across a **2,000+ unit pilot**, mapping dependencies across 1,200+ stations and shipping with **zero operational downtime**.
-2. Ran Agile ceremonies — sprint planning, retros, backlog grooming — clearing **40+ high-priority tickets** and stabilizing the developer intake process to accelerate team velocity.
-3. Partnered across IT, Operations, and Engineering to ship **automated CI/CD pipelines**, compressing the software deployment cycle by **25%** and unlocking faster iteration.
+1. Defined the **migration strategy** for a 2,000+ unit legacy OS transition, mapping dependencies across 1,200+ stations to achieve zero operational downtime — owning the outcome end-to-end across IT, Operations, and Engineering.
+2. Prioritized a cross-functional backlog to resolve **40+ high-priority tickets**, facilitating Agile sprint planning and retrospectives that stabilized the developer intake process and increased team shipping velocity.
+3. Drove strategic alignment across Engineering and Operations to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual release toil.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Lifted job bookings **26%** by redesigning the end-to-end scoping-to-invoicing lifecycle in a new CRM, owning the customer workflow across **200+ monthly proposals**.
-2. Cut Customer Acquisition Cost **13%** and boosted conversion **2.7%** by shipping a digital-first GTM strategy across the website and Google profile.
-3. Sharpened leadership pricing decisions through financial profitability analysis across **1,000+ project records**, surfacing margin leaks and informing a new pricing model.
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals — redesigning the CRM process to make the business easier to run for both operators and customers.
+2. Executed a **digital-first go-to-market strategy** — optimizing the website and Google profile — reducing Customer Acquisition Cost by 13% and boosting conversions by 2.7% through deliberate, hypothesis-driven GTM calls.
+3. Conducted **financial profitability analysis** across 1,000+ project records to identify margin leaks, delivering pricing model improvements that gave leadership the conviction to act on data rather than intuition.
 
 ## Notes from the rewriter
-- Mirrored JD language: job-to-be-done, discovery rigor, frontier/AI fluency, cross-functional partnership, velocity, ship/iterate.
-- Swapped all titles to Product Manager variants to align with the PM role at Rho.
-- Led with product ownership, discovery, and AI-as-leverage themes; surfaced fintech-adjacent skills.
+- JD term 'customer job-to-be-done end-to-end' woven verbatim into microsoft_ft bullet 1 to mirror Rho's exact ownership language.
+- JD term 'discovery rigor' / 'build conviction through discovery' surfaced in microsoft_ft bullet 2 and microsoft_2023 bullet 2, with hypothesis-and-success-criteria framing matching Rho's qualification language.
+- JD phrase 'step-change product improvements' and 'frontier fluency' used in microsoft_ft bullet 5 to directly mirror Rho's AI/emerging-tools qualification.
+- JD phrase 'make the business easier to run' echoed in pro_painters bullet 1 to connect SMB/fintech operational context to Rho's platform mission.
+- JD term 'go-to-market' (GTM) surfaced in microsoft_ft bullet 4 and pro_painters bullet 2, grounding cross-functional and customer-acquisition work in Rho's vocabulary.
+- JD phrase 'decide what matters most' / 'deliberate calls' used in microsoft_2022 bullet 1 and pro_painters bullet 3 to mirror Rho's high-agency, prioritization-focused PM profile.
 

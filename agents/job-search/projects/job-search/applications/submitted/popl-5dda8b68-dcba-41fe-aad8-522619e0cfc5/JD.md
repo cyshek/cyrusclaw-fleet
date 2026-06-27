@@ -95,3 +95,5 @@ This role also plays a key internal function: surfacing product feedback, partne
 - $150 monthly wellness credit
 
 - Constant daily learning
+
+*Popl is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees. We do not discriminate on the basis of race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, veteran status, or any other protected characteristic.*

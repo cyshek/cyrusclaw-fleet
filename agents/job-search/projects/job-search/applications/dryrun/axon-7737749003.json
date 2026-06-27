@@ -4,16 +4,16 @@
   "job_id": "7737749003",
   "job_title": "Employee Experience Program Manager",
   "job_location": "Washington, United States",
-  "fetched_at": "2026-06-02T02:03:55Z",
+  "fetched_at": "2026-06-27T00:12:19Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/axon/jobs/7737749003?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 40,
-    "filled": 25,
+    "filled": 36,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 11,
-    "blockers": 11
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -222,8 +222,8 @@
       "label": "Based on the below information, would you meet the requirements for a deemed export license in order to access EAR - controlled technology?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Yes",
-      "source": "work_authorization.status=us_citizen (matched ITAR option 'Yes')",
+      "value": "No",
+      "source": "work_authorization.status=us_citizen (INVERTED export Q 'based on the below information, would yo...' -> No)",
       "status": "filled",
       "matched_rule": "itar_us_person_ack",
       "options": [
@@ -282,10 +282,10 @@
       "label": "Are you a fugitive from justice?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you a fugitive from justice?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -302,10 +302,10 @@
       "label": "Are you an alien illegally or unlawfully in the United States?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you an alien illegally or unlawfully in the United States?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -322,10 +322,10 @@
       "label": "Are you an alien who has been admitted to the United States under a nonimmigrant visa? (i.e. H-1B, TN, F1)",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you an alien who has been admitted to the United States under a nonimmigrant visa? (i.e. H-1B, TN, F1)'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -342,10 +342,10 @@
       "label": "Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance? \n",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance? \\n'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -362,10 +362,10 @@
       "label": "Are you subject to a court order, including a Military Protection Order issued by a military judge or magistrate, restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you subject to a court order, including a Military Protection Order issued by a military judge or magistrate, restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -402,10 +402,10 @@
       "label": "Federal Firearms Licensee Employee Accessor Questionnaire",
       "type": "multi_value_multi_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Federal Firearms Licensee Employee Accessor Questionnaire'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Acknowledge",
+      "source": "pick_only_option (sole/first option 'Acknowledge')",
+      "status": "filled",
+      "matched_rule": "pick_only_option",
       "options": [
         {
           "label": "Acknowledge",
@@ -418,10 +418,10 @@
       "label": "Have you ever been adjudicated as a mental defective OR have you ever been committed to a mental institution?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you ever been adjudicated as a mental defective OR have you ever been committed to a mental institution?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -438,10 +438,10 @@
       "label": "Have you ever been convicted in any court of a misdemeanor crime of domestic violence, or are you or have you ever been a member of the military and been convicted of a crime that included, as an element, the use of force against a person as identified in the instructions?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you ever been convicted in any court of a misdemeanor crime of domestic violence, or are you or have you ever been a member of the military and been convicted of a crime that included, as an element, the use of force against a person as identified in the instructions?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -478,10 +478,10 @@
       "label": "Have you ever been discharged from the Armed Forces under dishonorable conditions?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you ever been discharged from the Armed Forces under dishonorable conditions?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -498,10 +498,10 @@
       "label": "Have you ever renounced your United States citizenship?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Have you ever renounced your United States citizenship?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -529,10 +529,10 @@
       "label": "Do you currently reside in the greater Seattle area?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Do you currently reside in the greater Seattle area?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
       "options": [
         {
           "label": "Yes",
@@ -721,131 +721,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_30772436003",
-      "label": "Are you a fugitive from justice?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you a fugitive from justice?'"
-    },
-    {
-      "id": "question_30772437003",
-      "label": "Are you an alien illegally or unlawfully in the United States?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you an alien illegally or unlawfully in the United States?'"
-    },
-    {
-      "id": "question_30772438003",
-      "label": "Are you an alien who has been admitted to the United States under a nonimmigrant visa? (i.e. H-1B, TN, F1)",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you an alien who has been admitted to the United States under a nonimmigrant visa? (i.e. H-1B, TN, F1)'"
-    },
-    {
-      "id": "question_30772439003",
-      "label": "Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance? \n",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance? \\n'"
-    },
-    {
-      "id": "question_30772440003",
-      "label": "Are you subject to a court order, including a Military Protection Order issued by a military judge or magistrate, restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you subject to a court order, including a Military Protection Order issued by a military judge or magistrate, restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner?'"
-    },
-    {
-      "id": "question_30772442003[]",
-      "label": "Federal Firearms Licensee Employee Accessor Questionnaire",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Federal Firearms Licensee Employee Accessor Questionnaire'"
-    },
-    {
-      "id": "question_30772443003",
-      "label": "Have you ever been adjudicated as a mental defective OR have you ever been committed to a mental institution?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you ever been adjudicated as a mental defective OR have you ever been committed to a mental institution?'"
-    },
-    {
-      "id": "question_30772444003",
-      "label": "Have you ever been convicted in any court of a misdemeanor crime of domestic violence, or are you or have you ever been a member of the military and been convicted of a crime that included, as an element, the use of force against a person as identified in the instructions?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you ever been convicted in any court of a misdemeanor crime of domestic violence, or are you or have you ever been a member of the military and been convicted of a crime that included, as an element, the use of force against a person as identified in the instructions?'"
-    },
-    {
-      "id": "question_30772446003",
-      "label": "Have you ever been discharged from the Armed Forces under dishonorable conditions?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you ever been discharged from the Armed Forces under dishonorable conditions?'"
-    },
-    {
-      "id": "question_30772447003",
-      "label": "Have you ever renounced your United States citizenship?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Have you ever renounced your United States citizenship?'"
-    },
-    {
-      "id": "question_30877772003",
-      "label": "Do you currently reside in the greater Seattle area?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Do you currently reside in the greater Seattle area?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_30772436003",
-      "label": "Are you a fugitive from justice?",
-      "reason": "no LABEL_RULES match for label='Are you a fugitive from justice?'"
-    },
-    {
-      "id": "question_30772437003",
-      "label": "Are you an alien illegally or unlawfully in the United States?",
-      "reason": "no LABEL_RULES match for label='Are you an alien illegally or unlawfully in the United States?'"
-    },
-    {
-      "id": "question_30772438003",
-      "label": "Are you an alien who has been admitted to the United States under a nonimmigrant visa? (i.e. H-1B, TN, F1)",
-      "reason": "no LABEL_RULES match for label='Are you an alien who has been admitted to the United States under a nonimmigrant visa? (i.e. H-1B, TN, F1)'"
-    },
-    {
-      "id": "question_30772439003",
-      "label": "Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance? \n",
-      "reason": "no LABEL_RULES match for label='Are you an unlawful user of, or addicted to, marijuana or any depressant, stimulant, narcotic drug, or any other controlled substance? \\n'"
-    },
-    {
-      "id": "question_30772440003",
-      "label": "Are you subject to a court order, including a Military Protection Order issued by a military judge or magistrate, restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner?",
-      "reason": "no LABEL_RULES match for label='Are you subject to a court order, including a Military Protection Order issued by a military judge or magistrate, restraining you from harassing, stalking, or threatening your child or an intimate partner or child of such partner?'"
-    },
-    {
-      "id": "question_30772442003[]",
-      "label": "Federal Firearms Licensee Employee Accessor Questionnaire",
-      "reason": "no LABEL_RULES match for label='Federal Firearms Licensee Employee Accessor Questionnaire'"
-    },
-    {
-      "id": "question_30772443003",
-      "label": "Have you ever been adjudicated as a mental defective OR have you ever been committed to a mental institution?",
-      "reason": "no LABEL_RULES match for label='Have you ever been adjudicated as a mental defective OR have you ever been committed to a mental institution?'"
-    },
-    {
-      "id": "question_30772444003",
-      "label": "Have you ever been convicted in any court of a misdemeanor crime of domestic violence, or are you or have you ever been a member of the military and been convicted of a crime that included, as an element, the use of force against a person as identified in the instructions?",
-      "reason": "no LABEL_RULES match for label='Have you ever been convicted in any court of a misdemeanor crime of domestic violence, or are you or have you ever been a member of the military and been convicted of a crime that included, as an element, the use of force against a person as identified in the instructions?'"
-    },
-    {
-      "id": "question_30772446003",
-      "label": "Have you ever been discharged from the Armed Forces under dishonorable conditions?",
-      "reason": "no LABEL_RULES match for label='Have you ever been discharged from the Armed Forces under dishonorable conditions?'"
-    },
-    {
-      "id": "question_30772447003",
-      "label": "Have you ever renounced your United States citizenship?",
-      "reason": "no LABEL_RULES match for label='Have you ever renounced your United States citizenship?'"
-    },
-    {
-      "id": "question_30877772003",
-      "label": "Do you currently reside in the greater Seattle area?",
-      "reason": "no LABEL_RULES match for label='Do you currently reside in the greater Seattle area?'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

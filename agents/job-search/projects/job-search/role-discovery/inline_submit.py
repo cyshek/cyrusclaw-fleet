@@ -125,6 +125,7 @@ BAMBOOHR_RX = re.compile(r"([a-z0-9-]+)\.bamboohr\.com/(?:careers/(\d+)|jobs/(?:
 # iCIMS career portals: careers-<co>.icims.com/jobs/<reqId>/<slug>/job (also
 # jobs.icims.com/... and <co>.icims.com/...). Capture the tenant host + reqId.
 ICIMS_RX = re.compile(r"https?://([a-z0-9-]+)\.icims\.com/jobs/(\d+)", re.I)
+ADP_WFN_RX = re.compile(r"workforcenow\.adp\.com/mascsr", re.I)
 
 # Greenhouse-iframe wrappers (Datadog, Databricks, Stripe, etc. — CUSTOM-ATS-SCOUT-2026-05-13).
 sys.path.insert(0, str(HERE / "adapters"))
@@ -164,6 +165,8 @@ def detect_ats(url: str) -> str:
         return "eightfold"
     if ICIMS_RX.search(u) or ".icims.com" in u:
         return "icims"
+    if ADP_WFN_RX.search(u):
+        return "adp_wfn"
     if _gh_iframe_slug(u) and _gh_iframe_jid(u):
         return "greenhouse_iframe"
     return "unknown"
@@ -555,7 +558,7 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
     where_clause = " OR ".join(where_url) or "1=0"
     rows = conn.execute(f"""
         SELECT * FROM roles
-         WHERE (status IS NULL OR status='' OR status='queued')
+         WHERE (status IS NULL OR status='' OR status='queued' OR status='open')
            AND applied_on IS NULL
            AND (prep_status IS NULL OR prep_status='')
            AND ({where_clause})
@@ -1980,6 +1983,113 @@ def prep_role_icims(role: dict, dry_run: bool = False) -> dict:
     return result
 
 
+def prep_role_adp_wfn(role: dict, dry_run: bool = False) -> dict:
+    """ADP WorkforceNow prep+submit. Invokes _adp_wfn_runner.py over CDP."""
+    import subprocess as _subprocess, json as _json4
+    slug = role["slug"]
+    workdir = SUBMITTED_DIR / slug
+    workdir.mkdir(parents=True, exist_ok=True)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    result = {
+        "slug": slug, "role_id": role["role_id"], "company": role["company"],
+        "role": role["role"], "ok": False, "workdir": str(workdir),
+        "ats": "adp_wfn", "submit_mode": "runner", "started_at": now,
+    }
+    personal = _json4.loads((ROOT / "personal-info.json").read_text())
+    stock = personal.get("files", {}).get("resume_pdf", "")
+    resume_path = str(ROOT / stock) if stock else None
+    pdfs = sorted(workdir.glob("*.pdf"))
+    if pdfs:
+        resume_path = str(pdfs[0])
+    if not resume_path or not Path(resume_path).exists():
+        result["error"] = "no resume found"
+        (workdir / "STATUS.md").write_text("ABORT-ADP-WFN-NO-RESUME\n")
+        return result
+    job_url = role.get("app_url") or role.get("url") or ""
+    adp_doc = {"role_id": role["role_id"], "company": role["company"],
+               "role": role["role"], "ats": "adp_wfn", "url": job_url, "slug": slug}
+    (workdir / "adp_wfn.json").write_text(_json4.dumps(adp_doc, indent=2) + "\n")
+    runner_cmd = (".venv/bin/python _adp_wfn_runner.py"
+                  f" --url '{job_url}' --resume '{resume_path}'"
+                  f" --role-id {role['role_id']}")
+    if dry_run:
+        status_text = (
+            "PREP-READY-ADP-WFN-RUNNER\n\n"
+            + f"role_id: {role['role_id']}\nslug: {slug}\nurl: {job_url}\n"
+            + f"resume: {resume_path}\nDRY-RUN: runner not invoked\n"
+        )
+        (workdir / "STATUS.md").write_text(status_text)
+        result["ok"] = True
+        result["dry_run"] = True
+        result["runner_cmd"] = runner_cmd
+        return result
+    (workdir / "STATUS.md").write_text(
+        f"RUNNING-ADP-WFN\n\nrole_id: {role['role_id']}\nurl: {job_url}\n"
+    )
+    try:
+        proc = _subprocess.run(
+            [".venv/bin/python", "_adp_wfn_runner.py",
+             "--url", job_url, "--resume", resume_path,
+             "--role-id", str(role["role_id"])],
+            cwd=str(RD), capture_output=True, text=True, timeout=600,
+        )
+        stdout = proc.stdout or ""
+        stderr = proc.stderr or ""
+        exit_code = proc.returncode
+        result["exit_code"] = exit_code
+        result["runner_stdout"] = stdout[-3000:]
+        result["runner_stderr"] = stderr[-1000:]
+    except _subprocess.TimeoutExpired:
+        result["error"] = "runner timeout"
+        (workdir / "STATUS.md").write_text("BLOCKED-ADP-WFN-TIMEOUT\n")
+        return result
+    except Exception as exc:
+        result["error"] = f"runner exec error: {exc}"
+        (workdir / "STATUS.md").write_text(f"BLOCKED-ADP-WFN-EXEC-ERROR\n{exc}\n")
+        return result
+    now2 = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    if exit_code == 0:
+        (workdir / "STATUS.md").write_text(
+            f"SUBMITTED\n\nsubmitted_by: _adp_wfn_runner\napply_url: {job_url}\n"
+            + f"resume_attached: {Path(resume_path).name}\n"
+        )
+        result["ok"] = True
+        result["submitted"] = True
+        if not dry_run:
+            try:
+                conn = sqlite3.connect(str(DB_PATH))
+                conn.execute(
+                    "UPDATE roles SET applied_by=?, applied_on=?, status=?, prep_status=? WHERE id=?",
+                    ("adp-wfn-runner", now2[:10], "submitted", "submitted", role["role_id"]),
+                )
+                conn.commit()
+                conn.close()
+                result["tracker_updated"] = True
+            except Exception as e2:
+                result["tracker_update_error"] = str(e2)
+    elif exit_code == 6:
+        _mark_role_closed(role["role_id"])
+        result["error"] = "role closed"
+        (workdir / "STATUS.md").write_text("CLOSED\nexit_code: 6\n")
+    else:
+        block_map = {2: "adp-wfn-otp-failed", 3: "adp-wfn-no-confirm",
+                     4: "adp-wfn-step-failed", 5: "adp-wfn-unexpected"}
+        br = block_map.get(exit_code, f"adp-wfn-exit-{exit_code}")
+        (workdir / "STATUS.md").write_text(f"BLOCKED\nexit_code: {exit_code}\nblock_reason: {br}\n")
+        if not dry_run:
+            try:
+                conn = sqlite3.connect(str(DB_PATH))
+                conn.execute("UPDATE roles SET status=?, block_reason=? WHERE id=?",
+                             ("blocked", br, role["role_id"]))
+                conn.commit()
+                conn.close()
+            except Exception:
+                pass
+        result["error"] = br
+    result["ended_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return result
+
+
 def prep_role_meta(role: dict, dry_run: bool = False) -> dict:
     """Meta Careers prep+submit pipeline.
 
@@ -2252,6 +2362,10 @@ def prep_role(role: dict, dry_run: bool = False, ignore_csp_block: bool = False,
     # iCIMS — full prep+submit via _icims_runner.py (CDP; email-OTP handled).
     if role.get("ats") == "icims":
         return prep_role_icims(role, dry_run=dry_run)
+
+    # ADP WorkforceNow — full submit via _adp_wfn_runner.py (CDP; email-OTP + wizard).
+    if role.get("ats") == "adp_wfn":
+        return prep_role_adp_wfn(role, dry_run=dry_run)
 
     # chain_005 P5 (2026-05-26): HEAD-probe the URL before any other work.
     # Cursor 933 lost a full prep cycle to a page-not-found. Probe runs after

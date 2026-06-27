@@ -2,7 +2,7 @@
 from . import greenhouse, ashby, lever, workday, smartrecruiters
 from . import microsoft, google, apple, meta, eightfold
 from . import linkedin, rippling, uber, snap, bytedance, workable
-from . import jobright, bamboohr
+from . import jobright, bamboohr, icims
 from . import remotive, remoteok, himalayas
 
 REGISTRY = {
@@ -28,4 +28,5 @@ REGISTRY = {
     "jobright": jobright.fetch,
     "remotive": remotive.fetch,
     "remoteok": remoteok.fetch,
+    "icims": icims.fetch,
 }

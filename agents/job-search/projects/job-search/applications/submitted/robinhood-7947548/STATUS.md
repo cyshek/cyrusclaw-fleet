@@ -1,9 +1,6 @@
-PREP-READY — 2026-06-02T01:59:26+00:00
+ABORT-JD-FETCH — 2026-06-27T00:46:43+00:00
 
 role_id: 1939
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-robinhood-7947548.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/robinhood-7947548/Cyrus_Shekari_Resume_robinhood_7947548_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/robinhood-7947548/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+phase: jd-fetch
+error:
+HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/robinhood/jobs/7947548

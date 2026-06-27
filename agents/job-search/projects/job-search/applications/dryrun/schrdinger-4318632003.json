@@ -4,15 +4,15 @@
   "job_id": "4318632003",
   "job_title": "Solutions Architect",
   "job_location": "Illinois; New York; Cambridge, MA",
-  "fetched_at": "2026-06-04T12:46:28Z",
+  "fetched_at": "2026-06-27T01:18:41Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/schrdinger/jobs/4318632003?questions=true",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 21,
-    "filled": 13,
+    "filled": 14,
     "filled_needs_review": 2,
     "declined": 4,
-    "unresolved": 2,
+    "unresolved": 1,
     "blockers": 0
   },
   "fields": [
@@ -207,10 +207,10 @@
       "label": "Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?",
       "type": "multi_value_single_select",
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -376,12 +376,6 @@
       "label": "How did you find out about this job?",
       "required": false,
       "reason": "no LABEL_RULES match for label='How did you find out about this job?'"
-    },
-    {
-      "id": "question_10120433003",
-      "label": "Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?",
-      "required": false,
-      "reason": "no LABEL_RULES match for label='Are you subject to any prior or existing agreements which would limit, restrict, or prevent you from performing the duties of the position for which you have applied, such as a non-solicitation or a non-competition agreement?'"
     }
   ],
   "blockers": [],
