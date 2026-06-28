@@ -929,7 +929,20 @@ def run_bullet_rewriter(slug: str, workdir: Path, gh_org: str, gh_jid: str,
                         timeout_s: int = 900) -> Path:
     """Run bullet_rewriter --render. Uses a queued→submitted symlink shim
     because bullet_rewriter hardcodes APPS_DIR=applications/queued. Returns
-    path to the rendered PDF."""
+    path to the rendered PDF.
+
+    FAST-PATH: if the v2 PDF is already present in workdir (e.g. bullet_rewriter
+    completed the render but then crashed in its own final write_text, or a
+    prior run was killed mid-flight after producing the PDF), skip re-running
+    the entire LLM + LaTeX pipeline and return the existing file immediately.
+    This fixes the ABORT-BULLET-REWRITER loop where TimeoutExpired fires AFTER
+    the PDF is already on disk.
+    """
+    pdf_name = f"Cyrus_Shekari_Resume_{gh_org}_{gh_jid}_v2.pdf"
+    pdf_fast = workdir / pdf_name
+    if pdf_fast.exists() and pdf_fast.stat().st_size > 1024:
+        # PDF already rendered — skip the full LLM+LaTeX run.
+        return pdf_fast
     QUEUED_DIR.mkdir(parents=True, exist_ok=True)
     shim = QUEUED_DIR / slug
     org_shim = QUEUED_DIR / f"{gh_org}-{gh_jid}"  # bullet_rewriter expects {gh_org}-{jid}

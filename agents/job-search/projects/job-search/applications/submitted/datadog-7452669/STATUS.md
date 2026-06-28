@@ -1,17 +1,5 @@
-PREP-READY-IFRAME-RUNNER — 2026-05-31T12:17:09+00:00
+SUBMITTED
 
+submitted_by: auto (stale-cleanup 2026-06-27)
 role_id: 615
-slug:    datadog-7452669
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-datadog-7452669.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/datadog-7452669/Cyrus_Shekari_Resume_datadog_7452669_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/datadog-7452669/cover_answers.md
-wrapper: https://careers.datadoghq.com/detail/7452669/?gh_jid=7452669
-
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
-
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug datadog-7452669
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).
+note: STATUS.md was stale PREP-READY; DB already showed submitted

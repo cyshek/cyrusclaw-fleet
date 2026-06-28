@@ -1,3 +1,5 @@
-# Cover answers — brain-co-fe8d9afb-afd6-424e-aae4-9f31d6d60426
+# Cover answers — Brainco, Product Manager (brain-co-fe8d9afb-afd6-424e-aae4-9f31d6d60426)
 
-(No open-ended essay questions detected in dryrun spec.)
+## Full Name
+
+Cyrus Shekari

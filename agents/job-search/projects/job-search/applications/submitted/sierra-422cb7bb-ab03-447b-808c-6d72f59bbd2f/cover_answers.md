@@ -6,8 +6,8 @@ Cyrus Shekari
 
 ## What's your favorite  junk food?
 
-Hot Cheetos. No contest.
+Hot Cheetos. No competition.
 
 ## Anything else? (Optional)
 
-Just excited about the work Sierra is doing at the intersection of enterprise AI and real customer experience. The agent data platform scope maps closely to what I have been building at Microsoft, and I am genuinely looking forward to the conversation.
+Excited about the Agent Data Platform role specifically - the intersection of enterprise AI agents and the data infrastructure that powers them is exactly where I've been spending my time at Microsoft. Happy to chat through any of the work in more detail.

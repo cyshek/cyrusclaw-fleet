@@ -3,41 +3,42 @@
 ## Title swaps applied
 - `microsoft_ft` → **Technical Product Manager**
 - `microsoft_2023` → **Technical Product Manager Intern**
-- `microsoft_2022` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
 - `amazon_robotics` → **Technical Program Manager Intern**
-- `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation from a 2-person workflow into a **shared platform**, standardizing interfaces and ownership to sustain 45+ annual drills and drive **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
-2. Led 0→1 product definition of an internal **Resilience Automation Platform**, shipping self-service scheduling that became the easiest, safest path for service teams to validate recovery and cut operational toil by **30%**.
-3. Spotted repeated engineering patterns across recovery workflows to launch Azure's first proactive rack-level drill program in 4 months, achieving a **94% recovery rate** and establishing a reusable model for continuous validation.
-4. Partnered with engineering to define clear readiness expectations and ownership boundaries for 14 cross-org executions, including bridge lead for a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**.
-5. Built an internal **AI agent** and restructured planning workflows to compress planning cycle time by **39%** and expand drill capacity by 21%, protecting product team velocity as adoption scaled.
-6. Evaluated real-world adoption of shared resilience components through usage telemetry and partner feedback loops, iterating interfaces so foundations stayed **lightweight** and grounded in actual delivery needs.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. **Platformized** Azure's recovery validation program from a 2-person operation into a scalable shared system, standardizing workflows to sustain 45+ annual resilience drills and deliver **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining shared interfaces, ownership boundaries, and self-service scheduling capabilities that reduced operational toil by 30% and freed product teams to ship faster.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**—surfacing critical hardware defects and establishing a reusable validation foundation across engineering teams.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract, coordinating ownership and readiness across distributed teams.
+5. Built an internal **AI agent** to restructure drill-planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21%—keeping platform processes lightweight and grounded in real delivery needs.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove voluntary adoption of an **AI-driven code generation** platform across 14 Azure service teams through hands-on demos and enablement, saving **37 engineering hours monthly** and validating shared tooling fit.
-2. Shaped the product roadmap for **intent-based YAML** generation by running 11+ user interviews with Azure service teams, translating friction patterns into prioritized platform capabilities.
-3. Migrated documentation to an **AI-powered semantic search** experience with rigorous metadata standards, cutting lookup time by **83%** and making the shared knowledge layer the default path for engineers.
+1. Drove **voluntary adoption** of AI-driven code generation workflows by conducting user demos and training across 14 key Azure teams, surfacing repeated friction patterns and saving **37 engineering hours monthly** through shared tooling.
+2. Influenced the product roadmap to prioritize intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, translating delivery friction into clear shared-component requirements.
+3. Improved **platform reliability** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, reducing lookup time by 83% and raising data integrity across shared systems.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Unlocked **$3M in accelerated revenue** and launched Azure regions **28% faster** by aligning 140+ teams on a unified automation prioritization framework — a standard adopted because it removed real delivery friction.
-2. Defined a platform strategy to eliminate region-launch toil, running discovery with 20+ service teams to quantify **81 hours of manual effort per region** and roadmapping automation of the critical path.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership the usage signal needed to ground standardization decisions in real data rather than premature coordination.
+1. Accelerated region launches by **28% and generated $3M** in revenue by securing cross-functional alignment on a unified automation prioritization framework—standardizing the highest-leverage paths across 140+ teams without over-constraining product-owned workflows.
+2. Identified **81 hours of manual effort** per region launch through discovery with 20+ service teams, then built a roadmap to automate critical paths and eliminate duplicated work across the platform.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership clear signal on standardization gaps and enabling data-grounded prioritization decisions.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Delivered **zero downtime** across a 2,000+ unit OS migration pilot by mapping dependencies across 1,200+ stations and defining clear readiness expectations between IT, Ops, and Engineering.
-2. Facilitated Agile ceremonies and backlog prioritization to resolve **40+ high-priority tickets**, stabilizing the developer intake process and reducing coordination overhead for product teams.
-3. Aligned IT, Operations, and Engineering on automated **CI/CD pipelines** as the shared deployment path, accelerating software release cycles by **25%** with lightweight process.
+1. Defined the **shared migration strategy** for a 2,000+ unit legacy OS transition, mapping dependencies across 1,200+ stations to achieve zero operational downtime and protect product team velocity throughout rollout.
+2. Implemented **automated CI/CD pipelines** in partnership with IT, Operations, and Engineering, accelerating the software deployment cycle by 25% and reducing delivery friction across the platform.
+3. Prioritized the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake process and keeping platform overhead lightweight during a high-stakes production transition.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Lifted job bookings by **26%** by standardizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals inside a new CRM workflow adopted across the sales team.
-2. Cut Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first GTM strategy, optimizing the website and Google profile as the default top-of-funnel surface.
-3. Sharpened leadership pricing models through **profitability analysis** of 1,000+ project records, surfacing margin leaks and grounding pricing decisions in real usage outcomes.
+1. Increased job bookings by **26%** by standardizing the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM process, reducing duplicated effort and improving delivery consistency.
+2. Cut **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile based on real usage and conversion data.
+3. Identified and sealed margin leaks by conducting **profitability analysis** across 1,000+ project records, giving leadership grounded pricing models backed by real outcomes.
 
 ## Notes from the rewriter
-- Reframed Azure resilience work as platform/shared-systems PM with adoption, interfaces, and ownership language from JD.
-- Surfaced 'voluntary adoption', 'lightweight process', and 'real delivery friction' phrasing to mirror JD success metrics.
+- 'Shared interfaces and ownership boundaries' (JD: 'define clear interfaces, ownership, and readiness expectations') woven into microsoft_ft bullet 2.
+- 'Voluntary adoption' and 'friction patterns' (JD: 'voluntary adoption because they are genuinely useful' and 'delivery friction') used in microsoft_2023 bullet 1.
+- 'Standardizing highest-leverage paths without over-constraining product-owned workflows' (JD: 'introduce standards without over-constraining teams') in microsoft_2022 bullet 1.
+- 'Lightweight platform processes grounded in real delivery needs' (JD exact phrase) in microsoft_ft bullet 5.
+- 'Data-grounded prioritization decisions' (JD: 'decisions about standardization clearly grounded in real usage and outcomes') in microsoft_2022 bullet 3.
 

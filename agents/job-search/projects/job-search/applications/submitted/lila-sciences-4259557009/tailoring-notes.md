@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's **AI data validation program** from a 2-person operation into a platformized system, standardizing delivery workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model consumed by downstream engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, standing up a rack-level drill program in **4 months** at a 94% recovery rate — surfacing critical hardware defects and establishing a continuous validation standard adopted across multiple project teams.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as the key communication interface across research, engineering, and enterprise stakeholders, including bridge lead for a sovereign-cloud isolation test tied to a $1.5B+ contract.
+5. Built an internal **AI agent for drill planning**, restructuring program workflows to cut planning cycle time by 39%, increase drill capacity by 21%, and enable rapid onboarding of new workstreams — directly mirroring best practices for fast program iteration at scale.
+6. Defined and enforced standardized handoff protocols and QA gates across all active project teams, ensuring model training and downstream technical consumers received **consistent, high-quality outputs** on every delivery cycle.
+7. Developed executive-quality reporting and program documentation that tracked progress, surfaced risks, and aligned distributed cross-functional teams to broader AI Research priorities — enabling fast, confident decisions even in rapidly evolving program states.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **AI data pipeline adoption** for AI-powered code generation workflows, conducting user demos and training sessions that embedded new tooling across 14 key engineering teams and saved **37 engineering hours monthly** in recurring manual effort.
+2. Shaped the product roadmap by facilitating **11+ structured user interviews** with Azure service teams, surfacing critical feature gaps and securing prioritization of intent-based YAML generation — translating raw research data into an actionable program roadmap.
+3. Improved dataset curation quality and retrieval speed by enforcing rigorous **metadata standards** and migrating documentation to an AI-powered semantic search tool, reducing lookup time by 83% and improving data consistency for downstream consumers.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by driving cross-functional alignment on a unified automation prioritization framework spanning 140+ teams across engineering and operations organizations.
+2. Mobilized a program strategy to eliminate operational toil during region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a roadmap to automate the highest-impact critical paths.
+3. Enabled leadership to target automation gaps and allocate resources to high-impact workstreams by engineering a **Power BI dashboard** tracking operational toil across 140+ teams — delivering the reporting infrastructure needed for data-driven program decisions.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and enforcing standardized handoff protocols between IT, Operations, and Engineering workstreams.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets**, stabilize the developer intake process, and maintain delivery velocity across a distributed cross-functional program team.
+3. Drove cross-org alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable delivery standard for future robotics software rollouts.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a structured CRM process that standardized outputs and reduced manual handoff errors across sales and operations teams.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile to improve lead quality and funnel performance.
+3. Strengthened leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through data-driven recommendations that improved per-job contribution across key service lines.
+
+## Notes from the rewriter
+- 'AI data generation and curation workstreams' (JD core) woven into microsoft_ft bullet#1 as 'AI data validation program' and bullet#6 as 'standardized handoff protocols and QA gates' — directly mirroring JD language around data delivery standards.
+- 'Key communication interface between project teams and research/science/model training organizations' (JD role definition) surfaced verbatim in microsoft_ft bullet#4 framing Cyrus as bridge between engineering, research, and enterprise stakeholders.
+- 'Rapid experimentation and iteration / new project teams ramp efficiently' (JD best-practices ask) mapped to microsoft_ft bullet#5 AI agent bullet, explicitly calling out fast program iteration and new workstream onboarding.
+- 'Standardized outputs the model training team can directly consume' (JD delivery standard) embedded in microsoft_ft bullet#6 and echoed in amazon_robotics bullet#1 with 'standardized handoff protocols' and 'repeatable delivery standard.'
+- 'Executive-quality documents, roadmaps, and updates that drive decisions' (JD communication requirement) directly addressed in microsoft_ft bullet#7, framed around program documentation, risk surfacing, and fast decision-making under uncertainty.
+

@@ -158,10 +158,8 @@ companies:
   tenant: visa
   site: VISA
 - name: ABB
-  adapter: workday
-  host: abb.wd3.myworkdayjobs.com
-  tenant: abb
-  site: 1abb
+  skip: true
+  reason: moved to Phenom People (phenompeople.com) — no runner; was Workday 404 as of 2026-06-27
 - name: Capital One
   adapter: workday
   host: capitalone.wd1.myworkdayjobs.com
@@ -622,7 +620,7 @@ companies:
   adapter: workday
   host: cisco.wd5.myworkdayjobs.com
   tenant: cisco
-  site: External
+  site: cisco_Careers  # fixed 2026-06-27; External was 404
 - name: Splunk Inc
   skip: true
   reason: duplicate of Splunk entry above
@@ -1125,9 +1123,6 @@ companies:
 - name: Substrate
   adapter: ashby
   slug: substrate
-- name: Datacurve
-  adapter: ashby
-  slug: datacurve
 - name: MotherDuck
   adapter: ashby
   slug: motherduck
@@ -1137,9 +1132,6 @@ companies:
 - name: Turbopuffer
   adapter: ashby
   slug: turbopuffer
-- name: Materialize
-  adapter: greenhouse
-  slug: materialize
 - name: Chalk
   adapter: ashby
   slug: chalk
@@ -1886,10 +1878,6 @@ companies:
   adapter: ashby
   slug: greenboard
   note: yc-auto-discovered Winter 2024
-- name: Handoff
-  adapter: ashby
-  slug: handoff
-  note: yc-auto-discovered Winter 2020
 - name: hud
   adapter: ashby
   slug: hud
@@ -2018,10 +2006,6 @@ companies:
   adapter: ashby
   slug: yumaai
   note: yc-auto-discovered Winter 2023
-- name: Abundant
-  adapter: ashby
-  slug: abundant
-  note: yc-auto-discovered Fall 2024
 - name: Alex
   adapter: ashby
   slug: alexai
@@ -2126,10 +2110,6 @@ companies:
   adapter: ashby
   slug: hadrius
   note: yc-auto-discovered Winter 2023
-- name: Harper
-  adapter: ashby
-  slug: harper
-  note: yc-auto-discovered Winter 2025
 - name: Hotplate
   adapter: ashby
   slug: hotplate
@@ -2302,10 +2282,6 @@ companies:
   adapter: greenhouse
   slug: nabis
   note: yc-auto-discovered Winter 2019
-- name: Interface
-  adapter: greenhouse
-  slug: interfaceai
-  note: yc-auto-discovered Summer 2025
 - name: GOAT Group
   adapter: greenhouse
   slug: goatgroup
@@ -2466,10 +2442,6 @@ companies:
   adapter: greenhouse
   slug: postscript
   note: yc-auto-discovered Winter 2019
-- name: Vitable Health
-  adapter: greenhouse
-  slug: vitablehealth
-  note: yc-auto-discovered Summer 2020
 - name: Haven
   adapter: greenhouse
   slug: haven
@@ -2478,10 +2450,6 @@ companies:
   adapter: greenhouse
   slug: beam
   note: yc-auto-discovered Winter 2022
-- name: Latent
-  adapter: greenhouse
-  slug: latentai
-  note: yc-auto-discovered Winter 2023
 - name: Piramidal
   adapter: greenhouse
   slug: piramidalinc
@@ -2798,10 +2766,6 @@ companies:
   adapter: greenhouse
   slug: outschool
   note: yc-auto-discovered Winter 2016
-- name: Snackpass
-  adapter: greenhouse
-  slug: snackpass
-  note: yc-auto-discovered Winter 2018
 - name: Tesseract
   adapter: greenhouse
   slug: tesseract
@@ -3177,10 +3141,6 @@ companies:
 - name: eNGINE
   adapter: greenhouse
   slug: engine
-  note: li-resolved
-- name: Credera
-  adapter: greenhouse
-  slug: credera
   note: li-resolved
 - name: Nintendo
   adapter: greenhouse
@@ -3692,9 +3652,6 @@ companies:
 - name: Remote
   adapter: greenhouse
   slug: remote
-- name: Luma AI
-  adapter: ashby
-  slug: luma
 - name: Honeycomb
   adapter: greenhouse
   slug: honeycomb
@@ -4448,9 +4405,6 @@ companies:
 - name: Branch AI
   adapter: greenhouse
   slug: branch
-- name: Forge
-  adapter: ashby
-  slug: forge
 - name: Polar
   adapter: ashby
   slug: polar
@@ -4610,9 +4564,6 @@ companies:
 - name: Interface
   adapter: ashby
   slug: interface
-- name: Doe
-  adapter: ashby
-  slug: doe
 - name: CareSwift
   adapter: ashby
   slug: careswift
@@ -4676,9 +4627,6 @@ companies:
 - name: Beyond Reach Labs
   adapter: ashby
   slug: beyondreachlabs
-- name: Cascade
-  adapter: ashby
-  slug: cascade
 - name: Mantis
   adapter: greenhouse
   slug: mantis

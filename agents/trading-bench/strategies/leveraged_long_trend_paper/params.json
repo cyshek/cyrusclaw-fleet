@@ -7,6 +7,7 @@
   "target_vol": 0.25,
   "vol_window": 20,
   "sma_window": 200,
+  "breadth_windows": [30, 90, 180],
   "w_max": 1.0,
 
   "deployable_notional": 1000.0,
@@ -15,6 +16,8 @@
   "flat_weight_eps": 0.02,
 
   "vix_gate": false,
+
+  "_breadth_note": "breadth_windows=[30,90,180]: replaces the binary SMA-200 trend gate with a 3-horizon SMA-breadth participation scaler g = (# of {30,90,180}d SMAs the QQQ close is above)/3 in {0,1/3,2/3,1}; weight = clamp(g * voltarget_weight, 0, w_max). Validated 2026-06-27 (ens_sma_breadth tiebreak, full engine parity, live vix_gate=false): OOS fp-Sharpe +0.018 vs binary SMA-200, OOS+canary +0.056 (canary-robust, no leak), OOS maxDD -22.55% vs -34.52% (+11.97pp shallower). IS gives up -0.070 Sharpe; the win is OOS DD compression + canary-stable forward Sharpe. Remove this key (or set null/[]) to revert to the binary SMA-200 gate (sma_window). Source: reports/_ens_breadth_tiebreak_driver.py + ENS_BREADTH_TIEBREAK_20260627T074651Z.md.",
 
   "_paper_note": "PAPER ONLY. deployable_notional == runner MAX_NOTIONAL ($1000). w_max=1.0 means NO added leverage on top of the 3x sleeve (max one full $1000 TQQQ position OR flat). deadband = max($25, 5%*$1000=$50) = $50: ignore rebalances smaller than $50 to avoid churn. flat_weight_eps=0.02: a target weight under 2% closes to cash.",
 

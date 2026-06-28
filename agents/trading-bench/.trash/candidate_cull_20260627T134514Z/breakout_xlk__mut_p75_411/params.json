@@ -1,0 +1,12 @@
+{
+  "symbol": "XLK",
+  "timeframe": "1Hour",
+  "bar_limit": 80,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "scale_out_pct": 4.11,
+  "scale_out_fraction": 0.5,
+  "_scale_out_note": "scale_out_pct=4.11 is the parent breakout_xlk per-trade p75 max-runup (p25 +1.26 / median +2.60 / p75 +4.11). HYPOTHESIS (main 2026-06-26): the median (+2.60) trigger cut bear/chop drawdown but capped bull upside enough that median return failed MUTATION_MIN_DELTA_PCT (+0.10pp). Raising the trigger to p75 fires the one-shot half-exit on ~25% of winners (only the biggest-runup trades) -> keep the DD-cut where it matters, give back less bull upside. The ORIGINAL p50 candidate's note predicted +4.11 would be 'inert' (too few fires); this round TESTS that prediction honestly against the p50 result. scale_out_fraction=0.5 trims HALF; remainder rides the parent's Donchian-low close. position_state['scaled_out'] makes the trim fire ONCE per trade; a fresh entry resets it.",
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

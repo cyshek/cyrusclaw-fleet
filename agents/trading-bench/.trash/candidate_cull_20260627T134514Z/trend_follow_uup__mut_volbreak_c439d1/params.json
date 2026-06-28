@@ -1,0 +1,19 @@
+{
+  "_archetype": "UUP (US-dollar bullish ETF) fast SMA(50) trend OR'd with a VOLUME-CONFIRMED N-bar breakout, daily bars. Parent trend_follow_uup gains entries: enter long when (close > SMA50 trend) OR (close > N-bar high AND bar volume > vol_mult x N-bar avg volume). Exit when close < SMA50 OR close < N-bar low.",
+  "_mutation": "Child of trend_follow_uup. Borrows the volume-confirmed-breakout mechanism from volume_breakout_qqq. The volume CONFIRMATION (price-AND-volume) is INTERNAL to the breakout leg; that breakout leg is then OR'd with the parent SMA-trend leg so the thin dollar-trend GAINS entries instead of being starved.",
+  "_why_or": "The SMA-trend leg captures slow, established dollar uptrends; the volume-confirmed-breakout leg captures fresh high-conviction range expansions the slow SMA hasn't turned up on yet. AND would intersect to nearly nothing and keep the parent (only 3 trades / 8 windows) starved; OR is purely additive — more entries, the explicit mutation goal.",
+  "_volume_handling": "Volume read via bar key 'v' (fallback 'volume'). Bars with missing / zero / unparseable volume gracefully DISABLE only the breakout leg (price-breakout without confirmation does NOT fire); the SMA-trend leg and ALL exits still run, so positions are always closeable.",
+  "_exit_note": "Exits evaluated FIRST and never gated by volume: close < SMA(period) OR close < N-bar low. An open position is always closeable regardless of volume availability.",
+  "_thresholds_grounded": "Parent profile shows median per-trade max drawdown -0.33% and max runup +0.09% with 1-3 day holds — too tight for a fixed stop/target, so this child does NOT add a stop/take-profit; it relies on the structural dual exits (trend-loss OR range-break). breakout_lookback=20 sits in the directive's 15-30 band; vol_mult=1.5 requires a clear participation surge to confirm a breakout.",
+  "_paper_only": "PAPER ONLY. No real money. Mutation child; independently held to the absolute fitness gate.",
+  "symbol": "UUP",
+  "timeframe": "1Day",
+  "bar_limit": 100,
+  "_bar_limit_note": "Longest lookback is SMA(50); breakout window is 20+1. bar_limit 100 >= 2x the 50-bar SMA, giving comfortable warmup for both legs.",
+  "period": 50,
+  "breakout_lookback": 20,
+  "vol_mult": 1.5,
+  "notional_usd": 1000.0,
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

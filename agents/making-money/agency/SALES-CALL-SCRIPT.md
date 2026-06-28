@@ -1,73 +1,82 @@
-# SALES-CALL SCRIPT + OBJECTION CHEATSHEET (for Cyrus)
+# THE CALL CARD (open this before every call — this is ALL you need)
 
-_For the 15-min discovery/demo call after a prospect replies. Keep this open on a second screen._
-_The whole call has ONE job: get them to say "yes, let's do the pilot." Don't oversell. Let the demo do the work._
+_You take the calls. This is built so you DON'T have to memorize anything._
+_I (the agent) hand you a one-pager per call with their name + gap + numbers. You just talk._
 _Demo to share-screen: http://40.65.93.84:8080/speed-to-lead-demo.html_
 
 ---
 
-## BEFORE the call (agent preps this for you — you just read it)
-For each booked call I'll hand you a one-pager with: business name, their specific gap, review count, what they currently use (booking tool/chat if any), and the 2–3 numbers to quote. You walk in already knowing their situation.
+## 🎯 THE WHOLE CALL = 4 LINES YOU SAY
+
+**1. "When someone fills out your form or calls and you're busy — what happens to that lead?"**
+   → Shut up. Let them describe the problem. They sell themselves.
+
+**2. "Right — whoever replies first usually wins, so those leads go cold. You're paying to generate leads that slip away."**
+   → That's the whole pitch. One sentence. Don't add more.
+
+**3. "Let me show you what I'd set up."**
+   → Share screen → play the demo → STOP TALKING. The demo sells, not you.
+
+**4. "I'll build this for you — $0 down, $500/month, and if it doesn't pay for itself in 30 days you cancel. Want me to get started?"**
+   → Then SILENCE. Whoever speaks first loses. Wait for them.
 
 ---
 
-## THE CALL (15 min, 4 beats)
+## 🆘 IF THEY HESITATE — ONE line, that's it:
 
-### 1. Open (1 min) — make it about them, not you
-> "Hey {Name}, thanks for hopping on. I'll keep this quick and useful. Before I show you anything — when someone fills out your contact form or calls and you're busy on a job/with a patient, what happens to that lead right now?"
-
-→ **Let them talk.** They'll describe the manual mess themselves. That's your whole pitch, in their words. Just listen and nod.
-
-### 2. Mirror the pain (2 min)
-> "Right, that's exactly what I see with most {trade} businesses. And the tough part is the customer who reaches out usually contacts a few places — whoever replies first tends to win. So a lead that sits even an hour often books somewhere else. You're basically paying to generate leads that go cold."
-
-→ Quote their number if you have it: *"You're at {ReviewCount} Google reviews — for {trade}, that's costing you visibility too."*
-
-### 3. Demo (5 min) — share screen, let it run
-> "Let me show you what I'd set up. This is a live demo — pretend you're the customer."
-
-→ Share screen, fill the form, **stop talking and let the animation play.** The 38-second reply → booking → review request sells itself. Then:
-> "That text back went out in 38 seconds, automatically, at 2am or whenever. It books them, then 3 days later it asks for a review on its own. For your business it plugs right into your {their form/phone/booking tool}."
-
-### 4. Close (3 min) — assume the pilot
-> "Here's how I'd do it: I build this for {BusinessName}, wired to your actual forms and phone. Setup's a one-time {$1,500 — or pilot price $750}, then {$500}/month to host and keep it tuned. I can have it live in about a week. Want me to get started?"
-
-→ Then **stop talking.** First person to speak loses. Let them respond.
+**"What's the one thing you'd need to see to feel good about trying it?"**
+→ Then listen. Whatever they say IS the real objection. Answer that one thing.
+→ You do NOT need to memorize rebuttals. This question replaces all of them.
 
 ---
 
-## OBJECTION CHEATSHEET
+## 💡 WHY THE CLOSE IS EASY (so you're relaxed)
+- "$0 down, cancel in 30 days" = almost nothing to say no to. You're not selling a $1,500
+  thing on faith — you're offering a no-risk trial. Easy yes, easy conversation.
+- First 1-2 clients get this risk-reversed deal in exchange for: a testimonial + letting us
+  document the results. That testimonial makes every future sale 10x easier.
 
-**"It's too expensive / I can't afford that right now."**
-> "Totally fair. Think of it this way — if it books you ONE extra job a month, it's paid for itself many times over. And the pilot's {$750} to start so you're not committing big up front. We can start small and you scale it if it works."
-
-**"I already have someone who handles that / my receptionist does it."**
-> "Love that — this doesn't replace them, it backs them up for nights, weekends, and when they're slammed. The leads that come in at 8pm or during a rush are the ones slipping through. This catches those so your person isn't chained to the inbox."
-
-**"I don't think I get that many leads online."**
-> "That's actually the perfect time to set it up — so every single one counts. And the review side works regardless of lead volume: more 5-star reviews means you show up higher and get MORE leads. It compounds."
-
-**"How is this different from {ChatGPT / a chatbot / Podium / a competitor}?"**
-> "Those are great tools but they're DIY — you still have to set it all up and maintain it. I build it for you, wired to your exact setup, and I keep it running. You don't touch anything. That's what the monthly covers."
-
-**"Let me think about it / send me some info."**
-> "Of course. I'll send you the 2-minute demo link so you can replay it. Can I check back Thursday? And honestly — what's the one thing you'd need to see to feel good about trying it?"
-→ (That last question surfaces the REAL objection. Answer that.)
-
-**"Does it sound like a robot? My customers will hate that."**
-> "Good question — it's text, it's friendly, and it sounds human. And the alternative is no reply at all for hours, which customers like a lot less than a fast, helpful text. Want me to tweak the tone to match your brand? That's part of the setup."
-
-**"Can it handle [specific thing about their business]?"**
-> "Yep — that's exactly the kind of thing I customize during setup. Tell me more about how you'd want that to work." (Never say no on a call. Everything is 'that's part of the build.')
+## ✅ AFTER A YES
+Just tell me: the business name + what they currently use (their form / phone / booking tool).
+I do the entire build + onboarding. You collected the win.
 
 ---
 
-## DON'TS (busy-person guardrails)
-- Don't quote a price until AFTER the demo. Value first, price second.
-- Don't explain the tech (n8n, OpenAI, APIs). They don't care. Talk outcomes: leads, bookings, reviews.
-- Don't discount unprompted. Only drop to the pilot price if they hesitate on cost.
-- Don't promise a feature you're unsure of — say "that's part of the build" and check with me after.
-- Don't fill silence after the close. Ask, then wait.
+## 🚫 3 RULES (the only "don'ts" worth remembering)
+1. **Don't talk price until after the demo.** Value first.
+2. **Don't explain the tech.** They don't care about n8n/AI/APIs. Talk leads, bookings, reviews.
+3. **Don't fill the silence after you ask.** Ask, then wait. Let them answer.
 
-## AFTER a "yes"
-Tell me the business + what they currently use, and I'll handle the build + onboarding. You collected the win; I do the work.
+---
+---
+
+# (REFERENCE ONLY — you do NOT need to read this on a call)
+# Full objection cheatsheet, in case you ever want it. The 1 magic question above handles 90%.
+
+**"Too expensive / can't afford it."**
+> "Fair. If it books you ONE extra job a month it's paid for itself many times over — and it's
+> $0 down, cancel anytime in the first 30 days. You're not committing big up front."
+
+**"My receptionist already handles that."**
+> "Love that — this backs them up for nights, weekends, and when they're slammed. The 8pm leads
+> are the ones slipping through. This catches those so your person isn't chained to the inbox."
+
+**"I don't get that many online leads."**
+> "Perfect time to set it up so every one counts. And the review side works regardless — more
+> 5-star reviews means you rank higher and get MORE leads. It compounds."
+
+**"How's this different from a chatbot / Podium / ChatGPT?"**
+> "Those are DIY — you set it up and maintain it. I build it for you, wired to your exact setup,
+> and keep it running. You don't touch anything. That's what the monthly covers."
+
+**"Let me think about it / send me info."**
+> "Of course — I'll send the demo link so you can replay it. Can I check back Thursday? And
+> honestly: what's the one thing you'd need to see to feel good about trying it?"
+
+**"Will it sound like a robot? My customers will hate that."**
+> "It's friendly text and sounds human. The alternative is no reply for hours, which customers
+> like a lot less. And I tune the tone to match your brand — that's part of setup."
+
+**"Can it handle [specific thing]?"**
+> "Yep, that's exactly what I customize during setup. Tell me more about how you'd want it."
+> (Never say no on a call. Everything is "that's part of the build.")

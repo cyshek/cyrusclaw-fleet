@@ -1,0 +1,7 @@
+# Cover answers — Lilasciences, Materials Technical Program Manager (lila-sciences-4207843009)
+
+## Why Lila, why this role, and why at this moment in your life?
+
+The through-line in my TPM work at Microsoft has been building execution infrastructure that lets technical programs run at speed without constant manual intervention. I scaled a recovery validation program from a 2-person operation into a platformized system sustaining 45+ annual resilience drills. I built an internal AI agent and restructured sprint rituals that cut planning cycle time 39% and increased program capacity by 21% without adding headcount. That work is essentially what this role is asking for: create the operational conditions so autonomous scientific programs can run efficiently and at scale, without the TPM becoming a bottleneck. The fit is direct.
+
+Lila specifically appeals to me because the mission is unusually serious. Applying autonomous experimentation to hard materials problems, extreme-environment coatings, clean energy catalysts, carbon capture, these are not incremental R&D programs. The AI Science Factory model, where the system executes the entire scientific method autonomously, is a genuine technical bet on a different pace of discovery. I want to be in an environment where the science is moving fast enough that rigorous program execution actually matters, where a well-run sprint or a dependency caught early has real downstream impact on outcomes that matter. That is the environment Lila is building, and this is the right moment in my career to grow into it.

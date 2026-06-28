@@ -1,42 +1,45 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
-- `microsoft_2022` → **Technical Product Manager Intern**
-- `amazon_robotics` → **Technical Product Manager Intern**
-- `pro_painters` → **Technical Product Manager Intern**
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
 
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Ran technical **discovery sessions** with enterprise clients (Databricks, Walmart, SAP, NetApp) to scope resilience requirements, scaling Azure's recovery validation from a 2-person effort into a platform sustaining **45+ annual drills** and **$14M+ impact**.
-2. Led 0→1 launch of a self-serve Resilience Automation Platform, defining requirements, **self-service launch tools**, and QA processes that cut operational toil **30%** and shifted execution to a scalable model.
-3. Delivered Azure's first proactive resilience capability in 4 months with a **94% recovery rate**, surfacing critical hardware defects and acting as the product expert guiding cross-functional troubleshooting and escalation.
-4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead and technical point of contact for a sovereign-cloud isolation test tied to a **$1.5B+ enterprise contract**.
-5. Built an internal AI agent and restructured planning workflows, reducing planning cycle time **39%** and increasing drill capacity **21%** while training partner teams on new self-serve tooling.
+1. Scaled Azure's resilience validation program from a **2-person operation** into a self-serve platform, standardizing launch workflows to sustain 45+ annual drills and drive **$14M+ impact** across enterprise clients including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling tools that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Built an **AI agent** for drill planning, restructuring end-to-end workflows to cut planning cycle time by 39% and increase drill capacity by 21%—directly expanding team capacity without additional headcount.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Pioneered Azure's first proactive rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation model across product and engineering teams.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove product adoption for AI-driven code-generation workflows, running **demos and training sessions** that increased utilization across **14 teams** and saved 37 engineering hours monthly.
-2. Shaped the roadmap toward intent-based YAML generation by leading **11+ user interviews** with Azure service teams to surface critical feature gaps and prioritize fixes.
-3. Migrated documentation to an AI-powered **semantic search** tool with rigorous metadata standards, cutting client lookup time **83%** and improving self-serve support.
+1. Championed **product adoption** for AI-driven code generation workflows, conducting client-facing demos and training sessions that drove utilization across 14 key teams and saved **37 engineering hours** monthly.
+2. Influenced the product roadmap by facilitating **11+ discovery sessions** with Azure service teams to surface critical feature gaps, leading to prioritization of intent-based YAML generation in the next release cycle.
+3. Improved **knowledge transfer and support** by implementing metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by 83% across internal stakeholders.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Accelerated **$3M in revenue** and launched regions **28% faster** by securing cross-functional alignment on a unified automation prioritization framework across **140+ teams**.
-2. Ran discovery with **20+ service teams** to quantify 81 hours of manual effort per region, then built a roadmap to automate critical paths and reduce launch toil.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact support.
+1. Generated **$3M in accelerated revenue** and reduced region launch cycles by 28% by securing cross-functional alignment on a unified automation prioritization framework across 140+ service teams.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a roadmap to automate critical paths—directly informing engineering and operations prioritization.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and target high-impact support investments with data-driven precision.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Delivered **zero downtime** across a 2,000+ unit pilot by defining the legacy OS migration strategy and mapping dependencies across **1,200+ stations**.
-2. Facilitated Agile ceremonies and prioritized the backlog to resolve **40+ high-priority tickets**, stabilizing the developer intake and support process.
-3. Aligned IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle **25%**.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations, coordinating across IT, Operations, and Engineering.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake and troubleshooting process.
+3. Drove cross-functional alignment to implement automated **CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing post-launch support escalations across the robotics platform.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings **26%** by optimizing operations and managing the end-to-end scoping and invoicing lifecycle for **200+ monthly proposals** via a new CRM process.
-2. Cut Customer Acquisition Cost **13%** and lifted conversions **2.7%** by executing a digital-first go-to-market strategy across the website and Google profile.
-3. Improved leadership pricing models by analyzing **1,000+ project records** to identify and seal margin leaks.
+1. Increased job bookings by **26%** by managing end-to-end scoping and invoicing for 200+ monthly proposals through an optimized CRM workflow, improving client experience and reducing turnaround time.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile for inbound lead generation.
+3. Improved leadership pricing models by conducting **profitability analysis** across 1,000+ project records to identify and seal margin leaks, directly informing strategic decisions on service-line prioritization.
 
 ## Notes from the rewriter
-- Tightened all bullets and dropped to min counts to fit one page.
-- Surfaced SE-relevant verbs: discovery sessions, demos/training, troubleshooting, escalation, self-serve launch tools, QA.
+- 'Self-serve launch tools' (JD term) woven into microsoft_ft bullet 2, describing the Resilience Automation Platform's scheduling capabilities as a self-service model.
+- 'Discovery sessions' (JD key responsibility) surfaced in microsoft_2022 bullet 2 and microsoft_2023 bullet 2, framing user interviews as structured discovery with service teams.
+- 'Knowledge transfer and support' (JD phrase) used verbatim in microsoft_2023 bullet 3 to tie semantic search migration to the SE role's training and escalation function.
+- 'Troubleshooting' and 'post-launch support' (JD responsibilities) referenced in amazon_robotics bullet 3 and microsoft_ft bullet 1, grounding operational outcomes in client-facing support framing.
+- 'CRM tools' (JD requirement) explicitly surfaced in pro_painters bullet 1, connecting sales ops experience to the JD's familiarity requirement.
 

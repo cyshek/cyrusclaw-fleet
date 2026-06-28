@@ -108,6 +108,9 @@ LABEL_RULES: list[tuple[str, str]] = [
     # 'relocation assistance' in the label — must match BEFORE the generic relocation rule.
     ("which axon hub", "city_location_select"),
     ("axon hub do you plan to work from", "city_location_select"),
+    # CoreWeave 2026-06-28: "Select the metropolitan area to closest to your city of residence"
+    ("metropolitan area", "city_location_select"),
+    ("closest to your city of residence", "city_location_select"),
     ("need relocation assistance", "answer_no"),
     ("relocation assistance", "answer_no"),
     # Scopely 2026-06-04 (role 2671): "Will you require relocation support?" Yes/No.
@@ -535,6 +538,15 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("current (or most recent) company", "current_employer"),
     ("current (or most recent) title", "current_title"),
     ("current (or most recent) job title", "current_title"),
+    # Scale AI 2026-06-28: "What is your current or more recent job title?"
+    ("current or more recent job title", "current_title"),
+    ("or more recent job title", "current_title"),
+    ("more recent job title", "current_title"),
+    # Quanata 2026-06-28: "After reviewing the posted job description, are you able to perform all job functions?"
+    # This is a general ADA/accommodation acknowledgment — truthful Yes (with or without accommodation).
+    ("able to perform all job functions", "acknowledge_yes"),
+    ("perform all job functions", "acknowledge_yes"),
+    ("able to perform the essential functions", "acknowledge_yes"),
 
     # --- education ---
     ("school", "school"),
@@ -608,6 +620,8 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("comp expectation", "compensation"),   # substring: 'comp expectations' too
     ("comp range", "compensation"),
     ("compensation range", "compensation"),
+    ("compensation & benefits", "compensation"),  # HoneHealth 3810 (2026-06-27)
+    ("compensation and benefits", "compensation"),  # alt phrasing
     ("open to relocation", "willing_to_relocate"),
     ("willing to relocate", "willing_to_relocate"),
     ("willing to travel", "willing_to_travel"),

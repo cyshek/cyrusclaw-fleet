@@ -1,33 +1,9 @@
-SUBMITTED
+PREP-READY — 2026-06-28T07:36:10+00:00
 
-submitted_by: auto
-applied_on: 2026-06-23
-role_id: 3345
-submitted_at: 2026-06-24T00:05:27+00:00
+role_id: 1464
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-rithum-8010880.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/rithum-8010880/Cyrus_Shekari_Resume_rithum_8010880_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/rithum-8010880/cover_answers.md
 
-Runner tail:
-    },
-     {
-      "id": "title-0",
-      "err": "noinput"
-     }
-    ]
-   }
-  }
- },
- "preSubmitState": {
-  "emptyRequired": [],
-  "multiUnset": [],
-  "submitDisabled": false
- },
- "otp_code": "JqW3kerd",
- "final": {
-  "url": "https://job-boards.greenhouse.io/rithum/jobs/8010880/confirmation",
-  "confirmed": true,
-  "otpStill": false,
-  "otpErr": false,
-  "head": "Thank you for applying for a role at Rithum!\n\nYour application has been received, and we can't wait to dive into your background. If our team finds that your experience aligns with the role, we'll be "
- },
- "status": "SUBMITTED"
-}
-
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

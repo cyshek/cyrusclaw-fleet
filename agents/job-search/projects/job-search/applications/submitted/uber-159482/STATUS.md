@@ -1,7 +1,7 @@
 # uber-159482 — Program Manager II, GTM Enablement & Field Programs (row 3071)
 
-STATUS: SUBMITTED ✅
-submitted_at: 2026-06-24
+STATUS: FAILED ❌ (signin-failed)
+submitted_at: 2026-06-28
 submitted_by: auto (_uber_batch.py)
 ats: uber
 url: https://www.uber.com/careers/apply/form/159482

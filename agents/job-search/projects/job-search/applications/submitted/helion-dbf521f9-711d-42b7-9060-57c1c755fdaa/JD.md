@@ -52,12 +52,18 @@ You will be the Technical Project Manager for projects on the Nuclear Science te
 
 Our total compensation package includes benefits, including but not limited to:
 
-• Medical, Dental, and Vision plans for employees and their families 
-• 31 Days of PTO (21 vacation days and 10 sick days) 
-• 10 Paid holidays, plus company-wide winter break 
-• Up to 5% employer 401(k) match 
-• Short term disability, long term disability, and life insurance 
-• Paid parental leave and support (up to 16 weeks) 
-• Annual wellness stipend
+- Medical, Dental, and Vision plans for employees and their families 
+
+- 31 Days of PTO (21 vacation days and 10 sick days) 
+
+- 10 Paid holidays, plus company-wide winter break 
+
+- Up to 5% employer 401(k) match 
+
+- Short term disability, long term disability, and life insurance 
+
+- Paid parental leave and support (up to 16 weeks) 
+
+- Annual wellness stipend
 
 *Helion is an equal opportunity employer and value diversity at our company. We do not discriminate based on race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. If you need assistance or an accommodation during the interview process, please let us know.*

@@ -2,18 +2,18 @@
   "role_url": "https://job-boards.greenhouse.io/figma/jobs/6008343004",
   "org": "figma",
   "job_id": "6008343004",
-  "job_title": "Program Manager, Voice of the Customer",
+  "job_title": "Voice of the Customer Program Manager",
   "job_location": "San Francisco, CA • New York, NY • United States",
-  "fetched_at": "2026-06-08T18:19:08Z",
+  "fetched_at": "2026-06-27T22:08:05Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/figma/jobs/6008343004?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 22,
-    "filled": 16,
+    "filled": 17,
     "filled_needs_review": 0,
     "declined": 5,
-    "unresolved": 1,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -159,10 +159,10 @@
       "label": "From where do you intend to work? ",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='From where do you intend to work? '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
       "options": null
     },
     {
@@ -202,9 +202,9 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "No",
-      "source": "worked_at_company_before (No)",
+      "source": "answer_no (matched 'No' option)",
       "status": "filled",
-      "matched_rule": "worked_at_company_before",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -373,21 +373,8 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_17929245004",
-      "label": "From where do you intend to work? ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='From where do you intend to work? '"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_17929245004",
-      "label": "From where do you intend to work? ",
-      "reason": "no LABEL_RULES match for label='From where do you intend to work? '"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

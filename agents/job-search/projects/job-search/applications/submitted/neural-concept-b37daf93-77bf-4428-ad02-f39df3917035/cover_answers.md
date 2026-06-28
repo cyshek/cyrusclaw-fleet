@@ -6,11 +6,12 @@ Cyrus Shekari
 
 ## Social Network and Web Links
 
-LinkedIn: https://linkedin.com/in/cyshekari | GitHub: https://github.com/cyshek
+LinkedIn: https://linkedin.com/in/cyshekari
+GitHub: https://github.com/cyshek
 
-## How many years of experience (after Master’s) do you have?
+## How many years of experience (after Master's) do you have?
 
-I don't hold a Master's degree. I have a Bachelor of Science in Computer Science with a Mathematics minor from the University of Houston, and roughly 2 years of full-time experience (3 including internships) working as a Technical Program Manager at Microsoft and Amazon Robotics.
+I hold a Bachelor's degree, not a Master's, so this framing doesn't map cleanly onto my background. I have 2 years of full-time professional experience after completing my BS in Computer Science from the University of Houston in December 2024, plus an additional year of internship experience prior to that.
 
 ## Do you understand this posting is for an ML Application Engineer position (not LLM or ML Engineer)? This means it is a customer-facing position, working on projects that combine physics, simulation ,and ML.  What excites you about the Engineering aspect of the position?
 
@@ -18,8 +19,8 @@ No.
 
 ## Are you familiar with CAD and CAE software? Please be specific and mention any relevant engineering software experience you have.
 
-I want to be honest here: I don't have direct hands-on production experience with CAD or CAE tools like CFD or FEM solvers. My academic background was Computer Science with a Mathematics minor, so I have a solid foundation in the underlying math, but I haven't worked day to day inside simulation software.
+I don't have hands-on experience with CAD or CAE tools like CATIA, ANSYS, or Abaqus directly. My engineering software background comes from the software and infrastructure side - working with Azure distributed systems, CI/CD pipelines, and simulation-adjacent tooling in the context of resilience and recovery validation at scale.
 
-Where I do have depth is in the adjacent technical territory this role lives in. At Microsoft I built an internal AI agent using Python and LLM-powered automation that cut planning cycle time by 39%, and I led the 0 to 1 design of a Resilience Automation Platform, translating engineering requirements into concrete technical workflows. I'm comfortable getting deep into engineering systems, working alongside engineers, and learning a new technical domain quickly. At Amazon Robotics I mapped technical dependencies across 1,200+ robotics stations to design a legacy OS migration with zero downtime, which meant ramping fast on hardware and operational constraints I hadn't touched before.
+What I do bring is a strong foundation in the computational and data-side work that sits adjacent to simulation workflows. At Microsoft I built an internal AI agent for drill planning that restructured end-to-end planning workflows, and I led development of a Resilience Automation Platform that standardized how engineering teams run and interpret validation results across 45+ annual drills. I also have coursework in machine learning and data science, and hands-on Python experience building data pipelines and ML-powered tools.
 
-So while CAD/CAE would be a learning curve for me, picking up a sophisticated technical domain and pairing it with ML and automation is exactly what I've done repeatedly, and I'd close that gap quickly.
+I'm honest that CAD/CAE is an area where I'd be ramping up, but my background in translating complex engineering workflows into automated, AI-assisted systems is directly transferable - and I pick up domain-specific tooling quickly given the right context and access.

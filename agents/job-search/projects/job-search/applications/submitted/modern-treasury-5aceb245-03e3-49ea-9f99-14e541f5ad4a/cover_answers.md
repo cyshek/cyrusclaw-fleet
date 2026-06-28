@@ -10,4 +10,4 @@ Cyrus Shekari
 
 ## Where will you be working from?
 
-I'm based in Kirkland, WA. I'm open to relocating to San Francisco for this role, and I'm comfortable with remote, hybrid, or onsite arrangements depending on what works best for the team.
+Kirkland, WA - open to relocating to San Francisco or working in whatever arrangement works best for the role.

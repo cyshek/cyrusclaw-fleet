@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Owned end-to-end roadmap for Azure's **resilience automation platform**, defining self-serve scheduling and configuration capabilities that reduced operational toil by 30% and scaled the program to 45+ annual enterprise drills.
+2. Shipped Azure's first proactive rack-level validation capability in 4 months — achieving a **94% recovery rate** — by translating ambiguous infrastructure requirements into clear product specs and partnering with engineering to launch on schedule.
+3. Built an **internal AI agent** for drill planning that cut planning cycle time by 39% and increased drill capacity by 21%, pioneering LLM-powered workflow automation within the resilience org.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Drove $14M+ in business impact by standardizing agent workflows and expanding platform integrations across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Influenced the **AI agent product roadmap** by conducting 11+ discovery interviews with Azure service teams, surfacing critical configuration gaps that were prioritized into the next planning cycle.
+2. Championed adoption of AI-powered code generation workflows, running customer demos and training sessions that drove utilization across **14 key teams** and saved 37 engineering hours monthly.
+3. Improved platform data retrieval by migrating documentation to a **semantic search tool** with rigorous metadata standards, cutting lookup time by 83% and enabling faster agent configuration.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Defined a product strategy to eliminate launch toil by conducting discovery with 20+ service teams, identifying 81 hours of manual effort per region and building a **roadmap to automate** critical deployment paths.
+3. Engineered a Power BI dashboard to surface automation gaps across 140+ teams, enabling leadership to **prioritize high-impact** investments and track operational improvements in real time.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the OS migration strategy, mapping dependencies across 1,200+ stations, and partnering with engineering on a phased rollout plan.
+2. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and unblocking faster agent feature releases.
+3. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end customer workflow — scoping, configuration, and invoicing — for 200+ monthly proposals through a new CRM process.
+2. Reduced Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a **digital-first go-to-market strategy**, optimizing web presence and search profile for self-serve discovery.
+3. Improved leadership pricing models by conducting profitability analysis across **1,000+ project records**, identifying and closing margin leaks that meaningfully improved unit economics.
+
+## Notes from the rewriter
+- 'AI agent' vocabulary from JD woven into microsoft_ft bullet 3 (internal AI agent for planning) and microsoft_2023 bullet 1 (AI agent product roadmap) — mirrors Decagon's core platform terminology.
+- 'Self-serve configuration' from JD surfaced in microsoft_ft bullet 1 (self-serve scheduling and configuration capabilities) — directly echoes Decagon's platform goal of effortless self-serve experiences.
+- 'End-to-end' ownership framing from JD ('own initiatives end-to-end') applied in microsoft_ft bullet 1 and pro_painters bullet 1 to signal founding-PM accountability Decagon seeks.
+- 'Roadmap' and 'discovery' language from JD used in microsoft_2023 bullet 1 and microsoft_2022 bullet 2 to mirror Decagon's PM workflow expectations.
+- 'Enterprise' and 'integrations' framing from JD reinforced in microsoft_ft bullet 5 (Databricks, Walmart, SAP, NetApp) to match Decagon's enterprise customer context.
+

@@ -235,7 +235,8 @@ def compute_blend_state() -> Dict:
 
     vt = run_backtest_voltarget(VolTargetParams(
         target_ann_vol=0.25, vol_window=20, sma_window=200, w_max=1.0,
-        vix_gate=False, switch_cost_bps=2.0))
+        vix_gate=False, switch_cost_bps=2.0,
+        breadth_windows=[30, 90, 180]))  # MUST match build_sleeves() sleeve-A params (breadth gate flipped 2026-06-27) or the decomposition desyncs from the blended sleeve
     vt_dates = vt["strategy"]["dates"]
     vt_weights = vt["strategy"]["weights"]     # weights[k] is the held weight OVER vt_dates[k+1]
     vt_w_map = {vt_dates[i + 1]: vt_weights[i] for i in range(len(vt_weights))}

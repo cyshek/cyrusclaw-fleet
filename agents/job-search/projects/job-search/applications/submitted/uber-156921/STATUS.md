@@ -1,7 +1,7 @@
 # uber-156921 — US Immigration Program Manager (row 3068)
 
-STATUS: SUBMITTED ✅
-submitted_at: 2026-06-24
+STATUS: FAILED ❌ (signin-failed)
+submitted_at: 2026-06-28
 submitted_by: auto (_uber_batch.py)
 ats: uber
 url: https://www.uber.com/careers/apply/form/156921

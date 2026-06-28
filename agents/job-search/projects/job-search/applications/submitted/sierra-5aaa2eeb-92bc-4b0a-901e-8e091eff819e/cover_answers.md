@@ -6,10 +6,8 @@ Cyrus Shekari
 
 ## What's your favorite  junk food?
 
-Takis. The blue heat ones specifically - once I start I basically can't stop.
+Hot Cheetos. No contest.
 
 ## Anything else? (Optional)
 
-I'm genuinely excited about this role. The Agent Development Life Cycle Sierra has defined - Analyze, Build, Test, Release - maps almost exactly to how I've been thinking about agent systems at Microsoft. I built out that loop practically when I led a rack-level drill program from zero, owned the build-test-release iteration, and then layered an AI planning agent on top to cut cycle time by 39%. The abstraction problems Agent Studio is solving, how to give builders the right primitives without burying them in complexity, are the exact product problems I want to be working on.
-
-I'm also relocating and fully open to being in San Francisco, so the in-person culture at Sierra is a feature, not a friction point for me.
+Just wanted to say - the Agent Development Life Cycle framing on Sierra's blog resonated with me immediately. The Analyze, Build, Test, Release loop maps almost exactly to how I've been thinking about the AI agent work I've done at Microsoft, and I'm excited about the chance to build that experience into a product others can use. Looking forward to the conversation.

@@ -1,14 +1,13 @@
-SUBMITTED — 2026-06-08T18:23:00+00:00
+SUBMITTED — 2026-06-27
 
-role_id: 2887
+role_id: 3733
+slug: figma-6008343004
 company: Figma
-role: Program Manager, Voice of the Customer
-confirmation_url: https://job-boards.greenhouse.io/figma/jobs/6008343004/confirmation
-confirmed: true ("Thank you for applying.")
-otp: auto-solved via gmail_imap (qWy211Mu)
-preSubmitState.emptyRequired: []
-method: _gh_submit --ignore-blockers + --answers
-answer (truthful): "From where do you intend to work?" (input_text) -> "Kirkland, WA (open to relocation and onsite work as needed)"
-marked_applied: mark_applied.py --id 2887 (status='applied', applied_by='Cyrus', applied_on=2026-06-08)
+role: Voice of the Customer Program Manager
+submitted_by: auto (_gh_submit.py with email OTP, residential CDP)
+submitted_on: 2026-06-27
 
-NOTE (flag to parent): LABEL_RULE gap "From where do you intend to work?" -> home-location free-text (Kirkland, WA). Reusable.
+confirmation_url: https://job-boards.greenhouse.io/figma/jobs/6008343004/confirmation
+confirmation_text: "Thank you for applying. Your application has been received. If there is a fit, someone will be getting back to you."
+resume_attached: Cyrus_Shekari_Resume_figma_6008343004_v2.pdf
+note: Fixed _gh_submit.py to read JOBSEARCH_CDP env var. OTP email flow completed successfully.

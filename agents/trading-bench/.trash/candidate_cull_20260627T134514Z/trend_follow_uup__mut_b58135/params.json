@@ -1,0 +1,18 @@
+{
+  "_archetype": "trend_follow_uup child: SMA(period) trend on UUP AND-confirmed by RSI(rsi_period) > rsi_min. Long ONLY when close > SMA AND RSI above its midline; flat when close < SMA. The RSI leg is a deliberate entry FILTER, not an OR widener.",
+  "_parent": "trend_follow_uup (UUP @ 1Day, SMA50 crossover).",
+  "_mutation": "Added a SECOND entry signal combined by AND: RSI(14) > 50. Both the parent's trend signal (close > SMA(period)) and positive short-term momentum (RSI > rsi_min) must hold to BUY. Exit is unchanged from the parent (CLOSE when close < SMA) and fires alone \u2014 an open long is never harder to close than to open (close logic runs first).",
+  "_failure_mode_eliminated": "Parent's empirical trades were thin/whippy: median per-trade runup +0.09% while 33% touched >=1% drawdown and median drawdown -0.33% \u2014 marginal SMA pokes with no momentum that reverse before paying. RSI>50 demands recent gains exceed recent losses, filtering out those momentum-less crosses. AND (filter) is chosen on purpose because the goal is to CUT losers, not add more entries.",
+  "_thresholds_grounded": "rsi_min=50 is the standard RSI midline (gains>losses), not a tuned magic number. need = max(period, rsi_period+1) bars enforces the mandatory not-enough-bars guard for BOTH indicators. No stop/take-profit added: parent's median drawdown (-0.33%) and runup (+0.09%) are razor-thin, so the SMA exit remains the cleanest non-inert exit \u2014 this mutation changes ENTRY quality, not the exit.",
+  "_paper_only": "PAPER ONLY. No real money. Mutation child; independently held to the absolute fitness gate.",
+  "symbol": "UUP",
+  "timeframe": "1Day",
+  "bar_limit": 100,
+  "_bar_limit_note": "Longest lookback is SMA50; RSI14 needs 15 closes. bar_limit 100 is 2x the SMA50 lookback with cushion, and well above the ~62 daily bars the 60-90d gate windows supply.",
+  "period": 50,
+  "rsi_period": 14,
+  "rsi_min": 50.0,
+  "notional_usd": 1000.0,
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

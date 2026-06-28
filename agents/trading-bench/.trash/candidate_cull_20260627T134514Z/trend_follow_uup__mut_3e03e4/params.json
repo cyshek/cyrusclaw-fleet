@@ -1,0 +1,18 @@
+{
+  "_archetype": "trend_follow_uup child: UUP SMA50 crossover + a 20-bar realized-volatility entry gate. Long when close > SMA(50) AND 20-bar realized vol (sample stdev of pct returns) <= vol_threshold; flat when close < SMA(50). Volatility-filtered fast US-dollar trend carrier.",
+  "_mutation": "Adds a volatility filter to the parent trend_follow_uup: new entries are blocked when 20-bar realized volatility exceeds vol_threshold. Exits (close < SMA) are NEVER gated — close-logic runs first so the filter can only suppress a new long, never trap an existing position.",
+  "_why_threshold_0006": "Grounded, not guessed. On UUP's full daily history the 20-bar realized vol AT the parent's replicated SMA50 entry points has median ~0.0042 and p75 ~0.0058 (sample stdev). A 0.006 cap sits just above that cluster and would have skipped ~20% of historical entries (53-57 of 163 at 0.005; 32-37 of 163 at 0.006) — clearing the >=15% 'must actually fire' floor with margin while staying inside the 0.005-0.025 allowed band. Any cap >=0.015 never fires for UUP and would be inert dead code.",
+  "_why_uup": "Inherited from parent: UUP chosen empirically 2026-06-26 as the MOST equity-orthogonal non-equity leg (monthly SMA-trend-return corr to SPY -0.415, to GLD -0.344). A dollar-trend signal is NEGATIVELY correlated to the equity-heavy single-name pool and distinct from the gold parent (trend_follow_gld) — maximally diversifying DNA.",
+  "_thesis": "Deliberate DE-CORRELATOR mutation child. The volatility gate aims to trim the choppiest false-breakout entries while preserving the calm-drift dollar-trend edge. Gate-FAILING on the equity-calibrated panel is acceptable BY DESIGN; value = structural genetic diversity, and this child is independently held to the absolute fitness gate. NOT standalone-deployable.",
+  "_paper_only": "PAPER ONLY. No real money. MUTATION-CHILD archetype (gene-pool member), NOT scheduled / live-traded.",
+  "symbol": "UUP",
+  "timeframe": "1Day",
+  "bar_limit": 100,
+  "_bar_limit_note": "Longest lookback is SMA50; 100 = 2x cushion and comfortably covers the 20-bar (21-close) realized-vol window.",
+  "period": 50,
+  "vol_window": 20,
+  "vol_threshold": 0.006,
+  "notional_usd": 1000.0,
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

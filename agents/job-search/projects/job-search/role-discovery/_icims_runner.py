@@ -35,11 +35,9 @@ protected by an hCaptcha "Verify you are human" checkbox that PRECEDES the OTP.
 Where that checkbox is a hard hCaptcha challenge (sitekey e.g.
 `94fee806-5cac-4582-9738-384a0f4ea6f8`, a real `newassets.hcaptcha.com` frame),
 submitting the email without a valid `h-captcha-response` token does nothing — the
-page re-renders on `/login`. Per TOOLS.md, CapSolver discontinued hCaptcha and no
-nopecha key is configured, so on THOSE tenants the gate is a HARD BLOCK
-(`icims-hcaptcha-no-vendor`) BEFORE the OTP step is reachable. The runner ATTEMPTS a
-solve via the shared CaptchaSolver; on SolverNotConfigured / vendor-reject it
-returns that reason. The OTP handling runs the moment human-verification is passed
+page re-renders on `/login`. CapSolver discontinued hCaptcha (confirmed live: ERROR_INVALID_TASK_DATA)
+but 2Captcha supports it and is configured (TWOCAPTCHA_API_KEY, $9+ balance). `try_solve_hcaptcha`
+now tries twocaptcha first. The OTP handling runs the moment human-verification is passed
 (a no-captcha tenant, a warmed/recognized profile where the checkbox auto-passes, or
 once a vendor is provisioned) — NO further code change needed.
 
@@ -458,7 +456,7 @@ def try_solve_hcaptcha(sitekey, page_url):
         from captcha_solver import CaptchaSolver, SolverNotConfigured, SolverError
     except Exception as e:
         return None, f"captcha-solver-import-fail:{e}"
-    for vendor in ("nopecha", "capsolver"):
+    for vendor in ("twocaptcha", "nopecha"):  # capsolver dropped hCaptcha; 2Captcha works
         try:
             solver = CaptchaSolver(vendor=vendor)
         except (SolverNotConfigured, SolverError):

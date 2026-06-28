@@ -1,7 +1,7 @@
 # Tailoring notes
 
 ## Title swaps applied
-- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_ft` → **Product Manager**
 - `microsoft_2023` → **Product Manager Intern**
 - `microsoft_2022` → **Product Manager Intern**
 - `amazon_robotics` → **Product Manager Intern**
@@ -9,38 +9,37 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (6 bullets emitted, master had 5)
-1. Owned **end-to-end product strategy** for Azure's resilience validation platform, scaling from a 2-person operation to a productized system sustaining 45+ annual drills and driving $14M+ impact across enterprise deployment partners including Databricks, Walmart, SAP, and NetApp.
-2. Led **0→1 development** of an internal Resilience Automation Platform, defining engineering-ready requirements and self-service scheduling capabilities that reduced operational toil by 30% and shifted execution from manual to a scalable, productized model.
-3. Pioneered Azure's first proactive resilience testing capability — delivered a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable framework for continuous platform validation.
-4. Served as **connective tissue** between engineering, field teams, and executive stakeholders across 14 cross-org recovery executions, including bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract.
-5. Built and deployed an **internal AI agent** for drill planning, restructuring workflows to cut planning cycle time by 39% and increase drill capacity by 21% — directly translating ambiguity into productized, LLM-powered automation.
-6. Defined platform boundaries and synthesized CSM and customer feedback into structured product requirements, enabling engineering to shift from one-off custom builds to **iterative, platform-wide solutions** that scaled across the enterprise customer base.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. **Owned end-to-end product line** for Azure's resilience validation platform, scaling from a 2-person operation to a productized system sustaining 45+ annual drills and driving **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining engineering-ready requirements and self-service scheduling capabilities that reduced operational toil by 30% and eliminated manual configuration bottlenecks.
+3. Synthesized deployment data and customer feedback to **prioritize ruthlessly** between one-off requests and platform-wide improvements, delivering Azure's first rack-level proactive resilience program in 4 months with a **94% recovery rate**.
+4. Served as cross-functional connective tissue across 14 recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Built an **AI agent** for drill planning and restructured workflows to cut planning cycle time by 39% and expand drill capacity by 21%, shifting the team from reactive execution to a scalable, iterative delivery model.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **product adoption** for AI-driven code generation workflows across 14 Azure service teams, running customer demos and training sessions that embedded conversational AI tooling into engineering practice and saved 37 hours of manual effort monthly.
-2. Synthesized insights from **11+ customer interviews** with Azure service teams to identify critical feature gaps, directly influencing the product roadmap to prioritize intent-based YAML generation as a platform-wide capability rather than a one-off request.
-3. Accelerated discovery and **reduced lookup time by 83%** by migrating documentation to an AI-powered semantic search tool and enforcing metadata standards, transforming an ad hoc knowledge base into a structured, self-service system for engineering teams.
+1. Drove **product adoption** for AI-driven code generation workflows by conducting user demos and structured training sessions, achieving utilization across 14 key teams and saving **37 engineering hours monthly**.
+2. Shaped the product roadmap by facilitating **11+ customer discovery interviews** with Azure service teams, synthesizing qualitative feedback into structured requirements that added intent-based YAML generation to the backlog.
+3. **Eliminated lookup friction** by migrating documentation to an AI-powered semantic search tool with rigorous metadata standards, cutting retrieval time by 83% and improving engineering self-service across the platform.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, generating $3M in accelerated revenue and launching Azure regions 28% faster by eliminating competing priorities between engineering and go-to-market teams.
-2. Ran structured discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, synthesizing qualitative feedback into a clear product roadmap that automated critical deployment paths and eliminated recurring operational bottlenecks.
-3. Partnered with engineering to define self-service tooling requirements and built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to prioritize high-impact automation gaps and measure shipped impact over process compliance.
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Conducted discovery with 20+ service teams to surface **81 hours of manual toil per region**, translating findings into a structured roadmap that productized critical automation paths and reduced one-off custom builds.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact improvements with real deployment data.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Defined the **migration product strategy** for a 2,000+ unit OS transition, mapping dependencies across 1,200+ stations and establishing clear platform boundaries that achieved zero operational downtime throughout the enterprise-scale deployment.
-2. Prioritized a backlog of **40+ high-priority tickets** across sprint planning and retrospectives, resolving critical blockers and stabilizing the developer intake process to maintain deployment velocity during a complex, multi-team platform migration.
-3. Drove cross-functional alignment between IT, Operations, and Engineering to productize CI/CD pipeline implementation, **accelerating software deployment cycles by 25%** and shifting the team from one-off manual releases to a repeatable, automated delivery model.
+1. Defined the **OS migration strategy** and mapped dependencies across 1,200+ stations for a 2,000+ unit pilot, achieving zero operational downtime and establishing a repeatable deployment model.
+2. **Prioritized the product backlog** and facilitated Agile sprint ceremonies to resolve 40+ high-priority tickets, stabilizing the developer intake process and accelerating iterative delivery cycles.
+3. Aligned IT, Operations, and Engineering around automated **CI/CD pipelines**, reducing ambiguity across competing priorities and accelerating the software deployment cycle by **25%**.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. **Increased job bookings by 26%** by overhauling end-to-end CRM workflows, standardizing the scoping and invoicing lifecycle across 200+ monthly proposals and eliminating manual configuration bottlenecks that slowed customer conversion.
-2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy — optimizing the website and Google profile to target high-intent inbound leads in a competitive local services market.
-3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks that were systematically underpriced across recurring service categories.
+1. Increased **job bookings by 26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a CRM process that turned customer feedback into repeatable, scalable operations.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to target high-fit customer profiles.
+3. Improved pricing models by analyzing **1,000+ project records**, surfacing margin leaks and delivering structured financial requirements that leadership used to iterate on profitability strategy.
 
 ## Notes from the rewriter
-- 'Connective tissue between customer reality and engineering execution' (JD verbatim) woven into microsoft_ft bullet#4 to mirror Avoca's exact framing of the PM role.
-- 'One-off custom builds to iterative, productized solutions' (JD language) used in microsoft_ft bullet#6 and amazon_robotics bullet#3 to directly reflect Avoca's engineering alignment priority.
-- 'Self-service tooling that eliminates manual configuration bottlenecks' (JD language) surfaced in microsoft_ft bullet#2 and pro_painters bullet#1 to align with Avoca's support/CS tooling goal.
-- 'Synthesize qualitative customer feedback into structured, engineering-ready requirements' mapped directly to microsoft_2023 bullet#2 (11+ interviews → roadmap influence) and microsoft_2022 bullet#2 (discovery → product roadmap).
-- 'Platform boundaries' and 'what the product can and cannot do' (JD framing) explicitly used in microsoft_ft bullet#6 and amazon_robotics bullet#1 to show Cyrus's instinct for productization over custom builds.
+- 'Productized' and 'one-off custom builds' from the JD woven into microsoft_2022 bullet 2 and microsoft_ft bullet 3, directly mirroring Avoca's goal of shifting from custom to iterative platform solutions.
+- 'AI agent' (JD: conversational AI agents, AI-driven) surfaced explicitly in microsoft_ft bullet 5 and skills section, signaling direct familiarity with Avoca's core product type.
+- 'Self-service tooling' and 'manual configuration bottlenecks' from the JD embedded in microsoft_ft bullet 2, matching Avoca's stated need to eliminate support toil through self-service.
+- 'Customer discovery' and 'synthesizing qualitative feedback into structured requirements' (JD's core PM ask) used in microsoft_2023 bullet 2 and pro_painters bullet 1 to show the feedback-loop ownership Avoca requires.
+- 'Go-to-market' and 'customer profiles' from the JD mirrored in pro_painters bullet 2, and 'cross-functional connective tissue' echoes JD language about bridging sales, engineering, and CS in microsoft_ft bullet 4.
 

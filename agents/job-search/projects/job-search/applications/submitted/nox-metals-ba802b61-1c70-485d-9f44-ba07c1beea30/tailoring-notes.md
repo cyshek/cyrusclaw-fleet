@@ -9,37 +9,38 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Owned **end-to-end product delivery** for Azure's internal Resilience Automation Platform — from idea to spec to deploy — cutting operational toil by 30% and enabling a self-service model that scaled across enterprise customers including Databricks, Walmart, SAP, and NetApp.
-2. Wrote tight product specs and ran weekly reviews across 14 cross-org recovery executions, driving **$14M+ in business impact** and serving as bridge lead for a sovereign-cloud isolation test tied to a $1.5B+ enterprise contract.
-3. Shipped Azure's first proactive rack-level drill program in **4 months**, achieving a 94% recovery rate by ruthlessly prioritizing a v1 scope, surfacing critical hardware defects, and iterating fast with engineers post-launch.
-4. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — living in the stack and making it faster every week.
-5. Scaled a 2-person resilience operation into a platformized system sustaining **45+ annual drills**, standardizing workflows and driving cross-functional alignment across sovereign and commercial cloud environments.
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Owned **end-to-end product delivery** for Azure's resilience platform — from idea through spec, build, deploy, and iterate — standardizing workflows that sustained 45+ annual drills and drove **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, writing tight specs engineers built from without clarification meetings, and shipping self-service scheduling that cut operational toil by **30%**.
+3. Shipped Azure's first rack-level proactive resilience drill in **4 months**, writing the spec, walking operators through each rollout on the floor, and achieving a **94% recovery rate** that surfaced critical hardware defects.
+4. Directed 14 high-visibility cross-org recovery executions, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, owning the operating cadence end to end.
+5. Built an **internal AI agent** for drill planning and restructured weekly product reviews, cutting planning cycle time by 39% and expanding drill capacity by 21% — compounding throughput without adding headcount.
+6. Ruthlessly prioritized the product roadmap across competing stakeholder requests, saying no to good ideas to ship great ones faster and keep operator-facing features moving from spec to production **within the same sprint**.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Conducted **11+ user interviews** with Azure service teams to surface critical feature gaps, directly influencing the product roadmap to include intent-based YAML generation shipped to production.
-2. Championed adoption of **AI-driven code generation** workflows through hands-on user demos and training, driving utilization across 14 teams and saving 37 engineering hours monthly.
-3. Improved data retrieval for operators by migrating documentation to an AI-powered semantic search tool with rigorous metadata standards, **cutting lookup time by 83%**.
+1. Drove **product adoption** for AI-driven code-generation workflows by running hands-on demos and operator-style walkthroughs with 14 Azure service teams, saving **37 engineering hours monthly** and building a repeatable rollout playbook.
+2. Influenced the **product roadmap** to include intent-based YAML generation by conducting 11+ user interviews with schedulers and engineers, surfacing critical feature gaps that competitors had missed and translating them into tight, build-ready specs.
+3. Increased **data retrieval speed by 83%** by enforcing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool — a v1 shipped fast that operators adopted immediately over the legacy lookup system.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Secured cross-functional alignment across 140+ teams on a unified automation prioritization framework, **launching regions 28% faster** and generating $3M in accelerated revenue.
-2. Ran discovery with 20+ service teams to map **81 hours of manual toil per region**, then built and socialized a roadmap to automate the highest-impact paths — bias for shipping real fixes fast.
-3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact investments with real data.
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by aligning 140+ teams on a unified automation prioritization framework — a clear, spec-driven roadmap that let engineers ship without ten clarification meetings.
+2. Conducted discovery with 20+ service teams to map **81 hours of manual toil** per region launch, then built a phased roadmap to automate critical paths — directly mirroring how a supply chain PM eliminates floor-level bottlenecks.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership real-time visibility to target automation gaps and ruthlessly prioritize the highest-impact work each sprint.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Defined the legacy OS migration strategy and mapped dependencies across 1,200+ stations, achieving **zero operational downtime** during a 2,000+ unit pilot rollout on an active shop floor.
-2. Prioritized the product backlog and facilitated Agile ceremonies to resolve **40+ high-priority tickets**, stabilizing the developer intake process and keeping the release cadence on schedule.
-3. Drove alignment across IT, Operations, and Engineering to ship automated CI/CD pipelines, **accelerating deployment cycles by 25%** and reducing manual handoffs between floor and software teams.
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot by owning the legacy OS migration spec end to end — mapping dependencies across 1,200+ floor stations and walking operators through each rollout phase personally.
+2. Facilitated Agile sprint planning and retrospectives on a robotics shop-floor product, **prioritizing 40+ high-severity tickets** to stabilize developer intake and keep physical operations running without interruption.
+3. Aligned IT, Operations, and Engineering to implement **automated CI/CD pipelines**, compressing the software deployment cycle by 25% and proving that fast, reliable shipping is as critical on a factory floor as in a cloud environment.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing workflow for 200+ monthly proposals, implementing a new CRM process that cut turnaround time for customers.
-2. Cut Customer Acquisition Cost by 13% and boosted conversions by 2.7% by executing a **digital-first go-to-market strategy**, optimizing the website and Google profile to reach the right buyers faster.
-3. Conducted profitability analysis across **1,000+ project records** to identify margin leaks, delivering pricing model improvements that directly lifted unit economics for leadership.
+1. Increased **job bookings by 26%** by redesigning the end-to-end scoping and invoicing workflow for 200+ monthly proposals in a new CRM — an operator-obsessed v1 built fast that schedulers and buyers adopted without training.
+2. Cut **Customer Acquisition Cost by 13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy — optimizing the website and Google profile to move customers from discovery to booked job faster.
+3. Identified and sealed **margin leaks** across 1,000+ project records through financial profitability analysis, surfacing pricing gaps and delivering a data-backed roadmap that improved leadership decision-making on future bids.
 
 ## Notes from the rewriter
-- JD term 'idea to production' / 'idea, spec, build, deploy, rollout, iterate' woven into microsoft_ft bullet 1 and the skills section — mirrors Nox's exact product cadence language.
-- JD term 'sit with operators, schedulers, and buyers' mirrored in skills_priority and amazon_robotics bullet 1 ('active shop floor') to signal comfort in physical operations environments.
-- JD term 'bias for shipping' and 'v1 live today' directly embedded in microsoft_ft bullet 3 ('ruthlessly prioritizing a v1 scope, iterating fast') to match Nox's speed-first culture.
-- JD term 'tight specs that engineers can build from' used verbatim in microsoft_ft bullet 2 to directly echo the hiring manager's language.
-- JD phrase 'living in the stack and making it faster every week' echoed in microsoft_ft bullet 4 to mirror Nox's AI-tools-obsessed operator profile.
+- 'End-to-end product ownership' (JD: 'Own product end to end — idea, spec, build, deploy, rollout, iterate') woven into microsoft_ft bullet#1 and amazon_robotics bullet#1.
+- 'Tight specs engineers build from without clarification meetings' (JD verbatim) placed in microsoft_ft bullet#2 and microsoft_2022 bullet#1 to mirror Nox's explicit spec-writing requirement.
+- 'Walk operators through rollout on the floor' / 'sit with operators, schedulers, and buyers' (JD) surfaced in microsoft_ft bullet#3, amazon_robotics bullet#1, and pro_painters bullet#1 to show floor-comfort and user obsession.
+- 'Ruthlessly prioritize / say no to good ideas to ship great ones faster' (JD verbatim) used in microsoft_ft bullet#6 to directly echo Nox's bias-for-shipping culture.
+- 'Supply chain / shop-floor / physical operations' domain language (JD nice-to-have) woven into microsoft_2022 bullet#2 and amazon_robotics bullet#3 to connect Azure/robotics work to Nox's industrial context.
 

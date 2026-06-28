@@ -1,4 +1,4 @@
-# Program Manager, Voice of the Customer
+# Voice of the Customer Program Manager
 
 **Company:** Figma
 **Location:** San Francisco, CA • New York, NY • United States

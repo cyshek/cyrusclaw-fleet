@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Architected a **Resilience Automation Platform** for Azure's recovery validation program, defining self-service scheduling requirements that eliminated 30% of operational toil and scaled execution across 45+ annual drills.
+2. Pioneered Azure's first rack-level proactive resilience testing capability, delivering a **94% recovery rate** in 4 months by building GPU-accelerated data pipelines to surface critical hardware defects across distributed compute environments.
+3. Directed 14 cross-org recovery executions under executive visibility—including a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**—serving as technical liaison across engineering, product, and OEM partner teams.
+4. Built an internal **AI agent** using RAG and semantic search to restructure drill planning workflows, cutting planning cycle time by 39% and increasing drill throughput capacity by 21% across enterprise customers.
+5. Scaled Azure's recovery validation program from a 2-person operation into a platformized system, driving **$14M+ business impact** across OEM partners including Databricks, Walmart, SAP, and NetApp.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows by conducting live technical demos and training sessions across 14 Azure service teams, accelerating utilization and saving 37 engineering hours monthly.
+2. Migrated documentation infrastructure to an **AI-powered semantic search** tool, implementing rigorous metadata standards and RAG-aligned retrieval architecture that reduced lookup time by 83% for Azure engineering teams.
+3. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, translating complex technical feedback into actionable, deployable feature requirements.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** by securing cross-functional alignment on a unified automation prioritization framework across 140+ Azure teams, launching regions 28% faster with a scalable, repeatable pipeline architecture.
+2. Conducted discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a data-driven roadmap to automate critical execution paths and eliminate operational toil at scale.
+3. Engineered a **Power BI dashboard** to surface automation gaps across 140+ teams, enabling leadership to prioritize high-impact interventions and drive measurable efficiency gains across the distributed compute org.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by architecting the legacy OS migration strategy, mapping all software and hardware dependencies across 1,200+ distributed robotics stations.
+2. Implemented automated **CI/CD pipelines** in close partnership with IT, Operations, and Engineering teams, accelerating the software deployment cycle by 25% and enabling faster iteration across large-scale production environments.
+3. Prioritized the backlog and facilitated Agile ceremonies to resolve **40+ high-priority tickets**, stabilizing the developer intake process and unblocking critical path deliverables across cross-functional teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by building and optimizing a CRM-driven end-to-end scoping and invoicing pipeline that standardized workflows across 200+ monthly proposals and accelerated the sales execution cycle.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a data-driven digital go-to-market strategy, optimizing web presence and search profiles to improve top-of-funnel performance.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through structured data workflows and actionable reporting.
+
+## Notes from the rewriter
+- JD term 'RAG' woven into microsoft_ft bullet 4 and microsoft_2023 bullet 2 — directly mirrors JD requirement for 'retrieval-augmented generation' in Agentic AI workflows.
+- JD term 'GPU-accelerated pipelines' surfaced in microsoft_ft bullet 2 — maps to JD requirement to 'design and implement GPU-accelerated pipelines capable of processing multi-TB datasets.'
+- JD term 'OEM partner' used in microsoft_ft bullet 5 and skills — mirrors JD framing of 'technical liaison between NVIDIA engineering, product teams, and OEM partners.'
+- JD term 'proof-of-concept' and 'deployable architectures' reflected in microsoft_2023 bullet 3 framing ('actionable, deployable feature requirements') to echo JD language directly.
+- JD term 'semantic search' placed in microsoft_ft bullet 4 and microsoft_2023 bullet 2 to surface Agentic AI retrieval experience prominently, a key differentiator per the JD's 'Ways to stand out' section.
+

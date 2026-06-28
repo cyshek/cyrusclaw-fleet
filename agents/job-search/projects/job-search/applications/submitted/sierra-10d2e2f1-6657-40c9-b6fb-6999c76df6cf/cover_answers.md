@@ -6,8 +6,8 @@ Cyrus Shekari
 
 ## What's your favorite  junk food?
 
-Flamin' Hot Cheetos. No contest.
+Takis. The blue heat ones specifically - hard to stop once you start.
 
 ## Anything else? (Optional)
 
-I'm based in the Seattle area right now but open to relocating to San Francisco for the right opportunity, and this role clears that bar easily. I've spent the last couple years at Microsoft building agentic tooling and developer-facing platforms for Azure, so the SDK and developer experience angle here maps closely to work I've already been doing. Excited about what Sierra is building and would love to contribute.
+Just that I'm genuinely excited about this role. The Agent SDK work sits right at the intersection of what I've been building toward - designing self-service, developer-facing interfaces at Microsoft, shipping an internal AI agent for drill planning, and defining SDK-style integration requirements for enterprise partners like Databricks and NetApp. I'd love to bring that experience to Sierra and help shape how developers build on top of agentic systems at scale.

@@ -1,0 +1,99 @@
+# Solution Architect - Americas
+
+**Company:** Morpho
+**Location:** New York
+**Apply:** https://jobs.ashbyhq.com/morpho/4488a763-e1bb-4b7f-bdc9-6e1245a5785f
+**Ashby Org:** morpho
+**Ashby Job ID:** 4488a763-e1bb-4b7f-bdc9-6e1245a5785f
+
+---
+
+## About Morpho
+
+Morpho is a leading Decentralized Finance (DeFi) lending protocol that raised $70 million from Ribbit Capital, a16z crypto, Coinbase Ventures, Variant, Brevan Howard, Pantera, Blocktower, and 50 others to build an open lending network giving anyone, anywhere, access to the best possible terms. Morpho is experiencing explosive growth, with over $10 billion in deposits on the network, solidifying itself as the new standard for DeFi lending. Now, Morpho is scaling its team of contributors to establish itself as a cornerstone, not just of DeFi, but of a new internet-native financial system.
+
+## Our Mission
+
+Morpho's mission is to power human ambition with open access to capital. Human ambition has no borders, but the capital to fuel it does. Today's financial system is closed and fragmented. No one sees all opportunities, most overpay, and some are excluded entirely. We believe capital should flow efficiently to where it's needed most - giving anyone, anywhere, access to the best possible terms.
+
+## Location
+
+New York
+
+## How we work
+
+We move fast on hard problems in a nascent market with no set playbook: navigating uncertainty is part of the job. You'll be challenged: anyone can question work and decisions must be justified. We keep a high bar and match it with high support: we help each other unblock and share context openly, with low ego. More about our values: [morpho.org/jobs](http://morpho.org/jobs).
+
+## Role
+
+As a Solution Architect at Morpho, you'll be part of the Integration Team and work closely with our largest partners (exchanges, custodians, wallets, fintechs, and asset managers) to design and launch robust and compliant integrations. You'll act as the main technical counterpart, bridging partner teams with Morpho's engineering and product teams.
+
+## Responsibilities
+
+- Shape partner solutions early: work with Business Development to understand partner needs, translate requirements into clear technical approaches, identify constraints, de-risk integrations, and define success criteria.
+
+- Design end-to-end architectures with partners: lead the design of integrations with key partners across APIs, smart contracts, oracles, and custody solutions, and architect around Morpho's core stack including wallets/custody, KYC and access controls, compliance, liquidation tooling, monitoring, and operations.
+
+- Run architecture workshops to align on user journeys, liquidity strategies, and go-to-market with partners.
+
+- Drive delivery and execution: produce clear, actionable deliverables (architecture diagrams, specs, integration playbooks), coordinate across internal teams (protocol, product, infra, legal, risk, growth) to unblock launches, and work closely with partner engineering teams to bring solutions to production.
+
+- Scale what works: turn field learnings into better product, tooling, and documentation, and contribute to reference architectures and best practices.
+
+- Stay ahead and communicate clearly: keep up with DeFi infrastructure, Ethereum, and regulatory developments, and communicate effectively across teams and time zones, keeping complex topics simple and actionable.
+
+## What Success Looks Like
+
+### First 30 days
+
+Familiar with all of Morpho's codebase and able to answer technical questions from integrators. Has absorbed 80% of Morpho's context and is already making a tangible difference supporting the Integration and Growth team.
+
+### First 4 months
+
+Fully autonomous on technical questions, able to support growth without needing to involve others from the integration team. Smoothly onboards integrators and reassures partners. Knows where to find answers and has improved documentation and internal processes.
+
+### In 1 year
+
+A key partner and reference point for the Integration, Growth teams and Morpho partners.
+
+## Must-have Experience & Skills
+
+- 7+ years of software engineering experience, with a track record of owning complex systems and delivering cross-functionally.
+
+- Significant experience working with external partners (solutions architecture, integration engineering, or technical pre-sales), ideally in high-stakes or enterprise environments.
+
+- Significant experience in DeFi (non-negotiable): deep understanding of at least one major DeFi protocol, or a solid grasp of lending and borrowing mechanisms.
+
+- Strong architecture skills: able to design and reason about end-to-end systems spanning smart contracts, APIs/SDKs, custody/wallet infrastructure, and compliance constraints.
+
+- Hands-on technical profile: working knowledge of Solidity; comfortable reading, reviewing, and debugging smart contracts and integration flows; proficient with modern programming languages and AI coding tools.
+
+- Experience designing or implementing integrations across multiple systems (APIs, smart contracts, custody providers, etc.), ideally in production environments.
+
+- Excellent written communication: able to produce clear specs, integration guides, and partner-facing documentation.
+
+- High ownership and autonomy: able to take ambiguous partner projects from early scoping to production without constant oversight.
+
+- Humble.
+
+## Nice-to-have Experience & Skills
+
+- Experience integrating with exchanges, wallets, custody providers, fintechs, or institutional asset managers (security reviews, audits, SLAs, compliance constraints).
+
+- Familiarity with permissioned DeFi patterns (allowlists, wrappers/controllers, role separation, timelocks) and partner requirements around custody and control.
+
+- Strong intuition for liquidity and go-to-market mechanics (liquidity provisioning, market makers, incentives) that impact integration success.
+
+- Experience defining scalable integration processes (handoffs, templates, playbooks) and improving documentation as a product.
+
+## Perks & benefits
+
+We design benefits around deep work and growth, so you can do the best work of your career. Expect fair, top-tier compensation, real flexibility, time together in Paris, great health coverage, and support to keep learning.
+
+## Equal opportunity
+
+We welcome applicants from all backgrounds and hire based on talent, potential, and values alignment.
+
+# Ready to shape the future of finance?
+
+##

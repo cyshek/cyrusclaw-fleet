@@ -1,17 +1,18 @@
 # uber-160295 — Data Collaboration Program Manager (row 3067)
 
-STATUS: SUBMITTED ✅
-submitted_at: 2026-06-24
-submitted_by: auto (uber_full_apply.py)
+STATUS: FAILED ❌ (signin-failed)
+submitted_at: 2026-06-28
+submitted_by: auto (_uber_batch.py)
 ats: uber
 url: https://www.uber.com/careers/apply/form/160295
-confirmed_by: browser success page (recovered by subagent session review)
-account: fresh-alias
+account: .uber-creds.json (cyshekari+wd-uber-202606081753@gmail.com alias)
 resume: Cyrus_Shekari_Resume.pdf
 
-## Form summary
-- Cyrus Shekari | 346-804-0227 | zipCode=98033
-- Microsoft TPM (current, from 03/2024)
-- Univ of Houston BS CS (08/2021-12/2024)
-- Screening: driver=No inUSA=Yes legal=Yes sponsor=No
-- Demographics: prefer-not-to-say | arb: Yes
+## Form contents
+- Basic: Cyrus Shekari, 346-804-0227, US
+- Resume: Cyrus_Shekari_Resume.pdf
+- Experience: Microsoft — Technical Program Manager (current, from 03/2024)
+- Education: University of Houston, BS Computer Science, 08/2021–12/2024
+- Screening: driver=No, openRoles=Yes, inUSA=Yes, subsidiary=No, legalRight=Yes, sponsor=No
+- Demographics/veteran/arbitration: Prefer not to say / I prefer not to say / Yes, I agree
+- zipCode=98033, disabilityAccomodation=No

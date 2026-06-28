@@ -1,26 +1,9 @@
-SUBMITTED
+PREP-READY — 2026-06-28T07:35:59+00:00
 
-submitted_by: auto
-applied_on: 2026-06-23
-role_id: 3239
-submitted_at: 2026-06-23T02:50:20.207183+00:00
+role_id: 1036
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-otter-8402672002.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/otter-8402672002/Cyrus_Shekari_Resume_otter_8402672002_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/otter-8402672002/cover_answers.md
 
-Runner tail:
-    ]
-   }
-  }
- },
- "preSubmitState": {
-  "emptyRequired": [],
-  "multiUnset": [],
-  "submitDisabled": false
- },
- "final": {
-  "url": "https://job-boards.greenhouse.io/otter/jobs/8402672002/confirmation",
-  "confirmed": true,
-  "otpStill": false,
-  "otpErr": false,
-  "head": "Thank you for applying.\n\nYour application has been received and will be reviewed right away. If there is a fit, we will be in touch.\n\nView more jobs at Otter\nBack to job post\n\nPowered by"
- },
- "status": "SUBMITTED"
-}
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

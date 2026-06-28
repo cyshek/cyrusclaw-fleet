@@ -1,17 +1,31 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-04T13:49:28+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-27
 role_id: 2686
-slug:    netskope-7786997
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-netskope-7786997.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/netskope-7786997/Cyrus_Shekari_Resume_netskope_7786997_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/netskope-7786997/cover_answers.md
-wrapper: https://www.netskope.com/company/careers/open-positions/?gh_jid=7786997
+submitted_at: 2026-06-27T16:41:07+00:00
 
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
+Runner tail:
+0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "a3prWQG4",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/embed/job_app/confirmation?for=netskope&token=7786997",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\u00a0\n\nView more jobs at Netskope\nBack to job post\n\nGive your application a boost!\n\nSign"
+ },
+ "status": "SUBMITTED"
+}
 
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug netskope-7786997
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).

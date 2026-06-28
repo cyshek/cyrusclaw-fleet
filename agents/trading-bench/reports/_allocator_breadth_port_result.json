@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "question": "Does {30,90,180} breadth on allocator sleeve A improve the inv-vol-63d BLEND OOS vs binary SMA200 sleeve A?",
+    "oos_split": "2018-12-31",
+    "breadth_windows": [
+      30,
+      90,
+      180
+    ],
+    "base_a_params": {
+      "target_ann_vol": 0.25,
+      "vol_window": 20,
+      "sma_window": 200,
+      "w_max": 1.0,
+      "vix_gate": false,
+      "switch_cost_bps": 2.0
+    },
+    "blend": "inv-vol-63d monthly, blend_cost_bps=2.0, VOL_LOOKBACK_DAYS=63 (ab.blend_portfolio + ab invvol fn)",
+    "headline_sharpe": "full-period continuous-span pop-std*sqrt252 (_stats_from_equity), NOT median-of-windows"
+  },
+  "standalone_sleeveA": {
+    "binary_sma200": {
+      "full": {
+        "sharpe": 0.8567938494011277,
+        "cagr_pct": 20.58245348765597,
+        "maxdd_pct": -34.523549463330326,
+        "vol_pct": 25.752345864078634,
+        "total_return_pct": 2026.3784613663042
+      },
+      "is_2010_2018": {
+        "sharpe": 0.7454873931039737,
+        "cagr_pct": 17.40506180667374,
+        "maxdd_pct": -33.15672885391091
+      },
+      "oos_2019_today": {
+        "sharpe": 0.9943539656610274,
+        "cagr_pct": 24.48817333245885,
+        "maxdd_pct": -24.40886565632909,
+        "total_return_pct": 412.0451903785213
+      }
+    },
+    "breadth_30_90_180": {
+      "full": {
+        "sharpe": 0.8328992554736325,
+        "cagr_pct": 17.792294906030428,
+        "maxdd_pct": -29.85271734442071,
+        "vol_pct": 22.817330795842462,
+        "total_return_pct": 1350.6938063061073
+      },
+      "is_2010_2018": {
+        "sharpe": 0.7106866261693293,
+        "cagr_pct": 14.653772720105351,
+        "maxdd_pct": -29.85271734442071
+      },
+      "oos_2019_today": {
+        "sharpe": 0.9811620176950181,
+        "cagr_pct": 21.649862779474493,
+        "maxdd_pct": -22.550102374201686,
+        "total_return_pct": 331.1436414612441
+      }
+    },
+    "binary_avg_weight": 0.5149917240392493,
+    "breadth_avg_weight": 0.47293614075858464,
+    "ref_tiebreak_split_2018_01_01": {
+      "note": "from reports/_ens_breadth_tiebreak_result.json (split 2018-01-01, NOT allocator split)",
+      "binary_oos_sharpe": 0.837,
+      "binary_oos_maxdd": -34.52,
+      "breadth_oos_sharpe": 0.8553,
+      "breadth_oos_maxdd": -22.55
+    }
+  },
+  "baseline_reproduction": {
+    "known_full_sharpe": 1.012478598814084,
+    "got_full_sharpe": 1.0030395085176487,
+    "known_oos_sharpe": 1.1424972297107936,
+    "got_oos_sharpe": 1.1228129459199865,
+    "known_full_maxdd": -23.897251590900126,
+    "got_full_maxdd": -23.897215365084545,
+    "known_w_tqqq": 0.348525857325614,
+    "got_w_tqqq": 0.3485259660467253,
+    "reproduced": true
+  },
+  "blend_binary_A": {
+    "label": "invvol_63d",
+    "window": {
+      "start": "2010-02-12",
+      "end": "2026-06-25",
+      "n_days": 4116
+    },
+    "n_rebal": 196,
+    "avg_turnover_per_rebal": 0.09328852457373374,
+    "full": {
+      "sharpe": 1.0030395085176487,
+      "cagr_pct": 15.720414125958904,
+      "maxdd_pct": -23.897215365084545,
+      "vol_pct": 15.812209561282863,
+      "total_return_pct": 985.0373790138051
+    },
+    "is_2010_2018": {
+      "sharpe": 0.8919358520213713,
+      "cagr_pct": 12.937199645973285,
+      "maxdd_pct": -23.897215365084545
+    },
+    "oos_2019_today": {
+      "sharpe": 1.1228129459199865,
+      "cagr_pct": 19.102669861643683,
+      "maxdd_pct": -21.881797452401898,
+      "total_return_pct": 268.2113687384358
+    },
+    "spx_full": {
+      "sharpe": 0.7685869874631682,
+      "cagr_pct": 12.475110052479277,
+      "maxdd_pct": -33.92496000265329
+    },
+    "spx_oos": {
+      "sharpe": 0.833910619575351,
+      "cagr_pct": 15.51489740005958
+    },
+    "avg_w_tqqq": 0.3485259660467253,
+    "avg_w_rot": 0.6514740339532746,
+    "common_window": [
+      "2010-02-12",
+      "2026-06-25"
+    ],
+    "n_common_days": 4116,
+    "sleeveA_full_annvol": 0.25752345864078635,
+    "sleeveB_full_annvol": 0.14238345002928862,
+    "sleeveA_oos_annvol": 0.25271901966772287,
+    "sleeveB_oos_annvol": 0.1578969778170094
+  },
+  "blend_breadth_A": {
+    "label": "invvol_63d",
+    "window": {
+      "start": "2010-02-12",
+      "end": "2026-06-25",
+      "n_days": 4116
+    },
+    "n_rebal": 196,
+    "avg_turnover_per_rebal": 0.1149685452691609,
+    "full": {
+      "sharpe": 1.0293592040047848,
+      "cagr_pct": 15.470859379199364,
+      "maxdd_pct": -20.32883590832534,
+      "vol_pct": 15.089412130167915,
+      "total_return_pct": 947.4531196716406
+    },
+    "is_2010_2018": {
+      "sharpe": 0.9175853855277277,
+      "cagr_pct": 12.699870605273112,
+      "maxdd_pct": -20.32883590832534
+    },
+    "oos_2019_today": {
+      "sharpe": 1.1495779285796597,
+      "cagr_pct": 18.84314227373809,
+      "maxdd_pct": -20.020743420707177,
+      "total_return_pct": 262.2707471458594
+    },
+    "spx_full": {
+      "sharpe": 0.7685869874631682,
+      "cagr_pct": 12.475110052479277,
+      "maxdd_pct": -33.92496000265329
+    },
+    "spx_oos": {
+      "sharpe": 0.833910619575351,
+      "cagr_pct": 15.51489740005958
+    },
+    "avg_w_tqqq": 0.38506323253484137,
+    "avg_w_rot": 0.6149367674651587,
+    "common_window": [
+      "2010-02-12",
+      "2026-06-25"
+    ],
+    "n_common_days": 4116,
+    "sleeveA_full_annvol": 0.2281733079584246,
+    "sleeveB_full_annvol": 0.14238345002928862,
+    "sleeveA_oos_annvol": 0.22602944692537663,
+    "sleeveB_oos_annvol": 0.1578969778170094
+  },
+  "blend_breadth_A_canary_plus1": {
+    "label": "invvol_63d",
+    "window": {
+      "start": "2010-02-12",
+      "end": "2026-06-25",
+      "n_days": 4116
+    },
+    "n_rebal": 196,
+    "avg_turnover_per_rebal": 0.1126907502497973,
+    "full": {
+      "sharpe": 1.0275992021949545,
+      "cagr_pct": 15.555266031790316,
+      "maxdd_pct": -22.167346970853284,
+      "vol_pct": 15.202628870668347,
+      "total_return_pct": 960.0262401820096
+    },
+    "is_2010_2018": {
+      "sharpe": 0.888874360199535,
+      "cagr_pct": 12.373443340983847,
+      "maxdd_pct": -22.167346970853284
+    },
+    "oos_2019_today": {
+      "sharpe": 1.1764690699524452,
+      "cagr_pct": 19.446796376851914,
+      "maxdd_pct": -21.359346785749256,
+      "total_return_pct": 276.2184314374954
+    },
+    "spx_full": {
+      "sharpe": 0.7685869874631682,
+      "cagr_pct": 12.475110052479277,
+      "maxdd_pct": -33.92496000265329
+    },
+    "spx_oos": {
+      "sharpe": 0.833910619575351,
+      "cagr_pct": 15.51489740005958
+    },
+    "avg_w_tqqq": 0.3820562279959783,
+    "avg_w_rot": 0.6179437720040216,
+    "common_window": [
+      "2010-02-12",
+      "2026-06-25"
+    ],
+    "n_common_days": 4116,
+    "sleeveA_full_annvol": 0.23092798182768984,
+    "sleeveB_full_annvol": 0.14238345002928862,
+    "sleeveA_oos_annvol": 0.22830058476134343,
+    "sleeveB_oos_annvol": 0.1578969778170094
+  },
+  "canary_standalone_plus1": {
+    "full": {
+      "sharpe": 0.8518658946668831,
+      "cagr_pct": 18.509200473750774,
+      "maxdd_pct": -34.46154557805582,
+      "vol_pct": 23.092798182768984,
+      "total_return_pct": 1501.8325450022169
+    },
+    "is_2010_2018": {
+      "sharpe": 0.6815232128376825,
+      "cagr_pct": 14.052848477766178,
+      "maxdd_pct": -34.46154557805582
+    },
+    "oos_2019_today": {
+      "sharpe": 1.0592161797662185,
+      "cagr_pct": 24.050891351639315,
+      "maxdd_pct": -24.983131500145994,
+      "total_return_pct": 398.7850861569573
+    }
+  },
+  "deltas_breadth_minus_binary": {
+    "blend_full_sharpe": 0.026319695487136086,
+    "blend_oos_sharpe": 0.026764982659673198,
+    "blend_full_maxdd": 3.5683794567592066,
+    "blend_oos_maxdd": 1.8610540316947208,
+    "blend_full_cagr": -0.24955474675953937,
+    "blend_oos_cagr": -0.2595275879055947,
+    "avg_w_tqqq": 0.03653726648811606,
+    "sleeveA_full_annvol": -0.029350150682361742,
+    "sleeveA_oos_annvol": -0.026689572742346235
+  },
+  "verdict": {
+    "blend_oos_sharpe_better": true,
+    "blend_oos_maxdd_better": true,
+    "blend_full_sharpe_better": true,
+    "blend_full_maxdd_better": true,
+    "canary_plus1_holds": true,
+    "recommendation": "GO",
+    "note": "GO iff breadth-A blend beats binary-A blend OOS on Sharpe OR maxDD net of cost; a +1-bar canary collapse flips to NO-GO (timing artifact)."
+  }
+}

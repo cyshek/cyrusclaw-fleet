@@ -174,6 +174,35 @@ def trend_is_up_sma200(underlying_closes: List[float], sma_window: int) -> bool:
     return (s is not None) and (last > s)
 
 
+def breadth_gate_scaler(underlying_closes: List[float],
+                        windows: List[int]) -> float:
+    """Multi-horizon SMA-breadth participation scaler g in [0, 1].
+
+    VERBATIM mirror of the validated tiebreak driver make_breadth_scaler
+    (reports/_ens_breadth_tiebreak_driver.py): g = (# windows whose SMA is
+    computable AND last close > that SMA) / len(windows). For windows
+    {30,90,180} g takes values {0, 1/3, 2/3, 1}. Replaces the binary SMA-200
+    gate with a graded risk-on throttle; the engine applies it as
+    w = clamp(g * vol_target_weight, 0, w_max) (breadth MULTIPLIES the
+    vol-target weight, it does not just switch it on/off).
+
+    underlying_closes = QQQ closes up to and INCLUDING decision day D
+    (lookahead-safe). Empty closes or a window with insufficient history
+    contributes 0 for that horizon (same fail-OFF convention as the binary
+    gate). Single-window {200} reproduces the binary SMA-200 gate exactly
+    ({0, 1}).
+    """
+    if not underlying_closes or not windows:
+        return 0.0
+    last = underlying_closes[-1]
+    agree = 0
+    for w in windows:
+        s = _sma(underlying_closes, int(w))
+        if s is not None and last > s:
+            agree += 1
+    return agree / len(windows)
+
+
 def _clamp(x: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, x))
 
@@ -266,6 +295,18 @@ def decide(market_state: dict, position_state: dict, params: dict) -> Action:
     target_vol = float(target_vol) if target_vol is not None else None
     vol_window = int(P("vol_window", 20))
     sma_window = int(P("sma_window", 200))
+    # Opt-in multi-horizon breadth gate. If breadth_windows is provided (e.g.
+    # [30, 90, 180]), the binary SMA-200 gate is replaced by a graded breadth
+    # scaler g in {0, 1/k, ..., 1}. Absent/empty -> fall back to the binary
+    # SMA-200 gate (single-window {sma_window}) so existing behaviour is
+    # bit-identical. Validated 2026-06-27 (ens_sma_breadth tiebreak): {30,90,180}
+    # OOS dSharpe +0.018, OOS+canary +0.056 (canary-robust), OOS maxDD -22.55%
+    # vs -34.52% binary, all under the live vix_gate=False convention.
+    _bw_raw = P("breadth_windows", None)
+    if _bw_raw:
+        breadth_windows = [int(x) for x in _bw_raw]
+    else:
+        breadth_windows = [sma_window]
     w_max = float(P("w_max", 1.0))
     deployable_notional = float(P("deployable_notional", 1000.0))  # == runner MAX_NOTIONAL
     deadband_abs_usd = float(P("deadband_abs_usd", 25.0))
@@ -318,21 +359,37 @@ def decide(market_state: dict, position_state: dict, params: dict) -> Action:
                              f"gate unknown -> stay flat (runner plumbing gap)")
 
     # --- 2) trend gate on QQQ closes through D ---
-    if len(qqq_closes) < sma_window:
-        gate_up = False
-        gate_note = f"gate=OFF(insufficient {underlying} hist {len(qqq_closes)}<{sma_window})"
+    # Graded breadth scaler g in [0,1]; single-window {sma_window} == binary
+    # SMA-200 gate ({0,1}). gate_up := g > 0 (any horizon risk-on).
+    max_win = max(breadth_windows)
+    if len(qqq_closes) < max_win:
+        # mirror the binary gate's fail-OFF on insufficient history for the
+        # LONGEST horizon (shorter horizons may compute, but to keep the
+        # "need full hist" parity with the validated driver we only act once
+        # the deepest SMA is well-defined). Shorter SMAs still contribute via
+        # breadth_gate_scaler; here we just label the partial-history case.
+        g = breadth_gate_scaler(qqq_closes, breadth_windows)
+        _gw_desc = "/".join(str(w) for w in breadth_windows)
+        gate_note = (f"gate={'PARTIAL' if g > 0 else 'OFF'}"
+                     f"(g={g:.2f} breadth{{{_gw_desc}}} hist {len(qqq_closes)}<{max_win})")
     else:
-        gate_up = trend_is_up_sma200(qqq_closes, sma_window)
-        sma_val = _sma(qqq_closes, sma_window)
-        gate_note = (f"gate={'ON' if gate_up else 'OFF'}"
-                     f"({underlying} {qqq_closes[-1]:.2f} vs SMA{sma_window} {sma_val:.2f})")
+        g = breadth_gate_scaler(qqq_closes, breadth_windows)
+        _gw_desc = "/".join(str(w) for w in breadth_windows)
+        gate_note = (f"gate={'ON' if g >= 1.0 else ('PARTIAL' if g > 0 else 'OFF')}"
+                     f"(g={g:.2f} breadth{{{_gw_desc}}} {underlying} {qqq_closes[-1]:.2f})")
+    gate_up = g > 0.0
 
     # --- 3) realized vol on the SLEEVE (TQQQ) own returns through D ---
     sleeve_rets = _sleeve_returns(bars)
     rv = realized_ann_vol(sleeve_rets, vol_window) if (target_vol is not None and gate_up) else None
 
-    # --- 4) target weight (engine math) ---
-    w = target_weight(gate_up, rv, target_vol, w_max)
+    # --- 4) target weight (engine math): breadth MULTIPLIES the vol-target
+    #        weight -> w = clamp(g * target_weight(True, rv, ...), 0, w_max).
+    #        Mirrors the validated tiebreak simulate(): vt computed with
+    #        trend_up=True, then scaled by g. For g in {0,1} this is identical
+    #        to the old target_weight(gate_up, ...).
+    vt = target_weight(gate_up, rv, target_vol, w_max)
+    w = _clamp(g * vt, 0.0, w_max)
     rv_note = f"rv={rv*100:.1f}%" if rv is not None else "rv=n/a"
 
     # --- 5) translate weight -> order ---

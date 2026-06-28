@@ -1,7 +1,7 @@
 # uber-158015 — Program Manager, AV Operational Safety (row 1949)
 
-STATUS: FAILED ❌ (form-not-visible)
-submitted_at: 2026-06-27
+STATUS: FAILED ❌ (signin-failed)
+submitted_at: 2026-06-28
 submitted_by: auto (_uber_batch.py)
 ats: uber
 url: https://www.uber.com/careers/apply/form/158015

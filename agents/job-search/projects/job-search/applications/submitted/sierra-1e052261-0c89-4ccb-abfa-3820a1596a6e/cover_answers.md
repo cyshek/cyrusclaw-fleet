@@ -10,6 +10,4 @@ Hot Cheetos. No contest.
 
 ## Anything else? (Optional)
 
-I've spent the last couple years at Microsoft owning infrastructure platform work, from defining compute and orchestration abstractions for Azure's resilience platform to building internal APIs and tooling that made complex operations self-serve. The through-line across all of it has been making infrastructure faster, more reliable, and easier for engineering teams to build on.
-
-Sierra's focus on agent execution infrastructure is exactly the kind of problem I want to be working on. Real-time workloads, enterprise-grade reliability, and developer primitives that don't get in the way of shipping - that combination is where I do my best work, and I'm excited about the scope of what's being built here.
+Just that I'm genuinely excited about this role. The work I've done at Microsoft, defining infrastructure platforms, building developer primitives, and shipping a resilience automation platform from 0 to 1, maps closely to what Sierra is building here. I'd love the chance to bring that experience to a team working at this level of ambition.

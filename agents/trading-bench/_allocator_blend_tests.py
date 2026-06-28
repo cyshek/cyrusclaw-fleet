@@ -145,7 +145,8 @@ def build_sleeves() -> Dict:
     print(">>> Reproducing TQQQ vol-target sleeve ...", flush=True)
     vt = run_backtest_voltarget(VolTargetParams(
         target_ann_vol=0.25, vol_window=20, sma_window=200, w_max=1.0,
-        vix_gate=False, switch_cost_bps=2.0))
+        vix_gate=False, switch_cost_bps=2.0,
+        breadth_windows=[30, 90, 180]))  # multi-horizon breadth gate (verified GO 2026-06-27: +1.9pp OOS DD, +0.027 OOS Sharpe, canary-clean; see reports/ALLOCATOR_BREADTH_PORT_20260627T215035Z.md)
     tqqq_dates = vt["strategy"]["dates"]
     tqqq_eq = vt["strategy"]["equity"]
     tqqq_ret_map = equity_to_daily_returns(tqqq_dates, tqqq_eq)

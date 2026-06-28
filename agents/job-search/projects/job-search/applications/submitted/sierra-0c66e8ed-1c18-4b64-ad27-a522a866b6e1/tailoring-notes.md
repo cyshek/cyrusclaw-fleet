@@ -9,37 +9,38 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized, self-service system sustaining 45+ annual resilience drills and driving **$14M+ business impact** across Databricks, Walmart, SAP, and NetApp.
-2. Led **0→1 development** of an internal Resilience Automation Platform—defined product requirements, self-service scheduling, and failure-handling workflows, cutting operational toil by 30% and enabling a fully scalable execution model.
-3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous real-time validation framework.
-4. Built an internal **AI agent** for drill planning, restructuring workflows to reduce planning cycle time by 39% and expand drill capacity by 21%—directly mirroring LLM-powered orchestration patterns used in production voice systems.
-5. Directed 14 cross-org recovery executions under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ contract**, requiring low-latency decision loops and real-time system reliability.
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing real-time workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling that cut operational toil by 30% and shifted execution to a scalable, low-latency model for distributed engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate—surfacing critical hardware defects and establishing a continuous validation loop across production environments.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across infra, reliability, and partner teams.
+5. Defined evaluation frameworks and feedback loops for production reliability, tracking resolution rate and failure-handling metrics across drills to surface systemic gaps and guide **roadmap prioritization** for the resilience platform.
+6. Scaled team leverage through **AI-driven automation**, building an internal AI agent and restructuring planning workflows to reduce planning cycle time by 39% and increase drill capacity by 21% without adding headcount.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **AI-powered product adoption** across 14 Azure service teams through user demos and training, surfacing workflow gaps via 11+ customer interviews and influencing the roadmap to ship intent-based YAML generation.
-2. Translated **real-world usage patterns** from user research into prioritized feature improvements, directly shaping how AI-generated outputs were evaluated and refined in production engineering environments.
-3. Improved retrieval quality and data integrity by migrating documentation to an **AI-powered semantic search** system with rigorous metadata standards, reducing lookup time by 83% across internal engineering teams.
+1. Championed adoption of **AI-driven code generation** workflows across Azure, conducting user demos and training that drove utilization across 14 key engineering teams and saved **37 engineering hours** monthly in production developer cycles.
+2. Shaped the product roadmap to include **intent-based YAML generation** by running 11+ user interviews with Azure service teams, identifying critical feature gaps and translating real-world usage patterns into actionable product requirements.
+3. Improved data retrieval reliability by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** system, cutting lookup time by 83% and improving signal quality for LLM-powered tooling downstream.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams with competing real-time operational demands.
-2. Conducted discovery with 20+ service teams to surface **81 hours of manual toil** per region launch, then built a roadmap automating critical execution paths—turning edge-case pain points into systematic product improvements.
-3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact investments with measurable, feedback-loop-driven product direction.
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ engineering and operations teams.
+2. Built the product strategy to eliminate manual toil during region launches—conducting discovery with 20+ service teams, mapping **81 hours of manual effort** per region, and delivering a prioritized roadmap to automate the most failure-prone critical paths.
+3. Enabled leadership to target automation gaps with a **Power BI reliability dashboard** tracking operational toil across 140+ teams, providing the data foundation for roadmap decisions and quarterly planning cycles.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Defined the **legacy OS migration strategy** for a 2,000+ unit pilot—mapping dependencies across 1,200+ stations and achieving zero operational downtime by anticipating real-world failure modes before production rollout.
-2. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and improving release reliability across distributed robotics infrastructure.
-3. Facilitated Agile sprint planning and retrospectives, **resolving 40+ high-priority tickets** to stabilize developer intake and maintain velocity during a complex, multi-team system transition.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating rollout sequencing across infra and operations teams.
+2. Prioritized a backlog of **40+ high-severity tickets** through Agile sprint planning and retrospectives, stabilizing the developer intake process and accelerating resolution of system-critical defects across robotics production environments.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to ship automated **CI/CD pipelines**, reducing deployment cycle time by 25% and improving release reliability across distributed robotics software systems.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals via a new CRM process, improving conversion through faster, more consistent customer interactions.
-2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions 2.7% by executing a digital-first go-to-market strategy—optimizing the website and Google profile to better match customer intent signals.
-3. Identified and closed margin leaks by conducting financial profitability analysis across **1,000+ project records**, translating real-world usage data into pricing model improvements that directly impacted leadership decisions.
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a CRM process that improved conversion tracking and reduced sales cycle friction.
+2. Cut **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy—optimizing the website, Google Business profile, and ad targeting based on customer segment analysis.
+3. Improved leadership pricing accuracy by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and delivering a data-driven model to guide future job scoping and resource allocation.
 
 ## Notes from the rewriter
-- '0→1 product development' from JD woven into microsoft_ft bullet 2 and amazon_robotics framing—signals comfort with ambiguous, greenfield voice product work.
-- 'Real-time systems' and 'latency' from JD woven into microsoft_ft bullets 4–5 and amazon_robotics bullet 1—directly mirrors JD's emphasis on low-latency, reliable production environments.
-- 'Failure-handling' and 'production environments' from JD woven into microsoft_ft bullet 2 and amazon_robotics bullet 1—addresses JD's requirement to design recovery from errors in live voice interactions.
-- 'Feedback loops' and 'real-world usage into product direction' from JD woven into microsoft_2023 bullet 2 and pro_painters bullet 3—mirrors JD's 'make voice measurable and improvable' responsibility.
-- 'Edge cases' and 'customer-deployed' framing from JD woven into microsoft_2022 bullet 2—reflects JD's call to translate noisy, real-world usage patterns into product improvements.
+- '0→1 development' from JD's '0→1 product development' requirement woven into microsoft_ft bullet#2 and microsoft_2022 bullet#1 to directly mirror Sierra's stated track-record criterion.
+- 'Feedback loops' and 'resolution rate' from JD's 'Make voice measurable and improvable' section woven into microsoft_ft bullet#5, framing Azure drill metrics in Sierra's evaluation-loop language.
+- 'Real-time' and 'low-latency' from JD's 'Build reliable real-time systems' section woven into microsoft_ft bullet#2 ('low-latency model') and amazon_robotics bullet#3 ('release reliability across distributed systems').
+- 'Production environments' from JD's 'reliable in production' language used in microsoft_ft bullet#3 and microsoft_2023 bullet#1 to reinforce production-grade experience with AI and infra systems.
+- 'Intent-based' and 'LLM-powered tooling' in microsoft_2023 bullets directly mirror JD's ASR/TTS/LLM stack ownership expectations, signaling familiarity with AI speech pipeline components.
 

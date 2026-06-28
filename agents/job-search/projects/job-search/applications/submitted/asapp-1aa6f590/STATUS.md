@@ -1,6 +1,9 @@
-ABORT-BULLET-REWRITER — 2026-06-23T11:26:37+00:00
+PREP-READY — 2026-06-28T07:01:52+00:00
 
 role_id: 2127
-phase: bullet-rewriter
-error:
-TimeoutExpired: Command '['/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/bin/python', '/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/bullet_rewriter.py', '--org', 'lever-asapp-2', '--job-id', '1aa6f590', '--render', '--max-loops', '3']' timed out after 360 seconds
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-asapp-1aa6f590.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/asapp-1aa6f590/Cyrus_Shekari_Resume_lever-asapp-2_1aa6f590_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/asapp-1aa6f590/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

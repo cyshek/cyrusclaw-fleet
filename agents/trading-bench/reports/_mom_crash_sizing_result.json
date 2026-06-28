@@ -1,0 +1,520 @@
+{
+  "meta": {
+    "utc": "20260627T235005Z",
+    "thesis": "Barroso&Santa-Clara momentum-crash-aware sizing on TQQQ vol-target sleeve",
+    "target_ann_vol": 0.25,
+    "vol_window_baseline": 20,
+    "w_max": 1.0,
+    "cost_bps_per_side": 2.0,
+    "split": "2018-01-01",
+    "vix_gate": false,
+    "sleeve": "TQQQ",
+    "underlying": "QQQ",
+    "benchmark": "^GSPC",
+    "headline_sharpe_def": "fp_continuous_sharpe on single continuous equity curve",
+    "research_only": true
+  },
+  "baseline_reproduction": {
+    "engine_full": {
+      "total_return_pct": 2026.384634077328,
+      "max_drawdown_pct": -34.52355745403721,
+      "stats_sharpe": 0.8567946605624833,
+      "fp_sharpe": 0.8566905732559509
+    },
+    "engine_is": {
+      "start": "2010-02-11",
+      "end": "2017-12-31",
+      "n": 1986,
+      "strategy_ret_pct": 331.96132717665944,
+      "spx_ret_pct": 147.90770072890987,
+      "bh_sleeve_ret_pct": 2573.675101714716,
+      "strategy_maxdd_pct": -33.156703027013364,
+      "avg_weight_in_window": 0.5937919467959415
+    },
+    "engine_oos": {
+      "start": "2018-01-01",
+      "end": "2026-06-25",
+      "n": 2131,
+      "strategy_ret_pct": 368.3539739177688,
+      "spx_ret_pct": 172.9231687121528,
+      "bh_sleeve_ret_pct": 1194.0219700028263,
+      "strategy_maxdd_pct": -34.52355745403721,
+      "avg_weight_in_window": 0.44159042636530305
+    },
+    "clone_full": {
+      "total_return_pct": 2026.384634077328,
+      "cagr_pct": 20.582474918737105,
+      "max_drawdown_pct": -34.52355745403721,
+      "ann_vol_pct": 25.752340636150805,
+      "stats_sharpe": 0.8567946605624833,
+      "fp_sharpe": 0.8566905732559509,
+      "avg_weight": 0.5149917912960168,
+      "n_rebalances": 3250,
+      "spx_total_return_pct": 582.2155863624233,
+      "spx_max_drawdown_pct": -33.92496000265329,
+      "spx_stats_sharpe": 0.7685869874631682
+    },
+    "clone_is": {
+      "start": "2010-02-11",
+      "end": "2017-12-31",
+      "n": 1986,
+      "strategy_ret_pct": 331.96132717665944,
+      "strategy_maxdd_pct": -33.156703027013364,
+      "strategy_cagr_pct": 20.412364995636434,
+      "strategy_fp_sharpe": 0.8488497852964473,
+      "spx_ret_pct": 147.90770072890987,
+      "spx_maxdd_pct": -19.388242072358498,
+      "avg_weight": 0.5937919467959415,
+      "beats_spx_raw": true
+    },
+    "clone_oos": {
+      "start": "2018-01-01",
+      "end": "2026-06-25",
+      "n": 2131,
+      "strategy_ret_pct": 368.3539739177688,
+      "strategy_maxdd_pct": -34.52355745403721,
+      "strategy_cagr_pct": 20.042640646068442,
+      "strategy_fp_sharpe": 0.842441878892871,
+      "spx_ret_pct": 172.9231687121528,
+      "spx_maxdd_pct": -33.92496000265329,
+      "avg_weight": 0.44159042636530305,
+      "beats_spx_raw": true
+    },
+    "known_reference": {
+      "full_maxdd_pct": -34.52,
+      "full_sharpe": 0.859,
+      "full_total_return_pct": 2025.5,
+      "oos_strategy_ret_pct": 368.16,
+      "oos_spx_ret_pct": 174.71,
+      "oos_maxdd_pct": -34.52,
+      "is_strategy_ret_pct": 331.96,
+      "is_spx_ret_pct": 147.91
+    },
+    "checks": {
+      "engine_vs_known_full_maxdd": true,
+      "engine_vs_known_full_sharpe": true,
+      "engine_vs_known_full_totret": true,
+      "engine_vs_known_oos_ret": true,
+      "engine_vs_known_oos_maxdd": true,
+      "engine_vs_known_is_ret": true,
+      "clone_vs_engine_full_maxdd": true,
+      "clone_vs_engine_full_totret": true,
+      "clone_vs_engine_full_sharpe": true,
+      "fp_equals_stats_sharpe_engine": true,
+      "fp_equals_stats_sharpe_clone": true
+    },
+    "all_ok": true
+  },
+  "baseline_clone": {
+    "full": {
+      "total_return_pct": 2026.384634077328,
+      "cagr_pct": 20.582474918737105,
+      "max_drawdown_pct": -34.52355745403721,
+      "ann_vol_pct": 25.752340636150805,
+      "stats_sharpe": 0.8567946605624833,
+      "fp_sharpe": 0.8566905732559509,
+      "avg_weight": 0.5149917912960168,
+      "n_rebalances": 3250,
+      "spx_total_return_pct": 582.2155863624233,
+      "spx_max_drawdown_pct": -33.92496000265329,
+      "spx_stats_sharpe": 0.7685869874631682
+    },
+    "in_sample": {
+      "start": "2010-02-11",
+      "end": "2017-12-31",
+      "n": 1986,
+      "strategy_ret_pct": 331.96132717665944,
+      "strategy_maxdd_pct": -33.156703027013364,
+      "strategy_cagr_pct": 20.412364995636434,
+      "strategy_fp_sharpe": 0.8488497852964473,
+      "spx_ret_pct": 147.90770072890987,
+      "spx_maxdd_pct": -19.388242072358498,
+      "avg_weight": 0.5937919467959415,
+      "beats_spx_raw": true
+    },
+    "out_sample": {
+      "start": "2018-01-01",
+      "end": "2026-06-25",
+      "n": 2131,
+      "strategy_ret_pct": 368.3539739177688,
+      "strategy_maxdd_pct": -34.52355745403721,
+      "strategy_cagr_pct": 20.042640646068442,
+      "strategy_fp_sharpe": 0.842441878892871,
+      "spx_ret_pct": 172.9231687121528,
+      "spx_maxdd_pct": -33.92496000265329,
+      "avg_weight": 0.44159042636530305,
+      "beats_spx_raw": true
+    }
+  },
+  "variants": {
+    "A_fast_ewma_hl10": {
+      "full": {
+        "total_return_pct": 1487.3746387703734,
+        "cagr_pct": 18.443432820078478,
+        "max_drawdown_pct": -32.22031007159013,
+        "ann_vol_pct": 24.42675153638931,
+        "stats_sharpe": 0.8161914290807644,
+        "fp_sharpe": 0.8160922744391929,
+        "avg_weight": 0.4899783019328057,
+        "n_rebalances": 3391,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "in_sample": {
+        "start": "2010-02-11",
+        "end": "2017-12-31",
+        "n": 1986,
+        "strategy_ret_pct": 284.6717414870624,
+        "strategy_maxdd_pct": -32.22031007159013,
+        "strategy_cagr_pct": 18.652929213020087,
+        "strategy_fp_sharpe": 0.8176977656380295,
+        "spx_ret_pct": 147.90770072890987,
+        "spx_maxdd_pct": -19.388242072358498,
+        "avg_weight": 0.5705504561870361,
+        "beats_spx_raw": true
+      },
+      "out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 293.93407223301915,
+        "strategy_maxdd_pct": -31.85535966099988,
+        "strategy_cagr_pct": 17.610061157999368,
+        "strategy_fp_sharpe": 0.7931701706003694,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.414926342198105,
+        "beats_spx_raw": true
+      },
+      "canary_full": {
+        "total_return_pct": 1271.331847058036,
+        "cagr_pct": 17.387262039550343,
+        "max_drawdown_pct": -43.17481487968651,
+        "ann_vol_pct": 24.83309074922336,
+        "stats_sharpe": 0.7708329822801194,
+        "fp_sharpe": 0.770739337988664,
+        "avg_weight": 0.4899082460431802,
+        "n_rebalances": 3390,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "canary_out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 326.09687496721136,
+        "strategy_maxdd_pct": -27.879585321906085,
+        "strategy_cagr_pct": 18.7071953276861,
+        "strategy_fp_sharpe": 0.8220781020114798,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.4152318508591212,
+        "beats_spx_raw": true
+      },
+      "delta_vs_baseline": {
+        "full_maxdd_pp_shallower": 2.303,
+        "oos_maxdd_pp_shallower": 2.668,
+        "full_fp_sharpe_delta": -0.0406,
+        "oos_ret_delta_pp": -74.42,
+        "full_totret_delta_pp": -539.0
+      },
+      "verdict": {
+        "go": false,
+        "dd_improvement_pp_vs_baseline": 2.668,
+        "canary_dd_improvement_pp_vs_baseline": 6.644,
+        "canary_dd_vs_variant_pp": 3.976,
+        "canary_falsifies_timing": true,
+        "canary_edge_persists": true,
+        "oos_beats_spx_raw": true,
+        "oos_spx_margin_pp": 121.01,
+        "baseline_oos_spx_margin_pp": 195.43,
+        "margin_kept_frac": 0.619,
+        "oos_ret_kept_frac": 0.798,
+        "reasons": [
+          "guts the mission-beat: keeps only 62% of baseline SPX-beat margin and 80% of baseline OOS return (>SPX by only 121.0pp vs baseline +195.4pp) -- cutting DD by surrendering the raw-return edge is a NO-GO",
+          "+1-bar canary FALSIFIES timing: extra lag makes DD 3.98pp SHALLOWER (better), so the DD-cut is lower-exposure/noise, not crash-timing skill"
+        ]
+      }
+    },
+    "B_barroso_126_21": {
+      "full": {
+        "total_return_pct": 928.2760642478225,
+        "cagr_pct": 15.336269868516727,
+        "max_drawdown_pct": -30.03433401093003,
+        "ann_vol_pct": 21.08609275181302,
+        "stats_sharpe": 0.782910393241853,
+        "fp_sharpe": 0.7828152817316624,
+        "avg_weight": 0.4082071762316497,
+        "n_rebalances": 3492,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "in_sample": {
+        "start": "2010-02-11",
+        "end": "2017-12-31",
+        "n": 1986,
+        "strategy_ret_pct": 250.3493654606521,
+        "strategy_maxdd_pct": -27.947320099436258,
+        "strategy_cagr_pct": 17.25344468287988,
+        "strategy_fp_sharpe": 0.843963331402859,
+        "spx_ret_pct": 147.90770072890987,
+        "spx_maxdd_pct": -19.388242072358498,
+        "avg_weight": 0.4887900473854727,
+        "beats_spx_raw": true
+      },
+      "out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 181.93412332610862,
+        "strategy_maxdd_pct": -30.03433401093003,
+        "strategy_cagr_pct": 13.04644362425944,
+        "strategy_fp_sharpe": 0.7013149843303745,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.3331452338382482,
+        "beats_spx_raw": true
+      },
+      "canary_full": {
+        "total_return_pct": 726.5923764109892,
+        "cagr_pct": 13.80483086644777,
+        "max_drawdown_pct": -36.340258348230336,
+        "ann_vol_pct": 21.400633456152107,
+        "stats_sharpe": 0.7121081046372751,
+        "fp_sharpe": 0.7120215945106564,
+        "avg_weight": 0.40814002255629206,
+        "n_rebalances": 3491,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "canary_out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 201.40751795829019,
+        "strategy_maxdd_pct": -26.786584824095318,
+        "strategy_cagr_pct": 13.943262889683329,
+        "strategy_fp_sharpe": 0.7314913083725958,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.3333922982183229,
+        "beats_spx_raw": true
+      },
+      "delta_vs_baseline": {
+        "full_maxdd_pp_shallower": 4.489,
+        "oos_maxdd_pp_shallower": 4.489,
+        "full_fp_sharpe_delta": -0.0739,
+        "oos_ret_delta_pp": -186.42,
+        "full_totret_delta_pp": -1098.1
+      },
+      "verdict": {
+        "go": false,
+        "dd_improvement_pp_vs_baseline": 4.489,
+        "canary_dd_improvement_pp_vs_baseline": 7.737,
+        "canary_dd_vs_variant_pp": 3.248,
+        "canary_falsifies_timing": true,
+        "canary_edge_persists": true,
+        "oos_beats_spx_raw": true,
+        "oos_spx_margin_pp": 9.01,
+        "baseline_oos_spx_margin_pp": 195.43,
+        "margin_kept_frac": 0.046,
+        "oos_ret_kept_frac": 0.494,
+        "reasons": [
+          "guts the mission-beat: keeps only 5% of baseline SPX-beat margin and 49% of baseline OOS return (>SPX by only 9.0pp vs baseline +195.4pp) -- cutting DD by surrendering the raw-return edge is a NO-GO",
+          "+1-bar canary FALSIFIES timing: extra lag makes DD 3.25pp SHALLOWER (better), so the DD-cut is lower-exposure/noise, not crash-timing skill"
+        ]
+      }
+    },
+    "C_asym_10_40": {
+      "full": {
+        "total_return_pct": 1280.3996027976414,
+        "cagr_pct": 17.43463811746091,
+        "max_drawdown_pct": -31.486874334174264,
+        "ann_vol_pct": 22.76686089420519,
+        "stats_sharpe": 0.8207347458847147,
+        "fp_sharpe": 0.8206350393003847,
+        "avg_weight": 0.45292062541859207,
+        "n_rebalances": 3412,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "in_sample": {
+        "start": "2010-02-11",
+        "end": "2017-12-31",
+        "n": 1986,
+        "strategy_ret_pct": 252.65644251535906,
+        "strategy_maxdd_pct": -31.486874334174264,
+        "strategy_cagr_pct": 17.3511867077641,
+        "strategy_fp_sharpe": 0.8144013653243624,
+        "spx_ret_pct": 147.90770072890987,
+        "spx_maxdd_pct": -19.388242072358498,
+        "avg_weight": 0.5255059900099465,
+        "beats_spx_raw": true
+      },
+      "out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 274.33089545104946,
+        "strategy_maxdd_pct": -30.70650537880921,
+        "strategy_cagr_pct": 16.901961417193245,
+        "strategy_fp_sharpe": 0.8045541303316647,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.3853082609353267,
+        "beats_spx_raw": true
+      },
+      "canary_full": {
+        "total_return_pct": 1121.8443026162142,
+        "cagr_pct": 16.560658404175264,
+        "max_drawdown_pct": -42.429565956663,
+        "ann_vol_pct": 23.14422365837304,
+        "stats_sharpe": 0.7788443795723284,
+        "fp_sharpe": 0.7787497620199438,
+        "avg_weight": 0.45286044343978515,
+        "n_rebalances": 3411,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "canary_out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 304.46937401513094,
+        "strategy_maxdd_pct": -26.91683690153971,
+        "strategy_cagr_pct": 17.977871054752548,
+        "strategy_fp_sharpe": 0.8350513960591051,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.38561695937905455,
+        "beats_spx_raw": true
+      },
+      "delta_vs_baseline": {
+        "full_maxdd_pp_shallower": 3.037,
+        "oos_maxdd_pp_shallower": 3.817,
+        "full_fp_sharpe_delta": -0.0361,
+        "oos_ret_delta_pp": -94.02,
+        "full_totret_delta_pp": -746.0
+      },
+      "verdict": {
+        "go": false,
+        "dd_improvement_pp_vs_baseline": 3.817,
+        "canary_dd_improvement_pp_vs_baseline": 7.607,
+        "canary_dd_vs_variant_pp": 3.79,
+        "canary_falsifies_timing": true,
+        "canary_edge_persists": true,
+        "oos_beats_spx_raw": true,
+        "oos_spx_margin_pp": 101.41,
+        "baseline_oos_spx_margin_pp": 195.43,
+        "margin_kept_frac": 0.519,
+        "oos_ret_kept_frac": 0.745,
+        "reasons": [
+          "guts the mission-beat: keeps only 52% of baseline SPX-beat margin and 74% of baseline OOS return (>SPX by only 101.4pp vs baseline +195.4pp) -- cutting DD by surrendering the raw-return edge is a NO-GO",
+          "+1-bar canary FALSIFIES timing: extra lag makes DD 3.79pp SHALLOWER (better), so the DD-cut is lower-exposure/noise, not crash-timing skill"
+        ]
+      }
+    },
+    "D_ewma_crashflag": {
+      "full": {
+        "total_return_pct": 1179.6704524298466,
+        "cagr_pct": 16.89111974063382,
+        "max_drawdown_pct": -31.90604908866559,
+        "ann_vol_pct": 22.904425154699506,
+        "stats_sharpe": 0.7970052310632075,
+        "fp_sharpe": 0.7969084072481055,
+        "avg_weight": 0.4594142632943863,
+        "n_rebalances": 2594,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "in_sample": {
+        "start": "2010-02-11",
+        "end": "2017-12-31",
+        "n": 1986,
+        "strategy_ret_pct": 247.80447181275815,
+        "strategy_maxdd_pct": -31.90604908866559,
+        "strategy_cagr_pct": 17.14497331751992,
+        "strategy_fp_sharpe": 0.796220539493394,
+        "spx_ret_pct": 147.90770072890987,
+        "spx_maxdd_pct": -19.388242072358498,
+        "avg_weight": 0.5409340125319181,
+        "beats_spx_raw": true
+      },
+      "out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 251.2346654255751,
+        "strategy_maxdd_pct": -31.240117036298876,
+        "strategy_cagr_pct": 16.024457991600304,
+        "strategy_fp_sharpe": 0.7748260319502791,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.3834796306165353,
+        "beats_spx_raw": true
+      },
+      "canary_full": {
+        "total_return_pct": 1049.4211334216193,
+        "cagr_pct": 16.125419693201604,
+        "max_drawdown_pct": -43.63607819697437,
+        "ann_vol_pct": 23.392341511715344,
+        "stats_sharpe": 0.757165956543422,
+        "fp_sharpe": 0.7570739725843213,
+        "avg_weight": 0.45934420740476073,
+        "n_rebalances": 2593,
+        "spx_total_return_pct": 582.2155863624233,
+        "spx_max_drawdown_pct": -33.92496000265329,
+        "spx_stats_sharpe": 0.7685869874631682
+      },
+      "canary_out_sample": {
+        "start": "2018-01-01",
+        "end": "2026-06-25",
+        "n": 2131,
+        "strategy_ret_pct": 283.417920798482,
+        "strategy_maxdd_pct": -25.948619007794193,
+        "strategy_cagr_pct": 17.2341665749002,
+        "strategy_fp_sharpe": 0.8092197369417026,
+        "spx_ret_pct": 172.9231687121528,
+        "spx_maxdd_pct": -33.92496000265329,
+        "avg_weight": 0.38378513927755153,
+        "beats_spx_raw": true
+      },
+      "delta_vs_baseline": {
+        "full_maxdd_pp_shallower": 2.618,
+        "oos_maxdd_pp_shallower": 3.283,
+        "full_fp_sharpe_delta": -0.0598,
+        "oos_ret_delta_pp": -117.12,
+        "full_totret_delta_pp": -846.7
+      },
+      "verdict": {
+        "go": false,
+        "dd_improvement_pp_vs_baseline": 3.283,
+        "canary_dd_improvement_pp_vs_baseline": 8.575,
+        "canary_dd_vs_variant_pp": 5.291,
+        "canary_falsifies_timing": true,
+        "canary_edge_persists": true,
+        "oos_beats_spx_raw": true,
+        "oos_spx_margin_pp": 78.31,
+        "baseline_oos_spx_margin_pp": 195.43,
+        "margin_kept_frac": 0.401,
+        "oos_ret_kept_frac": 0.682,
+        "reasons": [
+          "guts the mission-beat: keeps only 40% of baseline SPX-beat margin and 68% of baseline OOS return (>SPX by only 78.3pp vs baseline +195.4pp) -- cutting DD by surrendering the raw-return edge is a NO-GO",
+          "+1-bar canary FALSIFIES timing: extra lag makes DD 5.29pp SHALLOWER (better), so the DD-cut is lower-exposure/noise, not crash-timing skill"
+        ]
+      }
+    }
+  },
+  "overall_verdict": {
+    "any_go": false,
+    "go_variants": [],
+    "headline": "CLEAN NEGATIVE: no crash-aware variant cleared the OOS bar. The DD reductions came from structurally LOWER EXPOSURE (lower avgW), not crash-timing skill -- they got SHALLOWER under +1-bar lag (falsifying timing) AND surrendered most of the mission-beat (giving up huge raw OOS return to barely clear SPX). Cutting DD that way is a NO-GO per honesty rail #7."
+  }
+}

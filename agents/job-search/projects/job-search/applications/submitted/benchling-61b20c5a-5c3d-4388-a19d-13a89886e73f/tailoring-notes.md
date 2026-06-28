@@ -10,36 +10,36 @@
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (5 bullets emitted, master had 5)
-1. Owned the **end-to-end roadmap** for Azure's Resilience Automation Platform, defining self-service scheduling primitives and API-driven workflows that reduced operational toil by 30% and scaled the program to 45+ annual drills.
-2. Defined developer-facing product requirements for an internal automation platform, translating complex distributed-systems constraints into crisp specs that enabled engineering teams to ship a scalable, **self-service execution model**.
-3. Built an **AI agent** for drill planning using LLM-powered automation, restructuring workflows to cut planning cycle time by 39% and expand drill capacity by 21% without adding headcount.
-4. Established feedback loops across partner integrations (Databricks, Walmart, SAP, NetApp), synthesizing usage signals and stakeholder learnings into roadmap decisions that drove **$14M+ business impact**.
-5. Directed 14 cross-org recovery executions under executive visibility, including a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, serving as the primary bridge between engineering and partner teams.
+1. Owned the **end-to-end roadmap** for Azure's Resilience Automation Platform, defining self-service scheduling primitives and developer-facing APIs that reduced operational toil by 30% and scaled the program to 45+ annual drills.
+2. Built feedback loops across engineering, enterprise partners (Databricks, Walmart, SAP, NetApp), and customer success to surface platform gaps early, shaping roadmap priorities and driving **$14M+ in business impact**.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering the 0→1 program in 4 months with a **94% recovery rate** and establishing a repeatable validation model across sovereign-cloud environments.
+4. Directed 14 high-visibility cross-org recovery executions, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating across engineering, ops, and executive stakeholders.
+5. Deployed an internal **AI agent** to automate drill planning workflows, cutting planning cycle time by 39% and increasing drill capacity by 21% — directly applying LLM-powered tooling to compress R&D-style operational cycles.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **developer platform adoption** for AI-powered code generation workflows, running user demos and training sessions across 14 Azure service teams that saved 37 engineering hours monthly.
-2. Surfaced critical **API and tooling gaps** through 11+ structured developer interviews, directly influencing the roadmap to prioritize intent-based YAML generation as a first-class platform primitive.
-3. Improved developer experience by migrating documentation to an **AI-powered semantic search** system with rigorous metadata standards, cutting lookup time by 83% and reducing friction in developer onboarding.
+1. Drove **developer platform adoption** for AI-powered code generation workflows, running user demos and onboarding sessions that activated 14 Azure service teams and saved 37 engineering hours monthly.
+2. Shaped the product roadmap by conducting **11+ developer interviews** to identify critical API and tooling gaps, directly influencing the addition of intent-based YAML generation to the platform backlog.
+3. Improved developer onboarding and data retrieval by migrating documentation to an **AI-powered semantic search** system with rigorous metadata standards, cutting lookup time by 83% across internal engineering teams.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Secured cross-functional alignment across 140+ teams on a unified automation prioritization framework, **launching regions 28% faster** and generating $3M in accelerated revenue.
-2. Conducted discovery with 20+ service teams to map 81 hours of manual effort per region launch, then built a **platform roadmap** to automate critical paths and eliminate recurring operational toil.
-3. Engineered a Power BI dashboard to surface automation gaps and toil metrics across 140+ teams, giving leadership the **data foundation** needed to prioritize high-impact platform investments.
+1. Secured cross-functional alignment across 140+ teams on a unified automation prioritization framework, **accelerating region launches by 28%** and generating $3M in pull-forward revenue.
+2. Conducted discovery interviews with 20+ service teams to map 81 hours of manual effort per region launch, then built a **developer-facing roadmap** to automate critical paths and eliminate recurring operational toil.
+3. Engineered a **Power BI dashboard** tracking automation gaps across 140+ teams, enabling leadership to prioritize high-impact platform investments and quantify toil reduction in real time.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Defined the **legacy OS migration strategy** and dependency map across 1,200+ stations, achieving zero operational downtime during a 2,000+ unit pilot rollout.
-2. Prioritized a 40+ ticket backlog and facilitated Agile ceremonies to stabilize the **developer intake process**, unblocking engineering velocity during a high-stakes platform transition.
-3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25%.
+1. Defined the **platform migration strategy** for a 2,000+ unit legacy OS transition, mapping API and software dependencies across 1,200+ stations to achieve zero operational downtime during rollout.
+2. Prioritized a 40+ ticket backlog during Agile sprint planning to stabilize the **developer intake process**, unblocking cross-functional engineering teams and accelerating the software deployment cycle by 25%.
+3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, reducing manual deployment steps and establishing a scalable, repeatable release model for robotics software updates.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by redesigning the end-to-end proposal and invoicing workflow for 200+ monthly engagements, replacing manual processes with a structured CRM-driven system.
-2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profile to close the gap between developer-era buyers and our platform.
-3. Identified margin leaks across 1,000+ project records through financial profitability analysis, delivering actionable **pricing model improvements** that directly shaped leadership's go-forward strategy.
+1. Increased job bookings by **26%** by redesigning the end-to-end CRM workflow, standardizing the scoping and invoicing lifecycle across 200+ monthly proposals and closing process gaps that slowed conversion.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing SEO, the company website, and Google Business profile.
+3. Identified and sealed margin leaks by conducting **financial profitability analysis** across 1,000+ project records, delivering pricing model recommendations that improved unit economics for leadership.
 
 ## Notes from the rewriter
-- Wove 'self-service primitives' and 'API-driven workflows' (JD: 'define what those primitives are') into microsoft_ft bullet 1 to mirror platform-roadmap ownership language.
-- Used 'developer experience,' 'developer onboarding,' and 'API and tooling gaps' (JD: 'developers who try to build hit walls fast') in microsoft_2023 bullets 1–3 to directly echo DX ownership framing.
-- Inserted 'feedback loops,' 'usage signals,' and 'partner integrations' (JD: 'establish feedback loops through interviews, support signals, and usage data') into microsoft_ft bullet 4 to match the internal-voice-of-developer responsibility.
-- Referenced 'agentic workflows' and 'LLM-powered automation' (JD: 'agentic R&D workflows,' 'AI-era tooling') in microsoft_ft bullet 3 to surface direct alignment with Benchling's AI platform strategy.
-- Used 'platform roadmap' and 'platform investments' (JD: 'platform foundation,' 'platform business model') in microsoft_2022 bullets 2–3 to reinforce platform-strategist framing across earlier roles.
+- Wove 'developer-facing APIs' and 'self-service primitives' (JD: 'primitives that don't exist yet') into microsoft_ft bullet 1 to mirror platform strategy framing.
+- Used 'feedback loops,' 'platform gaps,' and 'roadmap priorities' (JD: 'establish the feedback loops...shape roadmap decisions') explicitly in microsoft_ft bullet 2.
+- Referenced 'AI agent' and 'LLM-powered tooling to compress R&D-style cycles' (JD: 'AI era,' 'agentic R&D workflows') in microsoft_ft bullet 5.
+- Used 'developer platform adoption,' 'developer interviews,' and 'API and tooling gaps' (JD: 'developer empathy,' 'identify the gaps before they become blockers') across microsoft_2023 bullets 1–2.
+- Framed amazon_robotics bullet 1 around 'platform migration strategy' and 'API dependencies' and bullet 2 around 'developer intake process' to surface technical platform and DX vocabulary from the JD.
 

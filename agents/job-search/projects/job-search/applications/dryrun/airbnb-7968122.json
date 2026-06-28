@@ -1,0 +1,575 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/airbnb/jobs/7968122",
+  "org": "airbnb",
+  "job_id": "7968122",
+  "job_title": "Product Manager, Guest Discovery & Homepage",
+  "job_location": "San Francisco, CA, Los Angeles, CA, Seattle, WA, New York, NY",
+  "fetched_at": "2026-06-28T07:48:35Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/airbnb/jobs/7968122?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 27,
+    "filled": 19,
+    "filled_needs_review": 3,
+    "declined": 3,
+    "unresolved": 2,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67287577",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67287578",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Social media (Facebook, LinkedIn, Twitter, Instagram)",
+      "source": "how_heard fuzzy 'linkedin' -> 'Social media (Facebook, LinkedIn, Twitter, Instagram)'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Company Website (Airbnb Careers)",
+          "value": 725482738
+        },
+        {
+          "label": "Third-party website or search engine",
+          "value": 725482739
+        },
+        {
+          "label": "Social media (Facebook, LinkedIn, Twitter, Instagram)",
+          "value": 725482740
+        },
+        {
+          "label": "Airbnb Tech blog post",
+          "value": 725482741
+        },
+        {
+          "label": "Airbnb.io",
+          "value": 725482742
+        },
+        {
+          "label": "Airbnb Open Source",
+          "value": 725482743
+        },
+        {
+          "label": "Event (Tech Talk, Meetup, conference)",
+          "value": 725482744
+        },
+        {
+          "label": "Airbnb Employee",
+          "value": 725482745
+        },
+        {
+          "label": "Friend, family, colleague",
+          "value": 725482746
+        },
+        {
+          "label": "Other",
+          "value": 725482747
+        }
+      ]
+    },
+    {
+      "id": "question_67287579[]",
+      "label": "U.S. Equal Opportunity Employment Information (Completion is voluntary)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='U.S. Equal Opportunity Employment Information (Completion is voluntary)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I decline to answer the following questions.",
+          "value": 725482748
+        }
+      ]
+    },
+    {
+      "id": "question_67287580",
+      "label": "Gender:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 725482749
+        },
+        {
+          "label": "Female",
+          "value": 725482750
+        },
+        {
+          "label": "Other",
+          "value": 725482751
+        },
+        {
+          "label": "Decline To Self Identify",
+          "value": 725482752
+        }
+      ]
+    },
+    {
+      "id": "question_67287581",
+      "label": "Race:",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": 725482753
+        },
+        {
+          "label": "Asian",
+          "value": 725482754
+        },
+        {
+          "label": "Black or African American",
+          "value": 725482755
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 725482756
+        },
+        {
+          "label": "White",
+          "value": 725482757
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 725482758
+        },
+        {
+          "label": "Two or More Races",
+          "value": 725482759
+        },
+        {
+          "label": "Decline to Self Identify",
+          "value": 725482760
+        }
+      ]
+    },
+    {
+      "id": "question_67287582",
+      "label": "Veteran Status: ",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "I am a protected veteran",
+          "value": 725482761
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": 725482762
+        },
+        {
+          "label": "Decline to Self Identify",
+          "value": 725482763
+        }
+      ]
+    },
+    {
+      "id": "question_67287583",
+      "label": "Are you legally authorized to work in the country where the job is located?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I am currently legally authorized to work in the country where the job is located.",
+      "source": "work_authorization.authorized_to_work_us (matched 'authorized to work for any employer')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes, I am currently legally authorized to work in the country where the job is located.",
+          "value": 725482764
+        },
+        {
+          "label": "No, I am not currently legally authorized to work in the country where the job is located.",
+          "value": 725482765
+        }
+      ]
+    },
+    {
+      "id": "question_67287584",
+      "label": "Will you now or in the future require company sponsorship to retain or extend your work authorization in the country where the job is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No, I do not and will not require immigration sponsorship to legally work in the country where the job is located.",
+      "source": "work_authorization.sponsorship_required_* | smart-matched to option 'No, I do not and will not require immigration sponsorship to legally work in the country where the job is located.'",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes, I will require immigration sponsorship now to legally work in the country where the job is located.",
+          "value": 725482766
+        },
+        {
+          "label": "Yes, I will require immigration sponsorship in the future to legally work in the country where the job is located.",
+          "value": 725482767
+        },
+        {
+          "label": "No, I do not and will not require immigration sponsorship to legally work in the country where the job is located.",
+          "value": 725482768
+        }
+      ]
+    },
+    {
+      "id": "question_67287585",
+      "label": "Airbnb Candidate Privacy Policy",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I acknowledge that I have read and understood the Airbnb Candidate Privacy Policy.",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "I acknowledge that I have read and understood the Airbnb Candidate Privacy Policy.",
+          "value": 725482769
+        }
+      ]
+    },
+    {
+      "id": "question_67287586",
+      "label": "Are you currently subject to any non-compete or non-solicitation agreement that would impact your ability to work at Airbnb or prevent you from accepting a job offer from Airbnb? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67287587",
+      "label": "Are you currently or have you ever worked for Airbnb in any capacity? This could include, but is not limited to, a full-time employee, intern, apprentice, or contingent worker.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67287707",
+      "label": "How many years of experience do you have as a Product Manager working on consumer products with marketplace dynamics on a global scale?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['No experience', '1 - 3 years', '4 - 7 years', '8+ years']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "No experience",
+          "value": 725482887
+        },
+        {
+          "label": "1 - 3 years",
+          "value": 725482888
+        },
+        {
+          "label": "4 - 7 years",
+          "value": 725482889
+        },
+        {
+          "label": "8+ years",
+          "value": 725482890
+        }
+      ]
+    },
+    {
+      "id": "question_67287708",
+      "label": "How many years of experience do you have as a Product Manager working on homepage or discovery experiences in a consumer-facing product?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['No experience', '1 - 3 years', '4 - 7 years', '8+ years']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "No experience",
+          "value": 725482891
+        },
+        {
+          "label": "1 - 3 years",
+          "value": 725482892
+        },
+        {
+          "label": "4 - 7 years",
+          "value": 725482893
+        },
+        {
+          "label": "8+ years",
+          "value": 725482894
+        }
+      ]
+    },
+    {
+      "id": "question_67287709",
+      "label": "How many years of experience do you have in Product Marketing? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['No experience', '1 - 3 years', '4 - 7 years', '8+ years']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "No experience",
+          "value": 725482895
+        },
+        {
+          "label": "1 - 3 years",
+          "value": 725482896
+        },
+        {
+          "label": "4 - 7 years",
+          "value": 725482897
+        },
+        {
+          "label": "8+ years",
+          "value": 725482898
+        }
+      ]
+    },
+    {
+      "id": "question_67287710",
+      "label": "What is your level of proficiency developing and presenting executive level presentations? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Intermediate",
+      "source": "proficiency_intermediate (matched 'Intermediate')",
+      "status": "filled",
+      "matched_rule": "proficiency_intermediate",
+      "options": [
+        {
+          "label": "No experience",
+          "value": 725482899
+        },
+        {
+          "label": "Beginner",
+          "value": 725482900
+        },
+        {
+          "label": "Intermediate",
+          "value": 725482901
+        },
+        {
+          "label": "Advanced",
+          "value": 725482902
+        }
+      ]
+    },
+    {
+      "id": "question_67287711",
+      "label": "Describe which cross functional partners and teams that you have worked with the most:",
+      "type": "textarea",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Describe which cross functional partners and teams that you have worked with the most:'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_67287579[]",
+      "label": "U.S. Equal Opportunity Employment Information (Completion is voluntary)",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='U.S. Equal Opportunity Employment Information (Completion is voluntary)'"
+    },
+    {
+      "id": "question_67287711",
+      "label": "Describe which cross functional partners and teams that you have worked with the most:",
+      "required": true,
+      "reason": "no LABEL_RULES match for label='Describe which cross functional partners and teams that you have worked with the most:'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_67287711",
+      "label": "Describe which cross functional partners and teams that you have worked with the most:",
+      "reason": "no LABEL_RULES match for label='Describe which cross functional partners and teams that you have worked with the most:'"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

@@ -6,4 +6,4 @@ Cyrus Shekari
 
 ## EliseAI is an in-office company. Are you comfortable working from our office around 4-5 days per week?
 
-Yes, I'm comfortable working from the office 4-5 days per week. I do my best work in person, especially on 0 to 1 problems where tight feedback loops with sales, ops, and engineering matter, and I'm happy to relocate to New York to make that happen.
+Yes - I'm fully comfortable with that and actually prefer the energy of an in-person environment. I do my best cross-functional work face to face, and for a role that requires moving fast and building close alignment across Sales, Product, and Ops, being in the room matters.

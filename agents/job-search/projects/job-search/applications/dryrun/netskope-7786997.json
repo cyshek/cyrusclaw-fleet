@@ -4,12 +4,12 @@
   "job_id": "7786997",
   "job_title": "Solutions Engineer - SDWAN",
   "job_location": "Texas, United States",
-  "fetched_at": "2026-06-04T13:47:37Z",
+  "fetched_at": "2026-06-27T09:57:56Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/netskope/jobs/7786997?questions=true",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 17,
-    "filled": 16,
+    "total_fields": 18,
+    "filled": 17,
     "filled_needs_review": 0,
     "declined": 1,
     "unresolved": 0,
@@ -138,14 +138,14 @@
       "options": null
     },
     {
-      "id": "question_65305570",
-      "label": "Will you now or in the future require Netskope to commence (“sponsor”) an immigration case in order to employ you (for example, H-1B or other employment-based immigration case)? This is sometimes called “sponsorship” for an employment-based visa status.",
+      "id": "question_65675806",
+      "label": "This role supports the Central region. Do you reside in this region?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "No",
-      "source": "work_authorization.sponsorship_required_*",
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
       "status": "filled",
-      "matched_rule": "needs_sponsorship",
+      "matched_rule": "answer_yes",
       "options": [
         {
           "label": "Yes",
@@ -158,14 +158,34 @@
       ]
     },
     {
-      "id": "question_65675806",
-      "label": "This role supports the Central region. Do you reside in this region?",
+      "id": "question_67710465",
+      "label": "Do you have the legal right to work in the country where you are applying to work?",
       "type": "multi_value_single_select",
       "required": true,
       "value": "Yes",
-      "source": "answer_yes (matched 'Yes' option)",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
       "status": "filled",
-      "matched_rule": "answer_yes",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67711429",
+      "label": "Will you now or in the future require a work permit, visa or additional right to work support for the country where you are applying to work?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
       "options": [
         {
           "label": "Yes",

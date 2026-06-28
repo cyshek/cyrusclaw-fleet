@@ -1,7 +1,7 @@
 # uber-147866 — Program Manager, Site Technology (row 3069)
 
-STATUS: SUBMITTED ✅
-submitted_at: 2026-06-24
+STATUS: FAILED ❌ (form-not-visible)
+submitted_at: 2026-06-28
 submitted_by: auto (_uber_batch.py)
 ats: uber
 url: https://www.uber.com/careers/apply/form/147866

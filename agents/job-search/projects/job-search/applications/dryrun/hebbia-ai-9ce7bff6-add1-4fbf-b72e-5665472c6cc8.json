@@ -1,0 +1,128 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/hebbia-ai/9ce7bff6-add1-4fbf-b72e-5665472c6cc8",
+  "org": "hebbia-ai",
+  "job_id": "9ce7bff6-add1-4fbf-b72e-5665472c6cc8",
+  "job_title": "Solutions Engineer - Partnerships",
+  "job_location": "NYC",
+  "fetched_at": "2026-06-28T07:00:38Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd__systemfield_name"
+    },
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd__systemfield_email"
+    },
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd__systemfield_resume"
+    },
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_phone"
+    },
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_cover_letter"
+    },
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_question_8610294005",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_question_8610294005"
+    },
+    {
+      "id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_question_8610295005",
+      "label": "Are you based in or willing to relocate to New York City?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Willing to relocate to New York",
+      "source": "ashby_location_ack (US onsite/relocation never a knockout -> Yes) | NOTE: 'Yes' not literally in options ['Based in New York', 'Willing to relocate to New York', 'No: based elsewhere and not willing to relocate'] | ashby_smart_match(relocation,picked='Willing to relocate to New York')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Based in New York",
+          "value": "21926303005"
+        },
+        {
+          "label": "Willing to relocate to New York",
+          "value": "21926304005"
+        },
+        {
+          "label": "No: based elsewhere and not willing to relocate",
+          "value": "21926305005"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "101dd24a-865a-4e88-8e05-d0e6490b24bd_question_8610295005"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

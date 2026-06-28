@@ -19,7 +19,7 @@ _PI_PATH = Path(__file__).resolve().parents[1] / "personal-info.json"
 _PI_MODULE = json.loads(_PI_PATH.read_text()) if _PI_PATH.exists() else {}
 _PI_PHONE_RAW = _PI_MODULE.get("contact", {}).get("phone", "").replace("-", "")
 
-CDP = "http://127.0.0.1:18800"
+CDP = os.environ.get("JOBSEARCH_CDP", "http://127.0.0.1:18800")
 
 DECLINES = ["Decline to self-identify","Decline To Self Identify","Decline to self identify",
             "I don't wish to answer","I do not wish to answer","I do not want to answer",

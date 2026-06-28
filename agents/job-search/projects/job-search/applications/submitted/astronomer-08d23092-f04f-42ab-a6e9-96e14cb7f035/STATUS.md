@@ -1,6 +1,6 @@
-ABORT-BULLET-REWRITER — 2026-06-25T03:36:57+00:00
+PREP-READY — 2026-06-27T20:32:54+00:00
 
 role_id: 3577
-phase: bullet-rewriter
-error:
-TimeoutExpired: Command '['/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/.venv/bin/python', '/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/bullet_rewriter.py', '--org', 'ashby-astronomer', '--job-id', '08d23092', '--render', '--max-loops', '3']' timed out after 360 seconds
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-astronomer-08d23092-f04f-42ab-a6e9-96e14cb7f035.json
+pdf: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/astronomer-08d23092-f04f-42ab-a6e9-96e14cb7f035/Cyrus_Shekari_Resume_ashby-astronomer_08d23092_v2.pdf
+recovered_from: ABORT-BULLET-REWRITER (v2 PDF already present)

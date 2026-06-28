@@ -1,0 +1,15 @@
+{
+  "symbol": "IWM",
+  "timeframe": "1Hour",
+  "bar_limit": 80,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "take_profit_pct": 2.0,
+  "stop_loss_pct": 2.0,
+  "max_hold_bars": 45,
+
+  "_thesis_note": "Contrarian mean-reversion inversion of breakout_xlk. Parent buys close>N-bar-high (trend continuation); this fades it: buys close<N-bar-low expecting IWM (Russell 2000) to snap back. Exits: +2.0% reversion take-profit (below parent median runup 2.60% so it locks >=half of comparable winners), -2.0% stop (between parent median -1.41% and p25 -2.21% drawdown so it actually fires), full reversion to upper Donchian band, or 45-bar time-stop (parent p75 hold 43 bars) so a dead trade is never trapped.",
+
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

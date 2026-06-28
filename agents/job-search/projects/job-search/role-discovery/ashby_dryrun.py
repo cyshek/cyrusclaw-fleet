@@ -145,6 +145,18 @@ _ASHBY_EXTRA_RULES = [
     ("reside in the us", "us_based_confirm"),
     ("currently located in the united states", "us_based_confirm"),
     ("based in the united states", "us_based_confirm"),
+
+    # --- Working rights (Neara-class): "Do you have valid working rights in
+    # the country you have applied for a role in?" with options like
+    # 'Yes - Valid working rights or visa' / 'No - Require Sponsorship'.
+    # The word 'country' would match the generic city_state/country resolver
+    # and return "United States" (wrong for a Yes/No pick). Must precede it.
+    # Truthful: Cyrus is a US citizen, no sponsorship required. ---
+    ("have valid working rights in the country", "working_rights_yes"),
+    ("valid working rights in the country", "working_rights_yes"),
+    ("do you have valid working rights", "working_rights_yes"),
+    ("working rights - do you have", "working_rights_yes"),
+    ("working rights in the country you have applied", "working_rights_yes"),
     # --- Prior-employer-at-this-company variants Greenhouse rules miss ---
     # Snowflake 2026-05-24: "Have you worked at Snowflake in the past in a Full-time..."
     # NOTE: 'type of companies have you worked at' must precede this generic rule
@@ -281,6 +293,15 @@ _ASHBY_EXTRA_RULES = [
     # --- City-specific commute / based-in / in-office asks ---
     # The `location_ack` resolver checks if it's a relocation-target city
     # (SF/NYC/Bay Area/Seattle) -> Yes; else -> No (Cyrus is in WA).
+    # Moment-class: "Are you comfortable commuting to this job's location? (NYC - West Village)"
+    # "commuting to this job" / "commuting to this job's location" -> the substring
+    # 'location' was matching the city_state resolver -> returned "Kirkland, WA" (WRONG).
+    # This specific phrasing is a Y/N commute-acknowledgement -> answer_yes.
+    # Must sit BEFORE the generic city_state / location rules below.
+    ("comfortable commuting to this job", "answer_yes"),
+    ("comfortable commuting to the job", "answer_yes"),
+    ("comfortable commuting to our", "ack_in_office"),
+    ("comfortable commuting", "answer_yes"),
     ("based in boston or able to commute", "location_ack"),
     ("able to commute in", "location_ack"),
     ("able to commute to", "location_ack"),
@@ -398,6 +419,10 @@ _ASHBY_EXTRA_RULES = [
     ("based in san francisco or open to relocat", "willing_to_relocate"),
     ("based in new york or open to relocat", "willing_to_relocate"),
     ("or open to relocating", "willing_to_relocate"),
+    # Morpho 2026-06-28: "Are you currently based or willing to move to New York?"
+    ("currently based or willing to move to new york", "willing_to_relocate"),
+    ("willing to move to new york", "willing_to_relocate"),
+    ("willing to move to", "willing_to_relocate"),
     ("would you be open to relocating", "location_ack"),
     ("open to relocating to one of our offices", "location_ack"),
     ("office-first", "location_ack"),
@@ -1484,6 +1509,25 @@ def _r_yoe_range_select(p, f):
     return ('unresolved', None, f'yoe_range_select: no options to match against')
 
 
+def _r_working_rights_yes(p, f):
+    # Neara-class: "Working Rights - Do you have valid working rights in the country
+    # you have applied for a role in?" with options like:
+    #   'Yes - Valid working rights or visa'  /  'No - Require Sponsorship'
+    # Cyrus is a US citizen; always pick the affirmative (Yes/Valid/authorized) option.
+    values = f.get('values') or []
+    opts = [v.get('label', '') if isinstance(v, dict) else str(v) for v in values]
+    # Prefer option that starts with Yes or contains 'valid'
+    for o in opts:
+        lo = (o or '').lower()
+        if lo.startswith('yes') or 'valid working' in lo or 'authorized' in lo or 'citizen' in lo:
+            return ('ok', o, f'working_rights_yes: picked affirmative option {o!r}')
+    # Fallback: any Yes
+    for o in opts:
+        if (o or '').lower() == 'yes':
+            return ('ok', o, 'working_rights_yes: bare Yes')
+    return ('ok', 'Yes', 'working_rights_yes: no options, free-text Yes')
+
+
 _ASHBY_EXTRA_RESOLVERS = {
     'yoe_range_select': _r_yoe_range_select,
     'primary_location_pick': _r_primary_location_pick,
@@ -1518,6 +1562,7 @@ _ASHBY_EXTRA_RESOLVERS = {
     'tech_stack_select': _r_tech_stack_select,
     'ai_tools_answer': _r_ai_tools_answer,
     'ashby_itar_us_person_affirm': _r_ashby_itar_us_person_affirm,
+    'working_rights_yes': _r_working_rights_yes,
 }
 
 # Add the Ashby resolver IMPLEMENTATIONS to GH's shared RESOLVERS dict. These
@@ -1701,6 +1746,11 @@ def adapt_field(entry: dict) -> tuple[dict, str]:
         title = "Email"
     elif aid.endswith("__systemfield_resume") and not title:
         title = "Resume"
+    elif "__systemfield_education_history" in aid:
+        # Ashby native education section — _ashby_runner fills this via
+        # plan_education_specs (typeahead school/degree/major). Mark optional
+        # here so dryrun doesn't block on it; runner fills natively.
+        title = "School"  # routes to 'school' LABEL_RULES resolver -> education typeahead
 
     values: list[dict] = []
     if a_type == "Boolean":

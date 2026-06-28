@@ -1,0 +1,165 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sesame/8ca24c17-e374-4075-9046-45b93fcf4b12",
+  "org": "sesame",
+  "job_id": "8ca24c17-e374-4075-9046-45b93fcf4b12",
+  "job_title": "Hardware Technical Program Manager ",
+  "job_location": "Bellevue",
+  "fetched_at": "2026-06-28T08:09:31Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 7,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3__systemfield_name"
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3__systemfield_email"
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3__systemfield_resume"
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_f446cc9f-3a23-4888-9505-dc49fa0ec8c9",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_f446cc9f-3a23-4888-9505-dc49fa0ec8c9"
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_c42d3821-05c1-4073-9a3a-447b771ddd2d",
+      "label": "Are you willing to work from the required location?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_c42d3821-05c1-4073-9a3a-447b771ddd2d",
+      "match_attempted": true
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_3eb5bcc5-64ff-478c-a606-6c776631e9f9",
+      "label": "Do you have 5 or more years of working full-time in a technical or product environment?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_3eb5bcc5-64ff-478c-a606-6c776631e9f9"
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_e731e11c-fd8a-4f3a-92b1-b6c7a983a291",
+      "label": "Are you currently employed as an intern or seeking an internship?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "common_form_answers.currently_employed",
+      "status": "filled",
+      "matched_rule": "currently_employed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_e731e11c-fd8a-4f3a-92b1-b6c7a983a291"
+    },
+    {
+      "id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_1f9a0e75-bada-4a65-810c-1b26d6c3884a",
+      "label": "Are you legally authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df0ebe6d-b247-4580-bc68-65b51fa6c3e3_1f9a0e75-bada-4a65-810c-1b26d6c3884a"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

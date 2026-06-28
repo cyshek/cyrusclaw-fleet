@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. **Scaled Azure's resilience validation program** from a 2-person operation into a fleet-wide platformized system, standardizing handover gates and SOP workflows to sustain **45+ annual drills** across enterprise partners including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 build of an internal Resilience Automation Platform**, defining acceptance criteria and self-service scheduling requirements that cut operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive rack-level drill program, delivering end-to-end from design to go-live in **4 months** with a 94% recovery rate, surfacing critical hardware defects and establishing a continuous validation standard.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract with zero missed go-live gates.
+5. Built an internal AI agent to automate drill planning workflows, **reducing planning cycle time by 39%** and increasing program capacity by 21% without adding headcount.
+6. Produced leadership dashboards tracking **stability metrics and incident trends** across the fleet, and drove CAPA programs that converted post-incident root cause findings into durable corrective actions with closure tracking.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption for AI-powered workflows**, conducting user demos and training across 14 Azure service teams that saved 37 engineering hours monthly and embedded new tooling into daily operations.
+2. Facilitated **11+ structured user interviews** with Azure service teams to surface critical feature gaps, directly influencing roadmap prioritization to include intent-based YAML generation.
+3. Improved data integrity and retrieval by migrating documentation to an **AI-powered semantic search platform**, enforcing metadata standards that cut lookup time by 83% across engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and cut region launch timelines by 28% by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams.
+2. Identified **81 hours of manual operational toil** per region launch through discovery with 20+ service teams, then built a roadmap to automate critical paths and reduce unplanned execution risk at go-live.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership real-time visibility to target automation gaps and prioritize high-impact corrective investments.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** across a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and driving cross-functional sign-off before go-live.
+2. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual intervention in critical release paths.
+3. Facilitated Agile ceremonies and owned backlog prioritization, resolving **40+ high-priority tickets** to stabilize the developer intake process and keep program execution on schedule.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals through a new CRM process, eliminating handover gaps between sales and field operations.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rate by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to improve qualified lead flow.
+3. Identified and sealed margin leaks by conducting **profitability analysis across 1,000+ project records**, producing pricing model recommendations that improved leadership's operational decision-making.
+
+## Notes from the rewriter
+- 'Handover gates and acceptance criteria' (JD: 'define the gates, acceptance criteria, and sign-off procedures') woven into microsoft_ft bullet 1 and amazon_robotics bullet 1.
+- 'CAPA programs' and 'stability metrics and incident trends' (JD: 'CAPA programs', 'dashboards and reporting', 'stability metrics') placed explicitly in microsoft_ft bullet 6.
+- 'Operational toil' and 'go-live' (JD: 'fly the plane while it's being built', 'go-live schedule', 'unplanned outages') used substantively in microsoft_ft bullet 2, microsoft_2022 bullet 2, and amazon_robotics bullet 1.
+- 'SOP workflows' and 'fleet-wide' framing (JD: 'SOPs that govern critical datacenter operations across the fleet') embedded in microsoft_ft bullet 1 to mirror Fluidstack's scale language.
+- 'Root cause findings into durable corrective actions with closure tracking' (JD: 'post-incident reviews with root cause analysis, corrective action tracking') used verbatim-adjacent in microsoft_ft bullet 6.
+

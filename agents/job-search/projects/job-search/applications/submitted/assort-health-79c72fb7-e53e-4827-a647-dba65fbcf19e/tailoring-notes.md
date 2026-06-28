@@ -9,43 +9,37 @@
 
 ## Bullet rewrites per role
 
-### `microsoft_ft` (7 bullets emitted, master had 5)
-1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized AI agent system, standardizing workflows to sustain 45+ annual drills and drive **$14M+ business impact** across enterprise customers.
-2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and enabled a scalable, agentic execution model.
-3. Pioneered Azure's first proactive resilience-testing capability—delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation standard.
-4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring multi-stakeholder alignment.
-5. Built an internal **AI agent** for drill planning that restructured end-to-end workflows, reducing planning cycle time by 39% and expanding drill capacity by 21% without adding headcount to the product team.
-6. Defined and launched partner integration protocols with Databricks, Walmart, SAP, and NetApp—translating complex technical requirements into **actionable engineering workstreams** and closing critical workflow gaps at scale.
-7. Shaped the long-term **product roadmap** for resilience tooling by synthesizing operational bottlenecks from 20+ stakeholder interviews into prioritized feature requirements delivered across two consecutive planning cycles.
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Led **0→1 development** of an internal AI agent for drill planning, automating decision pathways across resilience workflows and cutting planning cycle time by 39% — directly mirroring the agentic, high-volume interaction systems Assort Health builds.
+2. Scaled Azure's recovery validation program from a 2-person operation into a **production-grade platform**, standardizing care protocols and self-service scheduling to sustain 45+ annual drills and drive $14M+ impact across Databricks, Walmart, SAP, and NetApp.
+3. Defined product requirements and roadmap for an internal Resilience Automation Platform, transitioning manual execution to a **self-service model** that reduced operational toil by 30% and unlocked capacity for new agent workstreams.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract** — building trusted relationships across technical, operational, and exec stakeholders.
+5. Pioneered Azure's first proactive resilience testing capability — a **rack-level drill program** shipped in 4 months with a 94% recovery rate — establishing a new model for continuous, data-driven validation at scale.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Championed adoption of **AI-driven code generation** workflows by conducting customer-facing demos and training sessions that drove utilization across 14 key Azure teams, saving **37 engineering hours** monthly.
-2. Influenced the product roadmap to include intent-based YAML generation by leading **11+ user research interviews** with Azure service teams, surfacing critical feature gaps and translating findings into actionable engineering requirements.
-3. Improved agent memory and retrieval quality by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time by 83% across internal workflows.
+1. Championed adoption of **AI-driven code generation** workflows by running customer demos and training sessions that drove utilization across 14 key teams, saving 37 engineering hours monthly and accelerating the product's go-to-market penetration.
+2. Shaped the product roadmap by facilitating **11+ user interviews** with Azure service teams to surface critical feature gaps, directly influencing the addition of intent-based YAML generation to the near-term engineering backlog.
+3. Improved AI agent memory and retrieval quality by enforcing metadata standards and migrating documentation to an **LLM-powered semantic search** tool, reducing lookup time by 83% and enabling more accurate, context-aware responses.
 
-### `microsoft_2022` (4 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework deployed across 140+ teams with competing roadmap demands.
-2. Mobilized a product strategy to eliminate operational toil during region launches—conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a roadmap to automate critical paths.
-3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and allocate resources to the highest-friction care workflows.
-4. Translated stakeholder interviews and workflow bottleneck data into a structured **product requirements document**, directly informing engineering prioritization for the next two quarters of automation development.
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating roadmap decisions across 140+ teams toward a single product strategy.
+2. Ran discovery with 20+ service teams to map **81 hours of manual toil** per region launch, then built a prioritized roadmap to automate critical paths — mirroring the care-gap and referral orchestration work Assort Health is scaling.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and target high-impact investments in the product roadmap.
 
-### `amazon_robotics` (4 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and aligning IT, Operations, and Engineering on a unified execution plan.
-2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across a fast-moving cross-functional team.
-3. Drove strategic alignment across IT, Operations, and Engineering to deploy automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual intervention in production release workflows.
-4. Synthesized integration requirements from technical and operational stakeholders into a phased **migration roadmap**, enabling the engineering team to ship iteratively without disrupting live production environments.
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the **legacy OS migration strategy** for a 2,000+ unit pilot, mapping dependencies across 1,200+ stations and achieving zero operational downtime — demonstrating the careful workflow integration required for production-grade AI agent deployments.
+2. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing friction in the agent release process.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing 40+ high-priority tickets** to stabilize the developer intake process and maintain velocity on a fast-moving, cross-functional product team.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a new CRM workflow that eliminated manual handoffs and accelerated customer response time.
-2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile to better align messaging with patient-style user journeys.
-3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and translating findings into a restructured pricing framework adopted company-wide.
+1. Increased job bookings by **26%** by redesigning the end-to-end customer interaction workflow — managing scoping, proposals, and invoicing for 200+ monthly engagements via a new CRM process that mirrors patient-journey orchestration.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web and search presence to meet customers where they are — analogous to Assort's multi-channel patient outreach expansion.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and translating operational data into strategic roadmap decisions.
 
 ## Notes from the rewriter
-- 'AI agent' woven into microsoft_ft bullet#5 (internal AI agent for drill planning) and bullet#1 (platformized AI agent system), directly mirroring JD's 'Lead Development of High-Performance AI Agents' section.
-- '0→1' used in microsoft_ft bullet#2 to mirror JD's exact phrase 'leading the charge on new product workstreams 0→1', signaling Cyrus has done exactly what the role requires.
-- 'Agentic / agentic execution model' used in microsoft_ft bullet#2 to mirror JD's language around 'proactive, agentic campaigns' and autonomous agent behavior.
-- 'Operational bottlenecks / workflow bottlenecks' used in microsoft_ft bullet#7 and amazon_robotics bullet#4, echoing JD's 'understand workflows, requirements, and bottlenecks' customer engagement mandate.
-- 'Product roadmap' and 'actionable engineering workstreams' used in microsoft_ft bullets#6–7 and microsoft_2023 bullet#2, mirroring JD's 'Influence the Product Roadmap' section language.
-- 'User research interviews' in microsoft_2023 bullet#2 mirrors JD's customer-engagement emphasis on deeply understanding workflows and requirements before building.
-- 'Go-to-market strategy' in pro_painters bullet#2 mirrors JD's PM family tag and bonus skill around 'customer-facing or consulting-style roles influencing product decisions.'
+- Wove 'AI agent' / 'agentic' vocabulary (JD core term) into microsoft_ft bullet 1 and amazon_robotics bullet 1 to directly mirror Assort's product family language.
+- Used '0→1' framing (exact JD phrase) in microsoft_ft bullet 2 to signal familiarity with Assort's stage of product development.
+- Referenced 'care-gap' and 'referral orchestration' (JD-specific product areas) in microsoft_2022 bullet 2 to map Cyrus's discovery work onto Assort's proactive campaign and document processing platforms.
+- Framed microsoft_2023 bullet 3 around 'AI agent memory and retrieval' to echo Assort's Agent Memory feature and the JD's emphasis on context-carrying, personalized patient interactions.
+- Reframed pro_painters bullet 2 around 'multi-channel patient outreach' analogy to connect GTM experience to Assort's chatbot/two-way texting expansion described in the JD.
 

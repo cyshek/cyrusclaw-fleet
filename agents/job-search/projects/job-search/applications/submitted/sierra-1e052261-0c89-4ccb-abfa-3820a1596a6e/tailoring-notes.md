@@ -2,43 +2,44 @@
 
 ## Title swaps applied
 - `microsoft_ft` → **Technical Product Manager**
-- `microsoft_2023` → **Technical Product Manager Intern**
-- `microsoft_2022` → **Technical Product Manager Intern**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
 - `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
 
 ## Bullet rewrites per role
 
 ### `microsoft_ft` (5 bullets emitted, master had 5)
-1. **Defined infrastructure abstractions** for Azure's resilience platform, owning compute, orchestration, and storage primitives that scaled recovery validation from a 2-person operation to **45+ annual enterprise drills** with $14M+ business impact.
-2. Led **0→1 development** of an internal Resilience Automation Platform, authoring product requirements and self-service scheduling APIs that cut operational toil by 30% and unlocked scalable, developer-friendly execution workflows.
-3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering a **94% recovery rate** in 4 months by driving first-principles system architecture decisions and surfacing critical hardware defects at scale.
-4. Directed 14 high-visibility cross-org recovery executions, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract requiring strict fault-tolerance and availability guarantees.
-5. Built an internal **AI agent for drill planning**, restructuring orchestration workflows to cut planning cycle time by 39% and increase drill capacity by 21%, accelerating infrastructure iteration velocity across engineering teams.
+1. Defined the **infrastructure platform** for Azure's resilience validation org, owning compute, orchestration, and storage abstractions that standardized workflows across 45+ annual drills and drove **$14M+ enterprise impact** (Databricks, Walmart, SAP, NetApp).
+2. Led **0→1 development** of an internal Resilience Automation Platform, authoring product requirements and self-service scheduling primitives that reduced operational toil by 30% and shifted execution to a scalable, developer-friendly model.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, shipping in 4 months with a **94% recovery rate**—surfacing critical hardware defects and establishing a new continuous validation standard for enterprise-grade uptime.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ contract, coordinating tradeoffs across reliability, cost, and complexity.
+5. Built an internal **AI agent** to automate drill planning workflows, cutting planning cycle time by 39% and increasing drill capacity by 21%—enabling engineering teams to iterate faster without sacrificing reliability.
 
 ### `microsoft_2023` (3 bullets emitted, master had 3)
-1. Drove **developer platform adoption** for AI-powered code generation tooling, conducting demos and training across 14 Azure service teams to embed new workflows and save **37 engineering hours monthly**.
-2. Shaped the infrastructure roadmap toward **intent-based YAML generation** by running 11+ structured user interviews with engineering teams, surfacing critical API and developer-tooling gaps prioritized in the next planning cycle.
-3. Improved platform reliability and retrieval performance by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** system, reducing developer lookup time by 83%.
+1. Drove **developer platform adoption** for AI-powered code generation tooling, conducting demos and training across 14 Azure engineering teams and saving **37 engineering hours monthly** through improved developer workflows.
+2. Shaped the product roadmap by running 11+ structured user interviews with Azure service teams, surfacing critical gaps that prioritized **intent-based YAML generation** as a core platform primitive in the next planning cycle.
+3. Improved infrastructure developer tooling by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** system, reducing lookup time by 83% and accelerating onboarding for new engineering teams.
 
 ### `microsoft_2022` (3 bullets emitted, master had 3)
-1. Generated **$3M in accelerated revenue** and reduced region launch time by 28% by driving cross-functional alignment on an automation prioritization framework spanning 140+ engineering teams across Azure infrastructure.
-2. Defined a platform strategy to eliminate operational toil in region launches, conducting discovery with 20+ service teams to map **81 hours of manual effort per region** and building a roadmap to automate critical orchestration paths.
-3. Built a **Power BI observability dashboard** tracking automation gaps across 140+ teams, enabling engineering leadership to prioritize high-impact infrastructure investments and reduce redundant operational overhead.
+1. Generated **$3M in accelerated revenue** and cut region launch time by 28% by aligning 140+ teams on a unified automation prioritization framework, making infrastructure a velocity enabler rather than a bottleneck for product teams.
+2. Defined a product strategy to eliminate operational toil in region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort per region** and building a roadmap to automate critical orchestration paths.
+3. Built a **Power BI observability dashboard** tracking automation gaps across 140+ teams, giving leadership the systems visibility needed to prioritize high-impact infrastructure investments and measure reliability improvements over time.
 
 ### `amazon_robotics` (3 bullets emitted, master had 3)
-1. Achieved **zero operational downtime** during a 2,000+ unit OS migration by defining the infrastructure transition strategy, mapping compute and software dependencies across 1,200+ stations with full fault-tolerance planning.
-2. Implemented **automated CI/CD pipelines** in partnership with IT, Operations, and Engineering, accelerating the software deployment cycle by 25% and establishing a reliable, scalable developer release workflow.
-3. Facilitated Agile ceremonies and owned backlog prioritization, resolving **40+ high-priority infrastructure tickets** to stabilize the developer intake process and unblock critical platform reliability work.
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by owning the legacy OS migration strategy end-to-end, mapping dependencies across 1,200+ stations and making first-principles tradeoffs across reliability and rollout complexity.
+2. Implemented **automated CI/CD pipelines** in partnership with IT, Operations, and Engineering, accelerating the software deployment cycle by 25% and giving developer teams faster, more reliable iteration loops on robotics platform software.
+3. Facilitated Agile ceremonies and backlog prioritization, resolving **40+ high-priority tickets** to stabilize the developer intake process and unblock cross-functional teams operating under tight reliability and scale constraints.
 
 ### `pro_painters` (3 bullets emitted, master had 3)
-1. Increased job bookings by **26%** by designing and operating an end-to-end CRM workflow managing 200+ monthly proposals, bringing developer-tooling discipline to sales operations and reducing manual process overhead.
-2. Cut Customer Acquisition Cost by **13%** and lifted conversion by 2.7% by executing a data-driven go-to-market strategy, optimizing digital channels through structured experimentation and performance analysis.
-3. Identified and closed margin leaks by conducting **profitability analysis** across 1,000+ project records, delivering pricing model recommendations that improved unit economics for leadership planning.
+1. Increased job bookings by **26%** by redesigning the end-to-end CRM workflow for 200+ monthly proposals, improving data integrity and giving leadership real-time visibility into pipeline and conversion performance.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by owning a digital-first go-to-market strategy—optimizing web presence and search profiles to drive measurable top-of-funnel growth.
+3. Identified and closed margin leaks by conducting financial profitability analysis across **1,000+ project records**, delivering pricing model recommendations that improved unit economics for leadership decision-making.
 
 ## Notes from the rewriter
-- Wove in 'compute, storage, orchestration' (JD: 'compute, storage, orchestration, and networking layers') into microsoft_ft bullet 1 to mirror infrastructure platform vocabulary directly.
-- Used 'developer-friendly execution workflows' and 'self-service scheduling APIs' (JD: 'developer-friendly', 'APIs, SDKs') in microsoft_ft bullet 2 to align with developer primitives framing.
-- Introduced 'fault-tolerance and availability guarantees' (JD: 'latency, availability, and fault tolerance') in microsoft_ft bullet 4 and amazon_robotics bullet 1 to reflect reliability ownership language.
-- Reframed amazon_robotics CI/CD bullet around 'scalable, reliable developer release workflow' to echo JD's 'enable rapid iteration without sacrificing reliability' theme.
-- Used 'system architecture tradeoffs' in skills and 'first-principles system architecture decisions' in microsoft_ft bullet 3 to directly mirror JD's 'Drive system architecture decisions' and 'first-principles thinking' language.
+- JD term 'infrastructure platform' woven into microsoft_ft bullet 1 — explicitly frames Azure work as owning compute/orchestration/storage abstractions mirroring Sierra's infra scope.
+- JD term 'developer primitives and tooling / APIs, SDKs, workflows' used in microsoft_ft bullet 2 (self-service scheduling primitives) and microsoft_2023 bullet 1 (developer platform adoption) to mirror Sierra's developer-facing platform language.
+- JD term 'agent orchestration' and 'AI agent' surfaced in microsoft_ft bullet 5 and skills section, directly matching Sierra's agent execution platform context.
+- JD phrase 'enable rapid iteration / ship quickly without sacrificing reliability' echoed verbatim in microsoft_ft bullet 5 and microsoft_2022 bullet 1 to mirror Sierra's infrastructure velocity value.
+- JD term 'fault tolerance / reliability / enterprise-grade uptime' woven into microsoft_ft bullets 3–4 and amazon_robotics bullet 1 to surface systems intuition the JD explicitly calls out.
 

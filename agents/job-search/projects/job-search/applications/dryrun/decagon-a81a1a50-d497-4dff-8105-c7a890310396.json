@@ -1,0 +1,181 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/decagon/a81a1a50-d497-4dff-8105-c7a890310396",
+  "org": "decagon",
+  "job_id": "a81a1a50-d497-4dff-8105-c7a890310396",
+  "job_title": "Solutions Architect - Infrastructure ",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-28T05:56:35Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 10,
+    "filled": 9,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005__systemfield_name"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005__systemfield_email"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_53875d0a-2d25-4fe3-9da7-f45e96dd66eb",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_53875d0a-2d25-4fe3-9da7-f45e96dd66eb"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_122feb71-007f-4cf3-8c3a-cde1d088adae",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_122feb71-007f-4cf3-8c3a-cde1d088adae"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005__systemfield_resume"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_9cd61224-d783-43df-bbc7-1432446c7d02",
+      "label": "Where did you go for college?",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_9cd61224-d783-43df-bbc7-1432446c7d02"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_090c5ddb-4ceb-4d6a-9915-ff83d222d1a8",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_090c5ddb-4ceb-4d6a-9915-ff83d222d1a8"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_94f7fe0d-3768-4a5a-bf2e-588a195e26b7",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_94f7fe0d-3768-4a5a-bf2e-588a195e26b7"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_ea19a5c6-3b09-4f04-8312-7a0648962f06",
+      "label": "Are you excited to work in-office five days a week?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_ea19a5c6-3b09-4f04-8312-7a0648962f06"
+    },
+    {
+      "id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_9aa24500-e40e-4639-8311-1914395559af",
+      "label": "How did you hear about Decagon?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f3ad6e9e-3bb0-4e5d-ab40-706a1ac33005_9aa24500-e40e-4639-8311-1914395559af"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

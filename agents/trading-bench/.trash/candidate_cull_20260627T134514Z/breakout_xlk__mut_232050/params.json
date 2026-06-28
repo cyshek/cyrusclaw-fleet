@@ -1,0 +1,14 @@
+{
+  "symbol": "XLK",
+  "timeframe": "1Hour",
+  "bar_limit": 80,
+  "notional_usd": 1000.0,
+  "lookback": 20,
+  "scale_out_pct": 2.60,
+  "scale_out_fraction": 0.5,
+
+  "_scale_out_note": "scale_out_pct=2.60 is the parent breakout_xlk per-trade MEDIAN max-runup (p25 +1.26 / median +2.60 / p75 +4.11). Trigger at the median so the one-shot half-exit fires on ~50% of winners; below p25 leaves no upside to run, above p75 (+4.11) is inert. scale_out_fraction=0.5 trims HALF; the remainder rides the parent's Donchian-low close. position_state['scaled_out'] makes the trim fire ONCE per trade and a fresh entry resets it.",
+
+  "_safety_note": "safety_max_loss_pct is a HARD runaway-only rail enforced by runner/safety_backstop.py, NOT a strategy parameter. -50% means a position would have to halve before the rail fires. Intent: catch black-swan execution disasters (broken price data, fat-finger, broken close logic), NOT to optimize entries/exits. If this ever actually fires in live, that is a bug-investigation event, not a normal trade.",
+  "safety_max_loss_pct": -50.0
+}

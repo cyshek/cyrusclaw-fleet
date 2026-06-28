@@ -1,0 +1,19 @@
+{
+  "_archetype": "UUP (US-dollar bullish ETF) dollar-trend carrier WIDENED with a MACD-momentum entry. Long when SMA(50) trend is up OR a fresh bullish MACD(12/26/9) cross fires (MACD>0). Exit when close<SMA(50) OR MACD crosses back below its signal line. OR-combined entries deliberately ADD trades to the otherwise-inert thin dollar trend.",
+  "_mutation": "Child of trend_follow_uup. Borrows the MACD-momentum entry mechanism from the equity momentum parent (macd_momentum_iwm) but computes MACD on UUP's OWN daily closes. Entry signals OR-combined (SMA-trend up OR fresh MACD bullish cross); exit signals OR-combined (close<SMA OR MACD bearish cross).",
+  "_why_or": "A prior AND-combo made UUP inert \u2014 requiring BOTH a slow SMA(50) trend AND a momentum cross on an already-thin low-vol dollar series almost never co-occurred, so it traded ~never (parent: only 3 closed trades across the panel). OR is correct because the two signals are COMPLEMENTARY, not confirmatory: SMA(50) captures the slow persistent dollar regime; the MACD cross captures faster momentum bursts the slow MA misses. ORing them ADDS entries (the explicit mutation goal) while each remains a legitimate long-trend signal.",
+  "_ema_note": "EMA is not in strategies/_lib.indicators, so it is implemented locally via a plain iterative EMA recurrence (k=2/(period+1)) using only allowed arithmetic \u2014 no external libs.",
+  "_exits_always_reachable": "Exit logic is evaluated BEFORE entry logic, so a held position is always closeable regardless of entry conditions. Exit fires on EITHER trend loss (close<SMA) OR momentum loss (MACD bearish cross).",
+  "_paper_only": "PAPER ONLY. No real money. Mutation child; held independently to the absolute fitness gate (passes_mutation_gate).",
+  "symbol": "UUP",
+  "timeframe": "1Day",
+  "bar_limit": 80,
+  "_bar_limit_note": "Longest lookback is the SMA(50); MACD needs slow(26)+signal(9)=35 to warm plus 1 prior bar for the cross => effective need is max(50, 35)+1 = 51. bar_limit 80 is >= 2x neither single component would alone require but comfortably exceeds the 51-bar requirement and gives MACD EMAs ample warm-up so the recursive seed bias has decayed.",
+  "period": 50,
+  "macd_fast": 12,
+  "macd_slow": 26,
+  "macd_signal": 9,
+  "notional_usd": 1000.0,
+  "_safety_note": "safety_max_loss_pct is the HARD runaway rail enforced by runner/safety_backstop.py, not entry/exit logic.",
+  "safety_max_loss_pct": -50.0
+}

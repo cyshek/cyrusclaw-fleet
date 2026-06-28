@@ -1,9 +1,15 @@
-PREP-READY — 2026-06-21T09:52:57+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-27
 role_id: 2775
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-neara-9e86988e-45d9-40a6-93af-7e7cb8392b22.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/neara-9e86988e-45d9-40a6-93af-7e7cb8392b22/Cyrus_Shekari_Resume_ashby-neara_9e86988e_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/neara-9e86988e-45d9-40a6-93af-7e7cb8392b22/cover_answers.md
+submitted_at: 2026-06-27T23:41:40+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+ committed
+[runner] last-ms radio detail: [{'n': 'd-4639-8083-e9d955e7aacc', 'ok': True}]
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"messages":{"__typename":"FormSubmitMessages","blockMessageForCandidateHtml":"<p>Thank you for your interest in Neara! We noticed that you have already applied to this role. </p>"}}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+
