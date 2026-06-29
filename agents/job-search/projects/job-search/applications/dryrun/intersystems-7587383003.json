@@ -1,0 +1,407 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/intersystems/jobs/7587383003",
+  "org": "intersystems",
+  "job_id": "7587383003",
+  "job_title": "Product Manager",
+  "job_location": "Boston, MA",
+  "fetched_at": "2026-06-29T08:03:29Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/intersystems/jobs/7587383003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 21,
+    "filled": 15,
+    "filled_needs_review": 2,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_29278746003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_29278747003",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_29278748003[]",
+      "label": "InterSystems Employment History",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "",
+      "source": "optional field — intentionally blank | NOTE: '' not literally in options ['I have never worked at InterSystems', 'I am a current InterSystems employee or intern', 'I am a former InterSystems employee or intern', 'I have worked at an InterSystems Customer or Partner']",
+      "status": "filled_needs_review",
+      "matched_rule": "optional_blank",
+      "options": [
+        {
+          "label": "I have never worked at InterSystems",
+          "value": 153482818003
+        },
+        {
+          "label": "I am a current InterSystems employee or intern",
+          "value": 153482819003
+        },
+        {
+          "label": "I am a former InterSystems employee or intern",
+          "value": 153482820003
+        },
+        {
+          "label": "I have worked at an InterSystems Customer or Partner",
+          "value": 153482821003
+        }
+      ]
+    },
+    {
+      "id": "question_29278749003",
+      "label": "\n\nJob Location",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Able to work at job location', 'Able to relocate to job location', 'Unable to work or relocate to job location (remote work required)']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Able to work at job location",
+          "value": 153482822003
+        },
+        {
+          "label": "Able to relocate to job location",
+          "value": 153482823003
+        },
+        {
+          "label": "Unable to work or relocate to job location (remote work required)",
+          "value": 153482824003
+        }
+      ]
+    },
+    {
+      "id": "question_29278750003",
+      "label": "Do you now or have you previously worked for an InterSystems client?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have never worked for an InterSystems client",
+      "source": "worked_at_company_before (matched 'i have never' -> 'I have never worked for an InterSystems client')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "I currently work for an InterSystems client",
+          "value": 153482825003
+        },
+        {
+          "label": "I previously worked for an InterSystems client",
+          "value": 153482826003
+        },
+        {
+          "label": "I have never worked for an InterSystems client",
+          "value": 153482827003
+        }
+      ]
+    },
+    {
+      "id": "question_29278751003",
+      "label": "Are you currently authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29278752003",
+      "label": "Will you now or in the future require employment-based visa sponsorship to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29278753003",
+      "label": "Please provide your preferred first name or nickname (if different from first name provided above).",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_29278754003",
+      "label": "Data Protection Information Notice",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Acknowledge/Opt-in",
+      "source": "acknowledge_yes (single option 'Acknowledge/Opt-in')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Acknowledge/Opt-in",
+          "value": 153482828003
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

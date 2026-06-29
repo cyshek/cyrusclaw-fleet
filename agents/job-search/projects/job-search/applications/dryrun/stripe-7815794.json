@@ -3,14 +3,14 @@
   "org": "stripe",
   "job_id": "7815794",
   "job_title": "Operations Program Manager, Capital Collections",
-  "job_location": "US-NYC",
-  "fetched_at": "2026-05-23T14:08:15Z",
+  "job_location": "US-NYC or US-SF ",
+  "fetched_at": "2026-06-29T08:03:47Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7815794?questions=true",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 27,
-    "filled": 19,
-    "filled_needs_review": 4,
+    "filled": 20,
+    "filled_needs_review": 3,
     "declined": 4,
     "unresolved": 0,
     "blockers": 0
@@ -117,7 +117,7 @@
     },
     {
       "id": "question_66625084",
-      "label": "This role requires the candidate to be based in New York City and able to work in a hybrid arrangement. Are you currently based in NYC, and are you able to work in a hybrid schedule?",
+      "label": "This role requires the candidate to be based in New York City OR South San Francisco and able to work in a hybrid arrangement. Are you currently based in NYC or SF, and are you able to work in a hybrid schedule?",
       "type": "multi_value_single_select",
       "required": true,
       "value": "Kirkland",
@@ -397,7 +397,7 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "Yes",
-      "source": "work_authorization.authorized_to_work_us",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
       "status": "filled",
       "matched_rule": "work_authorized",
       "options": [
@@ -416,10 +416,10 @@
       "label": "Will you require Stripe to sponsor you for a work permit now or in the future for the location(s) you selected in in your previous response?\n",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Kirkland, WA",
-      "source": "address.city+state | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
-      "status": "filled_needs_review",
-      "matched_rule": "city_state",
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
       "options": [
         {
           "label": "Yes",
@@ -456,7 +456,7 @@
       "label": "What is your current or previous job title?",
       "type": "input_text",
       "required": true,
-      "value": "Technical Program Manager",
+      "value": "Program Manager",
       "source": "experience_summary.current_title",
       "status": "filled",
       "matched_rule": "current_title",
@@ -471,17 +471,6 @@
       "source": "experience_summary.current_employer",
       "status": "filled",
       "matched_rule": "current_employer",
-      "options": null
-    },
-    {
-      "id": "question_65611055",
-      "label": "What is the most recent degree you obtained?",
-      "type": "input_text",
-      "required": true,
-      "value": "Bachelor of Science",
-      "source": "education.degree",
-      "status": "filled",
-      "matched_rule": "degree",
       "options": null
     },
     {
@@ -505,6 +494,54 @@
       "status": "filled",
       "matched_rule": "city",
       "options": null
+    },
+    {
+      "id": "question_67839207",
+      "label": "What is the most recent degree you obtained?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Other",
+      "source": "education.degree | smart-matched to option 'Other'",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "High School",
+          "value": 730440400
+        },
+        {
+          "label": "Associate's Degree",
+          "value": 730440401
+        },
+        {
+          "label": "Bachelor's Degree",
+          "value": 730440405
+        },
+        {
+          "label": "Master's Degree",
+          "value": 730440408
+        },
+        {
+          "label": "Master of Business Administration (M.B.A.)",
+          "value": 730440412
+        },
+        {
+          "label": "Juris Doctor (J.D.)",
+          "value": 730440417
+        },
+        {
+          "label": "Doctor of Medicine (M.D.)",
+          "value": 730440420
+        },
+        {
+          "label": "Doctor of Philosophy (Ph.D.)",
+          "value": 730440424
+        },
+        {
+          "label": "Other",
+          "value": 730440428
+        }
+      ]
     },
     {
       "id": "disability_status",
@@ -664,5 +701,17 @@
     }
   ],
   "unresolved": [],
-  "blockers": []
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
 }

@@ -1,0 +1,803 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/stripe/jobs/7396509",
+  "org": "stripe",
+  "job_id": "7396509",
+  "job_title": "Solutions Architect, Platforms Velocity",
+  "job_location": "Chicago, IL or New York, NY",
+  "fetched_at": "2026-06-29T08:22:32Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7396509?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 32,
+    "filled": 24,
+    "filled_needs_review": 4,
+    "declined": 4,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": false,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_61527100",
+      "label": "This role will be based in one of our office hubs (NYC or Chicago). Do you currently live in one of these locations or are you open to relocating?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I live in one of these cities (within 35 miles of our offices)",
+      "source": "answer_yes (matched 'Yes...' option: 'Yes, I live in one of these cities (within 35 miles of our offices)')",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes, I live in one of these cities (within 35 miles of our offices)",
+          "value": 598335222
+        },
+        {
+          "label": "While I don't live there, I am open to relocating to Chicago or NYC.",
+          "value": 699304137
+        },
+        {
+          "label": "No, I am not in one of those cities and not open to relocating",
+          "value": 721294471
+        }
+      ]
+    },
+    {
+      "id": "question_61527101",
+      "label": "Do you have at least 3+ years of experience in a similar customer-facing engineering role such as solution consultant, solutions architect, sales engineer, for a global software enterprise?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_61527102",
+      "label": "How many years of pre-sales experience do you have? (Solutions architect, sales engineering, solutions consulting, solutions engineering, etc.)",
+      "type": "input_text",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": null
+    },
+    {
+      "id": "question_61527103",
+      "label": "What programming languages are you comfortable working in?\n",
+      "type": "input_text",
+      "required": true,
+      "value": "Python",
+      "source": "coding_lang_python (default Python)",
+      "status": "filled",
+      "matched_rule": "coding_lang_python",
+      "options": null
+    },
+    {
+      "id": "question_61527104",
+      "label": "Do you have experience working extensively with APIs or a tool like Postman?",
+      "type": "textarea",
+      "required": true,
+      "value": "Yes. I have hands-on experience in this area through my work at Microsoft on the Resilience Automation Platform and earlier roles in customer-facing engineering.",
+      "source": "experience_short_yes (default short answer)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": null
+    },
+    {
+      "id": "question_61420832",
+      "label": "Please select the country where you currently reside.\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Australia', 'Belgium', 'Brazil', 'Canada', 'Egypt', 'France', 'Germany', 'India', 'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Malaysia', 'Mexico', 'New Zealand', 'Poland', 'Romania', 'Singapore', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Thailand', 'The Netherlands', 'UAE', 'UK', 'US', 'Other']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Australia",
+          "value": 597651793
+        },
+        {
+          "label": "Belgium",
+          "value": 597651794
+        },
+        {
+          "label": "Brazil",
+          "value": 597651795
+        },
+        {
+          "label": "Canada",
+          "value": 597651796
+        },
+        {
+          "label": "Egypt",
+          "value": 597651797
+        },
+        {
+          "label": "France",
+          "value": 597651798
+        },
+        {
+          "label": "Germany",
+          "value": 597651799
+        },
+        {
+          "label": "India",
+          "value": 597651800
+        },
+        {
+          "label": "Indonesia",
+          "value": 597651801
+        },
+        {
+          "label": "Ireland",
+          "value": 597651802
+        },
+        {
+          "label": "Israel",
+          "value": 597651803
+        },
+        {
+          "label": "Italy",
+          "value": 597651804
+        },
+        {
+          "label": "Japan",
+          "value": 597651805
+        },
+        {
+          "label": "Malaysia",
+          "value": 597651806
+        },
+        {
+          "label": "Mexico",
+          "value": 597651807
+        },
+        {
+          "label": "New Zealand",
+          "value": 597651808
+        },
+        {
+          "label": "Poland",
+          "value": 597651809
+        },
+        {
+          "label": "Romania",
+          "value": 597651810
+        },
+        {
+          "label": "Singapore",
+          "value": 597651811
+        },
+        {
+          "label": "South Korea",
+          "value": 597651812
+        },
+        {
+          "label": "Spain",
+          "value": 597651813
+        },
+        {
+          "label": "Sweden",
+          "value": 597651814
+        },
+        {
+          "label": "Switzerland",
+          "value": 597651815
+        },
+        {
+          "label": "Thailand",
+          "value": 597651816
+        },
+        {
+          "label": "The Netherlands",
+          "value": 597651817
+        },
+        {
+          "label": "UAE",
+          "value": 597651818
+        },
+        {
+          "label": "UK",
+          "value": 597651819
+        },
+        {
+          "label": "US",
+          "value": 597651820
+        },
+        {
+          "label": "Other",
+          "value": 597651821
+        }
+      ]
+    },
+    {
+      "id": "question_61420833[]",
+      "label": "Please select the country or countries you anticipate working in for the role in which you are applying.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Australia', 'Belgium', 'Brazil', 'Canada', 'France', 'Germany', 'India', 'Indonesia', 'Ireland', 'Israel', 'Italy', 'Japan', 'Luxembourg', 'Malaysia', 'Mexico', 'New Zealand', 'Poland', 'Portugal', 'Romania', 'Singapore', 'South Korea', 'Spain', 'Sweden', 'Switzerland', 'Thailand', 'The Netherlands', 'UAE', 'UK', 'US']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Australia",
+          "value": 712472621
+        },
+        {
+          "label": "Belgium",
+          "value": 712472622
+        },
+        {
+          "label": "Brazil",
+          "value": 712472623
+        },
+        {
+          "label": "Canada",
+          "value": 712472624
+        },
+        {
+          "label": "France",
+          "value": 712472625
+        },
+        {
+          "label": "Germany",
+          "value": 712472626
+        },
+        {
+          "label": "India",
+          "value": 712472627
+        },
+        {
+          "label": "Indonesia",
+          "value": 712472628
+        },
+        {
+          "label": "Ireland",
+          "value": 712472629
+        },
+        {
+          "label": "Israel",
+          "value": 712472630
+        },
+        {
+          "label": "Italy",
+          "value": 712472631
+        },
+        {
+          "label": "Japan",
+          "value": 712472632
+        },
+        {
+          "label": "Luxembourg",
+          "value": 712472633
+        },
+        {
+          "label": "Malaysia",
+          "value": 712472634
+        },
+        {
+          "label": "Mexico",
+          "value": 712472635
+        },
+        {
+          "label": "New Zealand",
+          "value": 712472636
+        },
+        {
+          "label": "Poland",
+          "value": 712472637
+        },
+        {
+          "label": "Portugal",
+          "value": 712472638
+        },
+        {
+          "label": "Romania",
+          "value": 712472639
+        },
+        {
+          "label": "Singapore",
+          "value": 712472640
+        },
+        {
+          "label": "South Korea",
+          "value": 712472641
+        },
+        {
+          "label": "Spain",
+          "value": 712472642
+        },
+        {
+          "label": "Sweden",
+          "value": 712472643
+        },
+        {
+          "label": "Switzerland",
+          "value": 712472644
+        },
+        {
+          "label": "Thailand",
+          "value": 712472645
+        },
+        {
+          "label": "The Netherlands",
+          "value": 712472646
+        },
+        {
+          "label": "UAE",
+          "value": 712472647
+        },
+        {
+          "label": "UK",
+          "value": 712472648
+        },
+        {
+          "label": "US",
+          "value": 712472649
+        }
+      ]
+    },
+    {
+      "id": "question_61420834",
+      "label": "Are you authorized to work in the location(s) you selected in your previous response?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 597651850
+        },
+        {
+          "label": "No",
+          "value": 597651851
+        }
+      ]
+    },
+    {
+      "id": "question_61420835",
+      "label": "Will you require Stripe to sponsor you for a work permit now or in the future for the location(s) you selected in in your previous response?\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 597651852
+        },
+        {
+          "label": "No",
+          "value": 597651853
+        }
+      ]
+    },
+    {
+      "id": "question_61420836",
+      "label": "If this role offers the option to work from a remote location, do you plan to work remotely?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes, I intend to work remotely.', 'No, I intend to work from an office location.']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes, I intend to work remotely.",
+          "value": 597651854
+        },
+        {
+          "label": "No, I intend to work from an office location.",
+          "value": 597651855
+        }
+      ]
+    },
+    {
+      "id": "question_61420837",
+      "label": "Have you ever been employed by Stripe or a Stripe affiliate?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_61420838",
+      "label": "Who is your current or previous employer?",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_61420839",
+      "label": "What is your current or previous job title?",
+      "type": "input_text",
+      "required": true,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null
+    },
+    {
+      "id": "question_61420840",
+      "label": "What is the most recent school you attended?",
+      "type": "input_text",
+      "required": true,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null
+    },
+    {
+      "id": "question_61420842",
+      "label": "Do you opt-in to receive WhatsApp messages from Stripe Recruiting?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 597651856
+        },
+        {
+          "label": "No",
+          "value": 597651857
+        }
+      ]
+    },
+    {
+      "id": "question_64191780",
+      "label": "If located in the US, in what city and state do you reside?",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_67838866",
+      "label": "What is the most recent degree you obtained?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Other",
+      "source": "education.degree | smart-matched to option 'Other'",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "High School",
+          "value": 730437321
+        },
+        {
+          "label": "Associate's Degree",
+          "value": 730437329
+        },
+        {
+          "label": "Bachelor's Degree",
+          "value": 730437339
+        },
+        {
+          "label": "Master's Degree",
+          "value": 730437345
+        },
+        {
+          "label": "Master of Business Administration (M.B.A.)",
+          "value": 730437354
+        },
+        {
+          "label": "Juris Doctor (J.D.)",
+          "value": 730437359
+        },
+        {
+          "label": "Doctor of Medicine (M.D.)",
+          "value": 730437365
+        },
+        {
+          "label": "Doctor of Philosophy (Ph.D.)",
+          "value": 730437367
+        },
+        {
+          "label": "Other",
+          "value": 730437370
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

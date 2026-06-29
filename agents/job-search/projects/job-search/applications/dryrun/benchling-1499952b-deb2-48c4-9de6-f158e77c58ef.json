@@ -1,0 +1,272 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/benchling/1499952b-deb2-48c4-9de6-f158e77c58ef",
+  "org": "benchling",
+  "job_id": "1499952b-deb2-48c4-9de6-f158e77c58ef",
+  "job_title": "Enterprise Solutions Architect",
+  "job_location": "Boston, MA",
+  "fetched_at": "2026-06-29T05:39:48Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 12,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_name"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_email"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_resume"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_d41b39b6-4c19-41ab-942d-a46536e966f5",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_d41b39b6-4c19-41ab-942d-a46536e966f5"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b__systemfield_location"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_381d5974-3ef0-4dd7-8da8-f9bc8df30376",
+      "label": "Pronouns",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "She/Her/Hers",
+          "value": "She/Her/Hers"
+        },
+        {
+          "label": "He/Him/His",
+          "value": "He/Him/His"
+        },
+        {
+          "label": "They/Them/Theirs",
+          "value": "They/Them/Theirs"
+        },
+        {
+          "label": "Prefer not to answer",
+          "value": "Prefer not to answer"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_381d5974-3ef0-4dd7-8da8-f9bc8df30376"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_9ffb0344-65ab-40cf-8f36-34db48251c86",
+      "label": "Linkedin Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_9ffb0344-65ab-40cf-8f36-34db48251c86"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_2335cddb-81e4-4962-92bd-8116740863b9",
+      "label": "I acknowledge by submitting an application for this role that I accept and agree to Benchling's global applicant privacy policy, which may be accessed on the link below:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I acknowledge",
+      "source": "acknowledge_yes (matched 'I acknowledge')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I acknowledge",
+          "value": "I acknowledge"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_2335cddb-81e4-4962-92bd-8116740863b9"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_7e3ca5fa-f7c2-4f94-9e27-e3702c0972ce",
+      "label": "U.S. Work Authorization Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Can work for any employer",
+      "source": "work_authorization.authorized_to_work_us (matched 'Can work for any employer')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Can work for any employer",
+          "value": "Can work for any employer"
+        },
+        {
+          "label": "Can work for current employer",
+          "value": "Can work for current employer"
+        },
+        {
+          "label": "Seeking work authorization",
+          "value": "Seeking work authorization"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_7e3ca5fa-f7c2-4f94-9e27-e3702c0972ce"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_08247f10-d370-4b52-a41b-af0db229bfab",
+      "label": "Will you now, or sometime in the future, require visa sponsorship?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_08247f10-d370-4b52-a41b-af0db229bfab"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_69e1f38b-e90c-4fb5-afb0-d700a6c2bb73",
+      "label": "Are you able to work from our office Monday, Tuesday, and Thursday, in alignment with our hybrid work model? *",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_69e1f38b-e90c-4fb5-afb0-d700a6c2bb73"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_b7b625d3-5d78-4289-9077-c88d827b39e6",
+      "label": "Are you willing to relocate for this position?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "I am local to the location hub.",
+          "value": "I am local to the location hub."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_b7b625d3-5d78-4289-9077-c88d827b39e6"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_7a2472da-7faa-499d-8f65-b3a5f6e341fc",
+      "label": "What AI tools are you currently using today and how are you using them?",
+      "type": "textarea",
+      "required": true,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_7a2472da-7faa-499d-8f65-b3a5f6e341fc"
+    },
+    {
+      "id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_4a9dc8c4-df65-4e9c-80b8-17ec53805067",
+      "label": "Provide a summary of your experience implementing scientific/informatics platforms such as LIMS, ELN, MES, or LES.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "fa54d9f3-5aec-49dc-a7c5-579a40d33a9b_4a9dc8c4-df65-4e9c-80b8-17ec53805067"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

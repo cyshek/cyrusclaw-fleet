@@ -1,0 +1,574 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/fanduel/jobs/7951127",
+  "org": "fanduel",
+  "job_id": "7951127",
+  "job_title": "Data Product Manager",
+  "job_location": "New York City",
+  "fetched_at": "2026-06-29T08:03:03Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/fanduel/jobs/7951127?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 27,
+    "filled": 23,
+    "filled_needs_review": 2,
+    "declined": 2,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67128816",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_67128817",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67128818",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67128819",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67128820",
+      "label": "Are you an employee of Flutter or a Flutter brand?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67128821",
+      "label": "What are your base salary expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_67128822",
+      "label": "What are your total compensation expectations?",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_67128823",
+      "label": "Please list legal first and last name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "question_67128824",
+      "label": "What is your preferred name? ",
+      "type": "textarea",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_67128825",
+      "label": "Are you subject to a non-compete or any other agreements that may prohibit or restrict your employment with FanDuel? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.non_compete_agreement",
+      "status": "filled",
+      "matched_rule": "non_compete",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67128826",
+      "label": "Are you located within 120 miles of the New York, Atlanta, Jersey City, Toronto or Los Angeles office? If so, which location? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city | NOTE: 'Kirkland' not literally in options ['New York', 'Jersey City', 'Atlanta', 'Los Angeles', 'None']",
+      "status": "filled_needs_review",
+      "matched_rule": "city",
+      "options": [
+        {
+          "label": "New York",
+          "value": 723341314
+        },
+        {
+          "label": "Jersey City",
+          "value": 723341315
+        },
+        {
+          "label": "Atlanta",
+          "value": 723341316
+        },
+        {
+          "label": "Los Angeles",
+          "value": 723341317
+        },
+        {
+          "label": "None",
+          "value": 723341318
+        }
+      ]
+    },
+    {
+      "id": "question_67128827",
+      "label": "If you are not located within 120 miles of this location, are you willing to relocate for this opportunity upon hire?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No', 'I am located within 120 miles']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 723341319
+        },
+        {
+          "label": "No",
+          "value": 723341320
+        },
+        {
+          "label": "I am located within 120 miles",
+          "value": 723341321
+        }
+      ]
+    },
+    {
+      "id": "question_67128828",
+      "label": "How did you hear about this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Career Site",
+          "value": 723341322
+        },
+        {
+          "label": "Campus Career Fair",
+          "value": 723341323
+        },
+        {
+          "label": "Company Referral",
+          "value": 723341324
+        },
+        {
+          "label": "Conference Recruiting Expo",
+          "value": 723341325
+        },
+        {
+          "label": "Friend/Family Member",
+          "value": 723341326
+        },
+        {
+          "label": "FanDuel Recruiter",
+          "value": 723341327
+        },
+        {
+          "label": "Flutter Employee",
+          "value": 723341328
+        },
+        {
+          "label": "LinkedIn",
+          "value": 723341329
+        },
+        {
+          "label": "AISES – American Indian Science and Engineering Society",
+          "value": 723341330
+        },
+        {
+          "label": "Bet on Black",
+          "value": 723341331
+        },
+        {
+          "label": "Black Girls Code",
+          "value": 723341332
+        },
+        {
+          "label": "Black is Tech",
+          "value": 723341333
+        },
+        {
+          "label": "Grace Hopper",
+          "value": 723341334
+        },
+        {
+          "label": "HBCU Connect",
+          "value": 723341335
+        },
+        {
+          "label": "Jopwell",
+          "value": 723341336
+        },
+        {
+          "label": "Lesbians Who Tech",
+          "value": 723341337
+        },
+        {
+          "label": "POCIT – People of Color in Tech",
+          "value": 723341338
+        },
+        {
+          "label": "RenderATL",
+          "value": 723341339
+        },
+        {
+          "label": "Rewriting the Code",
+          "value": 723341340
+        },
+        {
+          "label": "Techqueria",
+          "value": 723341341
+        },
+        {
+          "label": "Techsgiving",
+          "value": 723341342
+        },
+        {
+          "label": "UK Tech Meetups",
+          "value": 723341343
+        },
+        {
+          "label": "UNCF - United Negro College Fund",
+          "value": 723341344
+        },
+        {
+          "label": "WISE – Women in Sports Entertainment",
+          "value": 723341345
+        },
+        {
+          "label": "Women in Automation",
+          "value": 723341346
+        },
+        {
+          "label": "Women in Innovation",
+          "value": 723341347
+        },
+        {
+          "label": "Other",
+          "value": 723341348
+        }
+      ]
+    },
+    {
+      "id": "question_67128829",
+      "label": "It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I don’t reside in Massachusetts.",
+      "source": "not_ma_resident (don't reside in MA)",
+      "status": "filled",
+      "matched_rule": "not_ma_resident",
+      "options": [
+        {
+          "label": "I reside in Massachusetts and acknowledge that I have received notice of this statement pursuant to G.L. c. 149, § 19B.",
+          "value": 723341349
+        },
+        {
+          "label": "I don’t reside in Massachusetts.",
+          "value": 723341350
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_45201",
+      "label": "How would you describe your gender identity? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Female",
+          "value": 272222
+        },
+        {
+          "label": "Male ",
+          "value": 272223
+        },
+        {
+          "label": "Non-Binary ",
+          "value": 272224
+        },
+        {
+          "label": "Prefer not to disclose",
+          "value": 272225
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_45202",
+      "label": "How would you describe your racial/ethnic background? (mark all that apply)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "White (Not Hispanic of Latino)",
+          "value": 272226
+        },
+        {
+          "label": "Black or African American ",
+          "value": 272227
+        },
+        {
+          "label": "Hispanic / Latino ",
+          "value": 272228
+        },
+        {
+          "label": "Asian ",
+          "value": 272229
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander ",
+          "value": 272230
+        },
+        {
+          "label": "Native American or Alaskan Native ",
+          "value": 272231
+        },
+        {
+          "label": "Two or More Races ",
+          "value": 272232
+        },
+        {
+          "label": "Prefer not to disclose ",
+          "value": 272233
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": false,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

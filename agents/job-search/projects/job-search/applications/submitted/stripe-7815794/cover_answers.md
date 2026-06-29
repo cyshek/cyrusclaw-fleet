@@ -2,15 +2,11 @@
 
 ## What is your current or previous job title?
 
-Technical Program Manager
+Program Manager
 
 ## Who is your current or previous employer?
 
 Microsoft
-
-## What is the most recent degree you obtained?
-
-Bachelor of Science in Computer Science, Minor in Mathematics
 
 ## What is the most recent school you attended?
 

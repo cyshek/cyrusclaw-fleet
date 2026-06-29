@@ -1,6 +1,10 @@
-ABORT-JD-FETCH — 2026-05-13T22:58:20+00:00
+CLOSED-URL-DEAD — 2026-06-29T05:49:53+00:00
 
 role_id: 790
-phase: jd-fetch
-error:
-HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/okta/jobs/7514481
+slug:    okta-7514481
+url:     https://www.okta.com/company/careers/opportunity/7514481?gh_jid=7514481
+probe:   status=404 reason=http-404
+
+chain_005 P5 URL-liveness HEAD probe: posting is no longer
+reachable. Tracker stamped status='closed'. No prep work
+performed. Override with --no-head-probe.

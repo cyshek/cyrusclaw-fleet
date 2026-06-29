@@ -1,0 +1,789 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/affirm/jobs/7622734003",
+  "org": "affirm",
+  "job_id": "7622734003",
+  "job_title": "Senior Product Manager, Shopping Experiences",
+  "job_location": "Remote US",
+  "fetched_at": "2026-06-29T07:00:03Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/affirm/jobs/7622734003?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 24,
+    "filled": 18,
+    "filled_needs_review": 0,
+    "declined": 3,
+    "unresolved": 3,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_29621300003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_29621301003",
+      "label": "Current Company",
+      "type": "input_text",
+      "required": false,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_29621302003",
+      "label": "Preferred Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_29621303003",
+      "label": "Name Pronunciation",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Name Pronunciation'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_29621304003",
+      "label": "Pronouns\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He/him/his",
+          "value": 154970058003
+        },
+        {
+          "label": "She/her/hers",
+          "value": 154970059003
+        },
+        {
+          "label": "They/them/theirs",
+          "value": 154970060003
+        },
+        {
+          "label": "My pronouns are not listed",
+          "value": 154970061003
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 154970062003
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 154970063003
+        }
+      ]
+    },
+    {
+      "id": "question_29621305003",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29621306003",
+      "label": "Do you now or in the future require sponsorship for employment visa status (e.g., H-1B, TN, E-3, F-1 visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_29621307003",
+      "label": "Which U.S. State or Canadian Province do you reside in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Washington",
+      "source": "address.state (mapped WA -> Washington)",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Alabama",
+          "value": 160605667003
+        },
+        {
+          "label": "Alaska",
+          "value": 160605668003
+        },
+        {
+          "label": "Arizona",
+          "value": 160605669003
+        },
+        {
+          "label": "Arkansas",
+          "value": 160605670003
+        },
+        {
+          "label": "California",
+          "value": 160605671003
+        },
+        {
+          "label": "Colorado",
+          "value": 160605672003
+        },
+        {
+          "label": "Connecticut",
+          "value": 160605673003
+        },
+        {
+          "label": "District of Columbia",
+          "value": 160605674003
+        },
+        {
+          "label": "Delaware",
+          "value": 160605675003
+        },
+        {
+          "label": "Florida",
+          "value": 160605676003
+        },
+        {
+          "label": "Georgia",
+          "value": 160605677003
+        },
+        {
+          "label": "Hawaii",
+          "value": 160605678003
+        },
+        {
+          "label": "Idaho",
+          "value": 160605679003
+        },
+        {
+          "label": "Illinois",
+          "value": 160605680003
+        },
+        {
+          "label": "Indiana",
+          "value": 160605681003
+        },
+        {
+          "label": "Iowa",
+          "value": 160605682003
+        },
+        {
+          "label": "Kansas",
+          "value": 160605683003
+        },
+        {
+          "label": "Kentucky",
+          "value": 160605684003
+        },
+        {
+          "label": "Louisiana",
+          "value": 160605685003
+        },
+        {
+          "label": "Maine",
+          "value": 160605686003
+        },
+        {
+          "label": "Maryland",
+          "value": 160605687003
+        },
+        {
+          "label": "Massachusetts",
+          "value": 160605688003
+        },
+        {
+          "label": "Michigan",
+          "value": 160605689003
+        },
+        {
+          "label": "Minnesota",
+          "value": 160605690003
+        },
+        {
+          "label": "Mississippi",
+          "value": 160605691003
+        },
+        {
+          "label": "Missouri",
+          "value": 160605692003
+        },
+        {
+          "label": "Montana",
+          "value": 160605693003
+        },
+        {
+          "label": "Nebraska",
+          "value": 160605694003
+        },
+        {
+          "label": "Nevada",
+          "value": 160605695003
+        },
+        {
+          "label": "New Hampshire",
+          "value": 160605696003
+        },
+        {
+          "label": "New Jersey",
+          "value": 160605697003
+        },
+        {
+          "label": "New Mexico",
+          "value": 160605698003
+        },
+        {
+          "label": "New York",
+          "value": 160605699003
+        },
+        {
+          "label": "North Carolina",
+          "value": 160605700003
+        },
+        {
+          "label": "North Dakota",
+          "value": 160605701003
+        },
+        {
+          "label": "Ohio",
+          "value": 160605702003
+        },
+        {
+          "label": "Oklahoma",
+          "value": 160605703003
+        },
+        {
+          "label": "Oregon",
+          "value": 160605704003
+        },
+        {
+          "label": "Pennsylvania",
+          "value": 160605705003
+        },
+        {
+          "label": "Rhode Island",
+          "value": 160605706003
+        },
+        {
+          "label": "South Carolina",
+          "value": 160605707003
+        },
+        {
+          "label": "South Dakota",
+          "value": 160605708003
+        },
+        {
+          "label": "Tennessee",
+          "value": 160605709003
+        },
+        {
+          "label": "Texas",
+          "value": 160605710003
+        },
+        {
+          "label": "Utah",
+          "value": 160605711003
+        },
+        {
+          "label": "Vermont",
+          "value": 160605712003
+        },
+        {
+          "label": "Virginia",
+          "value": 160605713003
+        },
+        {
+          "label": "Washington",
+          "value": 160605714003
+        },
+        {
+          "label": "West Virginia",
+          "value": 160605715003
+        },
+        {
+          "label": "Wisconsin",
+          "value": 160605716003
+        },
+        {
+          "label": "Wyoming",
+          "value": 160605717003
+        },
+        {
+          "label": "Alberta",
+          "value": 160605718003
+        },
+        {
+          "label": "Ontario",
+          "value": 160605719003
+        },
+        {
+          "label": "British Columbia",
+          "value": 160605720003
+        },
+        {
+          "label": "Saskatchewan",
+          "value": 160605721003
+        },
+        {
+          "label": "Manitoba",
+          "value": 160605722003
+        },
+        {
+          "label": "Nova Scotia",
+          "value": 160605723003
+        },
+        {
+          "label": "New Brunswick",
+          "value": 160605724003
+        },
+        {
+          "label": "Newfoundland",
+          "value": 160605725003
+        },
+        {
+          "label": "Prince Edward Island",
+          "value": 160605726003
+        },
+        {
+          "label": "Quebec",
+          "value": 160605727003
+        }
+      ]
+    },
+    {
+      "id": "question_29621308003",
+      "label": " How did you first learn about Affirm as an employer? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=' How did you first learn about Affirm as an employer? '",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Affirm blog",
+          "value": 154970123003
+        },
+        {
+          "label": "Affirm Recruiting Team reached out",
+          "value": 154970124003
+        },
+        {
+          "label": "Affirm’s Career Site",
+          "value": 154970125003
+        },
+        {
+          "label": "AfroTech",
+          "value": 154970126003
+        },
+        {
+          "label": "Alumni Forum",
+          "value": 154970127003
+        },
+        {
+          "label": "Built In",
+          "value": 154970128003
+        },
+        {
+          "label": "Facebook",
+          "value": 154970129003
+        },
+        {
+          "label": "Glassdoor",
+          "value": 154970130003
+        },
+        {
+          "label": "I have used Affirm as a product",
+          "value": 154970131003
+        },
+        {
+          "label": "I know someone that works at Affirm",
+          "value": 154970132003
+        },
+        {
+          "label": "Include.io",
+          "value": 154970133003
+        },
+        {
+          "label": "Indeed",
+          "value": 154970134003
+        },
+        {
+          "label": "Infoshare",
+          "value": 154970135003
+        },
+        {
+          "label": "Instagram",
+          "value": 154970136003
+        },
+        {
+          "label": "LinkedIn",
+          "value": 154970137003
+        },
+        {
+          "label": "Nextplay",
+          "value": 154970138003
+        },
+        {
+          "label": "POCIT",
+          "value": 154970139003
+        },
+        {
+          "label": "SheTO",
+          "value": 154970140003
+        },
+        {
+          "label": "The Muse",
+          "value": 154970141003
+        },
+        {
+          "label": "Twitter",
+          "value": 154970142003
+        },
+        {
+          "label": "Other",
+          "value": 154970143003
+        }
+      ]
+    },
+    {
+      "id": "question_29621309003",
+      "label": "GitHub",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null
+    },
+    {
+      "id": "question_29621310003",
+      "label": " Twitter",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "twitter not provided (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "twitter",
+      "options": null
+    },
+    {
+      "id": "question_29621311003",
+      "label": "Portfolio",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null
+    },
+    {
+      "id": "question_29621312003",
+      "label": "Other Links",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Other Links'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_29621313003",
+      "label": "Have you previously been employed at Affirm for any length of time?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I have not previously been employed at Affirm",
+      "source": "worked_at_company_before (matched 'have not' -> 'I have not previously been employed at Affirm')",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "I have not previously been employed at Affirm",
+          "value": 154970144003
+        },
+        {
+          "label": "I have been employed at Affirm as a full-time employee",
+          "value": 154970145003
+        },
+        {
+          "label": "I have been employed at Affirm as a part-time employee",
+          "value": 154970146003
+        },
+        {
+          "label": "I have been employed at Affirm as an intern",
+          "value": 154970147003
+        },
+        {
+          "label": "I have been employed at Affirm as a contractor",
+          "value": 154970148003
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_4028768003",
+      "label": "How do you identify? (gender identity)",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Female",
+          "value": 4173593003
+        },
+        {
+          "label": "Male",
+          "value": 4173594003
+        },
+        {
+          "label": "Non-binary",
+          "value": 4173595003
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 4173596003
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 4173597003
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4028769003",
+      "label": "How do you identify? (race/ethnicity)",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Black/African American",
+          "value": 4173598003
+        },
+        {
+          "label": "East Asian",
+          "value": 4173599003
+        },
+        {
+          "label": "Latinx",
+          "value": 4173600003
+        },
+        {
+          "label": "Middle Eastern",
+          "value": 4173601003
+        },
+        {
+          "label": "Multiracial/Multiethnic",
+          "value": 4173602003
+        },
+        {
+          "label": "Indigenous/Aboriginal (First Nations, Native American, Alaska Native, North American Indian, Metis, Inuit)",
+          "value": 4173603003
+        },
+        {
+          "label": "Pacific Islander",
+          "value": 4173604003
+        },
+        {
+          "label": "South Asian",
+          "value": 4173605003
+        },
+        {
+          "label": "Southeast Asian",
+          "value": 4173606003
+        },
+        {
+          "label": "White",
+          "value": 4173607003
+        },
+        {
+          "label": "I prefer not to say",
+          "value": 4173608003
+        },
+        {
+          "label": "I prefer to self describe",
+          "value": 4173609003
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_29621303003",
+      "label": "Name Pronunciation",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Name Pronunciation'"
+    },
+    {
+      "id": "question_29621308003",
+      "label": " How did you first learn about Affirm as an employer? ",
+      "required": true,
+      "reason": "no LABEL_RULES match for label=' How did you first learn about Affirm as an employer? '"
+    },
+    {
+      "id": "question_29621312003",
+      "label": "Other Links",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Other Links'"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_29621308003",
+      "label": " How did you first learn about Affirm as an employer? ",
+      "reason": "no LABEL_RULES match for label=' How did you first learn about Affirm as an employer? '"
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

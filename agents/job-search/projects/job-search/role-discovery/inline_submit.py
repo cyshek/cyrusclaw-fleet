@@ -141,8 +141,10 @@ NL_CONST = chr(10)
 
 
 def detect_ats(url: str) -> str:
-    """Return 'greenhouse' | 'greenhouse_iframe' | 'ashby' | 'lever' | 'workday' | 'rippling' | 'bamboohr' | 'meta' | 'unknown'."""
+    """Return 'greenhouse' | 'greenhouse_iframe' | 'ashby' | 'lever' | 'workday' | 'rippling' | 'bamboohr' | 'meta' | 'apple' | 'unknown'."""
     u = url or ""
+    if "jobs.apple.com" in u:
+        return "apple"
     if "greenhouse.io" in u:
         return "greenhouse"
     if "ashbyhq.com" in u:
@@ -193,6 +195,23 @@ def parse_icims_url(url: str) -> tuple[str, str] | None:
     if not m:
         return None
     return m.group(1), m.group(2)
+
+
+def parse_apple_url(url: str) -> tuple[str, str] | None:
+    """Return (reqid, slug_part) or None for an Apple jobs URL.
+
+    Apple URL shape:
+      https://jobs.apple.com/en-us/details/<reqid>-<team_code>/<slug>?team=<TEAM>
+    Returns (reqid, slug_part) e.g. ("200660532", "aiml-technical-program-manager").
+    """
+    import re as _re
+    m = _re.search(r"jobs\.apple\.com/[^/]+/details/([0-9]+)", url or "")
+    if not m:
+        return None
+    reqid = m.group(1)
+    slug_m = _re.search(r"jobs\.apple\.com/[^/]+/details/[0-9]+[^/]*/([^?#]+)", url or "")
+    slug_part = slug_m.group(1) if slug_m else reqid
+    return (reqid, slug_part)
 
 
 def parse_rippling_url(url: str) -> tuple[str, str] | None:
@@ -501,6 +520,21 @@ def resolve_role(role_id: int, conn: sqlite3.Connection) -> dict:
             "ats": "icims", "icims_host": ic_host, "icims_reqid": ic_reqid,
             "slug": slug, "flags": row["flags"],
         }
+    if ats == "apple":
+        ap = parse_apple_url(url)
+        if not ap:
+            raise ValueError(f"role id={role_id} URL parsed as Apple but no reqid: {url}")
+        apple_reqid, apple_slug_part = ap
+        slug = "apple-" + apple_reqid
+        return {
+            "role_id": row["id"], "company": row["company"], "role": row["role"],
+            "loc": row["loc"], "exp_req": row["exp_req"],
+            "url": url, "app_url": url,
+            "ats": "apple", "apple_reqid": apple_reqid, "apple_slug": apple_slug_part,
+            "gh_org": "apple-" + apple_reqid,
+            "gh_jid": apple_reqid,
+            "slug": slug, "flags": row["flags"],
+        }
     raise ValueError(f"role id={role_id} has unsupported ATS URL: {url}")
 
 
@@ -549,6 +583,8 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
         where_url.append("app_url LIKE '%.bamboohr.com%' OR jd_url LIKE '%.bamboohr.com%'")
     if ats_filter in (None, "meta"):
         where_url.append("app_url LIKE '%metacareers.com%' OR jd_url LIKE '%metacareers.com%'")
+    if ats_filter in (None, "apple"):
+        where_url.append("source_key LIKE 'apple:%'")
     if ats_filter in (None, "tiktok"):
         where_url.append("app_url LIKE '%lifeattiktok.com%' OR app_url LIKE '%jobs.bytedance.com%' OR jd_url LIKE '%lifeattiktok.com%' OR jd_url LIKE '%jobs.bytedance.com%'")
     if ats_filter in (None, "uber"):
@@ -558,7 +594,8 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
     where_clause = " OR ".join(where_url) or "1=0"
     rows = conn.execute(f"""
         SELECT * FROM roles
-         WHERE (status IS NULL OR status='' OR status='queued' OR status='open')
+         WHERE (status IS NULL OR status='' OR status='queued' OR status='open'
+                OR (status='blocked' AND (source_key LIKE 'apple:%')))
            AND applied_on IS NULL
            AND (prep_status IS NULL OR prep_status='')
            AND ({where_clause})
@@ -693,6 +730,20 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
                 "role_id": r["id"], "company": r["company"], "role": r["role"],
                 "loc": r["loc"], "exp_req": r["exp_req"], "url": url,
                 "ats": "meta", "job_id": job_id,
+                "slug": slug, "flags": r["flags"],
+            }
+        elif ats == "apple":
+            ap = parse_apple_url(url)
+            if not ap:
+                continue
+            apple_reqid, apple_slug_part = ap
+            slug = "apple-" + apple_reqid
+            entry = {
+                "role_id": r["id"], "company": r["company"], "role": r["role"],
+                "loc": r["loc"], "exp_req": r["exp_req"], "url": url, "app_url": url,
+                "ats": "apple", "apple_reqid": apple_reqid, "apple_slug": apple_slug_part,
+                "gh_org": "apple-" + apple_reqid,
+                "gh_jid": apple_reqid,
                 "slug": slug, "flags": r["flags"],
             }
         else:
@@ -1903,6 +1954,261 @@ def prep_role_rippling(role: dict, dry_run: bool = False) -> dict:
             result["tracker_update_error"] = f"{type(e).__name__}: {e}"
     return result
 
+# ---------------------------------------------------------------------------
+# Apple Careers (jobs.apple.com) PREP-ONLY pipeline
+# ---------------------------------------------------------------------------
+# Apple uses Apple-ID SSO with 2FA - full auto-submit is NOT possible.
+# This lane:
+#   1. Fetches JD via CDP browser (_apple_jd_fetch.py subprocess)
+#   2. Tailors resume via bullet_rewriter
+#   3. Generates cover answers
+#   4. Writes STATUS.md = PREP-READY-MANUAL-APPLE
+#   5. Sets prep_status='manual_ready', status stays 'blocked' (not applied)
+# NEVER sets applied_by or applied_on -- those are strictly manual-only.
+# ---------------------------------------------------------------------------
+
+
+def _fetch_apple_jd_subprocess(app_url, out_path, cdp="http://127.0.0.1:18800", timeout_s=90):
+    """Invoke _apple_jd_fetch.py as subprocess. Returns exit code.
+    0=OK, 2=boilerplate-only, 3=CDP/nav fail, 4=bad usage."""
+    res = subprocess.run(
+        [str(VENV_PY), str(HERE / "_apple_jd_fetch.py"),
+         app_url, "--out", out_path, "--cdp", cdp],
+        capture_output=True, text=True, timeout=timeout_s,
+    )
+    return res.returncode
+
+
+def write_jd_files_apple(workdir, role, jd_text):
+    """Write JD.md + meta.json + prefill.json for an Apple role. Returns apply_url."""
+    apply_url = role.get("app_url") or role.get("url") or ""
+    reqid = role.get("apple_reqid", "")
+    # Prepend header block to the JD.md written by the subprocess
+    jd_header = (
+        "# " + role["company"] + " \u2014 " + role["role"] + "\n\n"
+        "**Location:** " + (role.get("loc") or "n/a") + "\n"
+        "**Apply:** " + apply_url + "\n"
+        "**Apple Req ID:** " + reqid + "\n"
+        "**Submit mode:** MANUAL (Apple-ID SSO + 2FA required)\n\n"
+        "---\n\n"
+    )
+    (workdir / "JD.md").write_text(jd_header + (jd_text or ""))
+    meta = {
+        "company": role["company"],
+        "role": role["role"],
+        "location": role.get("loc"),
+        "exp_required": role.get("exp_req"),
+        "apply_url": apply_url,
+        "jd_url": apply_url,
+        "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "ats": "apple",
+        "apple_reqid": reqid,
+        "gh_org": "apple-" + reqid,
+        "gh_jid": reqid,
+        "flags": role.get("flags", ""),
+        "submit_mode": "manual",
+    }
+    (workdir / "meta.json").write_text(json.dumps(meta, indent=2) + "\n")
+    personal = json.loads(PERSONAL_INFO.read_text())
+    (workdir / "prefill.json").write_text(json.dumps(personal, indent=2) + "\n")
+    return apply_url
+
+
+def prep_role_apple(role, dry_run=False):
+    """Apple PREP-ONLY pipeline.
+
+    Fetches JD via CDP, tailors resume, generates cover answers,
+    writes PREP-READY-MANUAL-APPLE STATUS.md.
+    NEVER sets applied_by / applied_on -- manual submission only.
+    """
+    slug = role["slug"]
+    workdir = SUBMITTED_DIR / slug
+    workdir.mkdir(parents=True, exist_ok=True)
+    now_str = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    result = {
+        "slug": slug, "role_id": role["role_id"], "company": role["company"],
+        "role": role["role"], "ok": False, "phase_failed": None,
+        "workdir": str(workdir),
+        "started_at": now_str,
+        "ats": "apple", "submit_mode": "manual",
+    }
+
+    def abort(phase, err):
+        result["phase_failed"] = phase
+        result["error"] = err[:2000]
+        result["ended_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        (workdir / "STATUS.md").write_text(
+            "ABORT-" + phase.upper() + " \u2014 "
+            + datetime.now(timezone.utc).isoformat(timespec="seconds") + "\n\n"
+            "role_id: " + str(role["role_id"]) + "\nphase: " + phase
+            + "\nerror:\n" + err[:2000] + "\n"
+        )
+        return result
+
+    def fetch_fail(exit_code, reason):
+        result["phase_failed"] = "jd-fetch"
+        result["error"] = reason
+        result["ended_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        (workdir / "STATUS.md").write_text(
+            "FETCH-FAILED-APPLE \u2014 " + result["ended_at"] + "\n\n"
+            "role_id: " + str(role["role_id"]) + "\n"
+            "apple_reqid: " + str(role.get("apple_reqid", "")) + "\n"
+            "exit_code: " + str(exit_code) + "\n"
+            "reason: " + reason + "\n\n"
+            "JD fetch failed. Will not generate tailored resume.\n"
+            "Check CDP browser is running and the role URL is still live.\n"
+        )
+        if not dry_run:
+            try:
+                _c2 = sqlite3.connect(DB_PATH)
+                _c2.execute(
+                    "UPDATE roles SET prep_status=? WHERE id=?",
+                    ("fetch_failed", role["role_id"]),
+                )
+                _c2.commit()
+                _c2.close()
+            except Exception:
+                pass
+        return result
+
+    app_url = role.get("app_url") or role.get("url") or ""
+    reqid = role.get("apple_reqid", "")
+
+    # 1. JD fetch via CDP subprocess
+    jd_path = workdir / "JD.md"
+    try:
+        exit_code = _fetch_apple_jd_subprocess(app_url, str(jd_path))
+    except subprocess.TimeoutExpired:
+        return fetch_fail(3, "JD fetch timed out (CDP/browser)")
+    except Exception as exc:
+        return fetch_fail(3, type(exc).__name__ + ": " + str(exc))
+
+    if exit_code == 2:
+        return fetch_fail(2, "boilerplate-only JD (EEO page -- no Description/Min Quals rendered)")
+    if exit_code == 3:
+        return fetch_fail(3, "CDP attach failed or navigation failed")
+    if exit_code not in (0,):
+        return fetch_fail(exit_code, "_apple_jd_fetch.py exit " + str(exit_code))
+
+    # Read the JD text written by the subprocess
+    jd_text = jd_path.read_text() if jd_path.exists() else ""
+    if not jd_text.strip() or len(jd_text) < 200:
+        return fetch_fail(2, "JD too short (" + str(len(jd_text)) + " chars) after fetch")
+
+    # 2. Write meta.json + prefill.json (JD.md overwritten with header)
+    try:
+        apply_url = write_jd_files_apple(workdir, role, jd_text)
+    except Exception as exc:
+        return abort("jd-files", type(exc).__name__ + ": " + str(exc))
+
+    # Re-read JD.md (now has header prepended)
+    jd_full = (workdir / "JD.md").read_text() if (workdir / "JD.md").exists() else jd_text
+
+    # 3. JD-level overreach guard (best-effort)
+    try:
+        from core import is_overreach as _is_overreach, parse_experience as _parse_exp
+        if jd_text and len(jd_text) >= 200:
+            parsed_exp = _parse_exp(jd_text)
+            ovr, reason = _is_overreach(parsed_exp, jd_text, role.get("role"))
+            if ovr:
+                _log_skipped_overreach(role, reason, phase="apple-jd-check")
+                result["ended_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+                result["phase_failed"] = "overreach"
+                (workdir / "STATUS.md").write_text(
+                    "ABORT-OVERREACH \u2014 " + result["ended_at"] + "\n\n"
+                    "role_id: " + str(role["role_id"]) + "\nreason: " + reason + "\n"
+                    "parsed_exp: " + str(parsed_exp) + "\n\n"
+                    "Role requires senior-IC YOE or people-management experience.\n"
+                    "Auto-prep refused per Cyrus 2026-05-17 guard.\n"
+                )
+                return result
+    except Exception:
+        pass  # overreach guard is best-effort
+
+    # 4. Bullet rewriter (tailored resume PDF)
+    br_org = "apple-" + reqid
+    br_jid = reqid
+    # Fast-path: if v2 PDF already exists (prior run killed mid-flight), reuse it.
+    pdf_fast_name = "Cyrus_Shekari_Resume_" + br_org + "_" + br_jid + "_v2.pdf"
+    pdf_fast = workdir / pdf_fast_name
+    if pdf_fast.exists() and pdf_fast.stat().st_size > 1024:
+        result["pdf"] = str(pdf_fast)
+    else:
+        try:
+            pdf = run_bullet_rewriter(slug, workdir, br_org, br_jid)
+            result["pdf"] = str(pdf)
+        except Exception as exc:
+            return abort("bullet-rewriter", type(exc).__name__ + ": " + str(exc))
+
+    # 5. Cover answers — Apple has no ATS form questions; write a stub
+    # prep note based on the JD so Cyrus has talking points for the resume upload.
+    try:
+        cover_path = workdir / "cover_answers.md"
+        jd_preview = jd_full[:3000] if jd_full else ""
+        cover_path.write_text(
+            "# Application notes — " + role["company"] + ": " + role["role"] + "\n\n"
+            "Apple's apply flow is a resume upload + optional cover letter.\n"
+            "No ATS essay questions detected (Apple-ID SSO gated forms are not pre-scanned).\n\n"
+            "## JD Preview (for cover letter / resume tailoring context)\n\n"
+            + jd_preview + "\n"
+        )
+        result["cover_answers"] = str(cover_path)
+    except Exception as exc:
+        result["cover_answers"] = None
+        result["cover_answers_error"] = type(exc).__name__ + ": " + str(exc)
+
+    # 6. STATUS.md
+    result["ok"] = True
+    result["apply_url"] = apply_url
+    result["ended_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    cover_line = (
+        "(JD context + resume upload notes)"
+        if result.get("cover_answers")
+        else "(NOT GENERATED \u2014 " + result.get("cover_answers_error", "unknown") + ")"
+    )
+    pdf_name = Path(result["pdf"]).name if result.get("pdf") else "n/a"
+    jd_len = len(jd_full)
+    (workdir / "STATUS.md").write_text(
+        "STATUS: PREP-READY-MANUAL-APPLE\n"
+        "Generated: " + result["ended_at"] + "\n\n"
+        "role_id: " + str(role["role_id"]) + "\n"
+        "ats: apple (reqid: " + reqid + ")\n"
+        "company: " + role["company"] + "\n"
+        "role: " + role["role"] + "\n\n"
+        "=====================================================================\n"
+        "APPLY HERE (MANUAL \u2014 Apple-ID SSO + 2FA required):\n\n"
+        "    " + apply_url + "\n\n"
+        "=====================================================================\n\n"
+        "Packet contents:\n"
+        "  - JD.md                 (" + str(jd_len) + " chars of JD body)\n"
+        "  - " + pdf_name + "  (tailored resume PDF \u2014 upload this)\n"
+        "  - cover_answers.md      " + cover_line + "\n"
+        "  - meta.json, prefill.json\n\n"
+        "Apple-ID SSO + 2FA means auto-submit is not possible.\n"
+        "Open the apply URL above, sign in with Apple ID, upload the tailored\n"
+        "PDF, paste answers from cover_answers.md, submit.\n\n"
+        "Once submitted, stamp tracker.db:\n"
+        "  UPDATE roles SET applied_by='manual', applied_on='YYYY-MM-DD',\n"
+        "    prep_status='submitted' WHERE id=" + str(role["role_id"]) + ";\n"
+        "then re-run render_xlsx.py.\n"
+    )
+
+    # 7. Flip tracker prep_status (NEVER set applied_by/applied_on for Apple)
+    if not dry_run:
+        try:
+            _c3 = sqlite3.connect(DB_PATH)
+            _c3.execute(
+                "UPDATE roles SET prep_status='manual_ready', prep_path=? WHERE id=?",
+                (str(workdir), role["role_id"]),
+            )
+            _c3.commit()
+            _c3.close()
+            result["tracker_updated"] = True
+        except Exception as exc:
+            result["tracker_update_error"] = type(exc).__name__ + ": " + str(exc)
+    return result
+
+
 
 # ---------------------------------------------------------------------------
 # Meta Careers (metacareers.com) prep+submit pipeline
@@ -2368,6 +2674,11 @@ def prep_role(role: dict, dry_run: bool = False, ignore_csp_block: bool = False,
     if role.get("ats") == "rippling":
         return prep_role_rippling(role, dry_run=dry_run)
 
+
+    # Apple — prep-only via CDP JD fetch + bullet_rewriter. NEVER auto-submits.
+    if role.get("ats") == "apple":
+        return prep_role_apple(role, dry_run=dry_run)
+
     # Meta Careers — full prep+submit via _meta_runner.py (guest apply, no auth).
     if role.get("ats") == "meta":
         return prep_role_meta(role, dry_run=dry_run)
@@ -2653,7 +2964,7 @@ def main():
     g.add_argument("--batch", type=int)
     ap.add_argument("--dry-run", action="store_true",
                     help="Run prep but skip writing PREP-READY STATUS marker.")
-    ap.add_argument("--ats", choices=["greenhouse", "ashby", "lever", "workday", "greenhouse_iframe", "rippling", "bamboohr", "meta"], default=None,
+    ap.add_argument("--ats", choices=["greenhouse", "ashby", "lever", "workday", "greenhouse_iframe", "rippling", "bamboohr", "meta", "apple"], default=None,
                     help="Filter --batch picks to a specific ATS (default: any).")
     ap.add_argument("--ignore-csp-block", action="store_true",
                     help="Run prep even if tenant is in greenhouse_csp_blocklist.yaml.")

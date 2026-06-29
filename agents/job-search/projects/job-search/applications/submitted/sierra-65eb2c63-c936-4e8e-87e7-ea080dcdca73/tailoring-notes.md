@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **AI agent** validation platform from a 2-person operation into an enterprise-grade system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across customers like Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that cut operational toil by 30% and transitioned execution to a scalable, repeatable model serving enterprise customers.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in **4 months** with a 94% recovery rate—surfacing critical hardware defects and establishing a new continuous-validation model across enterprise infrastructure.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring strict compliance and security constraints.
+5. Built an internal **AI agent** for drill planning, restructuring workflows to reduce planning cycle time by 39% and increase drill capacity by 21%—directly informing how AI automation can scale high-stakes operational processes.
+6. Acted as trusted advisor to enterprise partners, presenting technical agent capabilities to executive stakeholders and aligning **platform roadmap** decisions to customer use cases across cloud resilience and infrastructure recovery domains.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows, conducting customer-facing demos and training sessions that drove utilization across 14 Azure service teams and saved **37 engineering hours** monthly by embedding AI agents into developer workflows.
+2. Shaped the product roadmap to include **intent-based YAML generation** by conducting 11+ discovery interviews with Azure service teams, surfacing critical feature gaps and translating unmet customer needs into actionable, prioritized requirements.
+3. Improved agent data quality and retrieval by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** tool, reducing lookup time by 83% and enabling more accurate, conversational query resolution across teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ teams across engineering and operations.
+2. Drove ground-up discovery with 20+ service teams to identify **81 hours of manual effort** per region launch, then built a strategic roadmap to automate critical paths—mirroring the use-case discovery and trusted-advisor role central to Sierra's Agent PM function.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to surface high-impact automation gaps and prioritize roadmap investments—delivering the kind of data-backed strategic decisions Sierra's healthcare customers depend on.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Defined the legacy OS migration strategy for a **2,000+ unit pilot**, mapping dependencies across 1,200+ stations and achieving zero operational downtime—demonstrating the technical rigor required to ship enterprise-grade agents in high-stakes environments.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing a backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process, ensuring reliable delivery cadence across cross-functional engineering and operations teams.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual intervention in production release workflows.
+4. Partnered with technical counterparts to overcome integration challenges across hardware and software systems, translating complex operational constraints into clear product requirements—mirroring the technical problem-solving Sierra's Agent PM role demands.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end customer conversation workflow—managing scoping, intake, and invoicing for 200+ monthly proposals through a new CRM process that improved conversion and reduced friction.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profiles to reach customers at key decision points in the buying journey.
+3. Improved leadership pricing models by conducting **profitability analysis** across 1,000+ project records to identify margin leaks—delivering the kind of data-driven, customer-outcome-focused insights that guide strategic decisions at Sierra's healthcare accounts.
+
+## Notes from the rewriter
+- 'AI agent' woven into microsoft_ft bullet#1 and bullet#5, and amazon_robotics bullet#1 — mirrors Sierra JD's core product noun 'AI agents' used throughout.
+- 'Ground-up discovery' and 'trusted advisor' language from the JD embedded in microsoft_2022 bullet#2 and pro_painters bullet#3 — directly echoes JD section 'Discover where agents will make an impact.'
+- 'Enterprise-grade' used in microsoft_ft bullet#1 and amazon_robotics bullet#1 — mirrors JD phrase 'Build enterprise-grade AI agents for healthcare.'
+- 'Platform roadmap' surfaced in microsoft_ft bullet#6 — mirrors JD section 'Shape the platform and healthcare roadmap.'
+- 'Conversational' and 'intake conversion' language in pro_painters bullet#1 — echoes JD example project 'replace lengthy paper intake forms with conversational experiences, boosting pre-visit intake conversion rates.'
+

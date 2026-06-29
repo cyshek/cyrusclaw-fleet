@@ -1,59 +1,37 @@
 # PEER_STATE.md
 
 _Auto-generated digest of peer agents' latest daily memory + current BACKLOG.md._
-_Generated: 2026-06-27 11:00 UTC_
+_Generated: 2026-06-28 11:00 UTC_
 
 ---
 
 ## job-search
 
-### Latest daily memory: `memory/2026-06-27.md`
+### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-27 Daily Log
+# 2026-06-28 (UTC) / 2026-06-27–28 (PDT)
 
-## GH Batch Submission Subagent Run
+## Summary
+This date's work was the tail of the June 27 grind session (02:00–02:35 PDT = 09:00–09:35 UTC June 28).
 
-**Task:** Submit 48 open Greenhouse roles.
+## LinkedIn resolver + post-drain (02:00–02:35 UTC)
+- Ran `linkedin_ats_resolver_v2.py --all` (640 rows) → **57 newly resolved** (26 GH, 18 Ashby, 10 WD, 3 Lever)
+  - Critical bug: resolver was backgrounded (&) first run → never committed; re-ran foreground, batched 100 rows
+- inline_submit prepped resolved rows → GH drain: **7 submitted** (Anthropic PM×2, Anthropic TPM×2, Chime, CoreWeave, Glean, Lila Sciences TPM)
+- Ashby drain: **2 submitted** (Harvey TPM Product Trust, Hebbia Solutions Engineer)
+- Ashby RECAPTCHA failures: Baseten, Elise, Perplexity, Cursor (no-confirmation), Decagon (uncertain), h-company (video required)
 
-**Outcome: All 48 handled.**
-- 38 SUBMITTED (reconciled existing + 3 new today)
-- 9 BLOCKED (8 Google = blocklist, 1 Aircall = Lever hCaptcha unsolvable)
-- 1 SKIP (Google job board)
+## Final June 27/28 state
+- Jun 27 submissions: **140** | Jun 28 so far: **9**
+- Total applied all-time: **1,358**
+- Open queue: **48 prepped rows** + 50 still-unprepped LI-resolved rows
+- XLSX: 255 open, 1,118 applied
 
-### New submissions this session (2026-06-27):
-1. **Nintendo 2748** (Program Manager, Nintendo Stores) — SUBMITTED
-   - greenhouse_iframe_runner.py, bypass wrapper (Nintendo SSO gate), direct embed
-   - reCAPTCHA v3 enterprise auto-solved, email-OTP gate: 2vuqb5ZF
-   - Confirmation: /embed/job_app/confirmation?for=nintendo&token=4241996009
-
-2. **Paystand 2799** (Pre-Sales Engineer) — SUBMITTED
-   - greenhouse_iframe_runner.py, validity_token from paystand.com wrapper
-   - salary-range question "Is aligned w/ expectations?" → answered Yes
-   - email-OTP gate: OAGVRu3P
-   - Confirmation: /embed/job_app/confirmation?for=paystand&token=7760524003
-
-3. **Orkes 1488** (Technical Program Manager) — SUBMITTED
-   - _gh_submit.py with existing plan (react-select country picker NOW RESOLVED)
-   - reCAPTCHA 428 → OTP gate auto-solved: qmd7BqfV
-   - Confirmation: /orkes/jobs/5228109008/confirmation
-   - Prior block (2026-05-29) was react-select country, now fixed in _gh_submit.py
-
-### Key fixes this session:
-- **Bulk reconciliation**: ~35 roles had `agent_notes` confirming SUBMITTED but `status='open'` — all reconciled to `status='submitted'` in tracker.db
-- **Paystand salary question**: dryrun resolved "Open to discuss" which didn't match options [Yes/No] → manually patched dryrun JSON to Yes, then re-ran runner
-- **Nintendo/Paystand bullet_rewriter OOM**: Both roles had 2-page (Paystand) or looping (Nintendo) bullet_rewriter failures. Used queued/submitted v2 PDFs directly + greenhouse_iframe_runner.py.
-
-### Tracker state after run:
-- Open: 280 | Applied: 1021 | Manual: 2128 | Interviews: 17
-
-## Lessons learned:
-- bullet_rewriter rc=-9 = OOM kill during page-fit verification loop → use existing v2 PDF
-- Paystand had a salary-range custom Q with Yes/No only → need to handle in dryrun solver
-- Orkes react-select country picker: NOW FIXED in current _gh_submit.py — don't re-block
-
-## Debunked:
-- "Orkes is blocked on react-select country picker" → WRONG, it's now submittable via _gh_submit.py. 2026-06-27.
-- bootstrap-guard trimmed MEMORY.md: 23631→19398 chars (backup kept; deduplicated standalone DEBUNKED sections + condensed closed lane entries)
+## Remaining blockers carried forward
+- GH Remix `emptyRequired:[""]` cohort (Stripe, FanDuel, Canonical, Brex) — unnamed required field ghost
+- Ashby HARD reCAPTCHA: Baseten, Perplexity, OpenAI, Cursor — needs real aged Google acct + dedicated residential
+- 50 unprepped LI-resolved rows (Workday=PREP-READY manual, GH/Ashby need inline_submit)
+- iCIMS hCaptcha-enterprise: 2Captcha tried, ERROR_CAPTCHA_UNSOLVABLE — 30 roles stay blocked
 
 ### BACKLOG.md
 
@@ -184,12 +162,12 @@ _…(truncated; 357 total lines in source)_
 
 ## openclaw-updates
 
-### Latest daily memory: `memory/2026-06-27.md`
+### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-27
+# 2026-06-28
 
 - No activity today. Nightly distill cron fired; nothing to log or promote.
-- System state: stable (disk ~54%, kernel 6.17.0-1018-azure, OpenClaw 2026.6.9) — no changes from Jun 26.
+- System state: stable (disk ~54%, kernel 6.17.0-1018-azure, OpenClaw 2026.6.9) — no changes from Jun 27.
 
 ### BACKLOG.md
 
@@ -241,9 +219,9 @@ Last reviewed: 2026-06-18
 
 ## travel
 
-### Latest daily memory: `memory/2026-06-27.md`
+### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-27
+# 2026-06-28
 
 - No active trip planning sessions today. Agent idle/standby.
 
@@ -283,90 +261,17 @@ _(none yet — will populate as trip ideas come in)_
 
 ## trading-bench
 
-### Latest daily memory: `memory/2026-06-27.md`
+### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-27 (UTC) — Daily Log
+# 2026-06-28 (Sunday)
 
-## 5pm PT Post-Market Review (cron)
-
-**Trade count:** 0 (market closed or no signals fired)
-**Anomalies:** None (no non-filled trades, no run errors, 0 decisions logged today)
-
-**Leaderboard Top 3:**
-1. `breakout_xlk__mut_c382b1` — $+44.05 realized, 4 trades, 100% win rate, 3 closed-days
-2. `sma_crossover_qqq_rth` — $+0.67, 2 trades, 100% win rate
-3. `sma_crossover_qqq_regime` — $+0.02, 6 trades, 67% win rate, Sortino +0.06
-
-**⚠️ PROMOTE CANDIDATE AWAITING REVIEW:**
-- `breakout_xlk__mut_232050` (parent: `breakout_xlk`) — partial-exit mutation
-  - WF: medRet +3.96%, pos% 62%, 88% beat BH-SPY, medSharpe 1.44, worst -9.85%, best +32.91%, 96 trades
-  - Quarantine path: `strategies_candidates/breakout_xlk__mut_232050`
-  - Promoted in TOURNAMENT_ROUND_20260626T190214Z (generated ~19:08 UTC)
-  - Needs Tessera manual code review + move to `strategies/` to go live
-
-**Today's tournament rounds (3):**
-- 19:08Z round: 1 PROMOTE (breakout_xlk__mut_232050), 7 REJECT_GATE
-- 21:06Z round: 5 REJECT_GATE (all trend_follow_uup mutations — UUP edge appears weak)
-- 22:02Z round (22:34Z file): 5 REJECT_GATE (cross-strategy combos; macd_momentum_iwm cross near gate but parent degraded)
-
-**Also in candidates dir (not yet reviewed, no PROMOTE verdict):**
-- `rsi_oversold_spy_momflip`, `rsi_oversold_spy_trendgate` — appear hand-crafted (no TOURNAMENT_ROUND file mapping them); need review
-# 2026-06-27
-
-## FX-CARRY 2ND-LEG TEST — CLOSED (honest negative, 2026-06-27 06:55Z)
-Subagent (opus, 12m26s) ran the full H1 FX-carry leg kill-test. Verified on disk: `reports/FX_CARRY_LEG_20260627T065031Z.md` (18KB), driver + JSON.
-
-**Numbers (primary = long top3/short bottom3 carry, dollar-neutral, 9% vol-target, 1-day lag, 2bps, carry accrual included, 7 G10 pairs 2006-06 → 2026-06):**
-- FX-carry standalone: full Sharpe 0.165 / IS 0.082 / **OOS 0.347** — misses ≥0.4 gate (a). maxDD −27.8%.
-- Beats EW control decisively: FX OOS 0.347 vs EW OOS −0.277 → **ΔSharpe +0.625** — signal is real, not USD-beta.
-- Corr to bond leg (OOS): **−0.118** — passes gate (b) with huge room.
-- Corr to SPY: +0.288; to TQQQ: +0.250 — modest risk-on tilt, both <0.5.
-- Stress: 2008 −3.6%, 2020 −4.1%, **2022 −0.2% (nearly flat)** — crashes in risk-off, orthogonal to bond-leg in rate-shocks (bond −6.8% in 2022, FX ~flat).
-- Canary (+1 extra month lag): OOS 0.337 vs 0.347 — edge survives, no publication-timing leak.
-- Robustness (8 cells): OOS min −0.218 / median 0.338 / **max 0.372 — 0/8 clear 0.4**. No plateau above the bar.
-- Combined (counterfactual): inv-vol OOS Sharpe **0.928** (beats 0.5 OOS) but IS Sharpe 0.375 <0.5 → IS/OOS-unstable + rests on sub-0.4 leg. corr→SPY −0.05 / →TQQQ −0.01. c1 OOS PASS but IS FAIL.
-
-**VERDICT: CLOSE.** Gate (a) fails; robustness plateau entirely below 0.4. The signal is honest (leak-free, EW-control-beating, genuinely orthogonal) but too thin standalone. Combined OOS clears 0.5 but is IS-unstable and built on a fragile sub-0.4 leg.
-
-**H1 carry lane FULLY EXHAUSTED:** bond NEAR-MISS (0.434), commodity CLOSED (dirty proxy), FX CLOSED (0.347). H1 carry is CLOSED unless mandate shifts to eff-N raising (the bond+FX blend is a legit small eff-N raiser, corr −0.12 between legs) or new free data (EM carry, actual futures, higher-quality rate series) appears.
-
-**Report:** `reports/FX_CARRY_LEG_20260627T065031Z.md`
-
-## MULTI-HORIZON TREND ENSEMBLE — LAUNCHED (2026-06-27, main-directed)
-After FX-carry closed + DB-audit clarification (not mine — main's own subagent), main redirected to the multi-horizon ensemble (the genuinely-new item from Fri 06-26 research sprint).
-- Thesis: our trend sleeves are SINGLE-WINDOW (leveraged_long_trend_paper = SMA-200 only). AQR/Man: combining short/med/long horizons (SMA-50/100/200 or 3/6/12mo) lifts Sharpe via horizon diversification. Test: 3-horizon EW-vote gate vs single SMA-200, on the live TQQQ vol-target sleeve.
-- Spawned opus subagent `multihorizon_trend`. Brief: reuse `_lev_trend_fullhist_driver.py` engine + `TQQQ_VOLTARGET_GATE_WRITEUP` baseline params, swap ONLY the gate (single-SMA → 3-horizon EW participation multiplier), same vol-target/cap/cost/1-day-lag/IS-OOS. Tests: continuous-fraction ensemble, discrete-majority (≥2/3), TSMOM 3/6/12mo variant, +1-day canary (decisive leak test), turnover/cost sensitivity 0/2/5bps, per-regime attribution.
-- Bar: beats single-SMA-200 baseline OOS net 2bps AND survives +1-day canary AND both SMA+TSMOM representations agree. Honesty rail: EW-across-horizons, NO per-horizon weight tuning.
-- Paper-only: subagent restricted to reports/ writes; no runner/strategies/crontab/db/orders/spend. Status posted Discord (msg 1520323360721207297). Awaiting completion → verify on disk + report verdict.
-
-## MULTI-HORIZON TREND ENSEMBLE — NEGATIVE, single SMA-200 wins (2026-06-27, main-assigned)
-
-3-horizon EW trend vote (SMA-50/100/200) vs single SMA-200 gate on the LIVE TQQQ vol-target sleeve. Honest harness (D+1 lag, 2bps, T-bill cash, target25%/20d rvol, FULL/IS≤2018/OOS>2018 FP-cont Sharpe, +1-day-lag canary). EW-only (no horizon weight tuning).
-
-**VERDICT: NEGATIVE — no promotion, lane CLOSED for the leveraged single-name sleeve.**
-- baseline (single SMA-200, live): FULL Sharpe **0.854**, OOS **0.987**, CAGR 20.5%, maxDD −34.5%. (Reproduces documented anchor → my reimplemented loop is faithful.)
-- ens_majority (≥2-of-3): WORSE everywhere — FULL Δ−0.128, OOS Δ−0.195, AND deeper DD (−37.5%/OOS −36.1%). Fast SMA-50/100 flip up early → buys failed bounces, 3x punishes the reversal.
-- ens_fraction (continuous EW vote n_up/3): also dominated — FULL Δ−0.057, OOS Δ−0.068, OOS maxDD −30.7% vs baseline −24.4%.
-- **CANARY TELL:** both ensembles' OOS Sharpe IMPROVES under +1-day stale (+0.082/+0.048) → fast horizons add whipsaw/noise not timing edge (a real edge DECAYS with lag). Baseline lag-invariant (decay 0.000) = clean incumbent.
-
-**WHY AQR/Man doesn't transfer:** horizon-diversification is a MULTI-ASSET-PORTFOLIO technique (dozens of uncorrelated futures, different horizons fire on different markets). On ONE 3x instrument the 3 horizons read the same QQQ price → highly correlated → no diversification to harvest; fast horizons only add early chop re-entry that a 3x sleeve punishes. Mechanism sound where AQR applies it; our sleeve is wrong shape.
-
-RE-OPEN TRIGGER: only if a genuine multi-asset trend sleeve is built (several uncorrelated futures/ETFs) — then horizon-ensembling there is worth a fresh test. NOT on TQQQ.
-BONUS: independently re-confirmed live sleeve anchor (0.854) + perfect +1-day-lag robustness → sleeve not timing-fragile.
-
-Integrity: 4 protected runner md5s UNCHANGED; engine files untouched (mtime 06-09, read-only import); live leveraged_long_trend_paper + allocator_blend untouched; no orders/spend/config. Report `reports/MULTIHORIZON_TREND_ENSEMBLE_20260627.md`, driver `reports/_multihorizon_trend_ensemble_driver.py`, datapack `_multihorizon_trend_ensemble_result.json`.
-
-NOTE: FX-carry 2nd-leg subagent (launched late 06-26) COMPLETED overnight → `reports/FX_CARRY_LEG_20260627T065031Z.md` (06:55) on disk. Main said "H1 carry fully closed" → consistent; holding per main's "hold FX-carry for Monday" (no action taken on it this session).
-
-## Multi-horizon trend-ensemble gate vs single-SMA-200 on TQQQ vol-target sleeve (subagent, paper research)
-- THESIS: AQR/Man "horizon diversification" — does a 3-horizon EW trend-ensemble gate (SMA-50/100/200 vote, or 3/6/12mo TSMOM vote) beat the single SMA-200 gate on the live TQQQ vol-target sleeve OOS net of cost, surviving the +1-day canary?
-- Reused validated engine (backtest_daily_voltarget) EXACTLY: vol-target 0.25, vol_window 20, w_max 1.0, 2bps-on-abs-weight cost, T-bill cash, D->D+1 lag, OOS split 2018-01-01. Only the GATE changed (participation fraction g in {0,1/3,2/3,1} multiplies vol-target weight). EW-across-horizons, NO per-horizon weight tuning.
-- BASELINE reproduced faithfully: full +2,002% / Sfp 0.854 / mdd -34.5%; OOS +386.6% / Sfp 0.858 / mdd -34.5%. Matches TQQQ_VOLTARGET_GATE_WRITEUP (optimistic 2bps-no-ER rung +2,026%, OOS +368% to 2026-06-08). SPX OOS +175% matches doc +174.7%.
-- VERDICT = **CLOSE (clean negative).** Every ensemble variant LOSES to single SMA-200 baseline OOS:
-  - sma_frac: OOS ΔSfp -0.025, Δtot -67.8pp
-  - sma_majority (>=2/3): OOS ΔSfp -0.159, Δtot -154.3pp
-
-_…(truncated; 259 total lines in source)_
+- No active sessions today. Nightly distill pass ran at 02:00 PT.
+- State carry-forward from yesterday:
+  - Live roster: 6 strategies (breakout_xlk pulled, allocator breadth-gated)
+  - Monday 06-29 mutation pass: verified-runnable via dry-run (harness healthy)
+  - Barroso momentum-crash-aware sizing: CLEAN NO-GO (all 4 variants; canary falsifies timing; no engine writes)
+  - All 6 protected hard-rail files: md5s unchanged
+- MEMORY.md current; no stale entries found.
 
 ### BACKLOG.md
 
@@ -497,15 +402,17 @@ _…(truncated; 280 total lines in source)_
 
 ## making-money
 
-### Latest daily memory: `memory/2026-06-27.md`
+### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-27
+# 2026-06-28
 
-## Nightly distill — 2026-06-27 02:20 PT
+## Nightly distill — 2026-06-28 02:20 PT
 - No Cyrus interaction or new work today.
-- State unchanged from 06-26: batch 1 (15 emails) delivered clean; batch 2 (38 remaining prospects) queued, waiting on Cyrus go/no-go.
-- EXP-3 PagePeek still running; verdict window ~2026-07-04.
-- MEMORY.md reviewed — nothing new to promote; no stale entries found.
+- State unchanged from 06-27 EOD: 42 agency emails sent total (batch1: 15, batch2: 27), 2 bounces (Cooney Law, Allante Life Med Spa). 25/27 batch2 clean.
+- Booking link live: cal.com/cyshek/15min — waiting on reply data.
+- Agency-reply-monitor cron active (every 2h, job b2ac77a9), will flag prospect replies to channel.
+- EXP-3 (PagePeek) still in organic install window; verdict ~2026-07-04.
+- MEMORY.md reviewed — no new durable lessons to promote, no stale entries found.
 
 ### BACKLOG.md
 

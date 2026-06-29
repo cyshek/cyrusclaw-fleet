@@ -1,0 +1,133 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/1x/d718036a-530c-40cd-bfed-63ce8e64dc75",
+  "org": "1x",
+  "job_id": "d718036a-530c-40cd-bfed-63ce8e64dc75",
+  "job_title": "Robot Operations Manager PM ",
+  "job_location": "San Carlos, CA",
+  "fetched_at": "2026-06-29T05:11:31Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 7,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902__systemfield_name"
+    },
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902__systemfield_email"
+    },
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902__systemfield_resume"
+    },
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902_9b74b690-81c0-4cb1-a866-e373246f178a",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902_9b74b690-81c0-4cb1-a866-e373246f178a"
+    },
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902_355a2d86-d576-4c2b-b5c0-a411348780c3",
+      "label": "Will you require visa sponsorship now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902_355a2d86-d576-4c2b-b5c0-a411348780c3"
+    },
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902_630f6006-b6b5-487f-bf03-abbce3314fd6",
+      "label": "Please share your LinkedIn profile.",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902_630f6006-b6b5-487f-bf03-abbce3314fd6"
+    },
+    {
+      "id": "615874c7-c72c-4338-a716-17879336c902_bfcb382b-1f09-4d72-8ffd-194b0c636446",
+      "label": "Please share links to GitHub, portfolio, publications, or hardware projects (if applicable).",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "615874c7-c72c-4338-a716-17879336c902_bfcb382b-1f09-4d72-8ffd-194b0c636446"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

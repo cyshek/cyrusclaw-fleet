@@ -1,0 +1,177 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/liquid-ai/e560189f-f3a7-4fc9-8b16-5d05ecefe629",
+  "org": "liquid-ai",
+  "job_id": "e560189f-f3a7-4fc9-8b16-5d05ecefe629",
+  "job_title": "Product Manager",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-29T08:03:29Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405__systemfield_name",
+      "section": "Your Information"
+    },
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405__systemfield_email",
+      "section": "Your Information"
+    },
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405_8b66cab7-1e52-4bd7-aabd-61cc77cbebbe",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405_8b66cab7-1e52-4bd7-aabd-61cc77cbebbe",
+      "section": "Your Information"
+    },
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405_c7fc17e7-0342-43f3-816f-f00cfbbec89d",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405_c7fc17e7-0342-43f3-816f-f00cfbbec89d",
+      "section": "Your Information"
+    },
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405_ce563b1e-3c62-495c-b550-9d99b738e586",
+      "label": "Where are you currently located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['San Francisco / Bay area', 'Boston metro area', 'Other US location (open to relocation)', 'Other US location (remote only)', 'Outside the US (open to relocation)', 'Outside the US (remote only)']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "San Francisco / Bay area",
+          "value": "San Francisco / Bay area"
+        },
+        {
+          "label": "Boston metro area",
+          "value": "Boston metro area"
+        },
+        {
+          "label": "Other US location (open to relocation)",
+          "value": "Other US location (open to relocation)"
+        },
+        {
+          "label": "Other US location (remote only)",
+          "value": "Other US location (remote only)"
+        },
+        {
+          "label": "Outside the US (open to relocation)",
+          "value": "Outside the US (open to relocation)"
+        },
+        {
+          "label": "Outside the US (remote only)",
+          "value": "Outside the US (remote only)"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405_ce563b1e-3c62-495c-b550-9d99b738e586",
+      "section": "Your Information",
+      "match_attempted": true
+    },
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405__systemfield_resume",
+      "section": "Your Information"
+    },
+    {
+      "id": "34e34950-b30c-43b7-af17-f03446bb7405_f169cf6f-0bfe-455c-80cb-264a3118c27c",
+      "label": "How did you hear about Liquid AI?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Twitter/X",
+          "value": "Twitter/X"
+        },
+        {
+          "label": "Hugging Face ",
+          "value": "Hugging Face "
+        },
+        {
+          "label": "Research Paper",
+          "value": "Research Paper"
+        },
+        {
+          "label": "Referral",
+          "value": "Referral"
+        },
+        {
+          "label": "Recruiter",
+          "value": "Recruiter"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "34e34950-b30c-43b7-af17-f03446bb7405_f169cf6f-0bfe-455c-80cb-264a3118c27c",
+      "section": "Your Information"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

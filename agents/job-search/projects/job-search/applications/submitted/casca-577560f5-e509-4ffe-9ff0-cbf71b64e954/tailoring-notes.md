@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Partnered with enterprise customers (Databricks, Walmart, SAP, NetApp) to **architect end-to-end resilience solutions**, scaling Azure's recovery validation program from a 2-person operation into a platformized system driving **$14M+ business impact**.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining self-service scheduling requirements that cut operational toil by 30% and shifted execution to a scalable, production-grade deployment model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation standard.
+4. Served as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, directing 14 cross-org recovery executions under CTO-level executive visibility across complex multi-team environments.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — directly translating AI-powered tooling into measurable engineering throughput gains.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **production adoption of AI-driven code generation**, conducting user demos and training sessions that activated 14 key Azure service teams and delivered 37 engineering hours saved monthly in measurable developer productivity.
+2. Translated customer feedback into roadmap action by running **11+ user interviews** with Azure engineering teams, surfacing critical gaps that shaped intent-based YAML generation as a prioritized product requirement.
+3. Architected a metadata standards overhaul and migrated documentation to an **AI-powered semantic search** backend, cutting lookup time by 83% and demonstrating end-to-end ownership from design through deployment.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, accelerating region launches by 28% and generating **$3M in pull-forward revenue** for Azure's global infrastructure expansion.
+2. Conducted discovery with 20+ service teams to quantify 81 hours of manual effort per region launch, then built a **production roadmap** to automate critical paths and eliminate toil at scale across Azure's deployment pipeline.
+3. Engineered a **Power BI dashboard** to surface operational toil metrics across 140+ teams, enabling leadership to target automation gaps and prioritize high-impact engineering investments with data-backed precision.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined legacy OS migration strategy and mapped dependencies across 1,200+ stations, achieving **zero operational downtime** during a 2,000+ unit pilot transition with full stakeholder alignment across IT, Ops, and Engineering.
+2. Drove CI/CD pipeline implementation across cross-functional teams, **accelerating software deployment cycles by 25%** and establishing engineering best practices that reduced manual release overhead at scale.
+3. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process for a time-critical robotics platform migration.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Owned end-to-end execution of 200+ monthly proposals via a redesigned CRM system, translating complex customer requirements into scoped solutions that **increased job bookings by 26%** with measurable conversion impact.
+2. Executed a digital-first go-to-market strategy — optimizing website architecture and Google profile — that **reduced customer acquisition cost by 13%** and lifted conversion rates by 2.7% within a single quarter.
+3. Conducted financial analysis across **1,000+ project records** to identify margin leaks and deliver data-backed pricing recommendations, directly improving leadership's profitability models and strategic planning.
+
+## Notes from the rewriter
+- 'end-to-end' (JD: 'Architect and build end-to-end systems') woven into microsoft_ft bullet 1 and microsoft_2023 bullet 3 to mirror CTO-level ownership framing.
+- 'AI agent' / 'AI-powered tooling' (JD: 'AI models', 'LangChain', 'Vercel AI-SDK') surfaced in microsoft_ft bullet 5 and microsoft_2023 bullet 3 to signal hands-on AI system building.
+- 'production deployment' and 'production roadmap' (JD: 'design through production deployment', 'production-quality code') inserted in microsoft_ft bullet 2 and microsoft_2022 bullet 2 to match Casca's deployment ownership language.
+- 'translating customer requirements into solutions' (JD: 'translate critical business requirements into technical solutions') framed explicitly in pro_painters bullet 1 and microsoft_2023 bullet 2 to reflect FDE customer-partnering core.
+- 'engineering best practices' (JD: 'Learn and drive engineering best practices') embedded in amazon_robotics bullet 2 as a direct JD vocabulary mirror.
+

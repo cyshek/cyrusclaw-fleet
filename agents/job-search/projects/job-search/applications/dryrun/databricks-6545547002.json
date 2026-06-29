@@ -4,12 +4,12 @@
   "job_id": "6545547002",
   "job_title": "Solutions Architect - Manufacturing",
   "job_location": "Chicago, Illinois",
-  "fetched_at": "2026-05-23T14:16:35Z",
+  "fetched_at": "2026-06-29T05:43:46Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs/6545547002?questions=true",
   "ready_to_submit": true,
   "counts": {
-    "total_fields": 20,
-    "filled": 16,
+    "total_fields": 21,
+    "filled": 17,
     "filled_needs_review": 0,
     "declined": 4,
     "unresolved": 0,
@@ -36,6 +36,17 @@
       "source": "identity.last_name",
       "status": "filled",
       "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
       "options": null
     },
     {
@@ -143,7 +154,7 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "Yes",
-      "source": "work_authorization.authorized_to_work_us",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
       "status": "filled",
       "matched_rule": "work_authorized",
       "options": [
@@ -407,5 +418,17 @@
     }
   ],
   "unresolved": [],
-  "blockers": []
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
 }

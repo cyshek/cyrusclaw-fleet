@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing cross-functional workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP,
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable delivery model across global engineering teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a **rack-level drill program** in 4 months with a 94% recovery rate — surfacing critical hardware defects and establishing a new continuous validation model aligned to system sub-system development schedules.
+4. Directed **14 cross-org recovery executions** under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, synchronizing supplier schedules, risk communication, and stakeholder alignment across global teams.
+5. Scaled team leverage through AI-driven automation, building an internal AI agent and restructuring planning workflows to **reduce planning cycle time by 39%** and increase drill capacity by 21%, enabling the program to absorb growing scope without headcount additions.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows across **14 engineering teams**, conducting user demos and structured training sessions that drove sustained utilization and saved 37 engineering hours monthly — directly reducing execution toil on cross-functional development
+2. Shaped the product roadmap to include **intent-based YAML generation** by facilitating 11+ user interviews with Azure service teams, surfacing critical feature gaps and translating technical requirements into prioritized, actionable backlog items for the engineering organization.
+3. Improved data integrity and cross-team information retrieval by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search platform, **cutting lookup time by 83%** and streamlining engineering workflows across globally distributed teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, synchronizing delivery schedules and dependencies across 140+ teams within a complex, multi-timezone program structure.
+2. Drove a product strategy to eliminate operational toil during region launches, conducting structured discovery with 20+ service teams to quantify **81 hours of manual effort** per region, then built and socialized a roadmap to automate critical-path deliverables across the program.
+3. Engineered a **Power BI dashboard** to track and visualize operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and communicate program health and risk posture clearly to senior stakeholders.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping hardware and software dependencies across 1,200+ stations, and coordinating delivery schedules with cross-functional engineering and operations teams.
+2. Facilitated Agile ceremonies — including sprint planning, backlog grooming, and retrospectives — prioritizing **40+ high-priority tickets** to stabilize the developer intake process and maintain schedule integrity across a multi-discipline robotics hardware and software program.
+3. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing integration risk across a globally coordinated hardware development and release program.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a structured CRM process that improved schedule tracking, delivery accuracy, and cross-team coordination across a high-volume operational program.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profiles to align outreach with prioritized customer segments and regional delivery capacity.
+3. Improved leadership pricing decisions by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through data-driven recommendations that directly informed resource allocation and program delivery prioritization.
+
+## Notes from the rewriter
+- JD term 'sub-system development schedules' woven into microsoft_ft bullet#3 — framing the rack-level drill program as tied to hardware sub-system development timelines, mirroring Apple's flex-PCBA/PCBA delivery language.
+- JD term 'supplier schedules' and 'global teams' woven into microsoft_ft bullet#4 — sovereign-cloud execution reframed to surface supplier coordination and global timezone synchronization, directly matching Apple EPM scope.
+- JD term 'dependency mapping' woven into amazon_robotics bullet#1 — OS migration reframed around hardware/software dependency mapping across 1,200+ stations, mirroring Apple's language around identifying and tracking cross-functional HW dependencies.
+- JD phrase 'synchronize the project with the development process' mirrored in microsoft_2022 bullet#1 — unified framework framed as synchronizing delivery schedules and dependencies across 140+ teams.
+- JD emphasis on 'risk identification and communication' surfaced in microsoft_ft bullet#3 and bullet#4 — surfacing critical hardware defects and communicating status/risk posture to management echoes Apple's EPM core responsibilities.
+

@@ -1,0 +1,279 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sierra/effd7cd2-8a28-4bae-a3b8-40720ba09717",
+  "org": "sierra",
+  "job_id": "effd7cd2-8a28-4bae-a3b8-40720ba09717",
+  "job_title": "Product Manager, Agent Development",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-29T05:23:09Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 13,
+    "filled": 11,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_name"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_email"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_bb870a7b-67ab-4a04-89af-47d4fc7d1895",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_bb870a7b-67ab-4a04-89af-47d4fc7d1895"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_location"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_91d82ee3-cdf8-4c25-85dd-af6ea85c6cfa",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_91d82ee3-cdf8-4c25-85dd-af6ea85c6cfa"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_f08b6e55-be67-47ca-8ed6-a88bbb454e14",
+      "label": "What's your favorite  junk food?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"What's your favorite\\xa0 junk food?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_f08b6e55-be67-47ca-8ed6-a88bbb454e14"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6__systemfield_resume"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_78d643e5-28f8-4c0b-ab62-575320cf5350",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_78d643e5-28f8-4c0b-ab62-575320cf5350"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_9be779eb-4de8-4ef5-ab1f-8c46497e1eb4",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_9be779eb-4de8-4ef5-ab1f-8c46497e1eb4"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_dfd867e7-04b1-4c88-a22a-a7993acf53b3",
+      "label": "Are you able to work from a Sierra office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes, I am based in one of Sierra's office locations.",
+      "source": "preferences.willing_to_travel_pct (>=25%) | smart-matched to option \"Yes, I am based in one of Sierra's office locations.\"",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes, I am based in one of Sierra's office locations.",
+          "value": "Yes, I am based in one of Sierra's office locations."
+        },
+        {
+          "label": "While I am not currently based in one of Sierra's office locations, I am open to relocation.",
+          "value": "While I am not currently based in one of Sierra's office locations, I am open to relocation."
+        },
+        {
+          "label": "No, I am not able to work from a Sierra office.",
+          "value": "No, I am not able to work from a Sierra office."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_dfd867e7-04b1-4c88-a22a-a7993acf53b3"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_04d593b3-ab57-46b4-8284-69fd1093932b",
+      "label": "We use Metaview, an AI notetaking tool, to streamline interviews by recoding and summarizing discussions, enabling interviewers to be fully present without manual notetaking. With your approval, it silently records notes during interviews. Can Metaview transcribe all your interviews?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_ai_notetaking_consent (auto-Yes per AI-disclosure policy: ok with recording for interview process)",
+      "status": "filled",
+      "matched_rule": "ai_notetaking_consent",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_04d593b3-ab57-46b4-8284-69fd1093932b"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_4b4e50fe-4a4f-4567-aaa9-8d53857829c6",
+      "label": "How did you hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Blog or news article",
+          "value": "Blog or news article"
+        },
+        {
+          "label": "Company website",
+          "value": "Company website"
+        },
+        {
+          "label": "Current employee",
+          "value": "Current employee"
+        },
+        {
+          "label": "Event",
+          "value": "Event"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        },
+        {
+          "label": "Podcast",
+          "value": "Podcast"
+        },
+        {
+          "label": "Search engine",
+          "value": "Search engine"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_4b4e50fe-4a4f-4567-aaa9-8d53857829c6"
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_452f3c78-6fe3-4978-a99b-11b2d190debd",
+      "label": "Anything else? (Optional)",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Anything else? (Optional)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "c2771dac-d685-45e2-b99e-192faa97bdc6_452f3c78-6fe3-4978-a99b-11b2d190debd"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_f08b6e55-be67-47ca-8ed6-a88bbb454e14",
+      "label": "What's your favorite  junk food?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"What's your favorite\\xa0 junk food?\""
+    },
+    {
+      "id": "c2771dac-d685-45e2-b99e-192faa97bdc6_452f3c78-6fe3-4978-a99b-11b2d190debd",
+      "label": "Anything else? (Optional)",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Anything else? (Optional)'"
+    }
+  ],
+  "blockers": []
+}

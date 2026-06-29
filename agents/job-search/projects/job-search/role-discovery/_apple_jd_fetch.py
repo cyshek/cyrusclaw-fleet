@@ -12,14 +12,14 @@ This script attaches to the already-running OpenClaw-managed browser over CDP
 Apple role URL, waits for the JD container to render, and emits a JD markdown
 body to stdout (or to --out <path>).
 
-Apple JD page DOM (stable ids, verified 2026-06-08):
-  #jd-job-summary               -> Summary block (incl. Posted / Role Number)
-  #jd-description               -> Description
-  #jd-key-qualifications        -> Key Qualifications (when present)
-  #jd-minimum-qualifications    -> Minimum Qualifications
-  #jd-preferred-qualifications  -> Preferred Qualifications
-  #jd-education-experience      -> Education & Experience (when present)
-  #jd-additional-requirements   -> Additional Requirements (when present)
+Apple JD page DOM (stable ids, verified 2026-06-29 -- UPDATED from jd-* to jobdetails-* ids):
+  #jobdetails-jobsummary                -> Summary block (incl. Posted / Role Number)
+  #jobdetails-jobdescription            -> Description
+  #jobdetails-responsibilities          -> Responsibilities (when present)
+  #jobdetails-minimumqualifications     -> Minimum Qualifications
+  #jobdetails-preferredqualifications   -> Preferred Qualifications
+  #jobdetails-posting-footer-0          -> Pay & Benefits (when present)
+  Legacy ids (#jd-description etc.) no longer present as of 2026-06.
 
 Apply/SSO is Apple-ID gated (2FA) and NOT IP-walled for JD pages, so no
 residential proxy is needed — the standard openclaw browser reaches these
@@ -65,13 +65,16 @@ _EXTRACT_JS = r"""
   const grab = (sel) => { const el = document.querySelector(sel); return el ? el.innerText.trim() : null; };
   const out = {};
   out.title = (document.querySelector('h1') && document.querySelector('h1').innerText.trim()) || document.title;
-  out.summary = grab('#jd-job-summary');
-  out.description = grab('#jd-description');
-  out.keyQuals = grab('#jd-key-qualifications');
-  out.minQuals = grab('#jd-minimum-qualifications');
-  out.prefQuals = grab('#jd-preferred-qualifications');
-  out.eduExp = grab('#jd-education-experience');
-  out.addReq = grab('#jd-additional-requirements');
+  // New-style IDs (jobs.apple.com updated 2026-06)
+  out.summary = grab('#jobdetails-jobsummary') || grab('#jd-job-summary');
+  out.description = grab('#jobdetails-jobdescription') || grab('#jd-description');
+  out.responsibilities = grab('#jobdetails-responsibilities');
+  out.keyQuals = grab('#jobdetails-keyqualifications') || grab('#jd-key-qualifications');
+  out.minQuals = grab('#jobdetails-minimumqualifications') || grab('#jd-minimum-qualifications');
+  out.prefQuals = grab('#jobdetails-preferredqualifications') || grab('#jd-preferred-qualifications');
+  out.eduExp = grab('#jobdetails-educationexperience') || grab('#jd-education-experience');
+  out.addReq = grab('#jobdetails-additionalrequirements') || grab('#jd-additional-requirements');
+  out.payBenefits = grab('#jobdetails-posting-footer-0');
   out.bodyLen = document.body ? document.body.innerText.length : 0;
   return out;
 }
@@ -80,11 +83,13 @@ _EXTRACT_JS = r"""
 _FIELD_BY_HEADING = {
     "Summary": "summary",
     "Description": "description",
+    "Responsibilities": "responsibilities",
     "Key Qualifications": "keyQuals",
     "Minimum Qualifications": "minQuals",
     "Preferred Qualifications": "prefQuals",
     "Education & Experience": "eduExp",
     "Additional Requirements": "addReq",
+    "Pay & Benefits": "payBenefits",
 }
 
 
@@ -124,6 +129,7 @@ def build_jd_markdown(data: dict) -> tuple[str, bool, dict]:
         parts.append("## Summary\n\n" + summary)
     for heading, field in (
         ("Description", "description"),
+        ("Responsibilities", "responsibilities"),
         ("Key Qualifications", "keyQuals"),
         ("Minimum Qualifications", "minQuals"),
         ("Preferred Qualifications", "prefQuals"),
@@ -139,8 +145,10 @@ def build_jd_markdown(data: dict) -> tuple[str, bool, dict]:
                 val = val[first_nl + 1 :].strip()
             parts.append(f"## {heading}\n\n{val}")
     jd_md = "\n\n".join(parts).strip()
-    has_core = bool((data.get("description") or "").strip()) or bool(
-        (data.get("minQuals") or "").strip()
+    has_core = (
+        bool((data.get("description") or "").strip())
+        or bool((data.get("minQuals") or "").strip())
+        or bool((data.get("responsibilities") or "").strip())
     )
     is_substantive = has_core and meta["bodyLen"] >= _BOILERPLATE_BODY_FLOOR and len(jd_md) >= 300
     return jd_md, is_substantive, meta
@@ -161,7 +169,7 @@ def fetch_via_cdp(url: str, cdp: str, timeout_ms: int, settle_ms: int) -> dict:
             # section or fall back to a fixed settle.
             try:
                 pg.wait_for_selector(
-                    "#jd-description, #jd-minimum-qualifications",
+                    "#jobdetails-jobdescription, #jobdetails-minimumqualifications",
                     timeout=min(timeout_ms, 20000),
                 )
             except Exception:

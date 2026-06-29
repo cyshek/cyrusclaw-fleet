@@ -1,12 +1,12 @@
 # Proof Archive — submitted applications
 
-_Auto-maintained by `proof_archiver.py`. Last run: 2026-06-28T08:15:01+00:00._
+_Auto-maintained by `proof_archiver.py`. Last run: 2026-06-29T08:15:01+00:00._
 
 Resume + filled-fields saved for EVERY submission. Live pre-submit screenshot sampled every 5th role (look for `screenshot: pending/done`).
 
 **Not posted to channel** — Cyrus shares on request only.
 
-Total archived: **1400**
+Total archived: **1439**
 
 | # | Date | Company | Role | id | Resume | Screenshot | Folder |
 |---|------|---------|------|----|--------|-----------|--------|
@@ -198,8 +198,10 @@ Total archived: **1400**
 | 3472 | 2026-06-24 | IXL Learning | IXL Product Manager | 3445 | ✅ | n/a | `2026-06-24-ixl-learning-3445` |
 | 3471 | 2026-06-24 | IXL Learning | Associate Product Manager, Rosetta Stone | 3443 | ✅ | n/a | `2026-06-24-ixl-learning-3443` |
 | 3470 | 2026-06-24 | IXL Learning | Associate Product Manager, Dictionary Medi | 3441 | ✅ | pending | `2026-06-24-ixl-learning-3441` |
+| 3467 | 2026-06-24 | Formlabs | Solutions Architect - Digital Systems | 3438 | ✅ | n/a | `2026-06-24-formlabs-3438` |
 | 3463 | 2026-06-24 | Cerebras | Product Manager, Strategic Verticals  | 3426 | ✅ | n/a | `2026-06-24-cerebras-3426` |
 | 3462 | 2026-06-24 | Cerebras | AI Models, Product Manager | 3425 | ✅ | n/a | `2026-06-24-cerebras-3425` |
+| 3458 | 2026-06-24 | OpenGov | Solutions Architect | 3420 | ✅ | n/a | `2026-06-24-opengov-3420` |
 | 3456 | 2026-06-24 | AngelList | Product Manager, Meridian | 3417 | ✅ | n/a | `2026-06-24-angellist-3417` |
 | 3455 | 2026-06-24 | AngelList | Product Manager, Funds | 3416 | ✅ | pending | `2026-06-24-angellist-3416` |
 | 3453 | 2026-06-24 | Veeva Systems | Vault Platform Pre-Sales Solution Architec | 3412 | ✅ | n/a | `2026-06-24-veeva-systems-3412` |
@@ -210,8 +212,10 @@ Total archived: **1400**
 | 3448 | 2026-06-24 | Veeva Systems | Product Manager - Vault CRM Suite | 3407 | ✅ | n/a | `2026-06-24-veeva-systems-3407` |
 | 3447 | 2026-06-24 | Veeva Systems | Global Program Manager - Commercial Life S | 3406 | ✅ | n/a | `2026-06-24-veeva-systems-3406` |
 | 3446 | 2026-06-24 | Veeva Systems | Associate Product Manager - Vault CRM Suit | 3405 | ✅ | n/a | `2026-06-24-veeva-systems-3405` |
+| 3445 | 2026-06-24 | 1X Technologies | Robot Operations Manager PM  | 3404 | — | pending | `2026-06-24-1x-technologies-3404` |
 | 3444 | 2026-06-24 | Nuro | People & Talent Program Manager | 3403 | ✅ | n/a | `2026-06-24-nuro-3403` |
 | 3443 | 2026-06-24 | Alloy | Solutions Engineer Associate | 3388 | ✅ | n/a | `2026-06-24-alloy-3388` |
+| 3442 | 2026-06-24 | Extend | Solutions Architect (Delivery) | 3387 | — | n/a | `2026-06-24-extend-3387` |
 | 3441 | 2026-06-24 | Paragon | Solutions Engineer (Post-Sales / Implement | 3380 | ✅ | n/a | `2026-06-24-paragon-3380` |
 | 3433 | 2026-06-24 | Waymo | Product Manager, Mapping (Real-time Disrup | 3370 | ✅ | n/a | `2026-06-24-waymo-3370` |
 | 3431 | 2026-06-24 | Waymo | Event Security Program Manager | 3368 | ✅ | n/a | `2026-06-24-waymo-3368` |
@@ -219,29 +223,49 @@ Total archived: **1400**
 | 3422 | 2026-06-24 | Avathon | Product Manager, Logistics & Transportatio | 3336 | ✅ | n/a | `2026-06-24-avathon-3336` |
 | 3421 | 2026-06-24 | Avathon | Product Manager, Integrated Demand Plannin | 3335 | ✅ | n/a | `2026-06-24-avathon-3335` |
 | 3419 | 2026-06-24 | Actively AI | Agent Product Manager | 3329 | ✅ | n/a | `2026-06-24-actively-ai-3329` |
+| 3418 | 2026-06-24 | Zuora | Product Manager, AI Platform | 3324 | ✅ | n/a | `2026-06-24-zuora-3324` |
 | 3417 | 2026-06-24 | PointClickCare | US- Technical Program Manager (PEO) | 3321 | ✅ | n/a | `2026-06-24-pointclickcare-3321` |
 | 3414 | 2026-06-24 | Cato Networks | Sales Engineer, SoCal | 3311 | ✅ | n/a | `2026-06-24-cato-networks-3311` |
 | 3413 | 2026-06-24 | Cato Networks | Sales Engineer, NorCal | 3310 | ✅ | n/a | `2026-06-24-cato-networks-3310` |
 | 3412 | 2026-06-24 | Cato Networks | Sales Engineer, NE/IA | 3309 | ✅ | n/a | `2026-06-24-cato-networks-3309` |
 | 3410 | 2026-06-24 | Salt Security | Solutions Engineer - Northeast | 3288 | ✅ | pending | `2026-06-24-salt-security-3288` |
 | 3409 | 2026-06-24 | Salt Security | Solutions Engineer - New York (Tri-State) | 3287 | ✅ | n/a | `2026-06-24-salt-security-3287` |
+| 3408 | 2026-06-24 | Benchling | Enterprise Solutions Architect | 3285 | ✅ | n/a | `2026-06-24-benchling-3285` |
+| 3403 | 2026-06-24 | Invert | Solutions Engineer  | 3269 | — | n/a | `2026-06-24-invert-3269` |
 | 3402 | 2026-06-24 | Legion Health | Technical Product Manager, Consumer + AI ( | 3266 | — | n/a | `2026-06-24-legion-health-3266` |
+| 3401 | 2026-06-24 | Casca | Forward Deployed Engineer | 3265 | ✅ | n/a | `2026-06-24-casca-3265` |
+| 3400 | 2026-06-24 | Verse Medical | Product Manager | 3253 | — | pending | `2026-06-24-verse-medical-3253` |
 | 3396 | 2026-06-24 | Sitetracker | Solution Architect | 3241 | ✅ | n/a | `2026-06-24-sitetracker-3241` |
+| 3395 | 2026-06-24 | Cartesia | Product Manager, Infrastructure | 3232 | ✅ | pending | `2026-06-24-cartesia-3232` |
 | 3394 | 2026-06-24 | Deepgram | Pre-Sales Solutions Engineer (San Francisc | 3222 | ✅ | n/a | `2026-06-24-deepgram-3222` |
 | 3393 | 2026-06-24 | Shield AI | Program Manager (R4930) | 3202 | ✅ | n/a | `2026-06-24-shield-ai-3202` |
+| 3391 | 2026-06-24 | Character.AI | Technical Program Manager, AI Infrastructu | 3193 | ✅ | n/a | `2026-06-24-character-ai-3193` |
 | 3390 | 2026-06-24 | Writer | Solutions architect (pre-sales) (West) | 3183 | ✅ | pending | `2026-06-24-writer-3183` |
 | 3389 | 2026-06-24 | Outreach | Forward Deployed Engineer – AI Revenue Age | 3180 | ✅ | n/a | `2026-06-24-outreach-3180` |
 | 3388 | 2026-06-24 | Intercom | Solutions Engineer - LATAM (Portuguese Spe | 3179 | ✅ | n/a | `2026-06-24-intercom-3179` |
+| 3387 | 2026-06-24 | Substack | Product Manager, Growth | 3175 | ✅ | n/a | `2026-06-24-substack-3175` |
+| 3386 | 2026-06-24 | Airtable | Product Manager, Funnel & Activation | 3171 | ✅ | n/a | `2026-06-24-airtable-3171` |
 | 3383 | 2026-06-24 | Canva | Product Manager - Algorithms (Flexible Lev | 3153 | — | n/a | `2026-06-24-canva-3153` |
 | 3382 | 2026-06-24 | Canva | Education Solutions Engineer | 3152 | — | n/a | `2026-06-24-canva-3152` |
+| 3380 | 2026-06-24 | Decagon | Technical Program Manager | 3149 | ✅ | pending | `2026-06-24-decagon-3149` |
+| 3379 | 2026-06-24 | Sierra | Product Manager, Agent Development - Flags | 3145 | ✅ | n/a | `2026-06-24-sierra-3145` |
+| 3378 | 2026-06-24 | Sierra | Product Manager, Agent Development (Brazil | 3144 | ✅ | n/a | `2026-06-24-sierra-3144` |
+| 3377 | 2026-06-24 | Sierra | Product Manager, Agent Development - Healt | 3143 | ✅ | n/a | `2026-06-24-sierra-3143` |
+| 3376 | 2026-06-24 | Sierra | Product Manager, Agent Development | 3142 | ✅ | n/a | `2026-06-24-sierra-3142` |
+| 3375 | 2026-06-24 | Sierra | Sales Engineer | 3141 | ✅ | pending | `2026-06-24-sierra-3141` |
 | 3374 | 2026-06-24 | xAI | Program Manager - Quality & Training (Safe | 3138 | ✅ | n/a | `2026-06-24-xai-3138` |
 | 3373 | 2026-06-24 | Palantir | Events Program Manager | 3132 | ✅ | n/a | `2026-06-24-palantir-3132` |
 | 3370 | 2026-06-24 | Fastly | Program Manager | 3126 | ✅ | pending | `2026-06-24-fastly-3126` |
 | 3361 | 2026-06-24 | Ramp | Product Manager / Generalist (All Levels) | 3109 | ✅ | n/a | `2026-06-24-ramp-3109` |
+| 3358 | 2026-06-24 | Axon | Manager, Solutions Architect | 3100 | ✅ | n/a | `2026-06-24-axon-3100` |
+| 3357 | 2026-06-24 | Plaid | Sales Engineer - Credit | 3096 | ✅ | n/a | `2026-06-24-plaid-3096` |
+| 3351 | 2026-06-24 | Instacart | Program Manager II | 3076 | ✅ | n/a | `2026-06-24-instacart-3076` |
 | 3342 | 2026-06-24 | Netflix | Program Manager, Live Media Operations - G | 3065 | — | n/a | `2026-06-24-netflix-3065` |
 | 3341 | 2026-06-24 | TikTok | Program Manager, Ads - San Jose | 3061 | — | n/a | `2026-06-24-tiktok-3061` |
 | 3332 | 2026-06-24 | Block | Solutions Engineer | 3027 | ✅ | n/a | `2026-06-24-block-3027` |
 | 3328 | 2026-06-24 | Stripe | Forward Deployed Engineer, Privy | 3019 | ✅ | n/a | `2026-06-24-stripe-3019` |
+| 3327 | 2026-06-24 | Roblox | Technical Program Manager, Data Science &  | 3013 | ✅ | n/a | `2026-06-24-roblox-3013` |
+| 3326 | 2026-06-24 | Roblox | Product Manager, Consumer Payments and Sub | 3012 | ✅ | n/a | `2026-06-24-roblox-3012` |
 | 3321 | 2026-06-24 | Meta | Product Manager (Probe Test) | 2985 | ✅ | n/a | `2026-06-24-meta-2985` |
 | 3318 | 2026-06-24 | Cape | Forward Deployed Engineer, East Asia | 2978 | ✅ | n/a | `2026-06-24-cape-2978` |
 | 3303 | 2026-06-24 | HackerRank | Forward Deployed Engineer | 2940 | ✅ | n/a | `2026-06-24-hackerrank-2940` |
@@ -272,6 +296,7 @@ Total archived: **1400**
 | 3000 | 2026-06-24 | 21shares US | Product Manager | 2314 | ✅ | pending | `2026-06-24-21shares-us-2314` |
 | 2983 | 2026-06-24 | Glean | Product Manager | 2296 | ✅ | n/a | `2026-06-24-glean-2296` |
 | 2975 | 2026-06-24 | Thumbtack | Product Manager, Pro Fulfillment | 2287 | ✅ | pending | `2026-06-24-thumbtack-2287` |
+| 2938 | 2026-06-24 | GitLab | Forward Deployed Engineer | 2231 | ✅ | n/a | `2026-06-24-gitlab-2231` |
 | 2905 | 2026-06-24 | Zinnia | Business Solutions Architect | 2184 | — | pending | `2026-06-24-zinnia-2184` |
 | 2900 | 2026-06-24 | Netskope | Solutions Architect | 2178 | ✅ | pending | `2026-06-24-netskope-2178` |
 | 2868 | 2026-06-24 | Metronome | Solutions Engineer, Enterprise | 2139 | — | n/a | `2026-06-24-metronome-2139` |
@@ -286,7 +311,12 @@ Total archived: **1400**
 | 2758 | 2026-06-24 | Netflix | Product Manager, Messaging Enablement Plat | 2000 | — | n/a | `2026-06-24-netflix-2000` |
 | 2756 | 2026-06-24 | Netflix | Product Manager, Games Discovery | 1998 | — | n/a | `2026-06-24-netflix-1998` |
 | 2755 | 2026-06-24 | Meta | Product Manager | 1997 | ✅ | pending | `2026-06-24-meta-1997` |
+| 2737 | 2026-06-24 | Plaid | Brand Marketing Program Manager | 1940 | ✅ | n/a | `2026-06-24-plaid-1940` |
 | 2732 | 2026-06-24 | TikTok | TikTok Shop - Voice of Customer/Service In | 1930 | — | n/a | `2026-06-24-tiktok-1930` |
+| 2456 | 2026-06-24 | NVIDIA | Solutions Architect, Agentic AI | 1594 | ✅ | n/a | `2026-06-24-nvidia-1594` |
+| 2455 | 2026-06-24 | NVIDIA | Solutions Architect, Applied AI Builder | 1593 | ✅ | pending | `2026-06-24-nvidia-1593` |
+| 2442 | 2026-06-24 | NVIDIA | Solutions Architect, Networking - CSP | 1579 | ✅ | n/a | `2026-06-24-nvidia-1579` |
+| 2440 | 2026-06-24 | NVIDIA | Solutions Architect, Infrastructure | 1577 | ✅ | pending | `2026-06-24-nvidia-1577` |
 | 2435 | 2026-06-24 | Clay | Solutions Engineer Manager | 1571 | ✅ | pending | `2026-06-24-clay-1571` |
 | 2430 | 2026-06-24 | Hebbia | Solutions Engineer - Partnerships | 1565 | — | pending | `2026-06-24-hebbia-1565` |
 | 2427 | 2026-06-24 | Hebbia | Solutions Engineer | 1561 | — | n/a | `2026-06-24-hebbia-1561` |
@@ -308,10 +338,14 @@ Total archived: **1400**
 | 2218 | 2026-06-24 | FloWorks | Field Sales Engineer | 1277 | — | n/a | `2026-06-24-floworks-1277` |
 | 2202 | 2026-06-24 | CoreWeave | Technical Program Manager, IaaS | 1259 | ✅ | n/a | `2026-06-24-coreweave-1259` |
 | 2195 | 2026-06-24 | CoreWeave | Product Manager, Data Center | 1252 | ✅ | pending | `2026-06-24-coreweave-1252` |
+| 2183 | 2026-06-24 | Mercor | Program Manager, Quality | 1236 | ✅ | n/a | `2026-06-24-mercor-1236` |
 | 2177 | 2026-06-24 | Salesforce | Product Manager, Pricing & Product Operati | 1222 | — | n/a | `2026-06-24-salesforce-1222` |
+| 2172 | 2026-06-24 | Lyft | Product Manager, Driver Earnings | 1217 | — | n/a | `2026-06-24-lyft-1217` |
 | 2168 | 2026-06-24 | Moment | Forward Deployed Engineer | 1213 | ✅ | n/a | `2026-06-24-moment-1213` |
+| 2141 | 2026-06-24 | NVIDIA | Solutions Architect – OEM AI | 1182 | ✅ | n/a | `2026-06-24-nvidia-1182` |
 | 2132 | 2026-06-24 | OP | Solutions Architect | 1169 | ✅ | n/a | `2026-06-24-op-1169` |
 | 2109 | 2026-06-24 | Taboola | Solution Engineer | 1137 | — | n/a | `2026-06-24-taboola-1137` |
+| 2107 | 2026-06-24 | NVIDIA | Solutions Architect, Supercomputing | 1132 | ✅ | n/a | `2026-06-24-nvidia-1132` |
 | 2063 | 2026-06-24 | Lila Sciences | Technical Program Manager, AI Safety | 1075 | ✅ | n/a | `2026-06-24-lila-sciences-1075` |
 | 2056 | 2026-06-24 | Lila Sciences | Materials Technical Program Manager | 1068 | ✅ | n/a | `2026-06-24-lila-sciences-1068` |
 | 2050 | 2026-06-24 | Quanata | Technical Program Manager II [Remote-US] | 1062 | — | pending | `2026-06-24-quanata-1062` |
@@ -322,6 +356,7 @@ Total archived: **1400**
 | 1965 | 2026-06-24 | Anduril | Forward Deployed Engineer, Mission Autonom | 960 | ✅ | pending | `2026-06-24-anduril-960` |
 | 1964 | 2026-06-24 | Adobe | Program Manager | 959 | ✅ | n/a | `2026-06-24-adobe-959` |
 | 1961 | 2026-06-24 | Anduril | Technical Program Manager, Frontier System | 949 | ✅ | n/a | `2026-06-24-anduril-949` |
+| 1956 | 2026-06-24 | Wiz | Solutions Engineer, Growth - West | 916 | ✅ | n/a | `2026-06-24-wiz-916` |
 | 1952 | 2026-06-24 | Vercel | Solutions Architect | 911 | ✅ | n/a | `2026-06-24-vercel-911` |
 | 1951 | 2026-06-24 | Vercel | Forward Deployed Engineer, v0 | 909 | ✅ | n/a | `2026-06-24-vercel-909` |
 | 1914 | 2026-06-24 | Scale AI | Product Manager, Trust & Safety | 846 | ✅ | n/a | `2026-06-24-scale-ai-846` |
@@ -343,6 +378,10 @@ Total archived: **1400**
 | 1774 | 2026-06-24 | HPE | HPC/AI Product Manager | 675 | — | n/a | `2026-06-24-hpe-675` |
 | 1756 | 2026-06-24 | Glean | Founding Forward Deployed Engineer | 655 | ✅ | n/a | `2026-06-24-glean-655` |
 | 1750 | 2026-06-24 | Elastic | Solutions Architect - Nashville - SLED | 641 | ✅ | pending | `2026-06-24-elastic-641` |
+| 1733 | 2026-06-24 | Datadog | Product Manager II - AI & Data Security | 617 | ✅ | n/a | `2026-06-24-datadog-617` |
+| 1731 | 2026-06-24 | Databricks | Solutions Architect | 613 | ✅ | n/a | `2026-06-24-databricks-613` |
+| 1729 | 2026-06-24 | Databricks | Solutions Architect - Manufacturing | 611 | ✅ | n/a | `2026-06-24-databricks-611` |
+| 1727 | 2026-06-24 | Databricks | Solutions Architect | 608 | ✅ | n/a | `2026-06-24-databricks-608` |
 | 1724 | 2026-06-24 | Cresta | Enterprise Solutions Engineer | 605 | ✅ | n/a | `2026-06-24-cresta-605` |
 | 1157 | 2026-06-24 | Anduril | Technical Program Manager, Frontier System | 24 | ✅ | n/a | `2026-06-24-anduril-24` |
 | 1156 | 2026-06-24 | Anduril | Program Manager, Safety and Standards | 21 | ✅ | n/a | `2026-06-24-anduril-21` |

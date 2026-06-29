@@ -1,6 +1,6 @@
-ABORT-JD-FETCH — 2026-06-23T17:58:15+00:00
+ABORT-JD-FETCH — 2026-06-29T05:01:06+00:00
 
-role_id: 1532
+role_id: 2784
 phase: jd-fetch
 error:
 HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/raft/jobs/5968743004

@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Owned the **product roadmap** for Azure's resilience validation platform, standardizing workflows to sustain 45+ annual drills and deliver **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining self-service scheduling requirements that reduced operational toil by 30% and scaled execution without proportional headcount growth.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a continuous validation model.
+4. Directed 14 cross-org recovery executions under executive visibility, including bridge lead for a **sovereign-cloud network isolation** test tied to a $1.5B+ enterprise contract requiring strict data security posture compliance.
+5. Built an internal **AI agent** to automate drill planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21%, translating complex infrastructure risk into scalable, repeatable product execution.
+6. Defined and tracked **adoption and usage metrics** across the platform lifecycle, partnering with engineering and design from concept through iteration to ensure features measurably improved customer security workflows.
+7. Engaged enterprise partners to validate AI-driven automation features against real operational risk patterns, using customer feedback to inform roadmap prioritization and accelerate **secure, scalable adoption**.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven code generation capabilities, conducting user demos and training that increased utilization across 14 Azure service teams and saved **37 engineering hours** monthly in production workflows.
+2. Shaped the product roadmap by facilitating **11+ customer interviews** with Azure engineering teams to surface critical feature gaps, directly influencing prioritization of intent-based YAML generation as a new capability.
+3. Improved **data security posture** of internal documentation by implementing metadata standards and migrating content to an AI-powered semantic search tool, cutting information lookup time by 83% across teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on an automation prioritization framework spanning 140+ teams across Azure infrastructure.
+2. Defined a product strategy to reduce operational risk during region launches, running discovery with 20+ service teams to identify **81 hours of manual toil** per region and building a roadmap to automate critical execution paths.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and manage risk visibility across the cloud infrastructure lifecycle.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot by defining the legacy OS migration strategy, mapping security and dependency risks across 1,200+ stations in a large-scale cloud-adjacent infrastructure environment.
+2. Prioritized a backlog of 40+ high-severity tickets across sprint cycles, facilitating Agile ceremonies to stabilize the developer intake process and ensure **secure, continuous delivery** of robotics software in production.
+3. Aligned IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing configuration risk across distributed robotics infrastructure.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, redesigning the CRM process to reduce data exposure risk and improve operational data integrity.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search visibility to scale secure customer acquisition.
+3. Identified and sealed **margin leaks** by conducting financial profitability analysis across 1,000+ project records, translating complex data patterns into clear pricing policy recommendations for leadership.
+
+## Notes from the rewriter
+- 'data security posture' (JD term) woven into microsoft_ft bullet#4 (sovereign-cloud isolation/compliance framing) and microsoft_2023 bullet#3 (documentation metadata standards).
+- 'secure, scalable adoption' (JD phrase) used verbatim in microsoft_ft bullet#7, grounding customer engagement work in AI security adoption context Datadog explicitly calls out.
+- 'AI agent' and 'production environments' (JD terms) surfaced in microsoft_ft bullet#5, directly mirroring Datadog's focus on AI systems risk in production.
+- 'customer interviews' and 'feedback to inform roadmap prioritization' (JD language) mirrored in microsoft_2023 bullet#2, aligning intern user research to Datadog's customer-validation PM model.
+- 'configuration risk' and 'continuous delivery' (JD-adjacent security posture vocabulary) embedded in amazon_robotics bullets#1 and #3 to show technical security awareness across infrastructure contexts.
+

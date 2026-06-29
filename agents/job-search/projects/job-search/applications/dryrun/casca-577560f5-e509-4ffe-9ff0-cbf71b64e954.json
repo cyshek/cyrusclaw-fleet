@@ -1,0 +1,133 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/casca/577560f5-e509-4ffe-9ff0-cbf71b64e954",
+  "org": "casca",
+  "job_id": "577560f5-e509-4ffe-9ff0-cbf71b64e954",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco",
+  "fetched_at": "2026-06-29T06:00:04Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 7,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2__systemfield_name"
+    },
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2__systemfield_email"
+    },
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2__systemfield_resume"
+    },
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_14bbd45b-acbf-42a2-972a-fee612f351e8",
+      "label": "What's the most exceptional thing you've achieved or built? This could be technical, competitive, or in any other domain (sport, hobby, talent, etc.)",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_14bbd45b-acbf-42a2-972a-fee612f351e8"
+    },
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_f78c2d7c-38d8-4762-b205-a8a1ad7d5d26",
+      "label": "Are you willing to work in-person out of our San Francisco office?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_f78c2d7c-38d8-4762-b205-a8a1ad7d5d26"
+    },
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_66bc24f6-e17b-4b63-8d1f-a2bb5bf67727",
+      "label": "Will you require visa sponsorship now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_66bc24f6-e17b-4b63-8d1f-a2bb5bf67727"
+    },
+    {
+      "id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_68a667eb-82d3-4c48-9c00-3dea9d21fa68",
+      "label": "If yes, can you tell us about your current work authorization status and any sponsorship needs? Please specify, such as H1B transfer/new H1B/TN/etc. If no, please put N/A.",
+      "type": "input_text",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "e0f4c8cf-4425-485a-9ef0-3d3555e91ea2_68a667eb-82d3-4c48-9c00-3dea9d21fa68"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

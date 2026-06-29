@@ -4,16 +4,16 @@
   "job_id": "7403855",
   "job_title": "Technical Program Manager, Onboard Systems",
   "job_location": "Mountain View, CA, USA",
-  "fetched_at": "2026-06-24T04:34:43Z",
+  "fetched_at": "2026-06-29T08:04:05Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/waymo/jobs/7403855?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 21,
-    "filled": 18,
+    "filled": 19,
     "filled_needs_review": 1,
     "declined": 0,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -294,10 +294,10 @@
       "label": "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label=\"To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.\"",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "I acknowledge the above policies",
+      "source": "acknowledge_yes (single option 'I acknowledge the above policies')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "I acknowledge the above policies",
@@ -395,21 +395,9 @@
       "label": "If yes, please provide your LDAP.",
       "required": false,
       "reason": "no LABEL_RULES match for label='If yes, please provide your LDAP.'"
-    },
-    {
-      "id": "question_65048912",
-      "label": "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label=\"To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.\""
     }
   ],
-  "blockers": [
-    {
-      "id": "question_65048912",
-      "label": "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.",
-      "reason": "no LABEL_RULES match for label=\"To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.\""
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

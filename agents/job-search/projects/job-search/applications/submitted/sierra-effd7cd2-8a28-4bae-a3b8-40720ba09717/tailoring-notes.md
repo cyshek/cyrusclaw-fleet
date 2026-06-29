@@ -1,0 +1,45 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Built and shipped **enterprise-grade AI agents** for resilience drill planning, cutting planning cycle time by 39% and increasing drill capacity by 21% across Azure's largest customers.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and self-service scheduling features that reduced operational toil by **30%** and scaled execution across enterprise accounts.
+3. Scaled Azure's recovery validation program from a 2-person operation into a platformized system, standardizing workflows to sustain **45+ annual resilience drills** and drive $14M+ business impact across Databricks, Walmart, SAP, and NetApp.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation model.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **AI agent adoption** for code generation workflows, conducting customer demos and training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ customer discovery interviews** with Azure service teams to surface critical feature gaps and unmet business process needs.
+3. Improved data retrieval by migrating documentation to an **AI-powered semantic search** tool with rigorous metadata standards, cutting lookup time by 83% for technical and non-technical users alike.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Drove product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to identify 81 hours of manual effort per region and building a **roadmap to automate critical paths**.
+3. Enabled leadership to target automation gaps by engineering a Power BI dashboard tracking toil across **140+ teams**, directly informing roadmap prioritization for high-impact customer-facing improvements.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations.
+2. Partnered with IT, Operations, and Engineering to implement automated CI/CD pipelines, accelerating the **software deployment cycle by 25%** and unblocking customer-facing feature delivery.
+3. Prioritized the backlog across Agile sprint cycles, resolving **40+ high-priority tickets** and stabilizing the developer intake process to sustain product velocity.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by managing end-to-end scoping and invoicing for 200+ monthly proposals, redesigning the CRM workflow to anticipate customer needs and accelerate conversion.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google profile for target customer segments.
+3. Improved leadership pricing models by conducting **profitability analysis** across 1,000+ project records to identify and close margin leaks, directly informing strategic business decisions.
+
+## Notes from the rewriter
+- 'AI agents' woven into microsoft_ft bullet 1 and microsoft_2023 bullet 1, directly mirroring JD title and core responsibility of building/shipping AI agents.
+- 'Customer discovery' and 'business process' language from JD used in microsoft_2023 bullet 2 and microsoft_2022 bullet 2, mirroring JD's 'discover and assess requirements' and 'business process' framing.
+- 'Enterprise-grade' from JD's 'enterprise-grade AI agents' used in microsoft_ft bullet 1; 'enterprise accounts' in bullet 2 mirrors JD's customer obsession and enterprise customer context.
+- 'Product roadmap' shaping language from JD's 'shape the product roadmap' section surfaced in microsoft_2023 bullet 2 and microsoft_2022 bullet 2 to match JD vocabulary precisely.
+- 'Go-to-market' in pro_painters mirrors JD's MBA/business role callout under 'Even better,' positioning Cyrus as commercially aware beyond pure PM scope.
+

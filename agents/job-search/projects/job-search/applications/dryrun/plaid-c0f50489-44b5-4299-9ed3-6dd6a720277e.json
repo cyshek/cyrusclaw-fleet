@@ -1,0 +1,394 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/plaid/c0f50489-44b5-4299-9ed3-6dd6a720277e",
+  "org": "plaid",
+  "job_id": "c0f50489-44b5-4299-9ed3-6dd6a720277e",
+  "job_title": "Sales Engineer - Credit",
+  "job_location": "Remote United States",
+  "fetched_at": "2026-06-29T05:50:00Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 18,
+    "filled": 15,
+    "filled_needs_review": 2,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_resume",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_name",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_email",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_b6586651-4b41-475f-9ad6-8295bc68d14c",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_b6586651-4b41-475f-9ad6-8295bc68d14c",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_location",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_education_history",
+      "label": "School",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "EducationHistory",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b__systemfield_education_history",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_c38ada9b-9b66-46ae-be6a-9c0be11b1c4c",
+      "label": "Preferred Work Location",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['San Francisco HQ', 'New York City Office', 'Seattle Office', 'Raleigh Office', 'Remote US', 'London Office', 'Amsterdam Office', 'Remote Canada']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "San Francisco HQ",
+          "value": "San Francisco HQ"
+        },
+        {
+          "label": "New York City Office",
+          "value": "New York City Office"
+        },
+        {
+          "label": "Seattle Office",
+          "value": "Seattle Office"
+        },
+        {
+          "label": "Raleigh Office",
+          "value": "Raleigh Office"
+        },
+        {
+          "label": "Remote US",
+          "value": "Remote US"
+        },
+        {
+          "label": "London Office",
+          "value": "London Office"
+        },
+        {
+          "label": "Amsterdam Office",
+          "value": "Amsterdam Office"
+        },
+        {
+          "label": "Remote Canada",
+          "value": "Remote Canada"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_c38ada9b-9b66-46ae-be6a-9c0be11b1c4c",
+      "section": "General Application",
+      "match_attempted": true
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_687b3361-536e-425d-81dd-ff7fd90d0a42",
+      "label": "Current/Last Company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_687b3361-536e-425d-81dd-ff7fd90d0a42",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_a62b9b56-1667-44cf-91c4-cded3b03ec25",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_a62b9b56-1667-44cf-91c4-cded3b03ec25",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_ef4889bc-55bc-4eec-819d-04751b9806c1",
+      "label": "GitHub",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_ef4889bc-55bc-4eec-819d-04751b9806c1",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_d437b29e-57a4-45ce-a828-e8fdc36153fe",
+      "label": "Portfolio",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "portfolio optional + portfolio_url=null -> blank",
+      "status": "filled",
+      "matched_rule": "portfolio",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_d437b29e-57a4-45ce-a828-e8fdc36153fe",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_564f5ebb-59e7-403e-8cdf-7d96e4daa3ef",
+      "label": "Other URL",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Other URL'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_564f5ebb-59e7-403e-8cdf-7d96e4daa3ef",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_cf26d652-4890-489c-b5ec-7f7e8538d1d5",
+      "label": "Have you ever been previously employed by Plaid, Quovo or Cognito?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "common_form_answers.previously_employed_by_company",
+      "status": "filled",
+      "matched_rule": "previously_employed",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_cf26d652-4890-489c-b5ec-7f7e8538d1d5",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_fce0d060-0d2d-4ae5-9832-1b1010adb270",
+      "label": "Will you now or in the future require Plaid to provide immigration-related support or sponsorship in order to employ you?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_fce0d060-0d2d-4ae5-9832-1b1010adb270",
+      "section": "General Application"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_55cd0838-aa7a-43cd-b808-ecfda77608fc",
+      "label": "Why are you interested in working at Plaid? Select all that apply.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Plaid because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Plaid is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Plaid while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Plaid aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Plaid') | NOTE: 'I'm excited about the opportunity to work at Plaid because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Plaid is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Plaid while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Plaid aligns strongly with those values, which makes the opportunity especially compelling to me.' not literally in options [\"Plaid's Mission\", 'Passion for Fintech Industry', \"Plaid's Products & Technical Innovation\", 'Ability to Use and Build AI Products', 'Company Culture']",
+      "status": "filled_needs_review",
+      "matched_rule": "why_company_essay",
+      "options": [
+        {
+          "label": "Plaid's Mission",
+          "value": "Plaid's Mission"
+        },
+        {
+          "label": "Passion for Fintech Industry",
+          "value": "Passion for Fintech Industry"
+        },
+        {
+          "label": "Plaid's Products & Technical Innovation",
+          "value": "Plaid's Products & Technical Innovation"
+        },
+        {
+          "label": "Ability to Use and Build AI Products",
+          "value": "Ability to Use and Build AI Products"
+        },
+        {
+          "label": "Company Culture",
+          "value": "Company Culture"
+        }
+      ],
+      "_ashby_type": "MultiValueSelect",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_55cd0838-aa7a-43cd-b808-ecfda77608fc",
+      "section": "AI & Interest in Working at Plaid",
+      "match_attempted": true
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_2c83a2e9-7f71-4b7a-a719-63da27a1748b",
+      "label": "Based on your current impression, how would you rate Plaid’s position in AI compared to other tech companies?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "4 - Among the leaders in the industry",
+      "source": "ashby_company_ai_rating (matched 'among the leaders')",
+      "status": "filled",
+      "matched_rule": "company_ai_rating",
+      "options": [
+        {
+          "label": "1 - Slightly below average",
+          "value": "1 - Slightly below average"
+        },
+        {
+          "label": "2 - About average",
+          "value": "2 - About average"
+        },
+        {
+          "label": "3 - Above average",
+          "value": "3 - Above average"
+        },
+        {
+          "label": "4 - Among the leaders in the industry",
+          "value": "4 - Among the leaders in the industry"
+        },
+        {
+          "label": "N/A - Not enough information on Plaid's AI work to say",
+          "value": "N/A - Not enough information on Plaid's AI work to say"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_2c83a2e9-7f71-4b7a-a719-63da27a1748b",
+      "section": "AI & Interest in Working at Plaid"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_3a208fae-425b-4044-8a98-bee4714ea58a",
+      "label": "Teams and roles based in our San Francisco HQ, New York, or Seattle offices may require a hybrid working arrangement with in office expectations. Are you able to come into the office to work at least 2x's a week, with or without a reasonable accommodation?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "ashby_location_ack (US onsite never a knockout -> matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "location_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_3a208fae-425b-4044-8a98-bee4714ea58a"
+    },
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_a6d8c228-729e-4950-b683-015b59c09165",
+      "label": "Teams and roles based at our Raleigh office require a hybrid working arrangement with in office expectations. Are you able to come into the office to work at least 4x's a week, with or without a reasonable accommodation?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "33310e6b-a835-4e7b-adc5-689e70fea12b_a6d8c228-729e-4950-b683-015b59c09165"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "33310e6b-a835-4e7b-adc5-689e70fea12b_564f5ebb-59e7-403e-8cdf-7d96e4daa3ef",
+      "label": "Other URL",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Other URL'"
+    }
+  ],
+  "blockers": []
+}

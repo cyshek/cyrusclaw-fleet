@@ -42,10 +42,10 @@ log "=== Daily apply run done (prep=${PREP_OK} submitted=${SUBMITTED}) ==="
 # --- Phase 4: LinkedIn ATS resolver — convert stranded manual-apply rows to real ATS URLs ---
 # Cap at 1800s; resolves linkedin-source rows with no offsite URL via Brave Search + careers probe.
 log "Phase 4: LinkedIn ATS resolver (max 1800s)..."
-LNK_OUT=$($PY "$SCRIPT_DIR/linkedin_ats_resolver_v2.py" --apply --max-seconds 1800 --quiet 2>&1)
+LNK_OUT=$($PY "$SCRIPT_DIR/linkedin_ats_resolver_v2.py" --limit 200 --workers 4 2>&1)
 LNK_RC=$?
 echo "$LNK_OUT" >> "$LOG"
-LNK_RESOLVED=$(echo "$LNK_OUT" | grep -oP '"resolved":\s*\K\d+' | tail -1 || echo 0)
+LNK_RESOLVED=$(echo "$LNK_OUT" | grep -oP 'resolved: \K\d+' | head -1 || echo 0)
 log "LinkedIn resolver done: ${LNK_RESOLVED} resolved (exit ${LNK_RC})"
 
 # --- Phase 5: Re-prep + drain any newly-resolved rows ---

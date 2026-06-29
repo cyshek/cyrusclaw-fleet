@@ -4,16 +4,16 @@
   "job_id": "8550274002",
   "job_title": "Product Manager, Driver Earnings",
   "job_location": "Seattle, WA",
-  "fetched_at": "2026-05-23T14:21:17Z",
+  "fetched_at": "2026-06-29T05:09:23Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/lyft/jobs/8550274002?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 25,
-    "filled": 16,
-    "filled_needs_review": 2,
+    "filled": 20,
+    "filled_needs_review": 0,
     "declined": 5,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -103,10 +103,10 @@
       "label": "May we contact your current employer?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Microsoft",
-      "source": "experience_summary.current_employer | NOTE: 'Microsoft' not literally in options ['Yes', 'No']",
-      "status": "filled_needs_review",
-      "matched_rule": "current_employer",
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
       "options": [
         {
           "label": "Yes",
@@ -143,10 +143,10 @@
       "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
       "type": "input_text",
       "required": false,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "",
+      "source": "optional field — intentionally blank",
+      "status": "filled",
+      "matched_rule": "optional_blank",
       "options": null
     },
     {
@@ -154,9 +154,9 @@
       "label": "Work Authorization",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Yes",
-      "source": "work_authorization.authorized_to_work_us | NOTE: 'Yes' not literally in options ['I am authorized to work for any employer in the country in which this position is based.', \"I require/will require Lyft's sponsorship to obtain work authorization in the country in which this position is based (e.g. H-1B, TN, etc.)\", 'My status to work in the country in which this position is based is unknown.']",
-      "status": "filled_needs_review",
+      "value": "I am authorized to work for any employer in the country in which this position is based.",
+      "source": "work_authorization.authorized_to_work_us (matched 'authorized to work for any employer')",
+      "status": "filled",
       "matched_rule": "work_authorized",
       "options": [
         {
@@ -308,10 +308,10 @@
       "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "I am willing to relocate before starting employment.",
+      "source": "preferences.willing_to_relocate (matched 'willing to relocate' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
       "options": [
         {
           "label": "I am willing to relocate before starting employment.",
@@ -495,25 +495,18 @@
       "section": "location"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_36540193002",
-      "label": "Please describe any need for a reasonable accommodation for this hiring process (no documentation required).",
-      "required": false,
-      "reason": "no LABEL_RULES match for label='Please describe any need for a reasonable accommodation for this hiring process (no documentation required).'"
-    },
-    {
-      "id": "question_36540200002",
-      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_36540200002",
-      "label": "This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?",
-      "reason": "no LABEL_RULES match for label='This position is based in the United States. Do you currently reside in commutable proximity to a Lyft Office located in Seattle or are you open to relocating?'"
-    }
-  ]
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
 }

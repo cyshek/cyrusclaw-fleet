@@ -4,16 +4,16 @@
   "job_id": "4659412005",
   "job_title": "Founding Forward Deployed Engineer",
   "job_location": "New York, NY",
-  "fetched_at": "2026-05-18T14:04:28Z",
+  "fetched_at": "2026-06-29T05:01:05Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/gleanwork/jobs/4659412005?questions=true",
   "ready_to_submit": false,
   "counts": {
     "total_fields": 22,
-    "filled": 15,
+    "filled": 17,
     "filled_needs_review": 0,
     "declined": 4,
-    "unresolved": 3,
-    "blockers": 3
+    "unresolved": 1,
+    "blockers": 1
   },
   "fields": [
     {
@@ -120,10 +120,10 @@
       "label": "Are you willing and able to commit to the hybrid policy if hired?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Are you willing and able to commit to the hybrid policy if hired?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
       "options": [
         {
           "label": "Yes",
@@ -174,7 +174,7 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "LinkedIn",
-      "source": "common_form_answers.how_did_you_hear_about_us",
+      "source": "how_heard literal-match 'LinkedIn'",
       "status": "filled",
       "matched_rule": "how_heard",
       "options": [
@@ -271,10 +271,10 @@
       "label": "What AI tools are you currently using today and how are you using them?",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='What AI tools are you currently using today and how are you using them?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -400,39 +400,29 @@
   ],
   "unresolved": [
     {
-      "id": "question_8382487005",
-      "label": "Are you willing and able to commit to the hybrid policy if hired?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Are you willing and able to commit to the hybrid policy if hired?'"
-    },
-    {
       "id": "question_8382493005",
       "label": "Have you built AI agents? If so, please elaborate. ",
       "required": true,
       "reason": "no LABEL_RULES match for label='Have you built AI agents? If so, please elaborate. '"
-    },
-    {
-      "id": "question_8595742005",
-      "label": "What AI tools are you currently using today and how are you using them?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='What AI tools are you currently using today and how are you using them?'"
     }
   ],
   "blockers": [
     {
-      "id": "question_8382487005",
-      "label": "Are you willing and able to commit to the hybrid policy if hired?",
-      "reason": "no LABEL_RULES match for label='Are you willing and able to commit to the hybrid policy if hired?'"
-    },
-    {
       "id": "question_8382493005",
       "label": "Have you built AI agents? If so, please elaborate. ",
       "reason": "no LABEL_RULES match for label='Have you built AI agents? If so, please elaborate. '"
-    },
-    {
-      "id": "question_8595742005",
-      "label": "What AI tools are you currently using today and how are you using them?",
-      "reason": "no LABEL_RULES match for label='What AI tools are you currently using today and how are you using them?'"
     }
-  ]
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
 }

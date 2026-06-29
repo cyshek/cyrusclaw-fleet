@@ -1,0 +1,160 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/semgrep/ddeaaf40-919b-4168-84e0-6c4e715ad208",
+  "org": "semgrep",
+  "job_id": "ddeaaf40-919b-4168-84e0-6c4e715ad208",
+  "job_title": "Sales Solutions Engineer - Digital Native",
+  "job_location": "Remote - US",
+  "fetched_at": "2026-06-29T08:22:24Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d__systemfield_name"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d__systemfield_email"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d__systemfield_resume"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d_phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d_phone"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d_cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d_cover_letter"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d_question_10555599007",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d_question_10555599007"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d_question_10555600007",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d_question_10555600007"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d_question_10555601007",
+      "label": "Will you now, or in the future, require sponsorship to work within the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d_question_10555601007"
+    },
+    {
+      "id": "45da678c-a72f-438f-904b-77254d97437d_question_10555602007",
+      "label": "Have you worked with CI / CD environments such as GitHub Actions, GitLab, Circle CI, Jenkins, and Buildkite?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github | NOTE: 'https://github.com/cyshek' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "github",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "45da678c-a72f-438f-904b-77254d97437d_question_10555602007",
+      "match_attempted": true
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

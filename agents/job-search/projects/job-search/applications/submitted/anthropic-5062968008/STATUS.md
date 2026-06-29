@@ -1,3 +1,6 @@
-ABORT-JD-404 — 2026-05-13
+ABORT-JD-FETCH — 2026-06-29T07:00:06+00:00
 
-Greenhouse API returned 404 for jobs/5062968008. Role likely closed/removed by Anthropic. Tracker row left untouched.
+role_id: 923
+phase: jd-fetch
+error:
+HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/anthropic/jobs/5062968008

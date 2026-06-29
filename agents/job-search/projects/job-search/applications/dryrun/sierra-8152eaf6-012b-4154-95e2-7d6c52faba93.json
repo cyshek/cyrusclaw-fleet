@@ -1,0 +1,253 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/sierra/8152eaf6-012b-4154-95e2-7d6c52faba93",
+  "org": "sierra",
+  "job_id": "8152eaf6-012b-4154-95e2-7d6c52faba93",
+  "job_title": "Sales Engineer",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-29T05:54:27Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 12,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 2,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_name"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_email"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_356781ea-5651-49e9-be89-1baf187328e5",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_356781ea-5651-49e9-be89-1baf187328e5"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_location"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_a699c4d9-d87d-4133-8acf-f6642de044b6",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_a699c4d9-d87d-4133-8acf-f6642de044b6"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922__systemfield_resume"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_681f5295-4c90-47e5-a60f-359937587fea",
+      "label": "What's your favorite junk food?",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"What's your favorite junk food?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_681f5295-4c90-47e5-a60f-359937587fea"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_0c7c4176-a48c-4e44-8dd4-0d4fcae8e63b",
+      "label": "Are you legally authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_0c7c4176-a48c-4e44-8dd4-0d4fcae8e63b"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_f0ce5588-4b36-4ff9-8456-9c9b51f0030d",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_f0ce5588-4b36-4ff9-8456-9c9b51f0030d"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_ead2aa82-6d57-49e0-be84-6095255473de",
+      "label": "We use Metaview, an AI notetaking tool, to streamline interviews by recoding and summarizing discussions, enabling interviewers to be fully present without manual notetaking. With your approval, it silently records notes during interviews. Can Metaview transcribe all your interviews?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "ashby_ai_notetaking_consent (auto-Yes per AI-disclosure policy: ok with recording for interview process)",
+      "status": "filled",
+      "matched_rule": "ai_notetaking_consent",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_ead2aa82-6d57-49e0-be84-6095255473de"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_5ff06eaf-e8ac-484a-9a72-ff7e64c34212",
+      "label": "How did you hear about this opportunity?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Blog or news article",
+          "value": "Blog or news article"
+        },
+        {
+          "label": "Company website",
+          "value": "Company website"
+        },
+        {
+          "label": "Current employee",
+          "value": "Current employee"
+        },
+        {
+          "label": "Event",
+          "value": "Event"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        },
+        {
+          "label": "Podcast",
+          "value": "Podcast"
+        },
+        {
+          "label": "Search engine",
+          "value": "Search engine"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_5ff06eaf-e8ac-484a-9a72-ff7e64c34212"
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_102c3da7-e431-4e02-9360-b022e187c305",
+      "label": "Anything else? (Optional)",
+      "type": "textarea",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='Anything else? (Optional)'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "f5a7ea0d-b4da-4381-be41-c637357fd922_102c3da7-e431-4e02-9360-b022e187c305"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_681f5295-4c90-47e5-a60f-359937587fea",
+      "label": "What's your favorite junk food?",
+      "required": false,
+      "reason": "no LABEL_RULES match for label=\"What's your favorite junk food?\""
+    },
+    {
+      "id": "f5a7ea0d-b4da-4381-be41-c637357fd922_102c3da7-e431-4e02-9360-b022e187c305",
+      "label": "Anything else? (Optional)",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='Anything else? (Optional)'"
+    }
+  ],
+  "blockers": []
+}

@@ -1,6 +1,17 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-24T04:34:44+00:00
+PREP-READY-IFRAME-RUNNER — 2026-06-29T08:04:16+00:00
 
 role_id: 3375
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_65049316", "label": "To ensure a fair and accurate assessment of each candidate's unique capabilities, Waymo prohibits the use of unauthorized outside assistance during the interview process. This includes, but is not limited to, artificial intelligence (AI) tools, generative software, or third-party resources, unless explicitly authorized by the hiring team. By submitting this application, you acknowledge and agree to adhere to these guidelines.", "reason": "no LABEL_RULES mat
+slug:    waymo-7733791
+plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-waymo-7733791.json
+pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/waymo-7733791/Cyrus_Shekari_Resume_waymo_7733791_v2.pdf
+cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/waymo-7733791/cover_answers.md
+wrapper: https://careers.withwaymo.com/jobs?gh_jid=7733791
+
+Calling agent / cron: do NOT execute the browser plan with the
+generic browser tool — the canonical /embed/job_app URL is
+reCAPTCHA-Enterprise gated. Instead run:
+
+    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug waymo-7733791
+
+and overwrite this STATUS.md with the runner's outcome block
+(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).
