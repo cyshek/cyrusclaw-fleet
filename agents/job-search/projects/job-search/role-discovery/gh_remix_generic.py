@@ -71,9 +71,20 @@ PHONE_JS = """async (args) => {
 def pw_fill_select(page, qid, labels):
     if isinstance(labels, str):
         labels = [labels]
-    result = page.evaluate(OPEN_MENU_JS, qid)
-    if result in ("noinp", "noctrl"):
-        print(f"  [WARN] no select control for {qid}")
+    # Use Playwright locator click on the select control to properly trigger React state
+    try:
+        ctrl_handle = page.evaluate_handle(
+            "(id) => document.getElementById(id)?.closest('.select__control')", qid
+        )
+        ctrl_el = ctrl_handle.as_element()
+        if not ctrl_el:
+            print(f"  [WARN] no select control for {qid}")
+            return None
+        ctrl_el.scroll_into_view_if_needed()
+        ctrl_el.click()  # Real Playwright click - triggers React's synthetic events
+        time.sleep(0.4)
+    except Exception as _e:
+        print(f"  [WARN] ctrl click failed for {qid}: {_e}")
         return None
     opts = page.locator(".select__option").all()
     for opt in opts:
@@ -81,9 +92,9 @@ def pw_fill_select(page, qid, labels):
             text = opt.text_content(timeout=3000)
             for lab in labels:
                 ll = lab.strip().lower()
-                tl = text.strip().lower()
+                tl = (text or "").strip().lower()
                 if ll == tl or ll in tl:
-                    opt.click()
+                    opt.click()  # Real Playwright click
                     time.sleep(0.3)
                     return text
         except Exception:
@@ -93,9 +104,20 @@ def pw_fill_select(page, qid, labels):
 
 
 def pw_typeahead(page, qid, type_text, match_text):
-    result = page.evaluate(OPEN_MENU_JS, qid)
-    if result in ("noinp", "noctrl"):
-        return None
+    # Use Playwright element click on the control
+    try:
+        ctrl_handle = page.evaluate_handle(
+            "(id) => document.getElementById(id)?.closest('.select__control')", qid
+        )
+        ctrl_el = ctrl_handle.as_element()
+        if not ctrl_el:
+            return None
+        ctrl_el.scroll_into_view_if_needed()
+        ctrl_el.click()
+    except Exception:
+        result = page.evaluate(OPEN_MENU_JS, qid)
+        if result in ("noinp", "noctrl"):
+            return None
     time.sleep(0.2)
     page.keyboard.type(type_text)
     time.sleep(1.5)
@@ -103,7 +125,7 @@ def pw_typeahead(page, qid, type_text, match_text):
     for opt in opts:
         try:
             text = opt.text_content(timeout=3000)
-            if match_text.lower() in text.lower():
+            if match_text.lower() in (text or "").lower():
                 opt.click()
                 time.sleep(0.3)
                 return text
@@ -120,19 +142,33 @@ with sync_playwright() as p:
     page.goto(URL, wait_until="networkidle", timeout=45000)
     time.sleep(2)
 
-    # Fill text fields
+    # Fill text fields using Playwright fill() to properly update React state
     for fid, val in plan.get("text_fields", {}).items():
         if val and fid not in ("location",):
-            page.evaluate(SET_VAL_JS, [fid, val])
+            try:
+                page.fill("#" + fid, str(val))
+            except Exception as _e:
+                print(f"  [fill-warn] #{fid}: {_e}")
 
     # Country / location typeaheads
     for cd in plan.get("country_dropdowns", []):
-        if cd["id"] == "country":
+        qid = cd["id"]
+        lbl = cd.get("label", "")
+        if qid == "country":
             r = pw_typeahead(page, "country", "United", "United States")
             print(f"  Country: {r}")
-        elif cd["id"] == "candidate-location":
+        elif qid == "candidate-location":
             r = pw_typeahead(page, "candidate-location", "Kirkland", "Kirkland, Washington")
             print(f"  Location: {r}")
+        else:
+            # Other country/location typeaheads (e.g. question_62329995 on Canonical)
+            type_text = "United States" if "united" in lbl.lower() else lbl.split()[0] if lbl else "United"
+            match_text = lbl if lbl else "United States"
+            r = pw_typeahead(page, qid, type_text, match_text)
+            if not r:
+                # fallback
+                r = pw_fill_select(page, qid, [lbl])
+            print(f"  CountryTypeahead {qid}: {r}")
 
     # Standard dropdowns (Playwright native clicks)
     for dd in plan.get("dropdowns", []):
@@ -145,10 +181,15 @@ with sync_playwright() as p:
         r = pw_fill_select(page, nr["id"], labels_to_try)
         print(f"  NR {nr['id']}: {r}")
 
-    # Phone ITI
+    # Phone ITI - use page.fill() for plain digit entry
     phone_iti = plan.get("phone_iti", {})
     if phone_iti:
-        page.evaluate(PHONE_JS, [phone_iti["id"], phone_iti.get("country", "United States"), phone_iti.get("digits", "3468040227")])
+        phone_id = phone_iti["id"]
+        digits = str(phone_iti.get("digits", "3468040227")).replace("-", "").replace(" ", "")
+        try:
+            page.fill("#" + phone_id, digits)
+        except Exception:
+            page.evaluate(PHONE_JS, [phone_id, phone_iti.get("country", "United States"), digits])
         print("  Phone set")
 
     # Resume
@@ -188,8 +229,70 @@ with sync_playwright() as p:
     if cb_result:
         print(f"  Checkboxes: {cb_result}")
 
+    # Demographic decline - handle any unfilled required react-select dropdowns
+    # (e.g. gender, race/ethnicity, nationality on Canonical)
+    time.sleep(0.5)
+    for attempt in range(3):
+        unfilled = page.evaluate("""() => {
+            return [...document.querySelectorAll('[aria-required=true]')].filter(e => {
+                if (e.getAttribute('role') === 'combobox') {
+                    const ctrl = e.closest('.select__control');
+                    return ctrl && !ctrl.querySelector('.select__single-value, .select__multi-value');
+                }
+                return false;
+            }).map(e => e.id);
+        }""")
+        if not unfilled:
+            break
+        print(f"  Unfilled required dropdowns: {unfilled}")
+        for fid in unfilled:
+            # Try to fill from plan first
+            plan_val = None
+            for dd in plan.get("dropdowns", []) + plan.get("needs_review_dropdowns", []):
+                if dd["id"] == fid:
+                    plan_val = dd["label"]
+                    break
+            if plan_val:
+                r = pw_fill_select(page, fid, [plan_val])
+                print(f"  Auto-fill {fid}: {r}")
+            else:
+                # Demographic - decline by picking last option
+                open_r = page.evaluate(OPEN_MENU_JS, fid)
+                if open_r not in ("noinp", "noctrl"):
+                    time.sleep(0.4)
+                    opts = page.locator(".select__option").all()
+                    decline_opt = None
+                    for opt in opts:
+                        txt = (opt.text_content() or "").lower()
+                        if any(kw in txt for kw in ["decline", "prefer not", "wish not", "disclose"]):
+                            decline_opt = opt
+                            break
+                    if decline_opt:
+                        decline_opt.click()
+                        print(f"  Demo-decline {fid}: declined")
+                    elif opts:
+                        # Pick last option as fallback for demographics
+                        last_opt = opts[-1]
+                        last_txt = (last_opt.text_content() or "").strip()
+                        last_opt.click()
+                        print(f"  Demo-last {fid}: {last_txt}")
+                    else:
+                        page.keyboard.press("Escape")
+        time.sleep(0.3)
+
+
     print("  Clicking Submit...")
     since_submit = time.time()
+
+    # Inject reCAPTCHA token if CapSolver enabled
+    try:
+        from captcha_presubmit import solve_and_inject_recaptcha_v3
+        cap = solve_and_inject_recaptcha_v3(page, fallback_sitekey="6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0", action="job_apply", page_url=URL)
+        if cap.get("injected"):
+            print(f"  reCAPTCHA injected (token_len={cap.get('token_len')})")
+    except Exception as _ce:
+        print(f"  reCAPTCHA skip: {_ce}")
+
     sub_btn = page.locator('button:has-text("Submit application")')
     if sub_btn.count() == 0:
         sub_btn = page.locator("button[type=submit]")

@@ -1,6 +1,6 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-29T08:03:03+00:00
+PREP-READY-IFRAME-RUNNER — 2026-06-30T03:21:15+00:00
 
-role_id: 2673
+role_id: 3867
 slug:    fanduel-7951127
 plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-fanduel-7951127.json
 pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/fanduel-7951127/Cyrus_Shekari_Resume_fanduel_7951127_v2.pdf

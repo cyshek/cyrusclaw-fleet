@@ -1,16 +1,9 @@
-BLOCKED — 2026-05-25T16:58 UTC
+PREP-READY — 2026-06-30T04:30:55+00:00
 
 role_id: 1375
-reason: disqualifier
-detail: Role is the Anduril SkillBridge Fellowship (US transitioning service members only). Required dropdown `question_12083811007` asks: "Are you currently a US transitioning service member that is eligible and interested in a SkillBridge Fellowship?*" — Cyrus is a civilian and the only truthful answer is "No", which is a self-disqualifier for the program itself.
-recommendation: manual-skip or hide-program-roles (filter out SkillBridge / Fellowship / military-transition roles in role-discovery)
-submitted_by: NONE (form was filled in prep but never submitted)
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-anduril-5142847007.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/anduril-5142847007/Cyrus_Shekari_Resume_andurilindustries_5142847007_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/anduril-5142847007/cover_answers.md
 
-Form-state at abort:
-- text fields: name/email/phone/linkedin all filled
-- dropdowns picked correctly per plan (citizen=US national, work-auth=Yes, sponsorship=No, SkillBridge-eligible=No, source=LinkedIn)
-- resume NOT uploaded
-- Submit NOT clicked
-- browser tab closed
-
-No tracker mutation. applied_by / applied_on left NULL.
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

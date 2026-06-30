@@ -1,0 +1,208 @@
+
+==============================================================================
+INDEX: SPY
+==============================================================================
+SPY: 8410 bars 1993-01-29 -> 2026-06-29 (33.4yr), cost=2.0bps, TOM(pre=2,post=3), tilt=1.0
+
+--- BUY & HOLD (1.0x always-long) ---
+                      FULL: cum     2973.0%  ann  12.74%  Sharpe 0.646  maxDD  55.2%
+                   IS<2013: cum      369.0%  ann  10.18%  Sharpe 0.493  maxDD  55.2%
+                 OOS>=2013: cum      555.2%  ann  16.63%  Sharpe 0.914  maxDD  33.7%
+                   IS<2018: cum      871.6%  ann  11.42%  Sharpe 0.589  maxDD  55.2%
+                 OOS>=2018: cum      216.3%  ann  16.71%  Sharpe 0.805  maxDD  33.7%
+
+--- (i) EXPLICIT-MARGIN OVERLAY: base 1.0x + tilt 1.0x borrowed; financing sweep ---
+               FULL fin=0%: cum     8715.1%  ann  17.75%  Sharpe 0.678  maxDD  64.8%
+               FULL fin=3%: cum     6844.9%  ann  16.91%  Sharpe 0.648  maxDD  65.2%
+               FULL fin=5%: cum     5824.1%  ann  16.36%  Sharpe 0.629  maxDD  65.4%
+               FULL fin=7%: cum     4953.2%  ann  15.81%  Sharpe 0.609  maxDD  65.7%
+              FULL fin=10%: cum     3880.9%  ann  14.98%  Sharpe 0.579  maxDD  66.0%
+   OOS detail @ fin=5%/yr:
+                      IS<2013: cum      611.1%  ann  14.07%  Sharpe 0.513  maxDD  65.4%
+                    OOS>=2013: cum      733.0%  ann  19.83%  Sharpe 0.837  maxDD  34.0%
+                      IS<2018: cum     1353.1%  ann  14.60%  Sharpe 0.569  maxDD  65.4%
+                    OOS>=2018: cum      307.7%  ann  21.70%  Sharpe 0.799  maxDD  34.0%
+   BREAK-EVEN financing (FULL cum == B&H): 13.3%/yr
+   +1BAR CANARY (margin@5%, tilt on WRONG days):
+                    FULL(lag): cum     4489.7%  ann  15.52%  Sharpe 0.595  maxDD  69.4%
+               OOS>=2013(lag): cum      633.0%  ann  18.79%  Sharpe 0.784  maxDD  33.1%
+   CANARY: PASS (lag degrades OOS Sharpe 0.837->0.784)
+
+--- (ii) LEVERAGED-ETF OVERLAY (tradeable: rotate into kx ETF during TOM) ---
+   (uses REAL ETF adjclose return = decay+fees+embedded-financing baked in)
+
+   >> SSO (2x), w_etf=1.000 of book rotated in during TOM; span 2006-06-21+ (20.0yr)
+                 B&H 1x (sub): cum      756.0%  ann  13.47%  Sharpe 0.650  maxDD  55.2%
+              MARGIN@5% (sub): cum      938.9%  ann  16.00%  Sharpe 0.595  maxDD  65.4%
+                 ETF-TILT SSO: cum     1008.4%  ann  16.33%  Sharpe 0.611  maxDD  65.7%
+                   B&H OOS>=2013: cum      555.2%  ann  16.63%  Sharpe 0.914  maxDD  33.7%
+                  ETF  OOS>=2013: cum      791.9%  ann  20.42%  Sharpe 0.863  maxDD  34.0%
+                   B&H OOS>=2018: cum      216.3%  ann  16.71%  Sharpe 0.805  maxDD  33.7%
+                  ETF  OOS>=2018: cum      319.8%  ann  22.10%  Sharpe 0.815  maxDD  34.0%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.611->0.551)
+
+   >> UPRO (3x), w_etf=0.500 of book rotated in during TOM; span 2009-06-25+ (17.0yr)
+                 B&H 1x (sub): cum      989.3%  ann  16.81%  Sharpe 0.908  maxDD  33.7%
+              MARGIN@5% (sub): cum     1375.8%  ann  20.09%  Sharpe 0.828  maxDD  34.0%
+                ETF-TILT UPRO: cum     1566.7%  ann  20.94%  Sharpe 0.862  maxDD  34.0%
+                   B&H OOS>=2013: cum      555.2%  ann  16.63%  Sharpe 0.914  maxDD  33.7%
+                  ETF  OOS>=2013: cum      803.6%  ann  20.54%  Sharpe 0.867  maxDD  34.0%
+                   B&H OOS>=2018: cum      216.3%  ann  16.71%  Sharpe 0.805  maxDD  33.7%
+                  ETF  OOS>=2018: cum      321.5%  ann  22.16%  Sharpe 0.817  maxDD  34.0%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.862->0.799)
+
+==============================================================================
+INDEX: QQQ
+==============================================================================
+QQQ: 6868 bars 1999-03-10 -> 2026-06-29 (27.3yr), cost=2.0bps, TOM(pre=2,post=3), tilt=1.0
+
+--- BUY & HOLD (1.0x always-long) ---
+                      FULL: cum     1582.8%  ann  15.01%  Sharpe 0.519  maxDD  83.0%
+                   IS<2013: cum       35.4%  ann   7.50%  Sharpe 0.227  maxDD  83.0%
+                 OOS>=2013: cum     1143.2%  ann  23.25%  Sharpe 1.002  maxDD  35.1%
+                   IS<2018: cum      242.7%  ann  11.10%  Sharpe 0.373  maxDD  83.0%
+                 OOS>=2018: cum      391.0%  ann  24.18%  Sharpe 0.907  maxDD  35.1%
+
+--- (i) EXPLICIT-MARGIN OVERLAY: base 1.0x + tilt 1.0x borrowed; financing sweep ---
+               FULL fin=0%: cum     3417.2%  ann  21.31%  Sharpe 0.545  maxDD  88.3%
+               FULL fin=3%: cum     2794.8%  ann  20.45%  Sharpe 0.525  maxDD  88.6%
+               FULL fin=5%: cum     2442.3%  ann  19.88%  Sharpe 0.512  maxDD  88.7%
+               FULL fin=7%: cum     2132.7%  ann  19.31%  Sharpe 0.498  maxDD  88.8%
+              FULL fin=10%: cum     1737.5%  ann  18.46%  Sharpe 0.478  maxDD  89.0%
+   OOS detail @ fin=5%/yr:
+                      IS<2013: cum       39.8%  ann  11.87%  Sharpe 0.267  maxDD  88.7%
+                    OOS>=2013: cum     1718.1%  ann  28.67%  Sharpe 0.933  maxDD  38.1%
+                      IS<2018: cum      265.9%  ann  14.80%  Sharpe 0.371  maxDD  88.7%
+                    OOS>=2018: cum      594.8%  ann  31.96%  Sharpe 0.894  maxDD  38.1%
+   BREAK-EVEN financing (FULL cum == B&H): 11.4%/yr
+   +1BAR CANARY (margin@5%, tilt on WRONG days):
+                    FULL(lag): cum     2362.1%  ann  19.81%  Sharpe 0.508  maxDD  86.2%
+               OOS>=2013(lag): cum     1469.6%  ann  27.38%  Sharpe 0.886  maxDD  46.0%
+   CANARY: PASS (lag degrades OOS Sharpe 0.933->0.886)
+
+--- (ii) LEVERAGED-ETF OVERLAY (tradeable: rotate into kx ETF during TOM) ---
+   (uses REAL ETF adjclose return = decay+fees+embedded-financing baked in)
+
+   >> QLD (2x), w_etf=1.000 of book rotated in during TOM; span 2006-06-21+ (20.0yr)
+                 B&H 1x (sub): cum     2089.3%  ann  19.58%  Sharpe 0.810  maxDD  53.4%
+              MARGIN@5% (sub): cum     3028.8%  ann  23.80%  Sharpe 0.746  maxDD  65.3%
+                 ETF-TILT QLD: cum     3330.1%  ann  24.41%  Sharpe 0.761  maxDD  65.0%
+                   B&H OOS>=2013: cum     1143.2%  ann  23.25%  Sharpe 1.002  maxDD  35.1%
+                  ETF  OOS>=2013: cum     1836.9%  ann  29.27%  Sharpe 0.951  maxDD  37.8%
+                   B&H OOS>=2018: cum      391.0%  ann  24.18%  Sharpe 0.907  maxDD  35.1%
+                  ETF  OOS>=2018: cum      603.5%  ann  32.15%  Sharpe 0.899  maxDD  37.8%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.761->0.714)
+
+   >> TQQQ (3x), w_etf=0.500 of book rotated in during TOM; span 2010-02-11+ (16.4yr)
+                 B&H 1x (sub): cum     1812.4%  ann  22.38%  Sharpe 0.978  maxDD  35.1%
+              MARGIN@5% (sub): cum     3183.7%  ann  28.36%  Sharpe 0.932  maxDD  38.1%
+                ETF-TILT TQQQ: cum     3592.0%  ann  29.24%  Sharpe 0.962  maxDD  37.5%
+                   B&H OOS>=2013: cum     1143.2%  ann  23.25%  Sharpe 1.002  maxDD  35.1%
+                  ETF  OOS>=2013: cum     1901.3%  ann  29.55%  Sharpe 0.963  maxDD  37.5%
+                   B&H OOS>=2018: cum      391.0%  ann  24.18%  Sharpe 0.907  maxDD  35.1%
+                  ETF  OOS>=2018: cum      619.5%  ann  32.44%  Sharpe 0.910  maxDD  37.5%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.962->0.913)
+
+==============================================================================
+INDEX: ^GSPC
+==============================================================================
+^GSPC: 14243 bars 1970-01-02 -> 2026-06-29 (56.5yr), cost=2.0bps, TOM(pre=2,post=3), tilt=1.0
+
+--- BUY & HOLD (1.0x always-long) ---
+                      FULL: cum     7900.5%  ann   9.67%  Sharpe 0.538  maxDD  56.8%
+                   IS<2013: cum     1433.5%  ann   8.14%  Sharpe 0.455  maxDD  56.8%
+                 OOS>=2013: cum      421.7%  ann  14.70%  Sharpe 0.809  maxDD  33.9%
+                   IS<2018: cum     2774.8%  ann   8.76%  Sharpe 0.502  maxDD  56.8%
+                 OOS>=2018: cum      178.3%  ann  14.99%  Sharpe 0.723  maxDD  33.9%
+
+--- (i) EXPLICIT-MARGIN OVERLAY: base 1.0x + tilt 1.0x borrowed; financing sweep ---
+               FULL fin=0%: cum    63617.7%  ann  14.93%  Sharpe 0.626  maxDD  67.3%
+               FULL fin=3%: cum    42494.3%  ann  14.11%  Sharpe 0.594  maxDD  67.7%
+               FULL fin=5%: cum    32463.7%  ann  13.57%  Sharpe 0.572  maxDD  67.9%
+               FULL fin=7%: cum    24794.7%  ann  13.03%  Sharpe 0.551  maxDD  68.1%
+              FULL fin=10%: cum    16539.9%  ann  12.23%  Sharpe 0.519  maxDD  68.4%
+   OOS detail @ fin=5%/yr:
+                      IS<2013: cum     4958.4%  ann  12.34%  Sharpe 0.520  maxDD  67.9%
+                    OOS>=2013: cum      543.8%  ann  17.59%  Sharpe 0.746  maxDD  34.2%
+                      IS<2018: cum     9080.9%  ann  12.51%  Sharpe 0.542  maxDD  67.9%
+                    OOS>=2018: cum      254.7%  ann  19.75%  Sharpe 0.729  maxDD  34.2%
+   BREAK-EVEN financing (FULL cum == B&H): 15.5%/yr
+   +1BAR CANARY (margin@5%, tilt on WRONG days):
+                    FULL(lag): cum    20052.5%  ann  12.63%  Sharpe 0.533  maxDD  70.7%
+               OOS>=2013(lag): cum      448.1%  ann  16.29%  Sharpe 0.683  maxDD  33.4%
+   CANARY: PASS (lag degrades OOS Sharpe 0.746->0.683)
+
+--- (ii) LEVERAGED-ETF OVERLAY (tradeable: rotate into kx ETF during TOM) ---
+   (uses REAL ETF adjclose return = decay+fees+embedded-financing baked in)
+
+   >> SSO (2x), w_etf=1.000 of book rotated in during TOM; span 2006-06-21+ (20.0yr)
+                 B&H 1x (sub): cum      494.2%  ann  11.44%  Sharpe 0.555  maxDD  56.8%
+              MARGIN@5% (sub): cum      558.8%  ann  13.47%  Sharpe 0.502  maxDD  67.9%
+                 ETF-TILT SSO: cum      736.5%  ann  14.71%  Sharpe 0.554  maxDD  65.9%
+                   B&H OOS>=2013: cum      421.7%  ann  14.70%  Sharpe 0.809  maxDD  33.9%
+                  ETF  OOS>=2013: cum      631.3%  ann  18.68%  Sharpe 0.793  maxDD  34.2%
+                   B&H OOS>=2018: cum      178.3%  ann  14.99%  Sharpe 0.723  maxDD  33.9%
+                  ETF  OOS>=2018: cum      273.5%  ann  20.45%  Sharpe 0.756  maxDD  34.2%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.554->0.497)
+
+   >> UPRO (3x), w_etf=0.500 of book rotated in during TOM; span 2009-06-25+ (17.0yr)
+                 B&H 1x (sub): cum      708.5%  ann  14.80%  Sharpe 0.801  maxDD  33.9%
+              MARGIN@5% (sub): cum      946.0%  ann  17.72%  Sharpe 0.734  maxDD  34.2%
+                ETF-TILT UPRO: cum     1166.5%  ann  19.03%  Sharpe 0.787  maxDD  34.2%
+                   B&H OOS>=2013: cum      421.7%  ann  14.70%  Sharpe 0.809  maxDD  33.9%
+                  ETF  OOS>=2013: cum      630.8%  ann  18.68%  Sharpe 0.792  maxDD  34.2%
+                   B&H OOS>=2018: cum      178.3%  ann  14.99%  Sharpe 0.723  maxDD  33.9%
+                  ETF  OOS>=2018: cum      273.3%  ann  20.45%  Sharpe 0.756  maxDD  34.2%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.787->0.728)
+
+==============================================================================
+INDEX: ^NDX
+==============================================================================
+^NDX: 10264 bars 1985-10-01 -> 2026-06-29 (40.7yr), cost=2.0bps, TOM(pre=2,post=3), tilt=1.0
+
+--- BUY & HOLD (1.0x always-long) ---
+                      FULL: cum    26451.4%  ann  18.59%  Sharpe 0.659  maxDD  82.9%
+                   IS<2013: cum     2272.9%  ann  16.78%  Sharpe 0.555  maxDD  82.9%
+                 OOS>=2013: cum     1019.0%  ann  22.34%  Sharpe 0.958  maxDD  35.6%
+                   IS<2018: cum     5604.0%  ann  17.34%  Sharpe 0.608  maxDD  82.9%
+                 OOS>=2018: cum      365.5%  ann  23.47%  Sharpe 0.874  maxDD  35.6%
+
+--- (i) EXPLICIT-MARGIN OVERLAY: base 1.0x + tilt 1.0x borrowed; financing sweep ---
+               FULL fin=0%: cum   226939.0%  ann  28.13%  Sharpe 0.726  maxDD  88.6%
+               FULL fin=3%: cum   169739.9%  ann  27.22%  Sharpe 0.705  maxDD  88.8%
+               FULL fin=5%: cum   139855.8%  ann  26.61%  Sharpe 0.691  maxDD  89.0%
+               FULL fin=7%: cum   115228.1%  ann  26.01%  Sharpe 0.677  maxDD  89.1%
+              FULL fin=10%: cum    86166.0%  ann  25.12%  Sharpe 0.657  maxDD  89.3%
+   OOS detail @ fin=5%/yr:
+                      IS<2013: cum     8551.4%  ann  26.11%  Sharpe 0.626  maxDD  89.0%
+                    OOS>=2013: cum     1517.7%  ann  27.64%  Sharpe 0.895  maxDD  38.8%
+                      IS<2018: cum    21238.7%  ann  25.44%  Sharpe 0.651  maxDD  89.0%
+                    OOS>=2018: cum      555.9%  ann  31.18%  Sharpe 0.866  maxDD  38.8%
+   BREAK-EVEN financing (FULL cum == B&H): 22.2%/yr
+   +1BAR CANARY (margin@5%, tilt on WRONG days):
+                    FULL(lag): cum    73832.7%  ann  24.66%  Sharpe 0.645  maxDD  87.5%
+               OOS>=2013(lag): cum     1261.6%  ann  26.13%  Sharpe 0.842  maxDD  46.5%
+   CANARY: PASS (lag degrades OOS Sharpe 0.895->0.842)
+
+--- (ii) LEVERAGED-ETF OVERLAY (tradeable: rotate into kx ETF during TOM) ---
+   (uses REAL ETF adjclose return = decay+fees+embedded-financing baked in)
+
+   >> QLD (2x), w_etf=1.000 of book rotated in during TOM; span 2006-06-21+ (20.0yr)
+                 B&H 1x (sub): cum     1792.2%  ann  18.83%  Sharpe 0.767  maxDD  53.7%
+              MARGIN@5% (sub): cum     2489.4%  ann  22.89%  Sharpe 0.703  maxDD  66.4%
+                 ETF-TILT QLD: cum     2947.9%  ann  23.75%  Sharpe 0.737  maxDD  64.8%
+                   B&H OOS>=2013: cum     1019.0%  ann  22.34%  Sharpe 0.958  maxDD  35.6%
+                  ETF  OOS>=2013: cum     1659.8%  ann  28.39%  Sharpe 0.922  maxDD  37.9%
+                   B&H OOS>=2018: cum      365.5%  ann  23.47%  Sharpe 0.874  maxDD  35.6%
+                  ETF  OOS>=2018: cum      568.6%  ann  31.42%  Sharpe 0.876  maxDD  37.9%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.737->0.688)
+
+   >> TQQQ (3x), w_etf=0.500 of book rotated in during TOM; span 2010-02-11+ (16.4yr)
+                 B&H 1x (sub): cum     1576.8%  ann  21.44%  Sharpe 0.933  maxDD  35.6%
+              MARGIN@5% (sub): cum     2711.4%  ann  27.22%  Sharpe 0.891  maxDD  38.8%
+                ETF-TILT TQQQ: cum     3170.3%  ann  28.33%  Sharpe 0.930  maxDD  37.8%
+                   B&H OOS>=2013: cum     1019.0%  ann  22.34%  Sharpe 0.958  maxDD  35.6%
+                  ETF  OOS>=2013: cum     1709.0%  ann  28.63%  Sharpe 0.931  maxDD  37.8%
+                   B&H OOS>=2018: cum      365.5%  ann  23.47%  Sharpe 0.874  maxDD  35.6%
+                  ETF  OOS>=2018: cum      582.8%  ann  31.70%  Sharpe 0.886  maxDD  37.8%
+      +1bar CANARY: PASS (lag degrades FULL Sharpe 0.930->0.883)

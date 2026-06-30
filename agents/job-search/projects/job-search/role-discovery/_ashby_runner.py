@@ -2365,12 +2365,25 @@ def scan_form_submit_success(submit_resps):
     fields win. Scan ALL captured (status, body) submit responses for a definitive
     Ashby `applicationFormResult.__typename == 'FormSubmitSuccess'`. A success
     ANYWHERE in the captured responses wins (you cannot un-submit). Returns True if
-    found, else False. Pure/never-raises so it is unit-testable."""
+    found, else False. Pure/never-raises so it is unit-testable.
+    Also handles chain_046: Cursor-style /api/careers/jobs/apply wrapper
+    that returns {"success":true, "data":{"success":true,...}}."""
     import json as _jsfs
     for item in (submit_resps or []):
         try:
             _bd = item[1] if isinstance(item, (list, tuple)) and len(item) > 1 else item
-            if not _bd or 'FormSubmitSuccess' not in _bd:
+            if not _bd:
+                continue
+            # chain_046: Cursor-style API wrapper {"success":true}
+            if '"success":true' in _bd or '"success": true' in _bd:
+                try:
+                    sd = _jsfs.loads(_bd) if str(_bd).strip().startswith('{') else {}
+                    if sd.get('success') is True:
+                        return True
+                except Exception:
+                    pass
+            # Standard Ashby FormSubmitSuccess
+            if 'FormSubmitSuccess' not in _bd:
                 continue
             sd = _jsfs.loads(_bd) if str(_bd).strip().startswith('{') else {}
             mfs = ((sd.get('data') or {}).get('submitApplicationFormAction')
@@ -2617,23 +2630,38 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
     def _on_resp(resp):
         try:
             u = resp.url
-            if 'graphql' in u and resp.request.method == 'POST':
-                pd = resp.request.post_data or ''
-                if 'SubmitApplication' in pd or 'submitApplication' in pd or 'ApplicationSubmit' in pd or 'SubmitMultipleFormsAction' in pd:
-                    body = ''
-                    full = ''
+            if resp.request.method == 'POST':
+                # Standard Ashby GraphQL path
+                if 'graphql' in u:
+                    pd = resp.request.post_data or ''
+                    if 'SubmitApplication' in pd or 'submitApplication' in pd or 'ApplicationSubmit' in pd or 'SubmitMultipleFormsAction' in pd:
+                        body = ''
+                        full = ''
+                        try:
+                            full = resp.text()
+                            body = full[:800]
+                        except Exception:
+                            body = '<no-body>'; full = ''
+                        _submit_resps.append((resp.status, full))
+                        try:
+                            open('/tmp/last_submit_resp.json','w').write(resp.text())
+                            import time as _t35
+                            open(f'/tmp/submit_resp_{len(_submit_resps)}.json','w').write(resp.text())
+                        except Exception: pass
+                        log(f"SUBMIT-RESP status={resp.status} body={body[:400]}")
+                # chain_046: Cursor-style /api/careers/jobs/<uuid>/apply wrapper
+                # Cursor proxies Ashby submit through their own Next.js API;
+                # response is {"success":true, "data":{"success":true,...}}
+                elif __import__('re').search(r'/api/(careers|apply)/jobs?/.*/apply', u):
                     try:
                         full = resp.text()
-                        body = full[:800]
                     except Exception:
-                        body = '<no-body>'; full = ''
+                        full = ''
                     _submit_resps.append((resp.status, full))
+                    log(f"SUBMIT-RESP (careers-api) status={resp.status} body={full[:400]}")
                     try:
-                        open('/tmp/last_submit_resp.json','w').write(resp.text())
-                        import time as _t35
-                        open(f'/tmp/submit_resp_{len(_submit_resps)}.json','w').write(resp.text())
+                        open('/tmp/last_submit_resp.json','w').write(full)
                     except Exception: pass
-                    log(f"SUBMIT-RESP status={resp.status} body={body[:400]}")
         except Exception:
             pass
     page.on('response', _on_resp)
@@ -2679,6 +2707,22 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                                     page.evaluate(_YESNO_CLICK_JS, {"name": pick.get('name'), "label_text": pick.get('label_text')})
                                 elif pick.get('kind') == 'radio_label' and pick.get('label_for'):
                                     page.evaluate(_RADIO_CLICK_BY_ID_JS, {"input_id": pick.get('label_for')})
+                                elif pick.get('kind') == 'radio_sronly_bool':
+                                    # sr-only radio (Cursor-class embed): value="true"/"false"
+                                    # Element may be off-screen (negative cy); use JS click on parent
+                                    name = pick.get('name', '')
+                                    val = pick.get('value_attr', '')
+                                    page.evaluate("""
+                                        (args) => {
+                                            const inp = [...document.querySelectorAll('input[type=radio][name="' + args.name + '"]')]
+                                                .find(i => i.value === args.val);
+                                            if (!inp) return;
+                                            const wrapper = inp.parentElement || inp;
+                                            try { wrapper.scrollIntoView({block:'center',behavior:'instant'}); } catch(e) {}
+                                            inp.click();
+                                            inp.dispatchEvent(new Event('change', {bubbles:true}));
+                                        }
+                                    """, {"name": name, "val": val})
                                 else:
                                     page.mouse.click(pick['cx'], pick['cy'])
                                 page.wait_for_timeout(120)
@@ -3885,6 +3929,20 @@ def run_plan(plan_path, no_submit=False, no_captcha=False):
                                         page.evaluate(_YESNO_CLICK_JS, {"name": pick.get('name'), "label_text": pick.get('label_text')})
                                     elif pick.get('kind') == 'radio_label' and pick.get('label_for'):
                                         page.evaluate(_RADIO_CLICK_BY_ID_JS, {"input_id": pick.get('label_for')})
+                                    elif pick.get('kind') == 'radio_sronly_bool':
+                                        _nm = pick.get('name', '')
+                                        _vl = pick.get('value_attr', '')
+                                        page.evaluate("""
+                                            (args) => {
+                                                const inp = [...document.querySelectorAll('input[type=radio][name="' + args.name + '"]')]
+                                                    .find(i => i.value === args.val);
+                                                if (!inp) return;
+                                                const wrapper = inp.parentElement || inp;
+                                                try { wrapper.scrollIntoView({block:'center',behavior:'instant'}); } catch(e) {}
+                                                inp.click();
+                                                inp.dispatchEvent(new Event('change', {bubbles:true}));
+                                            }
+                                        """, {"name": _nm, "val": _vl})
                                     else:
                                         page.mouse.click(pick['cx'], pick['cy'])
                                     page.wait_for_timeout(200)

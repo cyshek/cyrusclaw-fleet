@@ -1,7 +1,6 @@
-ABORT — 2026-05-13 23:27 UTC
+ABORT-JD-FETCH — 2026-06-30T04:30:46+00:00
 
-reason: Greenhouse API 404 — job no longer listed at https://boards-api.greenhouse.io/v1/boards/coreweave/jobs/4648208006
-
-Role likely closed/removed. Tracker row left untouched (consider marking 'closed' in next sweep).
-
-submitted_by: auto (job-search subagent, drain-batch-night7)
+role_id: 600
+phase: jd-fetch
+error:
+HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/coreweave/jobs/4648208006

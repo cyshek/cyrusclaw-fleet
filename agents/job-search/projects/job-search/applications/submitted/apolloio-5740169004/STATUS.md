@@ -1,8 +1,6 @@
-ABORT — 2026-05-13 22:46 UTC
+ABORT-JD-FETCH — 2026-06-30T04:20:57+00:00
 
-reason: jd-fetch-404
-detail: Greenhouse API 404 on https://boards-api.greenhouse.io/v1/boards/apolloio/jobs/5740169004 — role almost certainly closed.
 role_id: 27
-company: Apollo.io
-role: Product Builder (Product Manager), AI Agents
-submitted_by: -
+phase: jd-fetch
+error:
+HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/apolloio/jobs/5740169004

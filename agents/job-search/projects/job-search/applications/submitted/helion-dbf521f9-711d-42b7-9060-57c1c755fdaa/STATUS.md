@@ -1,9 +1,14 @@
-PREP-READY — 2026-06-28T08:09:30+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-29
 role_id: 1262
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-helion-dbf521f9-711d-42b7-9060-57c1c755fdaa.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/helion-dbf521f9-711d-42b7-9060-57c1c755fdaa/Cyrus_Shekari_Resume_ashby-helion_dbf521f9_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/helion-dbf521f9-711d-42b7-9060-57c1c755fdaa/cover_answers.md
+submitted_at: 2026-06-29T18:38:37+00:00
 
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+Runner tail:
+: [{'n': '8fb1_question_8036113005', 'ok': True}, {'n': '8fb1_question_8036114005', 'ok': True}, {'n': '8fb1_question_8036115005', 'ok': True}, {'n': '8fb1_question_8036119005', 'ok': True}]
+[runner] trusted submit click dispatched
+[runner] SUBMIT-RESP status=200 body={"data":{"submitMultipleFormsAction":{"__typename":"MultiFormSubmitResults","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null},"surveyFormResults":[{"__typename":"FormSubmitSuccess","_":null}]}}}
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+

@@ -1151,6 +1151,17 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("comfortable delivering live technical product demonstrations", "answer_yes"),
     ("responded to rfis/rfps as part of a technical pre-sales", "answer_yes"),
     ("have you ever responded to rfis/rfps", "answer_yes"),
+    # Hex / SE qualification booleans (2026-07-01)
+    # "Do you have a minimum of 1 year pre-sales experience...OR data consulting?"
+    ("minimum of 1 year pre-sales experience", "answer_yes"),
+    ("minimum of 1 year presales experience", "answer_yes"),
+    # "Do you have familiarity with SQL?" -> Yes (Cyrus has SQL experience)
+    ("familiarity with sql", "answer_yes"),
+    ("have familiarity with sql", "answer_yes"),
+    # Hex behavioral + SE deal essay questions (2026-07-01)
+    ("first instinct about how to handle something turned out to be wrong", "customer_facing_essay"),
+    ("you and the ae saw the customer situation differently", "customer_facing_essay"),
+    ("ae saw the customer situation differently", "customer_facing_essay"),
     # Alloy NYC hybrid: "Are you able to attend the office on these days?" -> ack_in_office
     ("hybrid work environment: our employees local to nyc are expected to work", "ack_in_office"),
     ("our employees local to nyc are expected to work", "ack_in_office"),

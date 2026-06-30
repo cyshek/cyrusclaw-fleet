@@ -14,7 +14,6 @@
     "question_61258860": "Microsoft",
     "question_61258861": "Program Manager",
     "question_61258868": "University of Houston",
-    "question_61258869": "Bachelor of Science in Computer Science",
     "question_67435389": "Kirkland",
     "location": "Kirkland, WA"
   },
@@ -34,6 +33,10 @@
     {
       "id": "question_61542746",
       "label": "Yes"
+    },
+    {
+      "id": "question_67838842",
+      "label": "Other"
     }
   ],
   "country_dropdowns": [
@@ -136,12 +139,6 @@
       "label": "what is the most recent school you attended?",
       "old_len": 21,
       "new_len": 21
-    },
-    {
-      "id": "question_61258869",
-      "label": "what is the most recent degree you obtained?",
-      "old_len": 19,
-      "new_len": 39
     }
   ],
   "steps": [
@@ -179,7 +176,6 @@
           "question_61258860": "Microsoft",
           "question_61258861": "Program Manager",
           "question_61258868": "University of Houston",
-          "question_61258869": "Bachelor of Science in Computer Science",
           "question_67435389": "Kirkland",
           "location": "Kirkland, WA"
         },
@@ -207,6 +203,10 @@
           {
             "id": "question_61542746",
             "label": "Yes"
+          },
+          {
+            "id": "question_67838842",
+            "label": "Other"
           }
         ],
         "comment": "Open each react-select via mousedown on .select__control and click the matching option div."

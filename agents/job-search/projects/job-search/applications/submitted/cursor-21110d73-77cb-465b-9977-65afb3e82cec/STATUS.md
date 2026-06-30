@@ -1,6 +1,10 @@
-PREP-READY — 2026-06-27T20:32:54+00:00
+# STATUS: SUBMITTED
 
-role_id: 932
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-cursor-21110d73-77cb-465b-9977-65afb3e82cec.json
-pdf: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/cursor-21110d73-77cb-465b-9977-65afb3e82cec/Cyrus_Shekari_Resume_ashby-cursor_21110d73_v2.pdf
-recovered_from: ABORT-BULLET-REWRITER (v2 PDF already present)
+- **role_id:** 932
+- **company:** Cursor
+- **role:** Product Manager, Cloud Agents
+- **url:** https://cursor.com/careers/product-manager-cloud-agents
+- **submitted_by:** auto (_ashby_runner.py)
+- **submitted_on:** 2026-06-30
+- **confirmation:** `{"success":true}` from /api/careers/jobs/21110d73-77cb-465b-9977-65afb3e82cec/apply
+- **resume_attached:** yes

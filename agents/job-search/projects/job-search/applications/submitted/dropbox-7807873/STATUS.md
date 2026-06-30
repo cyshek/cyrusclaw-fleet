@@ -1,9 +1,9 @@
-CLOSED-URL-DEAD — 2026-05-31T12:20:12+00:00
+CLOSED-URL-DEAD — 2026-06-30T04:29:47+00:00
 
 role_id: 637
 slug:    dropbox-7807873
 url:     https://jobs.dropbox.com/listing/7807873?gh_jid=7807873
-probe:   status=405 reason=http-405
+probe:   status=403 reason=http-403
 
 chain_005 P5 URL-liveness HEAD probe: posting is no longer
 reachable. Tracker stamped status='closed'. No prep work

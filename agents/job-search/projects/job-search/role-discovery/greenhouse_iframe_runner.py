@@ -496,6 +496,46 @@ def run(slug: str, *, dry_run: bool = False, headless: bool = True, debug_filest
                     rf = evalfn(JS_TICK_REACT_SELECT_MULTI, fallback_specs)
                     report["events"].append({"step": "multi_checkboxes_react_fallback", "result": rf})
                     log(f"multi_checkboxes_react_fallback: {rf}")
+                    # PW real-click fallback: if JS fire() left chips empty, use Playwright
+                    pw_mc = []
+                    for spec_item, res_item in zip(fallback_specs, rf if isinstance(rf, list) else []):
+                        still_missing = isinstance(res_item, dict) and res_item.get("missing")
+                        # also check if tags are actually in DOM
+                        bare_id_mc = spec_item["id"].replace("[]", "")
+                        tags_check = evalfn(f"""() => {{
+                            const inp = document.getElementById({repr(spec_item["id"])}) || document.getElementById({repr(bare_id_mc)});
+                            if (!inp) return [];
+                            const ctrl = inp.closest('.select__control');
+                            return ctrl ? [...ctrl.querySelectorAll('.select__multi-value__label')].map(e=>e.textContent) : [];
+                        }}""", None)
+                        if not tags_check and spec_item.get("values"):
+                            for val_mc in spec_item["values"]:
+                                if not val_mc: continue
+                                try:
+                                    # Open the select
+                                    ctrl_sel = frame.locator(f'input[id="{spec_item["id"]}"], input[id="{bare_id_mc}"]').locator('xpath=ancestor::*[contains(@class,"select__control")]').first
+                                    if ctrl_sel.count() == 0:
+                                        pw_mc.append({"id": spec_item["id"], "err": "no ctrl"})
+                                        break
+                                    ctrl_sel.click()
+                                    time.sleep(0.4)
+                                    # Find and click the option
+                                    opt_sel = frame.get_by_role("option", name=val_mc, exact=False).first
+                                    if opt_sel.count() == 0:
+                                        opt_sel = frame.locator('.select__option').filter(has_text=val_mc).first
+                                    if opt_sel.count() > 0:
+                                        opt_sel.click()
+                                        time.sleep(0.2)
+                                        pw_mc.append({"id": spec_item["id"], "val": val_mc, "ok": True})
+                                    else:
+                                        pw_mc.append({"id": spec_item["id"], "val": val_mc, "err": "no option"})
+                                    frame.keyboard.press("Escape")
+                                    time.sleep(0.15)
+                                except Exception as pw_mc_e:
+                                    pw_mc.append({"id": spec_item["id"], "val": val_mc, "err": str(pw_mc_e)})
+                    if pw_mc:
+                        report["events"].append({"step": "multi_checkboxes_pw_fallback", "result": pw_mc})
+                        log(f"multi_checkboxes_pw_fallback: {pw_mc}")
                 except Exception as e:
                     log(f"multi_checkboxes_react_fallback err: {e}")
                     report["events"].append({"step": "multi_checkboxes_react_fallback", "error": str(e)})
@@ -508,6 +548,54 @@ def run(slug: str, *, dry_run: bool = False, headless: bool = True, debug_filest
                 r = evalfn(gf.JS_FILL_EDUCATION_PANEL, plan["_education"])
                 report["events"].append({"step": "education_panel", "result": r})
                 log(f"education_panel: {r}")
+                # PW fallback for discipline when JS virtualized dropdown fails
+                edu_errors = r.get("errors", []) if isinstance(r, dict) else []
+                for err_item in edu_errors:
+                    if err_item.get("label") == "Discipline" and plan["_education"].get("discipline"):
+                        disc_want = plan["_education"]["discipline"]
+                        try:
+                            # Use Playwright to type into the discipline input, filtering the react-select list
+                            disc_input = frame.locator('input[id^="discipline--"]')
+                            disc_input.wait_for(timeout=2000)
+                            # triple-click to select+clear any existing value, then type to filter
+                            disc_input.click(click_count=3)
+                            time.sleep(0.15)
+                            # Use locator.type() which types directly into the element (works in frames)
+                            disc_input.type(disc_want[:20], delay=40)
+                            time.sleep(0.7)
+                            # Look for options that appeared after typing (check entire page for portaled menus)
+                            menu = frame.locator('.select__menu').last
+                            menu_count = menu.count()
+                            if menu_count == 0:
+                                # Also check page-level (portaled menus via menuPortalTarget=document.body)
+                                menu = page.locator('.select__menu').last
+                                menu_count = menu.count()
+                            if menu_count > 0:
+                                opts_loc = menu.locator('.select__option')
+                                # Find option containing disc_want
+                                matched_opt = None
+                                for i in range(min(opts_loc.count(), 30)):
+                                    txt = opts_loc.nth(i).inner_text()
+                                    if disc_want.lower() in txt.lower():
+                                        matched_opt = opts_loc.nth(i)
+                                        break
+                                if matched_opt is None and opts_loc.count() > 0:
+                                    matched_opt = opts_loc.first  # pick first filtered result
+                                if matched_opt is not None:
+                                    opt_text = matched_opt.inner_text()
+                                    matched_opt.click()
+                                    time.sleep(0.15)
+                                    log(f"education discipline PW fill: clicked {opt_text!r}")
+                                    report["events"].append({"step": "education_discipline_pw", "result": {"ok": True, "val": opt_text}})
+                                else:
+                                    log(f"education discipline PW fill: no options in menu for {disc_want!r}")
+                                    report["events"].append({"step": "education_discipline_pw", "result": {"ok": False, "val": disc_want}})
+                            else:
+                                log(f"education discipline PW fill: menu not found after typing {disc_want!r}")
+                                report["events"].append({"step": "education_discipline_pw", "result": {"ok": False, "val": disc_want, "err": "no menu"}})
+                        except Exception as de:
+                            log(f"education discipline PW fill err: {de}")
+                            report["events"].append({"step": "education_discipline_pw", "error": str(de)})
             except Exception as e:
                 log(f"education_panel err (continuing): {e}")
                 report["events"].append({"step": "education_panel", "error": str(e)})
@@ -643,14 +731,70 @@ def run(slug: str, *, dry_run: bool = False, headless: bool = True, debug_filest
             log(f"work_experience_block err (continuing): {e}")
             report["events"].append({"step": "work_experience_block", "error": str(e)})
 
-        # Needs-review dropdowns are NOT auto-resolved here — caller should
-        # already have spec-correct labels. Log them for transparency.
+        # Needs-review dropdowns: inspect live options, then commit using
+        # the plan's alternates to find the best matching live option.
+        # (2026-06-30: upgraded from inspect-only to inspect+commit.)
+        nrd_commit_specs = []
         for ndd in plan.get("needs_review_dropdowns", []) or []:
             try:
                 r = evalfn(gf.JS_INSPECT_OPTIONS, {"id": ndd["id"]})
                 report["events"].append({"step": "needs_review_inspect", "id": ndd["id"], "result": r})
-            except Exception:
-                pass
+                live_opts = r.get("options", []) if r else []
+                if not live_opts:
+                    continue
+                # Try label first, then state expansions, then alternates.
+                label_val = ndd.get("label", "")
+                _STATE_MAP = {"WA": ["Washington", "Another State in the US"], "CA": ["California"], "NY": ["New York"], "TX": ["Texas"], "IL": ["Illinois"]}
+                state_expansions = _STATE_MAP.get(str(label_val).upper(), [])
+                candidates = [label_val] + state_expansions + list(ndd.get("alternates") or [])
+                chosen = None
+                for cand in candidates:
+                    if not cand:
+                        continue
+                    cl = str(cand).lower()
+                    # exact match first
+                    match = next((o for o in live_opts if o.lower() == cl), None)
+                    if not match:
+                        # prefix match
+                        match = next((o for o in live_opts if o.lower().startswith(cl) or cl.startswith(o.lower())), None)
+                    if not match:
+                        # substring match (min 3 chars to avoid noise)
+                        match = next((o for o in live_opts if len(cl) >= 3 and cl in o.lower()), None)
+                    if match:
+                        chosen = match
+                        break
+                if chosen:
+                    nrd_commit_specs.append({"id": ndd["id"], "label": chosen})
+                    log(f"needs_review commit queued: {ndd['id']} -> {chosen!r}")
+                else:
+                    # Fallback heuristics for known option patterns when
+                    # label/alternates don't match the live option text.
+                    q_text = (ndd.get("question") or "").lower()
+                    opts_lc = [o.lower() for o in live_opts]
+                    fallback = None
+                    # InterSystems "Job Location" pattern: pick "relocate" option
+                    if any("able to work at job location" in o for o in opts_lc):
+                        # find the "relocate" option
+                        fallback = next((o for o in live_opts if "relocat" in o.lower()), None)
+                        if not fallback:
+                            fallback = next((o for o in live_opts if o.lower().startswith("able")), None)
+                    # Generic location-commitment fallback: if options are "Yes/No", pick Yes
+                    if not fallback and set(opts_lc).issuperset({"yes", "no"}):
+                        fallback = next((o for o in live_opts if o.lower() == "yes"), None)
+                    if fallback:
+                        nrd_commit_specs.append({"id": ndd["id"], "label": fallback})
+                        log(f"needs_review fallback queued: {ndd['id']} -> {fallback!r}")
+                    else:
+                        log(f"needs_review no live match for {ndd['id']}: candidates={candidates[:3]} opts={live_opts[:5]}")
+            except Exception as e:
+                log(f"needs_review_inspect err {ndd.get('id')}: {e}")
+        if nrd_commit_specs:
+            try:
+                nrd_result = evalfn(gf.JS_PICK_DROPDOWNS, nrd_commit_specs)
+                report["events"].append({"step": "needs_review_commit", "result": nrd_result})
+                log(f"needs_review committed: {nrd_result}")
+            except Exception as e:
+                log(f"needs_review_commit err: {e}")
 
         # Unplanned-required-dropdown filler (chain_011, 2026-05-26).
         # Some GH tenants (Lyft 716) ship required dropdowns that boards-api
@@ -1078,10 +1222,13 @@ def run(slug: str, *, dry_run: bool = False, headless: bool = True, debug_filest
             )
             if _capsolver_enabled():
                 log("capsolver pre-submit ENABLED; attempting recaptcha v3")
+                # Use frame URL for the captcha domain - the GH enterprise
+                # sitekey is registered to job-boards.greenhouse.io, not the
+                # wrapper company domain (brex.com, stripe.com, etc.).
+                captcha_page_url = frame.url if frame.url and 'greenhouse.io' in frame.url else page.url
                 presubmit = solve_and_inject_recaptcha_v3(
                     frame,
-                    page_url=page.url,  # top-level URL; v3 token is bound
-                                        # to the parent page origin not the iframe
+                    page_url=captcha_page_url,
                 )
                 report["captcha_presubmit"] = presubmit
                 log(f"capsolver pre-submit result: "

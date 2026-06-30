@@ -562,7 +562,7 @@ class TestUniverseFilter:
     def test_excluded_strategies_dropped_from_count(self):
         from runner.edge_calibrator import _fetch_all_trades, _filter_trades, _fifo_match_global
         # 2 live-book trips + a pile of excluded noise
-        rows = (self._roundtrip_rows("breakout_xlk__mut_c382b1", 2, win=True)
+        rows = (self._roundtrip_rows("tqqq_cot_combo", 2, win=True)
                 + self._roundtrip_rows("backstop_test", 5, win=False)
                 + self._roundtrip_rows("sma_crossover_btc", 4, win=True)
                 + self._roundtrip_rows("any", 3, win=False))
@@ -574,17 +574,17 @@ class TestUniverseFilter:
         filt = _filter_trades(all_trades)
         trips = _fifo_match_global(filt)
         assert len(trips) == 2
-        assert all(t["strategy"] == "breakout_xlk__mut_c382b1" for t in trips)
+        assert all(t["strategy"] == "tqqq_cot_combo" for t in trips)
 
     def test_not_in_roster_dropped(self):
         from runner.edge_calibrator import _filter_trades
         # A strategy that's neither excluded nor in the live roster is still dropped
         rows = ([{"strategy": "some_random_unlisted_strat", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}]
-                + [{"strategy": "breakout_xlk__mut_c382b1", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}])
+                + [{"strategy": "tqqq_cot_combo", "symbol": "AAA", "side": "buy", "qty": 1.0, "price": 100.0}])
         filt = _filter_trades(rows)
         strats = {r["strategy"] for r in filt}
         assert "some_random_unlisted_strat" not in strats
-        assert strats == {"breakout_xlk__mut_c382b1"}
+        assert strats == {"tqqq_cot_combo"}
 
     def test_explicit_universe_overrides_default(self):
         from runner.edge_calibrator import _filter_trades
@@ -605,7 +605,7 @@ class TestUniverseFilter:
     def test_train_gate_counts_live_book_only(self):
         from runner.edge_calibrator import train_calibrator, MIN_ROUND_TRIPS_TOTAL
         # 5 live-book trips + 40 excluded crypto trips → still below gate (only 5 count)
-        rows = (self._roundtrip_rows("breakout_xlk__mut_c382b1", 5, win=True)
+        rows = (self._roundtrip_rows("tqqq_cot_combo", 5, win=True)
                 + self._roundtrip_rows("sma_crossover_btc", 40, win=True))
         db_path = _make_trades_db(rows)
         res = train_calibrator(db_path=str(db_path))
@@ -617,7 +617,7 @@ class TestUniverseFilter:
         from runner.edge_calibrator import extract_training_rows, _fetch_all_trades
         # backstop_test has many LOSING trips; live book has winning trips.
         # The training label set must contain NONE of the harness losses.
-        rows = (self._roundtrip_rows("breakout_xlk__mut_c382b1", 6, win=True)
+        rows = (self._roundtrip_rows("tqqq_cot_combo", 6, win=True)
                 + self._roundtrip_rows("sma_crossover_qqq_regime", 6, win=True)
                 + self._roundtrip_rows("backstop_test", 20, win=False))
         db_path = _make_trades_db(rows)
@@ -630,7 +630,7 @@ class TestUniverseFilter:
 
     def test_report_says_live_book(self):
         from runner.edge_calibrator import calibration_report
-        rows = (self._roundtrip_rows("breakout_xlk__mut_c382b1", 2, win=True)
+        rows = (self._roundtrip_rows("tqqq_cot_combo", 2, win=True)
                 + self._roundtrip_rows("backstop_test", 3, win=False))
         db_path = _make_trades_db(rows)
         rep = calibration_report(db_path=str(db_path))

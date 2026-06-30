@@ -1,17 +1,13 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-29T08:22:18+00:00
+# STATUS: SUBMITTED
 
-role_id: 3456
-slug:    intersystems-7735588003
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-intersystems-7735588003.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/intersystems-7735588003/Cyrus_Shekari_Resume_intersystems_7735588003_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/intersystems-7735588003/cover_answers.md
-wrapper: https://www.intersystems.com/careers/careers-search/?gh_jid=7735588003
-
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
-
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug intersystems-7735588003
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).
+- role_id: 3456
+- company: InterSystems
+- role: Sales Engineer - Financial Services
+- gh_jid: 7735588003
+- submitted_at: 2026-06-30
+- submitted_by: auto
+- confirmation_url: https://job-boards.greenhouse.io/embed/job_app/confirmation?for=intersystems&token=7735588003
+- verification_code: niT2fG39
+- resume: Cyrus_Shekari_Resume_intersystems_7735588003_v2.pdf
+- job_location: Able to relocate to job location
+- employment_history: I have never worked at InterSystems

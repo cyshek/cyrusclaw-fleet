@@ -1119,6 +1119,56 @@ def main():
             # Re-read state so emptyRequired/multiUnset reflect the commits.
             state = page.evaluate(PRESUBMIT_STATE_JS)
             result['preSubmitState'] = json.loads(state)
+            # PW fallback: if MULTI_PICK left chips empty, use real Playwright clicks
+            still_unset = result['preSubmitState'].get('multiUnset') or []
+            pw_mc_results = []
+            for spec in ms_specs:
+                bare_id = spec["id"].replace("[]", "")
+                if bare_id in still_unset or spec["id"] in still_unset:
+                    # check if tags are present
+                    tags_js = f"""()=>{{
+                        const bid = {repr(bare_id)};
+                        const inp = document.getElementById(bid) || document.getElementById(bid + '[]');
+                        if (!inp) return [];
+                        const ctrl = inp.closest('.select__control');
+                        if (!ctrl) return [];
+                        return [...ctrl.querySelectorAll('.select__multi-value__label')].map(e => e.textContent);
+                    }}"""
+                    tags = page.evaluate(tags_js)
+                    if not tags:
+                        # Use Playwright real clicks
+                        vals = spec.get("label") if isinstance(spec.get("label"), list) else [spec.get("label")]
+                        try:
+                            # Use attribute selector (handles [] in ID, safe with CSS.escape)
+                            # Try bare_id first, then with [] suffix
+                            for try_id in [bare_id, spec["id"]]:
+                                ctrl_loc = page.locator(f'input[id="{try_id}"]').locator('xpath=ancestor::*[contains(@class,"select__control")]')
+                                if ctrl_loc.count() > 0:
+                                    break
+                            else:
+                                pw_mc_results.append({"id": spec["id"], "err": "no ctrl for PW click"})
+                                continue
+                            ctrl_loc.first.click()
+                            page.wait_for_timeout(400)
+                            for val in vals:
+                                if val:
+                                    opt = page.get_by_role("option", name=val, exact=False).first
+                                    if opt.count() == 0:
+                                        opt = page.locator(f'.select__option').filter(has_text=val).first
+                                    if opt.count() > 0:
+                                        opt.click()
+                                        page.wait_for_timeout(200)
+                                        pw_mc_results.append({"id": spec["id"], "val": val, "ok": True})
+                                    else:
+                                        pw_mc_results.append({"id": spec["id"], "val": val, "err": "no option"})
+                            page.keyboard.press("Escape")
+                            page.wait_for_timeout(150)
+                        except Exception as pw_e:
+                            pw_mc_results.append({"id": spec["id"], "err": str(pw_e)})
+            if pw_mc_results:
+                result['steps']['multiselect_commit_pw'] = pw_mc_results
+                state = page.evaluate(PRESUBMIT_STATE_JS)
+                result['preSubmitState'] = json.loads(state)
         else:
             result['steps']['multiselect_commit'] = {
                 'skipped': 'no dryrun-resolved plan values for multiUnset',
@@ -1136,6 +1186,22 @@ def main():
         maybe_capture_by_slug(page, plan.get('slug'))
     except Exception as _e:
         print(f"[proof_capture] skipped: {_e}")
+
+    # Pre-submit reCAPTCHA v3 solve (2026-07-01): GH direct-board forms score
+    # the submit attempt; inject a fresh token BEFORE clicking to avoid silent
+    # server-side rejection. Only runs when ENABLE_CAPSOLVER=1.
+    try:
+        from captcha_presubmit import solve_and_inject_recaptcha_v3
+        _pre_cap = solve_and_inject_recaptcha_v3(
+            page,
+            fallback_sitekey='6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0',
+            action='job_apply',
+            page_url=url
+        )
+        print(f'[pre-submit-captcha] {_pre_cap}', flush=True)
+        result['steps']['pre_submit_captcha'] = _pre_cap
+    except Exception as _cap_e:
+        print(f'[pre-submit-captcha] skipped: {_cap_e}', flush=True)
 
     # click submit — REAL playwright click triggers full React validation
     # (evaluate-click misses checkbox-group/required-field validation). Falls

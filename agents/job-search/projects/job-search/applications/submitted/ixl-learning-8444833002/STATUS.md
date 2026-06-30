@@ -1,12 +1,17 @@
-SUBMITTED — 2026-06-25T01:18:49+00:00
+PREP-READY-IFRAME-RUNNER — 2026-06-30T05:18:32+00:00
 
 role_id: 3446
-slug: ixl-learning-8444833002
-ats: greenhouse_iframe
-submitted_by: auto (_gh_submit.py)
-confirmation_url: https://job-boards.greenhouse.io/embed/job_app/confirmation?for=ixllearning&token=8444833002
-confirmation: Thank you for applying and for your interest in IXL Learning!
+slug:    ixl-learning-8444833002
+plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-ixl-learning-8444833002.json
+pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/ixl-learning-8444833002/Cyrus_Shekari_Resume_ixllearning_8444833002_v2.pdf
+cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/ixl-learning-8444833002/cover_answers.md
+wrapper: https://www.ixl.com/company/jobs?gh_jid=8444833002
 
-Your application 
-screenshot: n/a
-resume_attached: yes
+Calling agent / cron: do NOT execute the browser plan with the
+generic browser tool — the canonical /embed/job_app URL is
+reCAPTCHA-Enterprise gated. Instead run:
+
+    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug ixl-learning-8444833002
+
+and overwrite this STATUS.md with the runner's outcome block
+(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).

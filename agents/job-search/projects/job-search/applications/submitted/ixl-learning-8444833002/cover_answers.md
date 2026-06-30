@@ -2,4 +2,4 @@
 
 ## If you do not currently live a commutable distance to our San Mateo, CA, office, will you please let us know if you plan to relocate?
 
-I currently live in Kirkland, WA, so I am not within commuting distance of San Mateo. I am fully open to relocating for this role and can do so within two weeks of an offer.
+I'm currently based in Kirkland, WA, and yes, I'm fully open to relocating to the San Mateo area for this role. I can make myself available within two weeks of an offer.

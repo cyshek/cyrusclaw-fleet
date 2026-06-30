@@ -5,7 +5,7 @@
 **Apply:** https://comcast.wd5.myworkdayjobs.com/Comcast_Careers/job/NY---New-York-1407-Broadway-Floor-12/Solutions-Architect---FreeWheel---NYC_R439239/apply
 **Workday tenant:** comcast
 **Req ID:** R439239
-**Posted on:** Posted 10 Days Ago
+**Posted on:** Posted 16 Days Ago
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---

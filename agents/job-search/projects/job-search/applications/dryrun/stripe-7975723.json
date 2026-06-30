@@ -4,7 +4,7 @@
   "job_id": "7975723",
   "job_title": "Solutions Architect, AI",
   "job_location": "US-San Francisco",
-  "fetched_at": "2026-06-24T05:25:36Z",
+  "fetched_at": "2026-06-30T04:30:58Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7975723?questions=true",
   "ready_to_submit": true,
   "counts": {
@@ -553,17 +553,6 @@
       "options": null
     },
     {
-      "id": "question_67486076",
-      "label": "What is the most recent degree you obtained?",
-      "type": "input_text",
-      "required": true,
-      "value": "Bachelor of Science",
-      "source": "education.degree",
-      "status": "filled",
-      "matched_rule": "degree",
-      "options": null
-    },
-    {
       "id": "question_67486077",
       "label": "Do you opt-in to receive WhatsApp messages from Stripe Recruiting?",
       "type": "multi_value_single_select",
@@ -580,6 +569,54 @@
         {
           "label": "No",
           "value": 727216615
+        }
+      ]
+    },
+    {
+      "id": "question_67839538",
+      "label": "What is the most recent degree you obtained?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Other",
+      "source": "education.degree | smart-matched to option 'Other'",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "High School",
+          "value": 730443365
+        },
+        {
+          "label": "Associate's Degree",
+          "value": 730443369
+        },
+        {
+          "label": "Bachelor's Degree",
+          "value": 730443373
+        },
+        {
+          "label": "Master's Degree",
+          "value": 730443377
+        },
+        {
+          "label": "Master of Business Administration (M.B.A.)",
+          "value": 730443382
+        },
+        {
+          "label": "Juris Doctor (J.D.)",
+          "value": 730443394
+        },
+        {
+          "label": "Doctor of Medicine (M.D.)",
+          "value": 730443398
+        },
+        {
+          "label": "Doctor of Philosophy (Ph.D.)",
+          "value": 730443405
+        },
+        {
+          "label": "Other",
+          "value": 730443409
         }
       ]
     },

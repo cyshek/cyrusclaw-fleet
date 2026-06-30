@@ -1,17 +1,31 @@
-PREP-READY-IFRAME-RUNNER — 2026-06-29T08:22:54+00:00
+SUBMITTED
 
-role_id: 916
-slug:    wiz-4665622006
-plan:    /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-wiz-4665622006.json
-pdf:     /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/wiz-4665622006/Cyrus_Shekari_Resume_wizinc_4665622006_v2.pdf
-cover:   /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/wiz-4665622006/cover_answers.md
-wrapper: https://www.wiz.io/careers/job/4665622006/:title?gh_jid=4665622006
+submitted_by: auto
+applied_on: 2026-06-29
+role_id: 3849
+submitted_at: 2026-06-29T19:02:31+00:00
 
-Calling agent / cron: do NOT execute the browser plan with the
-generic browser tool — the canonical /embed/job_app URL is
-reCAPTCHA-Enterprise gated. Instead run:
+Runner tail:
+title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "wKcnXN35",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/embed/job_app/confirmation?for=wizinc&token=4665622006",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Hello!\u00a0\n\nThank you for your interest in Wiz! We have received your application, and we are delighted that you would consider joining our team. Our team will review your application and will be in touc"
+ },
+ "status": "SUBMITTED"
+}
 
-    .venv/bin/python role-discovery/greenhouse_iframe_runner.py --slug wiz-4665622006
-
-and overwrite this STATUS.md with the runner's outcome block
-(see INLINE-SUBMIT-PLAYBOOK.md § greenhouse_iframe runner).

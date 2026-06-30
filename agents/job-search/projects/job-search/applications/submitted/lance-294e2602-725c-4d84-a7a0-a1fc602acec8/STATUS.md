@@ -1,12 +1,9 @@
-# SUBMITTED — Lance (role 2595, Product Manager)
-- role_id: 2595
-- company: Lance
-- ats: ashby (slug lance-294e2602-725c-4d84-a7a0-a1fc602acec8)
-- result: SUBMITTED (on 3rd attempt; rotating autofill-clobber re-emptied a different field each pass - located/sponsorship/phone - converged on attempt 3)
-- proof: applicationFormResult.__typename == "FormSubmitSuccess"; runner result.ok==True
-- captcha: reCAPTCHA-v3 solved+injected via CapSolver
-- egress_ip: 82.23.97.223 (residential)
-- note: 996 question auto-answered affirmatively per 2026-06-08 standing reversal.
-- submitted_by: auto
-- submitted_at: 2026-06-08 PDT
-- run: ashby_resi_drain_r4
+PREP-READY — 2026-06-30T04:45:27+00:00
+
+role_id: 2595
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-lance-294e2602-725c-4d84-a7a0-a1fc602acec8.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/lance-294e2602-725c-4d84-a7a0-a1fc602acec8/Cyrus_Shekari_Resume_ashby-lance_294e2602_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/lance-294e2602-725c-4d84-a7a0-a1fc602acec8/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

@@ -1,0 +1,46 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Architected Azure's **recovery validation platform** end-to-end, standardizing integration workflows across Databricks, Walmart, SAP, and NetApp to sustain 45+ annual resilience drills and deliver **$14M+ business impact**.
+2. Led 0→1 design of an internal Resilience Automation Platform, defining solution requirements and self-service scheduling architecture that cut operational toil by **30%** and scaled execution across enterprise systems.
+3. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ contract requiring strict security and compliance frameworks.
+4. Pioneered Azure's first rack-level proactive resilience drill, delivering a **94% recovery rate** in 4 months by coordinating cross-functional build, test, and deployment cycles aligned to enterprise SLA requirements.
+5. Built an internal **AI agent** that restructured drill-planning workflows, reducing planning cycle time by 39% and increasing validated drill capacity by 21% across the enterprise resilience program.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **Salesforce-adjacent CRM tooling adoption** for AI-driven code generation workflows, conducting user demos and training sessions that embedded utilization across 14 key Azure service teams, saving **37 engineering hours** monthly.
+2. Shaped the product roadmap toward intent-based YAML generation by facilitating **11+ structured stakeholder interviews** with Azure service teams, translating requirements analysis findings into prioritized feature specifications.
+3. Improved solution data integrity by enforcing metadata standards and migrating documentation to an **AI-powered semantic search** platform, reducing lookup time by 83% and enabling scalable knowledge retrieval.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on an automation prioritization framework spanning 140+ teams using structured roadmap and governance tooling.
+2. Conducted requirements analysis across 20+ service teams to surface **81 hours of manual toil** per region launch, then designed a strategic roadmap to automate critical-path processes and optimize end-to-end delivery pipelines.
+3. Built a **Power BI dashboard** to track operational toil across 140+ teams, enabling leadership to prioritize automation investments and enforce delivery standards aligned to enterprise performance goals.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Defined the legacy OS migration solution architecture for a **2,000+ unit pilot**, mapping integration dependencies across 1,200+ stations and achieving zero operational downtime through rigorous build-test-deploy sequencing.
+2. Implemented **automated CI/CD pipelines** in close coordination with IT, Operations, and Engineering, accelerating the software deployment cycle by 25% and aligning development and operations processes to enterprise standards.
+3. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across cross-functional delivery teams.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by designing and implementing a CRM solution architecture that standardized the end-to-end scoping, proposal, and invoicing lifecycle across 200+ monthly customer engagements.
+2. Reduced Customer Acquisition Cost by **13%** and lifted conversions by 2.7% by executing a data-driven go-to-market strategy, integrating website and Google profile optimizations with CRM-tracked lead workflows.
+3. Delivered leadership a strategic pricing model by performing **financial data analysis** across 1,000+ project records, identifying margin leaks and producing decision-ready recommendations aligned to profitability goals.
+
+## Notes from the rewriter
+- Wove 'solution architecture' and 'integration workflows' (JD: 'designing technical solutions including integrations') into microsoft_ft bullet 1 and amazon_robotics bullet 1.
+- Mirrored JD's 'build, test, and solutions deployment' phrasing directly into microsoft_ft bullet 4 and amazon_robotics bullet 1 to reflect the delivery lifecycle language Micron uses.
+- Surfaced 'security and compliance frameworks' (JD requirement #5 / sovereign cloud security) in microsoft_ft bullet 3, and 'security' framing in skills to match Micron's mandate on secure, scalable solutions.
+- Referenced 'requirements analysis' (JD requirement verbatim) in microsoft_2023 bullet 2 and microsoft_2022 bullet 2 to directly echo Micron's stated technical expectation.
+- Introduced 'CRM solution architecture' and CRM tooling language in pro_painters bullet 1 and microsoft_2023 bullet 1 to connect Salesforce/CRM JD requirement #1 across multiple roles.
+- Used 'CI/CD pipelines' and 'Azure DevOps' framing in amazon_robotics bullet 2 to directly address JD requirement #5 on automated pipelines and ADO coordination.
+

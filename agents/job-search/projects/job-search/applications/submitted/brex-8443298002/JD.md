@@ -61,8 +61,6 @@ This role will be based in our Seattle office. We are a hybrid environment that 
 
 The expected salary range for this role is $140,000 - $210,000 USD.  However, the starting base pay will depend on a number of factors including the candidate’s location, skills, experience, market demands, and internal pay parity. Depending on the position offered, equity and other forms of compensation may be provided as part of a total compensation package.
 
- 
-
 Brex LLC is a wholly owned subsidiary of Capital One, N.A.
 
 *Please be aware, job-seekers may be at risk of targeting by malicious actors looking for personal data. Brex recruiters will only reach out via LinkedIn or email with a [brex.com](http://brex.com/) domain. Any outreach claiming to be from Brex via other sources should be ignored.*

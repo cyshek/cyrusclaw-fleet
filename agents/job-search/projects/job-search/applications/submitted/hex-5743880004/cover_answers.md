@@ -1,0 +1,17 @@
+# Cover answers — Hextechnologies, Sales Engineer, Commercial Mid-Market (hex-5743880004)
+
+## Describe a situation where your first instinct about how to handle something turned out to be wrong. How did you catch it? What did you do moving forward?
+
+When I first started scaling Azure's resilience drill program, my instinct was to push for speed. We had a backlog of partner organizations waiting to run drills, and I figured the fastest way to clear it was to run evaluations as quickly as possible and worry about repeatability later. I started booking drills back to back with Databricks, Walmart, and others without fully standardizing the workflow first.
+
+What caught me was the operational toil data I was tracking in my own reporting. After a few months I could see that each drill was still requiring roughly the same manual planning effort as the one before it. We weren't getting faster. I had been optimizing for throughput when the actual bottleneck was the lack of a repeatable foundation. The partners were also starting to feel it - coordination was inconsistent and the pre-drill architecture reviews were taking longer than the drills themselves.
+
+I shifted gears and paused new bookings long enough to define proper product requirements and build self-service scheduling into what became the Resilience Automation Platform. It was a harder conversation internally because there was pressure to keep the queue moving, but once we had the platform in place, we were able to sustain 45+ annual drills and reduce operational toil by 30%. The lesson I took from it was that moving fast without a repeatable foundation doesn't scale - it just defers the rework.
+
+## Describe a deal where you and the AE saw the customer situation differently. How did you handle it, and how did it resolve?
+
+The closest analog I can draw on comes from my work on a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract at Microsoft. In that situation, the account team's read was that the customer's primary concern was timeline - they wanted the drill executed quickly to satisfy a contractual milestone. My read, coming from the technical side, was that the architecture and security review dependencies were underweighted and that rushing without clearing those blockers was going to create real risk during execution.
+
+Rather than just flagging the disagreement, I put together a concrete dependency map showing which stakeholder sign-offs were on the critical path and what failure modes we were exposed to if we skipped steps. I brought that into a joint call with the account team so we were working from the same picture rather than talking past each other. The account team's concern about timeline was legitimate - there was real contractual pressure - so we found a middle path where I front-loaded the architecture and security reviews on an accelerated schedule while the account team managed expectations with the customer about a revised but still credible delivery window.
+
+The drill executed cleanly with a 94% recovery rate and the contract milestone was satisfied. The bigger takeaway for me was that the disagreement was mostly about what information each of us was prioritizing, not a fundamental difference in what we wanted for the customer. Getting both views in front of the same audience and grounding the conversation in specifics resolved it faster than either of us pushing harder on our own position would have.

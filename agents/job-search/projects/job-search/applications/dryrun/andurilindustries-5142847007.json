@@ -1,10 +1,10 @@
 {
-  "role_url": "https://boards.greenhouse.io/andurilindustries/jobs/5142847007?gh_jid=5142847007",
+  "role_url": "https://job-boards.greenhouse.io/andurilindustries/jobs/5142847007",
   "org": "andurilindustries",
   "job_id": "5142847007",
   "job_title": "Program Manager - SkillBridge",
   "job_location": "Ashville, Ohio, United States; Atlanta, Georgia, United States; Boston, Massachusetts, United States; Costa Mesa, California, United States; Irvine, California, United States; Seattle, Washington, United States; Washington, District of Columbia, United States",
-  "fetched_at": "2026-05-25T16:52:25Z",
+  "fetched_at": "2026-06-30T04:30:55Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs/5142847007?questions=true",
   "ready_to_submit": true,
   "counts": {
@@ -132,7 +132,7 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "Kirkland, WA",
-      "source": "address.city+state | NOTE: 'Kirkland, WA' not literally in options ['Costa Mesa, CA (HQ)', 'Irvine, CA', 'Atlanta, GA', 'Reston, VA', 'Boston, MA', 'Seattle, WA']",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Costa Mesa, CA (HQ)', 'Irvine, CA', 'Atlanta, GA', 'Reston, VA', 'Boston, MA', 'Seattle, WA']",
       "status": "filled_needs_review",
       "matched_rule": "city_state",
       "options": [
@@ -167,8 +167,8 @@
       "label": "EXPORT CONTROLS - This position requires access to information and technology that is subject to U.S. export controls. Your responses to the questions below will be used solely to determine your eligibility under U.S. law to receive information and materials subject to U.S. export controls.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "A United States citizen or national",
-      "source": "work_authorization.status=us_citizen (matched ITAR option 'A United States citizen or national')",
+      "value": "None of the above",
+      "source": "work_authorization.status=us_citizen (inverted export Q -> 'None of the above')",
       "status": "filled",
       "matched_rule": "itar_us_person_ack",
       "options": [
@@ -260,7 +260,7 @@
       "type": "multi_value_single_select",
       "required": true,
       "value": "LinkedIn",
-      "source": "common_form_answers.how_did_you_hear_about_us",
+      "source": "how_heard literal-match 'LinkedIn'",
       "status": "filled",
       "matched_rule": "how_heard",
       "options": [
@@ -494,5 +494,17 @@
       "reason": "no LABEL_RULES match for label='If other, please specify'"
     }
   ],
-  "blockers": []
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
 }

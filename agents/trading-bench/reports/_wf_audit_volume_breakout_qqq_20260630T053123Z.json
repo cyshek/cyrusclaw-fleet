@@ -1,0 +1,146 @@
+[
+  {
+    "strategy": "volume_breakout_qqq",
+    "n_windows_with_data": 8,
+    "median_return_pct": 0.11241140388561917,
+    "pct_positive": 0.625,
+    "pct_beat_bh_spy": 0.5,
+    "median_sharpe": 1.3863752062937276,
+    "median_spy_excess_ann_return": -0.04292189675819008,
+    "median_spy_information_ratio": -0.5355657321312276,
+    "worst": {
+      "label": "2022-H1 bear",
+      "pct": -0.8871624324972117
+    },
+    "best": {
+      "label": "2023-H1 recovery",
+      "pct": 0.5201830553671698
+    },
+    "fitness_gate": [
+      true,
+      "passed"
+    ],
+    "windows": [
+      {
+        "label": "2022-H1 bear",
+        "regime": "bear",
+        "end_date": "2022-07-01",
+        "days": 90,
+        "n_bars": 526,
+        "n_trades": 10,
+        "return_pct": -0.8871624324972117,
+        "sharpe": -3.505041424267213,
+        "max_dd_pct": -0.9394578903874845,
+        "bh_spy_pct": -1.4876538081690591,
+        "beats_bh_spy": true,
+        "spy_excess_ann_pct": 52.993849962516435,
+        "spy_information_ratio": 2.955626551824052
+      },
+      {
+        "label": "2022-Q3 chop",
+        "regime": "chop",
+        "end_date": "2022-10-01",
+        "days": 90,
+        "n_bars": 554,
+        "n_trades": 12,
+        "return_pct": -0.33318357878667937,
+        "sharpe": -1.3259178259267352,
+        "max_dd_pct": -0.7887549587374495,
+        "bh_spy_pct": -0.3728165820258068,
+        "beats_bh_spy": true,
+        "spy_excess_ann_pct": 14.717818297594832,
+        "spy_information_ratio": 0.7144346683759282
+      },
+      {
+        "label": "2023-H1 recovery",
+        "regime": "bull",
+        "end_date": "2023-04-01",
+        "days": 90,
+        "n_bars": 549,
+        "n_trades": 9,
+        "return_pct": 0.5201830553671698,
+        "sharpe": 2.1749813147404167,
+        "max_dd_pct": -0.23497572200985925,
+        "bh_spy_pct": 0.567482868033135,
+        "beats_bh_spy": false,
+        "spy_excess_ann_pct": -44.1297011494191,
+        "spy_information_ratio": -2.129407970584679
+      },
+      {
+        "label": "2023-Q3 chop",
+        "regime": "chop",
+        "end_date": "2023-10-01",
+        "days": 90,
+        "n_bars": 561,
+        "n_trades": 2,
+        "return_pct": 0.051494109942814247,
+        "sharpe": 1.0507376936335318,
+        "max_dd_pct": -0.07658457422277738,
+        "bh_spy_pct": -0.31180857254207783,
+        "beats_bh_spy": true,
+        "spy_excess_ann_pct": 16.069886631449016,
+        "spy_information_ratio": 1.4088998032303266
+      },
+      {
+        "label": "2024-Q2 bull",
+        "regime": "bull",
+        "end_date": "2024-07-01",
+        "days": 90,
+        "n_bars": 552,
+        "n_trades": 8,
+        "return_pct": 0.18591638598791177,
+        "sharpe": 2.154545013572408,
+        "max_dd_pct": -0.1659686954035539,
+        "bh_spy_pct": 0.44392204654900663,
+        "beats_bh_spy": false,
+        "spy_excess_ann_pct": -23.30219764923285,
+        "spy_information_ratio": -1.7855661326383834
+      },
+      {
+        "label": "2025-Q1 tariff bear",
+        "regime": "bear",
+        "end_date": "2025-05-01",
+        "days": 90,
+        "n_bars": 504,
+        "n_trades": 6,
+        "return_pct": -0.10766751181065502,
+        "sharpe": -0.9646704897690491,
+        "max_dd_pct": -0.2284386890588923,
+        "bh_spy_pct": -0.7188627368502911,
+        "beats_bh_spy": true,
+        "spy_excess_ann_pct": 25.080732142381045,
+        "spy_information_ratio": 0.7840879963350863
+      },
+      {
+        "label": "2025-Q3 bull",
+        "regime": "bull",
+        "end_date": "2025-10-01",
+        "days": 90,
+        "n_bars": 548,
+        "n_trades": 4,
+        "return_pct": 0.17332869782842408,
+        "sharpe": 1.7220127189539232,
+        "max_dd_pct": -0.1184076783238151,
+        "bh_spy_pct": 0.6167655148215635,
+        "beats_bh_spy": false,
+        "spy_excess_ann_pct": -28.790026222106402,
+        "spy_information_ratio": -2.6816163965840376
+      },
+      {
+        "label": "2026-recent bull",
+        "regime": "bull",
+        "end_date": "2026-05-25",
+        "days": 60,
+        "n_bars": 368,
+        "n_trades": 12,
+        "return_pct": 0.2679502176317555,
+        "sharpe": 2.7277847575750114,
+        "max_dd_pct": -0.276754495051345,
+        "bh_spy_pct": 1.263657430578401,
+        "beats_bh_spy": false,
+        "spy_excess_ann_pct": -138.36029989994438,
+        "spy_information_ratio": -6.221125319092398
+      }
+    ]
+  }
+]

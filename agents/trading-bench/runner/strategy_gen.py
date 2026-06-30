@@ -831,15 +831,37 @@ def _load_candidate_module_and_params(name: str):
 _PARENT_WF_CACHE: dict = {}
 
 
-def _parent_wf_cached(parent_name: str):
+def _parent_wf_cached(parent_name: str, notional_usd: float | None = None):
     """Run walk-forward for `parent_name` (a strategy in `strategies/`) and
-    cache by name. Returns a WalkForwardAggregate. Lazy import to avoid
-    pulling bars_cache at module load."""
-    if parent_name in _PARENT_WF_CACHE:
-        return _PARENT_WF_CACHE[parent_name]
-    from .walk_forward import walk_forward
-    agg = walk_forward(parent_name)
-    _PARENT_WF_CACHE[parent_name] = agg
+    cache it. Returns a WalkForwardAggregate. Lazy import to avoid pulling
+    bars_cache at module load.
+
+    NOTIONAL-MATCH (bugfix 2026-06-29): the mutation gate compares the
+    candidate's median *return %* against the parent's. In this engine
+    `total_return_pct` = dollars-pnl / starting_equity and pnl scales
+    LINEARLY with `notional_usd` (verified ratio exactly notional/100), so a
+    candidate that declares notional=1000 produces a 10x-inflated return %
+    vs a parent baseline run at its on-disk notional=100 — corrupting the
+    `MUTATION_MIN_DELTA_PCT` median-return check (it manufactured a FALSE
+    PROMOTE for breakout_xlk__mut_232050 on 2026-06-29). Fix: run the parent
+    baseline at the CANDIDATE's notional so the return-% delta is
+    apples-to-apples. The Sharpe-delta guard is notional-invariant and was
+    unaffected; this only closes the return-delta hole. Cache key includes
+    the notional so distinct-notional candidates don't collide.
+    """
+    key = (parent_name, None if notional_usd is None else round(float(notional_usd), 6))
+    if key in _PARENT_WF_CACHE:
+        return _PARENT_WF_CACHE[key]
+    from .walk_forward import walk_forward, load_strategy_module_and_params
+    if notional_usd is None:
+        agg = walk_forward(parent_name)
+    else:
+        # Re-run the parent at the candidate's notional (apples-to-apples).
+        module, p_params = load_strategy_module_and_params(parent_name)
+        p_params = dict(p_params)
+        p_params["notional_usd"] = float(notional_usd)
+        agg = walk_forward(parent_name, params=p_params, decide_fn=module.decide)
+    _PARENT_WF_CACHE[key] = agg
     return agg
 
 
@@ -1038,7 +1060,15 @@ def evaluate(candidate: dict, *, write_to_disk_temp: bool = True) -> dict:
     parent_agg = None
     if parent_name:
         try:
-            parent_agg = _parent_wf_cached(parent_name)
+            # Notional-match the parent baseline to the candidate so the
+            # mutation gate's median-return delta is apples-to-apples
+            # (return % scales linearly with notional in this engine).
+            cand_notional = None
+            try:
+                cand_notional = float(params.get("notional_usd")) if params else None
+            except (TypeError, ValueError):
+                cand_notional = None
+            parent_agg = _parent_wf_cached(parent_name, cand_notional)
         except Exception as e:
             # Don't fail the whole eval if parent baseline isn't reproducible;
             # log and fall back to absolute-gate-only behavior.

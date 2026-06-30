@@ -4,7 +4,7 @@
   "job_id": "7377101",
   "job_title": "Technical Solutions Engineer",
   "job_location": "Remote - California, Remote - Colorado, Remote - Oregon, Remote - Washington ",
-  "fetched_at": "2026-06-24T05:10:44Z",
+  "fetched_at": "2026-06-30T04:31:26Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/stripe/jobs/7377101?questions=true",
   "ready_to_submit": true,
   "counts": {
@@ -472,17 +472,6 @@
       "options": null
     },
     {
-      "id": "question_61258869",
-      "label": "What is the most recent degree you obtained?",
-      "type": "input_text",
-      "required": true,
-      "value": "Bachelor of Science",
-      "source": "education.degree",
-      "status": "filled",
-      "matched_rule": "degree",
-      "options": null
-    },
-    {
       "id": "question_61542746",
       "label": "To ensure we can focus fully on our conversation, we use BrightHire to record and transcribe interviews. This helps us get to know you better without the distraction of note-taking. We also use BrightHire to help us analyze interview notes and for internal Stripe interview quality training and assurance purposes. Please confirm if you consent to BrightHire being enabled for this interview and for your personal data to be collected and processed for the purposes mentioned above, by responding below.",
       "type": "multi_value_single_select",
@@ -512,6 +501,54 @@
       "status": "filled",
       "matched_rule": "city",
       "options": null
+    },
+    {
+      "id": "question_67838842",
+      "label": "What is the most recent degree you obtained?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Other",
+      "source": "education.degree | smart-matched to option 'Other'",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "High School",
+          "value": 730437125
+        },
+        {
+          "label": "Associate's Degree",
+          "value": 730437128
+        },
+        {
+          "label": "Bachelor's Degree",
+          "value": 730437130
+        },
+        {
+          "label": "Master's Degree",
+          "value": 730437132
+        },
+        {
+          "label": "Master of Business Administration (M.B.A.)",
+          "value": 730437134
+        },
+        {
+          "label": "Juris Doctor (J.D.)",
+          "value": 730437136
+        },
+        {
+          "label": "Doctor of Medicine (M.D.)",
+          "value": 730437138
+        },
+        {
+          "label": "Doctor of Philosophy (Ph.D.)",
+          "value": 730437140
+        },
+        {
+          "label": "Other",
+          "value": 730437144
+        }
+      ]
     },
     {
       "id": "disability_status",

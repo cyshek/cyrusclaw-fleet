@@ -62,3 +62,35 @@ staleness (rc=0): {"rows_logged": 1, "latest_logged": "2026-06-26", "latest_spx"
 snapshot rc: 0
 staleness (rc=0): {"rows_logged": 1, "latest_logged": "2026-06-26", "latest_spx": "2026-06-26", "behind_days": 0}
 === end xa_tsmom @ 20260626T213501Z ===
+=== xa_tsmom_paper_tracker @ 20260629T213501Z ===
+[xa_tsmom_paper] bar refresh: {"SPY": "2026-06-29", "TLT": "2026-06-29", "GLD": "2026-06-29", "DBC": "2026-06-29", "UUP": "2026-06-29"}
+{
+  "mark_date": "2026-06-29",
+  "decision_month": "2026-05",
+  "weights": {
+    "SPY": 0.2,
+    "TLT": 0.2,
+    "GLD": 0.2,
+    "DBC": 0.2,
+    "UUP": 0.2
+  },
+  "cash_w": 0.0,
+  "held": [
+    "SPY",
+    "TLT",
+    "GLD",
+    "DBC",
+    "UUP"
+  ],
+  "daily_ret": 9.006032689096199e-05,
+  "cum_ret_since_start": 9.006032689096166e-05,
+  "spx_daily_ret": 0.016474862380159383,
+  "cum_spx_since_start": 0.016474862380159383,
+  "engine_full_sharpe": 0.7462663332575002,
+  "is_first_row": false
+}
+[xa_tsmom_paper] staleness: {"rows_logged": 2, "latest_logged": "2026-06-29", "latest_spx": "2026-06-29", "behind_days": 0}
+[xa_tsmom_paper] forward: {"rows_logged": 2, "first_date": "2026-06-26", "last_date": "2026-06-29", "cum_book_ret": 9.006032689096166e-05, "cum_spx_ret": 0.016474862380159383, "fwd_book_sharpe": 0.0, "fwd_spx_sharpe": 0.0, "n_return_days": 1}
+snapshot rc: 0
+staleness (rc=0): {"rows_logged": 2, "latest_logged": "2026-06-29", "latest_spx": "2026-06-29", "behind_days": 0}
+=== end xa_tsmom @ 20260629T213501Z ===

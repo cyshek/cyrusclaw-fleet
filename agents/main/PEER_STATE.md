@@ -1,7 +1,7 @@
 # PEER_STATE.md
 
 _Auto-generated digest of peer agents' latest daily memory + current BACKLOG.md._
-_Generated: 2026-06-28 11:00 UTC_
+_Generated: 2026-06-29 11:00 UTC_
 
 ---
 
@@ -9,29 +9,59 @@ _Generated: 2026-06-28 11:00 UTC_
 
 ### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-28 (UTC) / 2026-06-27–28 (PDT)
+# 2026-06-28 Daily Log
 
-## Summary
-This date's work was the tail of the June 27 grind session (02:00–02:35 PDT = 09:00–09:35 UTC June 28).
+## Rekey Blocked URLs (ran overnight into 2026-06-29 UTC)
 
-## LinkedIn resolver + post-drain (02:00–02:35 UTC)
-- Ran `linkedin_ats_resolver_v2.py --all` (640 rows) → **57 newly resolved** (26 GH, 18 Ashby, 10 WD, 3 Lever)
-  - Critical bug: resolver was backgrounded (&) first run → never committed; re-ran foreground, batched 100 rows
-- inline_submit prepped resolved rows → GH drain: **7 submitted** (Anthropic PM×2, Anthropic TPM×2, Chime, CoreWeave, Glean, Lila Sciences TPM)
-- Ashby drain: **2 submitted** (Harvey TPM Product Trust, Hebbia Solutions Engineer)
-- Ashby RECAPTCHA failures: Baseten, Elise, Perplexity, Cursor (no-confirmation), Decagon (uncertain), h-company (video required)
+**Task:** 161 blocked roles had raw `https://` URLs as source_key — they were never properly processed. Re-keyed them to proper ATS identifiers so inline_submit.py can handle them.
 
-## Final June 27/28 state
-- Jun 27 submissions: **140** | Jun 28 so far: **9**
-- Total applied all-time: **1,358**
-- Open queue: **48 prepped rows** + 50 still-unprepped LI-resolved rows
-- XLSX: 255 open, 1,118 applied
+### Script: `rekey_blocked_urls.py`
+- Written to `role-discovery/rekey_blocked_urls.py` (committed to git)
+- Had shell/heredoc newline corruption issues; fixed with `perl -i -pe 's/\\n/\n/g'` + edit tool
 
-## Remaining blockers carried forward
-- GH Remix `emptyRequired:[""]` cohort (Stripe, FanDuel, Canonical, Brex) — unnamed required field ghost
-- Ashby HARD reCAPTCHA: Baseten, Perplexity, OpenAI, Cursor — needs real aged Google acct + dedicated residential
-- 50 unprepped LI-resolved rows (Workday=PREP-READY manual, GH/Ashby need inline_submit)
-- iCIMS hCaptcha-enterprise: 2Captcha tried, ERROR_CAPTCHA_UNSOLVABLE — 30 roles stay blocked
+### Re-key Results (241 updates committed):
+- GH direct (36): re-keyed `greenhouse:<org>:<token>`, status=queued
+- GH via-company (81): already had partial keys, re-keyed company-site cohort  
+- Ashby (42): re-keyed `ashby:<tenant>:<uuid>` (1 collision skip: ashby:blitzy)
+- Workday (82): kept URL as key, set prep_status=manual_ready, status=queued
+
+### inline_submit runs:
+- GH batch 1 (--batch 100 --ats greenhouse): 28 roles → 4 OK, 24 ABORT (404s/dryrun-blockers)
+- GH batch 2: 6 OK total
+- Ashby batch 1: ~5 OK prepped (characterai, liquid-ai, mercor, plaid, cursor) — SIGKILL'd
+- Ashby batch 2: prepped 37 new roles (cartesia, decagon, benchling, invert, verse, sierra etc.) — SIGKILL'd at role 29/39
+
+### drain_prep_ready runs:
+- GH drain (--limit 50 --ats greenhouse): **9 submitted** — airtable, axon, datadog, extend, gitlab, instacart, lyft, roblox×2
+- Ashby drain (--limit 50 --ats ashby): **9 submitted** — 1x-tech, benchling, cartesia, invert, mercor, sierra×4
+- Ashby RECAPTCHA failures: plaid, semgrep, ramp, sesame (moderate-strict cohort, need residential)
+
+### Final totals today (FINAL):
+- Re-keyed: 241 rows
+- Submitted today (applied_on=2026-06-29): **32 roles**
+  - GH drain 1: Airtable, Axon, Datadog, Extend, GitLab, Instacart, Lyft, Roblox×2 (9)
+  - Ashby drain 1: 1X Tech, Benchling, Cartesia, Invert, Mercor, Sierra×4, Zuora (9)
+  - Ashby residential drain: Casca, CharacterAI, Decagon, OpenGov, Plaid×2, Sierra-SA, Substack, VerseMedical (9)
+  - GH drain 2: Databricks×3, Formlabs (4) + Zuora already counted
+  - Full list: Airtable, Axon, Benchling, Cartesia, Casca, CharacterAI, Databricks×3, Datadog, Decagon, Extend, Formlabs, GitLab, Instacart, Invert, Lyft, Mercor, OpenGov, Plaid×2, Roblox×2, Sierra×5, Substack, 1X Tech, VerseMedical, Zuora
+- Tracker: Open=323, Applied=1198, Manual=1892
+
+### Still queued after session:
+- 128 queued (non-WD, non-google/linkedin) — need another inline_submit pass
+- 82 WD queued (prep_status=manual_ready) — human submit path
+- Remaining Ashby prepped but not submitted: characterai, cursor, decagon, liquid-ai, verse-medical (need drain_prep_ready --ats ashby pass)
+
+### Notes:
+- SIGKILL during inline_submit is recurring — processes keep getting killed mid-batch (~29/39 mark), likely memory/OOM
+- STATUS.md files DO get written before SIGKILL; DB update does NOT — drain_prep_ready recovers from STATUS.md
+- Ashby moderate-strict (plaid, ramp, skydio, notion, semgrep) = RECAPTCHA_SCORE_BELOW_THRESHOLD → need `drain_prep_ready --ats ashby --residential`
+
+## Subagent: rekey-blocked-urls (completed ~21:27 PDT)
+- Re-keyed 241 rows: 36 GH direct URLs, 81 GH via-company, 42 Ashby direct URLs, 82 Workday manual_ready
+- 32 new submissions: Airtable, Axon, Benchling, Cartesia, Character.AI, Databricks ×3, Datadog, Decagon, Extend, GitLab, Instacart, Lyft, Mercor, Plaid ×2, Roblox ×2, Sierra ×5, Substack, Verse Medical, Zuora + others
+- DB verified: 1,199 applied total
+- Remaining: ~41 GH iframe PREP-READY still in queue (SIGKILL at ~30); 82 WD manual_ready; ~13 Ashby HARD captcha
+- Apple prep-only subagent aborted (Cyrus: not worth building without auto-submit)
 
 ### BACKLOG.md
 
@@ -164,10 +194,55 @@ _…(truncated; 357 total lines in source)_
 
 ### Latest daily memory: `memory/2026-06-28.md`
 
-# 2026-06-28
+# 2026-06-28 Daily Log
 
-- No activity today. Nightly distill cron fired; nothing to log or promote.
-- System state: stable (disk ~54%, kernel 6.17.0-1018-azure, OpenClaw 2026.6.9) — no changes from Jun 27.
+## Weekly Maintenance Run (4:30 AM PDT)
+
+### Readiness check
+- main: CLEAR
+- job-search: CLEAR (replied CLEAR but had active ATS subagents — hard-hold triggered by gateway drain log)
+- travel: CLEAR
+
+### apt full-upgrade ✅
+- google-chrome-stable: 149.0.7827.155 → 149.0.7827.200
+- nodejs: 24.17.0 → 24.18.0
+- kpartx: 0.9.4-5ubuntu8.1 → 0.9.4-5ubuntu8.2
+- multipath-tools: 0.9.4-5ubuntu8.1 → 0.9.4-5ubuntu8.2
+- 0 packages removed, no load-bearing system packages touched
+
+### Security advisory check ✅
+- No pending security packages
+
+### OpenClaw update ⏸️ DEFERRED
+- Current: 2026.6.9 | Available: 2026.6.10 (patch bump, safe to auto-apply next week)
+- Gateway update.run triggered managed-service handoff, SIGUSR1 sent
+- Gateway blocked own restart: active job-search ATS subagents in-flight (Workday/Tesla/Uber, TikTok/ByteDance 63 roles, Ashby batches, GH+Ashby drain)
+- No submissions interrupted — gateway drain protection worked correctly
+- Will retry OpenClaw update next weekly run
+
+### Reboot check ✅
+- No reboot required (/var/run/reboot-required absent)
+
+### Notifications
+- Discord #1502552885756432496: summary posted ✅
+- Peer notifications sent (gateway was draining, messages sent before drain error — ok)
+
+### Lesson learned
+- job-search can reply CLEAR while having active subagent submissions; always cross-check gateway drain log / active tasks before triggering restart
+- Gateway drain protection is a reliable safety net but the hard-hold rule should be enforced proactively at the readiness-check stage (not just at restart)
+
+## 07:00 weekly-plugin-auth-check
+- Plugin check: discord plugin (only non-stock) at 2026.6.9 = core. No drift.
+- Auth check: github-copilot token present, no expired/invalid warning.
+- Node.js: v24.18.0 = latest v24 LTS patch. Current.
+- Reboot-required: file absent. No pending reboot.
+- Result: ALL PASS → NO_REPLY
+
+## 10:53 PDT — OpenClaw 2026.6.10 update confirmed post-restart
+- Cyrus asked to apply the update manually; gateway was already draining (managed handoff from morning's deferred attempt)
+- Confirmed 2026.6.9 → 2026.6.10 landed cleanly after restart
+- No errors; MEMORY.md version field updated below
+- Posted Discord confirmation to #1502552885756432496
 
 ### BACKLOG.md
 
@@ -219,11 +294,11 @@ Last reviewed: 2026-06-18
 
 ## travel
 
-### Latest daily memory: `memory/2026-06-28.md`
+### Latest daily memory: `memory/2026-06-29.md`
 
-# 2026-06-28
+# 2026-06-29
 
-- No active trip planning sessions today. Agent idle/standby.
+- No activity. Standby agent; no trips in flight, no Cyrus interactions today (nightly cron only).
 
 ### BACKLOG.md
 
@@ -261,17 +336,21 @@ _(none yet — will populate as trip ideas come in)_
 
 ## trading-bench
 
-### Latest daily memory: `memory/2026-06-28.md`
+### Latest daily memory: `memory/2026-06-29.md`
 
-# 2026-06-28 (Sunday)
+# 2026-06-29 (UTC / Monday)
 
-- No active sessions today. Nightly distill pass ran at 02:00 PT.
-- State carry-forward from yesterday:
+## Nightly distill — 2026-06-29 09:00 UTC (2:00 AM PT)
+
+- No interactive sessions today (Sunday night PT / early Monday UTC).
+- Nightly distill cron ran; no new work to log.
+- State carry-forward from 2026-06-28:
   - Live roster: 6 strategies (breakout_xlk pulled, allocator breadth-gated)
-  - Monday 06-29 mutation pass: verified-runnable via dry-run (harness healthy)
-  - Barroso momentum-crash-aware sizing: CLEAN NO-GO (all 4 variants; canary falsifies timing; no engine writes)
-  - All 6 protected hard-rail files: md5s unchanged
-- MEMORY.md current; no stale entries found.
+  - **Monday 06-29 mutation pass: planned** — harness verified-runnable, ready to execute
+  - Polymarket: 1 bet pending resolution today (WTI $65 LOW in June, resolves Jun 30 via Pyth). BTC-$70k-June (#10) likely a loss (BTC ~$60.1k as of yesterday, resolves Jul 1).
+  - Weekly leaderboard + candidate cull cron auto-fires today (~9am PT Saturday schedule — actually fires Saturdays; next is Jul 5)
+  - All 6 hard-rail files: md5s unchanged as of yesterday
+- MEMORY.md current; no pruning needed.
 
 ### BACKLOG.md
 
@@ -402,17 +481,16 @@ _…(truncated; 280 total lines in source)_
 
 ## making-money
 
-### Latest daily memory: `memory/2026-06-28.md`
+### Latest daily memory: `memory/2026-06-29.md`
 
-# 2026-06-28
+# 2026-06-29
 
-## Nightly distill — 2026-06-28 02:20 PT
+## Nightly distill — 2026-06-29 02:20 PT
 - No Cyrus interaction or new work today.
-- State unchanged from 06-27 EOD: 42 agency emails sent total (batch1: 15, batch2: 27), 2 bounces (Cooney Law, Allante Life Med Spa). 25/27 batch2 clean.
-- Booking link live: cal.com/cyshek/15min — waiting on reply data.
-- Agency-reply-monitor cron active (every 2h, job b2ac77a9), will flag prospect replies to channel.
-- EXP-3 (PagePeek) still in organic install window; verdict ~2026-07-04.
-- MEMORY.md reviewed — no new durable lessons to promote, no stale entries found.
+- State unchanged from 06-28: 42 agency emails sent (batch1:15, batch2:27), 2 bounces. Booking link live (cal.com/cyshek/15min). No replies logged yet.
+- Agency-reply-monitor cron active (job b2ac77a9, every 2h).
+- EXP-3 (PagePeek) still in organic install window; verdict due ~2026-07-04.
+- MEMORY.md reviewed — no new durable lessons, no stale entries.
 
 ### BACKLOG.md
 

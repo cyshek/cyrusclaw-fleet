@@ -72,23 +72,27 @@ MIN_ROUND_TRIPS_TOTAL = 30   # across the LIVE-BOOK roster before we bother trai
 # re-listed): breakout_xlk, breakout_xlk_regime, sma_crossover_qqq,
 # leveraged_long_trend_paper.
 LIVE_ROSTER: frozenset[str] = frozenset({
-    "breakout_xlk__mut_c382b1",
     "sma_crossover_qqq_regime",
     "sma_crossover_qqq_rth",
-    "rsi_oversold_spy",
     "volume_breakout_qqq",
     "macd_momentum_iwm",
     "tqqq_cot_combo",
     "allocator_blend",
 })
 
-# Retired-from-cron strategies (de-listed in the 2026-06-24 12->8 dedup). Kept
-# as a named set for visibility + 1-line re-add; NOT part of the live universe.
+# Retired-from-cron strategies (de-listed in the 2026-06-24 12->8 dedup, then
+# 8->6 on 2026-06-27/30). Kept as a named set for visibility + 1-line re-add;
+# NOT part of the live universe.
+#   - breakout_xlk__mut_c382b1: pulled 2026-06-27 (OOS Sharpe -0.089, dead weight). Position flat.
+#   - rsi_oversold_spy: pulled ~2026-06-25 (low-exposure Sharpe mirage: 6.86%/7.6yr vs SPY +127.7%,
+#     edge-while-deployed below SPY CAGR). Orphaned 0.1363-SPY position flattened 2026-06-30 (trade 89).
 RETIRED_FROM_CRON: frozenset[str] = frozenset({
     "breakout_xlk",
     "breakout_xlk_regime",
     "sma_crossover_qqq",
     "leveraged_long_trend_paper",
+    "breakout_xlk__mut_c382b1",
+    "rsi_oversold_spy",
 })
 
 # Known non-book strategy names that must NEVER enter the gate or training set,

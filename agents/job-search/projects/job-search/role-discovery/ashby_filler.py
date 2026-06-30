@@ -565,7 +565,41 @@ JS_RESOLVE_RADIO_LABELS = r"""
               || inputs.find(i => labelText(i.id).includes(c));
         if (chosen) break;
       }
-      if (!chosen) { out.no_match.push({name, want: r.value, options: inputs.map(i => labelText(i.id))}); continue; }
+      if (!chosen) {
+        // ---- (a2) sr-only radio fallback: match by value="true"/"false" for boolean yes/no ----
+        // Cursor-class embed uses <input type=radio class=sr-only value="true/false"> with no <label for=>
+        const boolMap = {yes: 'true', no: 'false', true: 'true', false: 'false', '1': 'true', '0': 'false'};
+        let boolChosen = null;
+        for (const cand of tries) {
+          const c = (cand || '').trim().toLowerCase();
+          const boolVal = boolMap[c];
+          if (boolVal) {
+            boolChosen = inputs.find(i => (i.value || '').toLowerCase() === boolVal);
+            if (boolChosen) break;
+          }
+        }
+        if (boolChosen) {
+          // already_active: radio is already checked with the correct value
+          if (boolChosen.checked) {
+            out.picked.push({name, kind: 'radio_sronly_bool', value_attr: boolChosen.value, cx: 0, cy: 0, already_active: true});
+            continue;
+          }
+          // Find nearest clickable ancestor or label wrapper
+          const wrapper = boolChosen.parentElement;
+          const rect = wrapper ? wrapper.getBoundingClientRect() : boolChosen.getBoundingClientRect();
+          out.picked.push({
+            name,
+            kind: 'radio_sronly_bool',
+            value_attr: boolChosen.value,
+            cx: Math.round(rect.left + rect.width / 2),
+            cy: Math.round(rect.top + rect.height / 2),
+            already_active: false,
+          });
+          continue;
+        }
+        out.no_match.push({name, want: r.value, options: inputs.map(i => labelText(i.id))});
+        continue;
+      }
       const label = document.querySelector(`label[for="${chosen.id}"]`);
       if (!label) { out.no_match.push({name, want: r.value, reason: 'no <label for=> found'}); continue; }
       try { label.scrollIntoView({block: 'center', behavior: 'instant'}); } catch (e) {}

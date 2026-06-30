@@ -1,9 +1,10 @@
-PREP-READY — 2026-06-27T18:39:43+00:00
+# STATUS: SUBMITTED
 
-role_id: 931
-plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-cursor-34cecd0c-c392-4454-8ef5-261310541011.json
-pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/cursor-34cecd0c-c392-4454-8ef5-261310541011/Cyrus_Shekari_Resume_ashby-cursor_34cecd0c_v2.pdf
-cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/cursor-34cecd0c-c392-4454-8ef5-261310541011/cover_answers.md
-
-Calling agent: execute the browser plan, click Submit, observe confirmation,
-then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).
+- **role_id:** 931
+- **company:** Cursor
+- **role:** Forward Deployed Engineer
+- **url:** https://cursor.com/careers/forward-deployed-engineer
+- **submitted_by:** auto (_ashby_runner.py)
+- **submitted_on:** 2026-06-30
+- **confirmation:** `{"success":true}` from /api/careers/jobs/34cecd0c-c392-4454-8ef5-261310541011/apply
+- **resume_attached:** yes

@@ -392,6 +392,31 @@ DEFAULT_UNPLANNED_DROPDOWN_PATTERNS = [
     {"pattern": "language requirements", "answer": "Yes"},
     {"pattern": "fluent in written and verbal english", "answer": "Yes"},
     {"pattern": "fluent in english", "answer": "Yes"},
+    # Country of residence / remote work Qs (Stripe 7975723/7377101, 2026-06-30)
+    {"pattern": "country where you currently reside", "answer": "US"},
+    {"pattern": "select the country where you currently reside", "answer": "US"},
+    {"pattern": "what country are you based in", "answer": "USA"},
+    {"pattern": "country are you based", "answer": "USA"},
+    {"pattern": "which country are you based", "answer": "USA"},
+    {"pattern": "plan to work remotely", "answer": "Yes, I intend to work remotely."},
+    {"pattern": "work from a remote location", "answer": "Yes, I intend to work remotely."},
+    {"pattern": "intend to work remotely", "answer": "Yes, I intend to work remotely."},
+    # State/region Qs (Waymo 2026-06-30): Cyrus in WA -> 'Another State in the US' or 'Washington'
+    {"pattern": "state/region in which you currently reside", "answer": "Another State in the US"},
+    {"pattern": "state or region where you currently reside", "answer": "Another State in the US"},
+    {"pattern": "provide the state/region", "answer": "Another State in the US"},
+    # Pre-sales / experience Qs — Cyrus has SA/SE experience -> Yes
+    {"pattern": "pre-sales role", "answer": "Yes"},
+    # InterSystems / generic job-location commitment dropdown (2026-06-30)
+    # Options: 'Able to work at job location' / 'Able to relocate to job location' / 'Unable to work...' 
+    {"pattern": "job location", "answer": "Able to relocate to job location"},
+    {"pattern": "able to work at job location", "answer": "Able to relocate to job location"},
+    {"pattern": "similar customer-facing", "answer": "Yes"},
+    {"pattern": "solutions architect, sales engineer", "answer": "Yes"},
+    # Education discipline (InterSystems 3453/3455/3456, 2026-07-01): large virtualized GH react-select
+    # that the JS approach can't filter. Cyrus is Computer Science.
+    {"pattern": "discipline", "answer": "Computer and Information Science"},
+    {"pattern": "major or area of study", "answer": "Computer and Information Science"},
     # Common legally-authorized-to-work knockout (honest: US citizen -> Yes).
     {"pattern": "legally authorized to work", "answer": "Yes"},
     {"pattern": "authorized to work in the united states", "answer": "Yes"},
@@ -1258,7 +1283,26 @@ async ({ school, degree, discipline, minor }) => {
     fire(ctrl, 'mouseup',   r.left + 5, r.top + 5);
     fire(ctrl, 'click',     r.left + 5, r.top + 5);
     await sleep(280);
-    const opts = [...document.querySelectorAll('[id^="react-select-"][id$="-option-0"], [id*="-option-"]')];
+    // If only a few options visible, try typing to filter (handles virtualized/large lists)
+    let opts = [...document.querySelectorAll('[id^="react-select-"][id$="-option-0"], [id*="-option-"]')];
+    if (opts.length <= 8 && wantedSubstr) {
+      // type to filter via native setter on the hidden text input
+      const inp = ctrl.querySelector('input');
+      if (inp) {
+        inp.focus();
+        // use native value setter to trigger React synthetic event
+        const nativeSetter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+        if (nativeSetter && nativeSetter.set) {
+          nativeSetter.set.call(inp, wantedSubstr.slice(0, 20));
+          inp.dispatchEvent(new KeyboardEvent('keydown', {bubbles: true, key: wantedSubstr[0] || 'a'}));
+          inp.dispatchEvent(new Event('input', {bubbles: true}));
+          inp.dispatchEvent(new Event('change', {bubbles: true}));
+          inp.dispatchEvent(new KeyboardEvent('keyup', {bubbles: true, key: wantedSubstr[0] || 'a'}));
+        }
+        await sleep(400);
+        opts = [...document.querySelectorAll('[id^="react-select-"][id$="-option-0"], [id*="-option-"]')];
+      }
+    }
     let best = null;
     const want = (wantedSubstr || '').toLowerCase();
     for (const o of opts) {
@@ -2054,7 +2098,13 @@ def build_plan(spec: dict) -> dict:
                 continue
             if val == "__UNRESOLVED__" or val in (None, "", []):
                 # Default: pick United States if the option is present.
-                values = ["United States", "US", "USA"]
+                # Exception: employment-history / prior-employment multis
+                # should always tick "I have never worked here" or equivalent
+                # (not "United States", which makes no sense for emp history).
+                if any(kw in (label or "").lower() for kw in ['employment history', 'employment at', 'previously worked', 'prior employment']):
+                    values = ["I have never worked"]
+                else:
+                    values = ["United States", "US", "USA"]
             elif isinstance(val, list):
                 values = [str(v) for v in val]
             else:

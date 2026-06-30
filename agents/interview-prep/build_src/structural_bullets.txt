@@ -1,0 +1,74 @@
+[Heading 1] Structural Study Guide
+[Heading 2] Project 1: Proactive Resilience Testing Program
+[Heading 3] Situation
+[normal] Ensured cloud infrastructure resilience within the team at Microsoft.
+[normal] Historically, the recovery program was entirely reactive, validating capabilities only when Service Teams requested a test.
+[normal] Drills were historically larger blast radius, increasing the likelihood of impact to other services within the cluster that did not want to participate.
+[normal] No existing framework was in place for proactively validating resilience at scale without impacting service teams.
+[normal] Owned the 0-to-1 incubation of Azure's first-ever proactive resilience testing program with a broad mandate to convert unused drill slots and scale the program by increasing the frequency of smaller blast radius drills.
+[Heading 3] The Disagreement & Pivot
+[normal] The initial execution model relied on an existing script used for power cycling nodes, tweaked to target a smaller blast radius (rack instead of cluster).
+[normal] The script was provided by engineering counterparts who develop programming for failure modes invoked for hardware power operations.
+[normal] The Availability Platform team (owning the Azure Node and VM automated recovery process) and infrastructure engineering leads raised a key concern.
+[normal] The concern was that Azure's safety mechanism marks nodes as Human Investigate when less than 20% of nodes in a cluster are powered off, as Fabric (the control plane triggering recovery) interprets this as unexpected behavior.
+[normal] After data center team inspection, Service Healing (an infrastructure fallback mechanism where VMs are migrated to healthy hardware) takes place to keep services available.
+[normal] The main issue was that ephemeral data on the nodes is wiped out during this process, making it impossible to track node recovery times and detect restart issues.
+[Heading 3] Action Taken
+[normal] Pushed back the execution date for the first Proactive drill to allow for cross-functional alignment between drill engineering and infrastructure teams.
+[normal] Decided to still use the script to power cycle nodes, but established a need to block Service Healing before the drill and unblock it afterward.
+[normal] Partnered with Availability Platform team engineers to develop scripts to trigger this blocker.
+[normal] To ensure full future autonomy, gathered engineering documents, scripts, APIs, and telemetry queries.
+[normal] Leveraged GitHub Copilot to architect an AI agent capable of programmatically executing the entire drill lifecycle.
+[normal] Successfully ran subsequent proactive drills end-to-end utilizing this AI solution.
+[Heading 3] Result
+[normal] The very first end-to-end execution achieved a 94% autonomous recovery rate, safely recovering 15 out of 16 infrastructure nodes with zero data loss.
+[normal] The drill successfully surfaced a latent hardware defect that could have impacted customers if left undetected.
+[normal] The program ultimately gained high-level executive visibility, receiving strong praise from multiple CVP leadership members and setting a new standard for resilience automation across Microsoft.
+
+[Heading 2] Project 2: GDOT Platform Integration & User Adoption
+[Heading 3] Situation
+[normal] Faced a major bottleneck while scaling the cloud recovery program due to manual confirmation requirements with the Data Center Operations team regarding planned hardware maintenance.
+[normal] Service teams lacked visibility into which slots were unavailable due to rack maintenance.
+[normal] Goal was to automate this conflict-checking process by establishing an API integration with the Global Datacenter Operations Team (GDOT) platform, the central source of truth for maintenance data.
+[normal] Integration aimed to enable the platform to automatically block unavailable dates on the internal calendar.
+[Heading 3] The Roadblock
+[normal] The project hit a major wall upon discovering that local data center operators for the Canary region were not using the central GDOT platform at all.
+[normal] Operators found the system unintuitive and difficult to navigate, leading them to track all campus maintenance data on localized, manual spreadsheets.
+[normal] Because their data was completely siloed, the automated API strategy was initially stalled due to the lack of a reliable data source to query, combined with a lack of direct authority over local operations teams.
+[Heading 3] Action Taken
+[normal] Recognized the issue as a human adoption challenge rather than purely an engineering problem, requiring a collaborative approach.
+[normal] Gathered granular usability feedback from operators and packaged it into a data-driven product gap analysis for the central GDOT product team, successfully influencing their long-term UX roadmap.
+[normal] Fed AI videos and documentation covering how to migrate data to the new platform to solve the immediate data silo.
+[normal] Had AI develop automations to assist local campus teams in migrating their spreadsheet data, including maintenance schedules, scope of work, and impacted hardware.
+[normal] Built dedicated onboarding resources, structured wiki guides, and configured a custom help copilot to support teams through the learning curve.
+[normal] Demonstrated immediate value to the 11 operators by showing how centralized data would automatically prevent recovery drills from disrupting physical data center maintenance windows.
+[Heading 3] Result
+[normal] Local teams successfully transitioned 100% of their maintenance data into the central platform, completely eliminating siloed spreadsheets in the canary region.
+[normal] Unlocked the technical roadmap, allowing the establishment of a clean API connection that eliminated manual scheduling friction and back-and-forth coordination.
+[normal] Demonstrated that true ownership means solving human adoption challenges to make technology effective.
+
+[Heading 2] Project 3: Resilience Automation Platform (Self-Service Intake)
+[Heading 3] Situation
+[normal] The team was responsible for running Azure’s high-impact resilience and recovery drills, but hit a massive scaling wall due to operational toil.
+[normal] Every internal service team scheduling request required hours of manual intake, timeline coordination, scope definition, and failure mode mapping.
+[normal] Manual friction consumed nearly 6 hours per drill for planning and scoping.
+[normal] Faced a team KPI to scale up and sustain over 45 major resilience drills a year, which was unsustainable using manual processes.
+[normal] Trying to go from running 1 drill a month to 1 drill a week
+[Heading 3] The Tension & Trade-off
+[normal] As the owner of the automation initiative to transition to a self-service platform model, I received numerous competing feature requests from internal service teams and engineering leads.
+[normal] Operated under a strict deadline to launch the platform MVP.
+[normal] Established a strict prioritization framework based on operational impact vs. execution velocity to protect project momentum.
+[normal] Focused 100% of initial engineering resources on the self-service scheduling and intake flow to offload manual work.
+[normal] Explicitly deprioritized secondary features, such as requested post-drill telemetry dashboards containing recovery metrics and RCAs, because that data could temporarily be pulled manually.
+[normal] Partnered with the Observability team to identify the source of truth for Node-to-Service team mapping, allowing Service Teams to see what hardware resources their subscriptions were tied to.
+[normal] Eliminated a tedious and inaccurate process where the team previously looked through various databases to construct ad-hoc queries for this information.
+[Heading 3] Action Taken
+[normal] Partnered with Dev and PM leads to prioritize the MVP feature set effectively.
+[normal] Leveraged AI agents to rapidly prototype key features needed, including a calendar view, drill request form, Service ID lookup resource mapping, compute infra failure modes, executive communications, RBAC, and remote execution.
+[normal] Set up an A/B testing framework to evaluate different layout configurations and visual hierarchies.
+[normal] Gathered real-world telemetry on user drop-off rates and completion times to ensure the finalized layout was frictionless for both technical and non-technical operational teams.
+[Heading 3] Result
+[normal] Launched the self-service platform exactly on time by protecting the MVP scope.
+[normal] The A/B-tested UI directly resulted in a 35% reduction in intake form completion times with a near-zero error rate during self-service scheduling.
+[normal] Transformed the operating model by crushing a process that previously required six hours of manual back-and-forth coordination down to just six minutes.
+[normal] Immediately reclaimed critical engineering hours, allowing the team to successfully scale and sustain the 45-drills-per-year milestone without adding headcount.

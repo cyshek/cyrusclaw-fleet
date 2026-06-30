@@ -77,6 +77,14 @@ if str(WORKSPACE) not in sys.path:
 BLEND_NAME = "invvol_63d"
 BLEND_COST_BPS = 2.0               # inter-sleeve monthly rebalance cost (one-way)
 VOL_LOOKBACK_DAYS = 63             # inverse-vol trailing window
+# Validated anti-rearview guardrail (report: ALLOCATOR_REARVIEW_GUARDRAIL_20260627).
+# EW-smooth the top-level inv-vol TARGET weights over the trailing N month-opens:
+# at each rebalance, average the RAW inv-vol target recomputed at the last <=N
+# month-open indices (each lookahead-safe), then renormalize to sum 1. smooth_3mo
+# was the one variant improving OOS on BOTH Sharpe (+0.011) and maxDD (+0.95pp) at
+# LOWER turnover with zero raw-return cost. Lookahead-safe by construction: a
+# smoothed weight at month m depends only on raw targets at months <= m. floor=None.
+WEIGHT_SMOOTH_MONTHS = 3           # trailing month-opens to EW-average the inv-vol target over
 ROT_ASSETS = ["SPY", "QQQ", "GLD", "TLT"]
 TRADING_DAYS = 252
 
@@ -182,10 +190,21 @@ def compute_blend_state() -> Dict:
 
     sleeves = [tqqq_r, rot_r]  # index 0 = TQQQ vol-target sleeve, 1 = rotation sleeve
 
-    # Inverse-vol (63d) target-weight function — IDENTICAL to the invvol_wfn used in
+    # Month-open indices (first calendar day index of each YYYY-MM), computed ONCE and
+    # closed over by the smoothed weight fn below. The latest-weight readout further down
+    # reuses this same list (so the smoothing fn and the readout cannot desync).
+    month_open: List[int] = []
+    seen = set()
+    for i, d in enumerate(dates):
+        ym = d[:7]
+        if ym not in seen:
+            seen.add(ym)
+            month_open.append(i)
+
+    # RAW inverse-vol (63d) target — IDENTICAL to the invvol_wfn used in
     # _allocator_blend_tests.main() for the promoted 'invvol_63d' blend. Lookahead-safe:
     # only uses sleeve returns STRICTLY BEFORE the month-open index `idx`.
-    def invvol_wfn(idx: int) -> List[float]:
+    def _raw_invvol_w(idx: int) -> List[float]:
         if idx < 2:
             return [0.5, 0.5]
         lo = max(0, idx - VOL_LOOKBACK_DAYS)
@@ -197,7 +216,31 @@ def compute_blend_state() -> Dict:
         s = iv0 + iv1
         return [iv0 / s, iv1 / s]
 
+    # SMOOTHED inv-vol target = EW-average of the RAW target over the last <=N month-opens
+    # (N = WEIGHT_SMOOTH_MONTHS), renormalized to sum 1. This is the validated smooth_3mo
+    # guardrail wired into the live blend. Lookahead-safe: at rebalance idx we only ever
+    # touch month-opens <= idx, each of which used returns strictly before its own open;
+    # appending FUTURE data after idx cannot change any selected raw target. floor=None.
+    def invvol_wfn(idx: int) -> List[float]:
+        prev = [m for m in month_open if m <= idx]
+        sel = prev[-WEIGHT_SMOOTH_MONTHS:] if prev else [idx]
+        if not sel:
+            sel = [idx]
+        acc0 = acc1 = 0.0
+        for m in sel:
+            w = _raw_invvol_w(m)
+            acc0 += w[0]
+            acc1 += w[1]
+        n = len(sel)
+        w = [acc0 / n, acc1 / n]
+        s = w[0] + w[1]
+        if s <= 0:
+            return [0.5, 0.5]
+        return [w[0] / s, w[1] / s]
+
     # Run the validated blend engine DIRECTLY to get the running equity + full Sharpe.
+    # blend_portfolio snaps to invvol_wfn(month_open) at each month-open and drifts
+    # intramonth, so the SMOOTHED targets above are what the running equity trades on.
     blend = ab.blend_portfolio(dates, sleeves, lambda i: invvol_wfn(i),
                                blend_cost_bps=BLEND_COST_BPS,
                                vol_lookback_days=VOL_LOOKBACK_DAYS)
@@ -213,14 +256,9 @@ def compute_blend_state() -> Dict:
     # --- Top-level sleeve weights currently in effect (latest month-open inv-vol) ---
     # The blend snaps to target at each month-open and drifts intramonth; the honest
     # "model says hold this" readout is the on-target weight a rebalance today would set,
-    # i.e. invvol_wfn evaluated at the latest month-open index <= last_idx.
-    month_open: List[int] = []
-    seen = set()
-    for i, d in enumerate(dates):
-        ym = d[:7]
-        if ym not in seen:
-            seen.add(ym)
-            month_open.append(i)
+    # i.e. invvol_wfn (the SMOOTHED target) evaluated at the latest month-open index
+    # <= last_idx. `month_open` was computed above (and is closed over by invvol_wfn),
+    # so the live trade weights and the running-equity weights cannot desync.
     latest_mo = month_open[-1] if month_open else last_idx
     w_tqqq, w_rot = invvol_wfn(latest_mo)
 

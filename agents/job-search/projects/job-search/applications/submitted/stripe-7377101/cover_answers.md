@@ -11,7 +11,3 @@ Program Manager
 ## What is the most recent school you attended?
 
 University of Houston
-
-## What is the most recent degree you obtained?
-
-Bachelor of Science in Computer Science
