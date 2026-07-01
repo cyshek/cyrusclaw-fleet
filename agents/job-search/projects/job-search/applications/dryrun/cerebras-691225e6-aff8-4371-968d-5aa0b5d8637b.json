@@ -1,0 +1,158 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/cerebras/691225e6-aff8-4371-968d-5aa0b5d8637b",
+  "org": "cerebras",
+  "job_id": "691225e6-aff8-4371-968d-5aa0b5d8637b",
+  "job_title": "TPM - Inference Capacity",
+  "job_location": "Headquarters/Sunnyvale Office",
+  "fetched_at": "2026-06-30T11:48:03Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_name",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_email",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_resume",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_location",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd_8505490d-6f7f-456b-87f7-cca29fc69a15",
+      "label": "Open to relocation if necessary:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd_8505490d-6f7f-456b-87f7-cca29fc69a15",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd_96a6c403-bfa5-44de-9e88-c502e5f0a888",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd_96a6c403-bfa5-44de-9e88-c502e5f0a888",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd_52ef2dc3-2679-4e86-951f-b667889967c8",
+      "label": "Cerebras products, software, source code, technology, and/or services are subject to the U.S. Export Administration Regulations (EAR). Access to controlled source code and technology by our employees may require prior authorization. Cerebras can be required to perform an export compliance assessment to review if an individual is a U.S. person, or may require a license from the U.S. Government in order to release source code and technology to employees who are not U.S. persons. In order to comply with these regulations (and for no other reason), we are asking you to confirm citizenship and permanent residency as defined below. Please check the field that applies to you:",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I am a U.S. person – this includes any individual who is a citizen of the United States, a permanent resident alien of the United States, or a protected individual as defined by 8 U.S.C. 1324b(a)(3).",
+      "source": "ashby_itar_us_person_affirm (matched US person: 'I am a U.S. person – this includes any i')",
+      "status": "filled",
+      "matched_rule": "ashby_itar_us_person_affirm",
+      "options": [
+        {
+          "label": "I am a U.S. person – this includes any individual who is a citizen of the United States, a permanent resident alien of the United States, or a protected individual as defined by 8 U.S.C. 1324b(a)(3).",
+          "value": "I am a U.S. person – this includes any individual who is a citizen of the United States, a permanent resident alien of the United States, or a protected individual as defined by 8 U.S.C. 1324b(a)(3)."
+        },
+        {
+          "label": "I am not a U.S. person, and I am not a current citizen or permanent resident of Cuba, Iran, North Korea, or Syria.",
+          "value": "I am not a U.S. person, and I am not a current citizen or permanent resident of Cuba, Iran, North Korea, or Syria."
+        },
+        {
+          "label": "I am not a U.S. person, and I am a current citizen or permanent resident of Cuba, Iran, North Korea, or Syria.",
+          "value": "I am not a U.S. person, and I am a current citizen or permanent resident of Cuba, Iran, North Korea, or Syria."
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd_52ef2dc3-2679-4e86-951f-b667889967c8",
+      "section": "Applicant Profile"
+    },
+    {
+      "id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_education_history",
+      "label": "School",
+      "type": "input_text",
+      "required": false,
+      "value": "University of Houston",
+      "source": "education.school",
+      "status": "filled",
+      "matched_rule": "school",
+      "options": null,
+      "_ashby_type": "EducationHistory",
+      "_ashby_id": "2e55118b-e9c4-49de-89fa-731bd1fba4bd__systemfield_education_history",
+      "section": "Applicant Profile"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

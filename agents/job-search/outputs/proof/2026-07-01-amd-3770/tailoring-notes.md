@@ -1,0 +1,51 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ business impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 product roadmap** for an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, adoption-ready model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable model for continuous validation.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**, coordinating requirements across engineering and partner teams.
+5. Built an internal AI agent and restructured planning workflows to apply **data-driven automation**, reducing planning cycle time by 39% and increasing drill capacity by 21% — directly expanding product adoption across engineering teams.
+6. Delivered clear functional documentation and stakeholder communications for each product release cycle, translating complex technical recovery requirements into actionable briefs consumed by senior leadership and cross-functional partners.
+7. Conducted root cause analysis across drill execution data to identify systemic gaps, recommending product improvements that informed the roadmap and enhanced overall platform fitness across sovereign and commercial cloud environments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key teams and saved 37 engineering hours monthly — directly supporting go-to-market activation.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ customer research interviews** with Azure service teams, surfacing critical feature gaps and translating findings into prioritized enhancement requests.
+3. Improved data integrity and retrieval by implementing metadata standards and migrating documentation to an **AI-powered semantic search** tool, cutting lookup time by 83% and enabling self-service adoption across internal product users.
+
+### `microsoft_2022` (4 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, building consensus across 140+ teams with competing roadmap priorities.
+2. Defined a product strategy to reduce operational toil during region launches, conducting discovery with 20+ service teams to quantify **81 hours of manual effort** per region and building a roadmap to automate the highest-impact critical paths.
+3. Enabled leadership to target automation gaps and prioritize high-value investments by engineering a **Power BI dashboard** that tracked operational toil metrics across 140+ teams, directly informing roadmap sequencing and resource allocation.
+4. Documented and analyzed enhancement requests and process inefficiencies surfaced during discovery, delivering structured findings that shaped the release plan and aligned engineering priorities to customer-facing business outcomes.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping software dependencies across 1,200+ stations, and coordinating release planning across IT, Operations, and Engineering.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, curating and prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across a cross-functional delivery team.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a scalable release model for future product version rollouts.
+4. Delivered functional product documentation and integration guides for the OS migration, translating complex system dependencies into clear requirements that enabled engineering teams to scope, estimate, and execute on schedule.
+
+### `pro_painters` (4 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning end-to-end CRM workflows, managing scoping and invoicing for 200+ monthly proposals and establishing a repeatable process that improved customer adoption and reduced proposal cycle time.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profiles to align product messaging with high-intent customer segments.
+3. Improved leadership pricing models by conducting financial profitability analysis across **1,000+ project records**, identifying and sealing margin leaks — providing the data-driven foundation needed to refine product and service pricing strategy.
+4. Gathered and analyzed customer feedback and market trends to inform service prioritization, delivering structured competitive research findings that shaped go-to-market planning and supported leadership's roadmap decisions.
+
+## Notes from the rewriter
+- 'product adoption' woven into microsoft_ft bullet#2 and microsoft_2023 bullet#1 — mirrors JD's emphasis on 'delivery and adoption of high-value product capabilities'
+- 'customer research interviews' and 'enhancement requests' used in microsoft_2023 bullet#2 and microsoft_2022 bullet#4 — directly mirrors JD language 'gather and analyze product feedback and enhancement requests'
+- 'go-to-market' used in microsoft_2023 bullet#1 and pro_painters bullet#2 — mirrors JD's 'assist marketing in communicating product benefits and supporting launch activities'
+- 'root cause analysis' and 'platform fitness' used in microsoft_ft bullet#7 — directly mirrors JD language 'participate in root cause analysis to recommend product improvements and enhance product fitness'
+- 'product version rollouts' and 'release planning' used in amazon_robotics bullet#3 — mirrors JD's 'plan, coordinate, and manage product version releases'
+- 'data-driven' framing and 'roadmap sequencing' used in microsoft_2022 bullet#3 — mirrors JD's 'strategic and analytical' persona and 'document and analyze enhancement requests and trends to inform product direction'
+

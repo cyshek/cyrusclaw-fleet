@@ -1,19 +1,30 @@
-ABORT-COVER-ANSWERS — 2026-06-22T08:16:13+00:00
+SUBMITTED
 
+submitted_by: auto
+applied_on: 2026-06-30
 role_id: 2466
-phase: cover-answers
-error:
-RuntimeError: cover_answer_generator failed (rc=1): Traceback (most recent call last):
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 564, in <module>
-    main()
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 559, in main
-    result = run(args.slug, args.max_retries)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 522, in run
-    prompt = build_prompt(jd_text, resume_text, personal_info, questions,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/cover_answer_generator.py", line 357, in build_prompt
-    { "question": "<verbatim question text>", "answer": "<answer text>" },
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-ValueError: Invalid format specifier ' "<verbatim question text>", "answer": "<answer text>" ' for object of type 'str'
+submitted_at: 2026-06-30T13:57:43+00:00
+
+Runner tail:
+oader_src": null,
+    "enterprise": false,
+    "source": null
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "cYeav7bL",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/anthropic/jobs/5222908008/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying!\n\nYour application has been received. If there is a fit, someone from our Recruiting team will notify you.\n\nView more jobs at Anthropic\nBack to job post\n\nGive your application a"
+ },
+ "status": "SUBMITTED"
+}
 

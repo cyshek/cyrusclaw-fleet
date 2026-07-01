@@ -4,13 +4,13 @@
   "job_id": "7951178",
   "job_title": "Data Product Manager",
   "job_location": "Atlanta, Georgia, United States",
-  "fetched_at": "2026-06-30T03:21:14Z",
+  "fetched_at": "2026-06-30T12:33:48Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/fanduel/jobs/7951178?questions=true",
   "ready_to_submit": true,
   "counts": {
     "total_fields": 27,
-    "filled": 23,
-    "filled_needs_review": 2,
+    "filled": 25,
+    "filled_needs_review": 0,
     "declined": 2,
     "unresolved": 0,
     "blockers": 0
@@ -255,10 +255,10 @@
       "label": "Are you located within 120 miles of the New York, Atlanta, Jersey City, Toronto or Los Angeles office? If so, which location? ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Kirkland",
-      "source": "address.city | NOTE: 'Kirkland' not literally in options ['New York', 'Jersey City', 'Atlanta', 'Los Angeles', 'None']",
-      "status": "filled_needs_review",
-      "matched_rule": "city",
+      "value": "None",
+      "source": "office_location_none: matched 'none'",
+      "status": "filled",
+      "matched_rule": "office_location_none",
       "options": [
         {
           "label": "New York",
@@ -287,10 +287,10 @@
       "label": "If you are not located within 120 miles of this location, are you willing to relocate for this opportunity upon hire?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Kirkland, WA",
-      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No', 'I am located within 120 miles']",
-      "status": "filled_needs_review",
-      "matched_rule": "city_state",
+      "value": "I am located within 120 miles",
+      "source": "office_location_none: fallback last option",
+      "status": "filled",
+      "matched_rule": "office_location_none",
       "options": [
         {
           "label": "Yes",

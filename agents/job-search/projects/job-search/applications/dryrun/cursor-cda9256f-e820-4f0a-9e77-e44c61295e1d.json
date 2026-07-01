@@ -1,0 +1,137 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/cursor/cda9256f-e820-4f0a-9e77-e44c61295e1d",
+  "org": "cursor",
+  "job_id": "cda9256f-e820-4f0a-9e77-e44c61295e1d",
+  "job_title": "Solutions Architect",
+  "job_location": "Remote",
+  "fetched_at": "2026-07-01T01:16:47Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15__systemfield_name"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15__systemfield_email"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": false,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15__systemfield_resume"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_76ac8c89-d8e8-4972-ba61-ad938053fe0d",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_76ac8c89-d8e8-4972-ba61-ad938053fe0d"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_8cad46b3-4fae-489b-b26b-5d6dc44fa4b7",
+      "label": "GitHub Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://github.com/cyshek",
+      "source": "contact.github",
+      "status": "filled",
+      "matched_rule": "github",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_8cad46b3-4fae-489b-b26b-5d6dc44fa4b7"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_c9104c7d-2dc6-4b6f-8edd-7a4e26a77734",
+      "label": "Tell us about a time you convinced a technical audience to adopt a new solution or tool. What was the resistance and how did you handle it?",
+      "type": "textarea",
+      "required": false,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_c9104c7d-2dc6-4b6f-8edd-7a4e26a77734"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_94c49e85-d3c6-4e1e-bb28-0829ade50824",
+      "label": "Will you now or in the future require visa sponsorship to work in the country where this position is located?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_94c49e85-d3c6-4e1e-bb28-0829ade50824"
+    },
+    {
+      "id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_43429982-be90-495c-81b9-49218d75113a",
+      "label": "Has someone at Cursor or Graphite referred you for this role? If so, please include their email here",
+      "type": "input_text",
+      "required": false,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "fbb7969e-79b0-4b14-bc74-3513b4b51a15_43429982-be90-495c-81b9-49218d75113a"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

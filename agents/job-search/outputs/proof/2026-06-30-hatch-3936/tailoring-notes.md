@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing multi-system orchestration workflows to sustain 45+ annual resilience drills across enterprise clients like Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 deployment** of an internal Resilience Automation Platform, defining self-service scheduling requirements and reusable architecture patterns that reduced operational toil by 30% and enabled scalable, repeatable execution.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a **rack-level drill program** in 4 months with a 94% recovery rate by building custom event-based triggers and surfacing critical hardware defects before client impact.
+4. Directed **14 cross-org recovery executions** under executive visibility, including bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring custom middleware and non-standard integration logic.
+5. Built an internal **AI agent** to automate drill planning workflows, restructuring end-to-end execution cycles to reduce planning time by 39% and increase drill capacity by 21% without adding headcount.
+6. Acted as field-side technical consultant for enterprise partners, conducting onsite architectural reviews to scope complex integration requirements and surface reproducible patterns to Product with a strong POV on native build candidates.
+7. Defined and enforced **best-practice frameworks** across enterprise SaaS implementations, creating reusable workflow templates for common integration use cases that cut repeat scoping effort and accelerated onboarding for new enterprise accounts.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove adoption of **AI-powered code generation** workflows across 14 Azure service teams by leading hands-on demos and technical onboarding sessions, saving 37 engineering hours monthly and accelerating custom tooling delivery.
+2. Surfaced critical integration gaps by facilitating **11+ user interviews** with Azure service teams, directly influencing the product roadmap to prioritize intent-based YAML generation as a native capability.
+3. Improved **API documentation retrieval** by 83% by implementing rigorous metadata standards and migrating team docs to a semantic search platform, enabling faster navigation of complex developer documentation during custom builds.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams with divergent integration requirements.
+2. Conducted discovery with 20+ service teams to map **81 hours of manual toil** per region launch, then built a roadmap to automate critical paths and eliminate recurring custom workarounds across multi-system deployments.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership real-time visibility into automation gaps and enabling data-driven prioritization of high-impact integration work.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit OS migration by mapping dependencies across 1,200+ stations and defining a phased deployment strategy that sequenced complex multi-system transitions without disrupting production.
+2. Facilitated Agile ceremonies and owned backlog prioritization, resolving **40+ high-priority tickets** to stabilize the developer intake process and unblock firmware integration work across cross-functional engineering teams.
+3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, reducing manual deployment steps and accelerating the software release cycle by 25% across the robotics fleet.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by owning the end-to-end CRM implementation — configuring workflows, webhook-style triggers, and scoping logic to manage 200+ monthly proposals with consistent, automated follow-through.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile as integrated channels in the client acquisition workflow.
+3. Identified and sealed **margin leaks** by conducting financial profitability analysis across 1,000+ project records, delivering a pricing model that gave leadership data-backed logic for quoting and resource allocation.
+
+## Notes from the rewriter
+- 'multi-system orchestration' from JD woven into microsoft_ft bullet#1 and amazon_robotics bullet#1 to mirror Hatch's core complexity framing.
+- 'reusable architecture patterns' from JD woven into microsoft_ft bullet#2 and microsoft_ft bullet#7, directly echoing Hatch's ask to prevent solving the same problem twice.
+- 'field-side technical consultant' and 'onsite architectural reviews' from JD woven into microsoft_ft bullet#6 to match Hatch's requirement for client-facing onsite visits.
+- 'custom middleware' and 'developer documentation' from JD woven into microsoft_2023 bullet#3 to surface directly relevant documentation-navigation and integration skills.
+- 'CRM implementation' and 'webhook-style triggers' from JD woven into pro_painters bullet#1 to connect sales-ops experience to Hatch's CRM integration scope.
+- 'event-based triggers' from JD woven into microsoft_ft bullet#3 to mirror Hatch's exact technical vocabulary for complex onboarding work.
+

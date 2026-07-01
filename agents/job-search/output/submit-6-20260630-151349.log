@@ -1,0 +1,719 @@
+submit run start 2026-06-30T15:13:49+00:00
+=== SUBMIT 1332 (ashby) ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 7 -> idx 9 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: browser.act.evaluate
+[runner] checkbox-ack f2d58aeac0d3: {'ok': True, 'checked': True, 'id': 'd575c68d-61ba-45b4-ae35-f32cea84a3d9_d6aebef6-0d0d-482e-b102-f2d58aeac0d3-labeled-checkbox-0', 'label': 'Yes'}
+[runner] step 7: sleep
+[runner] step 8: browser.act.evaluate
+[runner] step 9: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_name', '5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_email', '5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_73b6a961-b543-452e-a02e-049bafc88168', '5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_25ec01bb-d379-4cb7-bc1b-664124f72261', '5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 1 field(s)
+[runner] UPLOAD-LAST stabilize pass 2: re-set 1 field(s)
+[runner] UPLOAD-LAST stabilize pass 3: re-set 1 field(s)
+[runner] UPLOAD-LAST stabilize pass 4: re-set 1 field(s)
+[runner] reassert-text pass 1: repaired=1 ['b-416f-af59-d84ac4e302da'] missing=0
+[runner] reassert-text pass 2: repaired=1 ['b-416f-af59-d84ac4e302da'] missing=0
+[runner] reassert-text pass 3: repaired=1 ['b-416f-af59-d84ac4e302da'] missing=0
+[runner] UPLOAD-LAST chain_p7 re-assert: re-won 1 field(s) ['b-416f-af59-d84ac4e302da']
+[runner] step 10: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2190
+[runner] captcha v3 solved in 0.1s, token len=2190
+[runner] step 11: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 1 field(s)
+[runner] yesno not active after click b46cd0c2b755, retry 1
+[runner] SUBMIT-RESP status=200 body={"errors":[{"message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.","extensions":{"ashbyErrorId":"31a76cc2-6762-4557-bc51-54aa9a24fecf","ashbyErrorType":"RECAPTCHA_SCORE_BELOW_THRESHOLD","message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your app
+[runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[runner] reassert-select: 1 custom-select(s) checked, 0 re-committed
+[runner] reassert-select UNCOMMITTED: [('7-4525-b079-8983f9f45a37', 'no-container')]
+[runner] chain_checkbox_pw: no container for d-482e-b102-f2d58aeac0d3
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/3 committed
+[runner] last-ms radio detail: [{'n': '0-4679-b59d-b46cd0c2b755', 'ok': False}, {'n': 'e-4d69-99dc-43688e066564', 'ok': False}, {'n': '7-4525-b079-8983f9f45a37', 'ok': False}]
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+{
+  "slug": "thought-machine-c6d119df-b5e3-4d94-8a4f-22d5040a0924",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/thought-machine/c6d119df-b5e3-4d94-8a4f-22d5040a0924/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_73b6a961-b543-452e-a02e-049bafc88168",
+            "dom_id": "73b6a961-b543-452e-a02e-049bafc88168",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_25ec01bb-d379-4cb7-bc1b-664124f72261",
+            "dom_id": "25ec01bb-d379-4cb7-bc1b-664124f72261",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 7
+          },
+          {
+            "fid": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da",
+            "dom_id": "e0ffab2f-4d2b-416f-af59-d84ac4e302da",
+            "tag": "input",
+            "type": "number",
+            "current_value": "",
+            "want_len": 24
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_73b6a961-b543-452e-a02e-049bafc88168",
+            "dom_id": "73b6a961-b543-452e-a02e-049bafc88168",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_25ec01bb-d379-4cb7-bc1b-664124f72261",
+            "dom_id": "25ec01bb-d379-4cb7-bc1b-664124f72261",
+            "len": 7,
+            "post_value": "2 weeks"
+          },
+          {
+            "id": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da",
+            "dom_id": "e0ffab2f-4d2b-416f-af59-d84ac4e302da",
+            "len": 24,
+            "post_value": ""
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 5,
+      "fields": [
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_name",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_email",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_73b6a961-b543-452e-a02e-049bafc88168",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_25ec01bb-d379-4cb7-bc1b-664124f72261",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_36b75064-6520-4679-b59d-b46cd0c2b755",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 368,
+            "cy": 297
+          },
+          {
+            "name": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_1deecac8-7f5e-4d69-99dc-43688e066564",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 296
+          },
+          {
+            "name": "d575c68d-61ba-45b4-ae35-f32cea84a3d9_e685e708-a5d7-4525-b079-8983f9f45a37",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "d575c68d-61ba-45b4-ae35-f32cea84a3d9_e685e708-a5d7-4525-b079-8983f9f45a37-labeled-radio-0",
+            "label_text": "LinkedIn",
+            "cx": 315,
+            "cy": 296
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [],
+        "missing": [
+          {
+            "want_name": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_d6aebef6-0d0d-482e-b102-f2d58aeac0d3"
+          }
+        ],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "checkbox-ack",
+      "want_name": "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_d6aebef6-0d0d-482e-b102-f2d58aeac0d3",
+      "res": {
+        "ok": true,
+        "checked": true,
+        "id": "d575c68d-61ba-45b4-ae35-f32cea84a3d9_d6aebef6-0d0d-482e-b102-f2d58aeac0d3-labeled-checkbox-0",
+        "label": "Yes"
+      }
+    },
+    {
+      "i": 7,
+      "tool": "sleep"
+    },
+    {
+      "i": 8,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 6,
+        "text_filled": 4,
+        "radios_groups": 1,
+        "radios_checked": 1,
+        "checkboxes": 3,
+        "checkboxes_checked": 2,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 2,
+        "yesno_groups": 2
+      }
+    },
+    {
+      "i": 9,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-thought-machine_c6d119df_v2.pdf"
+    },
+    {
+      "i": 9,
+      "tool": "reassert-text-fields",
+      "repaired": [
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da"
+      ]
+    },
+    {
+      "i": 9,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_name",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_email",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_73b6a961-b543-452e-a02e-049bafc88168",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_25ec01bb-d379-4cb7-bc1b-664124f72261",
+        "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 10,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 129,
+      "token_len": 2190,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 11,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-select-fields",
+      "results": [
+        {
+          "name": "7-4525-b079-8983f9f45a37",
+          "want": "LinkedIn",
+          "target": "LinkedIn",
+          "ok": false,
+          "shape": null,
+          "already": false,
+          "before": null,
+          "after": null,
+          "reason": "no-container",
+          "pw_click": {
+            "ok": false,
+            "reason": "no-container"
+          }
+        }
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": []
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_name",
+          "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b__systemfield_email",
+          "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_73b6a961-b543-452e-a02e-049bafc88168",
+          "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_25ec01bb-d379-4cb7-bc1b-664124f72261",
+          "5ec8b17c-6b4c-4c5b-9e9c-973433fc876b_e0ffab2f-4d2b-416f-af59-d84ac4e302da"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": false,
+  "error": "spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)",
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Forward Deployed Engineer  LocationUnited States, New York, New York CityEmployment TypeFull timeLocation TypeHybridDepartmentClient ServicesCompensationBase Salary $140K \u2013 $220KOverviewApplicationWe couldn't submit your applicationYour application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.Learn morePowered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"8872c633-8033-433a-a6e5-e39b4b36acc4\",\"name\":\"Thought Machine\",\"publicWebsite\":\"https://www.thoughtmachine.net/\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"thought-machine\",\"activeFeatureFlags\":[\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"PermissionsAutomationOnJobConfidentialChange\",\"NewSchedulingActivityRescheduleActions\",\"InterviewLocationTypeReportingField\",\"EnhancedMobileCandidateFloatingButtons\",\"ClickhouseSharedStorageSnapshot\",\"CandidateSocialLinksWriteToTable\",\"RejectDeepPaginationOnIncrementalSync\",\"OverdueFollowupOptimizations\",\"DesignSystemDragListV2\",\"CoreMultipleBrandsEnableUnbrandedSurveys\",\"MigrateGoogleRecaptchaAutomatedLegal\",\"CoreOrganizationIssueNotifyOnNewCauseOnly\",\"WebhooksUseEncr",
+  "classify": "spam-flag"
+}
+submit 1332 rc=1
+
+=== SUBMIT 2032 (ashby) ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: sleep
+[runner] step 7: browser.act.evaluate
+[runner] step 8: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_name', 'f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_email', 'f0e1ac6d-4bb8-4751-8e6f-8ae487446253_54f5676c-c63e-48a1-8651-670b7e3a4079', 'f0e1ac6d-4bb8-4751-8e6f-8ae487446253_e350c277-8ee9-4bc2-96a8-985fe1879b69', 'f0e1ac6d-4bb8-4751-8e6f-8ae487446253_eda1e0a3-cddb-4008-b915-1a52166d1d02']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] step 9: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2212
+[runner] captcha v3 solved in 0.2s, token len=2212
+[runner] step 10: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] yesno not active after click cac5222acda0, retry 1
+[runner] SUBMIT-RESP status=200 body={"errors":[{"message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.","extensions":{"ashbyErrorId":"f77739f9-8364-4ba6-8be0-32411147c4fb","ashbyErrorType":"RECAPTCHA_SCORE_BELOW_THRESHOLD","message":"Your application submission was flagged as possible spam. If you believe this was a mistake, please submit your app
+[runner] YESNO trusted-click fix: re-clicked 1 radio(s)
+[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/5 committed
+[runner] last-ms radio detail: [{'n': '5-4dd7-ac56-c33ba8f40657', 'ok': False}, {'n': '0-4ca7-b37d-cac5222acda0', 'ok': False}, {'n': '4-4351-9698-a64781ad056a', 'ok': False}, {'n': 'e-47b1-8149-60e1151e94d8', 'ok': False}, {'n': 'b-475e-91da-ea9c1e9f6acd', 'ok': False}]
+[runner] SERVER SPAM-FLAG (gql errors[]): RECAPTCHA_SCORE_BELOW_THRESHOLD
+[runner] submit not confirmed; classify=spam-flag error=spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)
+{
+  "slug": "rillet-a182464e-76c1-4f0b-af78-76ba8a611281",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/rillet/a182464e-76c1-4f0b-af78-76ba8a611281/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_54f5676c-c63e-48a1-8651-670b7e3a4079",
+            "dom_id": "54f5676c-c63e-48a1-8651-670b7e3a4079",
+            "tag": "input",
+            "type": "tel",
+            "current_value": "",
+            "want_len": 12
+          },
+          {
+            "fid": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_e350c277-8ee9-4bc2-96a8-985fe1879b69",
+            "dom_id": "e350c277-8ee9-4bc2-96a8-985fe1879b69",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_4149c7d6-d2d7-4c55-8b4c-22b9725c9a70",
+            "dom_id": "4149c7d6-d2d7-4c55-8b4c-22b9725c9a70",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 0
+          },
+          {
+            "fid": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_eda1e0a3-cddb-4008-b915-1a52166d1d02",
+            "dom_id": "eda1e0a3-cddb-4008-b915-1a52166d1d02",
+            "tag": "textarea",
+            "type": "textarea",
+            "current_value": "",
+            "want_len": 1135
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_54f5676c-c63e-48a1-8651-670b7e3a4079",
+            "dom_id": "54f5676c-c63e-48a1-8651-670b7e3a4079",
+            "len": 12,
+            "post_value": "346-804-0227"
+          },
+          {
+            "id": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_e350c277-8ee9-4bc2-96a8-985fe1879b69",
+            "dom_id": "e350c277-8ee9-4bc2-96a8-985fe1879b69",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_4149c7d6-d2d7-4c55-8b4c-22b9725c9a70",
+            "dom_id": "4149c7d6-d2d7-4c55-8b4c-22b9725c9a70",
+            "len": 0,
+            "post_value": ""
+          },
+          {
+            "id": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_eda1e0a3-cddb-4008-b915-1a52166d1d02",
+            "dom_id": "eda1e0a3-cddb-4008-b915-1a52166d1d02",
+            "len": 1135,
+            "post_value": "The one I'm most proud of at Microsoft is the rack-level resilience testing program I pioneered on Azure. There was no playbook for it - I defined the capability from scratch, drove it through engineering and cross-org alignment, and delivered a working program in 4 months with a 94% recovery rate. That work surfaced real hardware defects that shaped the platform's long-term reliability strategy. The speed and quality of that delivery earned executive visibility and became a model for how Azure approached proactive resilience testing going forward.\n\nThe second is from my first PM internship at Microsoft, where I built the case for a unified automation prioritization framework across 140+ teams and secured cross-functional buy-in on it. That work generated $3M in accelerated revenue and helped launch cloud regions 28% faster by translating messy, distributed operational pain into a clear product direction leadership could act on. Both examples come back to the same thing: taking a complex, ambiguous problem, moving fast, and delivering something that actually moved the business - not just a feature, but a real outcome."
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 5,
+      "fields": [
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_name",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_email",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_54f5676c-c63e-48a1-8651-670b7e3a4079",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_e350c277-8ee9-4bc2-96a8-985fe1879b69",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_eda1e0a3-cddb-4008-b915-1a52166d1d02"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_cb700b0e-2cf5-4dd7-ac56-c33ba8f40657",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 297
+          },
+          {
+            "name": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_723175bc-02e0-4ca7-b37d-cac5222acda0",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 368,
+            "cy": 296
+          },
+          {
+            "name": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_59dc4ee8-b834-4351-9698-a64781ad056a",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 296
+          },
+          {
+            "name": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_cf0ed60e-8f2e-47b1-8149-60e1151e94d8",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "Yes",
+            "already_active": false,
+            "cx": 290,
+            "cy": 297
+          },
+          {
+            "name": "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_1be9a239-22fb-475e-91da-ea9c1e9f6acd",
+            "kind": "yesno_button",
+            "label_id": null,
+            "label_for": null,
+            "label_text": "No",
+            "already_active": false,
+            "cx": 368,
+            "cy": 296
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "sleep"
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 7,
+        "text_filled": 5,
+        "radios_groups": 0,
+        "radios_checked": 0,
+        "checkboxes": 5,
+        "checkboxes_checked": 3,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 5,
+        "yesno_groups": 5
+      }
+    },
+    {
+      "i": 8,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-rillet_a182464e_v2.pdf"
+    },
+    {
+      "i": 8,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 8,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_name",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_email",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_54f5676c-c63e-48a1-8651-670b7e3a4079",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_e350c277-8ee9-4bc2-96a8-985fe1879b69",
+        "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_eda1e0a3-cddb-4008-b915-1a52166d1d02"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 9,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 151,
+      "token_len": 2212,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 10,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": []
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_name",
+          "f0e1ac6d-4bb8-4751-8e6f-8ae487446253__systemfield_email",
+          "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_54f5676c-c63e-48a1-8651-670b7e3a4079",
+          "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_e350c277-8ee9-4bc2-96a8-985fe1879b69",
+          "f0e1ac6d-4bb8-4751-8e6f-8ae487446253_eda1e0a3-cddb-4008-b915-1a52166d1d02"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": false,
+  "error": "spam-flag: RECAPTCHA_SCORE_BELOW_THRESHOLD (proxy-walled)",
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Product Manager  LocationNew York City; San FranciscoEmployment TypeFull timeLocation TypeHybridDepartmentProductOverviewApplicationWe couldn't submit your applicationYour application submission was flagged as possible spam. If you believe this was a mistake, please submit your application again.Learn morePowered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"e4ef056f-a253-4cee-b993-eeb58db13455\",\"name\":\"Rillet\",\"publicWebsite\":\"https://www.rillet.com/\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"rillet\",\"activeFeatureFlags\":[\"InterviewLocationTypeReportingField\",\"PDFCharacterMaps\",\"ValidateFormFieldLogging\",\"NewSchedulingActivityRescheduleActions\",\"AutomaticInterviewActivityEmailFailedOrganizationIssue\",\"EnhancedMobileCandidateFloatingButtons\",\"ClickhouseCandidateExperienceSurveySubmission\",\"CandidateSocialLinksWriteToTable\",\"CoreMultipleBrandsEnableUnbrandedSurveys\",\"RejectDeepPaginationOnIncrementalSync\",\"CoreMultipleBrandsJobCompensationSettings\",\"NewReportBuilderAllowVersionSwitching\",\"PermissionsAutomationOnJobConfidentialChange\",\"CoreOrganizationIssueNotifyOnNewCauseOnly\",\"BookingLinkRescheduleLimits\",\"ShowCountsOnJobBoardFilterO",
+  "classify": "spam-flag"
+}

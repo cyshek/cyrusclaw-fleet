@@ -1,0 +1,521 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/fivetran/jobs/7787885003",
+  "org": "fivetran",
+  "job_id": "7787885003",
+  "job_title": "Product Manager - Fusion",
+  "job_location": "Remote, Colorado, United States, AMER",
+  "fetched_at": "2026-07-01T02:27:30Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/fivetran/jobs/7787885003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 26,
+    "filled": 20,
+    "filled_needs_review": 0,
+    "declined": 5,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_31206768003",
+      "label": "Address Line 1",
+      "type": "input_text",
+      "required": true,
+      "value": "12420 NE 120th St #1437",
+      "source": "address.street",
+      "status": "filled",
+      "matched_rule": "street",
+      "options": null
+    },
+    {
+      "id": "question_31206769003",
+      "label": "Address Line 2 (Optional)",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "optional field — intentionally blank",
+      "status": "filled",
+      "matched_rule": "optional_blank",
+      "options": null
+    },
+    {
+      "id": "question_31206770003",
+      "label": "City",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null
+    },
+    {
+      "id": "question_31206771003",
+      "label": "Province/State",
+      "type": "input_text",
+      "required": true,
+      "value": "WA",
+      "source": "address.state",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": null
+    },
+    {
+      "id": "question_31206772003",
+      "label": "Postal/Zip Code",
+      "type": "input_text",
+      "required": true,
+      "value": "98034",
+      "source": "address.zip",
+      "status": "filled",
+      "matched_rule": "zip",
+      "options": null
+    },
+    {
+      "id": "question_31206773003",
+      "label": "Country",
+      "type": "input_text",
+      "required": true,
+      "value": "United States",
+      "source": "address.country",
+      "status": "filled",
+      "matched_rule": "country",
+      "options": null
+    },
+    {
+      "id": "question_31206774003",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "question_31206775003[]",
+      "label": "What is your Preferred Pronoun?",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to answer",
+      "source": "identity.pronouns",
+      "status": "declined",
+      "matched_rule": "pronouns",
+      "options": [
+        {
+          "label": "He, Him",
+          "value": 164493646003
+        },
+        {
+          "label": "She, Her",
+          "value": 164493647003
+        },
+        {
+          "label": "They, Them",
+          "value": 164493648003
+        },
+        {
+          "label": "No Preference",
+          "value": 164493649003
+        }
+      ]
+    },
+    {
+      "id": "question_31206776003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_31206777003",
+      "label": "How did you hear about Fivetran?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn advertisement",
+      "source": "how_heard fuzzy 'linkedin' -> 'LinkedIn advertisement'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Afrotech",
+          "value": 164493650003
+        },
+        {
+          "label": "Built In Colorado",
+          "value": 164493651003
+        },
+        {
+          "label": "Built In SF",
+          "value": 164493652003
+        },
+        {
+          "label": "Career fair",
+          "value": 164493653003
+        },
+        {
+          "label": "Conference",
+          "value": 164493654003
+        },
+        {
+          "label": "Existing Employee",
+          "value": 164493655003
+        },
+        {
+          "label": "Facebook advertisement",
+          "value": 164493656003
+        },
+        {
+          "label": "Glassdoor",
+          "value": 164493657003
+        },
+        {
+          "label": "Google search",
+          "value": 164493658003
+        },
+        {
+          "label": "HBCU Connect",
+          "value": 164493659003
+        },
+        {
+          "label": "Indeed",
+          "value": 164493660003
+        },
+        {
+          "label": "LinkedIn advertisement",
+          "value": 164493661003
+        },
+        {
+          "label": "LinkedIn job search",
+          "value": 164493662003
+        },
+        {
+          "label": "Mentorli",
+          "value": 164493663003
+        },
+        {
+          "label": "Other",
+          "value": 164493664003
+        },
+        {
+          "label": "Referred",
+          "value": 164493665003
+        },
+        {
+          "label": "Word of mouth",
+          "value": 164493666003
+        }
+      ]
+    },
+    {
+      "id": "question_31206778003",
+      "label": "If you were referred for this role, please share the name of the employee that referred you",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If you were referred for this role, please share the name of the employee that referred you'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null
+    },
+    {
+      "id": "question_31206779003",
+      "label": "Are you currently or have you ever provided services to Fivetran (or any of its global subsidiaries or affiliated entities) as a consultant or independent contractor, or through an employment agency or placement firm of any kind? \t\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_31206780003",
+      "label": "Will you now or in the future require sponsorship for an employment visa in order to work in the country for which you are applying?\t\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_31206781003",
+      "label": "Do you have the right to work in the country for which you are applying?\t\n",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_31206782003",
+      "label": "By submitting this application, I acknowledge that I have read and understand Fivetran's Applicant Privacy Notice regarding the collection, use, and sharing of my personal information for recruitment and hiring purposes. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Acknowledge/Confirm",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Acknowledge/Confirm",
+          "value": 164493667003
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_31206778003",
+      "label": "If you were referred for this role, please share the name of the employee that referred you",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If you were referred for this role, please share the name of the employee that referred you'"
+    }
+  ],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

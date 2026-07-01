@@ -563,7 +563,7 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
            AND (prep_status IS NULL OR prep_status='')
            AND ({where_clause})
          ORDER BY
-           -- Role-type priority (Cyrus 2026-05-30): PM/TPM/EPM first, then SE/SA tier, then everything else.
+           -- Role-type priority (2026-07-01): Tier 1 PM/TPM/EPM/PgM/APM only (Cyrus blocked Tier 2+3).
            CASE
              WHEN role LIKE '%Product Manager%' OR role LIKE '%Program Manager%'
                OR role LIKE '%Project Manager%' OR role LIKE '%Product Marketing Manager%'
@@ -573,12 +573,7 @@ def pick_batch(n: int, conn: sqlite3.Connection, ats_filter: str | None = None) 
                OR role LIKE '% APM %' OR role LIKE '% APM' OR role LIKE 'APM %'
                OR role LIKE '% PgM %' OR role LIKE '% PgM' OR role LIKE 'PgM %'
              THEN 1
-             WHEN role LIKE '%Solution%Engineer%' OR role LIKE '%Solution%Architect%'
-               OR role LIKE '%Sales Engineer%' OR role LIKE '%Customer Engineer%'
-               OR role LIKE '% SE %' OR role LIKE '% SE' OR role LIKE 'SE %'
-               OR role LIKE '% SA %' OR role LIKE '% SA' OR role LIKE 'SA %'
-             THEN 2
-             ELSE 3
+             ELSE 99
            END,
            company, id
     """).fetchall()

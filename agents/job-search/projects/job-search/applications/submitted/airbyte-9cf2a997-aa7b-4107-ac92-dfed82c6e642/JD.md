@@ -85,7 +85,7 @@ Advocacy and Evangelism
 
 - Onsite 4 days/week in San Francisco, CA
 
-**Why You'll Love Working at Airbyte:**
+## **Why You'll Love Working at Airbyte:**
 
 At Airbyte, we believe great work happens when people feel supported, trusted, and empowered to grow. Our market-leading Total Rewards package is designed to help you thrive professionally and personally. Our benefits and perks include:
 
@@ -107,6 +107,8 @@ At Airbyte, we believe great work happens when people feel supported, trusted, a
 
 If you find this role exciting, we encourage you to apply even if you think you don’t meet all of the requirements!
 
-*Airbyte is an equal opportunity employer that does not discriminate on the basis of actual or perceived race, creed, color, religion, national origin, ancestry, age, physical or mental disability, pregnancy, genetic information, sex, sexual orientation, gender identity or expression, marital status, familial status, domestic violence victim status, veteran or military status, or any other legally recognized protected basis under federal, state or local laws. Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.*
+We are not accepting agency submissions or recruiting firm support for this role. Unsolicited resumes will not be considered.
 
-*Airbyte is committed to providing reasonable accommodations for qualified individuals with disabilities in our job application procedures. Please let us know if you need assistance or accommodations due to a disability.*
+Airbyte is an equal opportunity employer that does not discriminate on the basis of actual or perceived race, creed, color, religion, national origin, ancestry, age, physical or mental disability, pregnancy, genetic information, sex, sexual orientation, gender identity or expression, marital status, familial status, domestic violence victim status, veteran or military status, or any other legally recognized protected basis under federal, state or local laws. Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.
+
+Airbyte is committed to providing reasonable accommodations for qualified individuals with disabilities in our job application procedures. Please let us know if you need assistance or accommodations due to a disability.

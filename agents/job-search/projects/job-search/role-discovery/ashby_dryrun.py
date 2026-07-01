@@ -214,6 +214,8 @@ _ASHBY_EXTRA_RULES = [
     ("work hybrid", "ack_in_office"),
     ("able to work hybrid", "ack_in_office"),
     ("from our san francisco", "ack_in_office"),
+    ("come in to the san francisco", "ack_in_office"),
+    ("come in to the", "ack_in_office"),
     ("from our washington dc", "ack_in_office"),
     # EliseAI 2453 (2026-06-06): "EliseAI is an in-office company. Are you
     # comfortable working from our office around 4-5 days per week?" -> Yes
@@ -905,6 +907,15 @@ _ASHBY_EXTRA_RULES = [
     # Solace 3242: 'Are you comfortable providing customer support in Spanish?' -> No (not fluent)
     ("providing customer support in spanish", "answer_no"),
     ("support in spanish", "answer_no"),
+    # Neural Concept 1147 (2026-07-01): 'Indicate your level of French' -> None/No knowledge (truthful: Cyrus doesn't speak French)
+    ("level of french", "foreign_lang_none"),
+    ("your level of french", "foreign_lang_none"),
+    ("indicate your level of french", "foreign_lang_none"),
+    ("level of german", "foreign_lang_none"),
+    ("level of spanish", "foreign_lang_none"),
+    ("level of mandarin", "foreign_lang_none"),
+    ("level of chinese", "foreign_lang_none"),
+    ("level of japanese", "foreign_lang_none"),
     # Camunda 2910: experience select (BPMN/AI agents) -> pick highest-experience option
     ("experience with workflow automation or bpmn", "experience_select_highest"),
     ("experience with bpmn", "experience_select_highest"),
@@ -942,6 +953,10 @@ _ASHBY_EXTRA_RULES = [
     # 'Select all technologies you\'d consider yourself the best at' -> MultiValueSelect
     ("technologies you'd consider yourself the best at", "tech_stack_select"),
     ("select all technologies", "tech_stack_select"),
+    # Tenex 2213 (2026-07-01): 'Security Tool Experience:\xa0' -- multiselect of security tools.
+    # Cyrus is a PM/TPM, not a security engineer. Truthful: pick 'None' if available, else empty [].
+    ("security tool experience", "security_tool_experience"),
+    ("security tools experience", "security_tool_experience"),
     # 'What are your favorite AI tools (Up to 3)' -> freetext
     ("favorite ai tools", "ai_tools_answer"),
     ("your favorite ai tools", "ai_tools_answer"),
@@ -979,6 +994,13 @@ _ASHBY_EXTRA_RULES = [
     # ---- Camunda 2910: production experience at large company (essay) ----
     ("production experience at a lar", "experience_short_yes"),
     ("production experience at a large", "experience_short_yes"),
+
+    # ---- SMS/text consent (Nooks-class) ----
+    ("ok to text me", "acknowledge_yes"),
+    ("ok to receive texts", "acknowledge_yes"),
+    ("text me updates", "acknowledge_yes"),
+    ("receive text messages", "acknowledge_yes"),
+    ("sms updates", "acknowledge_yes"),
 ]
 
 
@@ -1427,6 +1449,44 @@ def _r_tech_stack_select(p, f):
     return ('ok', [labels[0]] if labels else [], 'tech_stack_select (fallback)')
 
 
+def _r_security_tool_experience(p, f):
+    """'Security Tool Experience' multiselect (Tenex 2213, 2026-07-01).
+    Cyrus is a PM/TPM, not a security engineer. Truthful: select 'None' if
+    available, otherwise leave empty. Never fabricate security tool experience."""
+    values = f.get('values') or f.get('selectableValues') or []
+    labels = [(v.get('label') or '').strip() for v in values]
+    none_labels = [l for l in labels if l.lower() in ('none', 'n/a', 'not applicable', 'none of the above', 'no experience')]
+    if none_labels:
+        return ('ok', none_labels[0], f'security_tool_experience: picked none option {none_labels[0]!r}')
+    # If required and no 'None' option, leave empty (multiselect optional)
+    return ('ok', [], 'security_tool_experience: no none option; leaving empty')
+
+
+def _r_foreign_lang_none(p, f):
+    """'Indicate your level of French/German/Spanish...' (Neural Concept 1147, 2026-07-01).
+    Cyrus is not fluent in non-English languages. For free-text: return 'None'.
+    For select: pick 'None', 'No knowledge', 'Beginner', or equivalent lowest tier.
+    Never fabricate language proficiency."""
+    ftype = f.get('type') or f.get('_ashby_type') or ''
+    values = f.get('values') or f.get('selectableValues') or []
+    if not values or ftype in ('input_text', 'String', 'text'):
+        # Free-text: honest answer
+        return ('ok', 'None', 'foreign_lang_none: free-text -> None (not fluent)')
+    labels = [(v.get('label') or '').strip() for v in values]
+    none_needles = ['none', 'no knowledge', 'no proficiency', 'not applicable', 'n/a',
+                    'beginner', 'elementary', 'a1', 'a2', '0']
+    lbl_lower = [l.lower() for l in labels]
+    for needle in none_needles:
+        for i, ll in enumerate(lbl_lower):
+            if needle == ll or ll.startswith(needle):
+                return ('ok', labels[i], f'foreign_lang_none: matched lowest tier {labels[i]!r}')
+    # Last resort: last option (language scales often go highest->lowest)
+    if labels:
+        last = labels[-1]
+        return ('ok', last, f'foreign_lang_none: fallback last option {last!r}')
+    return ('unresolved', None, 'foreign_lang_none: no options')
+
+
 def _r_ai_tools_answer(p, f):
     """'What are your favorite AI tools (Up to 3)' — freetext. Return truthful answer."""
     return ('ok', 'Claude (Anthropic), GitHub Copilot, Cursor', 'ai_tools_answer')
@@ -1560,6 +1620,8 @@ _ASHBY_EXTRA_RESOLVERS = {
     'job_priority_select': _r_job_priority_select,
     'tech_area_select': _r_tech_area_select,
     'tech_stack_select': _r_tech_stack_select,
+    'security_tool_experience': _r_security_tool_experience,
+    'foreign_lang_none': _r_foreign_lang_none,
     'ai_tools_answer': _r_ai_tools_answer,
     'ashby_itar_us_person_affirm': _r_ashby_itar_us_person_affirm,
     'working_rights_yes': _r_working_rights_yes,

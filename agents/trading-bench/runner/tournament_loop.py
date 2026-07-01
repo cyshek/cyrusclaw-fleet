@@ -194,10 +194,23 @@ def run_one_round(n_candidates: int = 3,
     pairs = _pick_pairs_with_postmortem_hints(n_candidates, parents, directives, WORKSPACE, seed=seed)
 
     results = []
+    _pm_dir = WORKSPACE / "reports" / "postmortem"
     for i, (parent, directive) in enumerate(pairs, 1):
         print(f"[{i}/{n_candidates}] parent={parent} directive={directive[:60]}...",
               file=sys.stderr)
-        candidate = generate_candidate(parent, directive, spawn_fn=spawn_fn)
+        # Inject the parent's most recent loss-anatomy as generation context so
+        # the mutation learns from HOW the parent lost (regime/cost/signal), not
+        # just a directive nudge. None when no recent postmortem -> prompt is
+        # byte-identical to the no-context form.
+        try:
+            from .postmortem import build_postmortem_prompt_context
+            _pm_ctx = build_postmortem_prompt_context(parent, _pm_dir)
+        except Exception:  # noqa: BLE001
+            _pm_ctx = None
+        if _pm_ctx:
+            print(f"    + loss-anatomy context injected for {parent}", file=sys.stderr)
+        candidate = generate_candidate(parent, directive, spawn_fn=spawn_fn,
+                                       postmortem_context=_pm_ctx)
         eval_result = evaluate(candidate)
         results.append({
             "parent": parent,

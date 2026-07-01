@@ -1,6 +1,6 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T16:42:39+00:00
+ABORT-JD-FETCH — 2026-06-30T15:03:22+00:00
 
 role_id: 2203
-phase: dryrun-blockers
+phase: jd-fetch
 error:
-dryrun has blockers: [{"id": "question_66919975[]", "label": "Kindly update your employement status?  (STEM OPT/F1/H1-B /Citizen /Greencard Holder/CPT)", "reason": "no LABEL_RULES match for label='Kindly update your employement status?  (STEM OPT/F1/H1-B /Citizen /Greencard Holder/CPT)'"}]
+HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/fourkites/jobs/7930668

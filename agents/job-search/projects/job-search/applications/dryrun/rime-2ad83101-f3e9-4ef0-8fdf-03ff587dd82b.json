@@ -1,0 +1,120 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/rime/2ad83101-f3e9-4ef0-8fdf-03ff587dd82b",
+  "org": "rime",
+  "job_id": "2ad83101-f3e9-4ef0-8fdf-03ff587dd82b",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "San Francisco Bay Area",
+  "fetched_at": "2026-07-01T03:02:31Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 6,
+    "filled": 6,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "05c81836-76ba-4277-a605-a33afceda9a3__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "05c81836-76ba-4277-a605-a33afceda9a3__systemfield_name"
+    },
+    {
+      "id": "05c81836-76ba-4277-a605-a33afceda9a3__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "05c81836-76ba-4277-a605-a33afceda9a3__systemfield_email"
+    },
+    {
+      "id": "05c81836-76ba-4277-a605-a33afceda9a3__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "05c81836-76ba-4277-a605-a33afceda9a3__systemfield_resume"
+    },
+    {
+      "id": "05c81836-76ba-4277-a605-a33afceda9a3_0a7806d7-d983-4f63-8557-9bbfb9b18d5d",
+      "label": "LinkedIn",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "Url",
+      "_ashby_id": "05c81836-76ba-4277-a605-a33afceda9a3_0a7806d7-d983-4f63-8557-9bbfb9b18d5d"
+    },
+    {
+      "id": "05c81836-76ba-4277-a605-a33afceda9a3_288206bf-2571-4ebb-b597-f9ad5b51639a",
+      "label": "Are you legally authorized to work in the United States for any employer?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "05c81836-76ba-4277-a605-a33afceda9a3_288206bf-2571-4ebb-b597-f9ad5b51639a"
+    },
+    {
+      "id": "05c81836-76ba-4277-a605-a33afceda9a3_7877f3de-cadb-466d-8327-2aaad7f6a79a",
+      "label": "Will you now or in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "05c81836-76ba-4277-a605-a33afceda9a3_7877f3de-cadb-466d-8327-2aaad7f6a79a"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

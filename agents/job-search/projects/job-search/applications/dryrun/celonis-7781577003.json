@@ -1,0 +1,454 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/celonis/jobs/7781577003",
+  "org": "celonis",
+  "job_id": "7781577003",
+  "job_title": "Partner Solutions Engineer",
+  "job_location": "New York, US, New York",
+  "fetched_at": "2026-06-30T22:42:25Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/celonis/jobs/7781577003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 23,
+    "filled": 18,
+    "filled_needs_review": 0,
+    "declined": 5,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_31145645003",
+      "label": "Most Recent Employer",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_31145646003",
+      "label": "Most Recent Job Title",
+      "type": "input_text",
+      "required": true,
+      "value": "Technical Program Manager",
+      "source": "experience_summary.current_title",
+      "status": "filled",
+      "matched_rule": "current_title",
+      "options": null
+    },
+    {
+      "id": "question_31145647003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_31145648003",
+      "label": "Are you legally authorized to work in the country you are applying to?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_31145649003",
+      "label": "Will you now or in the future require immigration sponsorship for employment visa status?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_31145650003",
+      "label": "Salary Expectation",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null
+    },
+    {
+      "id": "question_31145651003",
+      "label": "Preferred Start Date",
+      "type": "input_text",
+      "required": false,
+      "value": "Within 2 weeks of offer",
+      "source": "preferences.earliest_start_date",
+      "status": "filled",
+      "matched_rule": "earliest_start",
+      "options": null
+    },
+    {
+      "id": "question_31145652003",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Social Media",
+      "source": "how_heard fuzzy 'social media' -> 'Social Media'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Careers Site",
+          "value": 164300911003
+        },
+        {
+          "label": "Social Media",
+          "value": 164300912003
+        },
+        {
+          "label": "AI Search",
+          "value": 164300913003
+        },
+        {
+          "label": "Google",
+          "value": 164300914003
+        },
+        {
+          "label": "Built In",
+          "value": 164300915003
+        },
+        {
+          "label": "Reddit",
+          "value": 164300916003
+        },
+        {
+          "label": "Glassdoor",
+          "value": 164300917003
+        },
+        {
+          "label": "Comparably",
+          "value": 164300918003
+        },
+        {
+          "label": "Kununu",
+          "value": 164300919003
+        },
+        {
+          "label": "RepVue",
+          "value": 164300920003
+        },
+        {
+          "label": "Event/ Conference",
+          "value": 164300921003
+        },
+        {
+          "label": "Word of Mouth",
+          "value": 164300922003
+        },
+        {
+          "label": "Referral",
+          "value": 164300923003
+        }
+      ]
+    },
+    {
+      "id": "question_31145653003",
+      "label": "I confirm, that I have read the Celonis Privacy Notice for the handling of my personal data in the application process.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I confirm",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "I confirm",
+          "value": 164300924003
+        }
+      ]
+    },
+    {
+      "id": "question_31145654003",
+      "label": "I confirm the information provided in this application, including but not limited to my resume and the above information, is true and correct. I understand that false statements or material omissions of any kind during the hiring process may result in the rescinding of any offer of employment or dismissal once employed.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I confirm",
+      "source": "acknowledge_yes (matched 'I confirm')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I confirm",
+          "value": 164300925003
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4023664003",
+      "label": "What does \"The Best Team Wins\" mean to you?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "\"The Best Team Wins\" means to me...",
+          "value": 4142846003
+        },
+        {
+          "label": "I prefer not to answer",
+          "value": 4142847003
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

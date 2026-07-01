@@ -1,6 +1,6 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T17:58:13+00:00
+ABORT-JD-FETCH — 2026-06-30T15:03:21+00:00
 
-role_id: 2457
-phase: dryrun-blockers
+role_id: 2200
+phase: jd-fetch
 error:
-dryrun has blockers: [{"id": "50fd0e3b-ea17-431c-b10e-8523d7a95858_9a2c58a0-9f43-4c86-b7d2-24cc118e4fcf", "label": "Are you currently based in the SF Bay Area, or ready to relocate?", "reason": "no LABEL_RULES match for label='Are you currently based in the SF Bay Area, or ready to relocate?'"}]
+RuntimeError: Ashby job 16b5f692-bd71-4ad5-b5f6-6db18b6786c6 not found in board for pylon-labs

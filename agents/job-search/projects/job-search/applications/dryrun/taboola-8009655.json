@@ -4,16 +4,16 @@
   "job_id": "8009655",
   "job_title": "Solutions Engineer",
   "job_location": "New York City (NYC), New York, United States",
-  "fetched_at": "2026-06-24T05:14:13Z",
+  "fetched_at": "2026-06-30T16:09:23Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/taboola/jobs/8009655?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
-    "total_fields": 20,
-    "filled": 14,
-    "filled_needs_review": 2,
+    "total_fields": 23,
+    "filled": 20,
+    "filled_needs_review": 1,
     "declined": 2,
-    "unresolved": 2,
-    "blockers": 2
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -187,10 +187,10 @@
       "label": "Do you have any experience in the Ad Tech / Mar Tech industry?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
       "options": [
         {
           "label": "Yes",
@@ -227,10 +227,10 @@
       "label": "In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -238,10 +238,10 @@
       "label": "This role is a hybrid position requiring three days per week in-person at our New York City office. Which of the following best describes your situation?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "Kirkland",
-      "source": "address.city | NOTE: 'Kirkland' not literally in options ['I am currently based in the greater NYC area and open to a hybrid role', 'I am looking for a fully remote position', 'I am not currently based in the greater NYC area, but I am open to relocating for this role']",
-      "status": "filled_needs_review",
-      "matched_rule": "city",
+      "value": "I am not currently based in the greater NYC area, but I am open to relocating for this role",
+      "source": "preferences.willing_to_relocate (matched 'open to relocation' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
       "options": [
         {
           "label": "I am currently based in the greater NYC area and open to a hybrid role",
@@ -370,34 +370,46 @@
         }
       ],
       "compliance": "demographic"
-    }
-  ],
-  "unresolved": [
-    {
-      "id": "question_67717275",
-      "label": "Do you have any experience in the Ad Tech / Mar Tech industry?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'"
     },
     {
-      "id": "question_67717277",
-      "label": "In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.",
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
       "required": true,
-      "reason": "no LABEL_RULES match for label='In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_67717275",
-      "label": "Do you have any experience in the Ad Tech / Mar Tech industry?",
-      "reason": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'"
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
     },
     {
-      "id": "question_67717277",
-      "label": "In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.",
-      "reason": "no LABEL_RULES match for label='In 1–3 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.'"
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
     }
   ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

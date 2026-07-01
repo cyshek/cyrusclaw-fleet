@@ -153,7 +153,12 @@ def _extract_activation_link(body, host_hint=None):
         ul = u.lower()
         return any(k in ul for k in ("/activate/", "/activation/", "confirmemail",
                                      "confirm-email", "verifyemail", "verify-email",
-                                     "activateaccount", "emailconfirm"))
+                                     "activateaccount", "emailconfirm",
+                                     # Auth0 password reset links
+                                     "reset-password", "resetpassword", "/ticket",
+                                     "changepassword", "change-password",
+                                     # iCIMS tracking redirect URLs (resolve to reset-verify)
+                                     "clicks.icims.com/f/a/"))
     cands = [u for u in urls if _is_activation(u)]
     if not cands:
         return None

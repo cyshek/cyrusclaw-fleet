@@ -1,0 +1,320 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/nooks/4d8f6468-60b8-4fd3-a05d-6ff5dae3d2c1",
+  "org": "nooks",
+  "job_id": "4d8f6468-60b8-4fd3-a05d-6ff5dae3d2c1",
+  "job_title": "Solutions Engineer - Mid Market",
+  "job_location": "United States (Any Time Zone)",
+  "fetched_at": "2026-06-30T22:31:23Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 10,
+    "filled_needs_review": 0,
+    "declined": 4,
+    "needs_essay": 0,
+    "unresolved": 1,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039__systemfield_resume",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_c232ceac-b973-4e53-9980-eff9c12e1e4a",
+      "label": "LinkedIn Profile URL",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_c232ceac-b973-4e53-9980-eff9c12e1e4a",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039__systemfield_name",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039__systemfield_email",
+      "label": "Email Address",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039__systemfield_email",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_7fef2b0a-df76-4dfe-b71a-dba364d6d8c2",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_7fef2b0a-df76-4dfe-b71a-dba364d6d8c2",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_4eaa2a5f-66ed-4622-aa76-3bdb97b26a8d",
+      "label": "It's ok to text me updates on my application.",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_4eaa2a5f-66ed-4622-aa76-3bdb97b26a8d",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_973c7a66-129e-4811-a459-908bd5ff1c35",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_973c7a66-129e-4811-a459-908bd5ff1c35",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_fa38a576-422f-41e6-a748-6a5e9a36ecc1",
+      "label": "Where did you hear about us?",
+      "type": "input_text",
+      "required": false,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_fa38a576-422f-41e6-a748-6a5e9a36ecc1",
+      "section": "About You "
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_79eda494-cf14-4536-952c-cb490f749466",
+      "label": "What gender do you identify with?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Female",
+          "value": "Female"
+        },
+        {
+          "label": "Male",
+          "value": "Male"
+        },
+        {
+          "label": "Decline to self identify",
+          "value": "Decline to self identify"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_79eda494-cf14-4536-952c-cb490f749466",
+      "section": "Voluntary Self Identification"
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_a18e5738-b6f4-45be-86e8-d809ea7fc259",
+      "label": "Are you Hispanic/Latino?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        },
+        {
+          "label": "Decline to self identify",
+          "value": "Decline to self identify"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_a18e5738-b6f4-45be-86e8-d809ea7fc259",
+      "section": "Voluntary Self Identification"
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_310118bc-4752-4d9f-b2b6-1c9b5fc11e5d",
+      "label": "Are you a protected Veteran?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_veteran",
+      "options": [
+        {
+          "label": "No, I am not a protected veteran",
+          "value": "No, I am not a protected veteran"
+        },
+        {
+          "label": "Yes, I identify as one or more of the classifications of a protected veteran",
+          "value": "Yes, I identify as one or more of the classifications of a protected veteran"
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": "I don't wish to answer"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_310118bc-4752-4d9f-b2b6-1c9b5fc11e5d",
+      "section": "Veteran Status"
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_710c031f-2c66-4af2-b6ce-01b8f09696e4",
+      "label": "Disability Status",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "I have a disability, or have had one in the past",
+          "value": "I have a disability, or have had one in the past"
+        },
+        {
+          "label": "I do not have a disability and have not had one in the past",
+          "value": "I do not have a disability and have not had one in the past"
+        },
+        {
+          "label": "I do not want to answer",
+          "value": "I do not want to answer"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_710c031f-2c66-4af2-b6ce-01b8f09696e4",
+      "section": "Voluntary Self-Identification of Disability"
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_ce060df9-035e-4254-b2f8-45123b61bae2",
+      "label": "Are you legally authorized to work in the United States? (Yes/No)",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_ce060df9-035e-4254-b2f8-45123b61bae2",
+      "section": "Immigration Status"
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_045f9aa5-4c69-42cc-a658-9c99b6f33ef7",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B, TN, etc.)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_045f9aa5-4c69-42cc-a658-9c99b6f33ef7",
+      "section": "Immigration Status"
+    },
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_4e9a08e1-b833-48ba-bfd4-db5e8582738e",
+      "label": "If yes, please let us know what kind and the expiration date.",
+      "type": "input_text",
+      "required": false,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label='If yes, please let us know what kind and the expiration date.'",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "20b6ad1f-eabf-443f-a497-1cce4806e039_4e9a08e1-b833-48ba-bfd4-db5e8582738e",
+      "section": "Immigration Status"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "20b6ad1f-eabf-443f-a497-1cce4806e039_4e9a08e1-b833-48ba-bfd4-db5e8582738e",
+      "label": "If yes, please let us know what kind and the expiration date.",
+      "required": false,
+      "reason": "no LABEL_RULES match for label='If yes, please let us know what kind and the expiration date.'"
+    }
+  ],
+  "blockers": []
+}

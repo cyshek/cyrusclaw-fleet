@@ -1,0 +1,264 @@
+{
+  "slug": "gridware-59c475c0",
+  "ats": "lever",
+  "spec_path": "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/dryrun/lever-gridware-59c475c0-321e-4377-a85b-8d8ea2f4254c.json",
+  "pdf_path_local": "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/gridware-59c475c0/Cyrus_Shekari_Resume_lever-gridware_59c475c0_v2.pdf",
+  "pdf_path_staged": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_lever-gridware_59c475c0_v2.pdf",
+  "url": "https://jobs.lever.co/gridware/59c475c0-321e-4377-a85b-8d8ea2f4254c/apply",
+  "text_fields": {
+    "name": "Cyrus Shekari",
+    "email": "cyshekari@gmail.com",
+    "phone": "346-804-0227",
+    "location": "Kirkland, WA",
+    "org": "Microsoft",
+    "urls[LinkedIn]": "https://linkedin.com/in/cyshekari",
+    "urls[GitHub]": "https://github.com/cyshek"
+  },
+  "selects": [
+    {
+      "name": "cards[929c59d9-aa68-4654-a433-c5f806b4d8eb][field0]",
+      "value": "Yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "84b89462-5b1a-42f1-a610-e670f7c69582"
+        },
+        {
+          "label": "No",
+          "value": "e0d6c920-6590-4b51-b2bc-4bda233681e2"
+        }
+      ]
+    },
+    {
+      "name": "cards[929c59d9-aa68-4654-a433-c5f806b4d8eb][field1]",
+      "value": "No",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "e471bdca-6650-4f79-8ec2-1319b9a2dff4"
+        },
+        {
+          "label": "No",
+          "value": "26d1f82b-974d-4b1a-9757-98c60663abf9"
+        }
+      ]
+    }
+  ],
+  "radios": [],
+  "checkboxes": [],
+  "eeo": [
+    {
+      "name": "eeo[gender]",
+      "label": "Gender",
+      "decline_labels": [
+        "Decline to self identify",
+        "Decline to self-identify",
+        "Decline to identify",
+        "Prefer not to say",
+        "Prefer not to disclose",
+        "I do not wish to answer",
+        "I don't wish to answer",
+        "Choose not to disclose",
+        "I don't wish to self-identify",
+        "Decline To Self Identify"
+      ]
+    },
+    {
+      "name": "eeo[race]",
+      "label": "Race",
+      "decline_labels": [
+        "Decline to self identify",
+        "Decline to self-identify",
+        "Decline to identify",
+        "Prefer not to say",
+        "Prefer not to disclose",
+        "I do not wish to answer",
+        "I don't wish to answer",
+        "Choose not to disclose",
+        "I don't wish to self-identify",
+        "Decline To Self Identify"
+      ]
+    },
+    {
+      "name": "eeo[veteran]",
+      "label": "Veteran",
+      "decline_labels": [
+        "Decline to self identify",
+        "Decline to self-identify",
+        "Decline to identify",
+        "Prefer not to say",
+        "Prefer not to disclose",
+        "I do not wish to answer",
+        "I don't wish to answer",
+        "Choose not to disclose",
+        "I don't wish to self-identify",
+        "Decline To Self Identify"
+      ]
+    }
+  ],
+  "skipped": [],
+  "unknown": [],
+  "cover_overrides": [
+    {
+      "id": "name",
+      "label": "full name",
+      "old_len": 13,
+      "new_len": 13
+    }
+  ],
+  "steps": [
+    {
+      "tool": "browser.open",
+      "args": {
+        "label": "gridware-59c475c0",
+        "url": "https://jobs.lever.co/gridware/59c475c0-321e-4377-a85b-8d8ea2f4254c/apply"
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 800
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "gridware-59c475c0",
+        "fn": "\n(fields) => {\n  const set = (el, val) => {\n    const proto = Object.getPrototypeOf(el);\n    const setter = Object.getOwnPropertyDescriptor(proto, 'value').set;\n    setter.call(el, val);\n    el.dispatchEvent(new Event('input', { bubbles: true }));\n    el.dispatchEvent(new Event('change', { bubbles: true }));\n    el.dispatchEvent(new Event('blur', { bubbles: true }));\n  };\n  const results = {};\n  for (const [name, value] of Object.entries(fields)) {\n    const els = document.querySelectorAll(`[name=\"${CSS.escape(name)}\"]`);\n    if (!els.length) { results[name] = 'NOT_FOUND'; continue; }\n    set(els[0], value);\n    results[name] = 'OK:' + (value+'').slice(0, 40);\n  }\n  return results;\n}\n",
+        "arg": {
+          "name": "Cyrus Shekari",
+          "email": "cyshekari@gmail.com",
+          "phone": "346-804-0227",
+          "location": "Kirkland, WA",
+          "org": "Microsoft",
+          "urls[LinkedIn]": "https://linkedin.com/in/cyshekari",
+          "urls[GitHub]": "https://github.com/cyshek"
+        },
+        "comment": "Fill all text/textarea fields via native value setter."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "gridware-59c475c0",
+        "fn": "\nasync (loc) => {\n  if (!loc) return {skipped: 'no-location'};\n  const inp = document.querySelector('#location-input, input.location-input');\n  const sel = document.querySelector('#selected-location, input[name=\"selectedLocation\"]');\n  if (!inp || !sel) return {skipped: 'no-typeahead-on-page'};\n  // First try the unauthenticated /searchLocations endpoint.\n  try {\n    const $ = window.jQuery || window.$;\n    const hcap = ($ && $('#hcaptchaResponseInput').val()) || '';\n    const res = await fetch('/searchLocations?text=' + encodeURIComponent(loc) + '&hcaptchaResponse=' + encodeURIComponent(hcap));\n    const txt = await res.text();\n    let locs = null;\n    try { locs = JSON.parse(txt); } catch (_e) {}\n    if (!locs || !locs.length) {\n      // Fallback: stuff a synthetic object so the form has SOMETHING; Lever may\n      // still reject server-side but we want submit to attempt rather than\n      // silently no-op on blur-wipe.\n      const proto = Object.getPrototypeOf(inp);\n      const setter = Object.getOwnPropertyDescriptor(proto, 'value').set;\n      setter.call(inp, loc);\n      sel.value = JSON.stringify({name: loc});\n      if ($) { $('input.location-input').off('blur'); }\n      return {status: 'no-results-fallback', http: res.status, sample: txt.slice(0, 120)};\n    }\n    const lower = loc.toLowerCase();\n    const target = locs.find(l => (l.name || '').toLowerCase() === lower)\n                 || locs.find(l => (l.name || '').toLowerCase().startsWith(lower))\n                 || locs[0];\n    window.searchedLocations = locs;\n    const proto = Object.getPrototypeOf(inp);\n    const setter = Object.getOwnPropertyDescriptor(proto, 'value').set;\n    setter.call(inp, target.name);\n    sel.value = JSON.stringify(target);\n    inp.dispatchEvent(new Event('input', {bubbles: true}));\n    inp.dispatchEvent(new Event('change', {bubbles: true}));\n    // Crucially: kill the blur-wipe handler so subsequent focus shifts don't\n    // clear our values.\n    if ($) { $('input.location-input').off('blur'); }\n    return {status: 'OK', picked: target.name, id: target.id};\n  } catch (e) {\n    return {status: 'error', err: String(e).slice(0, 200)};\n  }\n}\n",
+        "arg": "Kirkland, WA",
+        "comment": "Lever location-typeahead bypass via /searchLocations API."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "gridware-59c475c0",
+        "fn": "\n(items) => {\n  const results = [];\n  for (const it of items) {\n    const sel = document.querySelector(`select[name=\"${CSS.escape(it.name)}\"]`);\n    if (!sel) { results.push({name: it.name, status: 'NOT_FOUND'}); continue; }\n    const want = (it.value+'').trim().toLowerCase();\n    let chosen = null;\n    for (const opt of sel.options) {\n      const t = (opt.textContent || opt.value || '').trim().toLowerCase();\n      if (t === want) { chosen = opt; break; }\n    }\n    if (!chosen) {\n      for (const opt of sel.options) {\n        const t = (opt.textContent || opt.value || '').trim().toLowerCase();\n        if (t.includes(want) || want.includes(t)) { chosen = opt; break; }\n      }\n    }\n    if (!chosen) { results.push({name: it.name, status: 'NO_MATCH', want: it.value}); continue; }\n    sel.value = chosen.value;\n    sel.dispatchEvent(new Event('change', { bubbles: true }));\n    results.push({name: it.name, status: 'OK', picked: chosen.textContent.trim().slice(0,40)});\n  }\n  return results;\n}\n",
+        "arg": [
+          {
+            "name": "cards[929c59d9-aa68-4654-a433-c5f806b4d8eb][field0]",
+            "value": "Yes"
+          },
+          {
+            "name": "cards[929c59d9-aa68-4654-a433-c5f806b4d8eb][field1]",
+            "value": "No"
+          }
+        ],
+        "comment": "Pick native <select> options by visible text."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "gridware-59c475c0",
+        "fn": "\n(items) => {\n  const declines = (items.declines || []).map(s => s.toLowerCase());\n  const results = [];\n  // Process all eeo[*] fields automatically \u2014 covers anything we missed.\n  const sels = document.querySelectorAll('select[name^=\"eeo[\"]');\n  for (const sel of sels) {\n    if (sel.value && sel.value !== '' && sel.value !== 'null') {\n      results.push({name: sel.name, status: 'ALREADY_SET'}); continue;\n    }\n    let chosen = null;\n    for (const opt of sel.options) {\n      const t = (opt.textContent || '').trim().toLowerCase();\n      if (declines.some(d => t.includes(d))) { chosen = opt; break; }\n    }\n    if (chosen) {\n      sel.value = chosen.value;\n      sel.dispatchEvent(new Event('change', { bubbles: true }));\n      results.push({name: sel.name, status: 'OK', picked: chosen.textContent.trim()});\n    } else {\n      results.push({name: sel.name, status: 'NO_DECLINE_OPTION'});\n    }\n  }\n  // Radio EEO fields: group by name.\n  const allRadios = document.querySelectorAll('input[type=\"radio\"][name^=\"eeo[\"]');\n  const groups = {};\n  for (const r of allRadios) { (groups[r.name] = groups[r.name] || []).push(r); }\n  for (const [name, rs] of Object.entries(groups)) {\n    if (rs.some(r => r.checked)) { results.push({name, status: 'ALREADY_SET'}); continue; }\n    let picked = null;\n    for (const r of rs) {\n      let txt = '';\n      let p = r.parentElement;\n      while (p && !txt) { txt = (p.textContent || '').trim(); p = p.parentElement; if (txt.length > 200) break; }\n      txt = txt.toLowerCase();\n      if (declines.some(d => txt.includes(d))) { picked = r; break; }\n    }\n    if (picked) { picked.click(); results.push({name, status: 'OK', picked: picked.value}); }\n    else { results.push({name, status: 'NO_DECLINE_OPTION'}); }\n  }\n  return results;\n}\n",
+        "arg": {
+          "declines": [
+            "Decline to self identify",
+            "Decline to self-identify",
+            "Decline to identify",
+            "Prefer not to say",
+            "Prefer not to disclose",
+            "I do not wish to answer",
+            "I don't wish to answer",
+            "Choose not to disclose",
+            "I don't wish to self-identify",
+            "Decline To Self Identify"
+          ]
+        },
+        "comment": "For each eeo[*] field, pick the 'Decline to self-identify' option."
+      }
+    },
+    {
+      "tool": "browser.upload",
+      "args": {
+        "label": "gridware-59c475c0",
+        "element": "input#resume-upload-input, input[name='resume']",
+        "paths": [
+          "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_lever-gridware_59c475c0_v2.pdf"
+        ],
+        "comment": "Upload resume PDF to the standard <input type=file name=resume>."
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 1500
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "gridware-59c475c0",
+        "fn": "\n() => {\n  const data = {};\n  const inputs = document.querySelectorAll('#application-form input, #application-form textarea, #application-form select');\n  for (const el of inputs) {\n    if (!el.name) continue;\n    if (el.type === 'file') { data[el.name] = el.files && el.files.length ? `FILE:${el.files[0].name}` : ''; continue; }\n    if (el.type === 'checkbox' || el.type === 'radio') {\n      if (el.checked) { data[el.name] = (data[el.name]||'') + '|' + el.value; }\n      continue;\n    }\n    data[el.name] = (el.value || '').slice(0, 80);\n  }\n  return data;\n}\n",
+        "comment": "Verify filled state for human review."
+      }
+    },
+    {
+      "tool": "browser.act.click",
+      "args": {
+        "label": "gridware-59c475c0",
+        "selector": "button:has-text('Submit application'):visible",
+        "comment": "Click the visible 'Submit application' button (NOT the hidden hcaptchaSubmitBtn helper)."
+      },
+      "meta": {
+        "final_submit": true,
+        "may_trigger_captcha": true
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 2500
+      }
+    },
+    {
+      "tool": "captcha.handle",
+      "args": {
+        "label": "gridware-59c475c0",
+        "detect_fn": "\n() => {\n  // Common patterns:\n  //   <div class=\"h-captcha\" data-sitekey=\"...\">\n  //   <div data-hcaptcha-widget-id ... data-sitekey=\"...\">\n  //   <iframe src=\"https://newassets.hcaptcha.com/captcha/v1/.../hcaptcha.html#frame=challenge&id=...&sitekey=...\">\n  let sitekey = null;\n  for (const el of document.querySelectorAll('[data-sitekey]')) {\n    const candidate = el.getAttribute('data-sitekey');\n    if (candidate && /^[0-9a-f-]{8,}$/i.test(candidate)) { sitekey = candidate; break; }\n  }\n  if (!sitekey) {\n    for (const f of document.querySelectorAll('iframe[src*=\"hcaptcha.com\"]')) {\n      const m = (f.src || '').match(/[?&#]sitekey=([0-9a-f-]+)/i);\n      if (m) { sitekey = m[1]; break; }\n    }\n  }\n  const enclaves = document.querySelectorAll('iframe[src*=\"hcaptcha-enclave\"]').length;\n  const challenge = document.querySelectorAll('iframe[src*=\"hcaptcha.html\"]').length;\n\n  // hCaptcha ENTERPRISE rqdata extraction (2026-06-05). Enterprise/invisible\n  // widgets generate per-session challenge data (`rqdata`) that MUST be passed\n  // to the solver as enterprisePayload.rqdata, or the solved token is\n  // valid-but-unbound and the apply-POST 400s (reproduced on FloQast +\n  // PointClickCare, shared sitekey e33f87f8-...). Try several known carriers,\n  // most-reliable first:\n  let rqdata = null;\n  try {\n    // (a) data attribute on the widget container/iframe.\n    for (const el of document.querySelectorAll('[data-hcaptcha-rqdata],[data-rqdata]')) {\n      const v = el.getAttribute('data-hcaptcha-rqdata') || el.getAttribute('data-rqdata');\n      if (v) { rqdata = v; break; }\n    }\n    // (b) captured render/execute config (set by the page-init hook below, if\n    //     it ran before render: window.__hcaptchaRqData).\n    if (!rqdata && window.__hcaptchaRqData) rqdata = window.__hcaptchaRqData;\n    // (c) hCaptcha internal config blob: window.hcaptcha may expose the last\n    //     render params; also scan a global config object some hosts set.\n    if (!rqdata) {\n      const blobs = [];\n      try { if (window.hcaptcha && window.hcaptcha.getRespKey) blobs.push(window.hcaptcha); } catch(e){}\n      for (const k of ['__hcaptchaConfig','hcaptchaConfig','rqdata']) {\n        try { if (window[k]) blobs.push(window[k]); } catch(e){}\n      }\n      for (const b of blobs) {\n        try {\n          const s = JSON.stringify(b);\n          const m = s && s.match(/\"rqdata\"\\s*:\\s*\"([^\"]+)\"/);\n          if (m) { rqdata = m[1]; break; }\n        } catch(e){}\n      }\n    }\n    // (d) last resort: scan inline <script> text for an rqdata string literal.\n    if (!rqdata) {\n      for (const sc of document.querySelectorAll('script:not([src])')) {\n        const m = (sc.textContent || '').match(/[\"']rqdata[\"']\\s*:\\s*[\"']([^\"']{16,})[\"']/);\n        if (m) { rqdata = m[1]; break; }\n      }\n    }\n  } catch (e) {}\n\n  return {\n    sitekey,\n    page_url: location.href,\n    enclaves,\n    challenge_iframes: challenge,\n    visible_challenge: challenge > 0,\n    rqdata: rqdata || null,\n    is_enterprise: !!rqdata,\n  };\n}\n",
+        "inject_fn": "\n(token) => {\n  const setNative = (el, val) => {\n    try {\n      const proto = Object.getPrototypeOf(el);\n      const setter = Object.getOwnPropertyDescriptor(proto, 'value');\n      if (setter && setter.set) { setter.set.call(el, val); }\n      else { el.value = val; }\n    } catch (_e) { el.value = val; }\n    el.dispatchEvent(new Event('input', { bubbles: true }));\n    el.dispatchEvent(new Event('change', { bubbles: true }));\n  };\n  const selectors = [\n    'textarea[name=\"h-captcha-response\"]',\n    'textarea[name=\"g-recaptcha-response\"]',\n    'textarea[id^=\"h-captcha-response\"]',\n    'textarea[id^=\"g-recaptcha-response\"]',\n    'input[name=\"h-captcha-response\"]',\n    'input[name=\"g-recaptcha-response\"]',\n  ];\n  const seen = new Set();\n  let found = 0;\n  for (const sel of selectors) {\n    for (const el of document.querySelectorAll(sel)) {\n      if (seen.has(el)) continue;\n      seen.add(el);\n      found++;\n      // Make hidden/zero-size textareas writable for React form libs that read\n      // `.value` directly. We don't need them visible.\n      if (el.style) {\n        el.style.display = el.style.display === 'none' ? '' : el.style.display;\n      }\n      setNative(el, token);\n    }\n  }\n  // Fire a global hCaptcha \"verified\" callback if present (some boards\n  // register `window.hcaptcha._onVerify` or check `hcaptcha.getResponse()`).\n  // We can't easily call internal callbacks, but setting the textarea is\n  // sufficient for boards that read it on submit (Lever, Greenhouse, Ashby).\n  return { found, set: found, token_len: (token || '').length };\n}\n",
+        "solver_kind": "hcaptcha",
+        "resubmit_selector": "button:has-text('Submit application'):visible",
+        "on_not_configured": "fail-role",
+        "failure_reason": "CAPTCHA-NOT-CONFIGURED, see CAPTCHA-SOLVER-DECISION.md",
+        "comment": "If a visible hCaptcha enclave is present, run CaptchaSolver().solve_hcaptcha(...) with the detected sitekey, inject the token, then re-click Submit. If no key is configured, fail this role only and continue the batch."
+      },
+      "meta": {
+        "captcha_phase": true,
+        "vendor_default": "capsolver"
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 2000
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "gridware-59c475c0",
+        "fn": "\n() => {\n  const data = {};\n  const inputs = document.querySelectorAll('#application-form input, #application-form textarea, #application-form select');\n  for (const el of inputs) {\n    if (!el.name) continue;\n    if (el.type === 'file') { data[el.name] = el.files && el.files.length ? `FILE:${el.files[0].name}` : ''; continue; }\n    if (el.type === 'checkbox' || el.type === 'radio') {\n      if (el.checked) { data[el.name] = (data[el.name]||'') + '|' + el.value; }\n      continue;\n    }\n    data[el.name] = (el.value || '').slice(0, 80);\n  }\n  return data;\n}\n",
+        "comment": "Final post-submit verify (look for confirmation page or error banner)."
+      }
+    }
+  ]
+}

@@ -4,16 +4,16 @@
   "job_id": "4604587101",
   "job_title": "Senior/Lead Forward Deployed Engineer - US",
   "job_location": "New York Office; Remotely in the USA",
-  "fetched_at": "2026-06-23T17:52:08Z",
+  "fetched_at": "2026-06-30T18:28:44Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/parloa/jobs/4604587101?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 20,
-    "filled": 12,
+    "filled": 14,
     "filled_needs_review": 1,
-    "declined": 4,
-    "unresolved": 3,
-    "blockers": 3
+    "declined": 5,
+    "unresolved": 0,
+    "blockers": 0
   },
   "fields": [
     {
@@ -142,10 +142,10 @@
       "label": "Are you able to come into our NYC office 2/3 x a week?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "answer_yes: no 'Yes' option among ['Berlin Office', 'Munich Office', 'New York Office', 'London Office', 'Remotely in Germany', 'Remotely in the USA', 'Remotely in Europe (not Germany)', 'Remotely']",
-      "status": "unresolved",
-      "matched_rule": "answer_yes",
+      "value": "New York Office",
+      "source": "primary_location_pick: matched US needle 'new york'",
+      "status": "filled",
+      "matched_rule": "primary_location_pick",
       "options": [
         {
           "label": "Berlin Office",
@@ -186,10 +186,10 @@
       "label": "Will you require relocation?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Will you require relocation?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
       "options": [
         {
           "label": "Yes",
@@ -234,10 +234,10 @@
       "label": "How do you identify?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='How do you identify?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
       "options": [
         {
           "label": "female",
@@ -394,43 +394,8 @@
       "compliance": "eeoc"
     }
   ],
-  "unresolved": [
-    {
-      "id": "question_7112796101",
-      "label": "Are you able to come into our NYC office 2/3 x a week?",
-      "required": true,
-      "reason": "answer_yes: no 'Yes' option among ['Berlin Office', 'Munich Office', 'New York Office', 'London Office', 'Remotely in Germany', 'Remotely in the USA', 'Remotely in Europe (not Germany)', 'Remotely']"
-    },
-    {
-      "id": "question_7112797101",
-      "label": "Will you require relocation?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Will you require relocation?'"
-    },
-    {
-      "id": "question_7112799101",
-      "label": "How do you identify?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='How do you identify?'"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "question_7112796101",
-      "label": "Are you able to come into our NYC office 2/3 x a week?",
-      "reason": "answer_yes: no 'Yes' option among ['Berlin Office', 'Munich Office', 'New York Office', 'London Office', 'Remotely in Germany', 'Remotely in the USA', 'Remotely in Europe (not Germany)', 'Remotely']"
-    },
-    {
-      "id": "question_7112797101",
-      "label": "Will you require relocation?",
-      "reason": "no LABEL_RULES match for label='Will you require relocation?'"
-    },
-    {
-      "id": "question_7112799101",
-      "label": "How do you identify?",
-      "reason": "no LABEL_RULES match for label='How do you identify?'"
-    }
-  ],
+  "unresolved": [],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

@@ -1,0 +1,532 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/reddit/jobs/8026419",
+  "org": "reddit",
+  "job_id": "8026419",
+  "job_title": "Product Manager, SMB Growth",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-30T11:47:32Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/reddit/jobs/8026419?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 25,
+    "filled": 19,
+    "filled_needs_review": 0,
+    "declined": 6,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "preferred_name",
+      "label": "Preferred First Name",
+      "type": "input_text",
+      "required": false,
+      "value": "Cyrus",
+      "source": "identity.preferred_name",
+      "status": "filled",
+      "matched_rule": "preferred_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_67796147",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_67796148",
+      "label": "How did you hear about this job?",
+      "type": "input_text",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "common_form_answers.how_did_you_hear_about_us",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": null
+    },
+    {
+      "id": "question_67796149",
+      "label": "Please provide the name of your current (or most recent) company",
+      "type": "input_text",
+      "required": true,
+      "value": "Microsoft",
+      "source": "experience_summary.current_employer",
+      "status": "filled",
+      "matched_rule": "current_employer",
+      "options": null
+    },
+    {
+      "id": "question_67796150",
+      "label": "How many years of experience do you have in this specific job, or in a related field?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2 - 4",
+      "source": "experience_summary.answer_for_years_of_experience_field | smart-matched to option '2 - 4'",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "Fewer than 2",
+          "value": 730181965
+        },
+        {
+          "label": "2 - 4",
+          "value": 730181966
+        },
+        {
+          "label": "5 - 9",
+          "value": 730181967
+        },
+        {
+          "label": "10+",
+          "value": 730181968
+        }
+      ]
+    },
+    {
+      "id": "question_67796151",
+      "label": "Are you currently authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67796152",
+      "label": "Do you now, or will you in the future, require immigration sponsorship to work at Reddit?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_67796153",
+      "label": "By selecting \"I agree,\" I understand that the information I have provided as part of this job application will be processed in accordance with Reddit's Candidate Privacy Policy. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I agree",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "I agree",
+          "value": 730181969
+        }
+      ]
+    },
+    {
+      "id": "demographic_question_430",
+      "label": "What gender identity do you most closely identify with? ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Agender",
+          "value": 2177
+        },
+        {
+          "label": "Genderfluid",
+          "value": 2178
+        },
+        {
+          "label": "Gender non-conforming",
+          "value": 2179
+        },
+        {
+          "label": "Genderqueer",
+          "value": 2180
+        },
+        {
+          "label": "Female",
+          "value": 2183
+        },
+        {
+          "label": "Male",
+          "value": 2181
+        },
+        {
+          "label": "Non-binary",
+          "value": 2182
+        },
+        {
+          "label": "Not listed",
+          "value": 2198
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 5382
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_431",
+      "label": "Are you a person of transgender experience? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 2186
+        },
+        {
+          "label": "No",
+          "value": 2187
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 5383
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_432",
+      "label": "What sexual orientation do you most closely identify with? ",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Asexual",
+          "value": 2189
+        },
+        {
+          "label": "Bisexual",
+          "value": 2190
+        },
+        {
+          "label": "Gay",
+          "value": 2191
+        },
+        {
+          "label": "Heterosexual",
+          "value": 2192
+        },
+        {
+          "label": "Lesbian",
+          "value": 2193
+        },
+        {
+          "label": "Pansexual",
+          "value": 2194
+        },
+        {
+          "label": "Queer",
+          "value": 2195
+        },
+        {
+          "label": "Not listed",
+          "value": 2196
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 5384
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_433",
+      "label": "Do you live with a disability (as outlined by the ADA)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_disability",
+      "options": [
+        {
+          "label": "Yes, I have a disability, or have a history/record of having a disability",
+          "value": 2199
+        },
+        {
+          "label": "No, I do not have a disability, or have a history/record of having a disability",
+          "value": 2200
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 5385
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_434",
+      "label": "Are you a veteran/have you served in the military? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Active Reserve",
+          "value": 2202
+        },
+        {
+          "label": "Inactive Reserve",
+          "value": 2203
+        },
+        {
+          "label": "Other Protected Veteran",
+          "value": 2204
+        },
+        {
+          "label": "Retired",
+          "value": 2205
+        },
+        {
+          "label": "Unspecified Veteran",
+          "value": 2206
+        },
+        {
+          "label": "Vietnam Era Veteran",
+          "value": 2207
+        },
+        {
+          "label": "Vietnam Veteran and Other Protected Veteran",
+          "value": 2208
+        },
+        {
+          "label": "No military service",
+          "value": 2209
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 5386
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_436",
+      "label": "Please select up to 2 ethnicities that you most closely identify with.",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "American Indian or Alaska Native",
+          "value": 2218
+        },
+        {
+          "label": "Black or African American",
+          "value": 2220
+        },
+        {
+          "label": "East Asian",
+          "value": 179711
+        },
+        {
+          "label": "South Asian",
+          "value": 179712
+        },
+        {
+          "label": "Hispanic or Latinx",
+          "value": 2221
+        },
+        {
+          "label": "Middle Eastern or North African",
+          "value": 179713
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": 2222
+        },
+        {
+          "label": "White",
+          "value": 2224
+        },
+        {
+          "label": "I don't wish to answer",
+          "value": 5388
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "longitude",
+      "label": "Longitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "-122.2087",
+      "source": "address.longitude",
+      "status": "filled",
+      "matched_rule": "longitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "latitude",
+      "label": "Latitude",
+      "type": "input_hidden",
+      "required": true,
+      "value": "47.6815",
+      "source": "address.latitude",
+      "status": "filled",
+      "matched_rule": "latitude",
+      "options": null,
+      "section": "location"
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "section": "location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

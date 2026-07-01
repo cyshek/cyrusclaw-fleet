@@ -1,0 +1,9 @@
+# Cover answers — Commvault, Sales Engineer (commvault-5250158008)
+
+## Work Experience
+
+I'm currently a Program Manager at Microsoft, where I've spent the past year-plus scaling Azure's cyber resilience validation program from a two-person operation into a platformized system that supports 45+ annual recovery drills and has driven $14M+ in business impact across enterprise accounts including Databricks, Walmart, SAP, and NetApp. A big part of that work has been translating complex technical requirements into executable plans, coordinating across engineering, sales, and C-suite stakeholders, and building the business case for why resilience investments matter at an organizational level. I also served as the bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, which required me to hold both the technical and business conversation at the same time.
+
+Before that I completed internships at Microsoft and Amazon Robotics, where I did similar work: conducting discovery with service teams to surface gaps, building roadmaps and business cases for senior leadership, and driving cross-functional alignment on technical decisions. At Microsoft's 2022 internship I helped generate $3M in accelerated revenue by getting 140+ teams aligned on an automation prioritization framework, and at Amazon Robotics I led a 2,000+ unit OS migration with zero operational downtime by mapping dependencies and defining the deployment strategy upfront.
+
+Across all of these roles the common thread has been sitting at the intersection of technical depth and business impact, running proof-of-concept-style validation programs, communicating value to executive stakeholders, and helping large organizations make confident decisions about complex infrastructure. That's exactly the motion I'm looking to bring to a pre-sales SE role at Commvault.

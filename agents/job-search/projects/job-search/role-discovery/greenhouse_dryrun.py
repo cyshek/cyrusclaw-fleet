@@ -170,12 +170,33 @@ LABEL_RULES: list[tuple[str, str]] = [
     # Block: full-stack experience / technical assignment (Solutions Engineer roles) -> Yes (Cyrus has SE-relevant tech skills)
     ("full-stack development experience", "answer_yes"),
     ("comfortable completing a technical assignment", "answer_yes"),
+    # Taboola 3320: Ad Tech / Mar Tech experience (Cyrus has ads/advertiser product experience at MSFT)
+    ("experience in the ad tech / mar tech industry", "answer_yes"),
+    ("experience in the ad tech", "answer_yes"),
+    ("ad tech / mar tech", "answer_yes"),
+    # Taboola 3320: Advertising campaign optimization essay -> customer_facing_essay (auto-gen)
+    ("describe your experience making technical advertising campaign optimizations", "customer_facing_essay"),
+    ("experience making technical advertising campaign", "customer_facing_essay"),
+    ("experience with performance marketing", "customer_facing_essay"),
+    ("advertising campaign optimizations or your experience with performance marketing", "customer_facing_essay"),
     # Instacart: Canada work authorization (role is US-only; Cyrus doesn't need Canada).
     ("legally entitled to work in canada", "answer_no"),
     ("entitled to work in canada", "answer_no"),
     # Coinbase AI-tools ack ("I understand that Coinbase may use AI tools...") — Yes-only select.
     ("coinbase may use ai tools", "acknowledge_yes"),
     ("use ai tools to assist in the application", "acknowledge_yes"),
+    # Taboola 3320: "Please confirm that you understand this role is NOT a Software Engineer..."
+    ("understand this role is not a software engineer", "acknowledge_yes"),
+    ("understand this role is not", "acknowledge_yes"),
+    ("confirm that you understand this role is not", "acknowledge_yes"),
+    # Neural Concept 1147 (2026-07-01): "You are aware this is a customer-facing position..."
+    ("you are aware this is a customer-facing position", "acknowledge_yes"),
+    ("aware this is a customer-facing position", "acknowledge_yes"),
+    ("aware that this is a customer-facing", "acknowledge_yes"),
+    # Taboola 3320: "This role is hybrid requiring 3 days/wk in NYC..." -> open to relocating
+    ("hybrid position requiring three days per week", "willing_to_relocate"),
+    ("requiring three days per week in-person", "willing_to_relocate"),
+    ("days per week in-person at our", "willing_to_relocate"),
     # Block AI-usage essay ("Tell me about a time where you used AI in a meaningful way...")
     ("used ai in a meaningful way", "customer_facing_essay"),
     ("used ai in a meaningful", "customer_facing_essay"),
@@ -296,6 +317,12 @@ LABEL_RULES: list[tuple[str, str]] = [
     # and authorization to work in the United States, to the extent required by law?"
     # Functionally a US-work-auth Yes/No — answer Yes.
     ("verification of both your identity", "work_authorized"),
+    # Commvault 2026-06-30: "Will you require Commvault to sponsor a work visa or work authorization"
+    # -> needs_sponsorship (No for US citizen). Must come BEFORE generic 'work authorization' match.
+    ("require commvault to sponsor", "needs_sponsorship"),
+    ("to sponsor a work visa or work authorization", "needs_sponsorship"),
+    # Commvault 2026-06-30: conditional text follow-up after sponsorship No — fill N/A
+    ("if yes, please confirm which type of visa", "visa_type_na"),
     ("provide verification of", "work_authorized"),
     # Phoenix Contact 2026-05-24 (role 1289): "If hired, can you provide proof of citizenship or verification
     # of your Legal Right to Work in the U.S.?" — Cyrus is US citizen -> Yes.
@@ -450,6 +477,19 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("commutable proximity to a lyft office", "willing_to_relocate"),
     ("proximity to a lyft office", "willing_to_relocate"),
     ("reside in commutable proximity", "willing_to_relocate"),
+    # FanDuel 3931 (2026-06-30): office-proximity location select: which of NY/ATL/JC/LAX are
+    # you within 120 miles of? Cyrus is in Kirkland WA -> None (truthful).
+    ("located within 120 miles of the new york", "office_location_none"),
+    ("located within 120 miles", "office_location_none"),
+    ("within 120 miles of", "office_location_none"),
+    # FanDuel 3931: follow-up 'If not within 120 miles, willing to relocate?' -> Yes
+    ("if you are not located within 120 miles", "answer_yes"),
+    ("not located within 120 miles", "answer_yes"),
+    # Parloa 1204/1623 (2026-07-01): NYC office select + relocation questions
+    ("able to come into our nyc office", "primary_location_pick"),
+    ("come into our nyc office", "primary_location_pick"),
+    ("come into our", "primary_location_pick"),
+    ("will you require relocation", "willing_to_relocate"),  # No (Cyrus doesn't need company to fund relocation)
     ("city", "city"),
     ("state", "state"),
     ("zip", "zip"),
@@ -538,6 +578,9 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("current (or most recent) company", "current_employer"),
     ("current (or most recent) title", "current_title"),
     ("current (or most recent) job title", "current_title"),
+    # Celonis 3972 batch: "Most Recent Job Title" simple text field
+    ("most recent job title", "current_title"),
+    ("most recent title", "current_title"),
     # Scale AI 2026-06-28: "What is your current or more recent job title?"
     ("current or more recent job title", "current_title"),
     ("or more recent job title", "current_title"),
@@ -605,6 +648,12 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("compensation expectations", "compensation"),
     ("salary expectations", "compensation"),
     ("pay expectation", "compensation"),
+    # Paystand 3934 (2026-06-30): 'Is the posted salary range aligned with your expectations?'
+    # Yes/No only options -> Yes (truthful: Cyrus is applying so it is acceptable).
+    # Must come BEFORE the generic 'salary range' -> compensation rule.
+    ("is the posted salary range aligned", "answer_yes"),
+    ("posted salary range aligned", "answer_yes"),
+    ("salary range aligned with your expectations", "answer_yes"),
     ("salary range", "compensation"),
     ("target compensation", "compensation"),
     ("compensation in mind", "compensation"),
@@ -624,9 +673,12 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("compensation and benefits", "compensation"),  # alt phrasing
     ("open to relocation", "willing_to_relocate"),
     ("willing to relocate", "willing_to_relocate"),
+    ("willingness to relocate", "willing_to_relocate"),  # Commvault 2026-06-30
     ("willing to travel", "willing_to_travel"),
     ("willing and able to travel", "willing_to_travel"),
     ("open to travel", "willing_to_travel"),  # Fluidstack 2969/2970 (2026-06-16)
+    ("able to travel as needed", "willing_to_travel"),  # Shelf 2149 (2026-07-01)
+    ("able to travel when needed", "willing_to_travel"),  # same class
     # 2026-06-03 (Cyrus directive via main): US onsite location is NEVER a knockout.
     # Cyrus relocates ANYWHERE in the USA, travels up to 100%. Any "do you reside in
     # <US area>" / "within commuting distance to <US city>" question -> Yes (answer_yes).
@@ -700,6 +752,13 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("stakeholder alignment", "customer_facing_essay"),
     ("what experience do you have working with", "customer_facing_essay"),
     ("experience do you have working with enterprise", "customer_facing_essay"),
+    # Lob PM (role 3928, 2026-06-30): open PM-curiosity essay.
+    ("what originally sparked your curiosity in product management", "customer_facing_essay"),
+    ("sparked your curiosity in product management", "customer_facing_essay"),
+    ("area of product sense that you are looking to grow", "customer_facing_essay"),
+    # Glean FDE (role 3920, 2026-06-30): open AI-agents experience essay.
+    ("have you built ai agents", "customer_facing_essay"),
+    ("built ai agents", "customer_facing_essay"),
     # Confidentiality / trade-secret affirmation (Everlaw 2759): "I understand,
     # affirm, and agree that I am strictly prohibited from taking...trade secret..."
     # -> Yes. A benign legal affirmation Cyrus can truthfully agree to (he won't
@@ -809,6 +868,7 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("can you work full-time on-site", "ack_in_office"),
     ("able to work on-site", "ack_in_office"),  # Afresh 2026-05-24 (role 994) — "Are you able to work on-site in San Francisco, CA?"
     ("willing to work from the office", "ack_in_office"),
+    ("willing to work from the", "ack_in_office"),  # CircleCI 2290 (2026-07-01): "willing to work from the San Francisco headquarters office"
     ("in-person in one of our offices", "ack_in_office"),
     ("work from our", "ack_in_office"),
     ("days per week", "ack_in_office"),
@@ -1162,6 +1222,10 @@ LABEL_RULES: list[tuple[str, str]] = [
     ("first instinct about how to handle something turned out to be wrong", "customer_facing_essay"),
     ("you and the ae saw the customer situation differently", "customer_facing_essay"),
     ("ae saw the customer situation differently", "customer_facing_essay"),
+    # Lob HQ state list (2026-07-01): "If outside SF HQ, will you be working in [AZ,CA,CO,DC,FL,GA,IA,IL,MA,MD,MI,MN,NE,NC,NH,NJ,NV,NY,OH,OR,PA,RI,TN,TX,UT,WA]?"
+    # Cyrus is in WA (Kirkland) -> Yes
+    ("outside our san francisco hq, will you be working in any of the following states", "answer_yes"),
+    ("will you be working in any of the following states", "answer_yes"),
     # Alloy NYC hybrid: "Are you able to attend the office on these days?" -> ack_in_office
     ("hybrid work environment: our employees local to nyc are expected to work", "ack_in_office"),
     ("our employees local to nyc are expected to work", "ack_in_office"),
@@ -1517,6 +1581,7 @@ LABEL_RULES: list[tuple[str, str]] = [
 
 
     ("gender", "demo_gender"),
+    ("how do you identify", "demo_gender"),  # Parloa 1204 (2026-07-01): 'How do you identify?' gender Q
     ("race", "demo_race"),
     ("ethnicity", "demo_race"),
     ("hispanic", "demo_race"),
@@ -1731,7 +1796,7 @@ def r_acknowledge_yes(p, f):
     values = f.get("values") or f.get("options") or []
     if values:
         # Prefer Yes / Agree / Accept / Acknowledge / I Agree style options.
-        prefer = ["yes", "i agree", "agree", "i accept", "accept", "i acknowledge", "acknowledge", "confirm", "i confirm"]
+        prefer = ["yes", "i agree", "agree", "i accept", "accept", "i acknowledge", "acknowledge", "confirm", "i confirm", "i understand"]
         for pat in prefer:
             for v in values:
                 lbl = (v.get("label") or "").strip()
@@ -1807,6 +1872,12 @@ def r_answer_no(p, f):
         labels = [v.get("label") for v in values]
         return _unresolved(f"answer_no: no 'No' option among {labels}")
     return _ok("No", "answer_no (default No)")
+
+def r_not_applicable_text(p, f):
+    """Conditional follow-up text fields that don't apply to Cyrus (e.g. 'If yes, please
+    confirm which type of Visa would be required' — Cyrus is US citizen, no sponsorship).
+    Returns 'N/A' as freetext so the field is non-empty. Commvault 2026-06-30."""
+    return _ok("N/A", "not_applicable_text (conditional follow-up, not applicable)")
 
 def r_num_companies_worked(p, f):
     """Canonical: 'How many companies have you worked for since graduation?'
@@ -2310,8 +2381,9 @@ def r_willing_to_relocate(p, f):
         for v in values:
             lbl = (v.get("label") or "").strip()
             low = lbl.lower()
-            if ("open to relocation" in low or "open to relocat" in low) and "not local" in low:
-                return _ok(lbl, "preferences.willing_to_relocate (matched 'open to relocation, not local' option)")
+            # "open to relocat" without requiring "not local" — catches Taboola-style options
+            if ("open to relocation" in low or "open to relocat" in low) and "not willing" not in low:
+                return _ok(lbl, "preferences.willing_to_relocate (matched 'open to relocation' option)")
         # Fall back to plain 'Yes' if present.
         for v in values:
             lbl = (v.get("label") or "").strip()
@@ -2320,7 +2392,7 @@ def r_willing_to_relocate(p, f):
         labels = [v.get("label") for v in values]
         # Fallback: if options are city names (no Yes), pick nearest city (Twitch-style)
         # Cyrus is willing to relocate anywhere in the US.
-        city_prefs = ["seattle", "san francisco", "new york", "remote"]
+        city_prefs = ["seattle", "san francisco", "new york", "nyc", "remote"]
         lbl_lower = [(l or "").lower() for l in labels]
         for pref in city_prefs:
             for i, ll in enumerate(lbl_lower):
@@ -2362,6 +2434,53 @@ def r_willing_to_travel(p, f):
 def r_remote_pref(p, f):         return _ok("Open to remote, hybrid, or onsite", "preferences.remote_preference")
 def r_ack_hybrid(p, f):          return _ok("Yes", "preferences.remote_preference (acks hybrid)")
 def r_ack_in_office(p, f):       return _ok("Yes", "preferences.willing_to_travel_pct (>=25%)")
+def r_office_location_none(p, f):
+    """Office-proximity location select where Cyrus is NOT near any listed office.
+    Picks the 'None' option (or nearest equivalent) truthfully.
+    FanDuel 3931: 'Are you located within 120 miles of NY/ATL/JC/TOR/LA? If so, which location?'
+    Options: New York, Jersey City, Atlanta, Los Angeles, None.
+    Cyrus is in Kirkland WA -> None."""
+    values = f.get("values") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    # Prefer 'None', then 'N/A', then 'Not applicable'
+    prefer = ["none", "n/a", "not applicable", "not near any", "not listed", "other"]
+    lbl_lower = [l.lower() for l in labels]
+    for pref in prefer:
+        for i, ll in enumerate(lbl_lower):
+            if pref == ll or ll.startswith(pref):
+                return _ok(labels[i], f"office_location_none: matched '{pref}'")
+    # Last resort: last option (often the "none of the above" position)
+    if labels:
+        return _ok(labels[-1], "office_location_none: fallback last option")
+    return _unresolved("office_location_none: no options")
+
+
+def r_primary_location_pick(p, f):
+    """Location-select where question asks which office/location can come in.
+    Parloa 1204/1623 (2026-07-01): 'Are you able to come into our NYC office 2/3 x a week?'
+    Options: 'Berlin Office', 'Munich Office', 'New York Office', ...
+    Cyrus can relocate anywhere in the US; pick the first US-related option.
+    US onsite is never a knockout per standing directive."""
+    values = f.get("values") or []
+    labels = [(v.get("label") or "").strip() for v in values]
+    # Prefer US cities / 'Remote' options (remote in USA) in priority order
+    us_needles = [
+        "new york", "nyc", "san francisco", "sf", "seattle", "boston",
+        "austin", "chicago", "los angeles", "la", "denver", "miami",
+        "remotely in the usa", "remote in the usa", "remote (us", "us remote",
+        "remote",
+    ]
+    lbl_lower = [l.lower() for l in labels]
+    for needle in us_needles:
+        for i, ll in enumerate(lbl_lower):
+            if needle in ll:
+                return _ok(labels[i], f"primary_location_pick: matched US needle '{needle}'")
+    # Fallback: first option
+    if labels:
+        return _ok(labels[0], "primary_location_pick: fallback first option")
+    return _unresolved("primary_location_pick: no options")
+
+
 def r_pick_only_option(p, f):
     """Single-option confirm/acknowledge selects (e.g. Astranis 'Please confirm
     the season you are applying for.' with only 'Summer 2026'). Pick the sole
@@ -2693,6 +2812,8 @@ RESOLVERS: dict[str, Any] = {
     "notice_period": r_notice_period,
     "how_heard": r_how_heard,
     "pick_only_option": r_pick_only_option,
+    "office_location_none": r_office_location_none,
+    "primary_location_pick": r_primary_location_pick,
     "referred_by": r_referred_by,
     "previously_applied": r_previously_applied,
     "previously_employed": r_previously_employed,

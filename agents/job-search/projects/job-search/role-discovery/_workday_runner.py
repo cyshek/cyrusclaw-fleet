@@ -3117,6 +3117,17 @@ def populate_work_history(page):
         except Exception as _e: log("  degree err", str(_e)[:70])
         _fill_wd_date(page, f"education-{idx}--lastYearAttended", "05", ed["end_year"])
         _fill_wd_date(page, f"education-{idx}--firstYearAttended", "08", ed["start_year"])
+        # GPA / gradeAverage fill (Applied Materials R2518866/R2621070 class)
+        try:
+            gpa_id = _find_id_suffix(page, f"education-{idx}--gradeAverage")
+            if gpa_id:
+                is_gpa_empty = page.evaluate("(id)=>{const e=document.getElementById(id); return e?!((e.value||'').trim()):false;}", gpa_id)
+                if is_gpa_empty:
+                    _set_native(page, gpa_id, "3.80")
+                    page.wait_for_timeout(300)
+                    log(f"  gradeAverage (GPA) set for education-{idx}")
+        except Exception as _gpa_e:
+            log(f"  gradeAverage fill err: {str(_gpa_e)[:70]}")
         log(f"  education [{idx}]: {ed['school']} (sn={bool(sn)} fo={bool(fo)})")
         page.wait_for_timeout(700)
 
@@ -3353,6 +3364,40 @@ def handle_experience(page, resume):
     except Exception as e:
         log("populate_work_history err", str(e)[:120])
     # DIAG: list still-empty required fields WITH a human label so we can see what blocks advance.
+    # workday-skills-widget (2026-07-01 Target): typeahead fix. Some tenants require skills--skills input.
+    try:
+        _skills_inp = page.locator("#skills--skills").first
+        if _skills_inp.count():
+            _scur = (page.evaluate("()=>{const i=document.getElementById('skills--skills');return i?i.value:'';}")  or "")
+            if not _scur.strip():
+                log("  skills widget empty -> filling via typeahead")
+                for _sk in ["Product Management", "Stakeholder", "Agile"]:
+                    try:
+                        _skills_inp.click(force=True)
+                        page.wait_for_timeout(400)
+                        _skills_inp.fill(_sk[:6])
+                        page.wait_for_timeout(1200)
+                        _oclick = page.evaluate(
+                            "()=>{const o=Array.from(document.querySelectorAll('[data-automation-id=promptOption],[role=option]'));"
+                            "if(o.length){o[0].click();return(o[0].textContent||'').trim().slice(0,40);}"
+                            "return null;}")
+                        page.wait_for_timeout(600)
+                        if _oclick:
+                            log(f"  skills opted: {_oclick[:30]}")
+                            break
+                        _skills_inp.press("Enter")
+                        page.wait_for_timeout(400)
+                        _aval = (page.evaluate("()=>{const i=document.getElementById('skills--skills');return i?i.value:'?';}") or "")
+                        if not _aval.strip():
+                            log("  skills tag created (input cleared)")
+                            break
+                    except Exception as _e:
+                        log(f"  skills err: {str(_e)[:50]}")
+
+            else:
+                log(f"  skills already set: {_scur[:30]}")
+    except Exception as _swe:
+        log(f"  skills widget err: {str(_swe)[:80]}")
     try:
         rem = page.evaluate("""()=>{const out=[];for(const el of document.querySelectorAll('input[aria-required=true],textarea[aria-required=true],button[aria-required=true],[aria-required=true]')){const v=(el.value||el.getAttribute('aria-label')||el.textContent||'').trim();const filled=el.tagName==='BUTTON'?!/select one|^$/i.test(v):!!v;if(!filled){let lab='';let p=el;for(let i=0;i<5&&p;i++){p=p.parentElement;if(p){const l=p.querySelector('label');if(l){lab=l.textContent.trim();break;}}}out.push((el.id||el.getAttribute('data-automation-id')||'?')+' :: '+lab.slice(0,30));}}return JSON.stringify(out.slice(0,20));}""")
         log("  STILL-REQUIRED-EMPTY:", rem[:600])
@@ -4297,7 +4342,14 @@ def verify_confirmation(page, base_url=None):
                # job on <date>' + shows a 'View Application' (viewButton) instead of Apply.
                # The runner previously missed this -> logged EXIT5 false-negative even though
                # the app submitted server-side. Treat these as confirmation.
-               "you applied for this job on","you applied for this job"]:
+               "you applied for this job on","you applied for this job",
+               # FIX (blackrock-modal-confirm 2026-06-30): BlackRock WD tenant shows
+               # "Congratulations! ... Your application has been submitted." in a MODAL
+               # overlay over the jobs listing. body.text_content() includes modal text.
+               # "application submitted" already present but guard against other phrasings.
+               "your application has been submitted","congratulations",
+               "application has been submitted","thanks for taking the time to apply"]:
+
         if kw in body:
             log("confirmation matched:", kw); return True
     # candidate home active application

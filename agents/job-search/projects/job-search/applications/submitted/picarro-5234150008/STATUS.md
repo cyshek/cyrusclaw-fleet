@@ -1,31 +1,9 @@
-SUBMITTED
+PREP-READY — 2026-06-30T15:03:26+00:00
 
-submitted_by: auto
-applied_on: 2026-06-24
-role_id: 3327
-submitted_at: 2026-06-24T03:43:50+00:00
+role_id: 2297
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-picarro-5234150008.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/picarro-5234150008/Cyrus_Shekari_Resume_picarroinc_5234150008_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/picarro-5234150008/cover_answers.md
 
-Runner tail:
-    {
-      "id": "title-0",
-      "err": "noinput"
-     }
-    ]
-   }
-  }
- },
- "preSubmitState": {
-  "emptyRequired": [],
-  "multiUnset": [],
-  "submitDisabled": false
- },
- "final": {
-  "url": "https://job-boards.greenhouse.io/embed/job_app/confirmation?for=picarroinc&token=5234150008",
-  "confirmed": true,
-  "otpStill": false,
-  "otpErr": false,
-  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\n\nView more jobs at Picarro, Inc\nBack to job post\n\nGive your application a boost!\n\nS"
- },
- "status": "SUBMITTED"
-}
-
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

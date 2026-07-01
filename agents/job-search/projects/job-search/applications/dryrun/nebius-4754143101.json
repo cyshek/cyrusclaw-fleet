@@ -1,0 +1,521 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/nebius/jobs/4754143101",
+  "org": "nebius",
+  "job_id": "4754143101",
+  "job_title": "Customer Engineer",
+  "job_location": "Canada; United States",
+  "fetched_at": "2026-06-30T22:52:44Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/nebius/jobs/4754143101?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 14,
+    "filled_needs_review": 1,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_8042547101",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_8042548101",
+      "label": "Have you read Nebius's Candidates Privacy Policy?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8042549101[]",
+      "label": "Which languages do you speak?",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "English",
+      "source": "languages_fluent (matched ['English'])",
+      "status": "filled",
+      "matched_rule": "languages_fluent",
+      "options": [
+        {
+          "label": "Arabic",
+          "value": 52053027101
+        },
+        {
+          "label": "Belarusian",
+          "value": 52053028101
+        },
+        {
+          "label": "Chinese",
+          "value": 52053029101
+        },
+        {
+          "label": "Czech",
+          "value": 52053030101
+        },
+        {
+          "label": "Dutch",
+          "value": 52053031101
+        },
+        {
+          "label": "English",
+          "value": 52053032101
+        },
+        {
+          "label": "Finnish",
+          "value": 52053033101
+        },
+        {
+          "label": "French",
+          "value": 52053034101
+        },
+        {
+          "label": "German",
+          "value": 52053035101
+        },
+        {
+          "label": "Greek",
+          "value": 52053036101
+        },
+        {
+          "label": "Hebrew",
+          "value": 52053037101
+        },
+        {
+          "label": "Icelandic",
+          "value": 52053038101
+        },
+        {
+          "label": "Italian",
+          "value": 52053039101
+        },
+        {
+          "label": "Japanese",
+          "value": 52053040101
+        },
+        {
+          "label": "Norwegian",
+          "value": 52053041101
+        },
+        {
+          "label": "Polish",
+          "value": 52053042101
+        },
+        {
+          "label": "Russian",
+          "value": 52053043101
+        },
+        {
+          "label": "Spanish",
+          "value": 52053044101
+        },
+        {
+          "label": "Swedish",
+          "value": 52053045101
+        },
+        {
+          "label": "Turkish",
+          "value": 52053046101
+        },
+        {
+          "label": "Ukrainian",
+          "value": 52053047101
+        }
+      ]
+    },
+    {
+      "id": "question_8042550101",
+      "label": "Are you currently authorized to work in the country where this position is located, without requiring sponsorship, now or in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8042551101",
+      "label": "Do you currently reside in the location specified for this role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state (NOTE: 'Kirkland, WA' not in options) | NOTE: 'Kirkland, WA' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "city_state",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8042552101",
+      "label": "What state do you currently reside in?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Washington",
+      "source": "address.state (mapped WA -> Washington)",
+      "status": "filled",
+      "matched_rule": "state",
+      "options": [
+        {
+          "label": "Alabama",
+          "value": 52053048101
+        },
+        {
+          "label": "Alaska",
+          "value": 52053049101
+        },
+        {
+          "label": "Arizona",
+          "value": 52053050101
+        },
+        {
+          "label": "Arkansas",
+          "value": 52053051101
+        },
+        {
+          "label": "California",
+          "value": 52053052101
+        },
+        {
+          "label": "Colorado",
+          "value": 52053053101
+        },
+        {
+          "label": "Connecticut",
+          "value": 52053054101
+        },
+        {
+          "label": "Delaware",
+          "value": 52053055101
+        },
+        {
+          "label": "Florida",
+          "value": 52053056101
+        },
+        {
+          "label": "Georgia",
+          "value": 52053057101
+        },
+        {
+          "label": "Hawaii",
+          "value": 52053058101
+        },
+        {
+          "label": "Idaho",
+          "value": 52053059101
+        },
+        {
+          "label": "Illinois",
+          "value": 52053060101
+        },
+        {
+          "label": "Indiana",
+          "value": 52053061101
+        },
+        {
+          "label": "Iowa",
+          "value": 52053062101
+        },
+        {
+          "label": "Kansas",
+          "value": 52053063101
+        },
+        {
+          "label": "Kentucky",
+          "value": 52053064101
+        },
+        {
+          "label": "Louisiana",
+          "value": 52053065101
+        },
+        {
+          "label": "Maine",
+          "value": 52053066101
+        },
+        {
+          "label": "Maryland",
+          "value": 52053067101
+        },
+        {
+          "label": "Massachusetts",
+          "value": 52053068101
+        },
+        {
+          "label": "Michigan",
+          "value": 52053069101
+        },
+        {
+          "label": "Minnesota",
+          "value": 52053070101
+        },
+        {
+          "label": "Mississippi",
+          "value": 52053071101
+        },
+        {
+          "label": "Missouri",
+          "value": 52053072101
+        },
+        {
+          "label": "Montana",
+          "value": 52053073101
+        },
+        {
+          "label": "Nebraska",
+          "value": 52053074101
+        },
+        {
+          "label": "Nevada",
+          "value": 52053075101
+        },
+        {
+          "label": "New Hampshire",
+          "value": 52053076101
+        },
+        {
+          "label": "New Jersey",
+          "value": 52053077101
+        },
+        {
+          "label": "New Mexico",
+          "value": 52053078101
+        },
+        {
+          "label": "New York",
+          "value": 52053079101
+        },
+        {
+          "label": "North Carolina",
+          "value": 52053080101
+        },
+        {
+          "label": "North Dakota",
+          "value": 52053081101
+        },
+        {
+          "label": "Ohio",
+          "value": 52053082101
+        },
+        {
+          "label": "Oklahoma",
+          "value": 52053083101
+        },
+        {
+          "label": "Oregon",
+          "value": 52053084101
+        },
+        {
+          "label": "Pennsylvania",
+          "value": 52053085101
+        },
+        {
+          "label": "Rhode Island",
+          "value": 52053086101
+        },
+        {
+          "label": "South Carolina",
+          "value": 52053087101
+        },
+        {
+          "label": "South Dakota",
+          "value": 52053088101
+        },
+        {
+          "label": "Tennessee",
+          "value": 52053089101
+        },
+        {
+          "label": "Texas",
+          "value": 52053090101
+        },
+        {
+          "label": "Utah",
+          "value": 52053091101
+        },
+        {
+          "label": "Vermont",
+          "value": 52053092101
+        },
+        {
+          "label": "Virginia",
+          "value": 52053093101
+        },
+        {
+          "label": "Washington",
+          "value": 52053094101
+        },
+        {
+          "label": "West Virginia",
+          "value": 52053095101
+        },
+        {
+          "label": "Wisconsin",
+          "value": 52053096101
+        },
+        {
+          "label": "Wyoming",
+          "value": 52053097101
+        }
+      ]
+    },
+    {
+      "id": "question_8263014101",
+      "label": "Have you ever been employed by Nebius before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

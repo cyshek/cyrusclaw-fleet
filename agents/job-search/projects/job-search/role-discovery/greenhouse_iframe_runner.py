@@ -731,66 +731,30 @@ def run(slug: str, *, dry_run: bool = False, headless: bool = True, debug_filest
             log(f"work_experience_block err (continuing): {e}")
             report["events"].append({"step": "work_experience_block", "error": str(e)})
 
-        # Needs-review dropdowns: inspect live options, then commit using
-        # the plan's alternates to find the best matching live option.
-        # (2026-06-30: upgraded from inspect-only to inspect+commit.)
-        nrd_commit_specs = []
+        # Needs-review dropdowns: use JS_INSPECT_AND_PICK (single JS call, avoids
+        # react-select menu-reopen bug). Proved on Taboola 3320 (2026-06-30):
+        # INSPECT closes the menu; PICK then can't re-open it within 300ms.
+        nrd_iap_specs = []
         for ndd in plan.get("needs_review_dropdowns", []) or []:
+            fid = ndd.get("id")
+            if not fid:
+                continue
+            label_val = ndd.get("label", "")
+            _STATE_MAP = {"WA": ["Washington", "Another State in the US"], "CA": ["California"], "NY": ["New York"], "TX": ["Texas"], "IL": ["Illinois"]}
+            state_expansions = _STATE_MAP.get(str(label_val).upper(), [])
+            _DOCTRINE_FALLBACKS = ["Yes", "I understand", "I confirm", "I acknowledge", "I agree", "Agree"]
+            raw_candidates = [label_val] + state_expansions + list(ndd.get("alternates") or []) + _DOCTRINE_FALLBACKS
+            seen_c: set = set()
+            deduped = []
+            for c in raw_candidates:
+                if c and c not in seen_c:
+                    seen_c.add(c)
+                    deduped.append(c)
+            nrd_iap_specs.append({"id": fid, "candidates": deduped})
+            log(f"needs_review queued (IAP): {fid} candidates={deduped[:4]}")
+        if nrd_iap_specs:
             try:
-                r = evalfn(gf.JS_INSPECT_OPTIONS, {"id": ndd["id"]})
-                report["events"].append({"step": "needs_review_inspect", "id": ndd["id"], "result": r})
-                live_opts = r.get("options", []) if r else []
-                if not live_opts:
-                    continue
-                # Try label first, then state expansions, then alternates.
-                label_val = ndd.get("label", "")
-                _STATE_MAP = {"WA": ["Washington", "Another State in the US"], "CA": ["California"], "NY": ["New York"], "TX": ["Texas"], "IL": ["Illinois"]}
-                state_expansions = _STATE_MAP.get(str(label_val).upper(), [])
-                candidates = [label_val] + state_expansions + list(ndd.get("alternates") or [])
-                chosen = None
-                for cand in candidates:
-                    if not cand:
-                        continue
-                    cl = str(cand).lower()
-                    # exact match first
-                    match = next((o for o in live_opts if o.lower() == cl), None)
-                    if not match:
-                        # prefix match
-                        match = next((o for o in live_opts if o.lower().startswith(cl) or cl.startswith(o.lower())), None)
-                    if not match:
-                        # substring match (min 3 chars to avoid noise)
-                        match = next((o for o in live_opts if len(cl) >= 3 and cl in o.lower()), None)
-                    if match:
-                        chosen = match
-                        break
-                if chosen:
-                    nrd_commit_specs.append({"id": ndd["id"], "label": chosen})
-                    log(f"needs_review commit queued: {ndd['id']} -> {chosen!r}")
-                else:
-                    # Fallback heuristics for known option patterns when
-                    # label/alternates don't match the live option text.
-                    q_text = (ndd.get("question") or "").lower()
-                    opts_lc = [o.lower() for o in live_opts]
-                    fallback = None
-                    # InterSystems "Job Location" pattern: pick "relocate" option
-                    if any("able to work at job location" in o for o in opts_lc):
-                        # find the "relocate" option
-                        fallback = next((o for o in live_opts if "relocat" in o.lower()), None)
-                        if not fallback:
-                            fallback = next((o for o in live_opts if o.lower().startswith("able")), None)
-                    # Generic location-commitment fallback: if options are "Yes/No", pick Yes
-                    if not fallback and set(opts_lc).issuperset({"yes", "no"}):
-                        fallback = next((o for o in live_opts if o.lower() == "yes"), None)
-                    if fallback:
-                        nrd_commit_specs.append({"id": ndd["id"], "label": fallback})
-                        log(f"needs_review fallback queued: {ndd['id']} -> {fallback!r}")
-                    else:
-                        log(f"needs_review no live match for {ndd['id']}: candidates={candidates[:3]} opts={live_opts[:5]}")
-            except Exception as e:
-                log(f"needs_review_inspect err {ndd.get('id')}: {e}")
-        if nrd_commit_specs:
-            try:
-                nrd_result = evalfn(gf.JS_PICK_DROPDOWNS, nrd_commit_specs)
+                nrd_result = evalfn(gf.JS_INSPECT_AND_PICK, nrd_iap_specs)
                 report["events"].append({"step": "needs_review_commit", "result": nrd_result})
                 log(f"needs_review committed: {nrd_result}")
             except Exception as e:

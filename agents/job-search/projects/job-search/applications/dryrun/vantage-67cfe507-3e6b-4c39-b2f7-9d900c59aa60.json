@@ -1,0 +1,231 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/vantage/67cfe507-3e6b-4c39-b2f7-9d900c59aa60",
+  "org": "vantage",
+  "job_id": "67cfe507-3e6b-4c39-b2f7-9d900c59aa60",
+  "job_title": "Founding Forward Deployed Engineer",
+  "job_location": "USA (Remote)",
+  "fetched_at": "2026-06-30T22:40:47Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 11,
+    "filled": 11,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de__systemfield_name",
+      "label": " Legal First and Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de__systemfield_name"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de__systemfield_email"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_c846fe5b-6a41-4073-bf0d-07a322cc1dcd",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_c846fe5b-6a41-4073-bf0d-07a322cc1dcd"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_92afb563-fc01-44d6-8120-01c37d4f1245",
+      "label": "Location (City, State)",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland",
+      "source": "address.city",
+      "status": "filled",
+      "matched_rule": "city",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_92afb563-fc01-44d6-8120-01c37d4f1245"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_28536e68-9aab-4234-ab80-e3c212374087",
+      "label": "Are you open to relocation?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_relocate (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_28536e68-9aab-4234-ab80-e3c212374087"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de__systemfield_resume"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_8783dd8f-1828-4620-9576-378195924209",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_8783dd8f-1828-4620-9576-378195924209"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_783f6afb-cf80-43e6-9f87-64efc01267c9",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_783f6afb-cf80-43e6-9f87-64efc01267c9"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_67a82f93-46ed-41fb-80d0-40f04c474747",
+      "label": "Are you authorized to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_67a82f93-46ed-41fb-80d0-40f04c474747"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_a0e24871-19af-47e7-8110-b43587d5f293",
+      "label": "Do you now or in the future require immigration support or visa sponsorship to continue working in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_a0e24871-19af-47e7-8110-b43587d5f293"
+    },
+    {
+      "id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_9c15841e-c27f-44ce-9a53-e1e9632ba54b",
+      "label": "How did you hear about this job?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (matched 'LinkedIn')",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": [
+        {
+          "label": "Vantage Careers Page",
+          "value": "Vantage Careers Page"
+        },
+        {
+          "label": "Third-party website or search engine",
+          "value": "Third-party website or search engine"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "LinkedIn"
+        },
+        {
+          "label": "Event (tech talk, meetup, conference)",
+          "value": "Event (tech talk, meetup, conference)"
+        },
+        {
+          "label": "Vantage employee",
+          "value": "Vantage employee"
+        },
+        {
+          "label": "Referral (friend, family member, colleague)",
+          "value": "Referral (friend, family member, colleague)"
+        },
+        {
+          "label": "Built In",
+          "value": "Built In"
+        },
+        {
+          "label": "Hacker News",
+          "value": "Hacker News"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "4492e848-a12f-4da5-bc7b-9f8e1cf941de_9c15841e-c27f-44ce-9a53-e1e9632ba54b"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

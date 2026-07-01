@@ -1,0 +1,341 @@
+{
+  "slug": "anduril-5177559007",
+  "ats": "greenhouse_iframe",
+  "wrapper_url": null,
+  "spec_path": "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/dryrun/andurilindustries-5177559007.json",
+  "pdf_path_local": "/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/anduril-5177559007/Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf",
+  "pdf_path_staged": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf",
+  "url": "https://job-boards.greenhouse.io/embed/job_app?token=5177559007&for=andurilindustries",
+  "text_fields": {
+    "first_name": "Cyrus",
+    "last_name": "Shekari",
+    "email": "cyshekari@gmail.com",
+    "phone": "346-804-0227",
+    "question_12405857007": "https://linkedin.com/in/cyshekari"
+  },
+  "dropdowns": [
+    {
+      "id": "question_12405858007",
+      "label": "None of the above"
+    },
+    {
+      "id": "question_12405859007",
+      "label": "Yes"
+    },
+    {
+      "id": "question_12405860007",
+      "label": "No"
+    },
+    {
+      "id": "question_12405861007",
+      "label": "No"
+    },
+    {
+      "id": "question_12405862007",
+      "label": "No"
+    },
+    {
+      "id": "question_12405863007",
+      "label": "No"
+    },
+    {
+      "id": "question_12405864007",
+      "label": "LinkedIn"
+    }
+  ],
+  "country_dropdowns": [
+    {
+      "id": "country",
+      "label": "United States"
+    }
+  ],
+  "phone_iti": {
+    "id": "phone",
+    "country": "United States",
+    "digits": "346-804-0227"
+  },
+  "needs_review_dropdowns": [],
+  "_education": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  },
+  "skipped": [
+    {
+      "id": "resume_text",
+      "reason": "placeholder"
+    },
+    {
+      "id": "cover_letter",
+      "type": "input_file"
+    },
+    {
+      "id": "question_12405865007",
+      "reason": "unresolved",
+      "required": false
+    }
+  ],
+  "unknown": [
+    {
+      "id": "cover_letter",
+      "type": "input_file",
+      "label": "Cover Letter"
+    }
+  ],
+  "cover_overrides": [],
+  "steps": [
+    {
+      "tool": "browser.open",
+      "args": {
+        "label": "anduril-5177559007",
+        "url": "https://job-boards.greenhouse.io/andurilindustries/jobs/5177559007"
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\n() => {\n  const b = [...document.querySelectorAll('button,a')]\n    .find(x => /^apply$/i.test((x.textContent || '').trim()));\n  if (b) b.click();\n  return b ? 'clicked' : 'noop';\n}\n",
+        "comment": "Click the visible 'Apply' button to reveal the form."
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 600
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync (fields) => {\n  const setNative = (el, val) => {\n    const proto = el.tagName === 'TEXTAREA'\n      ? HTMLTextAreaElement.prototype\n      : HTMLInputElement.prototype;\n    const desc = Object.getOwnPropertyDescriptor(proto, 'value');\n    desc.set.call(el, val);\n    el.dispatchEvent(new Event('input', { bubbles: true }));\n    el.dispatchEvent(new Event('change', { bubbles: true }));\n  };\n  const out = {};\n  for (const [id, val] of Object.entries(fields)) {\n    const el = document.getElementById(id);\n    if (!el) { out[id] = { ok: false, err: 'no element' }; continue; }\n    if (val === '' || val === null || val === undefined) {\n      out[id] = { ok: true, skipped: 'blank' }; continue;\n    }\n    setNative(el, String(val));\n    out[id] = { ok: true, value_after: String(el.value).slice(0, 60) };\n  }\n  return out;\n}\n",
+        "arg": {
+          "first_name": "Cyrus",
+          "last_name": "Shekari",
+          "email": "cyshekari@gmail.com",
+          "phone": "346-804-0227",
+          "question_12405857007": "https://linkedin.com/in/cyshekari"
+        },
+        "comment": "Fill every text/textarea field via the native value setter."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync (specs) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const fire = (el, type, x, y) => el.dispatchEvent(new MouseEvent(type, {\n    bubbles: true, cancelable: true, view: window, button: 0,\n    clientX: x, clientY: y,\n  }));\n  const out = [];\n  for (const { id, label } of specs) {\n    const inp = document.getElementById(id);\n    if (!inp) { out.push({ id, err: 'no input' }); continue; }\n    const ctrl = inp.closest('.select__control');\n    if (!ctrl) { out.push({ id, err: 'no control' }); continue; }\n    ctrl.scrollIntoView({ block: 'center' });\n    await sleep(100);\n    const r = ctrl.getBoundingClientRect();\n    const cx = r.left + 5, cy = r.top + 5;\n    fire(ctrl, 'mousedown', cx, cy);\n    fire(ctrl, 'mouseup',   cx, cy);\n    fire(ctrl, 'click',     cx, cy);\n    await sleep(300);\n    // CSS.escape id \u2014 see note on JS_DECLINE_DEMOGRAPHICS below; ids may carry\n    // `[`/`]` (Lyft) which break a raw attribute selector.\n    const escId = (window.CSS && CSS.escape) ? CSS.escape(id) : id.replace(/([\\[\\]\\.\\:\\(\\)\\#])/g, '\\\\$1');\n    let opts = [...document.querySelectorAll(`[id^=\"react-select-${escId}-option\"]`)];\n    // chain_044 (2026-05-31): newer GH 'remix' standalone boards\n    // (job-boards.greenhouse.io/<org>) render option nodes with class\n    // .select__option and id pattern react-select-<N>-option-<k> that does NOT\n    // embed the field id. Fall back to the open menu's options.\n    if (!opts.length) {\n      const menu = document.querySelector('.select__menu');\n      if (menu) opts = [...menu.querySelectorAll('.select__option, [role=option]')];\n    }\n    if (!opts.length) opts = [...document.querySelectorAll('.select__option, [role=option]')];\n    // Match priority: exact \u2192 case-insensitive exact \u2192 startsWith \u2192 includes.\n    // Codified after DeepMind 2026-05-08 where country option text was 'United\n    // States +1' (iti-flag rendered into the option) and the dryrun label was\n    // just 'United States'. Strict equality matches were too brittle.\n    const wantLc = String(label).toLowerCase();\n    let target = opts.find(o => o.textContent.trim() === label);\n    if (!target) target = opts.find(o => o.textContent.trim().toLowerCase() === wantLc);\n    if (!target) target = opts.find(o => o.textContent.trim().toLowerCase().startsWith(wantLc));\n    if (!target) target = opts.find(o => o.textContent.toLowerCase().includes(wantLc));\n    if (!target) {\n      out.push({ id, err: 'no option', want: label, available: opts.map(o => o.textContent.trim()), warn: 'dryrun label not in rendered options \u2014 driver should retry with alternates (see needs_review_dropdowns plan bucket)' });\n      // Close the menu.\n      fire(document.body, 'mousedown', 0, 0);\n      continue;\n    }\n    const tr = target.getBoundingClientRect();\n    const tx = tr.left + 5, ty = tr.top + 5;\n    fire(target, 'mousedown', tx, ty);\n    fire(target, 'mouseup',   tx, ty);\n    fire(target, 'click',     tx, ty);\n    await sleep(200);\n    const sv = ctrl.querySelector('.select__single-value');\n    out.push({ id, want: label, got: sv ? sv.textContent : null });\n  }\n  return out;\n}\n",
+        "arg": [
+          {
+            "id": "question_12405858007",
+            "label": "None of the above"
+          },
+          {
+            "id": "question_12405859007",
+            "label": "Yes"
+          },
+          {
+            "id": "question_12405860007",
+            "label": "No"
+          },
+          {
+            "id": "question_12405861007",
+            "label": "No"
+          },
+          {
+            "id": "question_12405862007",
+            "label": "No"
+          },
+          {
+            "id": "question_12405863007",
+            "label": "No"
+          },
+          {
+            "id": "question_12405864007",
+            "label": "LinkedIn"
+          }
+        ],
+        "comment": "Open each react-select via mousedown on .select__control and click the matching option div."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync (specs) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const fire = (el, type, x, y) => el.dispatchEvent(new MouseEvent(type, {\n    bubbles: true, cancelable: true, view: window, button: 0,\n    clientX: x || 0, clientY: y || 0,\n  }));\n  const setNative = (el, val) => {\n    const desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');\n    desc.set.call(el, val);\n    el.dispatchEvent(new Event('input', { bubbles: true }));\n  };\n  const out = [];\n  for (const { id, label } of specs) {\n    const inp = document.getElementById(id);\n    if (!inp) { out.push({ id, err: 'no input' }); continue; }\n    const ctrl = inp.closest('.select__control');\n    if (!ctrl) { out.push({ id, err: 'no control' }); continue; }\n    ctrl.scrollIntoView({ block: 'center' });\n    await sleep(120);\n    const r = ctrl.getBoundingClientRect();\n    fire(ctrl, 'mousedown', r.left + 5, r.top + 5);\n    fire(ctrl, 'mouseup',   r.left + 5, r.top + 5);\n    fire(ctrl, 'click',     r.left + 5, r.top + 5);\n    await sleep(250);\n    // Type into the search input to filter options.\n    // chain_026 2026-05-29 FIX: Greenhouse Remix-embed `candidate-location` async typeahead\n    // does NOT trigger its remote fetch on a bare `input` event \u2014 it needs real\n    // KeyboardEvent keydown/keyup per character. Without this, the menu stays\n    // empty (`opts.length === 0`) and we fall through to `no option after typeahead`.\n    // For ASYNC typeaheads we type char-by-char with key events; for SYNC/local\n    // typeaheads the original setNative bulk-set still works fine \u2014 we do BOTH:\n    // setNative for the React-state update, plus per-char keydown/keyup to trigger\n    // async fetch when present. Verified live on Mattermost 1320 (chain_026).\n    setNative(inp, '');\n    await sleep(60);\n    const _s = String(label);\n    for (let i = 1; i <= _s.length; i++) {\n      setNative(inp, _s.slice(0, i));\n      const ch = _s[i - 1];\n      inp.dispatchEvent(new KeyboardEvent('keydown', { key: ch, bubbles: true }));\n      inp.dispatchEvent(new KeyboardEvent('keyup',   { key: ch, bubbles: true }));\n      await sleep(60);\n    }\n    // Final wait \u2014 async fetches (Greenhouse candidate-location) take ~800-1500ms\n    await sleep(1200);\n    const escId = (window.CSS && CSS.escape) ? CSS.escape(id) : id.replace(/([\\[\\]\\.\\:\\(\\)\\#])/g, '\\\\$1');\n    let opts = [...document.querySelectorAll(`[id^=\"react-select-${escId}-option\"]`)];\n    let target = opts.find(o => o.textContent.trim().toLowerCase() === String(label).toLowerCase());\n    if (!target) target = opts.find(o => o.textContent.trim().toLowerCase().startsWith(String(label).toLowerCase()));\n    if (!target) target = opts.find(o => o.textContent.toLowerCase().includes(String(label).toLowerCase()));\n    if (!target && opts.length) target = opts[0];  // fallback: first filtered\n    if (!target) {\n      out.push({ id, err: 'no option after typeahead', want: label });\n      fire(document.body, 'mousedown', 0, 0);\n      continue;\n    }\n    const tr = target.getBoundingClientRect();\n    fire(target, 'mousedown', tr.left + 5, tr.top + 5);\n    fire(target, 'mouseup',   tr.left + 5, tr.top + 5);\n    fire(target, 'click',     tr.left + 5, tr.top + 5);\n    await sleep(180);\n    const sv = ctrl.querySelector('.select__single-value');\n    out.push({ id, want: label, got: sv ? sv.textContent : null, picked: (target.textContent||'').trim().slice(0, 60) });\n  }\n  return out;\n}\n",
+        "arg": [
+          {
+            "id": "country",
+            "label": "United States"
+          }
+        ],
+        "comment": "Country react-select(s): open + setNative(label) + click first matching option (typeahead)."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync ({ id, country, digits }) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const setNative = (el, val) => {\n    const desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');\n    desc.set.call(el, val);\n    el.dispatchEvent(new Event('input', { bubbles: true }));\n    el.dispatchEvent(new Event('change', { bubbles: true }));\n  };\n  const inp = document.getElementById(id);\n  if (!inp) return { ok: false, err: 'no phone input' };\n  const iti = inp.closest('.iti');\n  if (iti) {\n    const flag = iti.querySelector('.iti__selected-flag');\n    if (flag) {\n      flag.click();\n      await sleep(250);\n      const items = [...iti.querySelectorAll('.iti__country, li[class*=iti__country]')];\n      const wantLc = String(country || 'United States').toLowerCase();\n      let target = items.find(li => (li.textContent || '').toLowerCase().includes(wantLc));\n      if (!target) target = items.find(li => (li.getAttribute('data-country-code') || '').toLowerCase() === 'us');\n      if (target) {\n        target.click();\n        await sleep(150);\n      }\n    }\n  }\n  // digits-only \u2014 strip everything except digits\n  const clean = String(digits || '').replace(/[^0-9]/g, '');\n  setNative(inp, clean);\n  return { ok: true, iti: !!iti, value_after: inp.value, country };\n}\n",
+        "arg": {
+          "id": "phone",
+          "country": "United States",
+          "digits": "346-804-0227"
+        },
+        "comment": "Phone iti: click .iti__selected-flag, pick United States, set digits-only into the input."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync ({ patterns }) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const fire = (el, type, x, y) => el.dispatchEvent(new MouseEvent(type, {\n    bubbles: true, cancelable: true, view: window, button: 0,\n    clientX: x || 0, clientY: y || 0,\n  }));\n  const labelRe = new RegExp(patterns.label || 'gender|race|ethnic|hispanic|latin|veteran|disabilit|self[- ]?identif|pronoun|sexual.{0,5}orient', 'i');\n  const declines = patterns.declines || [];\n  const out = [];\n  const controls = [...document.querySelectorAll('.select__control')];\n  for (const ctrl of controls) {\n    // Skip if already has a value picked.\n    if (ctrl.querySelector('.select__single-value')) continue;\n    const inp = ctrl.querySelector('input[role=combobox]');\n    if (!inp || !inp.id) continue;\n    // Find the field label/legend nearby (walk up to find label or fieldset).\n    let lbl = '';\n    let n = ctrl;\n    for (let i = 0; i < 6 && n; i++) {\n      n = n.parentElement;\n      if (!n) break;\n      const labelEl = n.querySelector ? n.querySelector('label, legend') : null;\n      if (labelEl) { lbl = labelEl.textContent || ''; break; }\n    }\n    if (!labelRe.test(lbl)) continue;\n    ctrl.scrollIntoView({ block: 'center' });\n    await sleep(100);\n    const r = ctrl.getBoundingClientRect();\n    fire(ctrl, 'mousedown', r.left + 5, r.top + 5);\n    fire(ctrl, 'mouseup',   r.left + 5, r.top + 5);\n    fire(ctrl, 'click',     r.left + 5, r.top + 5);\n    await sleep(280);\n    // CSS.escape inp.id \u2014 Lyft (and other react-select v5 forms) ship ids like\n    // `question_36310349002[]` whose `[` `]` break a raw attribute selector\n    // and throw `SyntaxError: '...' is not a valid selector`. The runner\n    // currently swallows the exception and continues, but that means we\n    // miss every demographic field on those forms. Use CSS.escape() so the\n    // selector works regardless of id punctuation.\n    const escId = (window.CSS && CSS.escape) ? CSS.escape(inp.id) : inp.id.replace(/([\\[\\]\\.\\:\\(\\)\\#])/g, '\\\\$1');\n    let opts = [...document.querySelectorAll(`[id^=\"react-select-${escId}-option\"]`)];\n    // chain_044: remix boards use .select__option (id doesn't embed field id).\n    if (!opts.length) {\n      const menu = document.querySelector('.select__menu');\n      opts = menu ? [...menu.querySelectorAll('.select__option, [role=option]')]\n                  : [...document.querySelectorAll('.select__option, [role=option]')];\n    }\n    let target = null;\n    for (const want of declines) {\n      const wantLc = String(want).toLowerCase();\n      target = opts.find(o => o.textContent.trim().toLowerCase() === wantLc);\n      if (target) break;\n      target = opts.find(o => o.textContent.toLowerCase().includes(wantLc));\n      if (target) break;\n    }\n    if (!target) {\n      // Last-ditch: any option whose text contains 'decline', 'prefer not', or 'wish'.\n      target = opts.find(o => /decline|prefer not|don'?t wish|do not wish|not to identify|not to disclose/i.test(o.textContent));\n    }\n    if (!target) {\n      out.push({ id: inp.id, label: lbl.slice(0, 80), err: 'no decline option', available: opts.map(o => o.textContent.trim()).slice(0, 30) });\n      fire(document.body, 'mousedown', 0, 0);\n      continue;\n    }\n    const tr = target.getBoundingClientRect();\n    fire(target, 'mousedown', tr.left + 5, tr.top + 5);\n    fire(target, 'mouseup',   tr.left + 5, tr.top + 5);\n    fire(target, 'click',     tr.left + 5, tr.top + 5);\n    await sleep(150);\n    const sv = ctrl.querySelector('.select__single-value');\n    out.push({ id: inp.id, label: lbl.slice(0, 80), picked: (target.textContent || '').trim(), got: sv ? sv.textContent : null });\n  }\n  return out;\n}\n",
+        "arg": {
+          "patterns": {
+            "label": "gender|\\bsex\\b|race|ethnic|hispanic|latin|veteran|disabilit|self[- ]?identif|pronoun|sexual.{0,5}orient",
+            "declines": [
+              "Decline to self-identify",
+              "Decline To Self Identify",
+              "Decline to self identify",
+              "I don't wish to answer",
+              "I do not wish to answer",
+              "I do not want to answer",
+              "I don't want to answer",
+              "Prefer not to say",
+              "Prefer not to answer",
+              "Prefer not to disclose",
+              "Choose not to identify",
+              "Do not wish to answer",
+              "Do not want to answer"
+            ]
+          }
+        },
+        "comment": "For any unset gender/race/ethnicity/veteran/disability react-select, pick a 'Decline to self-identify' option by partial-text search."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\n() => {\n  const out = [];\n  const labelRe = /i consent to|demographic data|gdpr|i acknowledge and agree|processing of my personal data|by checking this box, you consent/i;\n  const inputs = [...document.querySelectorAll('input[type=checkbox]')];\n  for (const inp of inputs) {\n    const id = (inp.id || '');\n    let lbl = '';\n    if (id) {\n      const lblEl = document.querySelector(`label[for=\"${CSS.escape(id)}\"]`);\n      if (lblEl) lbl = lblEl.textContent || '';\n    }\n    if (!lbl) {\n      const wrap = inp.closest('label');\n      if (wrap) lbl = wrap.textContent || '';\n    }\n    // Also consider the parent fieldset's legend (Okta-style consent legends)\n    let legend = '';\n    const fs = inp.closest('fieldset');\n    if (fs) {\n      const lg = fs.querySelector('legend');\n      if (lg) legend = lg.textContent || '';\n    }\n    const idHit = /gdpr.*consent|gdpr_demographic_data|demographic_data_consent/i.test(id);\n    const lblHit = labelRe.test(lbl) || labelRe.test(legend);\n    if (!idHit && !lblHit) continue;\n    if (inp.checked) { out.push({ id, already: true }); continue; }\n    inp.scrollIntoView({ block: 'center' });\n    inp.click();\n    out.push({ id, label: (lbl || '').trim().slice(0, 80), checked: inp.checked });\n  }\n  return out;\n}\n",
+        "comment": "Tick any GDPR demographic-data consent checkbox so the form can submit."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync ({ school, degree, discipline, minor }) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const fire = (el, type, x, y) => el.dispatchEvent(new MouseEvent(type, {\n    bubbles: true, cancelable: true, view: window, button: 0,\n    clientX: x || 0, clientY: y || 0,\n  }));\n  const findSection = () => {\n    // Try common Greenhouse selectors first.\n    // 2026-05-25 (SpaceX 872): added .education--container / .education--form\n    // (double-dash BEM variant used by SpaceX Greenhouse iframe).\n    const sels = ['.education-section', '.education-fieldset', '[data-qa=\"education\"]', '#education_section', '.education--container', '.education--form'];\n    for (const s of sels) {\n      const el = document.querySelector(s);\n      if (el) return el;\n    }\n    // Fallback: fieldset/section whose legend or heading mentions Education.\n    const candidates = [...document.querySelectorAll('fieldset, section, div')];\n    for (const c of candidates) {\n      const heading = c.querySelector('legend, h2, h3, h4');\n      if (heading && /\\beducation\\b/i.test(heading.textContent || '')) return c;\n    }\n    return null;\n  };\n  const section = findSection();\n  if (!section) return { ok: true, found: false, note: 'no education section in DOM (this is fine \u2014 many GH boards omit it)' };\n\n  const summary = { ok: true, found: true, filled: [], skipped: [], errors: [] };\n\n  const pickSelect = async (label, ctrl, wantedSubstr) => {\n    // Open the react-select.\n    const r = ctrl.getBoundingClientRect();\n    fire(ctrl, 'mousedown', r.left + 5, r.top + 5);\n    fire(ctrl, 'mouseup',   r.left + 5, r.top + 5);\n    fire(ctrl, 'click',     r.left + 5, r.top + 5);\n    await sleep(280);\n    // If only a few options visible, try typing to filter (handles virtualized/large lists)\n    let opts = [...document.querySelectorAll('[id^=\"react-select-\"][id$=\"-option-0\"], [id*=\"-option-\"]')];\n    if (opts.length <= 8 && wantedSubstr) {\n      // type to filter via native setter on the hidden text input\n      const inp = ctrl.querySelector('input');\n      if (inp) {\n        inp.focus();\n        // use native value setter to trigger React synthetic event\n        const nativeSetter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');\n        if (nativeSetter && nativeSetter.set) {\n          nativeSetter.set.call(inp, wantedSubstr.slice(0, 20));\n          inp.dispatchEvent(new KeyboardEvent('keydown', {bubbles: true, key: wantedSubstr[0] || 'a'}));\n          inp.dispatchEvent(new Event('input', {bubbles: true}));\n          inp.dispatchEvent(new Event('change', {bubbles: true}));\n          inp.dispatchEvent(new KeyboardEvent('keyup', {bubbles: true, key: wantedSubstr[0] || 'a'}));\n        }\n        await sleep(400);\n        opts = [...document.querySelectorAll('[id^=\"react-select-\"][id$=\"-option-0\"], [id*=\"-option-\"]')];\n      }\n    }\n    let best = null;\n    const want = (wantedSubstr || '').toLowerCase();\n    for (const o of opts) {\n      const txt = (o.textContent || '').trim().toLowerCase();\n      if (!txt) continue;\n      if (txt === want) { best = o; break; }\n      if (!best && want && txt.includes(want)) best = o;\n    }\n    if (!best && opts.length) {\n      summary.errors.push({ label, err: 'no matching option', want: wantedSubstr, available: opts.slice(0, 8).map(o => (o.textContent||'').trim()) });\n      fire(document.body, 'mousedown', 0, 0);\n      return false;\n    }\n    if (best) {\n      const br = best.getBoundingClientRect();\n      fire(best, 'mousedown', br.left + 5, br.top + 5);\n      fire(best, 'mouseup',   br.left + 5, br.top + 5);\n      fire(best, 'click',     br.left + 5, br.top + 5);\n      await sleep(150);\n      summary.filled.push({ label, value: (best.textContent || '').trim() });\n      return true;\n    }\n    fire(document.body, 'mousedown', 0, 0);\n    return false;\n  };\n\n  // 2026-05-25 (SpaceX 872): the closest-text heuristic loses on layouts\n  // where the visible label is in a separate <label for=\"...\"> sibling rather\n  // than wrapping the control. Helper: find the .select__control whose input\n  // matches a label-for relationship matching `re`, OR whose input id starts\n  // with one of `idPrefixes` (e.g. 'school--', 'degree--', 'discipline--').\n  const findCtrlByLabelOrId = (re, idPrefixes) => {\n    for (const ctrl of section.querySelectorAll('.select__control')) {\n      const inp = ctrl.querySelector('input');\n      const inpId = inp?.id || '';\n      if (idPrefixes && idPrefixes.some(p => inpId.startsWith(p))) return ctrl;\n      const lbl = inpId ? document.querySelector('label[for=\"' + inpId + '\"]') : null;\n      if (lbl && re.test(lbl.textContent || '')) return ctrl;\n      // Fallback: surrounding container text excluding select inner text.\n      const wrap = ctrl.closest('.field, .form-group, .question, .education--item, div');\n      if (wrap) {\n        const wrapText = (wrap.textContent || '').replace(/select\\.\\.\\./gi, '').trim();\n        if (re.test(wrapText)) return ctrl;\n      }\n    }\n    return null;\n  };\n\n  // School: usually an async-typeahead react-select OR a plain text input.\n  const schoolSelects = [...section.querySelectorAll('.select__control')];\n  const schoolLabeled = findCtrlByLabelOrId(/school|university|institution/i, ['school--']);\n  if (school && schoolLabeled) {\n    try {\n      const inp = schoolLabeled.querySelector('input[role=combobox], input');\n      if (inp) {\n        // 2026-05-25 (SpaceX 872 fix): open the react-select control before\n        // dispatching the input event. Without the mousedown+click, the\n        // async typeahead doesn't fire and no options render.\n        const sr = schoolLabeled.getBoundingClientRect();\n        fire(schoolLabeled, 'mousedown', sr.left + 5, sr.top + 5);\n        fire(schoolLabeled, 'mouseup',   sr.left + 5, sr.top + 5);\n        fire(schoolLabeled, 'click',     sr.left + 5, sr.top + 5);\n        await sleep(280);\n        const proto = Object.getPrototypeOf(inp);\n        const desc = Object.getOwnPropertyDescriptor(proto, 'value') || Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');\n        desc.set.call(inp, school);\n        inp.dispatchEvent(new Event('input', { bubbles: true }));\n        await sleep(1200); // wait for async options to load (SpaceX ~800ms)\n        const opts = [...document.querySelectorAll('[id*=\"-option-\"]')];\n        const want = school.toLowerCase();\n        let best = opts.find(o => (o.textContent||'').trim().toLowerCase() === want)\n                || opts.find(o => (o.textContent||'').trim().toLowerCase().includes(want));\n        if (best) {\n          const br = best.getBoundingClientRect();\n          fire(best, 'mousedown', br.left + 5, br.top + 5);\n          fire(best, 'mouseup',   br.left + 5, br.top + 5);\n          fire(best, 'click',     br.left + 5, br.top + 5);\n          await sleep(150);\n          summary.filled.push({ label: 'School', value: (best.textContent || '').trim() });\n        } else {\n          // No autocomplete match \u2014 try free-text plain input fallback below.\n          summary.errors.push({ label: 'School', err: 'no async-select match', want: school });\n        }\n      }\n    } catch (e) { summary.errors.push({ label: 'School', err: String(e) }); }\n  } else if (school) {\n    // Plain text fallback.\n    const txt = [...section.querySelectorAll('input[type=text], input:not([type])')].find(i => {\n      const lab = i.closest('label, .field, fieldset, div');\n      return lab && /school|university|institution/i.test(lab.textContent || '');\n    });\n    if (txt) {\n      const proto = Object.getPrototypeOf(txt);\n      const desc = Object.getOwnPropertyDescriptor(proto, 'value') || Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');\n      desc.set.call(txt, school);\n      txt.dispatchEvent(new Event('input', { bubbles: true }));\n      summary.filled.push({ label: 'School', value: school });\n    } else {\n      summary.skipped.push({ label: 'School', reason: 'no field found' });\n    }\n  } else {\n    summary.skipped.push({ label: 'School', reason: 'no school value in personal-info' });\n  }\n\n  // Degree: standard react-select.\n  const degreeCtrl = findCtrlByLabelOrId(/\\bdegree\\b/i, ['degree--']);\n  if (degree && degreeCtrl) {\n    try { await pickSelect('Degree', degreeCtrl, degree); }\n    catch (e) { summary.errors.push({ label: 'Degree', err: String(e) }); }\n  } else if (!degree) {\n    summary.skipped.push({ label: 'Degree', reason: 'no degree value in personal-info' });\n  }\n\n  // Discipline (optional).\n  const discCtrl = findCtrlByLabelOrId(/discipline|major|field of study/i, ['discipline--']);\n  if (discipline && discCtrl) {\n    try { await pickSelect('Discipline', discCtrl, discipline); }\n    catch (e) { summary.errors.push({ label: 'Discipline', err: String(e) }); }\n  }\n\n  // Minor (optional). 2026-05-30 (gh-academic-fields-2026-05-30): mirror of\n  // Discipline but matches /minor/. Some Greenhouse tenants (SpaceX, Anduril)\n  // expose a Minor react-select inside the same education subsection.\n  const minorCtrl = findCtrlByLabelOrId(/\\bminor\\b/i, ['minor--']);\n  if (minor && minorCtrl) {\n    try { await pickSelect('Minor', minorCtrl, minor); }\n    catch (e) { summary.errors.push({ label: 'Minor', err: String(e) }); }\n  } else if (minor) {\n    // Plain text fallback.\n    const txt = [...section.querySelectorAll('input[type=text], input:not([type])')].find(i => {\n      const lab = i.closest('label, .field, fieldset, div');\n      return lab && /\\bminor\\b/i.test(lab.textContent || '');\n    });\n    if (txt) {\n      try {\n        const proto = Object.getPrototypeOf(txt);\n        const desc = Object.getOwnPropertyDescriptor(proto, 'value') || Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');\n        desc.set.call(txt, minor);\n        txt.dispatchEvent(new Event('input', { bubbles: true }));\n        summary.filled.push({ label: 'Minor', value: minor });\n      } catch (e) { summary.errors.push({ label: 'Minor', err: String(e) }); }\n    }\n  }\n\n  return summary;\n}\n",
+        "arg": {
+          "school": "University of Houston",
+          "degree": "Bachelor's degree",
+          "discipline": "Computer Science",
+          "minor": "Mathematics"
+        },
+        "comment": "Best-effort fill of dynamic Education subsection (School/Degree/Discipline). Greenhouse renders this after main form load; absent on many boards. Null personal-info values \u2192 'field-coverage-deferred' flag, not a hard block.",
+        "meta": {
+          "education_panel": true,
+          "defer_if_null": true
+        }
+      }
+    },
+    {
+      "tool": "browser.upload",
+      "args": {
+        "label": "anduril-5177559007",
+        "element": "input#resume",
+        "paths": [
+          "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf"
+        ],
+        "comment": "Stage the file into the visually-hidden #resume input via CDP setInputFiles. Filestack will commit it on the next Attach click. Files must be under /tmp/openclaw/uploads/."
+      }
+    },
+    {
+      "tool": "sleep",
+      "args": {
+        "ms": 300
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\nasync (opts) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const delay = (opts && opts.delayMs) || 1000;\n  const f = document.querySelector('#resume');\n  if (!f) {\n    // Already swapped out \u2014 file was committed by a prior click.\n    const filename = (opts && opts.filename) || '';\n    const committed = filename && document.body.innerText.includes(filename);\n    return { ok: !!committed, already_committed: !!committed, err: committed ? null : 'no #resume input and no filename in body' };\n  }\n  const btn = f.parentElement && f.parentElement.querySelector('button');\n  if (!btn) return { ok: false, err: 'no attach button' };\n  btn.click();\n  await sleep(delay);\n  // Check whether the file got committed (input gets swapped out, filename appears).\n  const filename = (opts && opts.filename) || '';\n  const stillHasInput = !!document.querySelector('#resume');\n  const committed = filename && document.body.innerText.includes(filename);\n  return { ok: !!committed, clicked: true, still_has_input: stillHasInput, committed: !!committed, attach_label: (btn.textContent || '').trim().slice(0, 40) };\n}\n",
+        "arg": {
+          "delayMs": 1200,
+          "filename": "Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf"
+        },
+        "comment": "Click Attach to wake Filestack \u2014 it picks up the file already staged in #resume and swaps the input out for a 'filename + Remove' UI."
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\n({ filename }) => {\n  const inputStill = !!document.querySelector('#resume');\n  const filesInInput = inputStill ? document.querySelector('#resume').files.length : 0;\n  const body = (document.body && document.body.innerText) || '';\n  const filenameVisible = !!filename && body.includes(filename);\n  return {\n    ok: filenameVisible || (inputStill && filesInInput > 0),\n    filename_visible: filenameVisible,\n    input_still_in_dom: inputStill,\n    files_in_input: filesInInput,\n    expected: filename,\n  };\n}\n",
+        "arg": {
+          "filename": "Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf"
+        },
+        "comment": "Verify the resume actually landed. If ok=false, RETRY the upload+click sequence once before continuing.",
+        "meta": {
+          "verify": "resume",
+          "retry_on_fail": true,
+          "retry_steps": [
+            {
+              "tool": "browser.upload",
+              "args": {
+                "label": "anduril-5177559007",
+                "element": "input#resume",
+                "paths": [
+                  "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf"
+                ]
+              }
+            },
+            {
+              "tool": "sleep",
+              "args": {
+                "ms": 500
+              }
+            },
+            {
+              "tool": "browser.act.evaluate",
+              "args": {
+                "label": "anduril-5177559007",
+                "fn": "\nasync (opts) => {\n  const sleep = ms => new Promise(r => setTimeout(r, ms));\n  const delay = (opts && opts.delayMs) || 1000;\n  const f = document.querySelector('#resume');\n  if (!f) {\n    // Already swapped out \u2014 file was committed by a prior click.\n    const filename = (opts && opts.filename) || '';\n    const committed = filename && document.body.innerText.includes(filename);\n    return { ok: !!committed, already_committed: !!committed, err: committed ? null : 'no #resume input and no filename in body' };\n  }\n  const btn = f.parentElement && f.parentElement.querySelector('button');\n  if (!btn) return { ok: false, err: 'no attach button' };\n  btn.click();\n  await sleep(delay);\n  // Check whether the file got committed (input gets swapped out, filename appears).\n  const filename = (opts && opts.filename) || '';\n  const stillHasInput = !!document.querySelector('#resume');\n  const committed = filename && document.body.innerText.includes(filename);\n  return { ok: !!committed, clicked: true, still_has_input: stillHasInput, committed: !!committed, attach_label: (btn.textContent || '').trim().slice(0, 40) };\n}\n",
+                "arg": {
+                  "delayMs": 1500,
+                  "filename": "Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf"
+                }
+              }
+            },
+            {
+              "tool": "browser.act.evaluate",
+              "args": {
+                "label": "anduril-5177559007",
+                "fn": "\n({ filename }) => {\n  const inputStill = !!document.querySelector('#resume');\n  const filesInInput = inputStill ? document.querySelector('#resume').files.length : 0;\n  const body = (document.body && document.body.innerText) || '';\n  const filenameVisible = !!filename && body.includes(filename);\n  return {\n    ok: filenameVisible || (inputStill && filesInInput > 0),\n    filename_visible: filenameVisible,\n    input_still_in_dom: inputStill,\n    files_in_input: filesInInput,\n    expected: filename,\n  };\n}\n",
+                "arg": {
+                  "filename": "Cyrus_Shekari_Resume_andurilindustries_5177559007_v2.pdf"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "browser.act.evaluate",
+      "args": {
+        "label": "anduril-5177559007",
+        "fn": "\n() => {\n  const text_inputs = [...document.querySelectorAll('input.input__single-line, textarea.input__multi-line')]\n    .map(e => ({ id: e.id, value: (e.value || '').slice(0, 60) }));\n  const dropdowns = [...document.querySelectorAll('.select__control')]\n    .map(c => {\n      const inp = c.querySelector('input[role=combobox]');\n      const sv = c.querySelector('.select__single-value');\n      return { id: inp ? inp.id : null, value: sv ? sv.textContent : null };\n    });\n  const resume_label = (document.body.textContent.match(/[A-Z]\\w+_[A-Z]\\w+_Resume\\.\\w+/) || [null])[0];\n  return { text_inputs, dropdowns, resume_label };\n}\n",
+        "comment": "Read back current state for verification."
+      }
+    }
+  ]
+}

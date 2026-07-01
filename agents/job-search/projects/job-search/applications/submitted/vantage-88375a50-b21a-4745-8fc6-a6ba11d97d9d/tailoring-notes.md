@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, cloud-native self-service model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable validation model across enterprise cloud infrastructure.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating engineering, finance, and partner stakeholders end-to-end.
+5. Built an internal **AI agent** and restructured planning workflows to reduce drill planning cycle time by 39% and increase capacity by 21%, shipping automation via Python scripts and API integrations that eliminated manual data-ingestion bottlenecks.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **adoption of AI-driven workflows** across 14 Azure service teams by conducting hands-on demos and training sessions, surfacing implementation blockers and translating customer feedback into actionable product improvements that saved 37 engineering hours monthly.
+2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating 11+ discovery interviews with Azure engineering stakeholders, identifying critical feature gaps and documenting repeatable use-case patterns for the engineering team.
+3. Improved **data retrieval speed by 83%** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, enabling engineering teams to self-serve technical answers and reducing escalations to core contributors.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, resolving competing stakeholder priorities across 140+ engineering and FinOps-adjacent teams.
+2. Drove a product strategy to eliminate operational toil during cloud region launches, conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region and building a phased roadmap to automate the highest-cost execution paths.
+3. Engineered a **Power BI dashboard** tracking operational cost and manual effort across 140+ teams, enabling leadership to identify automation gaps, prioritize high-impact investments, and report progress against efficiency OKRs in weekly executive reviews.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping data-ingestion dependencies across 1,200+ stations, and coordinating rollout sequencing with Engineering, IT, and Operations stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets**, stabilize the developer intake process, and unblock a cross-functional team operating across ambiguous infrastructure constraints.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing a repeatable integration pattern later adopted as the team's standard release workflow.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end scoping and invoicing lifecycle for 200+ monthly proposals, implementing a structured CRM workflow that gave leadership real-time visibility into pipeline health and conversion rates.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing website content and Google Business profile to align messaging with high-intent customer segments.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks tied to underpriced service categories and delivering a data-driven recommendation that raised average job profitability.
+
+## Notes from the rewriter
+- 'operational toil' (JD term) woven into microsoft_ft bullet#2 and microsoft_2022 bullet#2 to mirror Vantage's language around reducing manual effort in cloud workflows.
+- 'data-ingestion' (JD term for debugging ingestion/tagging issues) surfaced in amazon_robotics bullet#1 and microsoft_ft bullet#5 to signal direct experience with the technical troubleshooting this SA role requires.
+- 'repeatable implementation patterns' (JD phrase) echoed in microsoft_2023 bullet#2 ('repeatable use-case patterns') and amazon_robotics bullet#3 ('repeatable integration pattern') to show Cyrus naturally builds scalable, documented solutions.
+- 'self-service' and 'API integrations' (JD keywords for building custom solutions/workflows) placed in microsoft_ft bullets#2 and #5 to align with the requirement to build custom queries and workflows using Vantage's APIs.
+- 'FinOps-adjacent' framing added to microsoft_2022 bullet#1 to connect Azure region-launch cost work to Vantage's core FinOps platform domain without overstating direct FinOps experience.
+

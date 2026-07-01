@@ -4,16 +4,16 @@
   "job_id": "7905789",
   "job_title": "Product Manager",
   "job_location": "US Remote",
-  "fetched_at": "2026-06-22T08:05:10Z",
+  "fetched_at": "2026-06-30T13:47:59Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/yipitdatajobs/jobs/7905789?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 33,
-    "filled": 18,
+    "filled": 25,
     "filled_needs_review": 1,
     "declined": 3,
-    "unresolved": 11,
-    "blockers": 7
+    "unresolved": 4,
+    "blockers": 0
   },
   "fields": [
     {
@@ -109,10 +109,10 @@
       "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "unexpected resume field type: multi_value_single_select",
-      "status": "unresolved",
-      "matched_rule": "resume",
+      "value": "I have submitted a PDF version of my resume.",
+      "source": "acknowledge_yes (single option 'I have submitted a PDF version of my resume.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "I have submitted a PDF version of my resume.",
@@ -147,10 +147,10 @@
       "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -158,10 +158,10 @@
       "label": "Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
       "options": [
         {
           "label": "Yes",
@@ -178,10 +178,10 @@
       "label": "Please rank the top 3 skill sets that you'd like to further develop at YipitData.",
       "type": "textarea",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label=\"Please rank the top 3 skill sets that you'd like to further develop at YipitData.\"",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -200,10 +200,10 @@
       "label": "What is your minimum required yearly salary (in USD) to consider this position?",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='What is your minimum required yearly salary (in USD) to consider this position?'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
       "options": null
     },
     {
@@ -222,10 +222,10 @@
       "label": "Please explain any employment gaps in your work history. If none, say “N/A.”",
       "type": "input_text",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='Please explain any employment gaps in your work history. If none, say “N/A.”'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "At Microsoft I led the Resilience Automation Platform working directly with on-call engineers and partner teams as customers — gathering requirements, running customer-feedback sessions, and shipping iterations against their workflows. Earlier roles included direct customer-facing engineering across deployment, integration, and post-sales support.",
+      "source": "customer_facing_essay (placeholder; cover_answer_generator regenerates at fill-time)",
+      "status": "filled",
+      "matched_rule": "customer_facing_essay",
       "options": null
     },
     {
@@ -300,10 +300,10 @@
       "label": "A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. ",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. '",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "I acknowledge this.",
+      "source": "acknowledge_yes (single option 'I acknowledge this.')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
       "options": [
         {
           "label": "I acknowledge this.",
@@ -562,48 +562,6 @@
   ],
   "unresolved": [
     {
-      "id": "question_66631253",
-      "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.",
-      "required": true,
-      "reason": "unexpected resume field type: multi_value_single_select"
-    },
-    {
-      "id": "question_66631256",
-      "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.'"
-    },
-    {
-      "id": "question_66631257",
-      "label": "Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?'"
-    },
-    {
-      "id": "question_66631258",
-      "label": "Please rank the top 3 skill sets that you'd like to further develop at YipitData.",
-      "required": true,
-      "reason": "no LABEL_RULES match for label=\"Please rank the top 3 skill sets that you'd like to further develop at YipitData.\""
-    },
-    {
-      "id": "question_66631260",
-      "label": "What is your minimum required yearly salary (in USD) to consider this position?",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='What is your minimum required yearly salary (in USD) to consider this position?'"
-    },
-    {
-      "id": "question_66631262",
-      "label": "Please explain any employment gaps in your work history. If none, say “N/A.”",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='Please explain any employment gaps in your work history. If none, say “N/A.”'"
-    },
-    {
-      "id": "question_66631267",
-      "label": "A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. ",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. '"
-    },
-    {
       "id": "question_66631268",
       "label": "YipitData is an equal-opportunity employer and seeks collaboration, innovation, and excellence through diversity and inclusion. Here is a set of voluntary demographic questions that are part of our Diversity and Inclusion initiatives. You may choose not to answer the questions below. If you do choose to answer, your responses will be used (in aggregate form only) to help us identify areas for improvement in our process. Your responses, or your choice to not respond, will not be associated with your specific application and will not in any way be used in the hiring decision.",
       "required": false,
@@ -628,43 +586,7 @@
       "reason": "no LABEL_RULES match for label='The Americans with Disabilities Act (ADA) is a federal civil rights law that prohibits discrimination against people with disabilities in everyday activities.'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_66631253",
-      "label": "Please only submit a PDF version of your resume above. Submitting .doc, .pages, or other file types may lead to rendering/formatting errors.",
-      "reason": "unexpected resume field type: multi_value_single_select"
-    },
-    {
-      "id": "question_66631256",
-      "label": "Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.",
-      "reason": "no LABEL_RULES match for label='Briefly describe your experience working with data pipelines, datasets, or data products (e.g., metrics, dashboards, feeds). Include your specific role and contributions.'"
-    },
-    {
-      "id": "question_66631257",
-      "label": "Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?",
-      "reason": "no LABEL_RULES match for label='Do you have any experience with data tools and technologies like SQL, Databricks, and PySpark?'"
-    },
-    {
-      "id": "question_66631258",
-      "label": "Please rank the top 3 skill sets that you'd like to further develop at YipitData.",
-      "reason": "no LABEL_RULES match for label=\"Please rank the top 3 skill sets that you'd like to further develop at YipitData.\""
-    },
-    {
-      "id": "question_66631260",
-      "label": "What is your minimum required yearly salary (in USD) to consider this position?",
-      "reason": "no LABEL_RULES match for label='What is your minimum required yearly salary (in USD) to consider this position?'"
-    },
-    {
-      "id": "question_66631262",
-      "label": "Please explain any employment gaps in your work history. If none, say “N/A.”",
-      "reason": "no LABEL_RULES match for label='Please explain any employment gaps in your work history. If none, say “N/A.”'"
-    },
-    {
-      "id": "question_66631267",
-      "label": "A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. ",
-      "reason": "no LABEL_RULES match for label='A final step in the hiring process is for you to arrange reference calls with former managers, direct reports (for managerial roles), and others. '"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

@@ -1,18 +1,17 @@
 SUBMITTED
 
 submitted_by: auto
-applied_on: 2026-06-23
-role_id: 3224
-submitted_at: 2026-06-23T23:54:35+00:00
+applied_on: 2026-06-30
+role_id: 2137
+submitted_at: 2026-06-30T14:32:45+00:00
 
 Runner tail:
-it re-fill: re-set 0 field(s)
-[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
-[runner] reassert-text pass 1: repaired=0 [] missing=4
-[runner] reassert-text pass 1: repaired=0 [] missing=4
+ext pass 1: repaired=0 [] missing=4
 [runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
 [runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
 [runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/2 committed
+[runner] last-ms radio detail: [{'n': '4-48fb-83db-67d11295fcd0', 'ok': False}, {'n': 'd-419b-aa58-919a53085043', 'ok': False}]
 [runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
 [runner] SUBMIT SUCCESS
 

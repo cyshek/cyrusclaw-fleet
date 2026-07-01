@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Product Manager Intern**
+- `microsoft_2022` → **Technical Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized data pipeline system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and enabled scalable, repeatable execution across autonomous validation workflows.
+3. Pioneered Azure's first proactive resilience testing capability — delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a continuous validation model now adopted across multiple product teams.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating technical requirements across engineering, security, and customer stakeholders.
+5. Evangelized AI-driven automation internally by building an **AI agent for drill planning**, restructuring workflows to cut planning cycle time by 39% and increase drill capacity by 21%, directly enabling faster customer pilots and proof-of-concept delivery.
+6. Partnered with product engineering and account teams to translate frontline resilience insights into **roadmap influence**, prioritizing features that closed gaps identified during customer pilots and expanded platform adoption across sovereign and commercial deployments.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, delivering hands-on demos and training sessions that drove utilization across 14 key Azure engineering teams and saved **37 engineering hours monthly** through streamlined automation pipelines.
+2. Influenced the product roadmap to include **intent-based YAML generation** by facilitating 11+ structured user interviews with Azure service teams, surfacing critical feature gaps and translating customer feedback into actionable requirements for the ML engineering team.
+3. Optimized data integrity and retrieval for technical users by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** platform, reducing average lookup time by 83% and improving workflow efficiency across service teams.
+
+### `microsoft_2022` (4 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating execution across 140+ engineering and operations teams toward a common deployment roadmap.
+2. Built a product strategy to eliminate operational toil during region launches — conducting discovery with 20+ service teams to surface **81 hours of manual effort** per region — then defined a multi-quarter roadmap to automate the highest-impact critical paths.
+3. Engineered a **Power BI data pipeline dashboard** to track and visualize operational toil across 140+ teams, enabling leadership to identify automation gaps, prioritize high-ROI investments, and present data-backed decisions to executive stakeholders.
+4. Facilitated cross-org technical workshops with engineering, operations, and product leads to scope automation requirements, define statements of work, and align delivery timelines — directly accelerating time-to-launch for three high-priority Azure regions.
+
+### `amazon_robotics` (4 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping software and hardware dependencies across 1,200+ robotic stations, and coordinating validation checkpoints with autonomy and systems engineers.
+2. Facilitated Agile ceremonies across a cross-functional robotics engineering team — including sprint planning and retrospectives — resolving **40+ high-priority tickets** and stabilizing the developer intake process to unblock physical AI deployment workflows.
+3. Drove strategic alignment between IT, Operations, and Robotics Engineering to implement **automated CI/CD pipelines**, accelerating software deployment cycles by 25% and reducing manual integration overhead for autonomous systems across the fulfillment fleet.
+4. Partnered with senior engineers to scope and document technical requirements for robotic system upgrades, translating operational constraints from warehouse environments into structured product specifications that guided cross-team prioritization and pilot execution.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end sales operations and managing scoping, technical requirements gathering, and invoicing for 200+ monthly proposals through a newly implemented CRM workflow that reduced errors and accelerated customer conversions.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a data-driven go-to-market strategy, optimizing digital presence across web and Google platforms to better target and qualify high-value enterprise customers.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying margin leaks and translating findings into actionable pricing playbooks — directly informing sales strategy and commercial growth decisions.
+
+## Notes from the rewriter
+- 'Data pipeline' (JD: 'multi-modal real-world data pipelines') woven into microsoft_ft bullet#1 and amazon_robotics bullet#1 to mirror Scale's sensor data infrastructure language.
+- 'Proof-of-concept delivery' and 'customer pilots' (JD: 'delivering customized demos and Proof of Concepts') surfaced in microsoft_ft bullet#5 and amazon_robotics bullet#4 to directly reflect the SE pre-sales motion.
+- 'Statements of Work' (JD: 'develop actionable Statements of Work') referenced in microsoft_2022 bullet#4, aligning Cyrus's workshop facilitation experience to Scale's scoping and delivery workflow.
+- 'Roadmap influence' (JD: 'influence our product roadmap based on frontline insights') explicitly used in microsoft_ft bullet#6 and microsoft_2023 bullet#2, reflecting the SE-to-PM feedback loop Scale describes.
+- 'Technical workshops' and 'evangelize' (JD: 'conduct on-site technical workshops', 'Evangelize Scale') reflected in microsoft_2022 bullet#4 and microsoft_ft bullet#5 to match Scale's field engagement expectations.
+

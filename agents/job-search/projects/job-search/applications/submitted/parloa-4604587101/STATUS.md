@@ -1,6 +1,9 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-23T17:52:08+00:00
+PREP-READY — 2026-06-30T18:28:44+00:00
 
-role_id: 1204
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_7112796101", "label": "Are you able to come into our NYC office 2/3 x a week?", "reason": "answer_yes: no 'Yes' option among ['Berlin Office', 'Munich Office', 'New York Office', 'London Office', 'Remotely in Germany', 'Remotely in the USA', 'Remotely in Europe (not Germany)', 'Remotely']"}, {"id": "question_7112797101", "label": "Will you require relocation?", "reason": "no LABEL_RULES match for label='Will you require relocation?'"}, {"id": "question_7112799101", "label": "Ho
+role_id: 1623
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-parloa-4604587101.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/parloa-4604587101/Cyrus_Shekari_Resume_parloa_4604587101_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/parloa-4604587101/cover_answers.md
+
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

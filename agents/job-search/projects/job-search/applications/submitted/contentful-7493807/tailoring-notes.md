@@ -1,0 +1,48 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Program Manager**
+- `microsoft_2023` → **Program Manager Intern**
+- `microsoft_2022` → **Program Manager Intern**
+- `amazon_robotics` → **Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. **Scaled a global field-readiness program** from a 2-person operation into a platformized system, standardizing workflows across enterprise GTM partners (Databricks, Walmart, SAP, NetApp) to sustain 45+ annual drills and drive **$14M+ business impact**.
+2. Led **0→1 design and delivery** of an internal Resilience Automation Platform, defining role-based requirements and self-service scheduling capabilities that reduced operational toil by 30% and enabled field teams to execute independently at scale.
+3. Pioneered Azure's first proactive field-validation capability, delivering a rack-level program in 4 months with a **94% recovery rate**, surfacing critical gaps and establishing a new model for continuous performance measurement across GTM segments.
+4. Directed **14 cross-functional program executions** under executive visibility, managing global stakeholder alignment across engineering, operations, and partner teams — including serving as bridge lead for a sovereign-cloud initiative tied to a $1.5B+ contract.
+5. Built KPI dashboards and feedback loops to track enablement outcomes across drill cycles, giving senior field leadership real-time visibility into readiness gaps and accelerating course-correction on high-priority initiatives.
+6. Scaled team leverage through **AI-driven automation**, building an internal AI agent and restructuring planning workflows to cut program planning cycle time by 39% and increase delivery capacity by 21% without adding headcount.
+7. Acted as primary cross-functional facilitator across Marketing, Finance, and Operations stakeholders to align on program scope, content management standards, and learning pathway sequencing for each new GTM partner cohort.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. **Championed field adoption** of AI-driven code generation workflows, conducting user demos and structured training sessions that drove utilization across 14 key GTM-adjacent teams and saved **37 engineering hours monthly**.
+2. Influenced the enablement roadmap to include intent-based YAML generation by facilitating 11+ discovery interviews with Azure service teams, surfacing critical feature gaps and translating findings into prioritized program requirements for leadership.
+3. Optimized knowledge management and field readiness by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** platform, cutting information lookup time by 83% and improving onboarding integration for new team members.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. **Generated $3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating stakeholder buy-in across 140+ teams spread across global GTM segments.
+2. Drove a field-readiness product strategy to eliminate manual toil during region launches, conducting discovery sessions with 20+ service teams to map **81 hours of manual effort per region** and building a phased roadmap to automate critical execution paths.
+3. Enabled field leadership to target automation gaps and prioritize high-impact support by engineering a **Power BI dashboard** tracking operational toil metrics across 140+ teams, creating a reusable performance-measurement framework adopted by senior program stakeholders.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by owning the legacy OS migration program strategy, mapping dependencies across 1,200+ stations and aligning IT, Operations, and Engineering stakeholders on a sequenced field-readiness rollout.
+2. Facilitated Agile ceremonies — sprint planning, backlog grooming, and retrospectives — for a cross-functional field team, prioritizing 40+ high-priority tickets to stabilize the developer intake process and maintain **on-time program delivery**.
+3. Drove strategic GTM alignment across IT, Operations, and Engineering to implement automated CI/CD pipelines, accelerating the software deployment cycle by **25%** and establishing a repeatable enablement model for future large-scale fleet transitions.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. **Increased field bookings by 26%** by designing and operationalizing an end-to-end CRM-based program that managed scoping, proposals, and invoicing across 200+ monthly customer engagements, directly strengthening pre- and post-sales execution quality.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and search profiles to improve field team lead quality and sales-readiness alignment.
+3. Improved leadership pricing decisions by conducting financial performance analysis across **1,000+ project records**, identifying margin leaks and delivering actionable dashboards that informed GTM team enablement priorities and resource allocation.
+
+## Notes from the rewriter
+- JD term 'field readiness' woven into microsoft_ft bullet 1 (GTM field-readiness program) and amazon_robotics bullet 1 (field-readiness rollout) to mirror the JD's core mission language.
+- JD term 'KPI dashboards and feedback loops' directly reflected in microsoft_ft bullet 5, framing Power BI-style measurement work as enablement outcome tracking for field leadership — matching the JD's performance measurement emphasis.
+- JD term 'pre- and post-sales' surfaced in pro_painters bullet 1 to connect CRM/sales-ops experience to the JD's explicit call for coverage across both pre- and post-sales activities.
+- JD phrase 'cross-functional collaboration with Marketing, Finance, People and Operations' mirrored in microsoft_ft bullet 7, naming those exact functions to signal direct alignment with the role's stakeholder map.
+- JD term 'onboarding integration' woven into microsoft_2023 bullet 3 to connect semantic search / LMS content work to the JD's explicit onboarding and learning pathway requirements.
+- JD term 'role-based learning' and 'content management' surfaced in microsoft_ft bullet 7 (learning pathway sequencing, content management standards) to address the preferred qualification around program design and LMS best practices.
+

@@ -94,6 +94,10 @@ HOST_TO_GH_SLUG: dict[str, str] = {
     "rubrik.com":                 "rubrik",
     "esri.com":                   "esri",
     "cribl.io":                   "cribl",
+    # added 2026-06-30 — Spot & Tango gh_jid wrapper
+    "spotandtango.com":           "spotandtango",
+    # added 2026-06-30 batch drain 3972-4014
+    "careers.nebius.com":        "nebius",
 }
 
 GH_JID_RX = re.compile(r"[?&]gh_jid=(\d+)")

@@ -1,0 +1,735 @@
+submit-4b start 2026-06-30T15:19:33+00:00
+=== 2357 Character.AI (ashby/residential) ===
+/home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/_ashby_runner.py:61: SyntaxWarning: invalid escape sequence '\d'
+  _SET_VALUE_JS = """(args) => {
+[runner] UPLOAD-LAST: moved upload step 6 -> idx 8 (before captcha)
+[runner] step 0: browser.open
+[runner] step 1: sleep
+[runner] step 2: browser.act.evaluate
+[runner] step 3: browser.act.evaluate
+[runner] step 4: ashby.type_text_fields
+[runner] step 5: browser.act.evaluate
+[runner] step 6: sleep
+[runner] step 7: browser.act.evaluate
+[runner] step 8: ashby.upload_resume_via_visible_button
+[runner] upload: using #_systemfield_resume (skipping autofill widget)
+[runner] autofill settle: clean
+[runner] UPLOAD-LAST verify pass: repaired 5 field(s) ['bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_name', 'bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_email', 'bd30ded2-8d2b-4946-9a79-d44e201c26a6_7492fe29-0b42-4998-9479-ce5b3a91a97a', 'bd30ded2-8d2b-4946-9a79-d44e201c26a6_16718d91-59c0-4e57-8521-f72d798a6210', 'bd30ded2-8d2b-4946-9a79-d44e201c26a6_2d859c4e-c365-49e5-a674-571812b785e4']
+[runner] UPLOAD-LAST stabilize pass 1: re-set 0 field(s)
+[runner] reassert-text pass 1: repaired=0 [] missing=0
+[runner] step 9: ashby.maybe_solve_recaptcha_v3
+[runner] live recaptcha sitekey detected: 6LeFb_YUAAAAALUD5h...
+[runner] recaptcha-v3 generated IN-BROWSER (residential), len=2425
+[runner] captcha v3 solved in 0.3s, token len=2425
+[runner] step 10: browser.act.evaluate
+[runner] FINAL pre-submit re-fill: re-set 0 field(s)
+[runner] SUBMIT-RESP status=200 body={"data":{"submitApplicationFormAction":{"__typename":"SingleFormSubmitResult","messages":null,"applicationFormResult":{"__typename":"FormSubmitSuccess","_":null}}}}
+[runner] YESNO trusted-click fix: re-clicked 3 radio(s)
+[runner] reassert-select: 2 custom-select(s) checked, 0 re-committed
+[runner] reassert-select UNCOMMITTED: [('1-494a-aec9-42ca6c1002d2', 'no-container'), ('4-46b7-8b8a-c8f8cb146aa0', 'no-container')]
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] reassert-text pass 1: repaired=0 [] missing=5
+[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
+[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
+[runner] last-ms no-bounce text commit: 0 field(s), stable=True
+[runner] last-ms radio commit: 0/3 committed
+[runner] last-ms radio detail: [{'n': '1-4e9c-827f-32573a746fb5', 'ok': False}, {'n': '1-494a-aec9-42ca6c1002d2', 'ok': False}, {'n': '4-46b7-8b8a-c8f8cb146aa0', 'ok': False}]
+[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
+[runner] SUBMIT SUCCESS
+{
+  "slug": "characterai-091a6ad6-75dd-4dd4-9439-7e1e9d13970b",
+  "steps": [
+    {
+      "i": 0,
+      "tool": "browser.open",
+      "url": "https://jobs.ashbyhq.com/character/091a6ad6-75dd-4dd4-9439-7e1e9d13970b/application"
+    },
+    {
+      "i": 1,
+      "tool": "sleep"
+    },
+    {
+      "i": 2,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "resolved": [
+          {
+            "fid": "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 13
+          },
+          {
+            "fid": "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "tag": "input",
+            "type": "email",
+            "current_value": "",
+            "want_len": 19
+          },
+          {
+            "fid": "bd30ded2-8d2b-4946-9a79-d44e201c26a6_7492fe29-0b42-4998-9479-ce5b3a91a97a",
+            "dom_id": "7492fe29-0b42-4998-9479-ce5b3a91a97a",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 33
+          },
+          {
+            "fid": "bd30ded2-8d2b-4946-9a79-d44e201c26a6_16718d91-59c0-4e57-8521-f72d798a6210",
+            "dom_id": "16718d91-59c0-4e57-8521-f72d798a6210",
+            "tag": "input",
+            "type": "text",
+            "current_value": "",
+            "want_len": 51
+          },
+          {
+            "fid": "bd30ded2-8d2b-4946-9a79-d44e201c26a6_2d859c4e-c365-49e5-a674-571812b785e4",
+            "dom_id": "2d859c4e-c365-49e5-a674-571812b785e4",
+            "tag": "textarea",
+            "type": "textarea",
+            "current_value": "",
+            "want_len": 1342
+          }
+        ],
+        "missing": []
+      }
+    },
+    {
+      "i": 3,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "filled": [
+          {
+            "id": "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_name",
+            "dom_id": "_systemfield_name",
+            "len": 13,
+            "post_value": "Cyrus Shekari"
+          },
+          {
+            "id": "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_email",
+            "dom_id": "_systemfield_email",
+            "len": 19,
+            "post_value": "cyshekari@gmail.com"
+          },
+          {
+            "id": "bd30ded2-8d2b-4946-9a79-d44e201c26a6_7492fe29-0b42-4998-9479-ce5b3a91a97a",
+            "dom_id": "7492fe29-0b42-4998-9479-ce5b3a91a97a",
+            "len": 33,
+            "post_value": "https://linkedin.com/in/cyshekari"
+          },
+          {
+            "id": "bd30ded2-8d2b-4946-9a79-d44e201c26a6_16718d91-59c0-4e57-8521-f72d798a6210",
+            "dom_id": "16718d91-59c0-4e57-8521-f72d798a6210",
+            "len": 51,
+            "post_value": "I can start within two weeks of receiving an offer."
+          },
+          {
+            "id": "bd30ded2-8d2b-4946-9a79-d44e201c26a6_2d859c4e-c365-49e5-a674-571812b785e4",
+            "dom_id": "2d859c4e-c365-49e5-a674-571812b785e4",
+            "len": 1342,
+            "post_value": "The work I find most energizing at Microsoft sits exactly at this intersection: I built and standardized cross-functional alignment workflows connecting Safety Engineering, ML Infra, and operational teams, defined risk frameworks and go/no-go criteria for tightly coupled workstreams, and led an internal AI agent build that cut planning cycle time by 39%. That pattern, coordinating research, safety, and infrastructure toward a shared deployment outcome, is precisely what this role is asking for. The scale just shifts from resilience programs to model alignment and production deployment, and that shift is one I am actively seeking.\n\nCharacter.AI specifically is compelling because the technical bet here is unusually concrete: taking powerful pretrained models and making them genuinely safe, engaging, and scalable for over 20 million monthly users is not a vague safety mandate, it is a product and engineering problem with real stakes. The breadth of the stack, post-training, RLHF, annotation pipelines, serving infrastructure, UXR, all moving in parallel toward the same release, is the kind of program complexity I want to be building operational patterns around. The fact that alignment and deployment are treated as one integrated effort rather than siloed concerns is exactly the environment where a TPM can do meaningful work."
+          }
+        ],
+        "missing": [],
+        "errors": []
+      }
+    },
+    {
+      "i": 4,
+      "tool": "ashby.type_text_fields",
+      "typed_count": 5,
+      "fields": [
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_name",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_email",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6_7492fe29-0b42-4998-9479-ce5b3a91a97a",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6_16718d91-59c0-4e57-8521-f72d798a6210",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6_2d859c4e-c365-49e5-a674-571812b785e4"
+      ]
+    },
+    {
+      "i": 5,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "picked": [
+          {
+            "name": "2b48e7e1-a2f9-4614-83d4-8988f45357b2_bafe0992-e211-4e9c-827f-32573a746fb5",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "2b48e7e1-a2f9-4614-83d4-8988f45357b2_bafe0992-e211-4e9c-827f-32573a746fb5-labeled-radio-0",
+            "label_text": "Yes",
+            "cx": 379,
+            "cy": 396
+          },
+          {
+            "name": "2b48e7e1-a2f9-4614-83d4-8988f45357b2_3097477a-cae1-494a-aec9-42ca6c1002d2",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "2b48e7e1-a2f9-4614-83d4-8988f45357b2_3097477a-cae1-494a-aec9-42ca6c1002d2-labeled-radio-0",
+            "label_text": "Yes",
+            "cx": 379,
+            "cy": 397
+          },
+          {
+            "name": "2b48e7e1-a2f9-4614-83d4-8988f45357b2_b5a44e7b-1684-46b7-8b8a-c8f8cb146aa0",
+            "kind": "radio_label",
+            "label_id": null,
+            "label_for": "2b48e7e1-a2f9-4614-83d4-8988f45357b2_b5a44e7b-1684-46b7-8b8a-c8f8cb146aa0-labeled-radio-0",
+            "label_text": "Linkedin",
+            "cx": 398,
+            "cy": 396
+          }
+        ],
+        "missing": [],
+        "no_match": []
+      }
+    },
+    {
+      "i": 6,
+      "tool": "sleep"
+    },
+    {
+      "i": 7,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "text_inputs": 7,
+        "text_filled": 5,
+        "radios_groups": 3,
+        "radios_checked": 3,
+        "checkboxes": 0,
+        "checkboxes_checked": 0,
+        "file_inputs": 2,
+        "file_loaded": 0,
+        "submit_button": {
+          "found": true,
+          "disabled": false,
+          "text": "Submit Application"
+        },
+        "yesno_buttons_active": 0,
+        "yesno_groups": 0
+      }
+    },
+    {
+      "i": 8,
+      "tool": "ashby.upload_resume_via_visible_button",
+      "uploaded": "/tmp/openclaw/uploads/Cyrus_Shekari_Resume_ashby-character_091a6ad6_v2.pdf"
+    },
+    {
+      "i": 8,
+      "tool": "reassert-text-fields",
+      "repaired": []
+    },
+    {
+      "i": 8,
+      "tool": "upload-last-verify",
+      "repaired": [
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_name",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_email",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6_7492fe29-0b42-4998-9479-ce5b3a91a97a",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6_16718d91-59c0-4e57-8521-f72d798a6210",
+        "bd30ded2-8d2b-4946-9a79-d44e201c26a6_2d859c4e-c365-49e5-a674-571812b785e4"
+      ],
+      "location_refill": null
+    },
+    {
+      "i": 9,
+      "tool": "ashby.maybe_solve_recaptcha_v3",
+      "solve_ms": 252,
+      "token_len": 2425,
+      "inject": {
+        "injected": 2,
+        "ids": [
+          "g-recaptcha-response",
+          "g-recaptcha-response-100000"
+        ]
+      },
+      "detect": null
+    },
+    {
+      "i": 10,
+      "tool": "browser.act.evaluate",
+      "r": {
+        "ok": true,
+        "text": "Submit Application"
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-select-fields",
+      "results": [
+        {
+          "name": "1-494a-aec9-42ca6c1002d2",
+          "want": "Yes",
+          "target": "Yes",
+          "ok": false,
+          "shape": null,
+          "already": false,
+          "before": null,
+          "after": null,
+          "reason": "no-container",
+          "pw_click": {
+            "ok": false,
+            "reason": "no-container"
+          }
+        },
+        {
+          "name": "4-46b7-8b8a-c8f8cb146aa0",
+          "want": "Linkedin",
+          "target": "Linkedin",
+          "ok": false,
+          "shape": null,
+          "already": false,
+          "before": null,
+          "after": null,
+          "reason": "no-container",
+          "pw_click": {
+            "ok": false,
+            "reason": "no-container"
+          }
+        }
+      ]
+    },
+    {
+      "i": "pre-submit",
+      "tool": "reassert-text-fields-final",
+      "repaired": []
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-clobber-guard",
+      "status": {
+        "settled": true,
+        "location_value": null,
+        "location_ok": false,
+        "workauth_checked": null,
+        "refilled_location": {
+          "ok": false,
+          "reason": "no-container"
+        },
+        "reasserted_workauth": [],
+        "_loc_value": "Kirkland, WA",
+        "_loc_tail": "__systemfield_location",
+        "country_field_filled": {
+          "ok": false,
+          "reason": "no-country-container"
+        },
+        "location_stable": false,
+        "doctrine_fix": {
+          "workauth": null,
+          "inoffice": null
+        },
+        "final_text_recommit": []
+      }
+    },
+    {
+      "i": "pre-submit",
+      "tool": "final-text-commit-no-bounce",
+      "status": {
+        "committed": [],
+        "missing": [
+          "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_name",
+          "bd30ded2-8d2b-4946-9a79-d44e201c26a6__systemfield_email",
+          "bd30ded2-8d2b-4946-9a79-d44e201c26a6_7492fe29-0b42-4998-9479-ce5b3a91a97a",
+          "bd30ded2-8d2b-4946-9a79-d44e201c26a6_16718d91-59c0-4e57-8521-f72d798a6210",
+          "bd30ded2-8d2b-4946-9a79-d44e201c26a6_2d859c4e-c365-49e5-a674-571812b785e4"
+        ],
+        "errors": []
+      },
+      "stable": true
+    }
+  ],
+  "ok": true,
+  "error": null,
+  "submit_response": "\n    \n      You need to enable JavaScript to run this app.\n    \n    Technical Program Manager, Model Alignment and Deployment  LocationRedwood City, CAEmployment TypeFull timeDepartmentSafetyCompensation$220K \u2013 $260K\ud83e\ude7a  Top-notch health coverage for you & your family, with majority of the premium covered\ud83d\udcb0 We invest in your future with a generous 401(K) contribution\ud83c\udf7c New parents, we've got you covered with incredible paid leave -up to 20 weeks\ud83c\udf34 4 weeks of PTO to explore, unwind & come back recharged\ud83c\udf7d\ufe0f Daily in-office catering plus a monthly Doordash stipend to help keep you fueled no matter where you are\u2728 Monthly wellness stipend to support you in your health journeyOverviewApplicationSuccessThank you for applying to Character.AI! We will review your application and contact you if there are next steps.Powered by\u00a0AshbyPrivacy PolicySecurityVulnerability Disclosure\n    \n      window.__appData = {\"ddRumApplicationId\":\"80e0bf43-e772-45ac-858b-1e6dc0f1f415\",\"ddRumClientToken\":\"pub1a87c7036063ee7d4b7914b397e6324e\",\"environment\":\"production\",\"maintenanceMode\":false,\"schedulingMaintenanceMode\":false,\"organization\":{\"organizationId\":\"09be54bb-e1f2-48e9-8615-d3f5f4312f36\",\"name\":\"Character.AI\",\"publicWebsite\":\"https://character.ai/\",\"customJobsPageUrl\":null,\"hostedJobsPageSlug\":\"character\",\"activeFeatureFlags\":[\"AuditLogCollect\",\"ShowAllFieldsOnCandidateArchiveDetails\",\"LeverJobPosts\",\"InterviewLocationTypeReportingField\",\"LeverDetailedFeedbackTemplateImport\",\"LeverNotesImport\",\"LeverAtt",
+  "classify": "submitted"
+}
+2357 rc=0
+
+=== 2297 Picarro (gh/datacenter) ===
+[edu] filled: start=August/2021 end=December/2024
+[net-resp] 401 https://my.greenhouse.io/users/self?job_post_id=5234150008
+[net-resp-body] b'{"error":"You need to sign in or sign up before continuing."}'
+[pre-submit-captcha] {'enabled': True, 'injected': True, 'sitekey': '6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'enterprise': False, 'token_len': 2361, 'inject': {'injected_into': ['g-recaptcha-response', 'g-recaptcha-response-100000'], 'created': ['g-recaptcha-response', 'g-recaptcha-response-100000'], 'token_len': 2361}, 'detect': {'sitekey': None, 'page_url': 'https://www.picarro.com/company/careers/job-openings/apply?gh_jid=5234150008', 'loader_src': None, 'enterprise': False, 'source': None}}
+[otp] Screenshot saved after button loop
+{
+ "slug": "picarro-5234150008",
+ "steps": {
+  "text": {
+   "first_name": "NOEL",
+   "last_name": "NOEL",
+   "preferred_name": "NOEL",
+   "email": "NOEL",
+   "phone": "NOEL",
+   "question_16157025008": "NOEL"
+  },
+  "dropdowns": [
+   {
+    "id": "question_16157027008",
+    "err": "noinput"
+   },
+   {
+    "id": "question_16157028008",
+    "err": "noinput"
+   }
+  ],
+  "countries": [
+   {
+    "id": "country",
+    "err": "noinput"
+   }
+  ],
+  "education_typeahead": [
+   {
+    "id": "school--0",
+    "err": "noinput"
+   },
+   {
+    "id": "discipline--0",
+    "err": "noinput"
+   },
+   {
+    "id": "degree--0",
+    "err": "noinput"
+   }
+  ],
+  "phone": {
+   "err": "nophone"
+  },
+  "declines": [],
+  "upload": "no-input",
+  "cover_upload": {
+   "present": false
+  },
+  "custom_file_upload": {
+   "present": false
+  },
+  "edu_date_fill": {
+   "months": [],
+   "years": {},
+   "sm": "August",
+   "sy": "2021",
+   "em": "December",
+   "ey": "2024"
+  },
+  "work_history_fill": {
+   "spec": {
+    "checkCurrent": true,
+    "selects": [
+     {
+      "id": "start-date-month-0",
+      "label": "March"
+     }
+    ],
+    "company": "Microsoft",
+    "title": "Technical Program Manager",
+    "start_year": "2024",
+    "end_selects": [],
+    "end_year": ""
+   },
+   "months": [
+    {
+     "id": "start-date-month-0",
+     "err": "noinput"
+    }
+   ],
+   "cb_years": {
+    "current": "no-checkbox",
+    "years": [
+     {
+      "id": "start-date-year-0",
+      "err": "noinput"
+     }
+    ],
+    "text": [
+     {
+      "id": "company-name-0",
+      "err": "noinput"
+     },
+     {
+      "id": "title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  },
+  "pre_submit_captcha": {
+   "enabled": true,
+   "injected": true,
+   "sitekey": "6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+   "enterprise": false,
+   "token_len": 2361,
+   "inject": {
+    "injected_into": [
+     "g-recaptcha-response",
+     "g-recaptcha-response-100000"
+    ],
+    "created": [
+     "g-recaptcha-response",
+     "g-recaptcha-response-100000"
+    ],
+    "token_len": 2361
+   },
+   "detect": {
+    "sitekey": null,
+    "page_url": "https://www.picarro.com/company/careers/job-openings/apply?gh_jid=5234150008",
+    "loader_src": null,
+    "enterprise": false,
+    "source": null
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": "nobtn"
+ },
+ "final": {
+  "url": "https://www.picarro.com/company/careers/job-openings/apply?gh_jid=5234150008",
+  "confirmed": false,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Skip to main content\nUser account menu\nLog in\n \u7b80\u4f53\u4e2d\u6587\nMain navigation\nSolutions\nResources\nCompany\nContact Us\nPicarro Open Positions\nSolutions by Industry\nNatural Gas Industry\nEthylene Oxide\nFenceline Mo"
+ },
+ "status": "hosted-flow-bounce",
+ "bounce_host": "www.picarro.com"
+}
+2297 rc=0
+
+=== 2327 MetTel (gh/datacenter) ===
+[net-resp] 401 https://my.greenhouse.io/users/self?job_post_id=4685748006
+[net-resp-body] b'{"error":"You need to sign in or sign up before continuing."}'
+[edu] filled: start=August/2021 end=December/2024
+[pre-submit-captcha] {'enabled': True, 'injected': True, 'sitekey': '6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'enterprise': True, 'token_len': 2404, 'inject': {'injected_into': ['g-recaptcha-response', 'g-recaptcha-response-100000'], 'created': ['g-recaptcha-response'], 'token_len': 2404}, 'detect': {'sitekey': '6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'page_url': 'https://job-boards.greenhouse.io/mettel/jobs/4685748006', 'loader_src': 'https://www.recaptcha.net/recaptcha/enterprise.js?render=6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'enterprise': True, 'source': 'loader'}}
+[net-req] POST https://boards.greenhouse.io/mettel/jobs/4685748006
+[net-req-body] {"job_application":{"first_name":"Cyrus","last_name":"Shekari","email":"cyshekari@gmail.com","answers_attributes":{"8481035006":{"question_id":"8481035006","priority":0,"boolean_value":0},"8481036006":{"question_id":"8481036006","priority":1,"boolean_value":1},"8481037006":{"question_id":"8481037006","priority":2,"boolean_value":1},"8481038006":{"question_id":"8481038006","priority":3,"boolean_val
+[net-resp] 428 https://boards.greenhouse.io/mettel/jobs/4685748006
+[net-resp-body] b'{"code":"captcha-failed","message":"Oops! We were unable to verify your Captcha response.","security_code_recipient":"cyshekari@gmail.com"}'
+[otp-debug] {"url":"https://job-boards.greenhouse.io/mettel/jobs/4685748006","hasOTP":true,"btns":["Apply|d:false|a:null","Quick Apply with MyGreenhouse|d:false|a:false","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","|d:false|a:null","Submit application|d:false|a:false"],"vals":"8uEXtjtn"}
+[otp] captcha solve result: {'enabled': True, 'injected': True, 'sitekey': '6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'enterprise': True, 'token_len': 2468, 'inject': {'injected_into': ['g-recaptcha-response', 'g-recaptcha-response-100000'], 'created': [], 'token_len': 2468}, 'detect': {'sitekey': '6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'page_url': 'https://job-boards.greenhouse.io/mettel/jobs/4685748006', 'loader_src': 'https://www.recaptcha.net/recaptcha/enterprise.js?render=6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0', 'enterprise': True, 'source': 'loader'}}
+[otp-btn] try=0 found=True txt='Submit application' disabled=False aria='false'
+[net-req] POST https://boards.greenhouse.io/mettel/jobs/4685748006
+[net-req-body-FULL] {"job_application":{"first_name":"Cyrus","last_name":"Shekari","email":"cyshekari@gmail.com","answers_attributes":{"8481035006":{"question_id":"8481035006","priority":0,"boolean_value":0},"8481036006":{"question_id":"8481036006","priority":1,"boolean_value":1},"8481037006":{"question_id":"8481037006","priority":2,"boolean_value":1},"8481038006":{"question_id":"8481038006","priority":3,"boolean_value":0},"8481039006":{"question_id":"8481039006","priority":4,"boolean_value":1},"8485102006":{"question_id":"8485102006","priority":5,"text_value":"My background is not carrier-side wireless, but a meaningful portion of my product work maps directly to the enterprise mobility and managed connectivity space MetTel operates in. At Microsoft, I led 0-to-1 development of an internal Resilience Automation Platform, authoring PRDs and managing cross-functional dependencies across BSS/OSS systems and partner engineering teams - the same integration complexity you see in carrier and managed mobility environments. I also served as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating across partner and internal teams under executive visibility. That work required the same carrier-agnostic orchestration thinking the Wireless Solutions role calls for.\n\nBeyond that, I built and maintained an innovation-style backlog for resilience initiatives - scoring and prioritizing hypotheses against business value and feasibility, conducting voice-of-customer interviews to surface unmet needs, and converting field insights into structured product hypotheses. That process mirrors exactly how the JD describes building MetTel's wireless innovation pipeline. I've also defined pricing models and packaging context at Pro Painters, sized opportunity via Power BI dashboards tracking operational gaps across 140+ teams, and built Sales enablement materials that equipped the field to position new offerings.\n\nSo no, I haven't managed a carrier relationship with Verizon or AT&T directly. What I bring is a strong 0-to-1 product track record, fluency in enterprise infrastructure dependencies, and a commercial instinct built across multiple go-to-market motions. I'd ramp quickly on wireless-specific domain knowledge given the foundation already in place."},"8485103006":{"question_id":"8485103006","priority":6,"boolean_value":1},"8481040006":{"question_id":"8481040006","priority":7,"text_value":"Open to discuss"},"8481041006":{"question_id":"8481041006","priority":8,"boolean_value":0},"8481042006":{"question_id":"8481042006","priority":9,"answer_selected_options_attributes":{"0":{"question_option_id":"17630374006"}}}},"demographic_answers":[],"data_compliance":{},"attachments":{},"from_job_board_renderer":true,"employments":[{"start_date":{"month":null,"year":null},"end_date":{"month":null,"year":null},"current":false}],"phone":"+13468040227","resume_url":"https://grnhse-prod-jben-us-west-2.s3.us-west-2.amazonaws.com/stash/applications/resumes/1782832841217-ricddn4pp28-fbe675967be098f249c2b5eae761a16c","resume_url_filename":"Cyrus_Shekari_Resume_mettel_4685748006_v2.pdf","cover_letter_url":"https://grnhse-prod-jben-us-west-2.s3.us-west-2.amazonaws.com/stash/applications/resumes/1782832856317-ldayeedpw7-c3c972fc114c0556c1edebf623977a50","cover_letter_url_filename":"Cyrus_Shekari_CoverLetter_mettel-4685748006.pdf","gender":"3","race":"8","veteran_status":"3","disability_status":"3","educations":[{"school_name_id":null,"degree_id":null,"discipline_id":null,"start_date":{"month":null,"year":null},"end_date":{"month":null,"year":null}}],"mapped_url_token":null,"appcast_click_id":null,"time_zone":"UTC"},"security_code":"8uEXtjtn","fingerprint":"b364ae8d3b015d68149ada1d4affd9701e1890f8"}
+[otp-btn] clicked: ''
+[net-resp] 401 https://my.greenhouse.io/users/self
+[net-resp-body] b'{"error":"You need to sign in or sign up before continuing."}'
+[otp-btn] try=1 found=False txt=None disabled=None aria=None
+[otp-btn] try=2 found=False txt=None disabled=None aria=None
+[otp-btn] try=3 found=False txt=None disabled=None aria=None
+[otp] Screenshot saved after button loop
+{
+ "slug": "mettel-4685748006",
+ "steps": {
+  "text": {
+   "first_name": "Cyrus",
+   "last_name": "Shekari",
+   "email": "cyshekari@gmail.com",
+   "phone": "3468040227",
+   "question_8485102006": "My background is not carrier-s",
+   "question_8481040006": "Open to discuss"
+  },
+  "dropdowns": [
+   {
+    "id": "question_8481035006",
+    "want": "No",
+    "got": "No"
+   },
+   {
+    "id": "question_8481037006",
+    "want": "Yes",
+    "got": "Yes"
+   },
+   {
+    "id": "question_8481038006",
+    "want": "No",
+    "got": "No"
+   },
+   {
+    "id": "question_8481041006",
+    "want": "No",
+    "got": "No"
+   },
+   {
+    "id": "question_8481042006",
+    "want": "Yes",
+    "got": "Yes"
+   }
+  ],
+  "needs_review": [
+   {
+    "id": "question_8481036006",
+    "question": "Do you have any relatives that currently work for or previou",
+    "committed": "Yes",
+    "tried": [
+     "Open to remote, hybrid, or onsite",
+     "United States",
+     "Yes"
+    ]
+   },
+   {
+    "id": "question_8481039006",
+    "question": "Are you able to report full time in-office (New York City)?",
+    "committed": "Yes",
+    "tried": [
+     "Kirkland",
+     "United States",
+     "Yes"
+    ]
+   },
+   {
+    "id": "question_8485103006",
+    "question": "Do you have a Bachelor's Degree?",
+    "committed": "Yes",
+    "tried": [
+     "Bachelor of Science",
+     "United States",
+     "Yes"
+    ]
+   }
+  ],
+  "countries": [
+   {
+    "id": "country",
+    "want": "United States",
+    "got": "+1"
+   }
+  ],
+  "education_typeahead": [
+   {
+    "id": "school--0",
+    "err": "noinput"
+   },
+   {
+    "id": "discipline--0",
+    "err": "noinput"
+   },
+   {
+    "id": "degree--0",
+    "err": "noinput"
+   }
+  ],
+  "phone": {
+   "phone": "(346) 804-0227"
+  },
+  "declines": [
+   {
+    "id": "gender",
+    "got": "Decline To Self Identify"
+   },
+   {
+    "id": "hispanic_ethnicity",
+    "got": "Decline To Self Identify"
+   },
+   {
+    "id": "veteran_status",
+    "got": "I don't wish to answer"
+   },
+   {
+    "id": "disability_status",
+    "got": "I do not want to answer"
+   }
+  ],
+  "upload": true,
+  "cover_upload": {
+   "present": true,
+   "uploaded": true,
+   "pdf": "/tmp/openclaw/uploads/Cyrus_Shekari_CoverLetter_mettel-4685748006.pdf",
+   "files_in_input": -1,
+   "filename_committed": true
+  },
+  "custom_file_upload": {
+   "present": false
+  },
+  "edu_date_fill": {
+   "months": [],
+   "years": {},
+   "sm": "August",
+   "sy": "2021",
+   "em": "December",
+   "ey": "2024"
+  },
+  "work_history_fill": {
+   "spec": {
+    "checkCurrent": true,
+    "selects": [
+     {
+      "id": "start-date-month-0",
+      "label": "March"
+     }
+    ],
+    "company": "Microsoft",
+    "title": "Technical Program Manager",
+    "start_year": "2024",
+    "end_selects": [],
+    "end_year": ""
+   },
+   "months": [
+    {
+     "id": "start-date-month-0",
+     "err": "noinput"
+    }
+   ],
+   "cb_years": {
+    "current": "no-checkbox",
+    "years": [
+     {
+      "id": "start-date-year-0",
+      "err": "noinput"
+     }
+    ],
+    "text": [
+     {
+      "id": "company-name-0",
+      "err": "noinput"
+     },
+     {
+      "id": "title-0",
+      "err": "noinput"
+     }
+    ]
+   }
+  },
+  "pre_submit_captcha": {
+   "enabled": true,
+   "injected": true,
+   "sitekey": "6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+   "enterprise": true,
+   "token_len": 2404,
+   "inject": {
+    "injected_into": [
+     "g-recaptcha-response",
+     "g-recaptcha-response-100000"
+    ],
+    "created": [
+     "g-recaptcha-response"
+    ],
+    "token_len": 2404
+   },
+   "detect": {
+    "sitekey": "6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+    "page_url": "https://job-boards.greenhouse.io/mettel/jobs/4685748006",
+    "loader_src": "https://www.recaptcha.net/recaptcha/enterprise.js?render=6LfmcbcpAAAAAChNTbhUShzUOAMj_wY9LQIvLFX0",
+    "enterprise": true,
+    "source": "loader"
+   }
+  }
+ },
+ "preSubmitState": {
+  "emptyRequired": [],
+  "multiUnset": [],
+  "submitDisabled": false
+ },
+ "otp_code": "8uEXtjtn",
+ "final": {
+  "url": "https://job-boards.greenhouse.io/mettel/jobs/4685748006/confirmation",
+  "confirmed": true,
+  "otpStill": false,
+  "otpErr": false,
+  "head": "Thank you for applying.\n\nYour application has been received. If there is a fit, someone will be getting back to you.\n\nView more jobs at MetTel\nBack to job post\n\nGive your application a boost!\n\nSign in"
+ },
+ "status": "SUBMITTED"
+}
+2327 rc=0
+
+=== 2494 Everlaw (gh/datacenter) ===

@@ -5,12 +5,12 @@
 **Apply:** https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/San-Jose-California-US/ASIC-Engineering-Program-Manager_2012088/apply
 **Workday tenant:** cisco
 **Req ID:** 2012088
-**Posted on:** Posted 25 Days Ago
+**Posted on:** Posted Today
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---
 
-The application window is expected to close on: 06/30/2026**Job posting may be removed earlier if the position is filled or if a sufficient number of applications are received**.
+The application window is expected to close on: 07/24/2026**Job posting may be removed earlier if the position is filled or if a sufficient number of applications are received**.
 
 **Meet the Team**
 The Common Hardware Group (CHG) creates innovative hardware platforms central to the AI era, powering Cisco’s core Switching, Routing, and Wireless products for organizations globally. Our innovations in silicon, optics, and hardware platforms—like Silicon One—are shaping the technology industry. We're a global team of creative experts, bringing our unique backgrounds and bold ideas to push boundaries and help each other grow. Because full product development—from design to qualification to production—is within our team, we’re able to think differently, experiment more, and work quickly. Join us to power the future of the digital world. 

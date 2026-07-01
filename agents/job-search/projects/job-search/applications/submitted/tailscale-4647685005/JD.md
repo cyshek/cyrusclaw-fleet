@@ -1,0 +1,86 @@
+# Solutions Engineer - Commercial (Expansion Sales)
+
+**Company:** Tailscale
+**Location:** Remote (United States)
+**Apply:** https://job-boards.greenhouse.io/tailscale/jobs/4647685005
+**Greenhouse ID:** 4647685005
+
+---
+
+**About Tailscale **
+
+Tailscale is building the new Internet by delivering software that makes it easy to securely interconnect people and their devices, no matter where they are. From hobbyists to multinational corporations, teams of every size use Tailscale each day to protect their networks, share access to internal tools, and more. We're building a future for the Internet that's easy, sensible, and safe, like it used to be. Founded in 2019 and fully distributed, we're backed by Accel, CRV, Insight, Heavybit, and Uncork Capital.
+
+### **Job Description**
+
+Tailscale is seeking an experienced Commercial Solutions Engineer to partner with Sales in driving new business for Commercial customers. You will co-own a book of business with Account Executives, lead technical discovery and architecture design, and act as a trusted advisor to customers. This role blends deep networking and security expertise with strong sales acumen to win competitive deals, scale enablement, and influence product direction.
+
+### **Key Responsibilities**
+
+- Partner with AEs to identify, qualify, and close new Commercial customer opportunities.
+
+- Lead technical discovery, solution architecture, demos, and POCs to accelerate decision-making.
+
+- Guide complex multi-stakeholder deals, aligning technical and business objectives.
+
+- Provide structured feedback to shape product roadmap and GTM strategy.
+
+- Build scalable enablement resources, demo environments, and solution blueprints for the SE team.
+
+### **What We Are Looking For**
+
+- 4/5+ years in a customer-facing SE/SA role within networking or security software
+
+- Proven experience co-owning pipeline and influencing quota outcomes with Sales
+
+- Strong networking fundamentals (TCP/IP, DNS, routing, firewalls) and troubleshooting skills
+
+- Deep understanding of zero-trust networking, secure connectivity, and IAM integrations (SSO, SAML, OIDC)
+
+- Understanding of AI gateway and governance platforms for centralized LLM access, usage visibility, and audit 
+
+- Familiarity with privileged access management (PAM) including session recording, just-in-time access, and protocol-aware controls (e.g., Border0, CyberArk, Teleport)
+
+- Experience with infrastructure as code tools such as Terraform, Pulumi, Ansible, or CloudFormation
+
+- Hands-on architecture experience with AWS, GCP, and/or Azure
+
+- Excellent communication skills, capable of translating technical features into business value
+
+- Experience thriving in high-growth or startup environments
+
+As a company, we strive to maintain fair and equitable compensation practices within our team across all roles and all levels. Tailscale's compensation package includes base salary, equity, and comprehensive benefits. The salary range displayed on each job posting represents the target range for a new hire's base salary. Individual offers may vary based on experience and skill set.
+
+For this position, our pay ranges reflect target OTE (on target earnings), inclusive of base salary and variable compensation tied to the attainment of quarterly sales targets.
+
+US Pay Range (OTE)
+$150,000—$200,000 USD
+
+*Frequently cited statistics show that people who identify with historically marginalized groups are likely to apply to jobs only if they meet 100% of the qualifications. ****We encourage you to help us break that statistic!***
+
+**What We Offer**
+
+- **An inclusive, flexible environment where you can be your authentic self.** We recognize the impact of diverse voices and backgrounds on the growth of our people, product, and company. And that flexibility in how and when you work empowers our team to integrate work and life.
+
+- **A competitive total compensation package.** This includes a base salary, an equity incentive plan and variable commission (for quota-based roles).
+
+- **Comprehensive group benefits with no waiting period. **Take advantage of coverage for health, vision, dental, and more for you and your family!
+
+- **Remote first company**—most of our teams work fully remotely. Enjoy a change of scenery wherever you can get wifi, participate in virtual and in-person social events, and leverage our corporate co-working program to visit WeWork (or other similar spaces near you). Some roles require in-office collaboration depending on team needs, which will be clearly noted in the job description.
+
+- **Connect with other Tailscalars IRL. **Attend our annual company retreat, participate in team off-sites, and collaborate in person with teammates across Canada, the United States, and the United Kingdom. We support intentional in-person connection through team travel and distributed collaboration.**
+**
+
+- **Support for your personal and professional development.** Grow your career thoughtfully with $1500 USD annually for professional development, or take advantage of mentorship, coaching, and internal promotion opportunities. 
+
+- **Paid time off and a healthy work-life integration. **Our flexible, paid time off program supports you for any situation life throws your way, whether moving homes or travelling the world! 
+
+- **A build-your-own home office setup. **You choose your own company-owned laptop (Mac or PC), receive a monthly home internet reimbursement, and $1000 USD to customize your workstation to make it your own. 
+
+- **Generous parental leave program from your first day. **We care about your life outside of work and encourage new parents to take advantage of parental leave top-ups for up to 26 weeks. 
+
+*Tailscale is committed to providing an accessible and inclusive hiring process. If you require an accommodation at any stage of the recruitment process or related to any aspect of this role, please contact your recruiter.*
+
+*Our hiring process uses AI-assisted tools to help screen and assess candidates. All hiring decisions are made by people.*
+
+*Please be aware that legitimate emails from Tailscale's talent team will only originate from @tailscale.com, @greenhouse.io, and @interviews.modernloop.io email addresses. For more information about protecting yourself from impersonators and scams, please visit [https://tailscale.com/scam-awareness](https://tailscale.com/scam-awareness).*

@@ -1,18 +1,6 @@
-SUBMITTED
+ABORT-JD-FETCH — 2026-06-30T15:12:05+00:00
 
-submitted_by: auto
-applied_on: 2026-06-23
-role_id: 3272
-submitted_at: 2026-06-23T16:07:04+00:00
-
-Runner tail:
-it re-fill: re-set 0 field(s)
-[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
-[runner] reassert-text pass 1: repaired=0 [] missing=4
-[runner] reassert-text pass 1: repaired=0 [] missing=4
-[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
-[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
-[runner] last-ms no-bounce text commit: 0 field(s), stable=True
-[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
-[runner] SUBMIT SUCCESS
-
+role_id: 2442
+phase: jd-fetch
+error:
+RuntimeError: Ashby job 9ed7587a-0653-4e81-ab50-5136a2516639 not found in board for artie

@@ -5,7 +5,7 @@
 **Apply:** https://wd1.myworkdaysite.com/recruiting/snapchat/snap/job/Los-Angeles-California/Technical-Program-Manager--Level-4_R0045980/apply
 **Workday tenant:** snapchat
 **Req ID:** R0045980
-**Posted on:** Posted Yesterday
+**Posted on:** Posted 2 Days Ago
 **Submit mode:** MANUAL (Workday auto-submit not implemented)
 
 ---

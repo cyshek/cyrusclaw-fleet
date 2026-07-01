@@ -1,0 +1,768 @@
+{
+  "meta": {
+    "common_window": [
+      "2010-02-12",
+      "2026-06-30"
+    ],
+    "n_days": 4119,
+    "oos_split": "2019-01-01",
+    "regime": "SPX < trailing 200d SMA (past-only)",
+    "lookahead_guard": "every weight decision at month_open idx uses ONLY dates[:idx]/sleeves[:idx]; regime flag at idx uses SPX price/SMA through idx-1 (strictly past); hedge engages on forward returns only.",
+    "haven_labels": [
+      "GLD",
+      "TLT",
+      "DBC",
+      "UUP"
+    ],
+    "haven_first_covered_date": "2010-02-12"
+  },
+  "baseline": {
+    "label": "baseline_2sleeve",
+    "window": {
+      "start": "2010-02-12",
+      "end": "2026-06-30",
+      "n_days": 4119
+    },
+    "n_rebal": 196,
+    "avg_turnover_per_rebal": 0.11496862932804078,
+    "full": {
+      "sharpe": 1.0361983077874528,
+      "cagr_pct": 15.594476119286016,
+      "maxdd_pct": -20.32882602578382,
+      "vol_pct": 15.093761999714594,
+      "total_return_pct": 967.7555188560945
+    },
+    "is_2010_2018": {
+      "sharpe": 0.9175856218604828,
+      "cagr_pct": 12.699871110761718,
+      "maxdd_pct": -20.32882602578382
+    },
+    "oos_2019_today": {
+      "sharpe": 1.1633489085338997,
+      "cagr_pct": 19.116236486465876,
+      "maxdd_pct": -20.020774941279875,
+      "total_return_pct": 269.2924664068455
+    },
+    "spx_full": {
+      "sharpe": 0.7745517729044562,
+      "cagr_pct": 12.588494516275306,
+      "maxdd_pct": -33.92496000265329
+    },
+    "spx_oos": {
+      "sharpe": 0.8452781011932783,
+      "cagr_pct": 15.76499219570473
+    },
+    "hedge_diag": {
+      "n_rebal_months": 196,
+      "avg_hedge_w_all_months": 0.0,
+      "avg_hedge_w_when_engaged": 0.0,
+      "pct_months_engaged": 0.0,
+      "hedge_leg_transition_turnover_total": 0.0
+    }
+  },
+  "regime_diag": {
+    "pct_days_regime_on_full": 16.120417577081817,
+    "pct_days_regime_on_oos": 20.552310143388212
+  },
+  "configs": {
+    "cash_wh10": {
+      "label": "cash_wh10",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.12728351185222123,
+      "full": {
+        "sharpe": 1.0248342217475408,
+        "cagr_pct": 15.278326330467106,
+        "maxdd_pct": -20.76265807219002,
+        "vol_pct": 14.976532993434141,
+        "total_return_pct": 921.0222720898995
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9102761219116207,
+        "cagr_pct": 12.5167020005728,
+        "maxdd_pct": -20.76265807219002
+      },
+      "oos_2019_today": {
+        "sharpe": 1.148041446527786,
+        "cagr_pct": 18.635660653918173,
+        "maxdd_pct": -19.378725331146263,
+        "total_return_pct": 258.30952923233934
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.015816326530612244,
+        "avg_hedge_w_when_engaged": 0.1,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 2.400000000000001
+      }
+    },
+    "cash_wh15": {
+      "label": "cash_wh15",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.13458154411727022,
+      "full": {
+        "sharpe": 1.0187655676472476,
+        "cagr_pct": 15.11931274971059,
+        "maxdd_pct": -20.9811983757614,
+        "vol_pct": 14.922199772815773,
+        "total_return_pct": 898.249369106281
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9063806089649433,
+        "cagr_pct": 12.42440275056833,
+        "maxdd_pct": -20.9811983757614
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1398345348462533,
+        "cagr_pct": 18.394290844022798,
+        "maxdd_pct": -19.057332337126187,
+        "total_return_pct": 252.9008816814314
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.023724489795918364,
+        "avg_hedge_w_when_engaged": 0.15,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 3.5999999999999988
+      }
+    },
+    "cash_wh20": {
+      "label": "cash_wh20",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.14298175137477206,
+      "full": {
+        "sharpe": 1.012431069259184,
+        "cagr_pct": 14.95958028763338,
+        "maxdd_pct": -21.20055115231193,
+        "vol_pct": 14.870768598169388,
+        "total_return_pct": 875.8542390758464
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9023239569498889,
+        "cagr_pct": 12.33163026929529,
+        "maxdd_pct": -21.20055115231193
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1312419293181852,
+        "cagr_pct": 18.15198749047948,
+        "maxdd_pct": -18.737342044660878,
+        "total_return_pct": 247.54258014804452
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.03163265306122449,
+        "avg_hedge_w_when_engaged": 0.2,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 4.800000000000002
+      }
+    },
+    "cash_wh25": {
+      "label": "cash_wh25",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.1525323525586326,
+      "full": {
+        "sharpe": 1.005828972448187,
+        "cagr_pct": 14.799116917860577,
+        "maxdd_pct": -21.42112090294914,
+        "vol_pct": 14.822265213691082,
+        "total_return_pct": 853.8321909169898
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8980997491166238,
+        "cagr_pct": 12.23828377576881,
+        "maxdd_pct": -21.42112090294914
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1222661159401106,
+        "cagr_pct": 17.908850563134205,
+        "maxdd_pct": -18.417257228430984,
+        "total_return_pct": 242.23681693627123
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.039540816326530615,
+        "avg_hedge_w_when_engaged": 0.25,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 6.0
+      }
+    },
+    "haven_GLD_TLT_DBC_UUP_wh10": {
+      "label": "haven_GLD_TLT_DBC_UUP_wh10",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.12733332029107555,
+      "full": {
+        "sharpe": 1.0279287863084254,
+        "cagr_pct": 15.356336603900012,
+        "maxdd_pct": -20.464750515921594,
+        "vol_pct": 15.000826539686216,
+        "total_return_pct": 932.371882059717
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9150880977738398,
+        "cagr_pct": 12.607907569952935,
+        "maxdd_pct": -20.464750515921594
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1489305502982285,
+        "cagr_pct": 18.689599248229328,
+        "maxdd_pct": -19.545172086032416,
+        "total_return_pct": 259.52795889335493
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.015816326530612244,
+        "avg_hedge_w_when_engaged": 0.1,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 2.400000000000001
+      }
+    },
+    "haven_GLD_TLT_DBC_UUP_wh15": {
+      "label": "haven_GLD_TLT_DBC_UUP_wh15",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.13464997186404257,
+      "full": {
+        "sharpe": 1.0234270693532823,
+        "cagr_pct": 15.2363599757106,
+        "maxdd_pct": -20.535550522429414,
+        "vol_pct": 14.95893457104348,
+        "total_return_pct": 914.9652065152666
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9136300605261182,
+        "cagr_pct": 12.56121618395456,
+        "maxdd_pct": -20.535550522429414
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1411665644685045,
+        "cagr_pct": 18.475322497907776,
+        "maxdd_pct": -19.30720504560731,
+        "total_return_pct": 254.70871011852995
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.023724489795918364,
+        "avg_hedge_w_when_engaged": 0.15,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 3.5999999999999988
+      }
+    },
+    "haven_GLD_TLT_DBC_UUP_wh20": {
+      "label": "haven_GLD_TLT_DBC_UUP_wh20",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.14308820071088105,
+      "full": {
+        "sharpe": 1.0186731367832011,
+        "cagr_pct": 15.115679239921498,
+        "maxdd_pct": -20.607953580077254,
+        "vol_pct": 14.92012909138499,
+        "total_return_pct": 897.7346173357191
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9120314655655934,
+        "cagr_pct": 12.514052104848329,
+        "maxdd_pct": -20.607953580077254
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1330183587648774,
+        "cagr_pct": 18.260183831224765,
+        "maxdd_pct": -19.070766691937692,
+        "total_return_pct": 249.92646402135006
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.03163265306122449,
+        "avg_hedge_w_when_engaged": 0.2,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 4.800000000000002
+      }
+    },
+    "haven_GLD_TLT_DBC_UUP_wh25": {
+      "label": "haven_GLD_TLT_DBC_UUP_wh25",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.15270056552778002,
+      "full": {
+        "sharpe": 1.0136659242469193,
+        "cagr_pct": 14.994281230003391,
+        "maxdd_pct": -20.68240193504478,
+        "vol_pct": 14.884425475450444,
+        "total_return_pct": 880.6789656867604
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9102863600043108,
+        "cagr_pct": 12.466324583793265,
+        "maxdd_pct": -20.68240193504478
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1244902372458068,
+        "cagr_pct": 18.044268096957516,
+        "maxdd_pct": -18.834360747541744,
+        "total_return_pct": 245.1831905266851
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.039540816326530615,
+        "avg_hedge_w_when_engaged": 0.25,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 6.0
+      }
+    },
+    "TLT_alone_wh10": {
+      "label": "TLT_alone_wh10",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.12748776039811466,
+      "full": {
+        "sharpe": 1.0322701527819997,
+        "cagr_pct": 15.49472755495691,
+        "maxdd_pct": -21.249679436563675,
+        "vol_pct": 15.062986352567695,
+        "total_return_pct": 952.7981606587017
+      },
+      "is_2010_2018": {
+        "sharpe": 0.935813503228502,
+        "cagr_pct": 12.92941733829518,
+        "maxdd_pct": -19.943622595546984
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1359108353568272,
+        "cagr_pct": 18.598316456215436,
+        "maxdd_pct": -21.249679436563685,
+        "total_return_pct": 257.46805035951996
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.015816326530612244,
+        "avg_hedge_w_when_engaged": 0.1,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 2.400000000000001
+      }
+    },
+    "TLT_alone_wh15": {
+      "label": "TLT_alone_wh15",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.13485039544423325,
+      "full": {
+        "sharpe": 1.029227752608525,
+        "cagr_pct": 15.44233561030184,
+        "maxdd_pct": -21.859438755441186,
+        "vol_pct": 15.063453498801938,
+        "total_return_pct": 945.0209700878329
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9441182269296222,
+        "cagr_pct": 13.04175432082586,
+        "maxdd_pct": -19.755564861376442
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1209248108639158,
+        "cagr_pct": 18.337728779306218,
+        "maxdd_pct": -21.859438755441197,
+        "total_return_pct": 251.64370776757923
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.023724489795918364,
+        "avg_hedge_w_when_engaged": 0.15,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 3.5999999999999988
+      }
+    },
+    "TLT_alone_wh20": {
+      "label": "TLT_alone_wh20",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.14330302828634892,
+      "full": {
+        "sharpe": 1.0254687476910695,
+        "cagr_pct": 15.388175666657244,
+        "maxdd_pct": -22.467647838906768,
+        "vol_pct": 15.074488890262725,
+        "total_return_pct": 937.0380513543851
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9518590762153983,
+        "cagr_pct": 13.152480891323526,
+        "maxdd_pct": -19.57027698668089
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1051366007859442,
+        "cagr_pct": 18.075836112056564,
+        "maxdd_pct": -22.467647838906768,
+        "total_return_pct": 245.87318676825242
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.03163265306122449,
+        "avg_hedge_w_when_engaged": 0.2,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 4.800000000000002
+      }
+    },
+    "TLT_alone_wh25": {
+      "label": "TLT_alone_wh25",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.15300310624034488,
+      "full": {
+        "sharpe": 1.0210029349105054,
+        "cagr_pct": 15.332210579633987,
+        "maxdd_pct": -23.178148273127498,
+        "vol_pct": 15.096050675912863,
+        "total_return_pct": 928.849230488978
+      },
+      "is_2010_2018": {
+        "sharpe": 0.9590147784176457,
+        "cagr_pct": 13.261499278703814,
+        "maxdd_pct": -19.388187191932737
+      },
+      "oos_2019_today": {
+        "sharpe": 1.088596600050519,
+        "cagr_pct": 17.812675688916823,
+        "maxdd_pct": -23.178148273127498,
+        "total_return_pct": 240.1575245761018
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.039540816326530615,
+        "avg_hedge_w_when_engaged": 0.25,
+        "pct_months_engaged": 15.816326530612244,
+        "hedge_leg_transition_turnover_total": 6.0
+      }
+    }
+  },
+  "scored": [
+    {
+      "name": "cash_wh25",
+      "oos_dd_improve_pp": 1.604,
+      "raw_giveup_pp": 113.9,
+      "dd_pp_per_100pp_raw": 1.408,
+      "oos_maxdd_pct": -18.417,
+      "raw_ret_pct": 853.8
+    },
+    {
+      "name": "cash_wh20",
+      "oos_dd_improve_pp": 1.283,
+      "raw_giveup_pp": 91.9,
+      "dd_pp_per_100pp_raw": 1.397,
+      "oos_maxdd_pct": -18.737,
+      "raw_ret_pct": 875.9
+    },
+    {
+      "name": "haven_GLD_TLT_DBC_UUP_wh25",
+      "oos_dd_improve_pp": 1.186,
+      "raw_giveup_pp": 87.1,
+      "dd_pp_per_100pp_raw": 1.362,
+      "oos_maxdd_pct": -18.834,
+      "raw_ret_pct": 880.7
+    },
+    {
+      "name": "cash_wh15",
+      "oos_dd_improve_pp": 0.963,
+      "raw_giveup_pp": 69.5,
+      "dd_pp_per_100pp_raw": 1.386,
+      "oos_maxdd_pct": -19.057,
+      "raw_ret_pct": 898.2
+    },
+    {
+      "name": "haven_GLD_TLT_DBC_UUP_wh20",
+      "oos_dd_improve_pp": 0.95,
+      "raw_giveup_pp": 70.0,
+      "dd_pp_per_100pp_raw": 1.357,
+      "oos_maxdd_pct": -19.071,
+      "raw_ret_pct": 897.7
+    },
+    {
+      "name": "haven_GLD_TLT_DBC_UUP_wh15",
+      "oos_dd_improve_pp": 0.714,
+      "raw_giveup_pp": 52.8,
+      "dd_pp_per_100pp_raw": 1.352,
+      "oos_maxdd_pct": -19.307,
+      "raw_ret_pct": 915.0
+    },
+    {
+      "name": "cash_wh10",
+      "oos_dd_improve_pp": 0.642,
+      "raw_giveup_pp": 46.7,
+      "dd_pp_per_100pp_raw": 1.374,
+      "oos_maxdd_pct": -19.379,
+      "raw_ret_pct": 921.0
+    },
+    {
+      "name": "haven_GLD_TLT_DBC_UUP_wh10",
+      "oos_dd_improve_pp": 0.476,
+      "raw_giveup_pp": 35.4,
+      "dd_pp_per_100pp_raw": 1.344,
+      "oos_maxdd_pct": -19.545,
+      "raw_ret_pct": 932.4
+    },
+    {
+      "name": "TLT_alone_wh10",
+      "oos_dd_improve_pp": -1.229,
+      "raw_giveup_pp": 15.0,
+      "dd_pp_per_100pp_raw": -8.216,
+      "oos_maxdd_pct": -21.25,
+      "raw_ret_pct": 952.8
+    },
+    {
+      "name": "TLT_alone_wh15",
+      "oos_dd_improve_pp": -1.839,
+      "raw_giveup_pp": 22.7,
+      "dd_pp_per_100pp_raw": -8.088,
+      "oos_maxdd_pct": -21.859,
+      "raw_ret_pct": 945.0
+    },
+    {
+      "name": "TLT_alone_wh20",
+      "oos_dd_improve_pp": -2.447,
+      "raw_giveup_pp": 30.7,
+      "dd_pp_per_100pp_raw": -7.966,
+      "oos_maxdd_pct": -22.468,
+      "raw_ret_pct": 937.0
+    },
+    {
+      "name": "TLT_alone_wh25",
+      "oos_dd_improve_pp": -3.157,
+      "raw_giveup_pp": 38.9,
+      "dd_pp_per_100pp_raw": -8.115,
+      "oos_maxdd_pct": -23.178,
+      "raw_ret_pct": 928.8
+    }
+  ],
+  "best_config": "cash_wh25",
+  "canary": {
+    "config": "cash_wh25",
+    "same_bar": {
+      "oos_maxdd_pct": -18.417257228430984,
+      "oos_sharpe": 1.1222661159401106,
+      "full_sharpe": 1.005828972448187,
+      "raw_ret_pct": 853.8321909169898
+    },
+    "lag1": {
+      "oos_maxdd_pct": -18.606290919511824,
+      "oos_sharpe": 1.1342155213006389,
+      "full_sharpe": 1.010863090379942,
+      "raw_ret_pct": 871.601214758693
+    },
+    "full_rep_lag1": {
+      "label": "cash_wh25_CANARY_lag1",
+      "window": {
+        "start": "2010-02-12",
+        "end": "2026-06-30",
+        "n_days": 4119
+      },
+      "n_rebal": 196,
+      "avg_turnover_per_rebal": 0.14673042934895184,
+      "full": {
+        "sharpe": 1.010863090379942,
+        "cagr_pct": 14.928857377635296,
+        "maxdd_pct": -22.37964326397811,
+        "vol_pct": 14.866797852674043,
+        "total_return_pct": 871.601214758693
+      },
+      "is_2010_2018": {
+        "sharpe": 0.8969336445956675,
+        "cagr_pct": 12.29654586443032,
+        "maxdd_pct": -22.37964326397811
+      },
+      "oos_2019_today": {
+        "sharpe": 1.1342155213006389,
+        "cagr_pct": 18.1277968715591,
+        "maxdd_pct": -18.606290919511824,
+        "total_return_pct": 247.01151782924683
+      },
+      "spx_full": {
+        "sharpe": 0.7745517729044562,
+        "cagr_pct": 12.588494516275306,
+        "maxdd_pct": -33.92496000265329
+      },
+      "spx_oos": {
+        "sharpe": 0.8452781011932783,
+        "cagr_pct": 15.76499219570473
+      },
+      "hedge_diag": {
+        "n_rebal_months": 196,
+        "avg_hedge_w_all_months": 0.036989795918367346,
+        "avg_hedge_w_when_engaged": 0.25,
+        "pct_months_engaged": 14.795918367346939,
+        "hedge_leg_transition_turnover_total": 5.5
+      }
+    }
+  },
+  "canary_cash": {
+    "config": "cash_wh25",
+    "same_bar": {
+      "oos_maxdd_pct": -18.417257228430984,
+      "oos_sharpe": 1.1222661159401106,
+      "raw_ret_pct": 853.8321909169898
+    },
+    "lag1": {
+      "oos_maxdd_pct": -18.606290919511824,
+      "oos_sharpe": 1.1342155213006389,
+      "raw_ret_pct": 871.601214758693
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Cover answers — Paystand, Pre-Sales Engineer (paystand-7742010003)
+
+## Why would you like to be a part of Paystand?
+
+A lot of my work at Microsoft has centered on taking fragmented, manual workflows and turning them into something repeatable, scalable, and defensible. I architected ERP-adjacent recovery workflows across partners like SAP and NetApp, scoped integration test solutions across enterprise environments, and built internal tooling that cut planning cycle time by 39%. That work taught me how much operational debt lives inside finance and infrastructure workflows, and how much value gets unlocked when you actually replace the legacy plumbing instead of patching it. Paystand is going after exactly that problem at the B2B payments layer, and that combination of blockchain-based infrastructure plus practical AR automation is the kind of technical bet I want to be close to.
+
+Beyond the technical fit, I'm drawn to where Paystand sits in the market. Midmarket finance teams are genuinely underserved, and most of them are still running processes that were designed for a world before real-time payments existed. The acquisitions of Teampay and Yaydoo suggest Paystand is building a full-stack financial operations platform, not just a point solution, and that's a much harder and more interesting problem to solve. I want to be in a pre-sales role where I'm translating that complexity into real business value for CFOs and Controllers, helping them see what their operations could look like on the other side of modernization.

@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across cloud enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining self-service scheduling requirements that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across hybrid cloud environments.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation standard for cloud-native workloads.
+4. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud network isolation test** tied to a $1.5B+ enterprise contract requiring deep cloud infrastructure expertise.
+5. Built an internal AI agent and restructured planning workflows to reduce cycle time by **39%** and increase drill capacity by 21%, demonstrating the applied impact of AI-powered automation on cloud operations at scale.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows, conducting user demos and training sessions that drove utilization across 14 key Azure service teams and saved 37 engineering hours monthly.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, identifying critical feature gaps and translating technical feedback into actionable requirements.
+3. Improved data integrity and retrieval speed by **83%** by implementing metadata standards and migrating documentation to an AI-powered semantic search tool, directly enhancing how engineering teams discover and consume SaaS platform content.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched cloud regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework spanning 140+ internal service teams.
+2. Conducted discovery with 20+ service teams to surface **81 hours of manual toil per region launch**, then built a roadmap to automate critical paths—demonstrating the solution-selling instinct to uncover pain and map it to technical remediation.
+3. Engineered a **Power BI dashboard** to track operational toil across 140+ teams, enabling leadership to identify automation gaps and prioritize high-impact investments across cloud infrastructure initiatives.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations in a complex, hybrid on-prem and cloud-connected environment.
+2. Drove strategic alignment between IT, Operations, and Engineering to implement automated **CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing manual handoffs across the release workflow.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process across a fast-paced, cross-functional team.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals through a new CRM process, building early fluency in customer lifecycle management and sales operations.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to align messaging with target customer needs.
+3. Improved leadership pricing decisions by conducting financial profitability analysis across **1,000+ project records**, identifying margin leaks and delivering data-driven recommendations that sharpened competitive positioning.
+
+## Notes from the rewriter
+- Wove 'cloud-native workloads' (JD: 'born-in-the-cloud and hybrid cloud environments') into microsoft_ft bullet 3 and microsoft_2022 bullet 1 to mirror Commvault's target customer profile.
+- Surfaced 'resilience,' 'data protection,' and 'recovery' vocabulary (core Commvault platform pillars) across all five microsoft_ft bullets to signal direct domain overlap with Commvault's cyber resilience product.
+- Embedded 'proof-of-concept,' 'solution design,' and 'customer lifecycle' framing (JD: 'proof-of-concept activities,' 'trusted advisors') in amazon_robotics bullet 1 and pro_painters bullet 1 to align non-SE roles with pre-sales expectations.
+- Used 'go-to-market strategy' and 'competitive positioning' in pro_painters (JD: 'competitive solutions,' 'territory plans') to show commercial awareness Commvault explicitly calls out for this inside sales engineer role.
+- Highlighted 'CI/CD pipelines' and 'automation' in amazon_robotics to match JD emphasis on cloud infrastructure proficiency and technical depth expected of a cloud-native sales engineer candidate.
+

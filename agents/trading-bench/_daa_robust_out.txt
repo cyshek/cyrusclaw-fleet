@@ -1,0 +1,30 @@
+==============================================================================
+1) +1-BAR LAG effect on IS and OOS separately
+==============================================================================
+  IS  lag0 FP 0.809 -> +1bar FP 0.762  delta -0.047  [robust (degrades)]
+  OOS  lag0 FP 0.908 -> +1bar FP 0.841  delta -0.067  [robust (degrades)]
+
+==============================================================================
+2) OOS-SPLIT SENSITIVITY (DAA vs CONTROL vs SPX, OOS FP-Sharpe)
+==============================================================================
+  split 2017-12-31  OOS: DAA 0.945 | CTRL 0.857 | SPX 0.724   -> DAA wins OOS
+  split 2018-12-31  OOS: DAA 0.976 | CTRL 0.898 | SPX 0.848   -> DAA wins OOS
+  split 2019-12-31  OOS: DAA 0.908 | CTRL 0.854 | SPX 0.734   -> DAA wins OOS
+  split 2020-12-31  OOS: DAA 0.715 | CTRL 0.786 | SPX 0.860   -> CTRL wins OOS
+  split 2021-12-31  OOS: DAA 0.755 | CTRL 0.742 | SPX 0.664   -> DAA wins OOS
+
+==============================================================================
+3) COST SENSITIVITY (DAA full-period FP-Sharpe / CAGR / maxDD)
+==============================================================================
+   0.0 bps  FP 0.868  CAGR 8.94%  maxDD -18.48%  totRet 415.6%
+   2.0 bps  FP 0.847  CAGR 8.70%  maxDD -18.83%  totRet 394.1%
+   5.0 bps  FP 0.816  CAGR 8.33%  maxDD -19.35%  totRet 363.5%
+  10.0 bps  FP 0.763  CAGR 7.73%  maxDD -20.21%  totRet 316.7%
+
+==============================================================================
+4) CANARY ATTRIBUTION: DAA cascade vs NO-CANARY top-6 G12 EW (same universe)
+==============================================================================
+  DAA (canary cascade) : FP 0.847  CAGR 8.70%  maxDD -18.83%
+  NO-CANARY top6 G12 EW: FP 0.805  CAGR 10.43%  maxDD -35.30%
+  -> canary cuts -16.5pp of maxDD vs always-on same risk universe
+  -> FP delta from canary: +0.042

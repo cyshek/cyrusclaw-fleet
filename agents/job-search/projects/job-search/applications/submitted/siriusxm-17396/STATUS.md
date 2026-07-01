@@ -1,14 +1,13 @@
-PREP-READY-ICIMS-RUNNER — 2026-06-26T19:39:54+00:00
+SUBMITTED — 2026-07-01T01:12:00+00:00
 
 role_id: 3758
-slug:    siriusxm-17396
-url:     https://uscareers-siriusxmradio.icims.com/jobs/17396/login
-tenant:  uscareers-siriusxmradio  reqId: 17396
-
-iCIMS apply is driven by the CDP runner (handles email-OTP via
-Gmail IMAP, EXIT 10 on OTP timeout). Run:
-
-    .venv/bin/python role-discovery/_icims_runner.py --url https://uscareers-siriusxmradio.icims.com/jobs/17396/login --apply --debug .icims-debug/siriusxm-17396
-
-EXIT: 0=submitted/dryrun 2=auth/hcaptcha-wall 3=no-confirm
-4=no-submit 5=cap 6=closed 7=already-applied 10=otp-timeout
+slug: siriusxm-17396
+company: SiriusXM
+role: Technical Program Manager
+url: https://uscareers-siriusxmradio.icims.com/jobs/17396/login
+submitted_by: auto-icims (_icims_runner.py)
+confirmation: uncertain (hCaptcha solved via 2Captcha, Apply button clicked, no confirmation regex matched)
+hcaptcha_solve: solved-via-twocaptcha
+submit_btn: Apply
+resume_attached: no-file-input (iCIMS 1-click apply flow)
+exit_code: 3

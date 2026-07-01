@@ -1,0 +1,233 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/neuralconcept/78274a40-9e3c-48e3-b85c-9d24bf52eaa1",
+  "org": "neuralconcept",
+  "job_id": "78274a40-9e3c-48e3-b85c-9d24bf52eaa1",
+  "job_title": "Solutions Engineer",
+  "job_location": "Lausanne",
+  "fetched_at": "2026-06-30T18:09:26Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 14,
+    "filled": 13,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4__systemfield_name"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4__systemfield_email"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4__systemfield_resume"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_144be2f0-f274-4c73-a826-37e18c7f4e35",
+      "label": "Social Network and Web Links",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "ashby_linkedin_url (contact.linkedin)",
+      "status": "filled",
+      "matched_rule": "linkedin_url",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_144be2f0-f274-4c73-a826-37e18c7f4e35"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_ae5e1190-8188-4649-a864-b038b3a76e0e",
+      "label": "Can you confirm your salary expectations? ",
+      "type": "input_text",
+      "required": false,
+      "value": "$160,000 - $200,000 base",
+      "source": "comp_seeking: standard range for PM/TPM/SE roles",
+      "status": "filled",
+      "matched_rule": "comp_seeking",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_ae5e1190-8188-4649-a864-b038b3a76e0e"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_b8afa67b-e6f9-4d2a-a350-a150ba5f879a",
+      "label": "What is your desired start date?",
+      "type": "input_text",
+      "required": true,
+      "value": "$160,000 - $200,000 base",
+      "source": "comp_seeking: standard range for PM/TPM/SE roles",
+      "status": "filled",
+      "matched_rule": "comp_seeking",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_b8afa67b-e6f9-4d2a-a350-a150ba5f879a"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_01106fa5-5c04-41b0-a534-edb2fab31b01",
+      "label": "Do you have the right to work in the country this role is located in? Specify your citizenship.",
+      "type": "input_text",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_01106fa5-5c04-41b0-a534-edb2fab31b01"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_f4e01725-e471-4f04-8e21-e8d49132a072",
+      "label": "You are aware this is a customer-facing position, working on projects that combine physics, simulation, and ML. This is not a LLM/ML engineer position. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_f4e01725-e471-4f04-8e21-e8d49132a072"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_8f3c2513-1f3c-4912-9b36-bed53d4b0049",
+      "label": "Do you have past experience in a customer-facing role?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "acknowledge_yes (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_8f3c2513-1f3c-4912-9b36-bed53d4b0049"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_1a3b7482-06c5-4613-899f-7b3af8aa4d1f",
+      "label": "Do you have an Engineering background outside of Software or Computer Science?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "answer_no (matched 'No' option)",
+      "status": "filled",
+      "matched_rule": "answer_no",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_1a3b7482-06c5-4613-899f-7b3af8aa4d1f"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_eedf908e-4573-4300-af1e-9144769bdac8",
+      "label": "How many years of professional experience do you have?",
+      "type": "input_text",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_eedf908e-4573-4300-af1e-9144769bdac8"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_f0fc6322-b57a-4abf-bbbe-4804968049dc",
+      "label": "Are you familiar with CAD and CAE software? Please be specific and mention any relevant engineering software experience you have.",
+      "type": "textarea",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_f0fc6322-b57a-4abf-bbbe-4804968049dc"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_9d391f48-0a2d-4421-9d3c-355f3fcf9f90",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_9d391f48-0a2d-4421-9d3c-355f3fcf9f90"
+    },
+    {
+      "id": "62a1db56-1731-401d-9799-990d909118b4_b5530ab6-ca25-46e6-81b4-edc589449243",
+      "label": "Indicate your level of French",
+      "type": "input_text",
+      "required": true,
+      "value": "None",
+      "source": "foreign_lang_none: free-text -> None (not fluent)",
+      "status": "filled",
+      "matched_rule": "foreign_lang_none",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "62a1db56-1731-401d-9799-990d909118b4_b5530ab6-ca25-46e6-81b4-edc589449243"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

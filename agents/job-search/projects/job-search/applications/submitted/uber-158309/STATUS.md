@@ -1,7 +1,7 @@
 # uber-158309 — Product Manager II, Help Center Platform (row 1948)
 
 STATUS: FAILED ❌ (signin-failed)
-submitted_at: 2026-06-28
+submitted_at: 2026-06-30
 submitted_by: auto (_uber_batch.py)
 ats: uber
 url: https://www.uber.com/careers/apply/form/158309

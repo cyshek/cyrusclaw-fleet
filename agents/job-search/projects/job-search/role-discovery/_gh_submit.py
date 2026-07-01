@@ -158,7 +158,7 @@ def plan_remix_answers(scanned, personal, resolve_field=None):
 # is the affirmative, so this is a truthful fallback, not a fabrication. Genuine
 # knockouts have no LABEL_RULES match and never reach needs_review with a
 # resolved value in the first place.
-_NEEDS_REVIEW_DOCTRINE_FALLBACKS = ("Yes", "I acknowledge", "I agree", "Agree")
+_NEEDS_REVIEW_DOCTRINE_FALLBACKS = ("Yes", "I acknowledge", "I agree", "Agree", "I understand", "I confirm")
 
 
 def plan_needs_review_specs(plan):
@@ -785,7 +785,20 @@ def main():
     plan_path = sys.argv[1]
     no_submit = '--no-submit' in sys.argv
     plan = json.load(open(plan_path))
-    url = plan['url']
+    # Augment plan with multi_checkboxes from greenhouse_filler if spec_path present
+    # (inline GH-iframe plans don't bake multi_checkboxes in; needed for Nebius-class
+    # react-select multi language / consent fields). 2026-06-30.
+    if not plan.get('multi_checkboxes') and plan.get('spec_path'):
+        try:
+            import importlib
+            gf = importlib.import_module('greenhouse_filler')
+            _aug_spec = json.load(open(plan['spec_path']))
+            _aug_plan = gf.build_plan(_aug_spec)
+            if _aug_plan.get('multi_checkboxes'):
+                plan['multi_checkboxes'] = _aug_plan['multi_checkboxes']
+        except Exception as _e:
+            pass  # best-effort, proceed without
+    url = plan["url"]
     if '--url' in sys.argv:
         url = sys.argv[sys.argv.index('--url')+1]
     pdf = plan['pdf_path_staged']
@@ -860,6 +873,24 @@ def main():
         r = page.evaluate(SEL_PICK, specs)
         result['steps']['dropdowns'] = r
 
+    # Close phone ITI picker if it opened during text-field fill (the native value
+    # setter on the phone input triggers the ITI country listbox to display:block,
+    # which then pollutes document.querySelectorAll('[role=option]') with 244+
+    # country items and causes SEL_PICK fallback to miss the 2-option Yes/No
+    # eligibility dropdown. A body-mousedown closes it before needs_review.
+    try:
+        page.evaluate("""() => {
+            const iti = document.querySelector('.iti__country-list, [id^="iti-"][role="listbox"]');
+            if (iti && !iti.hidden && window.getComputedStyle(iti).display !== 'none') {
+                document.body.dispatchEvent(new MouseEvent('mousedown', {bubbles: true}));
+                document.body.dispatchEvent(new MouseEvent('mouseup', {bubbles: true}));
+                document.body.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+            }
+        }""")
+        time.sleep(0.3)
+    except Exception:
+        pass
+
     # needs_review single-selects (2026-06-08 cohort fix): commit the dryrun's
     # truthfully-resolved answers that greenhouse_filler parked in
     # plan['needs_review_dropdowns'] and that _gh_submit previously SKIPPED ->
@@ -874,13 +905,93 @@ def main():
             fid = spec['id']
             committed = None
             tried = []
-            for cand in spec['candidates']:
-                tried.append(cand)
-                res = page.evaluate(SEL_PICK, [{"id": fid, "label": cand}])
-                row = (res or [{}])[0]
-                if row.get('got') and not row.get('err'):
-                    committed = row.get('got')
-                    break
+            # STRATEGY (2026-06-30): Use Playwright-native page.click() for
+            # needs_review dropdowns. JS-dispatched MouseEvent clicks (SEL_PICK)
+            # don't properly close other open pickers (e.g. phone ITI country
+            # listbox which opens when setNative fires on the phone field).
+            # The ITI stays display:block and SEL_PICK's ctrl.click() toggles-
+            # closes the eligibility dropdown every other call instead of
+            # opening it, then the fallback querySelectorAll picks up 244 ITI
+            # country options instead of the 2-option Yes/No menu.
+            # Playwright's native click goes through the full browser pointer
+            # pipeline and properly closes open overlays before clicking.
+            _nr_pw_ok = False
+            try:
+                _get_avail_js = (
+                    "() => {"
+                    "  const opts = [...document.querySelectorAll("
+                    "    '[id^=\"react-select-" + fid.replace('"', '\\"') + "-option\"]'"
+                    "  )];"
+                    "  return opts.map(o => o.textContent.trim());"
+                    "}"
+                )
+                _get_sv_js = (
+                    "() => {"
+                    "  const inp = document.getElementById('" + fid.replace("'", "\\'") + "');"
+                    "  if (!inp) return null;"
+                    "  const ctrl = inp.closest('.select__control');"
+                    "  const sv = ctrl && ctrl.querySelector('.select__single-value');"
+                    "  return sv ? sv.textContent : null;"
+                    "}"
+                )
+                _get_expanded_js = (
+                    "() => {"
+                    "  const inp = document.getElementById('" + fid.replace("'", "\\'") + "');"
+                    "  return inp ? inp.getAttribute('aria-expanded') === 'true' : false;"
+                    "}"
+                )
+                # Hide phone ITI if open — its display:block causes page.click()
+                # to fail with 'element is not stable' (scrolling viewport conflict).
+                # Remove from layout before clicking the eligibility dropdown.
+                page.evaluate("""() => {
+                    const iti = document.querySelector('[id^="iti-"][role="listbox"]');
+                    if (iti) { iti.style.display = 'none'; iti.setAttribute('aria-hidden', 'true'); }
+                }""")
+                time.sleep(0.15)
+                # Scroll into view
+                page.evaluate("(id) => { const el = document.getElementById(id); if (el) el.scrollIntoView({block:'center'}); }", fid)
+                time.sleep(0.3)
+                # Use force=True to bypass Playwright stability check (element can
+                # still be animating after scrollIntoView when ITI was open)
+                page.click('#' + fid, timeout=5000, force=True)
+                time.sleep(0.45)
+                # Read available options (react-select renders them by ID only when open)
+                _avail = page.evaluate(_get_avail_js)
+                tried = list(spec['candidates'])
+                # Find best matching candidate
+                _target_opt_id = None
+                for _cand in spec['candidates']:
+                    _cand_lc = _cand.lower()
+                    _match_idx = next(
+                        (i for i, o in enumerate(_avail)
+                         if o.lower() == _cand_lc
+                         or o.lower().startswith(_cand_lc)
+                         or _cand_lc in o.lower()),
+                        None
+                    )
+                    if _match_idx is not None:
+                        _target_opt_id = 'react-select-' + fid + '-option-' + str(_match_idx)
+                        tried = [_cand]
+                        break
+                if _target_opt_id:
+                    page.click('#' + _target_opt_id, timeout=3000, force=True)
+                    time.sleep(0.25)
+                    committed = page.evaluate(_get_sv_js)
+                    _nr_pw_ok = True
+                else:
+                    page.keyboard.press('Escape')
+                    _nr_pw_ok = True  # path completed, just no match
+            except Exception as _nr_e:
+                pass  # fallback below: Playwright-native click failed
+            # Fallback to SEL_PICK-based loop if Playwright-native path failed/errored
+            if not _nr_pw_ok:
+                for cand in spec['candidates']:
+                    tried.append(cand)
+                    res = page.evaluate(SEL_PICK, [{"id": fid, "label": cand}])
+                    row = (res or [{}])[0]
+                    if row.get('got') and not row.get('err'):
+                        committed = row.get('got')
+                        break
             nr_out.append({"id": fid, "question": spec.get('question', '')[:60],
                            "committed": committed, "tried": tried})
         result['steps']['needs_review'] = nr_out

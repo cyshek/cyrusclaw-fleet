@@ -1,0 +1,59 @@
+=== reconcile @ 20260630T133001Z ===
+rc: 0
+Before: {'filled': 88, 'accepted': 1}
+{'id': 89, 'strategy': 'rsi_oversold_spy', 'symbol': 'SPY', 'old_status': 'accepted', 'new_status': 'filled', 'old_price': None, 'new_price': 741.22, 'old_qty': 0.136309726, 'new_qty': 0.136309726}
+After:  {'filled': 89}
+=== cron_tick.sh @ 20260630T133001Z ===
+strategies: sma_crossover_qqq_regime sma_crossover_qqq_rth macd_momentum_iwm tqqq_cot_combo allocator_blend
+tick rc: 0
+--- tick output ---
+[macd_momentum_iwm] BUY 0.405062358 IWM @ $298.60 | reason: MACD=0.2662 crossed above signal=0.2176 and MACD>0 (momentum bullish)
+=== end ===
+--- post rc: 0 ---
+[secrets] message: gateway secrets.resolve unavailable (gateway.auth.token is configured as a secret reference but is unavailable in this command path.
+Fix: set OPENCLAW_GATEWAY_TOKEN/OPENCLAW_GATEWAY_PASSWORD, pass explicit --token/--password,
+or run a gateway command path that resolves secret references before credential selection.); resolved command secrets locally.
+{
+  "action": "send",
+  "channel": "discord",
+  "dryRun": false,
+  "handledBy": "core",
+  "messageId": "1521508229354618910",
+  "payload": {
+    "channel": "discord",
+    "to": "channel:1508503706545557656",
+    "via": "direct",
+    "mediaUrl": null,
+    "result": {
+      "receipt": {
+        "primaryPlatformMessageId": "1521508229354618910",
+        "platformMessageIds": [
+          "1521508229354618910"
+        ],
+        "parts": [
+          {
+            "platformMessageId": "1521508229354618910",
+            "kind": "text",
+            "index": 0,
+            "raw": {
+              "channel": "discord",
+              "messageId": "1521508229354618910",
+              "channelId": "1508503706545557656"
+            }
+          }
+        ],
+        "sentAt": 1782826230289,
+        "raw": [
+          {
+            "channel": "discord",
+            "messageId": "1521508229354618910",
+            "channelId": "1508503706545557656"
+          }
+        ]
+      },
+      "messageId": "1521508229354618910",
+      "channel": "discord"
+    }
+  }
+}
+=== posted ===

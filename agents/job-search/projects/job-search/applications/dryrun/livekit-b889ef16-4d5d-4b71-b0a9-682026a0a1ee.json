@@ -1,0 +1,169 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/livekit/b889ef16-4d5d-4b71-b0a9-682026a0a1ee",
+  "org": "livekit",
+  "job_id": "b889ef16-4d5d-4b71-b0a9-682026a0a1ee",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "Remote, New York",
+  "fetched_at": "2026-06-30T22:46:58Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 1,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46__systemfield_name"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46__systemfield_email"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46__systemfield_resume"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46_5d6a291a-c20c-44b4-b0dc-cad9c5c2b47f",
+      "label": "Are you legally authorized to work in the US?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46_5d6a291a-c20c-44b4-b0dc-cad9c5c2b47f"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46_bb71a4b3-c127-4b81-9054-b8f8ce3e34a7",
+      "label": "Would you now or in the future require sponsorship support?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "No",
+          "value": "No"
+        }
+      ],
+      "_ashby_type": "ValueSelect",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46_bb71a4b3-c127-4b81-9054-b8f8ce3e34a7"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46_6ed384dc-a2d4-459e-86bc-85f7ab3c090b",
+      "label": "Legal First & Last Name (if different from name above)",
+      "type": "input_text",
+      "required": false,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46_6ed384dc-a2d4-459e-86bc-85f7ab3c090b"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46_34e5ca24-fb8a-4219-aa3b-2f4292a5835c",
+      "label": "At LiveKit, we embrace the thoughtful use of AI tools to move faster and work smarter. However, for the application form and during interviews, we ask that you don't use AI assistance. This allows us to get a clear sense of your genuine interest in LiveKit and how you communicate in your own voice. Please select \"yes\" below to acknowledge. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Decline to self-identify",
+      "source": "demographics_default (ashby)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46_34e5ca24-fb8a-4219-aa3b-2f4292a5835c",
+      "compliance": "eeoc"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46_7a119db6-53a2-44ce-9242-64755b42ae43",
+      "label": "Tell us about you and why you're excited to apply to this specific role at LiveKit!",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Livekit because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Livekit is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Livekit while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Livekit aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Livekit')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46_7a119db6-53a2-44ce-9242-64755b42ae43"
+    },
+    {
+      "id": "687bc1af-3586-4e7b-b929-f4cd21952b46_1e389cd9-5293-4965-b9f5-ae90329a5688",
+      "label": "Linkedin Profile Link",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "687bc1af-3586-4e7b-b929-f4cd21952b46_1e389cd9-5293-4965-b9f5-ae90329a5688"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

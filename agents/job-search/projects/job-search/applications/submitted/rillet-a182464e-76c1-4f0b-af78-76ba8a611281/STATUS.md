@@ -1,18 +1,9 @@
-SUBMITTED
+PREP-READY — 2026-06-30T15:00:58+00:00
 
-submitted_by: auto
-applied_on: 2026-06-23
-role_id: 3337
-submitted_at: 2026-06-23T17:06:04+00:00
+role_id: 2032
+plan: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/role-discovery/output/inline-plan-rillet-a182464e-76c1-4f0b-af78-76ba8a611281.json
+pdf:  /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/rillet-a182464e-76c1-4f0b-af78-76ba8a611281/Cyrus_Shekari_Resume_ashby-rillet_a182464e_v2.pdf
+cover: /home/azureuser/.openclaw/agents/job-search/workspace/projects/job-search/applications/submitted/rillet-a182464e-76c1-4f0b-af78-76ba8a611281/cover_answers.md
 
-Runner tail:
-it re-fill: re-set 0 field(s)
-[runner] reassert-select: 0 custom-select(s) checked, 0 re-committed
-[runner] reassert-text pass 1: repaired=0 [] missing=5
-[runner] reassert-text pass 1: repaired=0 [] missing=5
-[runner] final-clobber-guard: settled=True location_ok=False stable=False ('') workauth_checked=None reassert_wa=[]
-[runner] FINAL-GUARD WARNING: location_ok=False workauth_checked=None -- submit may still bank Missing entry
-[runner] last-ms no-bounce text commit: 0 field(s), stable=True
-[runner] SUBMIT SUCCESS (server: FormSubmitSuccess token in submit responses)
-[runner] SUBMIT SUCCESS
-
+Calling agent: execute the browser plan, click Submit, observe confirmation,
+then overwrite this STATUS.md with the success block (see INLINE-SUBMIT-PLAYBOOK.md).

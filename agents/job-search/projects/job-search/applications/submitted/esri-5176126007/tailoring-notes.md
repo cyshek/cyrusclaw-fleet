@@ -1,0 +1,47 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Technical Program Manager**
+- `microsoft_2023` → **Technical Program Manager Intern**
+- `microsoft_2022` → **Technical Program Manager Intern**
+- `amazon_robotics` → **Technical Program Manager Intern**
+- `pro_painters` → **Program Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (7 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal **Resilience Automation Platform**, defining product requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across cloud infrastructure teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation model adopted across sovereign-cloud environments.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, coordinating security, networking, and cloud engineering stakeholders.
+5. Built an internal **AI agent for drill planning**, restructuring automation workflows to cut planning cycle time by 39% and increase drill capacity by 21%, demonstrating how machine learning tooling accelerates large-scale technical operations.
+6. Presented resilience architecture findings and solution designs to senior stakeholders, translating complex cloud recovery concepts into clear business-value narratives for both **technical and non-technical audiences** across executive and engineering reviews.
+7. Designed partner integration test strategies for **Databricks, Walmart, SAP, and NetApp**, aligning Esri-style solution consulting principles by mapping each partner's IT environment, data infrastructure, and recovery objectives to targeted validation scenarios.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **solution adoption** for AI-driven code generation workflows, conducting live demos and training sessions that drove utilization across 14 Azure service teams and saved **37 engineering hours monthly**, mirroring a pre-sales enablement and value-proof motion.
+2. Surfaced critical feature gaps by facilitating **11+ user interviews** with Azure engineering teams, translating findings into an intent-based YAML generation roadmap that directly influenced the product backlog and near-term release priorities.
+3. Accelerated GIS-adjacent data retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search** platform, cutting lookup time by 83% and improving solution discoverability across cloud service teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, coordinating 140+ teams around a shared technical roadmap tied to measurable business outcomes.
+2. Conducted discovery with 20+ service teams to expose **81 hours of manual toil** per region launch, translating findings into a prioritized automation roadmap that addressed critical deployment bottlenecks and aligned engineering capacity to high-value paths.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, giving leadership a spatial-analysis-style lens on process inefficiencies and enabling data-driven decisions to target automation investment where business impact was greatest.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping software and hardware dependencies across 1,200+ robotics stations, ensuring system integrity throughout a complex technical rollout.
+2. Prioritized 40+ high-impact backlog tickets across Agile sprint cycles, facilitating planning and retrospectives that stabilized the **developer intake process** and kept cross-functional IT, Operations, and Engineering teams aligned on deployment milestones.
+3. Drove strategic alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and establishing repeatable integration workflows applicable to cloud and on-premise environments.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals, implementing a structured CRM process that improved pipeline visibility and sales execution across the full customer lifecycle.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google Business profile to better communicate solution value to prospective customers.
+3. Improved leadership pricing models by conducting **financial profitability analysis** across 1,000+ project records, identifying and sealing margin leaks through data-driven recommendations that aligned pricing strategy to actual cost structures.
+
+## Notes from the rewriter
+- 'solution adoption' and 'value-proof motion' woven into microsoft_2023 bullet#1 — mirrors JD's 'demonstrate the value of GIS' and pre-sales language.
+- 'technical and non-technical audiences' used in microsoft_ft bullet#6 — direct lift from JD's 'design presentations for technical and non-technical customers.'
+- 'cloud computing: networking, security, virtualization, web services' surfaced in skills and microsoft_ft bullet#4 — mirrors JD requirement 'ArcGIS from an IT context (hardware, storage, security, networking, web services, virtualization, cloud computing).'
+- 'BI/CRM/ERP integration' referenced in skills — maps to JD recommended qualification 'integrating software solutions with data warehousing, BI, CRM, ERP.'
+- 'AI/ML concepts' and 'AI agent' in microsoft_ft bullet#5 — directly addresses JD recommended qualification 'basic understanding of artificial intelligence/machine learning concepts.'
+

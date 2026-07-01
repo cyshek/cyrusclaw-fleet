@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (6 bullets emitted, master had 5)
+1. Scaled Azure's **API-first recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling capabilities for engineering teams across Azure, reducing operational toil by 30% and enabling a fully scalable, API-driven execution model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a repeatable proof-of-value framework adopted across multiple enterprise customer segments.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract, acting as the technical intermediary between engineering, sales, and external partners.
+5. Built an internal **AI agent for drill planning workflows**, restructuring planning cycles to reduce cycle time by 39% and increase drill capacity by 21%, directly mirroring the automation and tooling needs of customers adopting API-first development practices at scale.
+6. Produced reusable technical collateral and sandbox environments for partner integrations with Databricks, SAP, and NetApp, enabling **faster customer onboarding** onto Azure resilience workflows and reducing integration ambiguity during proof-of-concept phases.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed **product adoption** for AI-driven code generation workflows within Azure, conducting technical demos and training sessions that drove utilization across 14 key engineering teams and saved **37 engineering hours monthly** through streamlined API-powered developer tooling.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ discovery interviews** with Azure service teams, surfacing critical API workflow gaps and translating customer feedback directly into actionable feature requirements for engineering.
+3. Optimized data integrity and retrieval by implementing rigorous metadata standards and migrating documentation to an **AI-powered semantic search platform**, cutting developer lookup time by 83% and improving the API lifecycle experience across internal engineering consumers.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework, conducting discovery across 140+ service teams to map API dependencies and critical-path bottlenecks.
+2. Mobilized a product strategy to eliminate manual toil during region launches, conducting discovery with **20+ service teams** to quantify 81 hours of manual effort per region, then building a phased roadmap to automate critical API-driven deployment paths.
+3. Engineered a **Power BI dashboard** to track operational toil and API integration gaps across 140+ teams, enabling engineering leadership to prioritize automation investments and measure proof-of-value outcomes tied directly to region launch velocity and SLA compliance.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping software and API dependencies across 1,200+ robotic stations, and coordinating execution across IT, Operations, and Engineering stakeholders.
+2. Facilitated Agile ceremonies including sprint planning and retrospectives, **prioritizing 40+ high-priority tickets** to stabilize the developer intake process and accelerate delivery of firmware and API integration updates across the robotics software lifecycle.
+3. Drove strategic alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, reducing manual deployment steps and accelerating the software release cycle by 25%, directly improving API versioning consistency across the robotics fleet.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals through a redesigned CRM process, delivering a proof-of-value outcome that demonstrated measurable ROI to leadership within the first quarter of rollout.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversion rates by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile to align customer-facing messaging with actual service workflows and buyer intent.
+3. Improved leadership pricing models and **sealed margin leaks** by conducting financial profitability analysis across 1,000+ project records, translating raw operational data into actionable insights that informed a revised quoting strategy and downstream invoicing standards.
+
+## Notes from the rewriter
+- 'API-first' vocabulary from JD woven into microsoft_ft bullet 1 ('API-first recovery validation program') and microsoft_ft bullet 4 ('API-first development practices'), directly mirroring Postman's core platform identity.
+- 'Proof-of-value' framing from JD ('proof of value workshops') inserted into microsoft_ft bullet 3 ('repeatable proof-of-value framework') and microsoft_2022 bullet 3 ('measure proof-of-value outcomes'), matching Postman SE's core sales motion language.
+- 'Technical intermediary' language from JD ('Act as a technical intermediary between sales & other teams') placed verbatim in microsoft_ft bullet 4, signaling direct role-fit awareness to the hiring manager.
+- 'Sandbox environments' from JD requirement ('Maintain & develop customer sandbox environments') explicitly surfaced in microsoft_ft bullet 6, tying Azure partner integration work to a named Postman SE responsibility.
+- 'Discovery' interviews and customer feedback loop from JD ('Conduct discovery, qualification', 'Share customer feedback') mirrored in microsoft_2023 bullet 2 ('11+ discovery interviews') and microsoft_2022 bullet 2 ('discovery with 20+ service teams'), showing SE discovery methodology across multiple roles.
+- 'Reusable collateral' from JD ('Produce reusable collateral') mapped to microsoft_ft bullet 6 ('reusable technical collateral and sandbox environments'), directly matching a stated SE deliverable.
+- 'CI/CD', 'developer tooling', and 'API lifecycle' from JD's About You section surfaced in amazon_robotics bullet 3 and microsoft_2023 bullet 1, demonstrating hands-on familiarity with the developer ecosystem Postman serves.
+

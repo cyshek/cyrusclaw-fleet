@@ -1,6 +1,10 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-30T03:24:57+00:00
-
-role_id: 955
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_8382493005", "label": "Have you built AI agents? If so, please elaborate. ", "reason": "no LABEL_RULES match for label='Have you built AI agents? If so, please elaborate. '"}]
+STATUS: SUBMITTED
+submitted_by: auto
+applied_on: 2026-06-30
+ats: greenhouse
+role_id: 3920
+company: Glean
+role: Founding Forward Deployed Engineer
+confirmation_url: https://job-boards.greenhouse.io/gleanwork/jobs/4659412005/confirmation
+confirmation_text: Thank you for applying. Your application has been received.
+screenshot: n/a (auto-submit pipeline)

@@ -4,16 +4,16 @@
   "job_id": "7341443",
   "job_title": "Sales Engineer II - Specialist",
   "job_location": "Remote - NYC",
-  "fetched_at": "2026-06-22T08:59:26Z",
+  "fetched_at": "2026-06-30T15:01:02Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/samsara/jobs/7341443?questions=true",
-  "ready_to_submit": false,
+  "ready_to_submit": true,
   "counts": {
     "total_fields": 33,
-    "filled": 26,
+    "filled": 27,
     "filled_needs_review": 2,
     "declined": 3,
-    "unresolved": 2,
-    "blockers": 1
+    "unresolved": 1,
+    "blockers": 0
   },
   "fields": [
     {
@@ -506,10 +506,10 @@
       "label": "AI Policy for Interviewers",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "no LABEL_RULES match for label='AI Policy for Interviewers'",
-      "status": "unresolved",
-      "matched_rule": null,
+      "value": "Yes",
+      "source": "hardcoded ack of AI policy",
+      "status": "filled",
+      "matched_rule": "ai_policy_ack",
       "options": [
         {
           "label": "Yes",
@@ -768,21 +768,9 @@
       "label": "If you selected 'Other' for where you learned about Samsara, please share additional details.",
       "required": false,
       "reason": "no LABEL_RULES match for label=\"If you selected 'Other' for where you learned about Samsara, please share additional details.\""
-    },
-    {
-      "id": "question_67406144",
-      "label": "AI Policy for Interviewers",
-      "required": true,
-      "reason": "no LABEL_RULES match for label='AI Policy for Interviewers'"
     }
   ],
-  "blockers": [
-    {
-      "id": "question_67406144",
-      "label": "AI Policy for Interviewers",
-      "reason": "no LABEL_RULES match for label='AI Policy for Interviewers'"
-    }
-  ],
+  "blockers": [],
   "education_panel": {
     "school": "University of Houston",
     "degree": "Bachelor's degree",

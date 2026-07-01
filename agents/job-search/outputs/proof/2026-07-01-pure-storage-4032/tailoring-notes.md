@@ -1,0 +1,40 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a 2-person operation into a **platformized system**, standardizing workflows to sustain 45+ annual resilience drills and drive $14M+ business impact across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led 0→1 development of an internal Resilience Automation Platform, defining product requirements and **self-service scheduling capabilities** that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous validation standard.
+4. Directed 14 cross-org recovery executions under executive visibility, serving as bridge lead for a sovereign-cloud network isolation test tied to a **$1.5B+ enterprise contract**.
+5. Built an internal AI agent and restructured planning workflows to cut planning cycle time by **39%** and increase drill capacity by 21%, scaling team leverage without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of AI-driven code generation workflows, conducting demos and training that drove utilization across **14 key teams** and saved 37 engineering hours monthly.
+2. Influenced the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams to surface and prioritize critical feature gaps.
+3. Improved data retrieval by implementing metadata standards and migrating documentation to an AI-powered semantic search tool, **cutting lookup time by 83%**.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched regions 28% faster by securing cross-functional alignment on a unified automation prioritization framework across 140+ teams.
+2. Conducted discovery with 20+ service teams to identify 81 hours of manual effort per region launch, then built a roadmap to **automate critical operational paths** and reduce toil.
+3. Engineered a Power BI dashboard tracking operational toil across 140+ teams, enabling leadership to **target automation gaps** and prioritize high-impact support investments.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy and mapping dependencies across 1,200+ stations.
+2. Facilitated Agile sprint planning and retrospectives, prioritizing the backlog to resolve **40+ high-priority tickets** and stabilize the developer intake process.
+3. Drove alignment across IT, Operations, and Engineering to implement automated CI/CD pipelines, **accelerating software deployment cycles by 25%**.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by optimizing end-to-end scoping and invoicing workflows for 200+ monthly proposals through a redesigned CRM process.
+2. Reduced Customer Acquisition Cost by **13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the website and Google Business profile.
+3. Improved leadership pricing models by analyzing **1,000+ project records** to identify margin leaks and deliver a data-driven profitability framework.
+
+## Notes from the rewriter
+- Wove in 'operational toil' (JD: 'complex issues', support burden) across microsoft_2022 bullets 2-3 and microsoft_ft bullet 2 to mirror Pure Storage's support-efficiency framing.
+- Used 'hardware defects' and 'continuous validation' in microsoft_ft bullet 3 to directly echo JD language around diagnosing hardware/software/environmental factors for FlashArray.
+- Surfaced 'cross-org escalations' and 'executive visibility' in microsoft_ft bullet 4 to mirror JD's 'hot escalations' and 'customer advocate' responsibilities.
+- Dropped weakest bullets within caps and trimmed phrasing throughout to eliminate page-2 overflow while keeping all roles at their min count.
+

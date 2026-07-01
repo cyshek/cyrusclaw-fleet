@@ -1,6 +1,12 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-24T05:14:13+00:00
+SUBMITTED — 2026-06-30T16:30:00+00:00
 
-role_id: 3320
-phase: dryrun-blockers
-error:
-dryrun has blockers: [{"id": "question_67717275", "label": "Do you have any experience in the Ad Tech / Mar Tech industry?", "reason": "no LABEL_RULES match for label='Do you have any experience in the Ad Tech / Mar Tech industry?'"}, {"id": "question_67717277", "label": "In 1\u20133 sentences, please describe your experience making technical Advertising Campaign optimizations or your experience with Performance Marketing.", "reason": "no LABEL_RULES match for label='In 1\u20133 sentences, please describe your exper
+role_id:          3320
+slug:             taboola-8009655
+company:          Taboola
+title:            Solutions Engineer
+confirmation_url: https://job-boards.greenhouse.io/embed/job_app/confirmation?for=taboola&token=8009655
+submitted_by:     auto (greenhouse_iframe_runner.py + residential CDP)
+resume_attached:  yes (Cyrus_Shekari_Resume_taboola_8009655_v2.pdf)
+email_otp_used:   yes (7CxtaTki)
+notes:            Fixed JS_INSPECT_AND_PICK engine bug (single-pass avoids react-select reopen fail).
+                  Added LABEL_RULES for "confirm not SWE" and "willing to relocate NYC" questions.

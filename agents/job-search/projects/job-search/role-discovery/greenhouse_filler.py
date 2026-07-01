@@ -2427,3 +2427,73 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+# JS_INSPECT_AND_PICK: Combined inspect-options + pick-option in a single evaluate call.
+# Avoids the react-select "menu won't re-open" bug that occurs when JS_INSPECT_OPTIONS
+# closes the menu and then JS_PICK_DROPDOWNS tries to re-open it immediately after.
+# Usage: evalfn(JS_INSPECT_AND_PICK, [{id, candidates: [str,...]}])
+# Returns: [{id, options: [str,...], chosen: str|null, got: str|null, err: str|null}]
+JS_INSPECT_AND_PICK = r"""
+async (specs) => {
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const fire = (el, type, x, y) => el.dispatchEvent(new MouseEvent(type, {
+    bubbles: true, cancelable: true, view: window, button: 0,
+    clientX: x || 0, clientY: y || 0,
+  }));
+  const out = [];
+  for (const { id, candidates } of specs) {
+    const inp = document.getElementById(id);
+    if (!inp) { out.push({ id, err: 'no input' }); continue; }
+    const ctrl = inp.closest('.select__control');
+    if (!ctrl) { out.push({ id, err: 'no control' }); continue; }
+    ctrl.scrollIntoView({ block: 'center' });
+    await sleep(100);
+    const r = ctrl.getBoundingClientRect();
+    // Open the dropdown
+    fire(ctrl, 'mousedown', r.left + 5, r.top + 5);
+    fire(ctrl, 'mouseup',   r.left + 5, r.top + 5);
+    fire(ctrl, 'click',     r.left + 5, r.top + 5);
+    await sleep(350);
+    // Collect live options using the same priority chain as JS_INSPECT_OPTIONS
+    const escId = (window.CSS && CSS.escape) ? CSS.escape(id) : id.replace(/([\[\]\.\:\(\)\#])/g, '\\$1');
+    let opts = [...document.querySelectorAll(`[id^="react-select-${escId}-option"]`)];
+    if (!opts.length) {
+      const menu = document.querySelector('.select__menu');
+      if (menu) opts = [...menu.querySelectorAll('.select__option, [role=option]')];
+    }
+    if (!opts.length) opts = [...document.querySelectorAll('.select__option, [role=option]')];
+    const liveTexts = opts.map(o => (o.textContent || '').trim());
+    // Find matching option from candidates list (exact → ci-exact → startsWith → includes)
+    let target = null;
+    let chosen = null;
+    for (const cand of (candidates || [])) {
+      if (!cand) continue;
+      const cl = cand.toLowerCase();
+      target = opts.find(o => (o.textContent||'').trim() === cand);
+      if (!target) target = opts.find(o => (o.textContent||'').trim().toLowerCase() === cl);
+      if (!target) target = opts.find(o => (o.textContent||'').trim().toLowerCase().startsWith(cl));
+      if (!target) target = opts.find(o => cl.startsWith((o.textContent||'').trim().toLowerCase()) && (o.textContent||'').trim().length > 3);
+      if (!target) target = opts.find(o => (o.textContent||'').toLowerCase().includes(cl) && cl.length >= 3);
+      if (target) { chosen = cand; break; }
+    }
+    if (!target) {
+      // Close menu without picking
+      fire(document.body, 'mousedown', 0, 0);
+      out.push({ id, options: liveTexts, chosen: null, err: 'no match', available: liveTexts });
+      await sleep(150);
+      continue;
+    }
+    // Click the matching option
+    const tr = target.getBoundingClientRect();
+    fire(target, 'mousedown', tr.left + 5, tr.top + 5);
+    fire(target, 'mouseup',   tr.left + 5, tr.top + 5);
+    fire(target, 'click',     tr.left + 5, tr.top + 5);
+    await sleep(250);
+    const sv = ctrl.querySelector('.select__single-value');
+    out.push({ id, options: liveTexts, chosen, got: sv ? sv.textContent.trim() : null });
+    await sleep(150);
+  }
+  return out;
+}
+"""

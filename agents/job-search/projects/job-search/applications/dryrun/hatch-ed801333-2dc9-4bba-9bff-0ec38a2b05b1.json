@@ -1,0 +1,168 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/hatch/ed801333-2dc9-4bba-9bff-0ec38a2b05b1",
+  "org": "hatch",
+  "job_id": "ed801333-2dc9-4bba-9bff-0ec38a2b05b1",
+  "job_title": "Forward Deployed Engineer",
+  "job_location": "United States",
+  "fetched_at": "2026-06-30T11:55:03Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 9,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 1,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_name"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_email"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_resume"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_a8f03bde-a9ee-427e-aa08-16bdcd3c94be",
+      "label": "Compensation Requirements",
+      "type": "input_text",
+      "required": true,
+      "value": "Open to discuss",
+      "source": "preferences.compensation_expectation",
+      "status": "filled",
+      "matched_rule": "compensation",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_a8f03bde-a9ee-427e-aa08-16bdcd3c94be"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_31eaefff-e8e2-434a-8a3f-999acef607e6",
+      "label": "How many years experience do you have in this role or similar roles? ",
+      "type": "input_text",
+      "required": true,
+      "value": "",
+      "source": "ashby_needs_essay (cover_answer_generator handles at agent layer)",
+      "status": "needs_essay",
+      "matched_rule": null,
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_31eaefff-e8e2-434a-8a3f-999acef607e6"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_2e3569a1-4568-494c-ab00-5f952ad2898d",
+      "label": "Are you legally authorized to work in the U.S.?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_2e3569a1-4568-494c-ab00-5f952ad2898d"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_c922cdb6-5dc1-478c-81f1-cd878aaa3fae",
+      "label": "Will you now or in the future require sponsorship for employment visa status (e.g. H1-B visa status)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_c922cdb6-5dc1-478c-81f1-cd878aaa3fae"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_7e7c8c8d-b3b7-42f3-bccf-8e5c000fa558",
+      "label": "Have you previously been employed by Yelp, Inc. or any of its subsidiaries or affiliates including Hatch?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "No",
+      "source": "worked_at_company_before (No)",
+      "status": "filled",
+      "matched_rule": "worked_at_company_before",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df_7e7c8c8d-b3b7-42f3-bccf-8e5c000fa558"
+    },
+    {
+      "id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_location",
+      "label": "Location",
+      "type": "input_text",
+      "required": true,
+      "value": "Kirkland, WA",
+      "source": "address.city+state",
+      "status": "filled",
+      "matched_rule": "city_state",
+      "options": null,
+      "_ashby_type": "Location",
+      "_ashby_id": "df15bb2e-6e19-4b70-b01c-2ef3b919b7df__systemfield_location"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

@@ -281,17 +281,27 @@ def sign_in_fresh(page, email, password, job_id):
     pw_inp.fill(password, timeout=5000)
     time.sleep(0.3)
 
-    # Submit sign-in
-    for sel in ["button[type=submit]", "button:has-text('Sign in')", "button[name=submit-button]"]:
-        l = page.locator(sel).last
-        if l.count():
-            try:
-                l.click(timeout=5000)
-                break
-            except Exception:
-                continue
+    # Submit sign-in — use dialog-scoped selector to avoid clicking wrong button
+    # The modal has [role=dialog] button[type=submit] as the correct target
+    # .last on page-level was hitting a blank-text submit outside the dialog
+    submitted = page.evaluate("""() => {
+        const dialog = document.querySelector('[role=dialog]');
+        if (dialog) {
+            const btn = dialog.querySelector('button[type=submit]');
+            if (btn) { btn.click(); return 'clicked-dialog'; }
+        }
+        // fallback: find the 'Sign in' labeled submit button
+        const subs = [...document.querySelectorAll('button[type=submit]')];
+        const mBtn = subs.find(b => b.innerText.trim() === 'Sign in');
+        if (mBtn) { mBtn.click(); return 'clicked-signin-text'; }
+        return 'no-submit-found';
+    }""")
+    log(f"sign-in submit click: {submitted}")
+    if submitted == 'no-submit-found':
+        log("no submit button found for sign-in")
+        return "failed"
 
-    # Wait for form
+    # Wait for form — also check for backend-outage error in console or DOM
     for _ in range(20):
         time.sleep(1.2)
         if page.locator("input[name=firstName]").count():
@@ -308,6 +318,13 @@ def sign_in_fresh(page, email, password, job_id):
         if "captcha" in body or "verify" in body:
             log("captcha/verify detected after sign-in")
             return "captcha"
+        # Detect Uber backend outage: modal stays open + sign-in button still present = API failed
+        # The modal doesn't dismiss when TchannelDeclinedError occurs
+        dialog_still_open = page.evaluate("() => !!document.querySelector('[role=dialog]')")
+        signin_wall_still_visible = "uber careers account" in body and "sign in" in body
+        if dialog_still_open and signin_wall_still_visible:
+            log("sign-in modal still open after submit — backend error (TchannelDeclined or similar)")
+            return "backend-outage"
 
     log(f"sign-in timeout, url={page.url}")
     return "failed"
@@ -625,6 +642,9 @@ def main():
                     db_mark_blocked(role["id"], f"uber-job-closed:{role['job']}")
                 elif reason.startswith("signin-captcha"):
                     db_mark_blocked(role["id"], "uber-captcha-signin")
+                elif reason == "signin-backend-outage":
+                    db_mark_blocked(role["id"], "uber-backend-outage-tchannel-declined-2026-06-30")
+                    log(f"⚠️  BACKEND OUTAGE on {role['id']} — Uber careers tchannel service down, retry later")
                 else:
                     log(f"❌ FAILED {role['id']} {role['role']}: {reason}")
             

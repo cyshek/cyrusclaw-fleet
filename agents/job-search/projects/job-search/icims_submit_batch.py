@@ -99,9 +99,9 @@ def run_runner(url, role_id):
          "--url", url, "--apply",
          "--cdp", CDP,
          "--debug", debug_dir,
-         "--max-seconds", "300",
+         "--max-seconds", "480",
          "--otp-timeout", "120"],
-        capture_output=True, text=True, timeout=420
+        capture_output=True, text=True, timeout=600
     )
     return r.returncode, r.stdout, r.stderr
 

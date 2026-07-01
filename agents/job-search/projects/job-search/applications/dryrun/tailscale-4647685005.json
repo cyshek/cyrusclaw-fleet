@@ -1,0 +1,436 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/tailscale/jobs/4647685005",
+  "org": "tailscale",
+  "job_id": "4647685005",
+  "job_title": "Solutions Engineer - Commercial (Expansion Sales)",
+  "job_location": "Remote (United States)",
+  "fetched_at": "2026-06-30T22:42:57Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/tailscale/jobs/4647685005?questions=true",
+  "ready_to_submit": false,
+  "counts": {
+    "total_fields": 21,
+    "filled": 16,
+    "filled_needs_review": 0,
+    "declined": 4,
+    "unresolved": 1,
+    "blockers": 1
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": true,
+      "value": "Per your scope decision: no cover letters. If a form makes it required, paste a 3-line generic note pointing the recruiter to the resume.",
+      "source": "cover_letter_default (required)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_8274163005",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_8274164005",
+      "label": "Website",
+      "type": "input_text",
+      "required": false,
+      "value": "",
+      "source": "contact.website_default=null (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "website",
+      "options": null
+    },
+    {
+      "id": "question_8274165005",
+      "label": "Are you located in or willing to relocate to the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No, but I am willing to relocate.",
+      "source": "preferences.willing_to_relocate (matched 'willing to relocate' option)",
+      "status": "filled",
+      "matched_rule": "willing_to_relocate",
+      "options": [
+        {
+          "label": "Yes, I live in the US.",
+          "value": 20442873005
+        },
+        {
+          "label": "No, but I am willing to relocate.",
+          "value": 20442874005
+        },
+        {
+          "label": "No, and I am not willing to relocate.",
+          "value": 20442875005
+        }
+      ]
+    },
+    {
+      "id": "question_8274166005",
+      "label": "Will you now or at any point in the future require visa sponsorship to work in the United States?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8274167005",
+      "label": "How many years of experience do you have in a customer-facing Solutions Engineer, Sales Engineer, or Solutions Architect role supporting networking or security software solutions?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2-3",
+      "source": "experience_summary.answer_for_years_of_experience_field | smart-matched to option '2-3'",
+      "status": "filled",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "0",
+          "value": 20442876005
+        },
+        {
+          "label": "<1",
+          "value": 20442877005
+        },
+        {
+          "label": "1-2",
+          "value": 20442878005
+        },
+        {
+          "label": "2-3",
+          "value": 20442879005
+        },
+        {
+          "label": "3-4",
+          "value": 20442880005
+        },
+        {
+          "label": "4-5",
+          "value": 20442881005
+        },
+        {
+          "label": "5+",
+          "value": 20442882005
+        }
+      ]
+    },
+    {
+      "id": "question_8274168005",
+      "label": "Do you have hands-on experience designing and deploying zero-trust networking or secure connectivity solutions in cloud or hybrid environments (AWS, GCP, Azure)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_8274169005",
+      "label": "Why are you interested in joining Tailscale? Thoughtful responses are encouraged.",
+      "type": "textarea",
+      "required": true,
+      "value": "I'm excited about the opportunity to work at Tailscale because I'm drawn to organizations that operate at scale, solve complex technical challenges, and prioritize innovation and long-term impact. Throughout my experience at Microsoft and Amazon Robotics, I've enjoyed working at the intersection of technology, operations, and strategy — leading cross-functional initiatives, building scalable systems, and driving measurable business outcomes.\n\nWhat particularly interests me about Tailscale is the opportunity to contribute to high-impact products and programs while collaborating with talented teams across engineering, product, and business functions. I'm especially motivated by environments where I can combine technical depth with program leadership to improve reliability, automation, and operational efficiency.\n\nIn my current role, I've led large-scale resilience and automation initiatives, developed AI-driven workflow solutions, and managed complex cross-organizational programs under executive visibility. I enjoy taking ambiguous problems, creating structure, and driving execution from concept through delivery. I'd be excited to bring that same mindset to Tailscale while continuing to grow in a fast-paced and innovative environment.\n\nBeyond the technical challenges, I'm also looking for a company whose culture emphasizes ownership, collaboration, and continuous improvement. From what I've seen, Tailscale aligns strongly with those values, which makes the opportunity especially compelling to me.",
+      "source": "why-company-template.md (substituted [Company]='Tailscale')",
+      "status": "filled",
+      "matched_rule": "why_company_essay",
+      "options": null
+    },
+    {
+      "id": "question_8274170005",
+      "label": "We're always curious - have you used Tailscale before?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "__UNRESOLVED__",
+      "source": "no LABEL_RULES match for label=\"We're always curious - have you used Tailscale before?\"",
+      "status": "unresolved",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes, on my personal devices.",
+          "value": 20442883005
+        },
+        {
+          "label": "Yes, at work.",
+          "value": 20442884005
+        },
+        {
+          "label": "Yes, both personally and at work.",
+          "value": 20442885005
+        },
+        {
+          "label": "I haven’t used it, but I’m excited to learn more!",
+          "value": 20442886005
+        }
+      ]
+    },
+    {
+      "id": "question_8274171005",
+      "label": "I have read and understand Tailscale's \"Candidate Privacy Policy\" and \"AI Guidelines\" regarding the collection and use of my personal information and use of AI tools in the hiring and interviewing process. These can also be reviewed on the Tailscale career site. ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "privacy_ack (always acknowledge)",
+      "status": "filled",
+      "matched_rule": "privacy_ack",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 20442887005
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "question_8274170005",
+      "label": "We're always curious - have you used Tailscale before?",
+      "required": true,
+      "reason": "no LABEL_RULES match for label=\"We're always curious - have you used Tailscale before?\""
+    }
+  ],
+  "blockers": [
+    {
+      "id": "question_8274170005",
+      "label": "We're always curious - have you used Tailscale before?",
+      "reason": "no LABEL_RULES match for label=\"We're always curious - have you used Tailscale before?\""
+    }
+  ],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

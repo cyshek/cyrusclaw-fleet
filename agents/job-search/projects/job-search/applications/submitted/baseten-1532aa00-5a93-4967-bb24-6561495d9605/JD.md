@@ -10,7 +10,7 @@
 
 **ABOUT BASETEN**
 
-Baseten powers mission-critical inference for the world's most dynamic AI companies, like Cursor, Notion, OpenEvidence, Abridge, Clay, Gamma and Writer. By uniting applied AI research, flexible infrastructure, and seamless developer tooling, we enable companies operating at the frontier of AI to bring cutting-edge models into production. We're growing quickly and recently raised our [$1.5B Series F](https://www.baseten.co/blog/announcing-our-series-f/), backed by investors including BOND, IVP, Spark Capital, Greylock, and Conviction. Join us and help build the platform engineers turn to to ship AI products.
+Baseten powers mission-critical inference for the world's most dynamic AI companies, like Cursor, Notion, OpenEvidence, Abridge, Clay, Gamma and Writer. By uniting applied AI research, flexible infrastructure, and seamless developer tooling, we enable companies operating at the frontier of AI to bring cutting-edge models into production. We're growing quickly and recently raised our [$1.5B Series F](https://www.baseten.co/blog/announcing-our-series-f/), led by Altimeter Capital, Conviction Partners, and Spark Capital. Join us and help build the platform engineers turn to to ship AI products.
 
 **THE ROLE**
 

@@ -1,0 +1,44 @@
+# Tailoring notes
+
+## Title swaps applied
+- `microsoft_ft` → **Product Manager**
+- `microsoft_2023` → **Product Manager Intern**
+- `microsoft_2022` → **Product Manager Intern**
+- `amazon_robotics` → **Product Manager Intern**
+- `pro_painters` → **Product Manager Intern**
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's **recovery validation program** from a 2-person operation into a platformized system, standardizing workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining product requirements and self-service scheduling features that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model.
+3. Pioneered Azure's first proactive resilience-testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a new continuous-validation standard.
+4. Built an internal **AI agent** that restructured drill-planning workflows, cutting planning cycle time by 39% and increasing drill capacity by 21% through automated insight generation and scheduling optimization.
+5. Directed 14 cross-org recovery executions under executive visibility, including serving as bridge lead for a **sovereign-cloud** network isolation test tied to a $1.5B+ enterprise contract.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Championed adoption of **AI-driven code generation** workflows, conducting user demos and training sessions that drove utilization across 14 key Azure service teams and saved **37 engineering hours** monthly.
+2. Shaped the product roadmap to include intent-based YAML generation by facilitating **11+ user interviews** with Azure service teams, translating qualitative feedback into prioritized feature gaps and actionable requirements.
+3. Improved data retrieval quality by implementing metadata standards and migrating documentation to an **AI-powered semantic search** tool, reducing average lookup time by 83% across internal engineering teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and launched Azure regions 28% faster by securing cross-functional alignment on a unified automation-prioritization framework across 140+ service teams.
+2. Mobilized a product strategy to reduce launch toil, conducting discovery with 20+ teams to surface **81 hours of manual effort** per region and building a roadmap to automate the highest-impact workflows.
+3. Built a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to pinpoint automation gaps and direct engineering capacity toward highest-ROI improvements.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the legacy OS migration strategy, mapping dependencies across 1,200+ stations, and coordinating cross-functional stakeholder sign-off.
+2. Prioritized a 40+ ticket backlog across Agile sprint cycles, facilitating planning and retrospectives that stabilized the **developer intake process** and unblocked critical robotics-software delivery milestones.
+3. Drove alignment across IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing release risk for production robotics fleets.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by redesigning the end-to-end proposal lifecycle — managing 200+ monthly quotes through a new CRM workflow that improved data accuracy and shortened the customer decision cycle.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing the company website and Google Business profile for local search intent.
+3. Surfaced margin leaks and improved **pricing model accuracy** for leadership by conducting financial profitability analysis across 1,000+ project records, directly informing strategic decisions on service-line prioritization.
+
+## Notes from the rewriter
+- 'Advanced Insights' domain mirrored: microsoft_ft bullet 4 references AI agent for automated insight generation; microsoft_2023 bullet 3 references semantic search and data retrieval quality — both map to PointClickCare's insights/analytics focus.
+- 'AI-driven' vocabulary from JD woven into microsoft_ft bullet 4 ('AI agent') and microsoft_2023 bullet 1 ('AI-driven code generation') to signal fluency in AI product development relevant to PointClickCare's product direction.
+- 'Customer discovery / user research' framing (core APM skill in JD) surfaced explicitly in microsoft_2022 bullet 2 ('discovery with 20+ teams'), microsoft_2023 bullet 2 ('11+ user interviews'), and pro_painters bullet 1 ('customer decision cycle') to show consistent research-to-roadmap discipline.
+- Page-fit fix: dropped one bullet from microsoft_ft (from 5 to 5, already at min) and tightened phrasing throughout all roles to stay within 290-char ceiling and fit one page.
+

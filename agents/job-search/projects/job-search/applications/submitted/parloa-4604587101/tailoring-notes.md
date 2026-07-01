@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Led **end-to-end deployment engineering** of Azure's resilience validation program, scaling from a 2-person operation into a platformized system sustaining 45+ annual enterprise drills across Databricks, Walmart, SAP, and NetApp with **$14M+ business impact**.
+2. Architected and shipped a **0→1 Resilience Automation Platform**, defining self-service scheduling requirements and backend integration specs that cut operational toil by 30% and enabled scalable, repeatable deployment execution across enterprise environments.
+3. Pioneered Azure's first proactive rack-level resilience testing capability, delivering the full deployment in 4 months with a **94% recovery rate** — surfacing critical hardware defects and establishing a new continuous validation model for production systems.
+4. Served as bridge lead for a **sovereign-cloud network isolation deployment** tied to a $1.5B+ enterprise contract, directing 14 cross-org recovery executions under executive visibility and resolving live production blockers under high-stakes constraints.
+5. Built an **internal AI agent** to automate drill planning workflows, integrating LLM-powered orchestration into existing tooling to cut planning cycle time by 39% and scale deployment capacity by 21% without adding headcount.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **enterprise adoption of AI-powered code generation** tooling by leading hands-on demos and integration walkthroughs with 14 Azure service teams, directly saving 37 engineering hours monthly and closing the feedback loop between field usage and product roadmap.
+2. Shaped the **product roadmap toward intent-based YAML generation** by conducting 11+ structured user interviews with enterprise engineering teams, surfacing critical integration gaps and translating deployment realities into actionable platform requirements.
+3. Improved **system retrieval performance by 83%** by migrating documentation to an AI-powered semantic search infrastructure and enforcing rigorous metadata standards — reducing lookup friction for engineers operating across complex, multi-system environments.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Generated **$3M in accelerated revenue** and reduced region launch cycles by 28% by engineering a unified automation prioritization framework adopted across 140+ teams, resolving cross-functional misalignment blocking deployment velocity.
+2. Conducted discovery with 20+ enterprise service teams to surface **81 hours of per-region manual toil**, then built a deployment roadmap to automate critical execution paths — directly informing infrastructure-as-code priorities and reducing operational drag.
+3. Engineered a **Power BI dashboard** tracking operational toil across 140+ teams, enabling leadership to identify automation gaps and direct engineering resources toward the highest-impact deployment bottlenecks.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Architected a **zero-downtime OS migration strategy** for a 2,000+ unit pilot deployment, mapping dependencies across 1,200+ stations and sequencing execution to eliminate production risk in a live warehouse environment.
+2. Drove **cross-functional alignment between IT, Operations, and Engineering** to implement automated CI/CD pipelines, accelerating the software deployment cycle by 25% and reducing manual release overhead across distributed production systems.
+3. Prioritized and resolved **40+ high-priority integration tickets** by leading Agile sprint ceremonies, stabilizing the developer intake process and unblocking deployment execution under tight delivery constraints.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Increased job bookings by **26%** by re-engineering the end-to-end CRM workflow for 200+ monthly proposals, building structured data processes that improved pipeline visibility and accelerated the customer conversion lifecycle.
+2. Reduced **Customer Acquisition Cost by 13%** and lifted conversions by 2.7% through a data-driven digital go-to-market strategy, optimizing web and search presence to drive measurable revenue outcomes.
+3. Identified and closed **margin leaks across 1,000+ project records** by building a financial profitability model, delivering actionable pricing insights that directly improved leadership's decision-making on high-value engagements.
+
+## Notes from the rewriter
+- 'End-to-end deployment engineering' (JD: 'lead end-to-end deployment projects') woven into microsoft_ft bullet 1 and amazon_robotics bullet 1.
+- 'LLM-powered orchestration / AI agent' (JD: 'AI/LLM-powered systems', 'agent workflows') surfaced in microsoft_ft bullet 5 and microsoft_2023 bullet 1.
+- 'Zero-downtime' and 'production systems' (JD: 'deploying live to enterprise systems', 'mission-critical environments') embedded in amazon_robotics bullet 1 and microsoft_ft bullet 4.
+- 'Feedback loop between field and product' (JD: 'Act as the feedback loop between the field and our core engineering teams') reflected in microsoft_2023 bullet 1.
+- 'Infrastructure-as-code' (JD stack/ownership area) named explicitly in microsoft_2022 bullet 2 to mirror JD vocabulary.
+

@@ -5,7 +5,7 @@
   "job_id": "987fb6e0-1e22-45e5-b152-57acbcb59cb2",
   "job_title": "AI Process Forward Deployed Engineer",
   "job_location": "Remote",
-  "fetched_at": "2026-06-24T04:59:15Z",
+  "fetched_at": "2026-06-30T17:53:32Z",
   "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
   "ready_to_submit": false,
   "counts": {
@@ -19,7 +19,7 @@
   },
   "fields": [
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_name",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_name",
       "label": "Full Name",
       "type": "input_text",
       "required": true,
@@ -29,10 +29,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_name"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_name"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_email",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_email",
       "label": "Email",
       "type": "input_text",
       "required": true,
@@ -42,10 +42,10 @@
       "matched_rule": "email",
       "options": null,
       "_ashby_type": "Email",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_email"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_email"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_resume",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_resume",
       "label": "Resume",
       "type": "input_file",
       "required": true,
@@ -55,11 +55,11 @@
       "matched_rule": "resume",
       "options": null,
       "_ashby_type": "File",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_resume"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_resume"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_34946691-ffd0-4131-8960-f74b0fa7ccfe",
-      "label": "Are you legally eligible to work in the country where you’re planning to work from?",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_34946691-ffd0-4131-8960-f74b0fa7ccfe",
+      "label": "Are you legally eligible to work in the country where you\u2019re planning to work from?",
       "type": "multi_value_single_select",
       "required": true,
       "value": "Yes",
@@ -77,10 +77,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_34946691-ffd0-4131-8960-f74b0fa7ccfe"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_34946691-ffd0-4131-8960-f74b0fa7ccfe"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_location",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_location",
       "label": "Location",
       "type": "input_text",
       "required": true,
@@ -90,16 +90,16 @@
       "matched_rule": "city_state",
       "options": null,
       "_ashby_type": "Location",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d__systemfield_location"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf__systemfield_location"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
       "label": "If you are eligible, please select the status that allows you to work and live in that Country",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "__UNRESOLVED__",
-      "source": "work_authorized: no matching option among ['I am a citizen / permanent resident of the country where I plan to live & work from.', 'I have a work visa in the country where I plan to live & work from.', 'I require sponsorship / employer support from Camunda in the country where I plan to live & work from.']",
-      "status": "unresolved",
+      "value": "I am a citizen / permanent resident of the country where I plan to live & work from.",
+      "source": "manual-override: US citizen = citizen/permanent-resident",
+      "status": "filled",
       "matched_rule": "work_authorized",
       "options": [
         {
@@ -116,10 +116,10 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_d55cb82a-fd5e-4fbb-8586-06562c4f53cf"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_d55cb82a-fd5e-4fbb-8586-06562c4f53cf"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_5ab51c64-65c5-4d45-855e-73f5323304d1",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_5ab51c64-65c5-4d45-855e-73f5323304d1",
       "label": "What are your pronouns for others to use when referring to you?",
       "type": "multi_value_single_select",
       "required": false,
@@ -178,10 +178,10 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_5ab51c64-65c5-4d45-855e-73f5323304d1"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_5ab51c64-65c5-4d45-855e-73f5323304d1"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_9f8dc958-ffde-455c-88fa-0e7abb555e29",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_9f8dc958-ffde-455c-88fa-0e7abb555e29",
       "label": "Are you able and willing to work remotely?",
       "type": "multi_value_single_select",
       "required": true,
@@ -200,10 +200,10 @@
         }
       ],
       "_ashby_type": "Boolean",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_9f8dc958-ffde-455c-88fa-0e7abb555e29"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_9f8dc958-ffde-455c-88fa-0e7abb555e29"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_094217ef-b27e-40a5-aa82-0bd4f9919364",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_094217ef-b27e-40a5-aa82-0bd4f9919364",
       "label": "What are your salary expectations?",
       "type": "input_text",
       "required": true,
@@ -213,10 +213,10 @@
       "matched_rule": "comp_seeking",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_094217ef-b27e-40a5-aa82-0bd4f9919364"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_094217ef-b27e-40a5-aa82-0bd4f9919364"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_a2e5bf15-f611-4af4-9189-46f34088339e",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_a2e5bf15-f611-4af4-9189-46f34088339e",
       "label": "LinkedIn Profile",
       "type": "input_text",
       "required": true,
@@ -226,10 +226,10 @@
       "matched_rule": "linkedin",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_a2e5bf15-f611-4af4-9189-46f34088339e"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_a2e5bf15-f611-4af4-9189-46f34088339e"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_97d71de0-9a30-4822-8786-ecd3300492b2",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_97d71de0-9a30-4822-8786-ecd3300492b2",
       "label": "If you have discussed this role with a current Camunda employee, please enter their full name here",
       "type": "input_text",
       "required": false,
@@ -239,10 +239,10 @@
       "matched_rule": "full_name",
       "options": null,
       "_ashby_type": "String",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_97d71de0-9a30-4822-8786-ecd3300492b2"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_97d71de0-9a30-4822-8786-ecd3300492b2"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_87c4752c-8816-44a3-99b5-b64327a0b058",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_87c4752c-8816-44a3-99b5-b64327a0b058",
       "label": "What best describes your production experience at a large enterprise?",
       "type": "multi_value_single_select",
       "required": true,
@@ -269,11 +269,11 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_87c4752c-8816-44a3-99b5-b64327a0b058",
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_87c4752c-8816-44a3-99b5-b64327a0b058",
       "match_attempted": true
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_e684e6cc-31a8-44f9-ac2a-322b42651e77",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_e684e6cc-31a8-44f9-ac2a-322b42651e77",
       "label": "Which best describes your experience with AI agents or agentic workflows?",
       "type": "multi_value_single_select",
       "required": true,
@@ -300,10 +300,10 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_e684e6cc-31a8-44f9-ac2a-322b42651e77"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_e684e6cc-31a8-44f9-ac2a-322b42651e77"
     },
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_8d225fc3-bd78-4864-acd4-64f73cc1de30",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_8d225fc3-bd78-4864-acd4-64f73cc1de30",
       "label": "Which best describes your experience with workflow automation or BPMN?",
       "type": "multi_value_single_select",
       "required": true,
@@ -326,12 +326,12 @@
         }
       ],
       "_ashby_type": "ValueSelect",
-      "_ashby_id": "0b3a38f1-50ae-4e34-aada-460432f2788d_8d225fc3-bd78-4864-acd4-64f73cc1de30"
+      "_ashby_id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_8d225fc3-bd78-4864-acd4-64f73cc1de30"
     }
   ],
   "unresolved": [
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
       "label": "If you are eligible, please select the status that allows you to work and live in that Country",
       "required": true,
       "reason": "work_authorized: no matching option among ['I am a citizen / permanent resident of the country where I plan to live & work from.', 'I have a work visa in the country where I plan to live & work from.', 'I require sponsorship / employer support from Camunda in the country where I plan to live & work from.']"
@@ -339,7 +339,7 @@
   ],
   "blockers": [
     {
-      "id": "0b3a38f1-50ae-4e34-aada-460432f2788d_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
+      "id": "dad3e5d0-f14b-4e8e-8eaa-e09f9c55eaaf_d55cb82a-fd5e-4fbb-8586-06562c4f53cf",
       "label": "If you are eligible, please select the status that allows you to work and live in that Country",
       "reason": "work_authorized: no matching option among ['I am a citizen / permanent resident of the country where I plan to live & work from.', 'I have a work visa in the country where I plan to live & work from.', 'I require sponsorship / employer support from Camunda in the country where I plan to live & work from.']"
     }

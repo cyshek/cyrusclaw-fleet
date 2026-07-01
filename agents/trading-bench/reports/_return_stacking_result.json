@@ -1,0 +1,382 @@
+{
+  "meta": {
+    "common_window": [
+      "2010-02-12",
+      "2026-06-30"
+    ],
+    "n_days": 4119,
+    "n_months": 197,
+    "core_sleeve": "sector_rotation_top2 {SPY,QQQ,GLD,TLT} L3 hold2 (validated)",
+    "div_sleeve": "TQQQ voltarget tgt0.25 vw20 sma200 breadth[30,90,180] (validated)",
+    "financing_spread_annual_bps": 50.0,
+    "fee_annual_bps": 0.0,
+    "tbill_series": "FRED DGS3MO (percent, daily, vintage=latest=market-quote)",
+    "tbill_avg_annual_pct": 1.5075673707210488,
+    "is_oos_split": {
+      "is_thru": "2019-12-31",
+      "oos_from": "2020-01-01"
+    },
+    "div_full_window": [
+      "2010-02-11",
+      "2026-06-30"
+    ],
+    "rot_full_window": [
+      "2005-01-03",
+      "2026-06-30"
+    ]
+  },
+  "core_alone": {
+    "full": {
+      "n_months": 197,
+      "sharpe": 1.0177324472701086,
+      "ann_return_pct": 12.872054075065709,
+      "total_return_pct": 629.9512695079202,
+      "ann_vol_pct": 12.75060915328,
+      "maxdd_pct": -26.17105086241721,
+      "spy_corr": 0.5194703041881287
+    },
+    "is_thru2019": {
+      "n_months": 119,
+      "sharpe": 1.0616403201213533,
+      "ann_return_pct": 12.438506539341777,
+      "total_return_pct": 219.82157843510453,
+      "ann_vol_pct": 11.737524307110956,
+      "maxdd_pct": -19.29165116375198,
+      "spy_corr": 0.3483120977761197
+    },
+    "oos_2020plus": {
+      "n_months": 78,
+      "sharpe": 0.9669072951442367,
+      "ann_return_pct": 13.53671487254411,
+      "total_return_pct": 128.23702924599104,
+      "ann_vol_pct": 14.234509009256483,
+      "maxdd_pct": -26.171050862417246,
+      "spy_corr": 0.6778957268464415
+    }
+  },
+  "spx_benchmark": {
+    "full": {
+      "n_months": 197,
+      "sharpe": 0.8940870248769568,
+      "ann_return_pct": 12.538858524616314,
+      "total_return_pct": 595.3702993131988,
+      "ann_vol_pct": 14.438558324040748,
+      "maxdd_pct": -24.769522239058674,
+      "spy_corr": 1.0
+    },
+    "is_thru2019": {
+      "n_months": 119,
+      "sharpe": 0.9568015623337964,
+      "ann_return_pct": 11.699274641001555,
+      "total_return_pct": 199.5706989588705,
+      "ann_vol_pct": 12.41654052588117,
+      "maxdd_pct": -17.027591752812643,
+      "spy_corr": 1.0
+    },
+    "oos_2020plus": {
+      "n_months": 78,
+      "sharpe": 0.8443872453006555,
+      "ann_return_pct": 13.831936411011059,
+      "total_return_pct": 132.12226754148264,
+      "ann_vol_pct": 17.14789030122358,
+      "maxdd_pct": -24.76952223905865,
+      "spy_corr": 1.0
+    }
+  },
+  "div_alone": {
+    "full": {
+      "n_months": 197,
+      "sharpe": 0.82125650074841,
+      "ann_return_pct": 17.82848968474937,
+      "total_return_pct": 1378.0618412366678,
+      "ann_vol_pct": 23.343536074342975,
+      "maxdd_pct": -29.60803777433898,
+      "spy_corr": 0.6158703449045626
+    },
+    "is_thru2019": {
+      "n_months": 119,
+      "sharpe": 0.7229110703623421,
+      "ann_return_pct": 15.8779850692923,
+      "total_return_pct": 331.1972058282595,
+      "ann_vol_pct": 24.575076704970932,
+      "maxdd_pct": -29.60803777433898,
+      "spy_corr": 0.6464086148872463
+    },
+    "oos_2020plus": {
+      "n_months": 78,
+      "sharpe": 0.9928366238598165,
+      "ann_return_pct": 20.8676995862906,
+      "total_return_pct": 242.78094135548793,
+      "ann_vol_pct": 21.469011792069153,
+      "maxdd_pct": -16.340671548409848,
+      "spy_corr": 0.6129019373923076
+    }
+  },
+  "stacked": {
+    "@0.5": {
+      "full": {
+        "n_months": 197,
+        "sharpe": 1.0140968126787748,
+        "ann_return_pct": 21.1286432067729,
+        "total_return_pct": 2226.1398972857987,
+        "ann_vol_pct": 21.258002342452578,
+        "maxdd_pct": -32.101895284127835,
+        "spy_corr": 0.649233579118442
+      },
+      "is_thru2019": {
+        "n_months": 119,
+        "sharpe": 0.9977964246979687,
+        "ann_return_pct": 20.334834062692142,
+        "total_return_pct": 526.9232177522637,
+        "ann_vol_pct": 20.84935284669087,
+        "maxdd_pct": -26.789396129146148,
+        "spy_corr": 0.5771098021095123
+      },
+      "oos_2020plus": {
+        "n_months": 78,
+        "sharpe": 1.0322473502162965,
+        "ann_return_pct": 22.34981134612193,
+        "total_return_pct": 271.0406364635555,
+        "ann_vol_pct": 21.99899716014348,
+        "maxdd_pct": -32.1018952841278,
+        "spy_corr": 0.7370319290493902
+      },
+      "financing_drag": {
+        "total_borrow_cost_bps_per_yr": 100.37836853605243,
+        "spread_only_bps_per_yr": 25.0,
+        "note": "total = StackSize*(avg_Tbill+spread) on the stacked notional; this is the gross cost the diversifier leg must out-earn."
+      }
+    },
+    "@1.0": {
+      "full": {
+        "n_months": 197,
+        "sharpe": 0.9466882764817653,
+        "ann_return_pct": 28.280895736005473,
+        "total_return_pct": 5865.67010504401,
+        "ann_vol_pct": 31.83586078941626,
+        "maxdd_pct": -39.89023770120801,
+        "spy_corr": 0.6589818699965424
+      },
+      "is_thru2019": {
+        "n_months": 119,
+        "sharpe": 0.9065753890198741,
+        "ann_return_pct": 26.911718306103506,
+        "total_return_pct": 962.6545316528773,
+        "ann_vol_pct": 32.14932894225828,
+        "maxdd_pct": -39.89023770120801,
+        "spy_corr": 0.6213632052072036
+      },
+      "oos_2020plus": {
+        "n_months": 78,
+        "sharpe": 1.0031631136929802,
+        "ann_return_pct": 30.39828120195578,
+        "total_return_pct": 461.39318351796544,
+        "ann_vol_pct": 31.553554966325247,
+        "maxdd_pct": -38.251238786431195,
+        "spy_corr": 0.7218969089651793
+      },
+      "financing_drag": {
+        "total_borrow_cost_bps_per_yr": 200.75673707210487,
+        "spread_only_bps_per_yr": 50.0,
+        "note": "total = StackSize*(avg_Tbill+spread) on the stacked notional; this is the gross cost the diversifier leg must out-earn."
+      }
+    }
+  },
+  "stacked_canary_divlag1": {
+    "@0.5": {
+      "full": {
+        "n_months": 197,
+        "sharpe": 1.0160362922125699,
+        "ann_return_pct": 21.15542603831104,
+        "total_return_pct": 2234.5979582706846,
+        "ann_vol_pct": 21.24506349835605,
+        "maxdd_pct": -32.89043658529221,
+        "spy_corr": 0.636580937749316
+      },
+      "is_thru2019": {
+        "n_months": 119,
+        "sharpe": 0.9969620638476864,
+        "ann_return_pct": 20.367474568343823,
+        "total_return_pct": 528.6116002420176,
+        "ann_vol_pct": 20.921275376276498,
+        "maxdd_pct": -26.256316588620376,
+        "spy_corr": 0.5817894369562154
+      },
+      "oos_2020plus": {
+        "n_months": 78,
+        "sharpe": 1.0381510890156675,
+        "ann_return_pct": 22.367506168480556,
+        "total_return_pct": 271.3895762298779,
+        "ann_vol_pct": 21.86240511441463,
+        "maxdd_pct": -32.89043658529221,
+        "spy_corr": 0.7074083931952567
+      }
+    },
+    "@1.0": {
+      "full": {
+        "n_months": 197,
+        "sharpe": 0.9430066073251956,
+        "ann_return_pct": 28.24214977157331,
+        "total_return_pct": 5836.158158144341,
+        "ann_vol_pct": 32.01971459911056,
+        "maxdd_pct": -39.16642899610835,
+        "spy_corr": 0.637883326848378
+      },
+      "is_thru2019": {
+        "n_months": 119,
+        "sharpe": 0.9010086909818918,
+        "ann_return_pct": 26.861761535924945,
+        "total_return_pct": 958.5136921350713,
+        "ann_vol_pct": 32.468506669123016,
+        "maxdd_pct": -39.00242053363334,
+        "spy_corr": 0.6238424370867058
+      },
+      "oos_2020plus": {
+        "n_months": 78,
+        "sharpe": 1.00325879633377,
+        "ann_return_pct": 30.37711961018146,
+        "total_return_pct": 460.80126334226617,
+        "ann_vol_pct": 31.526769431576813,
+        "maxdd_pct": -39.16642899610835,
+        "spy_corr": 0.6750385561007064
+      }
+    }
+  },
+  "invvol_blend_reference": {
+    "full": {
+      "n_months": 197,
+      "sharpe": 1.099920173220007,
+      "ann_return_pct": 15.526294572864208,
+      "total_return_pct": 969.0807758046583,
+      "ann_vol_pct": 14.092092783477186,
+      "maxdd_pct": -17.624576379426916,
+      "spy_corr": 0.6642520750626364
+    },
+    "is_thru2019": {
+      "n_months": 119,
+      "sharpe": 1.0158013191383386,
+      "ann_return_pct": 13.729470044856939,
+      "total_return_pct": 258.1575162898294,
+      "ann_vol_pct": 13.639155147218062,
+      "maxdd_pct": -17.624576379426916,
+      "spy_corr": 0.6166570989301452
+    },
+    "oos_2020plus": {
+      "n_months": 78,
+      "sharpe": 1.2155643537999032,
+      "ann_return_pct": 18.322447979318945,
+      "total_return_pct": 198.49458050729072,
+      "ann_vol_pct": 14.816679628118667,
+      "maxdd_pct": -16.61333732428636,
+      "spy_corr": 0.7220006634115123
+    },
+    "note": "sum-to-1 monthly-rebalanced inv-vol(63d) blend of [voltarget, rotation]; NO financing. The best current point a sum-to-1 blend can reach."
+  },
+  "daily_annualized_xref": {
+    "note": "Sharpe here is daily/sqrt(252), directly comparable to the bench's reported sleeve/blend Sharpes.",
+    "core_alone": {
+      "n_days": 4119,
+      "sharpe_daily_ann": 0.9250737215662929,
+      "ann_return_pct": 12.931794927155682,
+      "total_return_pct": 629.951269507918,
+      "ann_vol_pct": 14.249149256764518,
+      "maxdd_pct": -28.982594625407266,
+      "spy_corr": 0.4565274435244534
+    },
+    "invvol_blend": {
+      "n_days": 4118,
+      "sharpe_daily_ann": 1.036542065738053,
+      "ann_return_pct": 15.603250705632266,
+      "total_return_pct": 969.0807758046395,
+      "ann_vol_pct": 15.09616596565095,
+      "maxdd_pct": -20.328835248026923,
+      "spy_corr": 0.5870253227968734
+    },
+    "stacked@0.5": {
+      "n_days": 4119,
+      "sharpe_daily_ann": 0.9588586168727382,
+      "ann_return_pct": 21.093928311784936,
+      "total_return_pct": 2183.783318535004,
+      "ann_vol_pct": 22.663270421688196,
+      "maxdd_pct": -36.462969924903646,
+      "spy_corr": 0.5776838185040727
+    },
+    "stacked@0.5_OOS2020": {
+      "n_days": 1631,
+      "sharpe_daily_ann": 0.9314410983803743,
+      "ann_return_pct": 22.234994868806425,
+      "total_return_pct": 266.7321902599011,
+      "ann_vol_pct": 24.917628253127162,
+      "maxdd_pct": -36.46296992490362,
+      "spy_corr": 0.5847584764670244
+    },
+    "stacked@1.0": {
+      "n_days": 4119,
+      "sharpe_daily_ann": 0.9194816415300237,
+      "ann_return_pct": 28.129691382950227,
+      "total_return_pct": 5648.5893573445,
+      "ann_vol_pct": 32.93184916472105,
+      "maxdd_pct": -43.725801895469054,
+      "spy_corr": 0.5975759640146557
+    },
+    "stacked@1.0_OOS2020": {
+      "n_days": 1631,
+      "sharpe_daily_ann": 0.921861269221309,
+      "ann_return_pct": 29.807886420749142,
+      "total_return_pct": 441.1401515593329,
+      "ann_vol_pct": 35.05306024506358,
+      "maxdd_pct": -43.378647443065276,
+      "spy_corr": 0.5883115804172855
+    },
+    "invvol_blend_OOS2020": {
+      "n_days": 1631,
+      "sharpe_daily_ann": 1.096935296752269,
+      "ann_return_pct": 18.407916436661353,
+      "total_return_pct": 198.49458050729118,
+      "ann_vol_pct": 16.683006416075624,
+      "maxdd_pct": -20.020760971064522,
+      "spy_corr": 0.5712767105425579
+    },
+    "core_alone_OOS2020": {
+      "n_days": 1631,
+      "sharpe_daily_ann": 0.8588947459009597,
+      "ann_return_pct": 13.598595145824932,
+      "total_return_pct": 128.2370292459928,
+      "ann_vol_pct": 16.421741450813713,
+      "maxdd_pct": -28.98259462540712,
+      "spy_corr": 0.5187919577970712
+    }
+  },
+  "verdict": {
+    "blend_full_sharpe": 1.099920173220007,
+    "blend_oos_sharpe": 1.2155643537999032,
+    "blend_oos_ann_return_pct": 18.322447979318945,
+    "blend_full_maxdd_pct": -17.624576379426916,
+    "stacked": {
+      "@0.5": {
+        "full_sharpe": 1.0140968126787748,
+        "oos_sharpe": 1.0322473502162965,
+        "oos_ann_return_pct": 22.34981134612193,
+        "full_maxdd_pct": -32.101895284127835,
+        "canary_full_sharpe": 1.0160362922125699,
+        "canary_oos_sharpe": 1.0381510890156675,
+        "borrow_drag_bps_per_yr": 100.37836853605243,
+        "beats_blend_oos_sharpe": false,
+        "beats_blend_oos_return": true,
+        "beats_blend_full_sharpe": false
+      },
+      "@1.0": {
+        "full_sharpe": 0.9466882764817653,
+        "oos_sharpe": 1.0031631136929802,
+        "oos_ann_return_pct": 30.39828120195578,
+        "full_maxdd_pct": -39.89023770120801,
+        "canary_full_sharpe": 0.9430066073251956,
+        "canary_oos_sharpe": 1.00325879633377,
+        "borrow_drag_bps_per_yr": 200.75673707210487,
+        "beats_blend_oos_sharpe": false,
+        "beats_blend_oos_return": true,
+        "beats_blend_full_sharpe": false
+      }
+    }
+  }
+}

@@ -24,8 +24,19 @@ PY = sys.executable or "python3"
 def log(*a):
     print(*a, flush=True)
 
-def run(cmd):
-    return subprocess.run(cmd, cwd=HERE, capture_output=True, text=True, timeout=600)
+def run(cmd, timeout=600):
+    return subprocess.run(cmd, cwd=HERE, capture_output=True, text=True, timeout=timeout)
+
+def read_exclude_file():
+    """Load the CURRENT followup_exclude.json (last-known good). Never raises."""
+    ex_path = os.path.join(HERE, "followup_exclude.json")
+    if os.path.exists(ex_path):
+        try:
+            d = json.load(open(ex_path))
+            return {a.lower() for a in d.get("exclude", [])}
+        except Exception:
+            return set()
+    return set()
 
 def batch_send_date(sendlog):
     """Earliest SENT timestamp in a sendlog -> touch-1 date (UTC)."""
@@ -43,18 +54,35 @@ def age_days(dt):
     return (datetime.now(timezone.utc) - dt).total_seconds() / 86400.0
 
 def load_exclude():
-    """Run the replier/bounce scan; return set of lowercase addresses to exclude."""
+    """Refresh the replier/bounce scan, then return (exclude_set, scan_ok, note).
+
+    FAIL-SAFE: if the scan crashes / times out / exits non-zero, we DO NOT treat that as
+    'nobody to exclude' and we DO NOT abort the run. We fall back to the last-known
+    followup_exclude.json on disk (sticky excludes) and flag scan_ok=False so the caller
+    can surface a warning. Missing a freshly-bounced address for one day is far less bad
+    than silently skipping a whole in-window batch.
+    """
     scan = os.path.join(HERE, "scan_replies_followup.py")
-    r = run([PY, scan])
-    log("  [scan] " + (r.stdout.strip().splitlines()[-1] if r.stdout.strip() else r.stderr.strip()[:200]))
-    ex_path = os.path.join(HERE, "followup_exclude.json")
-    if os.path.exists(ex_path):
-        try:
-            d = json.load(open(ex_path))
-            return {a.lower() for a in d.get("exclude", [])}
-        except Exception:
-            return set()
-    return set()
+    scan_ok = True
+    note = ""
+    try:
+        r = run([PY, scan], timeout=90)   # fast scan is ~5s; 90s is a generous ceiling
+        last = r.stdout.strip().splitlines()[-1] if r.stdout.strip() else (r.stderr.strip()[:200] or "(no output)")
+        log("  [scan] " + last)
+        if r.returncode != 0:
+            scan_ok = False
+            note = f"scan exit {r.returncode}"
+            log(f"  [scan] WARNING: non-zero exit ({r.returncode}); using last-known exclude file.")
+    except subprocess.TimeoutExpired:
+        scan_ok = False
+        note = "scan TIMEOUT"
+        log("  [scan] WARNING: scan TIMED OUT; using last-known exclude file (fail-safe).")
+    except Exception as e:
+        scan_ok = False
+        note = f"scan error: {e}"
+        log(f"  [scan] WARNING: scan crashed ({e}); using last-known exclude file (fail-safe).")
+    exclude = read_exclude_file()
+    return exclude, scan_ok, note
 
 def apply_exclude(payload_path, exclude):
     """Mark rows whose 'to' is in exclude as replied:true. Returns (n_total, n_excluded)."""
@@ -92,59 +120,94 @@ def discover_batches():
 
 def main():
     summary = []
+    decisions = []          # explicit per-batch decision lines (EVERY batch, EVERY run)
     batches = discover_batches()
     log(f"Discovered {len(batches)} sent batches: {[b[0] for b in batches]}")
 
-    # Build the live exclude set ONCE (covers all batches).
-    exclude = load_exclude()
-    log(f"Exclude set (replied/bounced): {len(exclude)} addresses")
+    # Refresh the scan FIRST (scan -> generate -> apply_exclude -> send), fail-safe.
+    exclude, scan_ok, scan_note = load_exclude()
+    log(f"Exclude set (replied/bounced): {len(exclude)} addresses" + ("" if scan_ok else f"  [SCAN DEGRADED: {scan_note} -> using last-known exclude]"))
+    if not scan_ok:
+        summary.append(f"SCAN-DEGRADED({scan_note})")
+
+    def decide(bid, verdict, detail=""):
+        line = f"batch{bid}: {verdict}" + (f" ({detail})" if detail else "")
+        decisions.append(line)
+        log("  DECISION -> " + line)
 
     for bid, sendlog, payload in batches:
         d1 = batch_send_date(sendlog)
         if not d1:
-            log(f"batch{bid}: no SENT rows, skip")
+            decide(bid, "SKIP", "no SENT rows in sendlog")
             continue
         age = age_days(d1)
         t2_log = os.path.join(HERE, f"followup_b{bid}_t2_sendlog.csv")
         t3_log = os.path.join(HERE, f"followup_b{bid}_t3_sendlog.csv")
         t2_done = os.path.exists(t2_log)
         t3_done = os.path.exists(t3_log)
-        log(f"batch{bid}: touch-1 {d1.date()} | age {age:.1f}d | t2_done={t2_done} t3_done={t3_done}")
+        log(f"batch{bid}: touch-1 {d1.date()} | age {age:.2f}d | t2_done={t2_done} t3_done={t3_done}")
 
         # ---- TOUCH 2 ----
+        if t3_done:
+            decide(bid, "CEILING-REACHED", "t3 already sent; 3-touch ceiling, stop forever")
+            continue
+        if not t2_done and age < 3:
+            decide(bid, "TOO-YOUNG-FOR-T2", f"age {age:.2f}d < 3d floor")
+            continue
+        if not t2_done and age > 6:
+            decide(bid, "MISSED-T2-WINDOW", f"age {age:.2f}d > 6d; t2 window passed (will consider t3 at 7-12d)")
+            # do NOT continue: fall through so a batch past t2 window can still get t3 if eligible
         if not t2_done and 3 <= age <= 6:
             out = os.path.join(HERE, f"followup_b{bid}_t2_payload.json")
             mk = make_followup(sendlog, payload, out, touch=2)
             if mk.returncode != 0 or not os.path.exists(out):
-                log(f"  batch{bid} t2: generate FAILED: {mk.stderr[:200]}")
+                decide(bid, "T2-GEN-FAIL", (mk.stderr or "")[:160])
                 summary.append(f"b{bid} t2 GEN-FAIL")
                 continue
             total, n_ex = apply_exclude(out, exclude)
             sd = send_followup(out, t2_log)
-            last = sd.stdout.strip().splitlines()[-1] if sd.stdout.strip() else sd.stderr[:200]
-            log(f"  batch{bid} t2 SENT ({total} drafted, {n_ex} excluded): {last}")
+            last = sd.stdout.strip().splitlines()[-1] if sd.stdout.strip() else (sd.stderr or "")[:200]
+            if sd.returncode != 0 or not os.path.exists(t2_log):
+                decide(bid, "T2-SEND-FAIL", last)
+                summary.append(f"b{bid} t2 SEND-FAIL")
+                continue
+            decide(bid, "SENT-T2", f"{total-n_ex} sent / {n_ex} excluded / {total} drafted")
+            log(f"  batch{bid} t2: {last}")
             summary.append(f"b{bid} touch-2: {total-n_ex} sent / {n_ex} excluded")
-        # ---- TOUCH 3 ----
-        elif t2_done and not t3_done and 7 <= age <= 12:
+            continue
+        # ---- TOUCH 3 (breakup) ----
+        if t2_done and not t3_done and age < 7:
+            decide(bid, "IDEMPOTENT-T2-DONE", f"t2 sent; age {age:.2f}d < 7d, t3 not due yet")
+            continue
+        if (t2_done or age > 6) and not t3_done and 7 <= age <= 12:
             out = os.path.join(HERE, f"followup_b{bid}_t3_payload.json")
             mk = make_followup(sendlog, payload, out, touch=3)
             if mk.returncode != 0 or not os.path.exists(out):
-                log(f"  batch{bid} t3: generate FAILED: {mk.stderr[:200]}")
+                decide(bid, "T3-GEN-FAIL", (mk.stderr or "")[:160])
                 summary.append(f"b{bid} t3 GEN-FAIL")
                 continue
             total, n_ex = apply_exclude(out, exclude)
             sd = send_followup(out, t3_log)
-            last = sd.stdout.strip().splitlines()[-1] if sd.stdout.strip() else sd.stderr[:200]
-            log(f"  batch{bid} t3 (breakup) SENT ({total} drafted, {n_ex} excluded): {last}")
+            last = sd.stdout.strip().splitlines()[-1] if sd.stdout.strip() else (sd.stderr or "")[:200]
+            if sd.returncode != 0 or not os.path.exists(t3_log):
+                decide(bid, "T3-SEND-FAIL", last)
+                summary.append(f"b{bid} t3 SEND-FAIL")
+                continue
+            decide(bid, "SENT-T3", f"{total-n_ex} sent / {n_ex} excluded / {total} drafted (breakup)")
+            log(f"  batch{bid} t3: {last}")
             summary.append(f"b{bid} touch-3: {total-n_ex} sent / {n_ex} excluded")
-        else:
-            log(f"  batch{bid}: nothing due")
+            continue
+        if age > 12:
+            decide(bid, "PAST-ALL-WINDOWS", f"age {age:.2f}d > 12d; no further touches")
+            continue
+        decide(bid, "NOTHING-DUE", f"age {age:.2f}d")
 
     log("")
+    log("PER-BATCH DECISIONS: " + " || ".join(decisions))
     if summary:
         log("FOLLOWUP_SUMMARY: " + " | ".join(summary))
     else:
-        log("FOLLOWUP_SUMMARY: nothing due today")
-
+        status = "nothing due today" + ("" if scan_ok else f" (NOTE: scan degraded: {scan_note})")
+        log("FOLLOWUP_SUMMARY: " + status)
 if __name__ == "__main__":
     main()

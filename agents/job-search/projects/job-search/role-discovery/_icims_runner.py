@@ -76,7 +76,9 @@ with open(_PI_PATH) as _f:
     _PI = json.load(_f)
 FIRST = _PI["identity"]["first_name"]
 LAST = _PI["identity"]["last_name"]
-EMAIL = _PI["contact"]["email"]
+EMAIL = os.environ.get("ICIMS_EMAIL_OVERRIDE", "").strip() or _PI["contact"]["email"]
+# Auth0 email: allow override so fresh aliases bypass locked accounts (use ICIMS_AUTH0_EMAIL_OVERRIDE)
+CANONICAL_EMAIL = os.environ.get("ICIMS_AUTH0_EMAIL_OVERRIDE", "").strip() or _PI["contact"]["email"]
 PHONE = _PI["contact"]["phone"].replace("-", "")  # 10-digit no-dash
 PHONE_FMT = _PI["contact"]["phone"]
 ADDR_STREET = _PI["address"]["street"]
@@ -290,12 +292,19 @@ _OTP_DETECT_JS = r"""()=>{
   const vis=el=>{const r=el.getBoundingClientRect();const s=getComputedStyle(el);
     return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none';};
   const txt=el=>((el.name||'')+' '+(el.id||'')+' '+(el.getAttribute('aria-label')||'')+
-    ' '+(el.placeholder||'')+' '+(el.getAttribute('autocomplete')||'')).toLowerCase();
-  const codeRe=/otp|one[-_ ]?time|onetime|verification|verif(y|ication)?code|\bcode\b|passcode|pin|securitycode|mfa|2fa/;
+    ' '+(el.placeholder||'')).toLowerCase();
+  // NOTE: we deliberately EXCLUDE autocomplete attr from OTP detection — postal-code
+  // contains 'code' and triggers false positives on zip/postal inputs.
+  const codeRe=/otp|one[-_ ]?time|onetime|verification|verif(y|ication)?code|\bcode\b|passcode|\bpin\b|securitycode|mfa|2fa/;
+  // Fields that look like OTP but are definitely NOT (address/zip/profile fields).
+  const antiRe=/postal|zip|address|phone|profile|birthdate|dob|gender|race|veteran|disability|salary|company|employer|start.?date|end.?date/;
   // 1. A single explicit code field.
   for(const el of all){
     if(!vis(el)) continue;
     const t=txt(el);
+    // Also check name/id directly for address-like patterns
+    const nameId=((el.name||'')+' '+(el.id||'')).toLowerCase();
+    if(antiRe.test(nameId)) continue;
     if((el.type==='text'||el.type==='tel'||el.type==='number'||el.type==='')&&codeRe.test(t)){
       return {present:true, segmented:false, n:1, sel: el.id?('#'+CSS.escape(el.id)):
               (el.name?('input[name="'+el.name+'"]'):null), why:'named:'+t.trim().slice(0,40)};
@@ -449,33 +458,495 @@ def handle_otp_gate(page, debug=None, gmail_mod=None, timeout=90, since_epoch=No
 
 
 # ---------------------------------------------------------------------------
+# iCIMS account password — used for Auth0 Universal Login password step.
+# AMD/Keysight/SiriusXM account created 2026-06-30 with this password (reset via
+# clicks.icims.com link in Gmail, proved working for AMD 3970 submission).
+# ---------------------------------------------------------------------------
+ICIMS_PASSWORD_DEFAULT = "JobSearch2026!amd"
+
+
+def _load_icims_password():
+    """Load iCIMS candidate password from env or default."""
+    return os.environ.get("ICIMS_PASSWORD", "").strip() or ICIMS_PASSWORD_DEFAULT
+
+
+# ---------------------------------------------------------------------------
+# Auth0 Universal Login handler (iCIMS Apr-2025+ hCaptcha wall on Auth0 page).
+# Proven 2026-06-30 on AMD iCIMS (sitekey ccfa5854-...). After the email gate
+# + OTP, some iCIMS tenants redirect to an Auth0 page that ALSO has an hCaptcha.
+# We solve it, inject h-captcha-response + g-recaptcha-response, submit the form,
+# then fill the password field that appears.
+# ---------------------------------------------------------------------------
+_AUTH0_URL_RE = re.compile(
+    r"auth0\.com|icims\.auth0\.com|login\.icims\.com", re.IGNORECASE)
+
+_AUTH0_BODY_DETECT_JS = (
+    "()=>{" +
+    "const forms=!!document.querySelector('form#identifier-form,form#kc-form-login');" +
+    "const userInp=!!document.querySelector('input#username,input[name=\"username\"]');" +
+    "const pwdInp=!!document.querySelector('input[type=\"password\"]');" +
+    "return {forms, userInp, pwdInp," +
+    " urlMatch:/(auth0|icims\\.auth0|login\\.icims)/i.test(location.href)};" +
+    "}"
+)
+
+_AUTH0_HCAP_DETECT_JS = (
+    "()=>{" +
+    "const iframe=document.querySelector('iframe[src*=\"hcaptcha\"]');" +
+    "const sk=document.querySelector('[data-sitekey]');" +
+    "const resp=document.querySelector('textarea[name=\"h-captcha-response\"]," +
+    "textarea[name=\"g-recaptcha-response\"],textarea[id^=\"h-captcha-response\"]');" +
+    "var sk2=null;if(iframe){var m2=iframe.src.match(/sitekey=([0-9a-f-]{30,})/i);if(m2)sk2=m2[1];}" +
+    "return {present:!!(iframe||sk||resp)," +
+    " sitekey:(sk?sk.getAttribute('data-sitekey'):null)||sk2," +
+    " iframeUrl:iframe?iframe.src.slice(0,200):null," +
+    " hasResp:!!resp};" +
+    "}"
+)
+
+# Inject hCaptcha token into Auth0 form (sets both h-captcha-response AND
+# g-recaptcha-response textareas, then submits the form directly).
+_AUTH0_INJECT_AND_SUBMIT_JS = r"""(token)=>{
+  let count=0;
+  // Set textareas (h-captcha-response, g-recaptcha-response)
+  const sels=[
+    'textarea[name="h-captcha-response"]',
+    'textarea[name="g-recaptcha-response"]',
+    'textarea[id^="h-captcha-response"]',
+    'textarea[id^="g-recaptcha-response"]'
+  ];
+  for(const sel of sels){
+    for(const el of document.querySelectorAll(sel)){
+      try{
+        const d=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value');
+        d.set.call(el,token);
+        el.dispatchEvent(new Event('input',{bubbles:true}));
+        el.dispatchEvent(new Event('change',{bubbles:true}));
+        count++;
+      }catch(e){}
+    }
+  }
+  // Also inject into hidden 'captcha' input (Auth0 reads this field)
+  const captchaHidden = document.querySelector('input[name="captcha"]');
+  if(captchaHidden){
+    const dh=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+    dh.set.call(captchaHidden,token);
+    captchaHidden.dispatchEvent(new Event('input',{bubbles:true}));
+    captchaHidden.dispatchEvent(new Event('change',{bubbles:true}));
+    count++;
+  }
+  // Also call hcaptcha.callback() if available (notifies Auth0's hCaptcha widget)
+  try{
+    if(window.hcaptcha && typeof window.hcaptcha.execute === 'function'){
+      // Try internal callback dispatch
+      const allWidgets = document.querySelectorAll('[data-hcaptcha-widget-id]');
+      allWidgets.forEach(w => {
+        const wid = w.getAttribute('data-hcaptcha-widget-id');
+        try{ window.hcaptcha.setData(wid, {response: token}); }catch(e){}
+      });
+    }
+  }catch(e){}
+  // Do NOT submit the form — instead return so the caller can click Continue
+  // (form.submit() bypasses Auth0 SPA routing and causes page to stay on identifier)
+  return {injected:count, submitted:false};
+}"""
+
+_AUTH0_FILL_EMAIL_JS = r"""(email)=>{
+  const inp=document.querySelector('input#username,input[name="username"],input[type="email"]');
+  if(!inp)return 'MISSING';
+  const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+  inp.scrollIntoView({block:'center'});inp.focus();d.set.call(inp,email);
+  inp.dispatchEvent(new Event('input',{bubbles:true}));
+  inp.dispatchEvent(new Event('change',{bubbles:true}));
+  inp.blur();return 'ok:'+inp.value.slice(0,20);
+}"""
+
+_AUTH0_CLICK_CONTINUE_JS = r"""()=>{
+  const btn=document.querySelector('button[type=submit],button[name=action],input[type=submit]');
+  if(btn){btn.scrollIntoView({block:'center'});btn.click();return 'clicked:'+(btn.textContent||btn.value||'').trim().slice(0,30);}
+  return null;
+}"""
+
+_AUTH0_FILL_PASSWORD_JS = r"""(pwd)=>{
+  const inp=[...document.querySelectorAll('input[type=password]')].find(el=>{
+    const r=el.getBoundingClientRect();const s=getComputedStyle(el);
+    return r.width>0&&r.height>0&&s.visibility!=='hidden'&&s.display!=='none';
+  });
+  if(!inp)return 'MISSING';
+  const d=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+  inp.scrollIntoView({block:'center'});inp.focus();d.set.call(inp,pwd);
+  inp.dispatchEvent(new Event('input',{bubbles:true}));
+  inp.dispatchEvent(new Event('change',{bubbles:true}));
+  inp.dispatchEvent(new KeyboardEvent('keydown',{bubbles:true}));
+  inp.dispatchEvent(new KeyboardEvent('keyup',{bubbles:true}));
+  inp.blur();return 'ok:'+inp.value.length;
+}"""
+
+
+def _is_auth0_page(page):
+    """Return True if the current page or any frame looks like Auth0 Universal Login."""
+    try:
+        if _AUTH0_URL_RE.search(page.url or ""):
+            return True
+    except Exception:
+        pass
+    for fr in page.frames:
+        try:
+            url = fr.url or ""
+            if _AUTH0_URL_RE.search(url):
+                return True
+            det = fr.evaluate(_AUTH0_BODY_DETECT_JS)
+            if det and (det.get("urlMatch") or det.get("forms") or det.get("userInp")):
+                return True
+        except Exception:
+            pass
+    return False
+
+
+def _find_auth0_frame(page):
+    """Return the frame that IS the Auth0 page (or None if not on Auth0)."""
+    for fr in page.frames:
+        try:
+            url = fr.url or ""
+            if _AUTH0_URL_RE.search(url):
+                return fr
+            det = fr.evaluate(_AUTH0_BODY_DETECT_JS)
+            if det and (det.get("urlMatch") or det.get("forms") or det.get("userInp")):
+                return fr
+        except Exception:
+            pass
+    # Fallback to main frame if top-level URL matched.
+    try:
+        if _AUTH0_URL_RE.search(page.url or ""):
+            return page.frames[0] if page.frames else None
+    except Exception:
+        pass
+    return None
+
+
+def handle_auth0_login(page, email, password, debug=None):
+    """Handle the Auth0 Universal Login flow that iCIMS tenants redirect to.
+
+    Proved 2026-06-30 on AMD iCIMS (3970): after email gate + OTP the page
+    navigates to Auth0 which also has an hCaptcha. Inject token into both
+    h-captcha-response + g-recaptcha-response textareas + form.submit().
+    Then fill the visible password input and click submit.
+
+    Returns:
+      'done'            - Auth0 flow completed, now on iCIMS portal
+      'no-auth0'        - Not on Auth0; caller should proceed normally
+      'blocked-captcha' - hCaptcha present but could not solve
+      'failed'          - Other failure (no identifier/password field found)
+    """
+    if not _is_auth0_page(page):
+        log("Auth0: not detected (URL=%s)", (page.url or "")[:80])
+        return "no-auth0"
+
+    log("Auth0 Universal Login detected:", (page.url or "")[:80])
+    shot(page, debug, "AUTH0-00-detected")
+
+    auth0_fr = _find_auth0_frame(page)
+    if auth0_fr is None:
+        auth0_fr = page.frames[0] if page.frames else None
+    log("Auth0 frame:", (auth0_fr.url if auth0_fr else "(none)")[:80])
+
+    # ---- hCaptcha on the Auth0 identifier page --------------------------------
+    hcap = {}
+    if auth0_fr:
+        try:
+            hcap = auth0_fr.evaluate(_AUTH0_HCAP_DETECT_JS)
+        except Exception as exc:
+            log("Auth0 hCaptcha detect error:", exc)
+
+    log("Auth0 hCaptcha: present=%s sitekey=%s",
+        hcap.get("present"), hcap.get("sitekey"))
+
+    if hcap.get("present") or hcap.get("sitekey"):
+        sitekey = hcap.get("sitekey")
+        if not sitekey:
+            # Try to pull sitekey from the iframe URL.
+            iframe_url = hcap.get("iframeUrl") or ""
+            m = re.search(r"sitekey=([0-9a-f\-]+)", iframe_url, re.IGNORECASE)
+            if m:
+                sitekey = m.group(1)
+        if not sitekey:
+            # Fallback: AMD Auth0 sitekey (all careers-amd tenants share it).
+            sitekey = "ccfa5854-6c50-47f8-92e6-4a4dfbe474c3"
+            log("Auth0 hCaptcha: sitekey not in DOM, using AMD fallback:", sitekey)
+
+        log("Auth0 hCaptcha: solving sitekey=%s url=%s",
+            sitekey, (page.url or "")[:60])
+        token, reason = None, None
+        for _hcap_try in range(3):
+            token, reason = try_solve_hcaptcha(sitekey, page.url)
+            if token:
+                break
+            log("Auth0 hCaptcha attempt %d/3 FAILED: %s", _hcap_try + 1, reason)
+            if "UNSOLVABLE" not in str(reason):
+                break  # Non-transient error, don't retry
+            page.wait_for_timeout(3000)
+        if not token:
+            log("Auth0 hCaptcha all retries FAILED:", reason)
+            shot(page, debug, "AUTH0-ERR-hcaptcha")
+            return "blocked-captcha"
+
+        log("Auth0 hCaptcha solved (%s), injecting...", reason)
+        if auth0_fr:
+            try:
+                res = auth0_fr.evaluate(_AUTH0_INJECT_AND_SUBMIT_JS, token)
+                log("Auth0 hCaptcha inject result:", res)
+            except Exception as exc:
+                log("Auth0 hCaptcha inject error:", exc)
+        # After token injection, wait for the hCaptcha widget to verify + click Continue
+        page.wait_for_timeout(2000)
+        shot(page, debug, "AUTH0-01-captcha-injected")
+        # Click the Continue / Submit button to proceed past the identifier+hCaptcha
+        if auth0_fr:
+            try:
+                click_res = auth0_fr.evaluate(_AUTH0_CLICK_CONTINUE_JS)
+                log("Auth0 identifier Continue click after hCaptcha:", click_res)
+            except Exception as exc:
+                log("Auth0 identifier Continue click error:", exc)
+        page.wait_for_timeout(5000)
+        shot(page, debug, "AUTH0-02-post-captcha")
+        log("After Auth0 captcha submit, URL:", (page.url or "")[:80])
+    else:
+        log("Auth0: no hCaptcha on identifier page")
+
+    # ---- Identifier / email step ---------------------------------------------
+    # Re-detect Auth0 frame (page may have navigated after captcha form.submit()).
+    for _attempt in range(3):
+        auth0_fr = _find_auth0_frame(page)
+        if auth0_fr:
+            break
+        # If we already left Auth0, skip identifier step.
+        if not _is_auth0_page(page):
+            log("Auth0: already navigated away after captcha (to %s)",
+                (page.url or "")[:60])
+            auth0_fr = None
+            break
+        page.wait_for_timeout(2000)
+
+    if auth0_fr:
+        try:
+            fill_res = auth0_fr.evaluate(_AUTH0_FILL_EMAIL_JS, email)
+            log("Auth0 email fill:", fill_res)
+        except Exception as exc:
+            log("Auth0 email fill error:", exc)
+        page.wait_for_timeout(500)
+        try:
+            click_res = auth0_fr.evaluate(_AUTH0_CLICK_CONTINUE_JS)
+            log("Auth0 continue click:", click_res)
+        except Exception as exc:
+            log("Auth0 continue click error:", exc)
+        page.wait_for_timeout(3000)
+        shot(page, debug, "AUTH0-03-after-identifier")
+
+    # ---- Password step -------------------------------------------------------
+    pwd_filled = False
+    for attempt in range(5):
+        for fr in page.frames:
+            try:
+                has_pwd = fr.evaluate(
+                    "()=>{const e=[...document.querySelectorAll('input[type=password]')]"
+                    ".find(el=>{const r=el.getBoundingClientRect();"
+                    "return r.width>0&&r.height>0;});return !!e;}"
+                )
+                if has_pwd:
+                    # Use ONLY Playwright native fill for Auth0 password (React state)
+                    try:
+                        pw_locator = fr.locator('input[type=password]').first
+                        pw_locator.clear(timeout=3000)
+                        pw_locator.fill(password, timeout=5000)
+                        # Verify value was set
+                        actual_val = pw_locator.input_value(timeout=2000)
+                        log("Auth0 password Playwright fill: len=%d", len(actual_val))
+                        if len(actual_val) > 0:
+                            page.wait_for_timeout(600)  # let React state settle
+                            # Use Playwright click for the submit button
+                            btn_locator = fr.locator('button[type=submit],button[name=action],input[type=submit]').first
+                            btn_locator.click(timeout=5000)
+                            log("Auth0 password submit (Playwright click): ok")
+                            pwd_filled = True
+                            break
+                        else:
+                            log("Auth0 password fill returned empty - trying JS fallback")
+                    except Exception as pf_exc:
+                        log("Auth0 password Playwright fill error: %s", pf_exc)
+                    # JS fallback if Playwright fill failed
+                    fill_res = fr.evaluate(_AUTH0_FILL_PASSWORD_JS, password)
+                    log("Auth0 password JS fill (frame=%s): %s",
+                        (fr.url or "")[:40], fill_res)
+                    if fill_res and "ok" in str(fill_res):
+                        page.wait_for_timeout(600)
+                        click_res = fr.evaluate(_AUTH0_CLICK_CONTINUE_JS)
+                        log("Auth0 password JS submit click:", click_res)
+                        pwd_filled = True
+                        break
+            except Exception as exc:
+                log("Auth0 pwd attempt %d error: %s", attempt, exc)
+        if pwd_filled:
+            break
+        page.wait_for_timeout(2000)
+
+    shot(page, debug, "AUTH0-04-after-password")
+    if not pwd_filled:
+        log("Auth0: could not fill password input (not found after 5 attempts)")
+        return "failed"
+
+    # Wait for navigation back to iCIMS portal.
+    page.wait_for_timeout(6000)
+    shot(page, debug, "AUTH0-05-post-login")
+    final_url = page.url or ""
+    log("Auth0 login complete. Final URL:", final_url[:80])
+    # Detect failed login: if we're still on the login.icims.com password page,
+    # the password was rejected (wrong password, or account not recognized).
+    if "login.icims.com/u/login/password" in final_url:
+        # Capture error message for diagnosis
+        for fr in page.frames:
+            try:
+                err_msg = fr.evaluate("() => { const e = document.querySelector('.cf-alert-block,.error-message,.alert-danger,[class*=error],[class*=alert]'); return e ? e.innerText.slice(0,120) : null; }")
+                if err_msg:
+                    log("Auth0 error message:", err_msg)
+                    break
+            except Exception:
+                pass
+        log("Auth0: still on password page after submit — login FAILED (wrong password?)")
+        return "failed"
+    return "done"
+
+
+# ---------------------------------------------------------------------------
 # hCaptcha solve attempt via shared CaptchaSolver. Returns (token|None, reason).
 # ---------------------------------------------------------------------------
-def try_solve_hcaptcha(sitekey, page_url):
+
+
+def try_solve_hcaptcha(sitekey, page_url, is_invisible=False):
+    """Solve hCaptcha via 2Captcha PROXYLESS.
+
+    AMD iCIMS email gate (sitekey 94fee806-...) is INVISIBLE hCaptcha Enterprise:
+    - Fails with ERROR_CAPTCHA_UNSOLVABLE when PROXY_2CAPTCHA is set (proxied task)
+    - Succeeds proxyless but takes ~170s (proved 2026-07-01)
+    - timeout_s=300 gives 130s of margin beyond the observed 170s worst-case
+
+    Auth0 identifier hCaptcha (ccfa5854-...): pass is_invisible=False (visible hCaptcha
+    on the Auth0 Universal Login page -- shown as a human-verification challenge).
+
+    Do NOT use CaptchaSolver wrapper here -- it caches TwoCaptchaClient which
+    picks up PROXY_2CAPTCHA env on init and the proxy causes UNSOLVABLE.
+    """
     try:
-        from captcha_solver import CaptchaSolver, SolverNotConfigured, SolverError
+        import twocaptcha_client as _tc
     except Exception as e:
-        return None, f"captcha-solver-import-fail:{e}"
-    for vendor in ("twocaptcha", "nopecha"):  # capsolver dropped hCaptcha; 2Captcha works
-        try:
-            solver = CaptchaSolver(vendor=vendor)
-        except (SolverNotConfigured, SolverError):
-            continue
-        try:
-            token = solver.solve_hcaptcha(sitekey, page_url)
-            if token:
-                return token, f"solved-via-{vendor}"
-        except Exception as e:
-            log(f"hcaptcha solve via {vendor} failed:", e)
-            continue
+        log("twocaptcha_client import fail:", e)
+        return None, "icims-hcaptcha-no-vendor"
+    try:
+        # proxy="" overrides PROXY_2CAPTCHA env to force proxyless mode.
+        # timeout_s=300 accommodates AMD's slow (~170s) solve time.
+        client = _tc.TwoCaptchaClient(proxy="", timeout_s=300)  # AMD hCaptcha ~170s avg, max 300s
+        token = client.hcaptcha(sitekey, page_url, is_invisible=is_invisible)
+        if token:
+            log("hCaptcha solved via 2Captcha proxyless (invisible=%s), token=%s...",
+                is_invisible, token[:20])
+            return token, "solved-via-twocaptcha-proxyless"
+    except _tc.TwoCaptchaTimeout as e:
+        log("hCaptcha 2Captcha timeout:", e)
+        return None, "icims-hcaptcha-timeout"
+    except _tc.TwoCaptchaError as e:
+        log("hCaptcha 2Captcha error:", e)
+        return None, f"icims-hcaptcha-twocaptcha-error:{e}"
+    except Exception as e:
+        log("hCaptcha unexpected:", e)
+        return None, "icims-hcaptcha-no-vendor"
     return None, "icims-hcaptcha-no-vendor"
+# JS to inject solved hCaptcha token + submit the AMD iCIMS invisible-hCaptcha email gate.
+# AMD iCIMS intercepts form submit and calls hcaptcha.execute(); we bypass by creating the
+# hidden input that AMD's own callback creates, then submitting via HTMLFormElement.prototype.submit.
+_ICIMS_EMAIL_GATE_INJECT_JS = r"""
+(token) => {
+  var form = document.getElementById('enterEmailForm')
+    || document.querySelector('form[action*="step=email"], form[action*="/login"]');
+  if (!form) return {ok: false, reason: 'no_form'};
+  // Tick all unchecked checkboxes (GDPR accept, etc).
+  form.querySelectorAll('input[type=checkbox]').forEach(function(c) { if (!c.checked) c.click(); });
+  // Remove any stale h-captcha-response hidden inputs.
+  form.querySelectorAll('input[name="h-captcha-response"]').forEach(function(e) { e.remove(); });
+  form.querySelectorAll('input[name="behavior-type"]').forEach(function(e) { e.remove(); });
+  // Create the hidden token input (replicates AMD hCaptcha callback behavior).
+  var captchaInput = document.createElement('input');
+  captchaInput.type = 'hidden';
+  captchaInput.name = 'h-captcha-response';
+  captchaInput.value = token;
+  form.appendChild(captchaInput);
+  // behavior-type field (AMD requires this alongside the token).
+  var behaviorInput = document.createElement('input');
+  behaviorInput.type = 'hidden';
+  behaviorInput.name = 'behavior-type';
+  behaviorInput.value = 'other';
+  form.appendChild(behaviorInput);
+  // Also set any visible textareas (non-AMD tenants with visible hCaptcha).
+  form.querySelectorAll('textarea[name="h-captcha-response"], textarea[id^="h-captcha-response"]').forEach(function(t) {
+    t.value = token;
+  });
+  // Submit via native HTMLFormElement.prototype.submit to bypass the event listener
+  // (AMD's listener calls hcaptcha.execute() which triggers a NEW challenge).
+  try {
+    HTMLFormElement.prototype.submit.call(form);
+    return {ok: true, reason: 'native_submit'};
+  } catch(e) {
+    var btn = form.querySelector('#enterEmailSubmitButton, input[type=submit], button[type=submit]');
+    if (btn) { btn.click(); return {ok: true, reason: 'click_fallback'}; }
+    return {ok: false, reason: 'no_submit_btn'};
+  }
+}
+"""
 
 
 def inject_hcaptcha(page, token):
+    """Inject hCaptcha token + submit the iCIMS email gate form.
+
+    AMD iCIMS uses INVISIBLE hCaptcha (data-size=invisible) where:
+    - Form submit event is intercepted -> calls hcaptcha.execute()
+    - hCaptcha callback creates hidden <input name=h-captcha-response> and calls
+      HTMLFormElement.prototype.submit.call(form) directly
+
+    Standard textarea injection fails: server reads only the hidden input created by
+    the callback (or our replication of it). This function replicates the callback.
+
+    For non-AMD tenants that use visible hCaptcha textareas, the fallback textarea
+    set + click_fallback path handles submission.
+
+    Returns True if the injection + submit was attempted.
+    """
+    # Find the iframe frame containing the email gate form.
+    gate_fr = None
+    for fr in page.frames:
+        try:
+            has_form = fr.evaluate(
+                "()=>!!document.getElementById('enterEmailForm') || !!document.querySelector('form[action*=\"step=email\"],[action*=\"/login\"]')")
+            if has_form:
+                gate_fr = fr
+                break
+        except Exception:
+            pass
+    # Fallback: frame with email input
+    if not gate_fr:
+        for fr in page.frames:
+            try:
+                if fr.evaluate("()=>!!document.querySelector('#email,input[type=email]')"):
+                    gate_fr = fr
+                    break
+            except Exception:
+                pass
+    if not gate_fr:
+        log("inject_hcaptcha: no email gate frame found")
+        return False
     try:
-        from captcha_inject import inject_hcaptcha_token
+        res = gate_fr.evaluate(_ICIMS_EMAIL_GATE_INJECT_JS, token)
+        log("inject_hcaptcha result:", res)
+        return bool(res and res.get("ok"))
     except Exception as e:
-        log("inject import fail:", e)
+        log("inject_hcaptcha error:", e)
         return False
     for fr in page.frames:
         try:
@@ -541,6 +1012,11 @@ def submit_email(page):
     fr = find_form_frame(page, "#enterEmailSubmitButton, input[type=submit]")
     if not fr:
         return False
+    # Tick any unchecked checkbox in the email gate frame (e.g. AMD "I accept" GDPR checkbox).
+    frame_eval(fr, r"""()=>{
+      document.querySelectorAll('input[type=checkbox]').forEach(chk=>{
+        if(!chk.checked){chk.click();}
+      });return true;}""")
     frame_eval(fr, r"""()=>{const b=document.querySelector('#enterEmailSubmitButton')||
       [...document.querySelectorAll('input[type=submit],button[type=submit],button')].find(x=>/next|continue|submit/i.test((x.value||x.textContent||'').trim()));
       if(b){b.scrollIntoView({block:'center'});b.click();return true;}return false;}""")
@@ -618,7 +1094,10 @@ def run(args):
         # hCaptcha wall?
         if eg.get("hcaptcha"):
             log("hCaptcha gate detected; attempting solve")
-            token, reason = try_solve_hcaptcha(eg.get("sitekey"), page.url)
+            # Use the iframe URL (where hCaptcha is rendered) for better token binding.
+            # AMD email gate uses INVISIBLE hCaptcha (data-size=invisible).
+            hcap_page_url = eg.get("frame") or page.url
+            token, reason = try_solve_hcaptcha(eg.get("sitekey"), hcap_page_url, is_invisible=True)
             result["hcaptcha_solve"] = reason
             if not token:
                 result.update(status="blocked", block_reason="icims-hcaptcha-no-vendor")
@@ -628,7 +1107,50 @@ def run(args):
                 shot(page, args.debug, "WALL-hcaptcha")
                 print(json.dumps(result)); _close(page, args); return result
             inject_hcaptcha(page, token)
-            page.wait_for_timeout(800)
+            # inject_hcaptcha now handles checkbox + form.submit() for AMD invisible hCaptcha.
+            # Wait for navigation: the iframe should navigate away from /login on success.
+            # TargetClosedError means the iCIMS outer page fully navigated (e.g. to Auth0).
+            _page_closed_after_inject = False
+            try:
+                page.wait_for_timeout(6000)
+            except Exception as _wte:
+                log("wait_for_timeout after hcaptcha inject (page navigated to Auth0?): %s", _wte)
+                _page_closed_after_inject = True
+            if not _page_closed_after_inject:
+                shot(page, args.debug, "02-post-email-hcap")
+            # Check if we're still on the email gate (= token was rejected by server).
+            still_on_gate = False
+            if not _page_closed_after_inject:
+                for _fr in page.frames:
+                    try:
+                        if _fr.evaluate("()=>!!document.getElementById('enterEmailForm') || !!document.getElementById('enterEmailSubmitButton')"):
+                            still_on_gate = True
+                            break
+                    except Exception:
+                        pass
+            if still_on_gate:
+                log("hCaptcha token rejected by server (still on email gate); blocking")
+                result.update(status="blocked", block_reason="icims-hcaptcha-token-rejected")
+                shot(page, args.debug, "WALL-hcaptcha-rejected")
+                print(json.dumps(result)); _close(page, args); return result
+            log("Email gate passed (navigated away from gate)")
+            # If page navigated entirely (top-level nav to Auth0), find the new page.
+            if _page_closed_after_inject:
+                import time as _time
+                _time.sleep(3)
+                try:
+                    _all_pages = [_p for _ctx in page.context.browser.contexts for _p in _ctx.pages]
+                except Exception:
+                    _all_pages = []
+                # Find a page that is on Auth0
+                for _ap in _all_pages:
+                    try:
+                        if _AUTH0_URL_RE.search(_ap.url or ""):
+                            log("Found Auth0 page after top-level nav: %s", (_ap.url or "")[:80])
+                            page = _ap
+                            break
+                    except Exception:
+                        pass
 
         if eg.get("status") == "no-email-frame":
             result.update(status="blocked", block_reason="icims-no-email-gate")
@@ -636,9 +1158,10 @@ def run(args):
             shot(page, args.debug, "ERR-no-email-frame")
             print(json.dumps(result)); _close(page, args); return result
 
-        # Submit email -> account/register/form. (Only reached if no hCaptcha wall.)
-        submit_email(page)
-        page.wait_for_timeout(5000)
+        # Submit email (no-hCaptcha path) -> account/register/form.
+        if not eg.get("hcaptcha"):
+            submit_email(page)
+            page.wait_for_timeout(5000)
         shot(page, args.debug, "02-post-email")
 
         # --- Email-OTP verification gate (iCIMS Universal Login / Auth0, Apr-2025+) ---
@@ -658,6 +1181,30 @@ def run(args):
             print(json.dumps(result)); _close(page, args); return result
         if otp.get("status") != "absent":
             page.wait_for_timeout(3000)
+
+        # --- Auth0 Universal Login (iCIMS tenants that redirect to Auth0 after OTP) ---
+        # AMD/Keysight/SiriusXM tenants redirect to auth0 after email+OTP.
+        # Proved 2026-06-30: Auth0 page has its own hCaptcha (sitekey ccfa5854-...);
+        # inject token + form.submit() -> password page -> fill password -> back to iCIMS.
+        icims_password = _load_icims_password()
+        # Use CANONICAL_EMAIL for Auth0 (the real account), not the gate alias.
+        auth0_email = CANONICAL_EMAIL
+        auth0_result = handle_auth0_login(
+            page, auth0_email, icims_password, debug=args.debug)
+        result["auth0"] = auth0_result
+        log("Auth0 login result:", auth0_result)
+        if auth0_result == "blocked-captcha":
+            result.update(status="blocked",
+                          block_reason="icims-auth0-hcaptcha-no-vendor")
+            shot(page, args.debug, "AUTH0-WALL")
+            print(json.dumps(result)); _close(page, args); return result
+        if auth0_result == "failed":
+            # Failed to fill password or identifier - log but don't abort;
+            # the form may still be reachable (rare case where Auth0 auto-completed).
+            log("Auth0 login FAILED - continuing to check form availability")
+        if auth0_result in ("done", "failed"):
+            page.wait_for_timeout(3000)
+            shot(page, args.debug, "03-post-auth0")
 
         term = detect_terminal(page)
         if term == "already_applied":

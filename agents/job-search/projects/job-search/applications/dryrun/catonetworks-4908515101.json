@@ -1,0 +1,295 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/catonetworks/jobs/4908515101",
+  "org": "catonetworks",
+  "job_id": "4908515101",
+  "job_title": "Sales Engineer, Pittsburgh",
+  "job_location": "Pittsburgh, Pennsylvania, United States",
+  "fetched_at": "2026-07-01T02:53:08Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/catonetworks/jobs/4908515101?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 15,
+    "filled": 13,
+    "filled_needs_review": 2,
+    "declined": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "question_9184331101",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_9184332101[]",
+      "label": "How did you hear about Cato Networks? (Multiple Choice)",
+      "type": "multi_value_multi_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "From a Cato employee",
+          "value": 66526017101
+        },
+        {
+          "label": "From a friend (who is not a Cato employee)",
+          "value": 66526018101
+        },
+        {
+          "label": "Cato Networks career page",
+          "value": 66526019101
+        },
+        {
+          "label": "LinkedIn",
+          "value": 66526020101
+        },
+        {
+          "label": "Facebook",
+          "value": 66526021101
+        },
+        {
+          "label": "Podcast",
+          "value": 66526022101
+        },
+        {
+          "label": "Glassdoor",
+          "value": 66526023101
+        },
+        {
+          "label": "Event/Meetup",
+          "value": 66526024101
+        },
+        {
+          "label": "Other",
+          "value": 66526025101
+        }
+      ]
+    },
+    {
+      "id": "question_9184333101",
+      "label": "I agree to the Cato Networks Privacy Policy",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "I agree",
+      "source": "acknowledge_yes (matched 'I agree')",
+      "status": "filled",
+      "matched_rule": "acknowledge_yes",
+      "options": [
+        {
+          "label": "I agree",
+          "value": 66526026101
+        }
+      ]
+    },
+    {
+      "id": "question_9184334101",
+      "label": "Do you require Visa Support to work in the country that you are applying for?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "United States",
+      "source": "address.country | NOTE: 'United States' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "country",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_9184335101",
+      "label": "Are you currently located in the Denver Metro area? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_9184336101",
+      "label": "Are you comfortable delivering live technical product demonstrations to both technical and business audiences? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_9184337101",
+      "label": "Have you ever responded to RFIs/RFPs as part of a technical pre-sales process?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "answer_yes (matched 'Yes' option)",
+      "status": "filled",
+      "matched_rule": "answer_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_9184338101",
+      "label": "Do you have 4+ years of experience as a pre-sales engineer working with network and/or cloud security products? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "2",
+      "source": "experience_summary.answer_for_years_of_experience_field | NOTE: '2' not literally in options ['Yes', 'No']",
+      "status": "filled_needs_review",
+      "matched_rule": "years_experience",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "question_9184339101",
+      "label": "Do you have hands-on experience with any of the following technologies? (LAN/WAN technologies, Switching and routing, Security (firewalls, filtering technologies), and/or Cloud (AWS, Azure, GCP, etc.)) ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "experience_short_yes (Yes option)",
+      "status": "filled",
+      "matched_rule": "experience_short_yes",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 1
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

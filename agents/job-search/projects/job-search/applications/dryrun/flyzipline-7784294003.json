@@ -1,0 +1,582 @@
+{
+  "role_url": "https://job-boards.greenhouse.io/flyzipline/jobs/7784294003",
+  "org": "flyzipline",
+  "job_id": "7784294003",
+  "job_title": "Test Maintenance Program Manager",
+  "job_location": "South San Francisco, California, USA",
+  "fetched_at": "2026-07-01T02:54:39Z",
+  "api_url": "https://boards-api.greenhouse.io/v1/boards/flyzipline/jobs/7784294003?questions=true",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 21,
+    "filled": 14,
+    "filled_needs_review": 0,
+    "declined": 7,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "first_name",
+      "label": "First Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus",
+      "source": "identity.first_name",
+      "status": "filled",
+      "matched_rule": "first_name",
+      "options": null
+    },
+    {
+      "id": "last_name",
+      "label": "Last Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Shekari",
+      "source": "identity.last_name",
+      "status": "filled",
+      "matched_rule": "last_name",
+      "options": null
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null
+    },
+    {
+      "id": "phone",
+      "label": "Phone",
+      "type": "input_text",
+      "required": false,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null
+    },
+    {
+      "id": "resume",
+      "label": "Resume/CV",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "resume_text",
+      "label": "Resume/CV",
+      "type": "textarea",
+      "required": true,
+      "value": "<<paste contents of resume/Cyrus_Shekari_Resume.txt>>",
+      "source": "files.resume_text_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null
+    },
+    {
+      "id": "cover_letter",
+      "label": "Cover Letter",
+      "type": "input_file",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "cover_letter_text",
+      "label": "Cover Letter",
+      "type": "textarea",
+      "required": false,
+      "value": "",
+      "source": "cover_letter_policy=skip_unless_required (optional -> blank)",
+      "status": "filled",
+      "matched_rule": "cover_letter",
+      "options": null
+    },
+    {
+      "id": "question_31173447003",
+      "label": "LinkedIn Profile",
+      "type": "input_text",
+      "required": false,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null
+    },
+    {
+      "id": "question_31173448003",
+      "label": "Are you authorized to work for Zipline in the United States without sponsorship now?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 164364449003
+        },
+        {
+          "label": "No",
+          "value": 164364450003
+        },
+        {
+          "label": "I don't know",
+          "value": 164364451003
+        }
+      ]
+    },
+    {
+      "id": "question_31173449003",
+      "label": "Are you authorized to work for Zipline in the United States without sponsorship in the future?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "work_authorization.authorized_to_work_us (matched 'Yes')",
+      "status": "filled",
+      "matched_rule": "work_authorized",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 164364452003
+        },
+        {
+          "label": "No",
+          "value": 164364453003
+        },
+        {
+          "label": "I don't know",
+          "value": 164364454003
+        }
+      ]
+    },
+    {
+      "id": "question_31173450003",
+      "label": "Tell us how you heard about Zipline and this job!",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "how_heard literal-match 'LinkedIn'",
+      "status": "filled",
+      "matched_rule": "how_heard",
+      "options": [
+        {
+          "label": "Google Search",
+          "value": 164364455003
+        },
+        {
+          "label": "Word of Mouth or Referrals",
+          "value": 164364456003
+        },
+        {
+          "label": "LinkedIn",
+          "value": 164364457003
+        },
+        {
+          "label": "SkillBridge",
+          "value": 164364458003
+        },
+        {
+          "label": "Glassdoor",
+          "value": 164364459003
+        },
+        {
+          "label": "Indeed",
+          "value": 164364460003
+        },
+        {
+          "label": "Handshake",
+          "value": 164364461003
+        },
+        {
+          "label": "BuiltIn",
+          "value": 164364462003
+        },
+        {
+          "label": "Social Media (Facebook, Whatsapp, Instagram, Twitter, etc.)",
+          "value": 164364463003
+        },
+        {
+          "label": "YouTube or News",
+          "value": 164364464003
+        },
+        {
+          "label": "Partner Organization (event, content, etc.)",
+          "value": 164364465003
+        },
+        {
+          "label": "Zipline Investors",
+          "value": 164364466003
+        },
+        {
+          "label": "University Careers Fair Event",
+          "value": 164364467003
+        },
+        {
+          "label": "Event at Zipline",
+          "value": 164364468003
+        },
+        {
+          "label": "Other Job Board",
+          "value": 164364469003
+        },
+        {
+          "label": "Other",
+          "value": 164364470003
+        }
+      ]
+    },
+    {
+      "id": "disability_status",
+      "label": "DisabilityStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I do not want to answer",
+          "value": "3"
+        },
+        {
+          "label": "No, I do not have a disability and have not had one in the past",
+          "value": "2"
+        },
+        {
+          "label": "Yes, I have a disability, or have had one in the past",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "veteran_status",
+      "label": "VeteranStatus",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (eeoc compliance block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "I don't wish to answer",
+          "value": "3"
+        },
+        {
+          "label": "I identify as one or more of the classifications of a protected veteran",
+          "value": "2"
+        },
+        {
+          "label": "I am not a protected veteran",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "race",
+      "label": "Race",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "8"
+        },
+        {
+          "label": "Two or More Races",
+          "value": "7"
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "value": "6"
+        },
+        {
+          "label": "White",
+          "value": "5"
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": "4"
+        },
+        {
+          "label": "Black or African American",
+          "value": "3"
+        },
+        {
+          "label": "Asian",
+          "value": "2"
+        },
+        {
+          "label": "American Indian or Alaskan Native",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "gender",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Decline To Self Identify",
+          "value": "3"
+        },
+        {
+          "label": "Female",
+          "value": "2"
+        },
+        {
+          "label": "Male",
+          "value": "1"
+        }
+      ],
+      "compliance": "eeoc"
+    },
+    {
+      "id": "demographic_question_4000409003",
+      "label": "Gender",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_gender",
+      "options": [
+        {
+          "label": "Male",
+          "value": 4002176003
+        },
+        {
+          "label": "Female",
+          "value": 4002177003
+        },
+        {
+          "label": "Nonbinary",
+          "value": 4002178003
+        },
+        {
+          "label": "A gender not listed here",
+          "value": 4002179003
+        },
+        {
+          "label": "Decline to state",
+          "value": 4002180003
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4000410003",
+      "label": "Race",
+      "type": "multi_value_multi_select",
+      "required": false,
+      "value": "Decline to self-identify",
+      "source": "demographics_default",
+      "status": "declined",
+      "matched_rule": "demo_race",
+      "options": [
+        {
+          "label": "White",
+          "value": 4002181003
+        },
+        {
+          "label": "Hispanic or Latino",
+          "value": 4002182003
+        },
+        {
+          "label": "Black or African American",
+          "value": 4002183003
+        },
+        {
+          "label": "Western African",
+          "value": 4002184003
+        },
+        {
+          "label": "Eastern African",
+          "value": 4002185003
+        },
+        {
+          "label": "Northern African",
+          "value": 4002186003
+        },
+        {
+          "label": "Southern African",
+          "value": 4002187003
+        },
+        {
+          "label": "South Asian",
+          "value": 4002188003
+        },
+        {
+          "label": "East Asian",
+          "value": 4002189003
+        },
+        {
+          "label": "Other Asian",
+          "value": 4002190003
+        },
+        {
+          "label": "Native American, Alaskan Native, Indigenous",
+          "value": 4002191003
+        },
+        {
+          "label": "Native Hawaiian or Pacific Islander",
+          "value": 4002192003
+        },
+        {
+          "label": "Other",
+          "value": 4002193003
+        },
+        {
+          "label": "Decline to state",
+          "value": 4002194003
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4000411003",
+      "label": "Educational attainment: What is the highest level of education you have completed so far?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Bachelor's degree (e.g., BA, BS)",
+      "source": "education.degree | smart-matched to option \"Bachelor's degree (e.g., BA, BS)\"",
+      "status": "filled",
+      "matched_rule": "degree",
+      "options": [
+        {
+          "label": "No schooling completed",
+          "value": 4002195003
+        },
+        {
+          "label": "Primary school",
+          "value": 4002196003
+        },
+        {
+          "label": "High school diploma or equivalent",
+          "value": 4002197003
+        },
+        {
+          "label": "Associate's degree (e.g., AA, AS)",
+          "value": 4002198003
+        },
+        {
+          "label": "Bachelor's degree (e.g., BA, BS)",
+          "value": 4002199003
+        },
+        {
+          "label": "Trade skill certification",
+          "value": 4002200003
+        },
+        {
+          "label": "Master's degree (e.g., MA, MS, MEng, MEd, MSW, MBA)",
+          "value": 4002201003
+        },
+        {
+          "label": "Other post graduate degree (e.g., MD, JD, PhD)",
+          "value": 4002202003
+        },
+        {
+          "label": "Decline to state",
+          "value": 4002203003
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4000412003",
+      "label": "Are you a veteran?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "No",
+      "source": "not a veteran / transitioning service member",
+      "status": "filled",
+      "matched_rule": "transitioning_service_member",
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4002204003
+        },
+        {
+          "label": "No",
+          "value": 4002205003
+        },
+        {
+          "label": "Decline to state",
+          "value": 4002206003
+        }
+      ],
+      "compliance": "demographic"
+    },
+    {
+      "id": "demographic_question_4000413003",
+      "label": "Are you a first generation college student?",
+      "type": "multi_value_single_select",
+      "required": false,
+      "value": "Decline To Self Identify",
+      "source": "demographics_default (demographic_questions block)",
+      "status": "declined",
+      "matched_rule": null,
+      "options": [
+        {
+          "label": "Yes",
+          "value": 4002207003
+        },
+        {
+          "label": "No",
+          "value": 4002208003
+        },
+        {
+          "label": "Not applicable",
+          "value": 4002209003
+        },
+        {
+          "label": "Decline to state",
+          "value": 4002210003
+        }
+      ],
+      "compliance": "demographic"
+    }
+  ],
+  "unresolved": [],
+  "blockers": [],
+  "education_panel": {
+    "school": "University of Houston",
+    "degree": "Bachelor's degree",
+    "discipline": "Computer Science",
+    "minor": "Mathematics",
+    "gpa_undergrad": "3.8",
+    "gpa_grad": null,
+    "gpa_doctorate": null,
+    "graduation_year": "2024",
+    "start_year": "2021",
+    "end_year": "2024"
+  }
+}

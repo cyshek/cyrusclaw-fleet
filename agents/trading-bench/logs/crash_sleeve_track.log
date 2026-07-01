@@ -1,0 +1,88 @@
+=== crash_sleeve_paper_tracker @ 20260630T171032Z ===
+[crash_sleeve_paper] bar refresh: {"^GSPC": "2026-06-30", "TQQQ": "2026-06-30", "QQQ": "2026-06-30", "SPY": "2026-06-30", "GLD": "2026-06-30", "TLT": "2026-06-30"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-30  Sharpe 0.838 CAGR 17.9% maxDD -29.9%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-30  Sharpe 0.913 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-30  (4119 days)
+    [common-window] TQQQ solo Sharpe 0.838 | ROT solo Sharpe 0.925 | SPX Sharpe 0.775
+[crash_sleeve_paper] config: CASH hedge wh15 / DD-trigger -10% / invvol_63d_crashgated (probe reports/CRASH_SLEEVE_PROBE_20260630T164742Z.md)
+[crash_sleeve_paper] mark_date=2026-06-30 inserted=0 rows_logged=1
+[crash_sleeve_paper] staleness: current (last logged == latest closed SPX bar 2026-06-30)
+[crash_sleeve_paper] REGIME: OFF (no hedge) | SPX trailing DD -2.23% (trigger -10%)
+[crash_sleeve_paper] gated sleeve weights: TQQQ-voltarget 55.6% / rotation 44.4% / cash-hedge 0.0%
+[crash_sleeve_paper] mark_date daily return: gated 1.3017% | baseline 1.3017% | SPX 0.7537%
+[crash_sleeve_paper] cum since paper-clock start: gated 1.3008% | baseline 1.3008% | SPX 0.7709%
+[crash_sleeve_paper] engine full backtest Sharpe (gated, drift check) = 1.044
+[crash_sleeve_paper] backtest window ['2010-02-12', '2026-06-30'] (4119 days)
+
+[crash_sleeve_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-30",
+  "n_days": 1,
+  "cum_gated_pct": 1.3008,
+  "cum_baseline_pct": 1.3008,
+  "cum_spx_pct": 0.7709,
+  "gate_vs_baseline_pp": 0.0,
+  "sharpe_since_start": 0.0,
+  "regime_engaged_days": 0,
+  "regime_engaged_pct": 0.0,
+  "current_w_tqqq": 0.5558,
+  "current_w_rot": 0.4442,
+  "current_w_hedge": 0.0,
+  "current_regime_on": 0
+}
+snapshot rc: 0
+staleness (rc=0): {
+  "last_logged": "2026-06-30",
+  "latest_closed_bar": "2026-06-30",
+  "trading_days_behind": 0,
+  "rows_logged": 1,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-30)"
+}
+=== end crash_sleeve @ 20260630T171032Z ===
+=== crash_sleeve_paper_tracker @ 20260630T215001Z ===
+[crash_sleeve_paper] bar refresh: {"^GSPC": "2026-06-30", "TQQQ": "2026-06-30", "QQQ": "2026-06-30", "SPY": "2026-06-30", "GLD": "2026-06-30", "TLT": "2026-06-30"}
+>>> Reproducing TQQQ vol-target sleeve ...
+    TQQQ sleeve: 2010-02-11 -> 2026-06-30  Sharpe 0.837 CAGR 17.9% maxDD -29.9%
+>>> Reproducing sector-rotation top-2 sleeve ...
+    ROT sleeve:  2005-01-03 -> 2026-06-30  Sharpe 0.913 CAGR 12.9% maxDD -29.0%
+    Common window: 2010-02-12 -> 2026-06-30  (4119 days)
+    [common-window] TQQQ solo Sharpe 0.837 | ROT solo Sharpe 0.925 | SPX Sharpe 0.775
+[crash_sleeve_paper] config: CASH hedge wh15 / DD-trigger -10% / invvol_63d_crashgated (probe reports/CRASH_SLEEVE_PROBE_20260630T164742Z.md)
+[crash_sleeve_paper] mark_date=2026-06-30 inserted=0 rows_logged=1
+[crash_sleeve_paper] staleness: current (last logged == latest closed SPX bar 2026-06-30)
+[crash_sleeve_paper] REGIME: OFF (no hedge) | SPX trailing DD -2.23% (trigger -10%)
+[crash_sleeve_paper] gated sleeve weights: TQQQ-voltarget 55.6% / rotation 44.4% / cash-hedge 0.0%
+[crash_sleeve_paper] mark_date daily return: gated 1.2676% | baseline 1.2676% | SPX 0.7920%
+[crash_sleeve_paper] cum since paper-clock start: gated 1.3008% | baseline 1.3008% | SPX 0.7709%
+[crash_sleeve_paper] engine full backtest Sharpe (gated, drift check) = 1.044
+[crash_sleeve_paper] backtest window ['2010-02-12', '2026-06-30'] (4119 days)
+
+[crash_sleeve_paper] forward paper-clock stats (since inception):
+{
+  "start_date": "2026-06-30",
+  "n_days": 1,
+  "cum_gated_pct": 1.3008,
+  "cum_baseline_pct": 1.3008,
+  "cum_spx_pct": 0.7709,
+  "gate_vs_baseline_pp": 0.0,
+  "sharpe_since_start": 0.0,
+  "regime_engaged_days": 0,
+  "regime_engaged_pct": 0.0,
+  "current_w_tqqq": 0.5558,
+  "current_w_rot": 0.4442,
+  "current_w_hedge": 0.0,
+  "current_regime_on": 0
+}
+snapshot rc: 0
+staleness (rc=0): {
+  "last_logged": "2026-06-30",
+  "latest_closed_bar": "2026-06-30",
+  "trading_days_behind": 0,
+  "rows_logged": 1,
+  "stale": false,
+  "note": "current (last logged == latest closed SPX bar 2026-06-30)"
+}
+=== end crash_sleeve @ 20260630T215001Z ===

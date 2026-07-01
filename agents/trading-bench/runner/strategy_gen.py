@@ -513,7 +513,8 @@ def _build_llm_prompt(seed_strategy: Optional[str],
                       mutation_directive: str,
                       candidate_name: str,
                       *,
-                      second_parent: Optional[str] = None) -> str:
+                      second_parent: Optional[str] = None,
+                      postmortem_context: Optional[str] = None) -> str:
     """Construct the task message sent to the candidate-generation subagent.
 
     Constraints baked into the prompt are also enforced by code_review;
@@ -524,6 +525,13 @@ def _build_llm_prompt(seed_strategy: Optional[str],
     clearly-labeled SECOND PARENT reference block so the LLM can borrow its real
     signal mechanism instead of reconstructing it from a prose description. When
     None (default) the prompt is byte-identical to the single-parent form.
+
+    `postmortem_context` (optional) prepends a LOSS-ANATOMY guidance block built
+    from the parent's most recent loss-postmortem (regime at loss, cost-vs-edge,
+    signal-quality, classified cause + avoidance hints). It makes the mutation
+    *learn from the specific way the parent lost*, not just mutate randomly. When
+    None (default) the assembled prompt is BYTE-IDENTICAL to the form without it
+    (preserves the protected-md5 enforcement path; verified by a pinning test).
     """
     parent_code = ""
     parent_params = ""
@@ -581,7 +589,21 @@ def _build_llm_prompt(seed_strategy: Optional[str],
             "\n\nstrategy.py:\n```python\n" + second_code + "\n```"
         )
 
-    return f"""You are writing ONE new trading strategy module for the trading-bench
+    # Optional LOSS-ANATOMY prefix. Empty string when no postmortem_context ->
+    # the assembled prompt is byte-identical to the form without it (pinned by
+    # test_build_llm_prompt_byte_identical_without_context).
+    postmortem_prefix = ""
+    if postmortem_context:
+        postmortem_prefix = (
+            "## PARENT LOSS ANATOMY (learn from how this parent recently lost)\n\n"
+            "The parent strategy below recently failed/lost. Here is the diagnosed\n"
+            "anatomy of that loss. Bias your mutation to ADDRESS this specific\n"
+            "failure mode — do not reintroduce it:\n\n"
+            + postmortem_context.strip()
+            + "\n\n---\n\n"
+        )
+
+    return postmortem_prefix + f"""You are writing ONE new trading strategy module for the trading-bench
 tournament. Output exactly two artifacts in your final message:
 
   1. A fenced block tagged ```python labelled `# === strategy.py ===` with
@@ -705,6 +727,7 @@ def generate_candidate(seed_strategy: Optional[str],
                        *,
                        candidate_name: Optional[str] = None,
                        spawn_fn: Optional[Callable[..., dict]] = None,
+                       postmortem_context: Optional[str] = None,
                        ) -> dict:
     """Spawn an LLM subagent to author ONE strategy module.
 
@@ -717,6 +740,10 @@ def generate_candidate(seed_strategy: Optional[str],
             hash so re-runs are idempotent-ish.
         spawn_fn: injectable for tests. Production wiring uses sessions_spawn
             from the OpenClaw runtime, which this module imports lazily.
+        postmortem_context: optional LOSS-ANATOMY blob (from the parent's most
+            recent loss-postmortem) injected as a prompt prefix so the mutation
+            addresses the parent's specific failure mode. None -> prompt is
+            byte-identical to the no-context form.
 
     Returns:
         {
@@ -737,7 +764,8 @@ def generate_candidate(seed_strategy: Optional[str],
         base = (seed_strategy or "synth").replace("/", "_")
         candidate_name = f"{base}__mut_{h}"
 
-    prompt = _build_llm_prompt(seed_strategy, mutation_directive, candidate_name)
+    prompt = _build_llm_prompt(seed_strategy, mutation_directive, candidate_name,
+                               postmortem_context=postmortem_context)
 
     # In production, spawn an LLM subagent via OpenClaw's sessions_spawn.
     # Caller can inject `spawn_fn` (used by tests and the --dry-run path).

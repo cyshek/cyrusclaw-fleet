@@ -1,18 +1,29 @@
-# uber-159482 — Program Manager II, GTM Enablement & Field Programs (row 3071)
+SUBMITTED — 2026-07-01 (Oracle Cloud HCM / iaziqy tenant guest apply)
 
-STATUS: FAILED ❌ (signin-failed)
-submitted_at: 2026-06-28
-submitted_by: auto (_uber_batch.py)
-ats: uber
-url: https://www.uber.com/careers/apply/form/159482
-account: .uber-creds.json (cyshekari+wd-uber-202606081753@gmail.com alias)
-resume: Cyrus_Shekari_Resume.pdf
+role_id: 3071
+company: Uber
+oracle_job_id: 159482
+role: Program Manager II, GTM Enablement & Field Programs
+app_url: https://iaziqy.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/UberCareers/jobs/preview/159482/apply/email?mode=location
+ats: oracle-cloud-hcm (iaziqy tenant)
 
-## Form contents
-- Basic: Cyrus Shekari, 346-804-0227, US
-- Resume: Cyrus_Shekari_Resume.pdf
-- Experience: Microsoft — Technical Program Manager (current, from 03/2024)
-- Education: University of Houston, BS Computer Science, 08/2021–12/2024
-- Screening: driver=No, openRoles=Yes, inUSA=Yes, subsidiary=No, legalRight=Yes, sponsor=No
-- Demographics/veteran/arbitration: Prefer not to say / I prefer not to say / Yes, I agree
-- zipCode=98033, disabilityAccomodation=No
+CONFIRMATION:
+- After Submit, redirected to /my-profile showing:
+  "Thank you for your job application."
+  ACTIVE JOB APPLICATIONS → "Program Manager II, GTM Enablement & Field Programs"
+  San Francisco, CA, United States
+  Status: "Under Consideration"
+  "Uber 159482 Applied on 07/01/2026"
+
+resume_attached: yes — Cyrus_Shekari_Resume.pdf (pre-filled from profile)
+applied_by: auto-oracle-hcm
+submitted_by: subagent (uber-oracle-hcm-submit)
+
+WHAT I ANSWERED:
+- Can we keep your app 12 months: YES
+- Require sponsorship now/future: NO
+- Currently employed by Uber subsidiary: NO
+- Open to other roles: YES
+- Currently a Driver/Uber Eats/Freight: NO
+- Ever employed by Uber: NO
+- E-Signature Full Name: Cyrus Shekari

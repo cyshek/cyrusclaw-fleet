@@ -1,0 +1,146 @@
+{
+  "ats": "ashby",
+  "role_url": "https://jobs.ashbyhq.com/column/32435cfe-91d7-485e-9558-dccd041ae791",
+  "org": "column",
+  "job_id": "32435cfe-91d7-485e-9558-dccd041ae791",
+  "job_title": "Customer Engineer",
+  "job_location": "San Francisco, CA",
+  "fetched_at": "2026-06-30T22:40:43Z",
+  "api_url": "https://jobs.ashbyhq.com/api/non-user-graphql?op=ApiJobPosting",
+  "ready_to_submit": true,
+  "counts": {
+    "total_fields": 8,
+    "filled": 8,
+    "filled_needs_review": 0,
+    "declined": 0,
+    "needs_essay": 0,
+    "unresolved": 0,
+    "blockers": 0
+  },
+  "fields": [
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe__systemfield_name",
+      "label": "Full Name",
+      "type": "input_text",
+      "required": true,
+      "value": "Cyrus Shekari",
+      "source": "identity.first_name+last_name",
+      "status": "filled",
+      "matched_rule": "full_name",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe__systemfield_name"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe__systemfield_email",
+      "label": "Email",
+      "type": "input_text",
+      "required": true,
+      "value": "cyshekari@gmail.com",
+      "source": "contact.email",
+      "status": "filled",
+      "matched_rule": "email",
+      "options": null,
+      "_ashby_type": "Email",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe__systemfield_email"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe_9d1e4767-8cc6-4fab-82bb-747e324ba29d",
+      "label": "Phone Number",
+      "type": "input_text",
+      "required": true,
+      "value": "346-804-0227",
+      "source": "contact.phone",
+      "status": "filled",
+      "matched_rule": "phone",
+      "options": null,
+      "_ashby_type": "Phone",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe_9d1e4767-8cc6-4fab-82bb-747e324ba29d"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe_c3fba675-0a79-48dc-a724-1c658e9fa5fd",
+      "label": "LinkedIn URL",
+      "type": "input_text",
+      "required": true,
+      "value": "https://linkedin.com/in/cyshekari",
+      "source": "contact.linkedin",
+      "status": "filled",
+      "matched_rule": "linkedin",
+      "options": null,
+      "_ashby_type": "String",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe_c3fba675-0a79-48dc-a724-1c658e9fa5fd"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe__systemfield_resume",
+      "label": "Resume",
+      "type": "input_file",
+      "required": true,
+      "value": "resume/Cyrus_Shekari_Resume.pdf",
+      "source": "files.resume_path",
+      "status": "filled",
+      "matched_rule": "resume",
+      "options": null,
+      "_ashby_type": "File",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe__systemfield_resume"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe_6801a1c1-7db4-40a9-888d-6f957337110f",
+      "label": "How did you hear about Column? Why are you interested in this role here? ",
+      "type": "textarea",
+      "required": true,
+      "value": "LinkedIn",
+      "source": "ashby_how_did_you_hear (free text)",
+      "status": "filled",
+      "matched_rule": "how_did_you_hear",
+      "options": null,
+      "_ashby_type": "LongText",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe_6801a1c1-7db4-40a9-888d-6f957337110f"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe_7ba1e085-91c7-417e-870a-c56db971d9a9",
+      "label": "Will you now or in the future require sponsorship to work in the United States (e.g., H-1B visa)?",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "No",
+      "source": "work_authorization.sponsorship_required_*",
+      "status": "filled",
+      "matched_rule": "needs_sponsorship",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe_7ba1e085-91c7-417e-870a-c56db971d9a9"
+    },
+    {
+      "id": "7bb77db9-614c-4548-abc2-0da7e229aefe_c34e00d4-6eaa-4b00-92a7-8e212421565c",
+      "label": "Confirming that you're willing to work out of our Presidio-based office 3-4 days/week? ",
+      "type": "multi_value_single_select",
+      "required": true,
+      "value": "Yes",
+      "source": "preferences.willing_to_travel_pct (>=25%)",
+      "status": "filled",
+      "matched_rule": "ack_in_office",
+      "options": [
+        {
+          "label": "Yes",
+          "value": true
+        },
+        {
+          "label": "No",
+          "value": false
+        }
+      ],
+      "_ashby_type": "Boolean",
+      "_ashby_id": "7bb77db9-614c-4548-abc2-0da7e229aefe_c34e00d4-6eaa-4b00-92a7-8e212421565c"
+    }
+  ],
+  "unresolved": [],
+  "blockers": []
+}

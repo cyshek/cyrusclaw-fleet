@@ -1,6 +1,7 @@
-ABORT-DRYRUN-BLOCKERS — 2026-06-22T08:59:26+00:00
+ABORT-BULLET-REWRITER — 2026-06-30T14:58:26+00:00
 
 role_id: 2106
-phase: dryrun-blockers
+phase: bullet-rewriter
 error:
-dryrun has blockers: [{"id": "question_67406144", "label": "AI Policy for Interviewers", "reason": "no LABEL_RULES match for label='AI Policy for Interviewers'"}]
+RuntimeError: bullet_rewriter failed (rc=1):      "title_swaps": { "<role_key>": "<allowed label>", ... },\n     "bullets": {\n       "microsoft_ft":     ["bullet 1 text", "bullet 2 text", ...],\n       "microsoft_2023":   ["...", ...],\n       "microsoft_2022":   ["...", ...],\n       "amazon_robotics":  ["...", ...],\n       "pro_painters":     ["...", ...]\n     },\n     "skills_priority": ["...", "..."],\n     "tailoring_notes": ["short note", "short note"]\n   }\n\n   `bullets` MUST contain an array for every role_key (microsoft_ft,\n   microsoft_2023, microsoft_2022, amazon_robotics, pro_painters), even if\n   you\'re keeping the master text — in that case echo the master bullets\n   verbatim into the array.\n\nF. Per-JD differentiation (MANDATORY): This resume must read as written\n   specifically for THIS job, not a lightly reskinned generic. At least half\n   the bullets across all roles must use vocabulary, tools, product areas, or\n   outcome framing pulled directly from THIS JD — not just bolding the same\n   words differently. If the JD calls out specific domains (e.g. "ads ranking",\n   "AI infrastructure", "capacity planning"), at least one bullet per role must\n   reference that domain in substance. Generic bullets ("led cross-functional\n   teams", "defined roadmaps") are only acceptable when paired with JD-specific\n   context. Your tailoring_notes must name at least 3 specific JD terms you\n   actually wove in and WHERE (which role/bullet).\n\nNow emit STRICT JSON only.']' timed out after 300 seconds
+

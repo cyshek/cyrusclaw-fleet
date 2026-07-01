@@ -745,16 +745,13 @@ TARGET_ROLE_SUBSTRINGS = [
     "technical program manager",
     "engineering program manager",
     "product marketing manager",
-    "solutions engineer",
-    "solution engineer",
-    "sales engineer",
-    "solutions architect",
-    "solution architect",
-    "customer engineer",
 ]
-# NOTE 2026-06-20: FDE + all SWE discipline keywords REMOVED from blocklist per Cyrus full-unblock directive.
+# NOTE 2026-07-01: Tier 2 (SE/SA/Sales Eng/Customer Eng/FDE) and Tier 3 (SWE/ML/data/infra)
+# BLOCKED per Cyrus directive. Only Tier 1 PM/TPM/EPM/PgM/APM roles kept.
+# To re-enable: restore solutions engineer/architect/sales engineer entries above
+# and add SE/SA back to the abbrev regex.
 _TARGET_ROLE_ABBREV_RE = re.compile(
-    r"\b(?:PM|TPM|EPM|PgM|SE|SA|APM|TPgM)\b"
+    r"\b(?:PM|TPM|EPM|PgM|APM|TPgM)\b"
 )
 
 

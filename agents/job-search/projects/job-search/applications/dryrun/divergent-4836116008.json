@@ -4,7 +4,7 @@
   "job_id": "4836116008",
   "job_title": "Technical Program Manager (Aerospace & Defense) ",
   "job_location": "Torrance, California, United States",
-  "fetched_at": "2026-06-04T11:19:12Z",
+  "fetched_at": "2026-06-30T17:50:25Z",
   "api_url": "https://boards-api.greenhouse.io/v1/boards/divergent/jobs/4836116008?questions=true",
   "ready_to_submit": true,
   "counts": {
@@ -131,8 +131,8 @@
       "label": "This position requires access to information and technology that is subject to US export controls. Are you any of the following “protected individuals” as defined in the Immigration and Naturalization Act, 8 USC 1324b(a)(3)?",
       "type": "multi_value_single_select",
       "required": true,
-      "value": "US citizen or national",
-      "source": "work_authorization.status=us_citizen (matched ITAR option 'US citizen or national')",
+      "value": "None of the above",
+      "source": "work_authorization.status=us_citizen (inverted export Q -> 'None of the above')",
       "status": "filled",
       "matched_rule": "itar_us_person_ack",
       "options": [

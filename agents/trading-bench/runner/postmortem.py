@@ -55,6 +55,19 @@ SIGNAL_DECAY = "SIGNAL_DECAY"
 REGIME_MISMATCH = "REGIME_MISMATCH"
 UNKNOWN = "UNKNOWN"
 
+# Regime labels for the market context at loss time.
+BULL = "BULL"
+BEAR = "BEAR"
+CHOP = "CHOP"
+
+# Cost assumption for the cost-vs-edge breakdown (one-way bps per side of
+# turnover). Matches the runner CostModel default used elsewhere in the bench.
+DEFAULT_COST_BPS = 2.0
+
+# A window net-return magnitude (in %) below this is treated as directionless
+# CHOP regardless of trend position.
+_CHOP_BAND_PCT = 2.0
+
 # Minimum round-trips below which we say we don't have enough data.
 MIN_ROUND_TRIPS = 5
 
@@ -220,7 +233,176 @@ def _compute_stats(rows: list) -> dict:
         "n_buys": n_buys,
         "n_sells": n_sells,
         "n_trades": len(rows),
+        "pnls": pnls,
     }
+
+
+# ---------------------------------------------------------------------------
+# Enrichment helpers: cost-vs-edge, signal-quality, regime-at-loss-time
+# (added for BACKLOG [V]4 — make the postmortem note diagnostic, not just
+# a stats dump, so the mutation step learns the *anatomy* of the loss.)
+# ---------------------------------------------------------------------------
+
+def _cost_edge_breakdown(stats: dict, cost_bps: float = DEFAULT_COST_BPS) -> dict:
+    """Split the realized (net) loss into directional edge vs transaction-cost drag.
+
+    The trades table PnL is already net of fills. We reconstruct the implied
+    cost drag from turnover (turnover * cost_bps) and back out the gross
+    (pre-cost) PnL, so the note can say how much of the loss was the *signal*
+    being wrong vs the strategy simply over-trading.
+
+    Returns:
+        cost_drag_usd: turnover * cost_bps (>= 0)
+        gross_pnl_usd: realized_pnl + cost_drag_usd (less negative than net)
+        cost_bps: the rate used
+        cost_exceeds_net_loss: True if the cost drag alone is larger than the
+            magnitude of the net loss (i.e. without costs the strategy would
+            have been ~flat or positive -> a cost problem, not an edge problem)
+        cost_frac_of_gross: cost_drag / |gross_pnl| (capped at 99.0 to avoid
+            divide-by-zero blowups when gross is ~0)
+    """
+    realized = float(stats.get("realized_pnl", 0.0) or 0.0)
+    turnover = float(stats.get("turnover", 0.0) or 0.0)
+    cost_drag = turnover * (cost_bps / 10000.0)
+    gross = realized + cost_drag
+    net_loss_mag = abs(realized) if realized < 0 else 0.0
+    cost_exceeds = cost_drag > net_loss_mag and realized < 0
+    denom = abs(gross)
+    cost_frac = (cost_drag / denom) if denom > 1e-9 else 99.0
+    return {
+        "cost_drag_usd": cost_drag,
+        "gross_pnl_usd": gross,
+        "cost_bps": cost_bps,
+        "cost_exceeds_net_loss": bool(cost_exceeds),
+        "cost_frac_of_gross": cost_frac,
+    }
+
+
+def _signal_quality(pnls: list) -> dict:
+    """Compute signal-quality metrics from a list of round-trip PnLs.
+
+    Returns:
+        n: number of round-trips
+        profit_factor: gross wins / gross losses (0.0 if no wins; guarded so no
+            div-by-zero / inf when there are no losses -> reported as gross_win)
+        hit_rate: fraction of round-trips that won
+        win_loss_ratio: avg_win / |avg_loss| (0.0 if no losses guard below)
+        breakeven_hit_rate: 1 / (1 + win_loss_ratio); the hit rate this strategy
+            would NEED given its win/loss asymmetry to break even. If there are
+            no wins, returns 1.0 (you'd need to win every trade — impossible).
+        hit_rate_minus_breakeven: hit_rate - breakeven_hit_rate (positive = the
+            strategy is winning often enough for its payoff profile)
+    """
+    n = len(pnls)
+    if n == 0:
+        return {
+            "n": 0, "profit_factor": 0.0, "hit_rate": 0.0,
+            "win_loss_ratio": 0.0, "breakeven_hit_rate": 1.0,
+            "hit_rate_minus_breakeven": -1.0,
+        }
+    wins = [x for x in pnls if x > 0]
+    losses = [x for x in pnls if x <= 0]
+    gross_win = sum(wins)
+    gross_loss = abs(sum(losses))
+    hit_rate = len(wins) / n
+    if gross_loss > 1e-9:
+        profit_factor = gross_win / gross_loss
+    else:
+        # No losing dollars: profit factor is degenerate-infinite; report the
+        # gross win as a finite stand-in so downstream formatting never prints inf.
+        profit_factor = gross_win
+    avg_win = (gross_win / len(wins)) if wins else 0.0
+    avg_loss_mag = (gross_loss / len(losses)) if losses else 0.0
+    if avg_loss_mag > 1e-9 and avg_win > 0:
+        win_loss_ratio = avg_win / avg_loss_mag
+        breakeven = 1.0 / (1.0 + win_loss_ratio)
+    elif not wins:
+        win_loss_ratio = 0.0
+        breakeven = 1.0
+    else:
+        # wins but no losses -> any hit rate breaks even; breakeven ~0
+        win_loss_ratio = float(avg_win)
+        breakeven = 0.0
+    return {
+        "n": n,
+        "profit_factor": profit_factor,
+        "hit_rate": hit_rate,
+        "win_loss_ratio": win_loss_ratio,
+        "breakeven_hit_rate": breakeven,
+        "hit_rate_minus_breakeven": hit_rate - breakeven,
+    }
+
+
+def _regime_label_from_metrics(net_return_pct: float, frac_above_sma: float) -> str:
+    """Pure classifier: label a window's market regime from its net return and
+    the fraction of days the benchmark closed above its trailing SMA.
+
+    Rules (return sign dominates; SMA position is the tie-breaker near zero):
+    - |net_return| < _CHOP_BAND_PCT  -> CHOP (directionless)
+    - net_return strongly positive (>= band) -> BULL
+    - net_return strongly negative (<= -band) -> BEAR
+    """
+    if abs(net_return_pct) < _CHOP_BAND_PCT:
+        return CHOP
+    if net_return_pct >= _CHOP_BAND_PCT:
+        return BULL
+    return BEAR
+
+
+def _benchmark_regime_at_loss(cutoff_iso: str, *, benchmark: str = "SPY",
+                              n_days: int = 7, sma_window: int = 50) -> dict:
+    """Fetch the benchmark's actual trend over the loss window and label it.
+
+    READ-ONLY: uses runner.daily_bars_cache (Yahoo v8 adjclose). On any failure
+    (no network, sparse data) returns a graceful 'regime: UNKNOWN' dict so the
+    postmortem never crashes on the regime section.
+
+    Returns: {regime, net_return_pct, frac_above_sma, benchmark, available}
+    """
+    fallback = {
+        "regime": UNKNOWN, "net_return_pct": 0.0, "frac_above_sma": 0.0,
+        "benchmark": benchmark, "available": False,
+    }
+    try:
+        from datetime import datetime as _dt
+        from . import daily_bars_cache as _dbc
+        bars = _dbc.get_daily(benchmark)
+        if not bars or len(bars) < sma_window + 2:
+            return fallback
+        # adjclose series (fall back to close if adjclose missing on a row)
+        closes_list = [float(b.get("adjclose") if b.get("adjclose") is not None
+                             else b.get("close")) for b in bars]
+        dates = [str(b.get("date")) for b in bars]
+        # window = trading days on/after the loss cutoff date
+        cutoff_date = cutoff_iso[:10]
+        win_idx = [i for i, d in enumerate(dates) if d >= cutoff_date]
+        if len(win_idx) < 2:
+            # cutoff is beyond the cached data tail; use the last n_days bars
+            win_idx = list(range(max(0, len(closes_list) - (n_days + 1)), len(closes_list)))
+        if len(win_idx) < 2:
+            return fallback
+        w0, w1 = win_idx[0], win_idx[-1]
+        if closes_list[w0] in (0, None):
+            return fallback
+        net_ret = (closes_list[w1] / closes_list[w0] - 1.0) * 100.0
+        # frac of window days closing above the trailing SMA
+        above = 0
+        total = 0
+        for i in win_idx:
+            if i < sma_window:
+                continue
+            sma = sum(closes_list[i - sma_window:i]) / sma_window
+            total += 1
+            if closes_list[i] > sma:
+                above += 1
+        frac_above = (above / total) if total > 0 else 0.5
+        regime = _regime_label_from_metrics(net_ret, frac_above)
+        return {
+            "regime": regime, "net_return_pct": net_ret,
+            "frac_above_sma": frac_above, "benchmark": benchmark, "available": True,
+        }
+    except Exception:  # noqa: BLE001
+        return fallback
 
 
 # ---------------------------------------------------------------------------
@@ -397,12 +579,26 @@ def _format_postmortem(
     narrative_text: str,
     suggested_directives: list[str],
     n_days: int,
+    *,
+    regime: Optional[dict] = None,
+    cost_edge: Optional[dict] = None,
+    sigqual: Optional[dict] = None,
 ) -> str:
     lines = [
         f"# Postmortem: `{strategy}`",
         f"",
         f"**Date range:** {date_from} → {date_to} ({n_days} days)",
         f"**Cause:** `{cause}`",
+    ]
+    if regime and regime.get("available"):
+        lines.append(
+            f"**Regime at loss ({regime.get('benchmark', 'SPY')}):** `{regime.get('regime')}` "
+            f"({regime.get('net_return_pct', 0.0):+.1f}% over window, "
+            f"{regime.get('frac_above_sma', 0.0):.0%} of days above 50d SMA)"
+        )
+    elif regime is not None:
+        lines.append(f"**Regime at loss:** `UNKNOWN` (benchmark data unavailable)")
+    lines += [
         f"",
         f"## Key Statistics",
         f"",
@@ -418,6 +614,50 @@ def _format_postmortem(
         f"| Trades (n) | {stats['n_trades']} |",
         f"| Buys / Sells | {stats['n_buys']} / {stats['n_sells']} |",
         f"| All-time realized PnL | ${alltime_stats['realized_pnl']:+.4f} |",
+    ]
+
+    # Cost-vs-edge breakdown
+    if cost_edge is not None:
+        lines += [
+            f"",
+            f"## Cost vs Edge",
+            f"",
+            f"| Component | Value |",
+            f"|-----------|-------|",
+            f"| Gross PnL (pre-cost, implied) | ${cost_edge['gross_pnl_usd']:+.4f} |",
+            f"| Cost drag (turnover × {cost_edge['cost_bps']:.1f}bps) | ${cost_edge['cost_drag_usd']:.4f} |",
+            f"| Net realized PnL | ${stats['realized_pnl']:+.4f} |",
+        ]
+        if cost_edge.get("cost_exceeds_net_loss"):
+            lines.append(
+                f"\n⚠️ **Cost drag alone (${cost_edge['cost_drag_usd']:.2f}) EXCEEDS the net loss "
+                f"magnitude** — without transaction costs this strategy would have been roughly "
+                f"flat-to-positive. This is a turnover/cost problem, not a directional-edge problem."
+            )
+
+    # Signal-quality metrics
+    if sigqual is not None and sigqual.get("n", 0) > 0:
+        pf = sigqual["profit_factor"]
+        lines += [
+            f"",
+            f"## Signal Quality",
+            f"",
+            f"| Metric | Value |",
+            f"|--------|-------|",
+            f"| Profit factor (gross win / gross loss) | {pf:.2f} |",
+            f"| Hit rate | {sigqual['hit_rate']:.0%} |",
+            f"| Win/loss size ratio | {sigqual['win_loss_ratio']:.2f} |",
+            f"| Breakeven hit rate needed | {sigqual['breakeven_hit_rate']:.0%} |",
+            f"| Hit rate − breakeven | {sigqual['hit_rate_minus_breakeven']:+.0%} |",
+        ]
+        if sigqual["hit_rate_minus_breakeven"] < 0:
+            lines.append(
+                f"\n⚠️ Hit rate ({sigqual['hit_rate']:.0%}) is BELOW the breakeven rate this "
+                f"payoff profile needs ({sigqual['breakeven_hit_rate']:.0%}) — the win/loss "
+                f"asymmetry is unfavorable: it wins too rarely for how small its wins are vs its losses."
+            )
+
+    lines += [
         f"",
         f"## Diagnosis",
         f"",
@@ -507,6 +747,13 @@ def run_postmortem(
     # Classify cause
     cause = _classify_cause(recent_stats, alltime_stats)
 
+    # Enrichments (regime at loss time, cost-vs-edge, signal-quality).
+    # All degrade gracefully: regime returns UNKNOWN on no-network; the other
+    # two are pure functions over already-computed stats.
+    regime = _benchmark_regime_at_loss(cutoff_iso, n_days=n_days)
+    cost_edge = _cost_edge_breakdown(recent_stats)
+    sigqual = _signal_quality(recent_stats.get("pnls", []))
+
     # Directives
     rng = random.Random(strategy + week_label)
     directives = _get_directives()
@@ -526,6 +773,9 @@ def run_postmortem(
         narrative_text=narrative_text,
         suggested_directives=suggested,
         n_days=n_days,
+        regime=regime,
+        cost_edge=cost_edge,
+        sigqual=sigqual,
     )
 
     # Write file
@@ -574,6 +824,54 @@ def run_postmortems_for_all(
 # ---------------------------------------------------------------------------
 # Postmortem hint for tournament_loop directive weighting
 # ---------------------------------------------------------------------------
+
+def build_postmortem_prompt_context(
+    strategy: str,
+    postmortem_dir: Path,
+    *,
+    max_age_days: int = 14,
+) -> Optional[str]:
+    """Build a compact LOSS-ANATOMY context string from `strategy`'s most recent
+    postmortem, for injection as a generation-prompt prefix.
+
+    Pulls the high-signal lines (cause, regime-at-loss, the cost/edge and
+    signal-quality warnings, and the first suggested directive) so the mutation
+    LLM sees the *anatomy* of the parent's loss, not just a directive nudge.
+
+    Returns a short markdown blob, or None if no recent postmortem exists.
+    """
+    if not postmortem_dir.exists():
+        return None
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=max_age_days)
+    candidates = sorted(postmortem_dir.glob(f"{strategy}_*.md"), reverse=True)
+    if not candidates:
+        return None
+    pm_path = candidates[0]
+    try:
+        mtime = datetime.fromtimestamp(pm_path.stat().st_mtime, tz=timezone.utc)
+        if mtime < cutoff:
+            return None
+        text = pm_path.read_text()
+    except Exception:  # noqa: BLE001
+        return None
+
+    keep: list[str] = []
+    for line in text.splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        # Header fields + the warning/diagnosis lines carry the anatomy.
+        if (s.startswith("**Cause:**")
+                or s.startswith("**Regime at loss")
+                or s.startswith("⚠️")
+                or s.startswith("**Directive 1:**")):
+            keep.append(s)
+    if not keep:
+        return None
+    header = f"Most recent loss-postmortem for parent `{strategy}` ({pm_path.name}):"
+    return header + "\n" + "\n".join(f"- {k}" for k in keep)
+
 
 def get_postmortem_directive_hint(
     strategy: str,

@@ -1,0 +1,41 @@
+# Tailoring notes
+
+## Title swaps applied
+- (none)
+
+## Bullet rewrites per role
+
+### `microsoft_ft` (5 bullets emitted, master had 5)
+1. Scaled Azure's recovery validation program from a **2-person operation** into a platformized system, standardizing onboarding workflows to sustain 45+ annual resilience drills and drive **$14M+ business impact** across enterprise customers including Databricks, Walmart, SAP, and NetApp.
+2. Led **0→1 development** of an internal Resilience Automation Platform, defining requirements and self-service scheduling capabilities that reduced operational toil by 30% and transitioned execution to a scalable, repeatable model across cross-functional teams.
+3. Pioneered Azure's first proactive resilience testing capability, delivering a rack-level drill program in 4 months with a **94% recovery rate**, surfacing critical hardware defects and establishing a new continuous-validation playbook adopted org-wide.
+4. Directed **14 cross-org recovery executions** under executive visibility, including serving as bridge lead for a sovereign-cloud network isolation test tied to a $1.5B+ enterprise contract requiring precise stakeholder coordination and go-live readiness validation.
+5. Built an internal **AI agent** to restructure drill-planning workflows, reducing planning cycle time by 39% and increasing drill capacity by 21% — demonstrating the same automation-first implementation mindset critical to scaling customer onboarding at speed.
+
+### `microsoft_2023` (3 bullets emitted, master had 3)
+1. Drove **product adoption** for AI-driven workflows by running hands-on demos and training sessions across 14 Azure service teams, saving 37 engineering hours monthly — mirroring the onboarding delivery and stakeholder enablement core to this role.
+2. Surfaced critical **workflow gaps** by facilitating 11+ discovery interviews with Azure engineering teams, directly influencing the product roadmap to prioritize intent-based YAML generation based on documented end-user pain points.
+3. Improved **data integrity and retrieval** by implementing rigorous metadata standards and migrating documentation to an AI-powered semantic search tool, cutting lookup time by 83% across internal customer teams.
+
+### `microsoft_2022` (3 bullets emitted, master had 3)
+1. Secured cross-functional alignment across **140+ teams** on a unified automation prioritization framework, accelerating region launches by 28% and generating $3M in revenue — demonstrating the repeatable implementation-playbook discipline this role demands.
+2. Conducted discovery with **20+ service teams** to identify 81 hours of manual effort per region launch, then built a phased roadmap to automate critical paths — directly paralleling the onboarding lifecycle design and workflow configuration work of this SE role.
+3. Engineered a **Power BI dashboard** to surface operational toil patterns across 140+ teams, enabling leadership to target high-impact automation gaps — the same feedback-loop and data-driven implementation mindset valued for improving electrical contractor onboarding.
+
+### `amazon_robotics` (3 bullets emitted, master had 3)
+1. Achieved **zero operational downtime** during a 2,000+ unit pilot transition by defining the full migration strategy and mapping dependencies across 1,200+ stations — demonstrating the go-live readiness and technical execution discipline central to this SE role.
+2. Drove cross-functional alignment between IT, Operations, and Engineering to implement **automated CI/CD pipelines**, accelerating the software deployment cycle by 25% and reducing friction during customer-facing technical rollouts.
+3. Facilitated Agile ceremonies including sprint planning and retrospectives, **resolving 40+ high-priority tickets** and stabilizing the developer intake process — building the structured project-management cadence this implementation role requires.
+
+### `pro_painters` (3 bullets emitted, master had 3)
+1. Owned the **end-to-end onboarding and scoping lifecycle** for 200+ monthly customer proposals via a new CRM workflow, increasing job bookings by 26% — directly reflecting the implementation ownership and customer-facing configuration work of this SE role.
+2. Reduced **Customer Acquisition Cost by 13%** and boosted conversions by 2.7% by executing a digital-first go-to-market strategy, optimizing web presence and Google profile to improve contractor customer engagement and pipeline quality.
+3. Conducted **profitability analysis** across 1,000+ project records to identify margin leaks and improve leadership pricing models, applying the same data-ingestion and workflow-validation discipline needed to configure Stratus for electrical contractor customers.
+
+## Notes from the rewriter
+- Wove 'go-live readiness' (JD: 'go-live readiness') into amazon_robotics bullet 1 and microsoft_ft bullet 4 to mirror implementation lifecycle language.
+- Used 'onboarding lifecycle,' 'workflow configuration,' and 'implementation playbook' (JD: 'onboarding lifecycle,' 'workflow design,' 'repeatable implementation playbooks') across pro_painters bullet 1, microsoft_2022 bullet 2, and microsoft_ft bullet 2.
+- Embedded 'operational toil,' 'self-service,' and 'repeatable model' (JD: 'repeatable implementation playbooks,' 'scalable') in microsoft_ft bullets 2 and 5 and microsoft_2022 bullet 3 to align with Stratus's scalable onboarding mission.
+- Framed microsoft_2023 bullet 1 around 'stakeholder enablement' and 'onboarding delivery' to directly echo JD language about training customer teams including field crews and project managers.
+- Recast pro_painters bullet 3 around 'data-ingestion and workflow-validation' to mirror JD terms 'data ingestion' and 'validate alignment between delivered workflows and the pre-sales plan.'
+

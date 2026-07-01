@@ -74,8 +74,6 @@ You must be both a teacher and a student, able to coach teammates on systems tha
 
 - Experience operating specialized equipment including aerial lifts and forklifts.
 
-- Valid Commercial Driver's License (CDL).
-
 - Ability to develop complex operational and logistics plans to move people and things quickly, over long distances, in unfamiliar locations.
 
 - Prior military or overseas contracting experience.
